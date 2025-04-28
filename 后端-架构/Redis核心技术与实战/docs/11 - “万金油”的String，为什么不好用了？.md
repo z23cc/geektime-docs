@@ -170,16 +170,16 @@ used_memory:1039136
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论，也欢迎你把今天的内容分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>link</span> 👍（195） 💬（12）<div>实测老师的例子，长度7位数，共100万条数据。使用string占用70mb，使用hash ziplist只占用9mb。效果非常明显。redis版本6.0.6</div>2020-08-31</li><br/><li><span>super BB💨🐷</span> 👍（72） 💬（4）<div>老师，我之前看到《redis设计与实现》中提出SDS 的结构体的中没有alloc字段，书中的提到的是free,用来表示buf数组未使用的字节长度</div>2020-09-11</li><br/><li><span>吕</span> 👍（54） 💬（5）<div>我有一个疑惑，老师，文中的案例，这么大的数据量，为什么采用redis这种内存数据库来存储数据么呢，感觉它的业务场景还是不很清楚？直接采用mysql存储会有什么问题么？</div>2020-09-01</li><br/><li><span>Hm_</span> 👍（14） 💬（5）<div>老师有个地方不是很理解，文中讲到String需要dictEntry来保存键值关系，那么hash结构最外层的那个key没有dictEntry来维护吗？因为我记得之前讲得Redis是用一个大的hash来维护所有的键值对的，所以感觉这和dictEntry所占用的内存是一样的吧</div>2020-12-14</li><br/><li><span>小喵喵</span> 👍（14） 💬（11）<div>老师，请教下，这样拆分的话，如何重复了咋办呢？
+<li><span>link</span> 👍（195） 💬（12）<p>实测老师的例子，长度7位数，共100万条数据。使用string占用70mb，使用hash ziplist只占用9mb。效果非常明显。redis版本6.0.6</p>2020-08-31</li><br/><li><span>super BB💨🐷</span> 👍（72） 💬（4）<p>老师，我之前看到《redis设计与实现》中提出SDS 的结构体的中没有alloc字段，书中的提到的是free,用来表示buf数组未使用的字节长度</p>2020-09-11</li><br/><li><span>吕</span> 👍（54） 💬（5）<p>我有一个疑惑，老师，文中的案例，这么大的数据量，为什么采用redis这种内存数据库来存储数据么呢，感觉它的业务场景还是不很清楚？直接采用mysql存储会有什么问题么？</p>2020-09-01</li><br/><li><span>Hm_</span> 👍（14） 💬（5）<p>老师有个地方不是很理解，文中讲到String需要dictEntry来保存键值关系，那么hash结构最外层的那个key没有dictEntry来维护吗？因为我记得之前讲得Redis是用一个大的hash来维护所有的键值对的，所以感觉这和dictEntry所占用的内存是一样的吧</p>2020-12-14</li><br/><li><span>小喵喵</span> 👍（14） 💬（11）<p>老师，请教下，这样拆分的话，如何重复了咋办呢？
 以图片 ID 1101000060 和图片存储对象 ID 3302000080 为例，我们可以把图片 ID 的前 7 位（1101000）作为 Hash 类型的键，把图片 ID 的最后 3 位（060）和图片存储对象 ID 分别作为 Hash 类型值中的 key 和 value。
 比如：两张图片分别为：图片 ID 1101000060 图片存储对象 ID 3302000080；
                                      图片 ID 1101001060 图片存储对象 ID 3302000081
-这个时候最后 3 位（060）的key是冲突的的，但是它的图片存储对象 ID不同。</div>2020-09-01</li><br/><li><span>yyl</span> 👍（13） 💬（3）<div>“在节省内存空间方面，哈希表就没有压缩列表那么高效了”
+这个时候最后 3 位（060）的key是冲突的的，但是它的图片存储对象 ID不同。</p>2020-09-01</li><br/><li><span>yyl</span> 👍（13） 💬（3）<p>“在节省内存空间方面，哈希表就没有压缩列表那么高效了”
 在内存空间的开销上，也许哈希表没有压缩列表高效
 但是哈希表的查询效率，要比压缩列表高。
 在对查询效率高的场景中，可以考虑空间换时间
 
-</div>2020-09-03</li><br/><li><span>Front</span> 👍（4） 💬（1）<div>如果你刚好读过Database System Implemenation, 这篇正解释了NoSQL Database越来越像RDBMS</div>2020-12-28</li><br/><li><span>蜗牛</span> 👍（3） 💬（3）<div>有大佬能解释下 “prev_len 有两种取值情况：1 字节或 5 字节” 这一句吗？取值的话不应该是具体的某一个值吗？这里取值为1字节或5字节 是啥意思呢？小菜鸟想不太明白。</div>2020-11-27</li><br/><li><span>Kaito</span> 👍（551） 💬（52）<div>保存图片的例子，除了用String和Hash存储之外，还可以用Sorted Set存储（勉强）。
+</p>2020-09-03</li><br/><li><span>Front</span> 👍（4） 💬（1）<p>如果你刚好读过Database System Implemenation, 这篇正解释了NoSQL Database越来越像RDBMS</p>2020-12-28</li><br/><li><span>蜗牛</span> 👍（3） 💬（3）<p>有大佬能解释下 “prev_len 有两种取值情况：1 字节或 5 字节” 这一句吗？取值的话不应该是具体的某一个值吗？这里取值为1字节或5字节 是啥意思呢？小菜鸟想不太明白。</p>2020-11-27</li><br/><li><span>Kaito</span> 👍（551） 💬（52）<p>保存图片的例子，除了用String和Hash存储之外，还可以用Sorted Set存储（勉强）。
 
 Sorted Set与Hash类似，当元素数量少于zset-max-ziplist-entries，并且每个元素内存占用小于zset-max-ziplist-value时，默认也采用ziplist结构存储。我们可以把zset-max-ziplist-entries参数设置为1000，这样Sorted Set默认就会使用ziplist存储了，member和score也会紧凑排列存储，可以节省内存空间。
 
@@ -195,7 +195,7 @@ Sorted Set与Hash类似，当元素数量少于zset-max-ziplist-entries，并且
 
 所以在选用Hash和Sorted Set存储时，意味着把Redis当做数据库使用，这样就需要务必保证Redis的可靠性（做好备份、主从副本），防止实例宕机引发数据丢失的风险。而采用String存储时，可以把Redis当做缓存使用，每个key设置过期时间，同时设置maxmemory和淘汰策略，控制整个实例的内存上限，这种方案需要在数据库层（例如MySQL）也存储一份映射关系，当Redis中的缓存过期或被淘汰时，需要从数据库中重新查询重建缓存，同时需要保证数据库和缓存的一致性，这些逻辑也需要编写业务代码实现。
 
-总之，各有利弊，我们需要根据实际场景进行选择。</div>2020-08-31</li><br/><li><span>注定非凡</span> 👍（105） 💬（5）<div>一，作者讲了什么？
+总之，各有利弊，我们需要根据实际场景进行选择。</p>2020-08-31</li><br/><li><span>注定非凡</span> 👍（105） 💬（5）<p>一，作者讲了什么？
     Redis的String类型数据结构，及其底层实现
 二，作者是怎么把这事给说明白的？
     1，通过一个图片存储的案例，讲通过合理利用Redis的数据结构，降低资源消耗
@@ -255,12 +255,12 @@ entry：（
 
 五，在将来的哪些场景中，我能够使用它？
     这次学习Redis数据结构特性有了更多了解，在以后可以更加有信心根据业务需要，选取特定的数据结构
-</div>2020-09-09</li><br/><li><span>永祺</span> 👍（28） 💬（11）<div>hset 1101000 060 3302000080 操作为何只占用16字节？哈希键（060）、值（3302000080）两者各占用一个entry，按文中介绍，应该至少占用28字节。
+</p>2020-09-09</li><br/><li><span>永祺</span> 👍（28） 💬（11）<p>hset 1101000 060 3302000080 操作为何只占用16字节？哈希键（060）、值（3302000080）两者各占用一个entry，按文中介绍，应该至少占用28字节。
 
 其中原因，我认为很可能是文中对ziplist entry的介绍有误，参考下面GitHub文章，entry中并没有len字段，entry长度由encoding表示。所以例子中虽然创建两个entry，但总长度是小于16的。
 
-参考：https:&#47;&#47;github.com&#47;zpoint&#47;Redis-Internals&#47;blob&#47;5.0&#47;Object&#47;hash&#47;hash_cn.md</div>2020-10-14</li><br/><li><span>zhou</span> 👍（20） 💬（39）<div>hset 1101000 060 3302000080
-这条记录只消耗 16 字节没明白，压缩列表保存一个对象需要 14 字节，060、3302000080 都需要保存，那应该至少大于 28 字节</div>2020-09-01</li><br/><li><span>aworker</span> 👍（15） 💬（3）<div>看好多小伙伴里面对embstr的临界点是44字节的算法有疑问，给大家解释下：
+参考：https:&#47;&#47;github.com&#47;zpoint&#47;Redis-Internals&#47;blob&#47;5.0&#47;Object&#47;hash&#47;hash_cn.md</p>2020-10-14</li><br/><li><span>zhou</span> 👍（20） 💬（39）<p>hset 1101000 060 3302000080
+这条记录只消耗 16 字节没明白，压缩列表保存一个对象需要 14 字节，060、3302000080 都需要保存，那应该至少大于 28 字节</p>2020-09-01</li><br/><li><span>aworker</span> 👍（15） 💬（3）<p>看好多小伙伴里面对embstr的临界点是44字节的算法有疑问，给大家解释下：
 
 首先说下redisObject的数据结构包含如下字段：
 type：表明redisobjct的类型如果string，hash，set等，占4字节。
@@ -293,13 +293,13 @@ buf：真正存储数据的地方，肯定有1字节的‘\0’表示结束符�
 
 
 
-</div>2021-05-06</li><br/><li><span>蓝魔丶</span> 👍（14） 💬（6）<div>老师，测试环境：redis5.0.4
+</p>2021-05-06</li><br/><li><span>蓝魔丶</span> 👍（14） 💬（6）<p>老师，测试环境：redis5.0.4
 1.实践采用String方案：set 1101000052 3301000051，查看内存增加的72，而不是64，是为什么？
-2.实践采用Hash方案：hset 1101000 060 3302000080 查看内存增加88，再次添加key-value，才是满足增加16</div>2020-09-02</li><br/><li><span>HappyHasson</span> 👍（11） 💬（1）<div>hset 1101000 060 3302000080  为什么这条语句执行之后内存增加了16B？
+2.实践采用Hash方案：hset 1101000 060 3302000080 查看内存增加88，再次添加key-value，才是满足增加16</p>2020-09-02</li><br/><li><span>HappyHasson</span> 👍（11） 💬（1）<p>hset 1101000 060 3302000080  为什么这条语句执行之后内存增加了16B？
 
 老师的前提是执行命令之前已经有了hash key 1101000。然后插入fieldkey:060   fieldvalue:3302000080
 fieldkey和fieldvalue各分配一个ziplist entry，hset时，会调用ziplistPush函数先把fieldkey放到ziplist表尾，然后再放fieldvalue。之所以是16字节，是老师讲解的有点问题。ziplist entry包含三个字段previous_entry_length、encoding、content。没有老师说的len这个固定4字节的字段
 previous_entry_length取值规则：https:&#47;&#47;github.com&#47;zpoint&#47;Redis-Internals&#47;blob&#47;5.0&#47;Object&#47;hash&#47;prevlen.png
 encoding取值规则：https:&#47;&#47;github.com&#47;zpoint&#47;Redis-Internals&#47;blob&#47;5.0&#47;Object&#47;hash&#47;encoding.png
-所以这个命令的fieldkey占用字节：1+1+1=3、fieldvalue占用字节：1+1+8(64位整数表示3302000080)</div>2022-03-03</li><br/>
+所以这个命令的fieldkey占用字节：1+1+1=3、fieldvalue占用字节：1+1+8(64位整数表示3302000080)</p>2022-03-03</li><br/>
 </ul>

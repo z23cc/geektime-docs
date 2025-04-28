@@ -324,22 +324,22 @@ CLIP模型使用4亿互联网图文数据，结合对比学习的方式进行训
 
 欢迎你在留言区和我交流互动，如果这一讲对你有启发，别忘了分享给身边更多朋友。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>海杰</span> 👍（8） 💬（2）<div>老师我有几个问题。
+<li><span>海杰</span> 👍（8） 💬（2）<p>老师我有几个问题。
 1. 在SD里，CLIP的作用就是对prompt进行编码。文生图txt2img是用CLIP的文本编码器，图生图img2img用的是图像编码器，这样理解对吗？
 2. 看到有些模型用CLIP skip 2，就是不用编码器的最后一层，这样设计的原理是什么？会得到更好的模型吗？
-3. 外面下载的各种SD基础模型，它们用的都是同一个CLIP吗？下载的几个G的一个safetensors文件里，也包括CLIP的权重吗？</div>2023-08-12</li><br/><li><span>恨％心~</span> 👍（2） 💬（1）<div>老师好，请问下如何分别用CLIP 和OpenCLIP推断任意图片的prompt，有对应的代码示例吗？</div>2023-09-06</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+3. 外面下载的各种SD基础模型，它们用的都是同一个CLIP吗？下载的几个G的一个safetensors文件里，也包括CLIP的权重吗？</p>2023-08-12</li><br/><li><span>恨％心~</span> 👍（2） 💬（1）<p>老师好，请问下如何分别用CLIP 和OpenCLIP推断任意图片的prompt，有对应的代码示例吗？</p>2023-09-06</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：动图是用什么做的？
 Q2:512纬度空间，这个512也是经验值吗？
 Q3：以4亿对图文数据集为例，硬件资源的需求量是个什么样子？ 比如存储空间需要多少台机器，计算需要多少台机器等。
-Q4：我的笔记本电脑是惠普电脑，16G内存，不知道是否有GPU（估计有但不知道多大），这样的配置能运行老师的例子吗？</div>2023-08-08</li><br/><li><span>yanyu-xin</span> 👍（0） 💬（1）<div>按着老师的代码，一次性在Colab运行成功。
+Q4：我的笔记本电脑是惠普电脑，16G内存，不知道是否有GPU（估计有但不知道多大），这样的配置能运行老师的例子吗？</p>2023-08-08</li><br/><li><span>yanyu-xin</span> 👍（0） 💬（1）<p>按着老师的代码，一次性在Colab运行成功。
 第二个作业：
 第一个图片，用CLIP测试，结果是：“Predicted class: cat    prob: cat 1.0, dog 0.0”； 
 用OpenCLIP测试结果是：“prob: a diagram 8.51679033075925e-06, a dog 1.5743193216621876e-05, a cat 0.9999756813049316”
 第二个图片，用CLIP测试，结果是：“Predicted class: dog  prob: cat 0.0, dog 1.0”
-用OpenCLIP测试结果是：“prob: a diagram 8.806668120087124e-06, a dog 0.999969482421875, a cat 2.167693673982285e-05”</div>2023-08-07</li><br/><li><span>陈炜</span> 👍（0） 💬（0）<div>CLIP 的训练目标是让对应的图像、文本得到的特征向量靠近，也就是余弦距离越大越好，让不对应的图像、文本得到的特征向量远离，也就是余弦距离尽可能小。
+用OpenCLIP测试结果是：“prob: a diagram 8.806668120087124e-06, a dog 0.999969482421875, a cat 2.167693673982285e-05”</p>2023-08-07</li><br/><li><span>陈炜</span> 👍（0） 💬（0）<p>CLIP 的训练目标是让对应的图像、文本得到的特征向量靠近，也就是余弦距离越大越好，让不对应的图像、文本得到的特征向量远离，也就是余弦距离尽可能小。
 
 这里的余弦距离是余弦相似度吗？
-特征向量靠近，余弦距离减小，余弦相似度增大</div>2025-02-12</li><br/><li><span>进化论</span> 👍（0） 💬（0）<div>import torch
+特征向量靠近，余弦距离减小，余弦相似度增大</p>2025-02-12</li><br/><li><span>进化论</span> 👍（0） 💬（0）<p>import torch
 import clip
 from PIL import Image
 import urllib.request
@@ -382,5 +382,5 @@ predicted_label = target_classes[predicted_class]
 plt.imshow(image)
 plt.show()
 print(f&quot;Predicted class: {predicted_label}&quot;)
-print(f&quot;prob: cat {similarity_scores[0][0]}, dog {similarity_scores[0][1]}, owl {similarity_scores[0][2]}&quot;)</div>2023-10-23</li><br/>
+print(f&quot;prob: cat {similarity_scores[0][0]}, dog {similarity_scores[0][1]}, owl {similarity_scores[0][2]}&quot;)</p>2023-10-23</li><br/>
 </ul>

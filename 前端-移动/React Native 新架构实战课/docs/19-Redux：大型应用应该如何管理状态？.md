@@ -482,9 +482,9 @@ export default function Root() {
 
 React/React Native 生态中，状态管理工具可谓是百家争鸣，那你选择的方案是什么呢？欢迎在评论区和我分享你的答案。我们下一讲见。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Geek_4e11e2</span> 👍（0） 💬（0）<div>现在最新的react native版本是0.71. 我的app是0.63.4版本，请问老师，建议升级到那个版本比较好。在升级时候，需要注意哪些事项。</div>2023-06-19</li><br/><li><span>杨永安</span> 👍（0） 💬（0）<div>想知道在react native中，所有的js代码都是在同一个上下文的js运行时中吗？
+<li><span>Geek_4e11e2</span> 👍（0） 💬（0）<p>现在最新的react native版本是0.71. 我的app是0.63.4版本，请问老师，建议升级到那个版本比较好。在升级时候，需要注意哪些事项。</p>2023-06-19</li><br/><li><span>杨永安</span> 👍（0） 💬（0）<p>想知道在react native中，所有的js代码都是在同一个上下文的js运行时中吗？
 
 否则Redux这种对象数据是如何跨页面共享的。
 
-因为我之前接触到的是多个WebView这样的，他们的数据不能共享</div>2023-04-14</li><br/><li><span>海绵豹豹</span> 👍（0） 💬（1）<div>用FB的Recoil吧, Redux太啰嗦了而且心智负担较高</div>2022-10-19</li><br/><li><span>abc🙂</span> 👍（0） 💬（1）<div>能不能讲讲全局状态的场景，感觉很多情况不需要redux</div>2022-06-15</li><br/><li><span>python4</span> 👍（0） 💬（0）<div>函数命名上加一点redux概念是否更好, 方便新手牢记概念, 比如: filter -&gt; filterReducer</div>2022-05-14</li><br/>
+因为我之前接触到的是多个WebView这样的，他们的数据不能共享</p>2023-04-14</li><br/><li><span>海绵豹豹</span> 👍（0） 💬（1）<p>用FB的Recoil吧, Redux太啰嗦了而且心智负担较高</p>2022-10-19</li><br/><li><span>abc🙂</span> 👍（0） 💬（1）<p>能不能讲讲全局状态的场景，感觉很多情况不需要redux</p>2022-06-15</li><br/><li><span>python4</span> 👍（0） 💬（0）<p>函数命名上加一点redux概念是否更好, 方便新手牢记概念, 比如: filter -&gt; filterReducer</p>2022-05-14</li><br/>
 </ul>

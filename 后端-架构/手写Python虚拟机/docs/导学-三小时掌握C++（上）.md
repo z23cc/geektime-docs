@@ -6,5 +6,5 @@
 
 下次直播是5月22日 19:30，期待在直播间看到你的身影，我们不见不散！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_b0e84e</span> 👍（0） 💬（1）<div>老师的新书如果出版之后，会考虑出新的专栏吗</div>2024-06-12</li><br/><li><span>zahi</span> 👍（0） 💬（1）<div>go语言的接口是不是 row polymorphism 的类型？</div>2024-05-19</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-10-13</li><br/>
+<li><span>Geek_b0e84e</span> 👍（0） 💬（1）<p>老师的新书如果出版之后，会考虑出新的专栏吗</p>2024-06-12</li><br/><li><span>zahi</span> 👍（0） 💬（1）<p>go语言的接口是不是 row polymorphism 的类型？</p>2024-05-19</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-10-13</li><br/>
 </ul>

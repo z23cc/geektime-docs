@@ -96,5 +96,5 @@ AIOps网站推荐：[https://www.aiops.cn](https://www.aiops.cn/%e6%96%87%e7%ab%
 
 你们的系统是否也在使用AIOps的一些手段来进行日常的运维工作，欢迎你分享在评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>奔跑的阿飞</span> 👍（1） 💬（0）<div>关于AIOPS有2个问题，1.什么样规模的企业比较适合应用AIOPS技术。2.AIOPS实施需要哪些做好哪些前置工作？</div>2024-08-23</li><br/>
+<li><span>奔跑的阿飞</span> 👍（1） 💬（0）<p>关于AIOPS有2个问题，1.什么样规模的企业比较适合应用AIOPS技术。2.AIOPS实施需要哪些做好哪些前置工作？</p>2024-08-23</li><br/>
 </ul>

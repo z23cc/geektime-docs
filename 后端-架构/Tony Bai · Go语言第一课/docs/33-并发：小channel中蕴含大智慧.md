@@ -965,30 +965,30 @@ channel作为Go并发设计的重要组成部分，需要你掌握的细节非�
 
 如果你觉得有收获，也欢迎你把这节课分享给更多对Go并发感兴趣的朋友。我是Tony Bai，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>peison</span> 👍（24） 💬（6）<div>请问计数信号量的例子中，因为jobs的容量是10，这里执行的循环不会导致阻塞，close(jobs) 应该会被执行到，那么下面的for range为什么不会终止，而可以继续运行？
+<li><span>peison</span> 👍（24） 💬（6）<p>请问计数信号量的例子中，因为jobs的容量是10，这里执行的循环不会导致阻塞，close(jobs) 应该会被执行到，那么下面的for range为什么不会终止，而可以继续运行？
 go func() {
 		for i := 0; i &lt; 8; i++ {
 			jobs &lt;- (i + 1)
 		}
 		close(jobs) 
-	}()</div>2022-04-15</li><br/><li><span>张申傲</span> 👍（13） 💬（1）<div>这节课信息量有点大，需要多看几遍好好消化。请问老师一个问题：如果程序中没有手动 close channel，那么 channel 会在什么时候关闭呢？是否需要借助 defer 去释放 channel 资源呢？</div>2022-02-20</li><br/><li><span>ibin</span> 👍（10） 💬（4）<div>白老师，你好，下面这段可以模拟close(groupSignal)
+	}()</p>2022-04-15</li><br/><li><span>张申傲</span> 👍（13） 💬（1）<p>这节课信息量有点大，需要多看几遍好好消化。请问老师一个问题：如果程序中没有手动 close channel，那么 channel 会在什么时候关闭呢？是否需要借助 defer 去释放 channel 资源呢？</p>2022-02-20</li><br/><li><span>ibin</span> 👍（10） 💬（4）<p>白老师，你好，下面这段可以模拟close(groupSignal)
 for i := 0;i &lt; 5; i++ {
 		groupSignal&lt;-signal(struct{}{})
 }
-为什么close(groupSignal) 可以给每个groupSignal都发送了{}</div>2022-01-12</li><br/><li><span>木木</span> 👍（8） 💬（1）<div>go的并发原语选择真的是非常精炼：简洁又强大，一个ch就负责了线程通信、同步的多种功能；一个select又实现了对阻塞、非阻塞的控制以及事件循环模式。</div>2022-03-18</li><br/><li><span>airmy丶</span> 👍（6） 💬（2）<div>请问下老师: 为什么 &quot;1 对 n 的信号通知机制&quot; 这个例子中，wg.Wait() 一定需要新起一个协程执行呢？而且在本地测试确实只能在新的协程中执行才不会报错，否则会报出: goroutine x [chan receive] 这样的错误。</div>2022-05-18</li><br/><li><span>瓜牛</span> 👍（5） 💬（2）<div>为啥有时需要手动调用close关闭channel，有时又不需要？</div>2022-04-20</li><br/><li><span>怎么睡才能做这种梦</span> 👍（4） 💬（1）<div>另外，select 语句中，如果有多个 case 同时都没有阻塞的话，会随机选择一个 case </div>2023-03-06</li><br/><li><span>Unknown element</span> 👍（4） 💬（1）<div>老师我看makechan的源码发现分配内存的时候分了3种情况：
+为什么close(groupSignal) 可以给每个groupSignal都发送了{}</p>2022-01-12</li><br/><li><span>木木</span> 👍（8） 💬（1）<p>go的并发原语选择真的是非常精炼：简洁又强大，一个ch就负责了线程通信、同步的多种功能；一个select又实现了对阻塞、非阻塞的控制以及事件循环模式。</p>2022-03-18</li><br/><li><span>airmy丶</span> 👍（6） 💬（2）<p>请问下老师: 为什么 &quot;1 对 n 的信号通知机制&quot; 这个例子中，wg.Wait() 一定需要新起一个协程执行呢？而且在本地测试确实只能在新的协程中执行才不会报错，否则会报出: goroutine x [chan receive] 这样的错误。</p>2022-05-18</li><br/><li><span>瓜牛</span> 👍（5） 💬（2）<p>为啥有时需要手动调用close关闭channel，有时又不需要？</p>2022-04-20</li><br/><li><span>怎么睡才能做这种梦</span> 👍（4） 💬（1）<p>另外，select 语句中，如果有多个 case 同时都没有阻塞的话，会随机选择一个 case </p>2023-03-06</li><br/><li><span>Unknown element</span> 👍（4） 💬（1）<p>老师我看makechan的源码发现分配内存的时候分了3种情况：
 1. 缓冲区大小=0 
 2. 元素类型不是指针 
 3. 元素类型包含指针
-我想问下为什么2和3要分成两种情况呢？我看区别好像是调用 mallocgc 时第二个参数不一样，但是mallocgc 的源码我就看不懂了。。。希望老师可以简单解释下 谢谢老师~</div>2022-11-20</li><br/><li><span>每天晒白牙</span> 👍（4） 💬（2）<div>感觉只发送channel和只接收channel类型定义符号，交换一下更好理解，也更形象吧
+我想问下为什么2和3要分成两种情况呢？我看区别好像是调用 mallocgc 时第二个参数不一样，但是mallocgc 的源码我就看不懂了。。。希望老师可以简单解释下 谢谢老师~</p>2022-11-20</li><br/><li><span>每天晒白牙</span> 👍（4） 💬（2）<p>感觉只发送channel和只接收channel类型定义符号，交换一下更好理解，也更形象吧
 
 make(chan&lt;- int, 1) 这个代表只接收
-make(&lt;-chan int, 1) 这个代表只发送</div>2022-07-20</li><br/><li><span>罗杰</span> 👍（4） 💬（1）<div>这节课比较绕，要静下心好好学习</div>2022-01-12</li><br/><li><span>lesserror</span> 👍（2） 💬（1）<div>Tony bai 老师：
+make(&lt;-chan int, 1) 这个代表只发送</p>2022-07-20</li><br/><li><span>罗杰</span> 👍（4） 💬（1）<p>这节课比较绕，要静下心好好学习</p>2022-01-12</li><br/><li><span>lesserror</span> 👍（2） 💬（1）<p>Tony bai 老师：
 
 1. 文中：“直到 channel 中有数据可接收或 channel 被关闭循环”，这里的 channel 被关闭循环该怎么理解呢？
 
 2. 文中的提到的“Goroutine 安全”，又该如何理解呢？
 
-3. 还有能不能通俗的解释一下“竞态” 这个概念呀？</div>2023-06-30</li><br/><li><span>Geek_640f2c</span> 👍（2） 💬（1）<div>白老师，请问您一个问题
+3. 还有能不能通俗的解释一下“竞态” 这个概念呀？</p>2023-06-30</li><br/><li><span>Geek_640f2c</span> 👍（2） 💬（1）<p>白老师，请问您一个问题
 无缓冲的 channel 替代锁那一节，我在 main 的代码中最后输出了 cter.i，但输出结果有时是10，有时却是11，这是什么原因呢？
 main代码如下：
 func main() {
@@ -1004,7 +1004,7 @@ func main() {
 	}
 	wg.Wait()
 	println(cter.i)
-}</div>2023-03-14</li><br/><li><span>Ppppppp</span> 👍（2） 💬（1）<div>for range对于channel会产生pop的效果吗？感觉好像跟对待slice和map不太一样。</div>2023-02-24</li><br/><li><span>怎么睡才能做这种梦</span> 👍（2） 💬（1）<div>满满的干货呀，感谢白老，希望老师能出进阶专栏，我一定买</div>2023-02-20</li><br/><li><span>knightjdq</span> 👍（2） 💬（1）<div>白老师好：请教下用于替代锁机制中的代码，十分感谢!
+}</p>2023-03-14</li><br/><li><span>Ppppppp</span> 👍（2） 💬（1）<p>for range对于channel会产生pop的效果吗？感觉好像跟对待slice和map不太一样。</p>2023-02-24</li><br/><li><span>怎么睡才能做这种梦</span> 👍（2） 💬（1）<p>满满的干货呀，感谢白老，希望老师能出进阶专栏，我一定买</p>2023-02-20</li><br/><li><span>knightjdq</span> 👍（2） 💬（1）<p>白老师好：请教下用于替代锁机制中的代码，十分感谢!
 func NewCounter() *counter {
 	cter := &amp;counter{
 		c: make(chan int),
@@ -1017,5 +1017,5 @@ func NewCounter() *counter {
 	}()
 	return cter
 }
-这里的死循环，i++写入channel后阻塞，Increase函数来读取，for循环到9后，不再读取，channel阻塞，那死循环的groutine呢？在counter对象销毁后就停止执行了是么？</div>2022-11-25</li><br/>
+这里的死循环，i++写入channel后阻塞，Increase函数来读取，for循环到9后，不再读取，channel阻塞，那死循环的groutine呢？在counter对象销毁后就停止执行了是么？</p>2022-11-25</li><br/>
 </ul>

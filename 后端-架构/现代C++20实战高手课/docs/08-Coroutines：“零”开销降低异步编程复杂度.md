@@ -431,22 +431,22 @@ concept Awaitable = ValidCoAwait<AwaitableType, Promise> ||
 
 ![](https://static001.geekbang.org/resource/image/3f/f6/3fcfb3a4f8cef31ec9bd3451886e5ef6.jpg?wh=2600x1285)
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Family mission</span> 👍（1） 💬（1）<div>作者你好，感觉你讲的这节内容干货满满，请解释下这个代码块的含义
+<li><span>Family mission</span> 👍（1） 💬（1）<p>作者你好，感觉你讲的这节内容干货满满，请解释下这个代码块的含义
 template
 struct promise;
 template
 struct Generator : std::coroutine_handle&gt; { using promise_type = promise;};
-using promise_type = promise&lt;T&gt;;这个代码块的含义么，可以理解成是将模版类赋值给这个promise_type么</div>2023-11-07</li><br/><li><span>常振华</span> 👍（0） 💬（1）<div>说实话，从这些代码来看，我认为比传统的异步编程更复杂了，而且是复杂太多了。
-学到这里，我觉得concept是个好东西，相比原来的模板元编程，可读性友好了很多，其它的，就是把简单的事情复杂化。</div>2023-09-20</li><br/><li><span>！null</span> 👍（0） 💬（1）<div>CountGenerator doCount() {
+using promise_type = promise&lt;T&gt;;这个代码块的含义么，可以理解成是将模版类赋值给这个promise_type么</p>2023-11-07</li><br/><li><span>常振华</span> 👍（0） 💬（1）<p>说实话，从这些代码来看，我认为比传统的异步编程更复杂了，而且是复杂太多了。
+学到这里，我觉得concept是个好东西，相比原来的模板元编程，可读性友好了很多，其它的，就是把简单的事情复杂化。</p>2023-09-20</li><br/><li><span>！null</span> 👍（0） 💬（1）<p>CountGenerator doCount() {
     for (int32_t i = 0; i &lt; 3; ++i) {
         co_yield i;
     }
 }
-这个返回值是在哪里return的呢？</div>2023-08-29</li><br/><li><span>sea520</span> 👍（0） 💬（1）<div>生成器在执行代码的时候，调用者也会在执行自己的代码吗，还是调用者暂停执行？
-调用者是通过自己不断循环来获取生成器的返回值，还调用者怎么去做自己的事情，感觉不太能体现异步编程。异步编程是生成器有数据后通知调用者，而不是一直循环去检查是否数据完成吧</div>2023-04-12</li><br/><li><span>tang_ming_wu</span> 👍（0） 💬（1）<div>个人觉得，作为普通开发者，当前只需要了解无栈协程的基本原理即可。最后使用的，应该还是标准库需要提供的易用接口。</div>2023-03-14</li><br/><li><span>momo</span> 👍（0） 💬（1）<div>请教老师一个问题：
-我们知道协程实现有 有栈协程和无栈协程，C++ 选用了无栈协程是基于什么考虑？</div>2023-02-19</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+这个返回值是在哪里return的呢？</p>2023-08-29</li><br/><li><span>sea520</span> 👍（0） 💬（1）<p>生成器在执行代码的时候，调用者也会在执行自己的代码吗，还是调用者暂停执行？
+调用者是通过自己不断循环来获取生成器的返回值，还调用者怎么去做自己的事情，感觉不太能体现异步编程。异步编程是生成器有数据后通知调用者，而不是一直循环去检查是否数据完成吧</p>2023-04-12</li><br/><li><span>tang_ming_wu</span> 👍（0） 💬（1）<p>个人觉得，作为普通开发者，当前只需要了解无栈协程的基本原理即可。最后使用的，应该还是标准库需要提供的易用接口。</p>2023-03-14</li><br/><li><span>momo</span> 👍（0） 💬（1）<p>请教老师一个问题：
+我们知道协程实现有 有栈协程和无栈协程，C++ 选用了无栈协程是基于什么考虑？</p>2023-02-19</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：局部变量的声明周期是什么？
 Q2：用“exposition only”标识出来的ptr怎么跟编译器有关？
 文中说“用“exposition only”标识出来的部分，就是 coroutine_handle 的内部存储内容，这部分只是为了说明标准做的示例，实际不同编译器可以根据自己的需求定义这里的实现”。 我的理解是：ptr应该是coder设置的具体内容，应该和编译器无关。
-Q3：协程可以用来做长耗时的运算吗？</div>2023-02-02</li><br/>
+Q3：协程可以用来做长耗时的运算吗？</p>2023-02-02</li><br/>
 </ul>

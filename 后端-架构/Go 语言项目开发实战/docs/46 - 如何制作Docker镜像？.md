@@ -260,7 +260,7 @@ CMD ["--help"]
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>jxlwqq</span> 👍（28） 💬（1）<div>自荐一个dockerfile的写法：
+<li><span>jxlwqq</span> 👍（28） 💬（1）<p>自荐一个dockerfile的写法：
 
 ```Dockerfile
 # 多阶段构建：提升构建速度，减少镜像大小
@@ -292,7 +292,7 @@ COPY --from=builder &#47;workspace&#47;app .
 EXPOSE 8080
 # 配置启动命令
 ENTRYPOINT [&quot;&#47;app&quot;]
-```</div>2021-09-13</li><br/><li><span>随风而过</span> 👍（7） 💬（1）<div>官方文档中最佳实践有介绍，RUN, COPY, ADD 三个指令会创建层，其他指令会创建一个中间镜像，并且不会影响镜像大小。这样我们说的指令合并也就是以这三个指令为主。当然了docker history查看构建历史与镜像大小，更为易读和简约</div>2021-09-12</li><br/><li><span>静心</span> 👍（2） 💬（1）<div>感觉介绍IAM项目本身的相关内容少了点，像Docker相关的知识，其实给大家推荐一下资料就可以了。</div>2021-11-04</li><br/><li><span>冷峰</span> 👍（0） 💬（1）<div>go get 依赖 git 的吧， 不装 git , go get 能运行吗？ </div>2022-11-06</li><br/><li><span>wei 丶</span> 👍（0） 💬（1）<div>老师想确认下，第二阶段的FROM busybox是会覆盖掉第一阶段的FROM是嘛，只是用第一阶段进行编译而已，然后用第二阶段的镜像去运行app</div>2021-10-16</li><br/><li><span>yandongxiao</span> 👍（0） 💬（0）<div>总结：
+```</p>2021-09-13</li><br/><li><span>随风而过</span> 👍（7） 💬（1）<p>官方文档中最佳实践有介绍，RUN, COPY, ADD 三个指令会创建层，其他指令会创建一个中间镜像，并且不会影响镜像大小。这样我们说的指令合并也就是以这三个指令为主。当然了docker history查看构建历史与镜像大小，更为易读和简约</p>2021-09-12</li><br/><li><span>静心</span> 👍（2） 💬（1）<p>感觉介绍IAM项目本身的相关内容少了点，像Docker相关的知识，其实给大家推荐一下资料就可以了。</p>2021-11-04</li><br/><li><span>冷峰</span> 👍（0） 💬（1）<p>go get 依赖 git 的吧， 不装 git , go get 能运行吗？ </p>2022-11-06</li><br/><li><span>wei 丶</span> 👍（0） 💬（1）<p>老师想确认下，第二阶段的FROM busybox是会覆盖掉第一阶段的FROM是嘛，只是用第一阶段进行编译而已，然后用第二阶段的镜像去运行app</p>2021-10-16</li><br/><li><span>yandongxiao</span> 👍（0） 💬（0）<p>总结：
 容器镜像的构建主要是通过Dockerfile来完成，构建过程如下：
 1. 创建一个临时目录，将Context中的文件解压到该目录；
 2. 执行Dockfile中的命令，一般是顺序执行，如果是多阶段构建，也会并行执行指令。
@@ -303,5 +303,5 @@ ENTRYPOINT [&quot;&#47;app&quot;]
 Dockerfile指令大写；From 选择官方容器镜像，指定镜像的tag；
 使用尽量少地层：构建时将相同指令的内容放到一层；不要在Dockerfile中修改文件权限；采用多阶段构建，大幅减少容器镜像的体积。
 充分利用缓存：不易修改的指令放在前面。
-推荐使用COPY而非ADD；ENTRYPOINT和CMD结合使用。</div>2021-12-05</li><br/>
+推荐使用COPY而非ADD；ENTRYPOINT和CMD结合使用。</p>2021-12-05</li><br/>
 </ul>

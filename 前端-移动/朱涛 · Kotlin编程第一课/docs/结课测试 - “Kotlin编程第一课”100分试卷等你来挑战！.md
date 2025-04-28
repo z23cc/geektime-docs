@@ -8,5 +8,5 @@
 
 [![](https://static001.geekbang.org/resource/image/28/a4/28d1be62669b4f3cc01c36466bf811a4.png?wh=1142%2A201)](http://time.geekbang.org/quiz/intro?act_id=3429&exam_id=8955)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>从心所欲</span> 👍（3） 💬（1）<div>今天学完了整个课程！整体来讲还不错，值这个价！我感觉这门课前面比较基础，学起来比较轻松，感觉收获也多。但是后面难起来了，学不动了，只能还给老师了，不得不承认后面难点对安卓菜鸟不太友好，期待以后经验丰富了看能不能理解清楚。</div>2022-04-15</li><br/><li><span>better</span> 👍（0） 💬（2）<div>其他jetpack系列</div>2022-04-15</li><br/><li><span>Michael</span> 👍（2） 💬（0）<div>没有看课程，也就是有 2个多选题少选了，看来我的 kotlin 还是有点基础</div>2022-05-31</li><br/>
+<li><span>从心所欲</span> 👍（3） 💬（1）<p>今天学完了整个课程！整体来讲还不错，值这个价！我感觉这门课前面比较基础，学起来比较轻松，感觉收获也多。但是后面难起来了，学不动了，只能还给老师了，不得不承认后面难点对安卓菜鸟不太友好，期待以后经验丰富了看能不能理解清楚。</p>2022-04-15</li><br/><li><span>better</span> 👍（0） 💬（2）<p>其他jetpack系列</p>2022-04-15</li><br/><li><span>Michael</span> 👍（2） 💬（0）<p>没有看课程，也就是有 2个多选题少选了，看来我的 kotlin 还是有点基础</p>2022-05-31</li><br/>
 </ul>

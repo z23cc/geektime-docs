@@ -207,17 +207,17 @@ this.readCompletionHandler = new CompletionHandler<Integer, SocketWrapperBase<Ni
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>-W.LI-</span> 👍（32） 💬（3）<div>老师好!Windows 的 IOCP 和 Linux 内核 2.6 的 AIO 都提供了异步 I&#47;O 的支持，Java 的 NIO.2 API 就是对操作系统异步 I&#47;O API 的封装。
-这句话怎么理解啊？我看别的老师说Linux不支持异步IO，评论里也有同学说Linux下的AIO其实只是NIO之类的。老师能具体讲讲么谢谢。</div>2019-06-18</li><br/><li><span>-W.LI-</span> 👍（20） 💬（1）<div>老师好!那个两次read能理解为，连接被保留着，数据没就绪处理的线程资源先释放了。收到异步数据就绪通知后，根据原有的连接重建处理线程，继续处理。阻塞期间线程可复用</div>2019-06-18</li><br/><li><span>王盛武</span> 👍（17） 💬（1）<div>李老师好，请问nio1，tomcat里nio为什么不参考netty，通过使用堆外内存来避免零拷贝问题？</div>2019-06-15</li><br/><li><span>J.M.Liu</span> 👍（13） 💬（2）<div>老师，NIO2中，由于TCP是一个流，那内核把多少字节拷贝到buff中才触发回调函数呢？比如一次http请求，有没有可能触发回调函数时，还没有把一个完整的http请求包接受完整呀？</div>2019-08-21</li><br/><li><span>发条橙子 。</span> 👍（8） 💬（1）<div>老师 ， 这两张讲的I&#47;O有点难啃 ，主要还是底子太薄 。 反复看了几遍有几个疑问点希望老师指点一下 😄
+<li><span>-W.LI-</span> 👍（32） 💬（3）<p>老师好!Windows 的 IOCP 和 Linux 内核 2.6 的 AIO 都提供了异步 I&#47;O 的支持，Java 的 NIO.2 API 就是对操作系统异步 I&#47;O API 的封装。
+这句话怎么理解啊？我看别的老师说Linux不支持异步IO，评论里也有同学说Linux下的AIO其实只是NIO之类的。老师能具体讲讲么谢谢。</p>2019-06-18</li><br/><li><span>-W.LI-</span> 👍（20） 💬（1）<p>老师好!那个两次read能理解为，连接被保留着，数据没就绪处理的线程资源先释放了。收到异步数据就绪通知后，根据原有的连接重建处理线程，继续处理。阻塞期间线程可复用</p>2019-06-18</li><br/><li><span>王盛武</span> 👍（17） 💬（1）<p>李老师好，请问nio1，tomcat里nio为什么不参考netty，通过使用堆外内存来避免零拷贝问题？</p>2019-06-15</li><br/><li><span>J.M.Liu</span> 👍（13） 💬（2）<p>老师，NIO2中，由于TCP是一个流，那内核把多少字节拷贝到buff中才触发回调函数呢？比如一次http请求，有没有可能触发回调函数时，还没有把一个完整的http请求包接受完整呀？</p>2019-08-21</li><br/><li><span>发条橙子 。</span> 👍（8） 💬（1）<p>老师 ， 这两张讲的I&#47;O有点难啃 ，主要还是底子太薄 。 反复看了几遍有几个疑问点希望老师指点一下 😄
 
 1. read请求是怎么发出来的 是通过调用select方法发出来的么 ？
 
 2. 异步我看发了一个read 就返回了，那实际是应该是指异步非阻塞 ， 那么存在异步阻塞的模型么？
 
 3. 老师说从tcp&#47;ip那层解数据包。我理解的过程是 当客户端发一个uri请求，当通过一系列的路由后最终到我们的服务器，再从七层网络模型的最底层开始一路向上到最顶层的应用层。 当应用层（Tomcat容器）接收到请求（连接器endpoint监听端口）后向操作系统发送一个read请求 ，然后等待操作系统内核回调应用程序（Tomcat容器）的回调接口 。那么按照我这种脑补的过程，实际上当服务端tomcat接收到客户端的I&#47;O请求时，向操作系统发送read请求要求操作系统将客户端发送的数据（前台的入参信息）从内核拷贝到用户空间。因为tcp&#47;ip层在应用层下面，那么从网卡解析数据到内核这个过程是不是在tomcat获取到请求之前的的时候就已经处理好了，而不是在tomcat发送read请求时再去从网卡解析数据..？
-</div>2019-06-14</li><br/><li><span>yungoo</span> 👍（8） 💬（3）<div>我所看的tomcat 8.5的代码跟专栏所讲已经有些不一致了。已经没有Nio2Acceptor了，accept获取连接用的是Future aceept()。</div>2019-06-13</li><br/><li><span>nimil</span> 👍（7） 💬（1）<div>问下老师，这个Tomcat这个IO模型是将数据拷贝了两次么，还是有做特殊优化</div>2019-06-13</li><br/><li><span>802.11</span> 👍（6） 💬（3）<div>怎么模拟呢。现在springboot内置的Tomcat使用的都是nio  。设定NIO2呢</div>2019-06-21</li><br/><li><span>Standly</span> 👍（6） 💬（1）<div>linux没有真正实现异步IO，所以linux环境下NIO和NIO2的性能差别是不是不大 ？</div>2019-06-15</li><br/><li><span>802.11</span> 👍（6） 💬（1）<div>Http11Processor的2次read是在哪个类中呢，没有找到。。。。</div>2019-06-15</li><br/><li><span>WL</span> 👍（4） 💬（1）<div>老师关于IO模型内存我有两个问题：
+</p>2019-06-14</li><br/><li><span>yungoo</span> 👍（8） 💬（3）<p>我所看的tomcat 8.5的代码跟专栏所讲已经有些不一致了。已经没有Nio2Acceptor了，accept获取连接用的是Future aceept()。</p>2019-06-13</li><br/><li><span>nimil</span> 👍（7） 💬（1）<p>问下老师，这个Tomcat这个IO模型是将数据拷贝了两次么，还是有做特殊优化</p>2019-06-13</li><br/><li><span>802.11</span> 👍（6） 💬（3）<p>怎么模拟呢。现在springboot内置的Tomcat使用的都是nio  。设定NIO2呢</p>2019-06-21</li><br/><li><span>Standly</span> 👍（6） 💬（1）<p>linux没有真正实现异步IO，所以linux环境下NIO和NIO2的性能差别是不是不大 ？</p>2019-06-15</li><br/><li><span>802.11</span> 👍（6） 💬（1）<p>Http11Processor的2次read是在哪个类中呢，没有找到。。。。</p>2019-06-15</li><br/><li><span>WL</span> 👍（4） 💬（1）<p>老师关于IO模型内存我有两个问题：
 1. 配内存的时候，是不是因为堆内存会受到GC的影响导致地址变化，所以不能直接使用不能使用堆内存， 如果使用堆内存的话也需要先指向一个固定的堆外内存，所以使用堆外内存就可以避免GC对内存地址的影响。
-2. 是不是IO在读数据的时候经过两次数据拷贝，从网卡到内核态，从内核态到用户态，这两次数据拷贝有什么方法可以减少1次吗？</div>2019-06-13</li><br/><li><span>Geek_0quh3e</span> 👍（3） 💬（3）<div>Http11Processor 是通过 2 次 read 调用来完成数据读取操作的。
+2. 是不是IO在读数据的时候经过两次数据拷贝，从网卡到内核态，从内核态到用户态，这两次数据拷贝有什么方法可以减少1次吗？</p>2019-06-13</li><br/><li><span>Geek_0quh3e</span> 👍（3） 💬（3）<p>Http11Processor 是通过 2 次 read 调用来完成数据读取操作的。
 这一点看了好几遍始终没明白，
 作者回复: Nio2SocketWrapper的read方法，这个方法会被调用两次，不是串行调两次，而是Poller会先后创建两个SocketProcessor任务类，在两个线程中执行，执行过程中每次Http11Processor都会调Nio2SocketWrapper的read方法。
 
@@ -234,5 +234,5 @@ nRead = fillReadBuffer(block);
 ...
 }
 以上是针对802.11的回答，可是我没有在Nio2EndPoint中找到对应poller内部类啊
- </div>2019-06-25</li><br/><li><span>飞翔</span> 👍（3） 💬（1）<div>老师tomcat 在哪里配置 使用nioendpoint 还是nio2endpoint，能否给个例子</div>2019-06-14</li><br/><li><span>helloWorld</span> 👍（1） 💬（1）<div>老师以后在文章中的例子可以给出完整的代码吗？</div>2019-06-15</li><br/><li><span>飞翔</span> 👍（0） 💬（1）<div>老师 有了nio2endpoint是不是就没人用nioendpoint了？</div>2019-06-14</li><br/>
+ </p>2019-06-25</li><br/><li><span>飞翔</span> 👍（3） 💬（1）<p>老师tomcat 在哪里配置 使用nioendpoint 还是nio2endpoint，能否给个例子</p>2019-06-14</li><br/><li><span>helloWorld</span> 👍（1） 💬（1）<p>老师以后在文章中的例子可以给出完整的代码吗？</p>2019-06-15</li><br/><li><span>飞翔</span> 👍（0） 💬（1）<p>老师 有了nio2endpoint是不是就没人用nioendpoint了？</p>2019-06-14</li><br/>
 </ul>

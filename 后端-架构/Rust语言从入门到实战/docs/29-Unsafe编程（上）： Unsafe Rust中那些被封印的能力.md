@@ -323,5 +323,5 @@ Rust与C有正统的血脉关系，可以实现真正的双向互通，而没有
 
 Unsafe Rust比C语言更安全吗，为什么？欢迎你把自己的思考分享到评论区，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>seven9t</span> 👍（5） 💬（1）<div>unsafe改名叫trustMe多好</div>2024-01-21</li><br/><li><span>Geek_03197d</span> 👍（2） 💬（1）<div>raw pointer 翻译成 裸指针 是不是更通用？</div>2024-02-27</li><br/><li><span>Apa琦</span> 👍（2） 💬（2）<div>tokio库也是用unsafe实现的么，rust自己没有实现Async，也就只能使用unsafe调用c语言库实现了</div>2024-01-08</li><br/><li><span>十八哥</span> 👍（2） 💬（0）<div>Unsafe Rust 比 C 语言更安全吗？是的。虽然是Unsafe，可以用指针。但是，Unsafe依然属于所有权这样的语法范畴。</div>2023-12-29</li><br/>
+<li><span>seven9t</span> 👍（5） 💬（1）<p>unsafe改名叫trustMe多好</p>2024-01-21</li><br/><li><span>Geek_03197d</span> 👍（2） 💬（1）<p>raw pointer 翻译成 裸指针 是不是更通用？</p>2024-02-27</li><br/><li><span>Apa琦</span> 👍（2） 💬（2）<p>tokio库也是用unsafe实现的么，rust自己没有实现Async，也就只能使用unsafe调用c语言库实现了</p>2024-01-08</li><br/><li><span>十八哥</span> 👍（2） 💬（0）<p>Unsafe Rust 比 C 语言更安全吗？是的。虽然是Unsafe，可以用指针。但是，Unsafe依然属于所有权这样的语法范畴。</p>2023-12-29</li><br/>
 </ul>

@@ -374,7 +374,7 @@ Pandas包与NumPy工具库配合使用可以发挥巨大的威力，正是有了
 
 如果你觉着这篇文章有价值，欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>何楚</span> 👍（88） 💬（6）<div>#!&#47;usr&#47;bin&#47;env python3
+<li><span>何楚</span> 👍（88） 💬（6）<p>#!&#47;usr&#47;bin&#47;env python3
 # -*- coding: utf-8 -*-
 
 import pandas as pd
@@ -416,7 +416,7 @@ df = df.apply(total_score, axis=1)
 print(df.isnull().sum())
 print(df.describe())
 print(df)
-</div>2018-12-24</li><br/><li><span>daydreamer</span> 👍（21） 💬（2）<div>&quot;&quot;&quot;
+</p>2018-12-24</li><br/><li><span>daydreamer</span> 👍（21） 💬（2）<p>&quot;&quot;&quot;
 Pandas中有Series和DataFrame两种重要的数据结构。
     Series：是一个定长的字典序列。有两个基本属性：index，values
     DataFrame：类似于数据库表的一种数据结构。我们甚至可以像操作数据库表那样对DataFrame数据进行
@@ -447,7 +447,7 @@ df = df.drop_duplicates()
 
 # Calculate the total scores.
 df[&#39;Total&#39;] = df.sum(axis=1)
-print(df.describe())</div>2018-12-24</li><br/><li><span>知悉者也</span> 👍（7） 💬（2）<div>stu_score = pd.DataFrame([[&#39;张飞&#39;, 66, 65, np.nan],
+print(df.describe())</p>2018-12-24</li><br/><li><span>知悉者也</span> 👍（7） 💬（2）<p>stu_score = pd.DataFrame([[&#39;张飞&#39;, 66, 65, np.nan],
                          [&#39;关羽&#39;, 95, 85, 98],
                          [&#39;赵云&#39;, 95, 92, 96],
                          [&#39;黄忠&#39;, 90, 88, 77],
@@ -458,7 +458,7 @@ stu_score = stu_score.set_index(&#39;姓名&#39;)  # 将某一列作为索引
 
 stu_score = stu_score.fillna(axis=1, method=&#39;ffill&#39;)  # 以左边来填充缺失值
 stu_score[&#39;总分&#39;] = stu_score.apply(sum , axis=1)
-stu_score</div>2019-11-07</li><br/><li><span>董大琳儿</span> 👍（6） 💬（1）<div>都没听懂，感到淡淡的忧伤~~~</div>2019-06-20</li><br/><li><span>Answer Liu</span> 👍（5） 💬（1）<div>df6 = pd.DataFrame(
+stu_score</p>2019-11-07</li><br/><li><span>董大琳儿</span> 👍（6） 💬（1）<p>都没听懂，感到淡淡的忧伤~~~</p>2019-06-20</li><br/><li><span>Answer Liu</span> 👍（5） 💬（1）<p>df6 = pd.DataFrame(
     {&quot;语文&quot;: [66, 95, 95, 90, 80, 80], &quot;数学&quot;: [65, 85, 92, 88, 90, 90], &quot;英语&quot;: [np.nan, 98, 96, 77, 90, 90]},
     index=[&#39;张飞&#39;, &#39;关羽&#39;, &#39;赵云&#39;, &#39;黄忠&#39;, &#39;典韦&#39;, &#39;典韦&#39;]
 )
@@ -470,7 +470,7 @@ df8 = df7.fillna(df7[&#39;英语&#39;].mean())
 df8[&#39;sum&#39;] = [df8.loc[name].sum() for name in df8.index]
 # 按总分倒序排列
 df9 = df8.sort_values(by=&quot;sum&quot;, ascending=False)
-print(df9)</div>2019-10-22</li><br/><li><span>qinggeouye</span> 👍（4） 💬（2）<div>import numpy as np
+print(df9)</p>2019-10-22</li><br/><li><span>qinggeouye</span> 👍（4） 💬（2）<p>import numpy as np
 import pandas as pd
 
 scores = pd.DataFrame(
@@ -501,7 +501,7 @@ print(scores)
 # scores[&#39;总和&#39;] = scores[&#39;语文&#39;] + scores[&#39;数学&#39;] + scores[&#39;英语&#39;]
 scores[&#39;总和&#39;] = scores.sum(axis=1)
 print(scores)
-</div>2019-11-03</li><br/><li><span>龟仙人</span> 👍（4） 💬（3）<div>老师你好，你好像没有在哪里明确说明自己的环境是python2.7的，结果大家的使用环境大多数是3.0的，多多少少会引发一些问题。还有请问，微信群怎么加？</div>2019-01-27</li><br/><li><span>Grandia_Z</span> 👍（3） 💬（1）<div>照着老师写 df2 = df2.drop(columns=[&#39;Chinese&#39;]) 这行代码后,返回结果是:
+</p>2019-11-03</li><br/><li><span>龟仙人</span> 👍（4） 💬（3）<p>老师你好，你好像没有在哪里明确说明自己的环境是python2.7的，结果大家的使用环境大多数是3.0的，多多少少会引发一些问题。还有请问，微信群怎么加？</p>2019-01-27</li><br/><li><span>Grandia_Z</span> 👍（3） 💬（1）<p>照着老师写 df2 = df2.drop(columns=[&#39;Chinese&#39;]) 这行代码后,返回结果是:
 TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-25-8116650c61ac&gt; in &lt;module&gt;()
 ----&gt; 1 df2 = df2.drop(columns=[&#39;Chinese&#39;])
@@ -509,7 +509,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: drop() got an unexpected keyword argument &#39;columns&#39;
 
 这个什么意思
-</div>2018-12-24</li><br/><li><span>窝窝头</span> 👍（2） 💬（1）<div>import pandas as pd
+</p>2018-12-24</li><br/><li><span>窝窝头</span> 👍（2） 💬（1）<p>import pandas as pd
 data = {&#39;语文&#39;: [66, 95, 93, 90, 80, 80], &#39;英语&#39;: [65, 85, 92, 88, 90, 90],
         &#39;数学&#39;: [None, 98, 96, 77, 90, 90]}
 df = pd.DataFrame(data, index=[&#39;张飞&#39;, &#39;关羽&#39;, &#39;赵云&#39;, &#39;黄忠&#39;, &#39;典韦&#39;, &#39;典韦&#39;],
@@ -518,7 +518,7 @@ df=df.dropna()
 df = df.drop_duplicates()
 df[u&#39;总和&#39;] = df[u&#39;语文&#39;]+df[u&#39;英语&#39;]+df[u&#39;数学&#39;]
 df.head()
-</div>2019-06-24</li><br/><li><span>青石</span> 👍（2） 💬（1）<div>from pandas import DataFrame
+</p>2019-06-24</li><br/><li><span>青石</span> 👍（2） 💬（1）<p>from pandas import DataFrame
 
 
 def score(df):
@@ -530,7 +530,7 @@ df = DataFrame(data, index=[&#39;ZhangFei&#39;, &#39;GuanYu&#39;, &#39;ZhaoYun&#
 df = df.drop_duplicates().fillna(0)
 df = df.apply(score, axis=1)
 
-print(df)</div>2019-04-11</li><br/><li><span>初</span> 👍（2） 💬（1）<div>None竟然是浮点型数据....没想到</div>2019-03-05</li><br/><li><span>lingmacker</span> 👍（2） 💬（1）<div>def exercise():
+print(df)</p>2019-04-11</li><br/><li><span>初</span> 👍（2） 💬（1）<p>None竟然是浮点型数据....没想到</p>2019-03-05</li><br/><li><span>lingmacker</span> 👍（2） 💬（1）<p>def exercise():
     # 1. 对于下表的数据，请使用Pandas中的DataFrame进行创建，并对数据进行清洗。
     # 2. 同时新增一列“总和”计算每个人的三科成绩之和。
 
@@ -553,7 +553,7 @@ print(df)</div>2019-04-11</li><br/><li><span>初</span> 👍（2） 💬（1）<
     # 添加 总分 列
     score_table.fillna(0, inplace=True)  # 将NaN替换为0
     score_table[&quot;总分&quot;] = score_table[&quot;语文&quot;] + score_table[&quot;英语&quot;] + score_table[&quot;数学&quot;]
-    print(score_table)</div>2018-12-24</li><br/><li><span>姜戈</span> 👍（2） 💬（1）<div># -*- coding: utf-8 -*-
+    print(score_table)</p>2018-12-24</li><br/><li><span>姜戈</span> 👍（2） 💬（1）<p># -*- coding: utf-8 -*-
 import pandas as pd
 from pandas import Series, DataFrame
 
@@ -569,7 +569,7 @@ print df
 
 df[&#39;总计&#39;]=df[&#39;语文&#39;]+df[&#39;英语&#39;]+df[&#39;数学&#39;]
 df.replace(to_replace=0, value=&#39;&#39;, inplace=True)
-print df</div>2018-12-24</li><br/><li><span>mickey</span> 👍（2） 💬（1）<div>#!&#47;usr&#47;bin&#47;python
+print df</p>2018-12-24</li><br/><li><span>mickey</span> 👍（2） 💬（1）<p>#!&#47;usr&#47;bin&#47;python
 # vim: set fileencoding:utf-8
 &#39;&#39;&#39;
 1.对于下表的数据，请使用Pandas中的DataFrame进行创建，并对数据进行清洗。
@@ -598,7 +598,7 @@ df1 = df1.drop_duplicates()
 
 # 生成新数据结构
 df1= df1.apply(addtotal, axis=1)
-print(df1)</div>2018-12-24</li><br/><li><span>郭 冲</span> 👍（1） 💬（1）<div>#!&#47;usr&#47;bin&#47;env python3
+print(df1)</p>2018-12-24</li><br/><li><span>郭 冲</span> 👍（1） 💬（1）<p>#!&#47;usr&#47;bin&#47;env python3
 # -*- coding: utf-8 -*-
 
 import pandas as pd
@@ -627,5 +627,5 @@ def sum_together(df):
 
 df_hw = df_hw.apply(sum_together,axis=1)
 
-df_hw</div>2020-08-31</li><br/>
+df_hw</p>2020-08-31</li><br/>
 </ul>

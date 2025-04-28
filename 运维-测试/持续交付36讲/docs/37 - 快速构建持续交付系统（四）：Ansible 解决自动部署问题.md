@@ -260,5 +260,5 @@ Spinnaker 是 Netflix 的开源项目，致力于解除持续交付平台和云�
 
 同样地，最后我还是建议你动手去搭建一套发布系统，看看是否能够顺利地完成这个过程。如果你在这个过程中碰到了任何问题，欢迎你给我留言一起讨论。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>铭熙</span> 👍（4） 💬（1）<div>如果jenkins有多个slave，每个slave节点都要装ansible吧？这些slave节点上的ssh key怎么保持一致性呢？</div>2018-09-27</li><br/><li><span>kkgo</span> 👍（5） 💬（3）<div>ansible tower收费的吧</div>2018-10-10</li><br/><li><span>天煜</span> 👍（3） 💬（0）<div>怎么快速的在大规模集群中发布大的代码包？例如，5000台机器，发布1G的代码包。</div>2019-12-05</li><br/><li><span>黄云龙</span> 👍（2） 💬（1）<div>ansible 与 Docker 有什么区别</div>2018-09-28</li><br/><li><span>戴斌</span> 👍（0） 💬（0）<div>我们也是用Ansible发布的</div>2020-03-25</li><br/>
+<li><span>铭熙</span> 👍（4） 💬（1）<p>如果jenkins有多个slave，每个slave节点都要装ansible吧？这些slave节点上的ssh key怎么保持一致性呢？</p>2018-09-27</li><br/><li><span>kkgo</span> 👍（5） 💬（3）<p>ansible tower收费的吧</p>2018-10-10</li><br/><li><span>天煜</span> 👍（3） 💬（0）<p>怎么快速的在大规模集群中发布大的代码包？例如，5000台机器，发布1G的代码包。</p>2019-12-05</li><br/><li><span>黄云龙</span> 👍（2） 💬（1）<p>ansible 与 Docker 有什么区别</p>2018-09-28</li><br/><li><span>戴斌</span> 👍（0） 💬（0）<p>我们也是用Ansible发布的</p>2020-03-25</li><br/>
 </ul>

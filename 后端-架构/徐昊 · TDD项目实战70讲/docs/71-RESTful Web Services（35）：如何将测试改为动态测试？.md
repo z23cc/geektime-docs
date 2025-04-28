@@ -280,5 +280,5 @@ class ResourceHandler implements ResourceRouter.Resource {
 
 欢迎把你的思考和想法分享在留言区，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>自从掌握动态测试后,写测试就更容易了</div>2022-09-03</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>自从掌握动态测试后,写测试就更容易了</p>2022-09-03</li><br/>
 </ul>

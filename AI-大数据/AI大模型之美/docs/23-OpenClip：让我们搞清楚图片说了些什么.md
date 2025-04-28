@@ -473,12 +473,12 @@ CLIP这样的多模态模型，进一步拓展了我们AI的能力。我们现�
 
 如果你想要对计算机视觉的深度学习有一个快速地了解，那么Pinecone提供的这份 [Embedding Methods for Image Search](https://www.pinecone.io/learn/image-search/) 是一份很好的教程。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>pomyin</span> 👍（1） 💬（2）<div>商品搜索与以图搜图部分，其中search函数部分代码有误（ training_split[i][&quot;image&quot;] ），我查了huggingface的Dataset数据类型，应该改成：training_split.select([i])[&quot;image&quot;]。我的python 3.7，transformers是4.28.1。</div>2023-05-09</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>Q1：笔记本，win10，安装了Anaconda，这个环境可以吗？我安装了Pycharm。应该是Pycharm用来编写代码，Anaconda提供底层支持，是这样吗？
+<li><span>pomyin</span> 👍（1） 💬（2）<p>商品搜索与以图搜图部分，其中search函数部分代码有误（ training_split[i][&quot;image&quot;] ），我查了huggingface的Dataset数据类型，应该改成：training_split.select([i])[&quot;image&quot;]。我的python 3.7，transformers是4.28.1。</p>2023-05-09</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>Q1：笔记本，win10，安装了Anaconda，这个环境可以吗？我安装了Pycharm。应该是Pycharm用来编写代码，Anaconda提供底层支持，是这样吗？
 Q2：用某个人的声音来播音或者阅读一段文字，有成熟的方案吗？
-比如，想用特朗普的声音来播报一段新闻，或者读一篇文章，是否有成熟的方案？开源或商用的都可以。</div>2023-05-03</li><br/><li><span>Steven</span> 👍（1） 💬（1）<div>目标检测部分，我的 transformers 版本是 4.24.0，文中代码执行异常，修改成下面的代码得到结果：
+比如，想用特朗普的声音来播报一段新闻，或者读一篇文章，是否有成熟的方案？开源或商用的都可以。</p>2023-05-03</li><br/><li><span>Steven</span> 👍（1） 💬（1）<p>目标检测部分，我的 transformers 版本是 4.24.0，文中代码执行异常，修改成下面的代码得到结果：
 detected = detector(&quot;.&#47;data&#47;cat.jpg&quot;,
     text_queries=[&quot;cat&quot;, &quot;dog&quot;, &quot;truck&quot;, &quot;couch&quot;, &quot;remote&quot;])[0]
-</div>2023-04-28</li><br/><li><span>Toni</span> 👍（0） 💬（1）<div>调用了几个模型对图片进行零样本分类，试验图像使用的是本课中的&#39;两只猫咪&#39;，为便于模型间的比较，取完全相同的分类参数: candidate_labels=[&quot;cat&quot;, &quot;dog&quot;, &quot;truck&quot;, &quot;couch&quot;, &quot;remote&quot;]。
+</p>2023-04-28</li><br/><li><span>Toni</span> 👍（0） 💬（1）<p>调用了几个模型对图片进行零样本分类，试验图像使用的是本课中的&#39;两只猫咪&#39;，为便于模型间的比较，取完全相同的分类参数: candidate_labels=[&quot;cat&quot;, &quot;dog&quot;, &quot;truck&quot;, &quot;couch&quot;, &quot;remote&quot;]。
 
 模型1: task=&quot;zero-shot-image-classification&quot;, model=&quot;openai&#47;clip-vit-large-patch14&quot;
 模型2: task=&quot;zero-shot-image-classification&quot;, model=&quot;laion&#47;CLIP-ViT-H-14-laion2B-s32B-b79K&quot;
@@ -502,7 +502,7 @@ https:&#47;&#47;huggingface.co&#47;models?pipeline_tag=zero-shot-image-classific
 [&quot;猫&quot;,    &quot;狗&quot;,   &quot;拖车&quot;,   &quot;长沙发&quot;,  &quot;遥控器&quot;]
 [0.996     0.       0.          0.004          0.   ]
 
-没有识别出遥控器。</div>2023-04-29</li><br/><li><span>小理想。</span> 👍（1） 💬（0）<div>老师，文本向量搜素图片那里下面这段代码是报错的
+没有识别出遥控器。</p>2023-04-29</li><br/><li><span>小理想。</span> 👍（1） 💬（0）<p>老师，文本向量搜素图片那里下面这段代码是报错的
 results = [ {&quot;image&quot;: training_split[i][&quot;image&quot;], &quot;distance&quot;: distances[0][j]} for j, i in enumerate(indices[0]) ]
 
 我试了图片搜素图片结果发现可以就把那段代码拿过来发现文本搜素图片产品对了
@@ -510,7 +510,7 @@ results = [ {&quot;image&quot;: training_split[i][&quot;image&quot;], &quot;dist
       {&quot;image&quot;: training_split[i.item()][&quot;image&quot;], &quot;distance&quot;: distances[0][j]} 
         for j, i in enumerate(indices[0])
     ]
-这段代码就可以了</div>2023-11-21</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<div>文本向量搜素商品时
+这段代码就可以了</p>2023-11-21</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<p>文本向量搜素商品时
  results = [  
       {&quot;image&quot;: training_split[i][&quot;image&quot;], &quot;distance&quot;: distances[0][int(j)]} 
         for j, i in enumerate(indices[0])
@@ -518,6 +518,6 @@ results = [ {&quot;image&quot;: training_split[i][&quot;image&quot;], &quot;dist
 这段代码报错：
 TypeError: Wrong key type: &#39;1461&#39; of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;. Expected one of int, slice, range, str or Iterable.
 请问大家有什么方案吗，搜了gpt也没有给解决方案
-</div>2023-11-21</li><br/><li><span>Tang</span> 👍（0） 💬（0）<div>徐老师你好，我测试了下猫狗图片的目标检测，结果猫和狗都检测成了狗</div>2023-11-08</li><br/><li><span>糖糖丸</span> 👍（0） 💬（0）<div>请问要运行可生产使用的CLIP模型，大概需要怎么样的机器配置（主要指显卡）呢？
-另外不知道图片搜索的响应时间大概在什么量级？ 是100ms级别，还是10s级别的？</div>2023-10-20</li><br/><li><span>新田小飞猪</span> 👍（0） 💬（0）<div>老师好，有没有对计算机音频&#47;音乐处理相关的深度学习资料的推荐啊</div>2023-07-28</li><br/><li><span>Santiago</span> 👍（0） 💬（0）<div>欢度五一</div>2023-04-28</li><br/>
+</p>2023-11-21</li><br/><li><span>Tang</span> 👍（0） 💬（0）<p>徐老师你好，我测试了下猫狗图片的目标检测，结果猫和狗都检测成了狗</p>2023-11-08</li><br/><li><span>糖糖丸</span> 👍（0） 💬（0）<p>请问要运行可生产使用的CLIP模型，大概需要怎么样的机器配置（主要指显卡）呢？
+另外不知道图片搜索的响应时间大概在什么量级？ 是100ms级别，还是10s级别的？</p>2023-10-20</li><br/><li><span>新田小飞猪</span> 👍（0） 💬（0）<p>老师好，有没有对计算机音频&#47;音乐处理相关的深度学习资料的推荐啊</p>2023-07-28</li><br/><li><span>Santiago</span> 👍（0） 💬（0）<p>欢度五一</p>2023-04-28</li><br/>
 </ul>

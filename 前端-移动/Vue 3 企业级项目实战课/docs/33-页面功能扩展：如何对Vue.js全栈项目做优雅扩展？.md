@@ -210,5 +210,5 @@ router.get('/page/:pageName', checkAccountOnlineStatus, renderPage);
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/33-34)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-10-06</li><br/>
+<li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-10-06</li><br/>
 </ul>

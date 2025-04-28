@@ -497,15 +497,15 @@ print(answer)
 
 在Pinecone提供的Langchain AI Handbook里面，专门测试了一下，从BufferWindowMemory到BufferSummaryMemory，对于上下文保持的能力，以及消耗的Token数量的统计。那个[教程](https://www.pinecone.io/learn/langchain-conversational-memory/)你也可以去看一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>张弛</span> 👍（4） 💬（1）<div>老师讲的太好了，通过对AI的能力探索，感觉有了跟自己业务结合的空间，但是如果需要身边的朋友使用的话，还是需要封装成网页或者app，而之前例子里面的HuggingFace国内访问还是挺慢的，能否介绍一下如果就是想把实战提高篇里的chatbot做一些定制化，封装为网页给别人在国内使用，推荐使用什么方式部署（例如腾讯云硅谷？），谢谢。</div>2023-04-15</li><br/><li><span>Geek_429477</span> 👍（2） 💬（3）<div>每天第一个追更. 请问一下大佬:
+<li><span>张弛</span> 👍（4） 💬（1）<p>老师讲的太好了，通过对AI的能力探索，感觉有了跟自己业务结合的空间，但是如果需要身边的朋友使用的话，还是需要封装成网页或者app，而之前例子里面的HuggingFace国内访问还是挺慢的，能否介绍一下如果就是想把实战提高篇里的chatbot做一些定制化，封装为网页给别人在国内使用，推荐使用什么方式部署（例如腾讯云硅谷？），谢谢。</p>2023-04-15</li><br/><li><span>Geek_429477</span> 👍（2） 💬（3）<p>每天第一个追更. 请问一下大佬:
 比如一个客服机器人,卖很多种类的商品,按照大佬之前的文章思路,QA问题集如下
 Q:你们卖哪些产品
 A:图书,玩具,衣服.......(很多字)
 
 一个用户问,你们卖电子产品吗?
-如果先搜索再提示,answer的字数太多,造成token不够,该怎么解决</div>2023-04-13</li><br/><li><span>Oli张帆</span> 👍（2） 💬（1）<div>Langchain确实是非常有用的利器，虽然我目前的项目使用NodeJS，但是里面的很多思路非常值得借鉴。</div>2023-04-13</li><br/><li><span>Jelly</span> 👍（1） 💬（2）<div>请问老师，每个用户单独的内存会话怎么做？需要用其他数据库存储起来？</div>2023-04-23</li><br/><li><span>Geek_053159</span> 👍（1） 💬（1）<div>老师 在chatgpt 界面使用它时 是不是也用到了memory呢 每次我们的问话都会全部发送给它 当超过token数量时 chatGPT会自动总结之前的会话内容吗 还是需要我们提示它来总结 然后再把总结和新的问话结合起来发给它</div>2023-04-21</li><br/><li><span>hyetry</span> 👍（1） 💬（1）<div>老师，有文本摘要对应的替换推荐模型吗？</div>2023-04-13</li><br/><li><span>君为</span> 👍（1） 💬（2）<div>老师你好，客服处理用户的问题很多都是一系列任务，有时还需要客服主动给用户发消息。比如用户要退货，需要提供手机号，订单号等信息，用户找不到订单号在哪需要一步步指导用户然后再做一些列操作。
+如果先搜索再提示,answer的字数太多,造成token不够,该怎么解决</p>2023-04-13</li><br/><li><span>Oli张帆</span> 👍（2） 💬（1）<p>Langchain确实是非常有用的利器，虽然我目前的项目使用NodeJS，但是里面的很多思路非常值得借鉴。</p>2023-04-13</li><br/><li><span>Jelly</span> 👍（1） 💬（2）<p>请问老师，每个用户单独的内存会话怎么做？需要用其他数据库存储起来？</p>2023-04-23</li><br/><li><span>Geek_053159</span> 👍（1） 💬（1）<p>老师 在chatgpt 界面使用它时 是不是也用到了memory呢 每次我们的问话都会全部发送给它 当超过token数量时 chatGPT会自动总结之前的会话内容吗 还是需要我们提示它来总结 然后再把总结和新的问话结合起来发给它</p>2023-04-21</li><br/><li><span>hyetry</span> 👍（1） 💬（1）<p>老师，有文本摘要对应的替换推荐模型吗？</p>2023-04-13</li><br/><li><span>君为</span> 👍（1） 💬（2）<p>老师你好，客服处理用户的问题很多都是一系列任务，有时还需要客服主动给用户发消息。比如用户要退货，需要提供手机号，订单号等信息，用户找不到订单号在哪需要一步步指导用户然后再做一些列操作。
 
-请问老师识别用户意图，提取关键信息后，如何让ChatGPT进入设定的工作流，最终处理好用户的问题？</div>2023-04-13</li><br/><li><span>Toni</span> 👍（0） 💬（1）<div>使用 LangChain 中的 KnowledgeGraphMemory，检测其处理对话信息的能力。
+请问老师识别用户意图，提取关键信息后，如何让ChatGPT进入设定的工作流，最终处理好用户的问题？</p>2023-04-13</li><br/><li><span>Toni</span> 👍（0） 💬（1）<p>使用 LangChain 中的 KnowledgeGraphMemory，检测其处理对话信息的能力。
 
 from langchain.memory import ConversationKGMemory # 知识图谱记忆
 llm = OpenAI(temperature=0)
@@ -550,8 +550,8 @@ Q4
 (AI 彻底错了)
 
 结果有点意外，是算法有错还是参数设置有待改进? 
-共指消解(coreference&#47;entity resolution)在知识图谱记忆中是最基本的方法，整合同一实体的不同称谓。</div>2023-04-13</li><br/><li><span>Evan</span> 👍（0） 💬（2）<div>from langchain.memory import ConversationSummaryMemory. 
-引入这个的时候报错</div>2023-04-13</li><br/><li><span>陈斌</span> 👍（1） 💬（0）<div>这一章节讲了如何利用外部的存储去实现上下文及关键信息的缓存，老师里面提到的一些点都是在应用 gpt 实现过程中对成本和开销需要考虑的问题，非常有实用性。
-尤其是关键信息，主要是对场景下问题回答的约束，比如在一个电商网站的客服机器人，问它怎么做饭的，是可以拒绝回答的。这里的模型是否需要重新训练，还是可以利用 gpt 判断问题与场景的相关性，再利用提示语让 gpt 给出一个委婉回答。</div>2023-11-13</li><br/><li><span>Penguin Shi</span> 👍（1） 💬（0）<div>原文：Langchain 里面还提供了一个 KnowledgeGraphMemory，你能不能去试着用一下，看看它能在什么样的场景下帮你解决问题？
-更新：Conversation Knowledge Graph Memory，https:&#47;&#47;python.langchain.com&#47;docs&#47;modules&#47;memory&#47;types&#47;kg</div>2023-08-12</li><br/><li><span>杨逸林</span> 👍（0） 💬（0）<div>可不可以这样，让一些总结类的活丢给本地 RTX 4090 可以部署的 BlueLM，然后把这一轮的对话和总结的内容丢给 ChatGPT，这样是不是更省 Token。简单的活给本地的部署的完成，复杂的丢给 ChatGPT4。就是不知道能不能做到。</div>2024-01-05</li><br/><li><span>l_j_dota_1111</span> 👍（0） 💬（0）<div>你好，请问如果既要求有总结，也要求有实体提取，又要求记住上下文，是用哪个chain呢？还有就是还想通过矢量数据库查询出信息就行参考文档，怎么和这些chain结合呢</div>2023-12-21</li><br/><li><span>Aurore</span> 👍（0） 💬（0）<div>在最后llm_chain.predict(human_input=&quot;你是谁？&quot;)并没有输入chat_history来替换对应的占位符，不会出错吗</div>2023-11-01</li><br/><li><span>Aurore</span> 👍（0） 💬（0）<div>请教一下。滑窗memory中，llm_chain.predict(human_input=&quot;你是谁？&quot;)。没有输入chat_history没有问题吗？</div>2023-11-01</li><br/>
+共指消解(coreference&#47;entity resolution)在知识图谱记忆中是最基本的方法，整合同一实体的不同称谓。</p>2023-04-13</li><br/><li><span>Evan</span> 👍（0） 💬（2）<p>from langchain.memory import ConversationSummaryMemory. 
+引入这个的时候报错</p>2023-04-13</li><br/><li><span>陈斌</span> 👍（1） 💬（0）<p>这一章节讲了如何利用外部的存储去实现上下文及关键信息的缓存，老师里面提到的一些点都是在应用 gpt 实现过程中对成本和开销需要考虑的问题，非常有实用性。
+尤其是关键信息，主要是对场景下问题回答的约束，比如在一个电商网站的客服机器人，问它怎么做饭的，是可以拒绝回答的。这里的模型是否需要重新训练，还是可以利用 gpt 判断问题与场景的相关性，再利用提示语让 gpt 给出一个委婉回答。</p>2023-11-13</li><br/><li><span>Penguin Shi</span> 👍（1） 💬（0）<p>原文：Langchain 里面还提供了一个 KnowledgeGraphMemory，你能不能去试着用一下，看看它能在什么样的场景下帮你解决问题？
+更新：Conversation Knowledge Graph Memory，https:&#47;&#47;python.langchain.com&#47;docs&#47;modules&#47;memory&#47;types&#47;kg</p>2023-08-12</li><br/><li><span>杨逸林</span> 👍（0） 💬（0）<p>可不可以这样，让一些总结类的活丢给本地 RTX 4090 可以部署的 BlueLM，然后把这一轮的对话和总结的内容丢给 ChatGPT，这样是不是更省 Token。简单的活给本地的部署的完成，复杂的丢给 ChatGPT4。就是不知道能不能做到。</p>2024-01-05</li><br/><li><span>l_j_dota_1111</span> 👍（0） 💬（0）<p>你好，请问如果既要求有总结，也要求有实体提取，又要求记住上下文，是用哪个chain呢？还有就是还想通过矢量数据库查询出信息就行参考文档，怎么和这些chain结合呢</p>2023-12-21</li><br/><li><span>Aurore</span> 👍（0） 💬（0）<p>在最后llm_chain.predict(human_input=&quot;你是谁？&quot;)并没有输入chat_history来替换对应的占位符，不会出错吗</p>2023-11-01</li><br/><li><span>Aurore</span> 👍（0） 💬（0）<p>请教一下。滑窗memory中，llm_chain.predict(human_input=&quot;你是谁？&quot;)。没有输入chat_history没有问题吗？</p>2023-11-01</li><br/>
 </ul>

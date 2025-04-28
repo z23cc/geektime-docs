@@ -361,19 +361,19 @@ const Component = () => {
 
 欢迎将你的思考和答案放在留言区，我会跟你交流。我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>🐑</span> 👍（1） 💬（1）<div>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.9.0</div>2022-09-14</li><br/><li><span>若川</span> 👍（17） 💬（7）<div>1. React官方文档：Hook 规则
+<li><span>🐑</span> 👍（1） 💬（1）<p>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.9.0</p>2022-09-14</li><br/><li><span>若川</span> 👍（17） 💬（7）<p>1. React官方文档：Hook 规则
 https:&#47;&#47;zh-hans.reactjs.org&#47;docs&#47;hooks-rules.html
 1.1 只在最顶层使用 Hook。不要在循环，条件或嵌套函数中调用 Hook。
 1.2 只在 React 函数中调用 Hook。不要在普通的 JavaScript 函数中调用 Hook。
 
 因为本质是链表。在各种判断中写 Hook 会导致节点错乱。
 
-2. useRef 中值变化是不会触发重新渲染。useState 中则是会触发渲染。</div>2022-09-12</li><br/><li><span>joel</span> 👍（2） 💬（1）<div>useRef 来代替 useState 吗?
-不能，这两个是不同的使用场景，usestate 是可以出发react 的协调过程，useref 不能</div>2022-09-15</li><br/><li><span>01</span> 👍（1） 💬（1）<div>18 批处理依托的 它的调度器。 可中断。  进入commit 阶段 则不可中断。  是否只渲染一次 这个不一定吧</div>2022-09-20</li><br/><li><span>__Initial</span> 👍（1） 💬（1）<div>我想问一下：在state自动批处理时，为什么使用函数参数就可以保证更新函数使用最新的state</div>2022-09-19</li><br/><li><span>风太大太大</span> 👍（1） 💬（1）<div>1. 函数组件之外的一个普通函数中调用 useState 不会生效
+2. useRef 中值变化是不会触发重新渲染。useState 中则是会触发渲染。</p>2022-09-12</li><br/><li><span>joel</span> 👍（2） 💬（1）<p>useRef 来代替 useState 吗?
+不能，这两个是不同的使用场景，usestate 是可以出发react 的协调过程，useref 不能</p>2022-09-15</li><br/><li><span>01</span> 👍（1） 💬（1）<p>18 批处理依托的 它的调度器。 可中断。  进入commit 阶段 则不可中断。  是否只渲染一次 这个不一定吧</p>2022-09-20</li><br/><li><span>__Initial</span> 👍（1） 💬（1）<p>我想问一下：在state自动批处理时，为什么使用函数参数就可以保证更新函数使用最新的state</p>2022-09-19</li><br/><li><span>风太大太大</span> 👍（1） 💬（1）<p>1. 函数组件之外的一个普通函数中调用 useState 不会生效
 2. 函数组件内部加一个 if 条件语句，在满足条件时才去调用 useState 不会生效。
 3. 在这个函数内部调用 useState，再在函数组件内调用这个函数。  useState 不会生效
-</div>2022-09-16</li><br/><li><span>学习前端-react</span> 👍（0） 💬（1）<div>隔了好久，回答第二个问题。
-useRef 的使用方式是用用会存放一个最新的值即 current，每次修改也不会触发当前组件的render，这个应该就区别于 useState 了，因为setState 会触发当前组件的render。</div>2022-09-17</li><br/><li><span>奕晨</span> 👍（1） 💬（0）<div>Hook 在使用中都会有哪些限制：
+</p>2022-09-16</li><br/><li><span>学习前端-react</span> 👍（0） 💬（1）<p>隔了好久，回答第二个问题。
+useRef 的使用方式是用用会存放一个最新的值即 current，每次修改也不会触发当前组件的render，这个应该就区别于 useState 了，因为setState 会触发当前组件的render。</p>2022-09-17</li><br/><li><span>奕晨</span> 👍（1） 💬（0）<p>Hook 在使用中都会有哪些限制：
 1. 在函数组件之外的一个普通函数中调用 useState；
     在函数组件之外的普通函数不能调用 useState；
 2. 在函数组件内部加一个 if 条件语句，在满足条件时才去调用 useState；
@@ -384,5 +384,5 @@ useRef 的使用方式是用用会存放一个最新的值即 current，每次�
 
 
 可以用 useRef 来代替 useState 吗？
-不可以，useState会重新渲染，useRef 值发生变化，不会重新渲染。</div>2023-01-11</li><br/><li><span>huangnan0709</span> 👍（0） 💬（0）<div>useState的set函数，无论是使用表达式，还是函数返回值更新状态，都能在下一次重新渲染之前，在set函数的回调函数参数获取最新值</div>2024-05-27</li><br/>
+不可以，useState会重新渲染，useRef 值发生变化，不会重新渲染。</p>2023-01-11</li><br/><li><span>huangnan0709</span> 👍（0） 💬（0）<p>useState的set函数，无论是使用表达式，还是函数返回值更新状态，都能在下一次重新渲染之前，在set函数的回调函数参数获取最新值</p>2024-05-27</li><br/>
 </ul>

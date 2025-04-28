@@ -163,12 +163,12 @@ func (cMap *ConcurrentMap) Store(key, value interface{}) {
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>sky</span> 👍（12） 💬（2）<div>郝大 go方面能推荐下比较成熟的微服务框架吗</div>2018-11-01</li><br/><li><span>下雨天</span> 👍（7） 💬（1）<div>老师好，关于：sync.Map在存储键值对的时候，只要只读字典中已存有这个键，并且该键值对未被标记为“已删除”，就会把新值存到里面并直接返回，这种情况下也不需要用到锁。这句话，只读map里面的值可以被替换的话，为什么不需要加锁？不会 有读写冲突吗？</div>2020-10-20</li><br/><li><span>疯琴</span> 👍（5） 💬（2）<div>这个设计很巧妙，在自己的开发中可以借鉴这种思想。有个问题请问老师：
-“脏字典中的键值对集合总是完全的”，而“read 和 dirty 互换之后 dirty 会置空”，那么重建的意思是不是这样的：在下一次访问 read 的时候，将 read 中的键值对全部复制到 dirty 中?</div>2020-01-05</li><br/><li><span>渺小de尘埃</span> 👍（3） 💬（1）<div>当一个结构体里的字段是sync.map类型的，怎么json序列化呢？</div>2018-11-01</li><br/><li><span>金时</span> 👍（2） 💬（1）<div>&#47;&#47; The read field itself is always safe to load, but must only be stored with mu held.
-老师，源代码里对read变量注释时说read 在store时，需要加锁，没懂这是为什么？</div>2021-07-10</li><br/><li><span>mkii</span> 👍（2） 💬（3）<div>老师，看到源码中Store的时候有个疑惑。如果read中存在此key对应的vlaue，则tryStore替换read的value。这里如果在dirty给read并将dirty置为nil的时候不会丢失新数据吗？</div>2021-03-04</li><br/><li><span>夜来寒雨晓来风</span> 👍（2） 💬（1）<div>关于文中提到的“键值对应该被删除，但却仍然存在于只读字典”，什么时候会出现这种情形呢？对于sync.Map的删除机制看的不是很明白，希望能解答一下，谢谢~</div>2021-01-07</li><br/><li><span>Geek_a8be59</span> 👍（2） 💬（2）<div>看了一下源码有地方不理解，有劳解答一下 
-第一：Store、Load等方法都会执行两次m.read.Load().(readOnly)，去判断两次  这样做的目的是什么？</div>2020-07-21</li><br/><li><span>一介农夫</span> 👍（1） 💬（1）<div>1.18后可以用泛型实现了</div>2023-03-06</li><br/><li><span>xl000</span> 👍（1） 💬（1）<div>老师，read、dirty交换和访问read这两个操作，难道不需要保护read变量吗</div>2021-06-21</li><br/><li><span>simple_孙</span> 👍（1） 💬（2）<div>更新时只修改只读map，不会造成数据不一致吗，后面应该会定期同步到脏map里吧？</div>2021-05-27</li><br/><li><span>Mr.zhou</span> 👍（0） 💬（1）<div>sync.Map在存储键值对的时候，只要只读字典中已存有这个键，并且该键值对未被标记为“已删除”，就会把新值存到里面并直接返回，这种情况下也不需要用到锁。
+<li><span>sky</span> 👍（12） 💬（2）<p>郝大 go方面能推荐下比较成熟的微服务框架吗</p>2018-11-01</li><br/><li><span>下雨天</span> 👍（7） 💬（1）<p>老师好，关于：sync.Map在存储键值对的时候，只要只读字典中已存有这个键，并且该键值对未被标记为“已删除”，就会把新值存到里面并直接返回，这种情况下也不需要用到锁。这句话，只读map里面的值可以被替换的话，为什么不需要加锁？不会 有读写冲突吗？</p>2020-10-20</li><br/><li><span>疯琴</span> 👍（5） 💬（2）<p>这个设计很巧妙，在自己的开发中可以借鉴这种思想。有个问题请问老师：
+“脏字典中的键值对集合总是完全的”，而“read 和 dirty 互换之后 dirty 会置空”，那么重建的意思是不是这样的：在下一次访问 read 的时候，将 read 中的键值对全部复制到 dirty 中?</p>2020-01-05</li><br/><li><span>渺小de尘埃</span> 👍（3） 💬（1）<p>当一个结构体里的字段是sync.map类型的，怎么json序列化呢？</p>2018-11-01</li><br/><li><span>金时</span> 👍（2） 💬（1）<p>&#47;&#47; The read field itself is always safe to load, but must only be stored with mu held.
+老师，源代码里对read变量注释时说read 在store时，需要加锁，没懂这是为什么？</p>2021-07-10</li><br/><li><span>mkii</span> 👍（2） 💬（3）<p>老师，看到源码中Store的时候有个疑惑。如果read中存在此key对应的vlaue，则tryStore替换read的value。这里如果在dirty给read并将dirty置为nil的时候不会丢失新数据吗？</p>2021-03-04</li><br/><li><span>夜来寒雨晓来风</span> 👍（2） 💬（1）<p>关于文中提到的“键值对应该被删除，但却仍然存在于只读字典”，什么时候会出现这种情形呢？对于sync.Map的删除机制看的不是很明白，希望能解答一下，谢谢~</p>2021-01-07</li><br/><li><span>Geek_a8be59</span> 👍（2） 💬（2）<p>看了一下源码有地方不理解，有劳解答一下 
+第一：Store、Load等方法都会执行两次m.read.Load().(readOnly)，去判断两次  这样做的目的是什么？</p>2020-07-21</li><br/><li><span>一介农夫</span> 👍（1） 💬（1）<p>1.18后可以用泛型实现了</p>2023-03-06</li><br/><li><span>xl000</span> 👍（1） 💬（1）<p>老师，read、dirty交换和访问read这两个操作，难道不需要保护read变量吗</p>2021-06-21</li><br/><li><span>simple_孙</span> 👍（1） 💬（2）<p>更新时只修改只读map，不会造成数据不一致吗，后面应该会定期同步到脏map里吧？</p>2021-05-27</li><br/><li><span>Mr.zhou</span> 👍（0） 💬（1）<p>sync.Map在存储键值对的时候，只要只读字典中已存有这个键，并且该键值对未被标记为“已删除”，就会把新值存到里面并直接返回，这种情况下也不需要用到锁。
 
-老师的这句话，让我有这个疑问？那写入的时候，只读map写了，那dirty map要不要同步写入？写入dirty map要不要加锁？</div>2023-07-19</li><br/><li><span>Ronin</span> 👍（0） 💬（1）<div>老师，我读了好几遍，还是不明白为什么要检查键值对的类型，这不是强制整个字典的key都为一个类型，整个字典的value都为一个类型了，而实际上原先的字典的键值对类型是可以多样化的存储，像这样：
+老师的这句话，让我有这个疑问？那写入的时候，只读map写了，那dirty map要不要同步写入？写入dirty map要不要加锁？</p>2023-07-19</li><br/><li><span>Ronin</span> 👍（0） 💬（1）<p>老师，我读了好几遍，还是不明白为什么要检查键值对的类型，这不是强制整个字典的key都为一个类型，整个字典的value都为一个类型了，而实际上原先的字典的键值对类型是可以多样化的存储，像这样：
 var m sync.Map
 m.Store(&quot;test&quot;, 18)
 m.Store(18, &quot;test&quot;)
@@ -176,12 +176,12 @@ m.Store(18, &quot;test&quot;)
 m.Store(1, &quot;a&quot;)
 m.Store(2, &quot;b&quot;)
 就算要检查，应该是检查键的实际类型不能是函数类型、字典类型和切片类型
-还望老师解惑下~谢谢</div>2022-10-28</li><br/><li><span>Jason</span> 👍（0） 💬（1）<div>郝大，map的键值对的删除为什么要先置为nil再置为unpunged呢，直接置为unpunged不行吗？而且真正删除一个键值对要经过delete-&gt;dirtyLocked-&gt;missLocked三个步骤才能删除</div>2022-10-11</li><br/><li><span>Geek_f0ae52</span> 👍（0） 💬（1）<div>func (e *entry) load() (value interface{}, ok bool) {
+还望老师解惑下~谢谢</p>2022-10-28</li><br/><li><span>Jason</span> 👍（0） 💬（1）<p>郝大，map的键值对的删除为什么要先置为nil再置为unpunged呢，直接置为unpunged不行吗？而且真正删除一个键值对要经过delete-&gt;dirtyLocked-&gt;missLocked三个步骤才能删除</p>2022-10-11</li><br/><li><span>Geek_f0ae52</span> 👍（0） 💬（1）<p>func (e *entry) load() (value interface{}, ok bool) {
 	p := atomic.LoadPointer(&amp;e.p)
 	if p == nil || p == expunged {
 		return nil, false
 	}
 	return *(*interface{})(p), true
 }
-(*interface{})(p)   这句话的意思是把p转换成interface类型的指针吗？</div>2022-04-01</li><br/>
+(*interface{})(p)   这句话的意思是把p转换成interface类型的指针吗？</p>2022-04-01</li><br/>
 </ul>

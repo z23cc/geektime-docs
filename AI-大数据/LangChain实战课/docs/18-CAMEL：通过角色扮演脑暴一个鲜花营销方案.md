@@ -376,7 +376,7 @@ while n < chat_turn_limit:
 1. CAMEL 项目[官网](https://www.camel-ai.org/) [GitHub](https://github.com/camel-ai/camel) 论文
 2. 新闻[「零人工含量」的「游戏公司」](https://mp.weixin.qq.com/s/GKHD6M74rqC42u2w8EFjJw)- Chen, Q., Cong, X., Yang, C., Chen, W., Su, Y., Xu, J., Liu, Z., &amp; Sun, M. (2023). [Communicative Agents for Software Development.](https://arxiv.org/abs/2307.07924) arXiv preprint arXiv:2307.07924 \[cs.SE].
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>neohope</span> 👍（6） 💬（1）<div>一、感觉可以再增加一个方案评价的角色，每一轮对结果进行挑战和质疑，帮助AI进一步进行优化，这样方案是不是就可以用于实操了。
+<li><span>neohope</span> 👍（6） 💬（1）<p>一、感觉可以再增加一个方案评价的角色，每一轮对结果进行挑战和质疑，帮助AI进一步进行优化，这样方案是不是就可以用于实操了。
 以鲜花营销方案为例，可以这样调整一下：
 1、营销要求进一步具体化，给出期望达到的目标
 2、每一轮营销专员给出方案后，花店老板对给出的方案进行评价，并进一步给出优化要求
@@ -384,7 +384,7 @@ while n < chat_turn_limit:
 4、当花店老板评价方案达标时，结束循环
 最后应该可以形成一个完善、可行的方案。
 
-二、此外，花店老板、营销专员可以交叉使用不同的大模型，相互碰撞，将碰撞结果进行评分，最终由GPT给出评分最高的三个方案，可以得到更好的结果。</div>2023-10-18</li><br/><li><span>棟</span> 👍（2） 💬（1）<div>您好，老师，请教一个疑惑，怎么限制这个对话达到某个token数值前停止，防止超出token限制，而且要得出答案。</div>2023-10-19</li><br/><li><span>鲸鱼</span> 👍（0） 💬（2）<div>老师，我运行您的demo，输出的结果不是很理想。总是花店老板自己就开始给方案了，然后营销专员就简单重复花店老板的方案；对话到后面花店老板开始问营销专员下一个请求了。重复了好几次都是这样
+二、此外，花店老板、营销专员可以交叉使用不同的大模型，相互碰撞，将碰撞结果进行评分，最终由GPT给出评分最高的三个方案，可以得到更好的结果。</p>2023-10-18</li><br/><li><span>棟</span> 👍（2） 💬（1）<p>您好，老师，请教一个疑惑，怎么限制这个对话达到某个token数值前停止，防止超出token限制，而且要得出答案。</p>2023-10-19</li><br/><li><span>鲸鱼</span> 👍（0） 💬（2）<p>老师，我运行您的demo，输出的结果不是很理想。总是花店老板自己就开始给方案了，然后营销专员就简单重复花店老板的方案；对话到后面花店老板开始问营销专员下一个请求了。重复了好几次都是这样
 
 开头的对话==================
 AI User (花店老板):
@@ -434,7 +434,7 @@ AI Assistant (花店营销专员):
 
 任务完成。
 
-</div>2023-11-10</li><br/><li><span>徐冰</span> 👍（3） 💬（1）<div>貌似这种模式对大模型本身要求还有一点高。实测下来，3.5turbo会逐步变成老板自己给方案，但是格式起码还一直对的。换成通义千问qwen-max测试，结果聊着聊着连格式都不跟随了，两个代理最后 相互加油变成死循环。尝试调整了pompt也效果不大。o(╥﹏╥)o</div>2024-01-31</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>将课程代码的大模型修订为国产通义千问模型qwen-turbo，测试结果理想。
+</p>2023-11-10</li><br/><li><span>徐冰</span> 👍（3） 💬（1）<p>貌似这种模式对大模型本身要求还有一点高。实测下来，3.5turbo会逐步变成老板自己给方案，但是格式起码还一直对的。换成通义千问qwen-max测试，结果聊着聊着连格式都不跟随了，两个代理最后 相互加油变成死循环。尝试调整了pompt也效果不大。o(╥﹏╥)o</p>2024-01-31</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>将课程代码的大模型修订为国产通义千问模型qwen-turbo，测试结果理想。
 
 ## 新代码1
 在from 代码后，增加：
@@ -455,11 +455,11 @@ task_specify_agent = CAMELAgent(task_specifier_sys_msg, llm)
 assistant_agent = CAMELAgent(assistant_sys_msg, llm)
 user_agent = CAMELAgent(user_sys_msg, llm)
 
-</div>2024-08-31</li><br/><li><span>账号已注销...</span> 👍（1） 💬（0）<div>老师，有可运行的jupyter代码吗？这样看起来比较直观</div>2024-03-11</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第18讲打卡~</div>2024-07-22</li><br/><li><span>colvin.zhang</span> 👍（0） 💬（1）<div>ask_specifier_prompt = &quot;&quot;&quot;这是一个{assistant_role_name}将帮助{user_role_name}完成的任务：{task}。请使其更具体化。请发挥你的创意和想象力。请用{word_limit}个或更少的词回复具体的任务。不要添加其他任何内容。&quot;&quot;&quot;
+</p>2024-08-31</li><br/><li><span>账号已注销...</span> 👍（1） 💬（0）<p>老师，有可运行的jupyter代码吗？这样看起来比较直观</p>2024-03-11</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第18讲打卡~</p>2024-07-22</li><br/><li><span>colvin.zhang</span> 👍（0） 💬（1）<p>ask_specifier_prompt = &quot;&quot;&quot;这是一个{assistant_role_name}将帮助{user_role_name}完成的任务：{task}。请使其更具体化。请发挥你的创意和想象力。请用{word_limit}个或更少的词回复具体的任务。不要添加其他任何内容。&quot;&quot;&quot;
 task_specifier_template = HumanMessagePromptTemplate.from_template( template=task_specifier_prompt)
 
 老师demo程序本身没啥问题，变量命令建议交换一下
 
 ask_specifier_template= &quot;&quot;&quot;这是一个{assistant_role_name}将帮助{user_role_name}完成的任务：{task}。请使其更具体化。请发挥你的创意和想象力。请用{word_limit}个或更少的词回复具体的任务。不要添加其他任何内容。&quot;&quot;&quot;
-task_specifier_prompt = HumanMessagePromptTemplate.from_template( template=task_specifier_prompt)</div>2023-10-31</li><br/>
+task_specifier_prompt = HumanMessagePromptTemplate.from_template( template=task_specifier_prompt)</p>2023-10-31</li><br/>
 </ul>

@@ -271,7 +271,7 @@ Answer: The total price of 1 kg of apples and 2 kg of bananas is 22.
 
 尝试修改我提供的例子，给它增加一些动作，让这个 Agent 实现更多的能力。欢迎在留言区分享你的改造心得。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>hellotong</span> 👍（1） 💬（1）<div>深入浅出👍</div>2024-11-29</li><br/><li><span>kergee</span> 👍（0） 💬（1）<div>和 Function Calling 的区别呢？</div>2025-02-15</li><br/><li><span>grok</span> 👍（3） 💬（0）<div>挺好玩的：
+<li><span>hellotong</span> 👍（1） 💬（1）<p>深入浅出👍</p>2024-11-29</li><br/><li><span>kergee</span> 👍（0） 💬（1）<p>和 Function Calling 的区别呢？</p>2025-02-15</li><br/><li><span>grok</span> 👍（3） 💬（0）<p>挺好玩的：
 ```
 query(&quot;三公斤苹果和两公斤香蕉的总价？&quot;)
 ---
@@ -296,5 +296,5 @@ Observation: 42
 Answer: 三公斤苹果和两公斤香蕉的总价是42元。
 ```
 
-本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec13.ipynb</div>2024-12-01</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>第13讲打卡~</div>2025-01-24</li><br/><li><span>willmyc</span> 👍（1） 💬（0）<div>老师，您好有几个问题 1.query(&quot;What is the total price of 3kg of apple and 2kg of banana?&quot;)这个prompt和输出的不匹配 2.re.compile 需要导入包，import re 3.为了方便理解，老师后续的代码是否可以增加一点注释，谢谢您！</div>2024-11-29</li><br/>
+本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec13.ipynb</p>2024-12-01</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>第13讲打卡~</p>2025-01-24</li><br/><li><span>willmyc</span> 👍（1） 💬（0）<p>老师，您好有几个问题 1.query(&quot;What is the total price of 3kg of apple and 2kg of banana?&quot;)这个prompt和输出的不匹配 2.re.compile 需要导入包，import re 3.为了方便理解，老师后续的代码是否可以增加一点注释，谢谢您！</p>2024-11-29</li><br/>
 </ul>

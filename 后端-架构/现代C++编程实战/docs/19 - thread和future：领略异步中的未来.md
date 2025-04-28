@@ -400,15 +400,15 @@ int main()
 
 \[14a] cppreference.com, “std::packaged\_task”. [https://zh.cppreference.com/w/cpp/thread/packaged\_task](https://zh.cppreference.com/w/cpp/thread/packaged_task)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李公子胜治</span> 👍（26） 💬（1）<div>作者大大，你好，我在effective modern c++这本书上面看到，作者告诫我们平时写代码时，首先基于任务而不是线程，但是如果我们使用async时，实际上async还是为我们创建了一个新线程，还是没有体会到async比thread的优越性，难道仅仅是可以调用get()，获取async后的执行结果吗？</div>2020-01-08</li><br/><li><span>YouCompleteMe</span> 👍（10） 💬（2）<div>当时看&lt;The C++ Programming&gt;下册关于多线程的时候，还写了一些demo，现在看到future&#47;async这些类，一点想不起来怎么用的-_-</div>2020-01-08</li><br/><li><span>风临</span> 👍（9） 💬（1）<div>老师教得很棒，学之前一头雾水，学之后醍醐灌顶，真是很享受。其实网上的教程很多，但是鱼龙混杂，自身没有经验的话，很难去分清多种方法的优劣，很可能片面甚至误导。所以跟着老师说真的很安心，因为质量很高，既全面又能让人看清楚趋势和方向</div>2020-04-14</li><br/><li><span>刘丹</span> 👍（6） 💬（1）<div>future执行get函数的时候，如果此时还没生成结果，是否get就阻塞了，直到有返回值为止呢？</div>2020-03-05</li><br/><li><span>皮皮侠</span> 👍（3） 💬（1）<div>模板部分终于看完了，玩过lamda和一些traits。跟着老师学了好多新东西，新思维，尤其是对编译期计算。对一些以前模糊的理论有了新的认识。这几篇以后肯定要回头继续把玩的。另外，我想老师花了这么多心血来写一些14、17、20的新特性，应该是希望让C++既能写出性能高的代码，也易于使用，简练，更适合上层业务逻辑，用心良苦。
-蟹蟹老师的分享；）</div>2020-02-29</li><br/><li><span>怪兽</span> 👍（2） 💬（1）<div>老师你好，想请问下shared_future，原文说“要么调用 future 的 share 方法来生成一个 shared_future，结果就可以在多个线程里用了——当然，每个 shared_future 上仍然还是只能调用一次 get 函数”。
+<li><span>李公子胜治</span> 👍（26） 💬（1）<p>作者大大，你好，我在effective modern c++这本书上面看到，作者告诫我们平时写代码时，首先基于任务而不是线程，但是如果我们使用async时，实际上async还是为我们创建了一个新线程，还是没有体会到async比thread的优越性，难道仅仅是可以调用get()，获取async后的执行结果吗？</p>2020-01-08</li><br/><li><span>YouCompleteMe</span> 👍（10） 💬（2）<p>当时看&lt;The C++ Programming&gt;下册关于多线程的时候，还写了一些demo，现在看到future&#47;async这些类，一点想不起来怎么用的-_-</p>2020-01-08</li><br/><li><span>风临</span> 👍（9） 💬（1）<p>老师教得很棒，学之前一头雾水，学之后醍醐灌顶，真是很享受。其实网上的教程很多，但是鱼龙混杂，自身没有经验的话，很难去分清多种方法的优劣，很可能片面甚至误导。所以跟着老师说真的很安心，因为质量很高，既全面又能让人看清楚趋势和方向</p>2020-04-14</li><br/><li><span>刘丹</span> 👍（6） 💬（1）<p>future执行get函数的时候，如果此时还没生成结果，是否get就阻塞了，直到有返回值为止呢？</p>2020-03-05</li><br/><li><span>皮皮侠</span> 👍（3） 💬（1）<p>模板部分终于看完了，玩过lamda和一些traits。跟着老师学了好多新东西，新思维，尤其是对编译期计算。对一些以前模糊的理论有了新的认识。这几篇以后肯定要回头继续把玩的。另外，我想老师花了这么多心血来写一些14、17、20的新特性，应该是希望让C++既能写出性能高的代码，也易于使用，简练，更适合上层业务逻辑，用心良苦。
+蟹蟹老师的分享；）</p>2020-02-29</li><br/><li><span>怪兽</span> 👍（2） 💬（1）<p>老师你好，想请问下shared_future，原文说“要么调用 future 的 share 方法来生成一个 shared_future，结果就可以在多个线程里用了——当然，每个 shared_future 上仍然还是只能调用一次 get 函数”。
 意思是，async 返回的 future 作为共享资源被多个线程使用时，每个线程通过 future 的 share 方法获取到 shared_future，然后每个线程就可以调用get函数了，是这样吗？
-另外，我在 MSVC 下测试，async 返回的 future，future.share() 得到 shared_future，shared_future 多次调用它的 get 方法也没有问题.</div>2022-11-14</li><br/><li><span>even</span> 👍（2） 💬（2）<div>吴老师的课适合几度回味，多看几次，跟着敲代码，试着运行，慢慢的领会C++新特性，希望以后能够用上</div>2020-04-08</li><br/><li><span>西加加</span> 👍（1） 💬（3）<div>看到作者推荐，买了一本 《c++ concurrency in action》 ，33.79美刀，肉痛。慢慢读完它。</div>2020-05-17</li><br/><li><span>王大为</span> 👍（1） 💬（3）<div>最近用google的cpplint工具扫描了我的代码，但cpplint报告说不允许包含c++11的thread头文件，请问这个是出于什么目的呢？
+另外，我在 MSVC 下测试，async 返回的 future，future.share() 得到 shared_future，shared_future 多次调用它的 get 方法也没有问题.</p>2022-11-14</li><br/><li><span>even</span> 👍（2） 💬（2）<p>吴老师的课适合几度回味，多看几次，跟着敲代码，试着运行，慢慢的领会C++新特性，希望以后能够用上</p>2020-04-08</li><br/><li><span>西加加</span> 👍（1） 💬（3）<p>看到作者推荐，买了一本 《c++ concurrency in action》 ，33.79美刀，肉痛。慢慢读完它。</p>2020-05-17</li><br/><li><span>王大为</span> 👍（1） 💬（3）<p>最近用google的cpplint工具扫描了我的代码，但cpplint报告说不允许包含c++11的thread头文件，请问这个是出于什么目的呢？
 
 cpplint. py --verbose=5 my_cpp_file
 output : &lt;thread&gt; is an unapproved c++11 header
 
-我看了一下cpplint脚本，里面确实对mutex thread chrono等头文件做了限制。</div>2020-01-09</li><br/><li><span>当初莫相识</span> 👍（0） 💬（1）<div>每次看线程都有新的收获，也有新的疑问。scoped_thread在析构函数时join，析构函数会等join完毕后销毁thread成员变量，对吗？
+我看了一下cpplint脚本，里面确实对mutex thread chrono等头文件做了限制。</p>2020-01-09</li><br/><li><span>当初莫相识</span> 👍（0） 💬（1）<p>每次看线程都有新的收获，也有新的疑问。scoped_thread在析构函数时join，析构函数会等join完毕后销毁thread成员变量，对吗？
   scoped_thread th{work, ref(cv),
                    ref(result)};
   &#47;&#47; 干一些其他事
@@ -418,7 +418,7 @@ output : &lt;thread&gt; is an unapproved c++11 header
   cout &lt;&lt; &quot;Answer: &quot; &lt;&lt; result
        &lt;&lt; &#39;\n&#39;;
 }
-main()函数里，我理解为scoped_thread直到｝才会执行析构启动线程，而cv.wait又一直在阻塞，所以不会运行到｝。虽然知道程序能得到预期结果，但逻辑上不理解，希望老师能解答我的困惑</div>2022-09-01</li><br/><li><span>青鸟飞鱼</span> 👍（0） 💬（1）<div>老师，你好，关于条件变量应该如何退出呢？
+main()函数里，我理解为scoped_thread直到｝才会执行析构启动线程，而cv.wait又一直在阻塞，所以不会运行到｝。虽然知道程序能得到预期结果，但逻辑上不理解，希望老师能解答我的困惑</p>2022-09-01</li><br/><li><span>青鸟飞鱼</span> 👍（0） 💬（1）<p>老师，你好，关于条件变量应该如何退出呢？
 比如说:
 void f()
 {
@@ -432,7 +432,7 @@ void f()
         ……
     }
 }
-线程函数如上面所写，这个线程如何安全退出呢？</div>2020-08-05</li><br/><li><span>范闲</span> 👍（0） 💬（2）<div>老师，异步的例子都是基于async的。那如果不用这个特性，在cpp98上应该只有下面这个方法了吧
+线程函数如上面所写，这个线程如何安全退出呢？</p>2020-08-05</li><br/><li><span>范闲</span> 👍（0） 💬（2）<p>老师，异步的例子都是基于async的。那如果不用这个特性，在cpp98上应该只有下面这个方法了吧
 1. Callback
 2.多线程+Callback
 
@@ -440,6 +440,6 @@ void f()
 
 最近对异步编程模式产生了些疑问，应该怎么解决？
 
-尤其高并发的情况下，阻塞的时候线程不被调度，这不就相当于cpu会飙升。</div>2020-07-31</li><br/><li><span>幻境之桥</span> 👍（0） 💬（2）<div>std::async 有个比较大的坑，如果把返回的 future 绑定到变量 ， 调用 std::sync 的线程仍然会阻塞到里面的任务执行完，即使绑定了，在出绑的变量出作用域时析构时会阻塞
-很多时候只是想单纯的异步运行一下，不阻塞当前的线程，这种情况使用 std::sync 就会掉坑里了</div>2020-06-24</li><br/><li><span>HaHa</span> 👍（0） 💬（1）<div>请问使用async时是每次都要启动一个线程吗，那大量使用会频繁创建线程？</div>2020-06-14</li><br/><li><span>西加加</span> 👍（0） 💬（1）<div>最近写了一些多线程程序练手，突然想到有了 feature 这一套东西，是不是应该完全抛弃之前的条件变量同步那一套呢？尝试写一个基于cpp17特性的线程池，想到上面的问题。望解答。</div>2020-05-22</li><br/>
+尤其高并发的情况下，阻塞的时候线程不被调度，这不就相当于cpu会飙升。</p>2020-07-31</li><br/><li><span>幻境之桥</span> 👍（0） 💬（2）<p>std::async 有个比较大的坑，如果把返回的 future 绑定到变量 ， 调用 std::sync 的线程仍然会阻塞到里面的任务执行完，即使绑定了，在出绑的变量出作用域时析构时会阻塞
+很多时候只是想单纯的异步运行一下，不阻塞当前的线程，这种情况使用 std::sync 就会掉坑里了</p>2020-06-24</li><br/><li><span>HaHa</span> 👍（0） 💬（1）<p>请问使用async时是每次都要启动一个线程吗，那大量使用会频繁创建线程？</p>2020-06-14</li><br/><li><span>西加加</span> 👍（0） 💬（1）<p>最近写了一些多线程程序练手，突然想到有了 feature 这一套东西，是不是应该完全抛弃之前的条件变量同步那一套呢？尝试写一个基于cpp17特性的线程池，想到上面的问题。望解答。</p>2020-05-22</li><br/>
 </ul>

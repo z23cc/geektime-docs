@@ -211,13 +211,13 @@ print(result)
 
 这三个抽象是最核心的，也是最容易理解。我建议你花些时间，尝试着写些代码，增进对于它们的熟悉。欢迎你在留言区分享你在练习中的心得体会。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>grok</span> 👍（3） 💬（2）<div>新手两个问题：
+<li><span>grok</span> 👍（3） 💬（2）<p>新手两个问题：
 1. langchain文档里面的例子, streaming时候, `print(chunk.content, end=&quot;&quot;, flush=True)` -- 这个flush干啥的？
 2. PromptTemplate和ChatPromptTemplate啥区别？`from langchain_core.prompts import PromptTemplate, ChatPromptTemplate`
 
 ---
 
-perplexity pro每月送5刀API额度，可以拿来做这些练习。本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec08.ipynb</div>2024-11-18</li><br/><li><span>hao-kuai</span> 👍（0） 💬（1）<div>简单总结：ChatModel是核心，其他都是辅助，原来大模型编程和普通编程没什么区别；真正的区别是模型差异和模型的Prompt优化，怪不得会有“Prompt工程师”这个说法</div>2024-11-22</li><br/><li><span>rOMEo罗密欧</span> 👍（4） 💬（0）<div>请问一下老师有练习环境提供吗？</div>2024-11-18</li><br/><li><span>Williamleelol</span> 👍（1） 💬（0）<div>添加JsonOutputParser后生成的prompt如下：生成的最终提示: 列举3部鲁迅的作品. 
+perplexity pro每月送5刀API额度，可以拿来做这些练习。本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec08.ipynb</p>2024-11-18</li><br/><li><span>hao-kuai</span> 👍（0） 💬（1）<p>简单总结：ChatModel是核心，其他都是辅助，原来大模型编程和普通编程没什么区别；真正的区别是模型差异和模型的Prompt优化，怪不得会有“Prompt工程师”这个说法</p>2024-11-22</li><br/><li><span>rOMEo罗密欧</span> 👍（4） 💬（0）<p>请问一下老师有练习环境提供吗？</p>2024-11-18</li><br/><li><span>Williamleelol</span> 👍（1） 💬（0）<p>添加JsonOutputParser后生成的prompt如下：生成的最终提示: 列举3部鲁迅的作品. 
 
  The output should be formatted as a JSON instance that conforms to the JSON schema below.
 
@@ -226,7 +226,7 @@ the object {&quot;foo&quot;: [&quot;bar&quot;, &quot;baz&quot;]} is a well-forma
 
 Here is the output schema:
 ```
-{&quot;properties&quot;: {&quot;title&quot;: {&quot;description&quot;: &quot;Title of the work&quot;, &quot;title&quot;: &quot;Title&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;description&quot;: {&quot;description&quot;: &quot;Description of the work&quot;, &quot;title&quot;: &quot;Description&quot;, &quot;type&quot;: &quot;string&quot;}}, &quot;required&quot;: [&quot;title&quot;, &quot;description&quot;]}</div>2025-01-24</li><br/><li><span>Seachal</span> 👍（1） 💬（1）<div>请问老师有完整代码提供吗？例如github 代码仓库， 纯小白，文中只是部分代码， 还需要切出去找教程</div>2024-11-30</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>第8讲打卡~</div>2024-11-22</li><br/><li><span>Geek_803ee3</span> 👍（0） 💬（0）<div>老师要是能提供能跑的代码就更好了</div>2025-02-11</li><br/><li><span>江旭东01</span> 👍（0） 💬（0）<div>直接传入文本和使用提示词模版【{&quot;text&quot;:&quot;Welcome to LLM application development!&quot;}】 的区别是什么？这里最终执行还是把后面要翻译的内容替换到前面占位符 text上了，有什么区别？</div>2025-02-09</li><br/><li><span>Geek_d4f4e7</span> 👍（0） 💬（0）<div>ChatPromptTemplate用StrOutputParser也可以按json返回，只需要在system中添加提示词约束按json返回</div>2025-02-08</li><br/><li><span>schwarzeni</span> 👍（0） 💬（0）<div>我所在的公司为内部员工提供了一个大模型服务接口来访问外部的各模型服务，看了一下文档是符合 openapi 接口的，设置了 OPENAI_API_KEY 和 OPENAI_API_BASE 后 langchain 也可以直接用，可以白嫖了 233</div>2025-01-19</li><br/><li><span>晴天了</span> 👍（0） 💬（0）<div>用 PromptTemplate 返回的json格式老是变咋办? </div>2024-12-31</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<div>输入：PromptTemplate，框架的规框架 ，用户的规用户；
+{&quot;properties&quot;: {&quot;title&quot;: {&quot;description&quot;: &quot;Title of the work&quot;, &quot;title&quot;: &quot;Title&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;description&quot;: {&quot;description&quot;: &quot;Description of the work&quot;, &quot;title&quot;: &quot;Description&quot;, &quot;type&quot;: &quot;string&quot;}}, &quot;required&quot;: [&quot;title&quot;, &quot;description&quot;]}</p>2025-01-24</li><br/><li><span>Seachal</span> 👍（1） 💬（1）<p>请问老师有完整代码提供吗？例如github 代码仓库， 纯小白，文中只是部分代码， 还需要切出去找教程</p>2024-11-30</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>第8讲打卡~</p>2024-11-22</li><br/><li><span>Geek_803ee3</span> 👍（0） 💬（0）<p>老师要是能提供能跑的代码就更好了</p>2025-02-11</li><br/><li><span>江旭东01</span> 👍（0） 💬（0）<p>直接传入文本和使用提示词模版【{&quot;text&quot;:&quot;Welcome to LLM application development!&quot;}】 的区别是什么？这里最终执行还是把后面要翻译的内容替换到前面占位符 text上了，有什么区别？</p>2025-02-09</li><br/><li><span>Geek_d4f4e7</span> 👍（0） 💬（0）<p>ChatPromptTemplate用StrOutputParser也可以按json返回，只需要在system中添加提示词约束按json返回</p>2025-02-08</li><br/><li><span>schwarzeni</span> 👍（0） 💬（0）<p>我所在的公司为内部员工提供了一个大模型服务接口来访问外部的各模型服务，看了一下文档是符合 openapi 接口的，设置了 OPENAI_API_KEY 和 OPENAI_API_BASE 后 langchain 也可以直接用，可以白嫖了 233</p>2025-01-19</li><br/><li><span>晴天了</span> 👍（0） 💬（0）<p>用 PromptTemplate 返回的json格式老是变咋办? </p>2024-12-31</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<p>输入：PromptTemplate，框架的规框架 ，用户的规用户；
 业务执行：ChatModel，不同的模型有不同的抽象，所有细节都被封装，用户无感知；
-输出：OutputParser，按需获取想要的结果。</div>2024-12-27</li><br/><li><span>技术骨干</span> 👍（0） 💬（0）<div>有没有可以让小白直接跑起来的代码</div>2024-12-08</li><br/>
+输出：OutputParser，按需获取想要的结果。</p>2024-12-27</li><br/><li><span>技术骨干</span> 👍（0） 💬（0）<p>有没有可以让小白直接跑起来的代码</p>2024-12-08</li><br/>
 </ul>

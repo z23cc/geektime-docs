@@ -249,6 +249,6 @@ drawLines: function (context) {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>许童童</span> 👍（0） 💬（1）<div>可以手动开启抗锯齿：
-canvas.getContext(&#39;2d&#39;).imageSmoothingEnabled = true;</div>2019-08-24</li><br/><li><span>信信</span> 👍（0） 💬（0）<div>https:&#47;&#47;learningrtc.cn&#47;getstats&#47;index.html 打不开了。。。</div>2023-01-16</li><br/><li><span>出逃的晴天小兔纸</span> 👍（0） 💬（0）<div>quadraticCurveTo，绘制二次贝塞尔曲线</div>2021-06-14</li><br/>
+<li><span>许童童</span> 👍（0） 💬（1）<p>可以手动开启抗锯齿：
+canvas.getContext(&#39;2d&#39;).imageSmoothingEnabled = true;</p>2019-08-24</li><br/><li><span>信信</span> 👍（0） 💬（0）<p>https:&#47;&#47;learningrtc.cn&#47;getstats&#47;index.html 打不开了。。。</p>2023-01-16</li><br/><li><span>出逃的晴天小兔纸</span> 👍（0） 💬（0）<p>quadraticCurveTo，绘制二次贝塞尔曲线</p>2021-06-14</li><br/>
 </ul>

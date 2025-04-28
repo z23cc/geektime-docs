@@ -844,13 +844,13 @@ Cobra还支持很多其他有用的特性，比如：自定义Help命令；可�
 
 欢迎你在留言区与我交流讨论，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Sch0ng</span> 👍（14） 💬（1）<div>使用Pflag解析命令行参数，使用Viper解析配置文件，使用Cobra实现命令行框架。
-复用优秀轮子省时省力。</div>2021-08-12</li><br/><li><span>党</span> 👍（7） 💬（1）<div>总结一下：
+<li><span>Sch0ng</span> 👍（14） 💬（1）<p>使用Pflag解析命令行参数，使用Viper解析配置文件，使用Cobra实现命令行框架。
+复用优秀轮子省时省力。</p>2021-08-12</li><br/><li><span>党</span> 👍（7） 💬（1）<p>总结一下：
 1：cobra = flag+启动流程管理
 2： viper读取配置文件+flag参数 最后 反序列化出来一个配置struct实例
-ps 最终代码里没有pflag包的事</div>2022-01-27</li><br/><li><span>宙斯</span> 👍（7） 💬（2）<div>有个疑问：flag和非选项参数数什么关系呢？</div>2021-07-27</li><br/><li><span>龍捲風</span> 👍（5） 💬（1）<div>想问下，关于golang的项目怎么实现优雅下线？注册中心可以将服务节点剔除，但关闭服务时怎么让已接收到请求可以做完呢？</div>2021-07-16</li><br/><li><span>Geek_8efe79</span> 👍（3） 💬（1）<div>全是文字看着好心累，没有视频？</div>2022-04-18</li><br/><li><span>helloworld</span> 👍（2） 💬（3）<div>开发环境，测试环境，生产环境的配置文件是不同的，关于不同环境下读取配置文件，这块有什么好的最佳实践吗，是通过命令行参数指定不同环境的配置文件的方式好呢，还是通过系统环境变量来区分环境并读取对应配置文件好呢</div>2021-07-16</li><br/><li><span>Neroldy</span> 👍（2） 💬（1）<div>标志可以是“持久的”，这意味着该标志可用于它所分配的命令以及该命令下的每个子命令。
-老师能再具体讲讲这个标志的持久化是什么意思吗？</div>2021-07-15</li><br/><li><span>我要去卖冰淇淋</span> 👍（1） 💬（2）<div>老师我有个疑问.例如 我现在要在别的方法中引用yaml中配置的变量，但在代码中我没有发现global存配置文件的信息，难道只能 1。自己声明一个全局了存储，2 直接用 viper.GetString(&quot;xxx.xxx&quot;) 方式。
-我在观察代码的时候 发现所有的初始化信息基本上都是在 启动之初处理好了。</div>2022-10-27</li><br/><li><span>czy</span> 👍（0） 💬（1）<div>Viper读取配置部分第2种方法反序列化两个示例解释的很不清楚，过于晦涩了，不如用一个简单的例子，这两个例子是官方上的，就直接翻译搬过来了吧？也没有加一些解析。</div>2022-08-29</li><br/><li><span>雪峰</span> 👍（0） 💬（1）<div>viper在容器中无法watch</div>2022-08-24</li><br/><li><span>scorpio</span> 👍（0） 💬（1）<div>这段代码最后一行，应该加上 VIPER_ 前缀，否则获取不到变量。
+ps 最终代码里没有pflag包的事</p>2022-01-27</li><br/><li><span>宙斯</span> 👍（7） 💬（2）<p>有个疑问：flag和非选项参数数什么关系呢？</p>2021-07-27</li><br/><li><span>龍捲風</span> 👍（5） 💬（1）<p>想问下，关于golang的项目怎么实现优雅下线？注册中心可以将服务节点剔除，但关闭服务时怎么让已接收到请求可以做完呢？</p>2021-07-16</li><br/><li><span>Geek_8efe79</span> 👍（3） 💬（1）<p>全是文字看着好心累，没有视频？</p>2022-04-18</li><br/><li><span>helloworld</span> 👍（2） 💬（3）<p>开发环境，测试环境，生产环境的配置文件是不同的，关于不同环境下读取配置文件，这块有什么好的最佳实践吗，是通过命令行参数指定不同环境的配置文件的方式好呢，还是通过系统环境变量来区分环境并读取对应配置文件好呢</p>2021-07-16</li><br/><li><span>Neroldy</span> 👍（2） 💬（1）<p>标志可以是“持久的”，这意味着该标志可用于它所分配的命令以及该命令下的每个子命令。
+老师能再具体讲讲这个标志的持久化是什么意思吗？</p>2021-07-15</li><br/><li><span>我要去卖冰淇淋</span> 👍（1） 💬（2）<p>老师我有个疑问.例如 我现在要在别的方法中引用yaml中配置的变量，但在代码中我没有发现global存配置文件的信息，难道只能 1。自己声明一个全局了存储，2 直接用 viper.GetString(&quot;xxx.xxx&quot;) 方式。
+我在观察代码的时候 发现所有的初始化信息基本上都是在 启动之初处理好了。</p>2022-10-27</li><br/><li><span>czy</span> 👍（0） 💬（1）<p>Viper读取配置部分第2种方法反序列化两个示例解释的很不清楚，过于晦涩了，不如用一个简单的例子，这两个例子是官方上的，就直接翻译搬过来了吧？也没有加一些解析。</p>2022-08-29</li><br/><li><span>雪峰</span> 👍（0） 💬（1）<p>viper在容器中无法watch</p>2022-08-24</li><br/><li><span>scorpio</span> 👍（0） 💬（1）<p>这段代码最后一行，应该加上 VIPER_ 前缀，否则获取不到变量。
 
 &#47;&#47; 使用环境变量
 os.Setenv(&quot;VIPER_USER_SECRET_ID&quot;, &quot;QLdywI2MrmDVjSSv6e95weNRvmteRjfKAuNV&quot;)
@@ -860,7 +860,7 @@ viper.AutomaticEnv()                                             &#47;&#47; 读�
 viper.SetEnvPrefix(&quot;VIPER&quot;)                                      &#47;&#47; 设置环境变量前缀：VIPER_，如果是viper，将自动转变为大写。
 viper.SetEnvKeyReplacer(strings.NewReplacer(&quot;.&quot;, &quot;_&quot;, &quot;-&quot;, &quot;_&quot;)) &#47;&#47; 将viper.Get(key) key字符串中&#39;.&#39;和&#39;-&#39;替换为&#39;_&#39;
 viper.BindEnv(&quot;user.secret-key&quot;)
-viper.BindEnv(&quot;user.secret-id&quot;, &quot;USER_SECRET_ID&quot;) &#47;&#47; 绑定环境变量名到key</div>2022-07-18</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<div>孔老师，有几个问题想请求下：
+viper.BindEnv(&quot;user.secret-id&quot;, &quot;USER_SECRET_ID&quot;) &#47;&#47; 绑定环境变量名到key</p>2022-07-18</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<p>孔老师，有几个问题想请求下：
 1、viper 有没有办法配置让它能区分大小写的配置 Key？
 2、如果有一长串的配置文件，例如以下 yml 配置，viper 有没有办法只反序列化我要关心的内层的那一部分配置（这样我不用定义其他配置项结构体和它的外层结构体）？
 aaa:
@@ -876,5 +876,5 @@ bbb:
 type AFoo struct {
     bar  int
     hhh string
-}</div>2022-06-25</li><br/><li><span>Struggle~honor</span> 👍（0） 💬（1）<div>老师，大厂里面应用构建，一般都是用自己内部造的轮子，更符合业务要求对吗？ 之前在腾讯实习用rainbow配置中心来存放配置，用他的sdk来拉取配置</div>2021-12-22</li><br/><li><span>💎A</span> 👍（9） 💬（0）<div>Pflag + Cobra 不如直接用github.com&#47;urfave&#47;cli</div>2022-03-10</li><br/><li><span>Geek_d9ada3</span> 👍（6） 💬（0）<div>感觉cobra学的有点没有头绪，要么概念上没发理解到位，要么找不到实际例子可以看看效果。 建议这块可以完善丰富一下，把概念和例子都整详细点。谢谢大佬</div>2022-03-15</li><br/>
+}</p>2022-06-25</li><br/><li><span>Struggle~honor</span> 👍（0） 💬（1）<p>老师，大厂里面应用构建，一般都是用自己内部造的轮子，更符合业务要求对吗？ 之前在腾讯实习用rainbow配置中心来存放配置，用他的sdk来拉取配置</p>2021-12-22</li><br/><li><span>💎A</span> 👍（9） 💬（0）<p>Pflag + Cobra 不如直接用github.com&#47;urfave&#47;cli</p>2022-03-10</li><br/><li><span>Geek_d9ada3</span> 👍（6） 💬（0）<p>感觉cobra学的有点没有头绪，要么概念上没发理解到位，要么找不到实际例子可以看看效果。 建议这块可以完善丰富一下，把概念和例子都整详细点。谢谢大佬</p>2022-03-15</li><br/>
 </ul>

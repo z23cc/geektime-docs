@@ -155,10 +155,10 @@ nacos is starting，you can check the /Users/banxian/workspace/dev/middleware/na
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Unknown</span> 👍（37） 💬（2）<div>这边windows本地 搭建的时候，端口不要连续，如果连续的话，在启动时候，会报端口占用 的错误
-nacos 中的其他服务会占用相邻的端口grpc</div>2022-02-10</li><br/><li><span>~</span> 👍（3） 💬（4）<div>Intel 的 mac，如果启动 nacos 时候，报错: 「找不到或无法加载主类，原因: java.lang.ClassNotFoundException」，八成是你的 jdk 版本不是 8，可以参照这个博客解决（我是按照方案 2 改动脚本，成功启动）。https:&#47;&#47;blog.csdn.net&#47;shentian885&#47;article&#47;details&#47;120718915
+<li><span>Unknown</span> 👍（37） 💬（2）<p>这边windows本地 搭建的时候，端口不要连续，如果连续的话，在启动时候，会报端口占用 的错误
+nacos 中的其他服务会占用相邻的端口grpc</p>2022-02-10</li><br/><li><span>~</span> 👍（3） 💬（4）<p>Intel 的 mac，如果启动 nacos 时候，报错: 「找不到或无法加载主类，原因: java.lang.ClassNotFoundException」，八成是你的 jdk 版本不是 8，可以参照这个博客解决（我是按照方案 2 改动脚本，成功启动）。https:&#47;&#47;blog.csdn.net&#47;shentian885&#47;article&#47;details&#47;120718915
 另：老师能否出个加餐讲一下使用 docker 启动的方式，或者指点我一下吗？我根据你之前评论的链接尝试安装却失败了。主要原因我认为有二：1 是我把 MySQL 也通过 docker 安装了，nacos 启动时候会报错找不到 DataSource；2 是我不知道 nacos1 和 nacos2 两个容器之间的 ip 地址改怎么设置，是使用 docker 的「内部 ip（我也不清楚是不是这么叫）」，还是 localhost 直接设置，还是用我本机分配的内网 ip？
-还麻烦老师解答一下，谢谢老师！！</div>2022-01-07</li><br/><li><span>前行</span> 👍（8） 💬（3）<div>windows 环境下单机模拟集群部署，需要注意的是在两个 Nacos Server 的 conf 文件夹下 都配置 cluster.conf 文件，其他配置按照文章来，启动时在两个 Nacos Server 的 bin 文件下执行 .\startup.cmd 即可。</div>2021-12-29</li><br/><li><span>Sally Kang 蓝</span> 👍（7） 💬（2）<div>姚老师 我有个问题需要请教。Nacos 2.0.3 集群环境搭建后，假设3个Nacos节点，点击集群管理 -&gt; 节点列表 -&gt; 任意下线某个节点后，该节点没办法重新上线(重新加入集群)。问题: 是Nacos没有提供集群节点上线功能？还是这是一个Bug？还是需要通过参数配置进行设置。</div>2021-12-29</li><br/><li><span>yu</span> 👍（4） 💬（3）<div>Mac M1 历经劫难，终于启动了单机nacos
+还麻烦老师解答一下，谢谢老师！！</p>2022-01-07</li><br/><li><span>前行</span> 👍（8） 💬（3）<p>windows 环境下单机模拟集群部署，需要注意的是在两个 Nacos Server 的 conf 文件夹下 都配置 cluster.conf 文件，其他配置按照文章来，启动时在两个 Nacos Server 的 bin 文件下执行 .\startup.cmd 即可。</p>2021-12-29</li><br/><li><span>Sally Kang 蓝</span> 👍（7） 💬（2）<p>姚老师 我有个问题需要请教。Nacos 2.0.3 集群环境搭建后，假设3个Nacos节点，点击集群管理 -&gt; 节点列表 -&gt; 任意下线某个节点后，该节点没办法重新上线(重新加入集群)。问题: 是Nacos没有提供集群节点上线功能？还是这是一个Bug？还是需要通过参数配置进行设置。</p>2021-12-29</li><br/><li><span>yu</span> 👍（4） 💬（3）<p>Mac M1 历经劫难，终于启动了单机nacos
 docker pull zhusaidong&#47;nacos-server-m1:2.0.3
 
 docker run -d -p 8848:8848 -p 9848:9848 -p 9555:9555 --name nacos-server \
@@ -174,7 +174,7 @@ docker run -d -p 8848:8848 -p 9848:9848 -p 9555:9555 --name nacos-server \
 --restart on-failure \
 zhusaidong&#47;nacos-server-m1:2.0.3
 
-</div>2022-04-19</li><br/><li><span>码小呆</span> 👍（3） 💬（1）<div>一次就搭建成功了哇</div>2022-02-23</li><br/><li><span>Magic</span> 👍（3） 💬（4）<div>我的是m1芯片，采用老师在评论中回复的镜像搭建的。暂时还没翻车😀
+</p>2022-04-19</li><br/><li><span>码小呆</span> 👍（3） 💬（1）<p>一次就搭建成功了哇</p>2022-02-23</li><br/><li><span>Magic</span> 👍（3） 💬（4）<p>我的是m1芯片，采用老师在评论中回复的镜像搭建的。暂时还没翻车😀
 # 拉取适合m1的镜像。
 docker pull zhusaidong&#47;nacos-server-m1:2.0.3
 
@@ -210,19 +210,19 @@ docker run -d \
 -e NACOS_SERVER_IP=192.168.96.126 \
 -p 8948:8948 \
 --name my-nacos2 \
-zhusaidong&#47;nacos-server-m1:2.0.3</div>2022-02-14</li><br/><li><span>密码123456</span> 👍（3） 💬（1）<div>遇到了一个问题，目录不能用中文，目录不能用中文，目录不能用中文。</div>2022-01-25</li><br/><li><span>kernel</span> 👍（3） 💬（2）<div>1、用腾讯云搭建nacos集群，在配置cluster.conf 后，启动，会在配置文件中多了一个
+zhusaidong&#47;nacos-server-m1:2.0.3</p>2022-02-14</li><br/><li><span>密码123456</span> 👍（3） 💬（1）<p>遇到了一个问题，目录不能用中文，目录不能用中文，目录不能用中文。</p>2022-01-25</li><br/><li><span>kernel</span> 👍（3） 💬（2）<p>1、用腾讯云搭建nacos集群，在配置cluster.conf 后，启动，会在配置文件中多了一个
 内网IP+端口？这是为什么？
 10.0.16.14:8948  --- 这个是启动后自动加上的，对应的IP是腾讯云的内网ip
 101.42.237.141:8848
 101.42.237.141:8948
 2、在idea中起服务，会报这个错误 
 failed to req API:&#47;nacos&#47;v1&#47;ns&#47;instance after all servers([101.42.237.141:8848]) tried: ErrCode:400
-网上查是说cluster.conf文件中配置了其他nacos时，若其他未启动，则会出现上述报错！是不是那个内网ip+端口导致的？</div>2022-01-18</li><br/><li><span>Geek_ebdb72</span> 👍（2） 💬（3）<div>我用的docker-compose搭建的但是启动总是报no datasource set 请问有交流群么</div>2022-02-11</li><br/><li><span>wxyz2z</span> 👍（2） 💬（1）<div>m1的mac启动不了，看了日志have &#39;x86_64&#39;, need &#39;arm64e&#39;，请问老师怎么解决</div>2022-01-05</li><br/><li><span>会飞的鱼</span> 👍（1） 💬（3）<div>不知道为啥，Nacos服务端总是启动失败，控制台、日志都看不出问题来，老师可以帮忙远程看下吗
+网上查是说cluster.conf文件中配置了其他nacos时，若其他未启动，则会出现上述报错！是不是那个内网ip+端口导致的？</p>2022-01-18</li><br/><li><span>Geek_ebdb72</span> 👍（2） 💬（3）<p>我用的docker-compose搭建的但是启动总是报no datasource set 请问有交流群么</p>2022-02-11</li><br/><li><span>wxyz2z</span> 👍（2） 💬（1）<p>m1的mac启动不了，看了日志have &#39;x86_64&#39;, need &#39;arm64e&#39;，请问老师怎么解决</p>2022-01-05</li><br/><li><span>会飞的鱼</span> 👍（1） 💬（3）<p>不知道为啥，Nacos服务端总是启动失败，控制台、日志都看不出问题来，老师可以帮忙远程看下吗
 
 添加集群机器列表时，用到的IP地址还用到application.properties中配置吗
 ## 注意，这里的IP不能是localhost或者127.0.0.1
 192.168.1.100:8848
-192.168.1.100:8948</div>2022-02-13</li><br/><li><span>Earthkiid</span> 👍（1） 💬（1）<div>mysql版本太低了也不行，搞了半天一直都无法绑定数据源，后面查看日志才发现是有表没查到，然后才发现应该是导入sql时没注意，只成功建了五六个表，有的语句貌似执行不了？然后升级到5.7再重新来一次就行了。。</div>2022-01-29</li><br/><li><span>西门吹牛</span> 👍（1） 💬（1）<div>Nacos 可以做服务注册中心，可以做配置中心
+192.168.1.100:8948</p>2022-02-13</li><br/><li><span>Earthkiid</span> 👍（1） 💬（1）<p>mysql版本太低了也不行，搞了半天一直都无法绑定数据源，后面查看日志才发现是有表没查到，然后才发现应该是导入sql时没注意，只成功建了五六个表，有的语句貌似执行不了？然后升级到5.7再重新来一次就行了。。</p>2022-01-29</li><br/><li><span>西门吹牛</span> 👍（1） 💬（1）<p>Nacos 可以做服务注册中心，可以做配置中心
 注册中心以高可用为主(AP)，采用最终一致性协议，和Gossip 不一样，每个节点只负责把自己管理的数据同步给集群中其他节点
-做配置中心以一致性为主(CP)，采用强一致性协议，基于raft 实现</div>2022-01-22</li><br/><li><span>超级芒果冰</span> 👍（1） 💬（1）<div>nacos在使用集群部署的时候，是不是一定配置外置的mysql数据库，不能使用内置的Derby数据库</div>2022-01-12</li><br/>
+做配置中心以一致性为主(CP)，采用强一致性协议，基于raft 实现</p>2022-01-22</li><br/><li><span>超级芒果冰</span> 👍（1） 💬（1）<p>nacos在使用集群部署的时候，是不是一定配置外置的mysql数据库，不能使用内置的Derby数据库</p>2022-01-12</li><br/>
 </ul>

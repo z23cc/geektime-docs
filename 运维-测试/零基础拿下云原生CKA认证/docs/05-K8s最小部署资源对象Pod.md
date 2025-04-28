@@ -249,7 +249,7 @@ etcd.yaml  kube-apiserver.yaml  kube-controller-manager.yaml  kube-scheduler.
 
 相信经过动手实践，会让你对知识的理解更加深刻。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Y</span> 👍（1） 💬（1）<div># three_container_pod.yaml
+<li><span>Y</span> 👍（1） 💬（1）<p># three_container_pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -273,5 +273,5 @@ spec:
       mountPath: &#47;data
   volumes:          # 定义了一个临时 Volume
   - name: data
-    emptyDir: {}</div>2024-07-17</li><br/>
+    emptyDir: {}</p>2024-07-17</li><br/>
 </ul>

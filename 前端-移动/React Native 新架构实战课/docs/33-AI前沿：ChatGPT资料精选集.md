@@ -114,5 +114,5 @@ ChatGLM-6B 模型的最低硬件要求是拥有 13GB 显存的 GPU，对应的�
 
 好了，今天的分享就到这里，在 ChatGPT 领域我也在努力学习，咱们共同进步。下节课咱们会继续聊 RN 的最新进展，下节课再见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>含笑🍂半步颠</span> 👍（1） 💬（0）<div>共同进步</div>2023-05-25</li><br/><li><span>atom</span> 👍（0） 💬（0）<div>很棒的ChatGPT资料精选集，意犹未尽，老师多来点，别停那种</div>2023-07-14</li><br/><li><span>Gavin 峰</span> 👍（0） 💬（1）<div>请问老师有交流群么？</div>2023-05-29</li><br/>
+<li><span>含笑🍂半步颠</span> 👍（1） 💬（0）<p>共同进步</p>2023-05-25</li><br/><li><span>atom</span> 👍（0） 💬（0）<p>很棒的ChatGPT资料精选集，意犹未尽，老师多来点，别停那种</p>2023-07-14</li><br/><li><span>Gavin 峰</span> 👍（0） 💬（1）<p>请问老师有交流群么？</p>2023-05-29</li><br/>
 </ul>

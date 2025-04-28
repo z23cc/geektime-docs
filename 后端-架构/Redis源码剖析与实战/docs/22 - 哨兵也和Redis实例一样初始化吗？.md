@@ -248,7 +248,7 @@ if (fmt[0] == '%' && fmt[1] == '@') {
 
 哨兵实例本身是有配置文件sentinel.conf的，那么你能在哨兵实例的初始化过程中，找到解析这个配置文件的函数吗？
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Kaito</span> 👍（16） 💬（0）<div>1、哨兵和 Redis 实例是一套代码，只不过哨兵会根据启动参数（redis-sentinel 或 redis-server --sentinel），设置当前实例为哨兵模式（server.sentinel_mode = 1），然后初始化哨兵相关数据
+<li><span>Kaito</span> 👍（16） 💬（0）<p>1、哨兵和 Redis 实例是一套代码，只不过哨兵会根据启动参数（redis-sentinel 或 redis-server --sentinel），设置当前实例为哨兵模式（server.sentinel_mode = 1），然后初始化哨兵相关数据
 
 2、哨兵模式的实例，只能执行一部分命令（ping、sentinel、subscribe、unsubscribe、psubscribe、punsubscribe、publish、info、role、client、shutdown、auth），其中 sentinel、publish、info、role 都是针对哨兵专门实现的
 
@@ -266,7 +266,7 @@ Redis 启动时，会在 main 函数中调用 loadServerConfig 加载配置文�
 
 loadServerConfigFromString 函数中，其中有一个分支，对哨兵模式进行了判断，如果是哨兵模式，则调用 sentinelHandleConfiguration 函数解析哨兵配置项。
 
-所以，函数调用链为 main -&gt; loadServerConfig（读出配置文件内容） -&gt; loadServerConfigFromString（解析配置项） -&gt; sentinelHandleConfiguration（解析哨兵配置项）。</div>2021-09-24</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<div>回答老师的问题：sentinel.conf 是在哪读取的？
+所以，函数调用链为 main -&gt; loadServerConfig（读出配置文件内容） -&gt; loadServerConfigFromString（解析配置项） -&gt; sentinelHandleConfiguration（解析哨兵配置项）。</p>2021-09-24</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<p>回答老师的问题：sentinel.conf 是在哪读取的？
     答:redis应该是实现了一套通用的配置文件读取方法loadServerConfig，可以解析文件，也可以直接解析字符串
 
 主要步骤如下所示：
@@ -311,6 +311,6 @@ loadServerConfigFromString 函数中，其中有一个分支，对哨兵模式�
         
 
     5、调用loadServerConfigFromString去解析读取出来的文件字符串
-        调用路径 loadServerConfig -&gt; loadServerConfigFromString</div>2021-09-23</li><br/><li><span>Milittle</span> 👍（2） 💬（0）<div>在main函数中：loadServerConfig这个函数用来load sentinel.conf。
-loadSentinelConfigFromQueue 在哨兵模式下的特殊load函数。</div>2021-09-23</li><br/>
+        调用路径 loadServerConfig -&gt; loadServerConfigFromString</p>2021-09-23</li><br/><li><span>Milittle</span> 👍（2） 💬（0）<p>在main函数中：loadServerConfig这个函数用来load sentinel.conf。
+loadSentinelConfigFromQueue 在哨兵模式下的特殊load函数。</p>2021-09-23</li><br/>
 </ul>

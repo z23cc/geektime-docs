@@ -380,11 +380,11 @@ SpinLock和 Mutex 最大的不同是，**使用 SpinLock，线程在忙等（bus
 2. 通过今天的例子，相信你对 atomic 以及其背后的 CAS 有个初步的了解，如果你还想更深入学习 Rust 下如何使用 atomic，可以看 Jon Gjengset 的视频：[Crust of Rust: Atomics and Memory Ordering](https://www.youtube.com/watch?v=rMGWeSjctlY)。
 3. Rust 的 [spin-rs crate](https://github.com/mvdnes/spin-rs) 提供了 Spinlock 的实现，感兴趣的可以看看它的实现。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Ethan Liu</span> 👍（8） 💬（1）<div>rust相比go在并发处理上 有什么优点和缺点？</div>2021-11-16</li><br/><li><span>D. D</span> 👍（3） 💬（1）<div>既然 Semaphore 是 Mutex 的推广，那么实现的思路应该有点类似。
+<li><span>Ethan Liu</span> 👍（8） 💬（1）<p>rust相比go在并发处理上 有什么优点和缺点？</p>2021-11-16</li><br/><li><span>D. D</span> 👍（3） 💬（1）<p>既然 Semaphore 是 Mutex 的推广，那么实现的思路应该有点类似。
 参考老师文章中所说的 Mutex 的实现方法，实现 Semaphore 的一个思路是：
 我们可以用一个 AtomicUsize 记录可用的 permits 的数量。在获取 permits 的时候，如果无法获取到足够的 permits，就把当前线程挂起，放入 Semaphore 的一个等待队列里。获取到 permits 的线程完成工作后退出临界区时，Semaphore 给等待队列发送信号，把队头的线程唤醒。
 
-至于像图书馆那样的人数控制系统，tokio 的 Semaphore 文档中使用 Semaphore::acquire_owned 的例子可以说就是这种场景的模拟。</div>2021-11-14</li><br/><li><span>Geek_b52974</span> 👍（1） 💬（1）<div>作業:
+至于像图书馆那样的人数控制系统，tokio 的 Semaphore 文档中使用 Semaphore::acquire_owned 的例子可以说就是这种场景的模拟。</p>2021-11-14</li><br/><li><span>Geek_b52974</span> 👍（1） 💬（1）<p>作業:
 use std::sync::Arc;
 
 use tokio::{sync::Semaphore, task::JoinHandle};
@@ -424,7 +424,7 @@ impl Library {
             drop(s);
         })
     }
-}</div>2021-12-17</li><br/><li><span>终生恻隐</span> 👍（1） 💬（1）<div>&#47;&#47; [dependencies]
+}</p>2021-12-17</li><br/><li><span>终生恻隐</span> 👍（1） 💬（1）<p>&#47;&#47; [dependencies]
 &#47;&#47; tokio = { version = &quot;1&quot;, features = [&quot;full&quot;] }
 &#47;&#47; chrono = &quot;*&quot;
 
@@ -453,13 +453,13 @@ async fn main() {
     for handle in join_handles {
         handle.await.unwrap();
     }
-}</div>2021-11-12</li><br/><li><span>Milittle</span> 👍（0） 💬（1）<div>cas是指令集指令提供的能力 一般语言封装的并发原语都是在这个基础上的</div>2022-01-13</li><br/><li><span>爱学习的小迪</span> 👍（0） 💬（1）<div>感觉和java对应的功能，原理一致</div>2022-01-10</li><br/><li><span>核桃</span> 👍（0） 💬（1）<div>另外关于Ordering那几个的区别，个人写代码的时候，绝大部分时候，要么最简单的Relaxed，要么最严格的SeqCst，剩下的，不一定考虑那么多，除非特殊需要才去查一下区别，平时记不住的。。。</div>2021-12-05</li><br/><li><span>核桃</span> 👍（0） 💬（1）<div>理解一下，对于所谓的指令原子操作，在计算机底层里面，没记错就是中断总线关闭吧。
+}</p>2021-11-12</li><br/><li><span>Milittle</span> 👍（0） 💬（1）<p>cas是指令集指令提供的能力 一般语言封装的并发原语都是在这个基础上的</p>2022-01-13</li><br/><li><span>爱学习的小迪</span> 👍（0） 💬（1）<p>感觉和java对应的功能，原理一致</p>2022-01-10</li><br/><li><span>核桃</span> 👍（0） 💬（1）<p>另外关于Ordering那几个的区别，个人写代码的时候，绝大部分时候，要么最简单的Relaxed，要么最严格的SeqCst，剩下的，不一定考虑那么多，除非特殊需要才去查一下区别，平时记不住的。。。</p>2021-12-05</li><br/><li><span>核桃</span> 👍（0） 💬（1）<p>理解一下，对于所谓的指令原子操作，在计算机底层里面，没记错就是中断总线关闭吧。
 
 然后那段优化的代码，就是拿不到锁先while空转一下，这里就有点像java的自旋锁的概念那样。
 当然这里为什么空转性能会比spin好，从系统的角度理解，空转没有调用系统调用，那么就没有太多的进程或者线程切换，而切换这个是涉及上下文变更的。不管进程还是线程，上下文切换的时候，其实五大结构都是要考虑的，例如信号量那些是否要保存起来等等，那样代码自然会大很多了。
 
-不知道这样理解是否对哈。</div>2021-12-05</li><br/><li><span>Geek_b52974</span> 👍（0） 💬（1）<div>compare_exchange(false, true, Ordering::Acquire, Ordering::Relaxed)
-想问一下第三个参数 为何不是 acqRel，这样其他线程会知道吗？</div>2021-11-16</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<div>CAS 的原理挺绕的，需要好好的消化，最近也在看“Go 并发实战课”，有一些互通的地方。</div>2021-11-12</li><br/><li><span>ELSE</span> 👍（1） 💬（0）<div>golang不是也支持atomic, mutex这些原语吗，为什么说遇到channel不好解决的时候就比较尴尬呢，不好理解</div>2022-07-13</li><br/><li><span>Geek_9f3c8c</span> 👍（1） 💬（1）<div>该文章关于CAS的代码示例似乎并未实现线程间同步，只是实现了对临界区访问的互斥。该示例运行结果可能是100或者10。</div>2022-04-21</li><br/><li><span>无邪</span> 👍（0） 💬（0）<div>&#47;&#47; semaphore 作业
+不知道这样理解是否对哈。</p>2021-12-05</li><br/><li><span>Geek_b52974</span> 👍（0） 💬（1）<p>compare_exchange(false, true, Ordering::Acquire, Ordering::Relaxed)
+想问一下第三个参数 为何不是 acqRel，这样其他线程会知道吗？</p>2021-11-16</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<p>CAS 的原理挺绕的，需要好好的消化，最近也在看“Go 并发实战课”，有一些互通的地方。</p>2021-11-12</li><br/><li><span>ELSE</span> 👍（1） 💬（0）<p>golang不是也支持atomic, mutex这些原语吗，为什么说遇到channel不好解决的时候就比较尴尬呢，不好理解</p>2022-07-13</li><br/><li><span>Geek_9f3c8c</span> 👍（1） 💬（1）<p>该文章关于CAS的代码示例似乎并未实现线程间同步，只是实现了对临界区访问的互斥。该示例运行结果可能是100或者10。</p>2022-04-21</li><br/><li><span>无邪</span> 👍（0） 💬（0）<p>&#47;&#47; semaphore 作业
 use std::sync::Mutex;
 &#47;&#47;atomic
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -508,7 +508,7 @@ impl Semaphore {
     }
 }
 
-</div>2025-02-17</li><br/><li><span>Rex Wang</span> 👍（0） 💬（0）<div>按老师的推荐找到一个博客，用c++把ordering讲得很清楚。
+</p>2025-02-17</li><br/><li><span>Rex Wang</span> 👍（0） 💬（0）<p>按老师的推荐找到一个博客，用c++把ordering讲得很清楚。
 
-https:&#47;&#47;luyuhuang.tech&#47;2022&#47;06&#47;25&#47;cpp-memory-order.html#%E5%86%85%E5%AD%98%E9%A1%BA%E5%BA%8F</div>2023-09-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>作业：https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=453c39051a8257931b0cb167bf8fc60f</div>2022-09-30</li><br/>
+https:&#47;&#47;luyuhuang.tech&#47;2022&#47;06&#47;25&#47;cpp-memory-order.html#%E5%86%85%E5%AD%98%E9%A1%BA%E5%BA%8F</p>2023-09-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>作业：https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=453c39051a8257931b0cb167bf8fc60f</p>2022-09-30</li><br/>
 </ul>

@@ -353,6 +353,6 @@ Please do a web search to find out what is the latest patch version that the cur
 
 欢迎你在留言区展示你的测试结果，我们一起来讨论。如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>linxs</span> 👍（0） 💬（2）<div>有个小疑问， 对于文中提到的联网搜索的操作，看一些大模型也是可以进行联网搜索的，那么在这种场景下，能否可以使用大模型本身的能力，替代Tavily这类网络搜索工具呢？
-</div>2025-01-06</li><br/>
+<li><span>linxs</span> 👍（0） 💬（2）<p>有个小疑问， 对于文中提到的联网搜索的操作，看一些大模型也是可以进行联网搜索的，那么在这种场景下，能否可以使用大模型本身的能力，替代Tavily这类网络搜索工具呢？
+</p>2025-01-06</li><br/>
 </ul>

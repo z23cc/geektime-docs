@@ -133,10 +133,10 @@ class MainActivity : ComponentActivity() {
 
 欢迎在留言区分享你的答案，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（3） 💬（1）<div>我参与开发的项目已经全面拥抱Compose，过程中遇到很多问题，例如多行的Textview想在右边显示一个垂直的滑动条，我仔细找了一下，没找到解决方案，只能用AndroidView+xml+android:scrollbars=&quot;vertical&quot;,老师如果知道解决方案，望不吝赐教。我还遇到一个情况，MutableState按照谷歌的文档，里面值改变（value指向新的对象）的时候，会recompose。但是在实际的某些UI响应中改变值却没有recompose，导致状态没有更新。这个问题困扰了我很久，一度让我认为Compose还没有成熟到可以解决复杂的UI问题，后来发现把MutableState里面的对象拆成简单类型（例如整型，字符串）可以解决问题。这种写法破坏了类的内聚性，但是Compose还有bug的情况下不得不做出妥协。
+<li><span>Paul Shan</span> 👍（3） 💬（1）<p>我参与开发的项目已经全面拥抱Compose，过程中遇到很多问题，例如多行的Textview想在右边显示一个垂直的滑动条，我仔细找了一下，没找到解决方案，只能用AndroidView+xml+android:scrollbars=&quot;vertical&quot;,老师如果知道解决方案，望不吝赐教。我还遇到一个情况，MutableState按照谷歌的文档，里面值改变（value指向新的对象）的时候，会recompose。但是在实际的某些UI响应中改变值却没有recompose，导致状态没有更新。这个问题困扰了我很久，一度让我认为Compose还没有成熟到可以解决复杂的UI问题，后来发现把MutableState里面的对象拆成简单类型（例如整型，字符串）可以解决问题。这种写法破坏了类的内聚性，但是Compose还有bug的情况下不得不做出妥协。
 
 Compose 遇到的最大问题就是思路的转变，原来的view类都是一个个有状态的对象，对象之间有复杂的继承关系，把他们全转成函数，我没有找到通用的方法，只能特事特办。例如，我遇到一个树状的UI，里面的view是父子结构，最终转化成Compose的时候用了递归函数。老师如果有机会的话可否在多讲一些Kotlin函数式编程的内容，个人觉得Kotlin函数式编程是Android开发人员将来不得不掌握的内容，函数式编程本身又是一个很大的的课题，值得大书特书。
-</div>2022-04-08</li><br/><li><span>追梦小乐</span> 👍（2） 💬（1）<div>老师，Compose 在国内应用的广吗？！</div>2022-04-08</li><br/><li><span>H.ZWei</span> 👍（2） 💬（2）<div>老师能对讲讲鸿蒙的看法吗，前几天在官网的文档看到，华为好像也在慢慢抛弃Java，在鸿蒙3.0上重点更新Js的环境，据说3.0开始会不兼容Android应用，未来在国内是不是会大量挤压Android的空间。</div>2022-04-08</li><br/><li><span>ZircoN</span> 👍（0） 💬（1）<div>卡顿检测框架 LeakCanary -&gt; 内存泄露检测框架 LeakCanary</div>2022-04-08</li><br/><li><span>无咎</span> 👍（1） 💬（0）<div>好久不写Android应用，最近想写了，发现涉及到Kotlin的代码越来越多了，虽然看了基本语法，还是没有把握，所以只好来学习课程了。
+</p>2022-04-08</li><br/><li><span>追梦小乐</span> 👍（2） 💬（1）<p>老师，Compose 在国内应用的广吗？！</p>2022-04-08</li><br/><li><span>H.ZWei</span> 👍（2） 💬（2）<p>老师能对讲讲鸿蒙的看法吗，前几天在官网的文档看到，华为好像也在慢慢抛弃Java，在鸿蒙3.0上重点更新Js的环境，据说3.0开始会不兼容Android应用，未来在国内是不是会大量挤压Android的空间。</p>2022-04-08</li><br/><li><span>ZircoN</span> 👍（0） 💬（1）<p>卡顿检测框架 LeakCanary -&gt; 内存泄露检测框架 LeakCanary</p>2022-04-08</li><br/><li><span>无咎</span> 👍（1） 💬（0）<p>好久不写Android应用，最近想写了，发现涉及到Kotlin的代码越来越多了，虽然看了基本语法，还是没有把握，所以只好来学习课程了。
 与其被动裹挟，不如主动拥抱变化，认真学习，积极实践。
-当然转换思路，切换语言和库也是有成本的，但也是值得的，有些常见问题甚至没有现成方案，也没什么好怕的，耐心逐步解决。</div>2022-06-17</li><br/><li><span>墨水</span> 👍（0） 💬（0）<div>我是脑子一热自己的应用上了kotlin，由于理解的不到位狠狠的被kotlin虐了一把</div>2023-06-16</li><br/>
+当然转换思路，切换语言和库也是有成本的，但也是值得的，有些常见问题甚至没有现成方案，也没什么好怕的，耐心逐步解决。</p>2022-06-17</li><br/><li><span>墨水</span> 👍（0） 💬（0）<p>我是脑子一热自己的应用上了kotlin，由于理解的不到位狠狠的被kotlin虐了一把</p>2023-06-16</li><br/>
 </ul>

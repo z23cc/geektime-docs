@@ -154,5 +154,5 @@ ip-192-168-81-115.ap-east-1.compute.internal   Ready    <none>   3m47s  �
 
 欢迎你和我在评论区一起讨论。如果这一讲对你有帮助，别忘了分享给身边更多同事、朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>暴躁的蜗牛</span> 👍（3） 💬（1）<div>bottlerocket 是可以替代 容器的 Alpine Linux吗 感觉虽然都是操作系统 是否某些应用会指定 操作系统的版本 这样对 系统bottlerocket  有影响吗</div>2024-04-20</li><br/><li><span>alex run</span> 👍（3） 💬（1）<div>老师，能谈一下私有云落地bottlerocket的做法吗？ 然后我想问一下，将传统操作系统替换成bottlerocket是有必要做的一件事情吗？ 回报会高于投入吗？</div>2024-04-13</li><br/><li><span>三万棵树</span> 👍（0） 💬（2）<div>Bottlerocket 这个在国内的落地情况 想咨询您一下</div>2024-03-29</li><br/><li><span>二十三</span> 👍（0） 💬（0）<div>国内公有云貌似都还没有支持</div>2024-04-19</li><br/><li><span>cfanbo</span> 👍（0） 💬（0）<div>Bottlerocket 这个在国内用的多吗？</div>2024-03-29</li><br/>
+<li><span>暴躁的蜗牛</span> 👍（3） 💬（1）<p>bottlerocket 是可以替代 容器的 Alpine Linux吗 感觉虽然都是操作系统 是否某些应用会指定 操作系统的版本 这样对 系统bottlerocket  有影响吗</p>2024-04-20</li><br/><li><span>alex run</span> 👍（3） 💬（1）<p>老师，能谈一下私有云落地bottlerocket的做法吗？ 然后我想问一下，将传统操作系统替换成bottlerocket是有必要做的一件事情吗？ 回报会高于投入吗？</p>2024-04-13</li><br/><li><span>三万棵树</span> 👍（0） 💬（2）<p>Bottlerocket 这个在国内的落地情况 想咨询您一下</p>2024-03-29</li><br/><li><span>二十三</span> 👍（0） 💬（0）<p>国内公有云貌似都还没有支持</p>2024-04-19</li><br/><li><span>cfanbo</span> 👍（0） 💬（0）<p>Bottlerocket 这个在国内用的多吗？</p>2024-03-29</li><br/>
 </ul>

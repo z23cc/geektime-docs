@@ -767,12 +767,12 @@ public Connection getConnection() throws SQLException {
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>Wallace Pang</span> 👍（5） 💬（0）<div>spring boot多数据源更简单</div>2021-06-23</li><br/><li><span>Yarin</span> 👍（2） 💬（0）<div>内外部事务都使用注解，希望两者同步回滚。但是内部事务抛出特定异常回滚，外部事务接收到的是回滚异常，如何把这个异常传给外部事务呢？我们目前做的是内部事务手动开启事务，在抛出指定异常后手动回滚，再往外抛出指定异常。欢迎交流，有没有更好的方法。</div>2023-02-25</li><br/><li><span>ly</span> 👍（2） 💬（2）<div>第1个案例个人觉得有个小问题: 
+<li><span>Wallace Pang</span> 👍（5） 💬（0）<p>spring boot多数据源更简单</p>2021-06-23</li><br/><li><span>Yarin</span> 👍（2） 💬（0）<p>内外部事务都使用注解，希望两者同步回滚。但是内部事务抛出特定异常回滚，外部事务接收到的是回滚异常，如何把这个异常传给外部事务呢？我们目前做的是内部事务手动开启事务，在抛出指定异常后手动回滚，再往外抛出指定异常。欢迎交流，有没有更好的方法。</p>2023-02-25</li><br/><li><span>ly</span> 👍（2） 💬（2）<p>第1个案例个人觉得有个小问题: 
 内层事务是给学员存储要学的学科，如果用的新事务require_new，那么假设内层事务程序改为不抛异常了，内层事务就会正常先入库。 
-而此时外层事务还未提交，一旦出现程序问题，导致异常，那么学员就不能保存成功，但是结果呢，学员所学的学科已经成功入库了。感觉就产生垃圾数据了。  我不知道分析对没</div>2022-04-15</li><br/><li><span>杨宇</span> 👍（2） 💬（0）<div>对于高频访问数据库的场景，DriverManagerDatasource效率低下，应改用HikariDatasource</div>2021-12-30</li><br/><li><span>萧</span> 👍（1） 💬（0）<div>干货满满</div>2021-06-18</li><br/><li><span>你是否清醒</span> 👍（0） 💬（0）<div>这种两个数据源一般就用分布式事务的了</div>2024-05-23</li><br/><li><span>study的程序员</span> 👍（0） 💬（0）<div>直接指定两个TransactionManager  ,两个DataSource ,@Transactional指定manager 更方便吧</div>2022-11-22</li><br/><li><span>study的程序员</span> 👍（0） 💬（0）<div>point.proceed(); 
+而此时外层事务还未提交，一旦出现程序问题，导致异常，那么学员就不能保存成功，但是结果呢，学员所学的学科已经成功入库了。感觉就产生垃圾数据了。  我不知道分析对没</p>2022-04-15</li><br/><li><span>杨宇</span> 👍（2） 💬（0）<p>对于高频访问数据库的场景，DriverManagerDatasource效率低下，应改用HikariDatasource</p>2021-12-30</li><br/><li><span>萧</span> 👍（1） 💬（0）<p>干货满满</p>2021-06-18</li><br/><li><span>你是否清醒</span> 👍（0） 💬（0）<p>这种两个数据源一般就用分布式事务的了</p>2024-05-23</li><br/><li><span>study的程序员</span> 👍（0） 💬（0）<p>直接指定两个TransactionManager  ,两个DataSource ,@Transactional指定manager 更方便吧</p>2022-11-22</li><br/><li><span>study的程序员</span> 👍（0） 💬（0）<p>point.proceed(); 
 MyDataSource.clearDataSource();
-要加上try finally</div>2022-11-22</li><br/><li><span>陌兮</span> 👍（0） 💬（0）<div>虽然多数据源事务的操作让人眼前一亮，但是涉及到的问题也非常多。感觉实用性并不大啊</div>2022-10-09</li><br/><li><span>palladio</span> 👍（0） 💬（0）<div>不行。每个事务都是和对应数据源绑定的，在默认事务声明的情况下，外层和内层的事务是同一个，也就意味着两个事务绑定的数据源是同一个。所以外层和内层事务回滚的都是同一个数据源，card 库回滚不了</div>2022-04-01</li><br/><li><span>S | c</span> 👍（0） 💬（0）<div>案例二没太理解，多个数据源的场景为什么不声明多个transactionManager bean实例？各管各的dataSource。。。
+要加上try finally</p>2022-11-22</li><br/><li><span>陌兮</span> 👍（0） 💬（0）<p>虽然多数据源事务的操作让人眼前一亮，但是涉及到的问题也非常多。感觉实用性并不大啊</p>2022-10-09</li><br/><li><span>palladio</span> 👍（0） 💬（0）<p>不行。每个事务都是和对应数据源绑定的，在默认事务声明的情况下，外层和内层的事务是同一个，也就意味着两个事务绑定的数据源是同一个。所以外层和内层事务回滚的都是同一个数据源，card 库回滚不了</p>2022-04-01</li><br/><li><span>S | c</span> 👍（0） 💬（0）<p>案例二没太理解，多个数据源的场景为什么不声明多个transactionManager bean实例？各管各的dataSource。。。
 
-@Transactional可以指定对应的transactionManager bean吧，反正你内部的发卡service也是在card库上开一个新事务来跑。</div>2022-03-09</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学到很多技巧</div>2021-11-10</li><br/><li><span>梦尘</span> 👍（0） 💬（0）<div>如果用默认的传播属性，切换应该会失败，会一直使用前一个数据源。
-AbstractPlatformTransactionManager.getTransaction()下的isExistingTransaction应该是true，所以DataSourceTransactionManager.doBegin()不会再次进入了。</div>2021-06-22</li><br/>
+@Transactional可以指定对应的transactionManager bean吧，反正你内部的发卡service也是在card库上开一个新事务来跑。</p>2022-03-09</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学到很多技巧</p>2021-11-10</li><br/><li><span>梦尘</span> 👍（0） 💬（0）<p>如果用默认的传播属性，切换应该会失败，会一直使用前一个数据源。
+AbstractPlatformTransactionManager.getTransaction()下的isExistingTransaction应该是true，所以DataSourceTransactionManager.doBegin()不会再次进入了。</p>2021-06-22</li><br/>
 </ul>

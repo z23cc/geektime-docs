@@ -313,7 +313,7 @@ poetry run python play_24_points_game_v2.py
 
 期待你的分享。如果今天的内容对你有所帮助，也期待你转发给你的同事或者朋友，大家一起学习，共同进步。我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>mxzjzj</span> 👍（2） 💬（1）<div>有没有交流群啊</div>2025-01-24</li><br/><li><span>Geek_8cf9dd</span> 👍（0） 💬（1）<div>老师，完整源代码在哪里可以下载</div>2025-02-21</li><br/><li><span>mxzjzj</span> 👍（0） 💬（1）<div>学完这课，不知道从哪里开始下手，需要本地先部署大模型吗</div>2025-02-06</li><br/><li><span>Geek_30bdf2</span> 👍（0） 💬（1）<div>我发现一个问题，如果让它不返回步骤只返回结果，则很容易出现错误答案，但是如果有步骤，那就会计算正确了，这是什么原因?
+<li><span>mxzjzj</span> 👍（2） 💬（1）<p>有没有交流群啊</p>2025-01-24</li><br/><li><span>Geek_8cf9dd</span> 👍（0） 💬（1）<p>老师，完整源代码在哪里可以下载</p>2025-02-21</li><br/><li><span>mxzjzj</span> 👍（0） 💬（1）<p>学完这课，不知道从哪里开始下手，需要本地先部署大模型吗</p>2025-02-06</li><br/><li><span>Geek_30bdf2</span> 👍（0） 💬（1）<p>我发现一个问题，如果让它不返回步骤只返回结果，则很容易出现错误答案，但是如果有步骤，那就会计算正确了，这是什么原因?
 ### 分析步骤
 
 1. LLM的计算行为差异分析：
@@ -351,7 +351,7 @@ class CheckExpression(Action):
 这样设计可以：
 1. 确保LLM进行完整计算
 2. 保持最终输出简洁
-3. 便于调试和验证</div>2025-02-01</li><br/><li><span>Geek_30bdf2</span> 👍（0） 💬（1）<div>在v2版本输入后中出现了
+3. 便于调试和验证</p>2025-02-01</li><br/><li><span>Geek_30bdf2</span> 👍（0） 💬（1）<p>在v2版本输入后中出现了
 Traceback (most recent call last):
   File &quot;&#47;root&#47;autodl-tmp&#47;work&#47;MetaGPT&#47;metagpt&#47;utils&#47;common.py&quot;, line 664, in wrapper
     return await func(self, *args, **kwargs)
@@ -382,5 +382,5 @@ Exception: Traceback (most recent call last):
   File &quot;&#47;root&#47;autodl-tmp&#47;work&#47;learn_metagpt&#47;autonomous_agent&#47;lesson_04&#47;game_judger_v2.py&quot;, line 32, in extract_result
     result = eval(search_obj.group(1))
 AttributeError: &#39;NoneType&#39; object has no attribute &#39;group&#39;
-的情况，请问是什么原因呢</div>2025-01-30</li><br/>
+的情况，请问是什么原因呢</p>2025-01-30</li><br/>
 </ul>

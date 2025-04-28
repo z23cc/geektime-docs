@@ -209,28 +209,28 @@ Pod的这些状态信息，是我们判断应用运行情况的重要标准，�
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>blackpiglet</span> 👍（319） 💬（2）<div>对于 Pod 状态是 Ready，实际上不能提供服务的情况能想到几个例子：
+<li><span>blackpiglet</span> 👍（319） 💬（2）<p>对于 Pod 状态是 Ready，实际上不能提供服务的情况能想到几个例子：
 1. 程序本身有 bug，本来应该返回 200，但因为代码问题，返回的是500；
 2. 程序因为内存问题，已经僵死，但进程还在，但无响应；
 3. Dockerfile 写的不规范，应用程序不是主进程，那么主进程出了什么问题都无法发现；
 4. 程序出现死循环。
-</div>2018-09-24</li><br/><li><span>细雨</span> 👍（35） 💬（2）<div>问一下老师，infra 网络的镜像为什么取名字叫 pause 呀，难道它一直处于“暂停状态”吗？</div>2018-12-03</li><br/><li><span>安排</span> 👍（21） 💬（1）<div>你好，我进入shell容器，然后执行ps ax，跟例子的结果不一样。例子代码也一样，添加了shareProcessNamespace: true了，为什么不行呢，请问可能出现的原因在哪里
+</p>2018-09-24</li><br/><li><span>细雨</span> 👍（35） 💬（2）<p>问一下老师，infra 网络的镜像为什么取名字叫 pause 呀，难道它一直处于“暂停状态”吗？</p>2018-12-03</li><br/><li><span>安排</span> 👍（21） 💬（1）<p>你好，我进入shell容器，然后执行ps ax，跟例子的结果不一样。例子代码也一样，添加了shareProcessNamespace: true了，为什么不行呢，请问可能出现的原因在哪里
 &#47; # ps
 PID USER TIME COMMAND
 1 root 0:00 sh
 10 root 0:00 ps
 
-请问怎么开启sharepid功能呢？</div>2018-10-05</li><br/><li><span>两两</span> 👍（15） 💬（1）<div>pod runing好理解，但k8s怎么知道容器runing呢，通过什么标准判断？应用死循环，k8s怎么能感知？</div>2018-09-26</li><br/><li><span>徐海浪</span> 👍（14） 💬（9）<div>以前我对容器的认识还不深，竟然用tail -f Catalina.out作为前台进程，这样即使tomcat进程挂掉，容器还是正在运行。应用不可用tomcat进程还在经常会遇到，比如内存溢出，或者应用依赖的数据库等外部系统动荡导致应用不正常。怎么在应用的角度来决定容器是否应该退出？应用提供一个健康检查url，跑前台shell定期检查该url，状态不对则shell退出，从而容器退出。</div>2018-09-26</li><br/><li><span>杨孔来</span> 👍（12） 💬（3）<div>老师，如果pod中的image更新了（比如 通过jenkins发布了新版本），我想通过重启pod,获取最新的image，有什么命令，可以优雅的重启pod，而不影响当前pod提供的业务吗</div>2018-09-25</li><br/><li><span>姜戈</span> 👍（10） 💬（2）<div>通过node selector将任务调度到了woker1   成功运行之后 再修改worker1的label,  任务会重新调度吗？</div>2018-09-25</li><br/><li><span>ethfoo</span> 👍（9） 💬（1）<div>如果pod加了健康检查，是不是就不关心应用进程是不是容器的初始化进程呢？因为应用进程挂了，虽然容器不会自动退出，但是kubelet会主动去kill掉这个容器</div>2018-09-25</li><br/><li><span>hexinzhe</span> 👍（8） 💬（3）<div>比较想要知道优雅停机方面的更详细内容，比如说terminationgraceperiodseconds与prestop之间的关系，两者怎么用</div>2018-09-25</li><br/><li><span>混沌渺无极</span> 👍（6） 💬（1）<div>各位，中秋节好。
-如果entrypoint是一个一直运行的命令，那postStart会执行吗？还是启动一个协程成执行entrypoint，然后再运行一个协程执行这个postStart，所以这两个命令的执行状态是独立的，没有真正的先后关系。</div>2018-09-24</li><br/><li><span>pytimer</span> 👍（6） 💬（2）<div>老师，问一下，我看pod.status.phase是running，但是Ready是false，如果我想判断pod状态，要怎么做</div>2018-09-24</li><br/><li><span>cfanbo</span> 👍（5） 💬（1）<div>本地测试的进入shell容器后执行ps ax，跟例子的结果不一样。没有看到nginx窗口里的nginx进程信息，为什么，我看也有人遇到这个问题.
+请问怎么开启sharepid功能呢？</p>2018-10-05</li><br/><li><span>两两</span> 👍（15） 💬（1）<p>pod runing好理解，但k8s怎么知道容器runing呢，通过什么标准判断？应用死循环，k8s怎么能感知？</p>2018-09-26</li><br/><li><span>徐海浪</span> 👍（14） 💬（9）<p>以前我对容器的认识还不深，竟然用tail -f Catalina.out作为前台进程，这样即使tomcat进程挂掉，容器还是正在运行。应用不可用tomcat进程还在经常会遇到，比如内存溢出，或者应用依赖的数据库等外部系统动荡导致应用不正常。怎么在应用的角度来决定容器是否应该退出？应用提供一个健康检查url，跑前台shell定期检查该url，状态不对则shell退出，从而容器退出。</p>2018-09-26</li><br/><li><span>杨孔来</span> 👍（12） 💬（3）<p>老师，如果pod中的image更新了（比如 通过jenkins发布了新版本），我想通过重启pod,获取最新的image，有什么命令，可以优雅的重启pod，而不影响当前pod提供的业务吗</p>2018-09-25</li><br/><li><span>姜戈</span> 👍（10） 💬（2）<p>通过node selector将任务调度到了woker1   成功运行之后 再修改worker1的label,  任务会重新调度吗？</p>2018-09-25</li><br/><li><span>ethfoo</span> 👍（9） 💬（1）<p>如果pod加了健康检查，是不是就不关心应用进程是不是容器的初始化进程呢？因为应用进程挂了，虽然容器不会自动退出，但是kubelet会主动去kill掉这个容器</p>2018-09-25</li><br/><li><span>hexinzhe</span> 👍（8） 💬（3）<p>比较想要知道优雅停机方面的更详细内容，比如说terminationgraceperiodseconds与prestop之间的关系，两者怎么用</p>2018-09-25</li><br/><li><span>混沌渺无极</span> 👍（6） 💬（1）<p>各位，中秋节好。
+如果entrypoint是一个一直运行的命令，那postStart会执行吗？还是启动一个协程成执行entrypoint，然后再运行一个协程执行这个postStart，所以这两个命令的执行状态是独立的，没有真正的先后关系。</p>2018-09-24</li><br/><li><span>pytimer</span> 👍（6） 💬（2）<p>老师，问一下，我看pod.status.phase是running，但是Ready是false，如果我想判断pod状态，要怎么做</p>2018-09-24</li><br/><li><span>cfanbo</span> 👍（5） 💬（1）<p>本地测试的进入shell容器后执行ps ax，跟例子的结果不一样。没有看到nginx窗口里的nginx进程信息，为什么，我看也有人遇到这个问题.
 &#47; # ps
 PID USER TIME COMMAND
 1 root 0:00 sh
-10 root 0:00 ps</div>2018-09-30</li><br/><li><span>XThundering</span> 👍（4） 💬（3）<div>文章中有处有问题：&quot;ImagePullPolicy 的值默认是 Always，即...&quot; 这部分和官方文档与实际情况不一致。
+10 root 0:00 ps</p>2018-09-30</li><br/><li><span>XThundering</span> 👍（4） 💬（3）<p>文章中有处有问题：&quot;ImagePullPolicy 的值默认是 Always，即...&quot; 这部分和官方文档与实际情况不一致。
 在官方文档中提到&quot;The default pull policy is IfNotPresent&quot;，我这边在使用中发现的也是这样子的~
-附一下官方文档链接：https:&#47;&#47;kubernetes.io&#47;docs&#47;concepts&#47;containers&#47;images&#47;</div>2019-01-17</li><br/><li><span>陆培尔</span> 👍（4） 💬（3）<div>关于pod还有一事请教，之前老师说过pod所有进出流量都会经pause这个根容器，那么是否可以这样理解，实现service mesh的最佳方式是扩展这个根容器的功能来做流量控制和路由，这比再注入一个envoy要更加底层，更加原生？</div>2018-10-28</li><br/><li><span>loda</span> 👍（3） 💬（1）<div>请教个问题，当资源不足的时候，在调用k8s扩容会出现失败，然后一直pending，表示资源不够。怎么能在请求失败前提前检测到该现象呢，避免在继续出现pending请求？
+附一下官方文档链接：https:&#47;&#47;kubernetes.io&#47;docs&#47;concepts&#47;containers&#47;images&#47;</p>2019-01-17</li><br/><li><span>陆培尔</span> 👍（4） 💬（3）<p>关于pod还有一事请教，之前老师说过pod所有进出流量都会经pause这个根容器，那么是否可以这样理解，实现service mesh的最佳方式是扩展这个根容器的功能来做流量控制和路由，这比再注入一个envoy要更加底层，更加原生？</p>2018-10-28</li><br/><li><span>loda</span> 👍（3） 💬（1）<p>请教个问题，当资源不足的时候，在调用k8s扩容会出现失败，然后一直pending，表示资源不够。怎么能在请求失败前提前检测到该现象呢，避免在继续出现pending请求？
 
 如果要每次扩容前都全量扫描一个所有pod和node，然后计算剩余资源，开销也太大了；
 如果要维护一个和kube-scheduler缓存一致的资源池，会不会又出现数据不一致的问题
 
-业界在碰到该类问题的时候，都是怎么处理的呢？</div>2018-09-25</li><br/>
+业界在碰到该类问题的时候，都是怎么处理的呢？</p>2018-09-25</li><br/>
 </ul>

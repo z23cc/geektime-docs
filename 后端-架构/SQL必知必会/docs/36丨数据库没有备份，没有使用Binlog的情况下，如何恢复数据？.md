@@ -152,8 +152,8 @@ INSERT INTO t2 SELECT * FROM t1 LIMIT 99;
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Monday</span> 👍（7） 💬（2）<div>开启innodb_force_recovery只能进行有限制的select操作，那后续的四步中，怎么还能再删除旧表？
-上网查的资料都是innodb_force_recovery&gt;0时，可以select，create，drop但是不可以insert，update，delete。。。恨windows系统下安装的mysql没找到在哪里设置innodb_force_recovery的值，所以没验证。。。</div>2019-09-16</li><br/><li><span>许童童</span> 👍（7） 💬（1）<div>磁盘也是逻辑删除，只要文件还没有被覆盖写，也是可以通过物理的方式把数据找回来的。</div>2019-09-16</li><br/><li><span>蒙开强</span> 👍（4） 💬（2）<div>老师，你好，那个存储引擎是可以针对表级设定的么</div>2019-09-16</li><br/><li><span>爱思考的仙人球</span> 👍（3） 💬（1）<div>原来丢失数据连接这个错误是由于数据损坏造成的</div>2019-10-25</li><br/><li><span>Venom</span> 👍（1） 💬（1）<div>代码可不可以都放上来呀 少一句创建存储过程的语句也很麻烦的。。。</div>2019-10-17</li><br/><li><span>Cookie123456</span> 👍（6） 💬（2）<div>创建的存储过程的完整代码为：
+<li><span>Monday</span> 👍（7） 💬（2）<p>开启innodb_force_recovery只能进行有限制的select操作，那后续的四步中，怎么还能再删除旧表？
+上网查的资料都是innodb_force_recovery&gt;0时，可以select，create，drop但是不可以insert，update，delete。。。恨windows系统下安装的mysql没找到在哪里设置innodb_force_recovery的值，所以没验证。。。</p>2019-09-16</li><br/><li><span>许童童</span> 👍（7） 💬（1）<p>磁盘也是逻辑删除，只要文件还没有被覆盖写，也是可以通过物理的方式把数据找回来的。</p>2019-09-16</li><br/><li><span>蒙开强</span> 👍（4） 💬（2）<p>老师，你好，那个存储引擎是可以针对表级设定的么</p>2019-09-16</li><br/><li><span>爱思考的仙人球</span> 👍（3） 💬（1）<p>原来丢失数据连接这个错误是由于数据损坏造成的</p>2019-10-25</li><br/><li><span>Venom</span> 👍（1） 💬（1）<p>代码可不可以都放上来呀 少一句创建存储过程的语句也很麻烦的。。。</p>2019-10-17</li><br/><li><span>Cookie123456</span> 👍（6） 💬（2）<p>创建的存储过程的完整代码为：
 DELIMITER $$
 CREATE PROCEDURE `insert_t1`(IN i int, IN max_num int)
 BEGIN 
@@ -175,13 +175,13 @@ END $$
 
 CALL insert_t1(0,100);
 SELECT @i as sum;
-</div>2020-04-08</li><br/><li><span>Jone_乔泓恺</span> 👍（4） 💬（0）<div>请问什么情况会导致.ibd文件损坏呢？</div>2020-04-17</li><br/><li><span>隰有荷</span> 👍（3） 💬（0）<div>老师，我在使用ibd文件进行数据恢复时，进入了my.cnf文件，
+</p>2020-04-08</li><br/><li><span>Jone_乔泓恺</span> 👍（4） 💬（0）<p>请问什么情况会导致.ibd文件损坏呢？</p>2020-04-17</li><br/><li><span>隰有荷</span> 👍（3） 💬（0）<p>老师，我在使用ibd文件进行数据恢复时，进入了my.cnf文件，
 然后设置了innodb_force_recovery = 1，再重新启动Mysql发现无法启动，然后在log里面看到下面这句话：
  [ERROR] &#47;usr&#47;sbin&#47;mysqld: unknown variable &#39;innodb_force_recovery = 1
 
-我去网上搜索这个报错，但是目前没有发现好的解决办法，请问我该怎么样继续操作呢，即使无法获取数据，能获取原来的数据表结构也是好的，希望获取您的指导。</div>2019-11-15</li><br/><li><span>完美坚持</span> 👍（2） 💬（0）<div>想请教大家，文中提到的 “然后用编辑器打开 t1.ibd”，这里的编辑器是什么编辑器啊？</div>2021-06-05</li><br/><li><span>四喜</span> 👍（2） 💬（0）<div>自己随便改了idb文件靠后面的2行，只能读取到第一条数据。</div>2020-03-02</li><br/><li><span>rike</span> 👍（2） 💬（0）<div>按照链接中的数据库文件，在数据库配置文件中添加配置参数后，无法启动。报错
-[FATAL] Tablespace id is 1477 in the data dictionary but in file .&#47;wucai&#47;t1.ibd it is 83!</div>2020-01-14</li><br/><li><span>CrazyCodes</span> 👍（1） 💬（0）<div>开启二进制会不会对性能造成影响
-</div>2020-01-30</li><br/><li><span>空知</span> 👍（1） 💬（1）<div>如果 ibd文件损坏的数据在开头，那会都select不出来吗？</div>2019-09-17</li><br/><li><span>钱</span> 👍（0） 💬（0）<div>巧妇难为无米之炊，如果数据真没有了（物理删除，磁盘上也被复写了）那基本没什么好方法了，除非产生数据的源头还可以再次通过一定的逻辑生产这些数据。老师本节讲的是，非完全消失的数据，只是不清楚底层原理的话，不知道怎么找到这些可能还在的数据。点赞，很有趣。</div>2024-08-25</li><br/><li><span>文古</span> 👍（0） 💬（1）<div>老师，开始把数据库停止后，放上损坏的t1.ibd，再启动，就会报错Job for mysqld.service failed because the control process exited with error code. See &quot;systemctl status mysqld.service&quot; and &quot;journalctl -xe&quot; for details.
+我去网上搜索这个报错，但是目前没有发现好的解决办法，请问我该怎么样继续操作呢，即使无法获取数据，能获取原来的数据表结构也是好的，希望获取您的指导。</p>2019-11-15</li><br/><li><span>完美坚持</span> 👍（2） 💬（0）<p>想请教大家，文中提到的 “然后用编辑器打开 t1.ibd”，这里的编辑器是什么编辑器啊？</p>2021-06-05</li><br/><li><span>四喜</span> 👍（2） 💬（0）<p>自己随便改了idb文件靠后面的2行，只能读取到第一条数据。</p>2020-03-02</li><br/><li><span>rike</span> 👍（2） 💬（0）<p>按照链接中的数据库文件，在数据库配置文件中添加配置参数后，无法启动。报错
+[FATAL] Tablespace id is 1477 in the data dictionary but in file .&#47;wucai&#47;t1.ibd it is 83!</p>2020-01-14</li><br/><li><span>CrazyCodes</span> 👍（1） 💬（0）<p>开启二进制会不会对性能造成影响
+</p>2020-01-30</li><br/><li><span>空知</span> 👍（1） 💬（1）<p>如果 ibd文件损坏的数据在开头，那会都select不出来吗？</p>2019-09-17</li><br/><li><span>钱</span> 👍（0） 💬（0）<p>巧妇难为无米之炊，如果数据真没有了（物理删除，磁盘上也被复写了）那基本没什么好方法了，除非产生数据的源头还可以再次通过一定的逻辑生产这些数据。老师本节讲的是，非完全消失的数据，只是不清楚底层原理的话，不知道怎么找到这些可能还在的数据。点赞，很有趣。</p>2024-08-25</li><br/><li><span>文古</span> 👍（0） 💬（1）<p>老师，开始把数据库停止后，放上损坏的t1.ibd，再启动，就会报错Job for mysqld.service failed because the control process exited with error code. See &quot;systemctl status mysqld.service&quot; and &quot;journalctl -xe&quot; for details.
 删除t1.ibd，数据库就启动正常，这是什么原因呢？
-</div>2023-09-08</li><br/>
+</p>2023-09-08</li><br/>
 </ul>

@@ -307,11 +307,11 @@ interface ComponentProvider<T> {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>张铁林</span> 👍（1） 💬（0）<div>这章又要开启替换大法，先完成一个同级别的实现，再替换。</div>2022-05-12</li><br/><li><span>davix</span> 👍（0） 💬（0）<div>我们要如何重构 ContextConfig 内部的实现，从而可以使用 Component 代替 Class ?
-所有bind時先components.put()一份，然後所有providers.get()都替換為components.get()，然後刪掉providers</div>2022-08-21</li><br/><li><span>davix</span> 👍（0） 💬（0）<div>老師能講講測試數據的組織嗎？像不同case都要用的，或有微小差別的，位置放在哪些文件，哪些類，哪些行？</div>2022-08-21</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>如何学习 TDD
+<li><span>张铁林</span> 👍（1） 💬（0）<p>这章又要开启替换大法，先完成一个同级别的实现，再替换。</p>2022-05-12</li><br/><li><span>davix</span> 👍（0） 💬（0）<p>我们要如何重构 ContextConfig 内部的实现，从而可以使用 Component 代替 Class ?
+所有bind時先components.put()一份，然後所有providers.get()都替換為components.get()，然後刪掉providers</p>2022-08-21</li><br/><li><span>davix</span> 👍（0） 💬（0）<p>老師能講講測試數據的組織嗎？像不同case都要用的，或有微小差別的，位置放在哪些文件，哪些類，哪些行？</p>2022-08-21</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>如何学习 TDD
 1. 跟着老师敲代码
 2.参与微信群互动
 - 例如我丢掉了30多个测试，在群里请教同学，同学说“不影响”，还真是！
 - 微信群笔记（更新中）https:&#47;&#47;wyyl1.com&#47;post&#47;19&#47;wq&#47;
-3. 工作中使用 TDD</div>2022-05-21</li><br/>
+3. 工作中使用 TDD</p>2022-05-21</li><br/>
 </ul>

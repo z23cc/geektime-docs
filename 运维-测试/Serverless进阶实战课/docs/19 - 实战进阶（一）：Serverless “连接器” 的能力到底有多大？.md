@@ -264,7 +264,7 @@ SLS触发器能够定时获取到日志的增量信息，而不用像对象存�
 
 感谢你的阅读，也欢迎你把这节课分享给更多的朋友一起阅读。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Jade@pluto-lang</span> 👍（0） 💬（1）<div>&gt; FaaS被云生态所集成的特性，被称为 Serverless“连接器”的存在
+<li><span>Jade@pluto-lang</span> 👍（0） 💬（1）<p>&gt; FaaS被云生态所集成的特性，被称为 Serverless“连接器”的存在
 
-请问这个有什么出处么？</div>2023-08-03</li><br/>
+请问这个有什么出处么？</p>2023-08-03</li><br/>
 </ul>

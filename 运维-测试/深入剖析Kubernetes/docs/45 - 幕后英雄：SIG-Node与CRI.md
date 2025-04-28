@@ -87,10 +87,10 @@ Kubernetes 项目之所以要在 kubelet 中引入这样一层单独的抽象，
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>勤劳的小胖子-libo</span> 👍（9） 💬（1）<div>&quot;当 Kubernetes 通过编排能力创建了一个 Pod 之后，调 度器会为这个Pod选择一个具体的节点来运行。这时候，kubelet会。。。。创建一个Pod&quot;
+<li><span>勤劳的小胖子-libo</span> 👍（9） 💬（1）<p>&quot;当 Kubernetes 通过编排能力创建了一个 Pod 之后，调 度器会为这个Pod选择一个具体的节点来运行。这时候，kubelet会。。。。创建一个Pod&quot;
 请教，这个kubelet以及随后的CRI grpc-&gt;dockershim&#47;CRIshim 是在具体的node上面运行的吗？还是通过master来远程调用的？
-另外，为什么与dockershim并列的叫remote(no-op)，难道都是不在同一个node的远程创建？</div>2018-12-05</li><br/><li><span>wutz</span> 👍（4） 💬（2）<div>kubernetes 1.13 最近刚发布，kubeadm 也 GA 了，为何其 HA 支持被移除了？</div>2018-12-05</li><br/><li><span>Geek_zbvt62</span> 👍（93） 💬（13）<div>整整2年前的内容了，这两天最大的新闻就是k8s将弃用docker，移除dockershim，所以特意跑来留言</div>2020-12-05</li><br/><li><span>hjydxy</span> 👍（15） 💬（2）<div>请教老师一个问题，现在有一个linux的k8s集群，一个windows的k8s集群，可不可以把这两个集群统一组建成一个新的联邦集群，统一调度？</div>2018-12-06</li><br/><li><span>Slide</span> 👍（12） 💬（1）<div>这专栏从19年年底开始看，回头来回看完了好几遍，每一次都有新的理解。。</div>2022-03-04</li><br/><li><span>zhenLEE@Saddam</span> 👍（8） 💬（2）<div>dockershim由docker开源维护了，现在看来，有必要看看contained了 </div>2020-12-16</li><br/><li><span>chenhz</span> 👍（4） 💬（0）<div>使用 ansible-playbook 部署到 Node 。</div>2020-02-06</li><br/><li><span>怀揣梦想的学渣</span> 👍（3） 💬（1）<div>正如作者讲的，Dockershim确实要删除。今天在官方文档看到“Dockershim removed from Kubernetes
-As of Kubernetes 1.24, Dockershim is no longer included in Kubernetes. ”</div>2022-05-06</li><br/><li><span>陈斯佳</span> 👍（3） 💬（0）<div>第四十三课:幕后英雄:SIG-Node和CRI
+另外，为什么与dockershim并列的叫remote(no-op)，难道都是不在同一个node的远程创建？</p>2018-12-05</li><br/><li><span>wutz</span> 👍（4） 💬（2）<p>kubernetes 1.13 最近刚发布，kubeadm 也 GA 了，为何其 HA 支持被移除了？</p>2018-12-05</li><br/><li><span>Geek_zbvt62</span> 👍（93） 💬（13）<p>整整2年前的内容了，这两天最大的新闻就是k8s将弃用docker，移除dockershim，所以特意跑来留言</p>2020-12-05</li><br/><li><span>hjydxy</span> 👍（15） 💬（2）<p>请教老师一个问题，现在有一个linux的k8s集群，一个windows的k8s集群，可不可以把这两个集群统一组建成一个新的联邦集群，统一调度？</p>2018-12-06</li><br/><li><span>Slide</span> 👍（12） 💬（1）<p>这专栏从19年年底开始看，回头来回看完了好几遍，每一次都有新的理解。。</p>2022-03-04</li><br/><li><span>zhenLEE@Saddam</span> 👍（8） 💬（2）<p>dockershim由docker开源维护了，现在看来，有必要看看contained了 </p>2020-12-16</li><br/><li><span>chenhz</span> 👍（4） 💬（0）<p>使用 ansible-playbook 部署到 Node 。</p>2020-02-06</li><br/><li><span>怀揣梦想的学渣</span> 👍（3） 💬（1）<p>正如作者讲的，Dockershim确实要删除。今天在官方文档看到“Dockershim removed from Kubernetes
+As of Kubernetes 1.24, Dockershim is no longer included in Kubernetes. ”</p>2022-05-06</li><br/><li><span>陈斯佳</span> 👍（3） 💬（0）<p>第四十三课:幕后英雄:SIG-Node和CRI
 kube-apiserver和kubelet是k8s中最核心的两个组建。其中kubelet是属于SIG-Node的范畴。
 
 kubelet的工作核心是一个叫做SyncLoop的控制循环。驱动这个控制循环运行的事件包括四种:
@@ -102,9 +102,9 @@ kubelet的工作核心是一个叫做SyncLoop的控制循环。驱动这个控�
 kubelet启动时要做的第一件事就是设置Listers，注册它所关心的的Informer.这些Informer就是SyncLoop需要处理的数据的来源。kubelet还负责很多子控制循环，比如Volume Manager, Image Manager, Node status Manager.kubelet还会通过Watch机制来监听关心的Pod对象的变化。
 
 CRI是负责kubeblet和底层容器打交道的统一接口
-</div>2021-11-04</li><br/><li><span>普罗@庞铮</span> 👍（3） 💬（2）<div>原生部署或者容器部署，不过这里的容器不能和k8s使用的容器重叠。😁</div>2018-12-22</li><br/><li><span>Geek_9ca34e</span> 👍（3） 💬（0）<div>老师，我用kubeadm 搭建了一个k8s集群，又搭建了一个Ceph rbd，两个集群不在相同的机器上，我现在手动创建PV，PVC，CS，并绑定pod没有问题，但是我想实现PVC动态绑定CS却不行，我看网上说需要安装rbd-privi插件，但是插件配好后，还是不能动态创建pv，to；通过log日志查看，好像是访问不到coredns，请问老师有好的解决方法麽？</div>2018-12-06</li><br/><li><span>Goteswille</span> 👍（3） 💬（0）<div>打卡</div>2018-12-05</li><br/><li><span>Vinsec</span> 👍（1） 💬（0）<div>跟不上了，我要快点看！！！</div>2018-12-06</li><br/><li><span>Jing Li</span> 👍（0） 💬（0）<div>思考题：
+</p>2021-11-04</li><br/><li><span>普罗@庞铮</span> 👍（3） 💬（2）<p>原生部署或者容器部署，不过这里的容器不能和k8s使用的容器重叠。😁</p>2018-12-22</li><br/><li><span>Geek_9ca34e</span> 👍（3） 💬（0）<p>老师，我用kubeadm 搭建了一个k8s集群，又搭建了一个Ceph rbd，两个集群不在相同的机器上，我现在手动创建PV，PVC，CS，并绑定pod没有问题，但是我想实现PVC动态绑定CS却不行，我看网上说需要安装rbd-privi插件，但是插件配好后，还是不能动态创建pv，to；通过log日志查看，好像是访问不到coredns，请问老师有好的解决方法麽？</p>2018-12-06</li><br/><li><span>Goteswille</span> 👍（3） 💬（0）<p>打卡</p>2018-12-05</li><br/><li><span>Vinsec</span> 👍（1） 💬（0）<p>跟不上了，我要快点看！！！</p>2018-12-06</li><br/><li><span>Jing Li</span> 👍（0） 💬（0）<p>思考题：
   思路是先在每台node上安装好需要的container runtime，然后再安装部署kubelet。
-  原因是猜测在安装kubelet时，kubelet会自动检测当前node上已经安装的container runtime并同时安装相应的CRI shim。</div>2023-11-17</li><br/><li><span>Geek_842c94</span> 👍（0） 💬（0）<div>实际上，kubelet 也是通过 Watch 机制，监听了与自己相关的 Pod 对象的变化。当然，这个 Watch 的过滤条件是该 Pod 的 nodeName 字段与自己相同。kubelet 会把这些 Pod 的信息缓存在自己的内存里。
+  原因是猜测在安装kubelet时，kubelet会自动检测当前node上已经安装的container runtime并同时安装相应的CRI shim。</p>2023-11-17</li><br/><li><span>Geek_842c94</span> 👍（0） 💬（0）<p>实际上，kubelet 也是通过 Watch 机制，监听了与自己相关的 Pod 对象的变化。当然，这个 Watch 的过滤条件是该 Pod 的 nodeName 字段与自己相同。kubelet 会把这些 Pod 的信息缓存在自己的内存里。
 
-kubelet不是运行在Node上的吗，他监听的是所有的Pod？还是说只监听本节点的Pod信息</div>2022-05-24</li><br/>
+kubelet不是运行在Node上的吗，他监听的是所有的Pod？还是说只监听本节点的Pod信息</p>2022-05-24</li><br/>
 </ul>

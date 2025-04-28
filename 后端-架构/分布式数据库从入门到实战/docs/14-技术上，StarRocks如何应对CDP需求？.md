@@ -133,5 +133,5 @@ FE节点有几种角色类型：Leader、Follower、Observer。其中，Leader�
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。欢迎你加入我们的[读者交流群](http://jinshuju.net/f/QX5mGO)，我们下节课见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Geek_61c09d</span> 👍（0） 💬（1）<div>starrocks的分区、分桶与tablet的个数有什么关系？</div>2024-08-08</li><br/><li><span>爱学习的王呱呱</span> 👍（0） 💬（0）<div>SR的具体优势，比如为什么CBO优化器更出色，老师可以详细介绍下。只看架构，分布式olap感觉都大同小异。</div>2024-08-26</li><br/>
+<li><span>Geek_61c09d</span> 👍（0） 💬（1）<p>starrocks的分区、分桶与tablet的个数有什么关系？</p>2024-08-08</li><br/><li><span>爱学习的王呱呱</span> 👍（0） 💬（0）<p>SR的具体优势，比如为什么CBO优化器更出色，老师可以详细介绍下。只看架构，分布式olap感觉都大同小异。</p>2024-08-26</li><br/>
 </ul>

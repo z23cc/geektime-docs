@@ -66,5 +66,5 @@ NDCG和其他一系列搜索评价指标都是更加注重头部的相关度。�
 - [Adapting Boosting for Information Retrieval Measures](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.157.5117&rep=rep1&type=pdf)
 - [Yahoo! Learning to Rank Challenge Overview](http://proceedings.mlr.press/v14/chapelle11a/chapelle11a.pdf)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>yaolixu</span> 👍（1） 💬（0）<div>会不会出现梯度消失的情况？如果出现了，怎么破？</div>2018-11-08</li><br/><li><span>吴文敏</span> 👍（0） 💬（0）<div>这样会影响模型的收敛速度吧</div>2018-01-31</li><br/>
+<li><span>yaolixu</span> 👍（1） 💬（0）<p>会不会出现梯度消失的情况？如果出现了，怎么破？</p>2018-11-08</li><br/><li><span>吴文敏</span> 👍（0） 💬（0）<p>这样会影响模型的收敛速度吧</p>2018-01-31</li><br/>
 </ul>

@@ -311,5 +311,5 @@ Tekton流水线配置中还有大量的配置细节与注释，完整配置超�
 
 欢迎在评论区与我讨论。如果这一讲对你有启发，也欢迎分享给身边更多朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>alex run</span> 👍（0） 💬（1）<div>解决tf init加载问题，是不是可以用pvc缓存起来</div>2024-04-21</li><br/><li><span>橙汁</span> 👍（0） 💬（1）<div>tekton有点之前用jenkins那味了，又是插件又是定义变量 最后总结的相当可以，之前看了kubernetes的gitops形式 其实gitops并不局限 iac 自动化 集群等任何方面都能用gitops方式</div>2024-04-10</li><br/><li><span>Geek_45a572</span> 👍（0） 💬（0）<div>可以使用cache.将provider缓存起来</div>2024-04-10</li><br/>
+<li><span>alex run</span> 👍（0） 💬（1）<p>解决tf init加载问题，是不是可以用pvc缓存起来</p>2024-04-21</li><br/><li><span>橙汁</span> 👍（0） 💬（1）<p>tekton有点之前用jenkins那味了，又是插件又是定义变量 最后总结的相当可以，之前看了kubernetes的gitops形式 其实gitops并不局限 iac 自动化 集群等任何方面都能用gitops方式</p>2024-04-10</li><br/><li><span>Geek_45a572</span> 👍（0） 💬（0）<p>可以使用cache.将provider缓存起来</p>2024-04-10</li><br/>
 </ul>

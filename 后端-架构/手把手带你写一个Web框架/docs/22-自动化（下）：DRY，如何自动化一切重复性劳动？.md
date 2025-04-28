@@ -486,7 +486,7 @@ os.RemoveAll(path.Join(folder, ".git"))
 
 欢迎在留言区分享你的思考。如果你觉得有收获，也欢迎把今天的内容分享给身边的朋友，邀他一起学习。我们下节课见。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Aaron</span> 👍（0） 💬（1）<div>直接go get 好像会更方便啊</div>2021-11-22</li><br/><li><span>taoist</span> 👍（0） 💬（0）<div>这里生成的新项目需要先 go mod tidy 更新依赖</div>2024-01-23</li><br/><li><span>徐石头</span> 👍（0） 💬（0）<div>默认最小版本号是0.1.0吧，不是0.0.1</div>2022-11-11</li><br/><li><span>无笔秀才</span> 👍（0） 💬（0）<div>那么正确的使用方法是 先git clone hade框架，
+<li><span>Aaron</span> 👍（0） 💬（1）<p>直接go get 好像会更方便啊</p>2021-11-22</li><br/><li><span>taoist</span> 👍（0） 💬（0）<p>这里生成的新项目需要先 go mod tidy 更新依赖</p>2024-01-23</li><br/><li><span>徐石头</span> 👍（0） 💬（0）<p>默认最小版本号是0.1.0吧，不是0.0.1</p>2022-11-11</li><br/><li><span>无笔秀才</span> 👍（0） 💬（0）<p>那么正确的使用方法是 先git clone hade框架，
 再进行 hade new?
-那么新项目的目录 在hade 框架下？</div>2022-01-17</li><br/><li><span>牛玉富</span> 👍（0） 💬（0）<div>咦，go install不就能一步安装的吗？</div>2022-01-13</li><br/><li><span>2345</span> 👍（0） 💬（1）<div>这个利用脚手架创建新的项目，还需要先下载hade的示例代码吧，不然哪里有hade new命令呢？</div>2021-11-14</li><br/>
+那么新项目的目录 在hade 框架下？</p>2022-01-17</li><br/><li><span>牛玉富</span> 👍（0） 💬（0）<p>咦，go install不就能一步安装的吗？</p>2022-01-13</li><br/><li><span>2345</span> 👍（0） 💬（1）<p>这个利用脚手架创建新的项目，还需要先下载hade的示例代码吧，不然哪里有hade new命令呢？</p>2021-11-14</li><br/>
 </ul>

@@ -220,31 +220,31 @@ div {color:blue}
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>忘忧草的约定</span> 👍（11） 💬（4）<div>老师请问一下：主线程在parseHtml时，是不是没办法执行执行paint等操作、那这时候页面又是如何绘制出来的呀？</div>2019-11-16</li><br/><li><span>叫我大胖就好了</span> 👍（8） 💬（1）<div>我看MDN写的是defer在DOMContentLoaded 前执行</div>2019-09-26</li><br/><li><span>木瓜777</span> 👍（2） 💬（1）<div>您好，网络进程接收到响应头之后，会根据请求头中的 content-type 字段来判断文件的类型，比如 content-type 的值是“text&#47;html”！  
-这个地方应该是根据响应头判断文件类型吧？</div>2019-09-27</li><br/><li><span>Luke</span> 👍（127） 💬（27）<div>CSS不阻塞dom的生成。
+<li><span>忘忧草的约定</span> 👍（11） 💬（4）<p>老师请问一下：主线程在parseHtml时，是不是没办法执行执行paint等操作、那这时候页面又是如何绘制出来的呀？</p>2019-11-16</li><br/><li><span>叫我大胖就好了</span> 👍（8） 💬（1）<p>我看MDN写的是defer在DOMContentLoaded 前执行</p>2019-09-26</li><br/><li><span>木瓜777</span> 👍（2） 💬（1）<p>您好，网络进程接收到响应头之后，会根据请求头中的 content-type 字段来判断文件的类型，比如 content-type 的值是“text&#47;html”！  
+这个地方应该是根据响应头判断文件类型吧？</p>2019-09-27</li><br/><li><span>Luke</span> 👍（127） 💬（27）<p>CSS不阻塞dom的生成。
 CSS不阻塞js的加载，但是会阻塞js的执行。
 js会阻塞dom的生成，也就是会阻塞页面的渲染，那么css也有可能会阻塞页面的渲染。
 如果把CSS放在文档的最后面加载执行，CSS不会阻塞DOM的生成，也不会阻塞JS，但是浏览器在解析完DOM后，要花费额外时间来解析CSS，而不是在解析DOM的时候，并行解析CSS。
 并且浏览器会先渲染出一个没有样式的页面，等CSS加载完后会再渲染成一个有样式的页面，页面会出现明显的闪动的现象。
 所以应该把CSS放在文档的头部，尽可能的提前加载CSS；把JS放在文档的尾部，这样JS也不会阻塞页面的渲染。CSS会和JS并行解析，CSS解析也尽可能的不去阻塞JS的执行，从而使页面尽快的渲染完成。
-</div>2019-09-25</li><br/><li><span>Angus</span> 👍（53） 💬（8）<div>会显示time.geekbang和test，JavaScript代码执行的时候第二个div还没有生成DOM节点，所以是获取不到div2的，页面会报错Uncaught TypeError: Cannot set property &#39;innerText&#39; of undefined。
+</p>2019-09-25</li><br/><li><span>Angus</span> 👍（53） 💬（8）<p>会显示time.geekbang和test，JavaScript代码执行的时候第二个div还没有生成DOM节点，所以是获取不到div2的，页面会报错Uncaught TypeError: Cannot set property &#39;innerText&#39; of undefined。
 
 另外复习了下async和defer：
 
 async：脚本并行加载，加载完成之后立即执行，执行时机不确定，仍有可能阻塞HTML解析，执行时机在load事件派发之前
 
-defer：脚本并行加载，等待HTML解析完成之后，按照加载顺序执行脚本，执行时机在DOMContentLoaded事件派发之前</div>2019-09-24</li><br/><li><span>Geek_93f234</span> 👍（20） 💬（10）<div>网络进程加载了多少数据，HTML 解析器便解析多少数据。这里有一个问题，如果是边加载边解析，那么一个标签还在网络传输过程中，浏览器还没有接受到script这个词段，那么浏览器又是怎么预加载的呢？</div>2020-05-02</li><br/><li><span>欣欣向荣的万七七</span> 👍（6） 💬（0）<div>讲得太赞了！一直以来我都只记着加载表现结果（大部分文章都并不知道细节原因，而只能从做测试得到的结果来推测）。而老师的视角则可以从运行时进行讲解 这种知识是很难得的呀～</div>2019-10-02</li><br/><li><span>mfist</span> 👍（6） 💬（1）<div>开始看文章的时候就在想如果js获取的dom还没有解析出来，会如何处理，结果思考题就是这个。
+defer：脚本并行加载，等待HTML解析完成之后，按照加载顺序执行脚本，执行时机在DOMContentLoaded事件派发之前</p>2019-09-24</li><br/><li><span>Geek_93f234</span> 👍（20） 💬（10）<p>网络进程加载了多少数据，HTML 解析器便解析多少数据。这里有一个问题，如果是边加载边解析，那么一个标签还在网络传输过程中，浏览器还没有接受到script这个词段，那么浏览器又是怎么预加载的呢？</p>2020-05-02</li><br/><li><span>欣欣向荣的万七七</span> 👍（6） 💬（0）<p>讲得太赞了！一直以来我都只记着加载表现结果（大部分文章都并不知道细节原因，而只能从做测试得到的结果来推测）。而老师的视角则可以从运行时进行讲解 这种知识是很难得的呀～</p>2019-10-02</li><br/><li><span>mfist</span> 👍（6） 💬（1）<p>开始看文章的时候就在想如果js获取的dom还没有解析出来，会如何处理，结果思考题就是这个。
 
 会两行显示，一行是time.geekbang 另外一行是test。原因是script脚本执行的时候获取想不到第二个div，所以不会对后来的div有影响。
 
 今日总结：
 1. 首先介绍了什么是DOM（表述渲染引擎内部数据结构，它将Web页面和JavaScript脚本连接起来，并过滤不安全内容）、DOM树如何生成（网络进程和渲染进程建立一个流式管道，HTML解析器直接解析，不需要等待text&#47;html类型的接口 接受完毕再进行解析），第一步：通过分词器将字节流转换为Token；第二步：将Token解析为DOM节点；第三步：将DOM节点添加到DOM树中。
 2. JavaScript是如何影响DOM生成的？暂停html解析，下载解析执行完毕js之后再进行html解析（如果这期间使用到了cssDom，需要等待相应css过程）。预解析线程的优化（提前加载相应js css文件）
-3. 渲染引擎还有一个安全检查模块XSSAuditor用来检测词法安全的</div>2019-09-24</li><br/><li><span>HoSalt</span> 👍（4） 💬（3）<div>老师，CSSOM的生成依赖于DOM吗？</div>2020-04-11</li><br/><li><span>sky</span> 👍（3） 💬（2）<div>有个问题，网络传输过程中，传输包有可能是乱序的，如果index.html没有加载完，怎么保证传输回来的index.html字节流不是乱序的呢。这样边加载边解析不会有问题吗？</div>2021-06-01</li><br/><li><span>余熙</span> 👍（3） 💬（0）<div>这是需求本身要求的: DOM 生成依赖 JS加载和执行，JS 依赖 CSS加载和解析。
+3. 渲染引擎还有一个安全检查模块XSSAuditor用来检测词法安全的</p>2019-09-24</li><br/><li><span>HoSalt</span> 👍（4） 💬（3）<p>老师，CSSOM的生成依赖于DOM吗？</p>2020-04-11</li><br/><li><span>sky</span> 👍（3） 💬（2）<p>有个问题，网络传输过程中，传输包有可能是乱序的，如果index.html没有加载完，怎么保证传输回来的index.html字节流不是乱序的呢。这样边加载边解析不会有问题吗？</p>2021-06-01</li><br/><li><span>余熙</span> 👍（3） 💬（0）<p>这是需求本身要求的: DOM 生成依赖 JS加载和执行，JS 依赖 CSS加载和解析。
 
 DOM 生成等待 JS: 
 解析到&lt;script&gt;标签时，渲染引擎判断这是一段脚本，此时 HTML 解析器就会暂停 DOM 的解析，因为接下来的 JavaScript 可能要修改当前已经生成的 DOM 结构。
 
 JS 等待 CSS加载和解析：
-JavaScript 引擎在解析 JavaScript 之前，是不知道 JavaScript 是否操纵了 CSSOM 的，所以渲染引擎在遇到 JavaScript 脚本时，不管该脚本是否操纵了 CSSOM，都会执行 CSS 文件下载，解析操作，再执行 JavaScript 脚本。</div>2020-12-22</li><br/><li><span>张萌</span> 👍（3） 💬（1）<div>一个很长的 html 文档，浏览器会分段进行渲染，一般是按什么规则分段的？</div>2020-05-24</li><br/><li><span>ytd</span> 👍（3） 💬（0）<div>第一行是time.geekbang，第二行不会变，仍是test。原因就是浏览器是边加载边解析html的，而且遇到js会停止dom的解析执行js，js执行完毕后再接着解析dom。上面的代码，js执行时第2个div并未被解析为dom，所以js中获取不到，js会抛出错误TypeError，但js抛出错误并未影响html的继续解析。所以，第2个div保持原来的状态被解析出来。</div>2019-09-25</li><br/><li><span>不二</span> 👍（2） 💬（6）<div>老师，思考题有个疑问：首先html解析器，解析到完&lt;div&gt;1&lt;&#47;div&gt;，此时dom树里是没有&lt;div&gt;test&lt;&#47;div&gt;的，然后开始i 解析script标签，在解析过程中，发现&lt;div&gt;test&lt;&#47;div&gt;找不到，所以此时js会报错，既然此时js报错了，不会阻止后面其他dom的生成吗？为什么页面&lt;div&gt;test&lt;&#47;div&gt;还是显示了出来？求解答</div>2020-01-08</li><br/><li><span>HB</span> 👍（2） 💬（2）<div>每节课都能学到东西，如果能更新快一点就好了。比如二四六改成一三五七</div>2019-09-24</li><br/>
+JavaScript 引擎在解析 JavaScript 之前，是不知道 JavaScript 是否操纵了 CSSOM 的，所以渲染引擎在遇到 JavaScript 脚本时，不管该脚本是否操纵了 CSSOM，都会执行 CSS 文件下载，解析操作，再执行 JavaScript 脚本。</p>2020-12-22</li><br/><li><span>张萌</span> 👍（3） 💬（1）<p>一个很长的 html 文档，浏览器会分段进行渲染，一般是按什么规则分段的？</p>2020-05-24</li><br/><li><span>ytd</span> 👍（3） 💬（0）<p>第一行是time.geekbang，第二行不会变，仍是test。原因就是浏览器是边加载边解析html的，而且遇到js会停止dom的解析执行js，js执行完毕后再接着解析dom。上面的代码，js执行时第2个div并未被解析为dom，所以js中获取不到，js会抛出错误TypeError，但js抛出错误并未影响html的继续解析。所以，第2个div保持原来的状态被解析出来。</p>2019-09-25</li><br/><li><span>不二</span> 👍（2） 💬（6）<p>老师，思考题有个疑问：首先html解析器，解析到完&lt;div&gt;1&lt;&#47;div&gt;，此时dom树里是没有&lt;div&gt;test&lt;&#47;div&gt;的，然后开始i 解析script标签，在解析过程中，发现&lt;div&gt;test&lt;&#47;div&gt;找不到，所以此时js会报错，既然此时js报错了，不会阻止后面其他dom的生成吗？为什么页面&lt;div&gt;test&lt;&#47;div&gt;还是显示了出来？求解答</p>2020-01-08</li><br/><li><span>HB</span> 👍（2） 💬（2）<p>每节课都能学到东西，如果能更新快一点就好了。比如二四六改成一三五七</p>2019-09-24</li><br/>
 </ul>

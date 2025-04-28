@@ -495,5 +495,5 @@ def test_caesar_cipher(message, offset, expected):
 
 期待你的分享，欢迎与我交流。如果今天的内容让你有所收获，也欢迎你把这节课转发给有需要的朋友！我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>qinsi</span> 👍（0） 💬（1）<div>显然ground truth不能也让ai生成，（Python，-2）的case明明没有重复的字母，结果里却有重复字母</div>2024-06-03</li><br/>
+<li><span>qinsi</span> 👍（0） 💬（1）<p>显然ground truth不能也让ai生成，（Python，-2）的case明明没有重复的字母，结果里却有重复字母</p>2024-06-03</li><br/>
 </ul>

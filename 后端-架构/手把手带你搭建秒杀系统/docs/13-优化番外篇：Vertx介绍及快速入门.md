@@ -140,5 +140,5 @@ StaticHandler处理静态资源的逻辑是直接根据你请求的URL，然后�
 
 期待你的思考，欢迎你来评论区和我讨论问题，交流经验！我们下节课再见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>GengTeng</span> 👍（1） 💬（1）<div>Vert.X 3.X 深度使用者。写异步回调太痛苦，如果不想写回调地狱，就要用 Future 组合链，写起来仍然痛苦，每个IO的地方都会把上下文割裂开。Java 没有 async&#47;await ，玩异步IO就是痛苦啊。Go那个简陋的语法又看不上，连个泛型都没有，最后去写Rust了，async&#47;await&#47;tokio&#47;actix 真的香啊。</div>2021-10-28</li><br/><li><span>qinsi</span> 👍（1） 💬（0）<div>多年以前用过Vert.x 2，开发上的体验接近Node.js（毕竟原本就叫Node.x）。缺点是招不到人，招进来的Java开发都只会写Spring，对着Vert.x代码只会干瞪眼。</div>2021-10-25</li><br/><li><span>止水</span> 👍（0） 💬（0）<div>spring的react,这个模型和vertx类似吗，也是异步非阻塞的框架。能简单对比下吗？</div>2023-03-15</li><br/><li><span>梅子黄时雨</span> 👍（0） 💬（0）<div>学习了。</div>2022-11-25</li><br/>
+<li><span>GengTeng</span> 👍（1） 💬（1）<p>Vert.X 3.X 深度使用者。写异步回调太痛苦，如果不想写回调地狱，就要用 Future 组合链，写起来仍然痛苦，每个IO的地方都会把上下文割裂开。Java 没有 async&#47;await ，玩异步IO就是痛苦啊。Go那个简陋的语法又看不上，连个泛型都没有，最后去写Rust了，async&#47;await&#47;tokio&#47;actix 真的香啊。</p>2021-10-28</li><br/><li><span>qinsi</span> 👍（1） 💬（0）<p>多年以前用过Vert.x 2，开发上的体验接近Node.js（毕竟原本就叫Node.x）。缺点是招不到人，招进来的Java开发都只会写Spring，对着Vert.x代码只会干瞪眼。</p>2021-10-25</li><br/><li><span>止水</span> 👍（0） 💬（0）<p>spring的react,这个模型和vertx类似吗，也是异步非阻塞的框架。能简单对比下吗？</p>2023-03-15</li><br/><li><span>梅子黄时雨</span> 👍（0） 💬（0）<p>学习了。</p>2022-11-25</li><br/>
 </ul>

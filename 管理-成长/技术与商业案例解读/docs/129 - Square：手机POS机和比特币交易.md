@@ -52,5 +52,5 @@ Square的未来怎么样呢，从目前的发展来看，显然Square发展还�
 
 从这个角度来看，无论是当年的流血上市，还是上市以后的发展，Square都是当之无愧的成功者。更不要说与经营得一塌糊涂的Twitter相比了，那么Twitter和Square这两个企业的到底有什么区别呢，我们下一期再做深入的分析。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Winter</span> 👍（1） 💬（1）<div>国内不需要手机POS机是因为已经有了微信支付和支付宝？</div>2019-07-02</li><br/><li><span>闷瓜蛋子</span> 👍（1） 💬（0）<div>pinterest 和 dropbox 现在都已经上市了</div>2019-04-21</li><br/><li><span>Panda</span> 👍（1） 💬（0）<div>敢做敢拼  敢出手 才是优秀的创业者</div>2019-03-06</li><br/><li><span>dra</span> 👍（0） 💬（0）<div>要说线上支付好的看中国</div>2020-07-03</li><br/><li><span>Panda</span> 👍（0） 💬（0）<div>看杰克的能力 可以胜任</div>2019-03-06</li><br/>
+<li><span>Winter</span> 👍（1） 💬（1）<p>国内不需要手机POS机是因为已经有了微信支付和支付宝？</p>2019-07-02</li><br/><li><span>闷瓜蛋子</span> 👍（1） 💬（0）<p>pinterest 和 dropbox 现在都已经上市了</p>2019-04-21</li><br/><li><span>Panda</span> 👍（1） 💬（0）<p>敢做敢拼  敢出手 才是优秀的创业者</p>2019-03-06</li><br/><li><span>dra</span> 👍（0） 💬（0）<p>要说线上支付好的看中国</p>2020-07-03</li><br/><li><span>Panda</span> 👍（0） 💬（0）<p>看杰克的能力 可以胜任</p>2019-03-06</li><br/>
 </ul>

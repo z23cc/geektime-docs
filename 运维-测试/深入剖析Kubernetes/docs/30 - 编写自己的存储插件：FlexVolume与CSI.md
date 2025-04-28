@@ -306,7 +306,7 @@ service Node {
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>陆培尔</span> 👍（0） 💬（1）<div>老师的课讲得太好了，什么时候开始讲容器网络方面的内容？感觉这一块一直有很多地方搞不明白，service,ingress，lb,跨节点组网等等</div>2018-11-02</li><br/><li><span>虎虎❤️</span> 👍（164） 💬（3）<div>思考题：
+<li><span>陆培尔</span> 👍（0） 💬（1）<p>老师的课讲得太好了，什么时候开始讲容器网络方面的内容？感觉这一块一直有很多地方搞不明白，service,ingress，lb,跨节点组网等等</p>2018-11-02</li><br/><li><span>虎虎❤️</span> 👍（164） 💬（3）<p>思考题：
 
 1. Register过程： csi 插件应该作为 daemonSet 部署到每个节点（node）。然后插件 container 挂载 hostpath 文件夹，把插件可执行文件放在其中，并启动rpc服务（identity, controller, node）。External component Driver Registrar 利用 kubelet plugin watcher 特性watch指定的文件夹路径来自动检测到这个存储插件。然后通过调用identity rpc服务，获得driver的信息，并完成注册。
 
@@ -316,7 +316,7 @@ service Node {
 3. Attach过程：部署External Attacher。Attacher 将会监听 apiServer 中 VolumeAttachment 对象的变化。一旦出现新的VolumeAttachment，Attacher 会调用插件的 controller.ControllerPublish() 服务。其主要工作是调用阿里云的api，把相应的磁盘 attach 到声明使用此 PVC&#47;PV 的 pod 所调度到的 node 上。挂载的目录：&#47;var&#47;lib&#47;kubelet&#47;pods&#47;&lt;Pod ID&gt;&#47;volumes&#47;aliyun~netdisk&#47;&lt;name&gt;
 
 
-4. Mount过程：mount 不可能在远程的container里完成，所以这个工作需要kubelet来做。kubelet 的 VolumeManagerReconciler 控制循环，检测到需要执行 Mount 操作的时候，通过调用 pkg&#47;volume&#47;csi 包，调用 CSI Node 服务，完成 volume 的 Mount 阶段。具体工作是调用 CRI 启动带有 volume 参数的container，把上阶段准备好的磁盘 mount 到 container指定的目录。</div>2018-10-31</li><br/><li><span>ch_ort</span> 👍（19） 💬（0）<div>PVC描述的，是Pod想要使用的持久化存储的属性，比如存储的大小、读写权限等
+4. Mount过程：mount 不可能在远程的container里完成，所以这个工作需要kubelet来做。kubelet 的 VolumeManagerReconciler 控制循环，检测到需要执行 Mount 操作的时候，通过调用 pkg&#47;volume&#47;csi 包，调用 CSI Node 服务，完成 volume 的 Mount 阶段。具体工作是调用 CRI 启动带有 volume 参数的container，把上阶段准备好的磁盘 mount 到 container指定的目录。</p>2018-10-31</li><br/><li><span>ch_ort</span> 👍（19） 💬（0）<p>PVC描述的，是Pod想要使用的持久化存储的属性，比如存储的大小、读写权限等
 PV描述的，则是一个具体的Volume的属性，比如Volume的类型、挂载目录、远程存储服务器地址等
 
 有两种管理PV的方式：  人工管理（Static Provisioning），自动创建（Dynamic Provisioning）。Dynamic Provisioning机制工作的核心，就在于一个名叫StorageClass的API对象。Kubernetes能够根据用户提交的PVC，找到一个对应的StorageClass了。然后，Kuberentes就会调用该StorageClass声明的存储插件，创建出需要的PV。
@@ -330,16 +330,16 @@ FlexVolume： kubelet --&gt; pkg&#47;volume&#47;flexvolume.SetUpAt() --&gt; &#47
 FlexVolume的方式，需要手动先创建好PV，由FlexVolume来执行Attach和Mount操作。
 
 相比于 FlexVolume，CSI 的设计思想是把插件的职责从“两阶段处理”，扩展成了 Provision、Attach 和 Mount 三个阶段。其中，Provision 等价于“创建磁盘”，Attach 等价于“挂载磁盘到虚拟机”，Mount 等价于“将该磁盘格式化后，挂载在 Volume 的宿主机目录上”。
-</div>2020-10-29</li><br/><li><span>Geek_5baa01</span> 👍（12） 💬（0）<div>Provision：调用阿里云 API  Create 云盘
+</p>2020-10-29</li><br/><li><span>Geek_5baa01</span> 👍（12） 💬（0）<p>Provision：调用阿里云 API  Create 云盘
 Attach： 调用阿里云 API 挂载云盘到 ECS 
-Mount: 挂载云盘到对应的 pod volume 目录</div>2021-06-06</li><br/><li><span>silver</span> 👍（10） 💬（0）<div>&#39;test 正是我们前面定义的 PV 的名字&#39;,这个是否是typo？PV的名字是pv-flex-nfs？</div>2018-11-01</li><br/><li><span>kakj</span> 👍（6） 💬（4）<div>java程序员从入门到放弃到再入门到再放弃中</div>2019-07-10</li><br/><li><span>leo</span> 👍（2） 💬（0）<div>厉害了 新的知识！</div>2018-11-20</li><br/><li><span>vincent</span> 👍（1） 💬（0）<div>简单说是两阶段：
+Mount: 挂载云盘到对应的 pod volume 目录</p>2021-06-06</li><br/><li><span>silver</span> 👍（10） 💬（0）<p>&#39;test 正是我们前面定义的 PV 的名字&#39;,这个是否是typo？PV的名字是pv-flex-nfs？</p>2018-11-01</li><br/><li><span>kakj</span> 👍（6） 💬（4）<p>java程序员从入门到放弃到再入门到再放弃中</p>2019-07-10</li><br/><li><span>leo</span> 👍（2） 💬（0）<p>厉害了 新的知识！</p>2018-11-20</li><br/><li><span>vincent</span> 👍（1） 💬（0）<p>简单说是两阶段：
 attach + mount
-细了说：1、创建卷资源  2、attach节点  3、node上创建设备格式化  4、挂在设备</div>2020-03-29</li><br/><li><span>虎虎❤️</span> 👍（1） 💬（0）<div>问题：
+细了说：1、创建卷资源  2、attach节点  3、node上创建设备格式化  4、挂在设备</p>2020-03-29</li><br/><li><span>虎虎❤️</span> 👍（1） 💬（0）<p>问题：
 
 1. 既然csi的PV是自己定义的类型，那么volume controller应该不会做这个红娘吧？所以问题是，他们是怎么完成绑定的？绑定后的状态会改变为 bound 吗？
-2. 按照我的理解 driver 插件应该安装到每个node上，那么适合使用 daemonSet 去部署插件和 Driver Registerar sidecar。而 External Provisioner&#47;Attacher 则只需要一份部署就可以。为什么文中建议把三个 External components 都部署为sidecar？</div>2018-10-31</li><br/><li><span>guolisen</span> 👍（0） 💬（0）<div>kubelet为什么会知道 对应的可执行程序叫做nfs(k8s~nfs&#47;nfs)？是在哪里告诉kubelet的？</div>2023-02-15</li><br/><li><span>BobToGo</span> 👍（0） 💬（0）<div>🐮🍺</div>2021-11-12</li><br/><li><span>chenkai-1</span> 👍（0） 💬（0）<div>1.register(包含调用identity获取插件信息）：将插件注册到kubelet里面，将可执行文件放在插件目录下
+2. 按照我的理解 driver 插件应该安装到每个node上，那么适合使用 daemonSet 去部署插件和 Driver Registerar sidecar。而 External Provisioner&#47;Attacher 则只需要一份部署就可以。为什么文中建议把三个 External components 都部署为sidecar？</p>2018-10-31</li><br/><li><span>guolisen</span> 👍（0） 💬（0）<p>kubelet为什么会知道 对应的可执行程序叫做nfs(k8s~nfs&#47;nfs)？是在哪里告诉kubelet的？</p>2023-02-15</li><br/><li><span>BobToGo</span> 👍（0） 💬（0）<p>🐮🍺</p>2021-11-12</li><br/><li><span>chenkai-1</span> 👍（0） 💬（0）<p>1.register(包含调用identity获取插件信息）：将插件注册到kubelet里面，将可执行文件放在插件目录下
 2.External Provisioner：处理 Provision 的阶段。External Provisioner 监听APIServer 里的 PVC 对象。当一个 PVC 被创建时，调用 CSI Controller 的 CreateVolume 方法，创建PV。
 3.External Attacher ：处理“Attach 阶段”。监听了 APIServer 里 VolumeAttachment 对象的变化。一旦出现了 VolumeAttachment 对象，External Attacher 就会调用 CSI Controller 服务的 ControllerPublish 方法，完成它所对应的 Volume 的 Attach 阶段。
 4.mount：kubelet 的 VolumeManagerReconciler 控制循环检查到它需要执行 Mount 操作的时候，会通过 pkg&#47;volume&#47;csi 包，直接调用 CSI Node 服务完成 Volume 的“Mount 阶段”。
-</div>2021-07-01</li><br/><li><span>惘 闻</span> 👍（0） 💬（1）<div>脑壳疼... 没用过docker 没用过k8s,操作系统知识不扎实,导致我看到这里好累啊,还是基础差</div>2021-02-05</li><br/><li><span>左氧佛沙星人</span> 👍（0） 💬（0）<div>思考题，应该参考local path storage provisioner 或者 local volume storage provisioner，需要新增的是，讲创建好的云盘，attach到主机上，这样对吗？</div>2019-10-16</li><br/><li><span>大星星</span> 👍（0） 💬（1）<div>有个问题，请教下，三个external组建为什么要独立出来。这个不需要吧。只要csi 三个服务起来了，自动注册插件。他们三个服务也负责watch api，每当有请求过来，provision attatch.mount动作时候分别找对应服务请求就行。不知道都一个个分出来有必要么？</div>2019-03-15</li><br/>
+</p>2021-07-01</li><br/><li><span>惘 闻</span> 👍（0） 💬（1）<p>脑壳疼... 没用过docker 没用过k8s,操作系统知识不扎实,导致我看到这里好累啊,还是基础差</p>2021-02-05</li><br/><li><span>左氧佛沙星人</span> 👍（0） 💬（0）<p>思考题，应该参考local path storage provisioner 或者 local volume storage provisioner，需要新增的是，讲创建好的云盘，attach到主机上，这样对吗？</p>2019-10-16</li><br/><li><span>大星星</span> 👍（0） 💬（1）<p>有个问题，请教下，三个external组建为什么要独立出来。这个不需要吧。只要csi 三个服务起来了，自动注册插件。他们三个服务也负责watch api，每当有请求过来，provision attatch.mount动作时候分别找对应服务请求就行。不知道都一个个分出来有必要么？</p>2019-03-15</li><br/>
 </ul>

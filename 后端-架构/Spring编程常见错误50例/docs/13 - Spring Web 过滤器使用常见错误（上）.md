@@ -497,9 +497,9 @@ public class DemoFilter implements Filter {
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>小飞同学</span> 👍（16） 💬（1）<div>@Qualifier(&quot;com.spring.puzzle.filter.TimeCostFilter&quot;) ​FilterRegistrationBean timeCostFilter;
-往controller层注入filter的意义是什么？有什么应用场景么？ 估计CodeReview会被打吧</div>2021-05-21</li><br/><li><span>学习</span> 👍（7） 💬（0）<div>其实对第二个案例有疑问，在catch中做业务逻辑，是因为需要业务补偿，怎么说都是在try里面未执行chain.doFilter才会补偿，但在try…catch外面再做一个chain.doFilter怎么看都不符合是碳基生物写的。假设catch到exception一定要抛出去然后处理异常信息，那后面doFilter永远不可能执行，毕竟是存在这种业务情况的。当然也存在catch到异常后还希望正常往下走。所以不是很理解在try…catch外后面执行的case</div>2021-11-04</li><br/><li><span>码畜</span> 👍（5） 💬（0）<div>Q:一次也没有调
-A:结果是接口无法正常响应，程序不会回调执行，最后无返回</div>2021-05-21</li><br/><li><span>一记妙蛙直拳</span> 👍（3） 💬（0）<div>为什么不能直接将Filter直接注册成bean呢而是要封装在FilterRegistrationBean中
-思考题:自定义的filte中不调用chain.doFilter(),由于还在if (pos &lt; n) {}作用域中,又没有继续调用下一个filter,就会直接return,无法执行核心业务代码servlet.service(request, response);</div>2021-05-21</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<div>积累知识点就好了，别抬杠啊。。。</div>2022-03-10</li><br/><li><span>高新刚</span> 👍（0） 💬（0）<div>遇到有问题排查的思路可能比知识点更重要，找源码，看堆栈，梳理流程等等类似的思考问题的方法值得我们学习</div>2023-11-14</li><br/><li><span>Y</span> 👍（0） 💬（1）<div>在案例 2 中，我们提到一定要避免在过滤器中调用多次 FilterChain#doFilter()。那么假设一个过滤器因为疏忽，在某种情况下，这个方法一次也没有调用，会出现什么情况呢？
-----测试了一下，没有任何返回</div>2022-04-25</li><br/>
+<li><span>小飞同学</span> 👍（16） 💬（1）<p>@Qualifier(&quot;com.spring.puzzle.filter.TimeCostFilter&quot;) ​FilterRegistrationBean timeCostFilter;
+往controller层注入filter的意义是什么？有什么应用场景么？ 估计CodeReview会被打吧</p>2021-05-21</li><br/><li><span>学习</span> 👍（7） 💬（0）<p>其实对第二个案例有疑问，在catch中做业务逻辑，是因为需要业务补偿，怎么说都是在try里面未执行chain.doFilter才会补偿，但在try…catch外面再做一个chain.doFilter怎么看都不符合是碳基生物写的。假设catch到exception一定要抛出去然后处理异常信息，那后面doFilter永远不可能执行，毕竟是存在这种业务情况的。当然也存在catch到异常后还希望正常往下走。所以不是很理解在try…catch外后面执行的case</p>2021-11-04</li><br/><li><span>码畜</span> 👍（5） 💬（0）<p>Q:一次也没有调
+A:结果是接口无法正常响应，程序不会回调执行，最后无返回</p>2021-05-21</li><br/><li><span>一记妙蛙直拳</span> 👍（3） 💬（0）<p>为什么不能直接将Filter直接注册成bean呢而是要封装在FilterRegistrationBean中
+思考题:自定义的filte中不调用chain.doFilter(),由于还在if (pos &lt; n) {}作用域中,又没有继续调用下一个filter,就会直接return,无法执行核心业务代码servlet.service(request, response);</p>2021-05-21</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<p>积累知识点就好了，别抬杠啊。。。</p>2022-03-10</li><br/><li><span>高新刚</span> 👍（0） 💬（0）<p>遇到有问题排查的思路可能比知识点更重要，找源码，看堆栈，梳理流程等等类似的思考问题的方法值得我们学习</p>2023-11-14</li><br/><li><span>Y</span> 👍（0） 💬（1）<p>在案例 2 中，我们提到一定要避免在过滤器中调用多次 FilterChain#doFilter()。那么假设一个过滤器因为疏忽，在某种情况下，这个方法一次也没有调用，会出现什么情况呢？
+----测试了一下，没有任何返回</p>2022-04-25</li><br/>
 </ul>

@@ -180,26 +180,26 @@ RDBMS的核心在于对实体和联系的定义，也就是E-R图（Entity Relat
 
 欢迎你在评论区写下你的答案，我会和你一起交流，也欢迎把这篇文章分享给你的朋友或者同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>我知道了嗯</span> 👍（289） 💬（14）<div>外键多了会有很多维护问题吧？</div>2019-06-19</li><br/><li><span>夜路破晓</span> 👍（39） 💬（3）<div>类比自己，
+<li><span>我知道了嗯</span> 👍（289） 💬（14）<p>外键多了会有很多维护问题吧？</p>2019-06-19</li><br/><li><span>夜路破晓</span> 👍（39） 💬（3）<p>类比自己，
 主键就好比是我的身份证；
 外键就好比我在各种团队组织中的身份，如在单位是员工和管理者、在家是儿子和丈夫、在协会是会员和委员等；
-索引就好比是我的某些特征或者独树一帜的风格，玉树临风、风流倜傥之类的。</div>2019-06-19</li><br/><li><span>夜路破晓</span> 👍（20） 💬（3）<div>修改字段数据类型,报错,改写成:
+索引就好比是我的某些特征或者独树一帜的风格，玉树临风、风流倜傥之类的。</p>2019-06-19</li><br/><li><span>夜路破晓</span> 👍（20） 💬（3）<p>修改字段数据类型,报错,改写成:
 ALTER TABLE player MODIFY column player_age float(3,1)
-</div>2019-06-19</li><br/><li><span>Danpier</span> 👍（11） 💬（3）<div>数据库管理工具墙裂推荐开源免费的 HeidiSQL（支持 MariaDB，MySQL，Microsoft SQL Server，PostgreSQL），运存占用低，很流畅，功能还全，Navicat 年费实在太贵了。</div>2019-07-10</li><br/><li><span>allean</span> 👍（11） 💬（1）<div>实际生产环境，更多的是用一个冗余字段取代外键吧？</div>2019-06-19</li><br/><li><span>chengzise</span> 👍（11） 💬（1）<div>我的理解：
+</p>2019-06-19</li><br/><li><span>Danpier</span> 👍（11） 💬（3）<p>数据库管理工具墙裂推荐开源免费的 HeidiSQL（支持 MariaDB，MySQL，Microsoft SQL Server，PostgreSQL），运存占用低，很流畅，功能还全，Navicat 年费实在太贵了。</p>2019-07-10</li><br/><li><span>allean</span> 👍（11） 💬（1）<p>实际生产环境，更多的是用一个冗余字段取代外键吧？</p>2019-06-19</li><br/><li><span>chengzise</span> 👍（11） 💬（1）<p>我的理解：
 主键：确保本表每行数据的唯一性
 外键：与外表建立连接
-索引：加快本表数据的查找</div>2019-06-19</li><br/><li><span>番茄</span> 👍（6） 💬（2）<div> 直接写这段，会报错哦
+索引：加快本表数据的查找</p>2019-06-19</li><br/><li><span>番茄</span> 👍（6） 💬（2）<p> 直接写这段，会报错哦
 create table player (
 player_id int(11) NOT NULL AUTO_INCREMENT,
 player_name varchar(255) NOT NULL
 );
 报错信息如下，所以是要设置主键吗：
-Incorrect table definition; there can be only one auto column and it must be defined as a key</div>2019-08-07</li><br/><li><span>学习爱好者</span> 👍（4） 💬（1）<div>老师能给推荐几本关于SQL以及MySQL的书吗？市面上的书感觉讲的太零散，不系统，也不全面，看完之后总觉得缺少了很多知识点。希望老师能回复。</div>2019-10-18</li><br/><li><span>Eglinux</span> 👍（4） 💬（1）<div>ALTER TABLE student DROP COLUMN player_age;
-这里是 player 吧？</div>2019-06-19</li><br/><li><span>满怀</span> 👍（3） 💬（1）<div>主键：主键是一张表中唯一表示每一个行记录的属性
+Incorrect table definition; there can be only one auto column and it must be defined as a key</p>2019-08-07</li><br/><li><span>学习爱好者</span> 👍（4） 💬（1）<p>老师能给推荐几本关于SQL以及MySQL的书吗？市面上的书感觉讲的太零散，不系统，也不全面，看完之后总觉得缺少了很多知识点。希望老师能回复。</p>2019-10-18</li><br/><li><span>Eglinux</span> 👍（4） 💬（1）<p>ALTER TABLE student DROP COLUMN player_age;
+这里是 player 吧？</p>2019-06-19</li><br/><li><span>满怀</span> 👍（3） 💬（1）<p>主键：主键是一张表中唯一表示每一个行记录的属性
 外键：外键是当子表中存在父表中的主键字段时，将子表中的字段设置为父表的外键，用于实现参照完整性
-索引：类似书中的书签，索引就是表中的&quot;书签&quot;，根据索引字段存储记录信息，从而利用索引的快速查找功能，提高我们的SQL语句执行效率</div>2019-06-26</li><br/><li><span>苦行僧</span> 👍（3） 💬（1）<div>修改大表字段需要谨慎 容易引发表结构写锁</div>2019-06-21</li><br/><li><span>‭</span> 👍（3） 💬（1）<div>创建表结构那里 是不是没把player_id设为主键</div>2019-06-19</li><br/><li><span>奋斗中的小神仙</span> 👍（2） 💬（1）<div>老师您好，这里写的是六个约束吧</div>2019-12-25</li><br/><li><span>木心云影</span> 👍（2） 💬（1）<div>首先，这门课程真心不错，非常感谢作者的用心。打个比方：语句最后以分号（;）作为结束符，最后一个字段的定义结束后没有逗号，这样一段，虽然很细微但是新手很容易犯错的问题，作者注意到且不厌其烦地指出来，足以证明作者的用心。另外，前端页面的划线功能，只有一种颜色，如果能够更加完善一下，比如可以改变线条颜色、改变粗细就够了。当然这有点吹毛求疵，不过既然是产品嘛，肯定是越完美越好。
+索引：类似书中的书签，索引就是表中的&quot;书签&quot;，根据索引字段存储记录信息，从而利用索引的快速查找功能，提高我们的SQL语句执行效率</p>2019-06-26</li><br/><li><span>苦行僧</span> 👍（3） 💬（1）<p>修改大表字段需要谨慎 容易引发表结构写锁</p>2019-06-21</li><br/><li><span>‭</span> 👍（3） 💬（1）<p>创建表结构那里 是不是没把player_id设为主键</p>2019-06-19</li><br/><li><span>奋斗中的小神仙</span> 👍（2） 💬（1）<p>老师您好，这里写的是六个约束吧</p>2019-12-25</li><br/><li><span>木心云影</span> 👍（2） 💬（1）<p>首先，这门课程真心不错，非常感谢作者的用心。打个比方：语句最后以分号（;）作为结束符，最后一个字段的定义结束后没有逗号，这样一段，虽然很细微但是新手很容易犯错的问题，作者注意到且不厌其烦地指出来，足以证明作者的用心。另外，前端页面的划线功能，只有一种颜色，如果能够更加完善一下，比如可以改变线条颜色、改变粗细就够了。当然这有点吹毛求疵，不过既然是产品嘛，肯定是越完美越好。
 作者留下的问题：
 主键：保证每条记录的唯一性；
 外键：建立表与表之间的关联性；
-索引：提高查询效率。不过据说一个表索引也不是越多越好，要有一个度。</div>2019-11-11</li><br/><li><span>雪飞鸿</span> 👍（2） 💬（1）<div>文中说有7种约束，只看到了主键、外键、惟一、Not Null、Default、Check六种约束。</div>2019-07-30</li><br/>
+索引：提高查询效率。不过据说一个表索引也不是越多越好，要有一个度。</p>2019-11-11</li><br/><li><span>雪飞鸿</span> 👍（2） 💬（1）<p>文中说有7种约束，只看到了主键、外键、惟一、Not Null、Default、Check六种约束。</p>2019-07-30</li><br/>
 </ul>

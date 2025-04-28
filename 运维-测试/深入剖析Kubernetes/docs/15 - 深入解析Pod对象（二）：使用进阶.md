@@ -557,7 +557,7 @@ spec:
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>我来也</span> 👍（46） 💬（15）<div>在使用PodPreset对象时,发现并未生效,最终才知道是因为当初安装时未启用 Pod Preset.然后参考[https:&#47;&#47;kubernetes.io&#47;docs&#47;concepts&#47;workloads&#47;pods&#47;podpreset&#47;#enable-pod-preset] 修改  [&#47;etc&#47;kubernetes&#47;manifests&#47;kube-apiserver.yaml] 中的spec.containers.command:   修改原[ - --runtime-config=api&#47;all=true]为[- --runtime-config=api&#47;all=true,settings.k8s.io&#47;v1alpha1=true], 新加一行[- --enable-admission-plugins=PodPreset] 可以等自动生效也可以强制重启[systemctl restart kubelet]. 然后再重新创建,就可以在pod中看见spec.containers.env.name:DB_PORT等信息了.</div>2018-09-27</li><br/><li><span>北卡</span> 👍（22） 💬（6）<div>我记得deployment所创建的pod restart策略只支持aways。是我使用的版本太低了吗？</div>2018-09-27</li><br/><li><span>snakorse</span> 👍（20） 💬（1）<div>probe的原理是通过sidecar容器来实现的吗</div>2018-09-26</li><br/><li><span>章宇军</span> 👍（14） 💬（2）<div>“需要注意的是，Secret 对象要求这些数据必须是经过 Base64 转码的，以免出现明文密码的安全隐患。” base64 等同于明文吧……我理解是主要是为了 binary 类型的数据。</div>2018-10-20</li><br/><li><span>寞月</span> 👍（12） 💬（2）<div>老师好，probe我们在生产实际应用中，有个问题。就是，每次新部署的时候，旧容器要做graceful delete，这个会触发kubelet的delete逻辑。 只有在容器被kill以后，k8s才会remove 这个探针。即，容器已经收到kill信号在停服务了，但是探针还在检测于是一直报错。   不知道有没有配置可解决这个问题。</div>2018-10-19</li><br/><li><span>龙坤</span> 👍（10） 💬（4）<div>老师你好，有句话不太明白
+<li><span>我来也</span> 👍（46） 💬（15）<p>在使用PodPreset对象时,发现并未生效,最终才知道是因为当初安装时未启用 Pod Preset.然后参考[https:&#47;&#47;kubernetes.io&#47;docs&#47;concepts&#47;workloads&#47;pods&#47;podpreset&#47;#enable-pod-preset] 修改  [&#47;etc&#47;kubernetes&#47;manifests&#47;kube-apiserver.yaml] 中的spec.containers.command:   修改原[ - --runtime-config=api&#47;all=true]为[- --runtime-config=api&#47;all=true,settings.k8s.io&#47;v1alpha1=true], 新加一行[- --enable-admission-plugins=PodPreset] 可以等自动生效也可以强制重启[systemctl restart kubelet]. 然后再重新创建,就可以在pod中看见spec.containers.env.name:DB_PORT等信息了.</p>2018-09-27</li><br/><li><span>北卡</span> 👍（22） 💬（6）<p>我记得deployment所创建的pod restart策略只支持aways。是我使用的版本太低了吗？</p>2018-09-27</li><br/><li><span>snakorse</span> 👍（20） 💬（1）<p>probe的原理是通过sidecar容器来实现的吗</p>2018-09-26</li><br/><li><span>章宇军</span> 👍（14） 💬（2）<p>“需要注意的是，Secret 对象要求这些数据必须是经过 Base64 转码的，以免出现明文密码的安全隐患。” base64 等同于明文吧……我理解是主要是为了 binary 类型的数据。</p>2018-10-20</li><br/><li><span>寞月</span> 👍（12） 💬（2）<p>老师好，probe我们在生产实际应用中，有个问题。就是，每次新部署的时候，旧容器要做graceful delete，这个会触发kubelet的delete逻辑。 只有在容器被kill以后，k8s才会remove 这个探针。即，容器已经收到kill信号在停服务了，但是探针还在检测于是一直报错。   不知道有没有配置可解决这个问题。</p>2018-10-19</li><br/><li><span>龙坤</span> 👍（10） 💬（4）<p>老师你好，有句话不太明白
 原文：“相信你一定有过这样的想法：我现在有了一个 Pod，我能不能在这个 Pod 里安装一个 Kubernetes 的Client，这样就可以从容器里直接访问并且操作这个 Kubernetes 的 API 了呢？”
 
 1. 这里可以举个简单例子吗？
@@ -565,14 +565,14 @@ spec:
 3. 操作“kubernetes的API”这里的API由指什么？
 
 小白问题，过不了这关，听得有点晕。见谅
-</div>2018-09-27</li><br/><li><span>Pixar</span> 👍（9） 💬（2）<div>复习了下容器的检查探针, 有几个点还是没太明白, 还望老师能解答下:
+</p>2018-09-27</li><br/><li><span>Pixar</span> 👍（9） 💬（2）<p>复习了下容器的检查探针, 有几个点还是没太明白, 还望老师能解答下:
 1.  restartPolicy : 这个restartPolicy是重启的Pod的Container, 那么重启的时机是根据Container结束时返回的状态码吗? 
 2. restart 和 probe的关系:  Pod某个容器的livenessProbe 返回fail, 这个时候Container并没有结束, 只是状态检查是失败的, 那为什么Container也会重启呢?  这个重启动作是谁发起的呢?
-3. readnessProbe:  如果某个Pod含多个Container, 且每个都有readnessProbe, 那是不是说只有全部Container的Probe返回success, 该Pod才会是 readness呢? </div>2018-12-02</li><br/><li><span>微思</span> 👍（8） 💬（1）<div>在讲述livenessProbe的时候说到：虽然是 Restart（重启），但实际却是重新创建了容器；那之前那个还在运行的liveness容器被自动销毁了吗？
-</div>2018-09-26</li><br/><li><span>我来也</span> 👍（4） 💬（2）<div>文章中的代码 dapi-volume.yaml 格式不对,被取消了缩进,导致直接贴出来使用会报错.
-还有按文章中的命令 kubectl create secret generic user --from-file=.&#47;username.txt ,在pod中[ kubectl exec -it test-projected-volume -- &#47;bin&#47;sh]展示的目录不是user,而是username.txt. 可以通过[kubectl edit secrets user]手动修改data:下的字段名.</div>2018-09-26</li><br/><li><span>风行传说</span> 👍（4） 💬（2）<div>老师，我想问一下，您文章里面讲到的pod.spec.volumes.projected.sources下的这四种对象中的configMap secret 和pod.spec.volumes下的configMap secret是否有区别，如果没有区别那为何相同的功能对象要设置在两个不同的对象下面呢？这点让我不是特别理解，希望您能给予一下解答，谢谢！</div>2018-09-26</li><br/><li><span>abc</span> 👍（4） 💬（2）<div>更重要的是，像这样通过挂载方式进入到容器里的 Secret，一旦其对应的 Etcd 里的数据被更新，这些 Volume 里的文件内容，同样也会被更新。
+3. readnessProbe:  如果某个Pod含多个Container, 且每个都有readnessProbe, 那是不是说只有全部Container的Probe返回success, 该Pod才会是 readness呢? </p>2018-12-02</li><br/><li><span>微思</span> 👍（8） 💬（1）<p>在讲述livenessProbe的时候说到：虽然是 Restart（重启），但实际却是重新创建了容器；那之前那个还在运行的liveness容器被自动销毁了吗？
+</p>2018-09-26</li><br/><li><span>我来也</span> 👍（4） 💬（2）<p>文章中的代码 dapi-volume.yaml 格式不对,被取消了缩进,导致直接贴出来使用会报错.
+还有按文章中的命令 kubectl create secret generic user --from-file=.&#47;username.txt ,在pod中[ kubectl exec -it test-projected-volume -- &#47;bin&#47;sh]展示的目录不是user,而是username.txt. 可以通过[kubectl edit secrets user]手动修改data:下的字段名.</p>2018-09-26</li><br/><li><span>风行传说</span> 👍（4） 💬（2）<p>老师，我想问一下，您文章里面讲到的pod.spec.volumes.projected.sources下的这四种对象中的configMap secret 和pod.spec.volumes下的configMap secret是否有区别，如果没有区别那为何相同的功能对象要设置在两个不同的对象下面呢？这点让我不是特别理解，希望您能给予一下解答，谢谢！</p>2018-09-26</li><br/><li><span>abc</span> 👍（4） 💬（2）<p>更重要的是，像这样通过挂载方式进入到容器里的 Secret，一旦其对应的 Etcd 里的数据被更新，这些 Volume 里的文件内容，同样也会被更新。
 ———————
-想问一下，secret是可以直接挂载使用的，加个projects volumes的方式有啥好处？是自动更新吗</div>2018-09-26</li><br/><li><span>周娄子</span> 👍（3） 💬（1）<div>podpreset我觉得不要什么情况都用，还是坚持所见即所得。</div>2018-09-27</li><br/><li><span>gogo</span> 👍（2） 💬（1）<div>老师好，请问java web项目的日志输出到分布式存储里面，怎么方便查看保存好的日志呢</div>2018-09-27</li><br/><li><span>Tim Zhang</span> 👍（2） 💬（1）<div>pv是1.11以后？</div>2018-09-26</li><br/><li><span>҉</span> 👍（1） 💬（2）<div>podpreset 支持的参数太少了。
+想问一下，secret是可以直接挂载使用的，加个projects volumes的方式有啥好处？是自动更新吗</p>2018-09-26</li><br/><li><span>周娄子</span> 👍（3） 💬（1）<p>podpreset我觉得不要什么情况都用，还是坚持所见即所得。</p>2018-09-27</li><br/><li><span>gogo</span> 👍（2） 💬（1）<p>老师好，请问java web项目的日志输出到分布式存储里面，怎么方便查看保存好的日志呢</p>2018-09-27</li><br/><li><span>Tim Zhang</span> 👍（2） 💬（1）<p>pv是1.11以后？</p>2018-09-26</li><br/><li><span>҉</span> 👍（1） 💬（2）<p>podpreset 支持的参数太少了。
 
-nodeSelector 、affinity 这种好像都没有。。</div>2019-04-13</li><br/>
+nodeSelector 、affinity 这种好像都没有。。</p>2019-04-13</li><br/>
 </ul>

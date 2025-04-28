@@ -79,11 +79,11 @@ class RootResourceClass implements ResourceRouter.RootResource {
 
 接下来要重构还是继续完成功能，让坏味道再多一点？
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>忘川</span> 👍（0） 💬（0）<div>重构的收益:
+<li><span>忘川</span> 👍（0） 💬（0）<p>重构的收益:
     1. 降低理解难度
     2. 提高复用
     3. 培养对象内聚的感觉 
-所以 重构越早收益越高</div>2023-01-09</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>三角法补充
+所以 重构越早收益越高</p>2023-01-09</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>三角法补充
 1、使用数据驱动进行测试
-2、两个测试不可能使用伪实现同时通过</div>2022-07-25</li><br/>
+2、两个测试不可能使用伪实现同时通过</p>2022-07-25</li><br/>
 </ul>

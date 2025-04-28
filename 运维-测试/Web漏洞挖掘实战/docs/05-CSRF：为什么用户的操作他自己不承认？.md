@@ -331,7 +331,7 @@ POST: <input type = "hidden" name = "csrf_token" value = "value"/>
 
 欢迎在评论区留下你的思考，我们下节课再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>DoHer4S</span> 👍（5） 💬（1）<div>Samesite Cookie 是一种JavaScript技术，因此需要在启用JavaScript的浏览器才可以使用该技术；
+<li><span>DoHer4S</span> 👍（5） 💬（1）<p>Samesite Cookie 是一种JavaScript技术，因此需要在启用JavaScript的浏览器才可以使用该技术；
 
 “双重Cookie” 和 “Samesite Cookie” 都需要在HTTPS应用协议下使用；
 
@@ -360,7 +360,7 @@ Samesite Cookie 和 双重Cookie 两者技术的区别：
   - XSS 如果获取到客户端的Cookie那么就会失效；
   - 无法做到子域隔离
 
-</div>2021-12-27</li><br/><li><span>孜孜</span> 👍（2） 💬（2）<div>下面是我的理解，理论上，在现代浏览器下，cors完全可以防止csrf，因为永远可以校验origin。。但是如果使用img tag浏览器就不会发送origin header(这是html 设计的失误)，这样服务器就没办法知道这是跨域请求，然后在恶意网站在监听img onload事件就可以知道资源是否加载成功。虽然无法拿到非img的数据，但是这样就可以判断用户是否登陆某些网站或者判断用户是否在企业内网etc。。更严重甚至可以利用img标签请求json数据并通过cpu的bug，拿到这个json数据。 这就是为什么在破坏web兼容性的前提下，新加samesite cookies的原因，让跨域请求无法默认带cookies，这样就避免了csrf。</div>2021-12-27</li><br/><li><span>ifelse</span> 👍（1） 💬（0）<div>学习了，将校验进行到底。</div>2023-03-06</li><br/><li><span>E-N</span> 👍（1） 💬（1）<div>老师在 MiTuan 里放的靶机似乎没有安装 nc，无法最终复现漏洞，不过自己搭建一下环境也不麻烦。</div>2022-01-15</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>&lt;script&gt;
+</p>2021-12-27</li><br/><li><span>孜孜</span> 👍（2） 💬（2）<p>下面是我的理解，理论上，在现代浏览器下，cors完全可以防止csrf，因为永远可以校验origin。。但是如果使用img tag浏览器就不会发送origin header(这是html 设计的失误)，这样服务器就没办法知道这是跨域请求，然后在恶意网站在监听img onload事件就可以知道资源是否加载成功。虽然无法拿到非img的数据，但是这样就可以判断用户是否登陆某些网站或者判断用户是否在企业内网etc。。更严重甚至可以利用img标签请求json数据并通过cpu的bug，拿到这个json数据。 这就是为什么在破坏web兼容性的前提下，新加samesite cookies的原因，让跨域请求无法默认带cookies，这样就避免了csrf。</p>2021-12-27</li><br/><li><span>ifelse</span> 👍（1） 💬（0）<p>学习了，将校验进行到底。</p>2023-03-06</li><br/><li><span>E-N</span> 👍（1） 💬（1）<p>老师在 MiTuan 里放的靶机似乎没有安装 nc，无法最终复现漏洞，不过自己搭建一下环境也不麻烦。</p>2022-01-15</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>&lt;script&gt;
     function attack()
     {
         form.email = &quot;attacker@example.com&quot;
@@ -373,5 +373,5 @@ Samesite Cookie 和 双重Cookie 两者技术的区别：
 &lt;&#47;body&gt;
 
 这段攻击代码不是很理解，页面加载函数里form.submit()；
-提交到哪里去?表单在哪里?提交地址在哪里？</div>2023-03-06</li><br/><li><span>人类幼仔</span> 👍（0） 💬（0）<div>请教老师，本域是怎么发生csrf攻击的呢</div>2022-11-08</li><br/><li><span>孤雁独鸣</span> 👍（0） 💬（0）<div>老师有没有h5静态代码扫描疑似漏洞的开源工具呢，要不然漏洞挖掘也不应该一直人肉找</div>2022-02-28</li><br/>
+提交到哪里去?表单在哪里?提交地址在哪里？</p>2023-03-06</li><br/><li><span>人类幼仔</span> 👍（0） 💬（0）<p>请教老师，本域是怎么发生csrf攻击的呢</p>2022-11-08</li><br/><li><span>孤雁独鸣</span> 👍（0） 💬（0）<p>老师有没有h5静态代码扫描疑似漏洞的开源工具呢，要不然漏洞挖掘也不应该一直人肉找</p>2022-02-28</li><br/>
 </ul>

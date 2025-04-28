@@ -196,22 +196,22 @@ react.run("淘宝去年双十一的营业额，可以买多少瓶可乐")
 
 欢迎你在留言区分享自己的思考或疑惑，我们会把精彩内容置顶供大家学习讨论。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>术子米德</span> 👍（0） 💬（3）<div>🤔☕️🤔☕️🤔
+<li><span>术子米德</span> 👍（0） 💬（3）<p>🤔☕️🤔☕️🤔
 【R】TQA = &lt;想&gt;Thought-&lt;问&gt;Question-&lt;答&gt;Answer
 （an evolution of ReACT&lt;Thought&#47;Action&#47;Action Input&#47;Observation&gt;）
 用于：提取不可言说的业务知识、修改用户故事、补充完善验收条件。
 【Q】告诉LLM从哪方面想&lt;Thought&gt;，然后LLM根据上下文、进行推理后会向我发问&lt;Question&gt;，由我来回答&lt;Answer&gt;，再继续来几轮TQA，如此这般嘛？
 如果每轮的Answer由我来回答，那下一轮的Thought是我每次新给出，还是预定义要进行哪几方面的Thought？
-— by 术子米德@2024年4月7日</div>2024-04-08</li><br/><li><span>范飞扬</span> 👍（4） 💬（0）<div>实践出真知，直接用我的代码在本地跑起来～
+— by 术子米德@2024年4月7日</p>2024-04-08</li><br/><li><span>范飞扬</span> 👍（4） 💬（0）<p>实践出真知，直接用我的代码在本地跑起来～
 
 我把老师的方法和 Prompt 做了微调，不需要处理 history 和 Stop Sequence，也不需要手写OutputParser，感觉自己实现还是比较优雅的哈哈~
 
-代码在文章最后~：https:&#47;&#47;mp.weixin.qq.com&#47;s?__biz=Mzg3MDg5MzYyMA==&amp;mid=2247483961&amp;idx=1&amp;sn=792be3eb1c598edd8e256e86359aa398&amp;chksm=ce879362f9f01a74ead04c804e77f9a93e802f51c506cdb6520d641137c4db82576cdccfe255&amp;token=1482009703&amp;lang=zh_CN#rd</div>2024-04-11</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<div>原文：模板中 {context} 表示了业务整体的解决方案。
+代码在文章最后~：https:&#47;&#47;mp.weixin.qq.com&#47;s?__biz=Mzg3MDg5MzYyMA==&amp;mid=2247483961&amp;idx=1&amp;sn=792be3eb1c598edd8e256e86359aa398&amp;chksm=ce879362f9f01a74ead04c804e77f9a93e802f51c506cdb6520d641137c4db82576cdccfe255&amp;token=1482009703&amp;lang=zh_CN#rd</p>2024-04-11</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<p>原文：模板中 {context} 表示了业务整体的解决方案。
 
 这里不准确，根据上一讲[1]， context 不仅包含了整体解决方案，还包含了用户旅程。
 
 
-[1] 12讲的原文：“ 为 LLM 提供整体解决方案和用户旅程作为业务背景说明；”</div>2024-04-14</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<div>思考题：请根据不同的用户故事场景（前台，API），改写 TQA 模板，增加 LLM 反馈的内容。
+[1] 12讲的原文：“ 为 LLM 提供整体解决方案和用户旅程作为业务背景说明；”</p>2024-04-14</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<p>思考题：请根据不同的用户故事场景（前台，API），改写 TQA 模板，增加 LLM 反馈的内容。
 
 首先，这个思考题我就没太搞懂，我是这么理解的：改写TQA模板，使 LLM 返回 API 文档。
 （不知道这样理解对嘛？）
@@ -223,7 +223,7 @@ react.run("淘宝去年双十一的营业额，可以买多少瓶可乐")
 改成 “You are a software engineer expert who is familar with REST and other best practices in API design.”
 
 再把“Scenarios: List all possible scenarios with concrete example in Given&#47;When&#47;Then style”，
-改成“Final Answers: Output the API document using RAML format.”</div>2024-04-11</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>TQA1 TQA2 包装成 bot 在 coze.com 上发布了「搜索路径 Bot Store -&gt; Learning -&gt; TQA」，效果没有直接使用 workflows 好「TQA2 的 bot 只有一轮就结束了， workflows 经过多轮才得出解决方案」
+改成“Final Answers: Output the API document using RAML format.”</p>2024-04-11</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>TQA1 TQA2 包装成 bot 在 coze.com 上发布了「搜索路径 Bot Store -&gt; Learning -&gt; TQA」，效果没有直接使用 workflows 好「TQA2 的 bot 只有一轮就结束了， workflows 经过多轮才得出解决方案」
 
 TQA1 开始数据
 context
@@ -249,7 +249,7 @@ history
 学生如何登录账号来完成学年注册？使用手机号码登录注册
 学生如何查询自己的账号？使用手机号码查询或注册成功后分配到的学号
 学生注册学籍后，是否会收到通知？会收到手机短信通知
-学生如何知道学期注册的期限？30天内完成注册</div>2024-04-06</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>coze 使用 2 个 workflows 半自动实现丐版 TQA
+学生如何知道学期注册的期限？30天内完成注册</p>2024-04-06</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>coze 使用 2 个 workflows 半自动实现丐版 TQA
 
 1. TQA_1：根据 context、story 进行提问
 2. TQA_2：回答 TQA_1 的问题，并将回答手动录入 history，下一轮提问会知道上一轮的问题与答案
@@ -265,5 +265,5 @@ story
 1. 我希望学生可以根据录取通知将学籍注册到教学计划上
 2. 作为学生，我希望登录之后接收到注册的通知，从而我可以不会错过学期注册的期限
 
-TQA_2 中经过多轮循环得到了解决方案</div>2024-04-06</li><br/>
+TQA_2 中经过多轮循环得到了解决方案</p>2024-04-06</li><br/>
 </ul>

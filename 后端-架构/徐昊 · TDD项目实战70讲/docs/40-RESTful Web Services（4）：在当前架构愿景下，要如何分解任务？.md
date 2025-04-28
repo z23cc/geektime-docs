@@ -148,12 +148,12 @@ java {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>枫中的刀剑</span> 👍（3） 💬（0）<div>缺少两个依赖
+<li><span>枫中的刀剑</span> 👍（3） 💬（0）<p>缺少两个依赖
     implementation(&quot;org.slf4j:slf4j-api:2.0.0-alpha7&quot;)
     implementation(&quot;org.slf4j:slf4j-simple:2.0.0-alpha7&quot;)
 不然在视频最后那几个因缺少stub的报错无法出现。
 
-</div>2022-06-18</li><br/><li><span>aoe</span> 👍（1） 💬（0）<div>你是怎么理解任务分解的？
+</p>2022-06-18</li><br/><li><span>aoe</span> 👍（1） 💬（0）<p>你是怎么理解任务分解的？
 
 将抽象的任务不断具体化，直到可以编码实现。
 例如：用户登录是一个抽象的任务。
@@ -161,5 +161,5 @@ java {
 第二步再对上面步骤中的每个任务进行分解，例如：手机短信登陆需要获得手机号码、生成验证码、发送验证码
 以此类推直到消除抽象，实现愿望
 
-代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;4</div>2022-06-17</li><br/>
+代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;4</p>2022-06-17</li><br/>
 </ul>

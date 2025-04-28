@@ -388,17 +388,17 @@ public void deleteStudent(@PathVariable("id") @Range(min = 1,max = 10000) String
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>安迪密恩</span> 👍（7） 💬（0）<div>案例一有个天坑。
+<li><span>安迪密恩</span> 👍（7） 💬（0）<p>案例一有个天坑。
 引入 spring-boot-starter-validation ， 没毛病。
 但是如果同时引入了 javax.validation - validation-api 。
-校验会失效。</div>2022-03-10</li><br/><li><span>bigben</span> 👍（3） 💬（1）<div>如果是List&lt;Phone&gt;怎么加@Valid</div>2022-05-18</li><br/><li><span>小飞同学</span> 👍（3） 💬（2）<div>思考题：解析器是ServletRequestMethodArgumentResolver，验证后发现校验并没有生效。因为里面没有相关的校验方法，需要在类上面增加@Validated才能做一个增强
+校验会失效。</p>2022-03-10</li><br/><li><span>bigben</span> 👍（3） 💬（1）<p>如果是List&lt;Phone&gt;怎么加@Valid</p>2022-05-18</li><br/><li><span>小飞同学</span> 👍（3） 💬（2）<p>思考题：解析器是ServletRequestMethodArgumentResolver，验证后发现校验并没有生效。因为里面没有相关的校验方法，需要在类上面增加@Validated才能做一个增强
 
 另外问一个小问题：老师怎么通过注解找到相关的实现类的，非常好奇。@Size 找到 SizeValidatorForCharSequence#isValid
 
-</div>2021-05-19</li><br/><li><span>慎独明强</span> 👍（2） 💬（0）<div>今天讲的两个案例亲身经历过，特别是级联检验时，因为没有加注解导致未检验。面向百度开发去了，汗颜 没有去面向源码深入研究为什么需要加注解才能级联检验</div>2021-05-31</li><br/><li><span>路在哪</span> 👍（1） 💬（0）<div>思考题：负责解析Id的参数解析器是：PathVariableMethodArgumentResolver，然后校验参数的解析器是：ServletRequestMethodArgumentResolver，该解析器在DispatcherServlet#processDispatchResult方法中得到并校验参数</div>2022-12-14</li><br/><li><span>唐国强</span> 👍（1） 💬（0）<div>很多问题真的是没有仔细学习文档挖的坑，反而浪费了时间</div>2022-01-12</li><br/><li><span>Monday</span> 👍（1） 💬（1）<div>思考题：解析器为 org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver，触发debug了半天没找着。</div>2021-07-10</li><br/><li><span>X</span> 👍（0） 💬（0）<div>org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver
+</p>2021-05-19</li><br/><li><span>慎独明强</span> 👍（2） 💬（0）<p>今天讲的两个案例亲身经历过，特别是级联检验时，因为没有加注解导致未检验。面向百度开发去了，汗颜 没有去面向源码深入研究为什么需要加注解才能级联检验</p>2021-05-31</li><br/><li><span>路在哪</span> 👍（1） 💬（0）<p>思考题：负责解析Id的参数解析器是：PathVariableMethodArgumentResolver，然后校验参数的解析器是：ServletRequestMethodArgumentResolver，该解析器在DispatcherServlet#processDispatchResult方法中得到并校验参数</p>2022-12-14</li><br/><li><span>唐国强</span> 👍（1） 💬（0）<p>很多问题真的是没有仔细学习文档挖的坑，反而浪费了时间</p>2022-01-12</li><br/><li><span>Monday</span> 👍（1） 💬（1）<p>思考题：解析器为 org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver，触发debug了半天没找着。</p>2021-07-10</li><br/><li><span>X</span> 👍（0） 💬（0）<p>org.springframework.web.servlet.mvc.method.annotation.PathVariableMethodArgumentResolver
 
 cglib代理校验
-org.springframework.validation.beanvalidation.MethodValidationInterceptor</div>2023-07-18</li><br/><li><span>路在哪</span> 👍（0） 💬（0）<div>负责解析ID值的参数解析器是：PathVariableMethodArgumentResolver  负责校验ID的解析器是：ServletRequestMethodArgumentResolver</div>2022-12-14</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（0）<div>打卡，完成本节课程</div>2022-02-07</li><br/><li><span>杨宇</span> 👍（0） 💬（0）<div>@Validated 支持分组 groups，使用起来更加灵活。</div>2021-12-28</li><br/><li><span>一记妙蛙直拳</span> 👍（0） 💬（2）<div>老师：案例一的问题修正并没有解决问题，虽然进入了校验判断，但是遍历Validator时getValidators()集合为空，校验操作并未执行
+org.springframework.validation.beanvalidation.MethodValidationInterceptor</p>2023-07-18</li><br/><li><span>路在哪</span> 👍（0） 💬（0）<p>负责解析ID值的参数解析器是：PathVariableMethodArgumentResolver  负责校验ID的解析器是：ServletRequestMethodArgumentResolver</p>2022-12-14</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（0）<p>打卡，完成本节课程</p>2022-02-07</li><br/><li><span>杨宇</span> 👍（0） 💬（0）<p>@Validated 支持分组 groups，使用起来更加灵活。</p>2021-12-28</li><br/><li><span>一记妙蛙直拳</span> 👍（0） 💬（2）<p>老师：案例一的问题修正并没有解决问题，虽然进入了校验判断，但是遍历Validator时getValidators()集合为空，校验操作并未执行
 protected void validateIfApplicable(WebDataBinder binder, MethodParameter parameter) {
    Annotation[] annotations = parameter.getParameterAnnotations();
    for (Annotation ann : annotations) {
@@ -427,5 +427,5 @@ public void validate(Object... validationHints) {
 				validator.validate(target, bindingResult);
 			}
 		}
-}</div>2021-05-19</li><br/>
+}</p>2021-05-19</li><br/>
 </ul>

@@ -234,7 +234,7 @@ void updateLFU(robj *val) {
 
 LFU算法在初始化键值对的访问次数时，会将访问次数设置为LFU\_INIT\_VAL，它的默认值是5次。那么，你能结合这节课介绍的代码，说说如果LFU\_INIT\_VAL设置为1，会发生什么情况吗？
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Kaito</span> 👍（39） 💬（0）<div>1、LFU 是在 Redis 4.0 新增的淘汰策略，它涉及的巧妙之处在于，其复用了 redisObject 结构的 lru 字段，把这个字段「一分为二」，保存最后访问时间和访问次数
+<li><span>Kaito</span> 👍（39） 💬（0）<p>1、LFU 是在 Redis 4.0 新增的淘汰策略，它涉及的巧妙之处在于，其复用了 redisObject 结构的 lru 字段，把这个字段「一分为二」，保存最后访问时间和访问次数
 
 2、key 的访问次数不能只增不减，它需要根据时间间隔来做衰减，才能达到 LFU 的目的
 
@@ -250,7 +250,7 @@ LFU算法在初始化键值对的访问次数时，会将访问次数设置为LF
 
 如果开启了 LFU，那在写入一个新 key 时，需要初始化访问时间、访问次数（createObject 函数），如果访问次数初始值太小，那这些新 key 的访问次数，很有可能在短时间内就被「衰减」为 0，那就会面临马上被淘汰的风险。
 
-新 key 初始访问次数 LFU_INIT_VAL = 5，就是为了避免一个 key 在创建后，不会面临被立即淘汰的情况发生。</div>2021-08-31</li><br/><li><span>曾轼麟</span> 👍（11） 💬（0）<div>回答老师的问题：
+新 key 初始访问次数 LFU_INIT_VAL = 5，就是为了避免一个 key 在创建后，不会面临被立即淘汰的情况发生。</p>2021-08-31</li><br/><li><span>曾轼麟</span> 👍（11） 💬（0）<p>回答老师的问题：
 LFU_INIT_VAL的初始值为5主要是避免，刚刚创建的对象被立马淘汰，而需要经历一个衰减的过程后才会被淘汰。
 
 LFU算法和LRU算法的不同就是，存粹的LFU算法会累计历史的访问次数，然而在高QPS的情况下可能会出现以下几个问题：
@@ -262,7 +262,7 @@ LFU算法和LRU算法的不同就是，存粹的LFU算法会累计历史的访�
     1、count有上限值255。（避免高频数据获得一个较大的count值，还能节省空间）
     2、count值是会随着时间衰减。(不再访问的数据更加容易被淘汰，高16位记录上一次访问时间戳-分钟，低8位记录count)
     3、刚刚创建的数据count值不为0。（避免刚刚创建的数据被淘汰） 
-    4、count值累加是概率随机的。（避免高峰期数据都能一下就能累加到255，其中概率能人为调整）</div>2021-09-07</li><br/><li><span>可怜大灰狼</span> 👍（7） 💬（0）<div>uint8_t LFULogIncr(uint8_t counter) {
+    4、count值累加是概率随机的。（避免高峰期数据都能一下就能累加到255，其中概率能人为调整）</p>2021-09-07</li><br/><li><span>可怜大灰狼</span> 👍（7） 💬（0）<p>uint8_t LFULogIncr(uint8_t counter) {
     if (counter == 255) return 255;
     double r = (double)rand()&#47;RAND_MAX;
     double baseval = counter - LFU_INIT_VAL;
@@ -271,8 +271,8 @@ LFU算法和LRU算法的不同就是，存粹的LFU算法会累计历史的访�
     if (r &lt; p) counter++;
     return counter;
 }
-通过源码可以发现：如果LFU_INIT_VAL太小，会导致baseval变大，从而导致p变小，导致counter加1比较困难。结果就是很容易导致刚set进去的数据，很快就会被淘汰。</div>2021-08-31</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<div>回答一下课后问题。如果LFU_INIT_VAL设置为1。会有两方面影响
+通过源码可以发现：如果LFU_INIT_VAL太小，会导致baseval变大，从而导致p变小，导致counter加1比较困难。结果就是很容易导致刚set进去的数据，很快就会被淘汰。</p>2021-08-31</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<p>回答一下课后问题。如果LFU_INIT_VAL设置为1。会有两方面影响
 1、数据访问次数的增加概率会变大，导致很多数据都会达到255这个值，最终导致不容易淘汰数据
-2、新创建出来的数据，访问频率过小。很容易刚刚创建就被淘汰</div>2023-11-14</li><br/><li><span>飞鱼</span> 👍（0） 💬（0）<div>提问：上一节中，哪里有说在实际淘汰数据的时候更新 redisObject对象中的 lru变量的值，只看到了 创建 和 访问更新 这2种情况会更新 lru变量值。</div>2022-09-27</li><br/><li><span>leetcode</span> 👍（0） 💬（1）<div>redis6.0以后server.c文件中都没有lookupKey函数了呀</div>2022-01-11</li><br/><li><span>或许</span> 👍（0） 💬（0）<div>第一张图里面，lookupKey函数是在db.c里面，老师这里是不是有问题啊？</div>2021-11-30</li><br/><li><span>Geek_197c21</span> 👍（0） 💬（2）<div>如果 LFU_INIT_VAL 设置为 1，那么容易一个key刚刚被set进去就被删除。
-麻烦问下老师，如果lfu算法要替换成lru算法的话，那么怎么处理呢？将key都对 255-次数呢？或者啥都不管，继续运行呢</div>2021-08-31</li><br/>
+2、新创建出来的数据，访问频率过小。很容易刚刚创建就被淘汰</p>2023-11-14</li><br/><li><span>飞鱼</span> 👍（0） 💬（0）<p>提问：上一节中，哪里有说在实际淘汰数据的时候更新 redisObject对象中的 lru变量的值，只看到了 创建 和 访问更新 这2种情况会更新 lru变量值。</p>2022-09-27</li><br/><li><span>leetcode</span> 👍（0） 💬（1）<p>redis6.0以后server.c文件中都没有lookupKey函数了呀</p>2022-01-11</li><br/><li><span>或许</span> 👍（0） 💬（0）<p>第一张图里面，lookupKey函数是在db.c里面，老师这里是不是有问题啊？</p>2021-11-30</li><br/><li><span>Geek_197c21</span> 👍（0） 💬（2）<p>如果 LFU_INIT_VAL 设置为 1，那么容易一个key刚刚被set进去就被删除。
+麻烦问下老师，如果lfu算法要替换成lru算法的话，那么怎么处理呢？将key都对 255-次数呢？或者啥都不管，继续运行呢</p>2021-08-31</li><br/>
 </ul>

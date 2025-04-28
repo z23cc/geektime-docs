@@ -286,7 +286,7 @@ function getX(o){
 2. 介绍V8基于推理的优化机制：[An Introduction to Speculative Optimization in V8](https://ponyfoo.com/articles/an-introduction-to-speculative-optimization-in-v8)
 3. 对Ignition字节码做优化的论文：[Register equivalence optimization](https://docs.google.com/document/d/1wW_VkkIwhAAgAxLYM0wvoTEkq8XykibDIikGpWH7l1I/edit?ts=570d7131#heading=h.6jz9dj3bnr8t)，我在GitHub上也放了一份[拷贝](https://github.com/RichardGong/CompilersInPractice/blob/master/v8/Ignition_%20Register%20Equivalence%20Optimization.pdf)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>coder</span> 👍（7） 💬（2）<div>请教龚老师一个私人问题，龚老师作为自己公司的CEO，通常理解应该是比较忙的，您是如何规划自己的时间的，还有时间在极客时间写专栏？👍👍👍</div>2020-07-29</li><br/><li><span>维李设论</span> 👍（0） 💬（1）<div>宫老师，对于 0 &amp;&amp; 1 === null; 这个语句，后边的===是否走了呢？从运算符优先级上来说，应该先处理===再处理&amp;&amp;，但是对于0 &amp;&amp; 这样开头的语句，V8的Ignition是否会先优化掉直接处理吗？不需要再读取后边的内容呢？谢谢</div>2020-10-12</li><br/><li><span>myrfy</span> 👍（2） 💬（0）<div>python里的字典初始化语法和js类似，也可以用隐藏类
+<li><span>coder</span> 👍（7） 💬（2）<p>请教龚老师一个私人问题，龚老师作为自己公司的CEO，通常理解应该是比较忙的，您是如何规划自己的时间的，还有时间在极客时间写专栏？👍👍👍</p>2020-07-29</li><br/><li><span>维李设论</span> 👍（0） 💬（1）<p>宫老师，对于 0 &amp;&amp; 1 === null; 这个语句，后边的===是否走了呢？从运算符优先级上来说，应该先处理===再处理&amp;&amp;，但是对于0 &amp;&amp; 这样开头的语句，V8的Ignition是否会先优化掉直接处理吗？不需要再读取后边的内容呢？谢谢</p>2020-10-12</li><br/><li><span>myrfy</span> 👍（2） 💬（0）<p>python里的字典初始化语法和js类似，也可以用隐藏类
 因为同样是动态语言，也可以基于统计特征推断类型然后做jit优化。另外python有一个强类型约束的子集，叫RPython，没记错的话pypy解释器就是用rpython写的。另外也可以借鉴Cython为类似python的语法加类型注解，从而帮助编译器推断类型。
-指针压缩好像不太适合，因为Python的一大特点就是作为胶水语言，很多高性能的工作都是第三方c库实现的，c-ffi调用很频繁，所以采用大家通用的指针表达方式会好一些</div>2020-07-20</li><br/>
+指针压缩好像不太适合，因为Python的一大特点就是作为胶水语言，很多高性能的工作都是第三方c库实现的，c-ffi调用很频繁，所以采用大家通用的指针表达方式会好一些</p>2020-07-20</li><br/>
 </ul>

@@ -133,17 +133,17 @@ java -Xmx2048m -Xss256k -verbosegc -Xlog:gc*,gc+ref=debug,gc+heap=debug,gc+age=t
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>新世界</span> 👍（30） 💬（3）<div>设置过大，回收频率会降低，导致单次回收时间过长，因为需要回收的对象更多，导致GC stop the world时间过长，卡顿明显，导致请求无法及时处理</div>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（14） 💬（5）<div>李老师好!感觉老师今天偷懒了，CMS负责老年代回收，年轻代一般配合parNew使用。
+<li><span>新世界</span> 👍（30） 💬（3）<p>设置过大，回收频率会降低，导致单次回收时间过长，因为需要回收的对象更多，导致GC stop the world时间过长，卡顿明显，导致请求无法及时处理</p>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（14） 💬（5）<p>李老师好!感觉老师今天偷懒了，CMS负责老年代回收，年轻代一般配合parNew使用。
 大概啥情况下使用G1比较好啊?之前看见网上说，大堆多核，jdk9以及以上可以使用G1，jdk8的话除非cms满足不了需求不然不建议使用G1。
 G1不太了解老师能推荐下资料么?
-我觉得工具，可以提高效率，初学者优先搞清楚原理扎实基础比较好。</div>2019-07-30</li><br/><li><span>弃</span> 👍（2） 💬（1）<div>老师，我想问个问题:在docker中运行的springboot(使用默认的tomcat容器)，如何查看tomcat的gc日志?</div>2019-07-30</li><br/><li><span>Wyatt</span> 👍（1） 💬（2）<div>
+我觉得工具，可以提高效率，初学者优先搞清楚原理扎实基础比较好。</p>2019-07-30</li><br/><li><span>弃</span> 👍（2） 💬（1）<p>老师，我想问个问题:在docker中运行的springboot(使用默认的tomcat容器)，如何查看tomcat的gc日志?</p>2019-07-30</li><br/><li><span>Wyatt</span> 👍（1） 💬（2）<p>
 执行命令：java -Xmx2048m -Xss256k -verbosegc -Xlog:gc*,gc+ref=debug,gc+heap=debug,gc+age=trace:file=gc-%p-%t.log:tags,uptime,time,level:filecount=2,filesize=100m -jar target&#47;demo-0.0.1-SNAPSHOT.jar
 java -Xmx2048m -Xss256k -verbosegc -Xlog:gc*,gc+ref=debug,gc+heap=debug,gc+age=trace:file=gc-%p-%t.log:tags,uptime,time,level:filecount=2,filesize=100m -jar target&#47;demo-0.0.1-SNAPSHOT.jar
 报错：
 Unrecognized option: -Xlog:gc*,gc+ref=debug,gc+heap=debug,gc+age=trace:file=gc-%p-%t.log:tags,uptime,time,level:filecount=2,filesize=100m
-</div>2019-08-01</li><br/><li><span>锦</span> 👍（0） 💬（3）<div>对于CMS来说，设置很大的堆内存，在导致单次STW时间长，会导致服务不可用，定时器出问题？对响应敏感的系统来说不太友好，但堆内存设置太小又会导致频道GC，所以需要综合评估。那么如何使用超大机器内存呢？可以使用集群方式部署，单个应用设置较小的堆内存。
+</p>2019-08-01</li><br/><li><span>锦</span> 👍（0） 💬（3）<p>对于CMS来说，设置很大的堆内存，在导致单次STW时间长，会导致服务不可用，定时器出问题？对响应敏感的系统来说不太友好，但堆内存设置太小又会导致频道GC，所以需要综合评估。那么如何使用超大机器内存呢？可以使用集群方式部署，单个应用设置较小的堆内存。
 对于G1来说，文中有提到可以设置较大内存，因为G1是局部收集，但极端情况下，区域之间的对象引用关系非常多，也会导致大面积回收，STW时间会较长。
-目前Java8使用CMS的较多，那么G1普及可能还需要时间吗？</div>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（45） 💬（0）<div>年轻代设置过大:
+目前Java8使用CMS的较多，那么G1普及可能还需要时间吗？</p>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（45） 💬（0）<p>年轻代设置过大:
 1.生命周期长的对象会长时间停留在年轻代，在S0和S1来回复制，增加复制开销。
 2.年轻代太大会增加YGC每次停顿的时间，不过通过根节点遍历，OopMap，old scan等优化手段这一部分的开销其实比较少。
 3.浪费内存。内存也是钱啊虽然现在租的很便宜
@@ -152,10 +152,10 @@ Unrecognized option: -Xlog:gc*,gc+ref=debug,gc+heap=debug,gc+age=trace:file=gc-%
 2.单次FGC时间变长，如果在夜深人静的时候主动触发FGC内啥影响，如果白天业务繁忙的时候就凉凉
 3.增加YGC的时间，old scan阶段会扫描老年代，而且这个阶段耗时在YGC总比重很大。
 
-最好别让太多老年代对象引用年轻代对象，这个坑很痛。</div>2019-07-30</li><br/><li><span>业余草</span> 👍（6） 💬（0）<div>需要实际操作一遍，光看是记不住的，过一段时间就忘记了。</div>2019-07-30</li><br/><li><span>nightmare</span> 👍（5） 💬（0）<div>分情况，如果是G1大年轻代和大老年代没什么问题    如果是cms parnew的话  也需要看情况  如果你的并发比较大并且很快占满eden区  或者 用jstat监控 supervisor区占比一直高于百分之70这个时候 这个时候加大新生代就没有什么问题   如果要很久才占满eden区 或者supervisor区占比比较小 这个时候就要把 新生代 设置小一点 减少新生代回收时间            老年代也要看年轻代晋升到老年代平均占多大  如果晋升很快并且对象占比较大 大一点没问题  否则就需要减少老年代</div>2019-07-30</li><br/><li><span>QQ怪</span> 👍（3） 💬（0）<div>设置过大回收频率降低，单次回收的对象量大，回收stw时间过长，设置大也不好，过小也不好，设置适合的才是最好的</div>2019-07-30</li><br/><li><span>James</span> 👍（1） 💬（0）<div>一句话：纸上谈兵终觉浅 绝知此事要躬行</div>2021-03-27</li><br/><li><span>maybe</span> 👍（1） 💬（0）<div>1、cms把堆分为老年代、年轻代。年轻代又细分为幸存区和伊甸园。对象创建在伊甸园，发生一次ygc后如果有幸存对象就移到幸存区。如果多次ygc后还存活的对象就移到老年代。老年代空间不足会发生fullgc。g1大部分回收工作都是可并行，这期间不会出现stop the world。g1不像cms分老年代和年轻代，而是分为一个个小区域，默认2m大小，这样就可以更小范围的进行垃圾回收。减少垃圾回收的时间。
+最好别让太多老年代对象引用年轻代对象，这个坑很痛。</p>2019-07-30</li><br/><li><span>业余草</span> 👍（6） 💬（0）<p>需要实际操作一遍，光看是记不住的，过一段时间就忘记了。</p>2019-07-30</li><br/><li><span>nightmare</span> 👍（5） 💬（0）<p>分情况，如果是G1大年轻代和大老年代没什么问题    如果是cms parnew的话  也需要看情况  如果你的并发比较大并且很快占满eden区  或者 用jstat监控 supervisor区占比一直高于百分之70这个时候 这个时候加大新生代就没有什么问题   如果要很久才占满eden区 或者supervisor区占比比较小 这个时候就要把 新生代 设置小一点 减少新生代回收时间            老年代也要看年轻代晋升到老年代平均占多大  如果晋升很快并且对象占比较大 大一点没问题  否则就需要减少老年代</p>2019-07-30</li><br/><li><span>QQ怪</span> 👍（3） 💬（0）<p>设置过大回收频率降低，单次回收的对象量大，回收stw时间过长，设置大也不好，过小也不好，设置适合的才是最好的</p>2019-07-30</li><br/><li><span>James</span> 👍（1） 💬（0）<p>一句话：纸上谈兵终觉浅 绝知此事要躬行</p>2021-03-27</li><br/><li><span>maybe</span> 👍（1） 💬（0）<p>1、cms把堆分为老年代、年轻代。年轻代又细分为幸存区和伊甸园。对象创建在伊甸园，发生一次ygc后如果有幸存对象就移到幸存区。如果多次ygc后还存活的对象就移到老年代。老年代空间不足会发生fullgc。g1大部分回收工作都是可并行，这期间不会出现stop the world。g1不像cms分老年代和年轻代，而是分为一个个小区域，默认2m大小，这样就可以更小范围的进行垃圾回收。减少垃圾回收的时间。
 2、cms调优需要根据需求划分好老年代和年轻代大小。
 g1比较职能一般设置下堆大小就行。
-3、课后思考：如果分配很大，一次垃圾回收需要的时间很会比较长，影响应用相应时间。还有浪费内存空间。</div>2020-08-17</li><br/><li><span>小唐</span> 👍（1） 💬（0）<div>老师可以把code分享到github吗？我想自己执行一遍加深印象，这样我们就不用自己配置了，多谢老师！</div>2019-08-13</li><br/><li><span>月如钩</span> 👍（1） 💬（0）<div>实操很重要呀，朋友们，纸上谈兵很容易忘</div>2019-08-01</li><br/><li><span>615</span> 👍（0） 💬（0）<div>JDK8 运行参数：
+3、课后思考：如果分配很大，一次垃圾回收需要的时间很会比较长，影响应用相应时间。还有浪费内存空间。</p>2020-08-17</li><br/><li><span>小唐</span> 👍（1） 💬（0）<p>老师可以把code分享到github吗？我想自己执行一遍加深印象，这样我们就不用自己配置了，多谢老师！</p>2019-08-13</li><br/><li><span>月如钩</span> 👍（1） 💬（0）<p>实操很重要呀，朋友们，纸上谈兵很容易忘</p>2019-08-01</li><br/><li><span>615</span> 👍（0） 💬（0）<p>JDK8 运行参数：
 
 -Xmx2048m
 -Xss256k
@@ -163,5 +163,5 @@ g1比较职能一般设置下堆大小就行。
 -XX:+PrintGCDateStamps
 -XX:+PrintGCDetails
 
-Refer: https:&#47;&#47;docs.oracle.com&#47;javase&#47;8&#47;docs&#47;technotes&#47;tools&#47;windows&#47;java.html</div>2023-04-14</li><br/><li><span>Geek_88463d</span> 👍（0） 💬（0）<div>这个标题配图有意思，哈哈哈哈</div>2020-12-19</li><br/>
+Refer: https:&#47;&#47;docs.oracle.com&#47;javase&#47;8&#47;docs&#47;technotes&#47;tools&#47;windows&#47;java.html</p>2023-04-14</li><br/><li><span>Geek_88463d</span> 👍（0） 💬（0）<p>这个标题配图有意思，哈哈哈哈</p>2020-12-19</li><br/>
 </ul>

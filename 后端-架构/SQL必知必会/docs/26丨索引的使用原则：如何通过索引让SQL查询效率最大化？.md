@@ -315,23 +315,23 @@ SELECT comment_id, comment_text, comment_time FROM product_comment WHERE DATE(co
 
 欢迎你在评论区写下你的答案，也欢迎把这篇文章分享给你的朋友或者同事，一起来交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>wusiration</span> 👍（52） 💬（9）<div>索引失效，因为使用了date函数。改成SELECT comment_id, comment_text, comment_time FROM product_comment WHERE comment_time BETWEEN DATE(&#39;2018-10-01 10:00:00&#39;) AND DATE(&#39;2018-10-02 10:00:00&#39;)
-</div>2019-08-09</li><br/><li><span>Yuhui</span> 👍（37） 💬（1）<div>老师您好！请教一下如何查找“不经常使用的“索引呢？谢谢！</div>2019-09-19</li><br/><li><span>佚花</span> 👍（8） 💬（1）<div>关于like. 
+<li><span>wusiration</span> 👍（52） 💬（9）<p>索引失效，因为使用了date函数。改成SELECT comment_id, comment_text, comment_time FROM product_comment WHERE comment_time BETWEEN DATE(&#39;2018-10-01 10:00:00&#39;) AND DATE(&#39;2018-10-02 10:00:00&#39;)
+</p>2019-08-09</li><br/><li><span>Yuhui</span> 👍（37） 💬（1）<p>老师您好！请教一下如何查找“不经常使用的“索引呢？谢谢！</p>2019-09-19</li><br/><li><span>佚花</span> 👍（8） 💬（1）<p>关于like. 
 %在左边，即使有索引，也会失效.
-只有当%在右边时，才会生效</div>2019-08-21</li><br/><li><span>haer</span> 👍（7） 💬（1）<div>索引失效，因为使用了date函数</div>2019-08-09</li><br/><li><span>Vackine</span> 👍（5） 💬（1）<div>关于关系型数据库模型介绍的论文，老师有推荐的么✨</div>2019-08-09</li><br/><li><span>加载中……</span> 👍（4） 💬（1）<div>老师好，请教个问题，有没有经验数据，在索引区分度低于“某个值”(80%)的时候，就不适合在这个列上建立索引了？</div>2019-08-30</li><br/><li><span>Goal</span> 👍（4） 💬（1）<div>老师，今天文章中的“product_comment”表结构和数据，是从哪里导入的呢？
+只有当%在右边时，才会生效</p>2019-08-21</li><br/><li><span>haer</span> 👍（7） 💬（1）<p>索引失效，因为使用了date函数</p>2019-08-09</li><br/><li><span>Vackine</span> 👍（5） 💬（1）<p>关于关系型数据库模型介绍的论文，老师有推荐的么✨</p>2019-08-09</li><br/><li><span>加载中……</span> 👍（4） 💬（1）<p>老师好，请教个问题，有没有经验数据，在索引区分度低于“某个值”(80%)的时候，就不适合在这个列上建立索引了？</p>2019-08-30</li><br/><li><span>Goal</span> 👍（4） 💬（1）<p>老师，今天文章中的“product_comment”表结构和数据，是从哪里导入的呢？
 
-个人感觉，本课程用到的所有表都可以放到一个统一的地方，比如之前的 GitHub上面，方便我们统一下载。</div>2019-08-13</li><br/><li><span>ABC</span> 👍（4） 💬（1）<div>索引会失效，因为使用了date函数。
+个人感觉，本课程用到的所有表都可以放到一个统一的地方，比如之前的 GitHub上面，方便我们统一下载。</p>2019-08-13</li><br/><li><span>ABC</span> 👍（4） 💬（1）<p>索引会失效，因为使用了date函数。
 
 如果修改的话，可以用between和and，对查询条件进行转换。
 
 例如:currtime between date(&#39;2018-01-10 10:00:00) and date(&#39;2018-02-10 12:00:00&#39;) 
 
-手机回复，没有实际运行，如有错误请老师指正，谢谢</div>2019-08-09</li><br/><li><span>rike</span> 👍（3） 💬（3）<div>“按照 user_id 进行评论分组，同时按照评论时间降序的方式进行排序”，执行对应的sql后，报错。望大神验证一下，不要误导付费学习的读者。</div>2019-12-27</li><br/><li><span>抢小孩子糖吃</span> 👍（3） 💬（1）<div>老师 如果我们给女儿国的性别加上了索引   我们查看男性的话会快很多 
+手机回复，没有实际运行，如有错误请老师指正，谢谢</p>2019-08-09</li><br/><li><span>rike</span> 👍（3） 💬（3）<p>“按照 user_id 进行评论分组，同时按照评论时间降序的方式进行排序”，执行对应的sql后，报错。望大神验证一下，不要误导付费学习的读者。</p>2019-12-27</li><br/><li><span>抢小孩子糖吃</span> 👍（3） 💬（1）<p>老师 如果我们给女儿国的性别加上了索引   我们查看男性的话会快很多 
 但如果我们有时需要查看男性 有时需要查看女性 还适合在性别上建索引吗  
-查看女性的时候优化器会选择用这个索引找数据吗</div>2019-11-23</li><br/><li><span>Geek_Wison</span> 👍（3） 💬（2）<div>老师您好，本节的内容我有个疑惑的地方：创建联合索引(comment_time, user_id)，但是查询语句是先GROUP BY，然后再ORDER BY，那这样子的话，这个联合索引不是应该不符合最左侧原则而失效了吗？</div>2019-08-09</li><br/><li><span>niemo</span> 👍（3） 💬（1）<div>老师 您好，sql条件执行顺序不是从右到左么？所有在使用联合索引的时候，把最左的索引写在where条件的最右边，这样理解对么？</div>2019-08-09</li><br/><li><span>Ronnyz</span> 👍（2） 💬（1）<div>作业：
+查看女性的时候优化器会选择用这个索引找数据吗</p>2019-11-23</li><br/><li><span>Geek_Wison</span> 👍（3） 💬（2）<p>老师您好，本节的内容我有个疑惑的地方：创建联合索引(comment_time, user_id)，但是查询语句是先GROUP BY，然后再ORDER BY，那这样子的话，这个联合索引不是应该不符合最左侧原则而失效了吗？</p>2019-08-09</li><br/><li><span>niemo</span> 👍（3） 💬（1）<p>老师 您好，sql条件执行顺序不是从右到左么？所有在使用联合索引的时候，把最左的索引写在where条件的最右边，这样理解对么？</p>2019-08-09</li><br/><li><span>Ronnyz</span> 👍（2） 💬（1）<p>作业：
 对comment_time使用了函数，索引失效
 SELECT comment_id, comment_text, comment_time FROM product_comment WHERE comment_time BETWEEN DATE(&#39;2018-10-01 10:00:00&#39;) AND DATE(&#39;2018-10-02 10:00:00&#39;);
 
-2888 rows in set (1.60 sec)</div>2019-08-09</li><br/><li><span>卡布</span> 👍（1） 💬（1）<div>KLOOK校招面试的时候就问了索引，那时候对索引一概不通，这回得在专栏补回来。</div>2019-12-04</li><br/><li><span>melon</span> 👍（1） 💬（1）<div>老师 为什么group by   后的列要加索引呢？
-</div>2019-08-13</li><br/>
+2888 rows in set (1.60 sec)</p>2019-08-09</li><br/><li><span>卡布</span> 👍（1） 💬（1）<p>KLOOK校招面试的时候就问了索引，那时候对索引一概不通，这回得在专栏补回来。</p>2019-12-04</li><br/><li><span>melon</span> 👍（1） 💬（1）<p>老师 为什么group by   后的列要加索引呢？
+</p>2019-08-13</li><br/>
 </ul>

@@ -301,9 +301,9 @@ ControlNet一共训练了8个不同的模型，除了上面3个之外，还包�
 
 如果你对ControlNet是如何训练出来的感兴趣，那么不妨去读一下它的[论文](https://arxiv.org/abs/2302.05543)。了解一下它是如何做到控制Stable Diffusion的输出结果的。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>wd</span> 👍（0） 💬（0）<div>这一讲里用到的 xformers 模块不支持 Mac，只能在 Windows 和 Linux 环境运行。参见这个讨论：https:&#47;&#47;github.com&#47;facebookresearch&#47;xformers&#47;issues&#47;740#issuecomment-1594080277
+<li><span>wd</span> 👍（0） 💬（0）<p>这一讲里用到的 xformers 模块不支持 Mac，只能在 Windows 和 Linux 环境运行。参见这个讨论：https:&#47;&#47;github.com&#47;facebookresearch&#47;xformers&#47;issues&#47;740#issuecomment-1594080277
 
-老师是不是可以在文章开头给出一些警告？</div>2023-06-20</li><br/><li><span>Toni</span> 👍（3） 💬（4）<div>利用 cv2 对图片边缘检测的功能，妥妥地将书法图变成了拓片图。再加上 Stable Diffusion 1.5 模型，pipeline 出来意想不到的铜版雕刻。
+老师是不是可以在文章开头给出一些警告？</p>2023-06-20</li><br/><li><span>Toni</span> 👍（3） 💬（4）<p>利用 cv2 对图片边缘检测的功能，妥妥地将书法图变成了拓片图。再加上 Stable Diffusion 1.5 模型，pipeline 出来意想不到的铜版雕刻。
 
 1. 书法图片变拓片
 
@@ -342,6 +342,6 @@ draw_image_grids(output.images, 2, 2)
 用 Scarlett Johanssona ... 生成的铜版字最清晰，字体突起明显。用不同的提示词，会有不同的展现。
 AI 千变万化，无限可能。这里只是沧海一粟。
 
-什么模型能够拆解中文字体的笔画顺序? 利用这类模型就有可能AI视频书法写起来。</div>2023-05-09</li><br/><li><span>马听</span> 👍（0） 💬（1）<div>image_file = &quot;https:&#47;&#47;hf.co&#47;datasets&#47;huggingface&#47;documentation-images&#47;resolve&#47;main&#47;diffusers&#47;input_image_vermeer.png&quot;original_image = load_image(image_file)
-这一行代码有误，多了original_image = load_image(image_file)</div>2023-05-08</li><br/><li><span>caicongyang</span> 👍（0） 💬（0）<div>买了很久才看到这篇，徐老师很用心</div>2024-12-27</li><br/><li><span>红烧肉</span> 👍（0） 💬（0）<div>有输出一段话，可以同时生成多张图嘛</div>2024-03-16</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<div>老师很奇怪自己找的图片则不可以生成骨骼图为什么呢？</div>2023-12-03</li><br/><li><span>Eric.Sui</span> 👍（0） 💬（0）<div>敬仰，老师方便加V吗？</div>2023-06-29</li><br/><li><span>神毓逍遥</span> 👍（0） 💬（0）<div>哈哈哈</div>2023-06-26</li><br/><li><span>Viktor</span> 👍（0） 💬（3）<div>这个技术的出现，被很多骗子利用，用来生成各种图片用来注册那些需要真人照片的网站。</div>2023-05-08</li><br/>
+什么模型能够拆解中文字体的笔画顺序? 利用这类模型就有可能AI视频书法写起来。</p>2023-05-09</li><br/><li><span>马听</span> 👍（0） 💬（1）<p>image_file = &quot;https:&#47;&#47;hf.co&#47;datasets&#47;huggingface&#47;documentation-images&#47;resolve&#47;main&#47;diffusers&#47;input_image_vermeer.png&quot;original_image = load_image(image_file)
+这一行代码有误，多了original_image = load_image(image_file)</p>2023-05-08</li><br/><li><span>caicongyang</span> 👍（0） 💬（0）<p>买了很久才看到这篇，徐老师很用心</p>2024-12-27</li><br/><li><span>红烧肉</span> 👍（0） 💬（0）<p>有输出一段话，可以同时生成多张图嘛</p>2024-03-16</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<p>老师很奇怪自己找的图片则不可以生成骨骼图为什么呢？</p>2023-12-03</li><br/><li><span>Eric.Sui</span> 👍（0） 💬（0）<p>敬仰，老师方便加V吗？</p>2023-06-29</li><br/><li><span>神毓逍遥</span> 👍（0） 💬（0）<p>哈哈哈</p>2023-06-26</li><br/><li><span>Viktor</span> 👍（0） 💬（3）<p>这个技术的出现，被很多骗子利用，用来生成各种图片用来注册那些需要真人照片的网站。</p>2023-05-08</li><br/>
 </ul>

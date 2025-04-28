@@ -535,5 +535,5 @@ public static void main(String[] args) throws Exception {
 
 代码中，我们直接将之前的代码 DemoFacadeImpl 类代码的内容作为源代码，紧接着创建 JavassistCompiler 对象，调用编译器的 compile 方法，反射实例化并反射调用 sayHello 方法，最后打印了“Hello Geek, I’m in 'javassistCompiler.”这个结果。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Ahaolin</span> 👍（1） 💬（1）<div>https:&#47;&#47;ahaolin-public-img.oss-cn-hangzhou.aliyuncs.com&#47;img&#47;202303030954605.png</div>2023-03-03</li><br/><li><span>Lum</span> 👍（0） 💬（1）<div>这里在生成代理类得时候会根据该注解判断是否有value值，如果没有就通过小写字母分开为点camelToSplitName，如果有就按照注解的value值进行赋值</div>2023-03-02</li><br/><li><span>Lum</span> 👍（0） 💬（1）<div>老师讲的真好，层层深入，对dubbo的spi有了更深的理解了，期待学完课把dubbo所有的流程串起来</div>2023-03-01</li><br/>
+<li><span>Ahaolin</span> 👍（1） 💬（1）<p>https:&#47;&#47;ahaolin-public-img.oss-cn-hangzhou.aliyuncs.com&#47;img&#47;202303030954605.png</p>2023-03-03</li><br/><li><span>Lum</span> 👍（0） 💬（1）<p>这里在生成代理类得时候会根据该注解判断是否有value值，如果没有就通过小写字母分开为点camelToSplitName，如果有就按照注解的value值进行赋值</p>2023-03-02</li><br/><li><span>Lum</span> 👍（0） 💬（1）<p>老师讲的真好，层层深入，对dubbo的spi有了更深的理解了，期待学完课把dubbo所有的流程串起来</p>2023-03-01</li><br/>
 </ul>

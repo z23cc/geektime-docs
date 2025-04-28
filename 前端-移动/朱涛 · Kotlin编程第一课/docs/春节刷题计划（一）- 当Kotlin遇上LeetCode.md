@@ -110,7 +110,7 @@ fun sort(array: IntArray): IntArray {
 
 这道题目我会在下节课给出答案解析，我们下节课再见。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>郑峰</span> 👍（5） 💬（1）<div>```Kotlin
+<li><span>郑峰</span> 👍（5） 💬（1）<p>```Kotlin
 fun compareVersion(version1: String, version2: String): Int {
   val v1 = version1.split(&quot;.&quot;).map { it.toInt() }
   val v2 = version2.split(&quot;.&quot;).map { it.toInt() }
@@ -122,12 +122,12 @@ fun compareVersion(version1: String, version2: String): Int {
   return 0;
 }
 
-```</div>2022-01-30</li><br/><li><span>白乾涛</span> 👍（2） 💬（2）<div>我知道为啥找不到 maxBy 了，估计是因为这个方法在 1.6 版本中隐藏了
+```</p>2022-01-30</li><br/><li><span>白乾涛</span> 👍（2） 💬（2）<p>我知道为啥找不到 maxBy 了，估计是因为这个方法在 1.6 版本中隐藏了
 
 @DeprecatedSinceKotlin(warningSince = &quot;1.4&quot;, errorSince = &quot;1.5&quot;, hiddenSince = &quot;1.6&quot;)
 public inline fun &lt;T, R : Comparable&lt;R&gt;&gt; Sequence&lt;T&gt;.maxBy(selector: (T) -&gt; R): T? {
     return maxByOrNull(selector)
-}</div>2022-03-02</li><br/><li><span>Geek_Adr</span> 👍（2） 💬（1）<div>&#47;&#47; 我能找到的最大程度的函数式
+}</p>2022-03-02</li><br/><li><span>Geek_Adr</span> 👍（2） 💬（1）<p>&#47;&#47; 我能找到的最大程度的函数式
     fun compareVersion(version1: String, version2: String): Int {
         return (version1.split(&quot;.&quot;).map { it.toInt() }
                 to version2.split(&quot;.&quot;).map { it.toInt() })
@@ -139,7 +139,7 @@ public inline fun &lt;T, R : Comparable&lt;R&gt;&gt; Sequence&lt;T&gt;.maxBy(sel
                     }
             }
     }
-</div>2022-02-07</li><br/><li><span>梁中华</span> 👍（1） 💬（1）<div>
+</p>2022-02-07</li><br/><li><span>梁中华</span> 👍（1） 💬（1）<p>
 fun mostCommonWord1(paragraph: String, banned: Array&lt;String&gt;) =
             paragraph.toLowerCase()
                 .replace(&quot;[^a-zA-Z ]&quot;.toRegex(), &quot; &quot;)
@@ -150,7 +150,7 @@ fun mostCommonWord1(paragraph: String, banned: Array&lt;String&gt;) =
                &#47;&#47; .maxBy { it.value }  &#47;&#47;这里编译不过，我改了下
                &#47;&#47; ?.key?:throw IllegalArgumentException()
              .toList()   &#47;&#47;先转成List才能用MaxBy
-            .maxByOrNull { it.second }</div>2022-03-19</li><br/><li><span>PoPlus</span> 👍（1） 💬（1）<div>涛哥，校招生还推荐用 kotlin 来写算法吗，感觉有些简化的太过了 😅</div>2022-03-04</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<div>&#47;&#47; 函数式 176ms 击败19%
+            .maxByOrNull { it.second }</p>2022-03-19</li><br/><li><span>PoPlus</span> 👍（1） 💬（1）<p>涛哥，校招生还推荐用 kotlin 来写算法吗，感觉有些简化的太过了 😅</p>2022-03-04</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<p>&#47;&#47; 函数式 176ms 击败19%
     fun compareVersion(version1: String, version2: String): Int {
         return (version1.split(&quot;.&quot;).map { it.toInt() }
                 to version2.split(&quot;.&quot;).map { it.toInt() })
@@ -195,7 +195,7 @@ fun mostCommonWord1(paragraph: String, banned: Array&lt;String&gt;) =
         return 0
     }
 
-</div>2022-02-07</li><br/><li><span>jim</span> 👍（1） 💬（1）<div>春节还更新吗？</div>2022-01-28</li><br/><li><span>爱学习的小羊</span> 👍（0） 💬（1）<div>我这个算是半java半kotlin编程了吧
+</p>2022-02-07</li><br/><li><span>jim</span> 👍（1） 💬（1）<p>春节还更新吗？</p>2022-01-28</li><br/><li><span>爱学习的小羊</span> 👍（0） 💬（1）<p>我这个算是半java半kotlin编程了吧
 fun compareVersion(version1: String, version2: String): Int {
         val nums1 = version1.split(&quot;.&quot;)
         val nums2 = version2.split(&quot;.&quot;)
@@ -212,7 +212,7 @@ fun compareVersion(version1: String, version2: String): Int {
 
         }
         return 0
-    }</div>2022-03-21</li><br/><li><span>浅色的风</span> 👍（0） 💬（1）<div>是不是java思维
+    }</p>2022-03-21</li><br/><li><span>浅色的风</span> 👍（0） 💬（1）<p>是不是java思维
 fun compareVersion(version1: String, version2: String): Int {
         val listV1 = version1.split(&quot;.&quot;).toList()
         val listV2 = version2.split(&quot;.&quot;).toList()
@@ -238,7 +238,7 @@ fun compareVersion(version1: String, version2: String): Int {
 
         return 0
 
-    }</div>2022-03-02</li><br/><li><span>$Kotlin</span> 👍（0） 💬（1）<div>    fun compareVersion(version1: String, version2: String): Int {
+    }</p>2022-03-02</li><br/><li><span>$Kotlin</span> 👍（0） 💬（1）<p>    fun compareVersion(version1: String, version2: String): Int {
         val versionList1 = version1.split(&quot;.&quot;).toMutableList()
         val versionList2 = version2.split(&quot;.&quot;).toMutableList()
         if (versionList1.size &gt; versionList2.size) {
@@ -260,5 +260,5 @@ fun compareVersion(version1: String, version2: String): Int {
             }
         }
         return 0
-    }</div>2022-01-28</li><br/>
+    }</p>2022-01-28</li><br/>
 </ul>

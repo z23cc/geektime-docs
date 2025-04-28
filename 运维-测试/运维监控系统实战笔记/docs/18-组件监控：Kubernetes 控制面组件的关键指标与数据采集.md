@@ -375,7 +375,7 @@ Kubernetes 控制面的组件全部都要认证鉴权，相比之前演示的 Ku
 
 在 Prometheus 的抓取配置中，我们给出了几个抓取 Job 的配置。如果一个 Kubernetes 集群的数据只写入一个时序库，这样的配置是没问题，如果多个 Kubernetes 集群的数据都写入一个时序库，就要通过额外的标签来区分了。你知道如何为抓取的数据附加新的标签吗？欢迎在评论区留下你的思考，也欢迎你把今天的内容分享给你身边的朋友，邀他一起学习。我们下一讲再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Geek_1a3949</span> 👍（4） 💬（1）<div>尝试回答一下课后题：
+<li><span>Geek_1a3949</span> 👍（4） 💬（1）<p>尝试回答一下课后题：
 
 可以为prometheus增加global.external_labels配置，增加cluster的标识以区分不同的集群：
 global:
@@ -385,7 +385,7 @@ global:
 
 另外，请教老师一个问题，ksm的分片，官网上有statefulset、daemonset的分片方式，它们各自的适用场景是什么，在生产环境下，更推荐哪种方式？
 
-</div>2023-02-17</li><br/><li><span>胡飞</span> 👍（1） 💬（1）<div>你好老师，promtheus 如果开启了remote write后，存储会用两份吗？prom本地一份数据，第三方一份数据？</div>2023-03-15</li><br/><li><span>peter</span> 👍（1） 💬（2）<div>请教老师几个问题：
+</p>2023-02-17</li><br/><li><span>胡飞</span> 👍（1） 💬（1）<p>你好老师，promtheus 如果开启了remote write后，存储会用两份吗？prom本地一份数据，第三方一份数据？</p>2023-03-15</li><br/><li><span>peter</span> 👍（1） 💬（2）<p>请教老师几个问题：
 Q1：KSM是k8s自身的组件吗？还是一个第三方的软件？
-Q2：一般性的问题，公司的实际运营中，日志数据一般保存多长时间？指标数据一般保存多长时间？（到期后是直接删除数据吧）</div>2023-02-18</li><br/><li><span>姜兵</span> 👍（0） 💬（1）<div>老师您好，想问一下，生产上的各类指标开启秒级采集的话，一般最小设置为多少秒可以确保采集性能和告警的及时性？</div>2023-07-19</li><br/><li><span>k8s卡拉米</span> 👍（0） 💬（1）<div>老师您好，采集work组件是后，您这篇文章中使用的是把prometheus当做agent，部署的这个采集的prometheus 是仅仅做采集使用吗？，我在其他机器上已经部署了prometheus用户和n9e和这个采集的prometheus 没关系是吗？</div>2023-07-04</li><br/><li><span>晴空万里</span> 👍（0） 💬（1）<div>自己做监控系统 但是用了公有云产品 比如华为云的k8s 请问怎么监控哈 公司都是用公有云saas 自己公司卖paas产品</div>2023-03-01</li><br/><li><span>LiLian</span> 👍（0） 💬（1）<div>请问老师：&quot;prometheus agent mode，支持 Kubernetes 服务发现&quot;  本质上还是通过list &amp; watch 监听来自api server的信息吗？ </div>2023-02-24</li><br/><li><span>Geek_7656a8</span> 👍（0） 💬（0）<div>老师好； 采集到集群调度信息，但是 scheduler (0 &#47; 8767 active targets)；这是什么情况？ 数据没有推到远端的prometheus</div>2023-06-21</li><br/>
+Q2：一般性的问题，公司的实际运营中，日志数据一般保存多长时间？指标数据一般保存多长时间？（到期后是直接删除数据吧）</p>2023-02-18</li><br/><li><span>姜兵</span> 👍（0） 💬（1）<p>老师您好，想问一下，生产上的各类指标开启秒级采集的话，一般最小设置为多少秒可以确保采集性能和告警的及时性？</p>2023-07-19</li><br/><li><span>k8s卡拉米</span> 👍（0） 💬（1）<p>老师您好，采集work组件是后，您这篇文章中使用的是把prometheus当做agent，部署的这个采集的prometheus 是仅仅做采集使用吗？，我在其他机器上已经部署了prometheus用户和n9e和这个采集的prometheus 没关系是吗？</p>2023-07-04</li><br/><li><span>晴空万里</span> 👍（0） 💬（1）<p>自己做监控系统 但是用了公有云产品 比如华为云的k8s 请问怎么监控哈 公司都是用公有云saas 自己公司卖paas产品</p>2023-03-01</li><br/><li><span>LiLian</span> 👍（0） 💬（1）<p>请问老师：&quot;prometheus agent mode，支持 Kubernetes 服务发现&quot;  本质上还是通过list &amp; watch 监听来自api server的信息吗？ </p>2023-02-24</li><br/><li><span>Geek_7656a8</span> 👍（0） 💬（0）<p>老师好； 采集到集群调度信息，但是 scheduler (0 &#47; 8767 active targets)；这是什么情况？ 数据没有推到远端的prometheus</p>2023-06-21</li><br/>
 </ul>

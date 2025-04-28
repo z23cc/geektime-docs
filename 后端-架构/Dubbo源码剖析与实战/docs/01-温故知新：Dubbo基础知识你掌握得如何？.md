@@ -385,23 +385,23 @@ Caused by: org.apache.dubbo.remoting.TimeoutException: Waiting server-side respo
 
 课程的代码仓库 [https://gitee.com/ylimhhmily/GeekDubbo3Tutorial](https://gitee.com/ylimhhmily/GeekDubbo3Tutorial) 。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>熊猫</span> 👍（6） 💬（6）<div>老师，你好，dubbo有没有这样的功能，一个接口多种实现，根据参数(标识渠道不同)来区分最终路由到哪个实现？再或者有没有在客户端可以知道有哪几种实现？</div>2022-12-19</li><br/><li><span>Geek_895efd</span> 👍（4） 💬（2）<div>老师，关于注册中心部分，确实有很多选择，相对于zookeeper等，用阿里自家孵化出的nacos来做注册中心是不是更好</div>2022-12-23</li><br/><li><span>Geek_327f7f</span> 👍（1） 💬（1）<div>老师，我觉得您这里的dubbo架构图跟dubbo官网的出入挺大的，感觉您这个架构图应该是在dubbo框架下的微服务架构而不是dubbo的架构图，不知道我的理解是否正确。而且provider和consumer都是需要一个container提供dubbo的运行环境的吧，我看您的架构图中只有provider有container而consumer并没有。</div>2023-05-21</li><br/><li><span>Geek_244b79</span> 👍（1） 💬（3）<div>老师，您好，看完课程有两个疑问，1.监控中心是存在于哪里 2.注册中心的消息推送是主动推送的吗？希望老师看到可以帮忙解答，谢谢！</div>2023-01-18</li><br/><li><span>java小霸王</span> 👍（1） 💬（1）<div>异常信息可以看出
+<li><span>熊猫</span> 👍（6） 💬（6）<p>老师，你好，dubbo有没有这样的功能，一个接口多种实现，根据参数(标识渠道不同)来区分最终路由到哪个实现？再或者有没有在客户端可以知道有哪几种实现？</p>2022-12-19</li><br/><li><span>Geek_895efd</span> 👍（4） 💬（2）<p>老师，关于注册中心部分，确实有很多选择，相对于zookeeper等，用阿里自家孵化出的nacos来做注册中心是不是更好</p>2022-12-23</li><br/><li><span>Geek_327f7f</span> 👍（1） 💬（1）<p>老师，我觉得您这里的dubbo架构图跟dubbo官网的出入挺大的，感觉您这个架构图应该是在dubbo框架下的微服务架构而不是dubbo的架构图，不知道我的理解是否正确。而且provider和consumer都是需要一个container提供dubbo的运行环境的吧，我看您的架构图中只有provider有container而consumer并没有。</p>2023-05-21</li><br/><li><span>Geek_244b79</span> 👍（1） 💬（3）<p>老师，您好，看完课程有两个疑问，1.监控中心是存在于哪里 2.注册中心的消息推送是主动推送的吗？希望老师看到可以帮忙解答，谢谢！</p>2023-01-18</li><br/><li><span>java小霸王</span> 👍（1） 💬（1）<p>异常信息可以看出
 1 超时机制是通过completeFutrue
-2 failover策略</div>2022-12-27</li><br/><li><span>null</span> 👍（1） 💬（1）<div>老师，注册中心使用zookeeper和etcd哪个好？</div>2022-12-21</li><br/><li><span>慎独明强</span> 👍（1） 💬（1）<div>补充一点：负载均衡策略，源码里面还有ShorestResponseLoadBalance
+2 failover策略</p>2022-12-27</li><br/><li><span>null</span> 👍（1） 💬（1）<p>老师，注册中心使用zookeeper和etcd哪个好？</p>2022-12-21</li><br/><li><span>慎独明强</span> 👍（1） 💬（1）<p>补充一点：负载均衡策略，源码里面还有ShorestResponseLoadBalance
 异常信息获取: 1) 重试次数为3，取的默认值 正常调用+重试2次  
 2） providers [192.168.100.183:28040] (1&#47;1)  providers列表为1，第一次调用就失败了
 3）集群容错策略为failOver故障转移
 4）超时时间为1000ms
 5）调用DemoFacade的sayHello方法超时
-</div>2022-12-19</li><br/><li><span>simuso</span> 👍（0） 💬（1）<div>为什么本地的zk连接没问题，如何连接其他服务器的zk就不行呢</div>2023-05-02</li><br/><li><span>天天学习</span> 👍（0） 💬（1）<div>老师，dubbo.application.service-discovery.migration在yml文件配置的时候为什么没有提示选项呢，也点不进这个配置，我用的dubbo是3.1.8版本的</div>2023-04-27</li><br/><li><span>Geek_forMySelf</span> 👍（0） 💬（1）<div>发生了TimeoutException应该需要provider方实现接口的幂等吧</div>2023-03-22</li><br/><li><span>Geek_698227</span> 👍（0） 💬（1）<div>请问有triple的内容吗</div>2023-03-10</li><br/><li><span>杨老师</span> 👍（0） 💬（1）<div>Dubbo 3.x 推崇的一个应用级注册新特性，主要是为了将来能支持十万甚至百万的集群实例地址发现，并且可以与不同的微服务体系实现地址发现互联互通。
+</p>2022-12-19</li><br/><li><span>simuso</span> 👍（0） 💬（1）<p>为什么本地的zk连接没问题，如何连接其他服务器的zk就不行呢</p>2023-05-02</li><br/><li><span>天天学习</span> 👍（0） 💬（1）<p>老师，dubbo.application.service-discovery.migration在yml文件配置的时候为什么没有提示选项呢，也点不进这个配置，我用的dubbo是3.1.8版本的</p>2023-04-27</li><br/><li><span>Geek_forMySelf</span> 👍（0） 💬（1）<p>发生了TimeoutException应该需要provider方实现接口的幂等吧</p>2023-03-22</li><br/><li><span>Geek_698227</span> 👍（0） 💬（1）<p>请问有triple的内容吗</p>2023-03-10</li><br/><li><span>杨老师</span> 👍（0） 💬（1）<p>Dubbo 3.x 推崇的一个应用级注册新特性，主要是为了将来能支持十万甚至百万的集群实例地址发现，并且可以与不同的微服务体系实现地址发现互联互通。
 
 这段话该怎么理解呢？
 
-</div>2023-03-10</li><br/><li><span>Geek_221364</span> 👍（0） 💬（1）<div>
+</p>2023-03-10</li><br/><li><span>Geek_221364</span> 👍（0） 💬（1）<p>
 chatGPT告诉我的，不知道是否正确
 dubbo.registry.register 和 dubbo.application.register 是 Dubbo 配置中的两个参数，它们分别用于控制服务提供者在注册中心上的注册行为和服务提供者在启动时将自己的地址信息注册到注册中心上的方式。
 
 dubbo.registry.register 参数用于控制服务提供者在注册中心上的注册行为。它的取值可以是 interface、instance 或 all，分别表示只注册服务接口、只注册服务实例或同时注册服务接口和服务实例。使用这个参数可以控制服务提供者在注册中心上的注册行为，让服务提供者只注册必要的接口或实例，避免不必要的服务暴露。
 
-dubbo.application.register 参数用于控制服务提供者在启动时将自己的地址信息注册到注册中心上的方式。它的取值可以是 provider 或 manual，分别表示服务提供者在启动时自动将自己的地址信息注册到注册中心上或需要手动将自己的地址信息注册到注册中心上。使用这个参数可以让服务提供者更灵活地控制自己在注册中心上的注册行为，避免一些不必要的服务注册，比如在测试环境中为了避免服务提供者过多的注册到注册中心上，可以设置 manual，然后手动将需要测试的服务提供者注册到注册中心上，这样可以控制测试服务提供者的数量。</div>2023-03-08</li><br/><li><span>Lum</span> 👍（0） 💬（1）<div>先远程调用超时了，然后又启用了failover策略，结果注册中心就一个节点就报错了</div>2023-02-25</li><br/><li><span>张申傲</span> 👍（0） 💬（1）<div>请问下老师 ，代码中的 Facade 可以理解为一些公用的接口和实体类声明吗？</div>2023-01-29</li><br/>
+dubbo.application.register 参数用于控制服务提供者在启动时将自己的地址信息注册到注册中心上的方式。它的取值可以是 provider 或 manual，分别表示服务提供者在启动时自动将自己的地址信息注册到注册中心上或需要手动将自己的地址信息注册到注册中心上。使用这个参数可以让服务提供者更灵活地控制自己在注册中心上的注册行为，避免一些不必要的服务注册，比如在测试环境中为了避免服务提供者过多的注册到注册中心上，可以设置 manual，然后手动将需要测试的服务提供者注册到注册中心上，这样可以控制测试服务提供者的数量。</p>2023-03-08</li><br/><li><span>Lum</span> 👍（0） 💬（1）<p>先远程调用超时了，然后又启用了failover策略，结果注册中心就一个节点就报错了</p>2023-02-25</li><br/><li><span>张申傲</span> 👍（0） 💬（1）<p>请问下老师 ，代码中的 Facade 可以理解为一些公用的接口和实体类声明吗？</p>2023-01-29</li><br/>
 </ul>

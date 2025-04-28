@@ -287,17 +287,17 @@ final void setArray(Object[] a) {
 
 你的朋友是不是也在准备面试呢？你可以“请朋友读”，把今天的题目分享给好友，或许你能帮到他。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>013</span> 👍（99） 💬（2）<div>1）CountDownLatch和CyclicBarrier都能够实现线程之间的等待，只不过它们侧重点不同：
+<li><span>013</span> 👍（99） 💬（2）<p>1）CountDownLatch和CyclicBarrier都能够实现线程之间的等待，只不过它们侧重点不同：
 CountDownLatch一般用于某个线程A等待若干个其他线程执行完任务之后，它才执行；
 而CyclicBarrier一般用于一组线程互相等待至某个状态，然后这一组线程再同时执行；
 另外，CountDownLatch是不能够重用的，而CyclicBarrier是可以重用的。
-2）Semaphore其实和锁有点类似，它一般用于控制对某组资源的访问权限。</div>2018-11-29</li><br/><li><span>Daydayup</span> 👍（43） 💬（6）<div>CountDownLatch最近还真用上了。我的需求是每个对象一个线程，分别在每个线程里计算各自的数据，最终等到所有线程计算完毕，我还需要将每个有共通的对象进行合并，所以用它很合适。</div>2018-06-22</li><br/><li><span>扫地僧的功夫梦</span> 👍（15） 💬（4）<div>17讲的问题，留言有点晚，老师可能不会看，想得到老师的回复：调用notify()&#47;notifyAll()方法后线程是处于阻塞状态吧，因为线程还没获取到锁。</div>2018-06-19</li><br/><li><span>忍者无敌1995</span> 👍（13） 💬（4）<div>最近有用到countDownLatch，一个批量更新接口，采用多线程提高处理速度，全部处理完将结果封装返回给app端</div>2018-10-03</li><br/><li><span>Phoenix</span> 👍（7） 💬（1）<div>经过老师的讲解，我对CountDownLatch的使用场景是这样理解的：
-1：A线程的执行，依赖与B线程或C线程等等其他多个线程任务的执行结果来触发A线程任务执行事件</div>2018-11-11</li><br/><li><span>zjh</span> 👍（2） 💬（1）<div>感觉再分布式的情况下，单体应用中需要多个线程并行的情况可能会被分散在多个应用里面，可能很少会用到CountDownLatch和cyclicbarrier，semaphore倒是比较适合用在分布式的场景下，用来做一些限流。
+2）Semaphore其实和锁有点类似，它一般用于控制对某组资源的访问权限。</p>2018-11-29</li><br/><li><span>Daydayup</span> 👍（43） 💬（6）<p>CountDownLatch最近还真用上了。我的需求是每个对象一个线程，分别在每个线程里计算各自的数据，最终等到所有线程计算完毕，我还需要将每个有共通的对象进行合并，所以用它很合适。</p>2018-06-22</li><br/><li><span>扫地僧的功夫梦</span> 👍（15） 💬（4）<p>17讲的问题，留言有点晚，老师可能不会看，想得到老师的回复：调用notify()&#47;notifyAll()方法后线程是处于阻塞状态吧，因为线程还没获取到锁。</p>2018-06-19</li><br/><li><span>忍者无敌1995</span> 👍（13） 💬（4）<p>最近有用到countDownLatch，一个批量更新接口，采用多线程提高处理速度，全部处理完将结果封装返回给app端</p>2018-10-03</li><br/><li><span>Phoenix</span> 👍（7） 💬（1）<p>经过老师的讲解，我对CountDownLatch的使用场景是这样理解的：
+1：A线程的执行，依赖与B线程或C线程等等其他多个线程任务的执行结果来触发A线程任务执行事件</p>2018-11-11</li><br/><li><span>zjh</span> 👍（2） 💬（1）<p>感觉再分布式的情况下，单体应用中需要多个线程并行的情况可能会被分散在多个应用里面，可能很少会用到CountDownLatch和cyclicbarrier，semaphore倒是比较适合用在分布式的场景下，用来做一些限流。
 
-</div>2018-06-21</li><br/><li><span>xinxin💛</span> 👍（1） 💬（1）<div>老师为什么我用ConcurrentHashMap执行remove操作的时候cpu总是跳得很高，hashmap就还好没那么夸张。。现在为了线程安全还是用ConcurrentHashMap，但执行remove操作的线程一多经常就卡死了。</div>2018-07-07</li><br/><li><span>jacy</span> 👍（1） 💬（1）<div>感觉CountDownLatch有点像c++中的条件锁，想问一下老师，可否给点从c++转java的建议。</div>2018-06-25</li><br/><li><span>步＊亮</span> 👍（0） 💬（1）<div>SemaphoreWorker类应该为static</div>2018-06-21</li><br/><li><span>天秤座的选择</span> 👍（53） 💬（6）<div>做android的，一个页面有A,B,C三个网络请求，其中请求C需要请求A和请求B的返回数据作为参数，用过CountdownLatch解决。</div>2018-06-20</li><br/><li><span>Jerry银银</span> 👍（30） 💬（0）<div>对于Java 并发包提供了哪些并发工具类，我是这么理解的：
+</p>2018-06-21</li><br/><li><span>xinxin💛</span> 👍（1） 💬（1）<p>老师为什么我用ConcurrentHashMap执行remove操作的时候cpu总是跳得很高，hashmap就还好没那么夸张。。现在为了线程安全还是用ConcurrentHashMap，但执行remove操作的线程一多经常就卡死了。</p>2018-07-07</li><br/><li><span>jacy</span> 👍（1） 💬（1）<p>感觉CountDownLatch有点像c++中的条件锁，想问一下老师，可否给点从c++转java的建议。</p>2018-06-25</li><br/><li><span>步＊亮</span> 👍（0） 💬（1）<p>SemaphoreWorker类应该为static</p>2018-06-21</li><br/><li><span>天秤座的选择</span> 👍（53） 💬（6）<p>做android的，一个页面有A,B,C三个网络请求，其中请求C需要请求A和请求B的返回数据作为参数，用过CountdownLatch解决。</p>2018-06-20</li><br/><li><span>Jerry银银</span> 👍（30） 💬（0）<p>对于Java 并发包提供了哪些并发工具类，我是这么理解的：
 1. 执行任务，需要对应的执行框架（Executors）；
 2. 多个任务被同时执行时，需要协调，这就需要Lock、闭锁、栅栏、信号量、阻塞队列；
-3. Java程序中充满了对象，在并发场景中当然避免不了遇到同种类型的N个对象，而对象需要被存储，这需要高效的线程安全的容器类</div>2018-06-20</li><br/><li><span>夏天🔆</span> 👍（16） 💬（0）<div>以前使用coutdownlatch进行并发异常的模拟，来修改bug，具体是在发生异常的错误堆栈上进行await，在某些条件处或触发点进行coutdown，来尽可能模拟触发异常时的场景，很多可以必现，修改之后没有问题，才算解决一个并发异常</div>2018-06-20</li><br/><li><span>如风</span> 👍（9） 💬（0）<div>在写爬虫时，使用过 Semaphore ，来控制最多爬同一个域名下的 url 数量。</div>2018-06-20</li><br/><li><span>石头狮子</span> 👍（8） 💬（0）<div>列举实践中两个应用并发工具的场景:
+3. Java程序中充满了对象，在并发场景中当然避免不了遇到同种类型的N个对象，而对象需要被存储，这需要高效的线程安全的容器类</p>2018-06-20</li><br/><li><span>夏天🔆</span> 👍（16） 💬（0）<p>以前使用coutdownlatch进行并发异常的模拟，来修改bug，具体是在发生异常的错误堆栈上进行await，在某些条件处或触发点进行coutdown，来尽可能模拟触发异常时的场景，很多可以必现，修改之后没有问题，才算解决一个并发异常</p>2018-06-20</li><br/><li><span>如风</span> 👍（9） 💬（0）<p>在写爬虫时，使用过 Semaphore ，来控制最多爬同一个域名下的 url 数量。</p>2018-06-20</li><br/><li><span>石头狮子</span> 👍（8） 💬（0）<p>列举实践中两个应用并发工具的场景:
 1. 请求熔断器，使用 Semaphore 熔断某些请求线程，待系统恢复以后再逐步释放信号量。
-2. Worker 搜索停止标志。使用 countdownlatch 标记 Worker 找到的结果个数，达到结果后其他线程不再继续执行。</div>2018-06-20</li><br/><li><span>feifei</span> 👍（7） 💬（0）<div>我的使用经验，在进行高并发的测试时，我会使用countdownlatch,将所有的工作线程在开始时等待，然后在统一的开始，这样就可以避免创建线程所需的时间开销，更好的模拟高并发</div>2018-08-03</li><br/>
+2. Worker 搜索停止标志。使用 countdownlatch 标记 Worker 找到的结果个数，达到结果后其他线程不再继续执行。</p>2018-06-20</li><br/><li><span>feifei</span> 👍（7） 💬（0）<p>我的使用经验，在进行高并发的测试时，我会使用countdownlatch,将所有的工作线程在开始时等待，然后在统一的开始，这样就可以避免创建线程所需的时间开销，更好的模拟高并发</p>2018-08-03</li><br/>
 </ul>

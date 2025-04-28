@@ -202,11 +202,11 @@ fatal error: all goroutines are asleep - deadlock!
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_cd5dcf</span> 👍（21） 💬（6）<div>讲的通俗易懂，还是挺好理解的，想问下mutex如果加锁后
+<li><span>Geek_cd5dcf</span> 👍（21） 💬（6）<p>讲的通俗易懂，还是挺好理解的，想问下mutex如果加锁后
 mutex.lock（）
 defer mutex.unlock（）
-在所有场景下都不会出错吗？</div>2018-10-11</li><br/><li><span>🐻</span> 👍（17） 💬（1）<div>1. Locker 接口
-2. func (rw *RWMutex) RLocker() Locker</div>2019-03-16</li><br/><li><span>Pana</span> 👍（13） 💬（3）<div>如果cpu只有一个核心，是不是就不会产生并发的情况？</div>2020-03-08</li><br/><li><span>授人以🐟，不如授人以渔</span> 👍（8） 💬（4）<div>老师，麻烦分析一下这样的场景：main goroutine 拿到读锁，此时 goroutine 1 试图拿到写锁但被阻塞，紧接着 goroutine 2 试图拿到读锁。我想知道 goroutine 2 为什么也会被阻塞，另外 main goroutine 读锁被释放后，哪个 goroutine 会继续运行？</div>2021-05-07</li><br/><li><span>安排</span> 👍（6） 💬（3）<div>goroutine和协程有什么本质区别啊，搜了网上也没看出来啥本质区别，有这方面的资料吗？</div>2019-09-22</li><br/><li><span>NoTryNoSuccess</span> 👍（5） 💬（3）<div>请问老师，多核心条件下如果两个goroutine底层同时运行在两个线程上，那么此时这两个goroutine实际上是完全并行的。此时它们如果同时进行互斥锁的锁定操作（随后可能同时对同一资源进行写操作）岂不是不能达到对临界区的保护目的了吗？</div>2020-04-04</li><br/><li><span>CcczzZ</span> 👍（4） 💬（3）<div>老师，有个疑问，文中说的这句：「对读锁进行解锁，只会在没有其他读锁锁定的前提下，唤醒“因试图锁定写锁，而被阻塞的 goroutine”」。
+在所有场景下都不会出错吗？</p>2018-10-11</li><br/><li><span>🐻</span> 👍（17） 💬（1）<p>1. Locker 接口
+2. func (rw *RWMutex) RLocker() Locker</p>2019-03-16</li><br/><li><span>Pana</span> 👍（13） 💬（3）<p>如果cpu只有一个核心，是不是就不会产生并发的情况？</p>2020-03-08</li><br/><li><span>授人以🐟，不如授人以渔</span> 👍（8） 💬（4）<p>老师，麻烦分析一下这样的场景：main goroutine 拿到读锁，此时 goroutine 1 试图拿到写锁但被阻塞，紧接着 goroutine 2 试图拿到读锁。我想知道 goroutine 2 为什么也会被阻塞，另外 main goroutine 读锁被释放后，哪个 goroutine 会继续运行？</p>2021-05-07</li><br/><li><span>安排</span> 👍（6） 💬（3）<p>goroutine和协程有什么本质区别啊，搜了网上也没看出来啥本质区别，有这方面的资料吗？</p>2019-09-22</li><br/><li><span>NoTryNoSuccess</span> 👍（5） 💬（3）<p>请问老师，多核心条件下如果两个goroutine底层同时运行在两个线程上，那么此时这两个goroutine实际上是完全并行的。此时它们如果同时进行互斥锁的锁定操作（随后可能同时对同一资源进行写操作）岂不是不能达到对临界区的保护目的了吗？</p>2020-04-04</li><br/><li><span>CcczzZ</span> 👍（4） 💬（3）<p>老师，有个疑问，文中说的这句：「对读锁进行解锁，只会在没有其他读锁锁定的前提下，唤醒“因试图锁定写锁，而被阻塞的 goroutine”」。
 我的理解是，对读锁进行解锁时，此刻若存在其他读锁等待的话，是会优先唤醒读锁的，如果不存在其他等待的读锁，才会唤醒写锁。不知道这样理解是否正确？
 
 而基于上面的理解，我写了段代码测试了一下，发现结果并不是这样，实际情况是：「当读锁进行解锁时，若此刻存在其他的读锁和写锁，会根据他们实际阻塞等待的时间长短，优先唤醒并执行」
@@ -254,13 +254,13 @@ start RUnLock
 get Lock
 get UnLock
 get RLock
-get RUnLock</div>2020-01-16</li><br/><li><span>大王叫我来巡山</span> 👍（3） 💬（2）<div>需要请教老师的是，主协程收到信号就被唤醒了，认为可以读了，但是被阻塞的写协程收到锁释放的消息会不会比主协程要早，然后继续获得写的机会，主协程会不会被阻塞？我认为是不会的，此处的锁只是保证了不同写协程互斥的写入，也就是写操作是原子的，但是并不保证读操作一定在写完后就读吧</div>2019-09-13</li><br/><li><span>芝士老爹</span> 👍（3） 💬（3）<div>如果一直有新的读锁请求，会不会导致写锁锁不了？
-还是说如果有了一个wlock锁请求了，现在因为有rlock未释放锁，wlock的协程被阻塞，后面再有新的rlock锁请求也会先被阻塞，等待wlock锁协程先恢复？</div>2019-08-04</li><br/><li><span>soooldier</span> 👍（2） 💬（1）<div>配套代码里puzzlers&#47;article26下并没有demo58.go，也没有demo59.go，懵圈中。。。</div>2019-05-31</li><br/><li><span>enjoylearning</span> 👍（1） 💬（1）<div>go本身是不是提供了对死锁的检查？</div>2023-05-05</li><br/><li><span>给力</span> 👍（1） 💬（1）<div>对于使用锁有个疑问：
+get RUnLock</p>2020-01-16</li><br/><li><span>大王叫我来巡山</span> 👍（3） 💬（2）<p>需要请教老师的是，主协程收到信号就被唤醒了，认为可以读了，但是被阻塞的写协程收到锁释放的消息会不会比主协程要早，然后继续获得写的机会，主协程会不会被阻塞？我认为是不会的，此处的锁只是保证了不同写协程互斥的写入，也就是写操作是原子的，但是并不保证读操作一定在写完后就读吧</p>2019-09-13</li><br/><li><span>芝士老爹</span> 👍（3） 💬（3）<p>如果一直有新的读锁请求，会不会导致写锁锁不了？
+还是说如果有了一个wlock锁请求了，现在因为有rlock未释放锁，wlock的协程被阻塞，后面再有新的rlock锁请求也会先被阻塞，等待wlock锁协程先恢复？</p>2019-08-04</li><br/><li><span>soooldier</span> 👍（2） 💬（1）<p>配套代码里puzzlers&#47;article26下并没有demo58.go，也没有demo59.go，懵圈中。。。</p>2019-05-31</li><br/><li><span>enjoylearning</span> 👍（1） 💬（1）<p>go本身是不是提供了对死锁的检查？</p>2023-05-05</li><br/><li><span>给力</span> 👍（1） 💬（1）<p>对于使用锁有个疑问：
 type Mutex struct {
 	state int32
 	sema  uint32
 }
 state表示锁的一个状态
 
-sema这个变量没太理清是做什么的？什么场景下使用</div>2020-03-26</li><br/><li><span>Geek_da1447</span> 👍（0） 💬（2）<div>老师，请问下sync pool发生inconsistent mutex state问题怎么定位原因？</div>2022-11-07</li><br/><li><span>黄仲辉</span> 👍（0） 💬（1）<div>同一个goroutine也不能多次执行一个mutex的lock，这是不可重入锁，go为何没有原生实现可重入锁？</div>2022-09-04</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<div>根据执行go run demo58.go -protecting=0的结果来看，go程序运行时调度时机并不是某个goroutine阻塞（即使不阻塞也会可能被P从M上分离），而是有它自己判断机制，对吗，那么他的调度机制是怎么样的呢，是否类似原理的参考资料</div>2021-12-20</li><br/>
+sema这个变量没太理清是做什么的？什么场景下使用</p>2020-03-26</li><br/><li><span>Geek_da1447</span> 👍（0） 💬（2）<p>老师，请问下sync pool发生inconsistent mutex state问题怎么定位原因？</p>2022-11-07</li><br/><li><span>黄仲辉</span> 👍（0） 💬（1）<p>同一个goroutine也不能多次执行一个mutex的lock，这是不可重入锁，go为何没有原生实现可重入锁？</p>2022-09-04</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<p>根据执行go run demo58.go -protecting=0的结果来看，go程序运行时调度时机并不是某个goroutine阻塞（即使不阻塞也会可能被P从M上分离），而是有它自己判断机制，对吗，那么他的调度机制是怎么样的呢，是否类似原理的参考资料</p>2021-12-20</li><br/>
 </ul>

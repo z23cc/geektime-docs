@@ -153,11 +153,11 @@ keywords.map((_, 1)).reduceByKey(_ + _).collect
 
 期待在留言区看到你的思考和答案，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>-.-</span> 👍（19） 💬（6）<div>受益匪浅，开始看第二遍了！有个问题想请教下，spark.executor.memoryOverhead控制的是堆外内存的大小，官方文档解释：This is memory that accounts for things like VM overheads, interned strings, other native overheads, etc.1. 如果设置spark.memory.offHeap.enabled=false，这块内存是不是只是jvm的堆外内存而不是spark管理的堆外内存，不会被用于执行内存和缓存内存？ 2. 如果设置spark.memory.offHeap.enabled=true,这块内存中是不是会包含offHeapSize，其中一部分为JVM堆外内存一部分为offHeap的执行内存和缓存内存？</div>2021-05-12</li><br/><li><span>斯盖丸</span> 👍（10） 💬（8）<div>堆内内存中：保留内存300M，用户内存为20*0.2=4GB，Storage内存为20*0.8*0.6=9.6GB，Execution内存为20*0.8*0.4=6.4GB
-堆外内存中：Storage内存为10*0.6=6G，Execution内存为10*0.4=4G</div>2021-03-29</li><br/><li><span>Kendrick</span> 👍（9） 💬（2）<div>有点疑惑，我想知道堆外内存存在的意义是什么，有什么场景是一定需要堆外内存么？</div>2021-05-25</li><br/><li><span>LYL</span> 👍（7） 💬（1）<div>老师，有几个问题我不太明白，
+<li><span>-.-</span> 👍（19） 💬（6）<p>受益匪浅，开始看第二遍了！有个问题想请教下，spark.executor.memoryOverhead控制的是堆外内存的大小，官方文档解释：This is memory that accounts for things like VM overheads, interned strings, other native overheads, etc.1. 如果设置spark.memory.offHeap.enabled=false，这块内存是不是只是jvm的堆外内存而不是spark管理的堆外内存，不会被用于执行内存和缓存内存？ 2. 如果设置spark.memory.offHeap.enabled=true,这块内存中是不是会包含offHeapSize，其中一部分为JVM堆外内存一部分为offHeap的执行内存和缓存内存？</p>2021-05-12</li><br/><li><span>斯盖丸</span> 👍（10） 💬（8）<p>堆内内存中：保留内存300M，用户内存为20*0.2=4GB，Storage内存为20*0.8*0.6=9.6GB，Execution内存为20*0.8*0.4=6.4GB
+堆外内存中：Storage内存为10*0.6=6G，Execution内存为10*0.4=4G</p>2021-03-29</li><br/><li><span>Kendrick</span> 👍（9） 💬（2）<p>有点疑惑，我想知道堆外内存存在的意义是什么，有什么场景是一定需要堆外内存么？</p>2021-05-25</li><br/><li><span>LYL</span> 👍（7） 💬（1）<p>老师，有几个问题我不太明白，
 1.tungsten中的page用于同一管理off-heap和on-heap，利用这个机制可否在spark runtime的时候shuffle同时使用堆内和堆外内存？
-2.在cache rdd的时候是否能指定StorageLevel为off_heap在spark runtime时使用堆外内存，memory_only的情况下使用堆内内存，或者说在配置开启堆外内存的参数之后，所有内存都是走堆外内存，无法使用堆内内存</div>2021-04-18</li><br/><li><span>井先生</span> 👍（7） 💬（1）<div>试读了几节果断订阅了。
-开启堆外内存后，分配的内存空间是多大？这时候还会分配堆内内存吗？谢谢</div>2021-03-31</li><br/><li><span>苏子浩</span> 👍（5） 💬（2）<div>老师，您好！我想问一下在文中提到“reduceByKey算子会引入 Shuffle，而 Shuffle 过程中所涉及的内部数据结构，如映射、排序、聚合等操作所仰仗的 Buffer、Array 和 HashMap，都会消耗 Execution Memory 区域中的内存。”上一节说到Shuffle的中间结果会写入磁盘：Shuffle manager通过BlockManager调用DiskStore的putBytes()方法将数据块写入文件。这里的联系是什么呢？在内存和磁盘上有点不理解，不好意思，感谢解答！</div>2021-04-15</li><br/><li><span>西南偏北</span> 👍（4） 💬（2）<div>第一题：
+2.在cache rdd的时候是否能指定StorageLevel为off_heap在spark runtime时使用堆外内存，memory_only的情况下使用堆内内存，或者说在配置开启堆外内存的参数之后，所有内存都是走堆外内存，无法使用堆内内存</p>2021-04-18</li><br/><li><span>井先生</span> 👍（7） 💬（1）<p>试读了几节果断订阅了。
+开启堆外内存后，分配的内存空间是多大？这时候还会分配堆内内存吗？谢谢</p>2021-03-31</li><br/><li><span>苏子浩</span> 👍（5） 💬（2）<p>老师，您好！我想问一下在文中提到“reduceByKey算子会引入 Shuffle，而 Shuffle 过程中所涉及的内部数据结构，如映射、排序、聚合等操作所仰仗的 Buffer、Array 和 HashMap，都会消耗 Execution Memory 区域中的内存。”上一节说到Shuffle的中间结果会写入磁盘：Shuffle manager通过BlockManager调用DiskStore的putBytes()方法将数据块写入文件。这里的联系是什么呢？在内存和磁盘上有点不理解，不好意思，感谢解答！</p>2021-04-15</li><br/><li><span>西南偏北</span> 👍（4） 💬（2）<p>第一题：
 缓存rdd：rdd.persist(StorageLevel.OFF_HEAP)
 
 第二题：
@@ -167,18 +167,18 @@ keywords.map((_, 1)).reduceByKey(_ + _).collect
 - Reserved：300M
 - User：(20GB - 300MB) * (1 - 0.8)
 - Execution：(20GB - 300MB) * 0.8 * (1 - 0.6) + 10GB * (1 - 0.6)
-- Storage：(20GB - 300MB) * 0.8 * 0.6 + 10GB * 0.6</div>2021-05-03</li><br/><li><span>赌神很低调</span> 👍（3） 💬（1）<div>老师好，有几个问题不是很明白想问下:
+- Storage：(20GB - 300MB) * 0.8 * 0.6 + 10GB * 0.6</p>2021-05-03</li><br/><li><span>赌神很低调</span> 👍（3） 💬（1）<p>老师好，有几个问题不是很明白想问下:
 1、spark中内存划分是逻辑上的，真正的管理还是在jvm。如user memory占用内存超过设定值，还是会占用框架内存。但框架内存会根据设定值让task做一些阻塞或spill操作，所以从这个层面上说，框架内存的值得正确设置，如用户不会用到大的list、map等内存集合，就要把用户内存空间设置得够小，以保证框架内存(执行内存+存储内存)足够大，避免不必要的阻塞或spill操作？
 2、如果开启了堆外内存,即使堆外内存不够，堆内内存充足，task也只会用堆外内存而不会用堆内内存？
 3、spark 2.x版本中如果开启了堆外内存，并设置了spark.memory.offHeap.size=500mb,在yarn上跑的话spark.executor.memoryOverhead除了默认需要的10%是否还有要加上这500mb，否则container不会分配堆外这500mb的内存？看网上说3.0以上就不用加了。
-4、task会在哪些场景申请和释放内存呢？只是shuffle的场景吗？transformer场景会吗？</div>2022-03-29</li><br/><li><span>Sean</span> 👍（3） 💬（1）<div>从第一章看到了第十一章,在留言去里面学习到了很多,老师对知识的传授也很有技巧,个人也是受益匪浅,随着阅读的慢慢深入的,总结了一些自己理解和疑惑,现在又回到了第七章,总结了一些问题,希望老师可以帮忙解惑,感谢!
+4、task会在哪些场景申请和释放内存呢？只是shuffle的场景吗？transformer场景会吗？</p>2022-03-29</li><br/><li><span>Sean</span> 👍（3） 💬（1）<p>从第一章看到了第十一章,在留言去里面学习到了很多,老师对知识的传授也很有技巧,个人也是受益匪浅,随着阅读的慢慢深入的,总结了一些自己理解和疑惑,现在又回到了第七章,总结了一些问题,希望老师可以帮忙解惑,感谢!
 1.在缓存rdd时,既然executor memory 和 storage memory 两块内存不可互相share,那是不是可以通过persist来指定呢,一部分rdd使用execm 一部分rdd使用storm呢?
 2.只要不开启off heap,spark就无法使用off heap,包括yarn,k8s模式利用off heap提升稳定性也无法体现出来,一旦开启了off heap,执行任务也就是executor memory优先使用off heap,storage memory还是优先堆内内存,可以这样理解吗?
 3.例如：spark executor如果配置了堆内和堆外各4GB，executor cores配置为2。那么该executor运行的第一个task只会使用堆外内存？调度来的第二个task，哪怕堆外剩余几十MB，它也会用堆外内存，如果第二个task发现堆外不够用，就会写磁盘,或清除部分堆外内存数据呢
-4.shuffle 阶段的稳定性参数 spark.excludeOnFailure.application.fetchFailure.enabled 从官网描述上来看,这个参数对fetch failed会切换到别的节点,结合实际情况,在Map 阶段：Shuffle writer 按照 Reducer 的分区规则将中间数据写入本地磁盘过程中,刚好写人的datanode 的数据卷故障,但是并没有触发重试机制,而是一直runing状态,是不是可以通过启用application.fetchFailure.enabled来识别,目前使用的是物理机,这种情况也是偶尔发生一次,所以很难验证</div>2021-08-24</li><br/><li><span>Z宇锤锤</span> 👍（3） 💬（2）<div>启用off-heap以后，RDD可以直接缓存到off-heap上。</div>2021-04-26</li><br/><li><span>对方正在输入。。。</span> 👍（3） 💬（5）<div>老师，stage的输入是外部数据源的情况，比如s3的parquet文件，是用哪一块内存来保存读取的数据呀</div>2021-03-29</li><br/><li><span>sparkjoy</span> 👍（2） 💬（2）<div>老师，怎么知道是堆外用完了才用堆内呢？能指导一下源码的出处么？</div>2021-10-21</li><br/><li><span>豪</span> 👍（1） 💬（2）<div>源码捕捉实力还不够强😂，看了半天没找到 一个job堆外不够用时转用堆内 的源码，老师能指点下吗</div>2021-11-13</li><br/><li><span>Sean</span> 👍（1） 💬（2）<div>二刷,接上一个留言的问题2:
+4.shuffle 阶段的稳定性参数 spark.excludeOnFailure.application.fetchFailure.enabled 从官网描述上来看,这个参数对fetch failed会切换到别的节点,结合实际情况,在Map 阶段：Shuffle writer 按照 Reducer 的分区规则将中间数据写入本地磁盘过程中,刚好写人的datanode 的数据卷故障,但是并没有触发重试机制,而是一直runing状态,是不是可以通过启用application.fetchFailure.enabled来识别,目前使用的是物理机,这种情况也是偶尔发生一次,所以很难验证</p>2021-08-24</li><br/><li><span>Z宇锤锤</span> 👍（3） 💬（2）<p>启用off-heap以后，RDD可以直接缓存到off-heap上。</p>2021-04-26</li><br/><li><span>对方正在输入。。。</span> 👍（3） 💬（5）<p>老师，stage的输入是外部数据源的情况，比如s3的parquet文件，是用哪一块内存来保存读取的数据呀</p>2021-03-29</li><br/><li><span>sparkjoy</span> 👍（2） 💬（2）<p>老师，怎么知道是堆外用完了才用堆内呢？能指导一下源码的出处么？</p>2021-10-21</li><br/><li><span>豪</span> 👍（1） 💬（2）<p>源码捕捉实力还不够强😂，看了半天没找到 一个job堆外不够用时转用堆内 的源码，老师能指点下吗</p>2021-11-13</li><br/><li><span>Sean</span> 👍（1） 💬（2）<p>二刷,接上一个留言的问题2:
 1.memoryOverhead这个参数不管是作用在堆内还是堆外,都是占用storage memory这部分内存吗,
 2.磊哥的回复中提到 &quot;不管堆外还是堆内，开发者用不到，spark也用不到，所以不用关心，千万不指望调这个参数去提升性能，它的目的是保持运行时的稳定性~&quot;,个人不太理解这句话的不用关心,因为有出现过oom overhead的问题,可以理解为是使用到了memoryOverhead,那么就需要去调整对应的memoryOverhead大小,&quot;开发者用不到，spark也用不到&quot;,这句话我还没有get到,斗胆在问一下磊哥,是哪里用到了这个参数,来提升稳定性呢? 
-个人理解不够,给磊哥添麻烦了 o(╥﹏╥)o  o(╥﹏╥)o  o(╥﹏╥)o</div>2021-08-29</li><br/><li><span>🚤</span> 👍（1） 💬（3）<div>老师，cache 之后 再进行count，主要是因为cache不是action算子，所以需要一个action算子来触发缓存的生效。
+个人理解不够,给磊哥添麻烦了 o(╥﹏╥)o  o(╥﹏╥)o  o(╥﹏╥)o</p>2021-08-29</li><br/><li><span>🚤</span> 👍（1） 💬（3）<p>老师，cache 之后 再进行count，主要是因为cache不是action算子，所以需要一个action算子来触发缓存的生效。
 我这样子理解对么？
 
 回答2：
@@ -194,5 +194,5 @@ Storage: 9.6GB
 
 堆外：
 Execution：6GB
-Storage：4GB</div>2021-03-30</li><br/>
+Storage：4GB</p>2021-03-30</li><br/>
 </ul>

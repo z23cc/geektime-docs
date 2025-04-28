@@ -158,13 +158,13 @@ SQL：SELECT name FROM heros WHERE name LIKE '_%太%'
 
 欢迎你在评论区写下你的思考，也欢迎点击请朋友读，把这篇文章分享给你的朋友或者同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>奕</span> 👍（106） 💬（5）<div>就是要避免全表扫描，所以我们会考虑在 WHERE 及 ORDER BY 涉及到的列上增加索引
+<li><span>奕</span> 👍（106） 💬（5）<p>就是要避免全表扫描，所以我们会考虑在 WHERE 及 ORDER BY 涉及到的列上增加索引
 -----------------------------------------------
-where 条件字段上加索引是可以明白的，但是为什么 order by 字段上还要加索引呢？这个时候已经通过 where条件过滤得到了数据，已经不需要在筛选过滤数据了，只需要在排序的时候根据字段排序就好了。不是很明白</div>2019-06-24</li><br/><li><span>极客星星</span> 👍（57） 💬（1）<div>你好  老师 不是很明白您说的对where语句建索引是什么意思 通过sql语句怎么实现
-谢谢</div>2019-06-25</li><br/><li><span>Abyssknight</span> 👍（35） 💬（6）<div>关于通配符匹配里的 % 相当于正则表达式里的 .* 表示匹配大于等于0个任意字符，
+where 条件字段上加索引是可以明白的，但是为什么 order by 字段上还要加索引呢？这个时候已经通过 where条件过滤得到了数据，已经不需要在筛选过滤数据了，只需要在排序的时候根据字段排序就好了。不是很明白</p>2019-06-24</li><br/><li><span>极客星星</span> 👍（57） 💬（1）<p>你好  老师 不是很明白您说的对where语句建索引是什么意思 通过sql语句怎么实现
+谢谢</p>2019-06-25</li><br/><li><span>Abyssknight</span> 👍（35） 💬（6）<p>关于通配符匹配里的 % 相当于正则表达式里的 .* 表示匹配大于等于0个任意字符，
 所以  % 太 % 匹配的是 [大于等于0个任意字符]太[大于等于0个任意字符]，[东皇]太[一] 和 []太[乙真人]都符合；
 而 _% 相当于正则表达式里的 .+ 表示匹配至少一个，即大于等于1个，
-所以  &#39;_% 太 % 匹配的是 [大于等于1个字符]太[大于等于0个字符]，只有 [东皇]太[一] 符合。</div>2019-06-24</li><br/><li><span>陈扬鸿</span> 👍（33） 💬（1）<div>老师，你好，现在mysql8已经没有frm文件，一旦数据字典丢失，没有表结构就无法恢复单个ibd文件的数据，如何通过mysql8的 sdi文件生成创建表的ddl语句。</div>2019-06-25</li><br/><li><span>怪兽宇</span> 👍（32） 💬（7）<div>老师好, 平日因业务考核需要，一条查询语句查询条件需要写 30 多个 like &quot;%A%&quot;  ，语句跑起来特别慢，请问有什么优化方法吗？</div>2019-06-26</li><br/><li><span>Goal</span> 👍（26） 💬（3）<div>老师关于通配符给的解释，不够清晰！
+所以  &#39;_% 太 % 匹配的是 [大于等于1个字符]太[大于等于0个字符]，只有 [东皇]太[一] 符合。</p>2019-06-24</li><br/><li><span>陈扬鸿</span> 👍（33） 💬（1）<p>老师，你好，现在mysql8已经没有frm文件，一旦数据字典丢失，没有表结构就无法恢复单个ibd文件的数据，如何通过mysql8的 sdi文件生成创建表的ddl语句。</p>2019-06-25</li><br/><li><span>怪兽宇</span> 👍（32） 💬（7）<p>老师好, 平日因业务考核需要，一条查询语句查询条件需要写 30 多个 like &quot;%A%&quot;  ，语句跑起来特别慢，请问有什么优化方法吗？</p>2019-06-26</li><br/><li><span>Goal</span> 👍（26） 💬（3）<p>老师关于通配符给的解释，不够清晰！
 说明如下：
 SQL：SELECT name FROM heros WHERE name LIKE &#39;_% 太 %&#39;
 
@@ -172,18 +172,18 @@ SQL：SELECT name FROM heros WHERE name LIKE &#39;_% 太 %&#39;
 
 说明：
 &quot;_&quot;：匹配任意一个字符，包括可以匹配到“太乙真人”的太字。 
-但是，整体的通配符  &#39;_% 太 %&#39;，需要后面继续匹配到一个&quot;太&quot;字符，显然，&quot;太乙真人&quot;不符合了，如果是，&quot;太乙真人太太&quot;，就可以匹配到。</div>2019-06-24</li><br/><li><span>stormsc</span> 👍（23） 💬（2）<div>有个问题想问老师：
+但是，整体的通配符  &#39;_% 太 %&#39;，需要后面继续匹配到一个&quot;太&quot;字符，显然，&quot;太乙真人&quot;不符合了，如果是，&quot;太乙真人太太&quot;，就可以匹配到。</p>2019-06-24</li><br/><li><span>stormsc</span> 👍（23） 💬（2）<p>有个问题想问老师：
 SELECT name,role_main,role_assist from heros where role_assist is not null LIMIT 5 
-这样限定的查询结果为5条数据，是随机选择的5条数据吗？</div>2019-06-25</li><br/><li><span>看，有只猪</span> 👍（20） 💬（3）<div>解答一下对使用DATE函数的疑问：
-birthdate字段可能会有时间包含在里面，如2019-01-01 00:00:00，如果直接和2019-01-01比较是会失败的，用DATE函数可以提取出原始数据的日期部分</div>2019-06-25</li><br/><li><span>stormsc</span> 👍（11） 💬（4）<div>作业 mysql: select name 英雄名称, role_main 主要定位, role_assist 次要定位,hp_max 最大生命值,mp_max 最大法力值 from heros where (role_main in (&#39;坦克&#39;,&#39;战士&#39;) 
-AND role_assist is not null) AND (hp_max &gt; 8000 or mp_max &lt;1500) ORDER BY (hp_max+mp_max) DESC</div>2019-06-25</li><br/><li><span>hlz-123</span> 👍（9） 💬（1）<div>where子句WHERE 子句中比较运算符、逻辑运算符和通配符这三者各自作用？
+这样限定的查询结果为5条数据，是随机选择的5条数据吗？</p>2019-06-25</li><br/><li><span>看，有只猪</span> 👍（20） 💬（3）<p>解答一下对使用DATE函数的疑问：
+birthdate字段可能会有时间包含在里面，如2019-01-01 00:00:00，如果直接和2019-01-01比较是会失败的，用DATE函数可以提取出原始数据的日期部分</p>2019-06-25</li><br/><li><span>stormsc</span> 👍（11） 💬（4）<p>作业 mysql: select name 英雄名称, role_main 主要定位, role_assist 次要定位,hp_max 最大生命值,mp_max 最大法力值 from heros where (role_main in (&#39;坦克&#39;,&#39;战士&#39;) 
+AND role_assist is not null) AND (hp_max &gt; 8000 or mp_max &lt;1500) ORDER BY (hp_max+mp_max) DESC</p>2019-06-25</li><br/><li><span>hlz-123</span> 👍（9） 💬（1）<p>where子句WHERE 子句中比较运算符、逻辑运算符和通配符这三者各自作用？
 1、比较运算符，比较数值的大小，数值类型可以是整数，浮点数，字符串，布尔类型等等。
 2、逻辑运算符，定义where子句中多个条件之间的关系。
 3、通配符，对文本类型字段进行模糊查询。
 Mysql查询语句：
 SELECT name,role_main,role_assist,hp_max,mp_max FROM heros 
 WHERE (role_main in (&#39;坦克&#39;,&#39;战士&#39;) AND role_assist is not null) 
-AND (hp_max&gt;8000 OR mp_max&lt;1500) order by (hp_max+mp_max) DESC;</div>2019-06-24</li><br/><li><span>华夏</span> 👍（5） 💬（3）<div>SELECT name, role_main, role_assist, hp_max, mp_max 
+AND (hp_max&gt;8000 OR mp_max&lt;1500) order by (hp_max+mp_max) DESC;</p>2019-06-24</li><br/><li><span>华夏</span> 👍（5） 💬（3）<p>SELECT name, role_main, role_assist, hp_max, mp_max 
 FROM heros 
 WHERE (role_main IN (&#39;坦克&#39;, &#39;战士&#39;) AND role_assist IS NOT NULL) 
 AND (hp_max &gt; 8000 OR mp_max &lt; 1500) 
@@ -201,10 +201,10 @@ ORDER BY (hp_max+mp_max) DESC;
 | 花木兰    | 战士      | 刺客        |   5397 |    100 |
 +-----------+-----------+-------------+--------+--------+
 8 rows in set (0.00 sec)
-</div>2019-06-30</li><br/><li><span>晓涛</span> 👍（4） 💬（2）<div>sql建立索引是什么意思，老师能详细解释下不？
-</div>2019-08-16</li><br/><li><span>不负</span> 👍（4） 💬（1）<div>过滤上线时间 DATE(birthdate) NOT BETWEEN &#39;2016-01-01&#39; AND &#39;2017-01-01&#39;，是MySQL里date类型可以直接与字符串进行比较运算？那这里birthdate可以不用 DATE 函数转换了；Oracle中日期的比较就比较严格，TO_DATE、TO_CHAR 效率也不同</div>2019-06-27</li><br/><li><span>꯭J꯭I꯭N꯭🙃</span> 👍（3） 💬（1）<div>SELECT name, role_main, role_assist,hp_max,mp_max
+</p>2019-06-30</li><br/><li><span>晓涛</span> 👍（4） 💬（2）<p>sql建立索引是什么意思，老师能详细解释下不？
+</p>2019-08-16</li><br/><li><span>不负</span> 👍（4） 💬（1）<p>过滤上线时间 DATE(birthdate) NOT BETWEEN &#39;2016-01-01&#39; AND &#39;2017-01-01&#39;，是MySQL里date类型可以直接与字符串进行比较运算？那这里birthdate可以不用 DATE 函数转换了；Oracle中日期的比较就比较严格，TO_DATE、TO_CHAR 效率也不同</p>2019-06-27</li><br/><li><span>꯭J꯭I꯭N꯭🙃</span> 👍（3） 💬（1）<p>SELECT name, role_main, role_assist,hp_max,mp_max
 FROM heros
 WHERE (role_main IN (&#39;坦克&#39;,&#39;战士&#39;) AND role_assist IS NOT NULL) 
 AND (hp_max &gt; 8000 or mp_max &lt; 1500)
-ORDER BY (hp_max+mp_max) DESC;</div>2019-06-25</li><br/><li><span>ballgod</span> 👍（2） 💬（1）<div>关于通配符的问题想问一下老师，有看过python的正则表达式，评论第三位的解释中，+是一个或无穷个，*是零个或无穷个。按照老师说的%和_的含义，_%太%应该是匹配 </div>2019-07-13</li><br/>
+ORDER BY (hp_max+mp_max) DESC;</p>2019-06-25</li><br/><li><span>ballgod</span> 👍（2） 💬（1）<p>关于通配符的问题想问一下老师，有看过python的正则表达式，评论第三位的解释中，+是一个或无穷个，*是零个或无穷个。按照老师说的%和_的含义，_%太%应该是匹配 </p>2019-07-13</li><br/>
 </ul>

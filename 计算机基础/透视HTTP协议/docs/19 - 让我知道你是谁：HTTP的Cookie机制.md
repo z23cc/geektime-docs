@@ -135,18 +135,18 @@ Cookie的另一个常见用途是**广告跟踪**。
 
 ![unpreview](https://static001.geekbang.org/resource/image/56/63/56d766fc04654a31536f554b8bde7b63.jpg?wh=1110%2A659)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>徐海浪</span> 👍（48） 💬（4）<div>1. 如果 Cookie 的 Max-Age 属性设置为 0，会有什么效果呢？
+<li><span>徐海浪</span> 👍（48） 💬（4）<p>1. 如果 Cookie 的 Max-Age 属性设置为 0，会有什么效果呢？
 设置为0，服务器0秒就让Cookie失效，即立即失效，服务器不存Cookie。
 2. Cookie 的好处已经很清楚了，你觉得它有什么缺点呢？
 好处：方便了市民
-缺点：方便了黑客:)</div>2019-07-10</li><br/><li><span>放开那个猴子</span> 👍（37） 💬（15）<div>广告追踪没看明白呀，能否详细讲讲</div>2019-07-10</li><br/><li><span>Geek_66666</span> 👍（28） 💬（2）<div>既然max-age=0会立即失效，那不就等于无记忆了？那干嘛还用cookie？</div>2019-08-15</li><br/><li><span>前端西瓜哥</span> 👍（25） 💬（1）<div>1. （我修改 Lua 文件测试了一下）如果 Max-Age 设置为0，浏览器中该 Cookie 失效，即便这个 Cookie 已存在于浏览器中，且尚未过期。另外 Web 应用开发中，可以通过这种方式消除掉用户的登陆状态，此外记得在服务器的 session 中移除该 cookie 和其对应的用户信息。
+缺点：方便了黑客:)</p>2019-07-10</li><br/><li><span>放开那个猴子</span> 👍（37） 💬（15）<p>广告追踪没看明白呀，能否详细讲讲</p>2019-07-10</li><br/><li><span>Geek_66666</span> 👍（28） 💬（2）<p>既然max-age=0会立即失效，那不就等于无记忆了？那干嘛还用cookie？</p>2019-08-15</li><br/><li><span>前端西瓜哥</span> 👍（25） 💬（1）<p>1. （我修改 Lua 文件测试了一下）如果 Max-Age 设置为0，浏览器中该 Cookie 失效，即便这个 Cookie 已存在于浏览器中，且尚未过期。另外 Web 应用开发中，可以通过这种方式消除掉用户的登陆状态，此外记得在服务器的 session 中移除该 cookie 和其对应的用户信息。
 2. Cookie 的缺点：
 （1） 不安全。如果被中间人获取到 Cookie，完全将它作为用户凭证冒充用户。解决方案是使用 https 进行加密。
 （2）有数量和大小限制。另外 Cookie 太大也不好，传输的数据会变大。
-（3）客户端可能不会保存 Cookie。比如用 telnet 收发数据，用户禁用浏览器 Cookie 保存功能的情况。</div>2019-07-11</li><br/><li><span>饭饭</span> 👍（18） 💬（1）<div>Max-age：-1 的时候会永久有效吧 ？</div>2019-07-10</li><br/><li><span>WL</span> 👍（16） 💬（3）<div>对于XSS和XSRF一直不是很理解希望老师帮忙解答一下：
+（3）客户端可能不会保存 Cookie。比如用 telnet 收发数据，用户禁用浏览器 Cookie 保存功能的情况。</p>2019-07-11</li><br/><li><span>饭饭</span> 👍（18） 💬（1）<p>Max-age：-1 的时候会永久有效吧 ？</p>2019-07-10</li><br/><li><span>WL</span> 👍（16） 💬（3）<p>对于XSS和XSRF一直不是很理解希望老师帮忙解答一下：
 1. XSS攻击是指第三方的JS代码读取到浏览器A网站的Cookie然后冒充我去访问A网站吗？
-2.XSRF是指浏览器从A网站跳转到B网站是会带上A网站的Cookie吗？这个不是由Domain和Path已经限定了吗？</div>2019-07-10</li><br/><li><span>rongyefeng</span> 👍（13） 💬（1）<div>还有一个属性叫“Secure”，表示这个 Cookie 仅能用 HTTPS 协议加密传输，明文的 HTTP 协议会禁止发送。
+2.XSRF是指浏览器从A网站跳转到B网站是会带上A网站的Cookie吗？这个不是由Domain和Path已经限定了吗？</p>2019-07-10</li><br/><li><span>rongyefeng</span> 👍（13） 💬（1）<p>还有一个属性叫“Secure”，表示这个 Cookie 仅能用 HTTPS 协议加密传输，明文的 HTTP 协议会禁止发送。
 但 Cookie 本身不是加密的，浏览器里还是以明文的形式存在。
-这里的“ Cookie 本身”怎么理解？</div>2020-05-28</li><br/><li><span>业余草</span> 👍（11） 💬（2）<div>属性“HttpOnly”、“Secure”、“SameSite”很少见，老师可以给几个配套例子，后面答疑篇，可以来个攻防实战！</div>2019-07-10</li><br/><li><span>cp3yqng</span> 👍（6） 💬（1）<div>域名+路径的方式存储cookie，感觉像只有一台业务服务器，那后台如何过分布式系统呢，用户中心是一个系统，核心业务是其他的系统，这里cookie肯定要共享，应该有一级域名和二级域名等等的概念吧，麻烦老师在解释解释。我本人是做移动端开发的，都是自己把token写在网络底层的请求头中，其实核心思想是一样的，但是缺点就是所有的域名里面都带token，这样也不好，好像还有优化的空间。</div>2019-07-10</li><br/><li><span>大小兵</span> 👍（6） 💬（2）<div>要是能把session和token也说一下就好了</div>2019-07-10</li><br/><li><span>业余爱好者</span> 👍（5） 💬（1）<div>1.Max-Age: 是永久有效的意思。 
-2.cookie在浏览器端禁用，还有就是安全性，因为在本地是明文存储的</div>2019-07-10</li><br/><li><span>Maske</span> 👍（4） 💬（1）<div>samesite的加入是为了在一定程度上防范CSRF，比如a.com页面中有个恶意表单，提交url为b.com的域名为开头且为银行转账接口地址，且为post请求，用户误操作后会将本地cookie（domain为b.com）发送，导致账户损失，设置samesite为Lax后可避免该cookie的发送，防止该情况出现。</div>2020-06-14</li><br/><li><span>quaeast</span> 👍（4） 💬（2）<div>老师您好，我一只搞不懂cookie和session的区别</div>2020-02-15</li><br/><li><span>許敲敲</span> 👍（4） 💬（1）<div>还有个名词，session 这个适合cookie放在一起的，这个老师能简单解释下嘛？</div>2019-12-26</li><br/><li><span>kissingers</span> 👍（4） 💬（1）<div>哈哈，就是九品芝麻官里的半个烧饼：你后人凭这个来找我</div>2019-12-10</li><br/>
+这里的“ Cookie 本身”怎么理解？</p>2020-05-28</li><br/><li><span>业余草</span> 👍（11） 💬（2）<p>属性“HttpOnly”、“Secure”、“SameSite”很少见，老师可以给几个配套例子，后面答疑篇，可以来个攻防实战！</p>2019-07-10</li><br/><li><span>cp3yqng</span> 👍（6） 💬（1）<p>域名+路径的方式存储cookie，感觉像只有一台业务服务器，那后台如何过分布式系统呢，用户中心是一个系统，核心业务是其他的系统，这里cookie肯定要共享，应该有一级域名和二级域名等等的概念吧，麻烦老师在解释解释。我本人是做移动端开发的，都是自己把token写在网络底层的请求头中，其实核心思想是一样的，但是缺点就是所有的域名里面都带token，这样也不好，好像还有优化的空间。</p>2019-07-10</li><br/><li><span>大小兵</span> 👍（6） 💬（2）<p>要是能把session和token也说一下就好了</p>2019-07-10</li><br/><li><span>业余爱好者</span> 👍（5） 💬（1）<p>1.Max-Age: 是永久有效的意思。 
+2.cookie在浏览器端禁用，还有就是安全性，因为在本地是明文存储的</p>2019-07-10</li><br/><li><span>Maske</span> 👍（4） 💬（1）<p>samesite的加入是为了在一定程度上防范CSRF，比如a.com页面中有个恶意表单，提交url为b.com的域名为开头且为银行转账接口地址，且为post请求，用户误操作后会将本地cookie（domain为b.com）发送，导致账户损失，设置samesite为Lax后可避免该cookie的发送，防止该情况出现。</p>2020-06-14</li><br/><li><span>quaeast</span> 👍（4） 💬（2）<p>老师您好，我一只搞不懂cookie和session的区别</p>2020-02-15</li><br/><li><span>許敲敲</span> 👍（4） 💬（1）<p>还有个名词，session 这个适合cookie放在一起的，这个老师能简单解释下嘛？</p>2019-12-26</li><br/><li><span>kissingers</span> 👍（4） 💬（1）<p>哈哈，就是九品芝麻官里的半个烧饼：你后人凭这个来找我</p>2019-12-10</li><br/>
 </ul>

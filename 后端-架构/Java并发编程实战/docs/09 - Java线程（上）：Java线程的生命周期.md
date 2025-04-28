@@ -163,7 +163,7 @@ while(true) {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>姜戈</span> 👍（407） 💬（12）<div>可能出现无限循环，线程在sleep期间被打断了，抛出一个InterruptedException异常，try catch捕捉此异常，应该重置一下中断标示，因为抛出异常后，中断标示会自动清除掉！
+<li><span>姜戈</span> 👍（407） 💬（12）<p>可能出现无限循环，线程在sleep期间被打断了，抛出一个InterruptedException异常，try catch捕捉此异常，应该重置一下中断标示，因为抛出异常后，中断标示会自动清除掉！
 Thread th = Thread.currentThread();
 while(true) {
   if(th.isInterrupted()) {
@@ -176,24 +176,24 @@ while(true) {
     Thread.currentThread().interrupt();
     e.printStackTrace();
   }
-}</div>2019-03-19</li><br/><li><span>虎虎❤️</span> 👍（124） 💬（6）<div>我的一位长辈曾告诉我，没有真正学不会的知识或者技术，只是缺乏好的老师。
+}</p>2019-03-19</li><br/><li><span>虎虎❤️</span> 👍（124） 💬（6）<p>我的一位长辈曾告诉我，没有真正学不会的知识或者技术，只是缺乏好的老师。
 
 有的人可以把复杂的知识讲明白，但是讲解的过程却也是晦涩难懂，不免落了下成。
 
 而学习王老师的课，我一直都觉得很轻松。云淡风轻地就把并发知识抽丝剥茧，确是更显功力。另一方面，我觉得人的大脑更喜欢接受这些平易近人的文字。看似浅近的文字，却更能带领我深入的思考，留下更深刻的印象。反观一些看起来高端大气上档次的论述，让人觉得云山雾罩，好不容易看懂了，但看过后却什么也想不起来了。大概是读文章的时候脑细胞都用来和晦涩的文字做斗争了，已经没有空间去思考和记忆了。
 
-再次感谢王老师给大家带来优秀的课程。</div>2019-03-19</li><br/><li><span>Tristan</span> 👍（98） 💬（16）<div>为什么实战高并发程序设计医术中写道“Tread.stop()方法在结束线程时，会直接终止线程，并且会释放这个线程所持有的锁”，而您文中所写的“果线程持有 synchronized 隐式锁，也不会释放”？？</div>2019-04-14</li><br/><li><span>thas</span> 👍（49） 💬（3）<div>interrupt是中断的意思，在单片机开发领域，用于接收特定的事件，从而执行后续的操作。Java线程中，（通常）使用interrupt作为线程退出的通知事件，告知线程可以结束了。
+再次感谢王老师给大家带来优秀的课程。</p>2019-03-19</li><br/><li><span>Tristan</span> 👍（98） 💬（16）<p>为什么实战高并发程序设计医术中写道“Tread.stop()方法在结束线程时，会直接终止线程，并且会释放这个线程所持有的锁”，而您文中所写的“果线程持有 synchronized 隐式锁，也不会释放”？？</p>2019-04-14</li><br/><li><span>thas</span> 👍（49） 💬（3）<p>interrupt是中断的意思，在单片机开发领域，用于接收特定的事件，从而执行后续的操作。Java线程中，（通常）使用interrupt作为线程退出的通知事件，告知线程可以结束了。
 interrupt不会结束线程的运行，在抛出InterruptedException后会清除中断标志（代表可以接收下一个中断信号了），所以我想，interrupt应该也是可以类似单片机一样作为一种通知信号的，只是实现通知的话，Java有其他更好的选择。
 因InterruptedException退出同步代码块会释放当前线程持有的锁，所以相比外部强制stop是安全的（已手动测试）。sleep、join等会抛出InterruptedException的操作会立即抛出异常，wait在被唤醒之后才会抛出异常（就像阻塞一样，不被打扰）。
-另外，感谢老师提醒，I&#47;O阻塞在Java中是可运行状态，并发包中的lock是等待状态。</div>2019-03-19</li><br/><li><span>Junzi</span> 👍（38） 💬（2）<div>当发起中断之后，Thread.sleep(100);会抛出InterruptedException异常，而这个抛出这个异常会清除当前线程的中断标识，导致th.isInterrupted()一直都是返回false的。
+另外，感谢老师提醒，I&#47;O阻塞在Java中是可运行状态，并发包中的lock是等待状态。</p>2019-03-19</li><br/><li><span>Junzi</span> 👍（38） 💬（2）<p>当发起中断之后，Thread.sleep(100);会抛出InterruptedException异常，而这个抛出这个异常会清除当前线程的中断标识，导致th.isInterrupted()一直都是返回false的。
 
-InterruptedException - if any thread has interrupted the current thread. The interrupted status of the current thread is cleared when this exception is thrown.</div>2019-03-26</li><br/><li><span>海鸿</span> 👍（21） 💬（5）<div>如果线程处于阻塞状态（BLOCKED）,此时调用线程的中断方法，线程会又如何反应?
+InterruptedException - if any thread has interrupted the current thread. The interrupted status of the current thread is cleared when this exception is thrown.</p>2019-03-26</li><br/><li><span>海鸿</span> 👍（21） 💬（5）<p>如果线程处于阻塞状态（BLOCKED）,此时调用线程的中断方法，线程会又如何反应?
 是否会像等待状态一样抛异常?
 还是会像运行状态一样被标记为已中断状态?
 还是不受到任何影响?
-麻烦老师解答一下😁</div>2019-03-19</li><br/><li><span>WhoAmI</span> 👍（17） 💬（1）<div>老师，Java调用阻塞API时，Java层面是runnable，那仍然占用CPU吗，此时此线程在操作系统中是什么状态呢？这个问题好几个人都在问，能详细解释下吗？</div>2019-03-24</li><br/><li><span>cky.宇</span> 👍（15） 💬（2）<div>根据接口文档描述，stop()虽然也会中止线程并释放锁，但是没有提供一种补偿的机会，可能某个线程对共享对象进行了不完整的修改，此时如果stop后，该共享对象会继续被其他线程使用，造成线程安全问题。interrupt()则是提供给使用者一种被中断后补偿的机会，例如回滚之前的修改。个人理解是这样的，请老师指点一下。</div>2019-11-04</li><br/><li><span>alias cd=rm -rf</span> 👍（13） 💬（5）<div>思考题，不能中断循环，异常捕获要放在while循环外面
-</div>2019-03-19</li><br/><li><span>Aven</span> 👍（10） 💬（1）<div>老师，您好，想问下，在讲到“java调用阻塞api的情况下，java程序仍然是Runnable状态”这里的时候，我不太理解，哪些api是属于阻塞api呢</div>2019-07-02</li><br/><li><span>J.M.Liu</span> 👍（10） 💬（2）<div>感谢老师提醒，原来jvm层面的线程状态和os层面上的线程状态是不一样的，i&#47;o挂起在jvm也是runable状态。另外并发包的lock其实是处于waitting状态。
-但是有个疑问，jvm中blocked状态的线程和waitting状态的线程，除了处在不同的队列之外，还有没有什么区别呀？我这里问的区别包括jvm和os两个层面，谢谢老师</div>2019-03-19</li><br/><li><span>yang</span> 👍（8） 💬（1）<div>
+麻烦老师解答一下😁</p>2019-03-19</li><br/><li><span>WhoAmI</span> 👍（17） 💬（1）<p>老师，Java调用阻塞API时，Java层面是runnable，那仍然占用CPU吗，此时此线程在操作系统中是什么状态呢？这个问题好几个人都在问，能详细解释下吗？</p>2019-03-24</li><br/><li><span>cky.宇</span> 👍（15） 💬（2）<p>根据接口文档描述，stop()虽然也会中止线程并释放锁，但是没有提供一种补偿的机会，可能某个线程对共享对象进行了不完整的修改，此时如果stop后，该共享对象会继续被其他线程使用，造成线程安全问题。interrupt()则是提供给使用者一种被中断后补偿的机会，例如回滚之前的修改。个人理解是这样的，请老师指点一下。</p>2019-11-04</li><br/><li><span>alias cd=rm -rf</span> 👍（13） 💬（5）<p>思考题，不能中断循环，异常捕获要放在while循环外面
+</p>2019-03-19</li><br/><li><span>Aven</span> 👍（10） 💬（1）<p>老师，您好，想问下，在讲到“java调用阻塞api的情况下，java程序仍然是Runnable状态”这里的时候，我不太理解，哪些api是属于阻塞api呢</p>2019-07-02</li><br/><li><span>J.M.Liu</span> 👍（10） 💬（2）<p>感谢老师提醒，原来jvm层面的线程状态和os层面上的线程状态是不一样的，i&#47;o挂起在jvm也是runable状态。另外并发包的lock其实是处于waitting状态。
+但是有个疑问，jvm中blocked状态的线程和waitting状态的线程，除了处在不同的队列之外，还有没有什么区别呀？我这里问的区别包括jvm和os两个层面，谢谢老师</p>2019-03-19</li><br/><li><span>yang</span> 👍（8） 💬（1）<p>
 public class TestThread {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -253,5 +253,5 @@ class Worker extends Thread {
 
 说的有点多了， 大家多多讨论~！~！~！
 
-</div>2019-03-20</li><br/><li><span>悟</span> 👍（8） 💬（3）<div>老师 stop方法直接杀掉线程了，什么不会释放锁呢</div>2019-03-19</li><br/><li><span>ZOU志伟</span> 👍（6） 💬（1）<div>老师，我有个疑问，文章中讲到线程调用阻塞式 API 时，不会转换到 BLOCKED 状态，而是保持RUNNABLE状态，想知道这些阻塞式API是什么？</div>2019-03-22</li><br/><li><span>向往的生活</span> 👍（6） 💬（3）<div>当线程 A 处于 WAITING、TIMED_WAITING 状态时，如果其他线程调用线程 A 的 interrupt() 方法，会使线程 A 返回到 RUNNABLE 状态，同时线程 A 的代码会触发 InterruptedException 异常。此时如果线程A获取不到锁，岂不是会立马又变成BLOCKED 状态？</div>2019-03-19</li><br/>
+</p>2019-03-20</li><br/><li><span>悟</span> 👍（8） 💬（3）<p>老师 stop方法直接杀掉线程了，什么不会释放锁呢</p>2019-03-19</li><br/><li><span>ZOU志伟</span> 👍（6） 💬（1）<p>老师，我有个疑问，文章中讲到线程调用阻塞式 API 时，不会转换到 BLOCKED 状态，而是保持RUNNABLE状态，想知道这些阻塞式API是什么？</p>2019-03-22</li><br/><li><span>向往的生活</span> 👍（6） 💬（3）<p>当线程 A 处于 WAITING、TIMED_WAITING 状态时，如果其他线程调用线程 A 的 interrupt() 方法，会使线程 A 返回到 RUNNABLE 状态，同时线程 A 的代码会触发 InterruptedException 异常。此时如果线程A获取不到锁，岂不是会立马又变成BLOCKED 状态？</p>2019-03-19</li><br/>
 </ul>

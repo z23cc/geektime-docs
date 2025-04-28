@@ -272,7 +272,7 @@ Redis一直被称为单线程架构，按照我们通常的理解，单个线程
 
 这节课我们学习了Reactor模型，除了Redis，你还了解什么软件系统使用了Reactor模型吗？
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（76） 💬（2）<div>Reactor模型可以分为3种：
+<li><span>Darren</span> 👍（76） 💬（2）<p>Reactor模型可以分为3种：
 单线程Reactor模式
 一个线程：
 单线程：建立连接（Acceptor）、监听accept、read、write事件（Reactor）、处理事件（Handler）都只用一个单线程。
@@ -298,7 +298,7 @@ nginx：nginx是多进程模型，master进程不处理网络IO，每个Wroker�
 
 netty：通信绝对的王者，默认是多Reactor，主Reacotr只负责建立连接，然后把建立好的连接给到从Reactor，从Reactor负责IO读写。当然可以专门调整为单Reactor。
 
-kafka：kafka也是多Reactor，但是因为Kafka主要与磁盘IO交互，因此真正的读写数据不是从Reactor处理的，而是有一个worker线程池，专门处理磁盘IO，从Reactor负责网络IO，然后把任务交给worker线程池处理。</div>2021-08-17</li><br/><li><span>Kaito</span> 👍（26） 💬（2）<div>1、为了高效处理网络 IO 的「连接事件」、「读事件」、「写事件」，演化出了 Reactor 模型
+kafka：kafka也是多Reactor，但是因为Kafka主要与磁盘IO交互，因此真正的读写数据不是从Reactor处理的，而是有一个worker线程池，专门处理磁盘IO，从Reactor负责网络IO，然后把任务交给worker线程池处理。</p>2021-08-17</li><br/><li><span>Kaito</span> 👍（26） 💬（2）<p>1、为了高效处理网络 IO 的「连接事件」、「读事件」、「写事件」，演化出了 Reactor 模型
 
 2、Reactor 模型主要有 reactor、acceptor、handler 三类角色：
 
@@ -324,7 +324,7 @@ kafka：kafka也是多Reactor，但是因为Kafka主要与磁盘IO交互，因�
 
 Netty、Memcached 采用多 Reactor 多线程模型。
 
-Nginx 采用多 Reactor 多进程模型，不过与标准的多 Reactor 多进程模型有些许差异。Nginx 的主进程只用来初始化 socket，不会 accept 连接，而是由子进程 accept 连接，之后这个连接的所有处理都在子进程中完成。</div>2021-08-17</li><br/><li><span>飞龙</span> 👍（3） 💬（0）<div>main(server.c)-&gt;aeCreateEventLoop(aeApiCreate epoll_create)-&gt;aeCreateFileEvent(aeApiAddEvent epoll_ctl)-&gt;aeMain(server.c)-&gt;aeProcessEvents(aeApiPoll epoll_wait)</div>2022-09-15</li><br/><li><span>夏天</span> 👍（2） 💬（1）<div>Redis 实现 ae 框架十分巧妙的一点是&quot;抽象&quot;。用面向过程的 C 写出了面向对象的感觉。
+Nginx 采用多 Reactor 多进程模型，不过与标准的多 Reactor 多进程模型有些许差异。Nginx 的主进程只用来初始化 socket，不会 accept 连接，而是由子进程 accept 连接，之后这个连接的所有处理都在子进程中完成。</p>2021-08-17</li><br/><li><span>飞龙</span> 👍（3） 💬（0）<p>main(server.c)-&gt;aeCreateEventLoop(aeApiCreate epoll_create)-&gt;aeCreateFileEvent(aeApiAddEvent epoll_ctl)-&gt;aeMain(server.c)-&gt;aeProcessEvents(aeApiPoll epoll_wait)</p>2022-09-15</li><br/><li><span>夏天</span> 👍（2） 💬（1）<p>Redis 实现 ae 框架十分巧妙的一点是&quot;抽象&quot;。用面向过程的 C 写出了面向对象的感觉。
 
 抽象出事件初始化、事件注册、事件接收。并通过 fd 和 mask 关联底层 API 对象和上层对象。
 
@@ -334,18 +334,18 @@ Nginx 采用多 Reactor 多进程模型，不过与标准的多 Reactor 多进�
 
 aeCreateEventLoop &lt;---&gt; aeApiCreate   &lt;---&gt; epoll_create
 aeCreateFileEvent &lt;---&gt; aeApiAddEvent &lt;---&gt; epoll_ctl    
-aeProcessEvents   &lt;---&gt; aeApiPoll     &lt;---&gt; epoll_wait   </div>2022-02-22</li><br/><li><span>码小呆</span> 👍（2） 💬（0）<div>只知道netty用过Reactor模型，看了评论学到了</div>2021-08-18</li><br/><li><span>阿豪</span> 👍（1） 💬（5）<div>主循环这样不断执行，怎么保证不耗尽cpu ？理论上这个cpu 会一直处于忙碌状态。</div>2021-12-18</li><br/><li><span>曾轼麟</span> 👍（1） 💬（0）<div>上篇文章回答的时候自己提到的-Redis基于多种IO复用实现了同一方法但是多套代码文件的思路，没想到这期老师就提到了。回答老师的问题：还有什么软件系统使用了Reactor模型？
+aeProcessEvents   &lt;---&gt; aeApiPoll     &lt;---&gt; epoll_wait   </p>2022-02-22</li><br/><li><span>码小呆</span> 👍（2） 💬（0）<p>只知道netty用过Reactor模型，看了评论学到了</p>2021-08-18</li><br/><li><span>阿豪</span> 👍（1） 💬（5）<p>主循环这样不断执行，怎么保证不耗尽cpu ？理论上这个cpu 会一直处于忙碌状态。</p>2021-12-18</li><br/><li><span>曾轼麟</span> 👍（1） 💬（0）<p>上篇文章回答的时候自己提到的-Redis基于多种IO复用实现了同一方法但是多套代码文件的思路，没想到这期老师就提到了。回答老师的问题：还有什么软件系统使用了Reactor模型？
 答：
     最典型的就是netty，java靠netty得以实现了高性能的服务
 
 总结：
 本篇文章老师主要介绍了Redis是如何实现Reactor模型，其本质上就是围绕三个事件的实现【连接请求，读事件，写事件】，而Redis为了方便实现，封装了事件驱动框架aeEventLoop，其本质上是一个不断处理事件的循环。能同时分发处理来自成百上千个客户端的读，写，连接等请求。
-</div>2021-08-19</li><br/><li><span>结冰的水滴</span> 👍（1） 💬（0）<div>kafka使用了Reactor编程模型，它使用一个Acceptor,多个Processor处理网络连接，读写请求，以及一个线程池处理消息读写</div>2021-08-17</li><br/><li><span>kobe</span> 👍（0） 💬（0）<div>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；
+</p>2021-08-19</li><br/><li><span>结冰的水滴</span> 👍（1） 💬（0）<p>kafka使用了Reactor编程模型，它使用一个Acceptor,多个Processor处理网络连接，读写请求，以及一个线程池处理消息读写</p>2021-08-17</li><br/><li><span>kobe</span> 👍（0） 💬（0）<p>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；
 ae_evport.c，对应 Solaris 上的 IO 复用函数 evport；
 ae_kqueue.c，对应 macOS 或 FreeBSD 上的 IO 复用函数 kqueue；
 ae_select.c，对应 Linux（或 Windows）的 IO 复用函数 select。
-你好 我想问下 这个不同操作系统是不是在编译的时候就确定了对应的是哪一个实现？</div>2023-08-24</li><br/><li><span>kobe</span> 👍（0） 💬（0）<div>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；ae_evport.c，对应 Solaris 上的 IO 复用函数 evport；ae_kqueue.c，对应 macOS 或 FreeBSD 上的 IO 复用函数 kqueue；ae_select.c，对应 Linux（或 Windows）的 IO 复用函数 select。</div>2023-08-24</li><br/><li><span>kobe</span> 👍（0） 💬（0）<div>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；
+你好 我想问下 这个不同操作系统是不是在编译的时候就确定了对应的是哪一个实现？</p>2023-08-24</li><br/><li><span>kobe</span> 👍（0） 💬（0）<p>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；ae_evport.c，对应 Solaris 上的 IO 复用函数 evport；ae_kqueue.c，对应 macOS 或 FreeBSD 上的 IO 复用函数 kqueue；ae_select.c，对应 Linux（或 Windows）的 IO 复用函数 select。</p>2023-08-24</li><br/><li><span>kobe</span> 👍（0） 💬（0）<p>ae_epoll.c，对应 Linux 上的 IO 复用函数 epoll；
 ae_evport.c，对应 Solaris 上的 IO 复用函数 evport；
 ae_kqueue.c，对应 macOS 或 FreeBSD 上的 IO 复用函数 kqueue；
-ae_select.c，对应 Linux（或 Windows）的 IO 复用函数 select。</div>2023-08-24</li><br/><li><span>柯江胜</span> 👍（0） 💬（1）<div>对于写事件还不是很理解，连接事件是客户端发来连接请求，读事件是客户端发来命令请求需要读取，那么写事件对应的是什么触发的？</div>2022-09-10</li><br/><li><span>路遥知码力</span> 👍（0） 💬（0）<div>swoole使用的是主从Reactor模型</div>2021-10-11</li><br/><li><span>sljoai</span> 👍（0） 💬（0）<div>Netty也实现了Reactor模型</div>2021-08-26</li><br/><li><span>Mr.差不多</span> 👍（0） 💬（1）<div>老师 您好，while 循环里面的线程就算是 IO 线程吗</div>2021-08-24</li><br/>
+ae_select.c，对应 Linux（或 Windows）的 IO 复用函数 select。</p>2023-08-24</li><br/><li><span>柯江胜</span> 👍（0） 💬（1）<p>对于写事件还不是很理解，连接事件是客户端发来连接请求，读事件是客户端发来命令请求需要读取，那么写事件对应的是什么触发的？</p>2022-09-10</li><br/><li><span>路遥知码力</span> 👍（0） 💬（0）<p>swoole使用的是主从Reactor模型</p>2021-10-11</li><br/><li><span>sljoai</span> 👍（0） 💬（0）<p>Netty也实现了Reactor模型</p>2021-08-26</li><br/><li><span>Mr.差不多</span> 👍（0） 💬（1）<p>老师 您好，while 循环里面的线程就算是 IO 线程吗</p>2021-08-24</li><br/>
 </ul>

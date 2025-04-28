@@ -224,7 +224,7 @@ Spark集群准备好之后，我们就可以通过修改hive-site.xml中相关�
 
 欢迎你在留言区跟我交流互动，也欢迎把这一讲的内容分享给更多同事、朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>A</span> 👍（7） 💬（2）<div>不过，相比前者，spark-sql CLI 的集成方式多了一层限制，那就是在部署上，spark-sql CLI 与 Hive Metastore 必须安装在同一个计算节点。换句话说，spark-sql CLI 只能在本地访问 Hive Metastore，而没有办法通过远程的方式来做到这一点。   ---------我试了试是可以的老师，是我对这句话理解有误嘛？三台机器 01、02、03；01、02启动hive metastore，然后在03上启动spark-sql spark:&#47;&#47;bdp-dc-003:7077  同样是可以使用hive的metastore</div>2021-11-09</li><br/><li><span>Unknown element</span> 👍（1） 💬（1）<div>老师问下 Beeline + Spark Thrift Server 这种部署方式应该怎么配置spark参数呢？我看我们公司的文件是在hivesql里带上类似 set hive.exec.parallel=true; 这种参数，这和用dataframe api设置参数不太一样啊。。如果在 hive sql里配置的话它的参数和spark的参数的对应关系是怎样的呢？谢谢老师~</div>2021-12-20</li><br/><li><span>Unknown element</span> 👍（0） 💬（1）<div>问题一的执行路径是不是还是先建立dataframe，然后根据sql逻辑完成计算，最后存到hive？虽然是hive on spark但是我理解这种情况下应该没有用到hive的优化引擎吧</div>2021-11-25</li><br/><li><span>HHB</span> 👍（0） 💬（1）<div>老师请问，Hive with Spark的方式比直接使用spark sql的性能高吗？</div>2021-11-19</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（3）<div>老师，我把hive引擎换成spark后，一直出现这个错误，我看了 资源充足呀，您看一下，是什么原因呢
+<li><span>A</span> 👍（7） 💬（2）<p>不过，相比前者，spark-sql CLI 的集成方式多了一层限制，那就是在部署上，spark-sql CLI 与 Hive Metastore 必须安装在同一个计算节点。换句话说，spark-sql CLI 只能在本地访问 Hive Metastore，而没有办法通过远程的方式来做到这一点。   ---------我试了试是可以的老师，是我对这句话理解有误嘛？三台机器 01、02、03；01、02启动hive metastore，然后在03上启动spark-sql spark:&#47;&#47;bdp-dc-003:7077  同样是可以使用hive的metastore</p>2021-11-09</li><br/><li><span>Unknown element</span> 👍（1） 💬（1）<p>老师问下 Beeline + Spark Thrift Server 这种部署方式应该怎么配置spark参数呢？我看我们公司的文件是在hivesql里带上类似 set hive.exec.parallel=true; 这种参数，这和用dataframe api设置参数不太一样啊。。如果在 hive sql里配置的话它的参数和spark的参数的对应关系是怎样的呢？谢谢老师~</p>2021-12-20</li><br/><li><span>Unknown element</span> 👍（0） 💬（1）<p>问题一的执行路径是不是还是先建立dataframe，然后根据sql逻辑完成计算，最后存到hive？虽然是hive on spark但是我理解这种情况下应该没有用到hive的优化引擎吧</p>2021-11-25</li><br/><li><span>HHB</span> 👍（0） 💬（1）<p>老师请问，Hive with Spark的方式比直接使用spark sql的性能高吗？</p>2021-11-19</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（3）<p>老师，我把hive引擎换成spark后，一直出现这个错误，我看了 资源充足呀，您看一下，是什么原因呢
 
 hive (test)&gt; select count(*) from spark_hive group by id;
 Query ID = root_20211031144450_fc398bef-8f94-4a07-a678-cdeef464b128
@@ -243,7 +243,7 @@ Please check YARN or Spark driver&#39;s logs for further information.
 Status: SENT
 Failed to execute spark task, with exception &#39;java.lang.IllegalStateException(RPC channel is closed.)&#39;
 FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.spark.SparkTask. RPC channel is closed.
-</div>2021-10-31</li><br/><li><span>qinsi</span> 👍（0） 💬（2）<div>理论上应该可以把HQL转换成Spark SQL吧，那样Hive on Spark是不是性能就会提升了？</div>2021-10-26</li><br/><li><span>gouge</span> 👍（0） 💬（4）<div>老师，请问为什么会有这个限制？“spark-sql CLI 的集成方式多了一层限制，那就是在部署上，spark-sql CLI 与 Hive Metastore 必须安装在同一个计算节点”。
+</p>2021-10-31</li><br/><li><span>qinsi</span> 👍（0） 💬（2）<p>理论上应该可以把HQL转换成Spark SQL吧，那样Hive on Spark是不是性能就会提升了？</p>2021-10-26</li><br/><li><span>gouge</span> 👍（0） 💬（4）<p>老师，请问为什么会有这个限制？“spark-sql CLI 的集成方式多了一层限制，那就是在部署上，spark-sql CLI 与 Hive Metastore 必须安装在同一个计算节点”。
 
 我实验好像没有发现存在这个“限制”。如下：
 
@@ -259,9 +259,9 @@ FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.spark
 
 谢谢！
 
-</div>2021-10-26</li><br/><li><span>Geek_e2be2a</span> 👍（5） 💬（0）<div>官方的Spark Thriftserver功能比较弱，可以试一下Apache Kyuubi</div>2022-07-17</li><br/><li><span>Chloe</span> 👍（0） 💬（0）<div>请问可以简单讲一下hive和iceberg的区别吗？两者和Spark的结合，各有什么应用场景呢？谢谢！</div>2024-12-20</li><br/><li><span>王云峰</span> 👍（0） 💬（0）<div>HBase是按照列族聚集的还是按照列聚集的？就是磁盘上顺序扫是只扫某一列还是会列族所有列一起扫？</div>2023-11-19</li><br/><li><span>钱鹏 Allen</span> 👍（0） 💬（0）<div>Spark是计算引擎，而Hive是开发侧实现业务逻辑的入口
+</p>2021-10-26</li><br/><li><span>Geek_e2be2a</span> 👍（5） 💬（0）<p>官方的Spark Thriftserver功能比较弱，可以试一下Apache Kyuubi</p>2022-07-17</li><br/><li><span>Chloe</span> 👍（0） 💬（0）<p>请问可以简单讲一下hive和iceberg的区别吗？两者和Spark的结合，各有什么应用场景呢？谢谢！</p>2024-12-20</li><br/><li><span>王云峰</span> 👍（0） 💬（0）<p>HBase是按照列族聚集的还是按照列聚集的？就是磁盘上顺序扫是只扫某一列还是会列族所有列一起扫？</p>2023-11-19</li><br/><li><span>钱鹏 Allen</span> 👍（0） 💬（0）<p>Spark是计算引擎，而Hive是开发侧实现业务逻辑的入口
 Hive的设计优势在于兼容，不同于以往的pig，他只需要写sql
-同时也能优化计算逻辑，最终将计算过程放在map—reduce上</div>2022-11-10</li><br/><li><span>Geek_278a2c</span> 👍（0） 💬（0）<div>1，请问可以通过hive sql create table并插入数据，然后通过spark sql访问吗？（配置同一个hive metastore）
+同时也能优化计算逻辑，最终将计算过程放在map—reduce上</p>2022-11-10</li><br/><li><span>Geek_278a2c</span> 👍（0） 💬（0）<p>1，请问可以通过hive sql create table并插入数据，然后通过spark sql访问吗？（配置同一个hive metastore）
 2，类似的，请问可以通过hive sql create udf，然后通过spark sql使用udf吗？
-</div>2022-03-15</li><br/>
+</p>2022-03-15</li><br/>
 </ul>

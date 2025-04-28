@@ -474,23 +474,23 @@ $ gsemver bump
 
 欢迎你在留言区分享你的见解，和我一起交流讨论，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Alery</span> 👍（4） 💬（2）<div>“如果 review 不通过，feature 开发者可以直接在 feature&#47;helloworld 分支修正代码，并 push 到远端的 feature&#47;helloworld 分支，然后通知 reviewers 再次 review。因为有 push 事件发生，所以会触发 GitHub Actions CI 流水线。”
+<li><span>Alery</span> 👍（4） 💬（2）<p>“如果 review 不通过，feature 开发者可以直接在 feature&#47;helloworld 分支修正代码，并 push 到远端的 feature&#47;helloworld 分支，然后通知 reviewers 再次 review。因为有 push 事件发生，所以会触发 GitHub Actions CI 流水线。”
 
-请问修复后的代码是直接执行gith commit --amend还是重新创建一个commit</div>2021-07-13</li><br/><li><span>daz2yy</span> 👍（4） 💬（3）<div>老师好，想问下，测试阶段过了之后，这个特性就能直接上线吗？还是说等大家一起开发完这个迭代内容再上线？
-另外，后端开发这里经常会设计 SQL 的变动，一种是数据变动，一种是结构变动，老师这块怎么去管理的呢？还有如何集成到特性研发流程里的呢？</div>2021-06-29</li><br/><li><span>helloworld</span> 👍（3） 💬（2）<div>release分支是从develop分支来的，如果测试直接通过，没有做进一步修改，就不用再合并到develop分支了吧，直接合并到master分支就可以了吧，这样理解对不对呢</div>2021-06-29</li><br/><li><span>Geek_6bdb4e</span> 👍（2） 💬（2）<div>我来回答一下第一个问题：make dependencies会执行dependencies.run，进而执行1. dependencies.packages，这个是对代码本身依赖的packages进行管理，2. dependencies.tools，这个是对项目本身依赖的一些工具进行检查和管理，其中又根据重要等级区分为blocker和critical以及trivial，缺失blocker可能导致CI流程失败，缺失critical可能导致make的一些环节失败，tiivial是可选的工具，缺失没有任何影响。我有一个小问题，这个make dependencies的调用时机是什么时候，发现只有通过make dependencies时候才会调用，为什么不把这条放到make all的依赖项里面呢</div>2022-04-02</li><br/><li><span>徐蕴</span> 👍（2） 💬（1）<div>测试完成的tag应该打在master上，还是release分支对应的commit上呢？master上应该还有其它没有测试的功能吧？</div>2021-08-05</li><br/><li><span>H.xu</span> 👍（1） 💬（2）<div>[going@192 iam]$ make test
+请问修复后的代码是直接执行gith commit --amend还是重新创建一个commit</p>2021-07-13</li><br/><li><span>daz2yy</span> 👍（4） 💬（3）<p>老师好，想问下，测试阶段过了之后，这个特性就能直接上线吗？还是说等大家一起开发完这个迭代内容再上线？
+另外，后端开发这里经常会设计 SQL 的变动，一种是数据变动，一种是结构变动，老师这块怎么去管理的呢？还有如何集成到特性研发流程里的呢？</p>2021-06-29</li><br/><li><span>helloworld</span> 👍（3） 💬（2）<p>release分支是从develop分支来的，如果测试直接通过，没有做进一步修改，就不用再合并到develop分支了吧，直接合并到master分支就可以了吧，这样理解对不对呢</p>2021-06-29</li><br/><li><span>Geek_6bdb4e</span> 👍（2） 💬（2）<p>我来回答一下第一个问题：make dependencies会执行dependencies.run，进而执行1. dependencies.packages，这个是对代码本身依赖的packages进行管理，2. dependencies.tools，这个是对项目本身依赖的一些工具进行检查和管理，其中又根据重要等级区分为blocker和critical以及trivial，缺失blocker可能导致CI流程失败，缺失critical可能导致make的一些环节失败，tiivial是可选的工具，缺失没有任何影响。我有一个小问题，这个make dependencies的调用时机是什么时候，发现只有通过make dependencies时候才会调用，为什么不把这条放到make all的依赖项里面呢</p>2022-04-02</li><br/><li><span>徐蕴</span> 👍（2） 💬（1）<p>测试完成的tag应该打在master上，还是release分支对应的commit上呢？master上应该还有其它没有测试的功能吧？</p>2021-08-05</li><br/><li><span>H.xu</span> 👍（1） 💬（2）<p>[going@192 iam]$ make test
 ===========&gt; Run unit test
 found packages example (doc.go) and main (example.go) in &#47;home&#47;going&#47;workspace&#47;golang&#47;src&#47;github.com&#47;marmotedu&#47;iam&#47;pkg&#47;rollinglog&#47;example
 found packages example (doc.go) and main (example.go) in &#47;home&#47;going&#47;workspace&#47;golang&#47;src&#47;github.com&#47;marmotedu&#47;iam&#47;pkg&#47;validator&#47;example
 no Go files in &#47;home&#47;going&#47;workspace&#47;golang&#47;src&#47;github.com&#47;marmotedu&#47;iam
 make[1]: *** [scripts&#47;make-rules&#47;golang.mk:81: go.test] Error 1
 make: *** [Makefile:108: test] Error 2
-这个错误是什么原因的呀</div>2022-05-02</li><br/><li><span>🌿小毒草</span> 👍（1） 💬（1）<div>如何保证“通过make gen 生成的存量代码要具有幂等性”， 如何测试？</div>2022-04-27</li><br/><li><span>江山未</span> 👍（1） 💬（1）<div>根据符合规范的commit message 生成版本号，这里有个疑问
-是一次commit会滚动一次数字吗？因为一个版本可能包含多个feature，feature a有一次commit，feature b有一次commit，但它们都属于这次的版本更新。那会造成 minor version +2 吗</div>2021-12-22</li><br/><li><span>yandongxiao</span> 👍（1） 💬（1）<div>总结：这些步骤应该是开发者经常遇到的。
+这个错误是什么原因的呀</p>2022-05-02</li><br/><li><span>🌿小毒草</span> 👍（1） 💬（1）<p>如何保证“通过make gen 生成的存量代码要具有幂等性”， 如何测试？</p>2022-04-27</li><br/><li><span>江山未</span> 👍（1） 💬（1）<p>根据符合规范的commit message 生成版本号，这里有个疑问
+是一次commit会滚动一次数字吗？因为一个版本可能包含多个feature，feature a有一次commit，feature b有一次commit，但它们都属于这次的版本更新。那会造成 minor version +2 吗</p>2021-12-22</li><br/><li><span>yandongxiao</span> 👍（1） 💬（1）<p>总结：这些步骤应该是开发者经常遇到的。
 开发阶段：执行 make all，本地走一遍CI流程。包括，自动生成部分代码或文档、静态代码检查、代码格式化、构建等。
 提交阶段：检查 commit message 是否符合 angular 规范；在 push commit &#47; pull request &#47; merge to develop 点，触发 CI 流程。所以，开发者要有在本地跑CI的方法。
-测试阶段：按照 Git Flow 的原则，创建出 release 分支，对代码进行测试。</div>2021-11-27</li><br/><li><span>lesserror</span> 👍（1） 💬（2）<div>孔老板，能大致说说：IAM 项目的分支命令规则图怎么解读吗？
+测试阶段：按照 Git Flow 的原则，创建出 release 分支，对代码进行测试。</p>2021-11-27</li><br/><li><span>lesserror</span> 👍（1） 💬（2）<p>孔老板，能大致说说：IAM 项目的分支命令规则图怎么解读吗？
 
-主要确认一下和我理解的是否相同。</div>2021-10-01</li><br/><li><span>陈麒文</span> 👍（1） 💬（1）<div>这么多的知识点，从哪开始入手比较能跟上大佬的节奏？</div>2021-08-17</li><br/><li><span>王骥</span> 👍（1） 💬（2）<div>执行make 失败，no such linter cyclop
+主要确认一下和我理解的是否相同。</p>2021-10-01</li><br/><li><span>陈麒文</span> 👍（1） 💬（1）<p>这么多的知识点，从哪开始入手比较能跟上大佬的节奏？</p>2021-08-17</li><br/><li><span>王骥</span> 👍（1） 💬（2）<p>执行make 失败，no such linter cyclop
 
 [going@dev iam]$ make
 ===========&gt; Generating iam error code go source files
@@ -504,6 +504,6 @@ make: *** [Makefile:101: lint] Error 2
 [going@dev iam]$ go version
 go version go1.16.2 linux&#47;amd64
 [going@dev iam]$ golangci-lint version
-golangci-lint has version v1.28.4-0.20200719134607-6a689074bf17 built from (unknown, mod sum: &quot;h1:LlCfXb0ozr7UL4sgH7UbR2Rt2eSjQE&#47;1zcIeWTu7ypk=&quot;) on (unknown)</div>2021-07-31</li><br/><li><span>Geek_4c902b</span> 👍（1） 💬（1）<div>老师，您好：
-iamctl new helloworld  这个iamctl 命令哪来的呀</div>2021-06-29</li><br/><li><span>小达</span> 👍（0） 💬（1）<div>iamctl new helloworld -d internal&#47;iamctl&#47;cmd&#47;helloworld这个在哪个目录下执行呢</div>2022-04-25</li><br/><li><span>CSB22</span> 👍（0） 💬（1）<div>Mark一个知识点：Maintainer 处理 pull request 冲突合并。https:&#47;&#47;blog.csdn.net&#47;danchenziDCZ&#47;article&#47;details&#47;81061989</div>2022-03-04</li><br/>
+golangci-lint has version v1.28.4-0.20200719134607-6a689074bf17 built from (unknown, mod sum: &quot;h1:LlCfXb0ozr7UL4sgH7UbR2Rt2eSjQE&#47;1zcIeWTu7ypk=&quot;) on (unknown)</p>2021-07-31</li><br/><li><span>Geek_4c902b</span> 👍（1） 💬（1）<p>老师，您好：
+iamctl new helloworld  这个iamctl 命令哪来的呀</p>2021-06-29</li><br/><li><span>小达</span> 👍（0） 💬（1）<p>iamctl new helloworld -d internal&#47;iamctl&#47;cmd&#47;helloworld这个在哪个目录下执行呢</p>2022-04-25</li><br/><li><span>CSB22</span> 👍（0） 💬（1）<p>Mark一个知识点：Maintainer 处理 pull request 冲突合并。https:&#47;&#47;blog.csdn.net&#47;danchenziDCZ&#47;article&#47;details&#47;81061989</p>2022-03-04</li><br/>
 </ul>

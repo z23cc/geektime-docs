@@ -363,5 +363,5 @@ Raft Node 是指一个唯一的 Raft 投票者，需要通过唯一的 ID 来标
 
 这里是本节课推荐的相关 issue 的任务列表，请点击查看[《Good First Issue》](http://www.robustmq.com/docs/robustmq-tutorial-cn/%e8%b4%a1%e7%8c%ae%e6%8c%87%e5%8d%97/good-first-issue/)。 另外欢迎给我的项目 [https://github.com/robustmq/robustmq](https://github.com/robustmq/robustmq) 点个 Star 啊！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>zhuxiufenghust</span> 👍（0） 💬（0）<div>create_snapshot调用的read_all有点疑问，rocksdb存储的都是kv格式数据，entry、last_index等数据存储没有什么区别，那read_all是如何做到只读取到entry的</div>2024-12-20</li><br/>
+<li><span>zhuxiufenghust</span> 👍（0） 💬（0）<p>create_snapshot调用的read_all有点疑问，rocksdb存储的都是kv格式数据，entry、last_index等数据存储没有什么区别，那read_all是如何做到只读取到entry的</p>2024-12-20</li><br/>
 </ul>

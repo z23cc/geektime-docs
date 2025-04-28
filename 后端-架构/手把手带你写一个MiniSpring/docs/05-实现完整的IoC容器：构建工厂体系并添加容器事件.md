@@ -518,7 +518,7 @@ IllegalStateException {
 
 学完这节课，我也给你留一道思考题。我们的容器以单例模式管理所有的Bean，那么怎么应对多线程环境？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>KernelStone</span> 👍（9） 💬（1）<div>这一小结其实新增的内容不算多！只是对之前已有的代码进行结构调整。在项目中对DefaultListableBeanFactory生成UML结构图，再进行从上到下的梳理，这样会舒服一些。
+<li><span>KernelStone</span> 👍（9） 💬（1）<p>这一小结其实新增的内容不算多！只是对之前已有的代码进行结构调整。在项目中对DefaultListableBeanFactory生成UML结构图，再进行从上到下的梳理，这样会舒服一些。
 
 0、【接口】BF，Bean工厂
 1、【接口】SingletonBeanRegistry，单例Bean仓库
@@ -531,27 +531,27 @@ IllegalStateException {
 8、AbstractAutowireCapableBF，提供成员List&lt;BeanPostProcessor&gt;！也因此它可以通过该成员进行更多的bean处理器操作，即add、get、apply在此有了具体实现。
 9、DefaultListableBF，其实没有啥，打开一看只Override了【接口】ListableBF中的4个方法，其余是默认继承。（即沿着类结构往上一堆，上面也说过了）
 
-因此，这节课真没什么新东西，不过梳理这个新的工厂体系，倒是很麻烦。。</div>2023-06-02</li><br/><li><span>马儿</span> 👍（3） 💬（3）<div>请教老师一下,
+因此，这节课真没什么新东西，不过梳理这个新的工厂体系，倒是很麻烦。。</p>2023-06-02</li><br/><li><span>马儿</span> 👍（3） 💬（3）<p>请教老师一下,
 1.ClassPathXmlApplicationContext和AbstractApplicationContext都有beanFactoryPostProcessors属性，是不是重复了呢？感觉直接复用父类的这个属性和相关方法也是可以的。
 2.AbstractAutowireCapableBeanFactory这个类中的beanPostProcessors属性写死了是AutowiredAnnotationBeanPostProcessor，不符合面向接口编程的风格。另外由于没有面向BeanPostProcessor导致DefaultListableBeanFactory需要再实现一遍 SingletonBeanRegistry
-3.AbstractBeanFactory实现了BeanFactory又写了两个抽象方法applyBeanPostProcessorsBeforeInitialization和applyBeanPostProcessorAfterInitialization，这里为什么不直接实现AutowireCapableBeanFactory呢？</div>2023-03-23</li><br/><li><span>CSY.</span> 👍（1） 💬（1）<div>老师我有个问题
-ConfigurableBeanFactory 中的 dependentBeanMap 等几个方法为什么要使用同级继承在DefaultSingletonBeanRegistry实现，而不在AbstractBeanFactory等中实现？</div>2023-04-07</li><br/><li><span>啊良梓是我</span> 👍（1） 💬（7）<div>BeanDefinition mbd = this.getBeanDefinition(beanName); Class classToMatch = mbd.getClass();
+3.AbstractBeanFactory实现了BeanFactory又写了两个抽象方法applyBeanPostProcessorsBeforeInitialization和applyBeanPostProcessorAfterInitialization，这里为什么不直接实现AutowireCapableBeanFactory呢？</p>2023-03-23</li><br/><li><span>CSY.</span> 👍（1） 💬（1）<p>老师我有个问题
+ConfigurableBeanFactory 中的 dependentBeanMap 等几个方法为什么要使用同级继承在DefaultSingletonBeanRegistry实现，而不在AbstractBeanFactory等中实现？</p>2023-04-07</li><br/><li><span>啊良梓是我</span> 👍（1） 💬（7）<p>BeanDefinition mbd = this.getBeanDefinition(beanName); Class classToMatch = mbd.getClass();
 这里为什么是拿BeanDefinition的Class的?这样子没意义吧?或者我漏掉什么了?
-前面存储Bean class 是 BeanDefinition的BeanName 才对.</div>2023-04-03</li><br/><li><span>Geek_513706</span> 👍（1） 💬（1）<div>老师，想提个建议，以后添加代码的时候能不能把添加到哪个包里面说清楚</div>2023-03-28</li><br/><li><span>风轻扬</span> 👍（1） 💬（1）<div>思考题：Spring的bean作用域默认是单例的，就是我们的DefaultSingletonBeanRegistry类中持有的那个那个singletons的ConcurrentHashMap，每次获取bean之前，都会先从这个单例map中获取，获取不到才创建。
+前面存储Bean class 是 BeanDefinition的BeanName 才对.</p>2023-04-03</li><br/><li><span>Geek_513706</span> 👍（1） 💬（1）<p>老师，想提个建议，以后添加代码的时候能不能把添加到哪个包里面说清楚</p>2023-03-28</li><br/><li><span>风轻扬</span> 👍（1） 💬（1）<p>思考题：Spring的bean作用域默认是单例的，就是我们的DefaultSingletonBeanRegistry类中持有的那个那个singletons的ConcurrentHashMap，每次获取bean之前，都会先从这个单例map中获取，获取不到才创建。
 如果是多线程场景，有竞态条件存在的情况下，可以考虑将bean的作用域改为Prototype类型，对于Prototype类型的bean，Spring会为每次get请求都新建bean，所以每个请求获取到的bean是不一样的，这样就没有并发问题了
 除了这两种作用域，还有另外四种作用域，我没怎么接触过，看了一下官方文档了解了一下。
 文档地址：https:&#47;&#47;docs.spring.io&#47;spring-framework&#47;docs&#47;5.3.27-SNAPSHOT&#47;reference&#47;html&#47;core.html#beans-factory-scopes
 遇到Spring的问题，可以多看看他们的文档，比搜索引擎强多了，写的很清晰
-另外，我有一个问题，请教一下老师，ClassPathXmlApplicationContext为啥要实现BeanFactory？感觉他们两个不是一个体系里的吧，一个是上下文，一个是bean工厂</div>2023-03-24</li><br/><li><span>Geek_03c08d</span> 👍（0） 💬（1）<div>BeanPostProcessor 接口 的 setFactory好像没有什么用</div>2024-02-28</li><br/><li><span>Geek_03c08d</span> 👍（0） 💬（1）<div>希望老师回答
+另外，我有一个问题，请教一下老师，ClassPathXmlApplicationContext为啥要实现BeanFactory？感觉他们两个不是一个体系里的吧，一个是上下文，一个是bean工厂</p>2023-03-24</li><br/><li><span>Geek_03c08d</span> 👍（0） 💬（1）<p>BeanPostProcessor 接口 的 setFactory好像没有什么用</p>2024-02-28</li><br/><li><span>Geek_03c08d</span> 👍（0） 💬（1）<p>希望老师回答
 1. AbstractAutowireCapableBeanFactory 为什么不加一个继承AutowireCapableBeanFactory,这样就不用写抽象方法了
-2. AbstractAutowireCapableBeanFactory 为什么是抽象的? 好像所有的功能都实现了</div>2024-02-28</li><br/><li><span>Cornicione.</span> 👍（0） 💬（1）<div>ide一直提示DefaultListableBeanFactory没有实现ConfigurableBeanFactory的部分methods。看了github上的代码也是一样的问题。github上的源码ioc5真的是可以运行的吗？</div>2024-01-17</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<div>ConfigurableBeanFactory定义了getDependentBeans()方法;
+2. AbstractAutowireCapableBeanFactory 为什么是抽象的? 好像所有的功能都实现了</p>2024-02-28</li><br/><li><span>Cornicione.</span> 👍（0） 💬（1）<p>ide一直提示DefaultListableBeanFactory没有实现ConfigurableBeanFactory的部分methods。看了github上的代码也是一样的问题。github上的源码ioc5真的是可以运行的吗？</p>2024-01-17</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<p>ConfigurableBeanFactory定义了getDependentBeans()方法;
 ConfigurableBeanFactory的实现类是DefaultListableBeanFactory，但是
 DefaultListableBeanFactory没有实现getDependentBeans()方法，居然没有报错！
 要是极客时间能发图，我肯定发一个图上来！
-我到底错哪儿了！</div>2023-05-30</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<div>原谅我实在没有看明白
+我到底错哪儿了！</p>2023-05-30</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<p>原谅我实在没有看明白
 ConfigurableBeanFactory接口, 有一个方法getDependentBeans();
 DefaultListableBeanFactory是它的实现类，大师并没有实现getDependentBeans这个方法，表示看的很懵b
-</div>2023-05-30</li><br/><li><span>梦幻之梦想</span> 👍（0） 💬（2）<div>我想问下DefaultListableBeanFactory中的beanDefinitionMap是怎么来的</div>2023-04-25</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（1）<div>String className = beanDefinition.getClassName();
+</p>2023-05-30</li><br/><li><span>梦幻之梦想</span> 👍（0） 💬（2）<p>我想问下DefaultListableBeanFactory中的beanDefinitionMap是怎么来的</p>2023-04-25</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（1）<p>String className = beanDefinition.getClassName();
             Class&lt;?&gt; aClass = null;
             try {
                 aClass = Class.forName(className);
@@ -559,7 +559,7 @@ DefaultListableBeanFactory是它的实现类，大师并没有实现getDependent
                 throw new RuntimeException(e);
             }
 
-应该是这样子获取BeanDefinition定义的Bean类型才对?</div>2023-04-03</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（2）<div>
+应该是这样子获取BeanDefinition定义的Bean类型才对?</p>2023-04-03</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（2）<p>
 package com.minis.beans.factory.config;
 import com.minis.beans.factory.ListableBeanFactory;
 public interface ConfigurableListableBeanFactory 
@@ -567,7 +567,7 @@ public interface ConfigurableListableBeanFactory
 ConfigurableBeanFactory {
 }
 
-这里是伪代码？ AutowireCapableBeanFactory按照流程下来，这里是一个Class的来哦。。。怎么可以用interface继承他的呢</div>2023-04-03</li><br/><li><span>宋健</span> 👍（0） 💬（1）<div>老师好，我想问几个小问题：
+这里是伪代码？ AutowireCapableBeanFactory按照流程下来，这里是一个Class的来哦。。。怎么可以用interface继承他的呢</p>2023-04-03</li><br/><li><span>宋健</span> 👍（0） 💬（1）<p>老师好，我想问几个小问题：
 1. 请问postProcessBeanFactory这个抽象方法的作用是什么呢？
-2.  我是不是可以在 registerBeanPostProcessors 中添加自己额外自定义的 BeanPostProcessor 来实现其他的注解解释器？</div>2023-04-03</li><br/>
+2.  我是不是可以在 registerBeanPostProcessors 中添加自己额外自定义的 BeanPostProcessor 来实现其他的注解解释器？</p>2023-04-03</li><br/>
 </ul>

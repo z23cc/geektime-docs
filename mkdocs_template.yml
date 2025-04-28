@@ -1,11 +1,11 @@
 # Site metadata
-site_name: Geek Time Docs
-site_description: 极客时间在线文档
-site_url:
+site_name: 极客时间文档
+site_description: 极客时间文档
+site_url: https://github.com/uaxe/geektime-docs
 site_author: zkep
-repo_url: https://github.com/uaxe/geektime-docs
+repo_name: zkep/my-geektime
+repo_url: https://github.com/zkep/my-geektime
 edit_uri: https://github.com/uaxe/geektime-docs
-repo_name: uaxe/geektime-docs
 remote_name: https://github.com/uaxe/geektime-docs
 docs_dir: "dist/" # where to find the markdown files
 site_dir: "site/" # where to publish to
@@ -14,7 +14,7 @@ use_directory_urls: true # don't display 'index.html' in slugs
 # Theme customization
 theme:
   name: material
-  language: en
+  language: zh
   custom_dir: overrides/
   logo:
   favicon:
@@ -43,7 +43,6 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
   features:
-    - content.action.edit
     - content.code.annotate
     - content.code.copy
     - content.tooltips

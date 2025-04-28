@@ -113,10 +113,10 @@ Kubernetes有readinessProbe和livenessProbe两个探针，前者用于检查应�
 
 我是朱晔，欢迎在评论区与我留言分享，也欢迎你把今天的内容分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>笨手笨脚の</span> 👍（0） 💬（1）<div>我之前部署单体 java 项目的时候遇到了这个错误：
+<li><span>笨手笨脚の</span> 👍（0） 💬（1）<p>我之前部署单体 java 项目的时候遇到了这个错误：
 org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.ClassFormatError: Unknown constant tag 67 in class file org&#47;apache&#47;catalina&#47;util&#47;ErrorPageSupport
 我找源码是在项目启动创建 tomcat 时报的错误，但是搜 Unknown constant tag ** 错误信息网上很多文章都说是 jdk 之类的问题，后来找公司的老员工看了看，调了下 cpu 和内存的限制，就可以了。
-他跟我说的是，可能因为分配的资源太少，启动非常慢，导致存活探针的 &#47;actuator&#47;health 接口在检测时项目还没启动完成，pod 一直重启。他好像也没太遇到过这个错误，想问下老师有遇到这个问题以及是怎么定位和解决的</div>2025-01-21</li><br/><li><span>Ethan New</span> 👍（0） 💬（1）<div>朱老师，期待你的新课</div>2023-02-15</li><br/><li><span>子休</span> 👍（12） 💬（0）<div>居然等到了朱老师又来加餐了，但是内容真的有点少，不知道朱老师后续还有没有别的计划，比如开个新专栏。时至今日，我买了三十门的极客课程，依旧觉得朱老师的课程最实用，也是我最快完成全部课程学习的。十分期待朱老师后续的新分享。</div>2021-11-27</li><br/><li><span>coder</span> 👍（3） 💬（0）<div>跟朱老师学到了很多，居然又更新了</div>2021-11-28</li><br/><li><span>袁帅</span> 👍（2） 💬（0）<div>朱老师再开一门课吧，太喜欢这种讲课风格了，实战性很强</div>2021-12-17</li><br/><li><span>胜勝</span> 👍（1） 💬（0）<div>哇，谢谢朱老师，最近公司就在从虚拟机到容器，虽然是开发，但是也在配合运维进行部署，看到了老师文章说的问题感觉很有用，能让人少踩很多坑</div>2021-11-28</li><br/><li><span>我已经设置了昵称</span> 👍（0） 💬（0）<div>NMT的具体使用方式，老师能加餐讲下吗，我们现在经常遇到RSS占用很高，但heapdump下来看没有任何问题。已经加上了
+他跟我说的是，可能因为分配的资源太少，启动非常慢，导致存活探针的 &#47;actuator&#47;health 接口在检测时项目还没启动完成，pod 一直重启。他好像也没太遇到过这个错误，想问下老师有遇到这个问题以及是怎么定位和解决的</p>2025-01-21</li><br/><li><span>Ethan New</span> 👍（0） 💬（1）<p>朱老师，期待你的新课</p>2023-02-15</li><br/><li><span>子休</span> 👍（12） 💬（0）<p>居然等到了朱老师又来加餐了，但是内容真的有点少，不知道朱老师后续还有没有别的计划，比如开个新专栏。时至今日，我买了三十门的极客课程，依旧觉得朱老师的课程最实用，也是我最快完成全部课程学习的。十分期待朱老师后续的新分享。</p>2021-11-27</li><br/><li><span>coder</span> 👍（3） 💬（0）<p>跟朱老师学到了很多，居然又更新了</p>2021-11-28</li><br/><li><span>袁帅</span> 👍（2） 💬（0）<p>朱老师再开一门课吧，太喜欢这种讲课风格了，实战性很强</p>2021-12-17</li><br/><li><span>胜勝</span> 👍（1） 💬（0）<p>哇，谢谢朱老师，最近公司就在从虚拟机到容器，虽然是开发，但是也在配合运维进行部署，看到了老师文章说的问题感觉很有用，能让人少踩很多坑</p>2021-11-28</li><br/><li><span>我已经设置了昵称</span> 👍（0） 💬（0）<p>NMT的具体使用方式，老师能加餐讲下吗，我们现在经常遇到RSS占用很高，但heapdump下来看没有任何问题。已经加上了
 java -XX:NativeMemoryTracking=smmary。看了下也没啥问题。
-后面这两个参数-XX:+UnlockDiagnosticVMOptions -XX:+PrintNMTStatistics也不知道使用场景</div>2022-05-26</li><br/><li><span>bigben</span> 👍（0） 💬（0）<div>存活弹针之前配置了健康检查的地址，导致系统经常重启</div>2022-05-03</li><br/>
+后面这两个参数-XX:+UnlockDiagnosticVMOptions -XX:+PrintNMTStatistics也不知道使用场景</p>2022-05-26</li><br/><li><span>bigben</span> 👍（0） 💬（0）<p>存活弹针之前配置了健康检查的地址，导致系统经常重启</p>2022-05-03</li><br/>
 </ul>

@@ -146,6 +146,6 @@ Dataflow不是一篇介绍具体系统实现的论文，而是一篇更加高屋
 
 欢迎在留言区分享你的答案和思考，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Gavin</span> 👍（3） 💬（0）<div>window merging 中结果有误(文中位置为：论文中的图5，如何通过AssignWindows和MergeWindows来进行数据计算，数据乱序也不影响计算结果) ，取的是window end, 而非window start，对应Google 论文应该是Figure 4
-https:&#47;&#47;storage.googleapis.com&#47;pub-tools-public-publication-data&#47;pdf&#47;43864.pdf</div>2022-01-19</li><br/><li><span>那时刻</span> 👍（2） 💬（1）<div>对于有边界的固定数据，我们当然可以通过重放日志把数据给到 Dataflow 系统， 我之前采用的是global window以及default trigger来处理的</div>2021-12-22</li><br/><li><span>piboye</span> 👍（1） 💬（0）<div>sql支持这些功能了吗？</div>2021-12-26</li><br/><li><span>在路上</span> 👍（0） 💬（0）<div>徐老师好，DataFlow论文第3.2节Design Principles，提到Support robust analysis of data in the context in which they occurred，数据的健壮分析是指什么？</div>2021-12-24</li><br/>
+<li><span>Gavin</span> 👍（3） 💬（0）<p>window merging 中结果有误(文中位置为：论文中的图5，如何通过AssignWindows和MergeWindows来进行数据计算，数据乱序也不影响计算结果) ，取的是window end, 而非window start，对应Google 论文应该是Figure 4
+https:&#47;&#47;storage.googleapis.com&#47;pub-tools-public-publication-data&#47;pdf&#47;43864.pdf</p>2022-01-19</li><br/><li><span>那时刻</span> 👍（2） 💬（1）<p>对于有边界的固定数据，我们当然可以通过重放日志把数据给到 Dataflow 系统， 我之前采用的是global window以及default trigger来处理的</p>2021-12-22</li><br/><li><span>piboye</span> 👍（1） 💬（0）<p>sql支持这些功能了吗？</p>2021-12-26</li><br/><li><span>在路上</span> 👍（0） 💬（0）<p>徐老师好，DataFlow论文第3.2节Design Principles，提到Support robust analysis of data in the context in which they occurred，数据的健壮分析是指什么？</p>2021-12-24</li><br/>
 </ul>

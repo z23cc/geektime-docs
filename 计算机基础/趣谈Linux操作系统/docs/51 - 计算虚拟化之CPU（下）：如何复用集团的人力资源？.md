@@ -857,9 +857,9 @@ CPU的虚拟化过程还是很复杂的，我画了一张图总结了一下。
 
 ![](https://static001.geekbang.org/resource/image/8c/37/8c0a95fa07a8b9a1abfd394479bdd637.jpg?wh=1110%2A659)
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>小龙的城堡</span> 👍（5） 💬（1）<div>深入内核以后，发现一切都是那么简洁，美妙？</div>2019-07-24</li><br/><li><span>whiledoing</span> 👍（4） 💬（1）<div>老师，想问一下：在虚拟机中创建的线程，是如何进行调度的？又是如何映射到vCPU执行的呢？</div>2019-08-23</li><br/><li><span>安排</span> 👍（4） 💬（1）<div>老师，那在虚拟机里面创建的多个核其实是假的是码？即使创建4个核的虚拟机，那么对应到kvm里面其实也是一个线程，也就是从虚拟机os这个层面它是无法真正利用多核的。其实它虚拟机os利用多核也没有意义。只要保证宿主os能正常利用多核就足够了，不知道这样理解是否正确？</div>2019-07-28</li><br/><li><span>一笔一画</span> 👍（1） 💬（1）<div>.unlocked_ioctl = kvm_dev_ioctl,
+<li><span>小龙的城堡</span> 👍（5） 💬（1）<p>深入内核以后，发现一切都是那么简洁，美妙？</p>2019-07-24</li><br/><li><span>whiledoing</span> 👍（4） 💬（1）<p>老师，想问一下：在虚拟机中创建的线程，是如何进行调度的？又是如何映射到vCPU执行的呢？</p>2019-08-23</li><br/><li><span>安排</span> 👍（4） 💬（1）<p>老师，那在虚拟机里面创建的多个核其实是假的是码？即使创建4个核的虚拟机，那么对应到kvm里面其实也是一个线程，也就是从虚拟机os这个层面它是无法真正利用多核的。其实它虚拟机os利用多核也没有意义。只要保证宿主os能正常利用多核就足够了，不知道这样理解是否正确？</p>2019-07-28</li><br/><li><span>一笔一画</span> 👍（1） 💬（1）<p>.unlocked_ioctl = kvm_dev_ioctl,
     .compat_ioctl   = kvm_dev_ioctl,
-请问下这两个ioctl有什么区别？在什么时候会调到</div>2019-07-27</li><br/><li><span>why</span> 👍（7） 💬（0）<div>CPU 虚拟化
+请问下这两个ioctl有什么区别？在什么时候会调到</p>2019-07-27</li><br/><li><span>why</span> 👍（7） 💬（0）<p>CPU 虚拟化
 
 初始化表示体系结构的 MachineClass 之后, qemu main 函数将继续初始化块设备, 初始化 KVM, 初始化网络设备以及 CPU 和 内存的虚拟化.
 
@@ -885,5 +885,5 @@ CPU 虚拟化
 
 qemu_kvm_cpu_thread_fn 先初始化 vcpu, 创建一个 struct file, file_operation 指向 kvm_vcpu_fops. 然后在 vmx_create_cpu 创建标识 vcpu 的结构 vcpu_vmx. vcpu_vmx 包含 guest_msrs, loaded_vmcs 等.  vmcs 存储 vcpu 状态, 物理 cpu 状态等信息. 对 vmcs 有两个操作 VM_Entry 进入 guest 状态, vm_exit 进入宿主机状态.
 
-qemu_kvm_cpu_thread_fn 接着执行无限循环调用 kvm_cpu_exec. 在 kvm_cpu_exec 进入 vm_entry, 执行 kvm_vcpu_ioctl(KVM_RUN) , 进行无限循环进入 guest 运行或处理信号. 进入 guest 执行的步骤为 save host reg -&gt; load guest reg -&gt; 进入&#47;恢复 guest 模式运行, 退出时 save guest reg -&gt; load host reg. </div>2020-02-26</li><br/><li><span>陈 皮。</span> 👍（1） 💬（0）<div>老师，请问是不是虚拟机的CPU本质就是一个线程，物理机的CPU调度到这个线程就等于调度到对应的VCPU？</div>2019-09-25</li><br/><li><span>Geek_ae11ce</span> 👍（0） 💬（0）<div>讲这一块，在函数中跳来跳去的时候最好把代码再贴一下，交代两句。否则很容易衔接不上。</div>2024-07-11</li><br/><li><span>Geek_ae11ce</span> 👍（0） 💬（0）<div>切换到kvm_init_vcpu那段，最好能再贴函数一下代码。上下翻来翻去特别费劲且不易于理解。</div>2023-07-26</li><br/><li><span>蚂蚁吃大象</span> 👍（0） 💬（0）<div>超哥，请问openvswitch结合dpdk跑在宿主机上时，qemu~kvm的虚拟机使用virtio虚拟网卡支持对称rss？想跑fstack程序。</div>2020-10-25</li><br/>
+qemu_kvm_cpu_thread_fn 接着执行无限循环调用 kvm_cpu_exec. 在 kvm_cpu_exec 进入 vm_entry, 执行 kvm_vcpu_ioctl(KVM_RUN) , 进行无限循环进入 guest 运行或处理信号. 进入 guest 执行的步骤为 save host reg -&gt; load guest reg -&gt; 进入&#47;恢复 guest 模式运行, 退出时 save guest reg -&gt; load host reg. </p>2020-02-26</li><br/><li><span>陈 皮。</span> 👍（1） 💬（0）<p>老师，请问是不是虚拟机的CPU本质就是一个线程，物理机的CPU调度到这个线程就等于调度到对应的VCPU？</p>2019-09-25</li><br/><li><span>Geek_ae11ce</span> 👍（0） 💬（0）<p>讲这一块，在函数中跳来跳去的时候最好把代码再贴一下，交代两句。否则很容易衔接不上。</p>2024-07-11</li><br/><li><span>Geek_ae11ce</span> 👍（0） 💬（0）<p>切换到kvm_init_vcpu那段，最好能再贴函数一下代码。上下翻来翻去特别费劲且不易于理解。</p>2023-07-26</li><br/><li><span>蚂蚁吃大象</span> 👍（0） 💬（0）<p>超哥，请问openvswitch结合dpdk跑在宿主机上时，qemu~kvm的虚拟机使用virtio虚拟网卡支持对称rss？想跑fstack程序。</p>2020-10-25</li><br/>
 </ul>

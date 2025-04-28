@@ -316,7 +316,7 @@ Vuex的出现，让我们整个项目中的数据流动变得非常自然。数�
 
 欢迎在留言区分享你的答案，并和我一起交流讨论，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ll</span> 👍（39） 💬（2）<div>非常棒的一节，在学习内容的过程中，我也在回顾之前学习关于 Vuex 的知识，在写miniVuex 的实现的代码后，对组件化有了新的认识，简单说下体会。
+<li><span>ll</span> 👍（39） 💬（2）<p>非常棒的一节，在学习内容的过程中，我也在回顾之前学习关于 Vuex 的知识，在写miniVuex 的实现的代码后，对组件化有了新的认识，简单说下体会。
 
  “组件化” 是解决“复杂”问题的重要思想。其实现就是一个个“组件”，即使表现方式不同，核心还是 MVX 的模型。
 
@@ -329,8 +329,8 @@ Vue2 提供的积木有 MVX(一般组件)，VX(函数式组件)，MX(vuex)；而
 到这，我发现，其实 Vuex 也是组件，没有 View 的组件，有 Model（state），有 X（mutation，action），它的逻辑和其他组件一样，想要变更“状态”，必须通过X。就这样“管家”诞生了。
 
 可是具体这个是怎么实现的？
-大概说下几个API：install，provide，use 等，大圣讲的很清楚，回头多看几遍，最主要的是多写写。</div>2021-11-08</li><br/><li><span>一个小🍎</span> 👍（23） 💬（1）<div>我Vuex4都还没学完，Pinia就出来了，学不完了。
-（话说想请教大圣老师，在前端技术发展如此之快的情况下，我们应该如何做取舍呢？）</div>2021-11-08</li><br/><li><span>乐叶</span> 👍（16） 💬（5）<div>  constructor(options) {
+大概说下几个API：install，provide，use 等，大圣讲的很清楚，回头多看几遍，最主要的是多写写。</p>2021-11-08</li><br/><li><span>一个小🍎</span> 👍（23） 💬（1）<p>我Vuex4都还没学完，Pinia就出来了，学不完了。
+（话说想请教大圣老师，在前端技术发展如此之快的情况下，我们应该如何做取舍呢？）</p>2021-11-08</li><br/><li><span>乐叶</span> 👍（16） 💬（5）<p>  constructor(options) {
     this._state = reactive({
       &#47;&#47;  data: options.state
       data: options.state()
@@ -343,12 +343,12 @@ Vue2 提供的积木有 MVX(一般组件)，VX(函数式组件)，MX(vuex)；而
   }
 
 options.state这样写使用调试发现获取到的是函数
-options.state()写成这样才可以正常运行</div>2021-11-08</li><br/><li><span>Geek_4578dc</span> 👍（7） 💬（1）<div>建议大圣老师把每节的代码放出来，这样有利于阅读</div>2021-11-08</li><br/><li><span>也許有一天</span> 👍（6） 💬（1）<div>我们公司导入rxjs来取代vuex，不得不说rxjs是真的猛...</div>2021-12-05</li><br/><li><span>深蓝</span> 👍（4） 💬（1）<div>状态管理感觉是前端代码的核心，其他所有组件，监听数据流的变化，或改变数据，然后与这个数据流相关的页面组件作出响应变化，动态菜单，导航栏，以及主页面的组件就随之改变了，整个Web服务就动起来了，最近几天vuex 看的有点晕，有个地方有点疑惑
+options.state()写成这样才可以正常运行</p>2021-11-08</li><br/><li><span>Geek_4578dc</span> 👍（7） 💬（1）<p>建议大圣老师把每节的代码放出来，这样有利于阅读</p>2021-11-08</li><br/><li><span>也許有一天</span> 👍（6） 💬（1）<p>我们公司导入rxjs来取代vuex，不得不说rxjs是真的猛...</p>2021-12-05</li><br/><li><span>深蓝</span> 👍（4） 💬（1）<p>状态管理感觉是前端代码的核心，其他所有组件，监听数据流的变化，或改变数据，然后与这个数据流相关的页面组件作出响应变化，动态菜单，导航栏，以及主页面的组件就随之改变了，整个Web服务就动起来了，最近几天vuex 看的有点晕，有个地方有点疑惑
 
 1  vue &lt; script&gt; computed &lt;&#47;script&gt;
 2 vuex  也有 getters 
 
 两者都是计算属性，这里绕来绕去，还是理不清这里怎么使用最好？
 
-</div>2021-11-20</li><br/><li><span>醉月</span> 👍（4） 💬（1）<div>大圣老师Pinia会有涉及吗</div>2021-11-08</li><br/><li><span>uncle 邦</span> 👍（3） 💬（1）<div>count 不是使用 ref 直接定义，而是使用计算属性返回了 state.state.count，也就是刚才在 src&#47;store&#47;index.js 中定义的 count。这个 &quot; state.state.count&quot; 是不是要改成 “store.state.count”</div>2021-11-08</li><br/><li><span>Mercurywithu</span> 👍（2） 💬（1）<div>请问下大圣老师。install 方法为什么会在main.js入口处app.use(store)的时候，执行这个函数调用。是内置的api么、</div>2022-01-15</li><br/><li><span>xiaxiaxiaxia</span> 👍（2） 💬（1）<div>为什么在代码示例里总是省略那么多你觉得我们都会懂的代码呢。。。。对新手一点也不友好。。。</div>2021-12-22</li><br/><li><span>小灰</span> 👍（2） 💬（1）<div>大圣老师   请教下vuex的模块化   </div>2021-12-16</li><br/><li><span>深蓝</span> 👍（2） 💬（1）<div>在看GitHub 其他开源项目代码，使用vuex 创建好store 引用的时候经常看到$store 一直不太理解这的$的含义？</div>2021-11-26</li><br/><li><span>JIo</span> 👍（2） 💬（3）<div>真心觉得这种设计到多段代码的课程应该出视频课 而不是音频课 各种中英文错综穿插 代码还需要截图在旁边才能听讲 效果真的不如视频来的快。。。</div>2021-11-17</li><br/><li><span>乔帆 Kayla</span> 👍（1） 💬（1）<div>STORE_KEY 的值定为 __store__ , 有什么特殊含义或特殊处理吗?</div>2021-12-30</li><br/><li><span>KLonILo</span> 👍（1） 💬（1）<div>盛哥，最近刚好碰到一个用户信息存储的问题，我们是多页面，vuex的话刷新就没了，所以是否将用户名同时存储本地来结合使用呢？或者你有没有比较好的方案提点提点，感恩~</div>2021-12-07</li><br/>
+</p>2021-11-20</li><br/><li><span>醉月</span> 👍（4） 💬（1）<p>大圣老师Pinia会有涉及吗</p>2021-11-08</li><br/><li><span>uncle 邦</span> 👍（3） 💬（1）<p>count 不是使用 ref 直接定义，而是使用计算属性返回了 state.state.count，也就是刚才在 src&#47;store&#47;index.js 中定义的 count。这个 &quot; state.state.count&quot; 是不是要改成 “store.state.count”</p>2021-11-08</li><br/><li><span>Mercurywithu</span> 👍（2） 💬（1）<p>请问下大圣老师。install 方法为什么会在main.js入口处app.use(store)的时候，执行这个函数调用。是内置的api么、</p>2022-01-15</li><br/><li><span>xiaxiaxiaxia</span> 👍（2） 💬（1）<p>为什么在代码示例里总是省略那么多你觉得我们都会懂的代码呢。。。。对新手一点也不友好。。。</p>2021-12-22</li><br/><li><span>小灰</span> 👍（2） 💬（1）<p>大圣老师   请教下vuex的模块化   </p>2021-12-16</li><br/><li><span>深蓝</span> 👍（2） 💬（1）<p>在看GitHub 其他开源项目代码，使用vuex 创建好store 引用的时候经常看到$store 一直不太理解这的$的含义？</p>2021-11-26</li><br/><li><span>JIo</span> 👍（2） 💬（3）<p>真心觉得这种设计到多段代码的课程应该出视频课 而不是音频课 各种中英文错综穿插 代码还需要截图在旁边才能听讲 效果真的不如视频来的快。。。</p>2021-11-17</li><br/><li><span>乔帆 Kayla</span> 👍（1） 💬（1）<p>STORE_KEY 的值定为 __store__ , 有什么特殊含义或特殊处理吗?</p>2021-12-30</li><br/><li><span>KLonILo</span> 👍（1） 💬（1）<p>盛哥，最近刚好碰到一个用户信息存储的问题，我们是多页面，vuex的话刷新就没了，所以是否将用户名同时存储本地来结合使用呢？或者你有没有比较好的方案提点提点，感恩~</p>2021-12-07</li><br/>
 </ul>

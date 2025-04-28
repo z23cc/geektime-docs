@@ -213,7 +213,7 @@ Serverless技术实践还是很重要的，最后一节课的作业我们就继�
 
 \[7] [https://workbench.aliyun.com/](https://workbench.aliyun.com/)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>我来也</span> 👍（2） 💬（2）<div>今天的例子部署的比较顺利.
+<li><span>我来也</span> 👍（2） 💬（2）<p>今天的例子部署的比较顺利.
 只修改了f.yml和src&#47;config&#47;config.default.ts.
 
 使用npm install安装依赖后
@@ -234,10 +234,10 @@ Serverless技术实践还是很重要的，最后一节课的作业我们就继�
 ------
 老师这一会node.js,一会TypeScript的,作为后端开发的我,比较懵.
 只会简单的部署,代码不会改也不会调.
-</div>2020-05-11</li><br/><li><span>Geek_a7fcb9</span> 👍（0） 💬（1）<div>老师，看完了您的文章。有2个问题想请教一下。
+</p>2020-05-11</li><br/><li><span>Geek_a7fcb9</span> 👍（0） 💬（1）<p>老师，看完了您的文章。有2个问题想请教一下。
 问题一：
 【k8s主要是对容器的编排，knative是一种基于k8s的serverless平台的实现，相比较于k8s提供了灰度发布、自动扩缩容之类的功能。】请问这样理解对吗？
 -------------------------------------------------------------------------
 问题二：
-【Serverless 有多种实现方法，比如：Serverless Framework，Malagu，Midway FaaS。上边三者类似knative可以帮助我们搭建serverless平台。而“阿里云开发平台”是已经搭建好的serverless平台。】请问这样理解对吗</div>2021-04-30</li><br/><li><span>peter</span> 👍（2） 💬（0）<div>挺好的，不错！</div>2020-05-18</li><br/>
+【Serverless 有多种实现方法，比如：Serverless Framework，Malagu，Midway FaaS。上边三者类似knative可以帮助我们搭建serverless平台。而“阿里云开发平台”是已经搭建好的serverless平台。】请问这样理解对吗</p>2021-04-30</li><br/><li><span>peter</span> 👍（2） 💬（0）<p>挺好的，不错！</p>2020-05-18</li><br/>
 </ul>

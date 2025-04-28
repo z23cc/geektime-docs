@@ -196,28 +196,28 @@ Spark支持丰富的存储级别，每一种存储级别都包含3个最基本�
 
 欢迎你在评论区分享你的答案。如果这一讲对你有帮助，也欢迎你把这一讲分享给自己的朋友，我们下一讲再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>嬴梦川</span> 👍（0） 💬（0）<div>Reserved Memory: 300M = 0.3G
+<li><span>嬴梦川</span> 👍（0） 💬（0）<p>Reserved Memory: 300M = 0.3G
 User Memory: (10GB-300M)*(1-0.8) = 1988M = 1.94G
 Storage Memory: (10GB-300M)*0.8*0.4=3180.8M=3.11G
-Execution Memory: (10GB-300M)*0.8*(1-0.4)=4771.2M=4.66G</div>2023-09-03</li><br/><li><span>GAC·DU</span> 👍（12） 💬（1）<div>R:300M
+Execution Memory: (10GB-300M)*0.8*(1-0.4)=4771.2M=4.66G</p>2023-09-03</li><br/><li><span>GAC·DU</span> 👍（12） 💬（1）<p>R:300M
 U:(10240 - 300) * (1 - 0.8) =1988
 E:(10240 - 300) * 0.8 * (1 - 0.4) = 4771.2
 S:(10240 -300) * 0.8 * 0.4 = 3180.8
-老师实际生产环境，把spark. executor. memory设置为物理内存的80%合理吗？</div>2021-09-27</li><br/><li><span>小新</span> 👍（6） 💬（1）<div> Storage memory与Execution Memory之间抢占时，会有一个最小阈值吗？不可能全部抢占完吧？</div>2021-11-30</li><br/><li><span>井先生</span> 👍（5） 💬（1）<div>既然user memory存储用户自定义的数据结构，我在纯sql的spark job中是不是把spark.memory.fraction设置很大的值，只给user memory留比较小的空间以提高execution和storage memory的大小，进而提高内存的使用率呢</div>2021-09-27</li><br/><li><span>冯杰</span> 👍（4） 💬（2）<div>在实际工作中发现，设置的executor内存，还要扣除1&#47;10的大小，剩余的9&#47;10才能参与老师说的公式计算。   看了别人的博客，说是jvm中的Survivor，只能有1个被真正用起来。       Spark UI上显示的结果，也刚好能够反映这个问题</div>2021-10-12</li><br/><li><span>Botanic</span> 👍（2） 💬（1）<div>老师好，我想请假一个问题。python中，如果wordCount加上take(5)这个算子后，数据类型就从RDD转化为list了，那么后面再使用saveAsTextFile算子就会报错，因为处理它要求前面的数据类型是RDD。这种情况应该怎么处理呢？谢谢</div>2021-12-23</li><br/><li><span>大志</span> 👍（2） 💬（2）<div>error: not found: value MEMORY_ONLY
+老师实际生产环境，把spark. executor. memory设置为物理内存的80%合理吗？</p>2021-09-27</li><br/><li><span>小新</span> 👍（6） 💬（1）<p> Storage memory与Execution Memory之间抢占时，会有一个最小阈值吗？不可能全部抢占完吧？</p>2021-11-30</li><br/><li><span>井先生</span> 👍（5） 💬（1）<p>既然user memory存储用户自定义的数据结构，我在纯sql的spark job中是不是把spark.memory.fraction设置很大的值，只给user memory留比较小的空间以提高execution和storage memory的大小，进而提高内存的使用率呢</p>2021-09-27</li><br/><li><span>冯杰</span> 👍（4） 💬（2）<p>在实际工作中发现，设置的executor内存，还要扣除1&#47;10的大小，剩余的9&#47;10才能参与老师说的公式计算。   看了别人的博客，说是jvm中的Survivor，只能有1个被真正用起来。       Spark UI上显示的结果，也刚好能够反映这个问题</p>2021-10-12</li><br/><li><span>Botanic</span> 👍（2） 💬（1）<p>老师好，我想请假一个问题。python中，如果wordCount加上take(5)这个算子后，数据类型就从RDD转化为list了，那么后面再使用saveAsTextFile算子就会报错，因为处理它要求前面的数据类型是RDD。这种情况应该怎么处理呢？谢谢</p>2021-12-23</li><br/><li><span>大志</span> 👍（2） 💬（2）<p>error: not found: value MEMORY_ONLY
 
 import org.apache.spark.storage.StorageLevel._
-wordCounts.persist(MEMORY_ONLY)  &#47;&#47; 就可以了</div>2021-09-27</li><br/><li><span>William</span> 👍（0） 💬（1）<div>老师，假设设定了spark.memory.storageFraction=0.4，那这部分用于存储的内存也是向计算内存转换的是吧？ 那设定这个参数的意义是什么呢，单纯为了在计算内存足够的情况下预留储存空间吗？</div>2021-11-14</li><br/><li><span>Andy</span> 👍（0） 💬（1）<div>Execution = (10G-300M)* 0.8 * (1-0.4) = 4771.2M 
+wordCounts.persist(MEMORY_ONLY)  &#47;&#47; 就可以了</p>2021-09-27</li><br/><li><span>William</span> 👍（0） 💬（1）<p>老师，假设设定了spark.memory.storageFraction=0.4，那这部分用于存储的内存也是向计算内存转换的是吧？ 那设定这个参数的意义是什么呢，单纯为了在计算内存足够的情况下预留储存空间吗？</p>2021-11-14</li><br/><li><span>Andy</span> 👍（0） 💬（1）<p>Execution = (10G-300M)* 0.8 * (1-0.4) = 4771.2M 
 User = (10G-300M) * (1-0.8) = 1988M
 Reserved = (10G-300M)* 0.8 * 0.4 = 3180.8M
 Storage = 300M
-</div>2021-11-13</li><br/><li><span>Geek_2dfa9a</span> 👍（0） 💬（1）<div>这里粗略估计1GB为1000MB
+</p>2021-11-13</li><br/><li><span>Geek_2dfa9a</span> 👍（0） 💬（1）<p>这里粗略估计1GB为1000MB
 Reserved Memory = 300MB
 Execution Memory + Storage Memory = (10GB - 0.3GB) * 0.8 = 9.7GB * 0.8 = 7.76GB
 User Memory = 9.7GB - 7.76GB = 1.94GB
 Execution Memory = 7.76GB * (1 - 0.4) = 7.76GB * 0.6 = 4.66GB
 Storage Memory = 7.76GB - 4.66GB = 3.1GB
-</div>2021-09-30</li><br/><li><span>Geek_796a41</span> 👍（0） 💬（1）<div>老师，我想问下spark.memory.fraction 和 spark.memory.storageFraction这两个值在设置的时候都有什么参考？</div>2021-09-27</li><br/><li><span>嬴梦川</span> 👍（0） 💬（0）<div>Reserved Memory: 300M = 0.3G
+</p>2021-09-30</li><br/><li><span>Geek_796a41</span> 👍（0） 💬（1）<p>老师，我想问下spark.memory.fraction 和 spark.memory.storageFraction这两个值在设置的时候都有什么参考？</p>2021-09-27</li><br/><li><span>嬴梦川</span> 👍（0） 💬（0）<p>Reserved Memory: 300M = 0.3G
 User Memory: (10GB-300M)*(1-0.8) = 1988M = 1.94G
 Storage Memory: (10GB-300M)*0.8*0.4=3180.8M=3.11G
-Execution Memory: (10GB-300M)*0.8*(1-0.4)=4771.2M=4.66G</div>2023-09-03</li><br/><li><span>Geek1185</span> 👍（0） 💬（0）<div>老师，我在工作中发现一个10TB任务量的spark任务中，executor的fraction只有0.3，memory为6g，这样usermemory就会非常大，而工作区和暂存区只有2g不到，这合理吗</div>2023-01-21</li><br/><li><span>王鑫</span> 👍（0） 💬（0）<div>老师您好，spark的堆内内存和堆外内存在什么情况下如何分配使用，堆外内存直接受spark管理，没有jvm。为什么不多使用堆外内存</div>2022-06-30</li><br/><li><span>xiong</span> 👍（0） 💬（0）<div>spark的memory模型是在jvm中的新声代区划分出来的吗？</div>2022-05-09</li><br/>
+Execution Memory: (10GB-300M)*0.8*(1-0.4)=4771.2M=4.66G</p>2023-09-03</li><br/><li><span>Geek1185</span> 👍（0） 💬（0）<p>老师，我在工作中发现一个10TB任务量的spark任务中，executor的fraction只有0.3，memory为6g，这样usermemory就会非常大，而工作区和暂存区只有2g不到，这合理吗</p>2023-01-21</li><br/><li><span>王鑫</span> 👍（0） 💬（0）<p>老师您好，spark的堆内内存和堆外内存在什么情况下如何分配使用，堆外内存直接受spark管理，没有jvm。为什么不多使用堆外内存</p>2022-06-30</li><br/><li><span>xiong</span> 👍（0） 💬（0）<p>spark的memory模型是在jvm中的新声代区划分出来的吗？</p>2022-05-09</li><br/>
 </ul>

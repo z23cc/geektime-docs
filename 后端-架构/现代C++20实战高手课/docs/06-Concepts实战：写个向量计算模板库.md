@@ -969,8 +969,8 @@ namespace numcpp {
 
 不妨在这里分享你的见解，我们一同交流。下一讲见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>黄骏</span> 👍（1） 💬（1）<div>内容太干了。哈哈。
-nits：concepts.cpp的line 38应该是IteratorMemberFunction(&amp;T::end)吧？</div>2023-01-29</li><br/><li><span>常振华</span> 👍（0） 💬（1）<div>我觉得concepts确实比modules有用多了。。。前者能改变编程思想，后者在我看来只是换汤不换药的语法糖，反而让语法看起来更复杂</div>2023-09-12</li><br/><li><span>！null</span> 👍（0） 💬（1）<div>定义 creation 模块时用到的 fillContainerBuffer、makeContainerShape 和 ContainerValueTypeHelper 这些约束表达式，就利用了 concept 的“原子约束”特性选择不同的模版版本，实现了泛型编程中的“多态”特性。
+<li><span>黄骏</span> 👍（1） 💬（1）<p>内容太干了。哈哈。
+nits：concepts.cpp的line 38应该是IteratorMemberFunction(&amp;T::end)吧？</p>2023-01-29</li><br/><li><span>常振华</span> 👍（0） 💬（1）<p>我觉得concepts确实比modules有用多了。。。前者能改变编程思想，后者在我看来只是换汤不换药的语法糖，反而让语法看起来更复杂</p>2023-09-12</li><br/><li><span>！null</span> 👍（0） 💬（1）<p>定义 creation 模块时用到的 fillContainerBuffer、makeContainerShape 和 ContainerValueTypeHelper 这些约束表达式，就利用了 concept 的“原子约束”特性选择不同的模版版本，实现了泛型编程中的“多态”特性。
 
-没看懂哪里体现了泛型编程的多态</div>2023-08-15</li><br/><li><span>Geek_7c0961</span> 👍（0） 💬（1）<div>concepts 这个feature太强了, 让我想起了rust中的traits 和 traits objects.</div>2023-01-31</li><br/><li><span>Geek_e04349</span> 👍（0） 💬（1）<div>感觉 SliceItem 的 getValidValue 使用 optional 返回会更符合其语义</div>2023-01-27</li><br/>
+没看懂哪里体现了泛型编程的多态</p>2023-08-15</li><br/><li><span>Geek_7c0961</span> 👍（0） 💬（1）<p>concepts 这个feature太强了, 让我想起了rust中的traits 和 traits objects.</p>2023-01-31</li><br/><li><span>Geek_e04349</span> 👍（0） 💬（1）<p>感觉 SliceItem 的 getValidValue 使用 optional 返回会更符合其语义</p>2023-01-27</li><br/>
 </ul>

@@ -517,15 +517,15 @@ image
 
 这一讲里，我们只是简单介绍了一下Stable Diffusion的模型结构。其实，无论是DALL-E 2还是Imagen，采用的图片生成方式都是和Stable Diffusion类似的。如果你想要深入了解一下这些模型的结构，可以去看一下B站里面“跟李沐学AI”里面对于 [DALL-E 2 论文的讲解](https://www.bilibili.com/video/BV17r4y1u77B/?spm_id_from=333.999.0.0)。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>东方奇骥</span> 👍（9） 💬（3）<div>老师，为什么要加了噪声，再去除噪声？</div>2023-05-05</li><br/><li><span>peter</span> 👍（2） 💬（5）<div>请教老师几个问题：
+<li><span>东方奇骥</span> 👍（9） 💬（3）<p>老师，为什么要加了噪声，再去除噪声？</p>2023-05-05</li><br/><li><span>peter</span> 👍（2） 💬（5）<p>请教老师几个问题：
 Q1：stable Diffusion采用的CLIP是自身的吗？还是调用chatGPT？
 Q2：先加噪声，再去掉，有什么意义？吃一口再吐一口，有意思吗？
 “先往前面的用 CLIP 模型推理出来的向量里添加很多噪声，再通过 UNet+Scheduler 逐渐去除噪声，最后拿到了一个新的张量”。
 Q3：本课的代码是在本机上运行的吗？我的笔记本上是普通配置，能运行并生成图吗？（或者，图的生成是调用了某个服务器？）
-Q4：可以对图片进行加工吗？ 比如在一个照片的头上加一个帽子。</div>2023-05-06</li><br/><li><span>一叶</span> 👍（0） 💬（2）<div>老师 如何 手动把模型下载,然后再上传到服务器 ? 我服务器本地liunx的,发现下载很慢..... DiffusionPipeline.from_pretrained</div>2023-05-10</li><br/><li><span>厚积薄发</span> 👍（0） 💬（2）<div>CUDA out of memory. Tried to allocate 20.00 MiB (GPU 0; 14.75 GiB total capacity; 13.46 GiB 
+Q4：可以对图片进行加工吗？ 比如在一个照片的头上加一个帽子。</p>2023-05-06</li><br/><li><span>一叶</span> 👍（0） 💬（2）<p>老师 如何 手动把模型下载,然后再上传到服务器 ? 我服务器本地liunx的,发现下载很慢..... DiffusionPipeline.from_pretrained</p>2023-05-10</li><br/><li><span>厚积薄发</span> 👍（0） 💬（2）<p>CUDA out of memory. Tried to allocate 20.00 MiB (GPU 0; 14.75 GiB total capacity; 13.46 GiB 
 already allocated; 10.81 MiB free; 13.46 GiB reserved in total by PyTorch) If reserved memory is &gt;&gt; allocated 
 memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and 
-PYTORCH_CUDA_ALLOC_CONF   老师，colab gpu不够了，默认的16g不够，是不是需要购买更大的gpu</div>2023-05-08</li><br/><li><span>Oli张帆</span> 👍（0） 💬（2）<div>请教一下老师，结合您之前讲的HuggingFace，我可以通过HuggingFace，免费调用Stable Diffusion的接口，来产生大量的图片。那这整个流程中需要的大量算力，是谁来买单的呢？</div>2023-05-06</li><br/><li><span>Toni</span> 👍（0） 💬（10）<div>1. 使用 GPU 无疑会加快图像的生成，但实在没有办法使用 GPU 时，就用 CPU，只要将下面代码中的 &quot;cuda&quot; 改成 &quot;cpu&quot; 即可，慢比没有强。
+PYTORCH_CUDA_ALLOC_CONF   老师，colab gpu不够了，默认的16g不够，是不是需要购买更大的gpu</p>2023-05-08</li><br/><li><span>Oli张帆</span> 👍（0） 💬（2）<p>请教一下老师，结合您之前讲的HuggingFace，我可以通过HuggingFace，免费调用Stable Diffusion的接口，来产生大量的图片。那这整个流程中需要的大量算力，是谁来买单的呢？</p>2023-05-06</li><br/><li><span>Toni</span> 👍（0） 💬（10）<p>1. 使用 GPU 无疑会加快图像的生成，但实在没有办法使用 GPU 时，就用 CPU，只要将下面代码中的 &quot;cuda&quot; 改成 &quot;cpu&quot; 即可，慢比没有强。
 
 pipeline.to(&quot;cuda&quot;) =&gt; pipeline.to(&quot;cpu&quot;) 
 ---------------------
@@ -545,8 +545,8 @@ Token indices sequence length is longer than the specified maximum sequence leng
 程序会继续运行，但输出结果是黑板。
 Potential NSFW content was detected in one or more images. A black image will be returned instead. Try again with a different prompt and&#47;or seed.
 
-prompt 中的 Token 数超过限定时，要停止运行，以节省时间。</div>2023-05-05</li><br/><li><span>Jack</span> 👍（0） 💬（2）<div>第一次运行“a photograph of an astronaut riding a horse”，只有马，没有宇航员，多运行几次就有了，不过图片没有老师的好看</div>2023-05-05</li><br/><li><span>Jacob.C</span> 👍（0） 💬（3）<div>老师可以讲一下，colab 上，跑这个太空人骑马要运行耗时多久吗？</div>2023-05-05</li><br/><li><span>Geek_7ee455</span> 👍（0） 💬（4）<div>老师,在mac上能自己部署一套stable diffusion吗</div>2023-05-05</li><br/><li><span>莹</span> 👍（2） 💬（0）<div>直接新建一个colab notebook后默认不是用的GPU，运行代码出错了&quot;RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http:&#47;&#47;www.nvidia.com&#47;Download&#47;index.aspx&quot;
+prompt 中的 Token 数超过限定时，要停止运行，以节省时间。</p>2023-05-05</li><br/><li><span>Jack</span> 👍（0） 💬（2）<p>第一次运行“a photograph of an astronaut riding a horse”，只有马，没有宇航员，多运行几次就有了，不过图片没有老师的好看</p>2023-05-05</li><br/><li><span>Jacob.C</span> 👍（0） 💬（3）<p>老师可以讲一下，colab 上，跑这个太空人骑马要运行耗时多久吗？</p>2023-05-05</li><br/><li><span>Geek_7ee455</span> 👍（0） 💬（4）<p>老师,在mac上能自己部署一套stable diffusion吗</p>2023-05-05</li><br/><li><span>莹</span> 👍（2） 💬（0）<p>直接新建一个colab notebook后默认不是用的GPU，运行代码出错了&quot;RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http:&#47;&#47;www.nvidia.com&#47;Download&#47;index.aspx&quot;
 
-遇到同样错误的小伙伴记得在Runtime菜单里选择Change runtime type，选择GPU, T4。我遇到了在运行也不成功的情况，这时可以再在Runtime菜单里选择Restart runtime或者Restart and run all。这样，我遇到的错误就解决了。</div>2023-06-02</li><br/><li><span>piboye</span> 👍（1） 💬（0）<div>李沐的课程太好了</div>2023-05-05</li><br/><li><span>Amark</span> 👍（0） 💬（0）<div>为啥有的图片跟文字不符，文字描述有啥要求吗</div>2024-02-01</li><br/><li><span>小理想。</span> 👍（0） 💬（2）<div>大家没遇到huggingface完全访问不了的情况吗？</div>2023-11-17</li><br/><li><span>昵称C</span> 👍（0） 💬（0）<div>思考题有做出来的吗？老师有答案吗？
-</div>2023-07-25</li><br/><li><span>和某欢</span> 👍（0） 💬（0）<div>老师，colab如何引入Counterfeit-V3.0 这个模型呢？示例代码没看懂，运行的时候报 NameError: name &#39;pipeline&#39; is not defined.</div>2023-06-18</li><br/>
+遇到同样错误的小伙伴记得在Runtime菜单里选择Change runtime type，选择GPU, T4。我遇到了在运行也不成功的情况，这时可以再在Runtime菜单里选择Restart runtime或者Restart and run all。这样，我遇到的错误就解决了。</p>2023-06-02</li><br/><li><span>piboye</span> 👍（1） 💬（0）<p>李沐的课程太好了</p>2023-05-05</li><br/><li><span>Amark</span> 👍（0） 💬（0）<p>为啥有的图片跟文字不符，文字描述有啥要求吗</p>2024-02-01</li><br/><li><span>小理想。</span> 👍（0） 💬（2）<p>大家没遇到huggingface完全访问不了的情况吗？</p>2023-11-17</li><br/><li><span>昵称C</span> 👍（0） 💬（0）<p>思考题有做出来的吗？老师有答案吗？
+</p>2023-07-25</li><br/><li><span>和某欢</span> 👍（0） 💬（0）<p>老师，colab如何引入Counterfeit-V3.0 这个模型呢？示例代码没看懂，运行的时候报 NameError: name &#39;pipeline&#39; is not defined.</p>2023-06-18</li><br/>
 </ul>

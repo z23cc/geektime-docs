@@ -239,5 +239,5 @@ class ResourceHandler implements ResourceRouter.Resource {
 
 历经42节课，我们终于完成了用TDD的方式来实现Restful Web Services，辛苦了。同时也要恭喜你，通过持续的努力与思考，成为了更好的自己！下周我们将开启一个全新的项目，敬请期待！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>原来路由派分是最复杂的模块</div>2022-09-13</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>原来路由派分是最复杂的模块</p>2022-09-13</li><br/>
 </ul>

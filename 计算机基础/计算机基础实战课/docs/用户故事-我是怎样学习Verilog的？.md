@@ -121,5 +121,5 @@
 
 好，我的分享就到这里。我继续去啃代码了。各位加油，一起实现RISC-V 五级流水线 CPU呀！fighting！！！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>xavier</span> 👍（0） 💬（1）<div>非常有效、实用的学习方法，感谢分享。</div>2023-05-30</li><br/>
+<li><span>xavier</span> 👍（0） 💬（1）<p>非常有效、实用的学习方法，感谢分享。</p>2023-05-30</li><br/>
 </ul>

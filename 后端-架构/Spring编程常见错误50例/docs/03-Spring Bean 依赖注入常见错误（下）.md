@@ -432,17 +432,17 @@ public List<Student> students(){
 
 我们留言区见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Monday</span> 👍（50） 💬（0）<div>思考题：
+<li><span>Monday</span> 👍（50） 💬（0）<p>思考题：
 方法一：添加@Order(number)注解，number越小优先级越高，越靠前
 方法二：声明Student这些Bean时将id=2的Student提到id=1之前
 
-</div>2021-06-16</li><br/><li><span>Ball</span> 👍（8） 💬（0）<div>今天的课程给出的问题直击业务痛点！我们非常方便的使用依赖注入的特性时，必须要思考🤔对象从哪里注入、怎么创建、为什么是注入这一个对象的。虽然编写框架的目的是让开发人员无需关心太多底层细节，能专心业务逻辑的开发，但是作为开发人员不能真的无脑去使用框架。
-另外，我还得学会注入集合等高级用法，之前业务上都是用的注入单个对象的简单用法，必须有所提升。</div>2021-04-27</li><br/><li><span>笨鱼</span> 👍（6） 💬（4）<div>StudentController构造函数上不需要加@Autowired注解吗？</div>2021-04-28</li><br/><li><span>ifelse</span> 👍（2） 💬（0）<div>不错，学习了</div>2021-11-01</li><br/><li><span>暖色浮余生</span> 👍（2） 💬（4）<div>发现一个问题。通过收集模式获取。比如我得 StudentController 类中通过 @Bean 的方式声明一个 bean 的时候，收集模式并不会收集到当前声明的这个 Student bean。当我的 @Bean 标注的方法为 static 的时候，收集模式此时收集到的是 3 个 bean. 感觉大概是当我的 bean 实例化完成之后才会调用 @Bean 标注的非静态方法，因为实例化未完成无法调用。 而静态方法并不依赖 bean 实例化。没找到具体的代码</div>2021-05-12</li><br/><li><span>qlmmys</span> 👍（2） 💬（0）<div>思考题
-spring按照bean声明的顺序加载bean，并顺序保存。所以想让学生2优先输出，主需要优先声明学生2即可</div>2021-04-26</li><br/><li><span>小飞同学</span> 👍（2） 💬（1）<div>思考题：
+</p>2021-06-16</li><br/><li><span>Ball</span> 👍（8） 💬（0）<p>今天的课程给出的问题直击业务痛点！我们非常方便的使用依赖注入的特性时，必须要思考🤔对象从哪里注入、怎么创建、为什么是注入这一个对象的。虽然编写框架的目的是让开发人员无需关心太多底层细节，能专心业务逻辑的开发，但是作为开发人员不能真的无脑去使用框架。
+另外，我还得学会注入集合等高级用法，之前业务上都是用的注入单个对象的简单用法，必须有所提升。</p>2021-04-27</li><br/><li><span>笨鱼</span> 👍（6） 💬（4）<p>StudentController构造函数上不需要加@Autowired注解吗？</p>2021-04-28</li><br/><li><span>ifelse</span> 👍（2） 💬（0）<p>不错，学习了</p>2021-11-01</li><br/><li><span>暖色浮余生</span> 👍（2） 💬（4）<p>发现一个问题。通过收集模式获取。比如我得 StudentController 类中通过 @Bean 的方式声明一个 bean 的时候，收集模式并不会收集到当前声明的这个 Student bean。当我的 @Bean 标注的方法为 static 的时候，收集模式此时收集到的是 3 个 bean. 感觉大概是当我的 bean 实例化完成之后才会调用 @Bean 标注的非静态方法，因为实例化未完成无法调用。 而静态方法并不依赖 bean 实例化。没找到具体的代码</p>2021-05-12</li><br/><li><span>qlmmys</span> 👍（2） 💬（0）<p>思考题
+spring按照bean声明的顺序加载bean，并顺序保存。所以想让学生2优先输出，主需要优先声明学生2即可</p>2021-04-26</li><br/><li><span>小飞同学</span> 👍（2） 💬（1）<p>思考题：
 收集装配风格：只能通过实体类实现Ordered接口 getOrder方法中指定一个顺序
-直接装配方式：除了上述方式，还可以@Order 、@Priority注解指定顺序。</div>2021-04-26</li><br/><li><span>Geek7319</span> 👍（1） 💬（0）<div>针对问题1，是否可以可以使用@PropertySource配置文件路径呢。 从固定配置文件路径抽取value值，就无需考虑多个配置文件命名冲突问题</div>2021-12-14</li><br/><li><span>虹炎</span> 👍（1） 💬（2）<div>控制spring bean加载顺序：
+直接装配方式：除了上述方式，还可以@Order 、@Priority注解指定顺序。</p>2021-04-26</li><br/><li><span>Geek7319</span> 👍（1） 💬（0）<p>针对问题1，是否可以可以使用@PropertySource配置文件路径呢。 从固定配置文件路径抽取value值，就无需考虑多个配置文件命名冲突问题</p>2021-12-14</li><br/><li><span>虹炎</span> 👍（1） 💬（2）<p>控制spring bean加载顺序：
 1，Bean上使用@Order注解，如@Order(2)。数值越小表示优先级越高。默认优先级最低。
-2，@DependsOn    使用它，可使得依赖的Bean如果未被初始化会被优先初始化。</div>2021-05-14</li><br/><li><span>otakuhuang</span> 👍（0） 💬（0）<div>声明 Bean 的位置靠前或使用 @Order 注解</div>2024-02-18</li><br/><li><span>小林桑</span> 👍（0） 💬（0）<div>课后总结：
+2，@DependsOn    使用它，可使得依赖的Bean如果未被初始化会被优先初始化。</p>2021-05-14</li><br/><li><span>otakuhuang</span> 👍（0） 💬（0）<p>声明 Bean 的位置靠前或使用 @Order 注解</p>2024-02-18</li><br/><li><span>小林桑</span> 👍（0） 💬（0）<p>课后总结：
 1.@Value使用：
 @Value(&quot;abc&quot;) &#47;&#47;注入常量
 @Value(&quot;${spring.datasource.password}&quot;);&#47;&#47;注入环境变量,这里不止是Spring的环境变量，还可以注入系统变量，Spring会扫描多个配置“源”，直至找到变量名就立即返回，所以使用环境变量时需要考虑是否和其他系统的参数名重复，导致加载到的属性值不是预期的值
@@ -450,6 +450,6 @@ spring按照bean声明的顺序加载bean，并顺序保存。所以想让学生
 2.关于注入集合的场景，分为：收集装配和直接装配（混合使用则默认使用收集装配）
 区别：收集装配会自动收集容器中对应类型的所有实例
 直接装配：定义一个集合对象，集合中存放相关元素，使用@Autowired或者构造函数注入
-</div>2024-01-13</li><br/><li><span>陌兮</span> 👍（0） 💬（0）<div>@Value这个点是之前从来没有考虑到的</div>2022-08-19</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（0）<div>添加@Order(number)注解，number越小优先级越高，越靠前</div>2022-01-25</li><br/><li><span>arch</span> 👍（0） 💬（3）<div>StudentController构造函数上应该需要加@Autowired注解</div>2021-05-04</li><br/><li><span>陈越</span> 👍（0） 💬（0）<div>order注解
-实现ordered接口</div>2021-04-26</li><br/>
+</p>2024-01-13</li><br/><li><span>陌兮</span> 👍（0） 💬（0）<p>@Value这个点是之前从来没有考虑到的</p>2022-08-19</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（0）<p>添加@Order(number)注解，number越小优先级越高，越靠前</p>2022-01-25</li><br/><li><span>arch</span> 👍（0） 💬（3）<p>StudentController构造函数上应该需要加@Autowired注解</p>2021-05-04</li><br/><li><span>陈越</span> 👍（0） 💬（0）<p>order注解
+实现ordered接口</p>2021-04-26</li><br/>
 </ul>

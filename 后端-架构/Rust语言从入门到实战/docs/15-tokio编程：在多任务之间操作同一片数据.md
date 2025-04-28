@@ -414,19 +414,19 @@ fn main() {
 
 希望你可以开动脑筋，认真思考，把你的答案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，邀他们一起学习Rust。好了，我们下节课再见吧！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>lilp</span> 👍（6） 💬（2）<div>1. 应该是防止这两个任务还没走完，主线程就结束了？
-2. 不会阻塞。我理解的是这两个任务 同时启动，顺序完成。不管他俩怎么去抢这个锁 最后的完成顺序应该还是和main中写的.await() 顺序一样。</div>2023-11-23</li><br/><li><span>PEtFiSh</span> 👍（4） 💬（1）<div>await代码会持续等待直到任务结束，因此在main thread里第一行会阻塞第二行。但这不会让task_a阻塞task_b。加入await可以使最后的println!打印两个任务执行完以后被修改的db值，如果不加入await。有一定几率最后println!打印的还是原始的db</div>2023-11-23</li><br/><li><span>-</span> 👍（4） 💬（3）<div>有个疑问，Arc::new(Mutex::new(db))后可以将一个不可变的变量变成可变变量？这个是什么原因</div>2023-11-22</li><br/><li><span>seven9t</span> 👍（2） 💬（1）<div>可以说下如果用rust自带的Mutex而不是tokio的会有什么问题 （是否必须配套</div>2024-01-14</li><br/><li><span>下雨天</span> 👍（2） 💬（4）<div>看实现，就当前例子而言task_a不会阻塞task_b。 如果task_a中loop{}下就可以阻塞了。
+<li><span>lilp</span> 👍（6） 💬（2）<p>1. 应该是防止这两个任务还没走完，主线程就结束了？
+2. 不会阻塞。我理解的是这两个任务 同时启动，顺序完成。不管他俩怎么去抢这个锁 最后的完成顺序应该还是和main中写的.await() 顺序一样。</p>2023-11-23</li><br/><li><span>PEtFiSh</span> 👍（4） 💬（1）<p>await代码会持续等待直到任务结束，因此在main thread里第一行会阻塞第二行。但这不会让task_a阻塞task_b。加入await可以使最后的println!打印两个任务执行完以后被修改的db值，如果不加入await。有一定几率最后println!打印的还是原始的db</p>2023-11-23</li><br/><li><span>-</span> 👍（4） 💬（3）<p>有个疑问，Arc::new(Mutex::new(db))后可以将一个不可变的变量变成可变变量？这个是什么原因</p>2023-11-22</li><br/><li><span>seven9t</span> 👍（2） 💬（1）<p>可以说下如果用rust自带的Mutex而不是tokio的会有什么问题 （是否必须配套</p>2024-01-14</li><br/><li><span>下雨天</span> 👍（2） 💬（4）<p>看实现，就当前例子而言task_a不会阻塞task_b。 如果task_a中loop{}下就可以阻塞了。
 
-有个疑问，为啥task::spawn后面会自动执行呢？ 我理解只有.await了才会加到调度器里面执行。</div>2023-11-23</li><br/><li><span>Geek_72807e</span> 👍（2） 💬（2）<div>请问老师，方案四中，会不会出现两次修改操作顺序不确定的问题，最终结构可以是40，也会是100？</div>2023-11-22</li><br/><li><span>yunyi</span> 👍（1） 💬（1）<div>1、为了等待任务完成
-2、不会阻塞，两个任务是并行运行的，结果也有可能是被改成50，taskb先完成，再执行taska。</div>2024-01-12</li><br/><li><span>雍和</span> 👍（1） 💬（1）<div>会，因为要获取mutex</div>2023-11-22</li><br/><li><span>Geek_3b58b9</span> 👍（0） 💬（1）<div>对原子变量的读写访问可以用指针？还是说应该用专门的API？我记得原子类型有特定的CPU指令的</div>2024-01-15</li><br/><li><span>yunyi</span> 👍（0） 💬（1）<div>哇 ，居然看到了Erlang的字眼，我一直是用erlang做为主力语言的后端开发，最近在学rust，找了很多资料，最后买了老师的教程，如获至宝</div>2024-01-12</li><br/><li><span>superggn</span> 👍（0） 💬（3）<div>问个事儿， Arc::clone(arc_db) 和 arc_db.clone() 一样吗？
+有个疑问，为啥task::spawn后面会自动执行呢？ 我理解只有.await了才会加到调度器里面执行。</p>2023-11-23</li><br/><li><span>Geek_72807e</span> 👍（2） 💬（2）<p>请问老师，方案四中，会不会出现两次修改操作顺序不确定的问题，最终结构可以是40，也会是100？</p>2023-11-22</li><br/><li><span>yunyi</span> 👍（1） 💬（1）<p>1、为了等待任务完成
+2、不会阻塞，两个任务是并行运行的，结果也有可能是被改成50，taskb先完成，再执行taska。</p>2024-01-12</li><br/><li><span>雍和</span> 👍（1） 💬（1）<p>会，因为要获取mutex</p>2023-11-22</li><br/><li><span>Geek_3b58b9</span> 👍（0） 💬（1）<p>对原子变量的读写访问可以用指针？还是说应该用专门的API？我记得原子类型有特定的CPU指令的</p>2024-01-15</li><br/><li><span>yunyi</span> 👍（0） 💬（1）<p>哇 ，居然看到了Erlang的字眼，我一直是用erlang做为主力语言的后端开发，最近在学rust，找了很多资料，最后买了老师的教程，如获至宝</p>2024-01-12</li><br/><li><span>superggn</span> 👍（0） 💬（3）<p>问个事儿， Arc::clone(arc_db) 和 arc_db.clone() 一样吗？
 
 为啥 不用 `std::sync::{Arc, Mutex}` 而是 `tokio::sync::{Arc, Mutex}`
 
 如果是因为在 tokio runtime 里头要用 tokio 的东西的话， 那么在啥情况下会用 std 的几板斧呢？
 
-同步场景都用 std::sync 底下的东西吗？</div>2023-12-21</li><br/><li><span>superggn</span> 👍（0） 💬（1）<div>思考题
+同步场景都用 std::sync 底下的东西吗？</p>2023-12-21</li><br/><li><span>superggn</span> 👍（0） 💬（1）<p>思考题
 意义： 等执行完了再打印， 对齐一下子， 别任务没跑完主进程就完事儿了
 到 await 这块儿就是同步了， 这俩 await 是顺序执行， 
 如果 task_a 没执行完， task_b 已经执行完了， 就会卡在 task_a 这里， task_a 这行完事儿了在执行 task_b 的 await, 这会儿 task_b 因为已经完事儿了， 所以第2个 await 不会卡
-</div>2023-12-21</li><br/><li><span>-Hedon🍭</span> 👍（0） 💬（1）<div>task_a.await.unwrap() 是阻塞等待任务结果，所以 task_a.await.unwrap() 会阻塞 task_b.await.unwrap() ，但是 task_a 不会阻塞 task_b，spwan 并发执行的。</div>2023-12-20</li><br/><li><span>Geek_e5eb33</span> 👍（0） 💬（1）<div>请问老师，rust 中不建议使用全局变量。那如果我想进行模块化开发，在 A 模块中定义的变量(比如缓存了用户信息)，怎么供其他模块使用呢，目前能想到的是都定义到 main 里。</div>2023-12-15</li><br/><li><span>Taozi</span> 👍（0） 💬（1）<div>关于arc里面为何需要套lock才能修改值，当然是为了在运行时保证内存安全。为什么说在运行时，因为还有对应的在静态时。还记得最开始我们说rust中每个值都有一个owner，这是为了保证ower在其作用域结束时释放值，这是可以通过代码静态分析出来的。对于所有权不能静态确定的情况，就需要arc来这个第三方来持有所有权，然后动态的决定何时释放值。原理也很简单，就是引用计数。同样最开始我们也说一个值只能同时存在一个可变借用或者多个不可变借用，这也是可以通过静态分析保证的，但是在arc这里只能通过加锁在运行时保证这点。</div>2023-11-22</li><br/>
+</p>2023-12-21</li><br/><li><span>-Hedon🍭</span> 👍（0） 💬（1）<p>task_a.await.unwrap() 是阻塞等待任务结果，所以 task_a.await.unwrap() 会阻塞 task_b.await.unwrap() ，但是 task_a 不会阻塞 task_b，spwan 并发执行的。</p>2023-12-20</li><br/><li><span>Geek_e5eb33</span> 👍（0） 💬（1）<p>请问老师，rust 中不建议使用全局变量。那如果我想进行模块化开发，在 A 模块中定义的变量(比如缓存了用户信息)，怎么供其他模块使用呢，目前能想到的是都定义到 main 里。</p>2023-12-15</li><br/><li><span>Taozi</span> 👍（0） 💬（1）<p>关于arc里面为何需要套lock才能修改值，当然是为了在运行时保证内存安全。为什么说在运行时，因为还有对应的在静态时。还记得最开始我们说rust中每个值都有一个owner，这是为了保证ower在其作用域结束时释放值，这是可以通过代码静态分析出来的。对于所有权不能静态确定的情况，就需要arc来这个第三方来持有所有权，然后动态的决定何时释放值。原理也很简单，就是引用计数。同样最开始我们也说一个值只能同时存在一个可变借用或者多个不可变借用，这也是可以通过静态分析保证的，但是在arc这里只能通过加锁在运行时保证这点。</p>2023-11-22</li><br/>
 </ul>

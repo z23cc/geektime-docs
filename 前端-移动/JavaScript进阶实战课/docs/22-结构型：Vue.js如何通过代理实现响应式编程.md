@@ -227,12 +227,12 @@ obj.count;
 
 欢迎在留言区分享你的答案、交流学习心得或者提出问题，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。我们下期再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>天择</span> 👍（1） 💬（1）<div>响应式编程可以利用“副作用”达到目的（比如更新UI），函数本身可能不是目的。而函数式编程还包括如“纯函数”一类的消除副作用的场景，函数本身即是目的。</div>2022-11-09</li><br/><li><span>郭慧娟</span> 👍（0） 💬（1）<div>对象增强的那个例子，为什么会有副作用呢？</div>2022-11-10</li><br/><li><span>cyw0220</span> 👍（0） 💬（2）<div>运算符重载的例子执行下来返回的是1啊，不太能理解13行的obj.count为啥会设置count</div>2022-11-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>import { reactive, computed } from &#39;vue&#39;
+<li><span>天择</span> 👍（1） 💬（1）<p>响应式编程可以利用“副作用”达到目的（比如更新UI），函数本身可能不是目的。而函数式编程还包括如“纯函数”一类的消除副作用的场景，函数本身即是目的。</p>2022-11-09</li><br/><li><span>郭慧娟</span> 👍（0） 💬（1）<p>对象增强的那个例子，为什么会有副作用呢？</p>2022-11-10</li><br/><li><span>cyw0220</span> 👍（0） 💬（2）<p>运算符重载的例子执行下来返回的是1啊，不太能理解13行的obj.count为啥会设置count</p>2022-11-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>import { reactive, computed } from &#39;vue&#39;
 var A0 = reactive(0);
 var A1 = reactive(1);
 var A2 = computed(() =&gt; A0.value + A1.value);
 A0.value = 2;
 
 
-这段代码应该是用 ref</div>2022-11-08</li><br/>
+这段代码应该是用 ref</p>2022-11-08</li><br/>
 </ul>

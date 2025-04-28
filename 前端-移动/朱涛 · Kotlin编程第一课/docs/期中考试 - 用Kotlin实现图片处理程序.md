@@ -173,8 +173,8 @@ fun main() = runBlocking {
 
 好了，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>曾帅</span> 👍（4） 💬（1）<div>git clone 之后，打开编译就报错，MultipleCompilationErrorsException 。把 gradle&#47;wrapper&#47;gradle-wrapper.properties 里面的 7.1 版本改成 7.2 之后重新编译就可以了。
-有同样问题的同学可以参考一下。</div>2022-03-01</li><br/><li><span>better</span> 👍（3） 💬（1）<div>&#47;&#47; Image 添加方法，同时 去掉 pixels 的 private
+<li><span>曾帅</span> 👍（4） 💬（1）<p>git clone 之后，打开编译就报错，MultipleCompilationErrorsException 。把 gradle&#47;wrapper&#47;gradle-wrapper.properties 里面的 7.1 版本改成 7.2 之后重新编译就可以了。
+有同样问题的同学可以参考一下。</p>2022-03-01</li><br/><li><span>better</span> 👍（3） 💬（1）<p>&#47;&#47; Image 添加方法，同时 去掉 pixels 的 private
 fun getHorArray(x: Int): Array&lt;Color&gt; {
         return pixels[x]
 }
@@ -201,7 +201,7 @@ fun Image.crop(startY: Int, startX: Int, width: Int, height: Int): Image {
         Image(it)
     }
 }
-</div>2022-02-27</li><br/><li><span>白乾涛</span> 👍（1） 💬（1）<div>fun main() = runBlocking {
+</p>2022-02-27</li><br/><li><span>白乾涛</span> 👍（1） 💬（1）<p>fun main() = runBlocking {
     File(BASE_PATH).mkdirs()
     downloadFile(URL, getPathFile(&quot;origin&quot;))
         .loadImage()
@@ -209,7 +209,7 @@ fun Image.crop(startY: Int, startX: Int, width: Int, height: Int): Image {
         .also { it.flipHorizontal().writeToFile(getPathFile(&quot;horizontal&quot;)) }
         .also { it.crop(0, 0, 100, 50).writeToFile(getPathFile(&quot;crop&quot;)) }
     delay(10L)
-}</div>2022-03-06</li><br/><li><span>A Lonely Cat</span> 👍（1） 💬（1）<div>图片下载功能
+}</p>2022-03-06</li><br/><li><span>A Lonely Cat</span> 👍（1） 💬（1）<p>图片下载功能
 
 private val client = OkHttpClient.Builder()
     .build()
@@ -247,7 +247,7 @@ fun main() = runBlocking {
     val file = File(&quot;${BASE_PATH}wallpaper.png&quot;)
     val success = downloadImage(url, file)
     println(&quot;Download file status is success：$success&quot;)
-}</div>2022-02-25</li><br/><li><span>Geek_Adr</span> 👍（0） 💬（1）<div>&#47;&#47; 先交作业，后看参考实现
+}</p>2022-02-25</li><br/><li><span>Geek_Adr</span> 👍（0） 💬（1）<p>&#47;&#47; 先交作业，后看参考实现
 &#47;&#47; 图片处理 单测Case 较难实现，偷懒写本地肉眼看
 
 &#47;**
@@ -309,7 +309,7 @@ suspend fun downloadImage(url: String, outputFile: File): Boolean =
             }
         }
     }
-</div>2022-03-12</li><br/><li><span>PoPlus</span> 👍（0） 💬（1）<div>&#47;**
+</p>2022-03-12</li><br/><li><span>PoPlus</span> 👍（0） 💬（1）<p>&#47;**
  * 挂起函数，以http的方式下载图片，保存到本地
  *&#47;
 suspend fun downloadImage(url: String, outputFile: File) = withContext(Dispatchers.IO) {
@@ -345,7 +345,7 @@ fun main() = runBlocking {
     println(&quot;Width = ${image.width()};Height = ${image.height()}&quot;)
 }
 
-看到有同学使用 suspendCoroutine 函数处理，不知道和我这个方法比较有什么区别 👀</div>2022-02-28</li><br/><li><span>小江爱学术</span> 👍（0） 💬（0）<div>当然是要把第一部分和第二部分的内容结合起来啦：
+看到有同学使用 suspendCoroutine 函数处理，不知道和我这个方法比较有什么区别 👀</p>2022-02-28</li><br/><li><span>小江爱学术</span> 👍（0） 💬（0）<p>当然是要把第一部分和第二部分的内容结合起来啦：
 首先自己创建一个获取图片的接口：
     @GetMapping(&quot;&#47;{name}&quot;, produces = [MediaType.IMAGE_JPEG_VALUE])
     fun picture(@PathVariable name: String): ByteArray {
@@ -364,7 +364,7 @@ fun main() = runBlocking {
         }
         println(&quot;still in progress&quot;)
         return@runBlocking deferred.await()
-    }</div>2023-01-15</li><br/><li><span>Michael</span> 👍（0） 💬（0）<div>使用系统自带的 api 下载文件
+    }</p>2023-01-15</li><br/><li><span>Michael</span> 👍（0） 💬（0）<p>使用系统自带的 api 下载文件
 suspend fun downloadImage(url: String, outputFile: File): Boolean =
     withContext(Dispatchers.IO) {
       kotlin.runCatching {
@@ -372,5 +372,5 @@ suspend fun downloadImage(url: String, outputFile: File): Boolean =
           outputFile.writeBytes(it.readAllBytes())
         }
       }
-    }.isSuccess</div>2022-06-29</li><br/>
+    }.isSuccess</p>2022-06-29</li><br/>
 </ul>

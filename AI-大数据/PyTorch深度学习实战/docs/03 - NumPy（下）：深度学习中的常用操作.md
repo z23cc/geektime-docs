@@ -360,15 +360,15 @@ scores[:,:,1] = 1 - scores[:,:,0]
 
 欢迎你在留言区记录你的疑问或者收获，也推荐你把这节课分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>IUniverse</span> 👍（22） 💬（1）<div>import numpy as np 
+<li><span>IUniverse</span> 👍（22） 💬（1）<p>import numpy as np 
 
 scores=np.random.rand(256,256,2)
 scores[:,:,0]=1-scores[:,:,1]
 mask=np.argmax(scores,axis=2)
-print(mask)</div>2021-10-15</li><br/><li><span>Yuhan</span> 👍（12） 💬（2）<div>方法一：
+print(mask)</p>2021-10-15</li><br/><li><span>Yuhan</span> 👍（12） 💬（2）<p>方法一：
 result = np.argmax(scores, axis=2)
 方法二：
-result = (scores[:, :, 0] &lt; scores[:, :, 1]).astype(&#39;int&#39;)</div>2021-10-15</li><br/><li><span>王骥</span> 👍（5） 💬（5）<div>    im_pillow_c1_3ch = im_pillow.copy()
+result = (scores[:, :, 0] &lt; scores[:, :, 1]).astype(&#39;int&#39;)</p>2021-10-15</li><br/><li><span>王骥</span> 👍（5） 💬（5）<p>    im_pillow_c1_3ch = im_pillow.copy()
     im_pillow_c2_3ch = im_pillow.copy()
     im_pillow_c3_3ch = im_pillow.copy()
     # 只留 r 通道
@@ -381,13 +381,13 @@ result = (scores[:, :, 0] &lt; scores[:, :, 1]).astype(&#39;int&#39;)</div>2021-
     im_pillow_c3_3ch[:, :, 0:] = 0
     im_pillow_c3_3ch[:, :, 1:] = 0
 
-老师，尝试用深拷贝来实现RGB通道过滤。R 显示没有问题，不过在显示 GB 通道的时候，获得的图片背景是黑色的。是我哪里理解出了问题吗？还是代码有问题？</div>2021-10-24</li><br/><li><span>cab</span> 👍（2） 💬（1）<div>OpenCV提取RGB通道很方便:
-b, g, r = cv2.split(image)</div>2021-10-17</li><br/><li><span>nico</span> 👍（1） 💬（1）<div>请问下为什么这样合并下来都是红色底图的，第二种方式是可以的
+老师，尝试用深拷贝来实现RGB通道过滤。R 显示没有问题，不过在显示 GB 通道的时候，获得的图片背景是黑色的。是我哪里理解出了问题吗？还是代码有问题？</p>2021-10-24</li><br/><li><span>cab</span> 👍（2） 💬（1）<p>OpenCV提取RGB通道很方便:
+b, g, r = cv2.split(image)</p>2021-10-17</li><br/><li><span>nico</span> 👍（1） 💬（1）<p>请问下为什么这样合并下来都是红色底图的，第二种方式是可以的
 im_pillow_c1_3ch = np.concatenate((im_pillow_c1, zeros), axis=2)
 im_pillow_c2_3ch = np.concatenate((im_pillow_c2, zeros), axis=2)
-im_pillow_c3_3ch = np.concatenate((im_pillow_c3, zeros), axis=2)</div>2022-06-27</li><br/><li><span>clee</span> 👍（1） 💬（2）<div>你好，为什么我执行 im_pillow_c1 = im_pillow_c1[:, :, np.newaxis] 后打印im_pillow_c1的shape变量，输出是  (116, 318, 1, 1, 1)， 而不是 (116, 318, 1,) 呢
+im_pillow_c3_3ch = np.concatenate((im_pillow_c3, zeros), axis=2)</p>2022-06-27</li><br/><li><span>clee</span> 👍（1） 💬（2）<p>你好，为什么我执行 im_pillow_c1 = im_pillow_c1[:, :, np.newaxis] 后打印im_pillow_c1的shape变量，输出是  (116, 318, 1, 1, 1)， 而不是 (116, 318, 1,) 呢
 
-</div>2021-10-25</li><br/><li><span>平常心</span> 👍（1） 💬（3）<div>老师，您好！想请教一下，下边这个问题：
+</p>2021-10-25</li><br/><li><span>平常心</span> 👍（1） 💬（3）<p>老师，您好！想请教一下，下边这个问题：
 
 课程中，您提到：“其实我们还有一种更加简单的方式获得三个通道的 BGR 数据，只需要将图片读入后，直接将其中的两个通道赋值为 0 即可。”
 
@@ -395,8 +395,8 @@ im_pillow = np.array(im)
 im_pillow[:,:,1:]=0
 
 这个出来的结果是：R通道的图像，想请教一下，G、B通道的图像，用同样的办法实现，代码im_pillow[:,:,:]=0应该是什么？谢谢
-</div>2021-10-24</li><br/><li><span>文森特没有眼泪</span> 👍（1） 💬（1）<div>mask = (s[:,:,0] &gt; s[:,:,1])
-mask = mask.astype(&#39;int&#39;)</div>2021-10-15</li><br/><li><span>Geek_f3b405</span> 👍（0） 💬（1）<div>用PIL和opencv打开同一张图片得到的图片一个是4维的一个是3维的是什么情况</div>2023-11-30</li><br/><li><span>Difer</span> 👍（0） 💬（1）<div>方法一遍历了整个数组(可能在某些条件下有用，但相对耗时)，方法二则采用求特定轴上最大索引的方法
+</p>2021-10-24</li><br/><li><span>文森特没有眼泪</span> 👍（1） 💬（1）<p>mask = (s[:,:,0] &gt; s[:,:,1])
+mask = mask.astype(&#39;int&#39;)</p>2021-10-15</li><br/><li><span>Geek_f3b405</span> 👍（0） 💬（1）<p>用PIL和opencv打开同一张图片得到的图片一个是4维的一个是3维的是什么情况</p>2023-11-30</li><br/><li><span>Difer</span> 👍（0） 💬（1）<p>方法一遍历了整个数组(可能在某些条件下有用，但相对耗时)，方法二则采用求特定轴上最大索引的方法
 ## mthod1
 a = scores[:, :, [0]]
 b = scores[:, :, [1]]
@@ -414,19 +414,19 @@ mask_m2 = np.argmax(scores, axis=2)
 
 if (mask_m1 == mask_m2).all():
     print(True)
-</div>2023-11-03</li><br/><li><span>Difer</span> 👍（0） 💬（1）<div>我发现使用&quot;列表&quot;的形式进行取值，就可以直接获得shape为三维的数组，不知道方老师认可这样的操作吗？
+</p>2023-11-03</li><br/><li><span>Difer</span> 👍（0） 💬（1）<p>我发现使用&quot;列表&quot;的形式进行取值，就可以直接获得shape为三维的数组，不知道方老师认可这样的操作吗？
 im_pillow_c0 = im_pillow[:, :, [0]]   ### 注意 im_pillow[:, :, [0]] 与 原文的im_pillow[:, :, 0] 是不一样的
 im_pillow_c1 = im_pillow[:, :, [1]]
 im_pillow_c2 = im_pillow[:, :, [2]]
 
 im_pillow_c0_3ch_m3 = np.concatenate((im_pillow_c0, z, z),axis=2)
 im_pillow_c1_3ch_m3 = np.concatenate((z, im_pillow_c1, z),axis=2)
-im_pillow_c2_3ch_m3 = np.concatenate((z, z, im_pillow_c2),axis=2)</div>2023-11-03</li><br/><li><span>峰老板牛逼</span> 👍（0） 💬（1）<div>课后习题没看懂</div>2022-08-25</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<div>另有一点想向您说：
-我是一名大二的学生，虽然和向您一样的业界佼佼者比不了，但是我把您的课程从头到尾学了一遍，每一个代码我都自己复现了一次，如果您有后面想继续出课的打算，我可以无偿帮您做一些力所能及的事情（比如一些基础部分的理解，和一些代码的操作，运行，翻译等工作），希望您做出的这么好的课程可以被更多人看见！</div>2022-08-02</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<div>谢谢老师一直以来的回复，您之前说有没有就是进阶课程的建议。
+im_pillow_c2_3ch_m3 = np.concatenate((z, z, im_pillow_c2),axis=2)</p>2023-11-03</li><br/><li><span>峰老板牛逼</span> 👍（0） 💬（1）<p>课后习题没看懂</p>2022-08-25</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<p>另有一点想向您说：
+我是一名大二的学生，虽然和向您一样的业界佼佼者比不了，但是我把您的课程从头到尾学了一遍，每一个代码我都自己复现了一次，如果您有后面想继续出课的打算，我可以无偿帮您做一些力所能及的事情（比如一些基础部分的理解，和一些代码的操作，运行，翻译等工作），希望您做出的这么好的课程可以被更多人看见！</p>2022-08-02</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<p>谢谢老师一直以来的回复，您之前说有没有就是进阶课程的建议。
 我是这样理解的：
 就比如您在18|图像分类（下）中提到的
 
 “我先给你解读一下EfficientNet的这篇论文，这里我着重分享论文的核心思路还有我的理解，学有余力的同学可以在课后自行阅读原文。”
 
-整篇文章通过您的解读看下来之后就发现很流畅，整体的思路很明晰，读了一遍都觉得读不够那种，虽然现在也在学习论文的撰写和理解，可是有很多时候还是找不到核心或者说读完一篇文章下来磕磕绊绊的，但是就是您这么加入自己的理解让后抽提论文的核心要素之后就觉得整篇文章很好理解了。就是怎么讲.......在我看来，我觉得如果日后您能出一个论文导读，或者说是不同模型的演练，我觉得效果可能会很好。不过无论如何，这套课程中真的很感谢您能分享这么多知识，从您的文字当中可以看出您是一个博学且友善的人！</div>2022-08-02</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<div>老师，很感谢您的文档，请问日后会更新进阶版的课程以供参考学习吗，因为感觉咱们这个课程是入门，您讲得很好，希望可以能再讲一讲如何从1到无穷，谢谢老师！</div>2022-08-01</li><br/>
+整篇文章通过您的解读看下来之后就发现很流畅，整体的思路很明晰，读了一遍都觉得读不够那种，虽然现在也在学习论文的撰写和理解，可是有很多时候还是找不到核心或者说读完一篇文章下来磕磕绊绊的，但是就是您这么加入自己的理解让后抽提论文的核心要素之后就觉得整篇文章很好理解了。就是怎么讲.......在我看来，我觉得如果日后您能出一个论文导读，或者说是不同模型的演练，我觉得效果可能会很好。不过无论如何，这套课程中真的很感谢您能分享这么多知识，从您的文字当中可以看出您是一个博学且友善的人！</p>2022-08-02</li><br/><li><span>醒狮</span> 👍（0） 💬（1）<p>老师，很感谢您的文档，请问日后会更新进阶版的课程以供参考学习吗，因为感觉咱们这个课程是入门，您讲得很好，希望可以能再讲一讲如何从1到无穷，谢谢老师！</p>2022-08-01</li><br/>
 </ul>

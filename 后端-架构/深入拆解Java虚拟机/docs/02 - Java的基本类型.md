@@ -153,13 +153,13 @@ public class Foo {
 }
 ```
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>丨落灬小莫</span> 👍（342） 💬（13）<div>当替换为2的时候无输出
+<li><span>丨落灬小莫</span> 👍（342） 💬（13）<p>当替换为2的时候无输出
 当替换为3的时候打印HelloJava及HelloJVM
 猜测是因为将boolean 保存在静态域中,指定了其类型为&#39;Z&#39;,当修改为2时取低位最后一位为0,当修改为3时取低位最后一位为1
-则说明boolean的掩码处理是取低位的最后一位</div>2018-07-23</li><br/><li><span>Kyle</span> 👍（69） 💬（2）<div>老师，文中看你说到：
+则说明boolean的掩码处理是取低位的最后一位</p>2018-07-23</li><br/><li><span>Kyle</span> 👍（69） 💬（2）<p>老师，文中看你说到：
 “也就是说，boolean、byte、char、short 这四种类型，在栈上占用的空间和 int 是一样的，和引用类型也是一样的。因此，在 32 位的 HotSpot 中，这些类型在栈上将占用 4 个字节；而在 64 位的 HotSpot 中，他们将占 8 个字节。”
 
-但是我记得boolean在内存中占1字节，char占2字节，这里是什么个意思？</div>2018-07-23</li><br/><li><span>LC</span> 👍（59） 💬（3）<div>老师可以讲下ASM、Unsafe和CAS的底层原理吗？这块儿一直是个拦路虎，谢谢！</div>2018-07-23</li><br/><li><span>曲东方</span> 👍（38） 💬（2）<div>Unsafe.putBoolean和Unsafe.puByte是native实现
+但是我记得boolean在内存中占1字节，char占2字节，这里是什么个意思？</p>2018-07-23</li><br/><li><span>LC</span> 👍（59） 💬（3）<p>老师可以讲下ASM、Unsafe和CAS的底层原理吗？这块儿一直是个拦路虎，谢谢！</p>2018-07-23</li><br/><li><span>曲东方</span> 👍（38） 💬（2）<p>Unsafe.putBoolean和Unsafe.puByte是native实现
 
 putBoolean和putByte也是通过宏SET_FIELD模板出的函数
 
@@ -215,13 +215,13 @@ public Method getFlag:&quot;()Z&quot;
 
 
 https:&#47;&#47;gist.github.com&#47;qudongfang&#47;49635d86882c03e49cff2b0f7d833805
-</div>2018-07-23</li><br/><li><span>Geek_dde3ac</span> 👍（34） 💬（2）<div>你好，在内存中都是0，那么是如何区别是哪种类型数据的呢？</div>2018-07-23</li><br/><li><span>落叶飞逝的恋</span> 👍（21） 💬（1）<div>其实那个boolean的true虚拟机里面为1，也就是if(true==吃了没)其实可以替换成if(1==2)这样理解吧</div>2018-07-24</li><br/><li><span>dong</span> 👍（18） 💬（1）<div>感觉&quot;吃饭了&quot;例子，弄得有点饶了。也有些地方语句的起承转合不是很通顺，个人理解。</div>2018-07-27</li><br/><li><span>别处</span> 👍（16） 💬（1）<div>以下两个引至本文内容：
+</p>2018-07-23</li><br/><li><span>Geek_dde3ac</span> 👍（34） 💬（2）<p>你好，在内存中都是0，那么是如何区别是哪种类型数据的呢？</p>2018-07-23</li><br/><li><span>落叶飞逝的恋</span> 👍（21） 💬（1）<p>其实那个boolean的true虚拟机里面为1，也就是if(true==吃了没)其实可以替换成if(1==2)这样理解吧</p>2018-07-24</li><br/><li><span>dong</span> 👍（18） 💬（1）<p>感觉&quot;吃饭了&quot;例子，弄得有点饶了。也有些地方语句的起承转合不是很通顺，个人理解。</p>2018-07-27</li><br/><li><span>别处</span> 👍（16） 💬（1）<p>以下两个引至本文内容：
 1、在 Java 虚拟机规范中，boolean 类型则被映射成 int 类型。
 2、在 HotSpot 中，boolean 字段占用一字节，
 
-问题：一个是int类型，一个是一个字节(32位系统的话就是byte类型)，是没讲透还是错误？</div>2018-07-24</li><br/><li><span>Invincible、</span> 👍（12） 💬（1）<div>为什么我不能让boolvalue＝2或者3……</div>2018-11-29</li><br/><li><span>星星</span> 👍（6） 💬（1）<div>long，double，float三种类型存入操作数栈有做转化操作吗？还是做浮点运算会有特殊处理，本文没有提及呀。</div>2018-09-25</li><br/><li><span>志远</span> 👍（6） 💬（1）<div>NaN 有一个有趣的特性：除了“!= 始终返回 true”之外，所有其他比较结果都会返回 false。这句话好拗口啊，双引号的标点符号有问题吧</div>2018-07-23</li><br/><li><span>D→_→M</span> 👍（5） 💬（1）<div>老师您在文中提到除了long,double以外，boolean,byte,char,short这四种类型在栈上占用的空间与int一样，那float也是一样的吗？
+问题：一个是int类型，一个是一个字节(32位系统的话就是byte类型)，是没讲透还是错误？</p>2018-07-24</li><br/><li><span>Invincible、</span> 👍（12） 💬（1）<p>为什么我不能让boolvalue＝2或者3……</p>2018-11-29</li><br/><li><span>星星</span> 👍（6） 💬（1）<p>long，double，float三种类型存入操作数栈有做转化操作吗？还是做浮点运算会有特殊处理，本文没有提及呀。</p>2018-09-25</li><br/><li><span>志远</span> 👍（6） 💬（1）<p>NaN 有一个有趣的特性：除了“!= 始终返回 true”之外，所有其他比较结果都会返回 false。这句话好拗口啊，双引号的标点符号有问题吧</p>2018-07-23</li><br/><li><span>D→_→M</span> 👍（5） 💬（1）<p>老师您在文中提到除了long,double以外，boolean,byte,char,short这四种类型在栈上占用的空间与int一样，那float也是一样的吗？
 还有您说的byte,char,short这三种类型在堆上占用的空间与这些类型的值域吻合，那其他的哪几种类型也是如此吗？
 最后还有就是加载那部分的内容只提到了boolean,byte,char以及short会加载到操作数栈上，将其值当成int类型来运算，并没有提到double,long和float类型，这三中类型与前四种类型相同吗？
-</div>2018-09-24</li><br/><li><span>果然如此</span> 👍（3） 💬（2）<div>不错，针对知识点分析的很深入！很有收获，所谓“一沙一世界”！
-我购买的另一个java面试题总结课程“看起来大而全”，而实际看了却感觉没有收获！</div>2018-09-17</li><br/><li><span>Oswww</span> 👍（3） 💬（1）<div>char -&gt; character -&gt; &#47;ˈkerə&#47;</div>2018-07-24</li><br/><li><span>乔伟</span> 👍（3） 💬（1）<div>Double long 占用两个数组单位 64位的数组单位是8个字节 是不是说在解释栈上面 64位的情况下double占用16个字节？</div>2018-07-23</li><br/>
+</p>2018-09-24</li><br/><li><span>果然如此</span> 👍（3） 💬（2）<p>不错，针对知识点分析的很深入！很有收获，所谓“一沙一世界”！
+我购买的另一个java面试题总结课程“看起来大而全”，而实际看了却感觉没有收获！</p>2018-09-17</li><br/><li><span>Oswww</span> 👍（3） 💬（1）<p>char -&gt; character -&gt; &#47;ˈkerə&#47;</p>2018-07-24</li><br/><li><span>乔伟</span> 👍（3） 💬（1）<p>Double long 占用两个数组单位 64位的数组单位是8个字节 是不是说在解释栈上面 64位的情况下double占用16个字节？</p>2018-07-23</li><br/>
 </ul>

@@ -441,8 +441,8 @@ DNS 是互联网中最基础的一项服务，提供了域名和 IP 地址间映
 
 欢迎在留言区和我讨论，也欢迎你把这篇文章分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>分清云淡</span> 👍（43） 💬（9）<div>nslookup 域名结果正确，但是 ping 域名 返回 unknown host, 让我挖出一大把相关的基础知识，一下子就把dns这块通关了：https:&#47;&#47;plantegg.github.io&#47;2019&#47;01&#47;09&#47;nslookup-OK-but-ping-fail&#47;</div>2019-03-01</li><br/><li><span>ninuxer</span> 👍（21） 💬（1）<div>打卡day39
-碰到dns问题最多的就是劫持，现在公网都是强制https，内部用powerdns，性能刚刚的～</div>2019-02-21</li><br/><li><span>MJ</span> 👍（14） 💬（1）<div>centos 7  dnsmasq如下操作：
+<li><span>分清云淡</span> 👍（43） 💬（9）<p>nslookup 域名结果正确，但是 ping 域名 返回 unknown host, 让我挖出一大把相关的基础知识，一下子就把dns这块通关了：https:&#47;&#47;plantegg.github.io&#47;2019&#47;01&#47;09&#47;nslookup-OK-but-ping-fail&#47;</p>2019-03-01</li><br/><li><span>ninuxer</span> 👍（21） 💬（1）<p>打卡day39
+碰到dns问题最多的就是劫持，现在公网都是强制https，内部用powerdns，性能刚刚的～</p>2019-02-21</li><br/><li><span>MJ</span> 👍（14） 💬（1）<p>centos 7  dnsmasq如下操作：
 
 cat &#47;etc&#47;resolv.conf
 nameserver 114.114.114.114
@@ -458,18 +458,18 @@ systemctl start dnsmasq
 再次运行命令，因为使用了缓存，查询时间应该大大缩短。
 
 老师，这种情况也是可以的吧。（针对上一个问题的解释）
-</div>2019-03-06</li><br/><li><span>Lucky  Guy</span> 👍（8） 💬（2）<div>老师关于 DNS污染 有什么好的解决方案么?</div>2019-07-26</li><br/><li><span>JJj</span> 👍（7） 💬（1）<div>你好，请问下dns缓存dnsmasq的配置里面是否还要设置DNS服务器地址，比如8.8.8.8或114.114.114.114
+</p>2019-03-06</li><br/><li><span>Lucky  Guy</span> 👍（8） 💬（2）<p>老师关于 DNS污染 有什么好的解决方案么?</p>2019-07-26</li><br/><li><span>JJj</span> 👍（7） 💬（1）<p>你好，请问下dns缓存dnsmasq的配置里面是否还要设置DNS服务器地址，比如8.8.8.8或114.114.114.114
 
-</div>2019-07-13</li><br/><li><span>慢热怪友</span> 👍（5） 💬（2）<div>既然域名以分层的结构进行管理，相对应的，域名解析其实也是用递归的方式（从顶级开始，以此类推），发送给每个层级的域名服务器，直到得到解析结果。
+</p>2019-07-13</li><br/><li><span>慢热怪友</span> 👍（5） 💬（2）<p>既然域名以分层的结构进行管理，相对应的，域名解析其实也是用递归的方式（从顶级开始，以此类推），发送给每个层级的域名服务器，直到得到解析结果。
 这里描述不恰当，老师漏讲了递归查询和迭代查询：
 （1）递归查询
 递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。所以，一般情况下服务器跟内网DNS 或直接 dns 之间都采用递归查询。
 （2）迭代查询
 DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS 服务器提交请求，依次循环直到返回查询的结果。所以一般内网 dns 和外网 dns 之间的都采用迭代查询。
-</div>2020-08-05</li><br/><li><span>夜空中最亮的星</span> 👍（4） 💬（1）<div>会有DNS域名劫持的内容吗？</div>2019-02-15</li><br/><li><span>bruceding</span> 👍（3） 💬（1）<div>遇到过 GO client 解析 dns 的问题，也是做了折中，配置 &#47;etc&#47;resolv.conf  多个 name server 解决，GO DNS 解析流程可以参考： http:&#47;&#47;blog.bruceding.com&#47;516.html</div>2019-02-20</li><br/><li><span>潘政宇</span> 👍（2） 💬（1）<div>ping一个IP的时候，140ms就算延迟很大了，一般多少毫秒算正常？</div>2019-02-21</li><br/><li><span>佳</span> 👍（2） 💬（1）<div>还需要故意，linux,ping过程域名解析，还有一个方向解析过程，内网解析器，目前使用coredns做内网的域名解析器的时候，使用etcd插件时候需要配置方向解析配置，否则ping时候，会把反向解析发送外网上游dns,出现超时，</div>2019-02-17</li><br/><li><span>eric-xin</span> 👍（1） 💬（1）<div>之前我配置内部DNS时候发现解析腾讯的地址有问题，后来把请求腾讯接口的zone换成了 119.29.29.29dns 超时就好了，默认dns 超时时间是30秒，简直要命</div>2019-07-04</li><br/><li><span>杨陆伟</span> 👍（1） 💬（1）<div>请教下，为什么多次nslookup的时延没有提升？dns服务器本身不是可以缓存吗？</div>2019-06-28</li><br/><li><span>MJ</span> 👍（1） 💬（1）<div>echo nameserver 127.0.0.1 &gt; &#47;etc&#47;resolv.conf
+</p>2020-08-05</li><br/><li><span>夜空中最亮的星</span> 👍（4） 💬（1）<p>会有DNS域名劫持的内容吗？</p>2019-02-15</li><br/><li><span>bruceding</span> 👍（3） 💬（1）<p>遇到过 GO client 解析 dns 的问题，也是做了折中，配置 &#47;etc&#47;resolv.conf  多个 name server 解决，GO DNS 解析流程可以参考： http:&#47;&#47;blog.bruceding.com&#47;516.html</p>2019-02-20</li><br/><li><span>潘政宇</span> 👍（2） 💬（1）<p>ping一个IP的时候，140ms就算延迟很大了，一般多少毫秒算正常？</p>2019-02-21</li><br/><li><span>佳</span> 👍（2） 💬（1）<p>还需要故意，linux,ping过程域名解析，还有一个方向解析过程，内网解析器，目前使用coredns做内网的域名解析器的时候，使用etcd插件时候需要配置方向解析配置，否则ping时候，会把反向解析发送外网上游dns,出现超时，</p>2019-02-17</li><br/><li><span>eric-xin</span> 👍（1） 💬（1）<p>之前我配置内部DNS时候发现解析腾讯的地址有问题，后来把请求腾讯接口的zone换成了 119.29.29.29dns 超时就好了，默认dns 超时时间是30秒，简直要命</p>2019-07-04</li><br/><li><span>杨陆伟</span> 👍（1） 💬（1）<p>请教下，为什么多次nslookup的时延没有提升？dns服务器本身不是可以缓存吗？</p>2019-06-28</li><br/><li><span>MJ</span> 👍（1） 💬（1）<p>echo nameserver 127.0.0.1 &gt; &#47;etc&#47;resolv.conf
 
 老师，这个需要配置吗？配置后就解析不了吧
-dnsmasq默认会从&#47;etc&#47;resolv.conf读取文件，读取114.114.114.114.</div>2019-03-06</li><br/><li><span>小老鼠</span> 👍（1） 💬（1）<div>1）
+dnsmasq默认会从&#47;etc&#47;resolv.conf读取文件，读取114.114.114.114.</p>2019-03-06</li><br/><li><span>小老鼠</span> 👍（1） 💬（1）<p>1）
 root@ubuntu:&#47;usr&#47;sbin# dig +trace +nodnssec time.geekbang.org
 
 ; &lt;&lt;&gt;&gt; DiG 9.11.3-1ubuntu1.2-Ubuntu &lt;&lt;&gt;&gt; +trace +nodnssec time.geekbang.org
@@ -483,5 +483,5 @@ dnsmasq: &#47;usr&#47;sbin&#47;dnsmasq &#47;usr&#47;share&#47;man&#47;man8&#47;d
 root@ubuntu:&#47;usr&#47;sbin# &#47;usr&#47;sbin&#47;dnsmasq start
 
 dnsmasq: junk found in command line
-如何解决</div>2019-02-16</li><br/><li><span>SunnyBird</span> 👍（1） 💬（1）<div>请教一下 如果在使用 http 的时候 直接使用 IP 地址 而不是 域名 是不是可以减少 dns 查询时间？</div>2019-02-16</li><br/>
+如何解决</p>2019-02-16</li><br/><li><span>SunnyBird</span> 👍（1） 💬（1）<p>请教一下 如果在使用 http 的时候 直接使用 IP 地址 而不是 域名 是不是可以减少 dns 查询时间？</p>2019-02-16</li><br/>
 </ul>

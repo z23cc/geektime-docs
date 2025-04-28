@@ -328,7 +328,7 @@ mysql> SELECT DATEDIFF("2021-02-01","2020-12-01");
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，欢迎你把它分享给你的朋友或同事，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>朱晓峰</span> 👍（1） 💬（3）<div>你好，我是朱晓峰，下面我就来公布一下上节课思考题的答案：
+<li><span>朱晓峰</span> 👍（1） 💬（3）<p>你好，我是朱晓峰，下面我就来公布一下上节课思考题的答案：
 
 上节课，我们学习了聚合函数。下面是思考题的答案：
 
@@ -336,12 +336,12 @@ SELECT
     goodsname, COUNT(*) 
 FROM
     demo.goodsmaster
-GROUP BY goodsname;</div>2021-04-21</li><br/><li><span>岁月静好</span> 👍（4） 💬（2）<div>select date_format(&#39;2021-03-31&#39;,&#39;%W %M %Y&#39;);
+GROUP BY goodsname;</p>2021-04-21</li><br/><li><span>岁月静好</span> 👍（4） 💬（2）<p>select date_format(&#39;2021-03-31&#39;,&#39;%W %M %Y&#39;);
 +--------------------------------------+
 | date_format(&#39;2021-03-31&#39;,&#39;%W %M %Y&#39;) |
 +--------------------------------------+
 | Wednesday March 2021                 |
-+--------------------------------------+</div>2021-03-31</li><br/><li><span>SevenMonths</span> 👍（1） 💬（1）<div>&#47;&#47;时间里获取 年 月 日 时 分 秒
++--------------------------------------+</p>2021-03-31</li><br/><li><span>SevenMonths</span> 👍（1） 💬（1）<p>&#47;&#47;时间里获取 年 月 日 时 分 秒
 EXTRACT(SECOND FROM Now())  SECOND(Now())
 EXTRACT(MINUTE FROM Now())  MINUTE(Now())
 EXTRACT(HOUR FROM Now())  HOUR(Now())
@@ -374,7 +374,7 @@ DATEDIFF(&quot;2021-02-01&quot;,&quot;2020-12-01&quot;) &#47;&#47; 62
 DAYOFWEEK(Now()):1 表示周日，以此类推，直到 7 表示周六。
 
 &#47;&#47;如果等于 0 表示为周日，其他为正常周几
-CASE DAYOFWEEK(CURDATE()) - 1 WHEN 0 THEN 7 ELSE DAYOFWEEK(CURDATE())</div>2021-09-01</li><br/><li><span>Geek_58516f</span> 👍（1） 💬（1）<div>老师您好，我需要获得每天从凌晨12点到晚上12点，24个小时，每个小时整点的时间（比如1点，2点...），怎么做呢</div>2021-08-04</li><br/><li><span>西云关二爷</span> 👍（1） 💬（3）<div>老师，您是否能提供下测试的表结构和测试数据。谢谢，每次手动建表做测试数据比较花费时间。</div>2021-03-29</li><br/><li><span>安全着陆_</span> 👍（0） 💬（1）<div>select case DAYOFWEEK(CURDATE())-1 when 0 then &#39;周日&#39; 
+CASE DAYOFWEEK(CURDATE()) - 1 WHEN 0 THEN 7 ELSE DAYOFWEEK(CURDATE())</p>2021-09-01</li><br/><li><span>Geek_58516f</span> 👍（1） 💬（1）<p>老师您好，我需要获得每天从凌晨12点到晚上12点，24个小时，每个小时整点的时间（比如1点，2点...），怎么做呢</p>2021-08-04</li><br/><li><span>西云关二爷</span> 👍（1） 💬（3）<p>老师，您是否能提供下测试的表结构和测试数据。谢谢，每次手动建表做测试数据比较花费时间。</p>2021-03-29</li><br/><li><span>安全着陆_</span> 👍（0） 💬（1）<p>select case DAYOFWEEK(CURDATE())-1 when 0 then &#39;周日&#39; 
  when 1 then &#39;周一&#39; 
  when 2 then &#39;周二&#39;
  when 3 then &#39;周三&#39;
@@ -383,9 +383,9 @@ CASE DAYOFWEEK(CURDATE()) - 1 WHEN 0 THEN 7 ELSE DAYOFWEEK(CURDATE())</div>2021-
  when 6 then &#39;周六&#39;
 else DAYOFWEEK(CURDATE())-1 
 end
-;</div>2022-03-15</li><br/><li><span>shk1230</span> 👍（0） 💬（1）<div>select date_format(curdate(),&#39;%W&#39;);</div>2022-03-12</li><br/><li><span>zhuyuping</span> 👍（0） 💬（1）<div>发现一个小错误：总结板块，图片中的表格的第10行，DDDATE 应该是 ADDDATE，少了一个A。</div>2022-03-09</li><br/><li><span>伍华龙</span> 👍（0） 💬（1）<div>老师，您好。最后的汇总表格貌似有2次笔误，麻烦确认一下：
+;</p>2022-03-15</li><br/><li><span>shk1230</span> 👍（0） 💬（1）<p>select date_format(curdate(),&#39;%W&#39;);</p>2022-03-12</li><br/><li><span>zhuyuping</span> 👍（0） 💬（1）<p>发现一个小错误：总结板块，图片中的表格的第10行，DDDATE 应该是 ADDDATE，少了一个A。</p>2022-03-09</li><br/><li><span>伍华龙</span> 👍（0） 💬（1）<p>老师，您好。最后的汇总表格貌似有2次笔误，麻烦确认一下：
 1. 「日期时间计算函数」的第2个函数&quot;ADDDATE&quot;漏了开头的A，写成&quot;DDDATE&quot;了。
-2. 「其他时间函数」的第2个函数&quot;WEEKOFDAY&quot;我查看mysql手册没找到，应该是&quot;DAYOFWEEK&quot;。另外我也发现有个类似的函数&quot;WEEKDAY&quot;，跟&quot;DAYOFWEEK&quot;类似，只是星期几与数字之间的映射不一样。</div>2022-03-08</li><br/><li><span>SharpBB</span> 👍（0） 💬（1）<div>虽然时间函数很有用 但是在处理复杂逻辑的时候 还是建议在业务层面进行逻辑运算</div>2022-02-10</li><br/><li><span>SharpBB</span> 👍（0） 💬（1）<div>1.从日期中获取时间
+2. 「其他时间函数」的第2个函数&quot;WEEKOFDAY&quot;我查看mysql手册没找到，应该是&quot;DAYOFWEEK&quot;。另外我也发现有个类似的函数&quot;WEEKDAY&quot;，跟&quot;DAYOFWEEK&quot;类似，只是星期几与数字之间的映射不一样。</p>2022-03-08</li><br/><li><span>SharpBB</span> 👍（0） 💬（1）<p>虽然时间函数很有用 但是在处理复杂逻辑的时候 还是建议在业务层面进行逻辑运算</p>2022-02-10</li><br/><li><span>SharpBB</span> 👍（0） 💬（1）<p>1.从日期中获取时间
 	获取用户的创建小时
 		SELECT EXTRACT(HOUR FROM create_time) time , FROM user;
 	使用函数
@@ -413,6 +413,6 @@ end
 			返回相差几天
 3.分布式系统时间差异解决办法
 	1.设置Windows 系统自带的网络同步
-	2.统一从总部MySQL服务器获取时间</div>2022-02-10</li><br/><li><span>枫林血舞</span> 👍（0） 💬（1）<div>交作业：
-select date_format(sysdate(), &#39;%W %M %Y&#39;);</div>2022-01-17</li><br/><li><span>大聖</span> 👍（0） 💬（1）<div>思考题：select dayname(curdate());</div>2021-06-21</li><br/><li><span>PHP菜鸟</span> 👍（0） 💬（1）<div>我们公司的要求是不允许在Sql中用各种的聚合函数,这可咋办......</div>2021-04-22</li><br/><li><span>Sinvi</span> 👍（0） 💬（1）<div>select DATE_FORMAT(curdate(), &#39;%W&#39;);</div>2021-04-09</li><br/>
+	2.统一从总部MySQL服务器获取时间</p>2022-02-10</li><br/><li><span>枫林血舞</span> 👍（0） 💬（1）<p>交作业：
+select date_format(sysdate(), &#39;%W %M %Y&#39;);</p>2022-01-17</li><br/><li><span>大聖</span> 👍（0） 💬（1）<p>思考题：select dayname(curdate());</p>2021-06-21</li><br/><li><span>PHP菜鸟</span> 👍（0） 💬（1）<p>我们公司的要求是不允许在Sql中用各种的聚合函数,这可咋办......</p>2021-04-22</li><br/><li><span>Sinvi</span> 👍（0） 💬（1）<p>select DATE_FORMAT(curdate(), &#39;%W&#39;);</p>2021-04-09</li><br/>
 </ul>

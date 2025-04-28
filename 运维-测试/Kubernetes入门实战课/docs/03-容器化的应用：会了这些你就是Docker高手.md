@@ -203,17 +203,17 @@ docker run -it --rm 2e6 sh
 我们下节课再见。  
 ![](https://static001.geekbang.org/resource/image/74/f9/7405faa28109b810cace4975eb3a4ef9.jpg?wh=1920x2481)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>星垂平野阔</span> 👍（28） 💬（1）<div>作业1：
+<li><span>星垂平野阔</span> 👍（28） 💬（1）<p>作业1：
 容器镜像比起这些安装包的差别就在于通用，不同linux版本下的安装包还不同。
 作业2:
-run是针对容器本身启动，而exec是进入了容器内部去跑命令，相当于进去操作系统跑应用。</div>2022-06-27</li><br/><li><span>sky</span> 👍（10） 💬（1）<div>还有一些命令docker  save,docker  load,docker stats,docker cp也很有用</div>2022-07-09</li><br/><li><span>lesserror</span> 👍（8） 💬（1）<div>老师后面的课程是会用k8s带领我们模拟真实场景，部署应用吗？
+run是针对容器本身启动，而exec是进入了容器内部去跑命令，相当于进去操作系统跑应用。</p>2022-06-27</li><br/><li><span>sky</span> 👍（10） 💬（1）<p>还有一些命令docker  save,docker  load,docker stats,docker cp也很有用</p>2022-07-09</li><br/><li><span>lesserror</span> 👍（8） 💬（1）<p>老师后面的课程是会用k8s带领我们模拟真实场景，部署应用吗？
 
-「纸上得来终觉浅」。</div>2022-06-27</li><br/><li><span>拾掇拾掇</span> 👍（7） 💬（3）<div>我实操了下，nginx:alpine 和 nginx:1.21-alpine image_id是不一样的，我猜是被更新了导致image_id不一样了，因为created也不一样</div>2022-06-27</li><br/><li><span>Bill</span> 👍（7） 💬（4）<div>1.容器镜像通过分层打包，安装所有依赖包，并可以在主机上共享使用，减少存储空间需求，它与 rpm、deb 安装包作为某一个功能的所有依赖包安装，聚焦某个命令的上下文，容器是整个应用的打包。
-2.docker run利用镜像运行容器，拥有丰富的启动参数，如挂载volume，端口映射等。是容器运行启动的基础。docker exec启动session，在一个已运行的容器中执行命令，仅当PID 1进程存在时运行，容器重启后，session将失效。</div>2022-06-27</li><br/><li><span>忧天小鸡</span> 👍（6） 💬（1）<div>苦于没有docker入门，耗费大量时间，这教程真是太creat了。
+「纸上得来终觉浅」。</p>2022-06-27</li><br/><li><span>拾掇拾掇</span> 👍（7） 💬（3）<p>我实操了下，nginx:alpine 和 nginx:1.21-alpine image_id是不一样的，我猜是被更新了导致image_id不一样了，因为created也不一样</p>2022-06-27</li><br/><li><span>Bill</span> 👍（7） 💬（4）<p>1.容器镜像通过分层打包，安装所有依赖包，并可以在主机上共享使用，减少存储空间需求，它与 rpm、deb 安装包作为某一个功能的所有依赖包安装，聚焦某个命令的上下文，容器是整个应用的打包。
+2.docker run利用镜像运行容器，拥有丰富的启动参数，如挂载volume，端口映射等。是容器运行启动的基础。docker exec启动session，在一个已运行的容器中执行命令，仅当PID 1进程存在时运行，容器重启后，session将失效。</p>2022-06-27</li><br/><li><span>忧天小鸡</span> 👍（6） 💬（1）<p>苦于没有docker入门，耗费大量时间，这教程真是太creat了。
 大佬的课我全入了，对你的讲述感觉十分易懂，不需要绕弯理解，nice的。
-等我cpp入门，去试试你们公司</div>2022-06-27</li><br/><li><span>lesserror</span> 👍（5） 💬（1）<div>1. 课外贴士的第四条，有同学问了，怎么删除，老师的回答我没太明白，最佳实践是如何操作呢？
+等我cpp入门，去试试你们公司</p>2022-06-27</li><br/><li><span>lesserror</span> 👍（5） 💬（1）<p>1. 课外贴士的第四条，有同学问了，怎么删除，老师的回答我没太明白，最佳实践是如何操作呢？
 
-2. 想听听老师的回答：docker run 和 docker exec 的区别在哪里？</div>2022-06-27</li><br/><li><span>Amosヾ</span> 👍（4） 💬（2）<div>老师，课外贴士中的第4条如何删除呢？有时候强制删除也没用</div>2022-06-27</li><br/><li><span>小伙儿</span> 👍（3） 💬（1）<div>docker镜像和rpm包的区别
+2. 想听听老师的回答：docker run 和 docker exec 的区别在哪里？</p>2022-06-27</li><br/><li><span>Amosヾ</span> 👍（4） 💬（2）<p>老师，课外贴士中的第4条如何删除呢？有时候强制删除也没用</p>2022-06-27</li><br/><li><span>小伙儿</span> 👍（3） 💬（1）<p>docker镜像和rpm包的区别
 
 镜像在打包推送到仓库后不管在那个操作系统中都能运行，而rpm包不行
 docker镜像中包含了完整的应用依赖和系统环境，而rpm包则没有
@@ -222,12 +222,12 @@ docker镜像中包含了完整的应用依赖和系统环境，而rpm包则没�
 
 docker的run和exec的区别
 
-run是从镜像创建运行一个容器的必备命令，exec则是在已经运行的容器中执行另外一个程序，他们的优先级是先run后exec。</div>2022-08-16</li><br/><li><span>朱雯</span> 👍（3） 💬（1）<div>老师好，想问一个问题，那就是k8s的container和docker容器有什么区别吗，我使用dockerfile打包一个镜像，在docker环境中是可以打包成功，但是放到使用k8s的jenkins流水线上，就无法打包成功，云平台相关工程师告诉我可能是k8s和docker的不兼容导致的，想请问一下这个问题</div>2022-06-27</li><br/><li><span>YueShi</span> 👍（2） 💬（1）<div>之前一直以为IMAGE ID是随机的，又学到了，原来是跟镜像文件相关的，特意去看了一下，不同的机器上的同一个image的同一个tag，IMAGE ID确实是一样的</div>2022-07-22</li><br/><li><span>Jarvis Chan</span> 👍（1） 💬（1）<div>chrono真的太牛了，真的是小白都能快速上手，沉淀多年才有这么深入浅出的能力</div>2023-05-16</li><br/><li><span>小马哥</span> 👍（1） 💬（1）<div>问题1: 说一说你对容器镜像的理解，它与 rpm、deb 安装包有哪些不同和优缺点。
+run是从镜像创建运行一个容器的必备命令，exec则是在已经运行的容器中执行另外一个程序，他们的优先级是先run后exec。</p>2022-08-16</li><br/><li><span>朱雯</span> 👍（3） 💬（1）<p>老师好，想问一个问题，那就是k8s的container和docker容器有什么区别吗，我使用dockerfile打包一个镜像，在docker环境中是可以打包成功，但是放到使用k8s的jenkins流水线上，就无法打包成功，云平台相关工程师告诉我可能是k8s和docker的不兼容导致的，想请问一下这个问题</p>2022-06-27</li><br/><li><span>YueShi</span> 👍（2） 💬（1）<p>之前一直以为IMAGE ID是随机的，又学到了，原来是跟镜像文件相关的，特意去看了一下，不同的机器上的同一个image的同一个tag，IMAGE ID确实是一样的</p>2022-07-22</li><br/><li><span>Jarvis Chan</span> 👍（1） 💬（1）<p>chrono真的太牛了，真的是小白都能快速上手，沉淀多年才有这么深入浅出的能力</p>2023-05-16</li><br/><li><span>小马哥</span> 👍（1） 💬（1）<p>问题1: 说一说你对容器镜像的理解，它与 rpm、deb 安装包有哪些不同和优缺点。
 主要在可移植性和隔离性上不同: 容器镜像依赖于容器环境, 一次打包处处运行; 而rpm,deb等安装包依赖与特定的操作系统环境.
 
 优缺点对比: 可移植性与隔离性强的容器技术, 在性能上肯定不如直接安装在本地的应用包, 是优点也是缺点.看解决的问题场景是什么.
 
-如果要解决的问题是移植性, 打包部署的方便, 当然选择容器技术. </div>2023-05-15</li><br/><li><span>极客酱酱</span> 👍（1） 💬（1）<div>补充一下：
+如果要解决的问题是移植性, 打包部署的方便, 当然选择容器技术. </p>2023-05-15</li><br/><li><span>极客酱酱</span> 👍（1） 💬（1）<p>补充一下：
 一次停止所有容器：docker stop `docker ps -a -q`
-一次删除所有容器：docker rm    `docker ps -a -q`</div>2023-01-15</li><br/><li><span>ReCharge</span> 👍（1） 💬（1）<div>买了老师很多的专栏了，每次都受益匪浅，老师能分享下学习新知识的方法么？如何能够做到这么深入浅出的。。</div>2022-11-09</li><br/>
+一次删除所有容器：docker rm    `docker ps -a -q`</p>2023-01-15</li><br/><li><span>ReCharge</span> 👍（1） 💬（1）<p>买了老师很多的专栏了，每次都受益匪浅，老师能分享下学习新知识的方法么？如何能够做到这么深入浅出的。。</p>2022-11-09</li><br/>
 </ul>

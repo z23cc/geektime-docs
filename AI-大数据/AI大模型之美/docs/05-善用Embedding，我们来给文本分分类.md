@@ -288,14 +288,14 @@ news_entertainment       0.86      0.88      0.87      7908
 
 整个原始数据集的下载链接我放在[这里](https://www.kaggle.com/snap/amazon-fine-food-reviews)了，欢迎你把你测试出来的结果分享出来，看看和其他人比起来怎么样。另外如果你觉得有收获的话，也欢迎你把这节课分享出去，让更多的人了解用Embedding给文本分类的方法。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>麦耀锋</span> 👍（32） 💬（2）<div>应该这么去理解embedding的使用。以前我们做机器学习的时候（或者相对于深度学习之前的“浅层学习”），不管是有监督还是无监督，一般我们需要做feature engineering，也就是需要data scientist，根据业务、专家领域，对数据提取有用的feature；而在NLP领域，那么就是通过word2vec等各种方式来提取feature。通过openai的embedding接口，实际上就是openai帮我们做了feature engineering这一步，将文本映射到一个合适的vector space，得到的embedding其实就是文本的feature，所以可以基于这个embedding即feature X来做传统的机器学习</div>2023-05-05</li><br/><li><span>浩仔是程序员</span> 👍（18） 💬（9）<div>老师，你好！既然都调用open ai的接口，为什么不直接让chatgpt直接返回分类结果呢</div>2023-03-28</li><br/><li><span>良辰美景</span> 👍（10） 💬（1）<div>“调用了 Tiktoken 这个库，使用了 cl100k_base 这种编码方式，这种编码方式和 text-embedding-ada-002 模型是一致的。如果选错了编码方式，你计算出来的 Token 数量可能和 OpenAI 的不一样。” 老师， 问你一个学习上的问题， 像这种API 文档里这么细节的东西，你是如何获取这些信息的</div>2023-04-07</li><br/><li><span>Toni</span> 👍（5） 💬（1）<div>在执行这段代码时会报ParserWarning
+<li><span>麦耀锋</span> 👍（32） 💬（2）<p>应该这么去理解embedding的使用。以前我们做机器学习的时候（或者相对于深度学习之前的“浅层学习”），不管是有监督还是无监督，一般我们需要做feature engineering，也就是需要data scientist，根据业务、专家领域，对数据提取有用的feature；而在NLP领域，那么就是通过word2vec等各种方式来提取feature。通过openai的embedding接口，实际上就是openai帮我们做了feature engineering这一步，将文本映射到一个合适的vector space，得到的embedding其实就是文本的feature，所以可以基于这个embedding即feature X来做传统的机器学习</p>2023-05-05</li><br/><li><span>浩仔是程序员</span> 👍（18） 💬（9）<p>老师，你好！既然都调用open ai的接口，为什么不直接让chatgpt直接返回分类结果呢</p>2023-03-28</li><br/><li><span>良辰美景</span> 👍（10） 💬（1）<p>“调用了 Tiktoken 这个库，使用了 cl100k_base 这种编码方式，这种编码方式和 text-embedding-ada-002 模型是一致的。如果选错了编码方式，你计算出来的 Token 数量可能和 OpenAI 的不一样。” 老师， 问你一个学习上的问题， 像这种API 文档里这么细节的东西，你是如何获取这些信息的</p>2023-04-07</li><br/><li><span>Toni</span> 👍（5） 💬（1）<p>在执行这段代码时会报ParserWarning
 df = pd.read_csv(&#39;data&#47;toutiao_cat&#47;toutiao_cat_data.txt&#39;, sep=&#39;_!_&#39;, names=[&#39;id&#39;, &#39;code&#39;, &#39;category&#39;, &#39;title&#39;, &#39;keywords&#39;])
 
 ParserWarning: Falling back to the &#39;python&#39; engine because the &#39;c&#39; engine does not support regex separators (separators &gt; 1 char and different from &#39;\s+&#39; are interpreted as regex); you can avoid this warning by specifying engine=&#39;python&#39;.
 
 原因是 &#39;c&#39; 引擎不支持分隔符sep=&#39;_!_&#39;表达式，可指定 engine=&#39;python&#39; 来避免此警告。
 代码如下
-df = pd.read_csv(&#39;data&#47;toutiao_cat&#47;toutiao_cat_data.txt&#39;, engine= &#39;python&#39;， sep=&#39;_!_&#39;, names=[&#39;id&#39;, &#39;code&#39;, &#39;category&#39;, &#39;title&#39;, &#39;keywords&#39;])</div>2023-03-30</li><br/><li><span>怡仔</span> 👍（5） 💬（4）<div>github中的找不到途中列举的数据文件</div>2023-03-28</li><br/><li><span>lala</span> 👍（4） 💬（1）<div>现在chatGPT是通用的问答应用。请问如何根据ChatGPT结合公司业务的知识库和商品信息，如何打造服务客户和内部顾问的机器人？比如根据用户问题，推荐对应产品给用户。根据内部知识库，回答内部同事关于产品使用，运营信息相关的问题呢。谢谢</div>2023-04-03</li><br/><li><span>Toni</span> 👍（4） 💬（2）<div>训练一个能把从 1 分到 5 分的每一个级别都区分出来的机器学习模型.
+df = pd.read_csv(&#39;data&#47;toutiao_cat&#47;toutiao_cat_data.txt&#39;, engine= &#39;python&#39;， sep=&#39;_!_&#39;, names=[&#39;id&#39;, &#39;code&#39;, &#39;category&#39;, &#39;title&#39;, &#39;keywords&#39;])</p>2023-03-30</li><br/><li><span>怡仔</span> 👍（5） 💬（4）<p>github中的找不到途中列举的数据文件</p>2023-03-28</li><br/><li><span>lala</span> 👍（4） 💬（1）<p>现在chatGPT是通用的问答应用。请问如何根据ChatGPT结合公司业务的知识库和商品信息，如何打造服务客户和内部顾问的机器人？比如根据用户问题，推荐对应产品给用户。根据内部知识库，回答内部同事关于产品使用，运营信息相关的问题呢。谢谢</p>2023-04-03</li><br/><li><span>Toni</span> 👍（4） 💬（2）<p>训练一个能把从 1 分到 5 分的每一个级别都区分出来的机器学习模型.
 使用下载的数据 fine_food_reviews_with_embeddings_1k.csv
 
 随机森林模型，超参数 n_estimators=100 下跑的结果
@@ -325,9 +325,9 @@ weighted avg       0.81      0.76      0.71       200
       accuracy                                0.75       200
     macro avg       0.95      0.40      0.49       200
 weighted avg       0.82      0.75      0.69       200
-</div>2023-03-31</li><br/><li><span>Geek_513b7c</span> 👍（4） 💬（2）<div>老师，你能解释一下在ai中向量是什么意思吗？这几节看的云里雾里的</div>2023-03-28</li><br/><li><span>四月.  🕊</span> 👍（2） 💬（1）<div>请问一下老师，既然已经按照batch_size划分出来了prompt_batches，为什么在get_embeddings_with_backoff函数中还要划分一次batch呢？是不是重复了？</div>2023-04-05</li><br/><li><span>王平</span> 👍（2） 💬（1）<div>老师请问如果把时序数据，比如用户行为序列作为输入给openAI 的 embedding, 根据行为判断用户情感的效果会好吗？</div>2023-04-03</li><br/><li><span>高捷</span> 👍（1） 💬（1）<div>老师您好，想知道大概多久需要去同步一次embedding模型，大模型自己怎么更新迭代呢？</div>2023-05-13</li><br/><li><span>楚翔style</span> 👍（1） 💬（1）<div>花费多少token怎么算呢 
-一个问题一个token吗</div>2023-05-08</li><br/><li><span>R9Go</span> 👍（1） 💬（1）<div>https:&#47;&#47;github.com&#47;xuwenhao&#47;geektime-ai-course&#47;blob&#47;main&#47;data&#47;20_newsgroup_with_embedding.parquet
-这个数据是不是不全？</div>2023-05-02</li><br/><li><span>Geek_512735</span> 👍（1） 💬（1）<div>老师，请利用ChatGPT embedding的优势在什么地方？</div>2023-04-17</li><br/><li><span>Bank</span> 👍（1） 💬（1）<div>在读数据的时候报了这个错，请问如何解决呢？内存应该是足够的
+</p>2023-03-31</li><br/><li><span>Geek_513b7c</span> 👍（4） 💬（2）<p>老师，你能解释一下在ai中向量是什么意思吗？这几节看的云里雾里的</p>2023-03-28</li><br/><li><span>四月.  🕊</span> 👍（2） 💬（1）<p>请问一下老师，既然已经按照batch_size划分出来了prompt_batches，为什么在get_embeddings_with_backoff函数中还要划分一次batch呢？是不是重复了？</p>2023-04-05</li><br/><li><span>王平</span> 👍（2） 💬（1）<p>老师请问如果把时序数据，比如用户行为序列作为输入给openAI 的 embedding, 根据行为判断用户情感的效果会好吗？</p>2023-04-03</li><br/><li><span>高捷</span> 👍（1） 💬（1）<p>老师您好，想知道大概多久需要去同步一次embedding模型，大模型自己怎么更新迭代呢？</p>2023-05-13</li><br/><li><span>楚翔style</span> 👍（1） 💬（1）<p>花费多少token怎么算呢 
+一个问题一个token吗</p>2023-05-08</li><br/><li><span>R9Go</span> 👍（1） 💬（1）<p>https:&#47;&#47;github.com&#47;xuwenhao&#47;geektime-ai-course&#47;blob&#47;main&#47;data&#47;20_newsgroup_with_embedding.parquet
+这个数据是不是不全？</p>2023-05-02</li><br/><li><span>Geek_512735</span> 👍（1） 💬（1）<p>老师，请利用ChatGPT embedding的优势在什么地方？</p>2023-04-17</li><br/><li><span>Bank</span> 👍（1） 💬（1）<p>在读数据的时候报了这个错，请问如何解决呢？内存应该是足够的
 ---------------------------------------------------------------------------
 ArrowMemoryError                          Traceback (most recent call last)
 Cell In[6], line 6
@@ -354,5 +354,5 @@ File D:\anaconda3\lib\site-packages\pyarrow\error.pxi:144, in pyarrow.lib.pyarro
 
 File D:\anaconda3\lib\site-packages\pyarrow\error.pxi:117, in pyarrow.lib.check_status()
 
-ArrowMemoryError: malloc of size 134217728 failed</div>2023-04-08</li><br/>
+ArrowMemoryError: malloc of size 134217728 failed</p>2023-04-08</li><br/>
 </ul>

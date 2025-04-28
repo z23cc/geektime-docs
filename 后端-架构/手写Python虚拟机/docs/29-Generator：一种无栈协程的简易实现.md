@@ -454,5 +454,5 @@ Generator 对象的迭代器就是它自身，所以Generator既支持 iter 方�
 
 如果进一步实现元类、文件等功能，请你思考一下，现有的机制是否可以支持？欢迎你把思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>冯某</span> 👍（0） 💬（0）<div>记录一下</div>2024-12-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-11-13</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<div>示例的foo 生成器函数是不是可以理解为：以为 foo() 返回的是一个或多个 数字，实际返回的是一个Generator，foo函数成了Generator 的一部分，在Generator.__next__ 执行时被触发。这也是python 让人迷惑和有魅力的地方，代码执行着执行着，类型就改了。 </div>2024-07-17</li><br/>
+<li><span>冯某</span> 👍（0） 💬（0）<p>记录一下</p>2024-12-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-11-13</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<p>示例的foo 生成器函数是不是可以理解为：以为 foo() 返回的是一个或多个 数字，实际返回的是一个Generator，foo函数成了Generator 的一部分，在Generator.__next__ 执行时被触发。这也是python 让人迷惑和有魅力的地方，代码执行着执行着，类型就改了。 </p>2024-07-17</li><br/>
 </ul>

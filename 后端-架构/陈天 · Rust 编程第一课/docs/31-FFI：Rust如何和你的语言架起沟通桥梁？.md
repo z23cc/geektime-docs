@@ -531,13 +531,13 @@ FFI 是 Rust 又一个处于领先地位的领域。
 
 感谢你的收听，今天完成了第31次Rust学习打卡啦。如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见～
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>卷王之王</span> 👍（2） 💬（2）<div>你好，我想用c语言调用rust，rust代码中用到了tokio。tokio的main函数中有 #[tokio::main] 的标记。这种情况不知道怎么提供给c语言接口了。
+<li><span>卷王之王</span> 👍（2） 💬（2）<p>你好，我想用c语言调用rust，rust代码中用到了tokio。tokio的main函数中有 #[tokio::main] 的标记。这种情况不知道怎么提供给c语言接口了。
 
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;()&gt; {
     &#47;&#47; Open a connection to the mini-redis address.
-    let mut client = client::connect(&quot;127.0.0.1:6379&quot;).await?;</div>2022-01-15</li><br/><li><span>Marvichov</span> 👍（1） 💬（2）<div>私以为对FFI的理解, 重点还是对ABI的理解; 
+    let mut client = client::connect(&quot;127.0.0.1:6379&quot;).await?;</p>2022-01-15</li><br/><li><span>Marvichov</span> 👍（1） 💬（2）<p>私以为对FFI的理解, 重点还是对ABI的理解; 
 
 C-ABI就像英语一样…不同母语的人可以通过英语交流…数据转换就相当于翻译的过程…中文 → 英文 → 法文; 目前很多机器翻译AI也是把target lang翻译成英语…英语有点像一个MIR了
 
@@ -555,7 +555,7 @@ HashMap没必要, 也需要做类似的serialization, 但是, 怎么做deseriali
 
 https:&#47;&#47;github.com&#47;rust-rocksdb&#47;rust-rocksdb&#47;blob&#47;master&#47;librocksdb-sys&#47;build.rs;
 librocksdb-sys提供C bindings → unsafe crate → 挺复杂的, bind了很多库…
-整个rocksdb crate提供safe rust api;</div>2021-11-14</li><br/><li><span>Marvichov</span> 👍（1） 💬（1）<div>Q: 有个小问题, 为啥bindings.h不需要以下这些header, 咋一build就自动添加这些header呢? 难道是ffi的scaffolding的代码需要?
+整个rocksdb crate提供safe rust api;</p>2021-11-14</li><br/><li><span>Marvichov</span> 👍（1） 💬（1）<p>Q: 有个小问题, 为啥bindings.h不需要以下这些header, 咋一build就自动添加这些header呢? 难道是ffi的scaffolding的代码需要?
 
     #include &lt;cstdarg&gt;
     #include &lt;cstdint&gt;
@@ -580,14 +580,14 @@ Q: Swift call rust FFI 代码的时候,  发生了什么呢?
         let returnedVal = **callback(&amp;callStatus)**
         &#47;&#47; ...
     }
-</div>2021-11-14</li><br/><li><span>overheat</span> 👍（0） 💬（2）<div>&quot;正常情况下应该创建另一个 crate 来撰写这样的接口&quot;，如果发布到crates.io上，“另一个crate”需要单独发布吗？也就是说在使用时会有两个dependences需要加入toml吗？（一个abc-sys，还有一个abc-interface）</div>2021-11-23</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<div>&gt; The ABI for C is platform-specific (OS, processor) - it covers issues such as register allocation and calling conventions, which are obviously specific to a particular processor. 
+</p>2021-11-14</li><br/><li><span>overheat</span> 👍（0） 💬（2）<p>&quot;正常情况下应该创建另一个 crate 来撰写这样的接口&quot;，如果发布到crates.io上，“另一个crate”需要单独发布吗？也就是说在使用时会有两个dependences需要加入toml吗？（一个abc-sys，还有一个abc-interface）</p>2021-11-23</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<p>&gt; The ABI for C is platform-specific (OS, processor) - it covers issues such as register allocation and calling conventions, which are obviously specific to a particular processor. 
 
 https:&#47;&#47;stackoverflow.com&#47;questions&#47;4489012&#47;does-c-have-a-standard-abi
 
 这样的话, 在之前评论里, 英语的那个类比就不恰当了...英语有很多dialect, 大家是可以用**标准**英语交流...和普通话一样的道理, 有个公认的标准...
 
-那么问题来了, 既然C-abi并没有标准, 为什么大家喜欢选择它作为中间的bridge呢? 难道是因为它最简单通用, 没有标准也可以 (实现不用platform agonostic)?</div>2021-11-16</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<div>如何在 build.rs 断点调试呢？</div>2021-11-08</li><br/><li><span>沈畅</span> 👍（1） 💬（1）<div>
+那么问题来了, 既然C-abi并没有标准, 为什么大家喜欢选择它作为中间的bridge呢? 难道是因为它最简单通用, 没有标准也可以 (实现不用platform agonostic)?</p>2021-11-16</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<p>如何在 build.rs 断点调试呢？</p>2021-11-08</li><br/><li><span>沈畅</span> 👍（1） 💬（1）<p>
   thread &#39;main&#39; panicked at &#39;Unable to find libclang: &quot;the `libclang` shared library at &#47;home&#47;dev12&#47;llvm&#47;lib&#47;libclang.so.9 could not be opened: &#47;lib64&#47;libc.so.6: version `GLIBC_2.18&#39; not found (required by &#47;home&#47;dev12&#47;llvm&#47;lib&#47;..&#47;lib&#47;libc++abi.so.1)&quot;&#39;, &#47;home&#47;dev12&#47;.cargo&#47;registry&#47;src&#47;mirrors.zte.com.cn-e61ca787596def60&#47;bindgen-0.59.2&#47;src&#47;lib.rs:2144:31
-这个问题大家遇见过吗？难道clang版本太低了？</div>2022-09-17</li><br/><li><span>Edwin</span> 👍（0） 💬（0）<div>目前我们正在做3的事情
-</div>2022-02-27</li><br/>
+这个问题大家遇见过吗？难道clang版本太低了？</p>2022-09-17</li><br/><li><span>Edwin</span> 👍（0） 💬（0）<p>目前我们正在做3的事情
+</p>2022-02-27</li><br/>
 </ul>

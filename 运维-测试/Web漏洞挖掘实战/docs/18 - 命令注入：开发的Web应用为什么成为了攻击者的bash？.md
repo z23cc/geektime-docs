@@ -341,7 +341,7 @@ commix -u http://{yourdomain}.app.mituan.zone/index.php?cmd=3
 
 欢迎在评论区留下你的思考，我们下节课再见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>E-N</span> 👍（2） 💬（0）<div>两种注入最主要的区别的话，我想应该是面向的对象不同，一个是针对操作系统，一个是针对数据库，因此最终能实现的效果也不尽相同。</div>2022-02-07</li><br/><li><span>TG</span> 👍（1） 💬（0）<div>cmd1 || cmd2 
+<li><span>E-N</span> 👍（2） 💬（0）<p>两种注入最主要的区别的话，我想应该是面向的对象不同，一个是针对操作系统，一个是针对数据库，因此最终能实现的效果也不尽相同。</p>2022-02-07</li><br/><li><span>TG</span> 👍（1） 💬（0）<p>cmd1 || cmd2 
 这种方式应该是 cmd1 执行为真的情况下 cmd2是不会被执行的 
-</div>2022-04-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习了打卡</div>2023-03-16</li><br/>
+</p>2022-04-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习了打卡</p>2023-03-16</li><br/>
 </ul>

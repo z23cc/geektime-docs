@@ -230,7 +230,7 @@ console.log (newArray); // 返回：[77,97]
 
 当然，你也可以在评论区交流下自己的疑问，我们一起讨论、共同进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>鐘</span> 👍（10） 💬（3）<div>靜下心來重看一次, 好像看懂了, 以下是我對於 composeReducer 的實作：
+<li><span>鐘</span> 👍（10） 💬（3）<p>靜下心來重看一次, 好像看懂了, 以下是我對於 composeReducer 的實作：
 
 ```
 const { filterTR, mapTR, composeReducer } = (() =&gt; {
@@ -291,7 +291,7 @@ var newArray = composeReducer(oldArray, [
 ]);
 
 console.log(newArray);
-```</div>2022-09-27</li><br/><li><span>卡卡</span> 👍（5） 💬（1）<div>我的理解是：reduce可以对原集合的每个元素使用map回调函数进行映射或者使用filter回调函数进行过滤，然后将新值放入新的集合
+```</p>2022-09-27</li><br/><li><span>卡卡</span> 👍（5） 💬（1）<p>我的理解是：reduce可以对原集合的每个元素使用map回调函数进行映射或者使用filter回调函数进行过滤，然后将新值放入新的集合
 
 mapReduce的实现：
 Array.prototype.mapReduce = function (cb, initValue) {
@@ -309,8 +309,8 @@ Array.prototype.filterReduce = function (cb, initValue) {
     }
     return mappedArray;
   }, []);
-};</div>2022-09-27</li><br/><li><span>雨中送陈萍萍</span> 👍（2） 💬（2）<div>看了下阮老师对PointFree风格的描述(https:&#47;&#47;www.ruanyifeng.com&#47;blog&#47;2017&#47;03&#47;pointfree.html)，可以直接简单理解成对多个运算过程的合成，不涉及到具体值的处理，所以compose和pipeline就是这种风格.</div>2022-11-09</li><br/><li><span>I keep my ideals💤</span> 👍（2） 💬（1）<div>想请教一下老师compose组合的新函数里面如果有某一个是异步函数，或者没有返回值的情况下该怎么处理呢。还有多条件分支的情况下又该如何处理呢</div>2022-09-28</li><br/><li><span>程序员一土</span> 👍（1） 💬（1）<div>业务上函数拆这么细会被打吧</div>2022-12-02</li><br/><li><span>深山何处钟</span> 👍（1） 💬（1）<div>请问老师，compose那个函数，直接fns后不接reverse，是不是就是pipe的效果呢？</div>2022-09-30</li><br/><li><span>天择</span> 👍（1） 💬（1）<div>最近两篇文章的知识常在框架和库的代码里面见到，也会给我们阅读源码提供帮助。
-具体和抽象都是为使用目标服务的，不管是柯里化还是函数组件，都是给使用者提供某种场景下的便利性，只不过有的需要具体的手段，有的需要抽象的手段。</div>2022-09-27</li><br/><li><span>天择</span> 👍（1） 💬（1）<div>point free的理解：把参数去掉，是指参数的含义已经体现在函数声明（名字）里面了，比如equalsToOne，那就是说传入的值是否等于1，如果是equalsToA，那么这个A就得传为参数，加上要比较的x就是两个参数了。这就是所谓“暴露给使用者的就是功能本身”。</div>2022-09-27</li><br/><li><span>WGH丶</span> 👍（0） 💬（1）<div>function compose(...fns) {
+};</p>2022-09-27</li><br/><li><span>雨中送陈萍萍</span> 👍（2） 💬（2）<p>看了下阮老师对PointFree风格的描述(https:&#47;&#47;www.ruanyifeng.com&#47;blog&#47;2017&#47;03&#47;pointfree.html)，可以直接简单理解成对多个运算过程的合成，不涉及到具体值的处理，所以compose和pipeline就是这种风格.</p>2022-11-09</li><br/><li><span>I keep my ideals💤</span> 👍（2） 💬（1）<p>想请教一下老师compose组合的新函数里面如果有某一个是异步函数，或者没有返回值的情况下该怎么处理呢。还有多条件分支的情况下又该如何处理呢</p>2022-09-28</li><br/><li><span>程序员一土</span> 👍（1） 💬（1）<p>业务上函数拆这么细会被打吧</p>2022-12-02</li><br/><li><span>深山何处钟</span> 👍（1） 💬（1）<p>请问老师，compose那个函数，直接fns后不接reverse，是不是就是pipe的效果呢？</p>2022-09-30</li><br/><li><span>天择</span> 👍（1） 💬（1）<p>最近两篇文章的知识常在框架和库的代码里面见到，也会给我们阅读源码提供帮助。
+具体和抽象都是为使用目标服务的，不管是柯里化还是函数组件，都是给使用者提供某种场景下的便利性，只不过有的需要具体的手段，有的需要抽象的手段。</p>2022-09-27</li><br/><li><span>天择</span> 👍（1） 💬（1）<p>point free的理解：把参数去掉，是指参数的含义已经体现在函数声明（名字）里面了，比如equalsToOne，那就是说传入的值是否等于1，如果是equalsToA，那么这个A就得传为参数，加上要比较的x就是两个参数了。这就是所谓“暴露给使用者的就是功能本身”。</p>2022-09-27</li><br/><li><span>WGH丶</span> 👍（0） 💬（1）<p>function compose(...fns) {
     return fns.reverse().reduce( function reducer(fn1,fn2){
         return function composed(...args){
             return fn2( fn1( ...args ) );
@@ -319,7 +319,7 @@ Array.prototype.filterReduce = function (cb, initValue) {
 }
 
 
-老师好，请教下：这里如果不用reverse，且交换下fn1，fn2的执行顺序能达到同样的效果。之所以使用reverse，是为了保证fn1先于fn2执行吗，还是别的原因？</div>2022-12-18</li><br/><li><span>23568</span> 👍（0） 💬（1）<div>
+老师好，请教下：这里如果不用reverse，且交换下fn1，fn2的执行顺序能达到同样的效果。之所以使用reverse，是为了保证fn1先于fn2执行吗，还是别的原因？</p>2022-12-18</li><br/><li><span>23568</span> 👍（0） 💬（1）<p>
 var oldArray = [36, 29, 18, 7, 46, 53];
 
 var newArray = composeReducer(oldArray, [
@@ -333,7 +333,7 @@ console.log (newArray); &#47;&#47; 返回：[77,97]
 
 “在这个例子里，我们对一组数组进行了一系列的操作，先是筛选出奇数，再乘以二，之后筛出大于六十的值，最后加上五。在这个过程中，会不断生成中间数组。”
 看返回结果是 [77, 97] ，这里好像筛选出来的是奇数吧老师
-</div>2022-11-09</li><br/><li><span>weineel</span> 👍（0） 💬（1）<div>经常写函数式代码的时候函数套函数，不知道如何高效调试，不知道老师后面有没有经验分享。</div>2022-10-25</li><br/><li><span>laoergege</span> 👍（0） 💬（1）<div>```js
+</p>2022-11-09</li><br/><li><span>weineel</span> 👍（0） 💬（1）<p>经常写函数式代码的时候函数套函数，不知道如何高效调试，不知道老师后面有没有经验分享。</p>2022-10-25</li><br/><li><span>laoergege</span> 👍（0） 💬（1）<p>```js
 
 function compose(...fns) {
     return fns.reverse().reduce( function reducer(fn1,fn2){
@@ -343,7 +343,7 @@ function compose(...fns) {
     } );
 }
 ```
-这里 reverse 是不是多余了。。</div>2022-10-16</li><br/><li><span>CondorHero</span> 👍（0） 💬（1）<div>Point-Free 这个例子是不是不对，毕竟 x 参数被显示定义了。
+这里 reverse 是不是多余了。。</p>2022-10-16</li><br/><li><span>CondorHero</span> 👍（0） 💬（1）<p>Point-Free 这个例子是不是不对，毕竟 x 参数被显示定义了。
 &#47;&#47; Not point-free - `x` is an explicit argument
 var isOdd = (x) =&gt; equalsToOne(remainderOfTwo(x));
 
@@ -365,5 +365,5 @@ const incrementAll2 = map(add(1))
 
 incrementAll 识别并且使用了 numbers 参数，因此它不是 Point-Free 风格的。 incrementAll2 仅连接函数与值，并不提及它所使用的参数，因为它是 Point-Free 风格的。
 
-Point-Free 风格的函数就像平常的赋值，不使用 function 或者 =&gt;。</div>2022-10-15</li><br/><li><span>灯火阑珊</span> 👍（0） 💬（1）<div>我是从制造业转行的，对pipe和流水线有天然的接受度，上个工序的半成品就是下个工序的入参。</div>2022-09-28</li><br/><li><span>晴空万里</span> 👍（0） 💬（0）<div>从第二节开始作为一个初学者感觉很费劲是不是得补充点基础课？</div>2023-09-07</li><br/>
+Point-Free 风格的函数就像平常的赋值，不使用 function 或者 =&gt;。</p>2022-10-15</li><br/><li><span>灯火阑珊</span> 👍（0） 💬（1）<p>我是从制造业转行的，对pipe和流水线有天然的接受度，上个工序的半成品就是下个工序的入参。</p>2022-09-28</li><br/><li><span>晴空万里</span> 👍（0） 💬（0）<p>从第二节开始作为一个初学者感觉很费劲是不是得补充点基础课？</p>2023-09-07</li><br/>
 </ul>

@@ -344,7 +344,7 @@ b = BPF(src_file="<ebpf-program>.c", usdt_contexts=[u])
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>莫名</span> 👍（10） 💬（1）<div>1. 跟踪编译型语言应用程序以 Bash Shell 作为例子，觉得有些容易与解释型语言混淆。解释型语言的特征是解释程序自身为编译型程序，利用自身内置的函数进行语法分析和执行，Bash readline 函数的功能即是如此。以编译型语言 Golang helloworld 程序使用 uprobes 或者开源的 Nginx 使用 USDT 可能更恰当一些。 
+<li><span>莫名</span> 👍（10） 💬（1）<p>1. 跟踪编译型语言应用程序以 Bash Shell 作为例子，觉得有些容易与解释型语言混淆。解释型语言的特征是解释程序自身为编译型程序，利用自身内置的函数进行语法分析和执行，Bash readline 函数的功能即是如此。以编译型语言 Golang helloworld 程序使用 uprobes 或者开源的 Nginx 使用 USDT 可能更恰当一些。 
 
 2. 思考题完整的 BCC 追踪程序：
 
@@ -403,16 +403,16 @@ while True:
     try:
         b.perf_buffer_poll()
     except KeyboardInterrupt:
-        exit()</div>2022-02-04</li><br/><li><span>ZR2021</span> 👍（4） 💬（2）<div>老师，跟踪用户态程序的时候还有512字节的限制吗</div>2022-02-04</li><br/><li><span>Geek3340</span> 👍（2） 💬（1）<div>sudo apt install bash-dbgsym 命令，执行后找不到dbgsym包的，可以参考这篇文章
-https:&#47;&#47;cloud.tencent.com&#47;developer&#47;article&#47;1637887</div>2022-03-20</li><br/><li><span>Geek_59a6f9</span> 👍（1） 💬（1）<div>用户态进程跟踪是不是使用frida效果更好？</div>2022-02-04</li><br/><li><span>郑小凯</span> 👍（0） 💬（1）<div>老师，咨询下ibm jdk，使用bcc的话有办法么？</div>2022-12-21</li><br/><li><span>│．Sk</span> 👍（0） 💬（1）<div>老师您好，请教一下
+        exit()</p>2022-02-04</li><br/><li><span>ZR2021</span> 👍（4） 💬（2）<p>老师，跟踪用户态程序的时候还有512字节的限制吗</p>2022-02-04</li><br/><li><span>Geek3340</span> 👍（2） 💬（1）<p>sudo apt install bash-dbgsym 命令，执行后找不到dbgsym包的，可以参考这篇文章
+https:&#47;&#47;cloud.tencent.com&#47;developer&#47;article&#47;1637887</p>2022-03-20</li><br/><li><span>Geek_59a6f9</span> 👍（1） 💬（1）<p>用户态进程跟踪是不是使用frida效果更好？</p>2022-02-04</li><br/><li><span>郑小凯</span> 👍（0） 💬（1）<p>老师，咨询下ibm jdk，使用bcc的话有办法么？</p>2022-12-21</li><br/><li><span>│．Sk</span> 👍（0） 💬（1）<p>老师您好，请教一下
 
 1. 执行了 strip 命令删除了  .symtab  的二进制文件，是否就“不能”用 .symtab 里的符号执行 bpftrace -e &#39;uretprobe:&#47;usr&#47;bin&#47;bash:符号  {...}&#39; ？
 
 2. 如果 1. 中的理解是对的，那么上面的 &#47;usr&#47;bin&#47;bash 的 .symtab 实际已经被 strip 了，但是还能执行上面的 trace 是否是因为 BCC 会用 &#47;usr&#47;bin&#47;bash 的 build id 去 &#47;usr&#47;lib&#47;debug&#47;.build-id&#47; 关联相应的符号表，然后再用符号找到函数地址？
 
-谢谢老师！</div>2022-03-05</li><br/><li><span>王恒</span> 👍（0） 💬（3）<div>某线程CPU占用率过高，通过perf工具生成了该线程的火焰图。发现该线程的系统函数占比较高，但是又无法查到这些系统函数的调用堆栈。（火焰图中，ia32_sysenter_target函数占比约6%，sysexit_from_sys_call函数占比约9%。）
+谢谢老师！</p>2022-03-05</li><br/><li><span>王恒</span> 👍（0） 💬（3）<p>某线程CPU占用率过高，通过perf工具生成了该线程的火焰图。发现该线程的系统函数占比较高，但是又无法查到这些系统函数的调用堆栈。（火焰图中，ia32_sysenter_target函数占比约6%，sysexit_from_sys_call函数占比约9%。）
 
-特别想搞懂这些内核函数是什么时候被调用的，调用堆栈是怎么样的，为什么耗时这么久。所以特地来学习ebpf，希望边学边解决工作中的实际问题。</div>2022-03-05</li><br/><li><span>行所当行</span> 👍（0） 💬（0）<div>老师您好，bash历史执行命令可以用history来快捷查看，那么在审计操作系统用户行为和操作系统安全方面，ebpf还有什么典型的应用场景？</div>2024-10-09</li><br/><li><span>Geek_722e86</span> 👍（0） 💬（0）<div>老师， 
+特别想搞懂这些内核函数是什么时候被调用的，调用堆栈是怎么样的，为什么耗时这么久。所以特地来学习ebpf，希望边学边解决工作中的实际问题。</p>2022-03-05</li><br/><li><span>行所当行</span> 👍（0） 💬（0）<p>老师您好，bash历史执行命令可以用history来快捷查看，那么在审计操作系统用户行为和操作系统安全方面，ebpf还有什么典型的应用场景？</p>2024-10-09</li><br/><li><span>Geek_722e86</span> 👍（0） 💬（0）<p>老师， 
 
 除了符号表之外，理论上你可以把 uprobe 插桩到二进制文件的任意地址。不过这要求你对应用程序 ELF 格式的地址空间非常熟悉，并且具体的地址会随着应用的迭代更新而发生变化。所以，在需要跟踪地址的场景中，一定要记得去 ELF 二进制文件动态获取地址信息。
 
@@ -425,5 +425,5 @@ https:&#47;&#47;cloud.tencent.com&#47;developer&#47;article&#47;1637887</div>202
 
 sudo bpftrace -e &#39;uretprobe:&#47;usr&#47;bin&#47;bash:readline { printf(&quot;User %d executed \&quot;%s\&quot; command\n&quot;, uid, str(retval)); }&#39;
 这个参数怎么写？
-</div>2023-06-01</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<div>好奇这种 uprobe 是怎么做到的？只是调用应用程序里另一个函数为什么会被内核介入？如果 epbf 程序执行时间较长，是不是应用程序会等待 ebpf 执行完再继续执行？</div>2023-04-04</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<div>其实现在的解释型脚本语言，比如 Python，Ruby 之类的语言，各自都有自己的字节码，虚拟机和 JIT，本质上和 Java 没有太大差异，只是不把字节码保存下来而已。</div>2023-04-04</li><br/><li><span>猪小擎</span> 👍（0） 💬（0）<div>plan 9对应的不是elf吗？怎么和abi有关系？</div>2023-03-12</li><br/><li><span>张Dave</span> 👍（0） 💬（0）<div>老师，能详细讲解一下USDT吗？怎么定义？怎么使用？怎么生效？</div>2022-10-03</li><br/><li><span>coconut</span> 👍（0） 💬（1）<div>&#47;usr&#47;bin&#47;bash 即使没有用 debuginfo-install 安装调试符号，也能执行 bpftrace -e &#39;uretprobe:&#47;usr&#47;bin&#47;bash:readline { printf(&quot;User %d executed \&quot;%s\&quot; command\n&quot;, uid, str(retval)); }&#39;</div>2022-07-25</li><br/><li><span>郑海成</span> 👍（0） 💬（3）<div>sudo bpftrace -l &#39;*:&#47;usr&#47;bin&#47;python3:*&#39; 执行后没有任何跟踪点信息</div>2022-04-12</li><br/>
+</p>2023-06-01</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<p>好奇这种 uprobe 是怎么做到的？只是调用应用程序里另一个函数为什么会被内核介入？如果 epbf 程序执行时间较长，是不是应用程序会等待 ebpf 执行完再继续执行？</p>2023-04-04</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<p>其实现在的解释型脚本语言，比如 Python，Ruby 之类的语言，各自都有自己的字节码，虚拟机和 JIT，本质上和 Java 没有太大差异，只是不把字节码保存下来而已。</p>2023-04-04</li><br/><li><span>猪小擎</span> 👍（0） 💬（0）<p>plan 9对应的不是elf吗？怎么和abi有关系？</p>2023-03-12</li><br/><li><span>张Dave</span> 👍（0） 💬（0）<p>老师，能详细讲解一下USDT吗？怎么定义？怎么使用？怎么生效？</p>2022-10-03</li><br/><li><span>coconut</span> 👍（0） 💬（1）<p>&#47;usr&#47;bin&#47;bash 即使没有用 debuginfo-install 安装调试符号，也能执行 bpftrace -e &#39;uretprobe:&#47;usr&#47;bin&#47;bash:readline { printf(&quot;User %d executed \&quot;%s\&quot; command\n&quot;, uid, str(retval)); }&#39;</p>2022-07-25</li><br/><li><span>郑海成</span> 👍（0） 💬（3）<p>sudo bpftrace -l &#39;*:&#47;usr&#47;bin&#47;python3:*&#39; 执行后没有任何跟踪点信息</p>2022-04-12</li><br/>
 </ul>

@@ -757,31 +757,31 @@ fun main() = runBlocking {
 
 请问，Channel是“热”的，这一特点有什么坏处吗？为什么？ 欢迎在留言区分享你的答案，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Allen</span> 👍（16） 💬（1）<div>Channel 是“热”的可能会导致一下几个问题：
+<li><span>Allen</span> 👍（16） 💬（1）<p>Channel 是“热”的可能会导致一下几个问题：
 1. 可能会导致数据的丢失。
 2. 浪费不必要的程序资源，类似于非懒加载的情况。
-3. 如果未及时 close 的话，可能会导致内存泄露。</div>2022-03-02</li><br/><li><span>jim</span> 👍（5） 💬（1）<div>Channel平时工作中有 哪些使用场景？？？</div>2022-03-31</li><br/><li><span>荷兰小猪8813</span> 👍（3） 💬（1）<div>1、最开始  channel.receive () 先调用，但是 channel 没有 item，所以挂起；
+3. 如果未及时 close 的话，可能会导致内存泄露。</p>2022-03-02</li><br/><li><span>jim</span> 👍（5） 💬（1）<p>Channel平时工作中有 哪些使用场景？？？</p>2022-03-31</li><br/><li><span>荷兰小猪8813</span> 👍（3） 💬（1）<p>1、最开始  channel.receive () 先调用，但是 channel 没有 item，所以挂起；
 
 2、协程启动要时间，send(it) 后调用，发送 item，然后 输入 “send1”；
 
 3、 协程循环再调用 send(it)，此时队列已经满了，所以挂起，并唤起接收协程，然后 输入 “receive1”；
 
-3、接收协程... ... ...</div>2022-04-10</li><br/><li><span>Geek_8a5ee1</span> 👍（3） 💬（1）<div>可以讲一下viewModelScope的区别吗</div>2022-03-07</li><br/><li><span>êｗěｎ</span> 👍（3） 💬（2）<div>Recieve的cancel是清空channel中的消息，但不会close吧？ 像go中如果在consumer 中关闭，会导致sender的panic。感觉kotlin也有这种陷阱。</div>2022-03-02</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<div>对于接收方而言，热的Channel状态是时刻改变的，数据之间是强依赖。简单的情况还好，如果Channel的数据级联了几次之后，调试就成了噩梦，这和滥用EventBus一样。
-</div>2022-03-24</li><br/><li><span>白乾涛</span> 👍（2） 💬（1）<div>以上代码看起来是可以正常工作了。但是，我仍然不建议你用这种方式。因为，当你为管道指定了 capacity 以后，以上的判断方式将会变得不可靠！原因是目前的 1.6.10 版本的协程库，运行这样的代码会崩溃，如下所示：
+3、接收协程... ... ...</p>2022-04-10</li><br/><li><span>Geek_8a5ee1</span> 👍（3） 💬（1）<p>可以讲一下viewModelScope的区别吗</p>2022-03-07</li><br/><li><span>êｗěｎ</span> 👍（3） 💬（2）<p>Recieve的cancel是清空channel中的消息，但不会close吧？ 像go中如果在consumer 中关闭，会导致sender的panic。感觉kotlin也有这种陷阱。</p>2022-03-02</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<p>对于接收方而言，热的Channel状态是时刻改变的，数据之间是强依赖。简单的情况还好，如果Channel的数据级联了几次之后，调试就成了噩梦，这和滥用EventBus一样。
+</p>2022-03-24</li><br/><li><span>白乾涛</span> 👍（2） 💬（1）<p>以上代码看起来是可以正常工作了。但是，我仍然不建议你用这种方式。因为，当你为管道指定了 capacity 以后，以上的判断方式将会变得不可靠！原因是目前的 1.6.10 版本的协程库，运行这样的代码会崩溃，如下所示：
 
 -------------
 
-这是现象，而不是原因呀，具体原因是什么呢？</div>2022-03-12</li><br/><li><span>魏全运</span> 👍（1） 💬（2）<div>为什么例子中是ReceiveChannel 在send？</div>2022-03-08</li><br/><li><span>Xs.Ten</span> 👍（0） 💬（1）<div>老师好，请问Channel 里面 Sender 和 Receiver 的身份可以发生互换么？</div>2022-03-26</li><br/><li><span>梁中华</span> 👍（0） 💬（3）<div>public fun &lt;E&gt; Channel(
+这是现象，而不是原因呀，具体原因是什么呢？</p>2022-03-12</li><br/><li><span>魏全运</span> 👍（1） 💬（2）<p>为什么例子中是ReceiveChannel 在send？</p>2022-03-08</li><br/><li><span>Xs.Ten</span> 👍（0） 💬（1）<p>老师好，请问Channel 里面 Sender 和 Receiver 的身份可以发生互换么？</p>2022-03-26</li><br/><li><span>梁中华</span> 👍（0） 💬（3）<p>public fun &lt;E&gt; Channel(
     capacity: Int = RENDEZVOUS,
     onBufferOverflow: BufferOverflow = BufferOverflow.SUSPEND,
     onUndeliveredElement: ((E) -&gt; Unit)? = null
 ): Channel&lt;E&gt;
 
-Channel居然也是个方法，为啥方法名是大写字母开头的? 难道是因为它是顶层方法?</div>2022-03-21</li><br/><li><span>梁中华</span> 👍（0） 💬（2）<div>val channel: ReceiveChannel by ::_channel
+Channel居然也是个方法，为啥方法名是大写字母开头的? 难道是因为它是顶层方法?</p>2022-03-21</li><br/><li><span>梁中华</span> 👍（0） 💬（2）<p>val channel: ReceiveChannel by ::_channel
  private val _channel: Channel = Channel()
 
-Channel既然是个接口，为啥还能直接实例化？</div>2022-03-21</li><br/><li><span>学习中...</span> 👍（0） 💬（1）<div>协程库最新不是1.6.0吗，怎么有1.6.10呢
-https:&#47;&#47;github.com&#47;Kotlin&#47;kotlinx.coroutines&#47;releases</div>2022-03-15</li><br/><li><span>白乾涛</span> 👍（0） 💬（2）<div>老师好，我又重新发了一遍哈
+Channel既然是个接口，为啥还能直接实例化？</p>2022-03-21</li><br/><li><span>学习中...</span> 👍（0） 💬（1）<p>协程库最新不是1.6.0吗，怎么有1.6.10呢
+https:&#47;&#47;github.com&#47;Kotlin&#47;kotlinx.coroutines&#47;releases</p>2022-03-15</li><br/><li><span>白乾涛</span> 👍（0） 💬（2）<p>老师好，我又重新发了一遍哈
 
 代码段12
 发送【奇数】条数据的时候正常，发送【偶数】条数据的时候就会异常崩溃
@@ -803,5 +803,5 @@ fun main() = runBlocking {
 }
 
 代码接报错信息如下图：
-https:&#47;&#47;gitee.com&#47;baiqiantao&#47;blogPic&#47;raw&#47;master&#47;img&#47;2020&#47;20220314204734.png</div>2022-03-14</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<div>老师你好，能举几个实际场景中channel使用例子吗？什么时候需要使用这种双向数据流呢？</div>2022-03-04</li><br/><li><span>tedzyc</span> 👍（0） 💬（1）<div>老师能有空能讲讲Android Jetpack的paging3这个库吗？里面用BroadcastChannel通信那块能否帮着分析一下。</div>2022-03-02</li><br/>
+https:&#47;&#47;gitee.com&#47;baiqiantao&#47;blogPic&#47;raw&#47;master&#47;img&#47;2020&#47;20220314204734.png</p>2022-03-14</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<p>老师你好，能举几个实际场景中channel使用例子吗？什么时候需要使用这种双向数据流呢？</p>2022-03-04</li><br/><li><span>tedzyc</span> 👍（0） 💬（1）<p>老师能有空能讲讲Android Jetpack的paging3这个库吗？里面用BroadcastChannel通信那块能否帮着分析一下。</p>2022-03-02</li><br/>
 </ul>

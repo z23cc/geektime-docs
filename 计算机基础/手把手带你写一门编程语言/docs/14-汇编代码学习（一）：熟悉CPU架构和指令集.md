@@ -206,7 +206,7 @@ ret指令则是一个反向的操作。从栈里取出返回地址，并设置�
 
 1.[Arm Architecture Reference Manual - Armv8, for A profile Architecture](https://developer.arm.com/documentation/ddi0487/latest)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>罗 乾 林</span> 👍（4） 💬（1）<div>Linux: cat &#47;proc&#47;cpuinfo
+<li><span>罗 乾 林</span> 👍（4） 💬（1）<p>Linux: cat &#47;proc&#47;cpuinfo
 Windows:https:&#47;&#47;docs.microsoft.com&#47;en-us&#47;sysinternals&#47;downloads&#47;coreinfo
 手上的ARM开发板Features：
 fp asimd evtstrm aes pmull sha1 sha2 crc32
@@ -215,5 +215,5 @@ fp：浮点运算指令集
 asimd：单指令流多数据流,处理RGB，YUV，即小碎数据的并行操作，armv7上有个NEON指令完成功能差不多
 aes、sha1、sha2：看上去像是跟加密相关的指令集
 
-其他几个就不太清楚了</div>2021-09-08</li><br/><li><span>奋斗的蜗牛</span> 👍（2） 💬（1）<div>汇编一直是弱项，看来还是要多学</div>2021-09-08</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<div>A64更接近x86_64。相比之下A32更有趣一些，比如每条指令都自带4bit标志位来实现条件执行；又比如指令中的立即数只有12bit，却能用来表示一些32bit的整数。</div>2021-09-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2022-09-16</li><br/>
+其他几个就不太清楚了</p>2021-09-08</li><br/><li><span>奋斗的蜗牛</span> 👍（2） 💬（1）<p>汇编一直是弱项，看来还是要多学</p>2021-09-08</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<p>A64更接近x86_64。相比之下A32更有趣一些，比如每条指令都自带4bit标志位来实现条件执行；又比如指令中的立即数只有12bit，却能用来表示一些32bit的整数。</p>2021-09-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2022-09-16</li><br/>
 </ul>

@@ -132,11 +132,11 @@ else:
 
 欢迎你把思考后的结果分享到留言区，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>willmyc</span> 👍（1） 💬（0）<div>老师，您好，这段代码 # 统计推理结果并寻找最常见的答案def extract_answer(text):    # 尝试从文本中提取数字    match = re.search(r&#39;\d+&#39;, text)    if match:        return int(match.group(0))    return None，准确的做法是否应该是匹配最后一个数字，因为模型的生成结果中第一个数字一般会是推理过程的输出的数字，并不是最终的答案，所以我把代码改成了下面这样，# 统计推理结果并寻找最常见的答案
+<li><span>willmyc</span> 👍（1） 💬（0）<p>老师，您好，这段代码 # 统计推理结果并寻找最常见的答案def extract_answer(text):    # 尝试从文本中提取数字    match = re.search(r&#39;\d+&#39;, text)    if match:        return int(match.group(0))    return None，准确的做法是否应该是匹配最后一个数字，因为模型的生成结果中第一个数字一般会是推理过程的输出的数字，并不是最终的答案，所以我把代码改成了下面这样，# 统计推理结果并寻找最常见的答案
 def extract_answer(text):
     # 尝试从文本中提取数字
     match = re.findall(r&#39;\d+&#39;, text)
     if match:
         return int(match[-1])
-    return None</div>2024-12-05</li><br/>
+    return None</p>2024-12-05</li><br/>
 </ul>

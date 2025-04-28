@@ -514,9 +514,9 @@ include也可以包含通配符`include scripts/make-rules/*`。make命令会按
 
 今天的内容就到这里啦，欢迎你在下面的留言区谈谈自己的看法，我们下一讲见。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>helloworld</span> 👍（17） 💬（2）<div>我觉得变量用${}, 函数用$(),这样能很好区分，对熟悉shell的人也更友好</div>2021-06-28</li><br/><li><span>pedro</span> 👍（7） 💬（1）<div>周一就更新，值😂</div>2021-06-28</li><br/><li><span>haha</span> 👍（2） 💬（1）<div>有学员群吗？可以加入下吗？方便交流和提升，谢谢。</div>2021-07-16</li><br/><li><span>Tiandh</span> 👍（2） 💬（4）<div>老师，这两句话不理解
+<li><span>helloworld</span> 👍（17） 💬（2）<p>我觉得变量用${}, 函数用$(),这样能很好区分，对熟悉shell的人也更友好</p>2021-06-28</li><br/><li><span>pedro</span> 👍（7） 💬（1）<p>周一就更新，值😂</p>2021-06-28</li><br/><li><span>haha</span> 👍（2） 💬（1）<p>有学员群吗？可以加入下吗？方便交流和提升，谢谢。</p>2021-07-16</li><br/><li><span>Tiandh</span> 👍（2） 💬（4）<p>老师，这两句话不理解
 因为伪目标不是文件，make 无法生成它的依赖关系，也无法决定是否要执行它。
-因为伪目标总是会被执行，所以其依赖总是会被决议。</div>2021-06-28</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<div>大家有什么不懂的，可以结合：陈皓老师编写的《跟我一起写 Makefile》 (PDF 重制版) 来看，本文受限于篇幅，有些概念可能不能花很大的篇幅去讲解。</div>2021-09-29</li><br/><li><span>Fan</span> 👍（1） 💬（3）<div>多行变量 的例子没明白
+因为伪目标总是会被执行，所以其依赖总是会被决议。</p>2021-06-28</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<p>大家有什么不懂的，可以结合：陈皓老师编写的《跟我一起写 Makefile》 (PDF 重制版) 来看，本文受限于篇幅，有些概念可能不能花很大的篇幅去讲解。</p>2021-09-29</li><br/><li><span>Fan</span> 👍（1） 💬（3）<p>多行变量 的例子没明白
 
 
 define USAGE_OPTIONS
@@ -526,12 +526,12 @@ Options:
   BINS         The binaries to build. Default is all of cmd.
   ...
   V            Set to 1 enable verbose build. Default is 0.
-endef</div>2021-08-11</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<div>老师，有问格式问题想问下：ifeq 语句中的内容建议要用 tab，还是顶格呢？</div>2022-07-01</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<div>ifeq ($(origin ROOT_DIR),undefined)
+endef</p>2021-08-11</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<p>老师，有问格式问题想问下：ifeq 语句中的内容建议要用 tab，还是顶格呢？</p>2022-07-01</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<p>ifeq ($(origin ROOT_DIR),undefined)
 ROOT_DIR := $(abspath $(shell cd $(COMMON_SELF_DIR)&#47;..&#47;.. &amp;&amp; pwd -P))
 endif
 和 
 ROOT_DIR ?= $(abspath $(shell cd $(COMMON_SELF_DIR)&#47;..&#47;.. &amp;&amp; pwd -P))
 
 请问：这两种方式的效果是否相同？
-</div>2022-06-30</li><br/><li><span>haha</span> 👍（0） 💬（2）<div>由于缺少云上开发资源，本地虚拟机的环境配置能否给些建议，可以创建一个群方便交流吗？</div>2021-07-16</li><br/><li><span>Realm</span> 👍（0） 💬（3）<div>老师，函数dir ，nodir注释好像有笔误.</div>2021-07-10</li><br/>
+</p>2022-06-30</li><br/><li><span>haha</span> 👍（0） 💬（2）<p>由于缺少云上开发资源，本地虚拟机的环境配置能否给些建议，可以创建一个群方便交流吗？</p>2021-07-16</li><br/><li><span>Realm</span> 👍（0） 💬（3）<p>老师，函数dir ，nodir注释好像有笔误.</p>2021-07-10</li><br/>
 </ul>

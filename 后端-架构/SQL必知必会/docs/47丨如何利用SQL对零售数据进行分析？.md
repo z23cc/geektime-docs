@@ -113,7 +113,7 @@ print('关联规则：', rules)
 ![](https://static001.geekbang.org/resource/image/a1/e6/a1767ae691f2c18d02f8009a687ba1e6.png?wh=850%2A361)  
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>mickey</span> 👍（19） 💬（2）<div>import numpy as np
+<li><span>mickey</span> 👍（19） 💬（2）<p>import numpy as np
 import pandas as pd
 title = [&#39;牛奶&#39;, &#39;面包&#39;, &#39;尿布&#39;, &#39;可乐&#39;, &#39;啤酒&#39;, &#39;鸡蛋&#39;];
 x = [[1, 1, 1, 0, 0, 0],
@@ -166,18 +166,18 @@ print(confidence)
 可乐  0.50  1.00  1.0  0.00  0.5  0.0
 啤酒  0.67  0.67  1.0  0.33  0.0  0.0
 鸡蛋  0.00  0.00  0.0  0.00  0.0  0.0
-</div>2019-09-27</li><br/><li><span>学习</span> 👍（2） 💬（1）<div>牛奶，面包，尿布同时出现是3，支持度是3&#47;5=0.6</div>2019-09-27</li><br/><li><span>mickey</span> 👍（1） 💬（1）<div>	支持度
+</p>2019-09-27</li><br/><li><span>学习</span> 👍（2） 💬（1）<p>牛奶，面包，尿布同时出现是3，支持度是3&#47;5=0.6</p>2019-09-27</li><br/><li><span>mickey</span> 👍（1） 💬（1）<p>	支持度
 牛奶	0.8
 面包	0.8
 尿布	1
 可乐	0.4
 啤酒	0.6
 鸡蛋	0.2
-</div>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（1） 💬（1）<div>efficient-apriori官方文档
-https:&#47;&#47;efficient-apriori.readthedocs.io&#47;en&#47;stable&#47;</div>2019-09-27</li><br/><li><span>骑行的掌柜J</span> 👍（0） 💬（1）<div>评论里朋友ttttt说” 
+</p>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（1） 💬（1）<p>efficient-apriori官方文档
+https:&#47;&#47;efficient-apriori.readthedocs.io&#47;en&#47;stable&#47;</p>2019-09-27</li><br/><li><span>骑行的掌柜J</span> 👍（0） 💬（1）<p>评论里朋友ttttt说” 
 遇到错误：mysql.connector.errors.NotSupportedError) Authentication plugin &#39;caching_sha2_password&#39; is not supported “
 换pymysql就可以，不过我这里有另一种解法，可以到我的博客看看，希望对你有帮助！谢谢
-https:&#47;&#47;blog.csdn.net&#47;weixin_41013322&#47;article&#47;details&#47;103427293 </div>2019-12-06</li><br/><li><span>TKbook</span> 👍（0） 💬（1）<div>transactions = []
+https:&#47;&#47;blog.csdn.net&#47;weixin_41013322&#47;article&#47;details&#47;103427293 </p>2019-12-06</li><br/><li><span>TKbook</span> 👍（0） 💬（1）<p>transactions = []
 temp_index = 0
 for i, v in orders_series.items():
     if i != temp_index:
@@ -188,7 +188,7 @@ for i, v in orders_series.items():
         print(transactions)
     else:
         temp_set.add(v)
-老师，这里的transactions = [] 里面的元素，不应该是每个订单所有的商品集合吗？  但是上述代码不是实现这个需求</div>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（0） 💬（2）<div>
+老师，这里的transactions = [] 里面的元素，不应该是每个订单所有的商品集合吗？  但是上述代码不是实现这个需求</p>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（0） 💬（2）<p>
 # 一行代码数据集格式转换
 # transactions = list(data.groupby(&#39;Transaction&#39;).agg(lambda x: set(x.Item.values))[&#39;Item&#39;])
 # 完整代码
@@ -218,10 +218,10 @@ print(&#39;关联规则：&#39;, rules)
 
 # ----------输出结果------------------ #
 频繁项集： {1: {(&#39;alfajores&#39;,): 344, (&#39;bread&#39;,): 3096, (&#39;brownie&#39;,): 379, (&#39;cake&#39;,): 983, (&#39;coffee&#39;,): 4528, (&#39;cookies&#39;,): 515, (&#39;farm house&#39;,): 371, (&#39;hot chocolate&#39;,): 552, (&#39;juice&#39;,): 365, (&#39;medialuna&#39;,): 585, (&#39;muffin&#39;,): 364, (&#39;pastry&#39;,): 815, (&#39;sandwich&#39;,): 680, (&#39;scandinavian&#39;,): 275, (&#39;scone&#39;,): 327, (&#39;soup&#39;,): 326, (&#39;tea&#39;,): 1350, (&#39;toast&#39;,): 318, (&#39;truffles&#39;,): 192}, 2: {(&#39;bread&#39;, &#39;cake&#39;): 221, (&#39;bread&#39;, &#39;coffee&#39;): 852, (&#39;bread&#39;, &#39;pastry&#39;): 276, (&#39;bread&#39;, &#39;tea&#39;): 266, (&#39;cake&#39;, &#39;coffee&#39;): 518, (&#39;cake&#39;, &#39;tea&#39;): 225, (&#39;coffee&#39;, &#39;cookies&#39;): 267, (&#39;coffee&#39;, &#39;hot chocolate&#39;): 280, (&#39;coffee&#39;, &#39;juice&#39;): 195, (&#39;coffee&#39;, &#39;medialuna&#39;): 333, (&#39;coffee&#39;, &#39;pastry&#39;): 450, (&#39;coffee&#39;, &#39;sandwich&#39;): 362, (&#39;coffee&#39;, &#39;tea&#39;): 472, (&#39;coffee&#39;, &#39;toast&#39;): 224}}
-关联规则： [{cake} -&gt; {coffee}, {cookies} -&gt; {coffee}, {hot chocolate} -&gt; {coffee}, {juice} -&gt; {coffee}, {medialuna} -&gt; {coffee}, {pastry} -&gt; {coffee}, {sandwich} -&gt; {coffee}, {toast} -&gt; {coffee}]</div>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（2） 💬（0）<div>遇到错误：NotSupportedError: (mysql.connector.errors.NotSupportedError) Authentication plugin &#39;caching_sha2_password&#39; is not supported (Background on this error at: http:&#47;&#47;sqlalche.me&#47;e&#47;tw8g)
+关联规则： [{cake} -&gt; {coffee}, {cookies} -&gt; {coffee}, {hot chocolate} -&gt; {coffee}, {juice} -&gt; {coffee}, {medialuna} -&gt; {coffee}, {pastry} -&gt; {coffee}, {sandwich} -&gt; {coffee}, {toast} -&gt; {coffee}]</p>2019-09-27</li><br/><li><span>JustDoDT</span> 👍（2） 💬（0）<p>遇到错误：NotSupportedError: (mysql.connector.errors.NotSupportedError) Authentication plugin &#39;caching_sha2_password&#39; is not supported (Background on this error at: http:&#47;&#47;sqlalche.me&#47;e&#47;tw8g)
 解决方法
 engine = sql.create_engine( &#39;mysql+pymysql:&#47;&#47;{}:{}@{}&#47;{}&#39;.format(user, passwd, host, database))
-mysql+mysqlconnector 改成 mysql+pymysql 就行了</div>2019-09-27</li><br/><li><span>邵家伟</span> 👍（1） 💬（0）<div>C#
+mysql+mysqlconnector 改成 mysql+pymysql 就行了</p>2019-09-27</li><br/><li><span>邵家伟</span> 👍（1） 💬（0）<p>C#
 string[] item = { &quot;牛奶&quot;, &quot;面包&quot;, &quot;尿布&quot;, &quot;鸡蛋&quot;, &quot;啤酒&quot;, &quot;可乐&quot; };
             int[,] Record = { { 1, 1, 1, 0, 0, 0 }, { 0, 1, 1, 0, 1, 0 }, { 1, 0, 1, 1, 1, 0 }, { 1, 1, 1, 0, 1, 0 }, { 1, 1, 1, 0, 0, 1 } };
             double SupportRate;
@@ -260,7 +260,7 @@ string[] item = { &quot;牛奶&quot;, &quot;面包&quot;, &quot;尿布&quot;, &q
                 }
                 Context.Response.Write(&quot;&lt;&#47;br&gt;&quot;);
             } 
-</div>2021-07-07</li><br/><li><span>邵家伟</span> 👍（0） 💬（0）<div>结果：
+</p>2021-07-07</li><br/><li><span>邵家伟</span> 👍（0） 💬（0）<p>结果：
 牛奶支持度为0.8
 面包支持度为0.8
 尿布支持度为1
@@ -273,5 +273,5 @@ string[] item = { &quot;牛奶&quot;, &quot;面包&quot;, &quot;尿布&quot;, &q
    尿布     0.80         0.80         0.00         0.20         0.60         0.20        
    鸡蛋     1.00         0.00         1.00         0.00         1.00         0.00        
    啤酒     0.67         0.67         1.00         0.33         0.00         0.00        
-   可乐     1.00         1.00         1.00         0.00         0.00         0.00        </div>2021-07-07</li><br/>
+   可乐     1.00         1.00         1.00         0.00         0.00         0.00        </p>2021-07-07</li><br/>
 </ul>

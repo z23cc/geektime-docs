@@ -174,7 +174,7 @@ private void set(ThreadLocal<?> key, Object value) {
 
 你的朋友是不是也在准备面试呢？你可以“请朋友读”，把今天的题目分享给好友，或许你能帮到他。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>风动静泉</span> 👍（120） 💬（6）<div>一课一练:
+<li><span>风动静泉</span> 👍（120） 💬（6）<p>一课一练:
 使用了两种方式获取当前程序的线程数。
 1、使用线程管理器MXBean
 2、直接通过线程组的activeCount
@@ -188,7 +188,7 @@ Signal Dispatcher
 Finalizer
 Reference Handler
 
-此外，如果使用的IDE是IDEA 直接运行会多一个Monitor Ctrl-break线程，这个是IDE的原因。debug模式下不会有这个线程。</div>2018-06-14</li><br/><li><span>小文同学</span> 👍（86） 💬（5）<div>做了一个test分析老师的问题，观察到的情况如下：
+此外，如果使用的IDE是IDEA 直接运行会多一个Monitor Ctrl-break线程，这个是IDE的原因。debug模式下不会有这个线程。</p>2018-06-14</li><br/><li><span>小文同学</span> 👍（86） 💬（5）<p>做了一个test分析老师的问题，观察到的情况如下：
 JVM 启动 Hello World的线程分析
 环境：
 macOS + jdk8
@@ -207,7 +207,7 @@ Signal Dispatcher：外部jvm命令的转发器
 还有一个Attach Listener的线程
 是负责接收外部命令的，如jmap、jstack
 
-</div>2018-06-14</li><br/><li><span>爱折腾的老斑鸠</span> 👍（24） 💬（2）<div>theadlocal里面的值如果是线程池的线程里面设置的，当任务完成，线程归还线程池时，这个threadlocal里面的值是不是不会被回收？</div>2018-06-14</li><br/><li><span>行者</span> 👍（22） 💬（2）<div>“我们会发现一个特别的地方，通常幻象引用都会和引用队列配合清理机制使用，但是 ThreadLocal 是个例外，它并没有这么做。”
+</p>2018-06-14</li><br/><li><span>爱折腾的老斑鸠</span> 👍（24） 💬（2）<p>theadlocal里面的值如果是线程池的线程里面设置的，当任务完成，线程归还线程池时，这个threadlocal里面的值是不是不会被回收？</p>2018-06-14</li><br/><li><span>行者</span> 👍（22） 💬（2）<p>“我们会发现一个特别的地方，通常幻象引用都会和引用队列配合清理机制使用，但是 ThreadLocal 是个例外，它并没有这么做。”
  老师，Entry继承的是WeakReference，这个是弱引用吧。
  main:
         System.out.println(&quot;hello world&quot;);
@@ -228,17 +228,17 @@ out:
 线程number：1 = Finalizer &#47;&#47; 回收对象时触发的finalize方法？
 线程number：2 = Signal Dispatcher &#47;&#47; 线程调度员
 线程number：3 = main
-线程number：4 = Monitor Ctrl-Break &#47;&#47; 监控器，锁相关</div>2018-06-14</li><br/><li><span>tyson</span> 👍（12） 💬（1）<div>1、站在应用程序方面，只创建了一个线程。
+线程number：4 = Monitor Ctrl-Break &#47;&#47; 监控器，锁相关</p>2018-06-14</li><br/><li><span>tyson</span> 👍（12） 💬（1）<p>1、站在应用程序方面，只创建了一个线程。
 2、站在jvm方面，肯定还有gc等其余线程。
 
 总结：
 1、线程是系统调度的最小单元，应该是进程吧。线程是操作系统的资源，在运行的时候会打开文件描述符等。
 2、 resume、stop、suspend等已经被废弃了
 3、线程的等待和唤醒，建议使用reentrantlock的condition wait&#47;notify方法
-4、可以使用线程的join方法、countdownlatch、cyclicbarrier、future等进行线程的等待</div>2018-06-14</li><br/><li><span>李二木</span> 👍（9） 💬（1）<div>现在觉得踩坑是一种很好学习方法</div>2018-06-15</li><br/><li><span>扬～</span> 👍（6） 💬（3）<div>等待与阻塞有什么区别呢</div>2018-11-24</li><br/><li><span>TonyEasy</span> 👍（6） 💬（1）<div>老师，我有一点疑问，在线程池里复用线程时是不是对同一个线程调用了多次.start()方法呢？</div>2018-06-18</li><br/><li><span>mongo</span> 👍（5） 💬（1）<div>杨老师请教你，关于高并发和线程池，我刚刚入门，工作中没有涉及过这一块。我阅读了oracle java tutorial high level concurrency 章节，阅读并粗略理解了《并发编程实践》这本书，想进一步清晰我的理解，我现在苦于在实践练习方面不知道怎么进行。老师有什么具体可行的思路指点一下吗？留言圈里有好多大神，在这里同时也请教其他的朋友。谢谢老师，谢谢大家。</div>2018-06-15</li><br/><li><span>锐</span> 👍（5） 💬（1）<div>通常弱引用都会和引用队列配合清理机制使用，但是 ThreadLocal 是个例外，它并没有这么做。
+4、可以使用线程的join方法、countdownlatch、cyclicbarrier、future等进行线程的等待</p>2018-06-14</li><br/><li><span>李二木</span> 👍（9） 💬（1）<p>现在觉得踩坑是一种很好学习方法</p>2018-06-15</li><br/><li><span>扬～</span> 👍（6） 💬（3）<p>等待与阻塞有什么区别呢</p>2018-11-24</li><br/><li><span>TonyEasy</span> 👍（6） 💬（1）<p>老师，我有一点疑问，在线程池里复用线程时是不是对同一个线程调用了多次.start()方法呢？</p>2018-06-18</li><br/><li><span>mongo</span> 👍（5） 💬（1）<p>杨老师请教你，关于高并发和线程池，我刚刚入门，工作中没有涉及过这一块。我阅读了oracle java tutorial high level concurrency 章节，阅读并粗略理解了《并发编程实践》这本书，想进一步清晰我的理解，我现在苦于在实践练习方面不知道怎么进行。老师有什么具体可行的思路指点一下吗？留言圈里有好多大神，在这里同时也请教其他的朋友。谢谢老师，谢谢大家。</p>2018-06-15</li><br/><li><span>锐</span> 👍（5） 💬（1）<p>通常弱引用都会和引用队列配合清理机制使用，但是 ThreadLocal 是个例外，它并没有这么做。
 
 这意味着，废弃项目的回收依赖于显式地触发，否则就要等待线程结束，进而回收相应 ThreadLocalMap！这就是很多 OOM 的来源
 
-这个平时还真没注意</div>2018-06-14</li><br/><li><span>食指可爱多</span> 👍（4） 💬（1）<div>我了解确定线程有:任务线程，Main线程，垃圾回收线程，还有些线程没细心关注名字和用途，惭愧了。可以在业务线程中等待，然后在命令行用jstack看看当前jvm的线程堆栈。</div>2018-06-14</li><br/><li><span>高杰</span> 👍（2） 💬（1）<div>有几个弱引用，虚引用的地方，音频和文字对不上。把我搞晕了。
-应该有2个线程，还有jvm的gc线程？还有第三个线程吗？</div>2018-06-14</li><br/><li><span>sunlight001</span> 👍（2） 💬（1）<div>threadlocal在放入值之后，在get出来之后，需要做remove操作，我这么理解对么？以前写的程序都没remove😄</div>2018-06-14</li><br/><li><span>Eason</span> 👍（2） 💬（1）<div>“比如，线程试图通过 synchronized 去获取某个锁，但是其他线程已经独占了，那么当前线程就会处于阻塞状态”这个例子换一个理解，感觉也是在等待其他线程做某些操作。在“阻塞”中也是在“等待”中？？</div>2018-06-14</li><br/><li><span>Phoenix</span> 👍（0） 💬（1）<div>想要请教老师，对于tomcat服务器为每个用户请求新建一条线程，那么该线程的threadlocal也会随着请求结束，线程被回收，threadlocal也会相应的被回收，那么我理解的是，类似tomcat请求这种线程模型，threadlocal即使不调用remove，也不会出现OOM，这样理解对吗？</div>2018-11-10</li><br/>
+这个平时还真没注意</p>2018-06-14</li><br/><li><span>食指可爱多</span> 👍（4） 💬（1）<p>我了解确定线程有:任务线程，Main线程，垃圾回收线程，还有些线程没细心关注名字和用途，惭愧了。可以在业务线程中等待，然后在命令行用jstack看看当前jvm的线程堆栈。</p>2018-06-14</li><br/><li><span>高杰</span> 👍（2） 💬（1）<p>有几个弱引用，虚引用的地方，音频和文字对不上。把我搞晕了。
+应该有2个线程，还有jvm的gc线程？还有第三个线程吗？</p>2018-06-14</li><br/><li><span>sunlight001</span> 👍（2） 💬（1）<p>threadlocal在放入值之后，在get出来之后，需要做remove操作，我这么理解对么？以前写的程序都没remove😄</p>2018-06-14</li><br/><li><span>Eason</span> 👍（2） 💬（1）<p>“比如，线程试图通过 synchronized 去获取某个锁，但是其他线程已经独占了，那么当前线程就会处于阻塞状态”这个例子换一个理解，感觉也是在等待其他线程做某些操作。在“阻塞”中也是在“等待”中？？</p>2018-06-14</li><br/><li><span>Phoenix</span> 👍（0） 💬（1）<p>想要请教老师，对于tomcat服务器为每个用户请求新建一条线程，那么该线程的threadlocal也会随着请求结束，线程被回收，threadlocal也会相应的被回收，那么我理解的是，类似tomcat请求这种线程模型，threadlocal即使不调用remove，也不会出现OOM，这样理解对吗？</p>2018-11-10</li><br/>
 </ul>

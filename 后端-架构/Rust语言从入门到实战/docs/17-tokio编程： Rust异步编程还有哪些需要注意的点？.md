@@ -228,5 +228,5 @@ impl MyTrait for Modal {}
 
 参考链接：[https://tokio.rs/tokio/topics/bridging](https://tokio.rs/tokio/topics/bridging)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>$侯</span> 👍（3） 💬（1）<div>老师，新的1.75是不是支持asnyc trait了</div>2023-12-31</li><br/><li><span>Geek_e72251</span> 👍（1） 💬（1）<div>期待axum的实战</div>2023-11-28</li><br/><li><span>Michael</span> 👍（1） 💬（2）<div>等了一个周末就7分钟的课程，而且最近几节将tokio的内容相对有点不充实，既然是进阶篇，异步这一块把 Future、Executor 的实现原理带着分析下。</div>2023-11-27</li><br/><li><span>不忘初心</span> 👍（1） 💬（1）<div>每天能更新一节就好了, 隔天更新拖的时间太长了</div>2023-11-27</li><br/><li><span>伯阳</span> 👍（0） 💬（1）<div>期待老师的实战课程</div>2023-11-27</li><br/><li><span>青云</span> 👍（1） 💬（0）<div>这几个RUST专栏里面最适合入门的</div>2024-10-25</li><br/>
+<li><span>$侯</span> 👍（3） 💬（1）<p>老师，新的1.75是不是支持asnyc trait了</p>2023-12-31</li><br/><li><span>Geek_e72251</span> 👍（1） 💬（1）<p>期待axum的实战</p>2023-11-28</li><br/><li><span>Michael</span> 👍（1） 💬（2）<p>等了一个周末就7分钟的课程，而且最近几节将tokio的内容相对有点不充实，既然是进阶篇，异步这一块把 Future、Executor 的实现原理带着分析下。</p>2023-11-27</li><br/><li><span>不忘初心</span> 👍（1） 💬（1）<p>每天能更新一节就好了, 隔天更新拖的时间太长了</p>2023-11-27</li><br/><li><span>伯阳</span> 👍（0） 💬（1）<p>期待老师的实战课程</p>2023-11-27</li><br/><li><span>青云</span> 👍（1） 💬（0）<p>这几个RUST专栏里面最适合入门的</p>2024-10-25</li><br/>
 </ul>

@@ -235,14 +235,14 @@ foo`${1}`
 
 当然，JavaScript内部其实还有很多其它的可执行结构，我今后还会讲到一些。或者你现在就可以开始去发掘，希望你能与大家一起分享，让我也有机会听听你的收获。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>阡陌</span> 👍（6） 💬（1）<div>虽然不知道&quot;模版调用&quot;在实际中有什么用处, 但根据结果来看, 似乎只有在&quot;模版调用&quot;时才能访问到模版字面量这个执行结构的类参数表结构, 作为函数调用的第一个参数.
+<li><span>阡陌</span> 👍（6） 💬（1）<p>虽然不知道&quot;模版调用&quot;在实际中有什么用处, 但根据结果来看, 似乎只有在&quot;模版调用&quot;时才能访问到模版字面量这个执行结构的类参数表结构, 作为函数调用的第一个参数.
 var c = &#39;ccc&#39;, x = 1;
 bar = (a1, a2, ...otherArgs) =&gt; console.log(a1, &#39;-------&#39;, a2, &#39;-----&#39;, otherArgs);
 bar`ass${c}edd${x}illll`;
 &#47;&#47; [&quot;ass&quot;, &quot;edd&quot;, &quot;illll&quot;, raw: Array(3)] &quot;-------&quot; &quot;ccc&quot; &quot;-----&quot; [1]
-</div>2019-11-27</li><br/><li><span>Astrogladiator-埃蒂纳度斯</span> 👍（6） 💬（3）<div>所以“1=1”是一个运行期错（ReferenceError），而不是语法错误（SyntaxError）。
+</p>2019-11-27</li><br/><li><span>Astrogladiator-埃蒂纳度斯</span> 👍（6） 💬（3）<p>所以“1=1”是一个运行期错（ReferenceError），而不是语法错误（SyntaxError）。
 请问为什么我尝试运行1=1在chrome控制台和node环境都报的语法错？
-Uncaught SyntaxError: Invalid left-hand side in assignment</div>2019-11-26</li><br/><li><span>潇潇雨歇</span> 👍（4） 💬（5）<div>看过专栏后，我是这么理解的：模版也是可执行结构，有一个发现-引用的过程，有点类似参数表，但是最后具体表现为值。自然就可以调用，而不是特意去制造这么个语法。</div>2019-11-26</li><br/><li><span>曙光</span> 👍（2） 💬（1）<div>老师
+Uncaught SyntaxError: Invalid left-hand side in assignment</p>2019-11-26</li><br/><li><span>潇潇雨歇</span> 👍（4） 💬（5）<p>看过专栏后，我是这么理解的：模版也是可执行结构，有一个发现-引用的过程，有点类似参数表，但是最后具体表现为值。自然就可以调用，而不是特意去制造这么个语法。</p>2019-11-26</li><br/><li><span>曙光</span> 👍（2） 💬（1）<p>老师
 1. handler.apply = function(target, thisArgument, argArray) {...} 其中“target”是指什么。
 我找到的例子，和老师这个三个参数不能一一对应上；
 var person = {
@@ -274,8 +274,8 @@ f1();  &#47;&#47;{ a: 1, b: 2 }   { a: 3, b: 4 }
  2) 如果像C语言的print格式化字符串也行，但ECMAScript想要更抽象的处理字符串，选用函数处理
  3) foo`aaa${c}bbb${x}ccc`; 对于foo的参数是[aaa,bbb,ccc],c,x,像是通用的数据格式规范，js将参数分隔，其余交给函数处理；
  
-4. 全篇看完几遍，只记住“名字和值的绑定”，是似懂非懂。</div>2020-11-11</li><br/><li><span>Elmer</span> 👍（1） 💬（3）<div>所以我们之前所说的引用都有可能是可执行结构。
+4. 全篇看完几遍，只记住“名字和值的绑定”，是似懂非懂。</p>2020-11-11</li><br/><li><span>Elmer</span> 👍（1） 💬（3）<p>所以我们之前所说的引用都有可能是可执行结构。
 会按照场景求值，或者返回引用本身。
-可以这么理解么。</div>2019-12-27</li><br/><li><span>小胖</span> 👍（0） 💬（2）<div>js的函数调用的参数是传名调用，而标签模板会先计算出结果再传递给函数。
-所以，模板调用是为了实现函数参数的传值调用?</div>2019-12-02</li><br/><li><span>weineel</span> 👍（0） 💬（0）<div>原来对 js 的理解真是太肤浅了，特殊可执行结构 的概念刷新了我对js 的认识。</div>2019-11-25</li><br/>
+可以这么理解么。</p>2019-12-27</li><br/><li><span>小胖</span> 👍（0） 💬（2）<p>js的函数调用的参数是传名调用，而标签模板会先计算出结果再传递给函数。
+所以，模板调用是为了实现函数参数的传值调用?</p>2019-12-02</li><br/><li><span>weineel</span> 👍（0） 💬（0）<p>原来对 js 的理解真是太肤浅了，特殊可执行结构 的概念刷新了我对js 的认识。</p>2019-11-25</li><br/>
 </ul>

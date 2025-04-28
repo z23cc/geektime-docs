@@ -355,7 +355,7 @@ if (rioWrite(rdb,&cksum,8) == 0) goto werr;
 
 你能在serverCron函数中，查找到rdbSaveBackground函数一共会被调用执行几次吗？这又分别对应了什么场景呢？
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>曾轼麟</span> 👍（21） 💬（0）<div>先回答老师的问题：serverCron函数中，查找到 rdbSaveBackground 函数一共会被调用执行几次？
+<li><span>曾轼麟</span> 👍（21） 💬（0）<p>先回答老师的问题：serverCron函数中，查找到 rdbSaveBackground 函数一共会被调用执行几次？
 
     答：包含直接或者间接，一共调用了4次（不知道还有没有漏的）
 
@@ -375,7 +375,7 @@ if (rioWrite(rdb,&cksum,8) == 0) goto werr;
 补充总结：
     本期老师主要介绍了Redis的持久化做法和RDB文件的编码方式，包括文件头部的编码方式，文件的键值对写入的编码方式，还有写入的触发时机等等，也方便我们日后自行解析RDB文件。
 
-    此外在本次源码中多次出现了RIO的标识，这里解释一下，RIO其实是unix下的一款IO包，起本质是封装了操作系统I&#47;O，能通过缓冲区的方式调用操作系统I&#47;O去对文件进行读写，此外Redis在保存RDB文件也使用了一些技巧，例如在rdbSave函数中，文件是先写入tmpfile（临时文件）的，最后通过rename的方式修改文件名字来替换掉整个文件，这是安全的文件写入方式，如果在写入期间掉电也并不会导致旧RDB文件损坏，但是也证明在磁盘预留上是需要双倍空间的。</div>2021-09-08</li><br/><li><span>Kaito</span> 👍（9） 💬（1）<div>1、RDB 文件是 Redis 的数据快照，以「二进制」格式存储，相比 AOF 文件更小，写盘和加载时间更短
+    此外在本次源码中多次出现了RIO的标识，这里解释一下，RIO其实是unix下的一款IO包，起本质是封装了操作系统I&#47;O，能通过缓冲区的方式调用操作系统I&#47;O去对文件进行读写，此外Redis在保存RDB文件也使用了一些技巧，例如在rdbSave函数中，文件是先写入tmpfile（临时文件）的，最后通过rename的方式修改文件名字来替换掉整个文件，这是安全的文件写入方式，如果在写入期间掉电也并不会导致旧RDB文件损坏，但是也证明在磁盘预留上是需要双倍空间的。</p>2021-09-08</li><br/><li><span>Kaito</span> 👍（9） 💬（1）<p>1、RDB 文件是 Redis 的数据快照，以「二进制」格式存储，相比 AOF 文件更小，写盘和加载时间更短
 
 2、RDB 在执行 SAVE &#47; BGSAVE 命令、定时 BGSAVE、主从复制时产生
 
@@ -402,5 +402,5 @@ if (rioWrite(rdb,&cksum,8) == 0) goto werr;
 
 一次是满足配置的定时 RDB 条件后（save &lt;seconds&gt; &lt;changes），触发子进程生成 RDB。
 
-另一次是客户端执行了 BGSAVE 命令，Redis 会先设置 server.rdb_bgsave_scheduled = 1，之后 serverCron 函数判断这个变量为 1，也会触发子进程生成 RDB。</div>2021-09-07</li><br/><li><span>Geek_6580e3</span> 👍（0） 💬（0）<div>老师好，能咨询个问题，redis321版本是有unknown RDB format version：7 #3353的bug吗，使用中遇到这个问题，但不知道什么情况下会触发，谢谢</div>2022-02-10</li><br/>
+另一次是客户端执行了 BGSAVE 命令，Redis 会先设置 server.rdb_bgsave_scheduled = 1，之后 serverCron 函数判断这个变量为 1，也会触发子进程生成 RDB。</p>2021-09-07</li><br/><li><span>Geek_6580e3</span> 👍（0） 💬（0）<p>老师好，能咨询个问题，redis321版本是有unknown RDB format version：7 #3353的bug吗，使用中遇到这个问题，但不知道什么情况下会触发，谢谢</p>2022-02-10</li><br/>
 </ul>

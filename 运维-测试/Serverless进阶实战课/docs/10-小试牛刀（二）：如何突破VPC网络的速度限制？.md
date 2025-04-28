@@ -190,11 +190,11 @@ HaVip是一种可以独立创建和释放的内网IP，可以与高可用软件�
 - 腾讯云的这一篇[VPC网络优化](https://cloud.tencent.com/developer/article/1461707)的文章，也是值得我们一看的。
 - 文中提到的ip-masq-agent，感兴趣的话，你可以继续看这一篇[ip-mast-agent指南](http://www.coderdocument.com/docs/kubernetes/v1.14/tasks/administer_cluster/ip_masquerade_agent_user_guide.html)，写得也是非常详细的。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Geek_4dmcwo</span> 👍（1） 💬（3）<div>func bcc和proxy bcc本来就是通的，为啥要加一层隧道呢，直接把proxy bcc做网关，不就直接可以访问user bcc了吗</div>2022-09-28</li><br/><li><span>Wang Yifei</span> 👍（0） 💬（1）<div>“此时 func bcc1 访问 user bcc 172.16.101.4 仍然访问不通，在 proxy bcc 侧监听 eth1 流量可以发现，eth1 发往用户 VPC 的包的源 IP 仍是 func1 bcc gre0 设备的 IP 10.0.0.3”
+<li><span>Geek_4dmcwo</span> 👍（1） 💬（3）<p>func bcc和proxy bcc本来就是通的，为啥要加一层隧道呢，直接把proxy bcc做网关，不就直接可以访问user bcc了吗</p>2022-09-28</li><br/><li><span>Wang Yifei</span> 👍（0） 💬（1）<p>“此时 func bcc1 访问 user bcc 172.16.101.4 仍然访问不通，在 proxy bcc 侧监听 eth1 流量可以发现，eth1 发往用户 VPC 的包的源 IP 仍是 func1 bcc gre0 设备的 IP 10.0.0.3”
 
 这里有个问题，proxy bbc的gre0设备是不是会把gre封装的包头去掉后，继续根据payload进行路由转发？ 如果是这样的话，payload的源IP为什么还是10.0.0.3，而不是192.168.80.8呢？
-</div>2023-04-04</li><br/><li><span>Wang Yifei</span> 👍（0） 💬（1）<div>没有找到Kubernetes中相关CM的配置
-但我理解，是否也可以这样实现：在func bcc1中添加一条iptables规则，把发送给172.16.101.0&#47;24流量的Source IP修改为10.0.0.3。</div>2023-04-04</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>网卡会提前在用户 VPC 所在的子网 Subnet 中创建，但租户的权限属于函数计算 VPC
+</p>2023-04-04</li><br/><li><span>Wang Yifei</span> 👍（0） 💬（1）<p>没有找到Kubernetes中相关CM的配置
+但我理解，是否也可以这样实现：在func bcc1中添加一条iptables规则，把发送给172.16.101.0&#47;24流量的Source IP修改为10.0.0.3。</p>2023-04-04</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>网卡会提前在用户 VPC 所在的子网 Subnet 中创建，但租户的权限属于函数计算 VPC
 ==========
-这个是怎么实现的？</div>2022-09-20</li><br/>
+这个是怎么实现的？</p>2022-09-20</li><br/>
 </ul>

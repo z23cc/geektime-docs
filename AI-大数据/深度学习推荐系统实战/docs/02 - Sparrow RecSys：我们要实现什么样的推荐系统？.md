@@ -121,20 +121,20 @@ links表包含了电影ID（movieId）、IMDB对应电影ID（imdbId）、TMDB�
 
 好啦，快按照这节的方法把Sparrow Recsys运行起来吧！课后的两个问题也并不困难，相信你肯定可以回答出来。今天就讲到这里了，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Capricornus</span> 👍（62） 💬（12）<div>MAC OS系统
+<li><span>Capricornus</span> 👍（62） 💬（12）<p>MAC OS系统
 1.下载IDEA（https:&#47;&#47;www.jetbrains.com&#47;idea&#47;download&#47;#section=mac）
 2.下载JDK（https:&#47;&#47;www.oracle.com&#47;java&#47;technologies&#47;javase-jdk15-downloads.html）
 3.安装IDEA和JDK（JDK的路径~&#47;Library&#47;Java&#47;JavaVirtualMachines&#47;openjdk-15.0.1-1）
 4.打开IDEA，打开File-&gt;Project Strucure-&gt;Project-&gt;Project JDK(我的好像会自动识别)。若没有识别（显示jdk15.1）,点击三角号，自己添加，步骤Add SDK-&gt;JDK-&gt;选择上面提到的JDK路径选择。
 5.在pom.xml点击右键，设置为maven project-&gt;&#39;Reload project&#39;。耐心等待，这个很费时间。
 6.然后找到SparrowRecSys&#47;src&#47;main&#47;java&#47;com&#47;SparrowRecSys&#47;online&#47;RecSysServer,右击选择&quot;Run &#39;RecSysServer.main()&#39;&quot;,程序就执行起来了.
-7.浏览器中键入http:&#47;&#47;localhost:6010&#47;</div>2020-12-22</li><br/><li><span>挖掘机</span> 👍（12） 💬（6）<div>windows下搭建推荐系统的步骤
+7.浏览器中键入http:&#47;&#47;localhost:6010&#47;</p>2020-12-22</li><br/><li><span>挖掘机</span> 👍（12） 💬（6）<p>windows下搭建推荐系统的步骤
 1. 使用的vscode作为IDE
 2. 编译命令为mvn package assembly:single
 3. 我的web root uri在源代码里总是为空，稍微改了一下，这里是为了绕过去，也请指导的高手告诉正确方法
 RecSysServer.java中49行改成了绝对路径
 URI webRootUri = URI.create(&quot;file:&#47;D:&#47;Work&#47;RecommendationSystem&#47;Sparrow&#47;SparrowRecSys&#47;target&#47;classes&#47;webroot&#47;&quot;);
-4. 运行java -jar target\SparrowRecSys-1.0-SNAPSHOT-jar-with-dependencies.jar即刻成功</div>2020-12-21</li><br/><li><span>嘿人</span> 👍（40） 💬（1）<div>王老师您好，我学习的时候就是经常把握不好“使用者”的度，碰到什么都想扎进去研究，导致很容易陷入‘局部极小值’，请问怎么把握这个度呢？</div>2020-12-09</li><br/><li><span>浣熊当家</span> 👍（38） 💬（7）<div>因为没有项目经验，想知道git clone到本地之后，怎么运行这个Maven project呢？油管上有没有类似的demo可以看看，老师能出一下小的录屏么？万分感谢。。第一步就卡住了。。</div>2020-09-23</li><br/><li><span>Hhha爲</span> 👍（34） 💬（1）<div>老师您好，我查阅了网上的一些博客资料，大多认为协同过滤这样的传统方法应该是在召回层。，不过在您的图里是在排序（精排）层，可以问一下这样分类的理由是什么吗？谢谢！</div>2020-09-23</li><br/><li><span>pedro</span> 👍（27） 💬（2）<div>暂时没有去跑项目，先尝试回答问题二吧，对于一个电影爱好者而言，从我的角度出发，一个能够取悦我的，电影推荐系统，必须满足我在电影种类，演员，电影内容，电影质量上的需求，要说什么最有帮助，我觉得应该是用户历史浏览记录。</div>2020-09-22</li><br/><li><span>Don</span> 👍（20） 💬（2）<div>召回有优化之后，排序并不能捕捉到召回新增的特征，在排序后召回的优化点弱化很多，这种一般怎么处理？比如：召回有话增加了性别+年龄的特征，但是排序层没有用这维特征，导致根据该特征召回的内容排序后都在靠后位置没有机会曝光</div>2020-09-23</li><br/><li><span>Sam</span> 👍（15） 💬（6）<div>## 上个旧版本有些链接失效，现在补上这个新的，而且更新了步骤。
+4. 运行java -jar target\SparrowRecSys-1.0-SNAPSHOT-jar-with-dependencies.jar即刻成功</p>2020-12-21</li><br/><li><span>嘿人</span> 👍（40） 💬（1）<p>王老师您好，我学习的时候就是经常把握不好“使用者”的度，碰到什么都想扎进去研究，导致很容易陷入‘局部极小值’，请问怎么把握这个度呢？</p>2020-12-09</li><br/><li><span>浣熊当家</span> 👍（38） 💬（7）<p>因为没有项目经验，想知道git clone到本地之后，怎么运行这个Maven project呢？油管上有没有类似的demo可以看看，老师能出一下小的录屏么？万分感谢。。第一步就卡住了。。</p>2020-09-23</li><br/><li><span>Hhha爲</span> 👍（34） 💬（1）<p>老师您好，我查阅了网上的一些博客资料，大多认为协同过滤这样的传统方法应该是在召回层。，不过在您的图里是在排序（精排）层，可以问一下这样分类的理由是什么吗？谢谢！</p>2020-09-23</li><br/><li><span>pedro</span> 👍（27） 💬（2）<p>暂时没有去跑项目，先尝试回答问题二吧，对于一个电影爱好者而言，从我的角度出发，一个能够取悦我的，电影推荐系统，必须满足我在电影种类，演员，电影内容，电影质量上的需求，要说什么最有帮助，我觉得应该是用户历史浏览记录。</p>2020-09-22</li><br/><li><span>Don</span> 👍（20） 💬（2）<p>召回有优化之后，排序并不能捕捉到召回新增的特征，在排序后召回的优化点弱化很多，这种一般怎么处理？比如：召回有话增加了性别+年龄的特征，但是排序层没有用这维特征，导致根据该特征召回的内容排序后都在靠后位置没有机会曝光</p>2020-09-23</li><br/><li><span>Sam</span> 👍（15） 💬（6）<p>## 上个旧版本有些链接失效，现在补上这个新的，而且更新了步骤。
 win7下 搭建 推荐系统 的步骤：
 1. 第1步骤：下载IDEA。
 https:&#47;&#47;www.jetbrains.com&#47;idea&#47;download&#47;#section=windows
@@ -163,7 +163,7 @@ https:&#47;&#47;www.jianshu.com&#47;p&#47;9f40fe1b6587
 7. 第7步骤：安装Redis
 https:&#47;&#47;www.cnblogs.com&#47;liuqingzheng&#47;p&#47;9831331.html
 
-大功告成，如果安装过程有问题的同学，请留言，我们一起解决！~^^</div>2021-06-18</li><br/><li><span>夜雨声烦</span> 👍（15） 💬（6）<div>JAVA小白 mac os系统 安装Sparrow Recsys时的历程：
+大功告成，如果安装过程有问题的同学，请留言，我们一起解决！~^^</p>2021-06-18</li><br/><li><span>夜雨声烦</span> 👍（15） 💬（6）<p>JAVA小白 mac os系统 安装Sparrow Recsys时的历程：
 1，安装java8和scala2.11
 网上有很多参考教程。
 安装Java8：https:&#47;&#47;blog.csdn.net&#47;irokay&#47;article&#47;details&#47;71374426
@@ -176,8 +176,8 @@ https:&#47;&#47;www.cnblogs.com&#47;liuqingzheng&#47;p&#47;9831331.html
 在pom.xml点击右键，设置为maven project-&gt;&#39;Reload project&#39;
 配置SDK：在File-&gt;Project Structure-&gt;Project配置Project SDK
 然后找到SparrowRecSys&#47;main&#47;java&#47;online&#47;RecSysServer,右击选择&quot;Run &#39;RecSysServer.main()&#39;&quot;,程序就执行起来了
-浏览器输入http:&#47;&#47;localhost:6010&#47;，就可以看到SparrowRecSys首页</div>2020-10-09</li><br/><li><span>明月</span> 👍（12） 💬（2）<div>老师，这是需要去了解一下java吗，在校生做推荐系统还是用Python</div>2020-11-25</li><br/><li><span>何去何从</span> 👍（10） 💬（1）<div>老师您好！因为之前工作没有过推荐系统相关的项目经验，如果后期有机会面试相关岗位，能否把这个项目写到简历中当做一个项目经验呢？</div>2020-09-23</li><br/><li><span>海</span> 👍（7） 💬（2）<div>老师，马上就要秋招找工作了。时间问题只学习了python，感觉学习java体系来不及了，为了找工作想在scala系和pyspark系取舍一下。请问pyspark等用python调大数据相关技术在工业界运用广吗？</div>2020-12-29</li><br/><li><span>悠悠我心</span> 👍（7） 💬（1）<div>运行起来了，还没仔细看代码，期待</div>2020-09-24</li><br/><li><span>wolong</span> 👍（7） 💬（2）<div>大佬您好！我这边大概从事搜索、广告、推荐的工作也大概有六七年的光景，我有几个一直困扰的问题希望您能抽时间帮忙解答。
+浏览器输入http:&#47;&#47;localhost:6010&#47;，就可以看到SparrowRecSys首页</p>2020-10-09</li><br/><li><span>明月</span> 👍（12） 💬（2）<p>老师，这是需要去了解一下java吗，在校生做推荐系统还是用Python</p>2020-11-25</li><br/><li><span>何去何从</span> 👍（10） 💬（1）<p>老师您好！因为之前工作没有过推荐系统相关的项目经验，如果后期有机会面试相关岗位，能否把这个项目写到简历中当做一个项目经验呢？</p>2020-09-23</li><br/><li><span>海</span> 👍（7） 💬（2）<p>老师，马上就要秋招找工作了。时间问题只学习了python，感觉学习java体系来不及了，为了找工作想在scala系和pyspark系取舍一下。请问pyspark等用python调大数据相关技术在工业界运用广吗？</p>2020-12-29</li><br/><li><span>悠悠我心</span> 👍（7） 💬（1）<p>运行起来了，还没仔细看代码，期待</p>2020-09-24</li><br/><li><span>wolong</span> 👍（7） 💬（2）<p>大佬您好！我这边大概从事搜索、广告、推荐的工作也大概有六七年的光景，我有几个一直困扰的问题希望您能抽时间帮忙解答。
 1.现在关于实时广告点击率预估，业界主流的深度学习解决方案是怎样的思路？
-2.深度强化学习在推荐行业目前的应用主要瓶颈在那些点？</div>2020-09-22</li><br/><li><span>太子长琴</span> 👍（6） 💬（1）<div>用户特征，尤其是行为特征，比如点击记录，有效浏览时长，点评记录，点评结果
-物品特征，主演，类型，评分</div>2020-09-25</li><br/>
+2.深度强化学习在推荐行业目前的应用主要瓶颈在那些点？</p>2020-09-22</li><br/><li><span>太子长琴</span> 👍（6） 💬（1）<p>用户特征，尤其是行为特征，比如点击记录，有效浏览时长，点评记录，点评结果
+物品特征，主演，类型，评分</p>2020-09-25</li><br/>
 </ul>

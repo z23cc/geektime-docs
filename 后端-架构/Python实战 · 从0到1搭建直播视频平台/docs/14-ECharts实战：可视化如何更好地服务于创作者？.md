@@ -377,11 +377,11 @@ ECharts是一款对新手非常友好的数据可视化组件库。我帮你梳�
 
 欢迎你在留言区和我交流互动，也推荐你把这节课分享给更多有需要的朋友。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>peter</span> 👍（2） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（2） 💬（1）<p>请教老师几个问题：
 Q1：安卓端canva与HTML、CSS、Js有关吗？
 老师的回答：“在安卓端，Canva则采用了完整的前端框架技术，包括HTML模板、JavaScript代码、组件等” 。我不确定。不过我感觉很惊讶，我潜意识里认为安卓的canva和这些没有关系，应该是利用底层绘制原理完成绘制的。我再搜搜。
 Q2：Vue文件是被谁解析的？是VSCode自带的编译器解析的吗？ 还是Node解析的？
 Q3：ECharts支持canvas、SVG等，那具体选哪个？是ECharts自主选择吗？
 Q4：npm用来安装包，假如不需要安装，vue还需要node吗？
-Q5：ECharts与node有关吗？与vue有关吗？</div>2023-05-24</li><br/><li><span>zgy</span> 👍（0） 💬（1）<div>搞反了吧，canvas 能兼容 IE6 吗？https:&#47;&#47;caniuse.com&#47;?search=canvas</div>2023-09-21</li><br/>
+Q5：ECharts与node有关吗？与vue有关吗？</p>2023-05-24</li><br/><li><span>zgy</span> 👍（0） 💬（1）<p>搞反了吧，canvas 能兼容 IE6 吗？https:&#47;&#47;caniuse.com&#47;?search=canvas</p>2023-09-21</li><br/>
 </ul>

@@ -520,5 +520,5 @@ void Interpreter::build_frame(HiObject* callable, ObjList args) {
 
 你是否能向虚拟机中添加更多的内建函数呢？欢迎你把你的想法分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>有风</span> 👍（0） 💬（0）<div>学习到这里，忍不住给海纳老师点个赞。 </div>2025-01-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-10-27</li><br/><li><span>冯某</span> 👍（0） 💬（0）<div>这里没有留言</div>2024-10-24</li><br/>
+<li><span>有风</span> 👍（0） 💬（0）<p>学习到这里，忍不住给海纳老师点个赞。 </p>2025-01-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-10-27</li><br/><li><span>冯某</span> 👍（0） 💬（0）<p>这里没有留言</p>2024-10-24</li><br/>
 </ul>

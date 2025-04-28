@@ -220,5 +220,5 @@ if __name__ == '__main__':
 
 欢迎把你的想法和思考分享在留言区，我们一起交流讨论。也欢迎你把课程分享给你的同事、朋友，我们一起做职场中的效率人。我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（2）<div>请问多个目录改怎么压缩?</div>2023-07-24</li><br/><li><span>碧海蓝天</span> 👍（0） 💬（1）<div>老师，请问一下我使用7z.exe a -tzip -ppwd666 C:\files 并没有压缩成功，这是为什么呢？</div>2021-07-26</li><br/><li><span>Soul of the Dragon</span> 👍（0） 💬（1）<div>老师，请问为什么我用zipWithPassword()函数对文件夹进行压缩后，生成的压缩包还是没有密码的状态呢？</div>2021-04-15</li><br/><li><span>LDxy</span> 👍（0） 💬（1）<div>使用 yield 返回的对象被称作生成器对象，该对象没法像列表一样，一次性获得对象中的所有数据，你必须使用 for 循环迭代访问，才能依次获取数据。这句话怎么理解呢？调用一次getAllFiles是返回一个数据还是返回所有数据？</div>2021-04-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-24</li><br/>
+<li><span>ifelse</span> 👍（0） 💬（2）<p>请问多个目录改怎么压缩?</p>2023-07-24</li><br/><li><span>碧海蓝天</span> 👍（0） 💬（1）<p>老师，请问一下我使用7z.exe a -tzip -ppwd666 C:\files 并没有压缩成功，这是为什么呢？</p>2021-07-26</li><br/><li><span>Soul of the Dragon</span> 👍（0） 💬（1）<p>老师，请问为什么我用zipWithPassword()函数对文件夹进行压缩后，生成的压缩包还是没有密码的状态呢？</p>2021-04-15</li><br/><li><span>LDxy</span> 👍（0） 💬（1）<p>使用 yield 返回的对象被称作生成器对象，该对象没法像列表一样，一次性获得对象中的所有数据，你必须使用 for 循环迭代访问，才能依次获取数据。这句话怎么理解呢？调用一次getAllFiles是返回一个数据还是返回所有数据？</p>2021-04-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-24</li><br/>
 </ul>

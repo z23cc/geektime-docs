@@ -292,11 +292,11 @@ ZREVRANGE user_score 0 -1 WITHSCORES
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>石维康</span> 👍（11） 💬（3）<div>在生成数据时,把&quot;temp = temp + create_time &#47; 10000000000&quot;换成 temp = temp +1 - create_time &#47; 10000000000 哈哈</div>2019-09-12</li><br/><li><span>Demon.Lee</span> 👍（11） 💬（5）<div>感觉用redis，最终还是需要结合程序以及MySQL来处理，因为排行榜展示，前端还是需要用户名的，光给个用户id不知道是谁，除非redis有序集合的member包含了用户id和name，请指正。</div>2019-09-12</li><br/><li><span>JustDoDT</span> 👍（5） 💬（1）<div>注册时间排名靠后MySQL语法：create_time按照降序排列。
+<li><span>石维康</span> 👍（11） 💬（3）<p>在生成数据时,把&quot;temp = temp + create_time &#47; 10000000000&quot;换成 temp = temp +1 - create_time &#47; 10000000000 哈哈</p>2019-09-12</li><br/><li><span>Demon.Lee</span> 👍（11） 💬（5）<p>感觉用redis，最终还是需要结合程序以及MySQL来处理，因为排行榜展示，前端还是需要用户名的，光给个用户id不知道是谁，除非redis有序集合的member包含了用户id和name，请指正。</p>2019-09-12</li><br/><li><span>JustDoDT</span> 👍（5） 💬（1）<p>注册时间排名靠后MySQL语法：create_time按照降序排列。
 SELECT (@rownum := @rownum + 1) AS user_rank, user_id, score, create_time
 FROM user_score, (SELECT @rownum := 0) b
 ORDER BY score DESC, create_time DESC
-</div>2019-09-11</li><br/><li><span>博弈</span> 👍（3） 💬（1）<div>Redis在实现排行榜方面优势显著，有现成命令且在内存操作，速度快</div>2020-03-27</li><br/><li><span>felix</span> 👍（3） 💬（1）<div>咨询老师一个关于ip匹配的索引问题：
+</p>2019-09-11</li><br/><li><span>博弈</span> 👍（3） 💬（1）<p>Redis在实现排行榜方面优势显著，有现成命令且在内存操作，速度快</p>2020-03-27</li><br/><li><span>felix</span> 👍（3） 💬（1）<p>咨询老师一个关于ip匹配的索引问题：
 有一个IP的库表，每一条记录了一个开始ip和结束ip，然后想批量匹配ip，查询为何没有用上“联合索引KEY `ip_range_int` (`start_int`,`end_int`) USING BTREE”？要怎么设置索引才有效？
 CREATE TABLE `t_dt_ip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -323,11 +323,11 @@ mysql&gt; explain select * from t_dt_ip i join t_tmp_ip t on 1= 1 where t.ip_add
 | id | select_type | table | partitions | type | possible_keys                       | key  | key_len | ref  | rows   | filtered | Extra                                          |
 |  1 | SIMPLE      | t     | NULL       | ALL  | NULL                                | NULL | NULL    | NULL |  73126 |   100.00 | NULL                                           |
 |  1 | SIMPLE      | i     | NULL       | ALL  | ip_range_int,indx_t_dt_ip_start_int | NULL | NULL    | NULL | 541942 |    33.33 | Range checked for each record (index map: 0xC) |
-</div>2019-09-14</li><br/><li><span>白菜炒五花肉</span> 👍（0） 💬（0）<div>ERR Error running script (call to f_84b63a152215a96efa70b8935ae3d2b0e5ab93d1): @user_script:3: user_script:3: bad argument #1 to &#39;randomseed&#39; (number expected, got nil) 老师，使用redis创建10w名玩家数据，执行lua脚本，报这个错误是啥问题</div>2022-08-25</li><br/><li><span>完美坚持</span> 👍（0） 💬（2）<div>为什么
+</p>2019-09-14</li><br/><li><span>白菜炒五花肉</span> 👍（0） 💬（0）<p>ERR Error running script (call to f_84b63a152215a96efa70b8935ae3d2b0e5ab93d1): @user_script:3: user_script:3: bad argument #1 to &#39;randomseed&#39; (number expected, got nil) 老师，使用redis创建10w名玩家数据，执行lua脚本，报这个错误是啥问题</p>2022-08-25</li><br/><li><span>完美坚持</span> 👍（0） 💬（2）<p>为什么
 查询某个玩家的排名
 对玩家的分数和排名进行更新
 查询指定玩家前后 M 名的玩家
 增加或移除某个玩家，并对排名进行更新
 的时间复杂度都是O(log(N))，这和有序集合的数据存储结构有关吗？老师能不能简单解释一下，或者给个链接
-</div>2021-06-09</li><br/>
+</p>2021-06-09</li><br/>
 </ul>

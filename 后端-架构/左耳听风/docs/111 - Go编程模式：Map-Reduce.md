@@ -528,8 +528,8 @@ func filter(slice, function interface{}, inPlace bool) (interface{}, int) {
 
 好了，这节课就到这里。如果你觉得今天的内容对你有所帮助，欢迎你帮我分享给更多人。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>北国骑士</span> 👍（11） 💬（1）<div>所以我觉得用go写业务逻辑真的是件很sb的事情</div>2021-04-16</li><br/><li><span>拉欧</span> 👍（2） 💬（1）<div>就是因为go最初不支持泛型，所以每个go框架都要搞一堆的代码生成器来生成重复代码，恶心的不要不要的</div>2022-04-30</li><br/><li><span>萧</span> 👍（1） 💬（0）<div>通俗易懂</div>2021-02-18</li><br/><li><span>Refrain</span> 👍（0） 💬（1）<div>verifyFuncSignature(fn, elemType, nil) 为什么要传一个空值呢？
+<li><span>北国骑士</span> 👍（11） 💬（1）<p>所以我觉得用go写业务逻辑真的是件很sb的事情</p>2021-04-16</li><br/><li><span>拉欧</span> 👍（2） 💬（1）<p>就是因为go最初不支持泛型，所以每个go框架都要搞一堆的代码生成器来生成重复代码，恶心的不要不要的</p>2022-04-30</li><br/><li><span>萧</span> 👍（1） 💬（0）<p>通俗易懂</p>2021-02-18</li><br/><li><span>Refrain</span> 👍（0） 💬（1）<p>verifyFuncSignature(fn, elemType, nil) 为什么要传一个空值呢？
 
 outType := types[len(types)-1] 这个地方outType必然是空值
-</div>2021-02-05</li><br/>
+</p>2021-02-05</li><br/>
 </ul>

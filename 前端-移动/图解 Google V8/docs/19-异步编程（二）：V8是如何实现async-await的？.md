@@ -359,11 +359,11 @@ Callback模式的异步编程模型需要实现大量的回调函数，大量的
 
 感谢你的阅读，如果你觉得这一讲的内容对你有所启发，也欢迎把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>若川</span> 👍（46） 💬（6）<div>co源码实现原理：其实就是通过不断的调用generator函数的next()函数，来达到自动执行generator函数的效果（类似async、await函数的自动自行）。
+<li><span>若川</span> 👍（46） 💬（6）<p>co源码实现原理：其实就是通过不断的调用generator函数的next()函数，来达到自动执行generator函数的效果（类似async、await函数的自动自行）。
 
 具体代码分析，我之前写过一篇文章：
 《学习 koa 源码的整体架构，浅析koa洋葱模型原理和co原理》
-https:&#47;&#47;juejin.im&#47;entry&#47;5e6a080af265da575b1bd160</div>2020-05-02</li><br/><li><span>HoSalt</span> 👍（13） 💬（1）<div>老师 async、await 是 generator promise 的语法糖吗，v8里面前者是借助后者实现的吗？async await 为什么能用try catch 捕获错误？</div>2020-04-29</li><br/><li><span>Geek_gaoqin</span> 👍（10） 💬（1）<div>哦，我知道了，async 修饰的函数会有自己的协程，那么它代码内部创建的宏任务，主线程有空了还是会拿消息队列中的宏任务来执行，如果await等待了一个never resolve，那么它后面的代码就再也不会执行！但是却不会影响消息队列中键盘鼠标事件等其它任务的执行！</div>2020-06-11</li><br/><li><span>潇潇雨歇</span> 👍（8） 💬（1）<div>co的原理是自动识别生成器代码的yield，做暂停执行和恢复执行的操作</div>2020-04-28</li><br/><li><span>蹦哒</span> 👍（5） 💬（5）<div>请教老师：为什么Generator方案不实现自动执行next的功能呢？我理解async&#47;await相对于Generator方案主要是能够自动执行next吧，co方案也是这么做的</div>2020-05-12</li><br/><li><span>Geek_gaoqin</span> 👍（1） 💬（1）<div>老师，很长很长一段代码中，业务逻辑很复杂，既有产生微任务，又有setTimeout产生宏任务，更有很多await的语句，那么这些结合上一章节讲的内容，它的执行顺序是怎样的呢？可以帮我分析下吗？</div>2020-06-11</li><br/><li><span>华仔</span> 👍（1） 💬（4）<div>setTimeout(() =&gt; {
+https:&#47;&#47;juejin.im&#47;entry&#47;5e6a080af265da575b1bd160</p>2020-05-02</li><br/><li><span>HoSalt</span> 👍（13） 💬（1）<p>老师 async、await 是 generator promise 的语法糖吗，v8里面前者是借助后者实现的吗？async await 为什么能用try catch 捕获错误？</p>2020-04-29</li><br/><li><span>Geek_gaoqin</span> 👍（10） 💬（1）<p>哦，我知道了，async 修饰的函数会有自己的协程，那么它代码内部创建的宏任务，主线程有空了还是会拿消息队列中的宏任务来执行，如果await等待了一个never resolve，那么它后面的代码就再也不会执行！但是却不会影响消息队列中键盘鼠标事件等其它任务的执行！</p>2020-06-11</li><br/><li><span>潇潇雨歇</span> 👍（8） 💬（1）<p>co的原理是自动识别生成器代码的yield，做暂停执行和恢复执行的操作</p>2020-04-28</li><br/><li><span>蹦哒</span> 👍（5） 💬（5）<p>请教老师：为什么Generator方案不实现自动执行next的功能呢？我理解async&#47;await相对于Generator方案主要是能够自动执行next吧，co方案也是这么做的</p>2020-05-12</li><br/><li><span>Geek_gaoqin</span> 👍（1） 💬（1）<p>老师，很长很长一段代码中，业务逻辑很复杂，既有产生微任务，又有setTimeout产生宏任务，更有很多await的语句，那么这些结合上一章节讲的内容，它的执行顺序是怎样的呢？可以帮我分析下吗？</p>2020-06-11</li><br/><li><span>华仔</span> 👍（1） 💬（4）<p>setTimeout(() =&gt; {
 console.log(&#39;in timeout&#39;);
 })
 new Promise((resolve, reject) =&gt; {
@@ -375,7 +375,7 @@ console.log(&#39;in promise&#39;)
 }).then((res) =&gt; {
 console.log(&#39;in then&#39;)
 })
-老师，想问下promise创建的then是微任务，是宏任务中创建的队列保存的消息队列中维护的。那么我这里这样一个场景，在promise中通过setTimeout(模拟宏任务http request)异步resolve的场景下，then也就会在下一个宏任务执行之后再执行了。这种当前宏任务中注册的微任务被拖到下一个宏任务执行，是怎么实现的呢？</div>2020-05-05</li><br/><li><span>断线人偶</span> 👍（0） 💬（2）<div>老师可以讲一下为什么在使用async...await...可以通过try...catch...来捕获到异步函数中的异常吗，v8是怎么实现的</div>2020-05-24</li><br/><li><span>地球外地人</span> 👍（0） 💬（1）<div>老师能讲讲 generate 和 await async中的闭包吗？</div>2020-05-04</li><br/><li><span>天然呆</span> 👍（0） 💬（1）<div>
+老师，想问下promise创建的then是微任务，是宏任务中创建的队列保存的消息队列中维护的。那么我这里这样一个场景，在promise中通过setTimeout(模拟宏任务http request)异步resolve的场景下，then也就会在下一个宏任务执行之后再执行了。这种当前宏任务中注册的微任务被拖到下一个宏任务执行，是怎么实现的呢？</p>2020-05-05</li><br/><li><span>断线人偶</span> 👍（0） 💬（2）<p>老师可以讲一下为什么在使用async...await...可以通过try...catch...来捕获到异步函数中的异常吗，v8是怎么实现的</p>2020-05-24</li><br/><li><span>地球外地人</span> 👍（0） 💬（1）<p>老师能讲讲 generate 和 await async中的闭包吗？</p>2020-05-04</li><br/><li><span>天然呆</span> 👍（0） 💬（1）<p>
 function HaveResolvePromise(){
     return new Promise((resolve, reject) =&gt; {
         setTimeout(() =&gt; {
@@ -393,7 +393,7 @@ console.log(0)
 getResult()
 console.log(3)
 
-是不是要改动？NoResolvePromise ==&gt;&gt; HaveResolvePromise</div>2020-04-28</li><br/><li><span>Geek_f74777</span> 👍（0） 💬（1）<div>看来一下co源码, 我的理解是: co的执行原理就是通过promise将generator函数中yield的异步操作的暂停和恢复执行自动化</div>2020-04-28</li><br/><li><span>写点啥呢</span> 👍（0） 💬（1）<div>async&#47;await章节的示例代码看着迷糊了，想和老师请教下，
+是不是要改动？NoResolvePromise ==&gt;&gt; HaveResolvePromise</p>2020-04-28</li><br/><li><span>Geek_f74777</span> 👍（0） 💬（1）<p>看来一下co源码, 我的理解是: co的执行原理就是通过promise将generator函数中yield的异步操作的暂停和恢复执行自动化</p>2020-04-28</li><br/><li><span>写点啥呢</span> 👍（0） 💬（1）<p>async&#47;await章节的示例代码看着迷糊了，想和老师请教下，
 1. 这部分代码，foo是不是应该调用getResult
 
 function NeverResolvePromise(){
@@ -425,5 +425,5 @@ console.log(0)
 foo()
 console.log(3)
 
-另外#2问题里的代码对应的图例中的函数名字和代码对应不上。</div>2020-04-28</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（4） 💬（0）<div>co 里面一般会定义一个方法,比如nextStep，执行改方法时会调用迭代器的next，根据结果中的done的取值来决定是继续递归调用nextStep还是结束。</div>2020-04-28</li><br/><li><span>kuaishou88880043</span> 👍（1） 💬（0）<div>讲的好好 ，“async修饰的函数会开启一个协程”，看到就通了</div>2024-09-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-06-21</li><br/>
+另外#2问题里的代码对应的图例中的函数名字和代码对应不上。</p>2020-04-28</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（4） 💬（0）<p>co 里面一般会定义一个方法,比如nextStep，执行改方法时会调用迭代器的next，根据结果中的done的取值来决定是继续递归调用nextStep还是结束。</p>2020-04-28</li><br/><li><span>kuaishou88880043</span> 👍（1） 💬（0）<p>讲的好好 ，“async修饰的函数会开启一个协程”，看到就通了</p>2024-09-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-06-21</li><br/>
 </ul>

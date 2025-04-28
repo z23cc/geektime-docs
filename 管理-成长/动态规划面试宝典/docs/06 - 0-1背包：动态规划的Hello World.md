@@ -316,7 +316,7 @@ g(\\{v(f(s(x,c)),c)\\}),c \\in values(x)
 
 不知道你今天的收获如何呢？如果感觉已经掌握了解题思路，不妨也去考考你们的同事或者朋友吧，刚好也有机会复述一遍今天所学。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>浅语清风</span> 👍（10） 💬（1）<div>课程难度越来越大了，对于对于初学者来说看一遍是根本不够的，要反复学习，不断积累，编程实践。我一定要攻克动态规划的难关！</div>2020-09-25</li><br/><li><span>BBQ</span> 👍（4） 💬（1）<div>感谢老师的细心讲解，怎么感觉越写越简单了呢。 😀
+<li><span>浅语清风</span> 👍（10） 💬（1）<p>课程难度越来越大了，对于对于初学者来说看一遍是根本不够的，要反复学习，不断积累，编程实践。我一定要攻克动态规划的难关！</p>2020-09-25</li><br/><li><span>BBQ</span> 👍（4） 💬（1）<p>感谢老师的细心讲解，怎么感觉越写越简单了呢。 😀
 把空间复杂度优化了一下，用一个一维数组，倒着走，就不会产生重复计算了。
 
     def lastStoneWeightII(self, stones: List[int]) -&gt; int:
@@ -330,7 +330,7 @@ g(\\{v(f(s(x,c)),c)\\}),c \\in values(x)
             while j &gt;= stones[i]:
                 dp[j] = max(dp[j], dp[j-stones[i]] + stones[i])
                 j-= 1
-        return total - dp[-1] - dp[-1]</div>2021-03-10</li><br/><li><span>冬风向左吹</span> 👍（2） 💬（4）<div>没太理解这里：dp[tn-1][rw-w[tn]] + v[tn]。放入物品前的价值+放入特别的价值。为什么放入特别前的价值 rw-w[tn]，这里要减w[tn]呢。放入物品前的价值不就是dp[tn-1][rw]吗？</div>2020-11-07</li><br/><li><span>Roy Liang</span> 👍（2） 💬（1）<div>#include &lt;iostream&gt;
+        return total - dp[-1] - dp[-1]</p>2021-03-10</li><br/><li><span>冬风向左吹</span> 👍（2） 💬（4）<p>没太理解这里：dp[tn-1][rw-w[tn]] + v[tn]。放入物品前的价值+放入特别的价值。为什么放入特别前的价值 rw-w[tn]，这里要减w[tn]呢。放入物品前的价值不就是dp[tn-1][rw]吗？</p>2020-11-07</li><br/><li><span>Roy Liang</span> 👍（2） 💬（1）<p>#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;cmath&gt;
 #include &lt;cstring&gt;
@@ -372,12 +372,12 @@ int main() {
   part1 = DP(w, v, N, sum &#47; 2);
   part2 = sum - part1;
   cout &lt;&lt; abs(part1 - part2) &lt;&lt; endl;
-}</div>2020-10-19</li><br/><li><span>coder</span> 👍（1） 💬（2）<div>关于粉碎石头（力扣上的题：1049. 最后一块石头的重量 II）的问题的思考：
+}</p>2020-10-19</li><br/><li><span>coder</span> 👍（1） 💬（2）<p>关于粉碎石头（力扣上的题：1049. 最后一块石头的重量 II）的问题的思考：
 
 1. 可以把石头分为两堆，这两堆的重量尽量均衡，才能产生最小的差值
 2. 那么就相当于把所有石头的总重量除以2，作为背包的容量，然后看最大能装入多少重量的石头
 3. 从而转化成背包问题
-</div>2021-12-21</li><br/><li><span>樟树林</span> 👍（1） 💬（4）<div>老师，关于背包问题哈，背包容量为2，物品个数为3的背包，按照你上述计算得出的结果是3，但实际结果应为6。这个问题，老师能解释一下吗？</div>2021-01-20</li><br/><li><span>Smile</span> 👍（0） 💬（1）<div>石头碾碎问题
+</p>2021-12-21</li><br/><li><span>樟树林</span> 👍（1） 💬（4）<p>老师，关于背包问题哈，背包容量为2，物品个数为3的背包，按照你上述计算得出的结果是3，但实际结果应为6。这个问题，老师能解释一下吗？</p>2021-01-20</li><br/><li><span>Smile</span> 👍（0） 💬（1）<p>石头碾碎问题
 
 public int lastStoneWeightII(int[] stones) {
 
@@ -417,8 +417,8 @@ public int lastStoneWeightII(int[] stones) {
 
         return Math.abs(sum-2*dp[N][W]);
 
-    }</div>2023-11-16</li><br/><li><span>Smile</span> 👍（0） 💬（1）<div>dp[tn][rw] = Math.max(dp[tn-1][rw], dp[tn-1][rw-w[tn]] + v[tn]);  这个是有问题的，w[tn]实际上是 tn+1的物品了，这个地方都是 tn-1，思路应该是对的，但是这个代码翻译是有问题的，发现评论区好多有问题
-</div>2023-11-16</li><br/><li><span>Smile</span> 👍（0） 💬（1）<div>public int max(int[] w,int[] v,int W,int N){
+    }</p>2023-11-16</li><br/><li><span>Smile</span> 👍（0） 💬（1）<p>dp[tn][rw] = Math.max(dp[tn-1][rw], dp[tn-1][rw-w[tn]] + v[tn]);  这个是有问题的，w[tn]实际上是 tn+1的物品了，这个地方都是 tn-1，思路应该是对的，但是这个代码翻译是有问题的，发现评论区好多有问题
+</p>2023-11-16</li><br/><li><span>Smile</span> 👍（0） 💬（1）<p>public int max(int[] w,int[] v,int W,int N){
 
         &#47;&#47;第几个物体的时候的最大价值
         &#47;&#47; dp[tn][rw] 表示浏览过 tn 件商品，能装下 rw 重量的最大剩余价值
@@ -449,7 +449,7 @@ public int lastStoneWeightII(int[] stones) {
             }
         }
         return dp[N][W];
-    }</div>2023-11-16</li><br/><li><span>风清扬</span> 👍（0） 💬（2）<div>参考评论里 Roy Liang的代码，修改了下代码，添加了部分注释：
+    }</p>2023-11-16</li><br/><li><span>风清扬</span> 👍（0） 💬（2）<p>参考评论里 Roy Liang的代码，修改了下代码，添加了部分注释：
 
 #include &lt;iostream&gt;
 #include &lt;vector&gt;
@@ -493,7 +493,7 @@ int main() {
   cout &lt;&lt; &quot;part1:&quot;&lt;&lt;part1&lt;&lt;&quot;,part2:&quot;&lt;&lt;part2&lt;&lt;&quot;,abs:&quot;&lt;&lt;abs(part1 - part2) &lt;&lt; endl;
 
   return 0;
-}</div>2023-03-05</li><br/><li><span>小灰</span> 👍（0） 💬（1）<div>       根据老师的代码，我用了 C#实现，请老师赐教，代码如下:  
+}</p>2023-03-05</li><br/><li><span>小灰</span> 👍（0） 💬（1）<p>       根据老师的代码，我用了 C#实现，请老师赐教，代码如下:  
        &#47;&#47;&#47; &lt;summary&gt;
         &#47;&#47;&#47; 0-1 背包问题（针对当前物品，是放入背包，还是不放入背包时的价值最大）
         &#47;&#47;&#47; &lt;&#47;summary&gt;
@@ -539,7 +539,7 @@ int main() {
         public static IEnumerable KnapsackSource()
         {
             yield return new TestCaseData(new int[] { 0, 3, 2, 1 }, new int[] { 0, 5, 2, 3 }, 3, 5, 8);
-        }</div>2022-04-07</li><br/><li><span>alex_lai</span> 👍（0） 💬（1）<div>dp[n,w]中的n 不是表示第几个item在还剩w空间的情况下的最优解 而是总共可以选n个item在w空间里的最优解吧？！ 我的意思n的值跟顺序无关，比如dp[1, 10] 就是选一个item给10的空间 最优是多少</div>2022-01-27</li><br/><li><span>coder</span> 👍（0） 💬（1）<div>背包基本问题，做决策部分：“如果背包容量小于当前物品价值”
+        }</p>2022-04-07</li><br/><li><span>alex_lai</span> 👍（0） 💬（1）<p>dp[n,w]中的n 不是表示第几个item在还剩w空间的情况下的最优解 而是总共可以选n个item在w空间里的最优解吧？！ 我的意思n的值跟顺序无关，比如dp[1, 10] 就是选一个item给10的空间 最优是多少</p>2022-01-27</li><br/><li><span>coder</span> 👍（0） 💬（1）<p>背包基本问题，做决策部分：“如果背包容量小于当前物品价值”
 
-应该是“小于当前物品重量”或者“小于当前物品体积”吧？</div>2021-12-21</li><br/><li><span>放飞风筝</span> 👍（0） 💬（1）<div>主要抓住状态参数（构建备忘录）和转移方程</div>2021-08-29</li><br/><li><span>Alvin</span> 👍（0） 💬（1）<div>看到这里一直觉得这个思路很奇怪，为什么是先初始化状态参数，再确定状态参数。不先确定状态参数，怎么初始化？每次看老师的思路说先初始化xxx，感觉其实就已经确定了xxx是状态参数。</div>2021-07-06</li><br/>
+应该是“小于当前物品重量”或者“小于当前物品体积”吧？</p>2021-12-21</li><br/><li><span>放飞风筝</span> 👍（0） 💬（1）<p>主要抓住状态参数（构建备忘录）和转移方程</p>2021-08-29</li><br/><li><span>Alvin</span> 👍（0） 💬（1）<p>看到这里一直觉得这个思路很奇怪，为什么是先初始化状态参数，再确定状态参数。不先确定状态参数，怎么初始化？每次看老师的思路说先初始化xxx，感觉其实就已经确定了xxx是状态参数。</p>2021-07-06</li><br/>
 </ul>

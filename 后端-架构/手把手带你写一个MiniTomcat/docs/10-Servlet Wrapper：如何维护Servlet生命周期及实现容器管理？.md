@@ -428,15 +428,15 @@ public void invoke(HttpRequest request, HttpResponse response)
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：为什么Cookie有实现而Session没有实现？
 代码中的Session类实现了HttpSession接口，但代码中用的Cookie是系统提供的。为什么Session就没有系统提供的实现类？
 
 Q2：C++服务器有哪些？
-看到一篇介绍用C++开发服务器的文章，说明有C++开发的服务器。Tomcat是用Java开发的。那么，有什么C++开发的服务器产品？用在什么场景下？互联网公司一般不用C++服务器吧。</div>2023-12-30</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>请一个副总吧， 管理每个部门的 Connector 和 Container， 负责他们两个创建和相互引用</div>2023-12-29</li><br/><li><span>silentyears</span> 👍（0） 💬（0）<div>老师，connector和container互相指引，这种类的依赖关系是不是不太好？像在spring中就是循环依赖</div>2024-06-18</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>发的留言怎么没有显示出来，再发一次：
+看到一篇介绍用C++开发服务器的文章，说明有C++开发的服务器。Tomcat是用Java开发的。那么，有什么C++开发的服务器产品？用在什么场景下？互联网公司一般不用C++服务器吧。</p>2023-12-30</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>请一个副总吧， 管理每个部门的 Connector 和 Container， 负责他们两个创建和相互引用</p>2023-12-29</li><br/><li><span>silentyears</span> 👍（0） 💬（0）<p>老师，connector和container互相指引，这种类的依赖关系是不是不太好？像在spring中就是循环依赖</p>2024-06-18</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>发的留言怎么没有显示出来，再发一次：
 Q1：为什么Cookie有实现而Session没有实现？
 代码中的Session类实现了HttpSession接口，但代码中用的Cookie是系统提供的。为什么Session就没有系统提供的实现类？
 
 Q2：C++服务器有哪些？
-看到一篇介绍用C++开发服务器的文章，说明有C++开发的服务器。Tomcat是用Java开发的。那么，有什么C++开发的服务器产品？用在什么场景下？互联网公司一般不用C++服务器吧。</div>2024-01-01</li><br/>
+看到一篇介绍用C++开发服务器的文章，说明有C++开发的服务器。Tomcat是用Java开发的。那么，有什么C++开发的服务器产品？用在什么场景下？互联网公司一般不用C++服务器吧。</p>2024-01-01</li><br/>
 </ul>

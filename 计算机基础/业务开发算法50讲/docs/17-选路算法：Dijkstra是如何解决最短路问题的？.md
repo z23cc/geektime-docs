@@ -219,9 +219,9 @@ Dijkstra算法实现起来还是有一定难度的，你可以多去力扣上找
 
 每个数据包里包含了目标地址，具体还有哪些内容，你可以去补习一下计算机网络的基础内容，推荐学习UW的[计算机网络](https://www.bilibili.com/video/BV1jt411M73w?from=search&seid=4894501404846508505&spm_id_from=333.337.0.0)课。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（3） 💬（1）<div>Dijkstra 算法是逐步构建最短路径树，树中的节点的最短距离不依赖于树外节点，这样才可以一个节点加入最短路径树之后，距离不再改变。负权节点的存在会让加入最短路径树的节点的真实最短路径会因为不在树中的节点而改变，整个算法也就无效了。
+<li><span>Paul Shan</span> 👍（3） 💬（1）<p>Dijkstra 算法是逐步构建最短路径树，树中的节点的最短距离不依赖于树外节点，这样才可以一个节点加入最短路径树之后，距离不再改变。负权节点的存在会让加入最短路径树的节点的真实最短路径会因为不在树中的节点而改变，整个算法也就无效了。
 如果用最小堆作为数据结构选择最短路径，可以让内存循环的复杂度降为lg V，最终的复杂度可以降为(V+E)lg V
-</div>2022-01-18</li><br/><li><span>ZeroIce</span> 👍（1） 💬（1）<div>有时候在想:负权边的意义是什么? 应用场景在哪里?🤪</div>2022-02-14</li><br/><li><span>到道可道</span> 👍（0） 💬（1）<div>Dijkstra的Java实现
+</p>2022-01-18</li><br/><li><span>ZeroIce</span> 👍（1） 💬（1）<p>有时候在想:负权边的意义是什么? 应用场景在哪里?🤪</p>2022-02-14</li><br/><li><span>到道可道</span> 👍（0） 💬（1）<p>Dijkstra的Java实现
 private int dijkstra(List&lt;int[]&gt;[] graph, int src, int k, int dst) {
         &#47;&#47; 从起点src到达节点i的最短路径权重为distTo[i]
         int[] distTo = new int[graph.length];
@@ -272,5 +272,5 @@ private int dijkstra(List&lt;int[]&gt;[] graph, int src, int k, int dst) {
 
         return -1;
     }
-</div>2022-03-06</li><br/>
+</p>2022-03-06</li><br/>
 </ul>

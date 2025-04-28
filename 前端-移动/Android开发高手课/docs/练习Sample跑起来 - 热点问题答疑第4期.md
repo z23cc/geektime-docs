@@ -34,12 +34,12 @@ Gradle学习的困难更多来自于Android Gradle Plugin对Gradle做的一些�
 
 最后送出3本“极客周历”给用户故事“[专栏学得苦？可能是方法没找对](http://time.geekbang.org/column/article/77342)”留言点赞数前三的同学，分别是@坚持远方、@蜗牛、@JIA，感谢同学们的参与。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>X</span> 👍（2） 💬（3）<div>文中有个笔误:“SampleApp 中其 p 的 e.systrace.TraceTag&quot; 这句话我推测应该是&quot;com.sample.systrace.TraceTag&quot;，同学们移植时要确保TraceTag的路径为com.sample.systrace.TraceTag，否则会报NoClassDefFoundError的。
+<li><span>X</span> 👍（2） 💬（3）<p>文中有个笔误:“SampleApp 中其 p 的 e.systrace.TraceTag&quot; 这句话我推测应该是&quot;com.sample.systrace.TraceTag&quot;，同学们移植时要确保TraceTag的路径为com.sample.systrace.TraceTag，否则会报NoClassDefFoundError的。
 
-</div>2019-03-14</li><br/><li><span>SunnyBird</span> 👍（1） 💬（0）<div>很棒 谢谢老师</div>2019-01-27</li><br/><li><span>yuanyuan</span> 👍（0） 💬（0）<div>生成的trace html显示
+</p>2019-03-14</li><br/><li><span>SunnyBird</span> 👍（1） 💬（0）<p>很棒 谢谢老师</p>2019-01-27</li><br/><li><span>yuanyuan</span> 👍（0） 💬（0）<p>生成的trace html显示
 activityStart(Did Not Finish)
 com.sample.systrace.MainActivity.onCreate.(Landroid.os.Bundle;)V(Did Not Finish)，
 实际上onCreate早运行完成了，感觉Trace一直卡在onCreate()，我自己手动插桩就是正常的，请问这是什么原因？
 
-</div>2020-02-08</li><br/>
+</p>2020-02-08</li><br/>
 </ul>

@@ -1094,7 +1094,7 @@ public String name(OAuth2Authentication authentication) {
 
 最后，我再提一下，将来Spring对于OAuth 2.0的支持可能会转移到[由社区推进的Spring Authorization Server项目上来继续运作](https://spring.io/blog/2020/04/15/announcing-the-spring-authorization-server)。如果你感兴趣的话，可以及时关注这个项目的进展。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>benxiong</span> 👍（2） 💬（2）<div>创建表的时候报错了：
+<li><span>benxiong</span> 👍（2） 💬（2）<p>创建表的时候报错了：
 CREATE TABLE `oauth_client_details` (
   `client_id` varchar(255) NOT NULL,
   `resource_ids` varchar(255) DEFAULT NULL,
@@ -1116,7 +1116,7 @@ CREATE TABLE `oauth_client_details` (
 
 但是我是很信服朱晔老师的，他非常严谨，他肯定是测试通过以后才发表的文章，所以我觉得应该还有别的原因导致他可以创建，而我却报错。
 
-这个原因期待老师和别的小伙伴帮忙解答。</div>2020-09-10</li><br/><li><span>布吉岛</span> 👍（1） 💬（1）<div>csrf攻击不讲嘛？</div>2020-08-15</li><br/><li><span>Geek_fb74a8</span> 👍（1） 💬（3）<div>请教一下老师，使用jwt的话应该怎么处理过期以及登出等处理？可否将jwt令牌存入Redis？</div>2020-08-06</li><br/><li><span>Tim Zhang</span> 👍（1） 💬（1）<div>有个问题，请指教：
+这个原因期待老师和别的小伙伴帮忙解答。</p>2020-09-10</li><br/><li><span>布吉岛</span> 👍（1） 💬（1）<p>csrf攻击不讲嘛？</p>2020-08-15</li><br/><li><span>Geek_fb74a8</span> 👍（1） 💬（3）<p>请教一下老师，使用jwt的话应该怎么处理过期以及登出等处理？可否将jwt令牌存入Redis？</p>2020-08-06</li><br/><li><span>Tim Zhang</span> 👍（1） 💬（1）<p>有个问题，请指教：
 我的需求是想开发一个统一认证平台，公司内所有应用需要认证，资源权限管控的都走这个应用
 
 用户首先访问a应用的某个webapi(受保护应用)，a应用发现token不存在，跳转到我的统一认证授权中心的登录界面，选择使用微信进行认证，认证成功后，根据我的数据库中的rbac表，查询这个用户在a应用的权限与角色，生成token，将token返回给受保护资源的应用a，然后a应用进行验证。
@@ -1133,7 +1133,7 @@ ler中的路由url，在这些url之上使用切面逻辑来验证token中的资
 
 5、受保护资源应用自己的数据库中假设存有用户表，是否还要与统一认证中的用户表进行实时关联，比如a应用的用户aa删除了，还需要实时删除统一认证中的aa用户在a应用中的数据
 
-问题较多，乱，请老师抽空回复下，谢谢了</div>2020-07-24</li><br/><li><span>苗</span> 👍（10） 💬（1）<div>导出公钥证书的命令：keytool -list -rfc --keystore mytest.jks | openssl x509 -inform pem -pubkey</div>2021-05-11</li><br/><li><span>而立斋</span> 👍（6） 💬（0）<div>爱了，我要去手撸一遍，验证一下真伪。哈哈</div>2020-07-23</li><br/><li><span>Younger Ku</span> 👍（5） 💬（0）<div>能把源码带着看一遍，再把经常需要定制化的地方讲一下就好了。无论如何只停留在demo使用层面总感觉心里不踏实。</div>2020-08-19</li><br/><li><span>行一善</span> 👍（2） 💬（0）<div> 生成jks密钥库	生成.jks文件
+问题较多，乱，请老师抽空回复下，谢谢了</p>2020-07-24</li><br/><li><span>苗</span> 👍（10） 💬（1）<p>导出公钥证书的命令：keytool -list -rfc --keystore mytest.jks | openssl x509 -inform pem -pubkey</p>2021-05-11</li><br/><li><span>而立斋</span> 👍（6） 💬（0）<p>爱了，我要去手撸一遍，验证一下真伪。哈哈</p>2020-07-23</li><br/><li><span>Younger Ku</span> 👍（5） 💬（0）<p>能把源码带着看一遍，再把经常需要定制化的地方讲一下就好了。无论如何只停留在demo使用层面总感觉心里不踏实。</p>2020-08-19</li><br/><li><span>行一善</span> 👍（2） 💬（0）<p> 生成jks密钥库	生成.jks文件
  keytool -genkey -alias tutorialspedia -keyalg RSA -keystore &quot;&#47;home&#47;yaoshenglu&#47;keytool&#47;tutorialspedia.jks&quot;
   keytool -genkey -alias jwt -keyalg RSA -keystore &quot;&#47;home&#47;yaoshenglu&#47;keytool&#47;jwt.jks&quot;
 
@@ -1143,7 +1143,7 @@ ler中的路由url，在这些url之上使用切面逻辑来验证token中的资
  
  查看公钥
  keytool -list -rfc --keystore tutorialspedia.jks | openssl x509 -inform pem -pubkey
-  keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey</div>2022-08-05</li><br/><li><span>Geek_0d99c9</span> 👍（2） 💬（3）<div>代码有点问题.直接访问8082&#47; 还是被重定向到login页面.OAuth2ClientApplication这个里面的EnableOAuth2Sso注解会覆盖WebSecurityConfig里面的免登录配置.所以应该把两个合并下
+  keytool -list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey</p>2022-08-05</li><br/><li><span>Geek_0d99c9</span> 👍（2） 💬（3）<p>代码有点问题.直接访问8082&#47; 还是被重定向到login页面.OAuth2ClientApplication这个里面的EnableOAuth2Sso注解会覆盖WebSecurityConfig里面的免登录配置.所以应该把两个合并下
 
 package me.josephzhu.springsecurity101.cloud.auth.client;
 
@@ -1186,7 +1186,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 }
 
-</div>2020-12-18</li><br/><li><span>Anony</span> 👍（2） 💬（1）<div>客户端使用了@EnableOAuth2Sso，里面包含自己的WebSecurity会拦截所有请求。而后自己定义的WebSecurity，Order是200，实际上是不起作用的吧，即使让某些url permitAll，也会直接跳转到授权服务器的登录页。请求都会直接被靠前的EnableOAuth2Sso里的过滤链处理 。</div>2020-12-02</li><br/><li><span>jiangb</span> 👍（1） 💬（0）<div>实操了一遍，运行OK。</div>2022-02-10</li><br/><li><span>工资不交税</span> 👍（1） 💬（2）<div>对于sso的实现还是不理解。看起来全程没有用到cookie，那授权服务是如何知道来自两个域名的请求是同一个用户？</div>2020-07-23</li><br/><li><span>BingoJ</span> 👍（0） 💬（0）<div>一直报这个错，
+</p>2020-12-18</li><br/><li><span>Anony</span> 👍（2） 💬（1）<p>客户端使用了@EnableOAuth2Sso，里面包含自己的WebSecurity会拦截所有请求。而后自己定义的WebSecurity，Order是200，实际上是不起作用的吧，即使让某些url permitAll，也会直接跳转到授权服务器的登录页。请求都会直接被靠前的EnableOAuth2Sso里的过滤链处理 。</p>2020-12-02</li><br/><li><span>jiangb</span> 👍（1） 💬（0）<p>实操了一遍，运行OK。</p>2022-02-10</li><br/><li><span>工资不交税</span> 👍（1） 💬（2）<p>对于sso的实现还是不理解。看起来全程没有用到cookie，那授权服务是如何知道来自两个域名的请求是同一个用户？</p>2020-07-23</li><br/><li><span>BingoJ</span> 👍（0） 💬（0）<p>一直报这个错，
 生成jks和公钥的命令如下，也不知道哪里不对
    keytool -genkeypair -alias jwt -keyalg RSA -keysize 2048 -validity 365 -keystore jwt.jks
     keytool -exportcert -alias jwt -file public.cert -keystore jwt.jks -rfc
@@ -1197,5 +1197,5 @@ Caused by: java.lang.IllegalStateException: For MAC signing you do not need to s
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
 	... 53 common frames omitted
-</div>2024-08-15</li><br/><li><span>ξ！</span> 👍（0） 💬（0）<div>可不可以出一期加餐security6.0的版本啊</div>2024-06-19</li><br/><li><span>Geek_4b4d7b</span> 👍（0） 💬（0）<div>老师好，请教下单点登录为啥会有http:&#47;&#47;localhost:8083&#47;ui&#47;login的访问地址，登录页面不是在认证服务8080上吗？</div>2022-03-26</li><br/>
+</p>2024-08-15</li><br/><li><span>ξ！</span> 👍（0） 💬（0）<p>可不可以出一期加餐security6.0的版本啊</p>2024-06-19</li><br/><li><span>Geek_4b4d7b</span> 👍（0） 💬（0）<p>老师好，请教下单点登录为啥会有http:&#47;&#47;localhost:8083&#47;ui&#47;login的访问地址，登录页面不是在认证服务8080上吗？</p>2022-03-26</li><br/>
 </ul>

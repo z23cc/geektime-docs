@@ -209,8 +209,8 @@ def read_and_process(path):
 
 欢迎在留言区写下你的经历，还有今天学习的心得和疑惑，与我一起分享。也欢迎你把这篇文章分享给你的同事、朋友，我们一起交流，一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>更好的做自己</span> 👍（79） 💬（3）<div>个人认为assert的使用应该是，有没有assert程序都能够正常运行，但有了assert可以使我们的代码后期维护更加方便</div>2019-07-12</li><br/><li><span>小侠龙旋风</span> 👍（13） 💬（1）<div>印象中好像就这个用法比较常用一点：
-assert isinstance(input, list), &#39;input must be type of list&#39;</div>2019-07-12</li><br/><li><span>阿卡牛</span> 👍（9） 💬（3）<div>正式上线时也建议用assert??</div>2019-07-12</li><br/><li><span>稳</span> 👍（3） 💬（1）<div>我记得以前看过assert会严重影响运行性能，所以一直不在代码里用。工作中，主要是单元测试用，想跟老师了解fb的规定</div>2019-07-12</li><br/><li><span>梁大瓜</span> 👍（12） 💬（0）<div>我记得最早写机器学习代码的时候，assert用来检查输入。</div>2019-08-07</li><br/><li><span>图·美克尔</span> 👍（9） 💬（0）<div>写测试代码时用</div>2019-07-15</li><br/><li><span>郭纯</span> 👍（9） 💬（0）<div>怎么确定使用还是不使用 assert 首先确定这段代码是否有出现错误的可能 然后再确定删除 assert 代码会不会影响到原有的逻辑. assert 不应该用到业务的逻辑代码中 更多的是参数的检查，一段算法结果的验证. </div>2020-10-17</li><br/><li><span>云蝈蝈</span> 👍（5） 💬（4）<div>学习assert的时候用过</div>2020-08-05</li><br/><li><span>Fergus</span> 👍（4） 💬（0）<div>assert 测试一个条件是否满足
+<li><span>更好的做自己</span> 👍（79） 💬（3）<p>个人认为assert的使用应该是，有没有assert程序都能够正常运行，但有了assert可以使我们的代码后期维护更加方便</p>2019-07-12</li><br/><li><span>小侠龙旋风</span> 👍（13） 💬（1）<p>印象中好像就这个用法比较常用一点：
+assert isinstance(input, list), &#39;input must be type of list&#39;</p>2019-07-12</li><br/><li><span>阿卡牛</span> 👍（9） 💬（3）<p>正式上线时也建议用assert??</p>2019-07-12</li><br/><li><span>稳</span> 👍（3） 💬（1）<p>我记得以前看过assert会严重影响运行性能，所以一直不在代码里用。工作中，主要是单元测试用，想跟老师了解fb的规定</p>2019-07-12</li><br/><li><span>梁大瓜</span> 👍（12） 💬（0）<p>我记得最早写机器学习代码的时候，assert用来检查输入。</p>2019-08-07</li><br/><li><span>图·美克尔</span> 👍（9） 💬（0）<p>写测试代码时用</p>2019-07-15</li><br/><li><span>郭纯</span> 👍（9） 💬（0）<p>怎么确定使用还是不使用 assert 首先确定这段代码是否有出现错误的可能 然后再确定删除 assert 代码会不会影响到原有的逻辑. assert 不应该用到业务的逻辑代码中 更多的是参数的检查，一段算法结果的验证. </p>2020-10-17</li><br/><li><span>云蝈蝈</span> 👍（5） 💬（4）<p>学习assert的时候用过</p>2020-08-05</li><br/><li><span>Fergus</span> 👍（4） 💬（0）<p>assert 测试一个条件是否满足
 
 检查值在某一确定的范围：
 assert a&gt;0, “a must &gt; 0”
@@ -220,8 +220,8 @@ assert isinstance(a, list), “a should be list”
 
 注：
 1. assert 是可以使用-O关闭的；
-2. run-time error需要使用try-except异常处理；</div>2019-07-17</li><br/><li><span>丁丁历险记</span> 👍（3） 💬（0）<div>个人理解，assert 主要是做健壮性处理。</div>2019-10-07</li><br/><li><span>倾</span> 👍（3） 💬（0）<div>一般不怎么用，全部使用异常处理的。</div>2019-07-15</li><br/><li><span>Ray</span> 👍（2） 💬（0）<div>之前在一个C++程序中用过assert语句，记得好像是在一个FTP下载模块中。后来很长时间没啥问题后也忘了，然后有一阵程序偶尔异常退出，查了半天发现是assert条件原因，最后发现原来是交换机出问题了时好时坏。</div>2020-03-17</li><br/><li><span>自由民</span> 👍（2） 💬（2）<div>在c++里用过，用得不多。Python里没用过。</div>2019-10-20</li><br/><li><span>Eski</span> 👍（2） 💬（0）<div>经常在 try except 当中用 assert，比较方便在一些不需要程序继续执行下去的地方跳出来，比if else好用</div>2019-07-16</li><br/><li><span>D.mc</span> 👍（0） 💬（0）<div>读下来认为是这样：
+2. run-time error需要使用try-except异常处理；</p>2019-07-17</li><br/><li><span>丁丁历险记</span> 👍（3） 💬（0）<p>个人理解，assert 主要是做健壮性处理。</p>2019-10-07</li><br/><li><span>倾</span> 👍（3） 💬（0）<p>一般不怎么用，全部使用异常处理的。</p>2019-07-15</li><br/><li><span>Ray</span> 👍（2） 💬（0）<p>之前在一个C++程序中用过assert语句，记得好像是在一个FTP下载模块中。后来很长时间没啥问题后也忘了，然后有一阵程序偶尔异常退出，查了半天发现是assert条件原因，最后发现原来是交换机出问题了时好时坏。</p>2020-03-17</li><br/><li><span>自由民</span> 👍（2） 💬（2）<p>在c++里用过，用得不多。Python里没用过。</p>2019-10-20</li><br/><li><span>Eski</span> 👍（2） 💬（0）<p>经常在 try except 当中用 assert，比较方便在一些不需要程序继续执行下去的地方跳出来，比if else好用</p>2019-07-16</li><br/><li><span>D.mc</span> 👍（0） 💬（0）<p>读下来认为是这样：
 1.try-except, 用于处理可能有多种异常的情况
 2.if-else, 用于处理多种情况，但不同情况都可能合理的情况
-3.assert, 则只能用于处理一种特定的情况，当要特定地确认某个情况是否发生时；或者说，一般只用于增强健壮性</div>2025-01-22</li><br/>
+3.assert, 则只能用于处理一种特定的情况，当要特定地确认某个情况是否发生时；或者说，一般只用于增强健壮性</p>2025-01-22</li><br/>
 </ul>

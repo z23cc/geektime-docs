@@ -263,7 +263,7 @@ val cleanedPairRDD: RDD[String] = wordPairRDD.filter(f)
 
 欢迎你在评论区回答这些练习题。你也可以把这一讲分享给更多的朋友或者同事，和他们一起讨论讨论，交流是学习的催化剂。我在评论区等你。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>qinsi</span> 👍（45） 💬（11）<div>不是很懂spark。mapPartitions()那里，光从代码上来看的话，在map()的闭包里可以访问到外面mapPartitions()闭包里的同一个md5实例，从而达到共享实例的效果。那么有没有可能在最外层创建一个全局的md5实例，这样就算只用map()，在闭包里访问的也是这同一个实例？这样会有什么问题吗？或者说在这种情况下mapPartitions()相比map()还有什么优势？</div>2021-09-16</li><br/><li><span>Unknown element</span> 👍（22） 💬（1）<div>老师您回答一楼的问题时提到的序列化意思是不是对象在不同节点间传输的时候只能序列化为字符串传输？如果是的话那我觉得 在mapPartitions里面创建MD5实例，map引用这个对象，Spark却没有报“Task not Serializable”错误 是因为driver把这段代码分发到了各个executor，而创建对象这个工作是由executor完成的，所以不会报错？</div>2021-09-24</li><br/><li><span>Geek_eb2d3d</span> 👍（8） 💬（1）<div>老师，我在 map 里面使用 SparkContext 或 SparkSession 创建新的 RDD，这样是可以的么？</div>2021-09-28</li><br/><li><span>Alvin-L</span> 👍（7） 💬（3）<div>Python版,虽然能跑,但是不知道对不对:
+<li><span>qinsi</span> 👍（45） 💬（11）<p>不是很懂spark。mapPartitions()那里，光从代码上来看的话，在map()的闭包里可以访问到外面mapPartitions()闭包里的同一个md5实例，从而达到共享实例的效果。那么有没有可能在最外层创建一个全局的md5实例，这样就算只用map()，在闭包里访问的也是这同一个实例？这样会有什么问题吗？或者说在这种情况下mapPartitions()相比map()还有什么优势？</p>2021-09-16</li><br/><li><span>Unknown element</span> 👍（22） 💬（1）<p>老师您回答一楼的问题时提到的序列化意思是不是对象在不同节点间传输的时候只能序列化为字符串传输？如果是的话那我觉得 在mapPartitions里面创建MD5实例，map引用这个对象，Spark却没有报“Task not Serializable”错误 是因为driver把这段代码分发到了各个executor，而创建对象这个工作是由executor完成的，所以不会报错？</p>2021-09-24</li><br/><li><span>Geek_eb2d3d</span> 👍（8） 💬（1）<p>老师，我在 map 里面使用 SparkContext 或 SparkSession 创建新的 RDD，这样是可以的么？</p>2021-09-28</li><br/><li><span>Alvin-L</span> 👍（7） 💬（3）<p>Python版,虽然能跑,但是不知道对不对:
 #哈希值计数
 ``` 
 from hashlib import md5
@@ -314,18 +314,18 @@ lineRDD = SparkContext().textFile(&quot;.&#47;wikiOfSpark.txt&quot;)
 cleanedPairRDD = lineRDD.flatMap(word_pair).filter(f)
 cleanedPairRDD.foreach(print)
 
-``` </div>2021-09-21</li><br/><li><span>Geek_a30533</span> 👍（4） 💬（1）<div>对scala的函数定义格式不是很清楚，那边绕了好几次，有一个小疑问，在flatMap里的匿名函数f
+``` </p>2021-09-21</li><br/><li><span>Geek_a30533</span> 👍（4） 💬（1）<p>对scala的函数定义格式不是很清楚，那边绕了好几次，有一个小疑问，在flatMap里的匿名函数f
 
 line =&gt; {  
 			val words: Array[String] = line.split(&quot; &quot;)  
 			for (i &lt;- 0 until words.length - 1) yield words(i) + &quot;-&quot; + words(i+1)
 		}
 
-只定义了形参是line，那出参是整个花括号么？主要是没有return，让我一下迷了，难道是最后一个是Array[String]所以返回值就是这个？不用声明吗？</div>2021-10-14</li><br/><li><span>子兮</span> 👍（4） 💬（1）<div>老师，请问，一个变量m被filter 算子内部计算时使用，若m定义在了filter算子所在函数内，也就是变量和算子在同一个函数里，就不会报序列化问题，若定义在了函数之外就会报序列化问题，这是为什么？看了一些解释，说是函数闭包，也不是很理解</div>2021-09-26</li><br/><li><span>木之上</span> 👍（3） 💬（1）<div>老师，在学习这些算子的时候，像map，flatmap是否可以类比JAVA8的lambda表达式+stream流去学习</div>2022-02-23</li><br/><li><span>DMY</span> 👍（3） 💬（3）<div>数据做map映射是以元素为粒度，执行f函数；
+只定义了形参是line，那出参是整个花括号么？主要是没有return，让我一下迷了，难道是最后一个是Array[String]所以返回值就是这个？不用声明吗？</p>2021-10-14</li><br/><li><span>子兮</span> 👍（4） 💬（1）<p>老师，请问，一个变量m被filter 算子内部计算时使用，若m定义在了filter算子所在函数内，也就是变量和算子在同一个函数里，就不会报序列化问题，若定义在了函数之外就会报序列化问题，这是为什么？看了一些解释，说是函数闭包，也不是很理解</p>2021-09-26</li><br/><li><span>木之上</span> 👍（3） 💬（1）<p>老师，在学习这些算子的时候，像map，flatmap是否可以类比JAVA8的lambda表达式+stream流去学习</p>2022-02-23</li><br/><li><span>DMY</span> 👍（3） 💬（3）<p>数据做map映射是以元素为粒度，执行f函数；
 这里业务场景中，f函数需要调用rpc，每个数据调一次rpc+数据量大就会非常耗时。
-所以想把一组数据打包成一个list减少rpc调用，来提高效率，这里要怎么处理呢</div>2021-10-20</li><br/><li><span>大叮当</span> 👍（3） 💬（4）<div>同问老师,AIK问的问题，什么时候用小括号什么时候用花括号啊，感觉scala实在有点过于灵活</div>2021-09-16</li><br/><li><span>孙浩</span> 👍（2） 💬（1）<div>有疑问，吴老师，PariedRDD中的（K，V），1.对应的数据类型应该是scala中的元组吧？2.reduceByKey为啥不支持元素是map类型？或者如果我存在一个RDD[Map[String,Int]]，我想做reduceByKey操作，应该怎么实现？</div>2021-11-05</li><br/><li><span>Geek_390836</span> 👍（2） 💬（1）<div>参考map和mapPartitions，为什么mapPartitions中的map，是对record进行getbytes而不是word.getbytes操作，刚学spark，求老师解答</div>2021-09-16</li><br/><li><span>钱鹏 Allen</span> 👍（1） 💬（1）<div>mapPartitionsWithIndex  需要结合分区索引使用
+所以想把一组数据打包成一个list减少rpc调用，来提高效率，这里要怎么处理呢</p>2021-10-20</li><br/><li><span>大叮当</span> 👍（3） 💬（4）<p>同问老师,AIK问的问题，什么时候用小括号什么时候用花括号啊，感觉scala实在有点过于灵活</p>2021-09-16</li><br/><li><span>孙浩</span> 👍（2） 💬（1）<p>有疑问，吴老师，PariedRDD中的（K，V），1.对应的数据类型应该是scala中的元组吧？2.reduceByKey为啥不支持元素是map类型？或者如果我存在一个RDD[Map[String,Int]]，我想做reduceByKey操作，应该怎么实现？</p>2021-11-05</li><br/><li><span>Geek_390836</span> 👍（2） 💬（1）<p>参考map和mapPartitions，为什么mapPartitions中的map，是对record进行getbytes而不是word.getbytes操作，刚学spark，求老师解答</p>2021-09-16</li><br/><li><span>钱鹏 Allen</span> 👍（1） 💬（1）<p>mapPartitionsWithIndex  需要结合分区索引使用
 map filter flatMap mapPartitions mapPartitionsWithIndex  通过函数，传递参数，返回新的RDD
-mapPartitions 采集系统中，只需实例化一次电表号，可读其他各类读数</div>2021-09-18</li><br/><li><span>艾利特-G</span> 👍（0） 💬（1）<div>&#47;&#47; 相邻词汇计数统计
+mapPartitions 采集系统中，只需实例化一次电表号，可读其他各类读数</p>2021-09-18</li><br/><li><span>艾利特-G</span> 👍（0） 💬（1）<p>&#47;&#47; 相邻词汇计数统计
 package com.shouneng
 
 import org.apache.spark.rdd.RDD
@@ -366,7 +366,7 @@ object NeighboringWordCount {
       }
     }
   }
-}</div>2022-01-03</li><br/><li><span>孙浩</span> 👍（0） 💬（1）<div>吴老师，mapPartitions的是不是也避免了对象锁的问题，因为partitions对应的也是任务数。</div>2021-11-05</li><br/><li><span>小强</span> 👍（0） 💬（1）<div>import org.apache.spark.rdd.RDD
+}</p>2022-01-03</li><br/><li><span>孙浩</span> 👍（0） 💬（1）<p>吴老师，mapPartitions的是不是也避免了对象锁的问题，因为partitions对应的也是任务数。</p>2021-11-05</li><br/><li><span>小强</span> 👍（0） 💬（1）<p>import org.apache.spark.rdd.RDD
  
 &#47;&#47; 这里的下划线&quot;_&quot;是占位符，代表数据文件的根目录
 val rootPath: String = &quot;&#47;home&#47;gxchen&#47;Spark&#47;01-wordCount&quot;
@@ -417,5 +417,5 @@ java.lang.ArrayIndexOutOfBoundsException: 1
 21&#47;10&#47;24 04:58:42 ERROR TaskSetManager: Task 1 in stage 2.0 failed 1 times; aborting job
 21&#47;10&#47;24 04:58:42 ERROR Executor: Exception in task 0.0 in stage 2.0 (TID 2)
 
-21&#47;10&#47;24 04:58:42 WARN TaskSetManager: Lost task 0.0 in stage 2.0 (TID 2) (localhost executor driver): java.lang.ArrayIndexOutOfBoundsException: 0</div>2021-10-24</li><br/>
+21&#47;10&#47;24 04:58:42 WARN TaskSetManager: Lost task 0.0 in stage 2.0 (TID 2) (localhost executor driver): java.lang.ArrayIndexOutOfBoundsException: 0</p>2021-10-24</li><br/>
 </ul>

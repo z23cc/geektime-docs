@@ -299,7 +299,7 @@ Java提供的框架比较简单，只包含java.util.Observable和java.util.Obse
 
 欢迎留言和我分享你的想法。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>zz</span> 👍（36） 💬（7）<div>看到源码中有这么多的if else，瞬间给了自己一些信心。</div>2020-06-05</li><br/><li><span>悟光</span> 👍（11） 💬（0）<div>支持按照消息类型匹配观察者，最终调用 SimpleApplicationEventMulticaster 类的multicastEvent方法通过反射匹配类型。根据配置采用异步还是同步的监听方式。
+<li><span>zz</span> 👍（36） 💬（7）<p>看到源码中有这么多的if else，瞬间给了自己一些信心。</p>2020-06-05</li><br/><li><span>悟光</span> 👍（11） 💬（0）<p>支持按照消息类型匹配观察者，最终调用 SimpleApplicationEventMulticaster 类的multicastEvent方法通过反射匹配类型。根据配置采用异步还是同步的监听方式。
 	public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
 		ResolvableType type = (eventType != null ? eventType : resolveDefaultEventType(event));
 		Executor executor = getTaskExecutor();
@@ -312,7 +312,7 @@ Java提供的框架比较简单，只包含java.util.Observable和java.util.Obse
 			}
 		}
 	}
-</div>2020-05-18</li><br/><li><span>Heaven</span> 👍（10） 💬（1）<div>看了下源码,其流程可以从
+</p>2020-05-18</li><br/><li><span>Heaven</span> 👍（10） 💬（1）<p>看了下源码,其流程可以从
 图片: https:&#47;&#47;uploader.shimo.im&#47;f&#47;fZuIVWFIlWQnnRFq.png
 推送Event时候,去发送Event开始走
 主要就是这个
@@ -324,9 +324,9 @@ Java提供的框架比较简单，只包含java.util.Observable和java.util.Obse
 在这个方法中,会在add返回的结果的时候,会调用一个方法supportsEvent(),
 这才是真正进行匹配的方法
 图片: https:&#47;&#47;uploader.shimo.im&#47;f&#47;102Ia9ToqIw5ZOyq.png
-匹配事件和源类型是否一致,一致才算做可以发送</div>2020-05-18</li><br/><li><span>test</span> 👍（8） 💬（0）<div>用反射获取的type</div>2020-05-18</li><br/><li><span>Monday</span> 👍（7） 💬（1）<div>定义了一个bean同时实现了InitializingBean, BeanPostProcessor, DisposableBean，发现方法跟老师最后一张图的不一致：
+匹配事件和源类型是否一致,一致才算做可以发送</p>2020-05-18</li><br/><li><span>test</span> 👍（8） 💬（0）<p>用反射获取的type</p>2020-05-18</li><br/><li><span>Monday</span> 👍（7） 💬（1）<p>定义了一个bean同时实现了InitializingBean, BeanPostProcessor, DisposableBean，发现方法跟老师最后一张图的不一致：
 1、顺序是构造器、afterPropertiesSet、postProcessBeforeInitialization、postProcessAfterInitialization、destroy
-2、postProcessBeforeInitialization、postProcessAfterInitialization这两个方法交替执行了N次</div>2020-05-20</li><br/><li><span>松小鼠</span> 👍（6） 💬（3）<div>昨天刚好在隔壁小马哥那里看到了，两个课一起听，侧重点不同，都很重要啊</div>2020-05-18</li><br/><li><span>Tobias</span> 👍（3） 💬（0）<div>Spring 提供的观察者模式是支持按照消息类型匹配观察者。getApplicationListeners(event, type) 方法会根据eventtype 找到对应的的listeners. getApplicationListeners(event, type) 通过反射找到 event 以及event的子类 对应的listeners.</div>2020-07-27</li><br/><li><span>tonyli</span> 👍（2） 💬（0）<div>使用模板模式定义了一系列步骤的骨架，是各类框架的根本设计模式。</div>2022-09-19</li><br/><li><span>握了个大蚂蚱</span> 👍（2） 💬（0）<div>1.实现InitializingBean的初始化方法，也是约定优于配置的一个体现，只不过不是覆盖默认值而是实现init-method的一个前置方法afterPropertiesSet。
-2.实现InitializingBean的初始化方法和自己指定init-method相比，侵入性更高，所以不太推荐。可以用注解版的@Bean(initMethod = &quot;xx&quot;)来指定初始化方法，或者使用JSR250中的@PostConstruct标注在初始化方法上来让程序回调。</div>2020-10-12</li><br/><li><span>剑八</span> 👍（2） 💬（1）<div>spring中的refresh是一个模板方法：
-大致有：注册beanFactoryPostProcessor，beanPostProcessor，读取bean definition，创建并初始化bean,等</div>2020-07-05</li><br/><li><span>李金鹏</span> 👍（0） 💬（0）<div>自定义注解加AOP可以实现支持按照消息类型匹配观察者</div>2022-01-24</li><br/><li><span>鹤涵</span> 👍（0） 💬（1）<div>策论模式 缓存对象类型和处理器的关系</div>2021-02-25</li><br/><li><span>子房</span> 👍（0） 💬（0）<div>spring 中通过 simple 实现类发送事件，并维护了事件和监听者的映射关系，当需要发送一个事件时会把该事件对应的监听者取出，并执行。</div>2021-02-04</li><br/><li><span>o0oi1i</span> 👍（0） 💬（0）<div>打卡85</div>2020-11-02</li><br/>
+2、postProcessBeforeInitialization、postProcessAfterInitialization这两个方法交替执行了N次</p>2020-05-20</li><br/><li><span>松小鼠</span> 👍（6） 💬（3）<p>昨天刚好在隔壁小马哥那里看到了，两个课一起听，侧重点不同，都很重要啊</p>2020-05-18</li><br/><li><span>Tobias</span> 👍（3） 💬（0）<p>Spring 提供的观察者模式是支持按照消息类型匹配观察者。getApplicationListeners(event, type) 方法会根据eventtype 找到对应的的listeners. getApplicationListeners(event, type) 通过反射找到 event 以及event的子类 对应的listeners.</p>2020-07-27</li><br/><li><span>tonyli</span> 👍（2） 💬（0）<p>使用模板模式定义了一系列步骤的骨架，是各类框架的根本设计模式。</p>2022-09-19</li><br/><li><span>握了个大蚂蚱</span> 👍（2） 💬（0）<p>1.实现InitializingBean的初始化方法，也是约定优于配置的一个体现，只不过不是覆盖默认值而是实现init-method的一个前置方法afterPropertiesSet。
+2.实现InitializingBean的初始化方法和自己指定init-method相比，侵入性更高，所以不太推荐。可以用注解版的@Bean(initMethod = &quot;xx&quot;)来指定初始化方法，或者使用JSR250中的@PostConstruct标注在初始化方法上来让程序回调。</p>2020-10-12</li><br/><li><span>剑八</span> 👍（2） 💬（1）<p>spring中的refresh是一个模板方法：
+大致有：注册beanFactoryPostProcessor，beanPostProcessor，读取bean definition，创建并初始化bean,等</p>2020-07-05</li><br/><li><span>李金鹏</span> 👍（0） 💬（0）<p>自定义注解加AOP可以实现支持按照消息类型匹配观察者</p>2022-01-24</li><br/><li><span>鹤涵</span> 👍（0） 💬（1）<p>策论模式 缓存对象类型和处理器的关系</p>2021-02-25</li><br/><li><span>子房</span> 👍（0） 💬（0）<p>spring 中通过 simple 实现类发送事件，并维护了事件和监听者的映射关系，当需要发送一个事件时会把该事件对应的监听者取出，并执行。</p>2021-02-04</li><br/><li><span>o0oi1i</span> 👍（0） 💬（0）<p>打卡85</p>2020-11-02</li><br/>
 </ul>

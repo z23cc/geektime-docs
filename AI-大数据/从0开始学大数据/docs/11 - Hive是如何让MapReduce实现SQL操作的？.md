@@ -102,10 +102,10 @@ Cloudera开发了Impala，这是一种运行在HDFS上的MPP架构的SQL引擎�
 
 欢迎你写下自己的思考或疑问，与我和其他同学一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李志博</span> 👍（52） 💬（3）<div>技术嫁接，我还真搞过2个，1个是selenium + 网上找的代码改本机host 实现 自动测试线上的每台机器的功能，另外1个是 java agent + jd-core （一个反编译软件的底层库）实现profile 监控同时能显示线上跑的真实的代码内容</div>2018-11-22</li><br/><li><span>朱国伟</span> 👍（20） 💬（1）<div>李老师 在跟着学的过程中 基本上都是现学的 比如 hive
+<li><span>李志博</span> 👍（52） 💬（3）<p>技术嫁接，我还真搞过2个，1个是selenium + 网上找的代码改本机host 实现 自动测试线上的每台机器的功能，另外1个是 java agent + jd-core （一个反编译软件的底层库）实现profile 监控同时能显示线上跑的真实的代码内容</p>2018-11-22</li><br/><li><span>朱国伟</span> 👍（20） 💬（1）<p>李老师 在跟着学的过程中 基本上都是现学的 比如 hive
 https:&#47;&#47;cwiki.apache.org&#47;confluence&#47;display&#47;Hive&#47;GettingStarted
 
-在学习课程的过程中 是不是先不用对涉及到的这些大数据技术 如hdfs yarn hive等去做深入了解 只需跑一下GettingStared即可 即有个概念</div>2018-12-15</li><br/><li><span>贺爷</span> 👍（9） 💬（1）<div>李老师，我之前买过您的《大型网站技术架构案例》并学习过，我想问下，对于一个程序员说，技术功底应该达到什么程度才可以去接触、学习和实践架构方面得东西呢？</div>2019-04-20</li><br/><li><span>大数据技术与数仓</span> 👍（8） 💬（1）<div>package com.company.sparkcore
+在学习课程的过程中 是不是先不用对涉及到的这些大数据技术 如hdfs yarn hive等去做深入了解 只需跑一下GettingStared即可 即有个概念</p>2018-12-15</li><br/><li><span>贺爷</span> 👍（9） 💬（1）<p>李老师，我之前买过您的《大型网站技术架构案例》并学习过，我想问下，对于一个程序员说，技术功底应该达到什么程度才可以去接触、学习和实践架构方面得东西呢？</p>2019-04-20</li><br/><li><span>大数据技术与数仓</span> 👍（8） 💬（1）<p>package com.company.sparkcore
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -144,12 +144,12 @@ object JoinBySpark {
   }
 
 
-}</div>2018-11-22</li><br/><li><span>不似旧日</span> 👍（7） 💬（3）<div>大数据框架可以执行sql,能执行sql的框架有hadoop的hive  spark的sparkSQL,sparkSQL的执行速度要快于hive,
-由于大数据框架能执行sql那么是不是可以把这个框架当做数据库来看待?java就能调用大数据服务操作数据了?</div>2019-01-19</li><br/><li><span>shawn</span> 👍（5） 💬（1）<div>李老师，“生成这些函数的 DAG（有向无环图）”，为什么是有向无环图，您可以说说原因嘛。
+}</p>2018-11-22</li><br/><li><span>不似旧日</span> 👍（7） 💬（3）<p>大数据框架可以执行sql,能执行sql的框架有hadoop的hive  spark的sparkSQL,sparkSQL的执行速度要快于hive,
+由于大数据框架能执行sql那么是不是可以把这个框架当做数据库来看待?java就能调用大数据服务操作数据了?</p>2019-01-19</li><br/><li><span>shawn</span> 👍（5） 💬（1）<p>李老师，“生成这些函数的 DAG（有向无环图）”，为什么是有向无环图，您可以说说原因嘛。
 
-</div>2018-11-22</li><br/><li><span>rains</span> 👍（4） 💬（1）<div>拍照软件和图像编辑美化软件结合起来，变成萌拍，美颜相机</div>2018-11-22</li><br/><li><span>一</span> 👍（3） 💬（1）<div>“在我们工作中也可以借鉴一下这种将两种技术嫁接到一起产生极大应用创新性的手段，说不定下一个做出类似Hive这种具有巨大应用价值的产品的人就是你！”老师的这句话好振奋人心啊！</div>2019-04-18</li><br/><li><span>yang</span> 👍（3） 💬（1）<div>智能手机就是嘛！ 以前的手机只能打电话，现在可以拍照、打电话、录音，也可以远程操控家电……等等 把操控其他事物的技术嫁接到手机上……</div>2018-11-23</li><br/><li><span>Flychen</span> 👍（1） 💬（1）<div>小白一个，想体验下hive中跑SQL，有什么在线环境吗</div>2021-08-06</li><br/><li><span>李二木</span> 👍（1） 💬（1）<div>子弹短信，智能音响也算吧。</div>2018-11-22</li><br/><li><span>有点意思</span> 👍（0） 💬（1）<div>老师好
+</p>2018-11-22</li><br/><li><span>rains</span> 👍（4） 💬（1）<p>拍照软件和图像编辑美化软件结合起来，变成萌拍，美颜相机</p>2018-11-22</li><br/><li><span>一</span> 👍（3） 💬（1）<p>“在我们工作中也可以借鉴一下这种将两种技术嫁接到一起产生极大应用创新性的手段，说不定下一个做出类似Hive这种具有巨大应用价值的产品的人就是你！”老师的这句话好振奋人心啊！</p>2019-04-18</li><br/><li><span>yang</span> 👍（3） 💬（1）<p>智能手机就是嘛！ 以前的手机只能打电话，现在可以拍照、打电话、录音，也可以远程操控家电……等等 把操控其他事物的技术嫁接到手机上……</p>2018-11-23</li><br/><li><span>Flychen</span> 👍（1） 💬（1）<p>小白一个，想体验下hive中跑SQL，有什么在线环境吗</p>2021-08-06</li><br/><li><span>李二木</span> 👍（1） 💬（1）<p>子弹短信，智能音响也算吧。</p>2018-11-22</li><br/><li><span>有点意思</span> 👍（0） 💬（1）<p>老师好
 请教下 HQL和SQL的区别有多大？我去搜集哪些资料才能知道他们的区别？
-由于目前我在做协议解析和语法解析 已经有了现成的sql语法解析了  </div>2019-08-21</li><br/><li><span>朱国伟</span> 👍（0） 💬（1）<div>好像只是join的话 并没有reduce这一步骤
+由于目前我在做协议解析和语法解析 已经有了现成的sql语法解析了  </p>2019-08-21</li><br/><li><span>朱国伟</span> 👍（0） 💬（1）<p>好像只是join的话 并没有reduce这一步骤
 SELECT pv.pageid, u.age FROM page_view pv JOIN users u ON (pv.userid = u.userid);
 
 Number of reduce tasks is set to 0 since there&#39;s no reduce operator
@@ -162,5 +162,5 @@ OK
 1	25
 2	25
 1	32
-Time taken: 26.01 seconds, Fetched: 3 row(s)</div>2018-12-15</li><br/><li><span>诺侠</span> 👍（57） 💬（0）<div>jupyter notebook应该算是一个。</div>2018-11-22</li><br/><li><span>李</span> 👍（45） 💬（8）<div>此教程适合有一定大数据基础的人，如果是新人，那么肯定是懵懂的</div>2018-11-22</li><br/>
+Time taken: 26.01 seconds, Fetched: 3 row(s)</p>2018-12-15</li><br/><li><span>诺侠</span> 👍（57） 💬（0）<p>jupyter notebook应该算是一个。</p>2018-11-22</li><br/><li><span>李</span> 👍（45） 💬（8）<p>此教程适合有一定大数据基础的人，如果是新人，那么肯定是懵懂的</p>2018-11-22</li><br/>
 </ul>

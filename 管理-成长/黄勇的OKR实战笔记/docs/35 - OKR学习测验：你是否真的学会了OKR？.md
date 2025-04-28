@@ -31,7 +31,7 @@
 4. ABD → 请学习《[10 | OKR评估没你想象的那么难，其实你可以这么做！](https://time.geekbang.org/column/article/107931)》
 5. ABC → 请学习《[19 | 敏捷与OKR都是为了“拥抱变化”，两者如何无缝整合？](https://time.geekbang.org/column/article/117125)》
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Svip</span> 👍（3） 💬（0）<div>1.✔2.×3.✔4.×5.×6.✔7.×8×9.✔10.✔
+<li><span>Svip</span> 👍（3） 💬（0）<p>1.✔2.×3.✔4.×5.×6.✔7.×8×9.✔10.✔
 11.B12.c13.D14.A15.D
-16.ABCD 17.ABCD 18.ABCD 19.ABD 20.ABC</div>2019-09-18</li><br/><li><span>liu</span> 👍（1） 💬（0）<div>串起来效果蛮好的</div>2019-09-20</li><br/><li><span>Bruce Talk</span> 👍（0） 💬（0）<div>老师用心了，知识串成线，还配合对应的文章。赞👍。收获颇丰。感谢老师为这个系列的辛苦付出。</div>2020-05-30</li><br/><li><span>IT蜗壳-Tango</span> 👍（0） 💬（0）<div>收藏了，以后复习用。</div>2020-03-29</li><br/>
+16.ABCD 17.ABCD 18.ABCD 19.ABD 20.ABC</p>2019-09-18</li><br/><li><span>liu</span> 👍（1） 💬（0）<p>串起来效果蛮好的</p>2019-09-20</li><br/><li><span>Bruce Talk</span> 👍（0） 💬（0）<p>老师用心了，知识串成线，还配合对应的文章。赞👍。收获颇丰。感谢老师为这个系列的辛苦付出。</p>2020-05-30</li><br/><li><span>IT蜗壳-Tango</span> 👍（0） 💬（0）<p>收藏了，以后复习用。</p>2020-03-29</li><br/>
 </ul>

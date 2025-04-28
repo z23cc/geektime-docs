@@ -100,10 +100,10 @@ return OpenFile(name, O\_RDONLY, 0)
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>心静梵音</span> 👍（2） 💬（1）<div>郝大大，咱们os&#47;exec和os&#47;signal包还会讲嘛？我看咱们的课程介绍上列了，是不是在其他讲讲过了？
-</div>2018-11-30</li><br/><li><span>SamuraiDeng</span> 👍（1） 💬（1）<div>权限，看的不是很懂，但是，我感觉跟Linux给文件加权限应该是一个出处</div>2021-03-18</li><br/><li><span>Cloud</span> 👍（9） 💬（0）<div>func Syscall</div>2018-11-27</li><br/><li><span>兵戈</span> 👍（5） 💬（0）<div>思考题：怎样通过os包中的 API 创建和操纵一个系统进程？
+<li><span>心静梵音</span> 👍（2） 💬（1）<p>郝大大，咱们os&#47;exec和os&#47;signal包还会讲嘛？我看咱们的课程介绍上列了，是不是在其他讲讲过了？
+</p>2018-11-30</li><br/><li><span>SamuraiDeng</span> 👍（1） 💬（1）<p>权限，看的不是很懂，但是，我感觉跟Linux给文件加权限应该是一个出处</p>2021-03-18</li><br/><li><span>Cloud</span> 👍（9） 💬（0）<p>func Syscall</p>2018-11-27</li><br/><li><span>兵戈</span> 👍（5） 💬（0）<p>思考题：怎样通过os包中的 API 创建和操纵一个系统进程？
 个人思路如下：
 1. os 包及其子包 os&#47;exec 提供了创建进程的方法
-2. os&#47;proc.go 提供了不少获取进程属性的方法</div>2018-12-10</li><br/><li><span>冰激凌的眼泪</span> 👍（5） 💬（0）<div>操作模式，限定了可以通过*File执行的操作
-权限模式，对应操作系统上的文件权限</div>2018-11-23</li><br/><li><span>蓬蒿</span> 👍（1） 💬（0）<div>怎样创建系统进程？通过cmd的api可以运行系统命令，其底层是系统调用fork和execv家族函数</div>2019-12-23</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<div>打卡</div>2019-03-15</li><br/><li><span>manky</span> 👍（0） 💬（0）<div>跟linux文件访问规则差不多</div>2018-11-23</li><br/>
+2. os&#47;proc.go 提供了不少获取进程属性的方法</p>2018-12-10</li><br/><li><span>冰激凌的眼泪</span> 👍（5） 💬（0）<p>操作模式，限定了可以通过*File执行的操作
+权限模式，对应操作系统上的文件权限</p>2018-11-23</li><br/><li><span>蓬蒿</span> 👍（1） 💬（0）<p>怎样创建系统进程？通过cmd的api可以运行系统命令，其底层是系统调用fork和execv家族函数</p>2019-12-23</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<p>打卡</p>2019-03-15</li><br/><li><span>manky</span> 👍（0） 💬（0）<p>跟linux文件访问规则差不多</p>2018-11-23</li><br/>
 </ul>

@@ -387,10 +387,10 @@ PolicyRule:
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>无痕飞客</span> 👍（39） 💬（4）<div>老师，怎么优雅的卸载掉kubernetes呢？</div>2018-10-22</li><br/><li><span>单朋荣</span> 👍（29） 💬（1）<div>为什么要生命这类service account，不能直接使用role进行权限分配吗？这个中间代理的好处是啥呢？</div>2018-12-11</li><br/><li><span>runner</span> 👍（13） 💬（1）<div>老师还是之前的问题，现在机器上有一个手动起的容器（比如是老的业务容器），想把他加到pod里管理起来，比如pod生成的时候发现已经有这个容器了，就关联这个容器，不再创建了。有办法实现么？</div>2018-10-23</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（5）<div>但在这种情况下，这个默认 ServiceAccount 并没有关联任何 Role。也就是说，此时它有访问 APIServer 的绝大多数权限。
+<li><span>无痕飞客</span> 👍（39） 💬（4）<p>老师，怎么优雅的卸载掉kubernetes呢？</p>2018-10-22</li><br/><li><span>单朋荣</span> 👍（29） 💬（1）<p>为什么要生命这类service account，不能直接使用role进行权限分配吗？这个中间代理的好处是啥呢？</p>2018-12-11</li><br/><li><span>runner</span> 👍（13） 💬（1）<p>老师还是之前的问题，现在机器上有一个手动起的容器（比如是老的业务容器），想把他加到pod里管理起来，比如pod生成的时候发现已经有这个容器了，就关联这个容器，不再创建了。有办法实现么？</p>2018-10-23</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（5）<p>但在这种情况下，这个默认 ServiceAccount 并没有关联任何 Role。也就是说，此时它有访问 APIServer 的绝大多数权限。
 为什么没有关联role，就会有绝大多数权限呢？有一个默认的role么，都有什么权限呢？
 
-另外，建议在所有的namespace给default serviceaccount绑定view，是出于安全的考虑是么？</div>2018-10-22</li><br/><li><span>虎虎❤️</span> 👍（4） 💬（6）<div>Prior to Kubernetes 1.6, many deployments used very permissive ABAC policies, including granting full API access to all service accounts.
+另外，建议在所有的namespace给default serviceaccount绑定view，是出于安全的考虑是么？</p>2018-10-22</li><br/><li><span>虎虎❤️</span> 👍（4） 💬（6）<p>Prior to Kubernetes 1.6, many deployments used very permissive ABAC policies, including granting full API access to all service accounts.
 
 Default RBAC policies grant scoped permissions to control-plane components, nodes, and controllers, but grant no permissions to service accounts outside the kube-system namespace (beyond discovery permissions given to all authenticated users).
 
@@ -400,7 +400,7 @@ Quoting from https:&#47;&#47;kubernetes.io&#47;docs&#47;reference&#47;access-aut
 
 如果给所有namespace的default service account都赋予view 权限。会不会出现如下风险？
 Warning: This allows any user with read access to secrets or the ability to create a pod to access super-user credentials.
-</div>2018-10-23</li><br/><li><span>Pixar</span> 👍（2） 💬（2）<div>role roleBanding serviceAccount 都是 namespaced , 那跨namespace 操作会怎么样？</div>2018-10-26</li><br/><li><span>无痕飞客</span> 👍（1） 💬（1）<div>老师，我kubernetes安装好了，怎么停止启动的kube进程并且卸载掉kubernetes呢？</div>2018-10-22</li><br/><li><span>huan</span> 👍（66） 💬（12）<div>kind: ClusterRoleBinding
+</p>2018-10-23</li><br/><li><span>Pixar</span> 👍（2） 💬（2）<p>role roleBanding serviceAccount 都是 namespaced , 那跨namespace 操作会怎么样？</p>2018-10-26</li><br/><li><span>无痕飞客</span> 👍（1） 💬（1）<p>老师，我kubernetes安装好了，怎么停止启动的kube进程并且卸载掉kubernetes呢？</p>2018-10-22</li><br/><li><span>huan</span> 👍（66） 💬（12）<p>kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io&#47;v1
 metadata:
   name: readonly-all-default
@@ -410,7 +410,7 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: view
-  apiGroup: rbac.authorization.k8s.io</div>2018-10-22</li><br/><li><span>喜剧。</span> 👍（40） 💬（3）<div>kind: ClusterRoleBinding
+  apiGroup: rbac.authorization.k8s.io</p>2018-10-22</li><br/><li><span>喜剧。</span> 👍（40） 💬（3）<p>kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io&#47;v1
 metadata:
 name: readonly-all-default
@@ -422,7 +422,7 @@ kind: ClusterRole
 name: view
 apiGroup: rbac.authorization.k8s.io
 
-前面的朋友写的问题在于，default应该是serciveacount</div>2018-11-28</li><br/><li><span>蹦蹦</span> 👍（14） 💬（4）<div>kind: ClusterRoleBinding
+前面的朋友写的问题在于，default应该是serciveacount</p>2018-11-28</li><br/><li><span>蹦蹦</span> 👍（14） 💬（4）<p>kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io&#47;v1
 metadata:
   name: readonly-all-default
@@ -435,18 +435,18 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 
 kind是ServiceAccount，不是Group。name直接写default，不指定namespace
-</div>2020-07-23</li><br/><li><span>芒果少侠</span> 👍（9） 💬（4）<div>老师，我查阅了相关资料。觉得思考题中的场景（为【所有namespace】下的【default service account】添加只读权限）无法实现。ClusterRoleBinding的subjects字段最多能允许我们给【default namespace】下的【所有service account】或者所有namespace下的所有 service account添加只读权限。不知道老师是否有其他方式实现？恳请回答，感谢。
+</p>2020-07-23</li><br/><li><span>芒果少侠</span> 👍（9） 💬（4）<p>老师，我查阅了相关资料。觉得思考题中的场景（为【所有namespace】下的【default service account】添加只读权限）无法实现。ClusterRoleBinding的subjects字段最多能允许我们给【default namespace】下的【所有service account】或者所有namespace下的所有 service account添加只读权限。不知道老师是否有其他方式实现？恳请回答，感谢。
 
 思考题请问:
-如何为所有 Namespace 下的默认 ServiceAccount（default ServiceAccount），绑定一个只读权限的 Role 呢？请你提供 ClusterRoleBinding（或者 RoleBinding）的 YAML 文件。</div>2020-03-04</li><br/><li><span>张振宇</span> 👍（9） 💬（0）<div>老师rbac怎么结合企业自己的ldap用户数据进行外部登录自研的web平台</div>2019-02-23</li><br/><li><span>yuanlinios</span> 👍（7） 💬（4）<div>虽然 clusterrole&#47;clusterrolebinding 不受 namespace 限制, 但是 serviceaccount 总是存在于 namespace 下. 为一个 namespace 下的 default sa 做只读限制很容易. 那么怎么为&quot;所有&quot; (包括现有的和未来的) 的 namespace 下的 default sa 做只读的限制? 希望给点提示
+如何为所有 Namespace 下的默认 ServiceAccount（default ServiceAccount），绑定一个只读权限的 Role 呢？请你提供 ClusterRoleBinding（或者 RoleBinding）的 YAML 文件。</p>2020-03-04</li><br/><li><span>张振宇</span> 👍（9） 💬（0）<p>老师rbac怎么结合企业自己的ldap用户数据进行外部登录自研的web平台</p>2019-02-23</li><br/><li><span>yuanlinios</span> 👍（7） 💬（4）<p>虽然 clusterrole&#47;clusterrolebinding 不受 namespace 限制, 但是 serviceaccount 总是存在于 namespace 下. 为一个 namespace 下的 default sa 做只读限制很容易. 那么怎么为&quot;所有&quot; (包括现有的和未来的) 的 namespace 下的 default sa 做只读的限制? 希望给点提示
 
-</div>2018-12-28</li><br/><li><span>艾利特-G</span> 👍（6） 💬（3）<div>关于课后思考，我看了官方文档的这个例子。
+</p>2018-12-28</li><br/><li><span>艾利特-G</span> 👍（6） 💬（3）<p>关于课后思考，我看了官方文档的这个例子。
 &gt; https:&#47;&#47;kubernetes.io&#47;docs&#47;reference&#47;access-authn-authz&#47;rbac&#47;#rolebinding-and-clusterrolebinding
 暂时得出的结论是通过ClusterRoleBinding做不到让每个NameSpace下的&quot;default&quot; ServiceAccount拥有namespaced resources的只读权限。
 这里面描述了如何在ClusterRolebinding中将ClusterRole与&quot;manager&quot;这个group绑定。但是这个&quot;manager&quot; group，是一个user的group，不是ServiceAccount的group。
 我想，将ClusterRolebinding其中的subjects[0].kind属性指定为ServiceAccount，name指定为system:serviceaccount:*:default，应该是无效的吧。
 如果这样不行的话，那就只有subjects[0].kind属性指定为group，然后name指定为system:serviceaccounts，这将会对所有ServiceAccount绑定&quot;view&quot;这个ClusterRole，包括&quot;default&quot;之外的ServiceAccount。这样会对所有ServiceAccount授权集群级别的只读权限，也就是不能限制在该ServiceAccount所在的Namespace下。
-如果在每个Namespace下创建RoleBinding，subjects[0].kind属性指定为ServiceAccount，name指定为default，namespace指定为该namespace，则可以使每个NameSpace下的&quot;default&quot; ServiceAccount拥有该Namespace的只读权限。</div>2020-03-18</li><br/><li><span>芒果少侠</span> 👍（4） 💬（2）<div>kind: ClusterRoleBinding
+如果在每个Namespace下创建RoleBinding，subjects[0].kind属性指定为ServiceAccount，name指定为default，namespace指定为该namespace，则可以使每个NameSpace下的&quot;default&quot; ServiceAccount拥有该Namespace的只读权限。</p>2020-03-18</li><br/><li><span>芒果少侠</span> 👍（4） 💬（2）<p>kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io&#47;v1
 metadata:
   name: readonly-all-default
@@ -459,5 +459,5 @@ roleRef:
   name: view
   apiGroup: rbac.authorization.k8s.io
 
-老师，请问这样写对吗？</div>2020-03-04</li><br/>
+老师，请问这样写对吗？</p>2020-03-04</li><br/>
 </ul>

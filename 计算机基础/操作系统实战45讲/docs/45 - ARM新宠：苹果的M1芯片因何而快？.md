@@ -317,11 +317,11 @@ vvp my_alu
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>neohope</span> 👍（4） 💬（1）<div>老师设计芯片太豪放了哦，输入输出位数针脚太多了。30位就十分奢侈啦：
+<li><span>neohope</span> 👍（4） 💬（1）<p>老师设计芯片太豪放了哦，输入输出位数针脚太多了。30位就十分奢侈啦：
 ena，1位；clk，1位；opcode，2位
 data1，8位；data2，8位；y，10位；
 Icarus Verilog：http:&#47;&#47;iverilog.icarus.com&#47;home
-Icarus Verilog for Windows：http:&#47;&#47;bleyer.org&#47;icarus&#47;</div>2021-08-24</li><br/><li><span>pedro</span> 👍（6） 💬（2）<div>risc-v最近太火了，没有历史包袱，设计又足够精妙，谁能不爱呢。</div>2021-08-20</li><br/><li><span>Fan</span> 👍（5） 💬（1）<div>哈哈哈，再来几篇Verilog。🐂🍺</div>2021-08-20</li><br/><li><span>springXu</span> 👍（2） 💬（1）<div>请教东哥，intel那款20年前的IA64(安腾)处理器，也是CISC的指令集么？  目前主流RISC指令集就ARM了，mips已经被市场淘汰。RISC-V是开源的指令集，被众多公司所追捧了。还有IBM的PowerPC指令集。</div>2021-08-20</li><br/><li><span>sugar</span> 👍（1） 💬（1）<div>所以是不是可以得出这么个结论：苹果M1的macbook之所以快，不在于他从x86切了arm有多大提升（指令集本身我一直理解为arm只是性能&#47;功耗的比值胜过x86，不计功耗只看perf还是x86有优势才对），而在于arm的开放性 赋予了苹果在硬件层面 拿arm这套架构做了大量魔改。 intel封闭性注定苹果不会拿x86这样深度魔改的。这么理解对吗？东哥</div>2022-01-11</li><br/><li><span>苏流郁宓</span> 👍（1） 💬（1）<div>mips？risc-v？不过，risc指令集实际实现某些功能的步骤比cisc多，苹果的cpu优秀离不开先进的工艺，假如intel的cpu也用5nm工艺，就台式机的cpu的价格估计会翻不少价，当然性能也会好到爆。问题是市场需要吗，认可吗？如同作者所言，这也是商业模式有关，不同的模式决定不同的选择？</div>2021-08-20</li><br/><li><span>-.-</span> 👍（0） 💬（0）<div>&#47;&#47;定义alu位宽 
+Icarus Verilog for Windows：http:&#47;&#47;bleyer.org&#47;icarus&#47;</p>2021-08-24</li><br/><li><span>pedro</span> 👍（6） 💬（2）<p>risc-v最近太火了，没有历史包袱，设计又足够精妙，谁能不爱呢。</p>2021-08-20</li><br/><li><span>Fan</span> 👍（5） 💬（1）<p>哈哈哈，再来几篇Verilog。🐂🍺</p>2021-08-20</li><br/><li><span>springXu</span> 👍（2） 💬（1）<p>请教东哥，intel那款20年前的IA64(安腾)处理器，也是CISC的指令集么？  目前主流RISC指令集就ARM了，mips已经被市场淘汰。RISC-V是开源的指令集，被众多公司所追捧了。还有IBM的PowerPC指令集。</p>2021-08-20</li><br/><li><span>sugar</span> 👍（1） 💬（1）<p>所以是不是可以得出这么个结论：苹果M1的macbook之所以快，不在于他从x86切了arm有多大提升（指令集本身我一直理解为arm只是性能&#47;功耗的比值胜过x86，不计功耗只看perf还是x86有优势才对），而在于arm的开放性 赋予了苹果在硬件层面 拿arm这套架构做了大量魔改。 intel封闭性注定苹果不会拿x86这样深度魔改的。这么理解对吗？东哥</p>2022-01-11</li><br/><li><span>苏流郁宓</span> 👍（1） 💬（1）<p>mips？risc-v？不过，risc指令集实际实现某些功能的步骤比cisc多，苹果的cpu优秀离不开先进的工艺，假如intel的cpu也用5nm工艺，就台式机的cpu的价格估计会翻不少价，当然性能也会好到爆。问题是市场需要吗，认可吗？如同作者所言，这也是商业模式有关，不同的模式决定不同的选择？</p>2021-08-20</li><br/><li><span>-.-</span> 👍（0） 💬（0）<p>&#47;&#47;定义alu位宽 
 parameter N = 32; &#47;&#47;输入范围[-128, 127]
-如果需要输入范围是[-128,127]那么位宽不应该是N=8吗？</div>2022-12-29</li><br/>
+如果需要输入范围是[-128,127]那么位宽不应该是N=8吗？</p>2022-12-29</li><br/>
 </ul>

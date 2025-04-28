@@ -190,7 +190,7 @@ MaterialApp(
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>dao</span> 👍（12） 💬（2）<div>import &#39;package:flutter&#47;cupertino.dart&#39;;
+<li><span>dao</span> 👍（12） 💬（2）<p>import &#39;package:flutter&#47;cupertino.dart&#39;;
 import &#39;package:flutter&#47;material.dart&#39;;
 
 void main() =&gt; runApp(MyThemePage());
@@ -263,7 +263,7 @@ class _MyThemeState extends State&lt;MyTheme&gt; {
         data: isLight ? widget.themes[0] : widget.themes[1]);
   }
 }
-</div>2019-08-10</li><br/><li><span>灰灰</span> 👍（5） 💬（2）<div>class _HomeState extends State&lt;Home&gt; with SingleTickerProviderStateMixin {
+</p>2019-08-10</li><br/><li><span>灰灰</span> 👍（5） 💬（2）<p>class _HomeState extends State&lt;Home&gt; with SingleTickerProviderStateMixin {
   TabController _controller;
   bool isNight = false;
   @override
@@ -305,13 +305,13 @@ class _MyThemeState extends State&lt;MyTheme&gt; {
     super.dispose();
   }
 }
-</div>2019-08-06</li><br/><li><span>Ω</span> 👍（2） 💬（1）<div>defaultTargetPlatform这个变量哪里来的，文章中没有说明清楚</div>2019-08-05</li><br/><li><span>小米</span> 👍（2） 💬（1）<div>思考题：
+</p>2019-08-06</li><br/><li><span>Ω</span> 👍（2） 💬（1）<p>defaultTargetPlatform这个变量哪里来的，文章中没有说明清楚</p>2019-08-05</li><br/><li><span>小米</span> 👍（2） 💬（1）<p>思考题：
 1、增加一个布尔变量
       bool  _isLight = false
 2、在ThemeData中，根据_isLight来显示是否为高亮或者暗色。
       brightness: _isLight ? Brightness.light : Brightness.dark
 3、增加一个切换按钮，点击改变_isLight值。
-      FlatButton(onPressed: (){setState(() { _isLight = !_isLight; });},child: Text(_isLight?&quot;白天&quot;:&quot;夜间&quot;))</div>2019-08-05</li><br/><li><span>文心雕龙</span> 👍（1） 💬（1）<div>第三方插件 https:&#47;&#47;pub.dev&#47;packages&#47;dynamic_theme#-readme-tab-</div>2019-08-06</li><br/><li><span>菜头</span> 👍（0） 💬（1）<div>Theme.of(context) 方法将向上查找 Widget 树，并返回 Widget 树中最近的主题 Theme。如果 Widget
+      FlatButton(onPressed: (){setState(() { _isLight = !_isLight; });},child: Text(_isLight?&quot;白天&quot;:&quot;夜间&quot;))</p>2019-08-05</li><br/><li><span>文心雕龙</span> 👍（1） 💬（1）<p>第三方插件 https:&#47;&#47;pub.dev&#47;packages&#47;dynamic_theme#-readme-tab-</p>2019-08-06</li><br/><li><span>菜头</span> 👍（0） 💬（1）<p>Theme.of(context) 方法将向上查找 Widget 树，并返回 Widget 树中最近的主题 Theme。如果 Widget
 的父 Widget 们有一个单独的主题定义，则使用该 Theme
 如果不是，就使用 App 全局 Theme。
 
@@ -320,7 +320,7 @@ class _MyThemeState extends State&lt;MyTheme&gt; {
 父 Widget 们？一个 widget 有多个父 widget?
 
 
-</div>2019-11-15</li><br/><li><span>Geek_e7jq8k</span> 👍（0） 💬（1）<div>请问下，目前主流的App内UI的样式应该不会局限于ThemeData中的定义的情况。比如有一个自定义的Button，是在代码中设置的特殊Color，不是Themedata里的，这种情况下的button（或类似实现的全部widget），对于日夜间切换这种动态处理的时候，有统一的换颜色的方法么？还是需要在每个widget中都要实现对应的颜色处理？同样的对于TextTheme，ThemeData只提供了textTheme,primaryTextTheme,accentTextTheme三种，如果App内有更多的通用TextTheme，如何动态的统一切换呢？</div>2019-10-23</li><br/><li><span>🌝</span> 👍（0） 💬（1）<div>如果全局更改主题的话，那岂不是要把MaterialApp这个Widget设置成有状态的widget?这样子是不是更耗性能</div>2019-09-20</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<div>老师，这个全局主题的设置只是针对于布局中的对应 widget 没有设置样式才会生效吧？例如我在 ThemeData 里面设置了文字颜色为黑色？但是我在子 widget 里面设置了一个文字会红色，那么此时黑色是不生效的吧？</div>2019-09-04</li><br/><li><span>宋世通</span> 👍（0） 💬（2）<div>老师，在flutter1.8.2，1.8.3版本中增加了ThemeMode，是不是用这个来控制主题明暗会更好一点?</div>2019-08-06</li><br/><li><span>许童童</span> 👍（0） 💬（2）<div>老师你好，这个Theme应该是要定义为状态，在setState里面修改这个变量，但是代码不知道怎么写，老师能否给一下代码。</div>2019-08-03</li><br/><li><span>嘎啦儿。</span> 👍（0） 💬（1）<div>老师，final ThemeData kIOSTheme = ThemeData(...省略)，这些语法我没看明白，能给我解释下吗？或者可以提供参考链接地址？</div>2021-07-05</li><br/><li><span>jayce</span> 👍（0） 💬（0）<div>我来说个app切换夜间模式的,ThemeMode system, light, dark
+</p>2019-11-15</li><br/><li><span>Geek_e7jq8k</span> 👍（0） 💬（1）<p>请问下，目前主流的App内UI的样式应该不会局限于ThemeData中的定义的情况。比如有一个自定义的Button，是在代码中设置的特殊Color，不是Themedata里的，这种情况下的button（或类似实现的全部widget），对于日夜间切换这种动态处理的时候，有统一的换颜色的方法么？还是需要在每个widget中都要实现对应的颜色处理？同样的对于TextTheme，ThemeData只提供了textTheme,primaryTextTheme,accentTextTheme三种，如果App内有更多的通用TextTheme，如何动态的统一切换呢？</p>2019-10-23</li><br/><li><span>🌝</span> 👍（0） 💬（1）<p>如果全局更改主题的话，那岂不是要把MaterialApp这个Widget设置成有状态的widget?这样子是不是更耗性能</p>2019-09-20</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<p>老师，这个全局主题的设置只是针对于布局中的对应 widget 没有设置样式才会生效吧？例如我在 ThemeData 里面设置了文字颜色为黑色？但是我在子 widget 里面设置了一个文字会红色，那么此时黑色是不生效的吧？</p>2019-09-04</li><br/><li><span>宋世通</span> 👍（0） 💬（2）<p>老师，在flutter1.8.2，1.8.3版本中增加了ThemeMode，是不是用这个来控制主题明暗会更好一点?</p>2019-08-06</li><br/><li><span>许童童</span> 👍（0） 💬（2）<p>老师你好，这个Theme应该是要定义为状态，在setState里面修改这个变量，但是代码不知道怎么写，老师能否给一下代码。</p>2019-08-03</li><br/><li><span>嘎啦儿。</span> 👍（0） 💬（1）<p>老师，final ThemeData kIOSTheme = ThemeData(...省略)，这些语法我没看明白，能给我解释下吗？或者可以提供参考链接地址？</p>2021-07-05</li><br/><li><span>jayce</span> 👍（0） 💬（0）<p>我来说个app切换夜间模式的,ThemeMode system, light, dark
 
 Box mainBox;
 void main() async {
@@ -359,5 +359,5 @@ class MyApp extends StatelessWidget {
       }),
     );
   }
-}</div>2021-02-23</li><br/><li><span>木木京尤</span> 👍（0） 💬（0）<div>老司，请问调夜间模式的时候，如果想给所有的页面都加一层半透明的图层，应该怎么调参数。不可能每个页面都添加图层，目前知道可以在materialapp  themedata  scaffold  调参数。</div>2020-05-24</li><br/><li><span>jianwei</span> 👍（0） 💬（0）<div>在全局的theme中定义多个 textTheme: TextTheme(body1: TextStyle(color: Colors.grey), body2: TextStyle(color: Colors.white), ...)，然后内部widget按需加载相应的 theme.body1 or theme.body2</div>2020-01-07</li><br/>
+}</p>2021-02-23</li><br/><li><span>木木京尤</span> 👍（0） 💬（0）<p>老司，请问调夜间模式的时候，如果想给所有的页面都加一层半透明的图层，应该怎么调参数。不可能每个页面都添加图层，目前知道可以在materialapp  themedata  scaffold  调参数。</p>2020-05-24</li><br/><li><span>jianwei</span> 👍（0） 💬（0）<p>在全局的theme中定义多个 textTheme: TextTheme(body1: TextStyle(color: Colors.grey), body2: TextStyle(color: Colors.white), ...)，然后内部widget按需加载相应的 theme.body1 or theme.body2</p>2020-01-07</li><br/>
 </ul>

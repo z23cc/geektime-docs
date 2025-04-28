@@ -214,14 +214,14 @@ of-type系列，是一个变形的语法糖，S:nth-of-type(An+B)是:nth-child(|
 
 今天留给你的思考题是：用JavaScript实现一个能够处理所有简单选择器的querySelector（行为伪类除外），你可以把你的答案分享出来，我们一起来探讨吧。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>不曾潇洒</span> 👍（61） 💬（1）<div>老师这儿描述有点问题:
+<li><span>不曾潇洒</span> 👍（61） 💬（1）<p>老师这儿描述有点问题:
 属性选择器第四种[attr|=value]
 应该是表示带有以 attr 命名的属性的元素，属性值为“value”或是以“value-”为前缀（&quot;-&quot;为连字符，Unicode编码为U+002D）开头。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW可以用zh作为value）。
 
 [attr^=value]
 表示带有以 attr 命名的属性，且属性值是以&quot;value&quot;开头的元素。
 
-出处:https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;CSS&#47;Attribute_selectors</div>2019-03-13</li><br/><li><span>奕</span> 👍（31） 💬（0）<div>
+出处:https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;CSS&#47;Attribute_selectors</p>2019-03-13</li><br/><li><span>奕</span> 👍（31） 💬（0）<p>
 选择器	描述
 [attribute]	用于选取带有指定属性的元素。
 [attribute=value]	用于选取带有指定属性和值的元素。
@@ -229,16 +229,16 @@ of-type系列，是一个变形的语法糖，S:nth-of-type(An+B)是:nth-child(|
 [attribute|=value]	用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。
 [attribute^=value]	匹配属性值以指定值开头的每个元素。
 [attribute$=value]	匹配属性值以指定值结尾的每个元素。
-[attribute*=value]	匹配属性值中包含指定值的每个元素。</div>2019-03-20</li><br/><li><span>GETStrongBENice</span> 👍（12） 💬（1）<div>属性以某值开头不是[attr^=xxx]吗（捂脸</div>2019-03-12</li><br/><li><span>阿成</span> 👍（12） 💬（2）<div>没想到写个 querySelector 这么费劲...
+[attribute*=value]	匹配属性值中包含指定值的每个元素。</p>2019-03-20</li><br/><li><span>GETStrongBENice</span> 👍（12） 💬（1）<p>属性以某值开头不是[attr^=xxx]吗（捂脸</p>2019-03-12</li><br/><li><span>阿成</span> 👍（12） 💬（2）<p>没想到写个 querySelector 这么费劲...
 还有很多情况没处理到的...
 emmm... 选择器字符串解析的部分应该上词法和语法分析的..
 差不多能用吧就...
-https:&#47;&#47;github.com&#47;aimergenge&#47;my-querySelector</div>2019-03-06</li><br/><li><span>CC</span> 👍（7） 💬（0）<div>namespace 和 of-type 系列的选择器的知识点，没想到之前居然完全被自己忽略。
+https:&#47;&#47;github.com&#47;aimergenge&#47;my-querySelector</p>2019-03-06</li><br/><li><span>CC</span> 👍（7） 💬（0）<p>namespace 和 of-type 系列的选择器的知识点，没想到之前居然完全被自己忽略。
 
 系统性的学习才不会遗漏，才会有叠加效果。
-</div>2019-03-05</li><br/><li><span>不曾潇洒</span> 👍（5） 💬（0）<div>属性选择器
+</p>2019-03-05</li><br/><li><span>不曾潇洒</span> 👍（5） 💬（0）<p>属性选择器
 第三种[attr~=val]的描述也会让人误解为选择器该表达式的val为空格分隔的序列，而实际是只匹配的目标元素上attr属性值为空格分隔的多个值:
-表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中[至少]一个值匹配&quot;value&quot;。</div>2019-03-14</li><br/><li><span>within〃</span> 👍（4） 💬（0）<div>function querySelector (selector, rootNode = document) {
+表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中[至少]一个值匹配&quot;value&quot;。</p>2019-03-14</li><br/><li><span>within〃</span> 👍（4） 💬（0）<p>function querySelector (selector, rootNode = document) {
   let [first, rest] = splitSelectorStr(selector)
   let nodes = findNodes(rootNode, first)
   if (nodes.length &gt; 0) {
@@ -278,14 +278,14 @@ function splitSelectorStr (selector) {
     rest = s.slice(i + 1)
   }
   return [first, rest]
-}</div>2019-03-13</li><br/><li><span>涂涂</span> 👍（3） 💬（0）<div>引用张大佬的文章话：
+}</p>2019-03-13</li><br/><li><span>涂涂</span> 👍（3） 💬（0）<p>引用张大佬的文章话：
 
 HTML5允许行内SVG和MathML，这就意味着，你可以使用同一个样式文件定义行内SVG、MathML元素的样式。
 
-HTML5的解析的好处是，如果文档是HTML(而非XHTML)，HTML5的解析器可以暗中分配命名空间到已知的词汇（到目前为止，SVG, XML和MathML）。这就意味着你无需使用xmlns为您的HTML5文档中的SVG或MathML元素明确指定命名空间。</div>2019-07-09</li><br/><li><span>oillie</span> 👍（2） 💬（0）<div>id可以用document.getElementById
+HTML5的解析的好处是，如果文档是HTML(而非XHTML)，HTML5的解析器可以暗中分配命名空间到已知的词汇（到目前为止，SVG, XML和MathML）。这就意味着你无需使用xmlns为您的HTML5文档中的SVG或MathML元素明确指定命名空间。</p>2019-07-09</li><br/><li><span>oillie</span> 👍（2） 💬（0）<p>id可以用document.getElementById
 class可以用document.getElementsByClassName
 tag可以用document.getElementsByTagName
-attribute没直接API可用，本人能想到的是可以先取全部document.getElementByTagName(&#39;*&#39;)再过滤</div>2019-03-05</li><br/><li><span>Nino</span> 👍（1） 💬（2）<div>都是平常会用到的一些特性，被老师总结一下觉得系统多了。另外，老师的英文发音好随意啊。。</div>2019-06-03</li><br/><li><span>Geek_3b2d8c</span> 👍（0） 💬（0）<div>简单实现了个：https:&#47;&#47;github.com&#47;Jarvis2018&#47;reader-response&#47;tree&#47;master&#47;%E9%87%8D%E5%AD%A6%E5%89%8D%E7%AB%AF&#47;%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E5%99%A8</div>2021-10-21</li><br/><li><span>云</span> 👍（0） 💬（0）<div>关于css选择器这块，强烈推荐看张鑫旭的 《CSS选择器世界》。</div>2020-12-28</li><br/><li><span>益明</span> 👍（0） 💬（0）<div>There are six different kinds of elements: void elements(空内容元素), the template element, raw text elements(原始文本元素), escapable raw text elements(可转意原始文本元素), foreign elements(外来元素：来自MathML和SVG命名空间的元素), and normal elements.
+attribute没直接API可用，本人能想到的是可以先取全部document.getElementByTagName(&#39;*&#39;)再过滤</p>2019-03-05</li><br/><li><span>Nino</span> 👍（1） 💬（2）<p>都是平常会用到的一些特性，被老师总结一下觉得系统多了。另外，老师的英文发音好随意啊。。</p>2019-06-03</li><br/><li><span>Geek_3b2d8c</span> 👍（0） 💬（0）<p>简单实现了个：https:&#47;&#47;github.com&#47;Jarvis2018&#47;reader-response&#47;tree&#47;master&#47;%E9%87%8D%E5%AD%A6%E5%89%8D%E7%AB%AF&#47;%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E5%99%A8</p>2021-10-21</li><br/><li><span>云</span> 👍（0） 💬（0）<p>关于css选择器这块，强烈推荐看张鑫旭的 《CSS选择器世界》。</p>2020-12-28</li><br/><li><span>益明</span> 👍（0） 💬（0）<p>There are six different kinds of elements: void elements(空内容元素), the template element, raw text elements(原始文本元素), escapable raw text elements(可转意原始文本元素), foreign elements(外来元素：来自MathML和SVG命名空间的元素), and normal elements.
 Void elements包含
 area, base, br, col, embed, hr, img, input, link, meta, param, source, track, wbr；
 The template element包含
@@ -297,5 +297,5 @@ textarea, title
 foreign elements 外来元素：
 SVG，MathML中包含的元素
 normal element：其余所有元素
-作为SVG中包含的元素，所以要通过namespace svg命名空间去选择</div>2020-10-19</li><br/><li><span>不甘心的翔入非非</span> 👍（0） 💬（1）<div>老师，感觉少了:after和:before这1个重要的选择器介绍呢</div>2020-08-26</li><br/><li><span>A祥瑞A</span> 👍（0） 💬（0）<div>属性选择器和伪类选择器用得特别少，这两种选择器一般在什么情况下使用?</div>2020-07-28</li><br/>
+作为SVG中包含的元素，所以要通过namespace svg命名空间去选择</p>2020-10-19</li><br/><li><span>不甘心的翔入非非</span> 👍（0） 💬（1）<p>老师，感觉少了:after和:before这1个重要的选择器介绍呢</p>2020-08-26</li><br/><li><span>A祥瑞A</span> 👍（0） 💬（0）<p>属性选择器和伪类选择器用得特别少，这两种选择器一般在什么情况下使用?</p>2020-07-28</li><br/>
 </ul>

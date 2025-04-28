@@ -411,22 +411,22 @@ Spec:
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>北卡</span> 👍（73） 💬（3）<div>运维人员会心碎?
-我是运维人员，此刻看完我感到很兴奋。</div>2018-10-18</li><br/><li><span>千寻</span> 👍（31） 💬（7）<div>我从代码开始，就按着步骤走，最后创建network的CRD和example-network都成功了，
+<li><span>北卡</span> 👍（73） 💬（3）<p>运维人员会心碎?
+我是运维人员，此刻看完我感到很兴奋。</p>2018-10-18</li><br/><li><span>千寻</span> 👍（31） 💬（7）<p>我从代码开始，就按着步骤走，最后创建network的CRD和example-network都成功了，
 但是我直接将cdr&#47;network.yml和example&#47;example-network.yml文件单独拿出来，并没有执行代码生成那些步骤，发现也创建成功了，搞得有点懵。
-老师可以说一下这大概是什么回事吗？</div>2018-10-17</li><br/><li><span>虎虎❤️</span> 👍（16） 💬（3）<div>好好好。之前学习过这些内容，但是很不系统，只是大概知道怎么回事，很多细节没有穿起来。跟老师比起来，我太不善于总结了。
+老师可以说一下这大概是什么回事吗？</p>2018-10-17</li><br/><li><span>虎虎❤️</span> 👍（16） 💬（3）<p>好好好。之前学习过这些内容，但是很不系统，只是大概知道怎么回事，很多细节没有穿起来。跟老师比起来，我太不善于总结了。
 磊哥大神，等我把你的课都学会了，能跟着你干吗？
 
 另外我看到有人问需要把代码重新编译进k8s中么？不需要。作为插件应该是可以热插拔的。比如service catalog，flannel，都不要求你重启k8s。
 在k8s里定义了你的CR后，controller可以作为一个container跑在k8s集群里，来响应CR的增删改。
 
-</div>2018-10-17</li><br/><li><span>骨汤鸡蛋面</span> 👍（12） 💬（1）<div>自定义resource的Controller 单独运行，只是通过client-go 与api 交互？ 是否可以认为，k8s内建的Resource 对应的Controller，由Controller-manager 统一管理呢？</div>2019-01-05</li><br/><li><span>Pixar</span> 👍（11） 💬（1）<div>有一个问题张老师，一直不是特别清楚… 通过 crd 创建的自定义资源我还并没有定义他的结构，为什么就可以通过 kubectl get 拿到这个资源的详情呢？</div>2018-10-23</li><br/><li><span>mazhen</span> 👍（8） 💬（4）<div>register.go会将自定义Type注册到APIServer，那register.go本身是怎么交给APIServer，然后被APIServer调用注册过程的？
+</p>2018-10-17</li><br/><li><span>骨汤鸡蛋面</span> 👍（12） 💬（1）<p>自定义resource的Controller 单独运行，只是通过client-go 与api 交互？ 是否可以认为，k8s内建的Resource 对应的Controller，由Controller-manager 统一管理呢？</p>2019-01-05</li><br/><li><span>Pixar</span> 👍（11） 💬（1）<p>有一个问题张老师，一直不是特别清楚… 通过 crd 创建的自定义资源我还并没有定义他的结构，为什么就可以通过 kubectl get 拿到这个资源的详情呢？</p>2018-10-23</li><br/><li><span>mazhen</span> 👍（8） 💬（4）<p>register.go会将自定义Type注册到APIServer，那register.go本身是怎么交给APIServer，然后被APIServer调用注册过程的？
 
 $ kubectl apply -f crd&#47;network.yaml
 $ kubectl apply -f example&#47;example-network.yaml 
 
-执行完这两步，自定义的Newwork对象被创建出来，怎么感觉register.go并没有被用到</div>2018-10-18</li><br/><li><span>圣诞使者</span> 👍（4） 💬（1）<div>老师，我照着你的代码敲了一遍，这个pkg&#47;signals目录是自己创建的吗？我这个生成完代码也没有这个目录。</div>2018-10-22</li><br/><li><span>Joe Black</span> 👍（3） 💬（2）<div>这章会让运维人员心碎的...幸好俺会Go语言! 
-请教下这个生成的代码，还得合并到apiserver的代码树中吧？还是得重新编译apiserver吧？毕竟Go目前还没有动态加载机制。</div>2018-10-17</li><br/><li><span>mazhen</span> 👍（1） 💬（1）<div>怎么感觉register.go没有用到，它是什么时机把自定义Type注册到APIServer的？</div>2018-10-17</li><br/><li><span>mgxian</span> 👍（1） 💬（1）<div>请问老师 通过那个CustomResourceDefinition相关的ymal文件已经可以正常定义查看crd了 为什么还需要写相关的go代码呢？生成的clients又是给谁用的呢？</div>2018-10-17</li><br/><li><span>小伟</span> 👍（0） 💬（1）<div>老师好，作为一个运维，觉得你讲的内容好深，学得好吃力，不知能否分享一些实际生产环境的troubleshooting 的案例和思路？</div>2018-10-18</li><br/><li><span>虎虎❤️</span> 👍（58） 💬（0）<div>一般来说，扩展api server (或者说添加自定义 resource )有两种方式：
+执行完这两步，自定义的Newwork对象被创建出来，怎么感觉register.go并没有被用到</p>2018-10-18</li><br/><li><span>圣诞使者</span> 👍（4） 💬（1）<p>老师，我照着你的代码敲了一遍，这个pkg&#47;signals目录是自己创建的吗？我这个生成完代码也没有这个目录。</p>2018-10-22</li><br/><li><span>Joe Black</span> 👍（3） 💬（2）<p>这章会让运维人员心碎的...幸好俺会Go语言! 
+请教下这个生成的代码，还得合并到apiserver的代码树中吧？还是得重新编译apiserver吧？毕竟Go目前还没有动态加载机制。</p>2018-10-17</li><br/><li><span>mazhen</span> 👍（1） 💬（1）<p>怎么感觉register.go没有用到，它是什么时机把自定义Type注册到APIServer的？</p>2018-10-17</li><br/><li><span>mgxian</span> 👍（1） 💬（1）<p>请问老师 通过那个CustomResourceDefinition相关的ymal文件已经可以正常定义查看crd了 为什么还需要写相关的go代码呢？生成的clients又是给谁用的呢？</p>2018-10-17</li><br/><li><span>小伟</span> 👍（0） 💬（1）<p>老师好，作为一个运维，觉得你讲的内容好深，学得好吃力，不知能否分享一些实际生产环境的troubleshooting 的案例和思路？</p>2018-10-18</li><br/><li><span>虎虎❤️</span> 👍（58） 💬（0）<p>一般来说，扩展api server (或者说添加自定义 resource )有两种方式：
 1. 通过创建CRDs, 主API server可以处理 CRDs 的 REST 请求（CRUD）和持久性存储。简单，不需要其他的编程。更适用于声明式的API，和kubernetes高度集成统一。
 2. API Aggregation, 一个独立的API server。主API server委托此独立的API server处理自定义resource。 需要编程，但能够更加灵活的控制API的行为，更加灵活的自定义存储，以及与API不同版本之间的转换。一般更适用于命令模式，或者复用已经存在REST API代码，不直接支持kubectl 和 k8s UI, 不支持scope resource in a cluster&#47;namespace.
 
@@ -434,5 +434,5 @@ $ kubectl apply -f example&#47;example-network.yaml
 
 综上，今天文档中的types.go 应该是给controller来理解CRDs的schema用的。只有掌握了resource的schema，才能解释并得到用户创建的resource API object。
 而 kubectl create -f resourcedefinition.yaml 或者 自定义API server， 则定义了RESTful API endpoint. 用于接受 REST 请求，改变 resource 的期望状态。
-</div>2018-10-17</li><br/><li><span>小金刚</span> 👍（45） 💬（0）<div>可以用 kubebuild 自动生成项目框架，添加自己的 CRD 并实现 controller 即可。</div>2018-10-28</li><br/><li><span>小明root</span> 👍（37） 💬（11）<div>我是运维人员，我很心碎.....我不会go语言</div>2018-11-22</li><br/><li><span>geraltlaush</span> 👍（17） 💬（2）<div>我是开发人员，会go,也会C++，也自己设计过业务协议，看到这篇异常兴奋</div>2019-01-26</li><br/>
+</p>2018-10-17</li><br/><li><span>小金刚</span> 👍（45） 💬（0）<p>可以用 kubebuild 自动生成项目框架，添加自己的 CRD 并实现 controller 即可。</p>2018-10-28</li><br/><li><span>小明root</span> 👍（37） 💬（11）<p>我是运维人员，我很心碎.....我不会go语言</p>2018-11-22</li><br/><li><span>geraltlaush</span> 👍（17） 💬（2）<p>我是开发人员，会go,也会C++，也自己设计过业务协议，看到这篇异常兴奋</p>2019-01-26</li><br/>
 </ul>

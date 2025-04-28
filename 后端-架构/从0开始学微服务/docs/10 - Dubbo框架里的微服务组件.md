@@ -191,11 +191,11 @@ registry://multicast://224.5.6.7:1234/com.alibaba.dubbo.registry.RegistryService
 
 欢迎你在留言区写下自己的思考，与我一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>echo＿陈</span> 👍（17） 💬（1）<div>撸了半年的dubbo源码……
-胡老师这篇很不错，已分享给同事</div>2018-09-13</li><br/><li><span>eason2017</span> 👍（7） 💬（1）<div>这篇文章好哇，学习dunno 必备</div>2018-09-13</li><br/><li><span>Home</span> 👍（5） 💬（1）<div>后期会有springcloud的介绍嘛？</div>2018-09-13</li><br/><li><span>Sam_Deep_Thinking</span> 👍（3） 💬（1）<div>没玩过，不过看起来doubo很强大哈。学习了。下篇是讲spring cloud吗？</div>2018-09-13</li><br/><li><span>fldhmily63319</span> 👍（3） 💬（1）<div>老师能评价一下Dubbo, Spring Cloud甚至是ZooKeeper的区别，优劣势吗？</div>2018-09-13</li><br/><li><span>小白</span> 👍（1） 💬（1）<div>在微服务架构中，同一个服务是不是有可能既充当服务提供者的角色又充当服务消费者的角色呢？</div>2018-11-03</li><br/><li><span>张龙大骗子</span> 👍（1） 💬（1）<div>neety是个好框架啊，thrift和protobuf也是</div>2018-09-13</li><br/><li><span>奕</span> 👍（1） 💬（3）<div>现在微服务框架，大部分都是java语言的，其他语言有推荐吗？比如nodejs或者go什么的</div>2018-09-13</li><br/><li><span>小猪</span> 👍（0） 💬（1）<div>rancher可以用来做微服务框架吗？可以运行微服务系统吗？</div>2018-11-30</li><br/><li><span>二师哥</span> 👍（0） 💬（1）<div>就算有有了前面学习的基础, 我依旧无法做到立刻理解. 已经看了三、四遍。
-打算看下文档，自己实现以下，然后边学习，边看文档和老胡的文章。</div>2018-09-13</li><br/><li><span>庞小勇</span> 👍（37） 💬（4）<div>php开发者，听着一脸蒙逼</div>2018-09-18</li><br/><li><span>波波安</span> 👍（4） 💬（0）<div>老师对怎么去读源码，有什么好的建议和方式吗，每次都不知道从哪看起😬</div>2018-10-13</li><br/><li><span>坤</span> 👍（2） 💬（0）<div>Dubbo 服务治理相关的组件都是需要客户端自己在代码中选择使用吗？不像ServiceMesh可以独立于业务代码进行流量或服务的治理。</div>2021-03-10</li><br/><li><span>Mr.Right</span> 👍（2） 💬（0）<div>python开发者，听着一脸蒙逼
-</div>2019-10-25</li><br/><li><span>钱</span> 👍（1） 💬（1）<div>牛逼的Dubbo
+<li><span>echo＿陈</span> 👍（17） 💬（1）<p>撸了半年的dubbo源码……
+胡老师这篇很不错，已分享给同事</p>2018-09-13</li><br/><li><span>eason2017</span> 👍（7） 💬（1）<p>这篇文章好哇，学习dunno 必备</p>2018-09-13</li><br/><li><span>Home</span> 👍（5） 💬（1）<p>后期会有springcloud的介绍嘛？</p>2018-09-13</li><br/><li><span>Sam_Deep_Thinking</span> 👍（3） 💬（1）<p>没玩过，不过看起来doubo很强大哈。学习了。下篇是讲spring cloud吗？</p>2018-09-13</li><br/><li><span>fldhmily63319</span> 👍（3） 💬（1）<p>老师能评价一下Dubbo, Spring Cloud甚至是ZooKeeper的区别，优劣势吗？</p>2018-09-13</li><br/><li><span>小白</span> 👍（1） 💬（1）<p>在微服务架构中，同一个服务是不是有可能既充当服务提供者的角色又充当服务消费者的角色呢？</p>2018-11-03</li><br/><li><span>张龙大骗子</span> 👍（1） 💬（1）<p>neety是个好框架啊，thrift和protobuf也是</p>2018-09-13</li><br/><li><span>奕</span> 👍（1） 💬（3）<p>现在微服务框架，大部分都是java语言的，其他语言有推荐吗？比如nodejs或者go什么的</p>2018-09-13</li><br/><li><span>小猪</span> 👍（0） 💬（1）<p>rancher可以用来做微服务框架吗？可以运行微服务系统吗？</p>2018-11-30</li><br/><li><span>二师哥</span> 👍（0） 💬（1）<p>就算有有了前面学习的基础, 我依旧无法做到立刻理解. 已经看了三、四遍。
+打算看下文档，自己实现以下，然后边学习，边看文档和老胡的文章。</p>2018-09-13</li><br/><li><span>庞小勇</span> 👍（37） 💬（4）<p>php开发者，听着一脸蒙逼</p>2018-09-18</li><br/><li><span>波波安</span> 👍（4） 💬（0）<p>老师对怎么去读源码，有什么好的建议和方式吗，每次都不知道从哪看起😬</p>2018-10-13</li><br/><li><span>坤</span> 👍（2） 💬（0）<p>Dubbo 服务治理相关的组件都是需要客户端自己在代码中选择使用吗？不像ServiceMesh可以独立于业务代码进行流量或服务的治理。</p>2021-03-10</li><br/><li><span>Mr.Right</span> 👍（2） 💬（0）<p>python开发者，听着一脸蒙逼
+</p>2019-10-25</li><br/><li><span>钱</span> 👍（1） 💬（1）<p>牛逼的Dubbo
 牛逼的阿里
 牛逼的开源
-感谢😊</div>2019-05-23</li><br/>
+感谢😊</p>2019-05-23</li><br/>
 </ul>

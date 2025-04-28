@@ -197,15 +197,15 @@ mysqlbinlog $binlog_file | mysql -h$host -P$port -u$user -p$pwd
 > @poppy 、@库淘淘 两位同学提到了第一个场景；  
 > @王显伟 @lionetes 两位同学帮忙回答了 @undifined 同学的疑问，拷贝出来的文件要确保MySQL进程可以读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>way</span> 👍（80） 💬（7）<div>写个比较小的点：在命令行查询数据需要行转列的时候习惯加个\G ; 比如slave slave stauts \G ; 后来发现 ; 是多余的。列几个常用的
+<li><span>way</span> 👍（80） 💬（7）<p>写个比较小的点：在命令行查询数据需要行转列的时候习惯加个\G ; 比如slave slave stauts \G ; 后来发现 ; 是多余的。列几个常用的
 \G 行转列并发送给 mysql server
 \g 等同于 ;
 \! 执行系统命令
 \q exit
 \c 清除当前SQL（不执行）
 \s mysql status 信息
-其他参考 \h</div>2019-02-20</li><br/><li><span>undifined</span> 👍（45） 💬（8）<div>权限的作用范围和修改策略总结：
-http:&#47;&#47;ww1.sinaimg.cn&#47;large&#47;d1885ed1ly1g0ab2twmjaj21gs0js78u.jpg</div>2019-02-18</li><br/><li><span>geraltlaush</span> 👍（34） 💬（2）<div>老师我使用delte删除用户，再创建用户都是失败，但是使用drop就可以了
+其他参考 \h</p>2019-02-20</li><br/><li><span>undifined</span> 👍（45） 💬（8）<p>权限的作用范围和修改策略总结：
+http:&#47;&#47;ww1.sinaimg.cn&#47;large&#47;d1885ed1ly1g0ab2twmjaj21gs0js78u.jpg</p>2019-02-18</li><br/><li><span>geraltlaush</span> 👍（34） 💬（2）<p>老师我使用delte删除用户，再创建用户都是失败，但是使用drop就可以了
 mysql&gt; create user &#39;ua&#39;@&#39;%&#39; identified by &#39;L1234567890c-&#39;;
 ERROR 1396 (HY000): Operation CREATE USER failed for &#39;ua&#39;@&#39;%&#39;
 mysql&gt; drop user &#39;ua&#39;@&#39;%&#39;;
@@ -213,7 +213,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 mysql&gt; create user &#39;ua&#39;@&#39;%&#39; identified by &#39;L1234567890c-&#39;;
 Query OK, 0 rows affected (0.01 sec)
-是不是drop才会同时从内存和磁盘删除用户信息，但是delete只是从磁盘删除</div>2019-02-18</li><br/><li><span>发芽的紫菜</span> 👍（31） 💬（7）<div>老师，联合索引的数据结构是怎么样的？到底是怎么存的？看了前面索引两章，还是不太懂，留言里老师说会在后面章节会讲到，但我也没看到，所以来此问一下？老师能否画图讲解一下</div>2019-02-18</li><br/><li><span>冰点18</span> 👍（15） 💬（1）<div>两三个月的时间，终于在上班地铁上读完了整部专栏，老师辛苦了！接下来就是搭建环境，二刷和验证了！一直有个问题，想问下老师，您用的画图工具是哪个？风格我特别喜欢，但是没找到</div>2019-04-10</li><br/><li><span>旭东(Frank)</span> 👍（14） 💬（3）<div>老师请教一个问题：MySQL 表设计时列表顺序对MySQL性能的影响大吗？对表的列顺序有什么建议吗？</div>2019-02-18</li><br/><li><span>XD</span> 👍（11） 💬（1）<div>老师，我刚说的是acl_db，是在db切换的时候，从acl_dbs拷贝到线程内部的？类似acl_user。
+是不是drop才会同时从内存和磁盘删除用户信息，但是delete只是从磁盘删除</p>2019-02-18</li><br/><li><span>发芽的紫菜</span> 👍（31） 💬（7）<p>老师，联合索引的数据结构是怎么样的？到底是怎么存的？看了前面索引两章，还是不太懂，留言里老师说会在后面章节会讲到，但我也没看到，所以来此问一下？老师能否画图讲解一下</p>2019-02-18</li><br/><li><span>冰点18</span> 👍（15） 💬（1）<p>两三个月的时间，终于在上班地铁上读完了整部专栏，老师辛苦了！接下来就是搭建环境，二刷和验证了！一直有个问题，想问下老师，您用的画图工具是哪个？风格我特别喜欢，但是没找到</p>2019-04-10</li><br/><li><span>旭东(Frank)</span> 👍（14） 💬（3）<p>老师请教一个问题：MySQL 表设计时列表顺序对MySQL性能的影响大吗？对表的列顺序有什么建议吗？</p>2019-02-18</li><br/><li><span>XD</span> 👍（11） 💬（1）<p>老师，我刚说的是acl_db，是在db切换的时候，从acl_dbs拷贝到线程内部的？类似acl_user。
 
 session a
 drop user &#39;test&#39;@&#39;%&#39;;
@@ -230,9 +230,9 @@ session b
 show databases;  &#47;&#47;只能看到information_schema库
 use gt;   &#47;&#47; Access denied for user &#39;test&#39;@&#39;%&#39; to database &#39;gt&#39;
 show tables;   &#47;&#47;可以看到gt库中所有的表
-select&#47;update  &#47;&#47;操作都正常</div>2019-02-18</li><br/><li><span>夜空中最亮的星</span> 👍（11） 💬（2）<div>通过老师的讲解 flush privileges 这回彻底懂了，高兴😃</div>2019-02-18</li><br/><li><span>夹心面包</span> 👍（8） 💬（2）<div>我在此分享一个授权库的小技巧, 如果需要授权多个库,库名还有规律,比如 db_201701 db_201702
-可以采用正则匹配写一条 grant  on db______,每一个_代表一个字符.这样避免了多次授权,简化了过程。我们线上已经采用</div>2019-02-18</li><br/><li><span>钱</span> 👍（6） 💬（1）<div>这篇容易消化，老师辛苦，你不讲这个，我想我很难发现这个细节，业务开发增删改查用的多，其他命令平时不咋用。
-多玩才能发现更多好玩的，如果能有几个老师这样的朋友一起玩，那该有多好玩。</div>2019-08-09</li><br/><li><span>业余草</span> 👍（5） 💬（2）<div>从学习中来，到实战中去！做了一个总结，可能写的不对，希望老师指点。https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;7KGQGpm0IGaVjco6UjLeAQ</div>2019-06-27</li><br/><li><span>Sinyo</span> 👍（3） 💬（2）<div>查一张大表，order_key字段值对应的最小createtime；
+select&#47;update  &#47;&#47;操作都正常</p>2019-02-18</li><br/><li><span>夜空中最亮的星</span> 👍（11） 💬（2）<p>通过老师的讲解 flush privileges 这回彻底懂了，高兴😃</p>2019-02-18</li><br/><li><span>夹心面包</span> 👍（8） 💬（2）<p>我在此分享一个授权库的小技巧, 如果需要授权多个库,库名还有规律,比如 db_201701 db_201702
+可以采用正则匹配写一条 grant  on db______,每一个_代表一个字符.这样避免了多次授权,简化了过程。我们线上已经采用</p>2019-02-18</li><br/><li><span>钱</span> 👍（6） 💬（1）<p>这篇容易消化，老师辛苦，你不讲这个，我想我很难发现这个细节，业务开发增删改查用的多，其他命令平时不咋用。
+多玩才能发现更多好玩的，如果能有几个老师这样的朋友一起玩，那该有多好玩。</p>2019-08-09</li><br/><li><span>业余草</span> 👍（5） 💬（2）<p>从学习中来，到实战中去！做了一个总结，可能写的不对，希望老师指点。https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;7KGQGpm0IGaVjco6UjLeAQ</p>2019-06-27</li><br/><li><span>Sinyo</span> 👍（3） 💬（2）<p>查一张大表，order_key字段值对应的最小createtime；
 以前一直用方法一查数，后来同事说可以优化成方法二，查询效率比方法一高了几倍；
 mysql特有的group by功能，没有group by的字段默认取查到的第一条记录；
 
@@ -255,5 +255,5 @@ select order_key
           FROM aaa
          order by createtime
        ) a
- group by order_key</div>2019-02-18</li><br/><li><span>萤火虫</span> 👍（1） 💬（1）<div>坚持到最后 为老师打call</div>2019-02-20</li><br/><li><span>舜</span> 👍（1） 💬（1）<div>老师，介绍完了order by后能不能继续介绍下group by的原理？等了好久了，一直想继续在order by基础上理解下group by，在使用过程中两者在索引利用上很相近，性能考虑也类似</div>2019-02-19</li><br/><li><span>爸爸回来了</span> 👍（1） 💬（1）<div>众所周知，sql是不区分大小写的。然而，涉及插件的变量却不是这样；上次在配置一个插件的参数的时候，苦思良久……最后发现了这个问题。难受😭</div>2019-02-18</li><br/>
+ group by order_key</p>2019-02-18</li><br/><li><span>萤火虫</span> 👍（1） 💬（1）<p>坚持到最后 为老师打call</p>2019-02-20</li><br/><li><span>舜</span> 👍（1） 💬（1）<p>老师，介绍完了order by后能不能继续介绍下group by的原理？等了好久了，一直想继续在order by基础上理解下group by，在使用过程中两者在索引利用上很相近，性能考虑也类似</p>2019-02-19</li><br/><li><span>爸爸回来了</span> 👍（1） 💬（1）<p>众所周知，sql是不区分大小写的。然而，涉及插件的变量却不是这样；上次在配置一个插件的参数的时候，苦思良久……最后发现了这个问题。难受😭</p>2019-02-18</li><br/>
 </ul>

@@ -545,5 +545,5 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 
 如果你有兴趣，可以继续跟进 NettyClient 的 doConnect 方法，看看最后是怎么将 Request 对象进行序列化发送出去的。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>胡月🌈</span> 👍（6） 💬（1）<div>感觉和spring集成的框架，feign、mybatis都是这个套路：自定义注解，扫描，动态代理生成目标类。</div>2023-01-19</li><br/><li><span>斯瓦辛武Roy</span> 👍（1） 💬（4）<div>你的源码里没看到这一节的代码呢</div>2023-01-16</li><br/>
+<li><span>胡月🌈</span> 👍（6） 💬（1）<p>感觉和spring集成的框架，feign、mybatis都是这个套路：自定义注解，扫描，动态代理生成目标类。</p>2023-01-19</li><br/><li><span>斯瓦辛武Roy</span> 👍（1） 💬（4）<p>你的源码里没看到这一节的代码呢</p>2023-01-16</li><br/>
 </ul>

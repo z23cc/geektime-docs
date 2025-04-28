@@ -306,7 +306,7 @@ ThreadLocal四大家族成员的使用场景和各自优劣势有哪些？你能
 
 ![图片](https://static001.geekbang.org/resource/image/49/2e/497b4d3e92ce3c2c692516ed4292932e.jpg?wh=5700x4084)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>浩仔是程序员</span> 👍（0） 💬（1）<div>那其实threadlocal也没有解决内存泄露的问题，那key设置成弱引用好像也没有太大的作用？请问老师，这么设计可以解决什么问题呢</div>2023-10-31</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>请教老师两个问题：
+<li><span>浩仔是程序员</span> 👍（0） 💬（1）<p>那其实threadlocal也没有解决内存泄露的问题，那key设置成弱引用好像也没有太大的作用？请问老师，这么设计可以解决什么问题呢</p>2023-10-31</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>请教老师两个问题：
 Q1：ThreadLocal是用于线程不同方法之间信息传递吗？我感觉这个说法有问题啊。
-Q2：ThreadLocal用于父子线程数据传递，只是创建的时候传递一次吗？创建完毕以后还有数据传递吗？</div>2023-10-30</li><br/>
+Q2：ThreadLocal用于父子线程数据传递，只是创建的时候传递一次吗？创建完毕以后还有数据传递吗？</p>2023-10-30</li><br/>
 </ul>

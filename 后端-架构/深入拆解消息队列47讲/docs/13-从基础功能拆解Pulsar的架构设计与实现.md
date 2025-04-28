@@ -179,6 +179,6 @@ Kafka的生产到消费总共经过生产者、Broker、消费者三个模块。
 
 3\. 在消费端，Kafka提供了消费分组消费和指定分区消费两种模式。消费端也会先经过寻址拿到完整的元数据信息，然后连接上不同的Broker。如果是消费分组模式消费，则需要经过重平衡、消费分区分配流程，然后连接上对应的分区的Leader，接着调用Broker的Fetch接口进行消费。最后一步也是需要提交消费进度来保存消费信息。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>虚竹</span> 👍（1） 💬（3）<div>老师好，作为新一代的mq，为何pulsar会在明知zk会成为瓶颈的情况下，依然选择zk呢？另外，pulsar的明显优势是哪些呢？</div>2023-10-10</li><br/><li><span>张申傲</span> 👍（1） 💬（2）<div>请教下强哥：像Pulsar这类存算分离架构，存储性能不会存在瓶颈吗？像RocketMQ、Kafka消息都是存本地文件，最多就是一次磁盘IO，而Pulsar要存远程BookKeeper，相当于是网络IO+磁盘IO，虽然会有PageCache、WAL顺序写等优化机制，但是理论上性能还是不如本地存储吧？
-还是说存算分离架构就是要牺牲存储性能来换取架构的弹性？</div>2023-07-19</li><br/><li><span>陈</span> 👍（0） 💬（1）<div>Pulsar底层也是一个分区数据一个文件存放的，为什么能支持百万topic？不会产生随机IO带来的性能影响吗？</div>2023-07-31</li><br/><li><span>Geek_ec80d2</span> 👍（0） 💬（0）<div>&quot;，TTL 仅用于 ACK 掉在 TTL 范围内应被 ACK 的消息，不执行删除操作。真正删除的操作是依靠 Retention 策略来执行的&quot;  这个帮忙代码上确定一下，看日志，5分钟周期ack消息后，马上把满足条件的ledger删除，而不是走retention的删除周期，多谢。</div>2023-07-20</li><br/>
+<li><span>虚竹</span> 👍（1） 💬（3）<p>老师好，作为新一代的mq，为何pulsar会在明知zk会成为瓶颈的情况下，依然选择zk呢？另外，pulsar的明显优势是哪些呢？</p>2023-10-10</li><br/><li><span>张申傲</span> 👍（1） 💬（2）<p>请教下强哥：像Pulsar这类存算分离架构，存储性能不会存在瓶颈吗？像RocketMQ、Kafka消息都是存本地文件，最多就是一次磁盘IO，而Pulsar要存远程BookKeeper，相当于是网络IO+磁盘IO，虽然会有PageCache、WAL顺序写等优化机制，但是理论上性能还是不如本地存储吧？
+还是说存算分离架构就是要牺牲存储性能来换取架构的弹性？</p>2023-07-19</li><br/><li><span>陈</span> 👍（0） 💬（1）<p>Pulsar底层也是一个分区数据一个文件存放的，为什么能支持百万topic？不会产生随机IO带来的性能影响吗？</p>2023-07-31</li><br/><li><span>Geek_ec80d2</span> 👍（0） 💬（0）<p>&quot;，TTL 仅用于 ACK 掉在 TTL 范围内应被 ACK 的消息，不执行删除操作。真正删除的操作是依靠 Retention 策略来执行的&quot;  这个帮忙代码上确定一下，看日志，5分钟周期ack消息后，马上把满足条件的ledger删除，而不是走retention的删除周期，多谢。</p>2023-07-20</li><br/>
 </ul>

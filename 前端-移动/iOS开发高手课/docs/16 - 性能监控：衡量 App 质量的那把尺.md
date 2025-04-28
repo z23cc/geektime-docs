@@ -244,14 +244,14 @@ Instruments 可以自定义性能数据的监控，那么接下来就请你看�
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎把它分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>xilie</span> 👍（4） 💬（1）<div>要不还是介绍下第三方的监控平台，小公司，监控后台都没人做啊</div>2019-05-29</li><br/><li><span>小阳哥</span> 👍（4） 💬（2）<div>每2s去遍历线程 这个不会有问题吗？</div>2019-04-17</li><br/><li><span>小城</span> 👍（1） 💬（1）<div>内存线上监控，不是针对多个线程，而是直接从结构体里面取出phys_footprint就可以？</div>2019-05-30</li><br/><li><span>异界</span> 👍（1） 💬（1）<div>图片名字，使用中文，会影响性能吗（项目中90％以上使用的中文命名图片）？</div>2019-05-05</li><br/><li><span>drunkenMouse</span> 👍（20） 💬（0）<div>CADisplayLink:与屏幕刷新频率的计时器同步，每次屏幕刷新都会调用一次，所以可以获取到一秒钟屏幕刷新的次数。
+<li><span>xilie</span> 👍（4） 💬（1）<p>要不还是介绍下第三方的监控平台，小公司，监控后台都没人做啊</p>2019-05-29</li><br/><li><span>小阳哥</span> 👍（4） 💬（2）<p>每2s去遍历线程 这个不会有问题吗？</p>2019-04-17</li><br/><li><span>小城</span> 👍（1） 💬（1）<p>内存线上监控，不是针对多个线程，而是直接从结构体里面取出phys_footprint就可以？</p>2019-05-30</li><br/><li><span>异界</span> 👍（1） 💬（1）<p>图片名字，使用中文，会影响性能吗（项目中90％以上使用的中文命名图片）？</p>2019-05-05</li><br/><li><span>drunkenMouse</span> 👍（20） 💬（0）<p>CADisplayLink:与屏幕刷新频率的计时器同步，每次屏幕刷新都会调用一次，所以可以获取到一秒钟屏幕刷新的次数。
 线下监控：Instrument，一个工具检测所有。
-线上监控：CPU使用直接获取所有线程的cpu_usage计算综合，内存消耗使用task_basic_info的phys_footprint，FPS用CADisplayLink。</div>2019-04-17</li><br/><li><span>李大江</span> 👍（3） 💬（0）<div>对于性能的监控有没有衡量标准，如何衡量优劣？</div>2019-04-17</li><br/><li><span>Onion</span> 👍（3） 💬（0）<div>监控起来如何分析，有实践方案嘛</div>2019-04-16</li><br/><li><span>一代真龙</span> 👍（2） 💬（0）<div>线上电量监控是监控不了的。现有的方案都是不可行的，没有参考价值。</div>2019-04-18</li><br/><li><span>CoderY</span> 👍（1） 💬（0）<div>文中提到“集成多个公司 SDK 的情况，所以我们就需要以黑盒的方式来进行性能监控”，请问大佬这块具体怎么监控？</div>2020-04-24</li><br/><li><span>Geek_rvf9xm</span> 👍（1） 💬（0）<div>time profile 工具再最新的xcode版本上收集不到数据，作者你有遇到过吗？</div>2019-08-18</li><br/><li><span>drq</span> 👍（1） 💬（3）<div>app耗电量怎么监控呢</div>2019-04-16</li><br/><li><span>...</span> 👍（0） 💬（0）<div>内存泄露线上监控如何做呢</div>2021-08-27</li><br/><li><span>Yest</span> 👍（0） 💬（2）<div>戴老师。cpu_usage是千分比吗？我打印的最高是1000
+线上监控：CPU使用直接获取所有线程的cpu_usage计算综合，内存消耗使用task_basic_info的phys_footprint，FPS用CADisplayLink。</p>2019-04-17</li><br/><li><span>李大江</span> 👍（3） 💬（0）<p>对于性能的监控有没有衡量标准，如何衡量优劣？</p>2019-04-17</li><br/><li><span>Onion</span> 👍（3） 💬（0）<p>监控起来如何分析，有实践方案嘛</p>2019-04-16</li><br/><li><span>一代真龙</span> 👍（2） 💬（0）<p>线上电量监控是监控不了的。现有的方案都是不可行的，没有参考价值。</p>2019-04-18</li><br/><li><span>CoderY</span> 👍（1） 💬（0）<p>文中提到“集成多个公司 SDK 的情况，所以我们就需要以黑盒的方式来进行性能监控”，请问大佬这块具体怎么监控？</p>2020-04-24</li><br/><li><span>Geek_rvf9xm</span> 👍（1） 💬（0）<p>time profile 工具再最新的xcode版本上收集不到数据，作者你有遇到过吗？</p>2019-08-18</li><br/><li><span>drq</span> 👍（1） 💬（3）<p>app耗电量怎么监控呢</p>2019-04-16</li><br/><li><span>...</span> 👍（0） 💬（0）<p>内存泄露线上监控如何做呢</p>2021-08-27</li><br/><li><span>Yest</span> 👍（0） 💬（2）<p>戴老师。cpu_usage是千分比吗？我打印的最高是1000
 (lldb) p threadBaseInfo-&gt;cpu_usage
 (integer_t) $10 = 965
 
 看原文解释 是百分比啊
-integer_t       cpu_usage;      &#47;* scaled cpu usage percentage *&#47;</div>2019-08-01</li><br/><li><span>毛成方</span> 👍（0） 💬（0）<div>threadBaseInfo = (thread_basic_info_data_t)threadInfo;
+integer_t       cpu_usage;      &#47;* scaled cpu usage percentage *&#47;</p>2019-08-01</li><br/><li><span>毛成方</span> 👍（0） 💬（0）<p>threadBaseInfo = (thread_basic_info_data_t)threadInfo;
 xcode8.2 无法强制转换
-请问得更新xcode？</div>2019-05-14</li><br/><li><span>月落泉</span> 👍（0） 💬（2）<div>mach_task_self()这个函数报错Implicit declaration of function &#39;mach_task_self&#39; is invalid in C99，如何处理</div>2019-05-08</li><br/>
+请问得更新xcode？</p>2019-05-14</li><br/><li><span>月落泉</span> 👍（0） 💬（2）<p>mach_task_self()这个函数报错Implicit declaration of function &#39;mach_task_self&#39; is invalid in C99，如何处理</p>2019-05-08</li><br/>
 </ul>

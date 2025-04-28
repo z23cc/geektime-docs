@@ -373,7 +373,7 @@ OpenAI 公司为了解决这些问题，想到了让大模型与外界环境交�
 
 欢迎你在留言区展示你的思考过程，我们一起探讨。如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>刘蕾</span> 👍（4） 💬（1）<div>没看懂，Tool里面没有定义加法实现。还是用大语言模型给出结果，这样用function call有什么好处?</div>2024-12-24</li><br/><li><span>日月星辰</span> 👍（0） 💬（1）<div>下面是我这边执行结果的输出，想请教老师，为什么这里会多次调用函数
+<li><span>刘蕾</span> 👍（4） 💬（1）<p>没看懂，Tool里面没有定义加法实现。还是用大语言模型给出结果，这样用function call有什么好处?</p>2024-12-24</li><br/><li><span>日月星辰</span> 👍（0） 💬（1）<p>下面是我这边执行结果的输出，想请教老师，为什么这里会多次调用函数
 2025&#47;02&#47;10 13:22:45 message_store.go:44: {ID:0194f006b99eab2c83e6d4ebde00af4f Object:chat.completion Created:1739193760 Model:deepseek-ai&#47;DeepSeek-V3 Choices:[{Index:0 Message:{Role:assistant Content: Refusal: MultiContent:[] Name: FunctionCall:&lt;nil&gt; ToolCalls:[{Index:&lt;nil&gt; ID:0194f006cc4a3475b18692239a8c0e41 Type:function Function:{Name:AddTool Arguments:{&quot;numbers&quot;:[1,2,3,4]}}}] ToolCallID:} F。。。]}
 2025&#47;02&#47;10 13:22:45 chat.go:49: 大模型回复的内容:
 2025&#47;02&#47;10 13:22:45 chat.go:50: 大模型选择的工具是: [{&lt;nil&gt; 0194f006cc4a3475b18692239a8c0e41 function {AddTool {&quot;numbers&quot;:[1,2,3,4]}}}]
@@ -394,7 +394,7 @@ OpenAI 公司为了解决这些问题，想到了让大模型与外界环境交�
 大模型的最终回复:  &lt;｜tool▁calls▁begin｜&gt;&lt;｜tool▁calls▁begin｜&gt;&lt;｜tool▁call▁begin｜&gt;function&lt;｜tool▁sep｜&gt;AddTool
 ```json
 {&quot;numbers&quot;:[1,2,3,4]}
-```&lt;｜tool▁call▁end｜&gt;&lt;｜tool▁calls▁end｜&gt;</div>2025-02-10</li><br/><li><span>🤡</span> 👍（0） 💬（1）<div>遇到一个奇怪的问题
+```&lt;｜tool▁call▁end｜&gt;&lt;｜tool▁calls▁end｜&gt;</p>2025-02-10</li><br/><li><span>🤡</span> 👍（0） 💬（1）<p>遇到一个奇怪的问题
 代码中需要去计算 prompt := &quot;1+2-3+4-5+6=? Just give me a number result&quot; 
 
 按照老师给的代码跑，会在循环中有好几轮计算，每次将计算结果附加到 messageStore 后面
@@ -412,5 +412,5 @@ OpenAI 公司为了解决这些问题，想到了让大模型与外界环境交�
 大模型选择的工具是:  [{0xc000014a50 call_d7719388d48d42e5994cb0 function {SubTool {&quot;numbers&quot;: [3, 5]}}}]
 函数计算结果:  -2
 --------
-大模型的最终回复:  The result of the calculation \( 1 + 2 - 3 + 4 - 5 + 6 \) is \( 5 \).</div>2025-02-01</li><br/><li><span>仲玄</span> 👍（0） 💬（1）<div>AddTool和SubTool的函数是需要用户自己实现吗? </div>2024-12-27</li><br/>
+大模型的最终回复:  The result of the calculation \( 1 + 2 - 3 + 4 - 5 + 6 \) is \( 5 \).</p>2025-02-01</li><br/><li><span>仲玄</span> 👍（0） 💬（1）<p>AddTool和SubTool的函数是需要用户自己实现吗? </p>2024-12-27</li><br/>
 </ul>

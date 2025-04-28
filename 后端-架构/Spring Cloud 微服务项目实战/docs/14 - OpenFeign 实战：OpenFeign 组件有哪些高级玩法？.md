@@ -237,11 +237,11 @@ public interface TemplateService {
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>gallifrey</span> 👍（18） 💬（1）<div>hystrix使用2.2.10.RELEASE的版本时，貌似需要在配置文件里面加上feign.circuitbreaker.enabled: true才行</div>2022-01-12</li><br/><li><span>Avalon</span> 👍（11） 💬（1）<div>老师，如果 TemplateServiceFallback 实现了 TemplateService 接口，那使用注解注入 TemplateService 时，Spring 如何判断要注入的是这个实现类还是动态代理类？</div>2022-01-27</li><br/><li><span>alex_lai</span> 👍（8） 💬（1）<div>Openfeign client 不是non block的？如果我的框架基于reactive 风格写的是不是没有必要introduce openfeign了，我可以自己写wrap加future在client side。社区未来会提供支持么？openfeign的业界地位是什么样的, nice to have？</div>2022-01-13</li><br/><li><span>被圣光照黑了</span> 👍（4） 💬（1）<div>我在coupon-customer-serv的启动类上加了@EnableHystrix，yml里加了feign:hystrix:enabled: true，coupon-template-serv里有个自定义异常，调用报错了怎么不触发熔断啊</div>2022-01-12</li><br/><li><span>kimoti</span> 👍（4） 💬（1）<div>好像是滑动窗口算法</div>2022-01-12</li><br/><li><span>Geek_0b93c0</span> 👍（2） 💬（1）<div>降级 放在客户端还是服务端好</div>2022-05-30</li><br/><li><span>逝影落枫</span> 👍（2） 💬（1）<div>是先有熔断，才有降级吗？熔断条件如何配置？</div>2022-01-12</li><br/><li><span>peter</span> 👍（2） 💬（1）<div>请教老师3个问题：
+<li><span>gallifrey</span> 👍（18） 💬（1）<p>hystrix使用2.2.10.RELEASE的版本时，貌似需要在配置文件里面加上feign.circuitbreaker.enabled: true才行</p>2022-01-12</li><br/><li><span>Avalon</span> 👍（11） 💬（1）<p>老师，如果 TemplateServiceFallback 实现了 TemplateService 接口，那使用注解注入 TemplateService 时，Spring 如何判断要注入的是这个实现类还是动态代理类？</p>2022-01-27</li><br/><li><span>alex_lai</span> 👍（8） 💬（1）<p>Openfeign client 不是non block的？如果我的框架基于reactive 风格写的是不是没有必要introduce openfeign了，我可以自己写wrap加future在client side。社区未来会提供支持么？openfeign的业界地位是什么样的, nice to have？</p>2022-01-13</li><br/><li><span>被圣光照黑了</span> 👍（4） 💬（1）<p>我在coupon-customer-serv的启动类上加了@EnableHystrix，yml里加了feign:hystrix:enabled: true，coupon-template-serv里有个自定义异常，调用报错了怎么不触发熔断啊</p>2022-01-12</li><br/><li><span>kimoti</span> 👍（4） 💬（1）<p>好像是滑动窗口算法</p>2022-01-12</li><br/><li><span>Geek_0b93c0</span> 👍（2） 💬（1）<p>降级 放在客户端还是服务端好</p>2022-05-30</li><br/><li><span>逝影落枫</span> 👍（2） 💬（1）<p>是先有熔断，才有降级吗？熔断条件如何配置？</p>2022-01-12</li><br/><li><span>peter</span> 👍（2） 💬（1）<p>请教老师3个问题：
 Q1 容错时用Hystrix，是因为OpenFeign在基于Feign而Feign本来就能和Hystrix集成吗？  除了搭配Hystrix，OpenFeign能搭配Resilience4j吗？  
 Q2 &quot;06&quot;篇中，思考题提到“3个模块分别部署到不同的集群上”，如果能分别部署，就不是单体应用了啊，而是像微服务了啊。单体应用就是难以分开部署，不是吗？
 Q3：微服务需要有“监控系统”，这个专栏会讲“监控系统”吗？ 或者“02篇”中提到的某个组件充当了“监控系统”？（没有明确说它是监控系统，但具有此功能）
-Q4：本专栏会讲“持续集成”吗？ 好像本专栏没有提这个方面。</div>2022-01-12</li><br/><li><span>DY</span> 👍（1） 💬（1）<div>可能是 openfeign 版本的问题， 我用下面配置验证超时不生效
+Q4：本专栏会讲“持续集成”吗？ 好像本专栏没有提这个方面。</p>2022-01-12</li><br/><li><span>DY</span> 👍（1） 💬（1）<p>可能是 openfeign 版本的问题， 我用下面配置验证超时不生效
 feign:
   client:
     config:
@@ -269,9 +269,9 @@ spring:
             connect-timeout: 1000
             read-timeout: 2000
 
-springcloud 用的版本是 2022.0.0， 对应的 spring-cloud-starter-openfeign 的版本是 4.0.0</div>2023-12-22</li><br/><li><span>简</span> 👍（1） 💬（1）<div>我有点不明白，这个项目结构单独的把API给抽离出来了，如果说引入了第三方的API JAR包后，为什么不能直接使用这个API呢？这个引入的第三方API和我们实现的 @FeignClients 接口几乎一模一样，能利用起来吗？</div>2022-04-12</li><br/><li><span>春</span> 👍（0） 💬（1）<div>老师你文档里面没有写
+springcloud 用的版本是 2022.0.0， 对应的 spring-cloud-starter-openfeign 的版本是 4.0.0</p>2023-12-22</li><br/><li><span>简</span> 👍（1） 💬（1）<p>我有点不明白，这个项目结构单独的把API给抽离出来了，如果说引入了第三方的API JAR包后，为什么不能直接使用这个API呢？这个引入的第三方API和我们实现的 @FeignClients 接口几乎一模一样，能利用起来吗？</p>2022-04-12</li><br/><li><span>春</span> 👍（0） 💬（1）<p>老师你文档里面没有写
 feign:
   circuitbreaker:
-    enabled: true    &#47;&#47;开启服务降级</div>2023-05-17</li><br/><li><span>春</span> 👍（0） 💬（1）<div>网上有人说用ErrorDecoder配置错误处理，但是我配了根本没生效是怎么回事</div>2023-05-17</li><br/><li><span>楚翔style</span> 👍（0） 💬（1）<div>老师,整个项目有github链接吗? 想clone下来跑跑看</div>2022-10-28</li><br/><li><span>一个想偷懒的程序坑</span> 👍（0） 💬（3）<div>“FULL：在 HEADERS 级别的基础上，还记录了服务请求和服务响应中的 Body 和 metadata，FULL 级别记录了最完成的调用信息。”，这句话中应该是“记录了最完整的调用信息”吧。</div>2022-02-27</li><br/><li><span>珠穆写码</span> 👍（0） 💬（2）<div>按步骤配置了fallback, 且customer服务配置了feign.circuitbreaker.enabled=true 
-template模块里面让线程sleep之后，还是之前readTimeout 没有触发降级。这是缺少了啥么？</div>2022-01-21</li><br/>
+    enabled: true    &#47;&#47;开启服务降级</p>2023-05-17</li><br/><li><span>春</span> 👍（0） 💬（1）<p>网上有人说用ErrorDecoder配置错误处理，但是我配了根本没生效是怎么回事</p>2023-05-17</li><br/><li><span>楚翔style</span> 👍（0） 💬（1）<p>老师,整个项目有github链接吗? 想clone下来跑跑看</p>2022-10-28</li><br/><li><span>一个想偷懒的程序坑</span> 👍（0） 💬（3）<p>“FULL：在 HEADERS 级别的基础上，还记录了服务请求和服务响应中的 Body 和 metadata，FULL 级别记录了最完成的调用信息。”，这句话中应该是“记录了最完整的调用信息”吧。</p>2022-02-27</li><br/><li><span>珠穆写码</span> 👍（0） 💬（2）<p>按步骤配置了fallback, 且customer服务配置了feign.circuitbreaker.enabled=true 
+template模块里面让线程sleep之后，还是之前readTimeout 没有触发降级。这是缺少了啥么？</p>2022-01-21</li><br/>
 </ul>

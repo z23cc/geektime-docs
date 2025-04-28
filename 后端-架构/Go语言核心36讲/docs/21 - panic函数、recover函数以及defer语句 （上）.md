@@ -102,11 +102,11 @@ Go语言的运行时系统可能会在程序出现严重错误时自动地抛出
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>锋</span> 👍（20） 💬（8）<div>老师，你好，我有一个疑问，请教一下，谢谢~
+<li><span>锋</span> 👍（20） 💬（8）<p>老师，你好，我有一个疑问，请教一下，谢谢~
 Go在设计的时候没有设计try...catch...finally这样的方式来捕获异常。
 我在网上查很多人用panic、defer和recover组合来实现异常的捕获，甚至很多都将这个二次封装之后作为一个库来进行使用。
 我的疑问是，从Go的设计角度为什么要这么做？是出于什么样的目的，还是他俩之间有什么优劣？
-非常感谢~，烦请解答。</div>2020-03-06</li><br/><li><span>唐丹</span> 👍（12） 💬（5）<div>郝大，你好，我在golang 8中通过recover处理panic时发现，必须在引发panic的当前协程就处理掉，否则待其传递到父协程直至main方法中，都不能通过recover成功处理掉了，程序会因此结束。请问这样设计的原因是什么？那么协程是通过panic中记录的协程id来区分是不是在当前协程引发的panic的吗？另外，这样的话，我们应用程序中每一个通过go新起的协程都应该在开始的地方recover，否则即使父协程有recover也不能阻止程序因为一个意外的panic而挂掉？盼望解答，谢谢🙏</div>2018-09-28</li><br/><li><span>沐夜星光</span> 👍（4） 💬（2）<div>“控制权如此一级一级地沿着调用栈的反方向传播至顶端，也就是我们编写的最外层函数那里”。最外层函数是go函数，也就说当panic触发，通过其所在的goroutine，将控制权转移给运行时系统时，是不一定经过main函数的吗？另外老师能不能讲讲，go是怎么回收一个进程的，怎么处理运行中的goroutine以及涉及的资源。</div>2020-05-21</li><br/><li><span>MClink</span> 👍（2） 💬（4）<div>初学go都会吐槽说没有 try catch , 应该不止我一个</div>2021-03-25</li><br/><li><span>阿俊</span> 👍（0） 💬（2）<div>请问老师 曾经我也是JAVA程序员 以前做JAVA项目 那时候遇到 例如 编写业务代码 “用户名称”不符合某种条件 业务逻辑代码会写throws 包含错误信息的自定义业务Exception 然后最终做一个try catch 然后catch到业务excption提取其中的message反馈给最终结果；如果在go项目开发中遇到类似问题，是不是可以通过的手动触发panic， 再在最终出口的地方，通过defer结合recover全局捕获相关panic并提取信息反馈给客户端也防止因此整个application崩掉，这种方式是否可取？ 想听听老师的观点，感谢~</div>2023-09-11</li><br/><li><span>Geek_37a441</span> 👍（0） 💬（4）<div>老师，你好，我想问下，panic触发的时机，比如指令执行过程中，在什么时候会调用到相关的panic，比如数组越界是什么时候调用runtime.panicIndex，是有个额外的线程不断检测有异常了吗？</div>2020-12-15</li><br/><li><span>江山如画</span> 👍（37） 💬（3）<div>一个函数如果要把 panic 转化为error类型值，并将其结果返回给调用方，可以考虑把 defer 语句封装到一个匿名函数之中，下面是实验的一个例子，所用函数是一个除法函数，当除数为0的时候会抛出 panic并捕获。
+非常感谢~，烦请解答。</p>2020-03-06</li><br/><li><span>唐丹</span> 👍（12） 💬（5）<p>郝大，你好，我在golang 8中通过recover处理panic时发现，必须在引发panic的当前协程就处理掉，否则待其传递到父协程直至main方法中，都不能通过recover成功处理掉了，程序会因此结束。请问这样设计的原因是什么？那么协程是通过panic中记录的协程id来区分是不是在当前协程引发的panic的吗？另外，这样的话，我们应用程序中每一个通过go新起的协程都应该在开始的地方recover，否则即使父协程有recover也不能阻止程序因为一个意外的panic而挂掉？盼望解答，谢谢🙏</p>2018-09-28</li><br/><li><span>沐夜星光</span> 👍（4） 💬（2）<p>“控制权如此一级一级地沿着调用栈的反方向传播至顶端，也就是我们编写的最外层函数那里”。最外层函数是go函数，也就说当panic触发，通过其所在的goroutine，将控制权转移给运行时系统时，是不一定经过main函数的吗？另外老师能不能讲讲，go是怎么回收一个进程的，怎么处理运行中的goroutine以及涉及的资源。</p>2020-05-21</li><br/><li><span>MClink</span> 👍（2） 💬（4）<p>初学go都会吐槽说没有 try catch , 应该不止我一个</p>2021-03-25</li><br/><li><span>阿俊</span> 👍（0） 💬（2）<p>请问老师 曾经我也是JAVA程序员 以前做JAVA项目 那时候遇到 例如 编写业务代码 “用户名称”不符合某种条件 业务逻辑代码会写throws 包含错误信息的自定义业务Exception 然后最终做一个try catch 然后catch到业务excption提取其中的message反馈给最终结果；如果在go项目开发中遇到类似问题，是不是可以通过的手动触发panic， 再在最终出口的地方，通过defer结合recover全局捕获相关panic并提取信息反馈给客户端也防止因此整个application崩掉，这种方式是否可取？ 想听听老师的观点，感谢~</p>2023-09-11</li><br/><li><span>Geek_37a441</span> 👍（0） 💬（4）<p>老师，你好，我想问下，panic触发的时机，比如指令执行过程中，在什么时候会调用到相关的panic，比如数组越界是什么时候调用runtime.panicIndex，是有个额外的线程不断检测有异常了吗？</p>2020-12-15</li><br/><li><span>江山如画</span> 👍（37） 💬（3）<p>一个函数如果要把 panic 转化为error类型值，并将其结果返回给调用方，可以考虑把 defer 语句封装到一个匿名函数之中，下面是实验的一个例子，所用函数是一个除法函数，当除数为0的时候会抛出 panic并捕获。
 
 func divide(a, b int) (res int, err error) {
 	func() {
@@ -127,9 +127,9 @@ func main() {
 	res, err = divide(2, 1)
 	fmt.Println(res, err) &#47;&#47; 2 &lt;nil&gt;
 }
-</div>2018-10-08</li><br/><li><span>Bang</span> 👍（14） 💬（0）<div>先使用go中的类似try catch这样的语句，将异常捕获的异常转为相应的错误error就可以了</div>2018-09-28</li><br/><li><span>冰激凌的眼泪</span> 👍（4） 💬（0）<div>panic时，会捕获异常及异常上下文（函数名+文件行）
+</p>2018-10-08</li><br/><li><span>Bang</span> 👍（14） 💬（0）<p>先使用go中的类似try catch这样的语句，将异常捕获的异常转为相应的错误error就可以了</p>2018-09-28</li><br/><li><span>冰激凌的眼泪</span> 👍（4） 💬（0）<p>panic时，会捕获异常及异常上下文（函数名+文件行）
 类似看作有一个异常上下文列表，始于异常触发处，沿着函数调用逆向展开，每一级append自己的异常上下文，直至goroutine入口函数，最终被runtime捕获
-最终异常信息被打印，异常上下文列表被顺序打印，程序退出</div>2018-10-02</li><br/><li><span>🐻</span> 👍（2） 💬（0）<div>https:&#47;&#47;gist.github.com&#47;bwangelme&#47;9ce1c606ba9f69c72f82722adf1402e1</div>2019-03-03</li><br/><li><span>A 凡</span> 👍（2） 💬（0）<div>之前自己学习时候的一些模糊点更加清晰了，支持！</div>2018-10-24</li><br/><li><span>MClink</span> 👍（0） 💬（0）<div>这个看起来比较简单
+最终异常信息被打印，异常上下文列表被顺序打印，程序退出</p>2018-10-02</li><br/><li><span>🐻</span> 👍（2） 💬（0）<p>https:&#47;&#47;gist.github.com&#47;bwangelme&#47;9ce1c606ba9f69c72f82722adf1402e1</p>2019-03-03</li><br/><li><span>A 凡</span> 👍（2） 💬（0）<p>之前自己学习时候的一些模糊点更加清晰了，支持！</p>2018-10-24</li><br/><li><span>MClink</span> 👍（0） 💬（0）<p>这个看起来比较简单
 func main() {
 	res, err := divide(1, 0)
 	if err != nil {
@@ -147,7 +147,7 @@ func divide(a, b int) (res int, err error) {
 	}()
 	res = a &#47; b
 	return
-}</div>2022-07-07</li><br/><li><span>Harlan</span> 👍（0） 💬（0）<div>go这种满屏幕都是 判断 err!=nil 这种没有意义的代码  代码侵入性极强  也不优雅</div>2021-08-12</li><br/><li><span>传说中的成大大</span> 👍（0） 💬（0）<div>今日总结
+}</p>2022-07-07</li><br/><li><span>Harlan</span> 👍（0） 💬（0）<p>go这种满屏幕都是 判断 err!=nil 这种没有意义的代码  代码侵入性极强  也不优雅</p>2021-08-12</li><br/><li><span>传说中的成大大</span> 👍（0） 💬（0）<p>今日总结
 今天主要是讲了panic运行时恐慌，一般发生在运行时
 同样也可以自己调用内置的panic来主动引起恐慌 一般用来自己调试程序异常等等
 主要掌握panic的执行过程 
@@ -164,5 +164,5 @@ main.main()
         &#47;home&#47;ubuntu&#47;geek_go&#47;Golang_Puzzlers&#47;src&#47;puzzlers&#47;article19&#47;q1&#47;demo48.go:9 +0x66
 exit status 2
 关于思考题 我也先想了一下 我们捕获异常并将错误信息封装到一个error当中最后返回这个err
-后来又去翻了解答 好像就是这个 样子的</div>2020-03-25</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<div>打卡</div>2019-01-21</li><br/>
+后来又去翻了解答 好像就是这个 样子的</p>2020-03-25</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<p>打卡</p>2019-01-21</li><br/>
 </ul>

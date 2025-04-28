@@ -34,7 +34,7 @@
 
 祝你取得好成绩！明天见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>TryTs</span> 👍（6） 💬（1）<div>虽然现在有很多排序算法自己不会亲自写，但是作为算法的基础，分治，归并，冒泡等排序算法在时间复杂度，空间复杂度以及原地排序这些算法知识上的理解非常有帮助。递归分治这些算法思想在简单的算法中也能体现出来，其实更多的是思维方式的训练。</div>2019-02-07</li><br/><li><span>Monster</span> 👍（1） 💬（2）<div>&#47;**
+<li><span>TryTs</span> 👍（6） 💬（1）<p>虽然现在有很多排序算法自己不会亲自写，但是作为算法的基础，分治，归并，冒泡等排序算法在时间复杂度，空间复杂度以及原地排序这些算法知识上的理解非常有帮助。递归分治这些算法思想在简单的算法中也能体现出来，其实更多的是思维方式的训练。</p>2019-02-07</li><br/><li><span>Monster</span> 👍（1） 💬（2）<p>&#47;**
  * O(n)时间复杂度内求无序数组中第K大元素
  *&#47;
 public class TopK {
@@ -76,7 +76,7 @@ public class TopK {
         array[right] = tmp;
         return i;
     }
-}</div>2019-02-13</li><br/><li><span>C_love</span> 👍（1） 💬（1）<div>Use Binary Search
+}</p>2019-02-13</li><br/><li><span>C_love</span> 👍（1） 💬（1）<p>Use Binary Search
 
 class Solution {
     public int mySqrt(int x) {
@@ -101,7 +101,7 @@ class Solution {
         
         return start;
     }
-}</div>2019-02-07</li><br/><li><span>涤生</span> 👍（0） 💬（1）<div>使用了二分法和牛顿法来解决平方根的求解问题。
+}</p>2019-02-07</li><br/><li><span>涤生</span> 👍（0） 💬（1）<p>使用了二分法和牛顿法来解决平方根的求解问题。
 二分法：
 class Solution:
     def mySqrt(self, x):
@@ -134,8 +134,8 @@ class Solution:
         ans = x&#47;&#47;2
         while(ans * ans - x&gt;0): # 可以是其他精度
             ans = (x &#47;&#47; ans + ans) &#47;&#47; 2
-        return ans</div>2019-02-07</li><br/><li><span>李皮皮皮皮皮</span> 👍（13） 💬（0）<div>各种排序算法真要说起来实际中使用的最多的也就是快排了。然而各种编程语言内置的标准库都包含排序算法的实现，基本没有自己动手实现的必要。然后作为经典的算法，自己实现一遍，分析分析时间空间复杂度对自己的算法设计大有裨益。需要注意的是为了高效，在实际的实现中，多种排序算法往往是组合使用的。例如c标准库中总体上是快排，但当数据量小于一定程度，会转而使用选择或插入排序。
-求平方根使用牛顿法二分逼近😄</div>2019-02-06</li><br/><li><span>虎虎❤️</span> 👍（5） 💬（0）<div>基本排序算法的关注点分为：
+        return ans</p>2019-02-07</li><br/><li><span>李皮皮皮皮皮</span> 👍（13） 💬（0）<p>各种排序算法真要说起来实际中使用的最多的也就是快排了。然而各种编程语言内置的标准库都包含排序算法的实现，基本没有自己动手实现的必要。然后作为经典的算法，自己实现一遍，分析分析时间空间复杂度对自己的算法设计大有裨益。需要注意的是为了高效，在实际的实现中，多种排序算法往往是组合使用的。例如c标准库中总体上是快排，但当数据量小于一定程度，会转而使用选择或插入排序。
+求平方根使用牛顿法二分逼近😄</p>2019-02-06</li><br/><li><span>虎虎❤️</span> 👍（5） 💬（0）<p>基本排序算法的关注点分为：
 1. 时间复杂度。如n的平方（冒泡，选择，插入）；插入排序的优化希尔排序，则把复杂度降低到n的3&#47;2次方；n乘以logn(快排，归并排序，堆排序）。
 2. 是否为原地排序。如，归并排序需要额外的辅助空间。
 3. 算法的稳定性。稳定排序（by nature）如冒泡，插入，归并。如果把次序考虑在内，可以把其他的排序（如快排，堆排序）也实现为稳定排序。
@@ -144,7 +144,7 @@ class Solution:
 
 二分查找，需要注意 (l+r)&#47;2可能存在越界问题。
 
-leetcode题，用二分查找找到x*x &gt; n 且(x-1)的平方小于n的数，则n-1就是结果。或者 x的平方小于n且x+1的平方大于n,则返回x。</div>2019-02-07</li><br/><li><span>失火的夏天</span> 👍（4） 💬（0）<div>牛顿法或者二分逼近都可以解决平方根问题，leetcode上有些大神的思路真的很厉害，经常醍醐灌顶</div>2019-02-06</li><br/><li><span>hopeful</span> 👍（3） 💬（0）<div>#O(n)时间复杂度时间复杂度内找到一组数据的第 n大元素
+leetcode题，用二分查找找到x*x &gt; n 且(x-1)的平方小于n的数，则n-1就是结果。或者 x的平方小于n且x+1的平方大于n,则返回x。</p>2019-02-07</li><br/><li><span>失火的夏天</span> 👍（4） 💬（0）<p>牛顿法或者二分逼近都可以解决平方根问题，leetcode上有些大神的思路真的很厉害，经常醍醐灌顶</p>2019-02-06</li><br/><li><span>hopeful</span> 👍（3） 💬（0）<p>#O(n)时间复杂度时间复杂度内找到一组数据的第 n大元素
 import random
 import time
 
@@ -192,7 +192,7 @@ def partation(array , start , end):
         while start&lt;end and array[start]&gt;=temp:
             start+=1
         swap(array , start , end)
-    return start</div>2019-02-16</li><br/><li><span>kai</span> 👍（2） 💬（0）<div>实现模糊二分查找算法2:
+    return start</p>2019-02-16</li><br/><li><span>kai</span> 👍（2） 💬（0）<p>实现模糊二分查找算法2:
 
 public class BinarySearch {
     &#47;&#47; 3. 查找第一个大于等于给定值的元素
@@ -238,7 +238,7 @@ public class BinarySearch {
 
         return -1;
     }
-}</div>2019-02-11</li><br/><li><span>TryTs</span> 👍（1） 💬（0）<div>#include&lt;iostream&gt;
+}</p>2019-02-11</li><br/><li><span>TryTs</span> 👍（1） 💬（0）<p>#include&lt;iostream&gt;
 #include&lt;cmath&gt;
 using namespace std;
 double a = 1e-6;
@@ -275,8 +275,8 @@ int main(){
 		cin&gt;&gt;t;
 		cout&lt;&lt;sqrt(t)&lt;&lt;endl;
 	}
-}</div>2019-02-14</li><br/><li><span>EidLeung</span> 👍（1） 💬（0）<div>编程实现 O(n) 时间复杂度内找到一组数据的第 K 大元素。
-这个的时间复杂路应该是n·logk吧？</div>2019-02-12</li><br/><li><span>Abner</span> 👍（1） 💬（0）<div>java实现冒泡排序
+}</p>2019-02-14</li><br/><li><span>EidLeung</span> 👍（1） 💬（0）<p>编程实现 O(n) 时间复杂度内找到一组数据的第 K 大元素。
+这个的时间复杂路应该是n·logk吧？</p>2019-02-12</li><br/><li><span>Abner</span> 👍（1） 💬（0）<p>java实现冒泡排序
 代码如下：
 package sort;
 
@@ -305,7 +305,7 @@ public class BubbleSort {
     }
 
 }
-</div>2019-02-11</li><br/><li><span>kai</span> 👍（1） 💬（0）<div>实现模糊二分查找算法1:
+</p>2019-02-11</li><br/><li><span>kai</span> 👍（1） 💬（0）<p>实现模糊二分查找算法1:
 
 public class BinarySearch {
     
@@ -356,7 +356,7 @@ public class BinarySearch {
 
         return -1;
     }
-}</div>2019-02-11</li><br/><li><span>kai</span> 👍（1） 💬（0）<div>实现一个有序数组的二分查找算法:
+}</p>2019-02-11</li><br/><li><span>kai</span> 👍（1） 💬（0）<p>实现一个有序数组的二分查找算法:
 
 public class BinarySearch {
     &#47;&#47; 最简单的二分查找算法：针对有序无重复元素数组
@@ -402,5 +402,5 @@ public class BinarySearch {
 
         return -1;
     }
-}</div>2019-02-11</li><br/><li><span>纯洁的憎恶</span> 👍（1） 💬（0）<div>这道题似乎可以等价于从1到x中找到一个数y，使得y*y小于等于x，且（y+1）*（y+1）大于x。那么可以从1到x逐个尝试，提高效率可以采用二分查找方法，时间复杂度为O（logx）。</div>2019-02-09</li><br/>
+}</p>2019-02-11</li><br/><li><span>纯洁的憎恶</span> 👍（1） 💬（0）<p>这道题似乎可以等价于从1到x中找到一个数y，使得y*y小于等于x，且（y+1）*（y+1）大于x。那么可以从1到x逐个尝试，提高效率可以采用二分查找方法，时间复杂度为O（logx）。</p>2019-02-09</li><br/>
 </ul>

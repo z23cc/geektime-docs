@@ -120,5 +120,5 @@ AssangeDAO在社区内设立了一个由5名成员组成的委员会，负责维
 
 关于DAO的创业方向，你能想到哪些？欢迎在留言区分享你的答案，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>王世艺</span> 👍（9） 💬（1）<div>极客专栏学习dao，学完专栏的奖励代币jkcoin给学员和作者，优秀的笔记和评论，点赞也会获得代币jkcoin，学员可以通过jkcoin买极客时间商品，专栏，训练营，并且持有jkcoin的用户可以分享极客时间营收的一半。作者或者星级会员可以讲jkcoin在交易所换为usdt（类似期权回购）</div>2022-09-06</li><br/><li><span>KingSwim</span> 👍（1） 💬（0）<div>字都认识，就不是看不懂</div>2022-12-06</li><br/><li><span>lanlyhs</span> 👍（0） 💬（0）<div>「AssangeDAO发起的提案投票」这张图的来源是 snapshot 不是 Snapchat。</div>2022-12-13</li><br/><li><span>白卓熙Leo</span> 👍（0） 💬（0）<div>所以还是谁最终拥有代码控制权的问题</div>2022-10-08</li><br/>
+<li><span>王世艺</span> 👍（9） 💬（1）<p>极客专栏学习dao，学完专栏的奖励代币jkcoin给学员和作者，优秀的笔记和评论，点赞也会获得代币jkcoin，学员可以通过jkcoin买极客时间商品，专栏，训练营，并且持有jkcoin的用户可以分享极客时间营收的一半。作者或者星级会员可以讲jkcoin在交易所换为usdt（类似期权回购）</p>2022-09-06</li><br/><li><span>KingSwim</span> 👍（1） 💬（0）<p>字都认识，就不是看不懂</p>2022-12-06</li><br/><li><span>lanlyhs</span> 👍（0） 💬（0）<p>「AssangeDAO发起的提案投票」这张图的来源是 snapshot 不是 Snapchat。</p>2022-12-13</li><br/><li><span>白卓熙Leo</span> 👍（0） 💬（0）<p>所以还是谁最终拥有代码控制权的问题</p>2022-10-08</li><br/>
 </ul>

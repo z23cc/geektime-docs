@@ -252,12 +252,12 @@ private:
 
 ![](https://static001.geekbang.org/resource/image/6e/14/6ec0c53ee9917795c0e2a494cfe70014.png?wh=3000%2A2994)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Mervin</span> 👍（18） 💬（1）<div>课后题：
+<li><span>Mervin</span> 👍（18） 💬（1）<p>课后题：
 1. 给程序作者带来了一些便利，但是给读者比较大的麻烦，所以我认为尽量还是应该在比较清晰明确的地方使用，并加以明确的注释。
-2.auto推导的是编译器计算变量初始值得到类型的，decltype也是分析表达式但是不需要计算表达式，所以它与表达式本身有很大关系。</div>2020-05-19</li><br/><li><span>下雨天</span> 👍（14） 💬（2）<div>decltype(auto) x1 = (x); &#47;&#47; 推导为int&amp;，因为(expr)是引用类型。老师，这里为什么是引用？x不是值吗？</div>2020-06-01</li><br/><li><span>Geek_jg3r26</span> 👍（12） 💬（2）<div>老师， 总是在一些c++ 源码看到extern “C” 对这个关键字理解的不是很透</div>2020-05-30</li><br/><li><span>张飞Dear</span> 👍（6） 💬（1）<div>1，算是一个缺点，但是就和容器、条件编译一样，尺有所短寸有所长。用的恰当就好，我现在工作用的的编译器不支持auto，只能自己实验这敲了，用auto 就不用再写那么长的迭代器名称了，很方便。还有使用decltype 来定义迭代器类型  真的是太好用，之前都是用typedef 来进行的。
+2.auto推导的是编译器计算变量初始值得到类型的，decltype也是分析表达式但是不需要计算表达式，所以它与表达式本身有很大关系。</p>2020-05-19</li><br/><li><span>下雨天</span> 👍（14） 💬（2）<p>decltype(auto) x1 = (x); &#47;&#47; 推导为int&amp;，因为(expr)是引用类型。老师，这里为什么是引用？x不是值吗？</p>2020-06-01</li><br/><li><span>Geek_jg3r26</span> 👍（12） 💬（2）<p>老师， 总是在一些c++ 源码看到extern “C” 对这个关键字理解的不是很透</p>2020-05-30</li><br/><li><span>张飞Dear</span> 👍（6） 💬（1）<p>1，算是一个缺点，但是就和容器、条件编译一样，尺有所短寸有所长。用的恰当就好，我现在工作用的的编译器不支持auto，只能自己实验这敲了，用auto 就不用再写那么长的迭代器名称了，很方便。还有使用decltype 来定义迭代器类型  真的是太好用，之前都是用typedef 来进行的。
 
 2，① auto 的“自动推导”能力只能用在“初始化”的场合。不能用在类成员里面初始化。auto 总是推导出“值类型”，绝不会是“引用”。
-② decltype 不仅能够推导出值类型，还能够推导出引用类型，也就是表达式的“原始类型”。可以定义类成员类型。</div>2020-08-06</li><br/><li><span>Geek_197dc8</span> 👍（6） 💬（2）<div>auto总是推导出“值类型”，但绝不会是“引用”，这句话怎么理解，难道不可以推导出引用的类型嘛？我看你的例子 auto&amp; x1＝x，不是推导出引用类型嘛。</div>2020-05-21</li><br/><li><span>hao</span> 👍（5） 💬（1）<div>罗老师，请问下，在函数内部定义了vector，push_back了很多数据，要将这些vector数据作为函数结果返回，也没释放vector，这样会不会有问题？</div>2020-08-15</li><br/><li><span>Geek_ca425d</span> 👍（4） 💬（1）<div>JavaScript弱语言类型就是不对类型做定义，运行时推导的，但这种缺点导致开发大型项目的时候各种困难，我觉得主要就是类型不明确锅，所以后来有了typescript这种js超集。前车之鉴，auto还是要少用的。</div>2021-09-20</li><br/><li><span>EncodedStar</span> 👍（3） 💬（2）<div>我觉得auto 虽然方便了，但是代码不能都用auto吧，大量的auto反而让程序员摸不着头脑，这就像看一本书所有地方都花下划线就失去了下划线的意义。
+② decltype 不仅能够推导出值类型，还能够推导出引用类型，也就是表达式的“原始类型”。可以定义类成员类型。</p>2020-08-06</li><br/><li><span>Geek_197dc8</span> 👍（6） 💬（2）<p>auto总是推导出“值类型”，但绝不会是“引用”，这句话怎么理解，难道不可以推导出引用的类型嘛？我看你的例子 auto&amp; x1＝x，不是推导出引用类型嘛。</p>2020-05-21</li><br/><li><span>hao</span> 👍（5） 💬（1）<p>罗老师，请问下，在函数内部定义了vector，push_back了很多数据，要将这些vector数据作为函数结果返回，也没释放vector，这样会不会有问题？</p>2020-08-15</li><br/><li><span>Geek_ca425d</span> 👍（4） 💬（1）<p>JavaScript弱语言类型就是不对类型做定义，运行时推导的，但这种缺点导致开发大型项目的时候各种困难，我觉得主要就是类型不明确锅，所以后来有了typescript这种js超集。前车之鉴，auto还是要少用的。</p>2021-09-20</li><br/><li><span>EncodedStar</span> 👍（3） 💬（2）<p>我觉得auto 虽然方便了，但是代码不能都用auto吧，大量的auto反而让程序员摸不着头脑，这就像看一本书所有地方都花下划线就失去了下划线的意义。
 auto对于减少冗赘的代码也很有用。比如：之前我们写代码是：
 for(vector&lt;int&gt;::const_iterator itr = m_vector.begin(); itr != m_vector.end();++itr)
 可以使用auto简化为：
@@ -265,16 +265,16 @@ for(auto itr = m_vector.begin(); itr != m_vector.end();++itr)这样写就简单�
 所有的功能都是建立在好的方向发展的，所有的功能都是工具，工具只有利用对了才是好的，怎么能利用好这时候就看使用者的功底和经验丰富程度了。
 
 decltype 和 auto 一起使用会更为有用。auto 变量的类型只有编译器知道，而 decltype 对于大量运用运算符重载和特化的类型的代码的表示也非常有用。
-</div>2020-05-19</li><br/><li><span>X.</span> 👍（2） 💬（3）<div>请问老师，for (const auto&amp; i : v) {...}这里，为什么说“常引用方式访问元素，避免拷贝代价”  ？为什么不考虑用 for (auto i : v) {...} 呢？</div>2022-02-28</li><br/><li><span>eletarior</span> 👍（2） 💬（2）<div>我倒是觉得auto可以多用啊，隐藏的真正类型完全可以使用vscode的cpp插件或者ide工具直接查看到，不算大的缺点。如果要说C ++11让我最舒服的地方就是auto和using了。</div>2020-05-19</li><br/><li><span>Jason</span> 👍（2） 💬（2）<div>&quot;auto 和 decltype 虽然很方便，但用多了也确实会“隐藏”真正的类型，增加阅读时的理解难度。&quot;
-我觉得这很算缺点，它们应该只用在确实很难手动推导出变量类型的地方。</div>2020-05-19</li><br/><li><span>宵练2233</span> 👍（1） 💬（1）<div>举一个不适合用auto的例子 Eigen，由于它内部大量使用了Expression Template，用auto会产生很多奇怪的bug。</div>2021-07-23</li><br/><li><span>201201150</span> 👍（1） 💬（1）<div>我想auto 和decltype的引入，关键还是因为C++语言有着一个完善而且强大的type system，在编译阶段就有很多信息可以确定下来。
+</p>2020-05-19</li><br/><li><span>X.</span> 👍（2） 💬（3）<p>请问老师，for (const auto&amp; i : v) {...}这里，为什么说“常引用方式访问元素，避免拷贝代价”  ？为什么不考虑用 for (auto i : v) {...} 呢？</p>2022-02-28</li><br/><li><span>eletarior</span> 👍（2） 💬（2）<p>我倒是觉得auto可以多用啊，隐藏的真正类型完全可以使用vscode的cpp插件或者ide工具直接查看到，不算大的缺点。如果要说C ++11让我最舒服的地方就是auto和using了。</p>2020-05-19</li><br/><li><span>Jason</span> 👍（2） 💬（2）<p>&quot;auto 和 decltype 虽然很方便，但用多了也确实会“隐藏”真正的类型，增加阅读时的理解难度。&quot;
+我觉得这很算缺点，它们应该只用在确实很难手动推导出变量类型的地方。</p>2020-05-19</li><br/><li><span>宵练2233</span> 👍（1） 💬（1）<p>举一个不适合用auto的例子 Eigen，由于它内部大量使用了Expression Template，用auto会产生很多奇怪的bug。</p>2021-07-23</li><br/><li><span>201201150</span> 👍（1） 💬（1）<p>我想auto 和decltype的引入，关键还是因为C++语言有着一个完善而且强大的type system，在编译阶段就有很多信息可以确定下来。
 泛型编程里面，auto关键字确实帮助程序员省去很多工作，这是最大的优点。但是如果auto 关键字满天飞，也会给程序的可读性带来很多问题。使用好关键还是一个度的把握。
-auto和decltype两者最大的区别应该是，一个根据值的类型来推导出来变量类型，一个根据表达式的类型推导出来变量类型。</div>2021-03-31</li><br/><li><span>范闲</span> 👍（1） 💬（1）<div>1. 大量使用auto和delctype确实会有这种问题。所以产量定义和初始化的时候原类型定义还是不错的.auto其实循环展开上用比较合理。delctype在类定义里使用，不传递到外部。
-2.auto和delctype其实更多是语法糖的效果。实际类型确定都在编译期。</div>2020-05-19</li><br/><li><span>幽殇</span> 👍（0） 💬（1）<div>老师，上面的一个例子：
+auto和decltype两者最大的区别应该是，一个根据值的类型来推导出来变量类型，一个根据表达式的类型推导出来变量类型。</p>2021-03-31</li><br/><li><span>范闲</span> 👍（1） 💬（1）<p>1. 大量使用auto和delctype确实会有这种问题。所以产量定义和初始化的时候原类型定义还是不错的.auto其实循环展开上用比较合理。delctype在类定义里使用，不传递到外部。
+2.auto和delctype其实更多是语法糖的效果。实际类型确定都在编译期。</p>2020-05-19</li><br/><li><span>幽殇</span> 👍（0） 💬（1）<p>老师，上面的一个例子：
 auto x = 10L; &#47;&#47; auto推导为long，x是long
 auto&amp; x1 = x; &#47;&#47; auto推导为long，x1是long&amp;
 auto* x2 = &amp;x; &#47;&#47; auto推导为long，x2是long*
 
 这里为什么说x2的auto推导为long而不是long*，因为我使用
 auto x2 = &amp;x;
-输出的结果与上述结果一样，说明推导出的结果就是long*，为什么还要在auto后加*</div>2023-12-09</li><br/>
+输出的结果与上述结果一样，说明推导出的结果就是long*，为什么还要在auto后加*</p>2023-12-09</li><br/>
 </ul>

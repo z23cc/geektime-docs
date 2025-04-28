@@ -220,8 +220,8 @@ undefined
 
 希望这份加餐会让你后续的课程变得轻松一些。今天就到这里，下一讲我们开始讲面向对象。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>kkxue</span> 👍（3） 💬（2）<div>个人觉得老师说明下您理解编程语言背后的哲学逻辑或者体系，我们上道才更快。</div>2020-05-21</li><br/><li><span>westfall</span> 👍（2） 💬（1）<div>“所以本质上，引用还是指向值、代表值的一个概念，它只是“获得值的访问能力”的一个途径。最终的结果仍然指向原点：计算值、求值。”
-不明白引用与指针的区别。</div>2020-06-09</li><br/><li><span>刘长锋</span> 👍（2） 💬（1）<div>D2 大会上听老师说，要有新书发布，很是期待！</div>2020-03-12</li><br/><li><span>K4SHIFZ</span> 👍（1） 💬（2）<div>老师，下个课程什么时候出啊，迫不及待想学了</div>2020-03-25</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<div>关于GetValue最后再请教一下
+<li><span>kkxue</span> 👍（3） 💬（2）<p>个人觉得老师说明下您理解编程语言背后的哲学逻辑或者体系，我们上道才更快。</p>2020-05-21</li><br/><li><span>westfall</span> 👍（2） 💬（1）<p>“所以本质上，引用还是指向值、代表值的一个概念，它只是“获得值的访问能力”的一个途径。最终的结果仍然指向原点：计算值、求值。”
+不明白引用与指针的区别。</p>2020-06-09</li><br/><li><span>刘长锋</span> 👍（2） 💬（1）<p>D2 大会上听老师说，要有新书发布，很是期待！</p>2020-03-12</li><br/><li><span>K4SHIFZ</span> 👍（1） 💬（2）<p>老师，下个课程什么时候出啊，迫不及待想学了</p>2020-03-25</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<p>关于GetValue最后再请教一下
 规范里的是
 ```
 6.2.4.5 GetValue ( V )
@@ -265,16 +265,16 @@ c. Return ? base.GetBindingValue(V.[[ReferencedName]], V.[[Strict]]) (see 9.1).
       return base.$GetPartial(this.GetReferencedNamePartial(realm, V), GetThisValue(realm, V));
 ```
 这里怎么看都是跟base有关系。实在是看不懂到底怎么样把一个value用getValue取出来。您的课也我也没有看到有直接讲到这个。所以能不能麻烦最后再指点一下，到底规范里面的哪一步是把像obj = {x: &#39;abcdef&#39;}，当【obj.x】作为一个引用时，我们把字符串给用getValue取出来的？
-</div>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<div>再请教一下：在JS里做equality check的时候, 比如用 === - 这个时候我们是在比value还是比reference？也就是说 x === y - 等于是 getValue(x) === getValue(y) 吗？
+</p>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<p>再请教一下：在JS里做equality check的时候, 比如用 === - 这个时候我们是在比value还是比reference？也就是说 x === y - 等于是 getValue(x) === getValue(y) 吗？
 相应地，是不是说在JS里面，能拿来比较的东西只能是 value，两个reference是肯定不一样的？
 请问规范里面有相应的章节吗？
-</div>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<div>1. 请教一下，您说“例如obj = {x: &#39;abcdef&#39;}，当【obj.x】作为一个引用时，base是obj，而不是那个字符串&#39;abcdef&#39;。又例如全局的变量let x = &#39;abcdef&#39;，base将是全局词法环境，指向Global.lexEnv。”
+</p>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<p>1. 请教一下，您说“例如obj = {x: &#39;abcdef&#39;}，当【obj.x】作为一个引用时，base是obj，而不是那个字符串&#39;abcdef&#39;。又例如全局的变量let x = &#39;abcdef&#39;，base将是全局词法环境，指向Global.lexEnv。”
 
 假如我现在把obj.x赋值给一个变量，那getValue(obj.x)拿出来的值不应该是字符串&#39;abcdef&#39;吗？https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-getvalue 我理解的规范里的getValue 最终拿出来的value就是base，请问这个理解是错的吗？如果是错的，那getValue里拿出来的value到底是什么？
 
 换一个问法，如果当【obj.x】作为一个引用时，错误地把base是当成了那个字符串&#39;abcdef&#39;，会造成什么样的理解错误呢，请问您能举个例子吗？
 
-2. 另外想请教一下在https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-reference-record-specification-type 里定义的 Reference Record Specification Type里，[[ReferencedName]]	提到 &quot;The name of the binding. Always a String if [[Base]] value is an Environment Record.&quot;这句话的意思是什么？意思是如果base不是一个Environment Record，那ReferencedName可以不是string？请问Environment Record又是啥。。</div>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<div>几个问题想向老师请教一下：
+2. 另外想请教一下在https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-reference-record-specification-type 里定义的 Reference Record Specification Type里，[[ReferencedName]]	提到 &quot;The name of the binding. Always a String if [[Base]] value is an Environment Record.&quot;这句话的意思是什么？意思是如果base不是一个Environment Record，那ReferencedName可以不是string？请问Environment Record又是啥。。</p>2022-01-17</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<p>几个问题想向老师请教一下：
 1. Reference Record Specification Type （https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-reference-record-specification-type）就是您一直提到的“规范层面的引用（References）”吗？
 2. 引用reference里的Base，我们是可以理解为真正的那个数字&#47;字符串&#47;object etc. 吗？而不是指针&#47;引用（内存层面上的）或者了另一个reference?
 3. 最想问的一个问题是，想知道在call function的时候，规范里有规定是pass by value还是pass by reference吗？假如说我们有 
@@ -289,8 +289,8 @@ fn(b)
 这里第一次给fn传入`a`的时候，整个过程我们有`x = getValue(a)` 吗还是说我们直接把`a`的reference给了`x`? fn(b) 也一样吗？ 
 我在规范里找了很久都找不到相应的章节，请问您能给一个链接到专门讲**函数传参**的章节吗？
 4.最后，您说“这个框架的核心在于——ECMAScript 的目的是描述“引擎如何实现”，而不是“描述语言是什么”。”这句话确定没有说反了吗？难道不是 ECMAScript的目的是设计一个语言，具体语言怎么实现是javascript engine的事情。比如ECMAScript里面不会讲memory layout应该会怎么样，什么东西放到stack上，什么放到heap上，因为这个是implementation details，由引擎自己决定。
-感谢！</div>2022-01-15</li><br/><li><span>青史成灰</span> 👍（0） 💬（2）<div>老师，关于上面“为什么要有‘引用’这么个东西呢”的解释，读下来感觉和C++的指针很像，指针是内存的地址，指向堆内存中的对象，需要访问指针指向的成员时，直接解引用这个指针，v = *p，就和此处的x=GetValue(r)一样。 不知道这样理解是否正确？</div>2019-12-14</li><br/><li><span>行问</span> 👍（0） 💬（2）<div>eval(str) 是执行语句，而{$str}是执行表达式
+感谢！</p>2022-01-15</li><br/><li><span>青史成灰</span> 👍（0） 💬（2）<p>老师，关于上面“为什么要有‘引用’这么个东西呢”的解释，读下来感觉和C++的指针很像，指针是内存的地址，指向堆内存中的对象，需要访问指针指向的成员时，直接解引用这个指针，v = *p，就和此处的x=GetValue(r)一样。 不知道这样理解是否正确？</p>2019-12-14</li><br/><li><span>行问</span> 👍（0） 💬（2）<p>eval(str) 是执行语句，而{$str}是执行表达式
 
 这里是 {$str} 正确，还是 ${str} 正确？
-</div>2019-12-09</li><br/><li><span>潇潇雨歇</span> 👍（2） 💬（3）<div>结合《程序原本》重新回顾前几讲，有趣</div>2019-12-09</li><br/><li><span>孜孜</span> 👍（1） 💬（0）<div>这两章的东西，虽说是js的，但是我感觉这是不限制在某个语言层面的。</div>2020-06-18</li><br/><li><span>Amundsen</span> 👍（0） 💬（0）<div>每次反复阅读都能收获，感觉看到了不一样的自己 :)</div>2020-03-20</li><br/><li><span>伪装</span> 👍（0） 💬（0）<div>按照ecma规范写一套解析器就是js了</div>2019-12-31</li><br/><li><span>weineel</span> 👍（0） 💬（0）<div>知识密度太大。</div>2019-12-09</li><br/>
+</p>2019-12-09</li><br/><li><span>潇潇雨歇</span> 👍（2） 💬（3）<p>结合《程序原本》重新回顾前几讲，有趣</p>2019-12-09</li><br/><li><span>孜孜</span> 👍（1） 💬（0）<p>这两章的东西，虽说是js的，但是我感觉这是不限制在某个语言层面的。</p>2020-06-18</li><br/><li><span>Amundsen</span> 👍（0） 💬（0）<p>每次反复阅读都能收获，感觉看到了不一样的自己 :)</p>2020-03-20</li><br/><li><span>伪装</span> 👍（0） 💬（0）<p>按照ecma规范写一套解析器就是js了</p>2019-12-31</li><br/><li><span>weineel</span> 👍（0） 💬（0）<p>知识密度太大。</p>2019-12-09</li><br/>
 </ul>

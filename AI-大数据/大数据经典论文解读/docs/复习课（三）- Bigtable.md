@@ -93,5 +93,5 @@ Bigtable最耀眼的能力在于**可以支撑每秒百万级别的随机读写*
 
 徐老师在 [09](https://time.geekbang.org/column/article/423602) 和 [10讲](https://time.geekbang.org/column/article/425351)都推荐了《数据密集型应用系统设计》这本书，如果你还没有开始阅读的话，我强烈建议你读起来。最近一有空我就会拿起这本书翻一翻，对于理解课程内容和拓展数据系统的知识非常有帮助，你也可以参考看看。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Dr.森</span> 👍（1） 💬（1）<div>优秀的课代表👏👏👏</div>2021-11-11</li><br/><li><span>Ping</span> 👍（0） 💬（1）<div>请问Bigtable的主要用途是啥？</div>2021-12-31</li><br/><li><span>Geek_z</span> 👍（0） 💬（1）<div>老师后面有没有可能讲下Mesa: Near Real-Time, Scalable Data Warehousing，当下比较流行的Doris之类底层论文</div>2021-11-17</li><br/>
+<li><span>Dr.森</span> 👍（1） 💬（1）<p>优秀的课代表👏👏👏</p>2021-11-11</li><br/><li><span>Ping</span> 👍（0） 💬（1）<p>请问Bigtable的主要用途是啥？</p>2021-12-31</li><br/><li><span>Geek_z</span> 👍（0） 💬（1）<p>老师后面有没有可能讲下Mesa: Near Real-Time, Scalable Data Warehousing，当下比较流行的Doris之类底层论文</p>2021-11-17</li><br/>
 </ul>

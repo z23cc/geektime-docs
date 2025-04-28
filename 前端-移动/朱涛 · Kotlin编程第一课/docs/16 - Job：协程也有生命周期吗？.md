@@ -795,7 +795,7 @@ fun main() = runBlocking {
 
 欢迎在留言区分享你的答案，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>面无表情的生鱼片</span> 👍（37） 💬（3）<div>思考题：
+<li><span>面无表情的生鱼片</span> 👍（37） 💬（3）<p>思考题：
 代码的执行结果是：
 &gt; First coroutine start!
 &gt; First coroutine end!
@@ -815,17 +815,17 @@ job2 after join: isCompleted === true
 
 可见 job2 创建后并没有被激活。
 
-val job2 = launch(job) {} 这一行代码指示 job2 将运行在 job 的 CoroutineContext 之下, 而之前的代码 job.join() 时 job 已经执行完毕了，根据协程结构化的特性，job2 在创建后不会被激活，并且标记为Cancelled，然后执行 job2 时，发现 job2 未被激活，并且已经被取消，则不会执行 job2 的代码块，但是会将 job2 标记为 Completed</div>2022-02-18</li><br/><li><span>没名儿</span> 👍（12） 💬（1）<div>看了大家的留言有个疑点
+val job2 = launch(job) {} 这一行代码指示 job2 将运行在 job 的 CoroutineContext 之下, 而之前的代码 job.join() 时 job 已经执行完毕了，根据协程结构化的特性，job2 在创建后不会被激活，并且标记为Cancelled，然后执行 job2 时，发现 job2 未被激活，并且已经被取消，则不会执行 job2 的代码块，但是会将 job2 标记为 Completed</p>2022-02-18</li><br/><li><span>没名儿</span> 👍（12） 💬（1）<p>看了大家的留言有个疑点
 ----很多异步任务之间都是没有互相依赖的，这样的代码结合挂起函数后，再通过 async 并发来执行，是可以大大提升代码运行效率的。----
 ----如你所说，存在依赖关系的时候，我们就可以挂起函数与async结合了。-----
 到底是存在依赖关系用async还是不存在依赖关系用async呢？
 
-</div>2022-03-17</li><br/><li><span>白乾涛</span> 👍（7） 💬（1）<div>思考题针对性不强。
-因为思考题考察的知识点是 CoroutineContext 上下文，而这一部分是下一节课的内容。</div>2022-02-23</li><br/><li><span>魏全运</span> 👍（6） 💬（1）<div>思考题结果：
+</p>2022-03-17</li><br/><li><span>白乾涛</span> 👍（7） 💬（1）<p>思考题针对性不强。
+因为思考题考察的知识点是 CoroutineContext 上下文，而这一部分是下一节课的内容。</p>2022-02-23</li><br/><li><span>魏全运</span> 👍（6） 💬（1）<p>思考题结果：
 First coroutine start!
 First coroutine end!
 Process end!
-没有执行job2的原因是，它的launch中传入了job 作为coroutinecontext，而它已经是complete 状态了，所以不会再执行job2的block 而是直接执行了job2的join ，然后结束。</div>2022-02-18</li><br/><li><span>原仲</span> 👍（2） 💬（3）<div>代码片段14 中的执行流程
+没有执行job2的原因是，它的launch中传入了job 作为coroutinecontext，而它已经是complete 状态了，所以不会再执行job2的block 而是直接执行了job2的join ，然后结束。</p>2022-02-18</li><br/><li><span>原仲</span> 👍（2） 💬（3）<p>代码片段14 中的执行流程
 val result1 = async { getResult1() } 
 val result2 = async { getResult2() } 
 val result3 = async { getResult3() }
@@ -843,12 +843,12 @@ val result3 = async { getResult3() }
 &#47;&#47;调用时机
 result3.await()
 用作者的思维模型，相当于三个钓鱼杆依次拉杆
-</div>2022-05-14</li><br/><li><span>20220106</span> 👍（2） 💬（3）<div>代码段10中【delay(500L)】这一句影响了什么呀？不加的话后边的日志就不打印了</div>2022-04-13</li><br/><li><span>Gavin</span> 👍（2） 💬（1）<div>&quot;First coroutine start!&quot;
+</p>2022-05-14</li><br/><li><span>20220106</span> 👍（2） 💬（3）<p>代码段10中【delay(500L)】这一句影响了什么呀？不加的话后边的日志就不打印了</p>2022-04-13</li><br/><li><span>Gavin</span> 👍（2） 💬（1）<p>&quot;First coroutine start!&quot;
 &quot;First coroutine end!&quot;
 &quot;Process end!&quot;
-通过源码可知launch中传入的CoroutineContext会作为parentJob，而job2的parentJob为job，job协程已经处于completed状态，故不执行job2直接跳过</div>2022-02-23</li><br/><li><span>20220106</span> 👍（1） 💬（1）<div>这里 await() 后面的代码，虽然看起来是阻塞了，但它只是执行流程被挂起和恢复的一种表现。而且如果你仔细思考的话，你会发现上面这个动图，同样也描述了之前 job.join() 的行为模式，在协程执行完毕之前，后面的协程代码都被暂时挂起了，等到协程执行完毕，才有机会继续执行。
+通过源码可知launch中传入的CoroutineContext会作为parentJob，而job2的parentJob为job，job协程已经处于completed状态，故不执行job2直接跳过</p>2022-02-23</li><br/><li><span>20220106</span> 👍（1） 💬（1）<p>这里 await() 后面的代码，虽然看起来是阻塞了，但它只是执行流程被挂起和恢复的一种表现。而且如果你仔细思考的话，你会发现上面这个动图，同样也描述了之前 job.join() 的行为模式，在协程执行完毕之前，后面的协程代码都被暂时挂起了，等到协程执行完毕，才有机会继续执行。
 
-——”在协程执行完毕之前“这里的协程指的父级协程，“后面的协程代码都被暂时挂起了“这里的协程代码指的子级协程代码部份。也就是说：如果子级自己有挂起操作，那么子级的代码会被暂时挂起，直到父级的协程代码执行完毕之后再继续执行子级协程代码（前提是父级没有挂起延迟之类的操作）。</div>2022-04-14</li><br/><li><span>dawn</span> 👍（1） 💬（1）<div>fun main() = runBlocking {
+——”在协程执行完毕之前“这里的协程指的父级协程，“后面的协程代码都被暂时挂起了“这里的协程代码指的子级协程代码部份。也就是说：如果子级自己有挂起操作，那么子级的代码会被暂时挂起，直到父级的协程代码执行完毕之后再继续执行子级协程代码（前提是父级没有挂起延迟之类的操作）。</p>2022-04-14</li><br/><li><span>dawn</span> 👍（1） 💬（1）<p>fun main() = runBlocking {
     val job = launch {
         logX(&quot;Coroutine  start!&quot;)
         delay(1000L)
@@ -863,8 +863,8 @@ result3.await()
     delay(2000)
     logX(&quot;Process end!&quot;)
 }
-为什么取消后输出延时1ms输出job的isCompleted会有false变为true</div>2022-03-30</li><br/><li><span>张国庆</span> 👍（1） 💬（1）<div>最后问题应该是按顺序打印</div>2022-02-18</li><br/><li><span>Luckykelan</span> 👍（0） 💬（1）<div>老师你好，请问完善后的思维模型这个例子中，是怎么知道println(&quot;Result = $result&quot;)和logX(&quot;Process end!&quot;)这两段代码是和协程在同一个task 中并一同挂起的呢？</div>2022-04-24</li><br/><li><span>neo</span> 👍（0） 💬（1）<div>Finishing[cancelling=true, completing=false, rootCause=kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=&quot;coroutine#2&quot;:StandaloneCoroutine{Completed}@d6da883, exceptions=null, list=List{Active}[]]
-上面cancelling的原因是父job已经被完结</div>2022-04-22</li><br/><li><span>20220106</span> 👍（0） 💬（1）<div>这里的阻塞和之前的挂起不是一回事把</div>2022-04-12</li><br/><li><span>jim</span> 👍（0） 💬（1）<div>思考题，job与job2存在父子协程关系吗？</div>2022-04-01</li><br/><li><span>Allen</span> 👍（0） 💬（1）<div>    val job = launch {
+为什么取消后输出延时1ms输出job的isCompleted会有false变为true</p>2022-03-30</li><br/><li><span>张国庆</span> 👍（1） 💬（1）<p>最后问题应该是按顺序打印</p>2022-02-18</li><br/><li><span>Luckykelan</span> 👍（0） 💬（1）<p>老师你好，请问完善后的思维模型这个例子中，是怎么知道println(&quot;Result = $result&quot;)和logX(&quot;Process end!&quot;)这两段代码是和协程在同一个task 中并一同挂起的呢？</p>2022-04-24</li><br/><li><span>neo</span> 👍（0） 💬（1）<p>Finishing[cancelling=true, completing=false, rootCause=kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=&quot;coroutine#2&quot;:StandaloneCoroutine{Completed}@d6da883, exceptions=null, list=List{Active}[]]
+上面cancelling的原因是父job已经被完结</p>2022-04-22</li><br/><li><span>20220106</span> 👍（0） 💬（1）<p>这里的阻塞和之前的挂起不是一回事把</p>2022-04-12</li><br/><li><span>jim</span> 👍（0） 💬（1）<p>思考题，job与job2存在父子协程关系吗？</p>2022-04-01</li><br/><li><span>Allen</span> 👍（0） 💬（1）<p>    val job = launch {
         log(&quot;First coroutine start!&quot;)
         delay(1000L)
         log(&quot;First coroutine end!&quot;)
@@ -880,5 +880,5 @@ result3.await()
     job2.join()
     log(&quot;Process end!&quot;)
 
-在示例代码中，加了一个打印 job2 的状态，发现 job2 已经被取消了，是因为绑定了 job 后，运行时认为其已经被执行过了，所以直接将其取消了？</div>2022-02-20</li><br/>
+在示例代码中，加了一个打印 job2 的状态，发现 job2 已经被取消了，是因为绑定了 job 后，运行时认为其已经被执行过了，所以直接将其取消了？</p>2022-02-20</li><br/>
 </ul>

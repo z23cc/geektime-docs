@@ -279,24 +279,24 @@ def oneRandomWalk(transferMatrix : scala.collection.mutable.Map[String, scala.co
 
 欢迎把你的思考和答案写在留言区，如果你掌握了Embedding的实战方法，也不妨把它分享给你的朋友吧，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>你笑起来真好看</span> 👍（30） 💬（5）<div>transitionMatrixAndItemDis 在生成中这样定义的话，会不会造成dirver端oom？</div>2020-10-20</li><br/><li><span>fsc2016</span> 👍（27） 💬（3）<div>老师，筛选出来的高分电影有900多部，随机游走出来的序列embdding后，只有500多部，这应该和序列数量，序列长度有关，比如序列数量不够，导致没有覆盖到全部高分电影。实际工作中，像序列数量，序列长度是不是要经过筛选，来保证所有item都会被embdding？</div>2020-10-31</li><br/><li><span>Huntley</span> 👍（12） 💬（1）<div>想请教下老师，user embedding 也可以用相同的方法获得吗？如何构建用户关系图呢？是不是看过同一部电影的两个用户之间由一条无向边进行连接？和item embedding相比，有什么区别或注意事项吗？</div>2020-10-19</li><br/><li><span>浣熊当家</span> 👍（10） 💬（3）<div>老师请教下，我对item2vec和Graph Embedding的联系理解是否正确：
+<li><span>你笑起来真好看</span> 👍（30） 💬（5）<p>transitionMatrixAndItemDis 在生成中这样定义的话，会不会造成dirver端oom？</p>2020-10-20</li><br/><li><span>fsc2016</span> 👍（27） 💬（3）<p>老师，筛选出来的高分电影有900多部，随机游走出来的序列embdding后，只有500多部，这应该和序列数量，序列长度有关，比如序列数量不够，导致没有覆盖到全部高分电影。实际工作中，像序列数量，序列长度是不是要经过筛选，来保证所有item都会被embdding？</p>2020-10-31</li><br/><li><span>Huntley</span> 👍（12） 💬（1）<p>想请教下老师，user embedding 也可以用相同的方法获得吗？如何构建用户关系图呢？是不是看过同一部电影的两个用户之间由一条无向边进行连接？和item embedding相比，有什么区别或注意事项吗？</p>2020-10-19</li><br/><li><span>浣熊当家</span> 👍（10） 💬（3）<p>老师请教下，我对item2vec和Graph Embedding的联系理解是否正确：
 1. 联系：item2vec和Graph Embedding 都是为了下一步的相关性矩阵，而一段物品序列
 2. 不同： item2vec使用同一用户历史时间序列下的滑动窗口， 而Graph embedding在同一用户的时间序列之上，还应用了不同用户，同一物品之间的图联系，所以说graph embedding可以生成更全面的物品与物品的连接。
 
-所以是否可理解为graph embedding比item2vec的复杂，更完善？业界更流行的是不是想deep walk这种graph embedding的算法？</div>2020-10-20</li><br/><li><span>白夜</span> 👍（9） 💬（2）<div>老师，randomWalk这部在60核的机器上跑的很慢，，慢到无语，可以优化下吗，transitionMatrixAndItemDis._1与_2的size都是300000</div>2020-10-29</li><br/><li><span>tuomasiii</span> 👍（6） 💬（1）<div>想问一下在item2vec和graph embedding里面ttl都设置成了24小时，也就是说24小时候后这些embedding就会从redis里面evict掉吗？
+所以是否可理解为graph embedding比item2vec的复杂，更完善？业界更流行的是不是想deep walk这种graph embedding的算法？</p>2020-10-20</li><br/><li><span>白夜</span> 👍（9） 💬（2）<p>老师，randomWalk这部在60核的机器上跑的很慢，，慢到无语，可以优化下吗，transitionMatrixAndItemDis._1与_2的size都是300000</p>2020-10-29</li><br/><li><span>tuomasiii</span> 👍（6） 💬（1）<p>想问一下在item2vec和graph embedding里面ttl都设置成了24小时，也就是说24小时候后这些embedding就会从redis里面evict掉吗？
 
-还有就是如果有new user和new item我们都是需要train from scratch吗？还是说可以增量训练？</div>2021-01-05</li><br/><li><span>聪聪呀</span> 👍（6） 💬（2）<div>老师，我最近在研究使用graph embedding ，根据网上的git 代码跑了item2vec，EGES代码，我的推荐场景是视频推荐，同样的训练数据，我发现item2vec 推荐效果较好，但我发现EGES推荐效果不好（只用了ID，没有加其他特征）推荐结果相似度很低。所以想请教您，您觉得可能是什么原因引起的呢，您有没有EGES的demo </div>2020-10-21</li><br/><li><span>W</span> 👍（5） 💬（2）<div>老师你好，不知道我是不是哪里理解错了T_T，新手入门。我的问题是：评分低于3.5的电影被过滤了，相当于电影库里没有低于3.5分的电影，那么也就不会有对应低于3.5分的电影的embedding向量，为什么BatMan的推荐结果里还有低于3.5分的推荐结果呢？</div>2021-06-29</li><br/><li><span>Geek_ee4f14</span> 👍（5） 💬（1）<div>再请问下老师，游走的时候起始点没有做去重，会不会导致某些爆款成为起始点的概率更高，也不容易游走到冷门物品呀？</div>2021-01-25</li><br/><li><span>梁栋💝</span> 👍（5） 💬（1）<div>综上，随机游走因为需要完整转移概率矩阵的原因，受限于转移概率矩阵规模能否容纳到内存中。</div>2021-01-06</li><br/><li><span>王发庆</span> 👍（5） 💬（1）<div>老师，您好，请教您一个问题，在生成Embedding的时候我们都是全量生成的，在生产环境下我们能增量的去生成新节点的Embedding么？</div>2020-10-22</li><br/><li><span>花花花木兰</span> 👍（4） 💬（1）<div>老师，对于非序列数据用spark的word2vec模型是不是不合适？非序列数据用什么方法训练比较好？例如生鲜配送的场景，用户一次会购买很多菜，这些菜在一个订单中是没有先后时序的。</div>2020-12-21</li><br/><li><span>WiFeng</span> 👍（4） 💬（3）<div>你们执行都没有问题吗？
+还有就是如果有new user和new item我们都是需要train from scratch吗？还是说可以增量训练？</p>2021-01-05</li><br/><li><span>聪聪呀</span> 👍（6） 💬（2）<p>老师，我最近在研究使用graph embedding ，根据网上的git 代码跑了item2vec，EGES代码，我的推荐场景是视频推荐，同样的训练数据，我发现item2vec 推荐效果较好，但我发现EGES推荐效果不好（只用了ID，没有加其他特征）推荐结果相似度很低。所以想请教您，您觉得可能是什么原因引起的呢，您有没有EGES的demo </p>2020-10-21</li><br/><li><span>W</span> 👍（5） 💬（2）<p>老师你好，不知道我是不是哪里理解错了T_T，新手入门。我的问题是：评分低于3.5的电影被过滤了，相当于电影库里没有低于3.5分的电影，那么也就不会有对应低于3.5分的电影的embedding向量，为什么BatMan的推荐结果里还有低于3.5分的推荐结果呢？</p>2021-06-29</li><br/><li><span>Geek_ee4f14</span> 👍（5） 💬（1）<p>再请问下老师，游走的时候起始点没有做去重，会不会导致某些爆款成为起始点的概率更高，也不容易游走到冷门物品呀？</p>2021-01-25</li><br/><li><span>梁栋💝</span> 👍（5） 💬（1）<p>综上，随机游走因为需要完整转移概率矩阵的原因，受限于转移概率矩阵规模能否容纳到内存中。</p>2021-01-06</li><br/><li><span>王发庆</span> 👍（5） 💬（1）<p>老师，您好，请教您一个问题，在生成Embedding的时候我们都是全量生成的，在生产环境下我们能增量的去生成新节点的Embedding么？</p>2020-10-22</li><br/><li><span>花花花木兰</span> 👍（4） 💬（1）<p>老师，对于非序列数据用spark的word2vec模型是不是不合适？非序列数据用什么方法训练比较好？例如生鲜配送的场景，用户一次会购买很多菜，这些菜在一个订单中是没有先后时序的。</p>2020-12-21</li><br/><li><span>WiFeng</span> 👍（4） 💬（3）<p>你们执行都没有问题吗？
 
 &#47;Users&#47;leeco&#47;github&#47;wzhe06&#47;SparrowRecSys&#47;src&#47;main&#47;java&#47;com&#47;wzhe&#47;sparrowrecsys&#47;offline&#47;spark&#47;embedding&#47;Embedding.scala:34:43
 No TypeTag available for scala.collection.Seq[String]
-    val sortUdf: UserDefinedFunction = udf((rows: Seq[Row]) =&gt; {</div>2020-10-26</li><br/><li><span>tuomasiii</span> 👍（3） 💬（1）<div>想请问下老师如果新的user&#47;item加入，embedding matrix形状变大。如果每天都end2end train from scratch，是不是太expensive了？
+    val sortUdf: UserDefinedFunction = udf((rows: Seq[Row]) =&gt; {</p>2020-10-26</li><br/><li><span>tuomasiii</span> 👍（3） 💬（1）<p>想请问下老师如果新的user&#47;item加入，embedding matrix形状变大。如果每天都end2end train from scratch，是不是太expensive了？
 如果是手动扩容embedding再initialize with昨日的checkpoint继续训练新的user-item interactions，然后时间久一点再train from scratch，行得通吗？
-</div>2021-02-23</li><br/><li><span>Capricornus</span> 👍（3） 💬（2）<div>userSeq.select(&quot;movieIdStr&quot;).rdd.map(r =&gt; r.getAs[String](&quot;movieIdStr&quot;).split(&quot; &quot;).toSeq)
+</p>2021-02-23</li><br/><li><span>Capricornus</span> 👍（3） 💬（2）<p>userSeq.select(&quot;movieIdStr&quot;).rdd.map(r =&gt; r.getAs[String](&quot;movieIdStr&quot;).split(&quot; &quot;).toSeq)
 老师这里为什么需要转陈Seq，而不使用Array？
     val sortUdf: UserDefinedFunction = udf((rows: Seq[Row]) =&gt; {
       rows.map { case Row(movieId: String, timestamp: String) =&gt; (movieId, timestamp) }
         .sortBy { case (movieId, timestamp) =&gt; timestamp }
         .map { case (movieId, timestamp) =&gt; movieId }
     })
-老师这里case的作用是什么？不太能理解。</div>2021-01-24</li><br/>
+老师这里case的作用是什么？不太能理解。</p>2021-01-24</li><br/>
 </ul>

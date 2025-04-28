@@ -236,10 +236,10 @@ nonce 是个单调递增的整数。当某个后来的请求的 nonce，比上�
 
 最后留一个思考题。今天的内容里，能不能使用 timestamp 代替 nonce？为什么？欢迎留言写下你的思考，也欢迎你把这篇文章分享出去。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>自由民</span> 👍（10） 💬（10）<div>为注册sandbox的账号折腾了半天，停在创建账号那里就不动了。不知道是不是墙的原因，挂了梯子终于注册好了，但是却要验证手机号码，开始我瞎填的美国加州，用网上的美国手机号接收验证码也不行。最后用另一个邮箱注册了，可以选中国的，手机也能接收到验证码。
+<li><span>自由民</span> 👍（10） 💬（10）<p>为注册sandbox的账号折腾了半天，停在创建账号那里就不动了。不知道是不是墙的原因，挂了梯子终于注册好了，但是却要验证手机号码，开始我瞎填的美国加州，用网上的美国手机号接收验证码也不行。最后用另一个邮箱注册了，可以选中国的，手机也能接收到验证码。
 思考题:应该不行，对并发程序，先运行的未必时间戳在前，而用递增序列则可以确保先开始的顺序一定在前。
-课程的练习代码: https:&#47;&#47;github.com&#47;zwdnet&#47;PythonPractice</div>2019-10-24</li><br/><li><span>Jingxiao</span> 👍（50） 💬（5）<div>思考题答案：事实上，在要求不是很严格的低频交易中，timestamp 是可以作为 nonce 存在的，它满足单调递增不重复的特性，比如一小时只会发送几个交易请求的波段策略中，timestamp 完全没问题。但是，在频率较高的交易中，timestamp 可能就不是那么适合。如果你使用协程来编程，或者使用类似 node.js 这样的异步编程工具或语言，那么你的代码很可能在发送的时候，并不是按照你想要的顺序发送给服务器，就会出现 timestamp 更大的请求反而更早发送。其次，在网络传输中，不同的包也可能有完全不同的抵达顺序，虽然你可以通过一些编程技巧来实现按顺序传输，但是如果你需要多台机器进行较为高频的交易。而且需要对同一个仓位（同一个 API Key）进行操作，就可能会变得比较麻烦。
-</div>2019-08-01</li><br/><li><span>小侠龙旋风</span> 👍（18） 💬（1）<div>知识点很多，整理一下。
+课程的练习代码: https:&#47;&#47;github.com&#47;zwdnet&#47;PythonPractice</p>2019-10-24</li><br/><li><span>Jingxiao</span> 👍（50） 💬（5）<p>思考题答案：事实上，在要求不是很严格的低频交易中，timestamp 是可以作为 nonce 存在的，它满足单调递增不重复的特性，比如一小时只会发送几个交易请求的波段策略中，timestamp 完全没问题。但是，在频率较高的交易中，timestamp 可能就不是那么适合。如果你使用协程来编程，或者使用类似 node.js 这样的异步编程工具或语言，那么你的代码很可能在发送的时候，并不是按照你想要的顺序发送给服务器，就会出现 timestamp 更大的请求反而更早发送。其次，在网络传输中，不同的包也可能有完全不同的抵达顺序，虽然你可以通过一些编程技巧来实现按顺序传输，但是如果你需要多台机器进行较为高频的交易。而且需要对同一个仓位（同一个 API Key）进行操作，就可能会变得比较麻烦。
+</p>2019-08-01</li><br/><li><span>小侠龙旋风</span> 👍（18） 💬（1）<p>知识点很多，整理一下。
 1. 非对称加密：
     加密：公钥加密，私钥解密；
     签名：私钥签名，公钥验签。
@@ -269,20 +269,20 @@ print(int(time.mktime(current_time.timetuple())*1000))
     &quot;result&quot;: &quot;error&quot;,
     &quot;reason&quot;: &quot;InsufficientFunds&quot;,
     &quot;message&quot;: &quot;Failed to place buy order on symbol &#39;BTCUSD&#39; for price $3,633.00 and quantity 5 BTC due to insufficient funds&quot;
-}</div>2019-07-27</li><br/><li><span>瞳梦</span> 👍（3） 💬（4）<div>请问gemini sandbox账号怎么注册呢？我在官网只找到了Open a Personal Account和I Represent an Institution</div>2019-07-26</li><br/><li><span>Xg huang</span> 👍（1） 💬（1）<div>哈哈，深入浅出，赞一个
+}</p>2019-07-27</li><br/><li><span>瞳梦</span> 👍（3） 💬（4）<p>请问gemini sandbox账号怎么注册呢？我在官网只找到了Open a Personal Account和I Represent an Institution</p>2019-07-26</li><br/><li><span>Xg huang</span> 👍（1） 💬（1）<p>哈哈，深入浅出，赞一个
 
 不过有个地方是否写错？&quot;而小宝在某一天中午 11:59:00，告诉交易所，我要挂一个单子，数量为 0.1 比特币，价格为 10000 美元，低于这个价格不卖。&quot;
 
-是不是1000才对？</div>2019-07-26</li><br/><li><span>王帅帅</span> 👍（0） 💬（1）<div>我跑了一遍，提示gemini 交易所正在维护，怎么回事。</div>2020-01-13</li><br/><li><span>SCAR</span> 👍（13） 💬（0）<div>思考题：
+是不是1000才对？</p>2019-07-26</li><br/><li><span>王帅帅</span> 👍（0） 💬（1）<p>我跑了一遍，提示gemini 交易所正在维护，怎么回事。</p>2020-01-13</li><br/><li><span>SCAR</span> 👍（13） 💬（0）<p>思考题：
 1. 纯粹使用timestamp应该不行，虽然timestamp也是递增的，但是在python里timestamp是float而不是int。
 2.但如果基于timestamp抽取出部分应该是可以，比如老师例子中的：
    payload_nonce = str(int(time.mktime(t.timetuple())*1000))
    改成：
    payload_nonce = str(int(t.timestamp())*1000)
-   结果应该是一致的。</div>2019-07-26</li><br/><li><span>Monroe  He</span> 👍（7） 💬（2）<div>我想问一下老师，有针对国内股票的虚拟交易平台吗
-可以提供一下相关方面的书籍资料吗</div>2019-07-26</li><br/><li><span>devna</span> 👍（6） 💬（0）<div>前段时间刚看完《计算机网络：自顶自下方法》，确实不错，能很快提升对网络的认识，强烈推荐</div>2020-01-19</li><br/><li><span>karofsky</span> 👍（4） 💬（0）<div>今天再看这篇文章的感受就是，BTC真的涨了好多啊...</div>2021-01-12</li><br/><li><span>kang</span> 👍（3） 💬（6）<div>請問大家都是怎麼註冊Genimi 的? 我的註冊國家都被阻擋</div>2019-08-23</li><br/><li><span>马建华</span> 👍（2） 💬（3）<div>我是报错：
+   结果应该是一致的。</p>2019-07-26</li><br/><li><span>Monroe  He</span> 👍（7） 💬（2）<p>我想问一下老师，有针对国内股票的虚拟交易平台吗
+可以提供一下相关方面的书籍资料吗</p>2019-07-26</li><br/><li><span>devna</span> 👍（6） 💬（0）<p>前段时间刚看完《计算机网络：自顶自下方法》，确实不错，能很快提升对网络的认识，强烈推荐</p>2020-01-19</li><br/><li><span>karofsky</span> 👍（4） 💬（0）<p>今天再看这篇文章的感受就是，BTC真的涨了好多啊...</p>2021-01-12</li><br/><li><span>kang</span> 👍（3） 💬（6）<p>請問大家都是怎麼註冊Genimi 的? 我的註冊國家都被阻擋</p>2019-08-23</li><br/><li><span>马建华</span> 👍（2） 💬（3）<p>我是报错：
 {&#39;result&#39;: &#39;error&#39;, &#39;reason&#39;: &#39;MissingAccounts&#39;, &#39;message&#39;: &#39;Expected a JSON payload with accounts&#39;}
-有谁碰到吗？</div>2020-07-20</li><br/><li><span>及時行樂</span> 👍（2） 💬（0）<div>现在程序跑起来都报错了，这是交易所把API地址改了吗？
-{&#39;result&#39;: &#39;error&#39;, &#39;reason&#39;: &#39;EndpointMismatch&#39;, &#39;message&#39;: &#39;EndpointMismatch&#39;}</div>2020-05-13</li><br/><li><span>知止。</span> 👍（1） 💬（2）<div>老师，是不是该针对运行可能出现的一些问题给出解答呢？如果网站变更过信息，那么课件相应也得更新一下吧，不然后来订阅学习的人没办法完整学习啊。比如我按照课件内容运行，提示{&#39;result&#39;: &#39;error&#39;, &#39;reason&#39;: &#39;InvalidSignature&#39;, &#39;message&#39;: &#39;InvalidSignature&#39;}，网上都找不到原因，想自己排查错误都不懂如何着手
-</div>2020-09-05</li><br/><li><span>SuperXiong</span> 👍（1） 💬（7）<div>第一部：注册sandbox没有成功，选了中国区，提交注册表之后，返回一个未知问题。</div>2020-01-12</li><br/>
+有谁碰到吗？</p>2020-07-20</li><br/><li><span>及時行樂</span> 👍（2） 💬（0）<p>现在程序跑起来都报错了，这是交易所把API地址改了吗？
+{&#39;result&#39;: &#39;error&#39;, &#39;reason&#39;: &#39;EndpointMismatch&#39;, &#39;message&#39;: &#39;EndpointMismatch&#39;}</p>2020-05-13</li><br/><li><span>知止。</span> 👍（1） 💬（2）<p>老师，是不是该针对运行可能出现的一些问题给出解答呢？如果网站变更过信息，那么课件相应也得更新一下吧，不然后来订阅学习的人没办法完整学习啊。比如我按照课件内容运行，提示{&#39;result&#39;: &#39;error&#39;, &#39;reason&#39;: &#39;InvalidSignature&#39;, &#39;message&#39;: &#39;InvalidSignature&#39;}，网上都找不到原因，想自己排查错误都不懂如何着手
+</p>2020-09-05</li><br/><li><span>SuperXiong</span> 👍（1） 💬（7）<p>第一部：注册sandbox没有成功，选了中国区，提交注册表之后，返回一个未知问题。</p>2020-01-12</li><br/>
 </ul>

@@ -303,5 +303,5 @@ def foo(a):
 
 Python[字节码的说明](https://docs.python.org/zh-cn/3/library/dis.html#python-bytecode-instructions)。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Jacob.C</span> 👍（5） 💬（0）<div>答题：因为python变量的语义设计是“定义-使用”，不存在先使用再定义的情况，所以不用担心这种情况下的消解错误</div>2020-07-13</li><br/><li><span>榕</span> 👍（0） 💬（0）<div>思考题：我的理解是Python在添加符号的时候已经通过标志位对符号做了标记，所以后面做引用消解可通过标志位区分。</div>2021-07-23</li><br/>
+<li><span>Jacob.C</span> 👍（5） 💬（0）<p>答题：因为python变量的语义设计是“定义-使用”，不存在先使用再定义的情况，所以不用担心这种情况下的消解错误</p>2020-07-13</li><br/><li><span>榕</span> 👍（0） 💬（0）<p>思考题：我的理解是Python在添加符号的时候已经通过标志位对符号做了标记，所以后面做引用消解可通过标志位区分。</p>2021-07-23</li><br/>
 </ul>

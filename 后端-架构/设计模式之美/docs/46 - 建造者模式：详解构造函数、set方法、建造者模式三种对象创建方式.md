@@ -268,12 +268,12 @@ r.setHeight(3); // r is valid
 
 欢迎留言和我分享你的想法，如果有收获，你也可以把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>zhengyu.nie</span> 👍（47） 💬（2）<div>依赖关系（Dependencies）、合法校验（Preconditions）、不可变（Immutable）。
+<li><span>zhengyu.nie</span> 👍（47） 💬（2）<p>依赖关系（Dependencies）、合法校验（Preconditions）、不可变（Immutable）。
 争哥这几个描述很精准！
 借着思路延伸一下的话，很多库和设计都是以上这些理念的。
-比如com.google.guava的校验、不可变集合，多线程设计模式中的Immutable模式、保护性拷贝（其中又可以分深浅api），java.lang.String的不可变设计。还有关于类状态的控制，还有Effective Java中类创建这一章中对于构造方法、set方法、Builder构建、枚举、静态工厂方法构建等对比，像Guava Lists、Sets、Maps、ImmutableList这种创建方式现在也很主流了</div>2020-04-28</li><br/><li><span>苏暮沉觞</span> 👍（4） 💬（1）<div>       小争哥，我在学习建造者模式的时候，发现传统的构建者模式写法跟文中的不太一样，传统的构建者模式存在监工，抽象Builder，具体Builder，产品类。可以通过不同的具体Builder，创建对应的产品类。而你在文章中的设计模式的写法，在某些文章中，被称为变种的构造者模式。
+比如com.google.guava的校验、不可变集合，多线程设计模式中的Immutable模式、保护性拷贝（其中又可以分深浅api），java.lang.String的不可变设计。还有关于类状态的控制，还有Effective Java中类创建这一章中对于构造方法、set方法、Builder构建、枚举、静态工厂方法构建等对比，像Guava Lists、Sets、Maps、ImmutableList这种创建方式现在也很主流了</p>2020-04-28</li><br/><li><span>苏暮沉觞</span> 👍（4） 💬（1）<p>       小争哥，我在学习建造者模式的时候，发现传统的构建者模式写法跟文中的不太一样，传统的构建者模式存在监工，抽象Builder，具体Builder，产品类。可以通过不同的具体Builder，创建对应的产品类。而你在文章中的设计模式的写法，在某些文章中，被称为变种的构造者模式。
        我比较了一下两种方式，感觉传统的构建者模式需要提前定义好你要生产的产品对应的属性，而文中这种方法则是在构建产品时，自己动态的设置产品属性，虽然说这种方法更加灵活，但是侵入性更高。
-      那么考虑到以后需求变更，是不是应该是用传统的构建者模式呢？不然要是资源池对应的参数变了，就要修改业务代码中的参数了。</div>2020-05-21</li><br/><li><span>是非～成败～</span> 👍（1） 💬（2）<div>&#47;**
+      那么考虑到以后需求变更，是不是应该是用传统的构建者模式呢？不然要是资源池对应的参数变了，就要修改业务代码中的参数了。</p>2020-05-21</li><br/><li><span>是非～成败～</span> 👍（1） 💬（2）<p>&#47;**
  * 需求：
  * 当 isRef 为 true 的时候，arg 表示 String 类型的 refBeanId，type 不需要设置；
  * 当 isRef 为 false 的时候，arg、type 都需要设置。
@@ -319,7 +319,7 @@ public class ConstructorArg_02 {
         }
     }
 }
-咱也不知道写的好不好，希望争哥看到了检视指导一二</div>2020-11-16</li><br/><li><span>悠南</span> 👍（1） 💬（3）<div>你这建造者模式代码，看不懂，构造方法私有了，怎么来的Builder 方法</div>2020-06-22</li><br/><li><span>Morse</span> 👍（0） 💬（5）<div>为什么定义了一个长方形类，如果不使用建造者模式，采用先创建后 set 的方式，那就会导致在第一个 set 之后，对象处于无效状态？求大佬解答</div>2020-08-03</li><br/><li><span>Darren</span> 👍（128） 💬（4）<div>简单理解就是：工厂模式是根据不同的条件生成不同Class的对象，构建者模式是根据不同参数生成一个class的不同对象。</div>2020-04-10</li><br/><li><span>webmin</span> 👍（114） 💬（13）<div>public class ConstructorArg {
+咱也不知道写的好不好，希望争哥看到了检视指导一二</p>2020-11-16</li><br/><li><span>悠南</span> 👍（1） 💬（3）<p>你这建造者模式代码，看不懂，构造方法私有了，怎么来的Builder 方法</p>2020-06-22</li><br/><li><span>Morse</span> 👍（0） 💬（5）<p>为什么定义了一个长方形类，如果不使用建造者模式，采用先创建后 set 的方式，那就会导致在第一个 set 之后，对象处于无效状态？求大佬解答</p>2020-08-03</li><br/><li><span>Darren</span> 👍（128） 💬（4）<p>简单理解就是：工厂模式是根据不同的条件生成不同Class的对象，构建者模式是根据不同参数生成一个class的不同对象。</p>2020-04-10</li><br/><li><span>webmin</span> 👍（114） 💬（13）<p>public class ConstructorArg {
     private boolean isRef;
     private Class type;
     private Object arg;
@@ -395,7 +395,7 @@ public class ConstructorArg_02 {
             return this;
         }
     }
-}</div>2020-02-17</li><br/><li><span>相逢是缘</span> 👍（55） 💬（4）<div>打卡
+}</p>2020-02-17</li><br/><li><span>相逢是缘</span> 👍（55） 💬（4）<p>打卡
 一、使用场景：
 1）类的构造函数必填属性很多，通过set设置，没有办法校验必填属性
 2）如果类的属性之间有一定的依赖关系，构造函数配合set方式，无法进行依赖关系和约束条件校验
@@ -406,7 +406,7 @@ public class ConstructorArg_02 {
 
 三、和工厂模式的区别：
 1）工厂模式：创建不同的同一类型对象（集成同一个父类或是接口的一组子类），由给定的参数来创建哪种类型的对象；
-2）建造者模式：创建一种类型的复杂对象，通过很多可设置参数，“定制化”的创建对象</div>2020-02-17</li><br/><li><span>javaadu</span> 👍（52） 💬（0）<div>课堂讨论题：
+2）建造者模式：创建一种类型的复杂对象，通过很多可设置参数，“定制化”的创建对象</p>2020-02-17</li><br/><li><span>javaadu</span> 👍（52） 💬（0）<p>课堂讨论题：
 
 &#47;**
  * 在下面的 ConstructorArg 类中，
@@ -463,14 +463,14 @@ public class ConstructorArg {
             return this;
         }
     }
-}</div>2020-02-17</li><br/><li><span>小文同学</span> 👍（18） 💬（0）<div>说说自己读了 Builder 模式的最大感悟：
+}</p>2020-02-17</li><br/><li><span>小文同学</span> 👍（18） 💬（0）<p>说说自己读了 Builder 模式的最大感悟：
 1、Builder 模式可以保证对象的状态。
 2、Builder 模式可以把对象的构造鉴定逻辑写在Builder类中，保证了类的简洁。
 
-平时普普通通地使用 lombok 生成 Builder，应该更加深入地了解一下。</div>2020-03-07</li><br/><li><span>黄林晴</span> 👍（12） 💬（2）<div>打卡~
-最近半年用的最多的就是Builder模式了</div>2020-02-17</li><br/><li><span>王涛</span> 👍（9） 💬（0）<div>最近，在学习本专栏的过程中。
+平时普普通通地使用 lombok 生成 Builder，应该更加深入地了解一下。</p>2020-03-07</li><br/><li><span>黄林晴</span> 👍（12） 💬（2）<p>打卡~
+最近半年用的最多的就是Builder模式了</p>2020-02-17</li><br/><li><span>王涛</span> 👍（9） 💬（0）<p>最近，在学习本专栏的过程中。
 逐渐体会到“知其然，更知其所以然”的感觉
-</div>2020-02-17</li><br/><li><span>业余爱好者</span> 👍（7） 💬（0）<div>创建型模式的作用在于，将对象“获取”（没有用创建）的过程独立出来，形成单独的类。这在获取复杂或者有特殊需求的对象时可以更好的体现单一职责原则---我负责拿到（ready to use）对象,你只管使用就可以了。你不需要关系我是不是懒加载之类的问题。
+</p>2020-02-17</li><br/><li><span>业余爱好者</span> 👍（7） 💬（0）<p>创建型模式的作用在于，将对象“获取”（没有用创建）的过程独立出来，形成单独的类。这在获取复杂或者有特殊需求的对象时可以更好的体现单一职责原则---我负责拿到（ready to use）对象,你只管使用就可以了。你不需要关系我是不是懒加载之类的问题。
 
 一个可以使用的对象，它的意义绝不单单是new一下就完事了，还有一系列其他的考量。
 如果要求一个类只有一个全局唯一的对象，如基本不变化的配置信息类，这就是单例模式。如何控制只有一个对象，当然是拦截掉所有其他创建对象的路径，只留下一条路---使用类唯一的静态方法获取对象。这就是为什么，单例一般都要求将构造方法私有化。（spring的单例bean其实只是一种单例的约定，你完全可以自己new一个。）单例模式还设计到懒加载的问题，不过由于只有一个访问入口，处理起来比较简单。
@@ -481,7 +481,7 @@ public class ConstructorArg {
 
 建造者用于处理创建参数过多的情形，同时可以校验参数，避免对象创建过程中的不一致状态。
 
-原型用于快速拷贝一个对象。</div>2020-08-02</li><br/><li><span>1024</span> 👍（7） 💬（2）<div>做了一下课后题，和其他同学的答案比较了下，还是有些疑惑，疑惑在属性的判断逻辑是放在Builder的setAttr()内还是放在build()内
+原型用于快速拷贝一个对象。</p>2020-08-02</li><br/><li><span>1024</span> 👍（7） 💬（2）<p>做了一下课后题，和其他同学的答案比较了下，还是有些疑惑，疑惑在属性的判断逻辑是放在Builder的setAttr()内还是放在build()内
 个人认为：
 setAttr()放属性自己的逻辑判断，比如不要为null，不能大于或小于某个常量
 build()方法放多个属性间的校验逻辑，因为调用builde()时，属性都set完成，这时候才有机会通过builde()来全局考虑所有属性的逻辑。
@@ -540,7 +540,7 @@ public static void main(String[] args) {
         ConstructorArg.Builder builder = new ConstructorArg.Builder();
 &#47;&#47;        java.lang.IllegalArgumentException: 当 isRef 为 true 的时候，arg 表示 String 类型refBeanId
         builder.setRef(true).setArg(1).build();
-    }</div>2020-03-07</li><br/><li><span>啦啦啦</span> 👍（7） 💬（0）<div>用php实现了一个
+    }</p>2020-03-07</li><br/><li><span>啦啦啦</span> 👍（7） 💬（0）<p>用php实现了一个
 &lt;?php
 class ResourcePoolConfig{
     private $maxTotal;
@@ -591,5 +591,5 @@ class Builder{
 
 $b = new Builder();
 $b-&gt;setMaxTotal(5)-&gt;setMaxIdle()-&gt;setMinIdle()-&gt;noodleValidate();
-new ResourcePoolConfig($b);</div>2020-02-17</li><br/>
+new ResourcePoolConfig($b);</p>2020-02-17</li><br/>
 </ul>

@@ -221,16 +221,16 @@ Consul的数据模型及存储是怎样的呢？
 
 感谢你阅读，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>金时</span> 👍（2） 💬（1）<div>线性读和强一致读有什么区别？</div>2021-09-01</li><br/><li><span>kkxue</span> 👍（10） 💬（0）<div>我觉得pingcap的这个方案可行：
+<li><span>金时</span> 👍（2） 💬（1）<p>线性读和强一致读有什么区别？</p>2021-09-01</li><br/><li><span>kkxue</span> 👍（10） 💬（0）<p>我觉得pingcap的这个方案可行：
 https:&#47;&#47;github.com&#47;etcd-io&#47;etcd&#47;issues&#47;11357
 https:&#47;&#47;pingcap.com&#47;blog-cn&#47;geographic-data-distribution-traffic-and-latency-halved&#47;
-&quot;这里我们引入了一个新概念 Group，每一个 Raft 节点都有一个对应的 Group ID，拥有相同 Group ID 的节点即在同一个数据中心中。既然有了每个 Raft 节点的 Group 信息，Leader 就可以在广播消息时在每一个 Group 中选择一个代理人节点（我们称为 Follower  Delegate），将整个 Group 成员所需要的信息发给这个代理人，代理人负责将数据同步给 Group 内的其他成员&quot;</div>2021-03-15</li><br/><li><span>骑着🚀看银河</span> 👍（5） 💬（1）<div>按照这个比较ETCD并没有胜出啊，反而Consul是最佳选择，哈哈哈
-</div>2022-03-17</li><br/><li><span>残天噬魂</span> 👍（3） 💬（0）<div>额，老师这么一比较，我感觉除了语言契合度之外，consul就应该是第一选择啊，哈哈</div>2021-12-31</li><br/><li><span>kkxue</span> 👍（2） 💬（2）<div>还有这个方案就是直接将不同数据中心的延时降低！如同local datacenter,传闻google做到了</div>2021-03-15</li><br/><li><span>初学者</span> 👍（1） 💬（0）<div>关于同城双az高可用，有一些问题想和老师探讨一下: 
+&quot;这里我们引入了一个新概念 Group，每一个 Raft 节点都有一个对应的 Group ID，拥有相同 Group ID 的节点即在同一个数据中心中。既然有了每个 Raft 节点的 Group 信息，Leader 就可以在广播消息时在每一个 Group 中选择一个代理人节点（我们称为 Follower  Delegate），将整个 Group 成员所需要的信息发给这个代理人，代理人负责将数据同步给 Group 内的其他成员&quot;</p>2021-03-15</li><br/><li><span>骑着🚀看银河</span> 👍（5） 💬（1）<p>按照这个比较ETCD并没有胜出啊，反而Consul是最佳选择，哈哈哈
+</p>2022-03-17</li><br/><li><span>残天噬魂</span> 👍（3） 💬（0）<p>额，老师这么一比较，我感觉除了语言契合度之外，consul就应该是第一选择啊，哈哈</p>2021-12-31</li><br/><li><span>kkxue</span> 👍（2） 💬（2）<p>还有这个方案就是直接将不同数据中心的延时降低！如同local datacenter,传闻google做到了</p>2021-03-15</li><br/><li><span>初学者</span> 👍（1） 💬（0）<p>关于同城双az高可用，有一些问题想和老师探讨一下: 
 如果我想采用2+2部署方案，也就一个集群4个节点平均部署到两个机房，这样的好处是一个az跪了，能保证另一个az肯定有节点上的数据是完整的，坏处是任何一个az挂了，服务就立即不可用，要有一个手动恢复的流程，我这里想请教一下老师，当前etcd只发现一种通过force-new-cluster的参数也通过某一个节点的数据恢复集群，有什么优雅的方式知道正常的az中两个节点中哪个节点数据最新？
 像zk这种，我完全可以在正常az中新扩容一个新节点，修改集群member配置信息，然后在正常的az中恢复出一个3节点的集群，而且也只能新扩容的节点需要复制集群数据，etcd好像不支持这种玩法。
-</div>2021-12-09</li><br/><li><span>Fis.</span> 👍（0） 💬（0）<div>3AZ的或者3地域的直接跨区域部署就行了，就是时延需要考虑及优化，双AZ的比较复杂。
+</p>2021-12-09</li><br/><li><span>Fis.</span> 👍（0） 💬（0）<p>3AZ的或者3地域的直接跨区域部署就行了，就是时延需要考虑及优化，双AZ的比较复杂。
 方案1：etcd集群2+1部署，引入全局仲裁服务，自己做一个agent，根据仲裁服务的信息，管理etcd节点升主或降备，破坏了原有raft协议
 方案2：两个etcd集群，开发专门的数据同步工具或者开源make mirror，主备集群模式。两个集群revision无法一致
 方案3：区域1主集群，区域2部署3个learner，故障时区域2升主。
-上面几种方案那种更好呢？还有其他好的方案吗？</div>2021-12-24</li><br/><li><span>mckee</span> 👍（0） 💬（0）<div>etcd一般可以采用同一个region下跨可用区部署，最好每个可用区部署一台</div>2021-11-17</li><br/>
+上面几种方案那种更好呢？还有其他好的方案吗？</p>2021-12-24</li><br/><li><span>mckee</span> 👍（0） 💬（0）<p>etcd一般可以采用同一个region下跨可用区部署，最好每个可用区部署一台</p>2021-11-17</li><br/>
 </ul>

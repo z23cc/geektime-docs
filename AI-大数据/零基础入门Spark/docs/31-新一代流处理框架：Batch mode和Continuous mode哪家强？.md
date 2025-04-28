@@ -160,7 +160,7 @@ Batch mode通过预写WAL日志来实现容错，请你脑洞一下，有没有�
 
 欢迎你在留言区跟我交流讨论，也推荐你把这一讲的内容分享给更多朋友。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>刘启涛</span> 👍（5） 💬（1）<div>课后习题: 
+<li><span>刘启涛</span> 👍（5） 💬（1）<p>课后习题: 
 我觉得先消费再记录的方式是可以实现，但是如果记录的时候出现异常(hdfs写数据网络抖动)，可能会导致数据重复消费，这种方式“Exactly Once”的准确性没有先记录、再消费数据高。
-老师，我这里还有一个问题，Continuous mode是处理完数据异步记录日志，感觉很难保证“刚好一次”</div>2021-12-02</li><br/><li><span>六月的余晖</span> 👍（2） 💬（1）<div>老师，可以比较一下Continuous mode和Flink 吗</div>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（1）<div>老师，后面课程没有spark streaming内容的讲解吗</div>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（1）<div>老师，虽然kafka幂等性不能保证跨分区的原子写入，但是kafka还支持事务呀</div>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（2）<div>老师，0.11版本后的kafka，引入了幂等性机制呀，文中问什么说kafka不是幂等的呢</div>2021-11-22</li><br/><li><span>Geek1185</span> 👍（0） 💬（1）<div>为什么batch mode的WAL不做成异步的形式呢？</div>2023-02-06</li><br/>
+老师，我这里还有一个问题，Continuous mode是处理完数据异步记录日志，感觉很难保证“刚好一次”</p>2021-12-02</li><br/><li><span>六月的余晖</span> 👍（2） 💬（1）<p>老师，可以比较一下Continuous mode和Flink 吗</p>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（1）<p>老师，后面课程没有spark streaming内容的讲解吗</p>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（1）<p>老师，虽然kafka幂等性不能保证跨分区的原子写入，但是kafka还支持事务呀</p>2021-11-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（2）<p>老师，0.11版本后的kafka，引入了幂等性机制呀，文中问什么说kafka不是幂等的呢</p>2021-11-22</li><br/><li><span>Geek1185</span> 👍（0） 💬（1）<p>为什么batch mode的WAL不做成异步的形式呢？</p>2023-02-06</li><br/>
 </ul>

@@ -392,19 +392,19 @@ AgentExecutor中最重要的方法是步骤处理方法，\_take\_next\_step方�
 1. 代码，AgentExecutor类的[实现细节](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/agents/agent.py)
 2. 代码，LLMChain类的[实现细节](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/chains/llm.py)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>刘旺旺</span> 👍（18） 💬（1）<div>各位同学可以尝试在测试脚本中添加一段代码:
+<li><span>刘旺旺</span> 👍（18） 💬（1）<p>各位同学可以尝试在测试脚本中添加一段代码:
 ```python
 import langchain
 langchain.debug = True
 ```
-这样可以看到大部分思考过程！</div>2024-01-19</li><br/><li><span>iLeGeND</span> 👍（12） 💬（1）<div>感觉能多能力 不管是chain还是代理,本质上都是给大模型完善的提示词呢, 并且langchain在适当的环节,内置了很多适当的提示词,结合上下文,觉得下一步做什么,引导大模型完成对应的需求, langchain本质上还是提供了默认的提示词,不知道理解的对不对</div>2023-09-30</li><br/><li><span>一只豆</span> 👍（4） 💬（3）<div>在最近比较火的Agent综述文章中，Agent被概括为：Profile Memory Plan Tool这四个模块。结合老师这讲前半部分说的“LLM编程新范式”：不是把操作序列硬编码进去，而是让GPT3&#47;4这样的模型去选择这些操作序列。
+这样可以看到大部分思考过程！</p>2024-01-19</li><br/><li><span>iLeGeND</span> 👍（12） 💬（1）<p>感觉能多能力 不管是chain还是代理,本质上都是给大模型完善的提示词呢, 并且langchain在适当的环节,内置了很多适当的提示词,结合上下文,觉得下一步做什么,引导大模型完成对应的需求, langchain本质上还是提供了默认的提示词,不知道理解的对不对</p>2023-09-30</li><br/><li><span>一只豆</span> 👍（4） 💬（3）<p>在最近比较火的Agent综述文章中，Agent被概括为：Profile Memory Plan Tool这四个模块。结合老师这讲前半部分说的“LLM编程新范式”：不是把操作序列硬编码进去，而是让GPT3&#47;4这样的模型去选择这些操作序列。
 可不可以理解为：所谓 Plan，就是定义了“操作序列”（？）；所谓Profile，就是提供了“选择操作序列”时推理所需的高层次背景信息？ 反思Reflect，是引导LLM生成推理需要的中观信息？
 Memory和Tool是基于此的支撑？
-提问心态：我已经通过prompt engineering验证了某个业务领域的多层次复杂问题框架，现在需要使用Agent思想工程化。所以在试着塞进去，还请老师明示！多谢！</div>2023-10-13</li><br/><li><span>阿斯蒂芬</span> 👍（3） 💬（1）<div>先打卡学习。
+提问心态：我已经通过prompt engineering验证了某个业务领域的多层次复杂问题框架，现在需要使用Agent思想工程化。所以在试着塞进去，还请老师明示！多谢！</p>2023-10-13</li><br/><li><span>阿斯蒂芬</span> 👍（3） 💬（1）<p>先打卡学习。
 
 人类一思考，上帝就发笑。大模型一循环思考，我就忍俊不住要惊呼点赞！
 
-话说第一张图Tack是写错了吗？应该是Task？</div>2023-09-27</li><br/><li><span>漏网之渔</span> 👍（2） 💬（1）<div>agent执行的过程中，prompt是不断累计的么，会出现token上限的情况吗</div>2023-10-08</li><br/><li><span>Geek_085d59</span> 👍（1） 💬（2）<div>请问调用数学计算工具时，为什么是llm在做计算，我理解的不应该是让大模型返回工具名称和参数，然后langchain本地调用python工具计算吗</div>2023-11-18</li><br/><li><span>Kevin</span> 👍（1） 💬（1）<div>debug的详细过程能不能也专门出一节课，整个判断的思路形成过程特别重要，谢谢啦~</div>2023-09-29</li><br/><li><span>Geek_339c29</span> 👍（0） 💬（1）<div>大佬，我们公司现在在计划做一个AI产品核心，形成自己的core产品，后续接到具体的客户订单的时候，可以直接基于core做一些定制化的开发以此来快速完成各种项目。不知道我理解的对不对，目前有个fastgpt开源项目，是不是做了可视化的chain组装最后生成的是agent？ 如果我们要做这样的一个core产品，是不是也是这样一个类似的东西，有哪些东西值得做在这个core里面？</div>2023-12-24</li><br/><li><span>SH</span> 👍（0） 💬（4）<div>老师， 看你本次的分析中，都会重复的出现 那个 思考-行动-观察的步骤，每一轮得到一个结果，再重复执行之前的步骤时，把上一步的结果代入到新的任务，有点不理解， 在这里为什么基于上次的逻辑里面，在需要的结果处继续往下执行的呢？而且重新思考一轮呢？  这样是不是会很浪费 token ?</div>2023-11-05</li><br/><li><span>iLeGeND</span> 👍（0） 💬（1）<div>chain中决策走哪一个分支,和代理中选择用哪一个代理, 本质上是一回事吗</div>2023-09-30</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<div>从  AgentType.ZERO_SHOT_REACT_DESCRIPTION  可以看到，不同的 AgentType 实质是prompt 不同？</div>2023-09-27</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>运行了课程代码，测试了 LangChain的Debug和Verbose 的不同：
+话说第一张图Tack是写错了吗？应该是Task？</p>2023-09-27</li><br/><li><span>漏网之渔</span> 👍（2） 💬（1）<p>agent执行的过程中，prompt是不断累计的么，会出现token上限的情况吗</p>2023-10-08</li><br/><li><span>Geek_085d59</span> 👍（1） 💬（2）<p>请问调用数学计算工具时，为什么是llm在做计算，我理解的不应该是让大模型返回工具名称和参数，然后langchain本地调用python工具计算吗</p>2023-11-18</li><br/><li><span>Kevin</span> 👍（1） 💬（1）<p>debug的详细过程能不能也专门出一节课，整个判断的思路形成过程特别重要，谢谢啦~</p>2023-09-29</li><br/><li><span>Geek_339c29</span> 👍（0） 💬（1）<p>大佬，我们公司现在在计划做一个AI产品核心，形成自己的core产品，后续接到具体的客户订单的时候，可以直接基于core做一些定制化的开发以此来快速完成各种项目。不知道我理解的对不对，目前有个fastgpt开源项目，是不是做了可视化的chain组装最后生成的是agent？ 如果我们要做这样的一个core产品，是不是也是这样一个类似的东西，有哪些东西值得做在这个core里面？</p>2023-12-24</li><br/><li><span>SH</span> 👍（0） 💬（4）<p>老师， 看你本次的分析中，都会重复的出现 那个 思考-行动-观察的步骤，每一轮得到一个结果，再重复执行之前的步骤时，把上一步的结果代入到新的任务，有点不理解， 在这里为什么基于上次的逻辑里面，在需要的结果处继续往下执行的呢？而且重新思考一轮呢？  这样是不是会很浪费 token ?</p>2023-11-05</li><br/><li><span>iLeGeND</span> 👍（0） 💬（1）<p>chain中决策走哪一个分支,和代理中选择用哪一个代理, 本质上是一回事吗</p>2023-09-30</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<p>从  AgentType.ZERO_SHOT_REACT_DESCRIPTION  可以看到，不同的 AgentType 实质是prompt 不同？</p>2023-09-27</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>运行了课程代码，测试了 LangChain的Debug和Verbose 的不同：
 
 * 设置为 langchain.verbose = True ：
 重要事件记录：Verbose模式会记录“重要”事件的输入和输出，而不是所有事件。这使得开发者可以看到应用程序执行的关键步骤，而不被过多的信息淹没。
@@ -413,7 +413,7 @@ Memory和Tool是基于此的支撑？
 * 设置为 langchain.debug = True ：
 Debug 模式
 详细日志记录：Debug模式是最详细的日志记录设置，会记录所有事件的输入和输出。这包括所有链、模型、代理、工具和检索器的详细信息。
-用途：适用于需要全面了解应用程序执行的每一个细节的场景，尤其是在复杂应用程序中进行问题诊断时。</div>2024-08-08</li><br/><li><span>Geek_7ee455</span> 👍（1） 💬（0）<div>如果我想新增一个工具,有办法吗</div>2023-11-23</li><br/><li><span>极客星星</span> 👍（0） 💬（0）<div>“是以最有帮助的方式描述这些工具”
+用途：适用于需要全面了解应用程序执行的每一个细节的场景，尤其是在复杂应用程序中进行问题诊断时。</p>2024-08-08</li><br/><li><span>Geek_7ee455</span> 👍（1） 💬（0）<p>如果我想新增一个工具,有办法吗</p>2023-11-23</li><br/><li><span>极客星星</span> 👍（0） 💬（0）<p>“是以最有帮助的方式描述这些工具”
 想问下，这个体现在代码里哪一步？比如langchain怎么知道serpapi是搜索引擎?下面这个代码里，并没有告诉langchain这个i信息？
-tools = load_tools([&quot;serpapi&quot;, &quot;llm-math&quot;], llm=llm)</div>2024-09-16</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第12讲打卡~</div>2024-07-17</li><br/>
+tools = load_tools([&quot;serpapi&quot;, &quot;llm-math&quot;], llm=llm)</p>2024-09-16</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第12讲打卡~</p>2024-07-17</li><br/>
 </ul>

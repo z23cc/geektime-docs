@@ -151,7 +151,7 @@ Windows 10自带Telnet，不需要安装，但默认是不启用的，需要你�
 
 ![unpreview](https://static001.geekbang.org/resource/image/56/63/56d766fc04654a31536f554b8bde7b63.jpg?wh=1110%2A659)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>cylim</span> 👍（157） 💬（12）<div>在Mac上，
+<li><span>cylim</span> 👍（157） 💬（12）<p>在Mac上，
 
 拷贝项目（需要Git）
 1. git clone https:&#47;&#47;github.com&#47;chronolaw&#47;http_study
@@ -165,7 +165,7 @@ Windows 10自带Telnet，不需要安装，但默认是不启用的，需要你�
 2. openresty -p `pwd` -c conf&#47;nginx.conf
 
 停止项目
-1. openresty -s quit -p `pwd` -c conf&#47;nginx.conf</div>2019-06-12</li><br/><li><span>前端西瓜哥</span> 👍（29） 💬（6）<div>对 cylim 的 mac 上运行 openresty 的教程进行补充：
+1. openresty -s quit -p `pwd` -c conf&#47;nginx.conf</p>2019-06-12</li><br/><li><span>前端西瓜哥</span> 👍（29） 💬（6）<p>对 cylim 的 mac 上运行 openresty 的教程进行补充：
 按照 cylim 的做法，我遇到了访问 localhost 时，网页报 403 错误的情况，原因是没有 html&#47;index.html 文件的访问权限。我研究并找到了解决方案：
 先 ls -la html，查看文件的权限，得到 user 和 group，我这里是 fstar 和 staff。
 
@@ -173,14 +173,14 @@ Windows 10自带Telnet，不需要安装，但默认是不启用的，需要你�
 
 user fstar staff;
 
-然后再启动 openresty 就可以正常访问了。</div>2019-06-28</li><br/><li><span>古夜</span> 👍（23） 💬（7）<div>我打赌很多人抓不到包，找不到本地回环地址，不知道最新版的wireshark是否修复了这个问题，如果出现以上问题，记得卸载重装wireshark，不要勾选它自带的ncap应该是这个名字，然后自己去单独下一个这个软件</div>2019-06-12</li><br/><li><span>geek桃</span> 👍（17） 💬（5）<div>送给后来的同学：
+然后再启动 openresty 就可以正常访问了。</p>2019-06-28</li><br/><li><span>古夜</span> 👍（23） 💬（7）<p>我打赌很多人抓不到包，找不到本地回环地址，不知道最新版的wireshark是否修复了这个问题，如果出现以上问题，记得卸载重装wireshark，不要勾选它自带的ncap应该是这个名字，然后自己去单独下一个这个软件</p>2019-06-12</li><br/><li><span>geek桃</span> 👍（17） 💬（5）<p>送给后来的同学：
 如果你按照步骤操作之后出现：start启动完成后，cmd窗口一闪而过，点击list启动时显示“没有运行的任务匹配制定标准”，请按任意键继续，当随便输入数据时，cmd窗口又没了；去查找www&#47;logs&#47;error.log，如果日志报错为“10013: An attempt was made to access a socket in a way forbidden by its access permissions”，说明你的80端口被占用了，按照下面步骤操作。
 1.按键盘win+r 打开运行界面，输入cmd，确定，打开管理员界面
 2.输入 netstat -aon | findstr :80 （有一条0.0.0.0的数据，记住这条数据最后的数字；我的是5884）
 3.输入  tasklist|findstr &quot;5884&quot; （根据上一步查到的数字，找到5884端口对应的服务名称，我的是snv）
 4.在控制台关闭服务
 5.重新启动start.bat，成功！
-</div>2021-03-03</li><br/><li><span>名曰蓝兮</span> 👍（17） 💬（1）<div>centos上的安装步骤，有错误请指出
+</p>2021-03-03</li><br/><li><span>名曰蓝兮</span> 👍（17） 💬（1）<p>centos上的安装步骤，有错误请指出
 wireshark：
 1. yum install wireshark
     yum install wireshark-gnome
@@ -231,7 +231,7 @@ http {
 7. 验证安装：
     curl http:&#47;&#47;localhost:8080
     输出：
-    &lt;p&gt;hello, world&lt;&#47;p&gt;</div>2019-06-19</li><br/><li><span>珈蓝白塔</span> 👍（16） 💬（5）<div>Mac 开发环境的搭建参考《答疑篇41》，项目中已经有前辈写好的 shell 脚本，终端里直接运行就可以，不需要自己输入 openresty 命令啦；服务器启动以后访问 localhost 环境遇到了 403 问题，显示不出来 HTML，可参照留言区中提出的，在 conf&#47;nginx.conf 文件的顶部添加 user xxxx staff; 来解决，这个 xxxx 是自己的 mac 账户名；Wireshark(v3.2.3) 中选择环回地址时，选择 lockback：lo0 就可以啦，过滤器是和文中一样的，已成功搭建环境（2020年4月13日）</div>2020-04-13</li><br/><li><span>YUANWOW</span> 👍（12） 💬（4）<div>我一开始nginx一直起不来
+    &lt;p&gt;hello, world&lt;&#47;p&gt;</p>2019-06-19</li><br/><li><span>珈蓝白塔</span> 👍（16） 💬（5）<p>Mac 开发环境的搭建参考《答疑篇41》，项目中已经有前辈写好的 shell 脚本，终端里直接运行就可以，不需要自己输入 openresty 命令啦；服务器启动以后访问 localhost 环境遇到了 403 问题，显示不出来 HTML，可参照留言区中提出的，在 conf&#47;nginx.conf 文件的顶部添加 user xxxx staff; 来解决，这个 xxxx 是自己的 mac 账户名；Wireshark(v3.2.3) 中选择环回地址时，选择 lockback：lo0 就可以啦，过滤器是和文中一样的，已成功搭建环境（2020年4月13日）</p>2020-04-13</li><br/><li><span>YUANWOW</span> 👍（12） 💬（4）<p>我一开始nginx一直起不来
 后面看了error.log
 发现本机443端口被占用了
 netstat -ano | findstr &quot;443&quot;
@@ -239,5 +239,5 @@ netstat -ano | findstr &quot;443&quot;
 查找到是vmware-hostd这个进程
 后面谷歌搜索了下 
 vmware的虚拟机共享会默认占用443端口
-所以安装了vmware的把虚拟机共享关闭就好了  </div>2019-07-02</li><br/><li><span>geraltlaush</span> 👍（11） 💬（1）<div>破冰篇最后一篇，是马上开展破冰行动，抓捕林耀东了吗</div>2019-06-12</li><br/><li><span>pyhhou</span> 👍（11） 💬（2）<div>想请问下在 MacOs 或者是 Linux 上怎么搭建？（不是太想弄 Windows 虚拟机）</div>2019-06-12</li><br/><li><span>郁方林</span> 👍（10） 💬（2）<div>start启动完成后，cmd窗口一闪而过，当我点击list启动时显示“没有运行的任务匹配制定标准”，请按任意键继续，当我随便输入数据时，cmd窗口又没了</div>2019-06-12</li><br/><li><span>Geek_d4dee7</span> 👍（7） 💬（1）<div>老师 最近我维护的一个网站打开速度非常慢  服务器CPU 负载0.5到0.8之间 有十多台web 服务器  redis  db  负载都正常 只是nginx 的链接数在出问题的时间点有上升  我目前不知道从哪下手排查这个问题 是用php symfony 开发的  能否给点思路 万分感谢</div>2019-06-12</li><br/><li><span>兔嘟嘟</span> 👍（6） 💬（2）<div>windows上装的最新的3.4.7版，没有npcap，但是有一个Adapter for loopback traffic，用起来效果一样，就是抓到的Source是::1，猜测是这台电脑比较新，用上了IPv6的localhost</div>2021-07-16</li><br/><li><span>Amark</span> 👍（6） 💬（1）<div>老师，上面过程怎么没有用到telnet</div>2019-06-12</li><br/><li><span>geraltlaush</span> 👍（5） 💬（1）<div>老师可以把环境打包成容器，我们进容器直接嗨，隔离更彻底</div>2019-06-12</li><br/><li><span>Cris</span> 👍（4） 💬（1）<div>在浏览器和服务器之间还存在“中间人”，这些中间人也都遵循http协议，我想问下，这些中间人是不是都工作在应用层？</div>2019-07-11</li><br/>
+所以安装了vmware的把虚拟机共享关闭就好了  </p>2019-07-02</li><br/><li><span>geraltlaush</span> 👍（11） 💬（1）<p>破冰篇最后一篇，是马上开展破冰行动，抓捕林耀东了吗</p>2019-06-12</li><br/><li><span>pyhhou</span> 👍（11） 💬（2）<p>想请问下在 MacOs 或者是 Linux 上怎么搭建？（不是太想弄 Windows 虚拟机）</p>2019-06-12</li><br/><li><span>郁方林</span> 👍（10） 💬（2）<p>start启动完成后，cmd窗口一闪而过，当我点击list启动时显示“没有运行的任务匹配制定标准”，请按任意键继续，当我随便输入数据时，cmd窗口又没了</p>2019-06-12</li><br/><li><span>Geek_d4dee7</span> 👍（7） 💬（1）<p>老师 最近我维护的一个网站打开速度非常慢  服务器CPU 负载0.5到0.8之间 有十多台web 服务器  redis  db  负载都正常 只是nginx 的链接数在出问题的时间点有上升  我目前不知道从哪下手排查这个问题 是用php symfony 开发的  能否给点思路 万分感谢</p>2019-06-12</li><br/><li><span>兔嘟嘟</span> 👍（6） 💬（2）<p>windows上装的最新的3.4.7版，没有npcap，但是有一个Adapter for loopback traffic，用起来效果一样，就是抓到的Source是::1，猜测是这台电脑比较新，用上了IPv6的localhost</p>2021-07-16</li><br/><li><span>Amark</span> 👍（6） 💬（1）<p>老师，上面过程怎么没有用到telnet</p>2019-06-12</li><br/><li><span>geraltlaush</span> 👍（5） 💬（1）<p>老师可以把环境打包成容器，我们进容器直接嗨，隔离更彻底</p>2019-06-12</li><br/><li><span>Cris</span> 👍（4） 💬（1）<p>在浏览器和服务器之间还存在“中间人”，这些中间人也都遵循http协议，我想问下，这些中间人是不是都工作在应用层？</p>2019-07-11</li><br/>
 </ul>

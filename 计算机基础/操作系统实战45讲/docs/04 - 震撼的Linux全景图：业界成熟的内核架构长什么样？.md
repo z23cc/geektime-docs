@@ -144,19 +144,19 @@ Windows NT内核属于哪种架构类型？
 
 我是LMOS，让我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>pedro</span> 👍（69） 💬（5）<div>NT是混合内核，内核相较于linux来说小，但是仍有一些模块在内核，也有相当多的模块在用户态。
-架构额外清晰，也难怪几十年迭代都未曾大改大变</div>2021-05-17</li><br/><li><span>Ilovek8s</span> 👍（11） 💬（6）<div>NT内核是微内核，但是是混合内核结构，原因如老师讲的，NT内核里还有内核，内核之上是执行体，说明各内核上的系统组件都是以进程方式运行起来，并且通过消息传递来实现各系统组件的功能协作</div>2021-05-17</li><br/><li><span>超级励辰</span> 👍（49） 💬（7）<div>确实有点颠覆自己的认知，一直以为Linux的内核时及其优秀且优雅的，然而并不是。反而一直觉得不稳定的Windows的内核时那么优雅。</div>2021-05-21</li><br/><li><span>Geek_e2256b</span> 👍（46） 💬（1）<div>看完这两节有些概念不清楚，想问问老师：
+<li><span>pedro</span> 👍（69） 💬（5）<p>NT是混合内核，内核相较于linux来说小，但是仍有一些模块在内核，也有相当多的模块在用户态。
+架构额外清晰，也难怪几十年迭代都未曾大改大变</p>2021-05-17</li><br/><li><span>Ilovek8s</span> 👍（11） 💬（6）<p>NT内核是微内核，但是是混合内核结构，原因如老师讲的，NT内核里还有内核，内核之上是执行体，说明各内核上的系统组件都是以进程方式运行起来，并且通过消息传递来实现各系统组件的功能协作</p>2021-05-17</li><br/><li><span>超级励辰</span> 👍（49） 💬（7）<p>确实有点颠覆自己的认知，一直以为Linux的内核时及其优秀且优雅的，然而并不是。反而一直觉得不稳定的Windows的内核时那么优雅。</p>2021-05-21</li><br/><li><span>Geek_e2256b</span> 👍（46） 💬（1）<p>看完这两节有些概念不清楚，想问问老师：
 所以宏内核相当于所有的功能都耦合在一起，放在内核内
 微内核是把大多数功能解耦出来，放在用户态，使用IPC在用户态调用服务进程
 混合结构其实与微内核相似，只不过解耦出来的这些功能依然放在内核里，不通过IPC调用
-想问一下老师这样理解是正确的吗？</div>2021-06-12</li><br/><li><span>os</span> 👍（40） 💬（4）<div>高清全景图来源 https:&#47;&#47;makelinux.github.io&#47;kernel&#47;map&#47; ，在线可缩放，点击进源码</div>2021-05-18</li><br/><li><span>Feen</span> 👍（27） 💬（4）<div>突然有点想笑，觉得很有意思，最近几年很火在linux上跑的微服务架构，本质对应在宏内核的架构上运行着微内核模式的微服务架构，好有意思。</div>2021-06-04</li><br/><li><span>fw～繁闻</span> 👍（21） 💬（1）<div>一直以为linux的内核应该是最简单优雅的，window内核应该是极其复杂的，看了东哥的文章真是颠覆了我的认知。</div>2021-08-02</li><br/><li><span>zhanyd</span> 👍（19） 💬（5）<div>这么说来Linux的内核架构相比较而言是最糟糕的咯？</div>2021-05-17</li><br/><li><span>Stony.修行僧</span> 👍（13） 💬（7）<div>从just for fun读到：就像Linus自己说：没有篮球，没有暑假，没有约会。当然也与他的启蒙人密不可分，外公是大学的数学教授。
+想问一下老师这样理解是正确的吗？</p>2021-06-12</li><br/><li><span>os</span> 👍（40） 💬（4）<p>高清全景图来源 https:&#47;&#47;makelinux.github.io&#47;kernel&#47;map&#47; ，在线可缩放，点击进源码</p>2021-05-18</li><br/><li><span>Feen</span> 👍（27） 💬（4）<p>突然有点想笑，觉得很有意思，最近几年很火在linux上跑的微服务架构，本质对应在宏内核的架构上运行着微内核模式的微服务架构，好有意思。</p>2021-06-04</li><br/><li><span>fw～繁闻</span> 👍（21） 💬（1）<p>一直以为linux的内核应该是最简单优雅的，window内核应该是极其复杂的，看了东哥的文章真是颠覆了我的认知。</p>2021-08-02</li><br/><li><span>zhanyd</span> 👍（19） 💬（5）<p>这么说来Linux的内核架构相比较而言是最糟糕的咯？</p>2021-05-17</li><br/><li><span>Stony.修行僧</span> 👍（13） 💬（7）<p>从just for fun读到：就像Linus自己说：没有篮球，没有暑假，没有约会。当然也与他的启蒙人密不可分，外公是大学的数学教授。
 从用户体验来讲：
 1. macOS流畅又稳定，已经10年的mbp 没有死机崩溃过，
 2. Linux server也是超级稳定，虽然GUI偶尔无响应，但是在ALT+F1 到F7 下无敌。
 3. 除了蓝屏还是蓝屏，或者C盘xx 文件不存在.
-话糙理不糙：NT内核再优雅连花瓶都不如。既不中看又不中用。</div>2021-07-30</li><br/><li><span>陈宇鸣</span> 👍（13） 💬（1）<div>既然Linux是宏内核，宏内核中模块耦合性很高，那Linux是如何保证系统稳定性的呢？</div>2021-07-21</li><br/><li><span>royalfarmer</span> 👍（11） 💬（3）<div>真是颠覆认知。以前只听人说Linux怎么怎么好，Windows怎么怎么差，其实主要是因Linux为开源，大家都能轻松接触到其内核，Windows不开源，研究其内核就有难度，造成了认知偏见。
+话糙理不糙：NT内核再优雅连花瓶都不如。既不中看又不中用。</p>2021-07-30</li><br/><li><span>陈宇鸣</span> 👍（13） 💬（1）<p>既然Linux是宏内核，宏内核中模块耦合性很高，那Linux是如何保证系统稳定性的呢？</p>2021-07-21</li><br/><li><span>royalfarmer</span> 👍（11） 💬（3）<p>真是颠覆认知。以前只听人说Linux怎么怎么好，Windows怎么怎么差，其实主要是因Linux为开源，大家都能轻松接触到其内核，Windows不开源，研究其内核就有难度，造成了认知偏见。
 免费的不一定是好的。不能人云亦云。如果Linux真的是最好又免费，应该属它发展最大才对。
-客观理性，佩服老师</div>2021-09-25</li><br/><li><span>杰良</span> 👍（10） 💬（2）<div>Linux 内核的两个维度划分：
+客观理性，佩服老师</p>2021-09-25</li><br/><li><span>杰良</span> 👍（10） 💬（2）<p>Linux 内核的两个维度划分：
 功能模块：human interface、system、processing、memory、storage、networking。
-层次划分：user space interface、virtual、bridges、logical、device control、hardware interface、electronics。</div>2021-05-20</li><br/><li><span>Paul Shan</span> 👍（9） 💬（4）<div>Windows NT从设计架构上看属于微内核结构，HAL层之上的内核层属于微内核的核心，之上的执行体属于内核级别的应用层。Windows NT从权限的角度看属于宏内核，内核模式之下功能完备，并不是微内核那样单薄。这种设计兼顾了结构清晰和性能良好两个优点。但是老师，大互联公司用的基本是Linux服务器，微软自己hotmail转成Windows服务器也不顺利，这是为何呀？</div>2021-05-18</li><br/><li><span>神经旷野舞者</span> 👍（8） 💬（6）<div>windows容易有病毒，linux很少有病毒，说明windows漏洞多</div>2021-10-11</li><br/><li><span>黄骏</span> 👍（8） 💬（2）<div>一直用linux，有点神化linus了，确实需要对比，保持开放心态了解优秀的商业操作系统</div>2021-07-18</li><br/>
+层次划分：user space interface、virtual、bridges、logical、device control、hardware interface、electronics。</p>2021-05-20</li><br/><li><span>Paul Shan</span> 👍（9） 💬（4）<p>Windows NT从设计架构上看属于微内核结构，HAL层之上的内核层属于微内核的核心，之上的执行体属于内核级别的应用层。Windows NT从权限的角度看属于宏内核，内核模式之下功能完备，并不是微内核那样单薄。这种设计兼顾了结构清晰和性能良好两个优点。但是老师，大互联公司用的基本是Linux服务器，微软自己hotmail转成Windows服务器也不顺利，这是为何呀？</p>2021-05-18</li><br/><li><span>神经旷野舞者</span> 👍（8） 💬（6）<p>windows容易有病毒，linux很少有病毒，说明windows漏洞多</p>2021-10-11</li><br/><li><span>黄骏</span> 👍（8） 💬（2）<p>一直用linux，有点神化linus了，确实需要对比，保持开放心态了解优秀的商业操作系统</p>2021-07-18</li><br/>
 </ul>

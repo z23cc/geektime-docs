@@ -379,7 +379,7 @@ while (1) {
 
 在Redis事件驱动框架代码中，分别使用了Linux系统上的select和epoll两种机制，你知道为什么Redis没有使用poll这一机制吗？
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>Kaito</span> 👍（65） 💬（2）<div>1、单线程服务器模型，面临的最大的问题就是，一个线程如何处理多个客户端请求？解决这种问题的办法就是「IO 多路复用」。它本质上是应用层不用维护多个客户端的连接状态，而是把它们「托管」给了操作系统，操作系统维护这些连接的状态变化，之后应用层只管问操作系统，哪些 socket 有数据可读&#47;可写就好了，大大简化了应用层的复杂度
+<li><span>Kaito</span> 👍（65） 💬（2）<p>1、单线程服务器模型，面临的最大的问题就是，一个线程如何处理多个客户端请求？解决这种问题的办法就是「IO 多路复用」。它本质上是应用层不用维护多个客户端的连接状态，而是把它们「托管」给了操作系统，操作系统维护这些连接的状态变化，之后应用层只管问操作系统，哪些 socket 有数据可读&#47;可写就好了，大大简化了应用层的复杂度
 
 2、IO 多路复用机制要想高效使用，一般还需要把 socket 设置成「非阻塞」模式，即 socket 没有数据可读&#47;可写时，应用层去 read&#47;write socket 也不会阻塞住（内核会返回指定错误，应用层可继续重试），这样应用层就可以去处理其它业务逻辑，不会阻塞影响性能
 
@@ -415,7 +415,7 @@ while (1) {
 所以我理解，select 并不是为 Linux 服务的，而是在 Windows 下使用的。
 
 因为 epoll 性能优于 select 和 poll，所以 Linux 平台下，Redis 直接会选择 epoll。而 Windows 不支持 epoll 和 poll，所以会用 select 模型。
-</div>2021-08-14</li><br/><li><span>Darren</span> 👍（33） 💬（1）<div>epoll总结如下：
+</p>2021-08-14</li><br/><li><span>Darren</span> 👍（33） 💬（1）<p>epoll总结如下：
 epoll是在2.6内核中提出的，是之前的select和poll的增强版本。相对于select和poll来说，epoll更加灵活，没有描述符限制。epoll使用一个文件描述符管理多个描述符，将用户关系的文件描述符的事件存放到内核的一个事件表中，这样在用户空间和内核空间的copy只需一次。
 
 int epoll_create(int size)；&#47;&#47;创建一个epoll的句柄，
@@ -457,7 +457,7 @@ epoll_event：是告诉内核需要监听什么事。
 通过回调函数内核会将 I&#47;O 准备好的描述符添加到rdlist双链表管理，进程调用 epoll_wait() 便可以得到事件完成的描述符。
 参数events用来从内核得到事件的集合，maxevents告之内核这个events有多大，参数timeout是超时时间（毫秒，正整数时间，0是非阻塞，-1永久阻塞直到事件发生）。该函数返回需要处理的事件数目，如返回0表示已超时。
 
-当然epoll对文件描述符的操作有两种模式：LT (level trigger)（默认）和ET (edge trigger)。LT模式是默认模式。</div>2021-08-17</li><br/><li><span>Darren</span> 👍（7） 💬（0）<div>select、poll总结如下：
+当然epoll对文件描述符的操作有两种模式：LT (level trigger)（默认）和ET (edge trigger)。LT模式是默认模式。</p>2021-08-17</li><br/><li><span>Darren</span> 👍（7） 💬（0）<p>select、poll总结如下：
 
 int select (int n, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
 select 函数监视的文件描述符分3类，分别是readfds、writefds、和exceptfds。调用后select函数会阻塞，直到有描述符就绪（有数据 可读、可写、或者有except），或者超时（timeout指定等待时间，如果立即返回设为null即可），函数返回。当select函数返回后，可以 通过遍历fdset，来找到就绪的描述符。
@@ -483,7 +483,7 @@ struct pollfd {
         2、利用结构体pollfd，每次置位revents字段，每次只需恢复revents即可。pollfd可重用。（解决select缺点2）
 缺点：
         1、每次调⽤用poll，都需要把pollfd数组从用户态拷贝到内核态，这个开销在fd很多时会很大。（同select缺点3）
-        2、和select函数一样，poll返回后，需要轮询pollfd来获取就绪的描述符。事实上，同时连接的大量客户端在一时刻可能只有很少的处于就绪状态，因此随着监视的描述符数量的增长，其效率也会线性下降。（同select缺点4）</div>2021-08-17</li><br/><li><span>可怜大灰狼</span> 👍（7） 💬（0）<div>poll相比select性能上变化不大，反而select可以运行在更多的系统上，兼容性更好。但是我记得rewrite aof的时候会用到poll。所以特意翻了下代码。aof.c中rewriteAppendOnlyFile方法调用了aeWait，aeWait里通过poll来完成阻塞时间。</div>2021-08-15</li><br/><li><span>曾轼麟</span> 👍（5） 💬（0）<div>首先回答老师的问题：为什么Redis没有使用poll这种机制？
+        2、和select函数一样，poll返回后，需要轮询pollfd来获取就绪的描述符。事实上，同时连接的大量客户端在一时刻可能只有很少的处于就绪状态，因此随着监视的描述符数量的增长，其效率也会线性下降。（同select缺点4）</p>2021-08-17</li><br/><li><span>可怜大灰狼</span> 👍（7） 💬（0）<p>poll相比select性能上变化不大，反而select可以运行在更多的系统上，兼容性更好。但是我记得rewrite aof的时候会用到poll。所以特意翻了下代码。aof.c中rewriteAppendOnlyFile方法调用了aeWait，aeWait里通过poll来完成阻塞时间。</p>2021-08-15</li><br/><li><span>曾轼麟</span> 👍（5） 💬（0）<p>首先回答老师的问题：为什么Redis没有使用poll这种机制？
 select 和 poll其实本质上没有太大的区别（二选一就好了，而select对windows较友好），poll的特点就是突破了select的最大套接字上限的问题，所以poll本身和select一样会存在，遍历所有套接字列表的情况，而如果Redis当前存在大量无效或者空闲的连接，这时候每次都遍历就会带来一定的开销了，而epoll可以直接返回已经触发事件（活跃）的套接字，避免了循环带来的开销。
 
 总结：
@@ -493,7 +493,7 @@ select 和 poll其实本质上没有太大的区别（二选一就好了，而se
 	3、在前面的文章中提到Redis启动的时候，在initServer方法中注册了acceptTcpHandler方法，用于处理连接事件，创建完成连接后交给对应IO多路复用
 	4、通过aeApiCreate方法创建对应的IO多路复用，在创建aeEventLoop中创建，然后开始接受处理对应的事件
 
-此外Redis在整个IO多路复用上的实现，预留了很大的灵活空间，实现了类似java接口的效果，这点值得我们学习，能灵活的切换不同的IO复用的方式，并且也方便拓展新的IO复用方式。</div>2021-08-18</li><br/><li><span>lei</span> 👍（2） 💬（0）<div>JDK 里也有 select() 方法，但是底层它是基于 epoll 实现。
+此外Redis在整个IO多路复用上的实现，预留了很大的灵活空间，实现了类似java接口的效果，这点值得我们学习，能灵活的切换不同的IO复用的方式，并且也方便拓展新的IO复用方式。</p>2021-08-18</li><br/><li><span>lei</span> 👍（2） 💬（0）<p>JDK 里也有 select() 方法，但是底层它是基于 epoll 实现。
 
 select 函数将当前进程轮流加入每个 fd 对应设备的等待队列去询问该 fd 有无可读&#47;写事件。Linux 的开发者想到，找个“代理”的回调函数代替当前进程，去加入 fd 对应设备的等待队列，让这个代理的回调函数去等待设备就绪，当有设备就绪就将自己唤醒，然后该回调函数就把这个设备的 fd 放到一个就绪队列，同时通知可能在等待的轮询进程来这个就绪队列里取已经就绪的 fd。当前轮询的进程不需要遍历整个被侦听的 fd 集合。
 
@@ -504,7 +504,7 @@ select 函数将当前进程轮流加入每个 fd 对应设备的等待队列去
 
 epoll缺点：
 epoll每次只遍历活跃的 fd (如果是 LT，也会遍历先前活跃的 fd)，在活跃fd较少的情况下就会很有优势，如果大部分fd都是活跃的，epoll的效率可能还不如 select&#47;poll。
-</div>2021-11-16</li><br/><li><span>风轻扬</span> 👍（1） 💬（0）<div>看了好几遍，终于看懂了select和epoll的主要区别。
+</p>2021-11-16</li><br/><li><span>风轻扬</span> 👍（1） 💬（0）<p>看了好几遍，终于看懂了select和epoll的主要区别。
 select函数。函数中定义了几个描述符集合，然后内核会关注这些描述符集合中，哪些描述符就绪了，然后返回已就绪的描述符个数，业务程序需要遍历所有的描述符集合，来找到可处理的描述符集合，这个遍历操作，很明显是O(n)的时间复杂度
-epoll函数。函数中定义了监听的描述符、就绪的描述符，并且很重要的是：就绪的描述符用一个专门的结构存储，业务程序可以直接遍历这个就绪描述符集合，这样就省了遍历整个集合，在描述符很多时，epoll相比select，性能有肉眼的增长</div>2023-10-20</li><br/><li><span>陌</span> 👍（1） 💬（0）<div>epoll 还有一个非常重要的一点就是会在 TCP&#47;IP 协议栈实现上注册一个回调函数，也就是 `ep_poll_callback`，其作用就是将 epoll 红黑树上的 epitem 对象添加到双向链表中，同时如果此时 `epoll_wait()` 如果被阻塞的话将会唤醒，获得调度机会后将双向链表的数据拷贝到 `evlist` 中，应用程序可直接对其中的 socket fd 进行读写。</div>2021-08-17</li><br/><li><span>Geek_613829</span> 👍（1） 💬（0）<div>天，我居然是第一Σ(￣ロ￣lll)</div>2021-08-14</li><br/><li><span>无风</span> 👍（0） 💬（0）<div>ep_events为什么用malloc呢？我查了下很多demo用malloc，也有的demo直接定义数组。。</div>2021-08-18</li><br/>
+epoll函数。函数中定义了监听的描述符、就绪的描述符，并且很重要的是：就绪的描述符用一个专门的结构存储，业务程序可以直接遍历这个就绪描述符集合，这样就省了遍历整个集合，在描述符很多时，epoll相比select，性能有肉眼的增长</p>2023-10-20</li><br/><li><span>陌</span> 👍（1） 💬（0）<p>epoll 还有一个非常重要的一点就是会在 TCP&#47;IP 协议栈实现上注册一个回调函数，也就是 `ep_poll_callback`，其作用就是将 epoll 红黑树上的 epitem 对象添加到双向链表中，同时如果此时 `epoll_wait()` 如果被阻塞的话将会唤醒，获得调度机会后将双向链表的数据拷贝到 `evlist` 中，应用程序可直接对其中的 socket fd 进行读写。</p>2021-08-17</li><br/><li><span>Geek_613829</span> 👍（1） 💬（0）<p>天，我居然是第一Σ(￣ロ￣lll)</p>2021-08-14</li><br/><li><span>无风</span> 👍（0） 💬（0）<p>ep_events为什么用malloc呢？我查了下很多demo用malloc，也有的demo直接定义数组。。</p>2021-08-18</li><br/>
 </ul>

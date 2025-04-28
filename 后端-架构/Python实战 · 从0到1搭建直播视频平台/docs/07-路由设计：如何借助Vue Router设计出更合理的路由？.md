@@ -639,12 +639,12 @@ this.$router.params.id
 
 欢迎你在留言区和我交流互动，也推荐你把这节课分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>🤬</span> 👍（2） 💬（1）<div>有些样式和内容不是很明确，能不能放一下代码？</div>2023-05-08</li><br/><li><span>功夫熊猫</span> 👍（1） 💬（1）<div>为啥课本里描述的代码和代码库的代码完全不同，还有人在管理吗？课件里的引入两个组件啥意思，也没找到home.vue，代码库的代码也运行不同，不知道是不是太久了，版本问题导致都失效了。
+<li><span>🤬</span> 👍（2） 💬（1）<p>有些样式和内容不是很明确，能不能放一下代码？</p>2023-05-08</li><br/><li><span>功夫熊猫</span> 👍（1） 💬（1）<p>为啥课本里描述的代码和代码库的代码完全不同，还有人在管理吗？课件里的引入两个组件啥意思，也没找到home.vue，代码库的代码也运行不同，不知道是不是太久了，版本问题导致都失效了。
 &#47;&#47;引入两个自己定义好的组件
 import Home from &#39;..&#47;pages&#47;Home.vue&#39;
 import About from &#39;..&#47;pages&#47;Home.vue&#39;
 
-</div>2023-10-23</li><br/><li><span>ZENG</span> 👍（1） 💬（1）<div>跟着教程实操一边确实学习到很多
+</p>2023-10-23</li><br/><li><span>ZENG</span> 👍（1） 💬（1）<p>跟着教程实操一边确实学习到很多
 
 有几点总结一下，
 1. vue-router3.x版本和4.x版本的路由配置会有一些差别，如果之前用vue-cli配置是3.x版本的可以按照 https:&#47;&#47;v3.router.vuejs.org&#47;zh&#47;guide&#47;#javascript 这个来，如果是冲重新安装的
@@ -674,8 +674,8 @@ npm install vue-router@4，按照 https:&#47;&#47;router.vuejs.org&#47;zh&#47;gu
     &quot;@babel&#47;plugin-transform-classes&quot;
   ]
 }
-</div>2023-06-11</li><br/><li><span>友</span> 👍（1） 💬（1）<div>我是访问 localhost:8080&#47;#&#47;about 才出现的页面 其实我现在也搞不清楚前端这些东西了</div>2023-05-25</li><br/><li><span>暴走的海鸽</span> 👍（1） 💬（2）<div>Home.vue组件和About.vue组件呢？</div>2023-05-10</li><br/><li><span>冯丽娟</span> 👍（0） 💬（1）<div>about页面出不来，我是复制文中的代码的，也出不来，home页面能正常路由。</div>2024-05-14</li><br/><li><span>niniク</span> 👍（0） 💬（1）<div>SyntaxError: lmporting binding name &#39;default&quot; cannot be resolved by star export entries.
-老师，这是什么原因呢</div>2024-04-17</li><br/><li><span>魁</span> 👍（0） 💬（1）<div>想开发一个带有页面分享统计功能的表单页面，能记录打开的表单是由谁分享的，这功能能用带参数的动态路由实现吗？</div>2024-04-10</li><br/><li><span>功夫熊猫</span> 👍（0） 💬（1）<div>老师你好，安装vue-router@4的时候会报错，看起来是不是router 4的版本yao 依赖vue 3.2.0以上版本，但是前边一路教程下来，安装下来的应该是vue2.9.6版本
+</p>2023-06-11</li><br/><li><span>友</span> 👍（1） 💬（1）<p>我是访问 localhost:8080&#47;#&#47;about 才出现的页面 其实我现在也搞不清楚前端这些东西了</p>2023-05-25</li><br/><li><span>暴走的海鸽</span> 👍（1） 💬（2）<p>Home.vue组件和About.vue组件呢？</p>2023-05-10</li><br/><li><span>冯丽娟</span> 👍（0） 💬（1）<p>about页面出不来，我是复制文中的代码的，也出不来，home页面能正常路由。</p>2024-05-14</li><br/><li><span>niniク</span> 👍（0） 💬（1）<p>SyntaxError: lmporting binding name &#39;default&quot; cannot be resolved by star export entries.
+老师，这是什么原因呢</p>2024-04-17</li><br/><li><span>魁</span> 👍（0） 💬（1）<p>想开发一个带有页面分享统计功能的表单页面，能记录打开的表单是由谁分享的，这功能能用带参数的动态路由实现吗？</p>2024-04-10</li><br/><li><span>功夫熊猫</span> 👍（0） 💬（1）<p>老师你好，安装vue-router@4的时候会报错，看起来是不是router 4的版本yao 依赖vue 3.2.0以上版本，但是前边一路教程下来，安装下来的应该是vue2.9.6版本
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
 npm ERR! 
@@ -690,7 +690,7 @@ npm ERR! node_modules&#47;vue-router
 npm ERR!   vue-router@&quot;4&quot; from the root project
 npm ERR! 
 npm ERR! Fix the upstream dependency conflict, or retry
-</div>2023-10-27</li><br/><li><span>明仔的阳光午后</span> 👍（0） 💬（1）<div>懒加载的写法二 `ComponentA：resolve=&gt;([&#39;需要加载的路由的地址&#39;，resolve])`没起作用，改成`ComponentA：resolve=&gt;require([&#39;需要加载的路由的地址&#39;，resolve])`之后才起作用</div>2023-08-29</li><br/><li><span>Geek_88cc02</span> 👍（0） 💬（1）<div>老师，有代码地址吗？叙述过于抽象了 about组件那些都么有，看不懂 我们真没基础</div>2023-06-10</li><br/><li><span>Geek_88cc02</span> 👍（0） 💬（1）<div>Home 组件  About 组件代码没有讲吧？</div>2023-06-10</li><br/><li><span>阿望(tom)</span> 👍（0） 💬（1）<div>老师，你的代码Layout 里边 下边 css 用了 less, 但是在文中还有你的git代码里边 没有提到需要安装这个扩展，于是我这边搜了一下 ，按照文中给出的搭建方法，less-loader 还只能安装@5.0.0版本，,另外在 编译过程中 项目并不能100%编译 ，提示 app.vue {parse:&quot;babylon&quot;} 被废弃了 需要换成 {parser::&quot;balbel&quot;} 请问这2个问题，能讲解下吗</div>2023-05-31</li><br/><li><span>Geek_840593</span> 👍（0） 💬（8）<div>ERROR  Failed to compile with 1 errors                                                                                                  18:14:14
+</p>2023-10-27</li><br/><li><span>明仔的阳光午后</span> 👍（0） 💬（1）<p>懒加载的写法二 `ComponentA：resolve=&gt;([&#39;需要加载的路由的地址&#39;，resolve])`没起作用，改成`ComponentA：resolve=&gt;require([&#39;需要加载的路由的地址&#39;，resolve])`之后才起作用</p>2023-08-29</li><br/><li><span>Geek_88cc02</span> 👍（0） 💬（1）<p>老师，有代码地址吗？叙述过于抽象了 about组件那些都么有，看不懂 我们真没基础</p>2023-06-10</li><br/><li><span>Geek_88cc02</span> 👍（0） 💬（1）<p>Home 组件  About 组件代码没有讲吧？</p>2023-06-10</li><br/><li><span>阿望(tom)</span> 👍（0） 💬（1）<p>老师，你的代码Layout 里边 下边 css 用了 less, 但是在文中还有你的git代码里边 没有提到需要安装这个扩展，于是我这边搜了一下 ，按照文中给出的搭建方法，less-loader 还只能安装@5.0.0版本，,另外在 编译过程中 项目并不能100%编译 ，提示 app.vue {parse:&quot;babylon&quot;} 被废弃了 需要换成 {parser::&quot;balbel&quot;} 请问这2个问题，能讲解下吗</p>2023-05-31</li><br/><li><span>Geek_840593</span> 👍（0） 💬（8）<p>ERROR  Failed to compile with 1 errors                                                                                                  18:14:14
 
  error  in .&#47;src&#47;components&#47;PC&#47;MyHeader.vue
 
@@ -709,7 +709,7 @@ Variable @border-color is undefined
  @ .&#47;node_modules&#47;babel-loader&#47;lib!.&#47;node_modules&#47;vue-loader&#47;lib&#47;selector.js?type=script&amp;index=0!.&#47;src&#47;App.vue
  @ .&#47;src&#47;App.vue
  @ .&#47;src&#47;main.js
- @ multi (webpack)-dev-server&#47;client?http:&#47;&#47;localhost:8080 webpack&#47;hot&#47;dev-server .&#47;src&#47;main.js</div>2023-05-25</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<div>npm install vue-router@4
+ @ multi (webpack)-dev-server&#47;client?http:&#47;&#47;localhost:8080 webpack&#47;hot&#47;dev-server .&#47;src&#47;main.js</p>2023-05-25</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<p>npm install vue-router@4
 
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
@@ -729,5 +729,5 @@ npm ERR! this command with --force or --legacy-peer-deps
 npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
 npm ERR! 
 npm ERR! 
-npm ERR! For a full report see:</div>2023-05-16</li><br/>
+npm ERR! For a full report see:</p>2023-05-16</li><br/>
 </ul>

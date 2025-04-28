@@ -419,11 +419,11 @@ Pod创建出来后，这时kube-scheduler监听到待调度的Pod，于是为其
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，谢谢。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>kkxue</span> 👍（5） 💬（1）<div>感觉这篇在讲述的创建pod的过程中，少了一些中间环节，比如介绍list-watch机制和Informer模块</div>2021-03-09</li><br/><li><span>Tendrun</span> 👍（0） 💬（1）<div>是不是kube-apiserver 的Cache中缓存了全量的etcd key-value数据，还是说不是全量，只是一部分。如果是一部分那这部分缓存的维护更新机制是怎样的呢</div>2022-04-20</li><br/><li><span>唐聪</span> 👍（24） 💬（1）<div>kubernetes中创建一个pod工作流程，resource version含义与etcd，通过label&#47;fieldSelecotor查询性能，是比较常见的面试题。</div>2021-03-03</li><br/><li><span>mmm</span> 👍（10） 💬（0）<div>informer watch请求的resource version比kube-apiserver缓存中保存的最小resource version还小，kube-apiserver就会返回“too old Resource Version”，然后触发informer进行list全量数据，导致expensive request</div>2021-03-20</li><br/><li><span>ly</span> 👍（1） 💬（0）<div>too old Resource Version
+<li><span>kkxue</span> 👍（5） 💬（1）<p>感觉这篇在讲述的创建pod的过程中，少了一些中间环节，比如介绍list-watch机制和Informer模块</p>2021-03-09</li><br/><li><span>Tendrun</span> 👍（0） 💬（1）<p>是不是kube-apiserver 的Cache中缓存了全量的etcd key-value数据，还是说不是全量，只是一部分。如果是一部分那这部分缓存的维护更新机制是怎样的呢</p>2022-04-20</li><br/><li><span>唐聪</span> 👍（24） 💬（1）<p>kubernetes中创建一个pod工作流程，resource version含义与etcd，通过label&#47;fieldSelecotor查询性能，是比较常见的面试题。</p>2021-03-03</li><br/><li><span>mmm</span> 👍（10） 💬（0）<p>informer watch请求的resource version比kube-apiserver缓存中保存的最小resource version还小，kube-apiserver就会返回“too old Resource Version”，然后触发informer进行list全量数据，导致expensive request</p>2021-03-20</li><br/><li><span>ly</span> 👍（1） 💬（0）<p>too old Resource Version
 
-在更新资源的过程中，这个资源已经被其他进程更新的时候</div>2021-03-28</li><br/><li><span>kkxue</span> 👍（1） 💬（1）<div>有哪些原因可能会导致 kube-apiserver 报“too old Resource Version”错误呢： 有bug的时候</div>2021-03-09</li><br/><li><span>Simon</span> 👍（1） 💬（0）<div>思考题:
+在更新资源的过程中，这个资源已经被其他进程更新的时候</p>2021-03-28</li><br/><li><span>kkxue</span> 👍（1） 💬（1）<p>有哪些原因可能会导致 kube-apiserver 报“too old Resource Version”错误呢： 有bug的时候</p>2021-03-09</li><br/><li><span>Simon</span> 👍（1） 💬（0）<p>思考题:
 
-请求的版本在etcd已经回收了是不是就报&quot;too old Resource Version&quot;?</div>2021-03-03</li><br/><li><span>远天</span> 👍（0） 💬（0）<div>唐老师，你好，prefix默认是&#47;registry，如果想自定义的话，要怎么设置呢？</div>2023-07-06</li><br/><li><span>mckee</span> 👍（0） 💬（0）<div>导致 kube-apiserver 报“too old Resource Version”错误：
+请求的版本在etcd已经回收了是不是就报&quot;too old Resource Version&quot;?</p>2021-03-03</li><br/><li><span>远天</span> 👍（0） 💬（0）<p>唐老师，你好，prefix默认是&#47;registry，如果想自定义的话，要怎么设置呢？</p>2023-07-06</li><br/><li><span>mckee</span> 👍（0） 💬（0）<p>导致 kube-apiserver 报“too old Resource Version”错误：
 revision太小，数据可能被压缩，会触发relist；
-watch cache size太小；</div>2022-05-23</li><br/>
+watch cache size太小；</p>2022-05-23</li><br/>
 </ul>

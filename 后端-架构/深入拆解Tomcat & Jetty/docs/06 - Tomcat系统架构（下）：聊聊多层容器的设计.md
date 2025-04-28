@@ -126,16 +126,16 @@ Tomcat内的Context组件跟Servlet规范中的ServletContext接口有什么区�
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>一路远行</span> 👍（229） 💬（9）<div>1）Servlet规范中ServletContext表示web应用的上下文环境，而web应用对应tomcat的概念是Context，所以从设计上，ServletContext自然会成为tomcat的Context具体实现的一个成员变量。
+<li><span>一路远行</span> 👍（229） 💬（9）<p>1）Servlet规范中ServletContext表示web应用的上下文环境，而web应用对应tomcat的概念是Context，所以从设计上，ServletContext自然会成为tomcat的Context具体实现的一个成员变量。
 
 2）tomcat内部实现也是这样完成的，ServletContext对应tomcat实现是org.apache.catalina.core.ApplicationContext，Context容器对应tomcat实现是org.apache.catalina.core.StandardContext。ApplicationContext是StandardContext的一个成员变量。
 
 3）Spring的ApplicationContext之前已经介绍过，tomcat启动过程中ContextLoaderListener会监听到容器初始化事件，它的contextInitialized方法中，Spring会初始化全局的Spring根容器ApplicationContext，初始化完毕后，Spring将其存储到ServletContext中。
 
-总而言之，Servlet规范中ServletContext是tomcat的Context实现的一个成员变量，而Spring的ApplicationContext是Servlet规范中ServletContext的一个属性。</div>2019-05-23</li><br/><li><span>阿旺</span> 👍（75） 💬（4）<div>你好 请问到业务的controller是从哪部分进去的呢 谢谢</div>2019-05-23</li><br/><li><span>发条橙子 。</span> 👍（70） 💬（4）<div>老师 ， 我之前一直误以为一个 server表示我们一个应用(实际上只是代表一个tomcat实例)，所以一直不理解为什么 server 下通过 host 可以配置多个应用 ，学了这节，发现是一个context对应一个应用， 自己百度了一下，原来可以通过 host 或者 service 来让 tomcat 访问不同的目录来访问多个应用 。
+总而言之，Servlet规范中ServletContext是tomcat的Context实现的一个成员变量，而Spring的ApplicationContext是Servlet规范中ServletContext的一个属性。</p>2019-05-23</li><br/><li><span>阿旺</span> 👍（75） 💬（4）<p>你好 请问到业务的controller是从哪部分进去的呢 谢谢</p>2019-05-23</li><br/><li><span>发条橙子 。</span> 👍（70） 💬（4）<p>老师 ， 我之前一直误以为一个 server表示我们一个应用(实际上只是代表一个tomcat实例)，所以一直不理解为什么 server 下通过 host 可以配置多个应用 ，学了这节，发现是一个context对应一个应用， 自己百度了一下，原来可以通过 host 或者 service 来让 tomcat 访问不同的目录来访问多个应用 。
 
 1. 但是我看生产环境中， 配的都是一个 tomcat 对应一个应用, 多个应用就用多个tomcat 。  那么他和一个 tomcat 加载多个应用有什么区别么 。难道用一个tomcat是为了节约内存么， 用一个tomcat加载多个应用都有什么弊端呢 ？？ 比如应用的上限 ，希望老师指点一下 。 而且一个tomcat里多个应用的话， 我们就无法用 ps -ef | grep tomcat 来定位到我们的真实应用了。
-2. 老师后面讲的， 通过责任链模式， 一步一步解析到 wrapper 的 servlet ， 那不是应该调用servlet 的 doGet()／doPost() 方法了么 ，老师说的创建一个 filter 链，并调用Servlet 的 service 方法， 这句话我不是很理解 </div>2019-05-26</li><br/><li><span>why</span> 👍（60） 💬（4）<div>- 容器的层次结构
+2. 老师后面讲的， 通过责任链模式， 一步一步解析到 wrapper 的 servlet ， 那不是应该调用servlet 的 doGet()／doPost() 方法了么 ，老师说的创建一个 filter 链，并调用Servlet 的 service 方法， 这句话我不是很理解 </p>2019-05-26</li><br/><li><span>why</span> 👍（60） 💬（4）<p>- 容器的层次结构
     - Engine, Host, Context, Wrapper, 是嵌套关系
     - 一个 Tomcat 实例包含一个 Engine, 一个 Engine 包含多个 Host, 以此类推
     - 容器采用组合模式, 所有容器组件都实现 Container 接口, 保证使用一致性
@@ -156,7 +156,7 @@ Tomcat内的Context组件跟Servlet规范中的ServletContext接口有什么区�
         - valve 工作在容器级别, 拦截所有应用; Servlet Filter 工作在应用级别, 只能拦截某个应用的请求
 - 留言
 
-    &gt; Tomcat 的 Context 是一个 Web 应用; Servlet 的 ServletContext 是 Web 应用上下文, 是 Context 的一个成员变量; Spring 的 ApplicationContext 是 spring 容器, 是 Servlet 的一个属性.</div>2019-05-28</li><br/><li><span>yhh</span> 👍（47） 💬（3）<div>Basic value 有些疑惑。比如engine容器下有多个host容器，那engine容器的basic value是怎么知道要指向哪个host容器的value呢？</div>2019-05-24</li><br/><li><span>永光</span> 👍（27） 💬（3）<div>老师您好，
+    &gt; Tomcat 的 Context 是一个 Web 应用; Servlet 的 ServletContext 是 Web 应用上下文, 是 Context 的一个成员变量; Spring 的 ApplicationContext 是 spring 容器, 是 Servlet 的一个属性.</p>2019-05-28</li><br/><li><span>yhh</span> 👍（47） 💬（3）<p>Basic value 有些疑惑。比如engine容器下有多个host容器，那engine容器的basic value是怎么知道要指向哪个host容器的value呢？</p>2019-05-24</li><br/><li><span>永光</span> 👍（27） 💬（3）<p>老师您好，
 你看这样理解对吗？，一个Engine可以对应多个Host，一个Host下面可以放多个应用。
 问题：
 1、如果我有两个应用需要部署，现在就可以有很多种方案了。
@@ -165,10 +165,10 @@ Tomcat内的Context组件跟Servlet规范中的ServletContext接口有什么区�
      部署在不同Service下（不同Engine）的各自Host目录下
 这几种部署方式有什么差异以及优缺点？以及分别适用于什么场合呀？
 谢谢
-</div>2019-06-04</li><br/><li><span>而立斋</span> 👍（24） 💬（3）<div>老师，能提供一份tomcat多host的配置吗？</div>2019-05-27</li><br/><li><span>天天向上</span> 👍（18） 💬（1）<div>Connector和Engine是平级的，并且 Connector可以有多个 容器结构图 xml结构表示的有问题吧</div>2019-05-23</li><br/><li><span>一路远行</span> 👍（17） 💬（1）<div>这段话的描述有些不准确：
+</p>2019-06-04</li><br/><li><span>而立斋</span> 👍（24） 💬（3）<p>老师，能提供一份tomcat多host的配置吗？</p>2019-05-27</li><br/><li><span>天天向上</span> 👍（18） 💬（1）<p>Connector和Engine是平级的，并且 Connector可以有多个 容器结构图 xml结构表示的有问题吧</p>2019-05-23</li><br/><li><span>一路远行</span> 👍（17） 💬（1）<p>这段话的描述有些不准确：
 “首先，根据协议和端口号选定 Service 和 Engine。”
 
-我的理解是，connector配置中只要有端口号就可以确定service和engine，协议的配置只是为了解析，对请求的路由决策没有起到作用。</div>2019-05-23</li><br/><li><span>yang</span> 👍（15） 💬（0）<div>老师，  关于 MapperHost的构造方法  
+我的理解是，connector配置中只要有端口号就可以确定service和engine，协议的配置只是为了解析，对请求的路由决策没有起到作用。</p>2019-05-23</li><br/><li><span>yang</span> 👍（15） 💬（0）<p>老师，  关于 MapperHost的构造方法  
 
         public MappedHost(String name, Host host) {
             super(name, host);
@@ -183,11 +183,11 @@ Tomcat内的Context组件跟Servlet规范中的ServletContext接口有什么区�
 
 contextList 尽管使用volatile修饰的，可以防止编译指令重拍序，并保证可见性。  
 
-但是，它没办法保证 还没构造完，这个new出来的对象，就不被其他线程使用啊？  求老师解答~！</div>2019-06-10</li><br/><li><span>robert_z_zhang</span> 👍（15） 💬（0）<div>老师，filter中没有办法直接使用@autowired的方式注入bean，是因为filter是tomcat管理，bean是spring容器管理，filter先于spring bean初始化，但是为什么在filter的init方法中使用applicationContext.getBean的方式就可以获取了呢，是因为init方法调用的时候，spring容器已经完全初始化了吗？ init方法调用的时机是什么？</div>2019-06-01</li><br/><li><span>Monday</span> 👍（14） 💬（1）<div>老师，tomcat容器的四层架构是一步一步演化过来的还是一步到位的？如果是演化过来的，是哪些故事推动他们如此演化的？谢谢</div>2019-05-24</li><br/><li><span>-W.LI-</span> 👍（14） 💬（1）<div>老师好!Tomcat，server.xml还是搞不太清楚。最外层是server，一个server对应一个Tomcat实例，server下面可以由很多service组件，service组件是区分协议和端口号(问题1:域名访问的话请求到达这里是已经被解析成port了吗？如果已经解析了后面为啥还能拿到二级域名)。每个service对应多个连接器和一个engine。(问题2:为啥要设置多个连接器对应一个engine，是为了提高连接器接受请求的并发吗？)。engine下面对应host，host区分域名(问题3:不同的二级域名对应多个host?)，host下面就是context对应应用通过服务名(webapps下文件夹名区分)（问题4：域名相同路径不同指向不同的服务，是在这配置的么?之前运维同事搞过，原理不太理解），wrapper就是应用程序web.xml中配置的servlet。默认只有一个dispatchservlet。支持对url进行ant风格配置多个。</div>2019-05-23</li><br/><li><span>allean</span> 👍（8） 💬（1）<div>原文：“所有容器都实现了Container接口，因此组合模式可以使得用户对单容器和组合容器的对象使用具有一致性”
+但是，它没办法保证 还没构造完，这个new出来的对象，就不被其他线程使用啊？  求老师解答~！</p>2019-06-10</li><br/><li><span>robert_z_zhang</span> 👍（15） 💬（0）<p>老师，filter中没有办法直接使用@autowired的方式注入bean，是因为filter是tomcat管理，bean是spring容器管理，filter先于spring bean初始化，但是为什么在filter的init方法中使用applicationContext.getBean的方式就可以获取了呢，是因为init方法调用的时候，spring容器已经完全初始化了吗？ init方法调用的时机是什么？</p>2019-06-01</li><br/><li><span>Monday</span> 👍（14） 💬（1）<p>老师，tomcat容器的四层架构是一步一步演化过来的还是一步到位的？如果是演化过来的，是哪些故事推动他们如此演化的？谢谢</p>2019-05-24</li><br/><li><span>-W.LI-</span> 👍（14） 💬（1）<p>老师好!Tomcat，server.xml还是搞不太清楚。最外层是server，一个server对应一个Tomcat实例，server下面可以由很多service组件，service组件是区分协议和端口号(问题1:域名访问的话请求到达这里是已经被解析成port了吗？如果已经解析了后面为啥还能拿到二级域名)。每个service对应多个连接器和一个engine。(问题2:为啥要设置多个连接器对应一个engine，是为了提高连接器接受请求的并发吗？)。engine下面对应host，host区分域名(问题3:不同的二级域名对应多个host?)，host下面就是context对应应用通过服务名(webapps下文件夹名区分)（问题4：域名相同路径不同指向不同的服务，是在这配置的么?之前运维同事搞过，原理不太理解），wrapper就是应用程序web.xml中配置的servlet。默认只有一个dispatchservlet。支持对url进行ant风格配置多个。</p>2019-05-23</li><br/><li><span>allean</span> 👍（8） 💬（1）<p>原文：“所有容器都实现了Container接口，因此组合模式可以使得用户对单容器和组合容器的对象使用具有一致性”
 问题：这段话不太理解，这里说的一致性是指什么，麻烦老师指明😁
-</div>2019-05-23</li><br/><li><span>永光</span> 👍（7） 💬（1）<div>老师你好，你在回答中Pipeline-value这个机制的详细流程是怎样时提到：“在Tomcat启动的时候，这些Valve都已经设置好了。通过addValve方法向Pipeline中添加Valve，最新添加的总是成为’first‘。“
+</p>2019-05-23</li><br/><li><span>永光</span> 👍（7） 💬（1）<p>老师你好，你在回答中Pipeline-value这个机制的详细流程是怎样时提到：“在Tomcat启动的时候，这些Valve都已经设置好了。通过addValve方法向Pipeline中添加Valve，最新添加的总是成为’first‘。“
 问题：当engine容器下有多个host容器，那engine容器的basic value，在Tomcat启动时是怎么设置Value的？
 
 谢谢
-</div>2019-06-05</li><br/>
+</p>2019-06-05</li><br/>
 </ul>

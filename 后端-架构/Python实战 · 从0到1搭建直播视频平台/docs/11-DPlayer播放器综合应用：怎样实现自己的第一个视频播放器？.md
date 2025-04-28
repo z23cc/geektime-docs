@@ -484,7 +484,7 @@ this.$axios.get("/video/ranking").then((data) => {
 
 欢迎你在留言区和我交流互动，如果觉得这节课对你有启发的话，也推荐你把它分享给更多朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>宋小宋^_^!</span> 👍（0） 💬（2）<div>老师，我想先实现一个最简单播放器的例子，但是过程中一直报错，百度了一圈也没解决，现在是控制台报错 Uncaught TypeError: Cannot call a class as a function，下面是我的代码
+<li><span>宋小宋^_^!</span> 👍（0） 💬（2）<p>老师，我想先实现一个最简单播放器的例子，但是过程中一直报错，百度了一圈也没解决，现在是控制台报错 Uncaught TypeError: Cannot call a class as a function，下面是我的代码
 
 &lt;template&gt;
   &lt;div&gt;
@@ -501,8 +501,8 @@ export default {
       video: {url: &#39;http:&#47;&#47;static.smartisanos.cn&#47;common&#47;video&#47;t1-ui.mp4&#39;}
       })}}
 &lt;&#47;script&gt;
-</div>2023-05-23</li><br/><li><span>佩慎斯予氪蕾沐</span> 👍（0） 💬（1）<div>我没有工作经验，如果是我，我会想办法通过监听点击的方式，或者watch监听某个和暂停相关变量，再使用v-if展示弹窗面板，或者直接写好弹窗面板，用点击来控制显示隐藏display为none等等。</div>2023-05-18</li><br/><li><span>peter</span> 👍（0） 💬（3）<div>请教老师几个问题：
+</p>2023-05-23</li><br/><li><span>佩慎斯予氪蕾沐</span> 👍（0） 💬（1）<p>我没有工作经验，如果是我，我会想办法通过监听点击的方式，或者watch监听某个和暂停相关变量，再使用v-if展示弹窗面板，或者直接写好弹窗面板，用点击来控制显示隐藏display为none等等。</p>2023-05-18</li><br/><li><span>peter</span> 👍（0） 💬（3）<p>请教老师几个问题：
 Q1: 用VSCode创建工程，创建vue文件。运行后浏览器能正常显示。此过程中，浏览器是直接解析vue文件吗？还是说vue文件先被编译成另外一种文件（比如html）然后被浏览器解析？
 Q2: 网页端有canva，安卓端也有。这两种是同一种技术吗？或者更具体地说，是同一套源代码吗？
-Q3: 对于前段工程，Node起什么作用？只是支持NPM吗？</div>2023-05-17</li><br/>
+Q3: 对于前段工程，Node起什么作用？只是支持NPM吗？</p>2023-05-17</li><br/>
 </ul>

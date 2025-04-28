@@ -440,6 +440,6 @@ StreamHandler和FileHandler的实现与DefaultHandler类似，只不过是将日
 
 欢迎分享你的问题以及日志库的改进意见。我们一同交流。下一讲见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（3）<div>不仅学到了format，还在老师的项目代码中学到了不同风格的时间处理</div>2024-01-17</li><br/><li><span>三笑三引伏兵</span> 👍（0） 💬（2）<div>我想问下为什么BaseHandler不声明一个emit的纯虚函数呢 因为开销吗</div>2024-11-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>StreamHandler的“流”是否包含File？甚至包含标准输出流？
-我目前的理解是：标准输出流就是控制台；“流”一般包括文件输出流、网络输出流，好像没有别的了。</div>2023-02-25</li><br/>
+<li><span>李云龙</span> 👍（1） 💬（3）<p>不仅学到了format，还在老师的项目代码中学到了不同风格的时间处理</p>2024-01-17</li><br/><li><span>三笑三引伏兵</span> 👍（0） 💬（2）<p>我想问下为什么BaseHandler不声明一个emit的纯虚函数呢 因为开销吗</p>2024-11-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>StreamHandler的“流”是否包含File？甚至包含标准输出流？
+我目前的理解是：标准输出流就是控制台；“流”一般包括文件输出流、网络输出流，好像没有别的了。</p>2023-02-25</li><br/>
 </ul>

@@ -236,14 +236,14 @@ EXPOSE 8081 8082 8083
 
 ![](https://static001.geekbang.org/resource/image/17/24/1705133103a8aaf6c7fed770afa6dc24.jpg?wh=1920x2805)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>includestdio.h</span> 👍（79） 💬（2）<div>关于指令生成层的问题需要再补充哈：只有 RUN, COPY, ADD 会生成新的镜像层，其它指令只会产生临时层，不影响构建大小，官网的镜像构建最佳实践里面有提及
+<li><span>includestdio.h</span> 👍（79） 💬（2）<p>关于指令生成层的问题需要再补充哈：只有 RUN, COPY, ADD 会生成新的镜像层，其它指令只会产生临时层，不影响构建大小，官网的镜像构建最佳实践里面有提及
 
 https:&#47;&#47;docs.docker.com&#47;develop&#47;develop-images&#47;dockerfile_best-practices&#47;
-Only the instructions RUN, COPY, ADD create layers. Other instructions create temporary intermediate images, and do not increase the size of the build.</div>2022-06-29</li><br/><li><span>陈卧虫</span> 👍（19） 💬（1）<div>1. 创建和修改文件：通过在写时复制实现；删除文件：通过白障实现，也就是通过一个文件记录已经被删除的文件。
-2. 镜像分层的好处：可以重复使用未被改动的layer，每次修改打包镜像，只需重新构建被改动的部分</div>2022-06-29</li><br/><li><span>风飘，吾独思</span> 👍（18） 💬（1）<div>1.容器最上一层是读写层，镜像所有的层是只读层。容器启动后，Docker daemon会在容器的镜像上添加一个读写层。
-2.容器分层可以共享资源，节约空间，相同的内容只需要加载一份份到内存。</div>2022-06-29</li><br/><li><span>hiDaLao</span> 👍（13） 💬（1）<div>请问下docker pull时输出的layer的值为什么和docker inspect里面layer信息的sha256的值不一样呢？</div>2022-07-19</li><br/><li><span>CK</span> 👍（9） 💬（3）<div>还是没太理解构建上下文的意思，是指docker build的时候指定路径？比如文中示例docker build -f Dockerfile.busybox .  是一个.表示，我执行文末的课下作业时，显示COPY failed: file not found in build context or excluded by .dockerignore: stat default.conf: file does not exist，是不是docker build时的路径没指定好呢
-</div>2022-06-30</li><br/><li><span>奕</span> 👍（9） 💬（3）<div>ENTRYPOINT 和 CMD 的本质区别是什么的？ 什么时候用 ENTRYPOINT 什么时候用 CMD？</div>2022-06-29</li><br/><li><span>Geek_666217</span> 👍（8） 💬（1）<div>构建包如果出错了，注意注释和内容不要再同一行，会将注释视为参数
-</div>2022-09-29</li><br/><li><span>Geek_f20da9</span> 👍（6） 💬（2）<div>老师有时间帮忙看一下，不知道写的对不对。
+Only the instructions RUN, COPY, ADD create layers. Other instructions create temporary intermediate images, and do not increase the size of the build.</p>2022-06-29</li><br/><li><span>陈卧虫</span> 👍（19） 💬（1）<p>1. 创建和修改文件：通过在写时复制实现；删除文件：通过白障实现，也就是通过一个文件记录已经被删除的文件。
+2. 镜像分层的好处：可以重复使用未被改动的layer，每次修改打包镜像，只需重新构建被改动的部分</p>2022-06-29</li><br/><li><span>风飘，吾独思</span> 👍（18） 💬（1）<p>1.容器最上一层是读写层，镜像所有的层是只读层。容器启动后，Docker daemon会在容器的镜像上添加一个读写层。
+2.容器分层可以共享资源，节约空间，相同的内容只需要加载一份份到内存。</p>2022-06-29</li><br/><li><span>hiDaLao</span> 👍（13） 💬（1）<p>请问下docker pull时输出的layer的值为什么和docker inspect里面layer信息的sha256的值不一样呢？</p>2022-07-19</li><br/><li><span>CK</span> 👍（9） 💬（3）<p>还是没太理解构建上下文的意思，是指docker build的时候指定路径？比如文中示例docker build -f Dockerfile.busybox .  是一个.表示，我执行文末的课下作业时，显示COPY failed: file not found in build context or excluded by .dockerignore: stat default.conf: file does not exist，是不是docker build时的路径没指定好呢
+</p>2022-06-30</li><br/><li><span>奕</span> 👍（9） 💬（3）<p>ENTRYPOINT 和 CMD 的本质区别是什么的？ 什么时候用 ENTRYPOINT 什么时候用 CMD？</p>2022-06-29</li><br/><li><span>Geek_666217</span> 👍（8） 💬（1）<p>构建包如果出错了，注意注释和内容不要再同一行，会将注释视为参数
+</p>2022-09-29</li><br/><li><span>Geek_f20da9</span> 👍（6） 💬（2）<p>老师有时间帮忙看一下，不知道写的对不对。
 
 dockerfile常用参数：
 1.ARG：镜像层的环境变量
@@ -257,7 +257,7 @@ dockerfile常用参数：
 
 思考题：
 1.docker采用UNION FS文件系统，将文件系统分为上层和下层。即上层为容器层，下层为镜像层。如果下层有修改，运行容器时，上层会同步修改。如果上层有数据修改（即容器层数据修改），不会影响到下层（即镜像层）。
-2.好处：共享已存在的layer，如果有新的数据加入，只会增量在最上层新增layer层。减少了网络传输等一些成本。</div>2022-09-17</li><br/><li><span>每天晒白牙</span> 👍（5） 💬（1）<div>chatgpt的回答
+2.好处：共享已存在的layer，如果有新的数据加入，只会增量在最上层新增layer层。减少了网络传输等一些成本。</p>2022-09-17</li><br/><li><span>每天晒白牙</span> 👍（5） 💬（1）<p>chatgpt的回答
 1.容器运行时需要写入数据，但是Docker镜像的分层技术是只读的，这会导致冲突。为了解决这个问题，Docker采用了一种称为“容器层”的技术，用于在镜像的基础上创建一个可写的文件系统层，用于存储容器中的数据和修改。
 
 具体来说，当创建一个新的Docker容器时，Docker会在镜像的基础上创建一个可写的文件系统层，称为“容器层”，用于存储容器中的数据和修改。容器层会覆盖镜像中相应的文件系统层，从而实现容器的个性化定制和隔离。
@@ -276,7 +276,7 @@ dockerfile常用参数：
 
 提高镜像的安全性：镜像的分层结构可以提高镜像的安全性，因为每个文件系统层都是只读的，不会被修改。这样可以避免恶意软件或攻击者修改镜像中的文件，从而提高镜像的安全性。
 
-方便镜像的共享和复用：镜像的分层结构可以方便镜像的共享和复用，因为可以将多个镜像共用相同的Layer，从而减小镜像的大小，提高镜像的构建和传输效率。这样可以方便镜像的共享和复用，提高镜像的可用性和可维护性。</div>2023-05-17</li><br/><li><span>虢國技醬</span> 👍（4） 💬（1）<div>&quot;Dockerfile 里，第一个指令必须是 FROM，用来选择基础镜像&quot;
+方便镜像的共享和复用：镜像的分层结构可以方便镜像的共享和复用，因为可以将多个镜像共用相同的Layer，从而减小镜像的大小，提高镜像的构建和传输效率。这样可以方便镜像的共享和复用，提高镜像的可用性和可维护性。</p>2023-05-17</li><br/><li><span>虢國技醬</span> 👍（4） 💬（1）<p>&quot;Dockerfile 里，第一个指令必须是 FROM，用来选择基础镜像&quot;
 
 一直有个疑问，写Dockerfile都必须有个基础镜像，那么依赖的这些基础镜像 的最原始镜像是怎么制作的？
 
@@ -294,5 +294,5 @@ https:&#47;&#47;docs.docker.com&#47;build&#47;building&#47;base-images&#47;#crea
 
 You can use Docker’s reserved, minimal image, scratch, as a starting point for building containers. Using the scratch “image” signals to the build process that you want the next command in the Dockerfile to be the first filesystem layer in your image.
 
-While scratch appears in Docker’s repository on the hub, you can’t pull it, run it, or tag any image with the name scratch. Instead, you can refer to it in your Dockerfile.</div>2023-03-10</li><br/><li><span>jone</span> 👍（4） 💬（1）<div>【课下作业】 ，用docker build打好镜像后，即使使用-d，也是会自动退出。如果想要看容器里面刚刚copy和生成的a.txt文件，只能采用： docker run -it ngx-app:1.0 sh ，这样就进入到容器里面了，当然exits之后，就会退出容器了。  老师，这个要怎么理解呢。即使用了-d，也是一次性执行容器。</div>2022-09-01</li><br/><li><span>芋头</span> 👍（3） 💬（1）<div>老师，课程里面讲的是编写一个docker file，那dockerfile中 FROM的镜像是怎么生成的呢</div>2023-06-30</li><br/><li><span>rongyefeng</span> 👍（2） 💬（1）<div>说实话，容器的内部结构讲解还是没看太明白</div>2022-08-02</li><br/><li><span>萝卜头王</span> 👍（2） 💬（1）<div>文章中的dockerfile里面的注释信息(以#开头的内容)，是不是应该放在单独的一行？</div>2022-06-29</li><br/><li><span>宇宙的大洞</span> 👍（1） 💬（1）<div>我可以这样理解 build context, DockerFile 这个构建镜像的逻辑正常执行 所依赖的 文件系统资源</div>2025-01-19</li><br/>
+While scratch appears in Docker’s repository on the hub, you can’t pull it, run it, or tag any image with the name scratch. Instead, you can refer to it in your Dockerfile.</p>2023-03-10</li><br/><li><span>jone</span> 👍（4） 💬（1）<p>【课下作业】 ，用docker build打好镜像后，即使使用-d，也是会自动退出。如果想要看容器里面刚刚copy和生成的a.txt文件，只能采用： docker run -it ngx-app:1.0 sh ，这样就进入到容器里面了，当然exits之后，就会退出容器了。  老师，这个要怎么理解呢。即使用了-d，也是一次性执行容器。</p>2022-09-01</li><br/><li><span>芋头</span> 👍（3） 💬（1）<p>老师，课程里面讲的是编写一个docker file，那dockerfile中 FROM的镜像是怎么生成的呢</p>2023-06-30</li><br/><li><span>rongyefeng</span> 👍（2） 💬（1）<p>说实话，容器的内部结构讲解还是没看太明白</p>2022-08-02</li><br/><li><span>萝卜头王</span> 👍（2） 💬（1）<p>文章中的dockerfile里面的注释信息(以#开头的内容)，是不是应该放在单独的一行？</p>2022-06-29</li><br/><li><span>宇宙的大洞</span> 👍（1） 💬（1）<p>我可以这样理解 build context, DockerFile 这个构建镜像的逻辑正常执行 所依赖的 文件系统资源</p>2025-01-19</li><br/>
 </ul>

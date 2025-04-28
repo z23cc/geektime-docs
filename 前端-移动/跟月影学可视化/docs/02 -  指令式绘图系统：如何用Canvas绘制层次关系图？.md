@@ -348,13 +348,13 @@ draw(context, root);
 
 \[1] [MDN官方文档.](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Spring</span> 👍（36） 💬（1）<div>老师，有点不太理解translate的平移操作，平移后画布的坐标系是怎么发生变化的呢?
-平移的是画布还是坐标系。</div>2020-06-24</li><br/><li><span>特异型大光头</span> 👍（24） 💬（2）<div>原理大致听懂了,学着做个打砖块练习
+<li><span>Spring</span> 👍（36） 💬（1）<p>老师，有点不太理解translate的平移操作，平移后画布的坐标系是怎么发生变化的呢?
+平移的是画布还是坐标系。</p>2020-06-24</li><br/><li><span>特异型大光头</span> 👍（24） 💬（2）<p>原理大致听懂了,学着做个打砖块练习
 https:&#47;&#47;codepen.io&#47;ysosu&#47;pen&#47;MWKorYj
 问题:
 function draw(ctx, node, {fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39;} = {}) {};
 里面这个{fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39;} = {}没看懂
-跟这样写的差别是啥function draw(ctx, node, fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39; ) {};</div>2020-06-25</li><br/><li><span>宁康</span> 👍（18） 💬（2）<div>借鉴了之前留言的朋友的部分逻辑重新开发了一个五子棋程序，主要修改了几个地方：
+跟这样写的差别是啥function draw(ctx, node, fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39; ) {};</p>2020-06-25</li><br/><li><span>宁康</span> 👍（18） 💬（2）<p>借鉴了之前留言的朋友的部分逻辑重新开发了一个五子棋程序，主要修改了几个地方：
 - 使用二维数组记录落子情况，方便后续判断胜负
 - 重新获取光标后不进行整个棋盘的渲染，而是将上一个光标处局部修复
 - 根据当前落子周围八个方向4个单位距离的棋盘中是否赢了
@@ -362,8 +362,8 @@ function draw(ctx, node, {fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = 
 遇到的问题：
 - 光标是用1个单位线宽绘制出来的，我用同样一个单位线宽去覆盖，发现覆盖不全，还会残留线段，最后只能加大线宽去覆盖，请问老师这个是什么问题？
 
-五子棋在线预览：https:&#47;&#47;codesandbox.io&#47;s&#47;chess-demo-d2qgt</div>2020-06-26</li><br/><li><span>Geek_3469f6</span> 👍（10） 💬（2）<div>老师现在讲的还可以完全听懂，学习了之后立刻实践了以下。并且，学练结合，把以前的想法实现了下。这次没有偷懒。画了个五子棋盘+棋子，输赢判定逻辑还没写。
-https:&#47;&#47;codepen.io&#47;maslke&#47;pen&#47;MWKoKKp</div>2020-06-25</li><br/><li><span>随遇而安</span> 👍（9） 💬（4）<div>我尝试了用canvas绘制不规则多边形，如果想要添加鼠标交互事件，获取到鼠标的坐标之后，可以利用凸包算法判断点是否在不规则多边形内。</div>2020-06-24</li><br/><li><span>春饼sama</span> 👍（3） 💬（1）<div>老师，获取json的都挂了</div>2021-07-05</li><br/><li><span>筑梦师刘渊</span> 👍（3） 💬（6）<div>作业2:
+五子棋在线预览：https:&#47;&#47;codesandbox.io&#47;s&#47;chess-demo-d2qgt</p>2020-06-26</li><br/><li><span>Geek_3469f6</span> 👍（10） 💬（2）<p>老师现在讲的还可以完全听懂，学习了之后立刻实践了以下。并且，学练结合，把以前的想法实现了下。这次没有偷懒。画了个五子棋盘+棋子，输赢判定逻辑还没写。
+https:&#47;&#47;codepen.io&#47;maslke&#47;pen&#47;MWKoKKp</p>2020-06-25</li><br/><li><span>随遇而安</span> 👍（9） 💬（4）<p>我尝试了用canvas绘制不规则多边形，如果想要添加鼠标交互事件，获取到鼠标的坐标之后，可以利用凸包算法判断点是否在不规则多边形内。</p>2020-06-24</li><br/><li><span>春饼sama</span> 👍（3） 💬（1）<p>老师，获取json的都挂了</p>2021-07-05</li><br/><li><span>筑梦师刘渊</span> 👍（3） 💬（6）<p>作业2:
 
 1. 先封装一个清除圆形方法：           
  CanvasRenderingContext2D.prototype.clearCircle = function (x, y,r) {
@@ -404,10 +404,10 @@ https:&#47;&#47;codepen.io&#47;maslke&#47;pen&#47;MWKoKKp</div>2020-06-25</li><b
                     const x = e.clientX * 2;
                     const y = e.clientY * 2;
                     isInCircle(context, x, y, root);
-                });</div>2020-06-26</li><br/><li><span>gltjk</span> 👍（3） 💬（2）<div>提交一下第二个作业。之前纠结了一下怎么在鼠标移出城市时恢复小圆的颜色，最后决定专门做一个新的 canvas 叠在上面。另外鼠标移动的事件是不是要做个节流比较好？我试了一下感觉又不够流畅，就去掉了…… https:&#47;&#47;codepen.io&#47;gltjk&#47;pen&#47;GRomzQE</div>2020-06-24</li><br/><li><span>1830</span> 👍（2） 💬（1）<div>老师，JSON数据不能用了可以解决一下不，或者把数据结构要求贴一下我们模拟一下</div>2021-07-07</li><br/><li><span>sheeeeep</span> 👍（2） 💬（2）<div>交作业：https:&#47;&#47;output.jsbin.com&#47;rirahom，思路基本和大家一致。
+                });</p>2020-06-26</li><br/><li><span>gltjk</span> 👍（3） 💬（2）<p>提交一下第二个作业。之前纠结了一下怎么在鼠标移出城市时恢复小圆的颜色，最后决定专门做一个新的 canvas 叠在上面。另外鼠标移动的事件是不是要做个节流比较好？我试了一下感觉又不够流畅，就去掉了…… https:&#47;&#47;codepen.io&#47;gltjk&#47;pen&#47;GRomzQE</p>2020-06-24</li><br/><li><span>1830</span> 👍（2） 💬（1）<p>老师，JSON数据不能用了可以解决一下不，或者把数据结构要求贴一下我们模拟一下</p>2021-07-07</li><br/><li><span>sheeeeep</span> 👍（2） 💬（2）<p>交作业：https:&#47;&#47;output.jsbin.com&#47;rirahom，思路基本和大家一致。
 看完评论有两个主要的优化方法：
 1. 减少重绘次数：判断是否在「圆」内 或 判断结果和上次不同，才进行重绘
-2. 缩小重绘区域：进行局部清除和局部重绘</div>2020-07-08</li><br/><li><span>River</span> 👍（2） 💬（2）<div>ifInCircle(pos, node) {
+2. 缩小重绘区域：进行局部清除和局部重绘</p>2020-07-08</li><br/><li><span>River</span> 👍（2） 💬（2）<p>ifInCircle(pos, node) {
         if (pos[0] &lt; node.x + node.r &amp;&amp; pos[1] &lt; node.y + node.r) {
           let result = Math.pow((node.x - pos[0]), 2) + Math.pow((node.y - pos[1]), 2) &lt; Math.pow(node.r, 2)
           if (result) {
@@ -434,7 +434,7 @@ https:&#47;&#47;codepen.io&#47;maslke&#47;pen&#47;MWKoKKp</div>2020-06-25</li><b
           }
         }
       },
-好歹是实现了。。。不卡</div>2020-07-01</li><br/><li><span>浩明啦</span> 👍（2） 💬（1）<div>老师，鼠标移动圆发生变化的前提是需要遍历整个数据结构，当找到对应变化的点之后再重绘，但是这样我还是需要渲染多次，对于这个优化应该怎么写呢，实在没什么头绪了</div>2020-06-29</li><br/><li><span>特异型大光头</span> 👍（1） 💬（2）<div>初学前端,请问下 draw() 方法这个参数是什么意思{fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39;} = {}</div>2020-06-25</li><br/><li><span>王子晨</span> 👍（1） 💬（1）<div>老师我看你本节课案例，里面的城市名字字体单位是rem，canvas对rem和view这些单位，支持的程度是怎样的？如果都支持，那俩个单位在使用时更倾向于使用哪种？</div>2020-06-25</li><br/><li><span>Alex🦁</span> 👍（1） 💬（1）<div>2的交作业 感觉 有点卡顿。。。    
+好歹是实现了。。。不卡</p>2020-07-01</li><br/><li><span>浩明啦</span> 👍（2） 💬（1）<p>老师，鼠标移动圆发生变化的前提是需要遍历整个数据结构，当找到对应变化的点之后再重绘，但是这样我还是需要渲染多次，对于这个优化应该怎么写呢，实在没什么头绪了</p>2020-06-29</li><br/><li><span>特异型大光头</span> 👍（1） 💬（2）<p>初学前端,请问下 draw() 方法这个参数是什么意思{fillStyle = &#39;rgba(0, 0, 0, 0.2)&#39;, textColor = &#39;white&#39;} = {}</p>2020-06-25</li><br/><li><span>王子晨</span> 👍（1） 💬（1）<p>老师我看你本节课案例，里面的城市名字字体单位是rem，canvas对rem和view这些单位，支持的程度是怎样的？如果都支持，那俩个单位在使用时更倾向于使用哪种？</p>2020-06-25</li><br/><li><span>Alex🦁</span> 👍（1） 💬（1）<p>2的交作业 感觉 有点卡顿。。。    
          function caculate(dx, dy, node) {
             let children = node.children;
             const { x, y, r } = node;
@@ -455,5 +455,5 @@ https:&#47;&#47;codepen.io&#47;maslke&#47;pen&#47;MWKoKKp</div>2020-06-25</li><b
             caculate(x, y, root);
             context.clearRect(0,0,800,800)
             draw(context, root);
-        }</div>2020-06-24</li><br/>
+        }</p>2020-06-24</li><br/>
 </ul>

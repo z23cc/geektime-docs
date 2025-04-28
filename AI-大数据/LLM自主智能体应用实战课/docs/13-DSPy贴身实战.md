@@ -310,11 +310,11 @@ DSPy 的相关内容很丰富，上节课我们对 DSPy 做了一个俯瞰，以
 
 欢迎你把你试验的结果分享到留言区，和我一起交流，如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>夏一行</span> 👍（1） 💬（1）<div>用中文的数据集训练后，中文问题的回答会不会更好？</div>2025-02-07</li><br/><li><span>Shepard</span> 👍（0） 💬（1）<div>我把上面的例子投给了deepseek-r1, 也返回了正确的答案，其中还有流式输出的推理思考过程，这感觉，真像一个推理的人啊。
+<li><span>夏一行</span> 👍（1） 💬（1）<p>用中文的数据集训练后，中文问题的回答会不会更好？</p>2025-02-07</li><br/><li><span>Shepard</span> 👍（0） 💬（1）<p>我把上面的例子投给了deepseek-r1, 也返回了正确的答案，其中还有流式输出的推理思考过程，这感觉，真像一个推理的人啊。
 
 query:Use the following four natural numbers 1,3,7,13 to form a four-rule operation expression. This expression calculates a value equal to 24, where only the four natural numbers and add, subtract, multiply, divide symbols and parentheses. The expression can only have four natural numbers given in the expression, and all four natural numbers must be included. Please simply return an expression that meets the above requirements, don&#39;t include &#39;= 24&#39;.
 结果：
 The expression that meets the requirements is:
 (13 - 7) * (3 + 1)
-</div>2025-02-11</li><br/>
+</p>2025-02-11</li><br/>
 </ul>

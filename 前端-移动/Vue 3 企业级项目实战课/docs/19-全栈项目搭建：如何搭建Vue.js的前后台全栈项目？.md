@@ -479,5 +479,5 @@ declare module 'process' {
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/19)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Akili</span> 👍（0） 💬（1）<div>静态文件适合做些配置文件，如果使用静态文件存储动态的数据，需要进行读写文件，效率不高，还有读写静态文件会缺失数据库有的事物、约束、索引等等。</div>2023-02-17</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-20</li><br/><li><span>冰糖爱白开水</span> 👍（0） 💬（0）<div>运营搭建平台分为前后台，是普遍的实现方案吗？</div>2024-03-12</li><br/>
+<li><span>Akili</span> 👍（0） 💬（1）<p>静态文件适合做些配置文件，如果使用静态文件存储动态的数据，需要进行读写文件，效率不高，还有读写静态文件会缺失数据库有的事物、约束、索引等等。</p>2023-02-17</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-20</li><br/><li><span>冰糖爱白开水</span> 👍（0） 💬（0）<p>运营搭建平台分为前后台，是普遍的实现方案吗？</p>2024-03-12</li><br/>
 </ul>

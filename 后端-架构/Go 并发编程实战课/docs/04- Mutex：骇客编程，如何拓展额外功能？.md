@@ -237,13 +237,13 @@ Mutex是package sync的基石，其他的一些同步原语也是基于它实现
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>+1day</span> 👍（24） 💬（7）<div>老师您好，在获取等待者数量的代码中
+<li><span>+1day</span> 👍（24） 💬（7）<p>老师您好，在获取等待者数量的代码中
 如果要加上锁持有者的数量的话，为什么不是 
 v = v &gt;&gt; mutexWaiterShift + (v &amp; mutexLocked)
 而是
 v = v &gt;&gt; mutexWaiterShift &#47;&#47;得到等待者的数值
 v = v + (v &amp; mutexLocked) &#47;&#47;再加上锁持有者的数量，0或者1
-这样呢？第一步修改了 v 的值，v 的第一位已经不再是记录该锁是否被持有了，那 v&amp;mutexLocked 是不是不对呢？</div>2020-10-23</li><br/><li><span>Panmax</span> 👍（10） 💬（4）<div>如果底层 Mutex 的 state 在某个版本中含义变了，上边写的 TryLock 和监控锁的一些方法就会失效，所以这样做是不是比较危险。</div>2020-10-24</li><br/><li><span>不二</span> 👍（6） 💬（7）<div>请教一个基础问题，为啥 (*int32)(unsafe.Pointer(&amp;m.Mutex)) 可以获取sync.Mutex中state的值，Mutex结构中不是还有sema吗？</div>2020-10-20</li><br/><li><span>天空之城</span> 👍（2） 💬（1）<div>关于 RWLock 的扩展，我这边给出一段代码（评论不好贴代码，贴个 share link）
+这样呢？第一步修改了 v 的值，v 的第一位已经不再是记录该锁是否被持有了，那 v&amp;mutexLocked 是不是不对呢？</p>2020-10-23</li><br/><li><span>Panmax</span> 👍（10） 💬（4）<p>如果底层 Mutex 的 state 在某个版本中含义变了，上边写的 TryLock 和监控锁的一些方法就会失效，所以这样做是不是比较危险。</p>2020-10-24</li><br/><li><span>不二</span> 👍（6） 💬（7）<p>请教一个基础问题，为啥 (*int32)(unsafe.Pointer(&amp;m.Mutex)) 可以获取sync.Mutex中state的值，Mutex结构中不是还有sema吗？</p>2020-10-20</li><br/><li><span>天空之城</span> 👍（2） 💬（1）<p>关于 RWLock 的扩展，我这边给出一段代码（评论不好贴代码，贴个 share link）
 https:&#47;&#47;go.dev&#47;play&#47;p&#47;X4YNwqZR4ta
 
 ```go
@@ -323,10 +323,10 @@ func (e *RWMutex) readerWaitPtr() *int32 {
 }
 ```
 
-</div>2023-05-12</li><br/><li><span>Gojustforfun</span> 👍（2） 💬（1）<div>1）『获取等待者的数量等指标』小节，『第 15 行我们左移三位（这里的常量 mutexWaiterShift 的值为 3）』应该是右移三位。
-2）在now～now+timout内，间隔重试调用TryLock</div>2020-10-20</li><br/><li><span>CrazyCodes</span> 👍（1） 💬（1）<div>你可以为 Mutex 获取锁时加上 Timeout 机制吗？会有什么问题吗？
+</p>2023-05-12</li><br/><li><span>Gojustforfun</span> 👍（2） 💬（1）<p>1）『获取等待者的数量等指标』小节，『第 15 行我们左移三位（这里的常量 mutexWaiterShift 的值为 3）』应该是右移三位。
+2）在now～now+timout内，间隔重试调用TryLock</p>2020-10-20</li><br/><li><span>CrazyCodes</span> 👍（1） 💬（1）<p>你可以为 Mutex 获取锁时加上 Timeout 机制吗？会有什么问题吗？
 
-如果加上timeout机制，就不要用defer 去unlock，因为需要自行判断超时时间，然后直接unlock，如果defer再unlock就会触发panic</div>2023-11-27</li><br/><li><span>斯蒂芬.赵</span> 👍（1） 💬（3）<div>fast path执行失败，直接返回false不就行了，为啥还要往下执行？正常不是多个携程并发只有一个执行成功，其他都是失败么？</div>2021-05-07</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<div>老师，TryLock 那里的以下这段代码，我对比了一下官方 1.18 以后的实现，貌似 mutexWoken 可以排除掉？
+如果加上timeout机制，就不要用defer 去unlock，因为需要自行判断超时时间，然后直接unlock，如果defer再unlock就会触发panic</p>2023-11-27</li><br/><li><span>斯蒂芬.赵</span> 👍（1） 💬（3）<p>fast path执行失败，直接返回false不就行了，为啥还要往下执行？正常不是多个携程并发只有一个执行成功，其他都是失败么？</p>2021-05-07</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<p>老师，TryLock 那里的以下这段代码，我对比了一下官方 1.18 以后的实现，貌似 mutexWoken 可以排除掉？
 old := atomic.LoadInt32((*int32)(unsafe.Pointer(&amp;m.Mutex)))
 if old&amp;(mutexLocked|mutexStarving|mutexWoken) != 0 {
 	return false
@@ -348,12 +348,12 @@ if !atomic.CompareAndSwapInt32(&amp;m.state, old, old|mutexLocked) {
 if race.Enabled {
 	race.Acquire(unsafe.Pointer(m))
 }
-return true</div>2024-05-20</li><br/><li><span>路过</span> 👍（0） 💬（1）<div>想问一下，为什么最后实现线程安全的队列里面的 Dequeue() 方法释放锁不用defer，这样不用写两次unlock</div>2023-04-17</li><br/><li><span>鲁迅原名周树人</span> 👍（0） 💬（2）<div>老师您好，
+return true</p>2024-05-20</li><br/><li><span>路过</span> 👍（0） 💬（1）<p>想问一下，为什么最后实现线程安全的队列里面的 Dequeue() 方法释放锁不用defer，这样不用写两次unlock</p>2023-04-17</li><br/><li><span>鲁迅原名周树人</span> 👍（0） 💬（2）<p>老师您好，
 
 &#47;&#47; 如果能成功抢到锁 if atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&amp;m.Mutex)), 0, mutexLocked) { return true }
 
 在以上代码中，(*int32)(unsafe.Pointer(&amp;m.Mutex))是取的Mutex中state的首地址对嘛?
-</div>2021-05-03</li><br/><li><span>黄毅</span> 👍（0） 💬（1）<div>func (m *Mutex) TryLock() bool {
+</p>2021-05-03</li><br/><li><span>黄毅</span> 👍（0） 💬（1）<p>func (m *Mutex) TryLock() bool {
 	&#47;&#47; 如果能成功抢到锁
 	if atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&amp;m.Mutex)), 0, mutexLocked) {
 		return true
@@ -402,12 +402,12 @@ func main() {
 	wg.Wait()
 }
 
-老师，你好。在main中尝试编写一段逻辑测试TryLock方法，请问在什么情况下会执行fmt.Println(&quot;===new===:&quot;, new) 请老师答疑解惑，谢谢。</div>2020-11-16</li><br/><li><span>樊少</span> 👍（0） 💬（1）<div>在安全Queue的实现中，锁的释放为什么不用defer?</div>2020-11-05</li><br/><li><span>Chen</span> 👍（0） 💬（1）<div>第 15 行我们右移三位（这里的常量 mutexWaiterShift 的值为 3），就得到了当前等待者的数量
-=&gt;&gt; 这里看不懂，为什么右移三位=》得到等待者数量</div>2020-10-22</li><br/><li><span>linxs</span> 👍（0） 💬（3）<div>TryLock方法内，对于这段代码有点不理解，为什么要把&amp;m.Mutex转换成*int32，这里的话我直接用&amp;m.Mutex.state是否是一样的
+老师，你好。在main中尝试编写一段逻辑测试TryLock方法，请问在什么情况下会执行fmt.Println(&quot;===new===:&quot;, new) 请老师答疑解惑，谢谢。</p>2020-11-16</li><br/><li><span>樊少</span> 👍（0） 💬（1）<p>在安全Queue的实现中，锁的释放为什么不用defer?</p>2020-11-05</li><br/><li><span>Chen</span> 👍（0） 💬（1）<p>第 15 行我们右移三位（这里的常量 mutexWaiterShift 的值为 3），就得到了当前等待者的数量
+=&gt;&gt; 这里看不懂，为什么右移三位=》得到等待者数量</p>2020-10-22</li><br/><li><span>linxs</span> 👍（0） 💬（3）<p>TryLock方法内，对于这段代码有点不理解，为什么要把&amp;m.Mutex转换成*int32，这里的话我直接用&amp;m.Mutex.state是否是一样的
 
 if atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&amp;m.Mutex)), 0, mutexLocked) { 
      return true 
-}</div>2020-10-20</li><br/><li><span>Junes</span> 👍（34） 💬（2）<div>我来提供个思路~
+}</p>2020-10-20</li><br/><li><span>Junes</span> 👍（34） 💬（2）<p>我来提供个思路~
 
 最简单直接的是采用channel实现，用select监听锁和timeout两个channel，不在今天的讨论范围内。
 
@@ -420,5 +420,5 @@ if atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&amp;m.Mutex)), 0, mutexLo
 TryLock的抢占实现分为两部分，一个是fast path，另一个是竞争状态下的，后者的cas操作很多。我会考虑减少slow方法的频率，比如调用n次fast path失败后，再调用一次整个Trylock。
 
 3. 优化2：借鉴TCP重试机制
-for循环中的重试增加休眠时间，每次失败将休眠时间乘以一个系数（如1.5），直到达到上限（如10ms），减少自旋带来的性能损耗</div>2020-10-19</li><br/>
+for循环中的重试增加休眠时间，每次失败将休眠时间乘以一个系数（如1.5），直到达到上限（如10ms），减少自旋带来的性能损耗</p>2020-10-19</li><br/>
 </ul>

@@ -433,7 +433,7 @@ SharedInformerFactory 可以使用 GVR 来创建 Informer，那我们是否能�
 
 欢迎你在留言区展示你的思考和测试结果，我们一起来讨论。如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>王建</span> 👍（0） 💬（1）<div>思考题：
+<li><span>王建</span> 👍（0） 💬（1）<p>思考题：
 当用户传入 resource = pods 时，使用上一节代码中的 mappingFor() 方法，获取到 RESTMapping，RESTMapping 中的 Resource 就是完整的GVR信息，将其传给 fact.ForResource() 方法即可创建 informer。核心代码如下：
 
         mapper := InitRestMapper(client)
@@ -447,5 +447,5 @@ SharedInformerFactory 可以使用 GVR 来创建 Informer，那我们是否能�
 	informer.Informer().AddEventHandler(&amp;PodHandler{})
 	fact.Start(wait.NeverStop)
 
-	select {}</div>2025-02-20</li><br/><li><span>Samaritan.</span> 👍（0） 💬（1）<div>不错不错，关于client-go的一些知识经过讲解之后更清晰了，谢谢老师</div>2025-01-05</li><br/><li><span>stevensafin</span> 👍（0） 💬（1）<div>跟 AI 有什么关系？</div>2024-12-27</li><br/><li><span>ly</span> 👍（0） 💬（0）<div>三节k8s的课了，我的agent呢</div>2024-12-29</li><br/>
+	select {}</p>2025-02-20</li><br/><li><span>Samaritan.</span> 👍（0） 💬（1）<p>不错不错，关于client-go的一些知识经过讲解之后更清晰了，谢谢老师</p>2025-01-05</li><br/><li><span>stevensafin</span> 👍（0） 💬（1）<p>跟 AI 有什么关系？</p>2024-12-27</li><br/><li><span>ly</span> 👍（0） 💬（0）<p>三节k8s的课了，我的agent呢</p>2024-12-29</li><br/>
 </ul>

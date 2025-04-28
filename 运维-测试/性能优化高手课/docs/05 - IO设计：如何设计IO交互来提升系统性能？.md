@@ -172,5 +172,5 @@ collection.insertOne(doc, new SingleResultCallback<Void>() {
 
 欢迎在留言区分享你的答案和思考。如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>余生</span> 👍（0） 💬（1）<div>nio netty都是建立在epoll的机制上，windows上的nio是select机制性能高不了</div>2022-03-21</li><br/><li><span>公号-技术夜未眠</span> 👍（0） 💬（1）<div>异步回调机制功能的确强大;但是如何保证事务了？</div>2021-08-02</li><br/>
+<li><span>余生</span> 👍（0） 💬（1）<p>nio netty都是建立在epoll的机制上，windows上的nio是select机制性能高不了</p>2022-03-21</li><br/><li><span>公号-技术夜未眠</span> 👍（0） 💬（1）<p>异步回调机制功能的确强大;但是如何保证事务了？</p>2021-08-02</li><br/>
 </ul>

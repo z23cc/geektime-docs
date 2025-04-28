@@ -350,12 +350,12 @@ Hi, g6
 
 欢迎你在评论区写下你的思考，我会和你一起讨论。也欢迎把这篇文章分享给你的朋友或者同事，一起讨论一下UDP这个协议。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>何赫赫</span> 👍（26） 💬（2）<div>老师，UDP没有发送缓冲区这个概念吗</div>2020-03-09</li><br/><li><span>tongmin_tsai</span> 👍（22） 💬（3）<div>老师，UDP被IP层分包发送后，对端如何保证UDP包整个组合的？比如用UDP发送3000字节，假设拆分2个MTU发送，后一个先到服务端，前一个后到服务端，那应用层接收的时候，UDP怎么组装的？</div>2019-09-30</li><br/><li><span>你好</span> 👍（12） 💬（4）<div>多人聊天室使用UDP，消息发出后怎么保证消息可以被收到呀，UDP不是不可靠传输嘛，中间丢了消息咋办呀</div>2019-10-30</li><br/><li><span>旅途</span> 👍（10） 💬（1）<div>第一个思考题 另起一个线程进行recvfrom</div>2019-12-29</li><br/><li><span>YUAN</span> 👍（6） 💬（1）<div>udp之所以sendto要目的地址是因为他是非连接的，否则不知道将数据发给谁，recvfrom要发送方地址也是因为udp是非连接的，有了from内核就可以判定将数据上传给谁（应用进程）。是这样吗？</div>2020-10-03</li><br/><li><span>kissingers</span> 👍（5） 💬（4）<div>老师，TCP 流，UDP包，流的说法怎么理解？</div>2019-09-06</li><br/><li><span>范龙dragon</span> 👍（5） 💬（2）<div>客户端代码的29行sendline数组之前没有初始化数组元素为0，直接用strlen应该会有问题吧，strlen不是以0作为结束标志吗？</div>2019-08-18</li><br/><li><span>zhchnchn</span> 👍（5） 💬（2）<div>如果不开启服务端，TCP 客户端的 connect 函数会直接返回“Connection refused”报错信息。而在 UDP 程序里，则会一直阻塞在这里。
+<li><span>何赫赫</span> 👍（26） 💬（2）<p>老师，UDP没有发送缓冲区这个概念吗</p>2020-03-09</li><br/><li><span>tongmin_tsai</span> 👍（22） 💬（3）<p>老师，UDP被IP层分包发送后，对端如何保证UDP包整个组合的？比如用UDP发送3000字节，假设拆分2个MTU发送，后一个先到服务端，前一个后到服务端，那应用层接收的时候，UDP怎么组装的？</p>2019-09-30</li><br/><li><span>你好</span> 👍（12） 💬（4）<p>多人聊天室使用UDP，消息发出后怎么保证消息可以被收到呀，UDP不是不可靠传输嘛，中间丢了消息咋办呀</p>2019-10-30</li><br/><li><span>旅途</span> 👍（10） 💬（1）<p>第一个思考题 另起一个线程进行recvfrom</p>2019-12-29</li><br/><li><span>YUAN</span> 👍（6） 💬（1）<p>udp之所以sendto要目的地址是因为他是非连接的，否则不知道将数据发给谁，recvfrom要发送方地址也是因为udp是非连接的，有了from内核就可以判定将数据上传给谁（应用进程）。是这样吗？</p>2020-10-03</li><br/><li><span>kissingers</span> 👍（5） 💬（4）<p>老师，TCP 流，UDP包，流的说法怎么理解？</p>2019-09-06</li><br/><li><span>范龙dragon</span> 👍（5） 💬（2）<p>客户端代码的29行sendline数组之前没有初始化数组元素为0，直接用strlen应该会有问题吧，strlen不是以0作为结束标志吗？</p>2019-08-18</li><br/><li><span>zhchnchn</span> 👍（5） 💬（2）<p>如果不开启服务端，TCP 客户端的 connect 函数会直接返回“Connection refused”报错信息。而在 UDP 程序里，则会一直阻塞在这里。
 -------------------------
-这个地方不太理解。请问老师,对TCP来说，收到“Connection refused”报错信息，表明收到了服务端的RST包，如果服务端不开启，谁负责发送RST包呢?</div>2019-08-14</li><br/><li><span>江永枫</span> 👍（3） 💬（1）<div>关于阻塞io，可以考虑使用多线程模型去提升性能，或者结合io多路复用来处理能力。
+这个地方不太理解。请问老师,对TCP来说，收到“Connection refused”报错信息，表明收到了服务端的RST包，如果服务端不开启，谁负责发送RST包呢?</p>2019-08-14</li><br/><li><span>江永枫</span> 👍（3） 💬（1）<p>关于阻塞io，可以考虑使用多线程模型去提升性能，或者结合io多路复用来处理能力。
 
 
-https:&#47;&#47;m.php.cn&#47;article&#47;410029.html</div>2019-08-14</li><br/><li><span>null</span> 👍（2） 💬（1）<div>老师好，有 3 个问题请教一下：
+https:&#47;&#47;m.php.cn&#47;article&#47;410029.html</p>2019-08-14</li><br/><li><span>null</span> 👍（2） 💬（1）<p>老师好，有 3 个问题请教一下：
 1. TCP 有序传输的意思是：需要等到当前发送的包 ACK 之后，才发下一个包么？还是说可以一直发消息，收到 ACK 之后再确认对应的包发送成功？
 
 2. 关于 TCP 和 UDP 连接，我可以这么理解么？
@@ -369,15 +369,15 @@ client 又继续发给 server，继续重复刚才的步骤....，
 3. 下面的循环发送，我甚至是可以动态更改对端 client_addr 地址和端口信息的吧？
 for (;;) {
   sendto(socket_fd, send_line, strlen(send_line), 0, (struct sockaddr *) &amp;client_addr, client_len);
-}</div>2021-03-16</li><br/><li><span>流浪在寂寞古城</span> 👍（2） 💬（3）<div>https:&#47;&#47;github.com&#47;worsun&#47;study&#47;tree&#47;master&#47;hack_time&#47;socket_code&#47;6</div>2019-10-31</li><br/><li><span>马留</span> 👍（2） 💬（5）<div>如果对udp套接字调用了listen函数，会怎么样呢？</div>2019-08-29</li><br/><li><span>胜辉（大V）</span> 👍（1） 💬（1）<div>示例程序在我的测试机(ubuntu 20.04）上有几个报错。除了include需要添加多个库，还有就是sprintf不分需要改为如下：
+}</p>2021-03-16</li><br/><li><span>流浪在寂寞古城</span> 👍（2） 💬（3）<p>https:&#47;&#47;github.com&#47;worsun&#47;study&#47;tree&#47;master&#47;hack_time&#47;socket_code&#47;6</p>2019-10-31</li><br/><li><span>马留</span> 👍（2） 💬（5）<p>如果对udp套接字调用了listen函数，会怎么样呢？</p>2019-08-29</li><br/><li><span>胜辉（大V）</span> 👍（1） 💬（1）<p>示例程序在我的测试机(ubuntu 20.04）上有几个报错。除了include需要添加多个库，还有就是sprintf不分需要改为如下：
         char send_line[MAXLINE+4];
         sprintf(send_line, &quot;Hi, %s&quot;, message);
 
-因为&quot;Hi, &quot;本身占用了额外的4个字节，所以导致send_line跟&quot;Hi, &quot;+message的长度不匹配，需要修改send_line为message长度加4。不知道其他同学的测试环境那里如何？</div>2021-10-25</li><br/><li><span>null</span> 👍（1） 💬（1）<div>如果不开启服务端，而在 UDP 程序里，则会一直阻塞在这里（sendto）。
+因为&quot;Hi, &quot;本身占用了额外的4个字节，所以导致send_line跟&quot;Hi, &quot;+message的长度不匹配，需要修改send_line为message长度加4。不知道其他同学的测试环境那里如何？</p>2021-10-25</li><br/><li><span>null</span> 👍（1） 💬（1）<p>如果不开启服务端，而在 UDP 程序里，则会一直阻塞在这里（sendto）。
 
 阻塞是为了等待消息发出去之后的 ACK 确认么？
 不是说把明信片放到邮筒就不管了么？
 邮筒可以认为是 IP 协议栈（即网络接口层？）吧？把 udp 包传递给 IP 层就不管了。
 
-谢谢老师</div>2021-03-16</li><br/><li><span>rongyefeng</span> 👍（1） 💬（1）<div>老师，你之前说过，创建套接字应该使用PF_INET，初始化套接字结构体地址才使用AF_INET，我看你在创建套接字的时候使用AF_INET。</div>2020-05-15</li><br/>
+谢谢老师</p>2021-03-16</li><br/><li><span>rongyefeng</span> 👍（1） 💬（1）<p>老师，你之前说过，创建套接字应该使用PF_INET，初始化套接字结构体地址才使用AF_INET，我看你在创建套接字的时候使用AF_INET。</p>2020-05-15</li><br/>
 </ul>

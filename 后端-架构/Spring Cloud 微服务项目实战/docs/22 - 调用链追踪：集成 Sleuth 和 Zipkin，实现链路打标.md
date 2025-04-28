@@ -173,22 +173,22 @@ Zipkin天然支持通过Cassandra、ElasticSearch和MySQL这三种方式保存�
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>~</span> 👍（21） 💬（2）<div>https:&#47;&#47;github.com&#47;openzipkin&#47;zipkin&#47;blob&#47;master&#47;zipkin-storage&#47;mysql-v1&#47;src&#47;main&#47;resources&#47;mysql.sql 
+<li><span>~</span> 👍（21） 💬（2）<p>https:&#47;&#47;github.com&#47;openzipkin&#47;zipkin&#47;blob&#47;master&#47;zipkin-storage&#47;mysql-v1&#47;src&#47;main&#47;resources&#47;mysql.sql 
 这是官方仓库中给的 MySQL 改造的脚本，创建一个 zipkin 的 db 库；之后可以从 https:&#47;&#47;github.com&#47;openzipkin&#47;zipkin&#47;blob&#47;16857b6cc3&#47;zipkin-server&#47;src&#47;main&#47;resources&#47;zipkin-server-shared.yml 配置文件中看到 mysql 的配置项，然后对照着之前老师给的命令，添加上 MySQL 的即可。
 我的命令：
-java -jar zipkin-server-2.23.9-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.0.1 --MYSQL_TCP_PORT=3306 --MYSQL_USER=root --MYSQL_PASS=123456 --MYSQL_DB=zipkin --RABBIT_ADDRESSES=127.0.0.1:5672</div>2022-02-07</li><br/><li><span>yinwenping</span> 👍（8） 💬（1）<div>这种traceid只是在两个服务直接适用吗？比如服务A调用服务B，而服务B内部时线程池处理的，线程池还能用A的traceid吗？</div>2022-03-15</li><br/><li><span>牛年榴莲</span> 👍（2） 💬（1）<div>Zipkin 好像不支持告警，有没有能根据链路追踪情况进行告警的组件呢？</div>2022-06-01</li><br/><li><span>peter</span> 👍（2） 💬（1）<div>下面四个问题是在第21篇提的，不过在21篇留言中没有发现，很奇怪。重新提一次。
+java -jar zipkin-server-2.23.9-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.0.1 --MYSQL_TCP_PORT=3306 --MYSQL_USER=root --MYSQL_PASS=123456 --MYSQL_DB=zipkin --RABBIT_ADDRESSES=127.0.0.1:5672</p>2022-02-07</li><br/><li><span>yinwenping</span> 👍（8） 💬（1）<p>这种traceid只是在两个服务直接适用吗？比如服务A调用服务B，而服务B内部时线程池处理的，线程池还能用A的traceid吗？</p>2022-03-15</li><br/><li><span>牛年榴莲</span> 👍（2） 💬（1）<p>Zipkin 好像不支持告警，有没有能根据链路追踪情况进行告警的组件呢？</p>2022-06-01</li><br/><li><span>peter</span> 👍（2） 💬（1）<p>下面四个问题是在第21篇提的，不过在21篇留言中没有发现，很奇怪。重新提一次。
 老师新年快乐，请教四个问题：
 Q1: 实际的线上系统，用户请求是直接到gateway吗？还是需要在gateway的前面加一个节点？如果需要，一般用什么？Nginx吗？
 Q2：Sleuth是怎么产生TraceID、Span ID、Parent Span ID的？
 Q3：时间同步问题：Sleuth通过时间来排序，如果不同服务所在机器的时间不是同步的，会有什么问题？怎么解决？
-Q4：Sleuth是怎么实现“打标”的？怎么获取到微服务之间的调用信息的？又是怎么影响到日志组件(e.g,logback)的？通过拦截器实现的吗？</div>2022-02-02</li><br/><li><span>alex_lai</span> 👍（1） 💬（1）<div>rabbitmq的配置没有提 需要单独启动 配置queue
-么？</div>2022-02-06</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>Q1：&quot;# 每秒采样数字最高为100      rate: 1000&quot;
+Q4：Sleuth是怎么实现“打标”的？怎么获取到微服务之间的调用信息的？又是怎么影响到日志组件(e.g,logback)的？通过拦截器实现的吗？</p>2022-02-02</li><br/><li><span>alex_lai</span> 👍（1） 💬（1）<p>rabbitmq的配置没有提 需要单独启动 配置queue
+么？</p>2022-02-06</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>Q1：&quot;# 每秒采样数字最高为100      rate: 1000&quot;
         注释为100，实际是1000，是笔误吗？
 Q2：“如果我们把 probability 设置成小于 1 的数，就说明有的请求不会被采样”
        哪些会被采样？哪些不会被采样？
 Q3：“在 OpenFeign 的环节动了一个手脚。Sleuth 通过 TracingFeignClient 类，将一系列 Tag 标记塞进了OpenFeign 构造的服务请求的 Header 结构中”
    A 如果一个组件，sleuth没有适配，能扩展吗？
-   B Sleuth对OpenFeign的处理，是通过拦截器实现的吗？</div>2022-02-02</li><br/><li><span>吴少伟</span> 👍（0） 💬（1）<div>追加一个问题：任务调度开始执行的时候，可以生成traceId等信息啊？ps：自己留言跑哪里去了。。。。咋找不到</div>2022-06-05</li><br/><li><span>吴少伟</span> 👍（0） 💬（1）<div>老师咨询几个小问题：
+   B Sleuth对OpenFeign的处理，是通过拦截器实现的吗？</p>2022-02-02</li><br/><li><span>吴少伟</span> 👍（0） 💬（1）<p>追加一个问题：任务调度开始执行的时候，可以生成traceId等信息啊？ps：自己留言跑哪里去了。。。。咋找不到</p>2022-06-05</li><br/><li><span>吴少伟</span> 👍（0） 💬（1）<p>老师咨询几个小问题：
 1、必须要设置日志级别为debug吗?设置为info是否可以，已经集成了其他的日志收集器了，现在目的只想加上traceId和spanId信息。修改log的配置文件增加这个数据的参数，可以直接打印出来吗？
-2、对性能是否有影响？</div>2022-06-05</li><br/><li><span>寥若晨星</span> 👍（0） 💬（1）<div>我怎么记得要生成链路图，还要再下载一个jar包定时执行一下任务</div>2022-04-19</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（1）<div>请问老师  sleuth依赖 上下游服务器都要加嘛</div>2022-03-30</li><br/><li><span>蝴蝶</span> 👍（0） 💬（1）<div>这个链路表报功能好sao啊，好强大</div>2022-03-11</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（1）<div>如果用的rocket mq 咋办，web 直连 zipkin 会产生什么大问题吗</div>2022-03-10</li><br/><li><span>Geek_7346b9</span> 👍（0） 💬（1）<div>请教下，我启动rabbitmq server 且成功启动后，当我尝试执行启动zipkin（按您给的参数一样），没有一次是成功的。每一次都是timeout问题，我查看了rabbitmq的日志，发现报了client unexpected close socket.而且时间很固定是5秒。请问是哪里问题？即便我配置了rabbitmq.collector.connection-timeout超过10秒，依旧报错</div>2022-02-22</li><br/><li><span>被水淹没</span> 👍（0） 💬（0）<div>作者还有在关注这个课程吗，有个问题，在springboot3中，sleuth已经过时，转而升级为Micrometer Tracing了，但是我发现Micrometer Tracing的设计理念涉及整套观测性的逻辑，有点复杂，找不到对应的中转MQ的相关配置，请教下老师如何配置呀，还是说Micrometer Tracing并没有支撑，得自己写桥接？</div>2024-09-08</li><br/>
+2、对性能是否有影响？</p>2022-06-05</li><br/><li><span>寥若晨星</span> 👍（0） 💬（1）<p>我怎么记得要生成链路图，还要再下载一个jar包定时执行一下任务</p>2022-04-19</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（1）<p>请问老师  sleuth依赖 上下游服务器都要加嘛</p>2022-03-30</li><br/><li><span>蝴蝶</span> 👍（0） 💬（1）<p>这个链路表报功能好sao啊，好强大</p>2022-03-11</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（1）<p>如果用的rocket mq 咋办，web 直连 zipkin 会产生什么大问题吗</p>2022-03-10</li><br/><li><span>Geek_7346b9</span> 👍（0） 💬（1）<p>请教下，我启动rabbitmq server 且成功启动后，当我尝试执行启动zipkin（按您给的参数一样），没有一次是成功的。每一次都是timeout问题，我查看了rabbitmq的日志，发现报了client unexpected close socket.而且时间很固定是5秒。请问是哪里问题？即便我配置了rabbitmq.collector.connection-timeout超过10秒，依旧报错</p>2022-02-22</li><br/><li><span>被水淹没</span> 👍（0） 💬（0）<p>作者还有在关注这个课程吗，有个问题，在springboot3中，sleuth已经过时，转而升级为Micrometer Tracing了，但是我发现Micrometer Tracing的设计理念涉及整套观测性的逻辑，有点复杂，找不到对应的中转MQ的相关配置，请教下老师如何配置呀，还是说Micrometer Tracing并没有支撑，得自己写桥接？</p>2024-09-08</li><br/>
 </ul>

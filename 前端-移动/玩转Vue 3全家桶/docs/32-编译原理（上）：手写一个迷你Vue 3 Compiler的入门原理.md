@@ -454,11 +454,11 @@ export function render(_ctx, _cache, $props) {
 
 最后留一个思考题吧，Vue的compiler输出的代码会有几个hoisted开头的变量，这几个变量有什么用处呢？欢迎在评论区分享你的答案，也欢迎你把这一讲分享给你的同事和朋友们，我们下一讲再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>神瘦</span> 👍（0） 💬（1）<div>“tokenizer 的迷你实现”这个地方“把模板中的”这几个字后面一大段空白呢，你们那边能看到吗？检查下呢</div>2022-01-30</li><br/><li><span>openbilibili</span> 👍（0） 💬（1）<div>template中的p标签 不能有空格 不然解析不了</div>2022-01-06</li><br/><li><span>斜月浮云</span> 👍（0） 💬（2）<div>hoisted开头的变量用于静态节点提升，说白了就是在整个生命周期中只需要进行一次创建，有效节省不必要的性能开销。
+<li><span>神瘦</span> 👍（0） 💬（1）<p>“tokenizer 的迷你实现”这个地方“把模板中的”这几个字后面一大段空白呢，你们那边能看到吗？检查下呢</p>2022-01-30</li><br/><li><span>openbilibili</span> 👍（0） 💬（1）<p>template中的p标签 不能有空格 不然解析不了</p>2022-01-06</li><br/><li><span>斜月浮云</span> 👍（0） 💬（2）<p>hoisted开头的变量用于静态节点提升，说白了就是在整个生命周期中只需要进行一次创建，有效节省不必要的性能开销。
 
-话说最后的generate代码明显不对啊，createVnode的后括号阔歪了哦~🙂</div>2022-01-03</li><br/><li><span>陈坚泓</span> 👍（0） 💬（0）<div>const [key, val] = token.val.replace(&#39;=&#39;,&#39;~&#39;).split(&#39;~&#39;)  
+话说最后的generate代码明显不对啊，createVnode的后括号阔歪了哦~🙂</p>2022-01-03</li><br/><li><span>陈坚泓</span> 👍（0） 💬（0）<p>const [key, val] = token.val.replace(&#39;=&#39;,&#39;~&#39;).split(&#39;~&#39;)  
 是不是可以写成
 const [key, val] = token.val.split(&#39;=&#39;)  
 
-备注里 &#47;&#47; trnsformText    估计是拼错了 </div>2022-05-20</li><br/><li><span>Blueberry</span> 👍（0） 💬（0）<div>template语法需要经过这么一系列的编译，那h函数呢，是经过什么变成了最后的render语法?</div>2022-04-12</li><br/><li><span>名字好长的大林</span> 👍（0） 💬（1）<div>PatchFlags 这个变量没有给？？</div>2022-02-04</li><br/>
+备注里 &#47;&#47; trnsformText    估计是拼错了 </p>2022-05-20</li><br/><li><span>Blueberry</span> 👍（0） 💬（0）<p>template语法需要经过这么一系列的编译，那h函数呢，是经过什么变成了最后的render语法?</p>2022-04-12</li><br/><li><span>名字好长的大林</span> 👍（0） 💬（1）<p>PatchFlags 这个变量没有给？？</p>2022-02-04</li><br/>
 </ul>

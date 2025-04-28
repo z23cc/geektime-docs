@@ -491,7 +491,7 @@ object\_new中，TypeImpl的instance\_init会被调用，创建一个对象。cu
 
 欢迎留言和我分享你的疑惑和见解，也欢迎可以收藏本节内容，反复研读。你也可以把今天的内容分享给你的朋友，和他一起学习和进步。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>大王叫我来巡山</span> 👍（27） 💬（1）<div>感觉设计这个软件的真厉害，怪不得我们自己做的业务系统自己都信不过，差距实在是太远，国内很多大公司在分享技术的时候也就是个PPT，根本不敢把代码放出来给大家看，也没有把实际用的效果展示给大家，只是给别人的感觉很牛逼而已。我感觉我从事这个工作这么久，真没遇到过这种大神</div>2019-07-22</li><br/><li><span>佳俊</span> 👍（8） 💬（1）<div>看了很久都没有搞明白一个type_init 宏定义出来的函数是怎么被调用的，直到发现在module_init 里面一个这个属性的定义__attribute__((constructor))，才明白是GNU C 里面的一个特性，在main函数调用前系统会自动先调用这个函数。</div>2020-05-28</li><br/><li><span>泡泡</span> 👍（1） 💬（2）<div>请问代码是用的哪个内核版本</div>2019-07-22</li><br/><li><span>why</span> 👍（12） 💬（0）<div>解析 qemu 的执行步骤
+<li><span>大王叫我来巡山</span> 👍（27） 💬（1）<p>感觉设计这个软件的真厉害，怪不得我们自己做的业务系统自己都信不过，差距实在是太远，国内很多大公司在分享技术的时候也就是个PPT，根本不敢把代码放出来给大家看，也没有把实际用的效果展示给大家，只是给别人的感觉很牛逼而已。我感觉我从事这个工作这么久，真没遇到过这种大神</p>2019-07-22</li><br/><li><span>佳俊</span> 👍（8） 💬（1）<p>看了很久都没有搞明白一个type_init 宏定义出来的函数是怎么被调用的，直到发现在module_init 里面一个这个属性的定义__attribute__((constructor))，才明白是GNU C 里面的一个特性，在main函数调用前系统会自动先调用这个函数。</p>2020-05-28</li><br/><li><span>泡泡</span> 👍（1） 💬（2）<p>请问代码是用的哪个内核版本</p>2019-07-22</li><br/><li><span>why</span> 👍（12） 💬（0）<p>解析 qemu 的执行步骤
 
 1. 初始化所有模块
 
@@ -507,5 +507,5 @@ module_call_init() 会调用 ModelTypeList 中所有模块的初始化函数,  �
 
 3. 初始化 machine
 
-会在 qemu 的全局 hash 表中注册对应计算机体系结构的 TypeImpl 信息. 然后会调用所有 TypeImpl 的初始化方法 class_init 生成对应的 Class. 最后会得到一个 MachineClass. 然后调用 TypeImple 中的 instance_init 方法生成 MachineClass 的一个实例. </div>2020-02-24</li><br/><li><span>柒城</span> 👍（3） 💬（0）<div>老师，之后会不会开个专门讲虚拟化的专栏啊？吧QEMU和KVM好好讲讲</div>2021-10-15</li><br/><li><span>石维康</span> 👍（3） 💬（0）<div>请问老师pc_machine_type_##suffix所对应的TypeImpl的instance_init是在哪初始化的？也就是从代码里如何体现从MachineClass生成MachineState？</div>2019-07-23</li><br/><li><span>RobinDevNotes</span> 👍（2） 💬（0）<div>期望老师出一个讲openstack的专栏</div>2021-09-01</li><br/><li><span>RobinDevNotes</span> 👍（1） 💬（0）<div>openstack是调用libvirt，libevirtd再调用kvm吗？</div>2021-09-01</li><br/><li><span>kkxue</span> 👍（0） 💬（0）<div>nova通过libvirt驱动，将配置数据转化成XML格式的文件，用于创建虚拟机。</div>2022-04-26</li><br/><li><span>奔跑的码仔</span> 👍（0） 💬（0）<div>请问，qemu使用的是哪个版本？</div>2019-10-23</li><br/>
+会在 qemu 的全局 hash 表中注册对应计算机体系结构的 TypeImpl 信息. 然后会调用所有 TypeImpl 的初始化方法 class_init 生成对应的 Class. 最后会得到一个 MachineClass. 然后调用 TypeImple 中的 instance_init 方法生成 MachineClass 的一个实例. </p>2020-02-24</li><br/><li><span>柒城</span> 👍（3） 💬（0）<p>老师，之后会不会开个专门讲虚拟化的专栏啊？吧QEMU和KVM好好讲讲</p>2021-10-15</li><br/><li><span>石维康</span> 👍（3） 💬（0）<p>请问老师pc_machine_type_##suffix所对应的TypeImpl的instance_init是在哪初始化的？也就是从代码里如何体现从MachineClass生成MachineState？</p>2019-07-23</li><br/><li><span>RobinDevNotes</span> 👍（2） 💬（0）<p>期望老师出一个讲openstack的专栏</p>2021-09-01</li><br/><li><span>RobinDevNotes</span> 👍（1） 💬（0）<p>openstack是调用libvirt，libevirtd再调用kvm吗？</p>2021-09-01</li><br/><li><span>kkxue</span> 👍（0） 💬（0）<p>nova通过libvirt驱动，将配置数据转化成XML格式的文件，用于创建虚拟机。</p>2022-04-26</li><br/><li><span>奔跑的码仔</span> 👍（0） 💬（0）<p>请问，qemu使用的是哪个版本？</p>2019-10-23</li><br/>
 </ul>

@@ -167,18 +167,18 @@ func coordinateWithWaitGroup() {
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_e68th4</span> 👍（20） 💬（2）<div>“双重检查” 貌似也并不是完全安全的吧，像c++11那样加入内存屏障才是真正线性安全的。go有这类接口吗</div>2019-02-26</li><br/><li><span>唐大少在路上。。。</span> 👍（17） 💬（3）<div>个人感觉Once里面的逻辑设计得不够简洁，既然目的就是只要能够拿到once的锁的gorountine就会消费掉这个once，那其实直接在Do方法的最开始用if atomic.CompareAndSwapUint32(&amp;o.done, 0,1)不就行了，连锁都不用。
-还请老师指正，哈哈</div>2019-10-24</li><br/><li><span>moonfox</span> 👍（10） 💬（1）<div>请问一下，在 sync.Once的源码里， doSlow()方法中，已经用了o.m.Lock()，什么写入o.done=1的时候，还要用原子写入呢？</div>2021-05-09</li><br/><li><span>only</span> 👍（10） 💬（0）<div>可不可以把 sync.once 理解为单例模式，比如连接数据库只需要连接一次，把连接数据库的代码实在once.do()里面</div>2019-12-10</li><br/><li><span>超大叮当当</span> 👍（7） 💬（1）<div>sync.Once 不用 Mutex ，直接用 atomic.CompareAndSwapUint32 函数也可以安全吧？</div>2019-03-13</li><br/><li><span>1287</span> 👍（3） 💬（2）<div>没理解使用once和自己只调用一次有什么区别，类似初始化的操作，我在程序执行前写个init也是只执行一次吧，求教</div>2020-05-25</li><br/><li><span>窗外</span> 👍（3） 💬（2）<div>go func ()  {
+<li><span>Geek_e68th4</span> 👍（20） 💬（2）<p>“双重检查” 貌似也并不是完全安全的吧，像c++11那样加入内存屏障才是真正线性安全的。go有这类接口吗</p>2019-02-26</li><br/><li><span>唐大少在路上。。。</span> 👍（17） 💬（3）<p>个人感觉Once里面的逻辑设计得不够简洁，既然目的就是只要能够拿到once的锁的gorountine就会消费掉这个once，那其实直接在Do方法的最开始用if atomic.CompareAndSwapUint32(&amp;o.done, 0,1)不就行了，连锁都不用。
+还请老师指正，哈哈</p>2019-10-24</li><br/><li><span>moonfox</span> 👍（10） 💬（1）<p>请问一下，在 sync.Once的源码里， doSlow()方法中，已经用了o.m.Lock()，什么写入o.done=1的时候，还要用原子写入呢？</p>2021-05-09</li><br/><li><span>only</span> 👍（10） 💬（0）<p>可不可以把 sync.once 理解为单例模式，比如连接数据库只需要连接一次，把连接数据库的代码实在once.do()里面</p>2019-12-10</li><br/><li><span>超大叮当当</span> 👍（7） 💬（1）<p>sync.Once 不用 Mutex ，直接用 atomic.CompareAndSwapUint32 函数也可以安全吧？</p>2019-03-13</li><br/><li><span>1287</span> 👍（3） 💬（2）<p>没理解使用once和自己只调用一次有什么区别，类似初始化的操作，我在程序执行前写个init也是只执行一次吧，求教</p>2020-05-25</li><br/><li><span>窗外</span> 👍（3） 💬（2）<p>go func ()  {
 		 wg.Done()
 		fmt.Println(&quot;send complete&quot;)
 	 }()
-老师，为什么在Done()后的代码就不会被执行呢？</div>2019-11-03</li><br/><li><span>手指饼干</span> 👍（3） 💬（2）<div>请问老师，如下deferFunc为什么要用func包装起来，直接使用defer deferFunc()不可以吗？
+老师，为什么在Done()后的代码就不会被执行呢？</p>2019-11-03</li><br/><li><span>手指饼干</span> 👍（3） 💬（2）<p>请问老师，如下deferFunc为什么要用func包装起来，直接使用defer deferFunc()不可以吗？
 func addNum(numP *int32, id, max int32, deferFunc func()) {
 	defer func() {
 		deferFunc()
 	}()
 	&#47;&#47;...
-}</div>2019-10-10</li><br/><li><span>Laughing</span> 👍（3） 💬（1）<div>子任务的结果应该用通道来传递吧。另外once的应用场景还是没有理解。郝大能简单说一下么？</div>2018-10-30</li><br/><li><span>罗峰</span> 👍（2） 💬（1）<div>老师，你好，waitgroup的计数周期这个概念是自创的吗？使用上感觉 只要 add操作在wait语句之前执行就可以，使用个例子：
+}</p>2019-10-10</li><br/><li><span>Laughing</span> 👍（3） 💬（1）<p>子任务的结果应该用通道来传递吧。另外once的应用场景还是没有理解。郝大能简单说一下么？</p>2018-10-30</li><br/><li><span>罗峰</span> 👍（2） 💬（1）<p>老师，你好，waitgroup的计数周期这个概念是自创的吗？使用上感觉 只要 add操作在wait语句之前执行就可以，使用个例子：
  for {
       select {
       case &lt;- cancel:
@@ -191,7 +191,7 @@ func addNum(numP *int32, id, max int32, deferFunc func()) {
             }
      }
 }
-wg.wait()</div>2021-01-22</li><br/><li><span>窝窝头</span> 👍（1） 💬（1）<div>执行结果可以通过共享内存、channel之类的，如果只是想让其他协程等待所有协程都完成后统一退出的话是不是每个协程里面wg.Done,然后wg.Wait就行了</div>2022-01-06</li><br/><li><span>bluuus</span> 👍（1） 💬（3）<div>func coordinateWithWaitGroup() {
+wg.wait()</p>2021-01-22</li><br/><li><span>窝窝头</span> 👍（1） 💬（1）<p>执行结果可以通过共享内存、channel之类的，如果只是想让其他协程等待所有协程都完成后统一退出的话是不是每个协程里面wg.Done,然后wg.Wait就行了</p>2022-01-06</li><br/><li><span>bluuus</span> 👍（1） 💬（3）<p>func coordinateWithWaitGroup() {
 	var wg sync.WaitGroup
 	wg.Add(2)
 	num := int32(0)
@@ -212,10 +212,10 @@ The number: 10 [3-4]
 fatal error: all goroutines are asleep - deadlock!
 
 执行这段代码会死锁，我以为最多在wai()方法那儿阻塞，谁能解释一下？
-</div>2019-09-06</li><br/><li><span>NeoMa</span> 👍（0） 💬（1）<div>您好，关于once.go中 doSlow方法有两个疑问：
+</p>2019-09-06</li><br/><li><span>NeoMa</span> 👍（0） 💬（1）<p>您好，关于once.go中 doSlow方法有两个疑问：
 1. 在拿到m.Lock()锁之后的o.done == 0 的判断能否省略？或者说这个判断针对的是某些可能的未知场景吗？我的理解是，理论上此时这个值一定是0，但为了确保预防未知场景又做了一次判断。
 2. defer atomic.StoreUint32(&amp;o.done, 1) 这个操作是否可以不用原子操作，只是使用例如 o.done = 1类似的赋值操作？
-希望您多多指正。</div>2022-01-17</li><br/><li><span>poettian</span> 👍（0） 💬（1）<div>老师，once 里的实现为什么要用原子操作呢？不是已经有锁了。这点不是很明白。</div>2021-01-10</li><br/><li><span>Godruoyi</span> 👍（0） 💬（1）<div>type myOnce struct {
+希望您多多指正。</p>2022-01-17</li><br/><li><span>poettian</span> 👍（0） 💬（1）<p>老师，once 里的实现为什么要用原子操作呢？不是已经有锁了。这点不是很明白。</p>2021-01-10</li><br/><li><span>Godruoyi</span> 👍（0） 💬（1）<p>type myOnce struct {
 	done uint32
 	m    sync.Mutex
 
@@ -238,5 +238,5 @@ func (m *myOnce) Do(f func()) {
 }
 
 
-for 循环阻塞和加锁阻塞有什么区别呢</div>2020-11-10</li><br/>
+for 循环阻塞和加锁阻塞有什么区别呢</p>2020-11-10</li><br/>
 </ul>

@@ -454,9 +454,9 @@ sudo mount -t trfs none /mnt/  // 挂载trfs文件系统到mnt目录下
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>pedro</span> 👍（8） 💬（1）<div>请说一说 super_block，dentry，inode 这三个数据结构 ，一定要在储存设备上对应存在吗？
+<li><span>pedro</span> 👍（8） 💬（1）<p>请说一说 super_block，dentry，inode 这三个数据结构 ，一定要在储存设备上对应存在吗？
 
-不需要严格对应，之所以要对应是为了使用、维护更加方便，抽象是软件设计最大的魅力。</div>2021-07-28</li><br/><li><span>neohope</span> 👍（7） 💬（1）<div>一、数据结构
+不需要严格对应，之所以要对应是为了使用、维护更加方便，抽象是软件设计最大的魅力。</p>2021-07-28</li><br/><li><span>neohope</span> 👍（7） 💬（1）<p>一、数据结构
 1、四大基本结构
 A、超级块管理为super_block，用于描述存储设备上的文件系统，可以从super_block出发把存储设备上的内容读取出来
 B、目录结构管理为dentry，通过其来组织整个目录结构
@@ -491,13 +491,13 @@ trfs_mount-&gt;mount_nodev-&gt;trfs_fill_super
 A、每次新建文件或文件夹，就占用一个空闲的fileinfo
 B、删除文件或文件夹，就将一个fileinfo设置为可用
 C、读写文件就是通过file找到fileinfo.data
-D、查找和枚举就是通过file找到fileinfo.data，然后访问其中的每个dir_entry</div>2021-08-08</li><br/><li><span>Fan</span> 👍（1） 💬（2）<div>请说一说 super_block，dentry，inode 这三个数据结构 ，一定要在储存设备上对应存在吗？
+D、查找和枚举就是通过file找到fileinfo.data，然后访问其中的每个dir_entry</p>2021-08-08</li><br/><li><span>Fan</span> 👍（1） 💬（2）<p>请说一说 super_block，dentry，inode 这三个数据结构 ，一定要在储存设备上对应存在吗？
 
 要的。
-</div>2021-07-29</li><br/><li><span>蓝色梦幻</span> 👍（0） 💬（1）<div>请教一下：＂有了上述代码，挂载 trfs 到 &#47;mnt 下，我们就可以用 touch 建立一个文件，然后用 cat 读取这个文件了。＂
+</p>2021-07-29</li><br/><li><span>蓝色梦幻</span> 👍（0） 💬（1）<p>请教一下：＂有了上述代码，挂载 trfs 到 &#47;mnt 下，我们就可以用 touch 建立一个文件，然后用 cat 读取这个文件了。＂
 这里具体要怎么操作呀？我可以用findmnt 查看到trfs系统的挂载，后续要怎么操作呢？
 
 TARGET                       SOURCE     FSTYPE          OPTIONS
 ├─&#47;mnt                                none       trfs            rw,relatime
-</div>2022-05-14</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<div>打卡</div>2022-05-13</li><br/><li><span>Geek_cb2b43</span> 👍（0） 💬（1）<div>请问在一个新建的空文件，从100兆的位置写200兆数据，操作的流程是什么，文件的大小是300兆吗？</div>2021-11-13</li><br/><li><span>不及胜于过之</span> 👍（0） 💬（1）<div>文件系统就是 super_block&#47;和super_operations，dentry和dentry_operations，inode和inode_operations，file 和 file_operations，真的是醍醐灌顶，大佬可以按这个表述风格，详细说下mount 嘛， 一直理解的不是很深刻，尤其是容器用到的union mount</div>2021-08-08</li><br/>
+</p>2022-05-14</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<p>打卡</p>2022-05-13</li><br/><li><span>Geek_cb2b43</span> 👍（0） 💬（1）<p>请问在一个新建的空文件，从100兆的位置写200兆数据，操作的流程是什么，文件的大小是300兆吗？</p>2021-11-13</li><br/><li><span>不及胜于过之</span> 👍（0） 💬（1）<p>文件系统就是 super_block&#47;和super_operations，dentry和dentry_operations，inode和inode_operations，file 和 file_operations，真的是醍醐灌顶，大佬可以按这个表述风格，详细说下mount 嘛， 一直理解的不是很深刻，尤其是容器用到的union mount</p>2021-08-08</li><br/>
 </ul>

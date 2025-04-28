@@ -190,7 +190,7 @@ Stages页面，更多地是一种预览，要想查看每一个Stage的详情，
 
 欢迎你在留言区跟我交流探讨，也欢迎推荐你把这一讲分享给有需要的朋友、同事。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>小李</span> 👍（9） 💬（1）<div>1、我想数量不一致是由于Executors在处理这个application下的所有job(一个job由action算子来触发,每个job又会根据shuffle情况划分出多个stage，每个stage中又会划分出多个task，再根据taskScheduler分配到各个Excecutor)得出来的Complete Tasks。
-</div>2021-11-01</li><br/><li><span>LHF</span> 👍（5） 💬（3）<div>第一个：每个rdd经过处理后，又可能生成其他rdd，这里的tasks应该是显示整个executors处理过的任务数，跟rdd的blocks无关。
-第二个：因为代码最后一个是save，会生成一个save的action</div>2021-10-28</li><br/><li><span>我爱夜来香</span> 👍（2） 💬（2）<div>老师,请问下4040端口和8080端口有什么区别和联系啊?</div>2022-01-20</li><br/><li><span>Geek_d4ccac</span> 👍（0） 💬（1）<div>老师好！我有一个疑问，所以这一节准备工作部分的code example并不是后面spark ui里跑的code么？ 我这边显示最后是result.collect。。。</div>2021-11-03</li><br/><li><span>Geek_frank</span> 👍（0） 💬（0）<div>这个可以禁用掉吗，感觉这块也挺占资源的。在开发环境调试的时候可以用用。产线这块最好禁掉</div>2023-08-09</li><br/>
+<li><span>小李</span> 👍（9） 💬（1）<p>1、我想数量不一致是由于Executors在处理这个application下的所有job(一个job由action算子来触发,每个job又会根据shuffle情况划分出多个stage，每个stage中又会划分出多个task，再根据taskScheduler分配到各个Excecutor)得出来的Complete Tasks。
+</p>2021-11-01</li><br/><li><span>LHF</span> 👍（5） 💬（3）<p>第一个：每个rdd经过处理后，又可能生成其他rdd，这里的tasks应该是显示整个executors处理过的任务数，跟rdd的blocks无关。
+第二个：因为代码最后一个是save，会生成一个save的action</p>2021-10-28</li><br/><li><span>我爱夜来香</span> 👍（2） 💬（2）<p>老师,请问下4040端口和8080端口有什么区别和联系啊?</p>2022-01-20</li><br/><li><span>Geek_d4ccac</span> 👍（0） 💬（1）<p>老师好！我有一个疑问，所以这一节准备工作部分的code example并不是后面spark ui里跑的code么？ 我这边显示最后是result.collect。。。</p>2021-11-03</li><br/><li><span>Geek_frank</span> 👍（0） 💬（0）<p>这个可以禁用掉吗，感觉这块也挺占资源的。在开发环境调试的时候可以用用。产线这块最好禁掉</p>2023-08-09</li><br/>
 </ul>

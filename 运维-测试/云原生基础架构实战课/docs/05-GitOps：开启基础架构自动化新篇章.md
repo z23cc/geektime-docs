@@ -102,5 +102,5 @@ GitOps并不是一种万能的解决方案，它同样存在一些挑战和限�
 
 欢迎你和我在评论区一起讨论。如果这一讲对你有帮助，别忘了分享给身边更多同事、朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_45a572</span> 👍（2） 💬（1）<div>潘帅哥 能分享一些terraform和gitops的最佳实践吗？变更ec2实例规格有点太简单啦。例如使用tf创建eks时vpc安全组 子网 add-on  混部 …  这种生产可用的实战</div>2024-04-09</li><br/><li><span>cfanbo</span> 👍（0） 💬（1）<div>这里的集群升级与k8s官网文档介绍的升级当时有哪些区别？文章里说升级是通过新建一个节点加入集群，在把老节点从集群移除，这原来节点上面的pod不是有重见了吗？这是服务可用性又如何保证？</div>2024-04-07</li><br/><li><span>橙汁</span> 👍（1） 💬（2）<div>基础设施全走gitops 还有个问题要解决，就是terraform的状态信息存储，肯定是要远程 走ci做terraform plan检测好理解，合并到主分支再次触发cicd 执行terraform apply时候会涉及到更新git仓库文件，我现在是在本地apply完直接推到git算是拿git当远程存储，不知道这部分我理解的对不对，反正terraform可以拿s3啥的当存储</div>2024-04-03</li><br/>
+<li><span>Geek_45a572</span> 👍（2） 💬（1）<p>潘帅哥 能分享一些terraform和gitops的最佳实践吗？变更ec2实例规格有点太简单啦。例如使用tf创建eks时vpc安全组 子网 add-on  混部 …  这种生产可用的实战</p>2024-04-09</li><br/><li><span>cfanbo</span> 👍（0） 💬（1）<p>这里的集群升级与k8s官网文档介绍的升级当时有哪些区别？文章里说升级是通过新建一个节点加入集群，在把老节点从集群移除，这原来节点上面的pod不是有重见了吗？这是服务可用性又如何保证？</p>2024-04-07</li><br/><li><span>橙汁</span> 👍（1） 💬（2）<p>基础设施全走gitops 还有个问题要解决，就是terraform的状态信息存储，肯定是要远程 走ci做terraform plan检测好理解，合并到主分支再次触发cicd 执行terraform apply时候会涉及到更新git仓库文件，我现在是在本地apply完直接推到git算是拿git当远程存储，不知道这部分我理解的对不对，反正terraform可以拿s3啥的当存储</p>2024-04-03</li><br/>
 </ul>

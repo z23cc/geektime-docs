@@ -391,10 +391,10 @@ public class FileFragment extends Fragment implements FileListContract.FileView 
 
 欢迎你把它分享给你的同事或朋友，让我们一起来高效高质量交付软件！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：RxJava以前用过，记得是用来做网络请求的，也是线程库吗？
 如果是的话，除了RxJava，还有什么线程库（或线程池）？
 Q2：MVP中架构中，P被称作“表现层”。从字面意思看，“表现”容易被理解成界面、显示一类的东西。实际上，P一般是负责网络请求、逻辑处理方面的事情。感觉“表现层”这个用词不是很好啊。
 Q3：安卓手机上的APP可以直接运行在安卓平板上吗？
-或者，需要做一些移植工作？</div>2023-03-15</li><br/><li><span>湛卢</span> 👍（0） 💬（1）<div>有完整的代码示例吗</div>2023-03-15</li><br/><li><span>李鑫鑫</span> 👍（0） 💬（1）<div>这块的代码有吗？</div>2023-03-15</li><br/>
+或者，需要做一些移植工作？</p>2023-03-15</li><br/><li><span>湛卢</span> 👍（0） 💬（1）<p>有完整的代码示例吗</p>2023-03-15</li><br/><li><span>李鑫鑫</span> 👍（0） 💬（1）<p>这块的代码有吗？</p>2023-03-15</li><br/>
 </ul>

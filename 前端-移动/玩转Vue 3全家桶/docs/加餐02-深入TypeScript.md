@@ -344,13 +344,13 @@ request('/course/404',{id:1}) //接口不存在 类型怎么需要报错
 
 欢迎你在评论区分享你的答案，也欢迎你把这一讲的内容分享给你的同事和朋友们，我们下一讲再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>cwang</span> 👍（11） 💬（1）<div>不建议用中文变量名，其中一个原因是手敲的时候，需要来回转换中英文输入法。😅</div>2021-12-03</li><br/><li><span>require</span> 👍（4） 💬（1）<div>学得时候是typescript, 用的时候就变成了anyscript😂</div>2021-12-07</li><br/><li><span>山雨</span> 👍（2） 💬（1）<div>大圣老师，实战篇代码啥时候更新</div>2021-12-03</li><br/><li><span>风一样</span> 👍（1） 💬（1）<div>请问老师，let todos:Ref = ref([{title:&#39;学习Vue&#39;,done:false}])这条语句中，用 Ref 和 不用 Ref，有什么区别呢？</div>2021-12-21</li><br/><li><span>Lanb Wang</span> 👍（0） 💬（1）<div>跟着敲了一遍，然后现在看自己敲得是啥子都不晓得
-</div>2022-02-11</li><br/><li><span>起風了</span> 👍（0） 💬（1）<div>想问一下type和interface有什么区别?什么时候用type,什么时候用interface?</div>2022-01-11</li><br/><li><span>韩棒</span> 👍（0） 💬（1）<div>大圣老师 Ref在使用的时候有一个 “Ref”仅表示类型，但在此处却作为值使用-ts。是需要配置tsconfig.json吗？</div>2021-12-03</li><br/><li><span>2345</span> 👍（27） 💬（1）<div>个人不觉得中文变量能帮助理解。</div>2022-02-13</li><br/><li><span>南山</span> 👍（9） 💬（1）<div>type RecursivePartial&lt;T&gt; = {
+<li><span>cwang</span> 👍（11） 💬（1）<p>不建议用中文变量名，其中一个原因是手敲的时候，需要来回转换中英文输入法。😅</p>2021-12-03</li><br/><li><span>require</span> 👍（4） 💬（1）<p>学得时候是typescript, 用的时候就变成了anyscript😂</p>2021-12-07</li><br/><li><span>山雨</span> 👍（2） 💬（1）<p>大圣老师，实战篇代码啥时候更新</p>2021-12-03</li><br/><li><span>风一样</span> 👍（1） 💬（1）<p>请问老师，let todos:Ref = ref([{title:&#39;学习Vue&#39;,done:false}])这条语句中，用 Ref 和 不用 Ref，有什么区别呢？</p>2021-12-21</li><br/><li><span>Lanb Wang</span> 👍（0） 💬（1）<p>跟着敲了一遍，然后现在看自己敲得是啥子都不晓得
+</p>2022-02-11</li><br/><li><span>起風了</span> 👍（0） 💬（1）<p>想问一下type和interface有什么区别?什么时候用type,什么时候用interface?</p>2022-01-11</li><br/><li><span>韩棒</span> 👍（0） 💬（1）<p>大圣老师 Ref在使用的时候有一个 “Ref”仅表示类型，但在此处却作为值使用-ts。是需要配置tsconfig.json吗？</p>2021-12-03</li><br/><li><span>2345</span> 👍（27） 💬（1）<p>个人不觉得中文变量能帮助理解。</p>2022-02-13</li><br/><li><span>南山</span> 👍（9） 💬（1）<p>type RecursivePartial&lt;T&gt; = {
   [P in keyof T]?:
     T[P] extends (infer U)[] ? RecursivePartial&lt;U&gt;[] :
     T[P] extends object ? RecursivePartial&lt;T[P]&gt; :
     T[P];
-};</div>2021-12-03</li><br/><li><span>江南烟雨时</span> 👍（7） 💬（0）<div>一看就会，一做就废。</div>2022-04-21</li><br/><li><span>cwang</span> 👍（7） 💬（2）<div>有个地方挺神奇的哈，不打印你是不会理解这段代码的。
+};</p>2021-12-03</li><br/><li><span>江南烟雨时</span> 👍（7） 💬（0）<p>一看就会，一做就废。</p>2022-04-21</li><br/><li><span>cwang</span> 👍（7） 💬（2）<p>有个地方挺神奇的哈，不打印你是不会理解这段代码的。
 
 enum 课程评分 { 好, 非常好, 嘎嘎好 }
 console.log(课程评分[&#39;好&#39;] === 0) &#47;&#47; true
@@ -373,12 +373,12 @@ console.log(课程评分)
 原来如此~
 
 
-</div>2021-12-03</li><br/><li><span>ll</span> 👍（4） 💬（0）<div>ts 是 js 的 “超集” 其将 js 缺失的 “静态类型” 补上了，此外实现了一些“新的特性”，例如，函数重载。
+</p>2021-12-03</li><br/><li><span>ll</span> 👍（4） 💬（0）<p>ts 是 js 的 “超集” 其将 js 缺失的 “静态类型” 补上了，此外实现了一些“新的特性”，例如，函数重载。
 js 原生不支持这种语言特性，是可以自己写代码实现的。而 ts 原生提供了这些“特性”，对于使用者的“成本” 就是要额外学习一些“新语法”。当熟悉这些新的写法后，我们在工程上收获的就是所谓“出错要趁早”，在“编译阶段”就发现错误，不用等到“运行时”发生错误，造成更大的损失。额外的，静态类型系统也给 lint 类插件提供了“技术支持”，使得在编写代码的时候得到更好的提示。
 
 简单说，ts “让”我们的是更严格的写代码，“先要有，才能用，后边不能随心变”。是不是太“严格”了，是“严格”了，这也动态语言与静态语言是经常被争论的一个点。但 ts 在“灵活性”上也作了工作，比如所谓的泛型，以及一系列与之配套的API。
 
- 当然只谈感受作用不是很大，要想用的好，还是要不断的实践。</div>2021-12-06</li><br/><li><span>许强</span> 👍（1） 💬（0）<div>
+ 当然只谈感受作用不是很大，要想用的好，还是要不断的实践。</p>2021-12-06</li><br/><li><span>许强</span> 👍（1） 💬（0）<p>
  import { ref ,Ref} from &#39;vue&#39;
  interface Todo{ 
      title:string,
@@ -386,8 +386,8 @@ js 原生不支持这种语言特性，是可以自己写代码实现的。而 t
  }
  let todos:Ref = ref([{title:&#39;学习Vue&#39;,done:false}])
  
-这段代码貌似没使用到 Todo 这个接口把？</div>2023-01-12</li><br/><li><span>淡若清风过</span> 👍（1） 💬（0）<div>slots，attrs，emit这些是什么类型？</div>2022-06-21</li><br/><li><span>杨林山</span> 👍（1） 💬（0）<div>示例中Interface API的属性全都是固定接口名，那像restful方式的接口地址该如何定义呢？
+这段代码貌似没使用到 Todo 这个接口把？</p>2023-01-12</li><br/><li><span>淡若清风过</span> 👍（1） 💬（0）<p>slots，attrs，emit这些是什么类型？</p>2022-06-21</li><br/><li><span>杨林山</span> 👍（1） 💬（0）<p>示例中Interface API的属性全都是固定接口名，那像restful方式的接口地址该如何定义呢？
 
 get &#47;users&#47;:userId
-</div>2022-04-11</li><br/>
+</p>2022-04-11</li><br/>
 </ul>

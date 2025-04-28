@@ -761,7 +761,7 @@ spring.factories 除了可以 EnableAutoConfiguration 类型的类之外，还�
 6. FailureAnalyzer
 7. TemplateAvailabilityProvider
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>斯瓦辛武Roy</span> 👍（3） 💬（1）<div>给老师点个赞，这样的底层代码真的有助于P6的进步，希望春节期间不停更哈</div>2023-01-22</li><br/><li><span>王建新</span> 👍（0） 💬（2）<div>他到底是怎么代理生成那块if else的没看到原理呀</div>2023-07-28</li><br/><li><span>张三丰</span> 👍（0） 💬（2）<div>&quot;但是这么一来，如何生成动态代理类的逻辑就至关重要了，而且万一我们以后有自主定制的诉求，想修改这段生成代理类的这段逻辑，反而受 Cglib 库的牵制。&quot;
+<li><span>斯瓦辛武Roy</span> 👍（3） 💬（1）<p>给老师点个赞，这样的底层代码真的有助于P6的进步，希望春节期间不停更哈</p>2023-01-22</li><br/><li><span>王建新</span> 👍（0） 💬（2）<p>他到底是怎么代理生成那块if else的没看到原理呀</p>2023-07-28</li><br/><li><span>张三丰</span> 👍（0） 💬（2）<p>&quot;但是这么一来，如何生成动态代理类的逻辑就至关重要了，而且万一我们以后有自主定制的诉求，想修改这段生成代理类的这段逻辑，反而受 Cglib 库的牵制。&quot;
 
-老师，这个能举个例子么？  是怎么牵制的？</div>2023-02-09</li><br/><li><span>_Axios丶靜ﻩ</span> 👍（0） 💬（0）<div>这里的wrapper机制和ExtentionLoader里面的iswrapclass有关系吗，我觉得是没有啥关系</div>2025-01-11</li><br/>
+老师，这个能举个例子么？  是怎么牵制的？</p>2023-02-09</li><br/><li><span>_Axios丶靜ﻩ</span> 👍（0） 💬（0）<p>这里的wrapper机制和ExtentionLoader里面的iswrapclass有关系吗，我觉得是没有啥关系</p>2025-01-11</li><br/>
 </ul>

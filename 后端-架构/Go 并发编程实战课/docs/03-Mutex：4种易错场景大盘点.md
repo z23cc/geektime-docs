@@ -457,7 +457,7 @@ Go死锁探测工具只能探测整个程序是否因为死锁而冻结了，不
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Remember九离</span> 👍（19） 💬（3）<div>第三课代码整理:https:&#47;&#47;github.com&#47;wuqinqiang&#47;Go_Concurrency&#47;tree&#47;main&#47;class_3</div>2020-10-18</li><br/><li><span>David</span> 👍（3） 💬（3）<div>个人理解：我觉得go里面的可重入锁，有点鸡肋，这也是go官方没有实现的原因吧。第一，如果我加了互斥锁，说明这临界区的资源都是某个groutine独享，那何必要在临界区里面再去请求锁呢，不是多此一举吗，第二，就拿递归来说，我们完全可以把加在递归函数里面的锁，提取到调用递归之前，这样就可以避免递归函数加锁的情况。这是我的个人理解。在redis里面有分布式锁，会出现一个持有锁的线程再次加锁的情况，但是呢，和这里的使用情况还是不一样，redis一般加锁，都会加个有效期(担心忘记释放锁，造成死锁)，这个有效期时间长度，不能太大于程序执行时间，这样如果锁来不及释放的时候可能会影响性能，所以一般有效期都和程序执行时间差不多。但是有时候，出现执行时间长超过了有效期的时候，需要续期，才有再次请求锁。以上是我个人理解，如果老师看到评论，可以点评一下我的思维是否有问题</div>2020-11-18</li><br/><li><span>David</span> 👍（2） 💬（4）<div>您好老师，在设计可重入锁的时候，在lock方法中，
+<li><span>Remember九离</span> 👍（19） 💬（3）<p>第三课代码整理:https:&#47;&#47;github.com&#47;wuqinqiang&#47;Go_Concurrency&#47;tree&#47;main&#47;class_3</p>2020-10-18</li><br/><li><span>David</span> 👍（3） 💬（3）<p>个人理解：我觉得go里面的可重入锁，有点鸡肋，这也是go官方没有实现的原因吧。第一，如果我加了互斥锁，说明这临界区的资源都是某个groutine独享，那何必要在临界区里面再去请求锁呢，不是多此一举吗，第二，就拿递归来说，我们完全可以把加在递归函数里面的锁，提取到调用递归之前，这样就可以避免递归函数加锁的情况。这是我的个人理解。在redis里面有分布式锁，会出现一个持有锁的线程再次加锁的情况，但是呢，和这里的使用情况还是不一样，redis一般加锁，都会加个有效期(担心忘记释放锁，造成死锁)，这个有效期时间长度，不能太大于程序执行时间，这样如果锁来不及释放的时候可能会影响性能，所以一般有效期都和程序执行时间差不多。但是有时候，出现执行时间长超过了有效期的时候，需要续期，才有再次请求锁。以上是我个人理解，如果老师看到评论，可以点评一下我的思维是否有问题</p>2020-11-18</li><br/><li><span>David</span> 👍（2） 💬（4）<p>您好老师，在设计可重入锁的时候，在lock方法中，
 	&#47;&#47; 延用mutex的加锁机制
 	m.Mutex.Lock()
 	atomic.StoreInt64(&amp;m.owner, gid)
@@ -465,13 +465,13 @@ Go死锁探测工具只能探测整个程序是否因为死锁而冻结了，不
       
 
 其次，如果有必要，为什么  m.recursion = 1  不用了呢
-我个人认为，在锁里面，好像是没必要使用的吧</div>2021-01-04</li><br/><li><span>gitxuzan</span> 👍（2） 💬（3）<div>有个地方不明白， 为什么源码里面需要用atomic 原子操作和直接赋值有什么区别</div>2020-10-21</li><br/><li><span>校歌</span> 👍（1） 💬（1）<div>Tidb在用mutex的时候特意改成了defer 这种方式，https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;19072，
-不过找了个比较老的issue，https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;5171 ，lock和unlock还是没有统一用defer的方式，这个以后可能成为隐患吧。</div>2021-01-29</li><br/><li><span>Fan</span> 👍（1） 💬（2）<div>看了前三节，这门课写的太棒了。继续打卡。</div>2020-12-23</li><br/><li><span>Geek_fa7924</span> 👍（0） 💬（1）<div>老师您好，看到第三节课了。这里我有个疑问，课程中遇到重入锁导致死锁的问，老师都是说提供一个不加锁的方法，这里我不太明白，不加锁的方法的含义？</div>2024-06-23</li><br/><li><span>菠萝吹雪—Code</span> 👍（0） 💬（1）<div>打卡
+我个人认为，在锁里面，好像是没必要使用的吧</p>2021-01-04</li><br/><li><span>gitxuzan</span> 👍（2） 💬（3）<p>有个地方不明白， 为什么源码里面需要用atomic 原子操作和直接赋值有什么区别</p>2020-10-21</li><br/><li><span>校歌</span> 👍（1） 💬（1）<p>Tidb在用mutex的时候特意改成了defer 这种方式，https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;19072，
+不过找了个比较老的issue，https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;5171 ，lock和unlock还是没有统一用defer的方式，这个以后可能成为隐患吧。</p>2021-01-29</li><br/><li><span>Fan</span> 👍（1） 💬（2）<p>看了前三节，这门课写的太棒了。继续打卡。</p>2020-12-23</li><br/><li><span>Geek_fa7924</span> 👍（0） 💬（1）<p>老师您好，看到第三节课了。这里我有个疑问，课程中遇到重入锁导致死锁的问，老师都是说提供一个不加锁的方法，这里我不太明白，不加锁的方法的含义？</p>2024-06-23</li><br/><li><span>菠萝吹雪—Code</span> 👍（0） 💬（1）<p>打卡
 
 作业：
 
 https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;issues&#47;27725  
-</div>2022-08-13</li><br/><li><span>niceshot</span> 👍（0） 💬（2）<div>func (m *TokenRecursiveMutex) Lock(token int64)  {
+</p>2022-08-13</li><br/><li><span>niceshot</span> 👍（0） 💬（2）<p>func (m *TokenRecursiveMutex) Lock(token int64)  {
 	if atomic.LoadInt64(&amp;m.token)==token{
 		m.recursion++
 		return
@@ -480,7 +480,7 @@ https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;issues&#47;27725
 	atomic.StoreInt64(&amp;m.token,token)
 	m.recursion = 1
 }
-这里如果调用者提供前后两次两个不同的token Mutex.Lock()不就调用两次了吗</div>2020-10-30</li><br/><li><span>橙子888</span> 👍（0） 💬（1）<div>更新地好快，上一讲的源码还没消化完，新的一讲又出了……</div>2020-10-16</li><br/><li><span>Junes</span> 👍（64） 💬（0）<div>分享一个我觉得很有项目借鉴意义的PR吧：
+这里如果调用者提供前后两次两个不同的token Mutex.Lock()不就调用两次了吗</p>2020-10-30</li><br/><li><span>橙子888</span> 👍（0） 💬（1）<p>更新地好快，上一讲的源码还没消化完，新的一讲又出了……</p>2020-10-16</li><br/><li><span>Junes</span> 👍（64） 💬（0）<p>分享一个我觉得很有项目借鉴意义的PR吧：
 
 https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;20381&#47;files 
 
@@ -488,6 +488,6 @@ https:&#47;&#47;github.com&#47;pingcap&#47;tidb&#47;pull&#47;20381&#47;files
 
 PR中加了个recover处理，并且判断recover有error才Unlock，这是一种处理方法。
 
-理想的设计，是将子函数的Unlock挪到与Lock平级的代码，或者不进行recover处理，Let it panic后修复问题。但大型项目项目经常会因为逻辑错综复杂或者各种历史原因，不好改动吧，这种处理方式虽然不好看，但能解决问题，有时候也挺无奈的~</div>2020-10-16</li><br/><li><span>iamjohnnyzhuang</span> 👍（16） 💬（4）<div>买这个课程本来没报多大希望，没想到看看几节下来太赞了，不仅说到了一些技术的实现细节，同时给出的让我们业务开发避免的经验、排查方法也十分有借鉴价值</div>2020-11-01</li><br/><li><span>buckwheat</span> 👍（8） 💬（3）<div>看了一眼tidb关于mutex的issue，发现大部问题都出现在Unlock的时机上面，尤其是涉及到多个锁的时候，把Lock和Unlock放到两个方法里面就非常容易出现这种情况。tidb出现data race的issue要比dead lock的要多的多。老师，业务复杂时，在涉及到链式加锁时有没有什么好的办法避免死锁呢？</div>2020-10-16</li><br/><li><span>pony</span> 👍（5） 💬（1）<div>老师讲解的很仔细，对mutex使用错误场景都列举了
-补充点：Go语言核心36讲的解锁一个未加锁的mutex 导致的panic，无法被recover()捕获</div>2020-10-24</li><br/><li><span>打奥特曼的小怪兽</span> 👍（5） 💬（0）<div>这个课程看起来很有意思</div>2020-10-16</li><br/>
+理想的设计，是将子函数的Unlock挪到与Lock平级的代码，或者不进行recover处理，Let it panic后修复问题。但大型项目项目经常会因为逻辑错综复杂或者各种历史原因，不好改动吧，这种处理方式虽然不好看，但能解决问题，有时候也挺无奈的~</p>2020-10-16</li><br/><li><span>iamjohnnyzhuang</span> 👍（16） 💬（4）<p>买这个课程本来没报多大希望，没想到看看几节下来太赞了，不仅说到了一些技术的实现细节，同时给出的让我们业务开发避免的经验、排查方法也十分有借鉴价值</p>2020-11-01</li><br/><li><span>buckwheat</span> 👍（8） 💬（3）<p>看了一眼tidb关于mutex的issue，发现大部问题都出现在Unlock的时机上面，尤其是涉及到多个锁的时候，把Lock和Unlock放到两个方法里面就非常容易出现这种情况。tidb出现data race的issue要比dead lock的要多的多。老师，业务复杂时，在涉及到链式加锁时有没有什么好的办法避免死锁呢？</p>2020-10-16</li><br/><li><span>pony</span> 👍（5） 💬（1）<p>老师讲解的很仔细，对mutex使用错误场景都列举了
+补充点：Go语言核心36讲的解锁一个未加锁的mutex 导致的panic，无法被recover()捕获</p>2020-10-24</li><br/><li><span>打奥特曼的小怪兽</span> 👍（5） 💬（0）<p>这个课程看起来很有意思</p>2020-10-16</li><br/>
 </ul>

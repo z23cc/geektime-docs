@@ -232,7 +232,7 @@ public class ContextConfig {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>aoe</span> 👍（2） 💬（0）<div>神奇的方法
+<li><span>aoe</span> 👍（2） 💬（0）<p>神奇的方法
 
 static abstract class TypeLiteral&lt;T&gt; {
     public ParameterizedType getType() {
@@ -243,7 +243,7 @@ static abstract class TypeLiteral&lt;T&gt; {
 ParameterizedType type = (ParameterizedType) new TypeLiteral&lt;Provider&lt;Component&gt;&gt;() {}.getType();
 
 assertEquals(Provider.class, type.getRawType());
-assertEquals(Component.class, type.getActualTypeArguments()[0]);</div>2022-05-06</li><br/><li><span>张铁林</span> 👍（1） 💬（0）<div>跟着敲完，都不知道在干啥了，必须要回来多练才清楚</div>2022-05-04</li><br/><li><span>蝴蝶</span> 👍（0） 💬（1）<div>15分钟左右，我不明白为啥provider.get(this)能强转成(Provider&lt;Object&gt;)。一个是 ComponentProvider，一个是 Provider，没有继承，没有同名方法，又不是 python 的 ducktype。困惑啊</div>2022-08-29</li><br/><li><span>蝴蝶</span> 👍（0） 💬（0）<div>        @Test
+assertEquals(Component.class, type.getActualTypeArguments()[0]);</p>2022-05-06</li><br/><li><span>张铁林</span> 👍（1） 💬（0）<p>跟着敲完，都不知道在干啥了，必须要回来多练才清楚</p>2022-05-04</li><br/><li><span>蝴蝶</span> 👍（0） 💬（1）<p>15分钟左右，我不明白为啥provider.get(this)能强转成(Provider&lt;Object&gt;)。一个是 ComponentProvider，一个是 Provider，没有继承，没有同名方法，又不是 python 的 ducktype。困惑啊</p>2022-08-29</li><br/><li><span>蝴蝶</span> 👍（0） 💬（0）<p>        @Test
         public void should_retrieve_bind_as_provider() {
             Component instance = new Component() {
             };
@@ -271,5 +271,5 @@ assertEquals(Component.class, type.getActualTypeArguments()[0]);</div>2022-05-06
 抛出了异常信息：
 java.lang.ClassCastException: class xxx.ContainerTest$DependencyInject$2 cannot be cast to class jakarta.inject.Provider (com.coolme.di.ContainerTest$DependencyInject$2 and jakarta.inject.Provider are in unnamed module of loader &#39;app&#39;)
 
-有踩过坑的小伙伴吗？</div>2022-08-29</li><br/>
+有踩过坑的小伙伴吗？</p>2022-08-29</li><br/>
 </ul>

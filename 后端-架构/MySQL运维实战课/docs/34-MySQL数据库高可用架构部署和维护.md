@@ -703,6 +703,6 @@ MySQL主备数据复制默认是异步的。如果主库执行成功，但binlog
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>一本书</span> 👍（1） 💬（1）<div>“如果主库使用了 GTID，生产的备份文件中已经记录了备份时，主库的 GTID_executed 变量。这可以从文件中直接看到。”，老师，我看下方的代码中是SET @@GLOBAL.GTID_PURGED=...，难道 GTID_executed 与GTID_PURGED变量之间是有什么关联吗？</div>2024-11-18</li><br/><li><span>叶明</span> 👍（0） 💬（1）<div>当 sync_binlog != 1 时，source 上的 sync binlog 操作可能并没有使 binlog 落盘，如果没有落盘，那么在 engine commit 前，source 掉电，然后恢复，那么这个事务会被回滚（处于 prepare 状态，但没完整的 binlog），但是 replica 可能已经收到该事务并执行，这个时候就会出现 Slave 比 Master 多的情况。
-可参考 http:&#47;&#47;mysql.taobao.org&#47;monthly&#47;2017&#47;04&#47;01&#47;</div>2024-11-08</li><br/>
+<li><span>一本书</span> 👍（1） 💬（1）<p>“如果主库使用了 GTID，生产的备份文件中已经记录了备份时，主库的 GTID_executed 变量。这可以从文件中直接看到。”，老师，我看下方的代码中是SET @@GLOBAL.GTID_PURGED=...，难道 GTID_executed 与GTID_PURGED变量之间是有什么关联吗？</p>2024-11-18</li><br/><li><span>叶明</span> 👍（0） 💬（1）<p>当 sync_binlog != 1 时，source 上的 sync binlog 操作可能并没有使 binlog 落盘，如果没有落盘，那么在 engine commit 前，source 掉电，然后恢复，那么这个事务会被回滚（处于 prepare 状态，但没完整的 binlog），但是 replica 可能已经收到该事务并执行，这个时候就会出现 Slave 比 Master 多的情况。
+可参考 http:&#47;&#47;mysql.taobao.org&#47;monthly&#47;2017&#47;04&#47;01&#47;</p>2024-11-08</li><br/>
 </ul>

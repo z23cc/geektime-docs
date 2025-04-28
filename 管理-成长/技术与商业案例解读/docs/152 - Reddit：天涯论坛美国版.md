@@ -57,5 +57,5 @@ Reddit目前流量很丰富，但是如何把流量变成钱，是Reddit面临�
 
 这个独角兽将来的发展会怎么样，取决于有多少钱可以烧、能够支撑多久，以及最后能不能盈利了。通常来说，论坛都是叫好不叫座的东西，赚钱太难，我想Reddit也不能免俗。所以我个人觉得将来如果盈利模式没有本质上的创新，Reddit的衰落只是时间问题。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>耿老的竹林</span> 👍（1） 💬（1）<div>有点类似于twitter，有流量，赚钱难</div>2019-07-20</li><br/><li><span>Panda</span> 👍（2） 💬（0）<div>reddit 里面内容不错 经常逛</div>2019-03-17</li><br/><li><span>Panda</span> 👍（0） 💬（0）<div>这个模式不错</div>2019-03-17</li><br/>
+<li><span>耿老的竹林</span> 👍（1） 💬（1）<p>有点类似于twitter，有流量，赚钱难</p>2019-07-20</li><br/><li><span>Panda</span> 👍（2） 💬（0）<p>reddit 里面内容不错 经常逛</p>2019-03-17</li><br/><li><span>Panda</span> 👍（0） 💬（0）<p>这个模式不错</p>2019-03-17</li><br/>
 </ul>

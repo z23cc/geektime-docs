@@ -241,11 +241,11 @@ cGroup 程序用于对 cGroup 内所有进程的网络过滤、套接字选项�
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>进击的Lancelot</span> 👍（1） 💬（0）<div>XDP 程序类型老师已经讲过，这里不再赘述。
+<li><span>进击的Lancelot</span> 👍（1） 💬（0）<p>XDP 程序类型老师已经讲过，这里不再赘述。
 TC 类型的返回值有 TC_ACT_OK（放行） 和 TC_ACT_SHOT（丢弃），可以参考 
 定义：https:&#47;&#47;elixir.bootlin.com&#47;linux&#47;v6.8&#47;source&#47;samples&#47;bpf&#47;net_shared.h#L17
 示例：&#47;samples&#47;bpf&#47;tc_l2_redirect_kern.c
 
 至于 kprobe，大部分情况下返回值都是和 map 访问相关的错误处理，以 &#47;samples&#47;bpf&#47;tracex6.bpf.c 为例，具体可以参考 get_map_perf_counter 实现（https:&#47;&#47;elixir.bootlin.com&#47;linux&#47;v6.8&#47;source&#47;kernel&#47;trace&#47;bpf_trace.c#L549）  
-</div>2024-12-27</li><br/>
+</p>2024-12-27</li><br/>
 </ul>

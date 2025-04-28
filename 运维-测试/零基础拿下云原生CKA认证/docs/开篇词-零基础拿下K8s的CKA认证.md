@@ -64,5 +64,5 @@ CKA（Certified Kubernetes Administrator）是由 Linux 基金会和 CNCF 基金
 
 还有就是，因为课程设计主要是针对 CKA 考试，有些 Kubernetes 原理和细节并不会很深入，你入门之后可以再找相关资料继续学习。只要你认真学习，认真练习，一定能快速拿到 CKA 证书。我也预祝每个同学都能顺利拿证，开启新的职场生涯！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>孙邺鑫</span> 👍（0） 💬（1）<div>群的入口没有看到呢？</div>2024-07-25</li><br/><li><span>娄江国</span> 👍（0） 💬（2）<div>CKA的考试费用，大概是多少呢？</div>2024-07-12</li><br/><li><span>Fan</span> 👍（0） 💬（1）<div>你好，请问有没有微信群可以交流学习呢，谢谢。</div>2024-07-12</li><br/>
+<li><span>孙邺鑫</span> 👍（0） 💬（1）<p>群的入口没有看到呢？</p>2024-07-25</li><br/><li><span>娄江国</span> 👍（0） 💬（2）<p>CKA的考试费用，大概是多少呢？</p>2024-07-12</li><br/><li><span>Fan</span> 👍（0） 💬（1）<p>你好，请问有没有微信群可以交流学习呢，谢谢。</p>2024-07-12</li><br/>
 </ul>

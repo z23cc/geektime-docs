@@ -359,11 +359,11 @@ class InjectionProvider<T> implements ContextConfig.ComponentProvider<T> {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>张铁林</span> 👍（1） 💬（0）<div>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-di-container&#47;tree&#47;master
-104个测试的数字对上了，就是不知道是不是一致</div>2022-06-03</li><br/><li><span>aoe</span> 👍（1） 💬（0）<div>建模上的缺陷
+<li><span>张铁林</span> 👍（1） 💬（0）<p>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-di-container&#47;tree&#47;master
+104个测试的数字对上了，就是不知道是不是一致</p>2022-06-03</li><br/><li><span>aoe</span> 👍（1） 💬（0）<p>建模上的缺陷
 
 - 模型冗余：相同的计算逻辑同时出现在构造方法、实现方法中
 - 模型不能真正反应需求上要解决的问题
 - 对概念上的封装存在缺失
-- 在工作中很难发现，缓慢的让代码进入到一个滑坡状态、越来越复杂</div>2022-05-24</li><br/><li><span>人间四月天</span> 👍（0） 💬（0）<div>厉害，重构真厉害</div>2022-05-24</li><br/>
+- 在工作中很难发现，缓慢的让代码进入到一个滑坡状态、越来越复杂</p>2022-05-24</li><br/><li><span>人间四月天</span> 👍（0） 💬（0）<p>厉害，重构真厉害</p>2022-05-24</li><br/>
 </ul>

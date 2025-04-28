@@ -197,7 +197,7 @@ DBA虽然可以通过语句重写来暂时处理问题，但是这本身是一�
 
 最后，我要为元旦期间还坚持学习的同学们，点个赞 ^\_^
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>某、人</span> 👍（72） 💬（11）<div>最近才发生了个案列:
+<li><span>某、人</span> 👍（72） 💬（11）<p>最近才发生了个案列:
 由于一个delete大事务导致磁盘空间满了,数据库hang住,连接不上,所以无法kill掉该大事务
 当时的观察到的现象是:
 binlog有一个文件已经达到50多G
@@ -215,7 +215,7 @@ binlog是在事务执行完以后,才一次性fsync到磁盘
 
 请问老师有没有更好的办法来处理这种hang住的情况?
 如果在操作系统层面kill掉执行的线程,就好了。
-昨天提到的问题3,我也没有测试出来Sending to client这个状态.是之前别人问到的,我也挺懵</div>2019-01-03</li><br/><li><span>Long</span> 👍（87） 💬（4）<div>不是专业DBA，遇到过几次数据库问题，有的能解决，有的好像除了重启或者干等着没啥好办法。
+昨天提到的问题3,我也没有测试出来Sending to client这个状态.是之前别人问到的,我也挺懵</p>2019-01-03</li><br/><li><span>Long</span> 👍（87） 💬（4）<p>不是专业DBA，遇到过几次数据库问题，有的能解决，有的好像除了重启或者干等着没啥好办法。
 MySQL5.6版本遇到的部分问题：
 
 1. 几个线程处于killed状态一直kill不掉（1天），然后备份的时候MySQL backup flush all tables with read lock的时候被阻塞，后面的线程只能等待flush table, kill backup以后也没有办法kill那几个killed状态的语句（processlist显示的killed状态的语句的就是show columns, show create table这样的），后面没办法，重启了server。（看到老师后面第25讲有关于kill的解释，非常期待新知识）
@@ -242,7 +242,7 @@ DBA以及他们团队要求重启。但是分析了几分钟后提供了几个�
 今天看了这期专栏，发现5.7的这个功能，query_rewrite，受教了。等我们升到5.7以后，可以实际操练下。上面的问题3，也可以用这个功能了（因为是新业务，新表，特殊sql，完全可以起到hotfix的作用）。
 
 
-请老师帮忙看下上面几次故障是否有更好，更专业的解决方案。多谢</div>2019-01-02</li><br/><li><span>Ryoma</span> 👍（73） 💬（13）<div>我之前的描述有点问题，其实想问的是：为什么加了 order by c desc，第一个定位c=20 的行，会加上间隙锁 (20,25) 和 next-key lock (15,20]？
+请老师帮忙看下上面几次故障是否有更好，更专业的解决方案。多谢</p>2019-01-02</li><br/><li><span>Ryoma</span> 👍（73） 💬（13）<p>我之前的描述有点问题，其实想问的是：为什么加了 order by c desc，第一个定位c=20 的行，会加上间隙锁 (20,25) 和 next-key lock (15,20]？
 
 如果没有order by c desc，第一次命中c=15时，只会加上next-key lock(10.15]；
 而有了order by c desc，我的理解是第一次命中c=20只需要加上next-key lock (15,20]
@@ -250,10 +250,10 @@ DBA以及他们团队要求重启。但是分析了几分钟后提供了几个�
 当然最后(20,25)还是加上了锁，老师的结论是对的，我也测试过了，但是我不知道如何解释。
 唯一能想到的解释是order by c desc 并不会改变优化2这个原则：即等值查询时，会向右遍历且最后一个值不满足等值条件；同时order by c desc 带来一个类似于优化2的向左遍历原则。
 进而导致最后的锁范围是(5,25)；而没有order by c desc的范围是(10,25]。
-</div>2019-01-03</li><br/><li><span>Tony Du</span> 👍（43） 💬（27）<div>对于上期问题的解答，有一点不是特别理解，
+</p>2019-01-03</li><br/><li><span>Tony Du</span> 👍（43） 💬（27）<p>对于上期问题的解答，有一点不是特别理解，
 因为order by desc，在索引c上向左遍历，对于（15， 25）这段区间没有问题，
 然后，扫描到c=10才停下来，理论上把（10，15]这个区间锁上就应该是完备的了呀。（5，10]这段区间是否锁上对结果应该没有影响呀，为什么会需要（5，10] 这段的next-key lock ?
-</div>2019-01-02</li><br/><li><span>Long</span> 👍（27） 💬（3）<div>老师好，看到有的同学在讨论锁的释放问题。
+</p>2019-01-02</li><br/><li><span>Long</span> 👍（27） 💬（3）<p>老师好，看到有的同学在讨论锁的释放问题。
 
 之前分析过一个锁表异常，很多用workbench或者类似客户端的同学可能会遇到，
 复现方式：
@@ -279,9 +279,9 @@ https:&#47;&#47;dev.mysql.com&#47;doc&#47;refman&#47;5.6&#47;en&#47;kill.html
 自己解决：kill 对应的thread_id，或者关闭执行窗口（这个时候会送个quit给server端）。
 别人解决：有super权限的人kill thread_id。
 
-关于kill的那个文章，其实对所有DDL，DML的操作释放过程，还没有全部搞清楚，期待老师的第25讲。</div>2019-01-02</li><br/><li><span>张永志</span> 👍（26） 💬（1）<div>分享一个主从切换时遇到的问题，主从切换前主库要改为只读，设置只读后，show master status发现binlog一直在变化，当时应用没断开。
+关于kill的那个文章，其实对所有DDL，DML的操作释放过程，还没有全部搞清楚，期待老师的第25讲。</p>2019-01-02</li><br/><li><span>张永志</span> 👍（26） 💬（1）<p>分享一个主从切换时遇到的问题，主从切换前主库要改为只读，设置只读后，show master status发现binlog一直在变化，当时应用没断开。
 主库并不是其他库的从库，怎么搞的呢？
-检查业务用户权限发现拥有super权限，查看授权语句原来是grant all on *.* to user，这里要说的是*.* 权限就太大了，而且这个也很容易被误解，需要特别注意。</div>2019-01-04</li><br/><li><span>Tony Du</span> 👍（17） 💬（8）<div>对于上期问题的解答，有一点不是特别理解，
+检查业务用户权限发现拥有super权限，查看授权语句原来是grant all on *.* to user，这里要说的是*.* 权限就太大了，而且这个也很容易被误解，需要特别注意。</p>2019-01-04</li><br/><li><span>Tony Du</span> 👍（17） 💬（8）<p>对于上期问题的解答，有一点不是特别理解，
 因为order by desc，在索引c上向左遍历，对于（15， 25）这段区间没有问题，
 然后，扫描到c=10才停下来，理论上把（10，15]这个区间锁上就应该是完备的了呀。（5，10]这段区间是否锁上对结果应该没有影响呀，为什么会需要（5，10] 这段的next-key lock ?
 2019-01-02
@@ -295,25 +295,25 @@ C=10还是要锁的，如果不锁可能被删除
 select * from t where c&gt;=15 and c&lt;=20 order by c asc lock in share mode;
 那锁的范围就应该是索引c上（10，25）了吧。
 同样查询条件，不同的order顺序，锁的范围不一样，稍微感觉有一点奇怪...
-</div>2019-01-03</li><br/><li><span>沙漠里的骆驼</span> 👍（15） 💬（1）<div>qps(查询语句)突然增大的情况，我们的实践是:
+</p>2019-01-03</li><br/><li><span>沙漠里的骆驼</span> 👍（15） 💬（1）<p>qps(查询语句)突然增大的情况，我们的实践是:
 1. 账号、接口级别的限流。
-2.引导到备库执行</div>2019-02-19</li><br/><li><span>Moby</span> 👍（12） 💬（6）<div>丁奇老师好，不好意思，学渣看得比较慢。关于前两期的问题，我有一点没搞懂。就是你说的：&quot;session A 在 select 语句锁的范围是 1.... ; 2.在主键索引上id=10、15、20三个行锁”，经我测试(MySQL版本：5.7.17-log; 隔离级别：可重复读)：“session 
-A: begin; select * from t where c&gt;=15 and c&lt;=20 order by c desc lock in share mode;&quot;、&quot;session B:  update t set c=1010 where id=10; Query ok&quot;、”session C:  update t set c=1515 where id=15;block...“。即：为什么id=10这一行可以更新数据？而id=15、20这两行更新数据就被阻塞？</div>2019-01-21</li><br/><li><span>mongo</span> 👍（11） 💬（1）<div>看完了《算法导论》那本书的前20章，看到了动态规划。再来看老师的专栏，发现我终于可以无障碍get到本专栏的知识了。</div>2019-07-18</li><br/><li><span>某、人</span> 👍（10） 💬（3）<div>老师,我有几个问题:
+2.引导到备库执行</p>2019-02-19</li><br/><li><span>Moby</span> 👍（12） 💬（6）<p>丁奇老师好，不好意思，学渣看得比较慢。关于前两期的问题，我有一点没搞懂。就是你说的：&quot;session A 在 select 语句锁的范围是 1.... ; 2.在主键索引上id=10、15、20三个行锁”，经我测试(MySQL版本：5.7.17-log; 隔离级别：可重复读)：“session 
+A: begin; select * from t where c&gt;=15 and c&lt;=20 order by c desc lock in share mode;&quot;、&quot;session B:  update t set c=1010 where id=10; Query ok&quot;、”session C:  update t set c=1515 where id=15;block...“。即：为什么id=10这一行可以更新数据？而id=15、20这两行更新数据就被阻塞？</p>2019-01-21</li><br/><li><span>mongo</span> 👍（11） 💬（1）<p>看完了《算法导论》那本书的前20章，看到了动态规划。再来看老师的专栏，发现我终于可以无障碍get到本专栏的知识了。</p>2019-07-18</li><br/><li><span>某、人</span> 👍（10） 💬（3）<p>老师,我有几个问题:
 1.如果把order by去掉或者order by c asc,往右扫描,为什么没有加[25,30)next-key lock?
 2.执行session A,为什么slow log里的Rows_examined为2?按照答案来讲不应该是为3嘛
 3.thread states里sending data包括sending data to the client,
 另外还有一种state是Sending to client(5.7.8之前叫Writing to net)是writing a packet to the client.
-请问针对发送数据给客户端,这两种状态有什么区别？</div>2019-01-02</li><br/><li><span>不二</span> 👍（9） 💬（1）<div>老师，曾剑同学的问题
+请问针对发送数据给客户端,这两种状态有什么区别？</p>2019-01-02</li><br/><li><span>不二</span> 👍（9） 💬（1）<p>老师，曾剑同学的问题
 关于上期遗留问题的解答，我有一点疑惑：
 解答中的1中，第一个要定位的是索引 c 上“最右边的”c=20 的行，为啥只会加上间隙锁（20,25）和next-key lock(15,20]呢，为啥不是两个next-key lock(15,20]和(20,25]呢？25上的行锁难道是退化的？老师上一篇文章中说到加锁的基本原则中第一点是加锁的基本单位是next-key lock，而退化都是基于索引上的等值查询才会发生呀？盼老师指点迷津。
 您给回答是定位到c=20的时候，是等值查询，所以加的是(20,25)的间隙锁，25的行锁退化了，那么在上一期中的案例五：唯一索引范围锁 bug，那id&lt;=15,不也是先定位到id=15，然后向右扫描，那应该也是等值查询，那么应该加的是（15，20）间隙锁，那为啥你说的加的是（15，20],为啥这个id=20的行锁也加上了呢，为啥同样是范围查询，一个行锁退化了，一个没有退化呢，求老师指点迷津
 
-</div>2019-01-04</li><br/><li><span>张永志</span> 👍（9） 💬（1）<div>我是从Oracle转到MySQL来的，先接触的Oracle再看MySQL就经常喜欢拿两者对比，包括表数据存储结构，二级索引的异同，redo，binlog，锁机制，以及默认隔离级别。
+</p>2019-01-04</li><br/><li><span>张永志</span> 👍（9） 💬（1）<p>我是从Oracle转到MySQL来的，先接触的Oracle再看MySQL就经常喜欢拿两者对比，包括表数据存储结构，二级索引的异同，redo，binlog，锁机制，以及默认隔离级别。
 研究锁后，根据自己的理解得出一个结论，MySQL默认隔离级别选为RR也是无奈之举！
 因为当时binlog还是语句格式，为了保证binlog事务顺序正确就得有gap和next key锁。
 而对开发人员来说，他们未必清楚事务隔离级别，且大多数开发都是从Oracle转向MySQL的，故果断将隔离级别全部调整为RC。
 
-</div>2019-01-04</li><br/><li><span>zws</span> 👍（8） 💬（1）<div>老师，如果不是专业的dba看着专栏是不是有点太深了。 老师可不可以把文章分下类，哪部分可以适合业务开发人员看。</div>2019-04-24</li><br/><li><span>刘昆</span> 👍（8） 💬（6）<div>老师你好，上期问题里面我遇到一下问题：
+</p>2019-01-04</li><br/><li><span>zws</span> 👍（8） 💬（1）<p>老师，如果不是专业的dba看着专栏是不是有点太深了。 老师可不可以把文章分下类，哪部分可以适合业务开发人员看。</p>2019-04-24</li><br/><li><span>刘昆</span> 👍（8） 💬（6）<p>老师你好，上期问题里面我遇到一下问题：
 insert into t values(6,5,6) =&gt; block
 insert into t values(4,5,6) =&gt; no block
 insert into t values(6,4,6) =&gt; no block
@@ -321,5 +321,5 @@ insert into t values(7,5,6) =&gt; block
 insert into t values(7,4,6) =&gt; no block
 根据你的解答，c 上面的 next-key lock 在 (5, 10]，那么上面的情况应该都不会阻塞还对呀？
 Server version: 5.7.24-log MySQL Community Server (GPL)
-</div>2019-02-02</li><br/>
+</p>2019-02-02</li><br/>
 </ul>

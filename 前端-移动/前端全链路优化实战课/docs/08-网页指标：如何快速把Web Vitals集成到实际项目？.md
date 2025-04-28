@@ -289,7 +289,7 @@ export class BaseTrace implements BaseTraceInterface {
 
 关于在使用Web Vitals过程中遇到的问题和建议，非常欢迎和我交流，一起共同进步和成长。欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。我们下节课见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>苏果果</span> 👍（0） 💬（0）<div>完整源码入口：
-https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</div>2024-07-18</li><br/><li><span>blue</span> 👍（2） 💬（1）<div>三桥老师，这些性能指标，只有在页面刷新的时候才能调用web-vitals回调，那么单页应用的切换怎么监听每个页面的性能指标？</div>2024-05-14</li><br/><li><span>westfall</span> 👍（1） 💬（1）<div>Hello，三桥老师，我感觉开发者更关心的应该是如何通过 web-vitals 的数据分析和解决性能问题，后面会详细讲解吗？</div>2024-05-07</li><br/><li><span>小尤</span> 👍（0） 💬（1）<div>老师，
-web-vitals Safari 只支持 FCP和TTFB，对于移动端来说，衡量页面首屏渲染是否足够？</div>2024-07-03</li><br/>
+<li><span>苏果果</span> 👍（0） 💬（0）<p>完整源码入口：
+https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</p>2024-07-18</li><br/><li><span>blue</span> 👍（2） 💬（1）<p>三桥老师，这些性能指标，只有在页面刷新的时候才能调用web-vitals回调，那么单页应用的切换怎么监听每个页面的性能指标？</p>2024-05-14</li><br/><li><span>westfall</span> 👍（1） 💬（1）<p>Hello，三桥老师，我感觉开发者更关心的应该是如何通过 web-vitals 的数据分析和解决性能问题，后面会详细讲解吗？</p>2024-05-07</li><br/><li><span>小尤</span> 👍（0） 💬（1）<p>老师，
+web-vitals Safari 只支持 FCP和TTFB，对于移动端来说，衡量页面首屏渲染是否足够？</p>2024-07-03</li><br/>
 </ul>

@@ -263,7 +263,7 @@ Pulumi也吸收了Terraform的经验，支持了亚马逊云科技、微软Azure
 
 欢迎你在留言区分享你的思考或疑惑。如果这一讲对你有启发，别忘了分享给身边更多朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>alex run</span> 👍（0） 💬（2）<div>老师，为什么说ansible是不可重复的呢？ ansible操作同一资源，如果配置有变化才会change，没变化是不会执行的</div>2024-04-13</li><br/><li><span>🐭 🐹 🐭 🐹 🐭</span> 👍（0） 💬（1）<div>老师之后会有k8s网络问题的排查讲解吗</div>2024-03-27</li><br/><li><span>yayiyaya</span> 👍（3） 💬（0）<div>思考题：
+<li><span>alex run</span> 👍（0） 💬（2）<p>老师，为什么说ansible是不可重复的呢？ ansible操作同一资源，如果配置有变化才会change，没变化是不会执行的</p>2024-04-13</li><br/><li><span>🐭 🐹 🐭 🐹 🐭</span> 👍（0） 💬（1）<p>老师之后会有k8s网络问题的排查讲解吗</p>2024-03-27</li><br/><li><span>yayiyaya</span> 👍（3） 💬（0）<p>思考题：
 provider &quot;aws&quot; {
   region = &quot;us-east-1&quot;  
 }
@@ -309,5 +309,5 @@ resource &quot;aws_security_group&quot; &quot;http_sg&quot; {
     cidr_blocks = [&quot;0.0.0.0&#47;0&quot;]
   }
 }
-</div>2024-03-27</li><br/><li><span>二十三</span> 👍（2） 💬（2）<div>怎么感觉使用terraform 各种配置还要学习语法、还不如自己写代码封装云api接口啊？ </div>2024-04-19</li><br/><li><span>Joe Black</span> 👍（0） 💬（0）<div>Terraform好像不让在中国用……</div>2024-04-13</li><br/>
+</p>2024-03-27</li><br/><li><span>二十三</span> 👍（2） 💬（2）<p>怎么感觉使用terraform 各种配置还要学习语法、还不如自己写代码封装云api接口啊？ </p>2024-04-19</li><br/><li><span>Joe Black</span> 👍（0） 💬（0）<p>Terraform好像不让在中国用……</p>2024-04-13</li><br/>
 </ul>

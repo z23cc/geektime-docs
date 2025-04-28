@@ -151,13 +151,13 @@ Tracepoint这种方式不仅使用起来更加方便，而且它的性能开销�
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，我们下一讲见。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>邵亚方</span> 👍（12） 💬（0）<div>
+<li><span>邵亚方</span> 👍（12） 💬（0）<p>
 课后作业答案：
 - 请问我们提到的 tracepoint 观察方式，或者 tcpretrans 这个工具，可以追踪收到的 TCP 重传包吗？为什么？
-不可以，因为tracepoint是在发送的地方进行打点来追踪的重传包，所以无法追踪收到的重传包。</div>2020-10-11</li><br/><li><span>mazhen</span> 👍（10） 💬（1）<div>从本文了解到的ftrace简直打开了新天地。
-学习后写了篇ftrace的介绍文章 https:&#47;&#47;github.com&#47;mz1999&#47;blog&#47;blob&#47;master&#47;docs&#47;ftrace.md</div>2021-06-30</li><br/><li><span>石维康</span> 👍（2） 💬（0）<div>『如果你觉得实现内核模块比较麻烦，可以借助 ftrace 框架来使用 Kprobe。Brendan Gregg 实现的tcpretrans采用的就是这种方式，你也可以直接使用它这个工具来追踪 TCP 重传。』
+不可以，因为tracepoint是在发送的地方进行打点来追踪的重传包，所以无法追踪收到的重传包。</p>2020-10-11</li><br/><li><span>mazhen</span> 👍（10） 💬（1）<p>从本文了解到的ftrace简直打开了新天地。
+学习后写了篇ftrace的介绍文章 https:&#47;&#47;github.com&#47;mz1999&#47;blog&#47;blob&#47;master&#47;docs&#47;ftrace.md</p>2021-06-30</li><br/><li><span>石维康</span> 👍（2） 💬（0）<p>『如果你觉得实现内核模块比较麻烦，可以借助 ftrace 框架来使用 Kprobe。Brendan Gregg 实现的tcpretrans采用的就是这种方式，你也可以直接使用它这个工具来追踪 TCP 重传。』
 
-『。它通过解析该 Tracepoint 实现了对 TCP 重传事件的追踪，而不再使用之前的 Kprobe 方式，』</div>2020-09-22</li><br/><li><span>lxwCoding</span> 👍（0） 💬（0）<div>弱网情况下如何保证网络数据传输</div>2024-08-15</li><br/><li><span>明翼</span> 👍（0） 💬（0）<div>有个问题请教，一次重传，总发包数也会增加，那么重传率为什么可以超过百分之百？</div>2023-05-02</li><br/><li><span>逗比</span> 👍（0） 💬（0）<div>最近遇到一个情况，关掉接收方的网卡GRO就没有重传，乱序，重复ack现象，但是不知道为什么
+『。它通过解析该 Tracepoint 实现了对 TCP 重传事件的追踪，而不再使用之前的 Kprobe 方式，』</p>2020-09-22</li><br/><li><span>lxwCoding</span> 👍（0） 💬（0）<p>弱网情况下如何保证网络数据传输</p>2024-08-15</li><br/><li><span>明翼</span> 👍（0） 💬（0）<p>有个问题请教，一次重传，总发包数也会增加，那么重传率为什么可以超过百分之百？</p>2023-05-02</li><br/><li><span>逗比</span> 👍（0） 💬（0）<p>最近遇到一个情况，关掉接收方的网卡GRO就没有重传，乱序，重复ack现象，但是不知道为什么
 
-场景：A（虚拟机ip） -&gt; B(虚拟机ip:port)， ipvs转发到某一台pod ip，其实就是一个普通的k8s service</div>2022-08-30</li><br/><li><span>尼克</span> 👍（0） 💬（2）<div>请问老师，路由变化为什么会导致发送包乱序呢？这段时间生产有个问题，ospf刷新的时候会有很多的重传，但是我不理解为什么路由变化会导致乱序，我理解的seq 不应该是同一个包是一直不变的吗，谢谢</div>2021-01-28</li><br/>
+场景：A（虚拟机ip） -&gt; B(虚拟机ip:port)， ipvs转发到某一台pod ip，其实就是一个普通的k8s service</p>2022-08-30</li><br/><li><span>尼克</span> 👍（0） 💬（2）<p>请问老师，路由变化为什么会导致发送包乱序呢？这段时间生产有个问题，ospf刷新的时候会有很多的重传，但是我不理解为什么路由变化会导致乱序，我理解的seq 不应该是同一个包是一直不变的吗，谢谢</p>2021-01-28</li><br/>
 </ul>

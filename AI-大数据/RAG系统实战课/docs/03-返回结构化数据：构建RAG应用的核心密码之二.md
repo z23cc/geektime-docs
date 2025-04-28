@@ -288,15 +288,15 @@ messages=[
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>张申傲</span> 👍（11） 💬（1）<div>第3讲打卡~
+<li><span>张申傲</span> 👍（11） 💬（1）<p>第3讲打卡~
 
 思考题：老师课程中的示例，基本都是在Prompt去做优化，指导LLM生成特定的结构化数据，这种方式在大多数情况下没有问题，但是由于LLM生成的方式本质上是基于概率的，会存在一定的随机性，不一定会完全符合指定的结构。
 
 为了更好地实现格式化输出，可以使用LLM的工具调用(tool-calling&#47;functiom-calling)功能，即在调用LLM的API时，传入可选择的工具列表，并详细描述工具调用参数的格式。这样LLM推理出需要调用工具时，就会生成工具调用的参数，这个参数是完全满足指定的结构(如json)的。通过这种方式，可以让LLM更加稳定地生成结构化数据。目前大多数主流的LLM都支持工具调用功能了。
 
-我在实际的项目中实现过一个基于自然语言的SQL查询代理，就可以利用LLM的tool-calling功能，生成结构化的SQL，并实际执行获取查询结果。感兴趣的同学可以参考我的文章：https:&#47;&#47;blog.csdn.net&#47;weixin_34452850&#47;article&#47;details&#47;141677371 </div>2024-09-06</li><br/><li><span>grok</span> 👍（3） 💬（1）<div>老师请问这个json schema是否有帮助？
-“Introducing Structured Outputs in the API” -- https:&#47;&#47;openai.com&#47;index&#47;introducing-structured-outputs-in-the-api&#47;</div>2024-09-06</li><br/><li><span>明辰</span> 👍（2） 💬（1）<div>老师我有一个问题请教
-我们面对复杂问题的时候，prompt可能会写很长（尤其是增加了例子的情况），那么到线上应用的时候，也是保留完整的prompt嘛，这样把例子放到prompt里是否会增加不必要的成本</div>2024-09-12</li><br/><li><span>Luo</span> 👍（0） 💬（1）<div>我一般在提示词里使用下面的描述：
+我在实际的项目中实现过一个基于自然语言的SQL查询代理，就可以利用LLM的tool-calling功能，生成结构化的SQL，并实际执行获取查询结果。感兴趣的同学可以参考我的文章：https:&#47;&#47;blog.csdn.net&#47;weixin_34452850&#47;article&#47;details&#47;141677371 </p>2024-09-06</li><br/><li><span>grok</span> 👍（3） 💬（1）<p>老师请问这个json schema是否有帮助？
+“Introducing Structured Outputs in the API” -- https:&#47;&#47;openai.com&#47;index&#47;introducing-structured-outputs-in-the-api&#47;</p>2024-09-06</li><br/><li><span>明辰</span> 👍（2） 💬（1）<p>老师我有一个问题请教
+我们面对复杂问题的时候，prompt可能会写很长（尤其是增加了例子的情况），那么到线上应用的时候，也是保留完整的prompt嘛，这样把例子放到prompt里是否会增加不必要的成本</p>2024-09-12</li><br/><li><span>Luo</span> 👍（0） 💬（1）<p>我一般在提示词里使用下面的描述：
 &quot;&quot;&quot;
 输出的格式要求如下：
 The output should be a markdown code snippet formatted in the following schema, including the leading and trailing &quot;```json&quot; and &quot;```&quot;:
@@ -360,7 +360,7 @@ The output should be a markdown code snippet formatted in the following schema, 
 	],
 	&quot;difficulty&quot;: &quot;中等&quot;
 }
-&quot;&quot;&quot;</div>2024-10-15</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<div>更改 prompt</div>2024-09-07</li><br/><li><span>Luo</span> 👍（1） 💬（0）<div>我一般在提示词里使用下面的描述：
+&quot;&quot;&quot;</p>2024-10-15</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<p>更改 prompt</p>2024-09-07</li><br/><li><span>Luo</span> 👍（1） 💬（0）<p>我一般在提示词里使用下面的描述：
 &quot;&quot;&quot;
 输出的格式要求如下：
 The output should be a markdown code snippet formatted in the following schema, including the leading and trailing &quot;```json&quot; and &quot;```&quot;:
@@ -424,5 +424,5 @@ The output should be a markdown code snippet formatted in the following schema, 
 	],
 	&quot;difficulty&quot;: &quot;中等&quot;
 }
-&quot;&quot;&quot;</div>2024-10-15</li><br/><li><span>Geek_fbf3a3</span> 👍（0） 💬（0）<div>学习到了，比如：LLM的工具调用(tool-calling&#47;functiom-calling)功能，以为数据结构化是个很简单的问题，没想到还有那么多的门道</div>2024-11-05</li><br/>
+&quot;&quot;&quot;</p>2024-10-15</li><br/><li><span>Geek_fbf3a3</span> 👍（0） 💬（0）<p>学习到了，比如：LLM的工具调用(tool-calling&#47;functiom-calling)功能，以为数据结构化是个很简单的问题，没想到还有那么多的门道</p>2024-11-05</li><br/>
 </ul>

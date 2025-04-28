@@ -101,10 +101,10 @@ $$ F(x) = {\\rm sign} \[\\sum\\limits\_{m = 1}^M \\alpha\_m f\_m(x)] $$
 
 ![](https://static001.geekbang.org/resource/image/11/6e/118d5a95c813c3be33d8fec2d182346e.jpg?wh=2379%2A2269)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>我心飞扬</span> 👍（3） 💬（1）<div>MultiBoosting由于集合了Bagging，Wagging，AdaBoost，可以有效的降低误差和方差，特别是误差。但是训练成本和预测成本都会显著增加。 
-Iterative Bagging相比Bagging会降低误差，但是方差上升。由于Bagging本身就是一种降低方差的算法，所以Iterative Bagging相当于Bagging与单分类器的折中。</div>2018-08-02</li><br/><li><span>InsomniaTony</span> 👍（0） 💬（1）<div>如果对基于决策树的方法感兴趣的话，可以看Gilles Louppe的博士毕业论文Understanding Random Forest。个人觉得很有帮助</div>2018-10-20</li><br/><li><span>林彦</span> 👍（0） 💬（1）<div>MultiBoosting如果不引入有泊松分布的权重来对样本作wagging，不知道在性能和效果上是否能比Adaboost达到更好的平衡。
+<li><span>我心飞扬</span> 👍（3） 💬（1）<p>MultiBoosting由于集合了Bagging，Wagging，AdaBoost，可以有效的降低误差和方差，特别是误差。但是训练成本和预测成本都会显著增加。 
+Iterative Bagging相比Bagging会降低误差，但是方差上升。由于Bagging本身就是一种降低方差的算法，所以Iterative Bagging相当于Bagging与单分类器的折中。</p>2018-08-02</li><br/><li><span>InsomniaTony</span> 👍（0） 💬（1）<p>如果对基于决策树的方法感兴趣的话，可以看Gilles Louppe的博士毕业论文Understanding Random Forest。个人觉得很有帮助</p>2018-10-20</li><br/><li><span>林彦</span> 👍（0） 💬（1）<p>MultiBoosting如果不引入有泊松分布的权重来对样本作wagging，不知道在性能和效果上是否能比Adaboost达到更好的平衡。
 
 Iterative Boosting方法的文章不好找，有没有更具体的称呼。
 
-从实践中看，这几年GBDT，XGBoost，Random Forest太好用了。除了它们和基本的几类集成学习方法外，介绍其他的延伸集成学习方法通俗易懂，正确，且不只是概述的中文文章在学术领域之外很少。</div>2018-08-18</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-06-11</li><br/><li><span>wsstony</span> 👍（0） 💬（0）<div>有没有实际的实战例子，这样结合例子和理论，加深理解。</div>2020-01-16</li><br/><li><span>周平</span> 👍（0） 💬（0）<div>没看太懂，需要多次学习</div>2018-08-03</li><br/>
+从实践中看，这几年GBDT，XGBoost，Random Forest太好用了。除了它们和基本的几类集成学习方法外，介绍其他的延伸集成学习方法通俗易懂，正确，且不只是概述的中文文章在学术领域之外很少。</p>2018-08-18</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-06-11</li><br/><li><span>wsstony</span> 👍（0） 💬（0）<p>有没有实际的实战例子，这样结合例子和理论，加深理解。</p>2020-01-16</li><br/><li><span>周平</span> 👍（0） 💬（0）<p>没看太懂，需要多次学习</p>2018-08-03</li><br/>
 </ul>

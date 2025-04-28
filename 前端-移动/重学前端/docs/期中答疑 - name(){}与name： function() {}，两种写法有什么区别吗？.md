@@ -242,7 +242,7 @@ atoi("1001")
 
 好了，今天的答疑环节就进行到这里，你也可以把自己想要解答的问题留言。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geeker1992</span> 👍（41） 💬（1）<div>我知道答案了。在 promise 出现之前，javascript 并没有异步，有异步的是宿主环境。</div>2019-04-04</li><br/><li><span>Geeker1992</span> 👍（10） 💬（1）<div>老师，为什么说没有了微任务就没有了异步？不是还有 setTimeout 的吗？</div>2019-04-03</li><br/><li><span>哈哈</span> 👍（0） 💬（2）<div>function foo(a) {
+<li><span>Geeker1992</span> 👍（41） 💬（1）<p>我知道答案了。在 promise 出现之前，javascript 并没有异步，有异步的是宿主环境。</p>2019-04-04</li><br/><li><span>Geeker1992</span> 👍（10） 💬（1）<p>老师，为什么说没有了微任务就没有了异步？不是还有 setTimeout 的吗？</p>2019-04-03</li><br/><li><span>哈哈</span> 👍（0） 💬（2）<p>function foo(a) {
     var a;
     return a;
 }
@@ -253,7 +253,7 @@ function bar(a) {
 [foo(&#39;hello&#39;), bar(&#39;hello&#39;)]&#47;&#47;输出结果为：hello，bye
 两个函数内部的 return a; 根据作用域链寻找都是返回函数作用域的 a 吧。
 第二个输出我可以理解，可是第一个的输出结果是 hello ，
-第一个函数的a 不是undefined 吗？</div>2019-05-27</li><br/><li><span>阿成</span> 👍（8） 💬（0）<div>&#47;**
+第一个函数的a 不是undefined 吗？</p>2019-05-27</li><br/><li><span>阿成</span> 👍（8） 💬（0）<p>&#47;**
  * @param {string} str
  *&#47;
 function str2num (str) {
@@ -331,10 +331,10 @@ void function test () {
   assert(&#39;.1&#39;)
   console.log(&#39;All right.&#39;)
 }()
-</div>2019-03-30</li><br/><li><span>自由之翼</span> 👍（3） 💬（1）<div>一般都是缓存 数据 吧 ,个人感觉 缓存 js css 纯属没事儿找事儿.</div>2019-04-03</li><br/><li><span>Geek_c43534</span> 👍（2） 💬（2）<div>老师，jquery ajax 同步请求的原理是?目前用axios库，不支持同步请求，如果希望执行同步请求有什么解决办法？</div>2019-04-01</li><br/><li><span>weineel</span> 👍（2） 💬（2）<div>老师您好，把JS代码缓存在 localStorage 中，从 localStorage 取出后怎么执行？ 如果缓存的是 css 呢？</div>2019-03-30</li><br/><li><span>EmilyLucky</span> 👍（1） 💬（0）<div>好像对异步任务的分类又多了一点理解。异步中任务分为宏任务和微任务，微任务是后来出现的，它其实是JS引擎内部的机制，而宏任务是宿主环境下的异步。老师，这么理解对吗？那么设计微任务的初衷仅仅就是为了让JS引擎内部有异步么？</div>2020-05-12</li><br/><li><span>xiaolu289</span> 👍（1） 💬（0）<div>js如果取出来是字符串，目前我想到一个方案是用eval去执行，不过感觉直接用localstrage存储js代码这种操作可能会有安全问题，毕竟locastrage在浏览器是随便我怎么改都行的....
+</p>2019-03-30</li><br/><li><span>自由之翼</span> 👍（3） 💬（1）<p>一般都是缓存 数据 吧 ,个人感觉 缓存 js css 纯属没事儿找事儿.</p>2019-04-03</li><br/><li><span>Geek_c43534</span> 👍（2） 💬（2）<p>老师，jquery ajax 同步请求的原理是?目前用axios库，不支持同步请求，如果希望执行同步请求有什么解决办法？</p>2019-04-01</li><br/><li><span>weineel</span> 👍（2） 💬（2）<p>老师您好，把JS代码缓存在 localStorage 中，从 localStorage 取出后怎么执行？ 如果缓存的是 css 呢？</p>2019-03-30</li><br/><li><span>EmilyLucky</span> 👍（1） 💬（0）<p>好像对异步任务的分类又多了一点理解。异步中任务分为宏任务和微任务，微任务是后来出现的，它其实是JS引擎内部的机制，而宏任务是宿主环境下的异步。老师，这么理解对吗？那么设计微任务的初衷仅仅就是为了让JS引擎内部有异步么？</p>2020-05-12</li><br/><li><span>xiaolu289</span> 👍（1） 💬（0）<p>js如果取出来是字符串，目前我想到一个方案是用eval去执行，不过感觉直接用localstrage存储js代码这种操作可能会有安全问题，毕竟locastrage在浏览器是随便我怎么改都行的....
 css的话，直接插一个style不就好了嘛....js其实也可以插一个script....所以具体什么场景采用什么方案，还得根据业务场景来决定
 
-不知道我理解得是否正确..</div>2019-04-01</li><br/><li><span>阿成</span> 👍（1） 💬（0）<div>写的过程中遇到了个精度问题：
-比如13.4e-7，一开始我的结果是0.0000013399999999999999，然后我把乘法改成了对应的除法，就可以了。这说明JS引擎对除法的处理不是简单的乘以相应的倒数，具体的机制不知道 winter 老师能不能给个解释。</div>2019-03-30</li><br/><li><span>Jy</span> 👍（1） 💬（0）<div>name()和name: function，本质上前面的是Method，后面是函数属性。
-具体的差异不大，有个小栗子: 在name: function中使用super会报错，而name()不会。</div>2019-03-30</li><br/><li><span>momo</span> 👍（0） 💬（0）<div>那个函数使用，o.func()和a=o.func这俩，如果函数内部使用了this，还是会有差别的，不过，一般不会有人用a=o.func这种方式的吧…</div>2020-02-25</li><br/><li><span>blueBean</span> 👍（0） 💬（1）<div>请问类和类型有什么区别呢</div>2020-02-13</li><br/><li><span>洛小贼</span> 👍（0） 💬（0）<div>请问第4个问题产生这种差异是否是因为o1用了闭包所以可以访问自己，o2没有用闭包所以不能访问它自身？</div>2019-06-16</li><br/><li><span>veath</span> 👍（0） 💬（0）<div>请问下，link preload 解析执行时机和构建 CSSOM一样吗---html从上往下解析到link preload才会解析执行？还是说并行解析html 和preload</div>2019-04-16</li><br/>
+不知道我理解得是否正确..</p>2019-04-01</li><br/><li><span>阿成</span> 👍（1） 💬（0）<p>写的过程中遇到了个精度问题：
+比如13.4e-7，一开始我的结果是0.0000013399999999999999，然后我把乘法改成了对应的除法，就可以了。这说明JS引擎对除法的处理不是简单的乘以相应的倒数，具体的机制不知道 winter 老师能不能给个解释。</p>2019-03-30</li><br/><li><span>Jy</span> 👍（1） 💬（0）<p>name()和name: function，本质上前面的是Method，后面是函数属性。
+具体的差异不大，有个小栗子: 在name: function中使用super会报错，而name()不会。</p>2019-03-30</li><br/><li><span>momo</span> 👍（0） 💬（0）<p>那个函数使用，o.func()和a=o.func这俩，如果函数内部使用了this，还是会有差别的，不过，一般不会有人用a=o.func这种方式的吧…</p>2020-02-25</li><br/><li><span>blueBean</span> 👍（0） 💬（1）<p>请问类和类型有什么区别呢</p>2020-02-13</li><br/><li><span>洛小贼</span> 👍（0） 💬（0）<p>请问第4个问题产生这种差异是否是因为o1用了闭包所以可以访问自己，o2没有用闭包所以不能访问它自身？</p>2019-06-16</li><br/><li><span>veath</span> 👍（0） 💬（0）<p>请问下，link preload 解析执行时机和构建 CSSOM一样吗---html从上往下解析到link preload才会解析执行？还是说并行解析html 和preload</p>2019-04-16</li><br/>
 </ul>

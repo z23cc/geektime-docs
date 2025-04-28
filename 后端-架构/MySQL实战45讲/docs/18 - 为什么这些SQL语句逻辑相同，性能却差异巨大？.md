@@ -308,7 +308,7 @@ mysql> select * from t limit N, M-N+1;
 > @老杨同志 提出了重新整理的方法、@雪中鼠\[悠闲] 提到了用rowid的方法，是类似的思路，就是让表里面保存一个无空洞的自增值，这样就可以用我们的随机算法1来实现；  
 > @吴宇晨 提到了拿到第一个值以后，用id迭代往下找的方案，利用了主键索引的有序性。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>冠超</span> 👍（34） 💬（2）<div>非常感谢老师分享的内容，实打实地学到了。这里提个建议，希望老师能介绍一下设计表的时候要怎么考虑这方面的知识哈😊</div>2019-01-28</li><br/><li><span>700</span> 👍（8） 💬（6）<div>老师您好，有个问题恳请指教。背景如下，我长话短说：
+<li><span>冠超</span> 👍（34） 💬（2）<p>非常感谢老师分享的内容，实打实地学到了。这里提个建议，希望老师能介绍一下设计表的时候要怎么考虑这方面的知识哈😊</p>2019-01-28</li><br/><li><span>700</span> 👍（8） 💬（6）<p>老师您好，有个问题恳请指教。背景如下，我长话短说：
 
 mysql&gt;select @@version;
 5.6.30-log
@@ -346,7 +346,7 @@ SELECT t1.id, t1.user_id
 2)为什么 t3.ootime 也用到索引了，从 key_len 看出。t3.ootime 是 varchar 类型的，而 UNIX_TIMESTAMP(&#39;2022-01-18&#39;) 是数值，不是发生了隐式转换吗？
 
 请老师指点。
-</div>2019-01-18</li><br/><li><span>可凡不凡</span> 👍（23） 💬（21）<div>1.老师好
+</p>2019-01-18</li><br/><li><span>可凡不凡</span> 👍（23） 💬（21）<p>1.老师好
 2.如果在用一个 MySQL 关键字做字段,并且字段上索引,当我用这个索引作为唯一查询条件的时候 ,会 造  成隐式的转换吗? 
 例如:SELECT * FROM b_side_order WHERE CODE = 332924 ; (code 上有索引)
 3. mysql5.6  code 上有索引  intime 上没有索引
@@ -360,8 +360,8 @@ SELECT * FROM b_side_order WHERE CODE = 332924 ;
  
 
 
-</div>2018-12-25</li><br/><li><span>赖阿甘</span> 👍（42） 💬（12）<div>“mysql&gt;select l.operator from tradelog l , trade_detail d where d.tradeid=l.tradeid and d.id=4;”
-图6上面那句sql是不是写错了。d.tradeid=l.tradeid是不是该写成l.tradeid = d.tradeid？不然函数会作用在索引字段上，就只能全表扫描了</div>2018-12-24</li><br/><li><span>老杨同志</span> 👍（179） 💬（30）<div>感谢老师鼓励，我本人工作时间比较长，有一定的基础，听老师的课还是收获很大。每次公司内部有技术分享，我都去听课，但是多数情况，一两个小时的分享，就只有一两句话受益。老师的每篇文章都能命中我的知识盲点，感觉太别爽。
+</p>2018-12-25</li><br/><li><span>赖阿甘</span> 👍（42） 💬（12）<p>“mysql&gt;select l.operator from tradelog l , trade_detail d where d.tradeid=l.tradeid and d.id=4;”
+图6上面那句sql是不是写错了。d.tradeid=l.tradeid是不是该写成l.tradeid = d.tradeid？不然函数会作用在索引字段上，就只能全表扫描了</p>2018-12-24</li><br/><li><span>老杨同志</span> 👍（179） 💬（30）<p>感谢老师鼓励，我本人工作时间比较长，有一定的基础，听老师的课还是收获很大。每次公司内部有技术分享，我都去听课，但是多数情况，一两个小时的分享，就只有一两句话受益。老师的每篇文章都能命中我的知识盲点，感觉太别爽。
 
 对应今天的隐式类型转换问题也踩过坑。
 我们有个任务表记录待执行任务，表结构简化后如下：
@@ -383,8 +383,8 @@ select * from task_history where task_rfid =99;
 运维时的套路是，猜测主键task_id的范围，怎么猜，我原表有creat_time字段，我会先查
 select max(task_id) from task_history   然后再看看 select * from task_history  where task_id = maxId - 10000的时间，估计出大概的id范围。然后语句变成
 select * from task_history where task_rfid =99 and id between ？ and ？;
-</div>2018-12-24</li><br/><li><span>探索无止境</span> 👍（230） 💬（14）<div>老师，有道面试题困扰了很久，求指教！题目是这样的，a表有100条记录，b表有10000条记录，两张表做关联查询时，是将a表放前面效率高，还是b表放前面效率高？网上各种答案，但感觉都没有十分的说服力，期待老师的指点！</div>2019-01-13</li><br/><li><span>geraltlaush</span> 👍（113） 💬（9）<div>索引字段不能进行函数操作，但是索引字段的参数可以玩函数，一言以蔽之</div>2018-12-24</li><br/><li><span>风轨</span> 👍（63） 💬（4）<div>刚试了文中穿插得思考题:当主键是整数类型条件是字符串时，会走索引。
+</p>2018-12-24</li><br/><li><span>探索无止境</span> 👍（230） 💬（14）<p>老师，有道面试题困扰了很久，求指教！题目是这样的，a表有100条记录，b表有10000条记录，两张表做关联查询时，是将a表放前面效率高，还是b表放前面效率高？网上各种答案，但感觉都没有十分的说服力，期待老师的指点！</p>2019-01-13</li><br/><li><span>geraltlaush</span> 👍（113） 💬（9）<p>索引字段不能进行函数操作，但是索引字段的参数可以玩函数，一言以蔽之</p>2018-12-24</li><br/><li><span>风轨</span> 👍（63） 💬（4）<p>刚试了文中穿插得思考题:当主键是整数类型条件是字符串时，会走索引。
 文中提到了当字符串和数字比较时会把字符串转化为数字，所以隐式转换不会应用到字段上，所以可以走索引。
-另外，select &#39;a&#39; = 0 ; 的结果是1，说明无法转换成数字的字符串都被转换成0来处理了。</div>2018-12-24</li><br/><li><span>crazyone</span> 👍（57） 💬（5）<div>老师你好，我在执行explain的时候，发现extra 里面 有using where，using index ，using index condition 能具体讲下这几个的区别吗？</div>2018-12-26</li><br/><li><span>饭粒</span> 👍（30） 💬（1）<div>感觉要使用索引就不能“破坏”索引原有的顺序，这节的函数操作，隐式转换都“破坏”了原有的顺序。前一节的select * from t where city in in (“杭州”,&quot; 苏州 &quot;) order by name limit 100; 同样是破坏了 (city,name) 联合索引的递增顺序，类似的还有使用联合索引，一个字段DESC，一个ASC。</div>2019-02-25</li><br/><li><span>匿名的朋友</span> 👍（26） 💬（2）<div>丁奇老师，我有个疑问，就是sql语句执行时那些order by group by  limit 以及where条件，有执行的先后顺序吗？</div>2019-01-05</li><br/><li><span>涛哥哥</span> 👍（22） 💬（11）<div>老师，您好！我是做后端开发的。想问一下 mysql in关键字 的内部原理，能抽一点点篇幅讲一下吗？比如：select * from T where id in (a,b,d,c,,e,f); id是主键。1、为什么查询出来的结果集会按照id排一次序呢（是跟去重有关系么）？2、如果 in 里面的值较多的时候，就会比较慢啊（是还不如全表扫描么）？问我们公司很多后端的，都不太清楚，问我们DBA，他说默认就是这样（这不跟没说一样吗）。希望老师可以帮忙解惑。祝老师身体健康！微笑~</div>2019-01-26</li><br/><li><span>greatcl</span> 👍（16） 💬（1）<div>刚刚帮一个同事看SQL慢的问题，帮他找出来问题，并拿出这篇文章让他看，哈哈</div>2019-05-22</li><br/><li><span>可凡不凡</span> 👍（14） 💬（2）<div>1.老师对于多表联合查询中,MySQL 对索引的选择 以后会详细介绍吗?
-</div>2018-12-24</li><br/><li><span>Wrelon</span> 👍（10） 💬（1）<div>在第10章的时候提问过一次，当时表述的不够清楚，现在知道了，应该是因为隐式类型转换导致了全索引扫描。这个课程真实太棒了，我踩过的坑都说了。</div>2018-12-25</li><br/>
+另外，select &#39;a&#39; = 0 ; 的结果是1，说明无法转换成数字的字符串都被转换成0来处理了。</p>2018-12-24</li><br/><li><span>crazyone</span> 👍（57） 💬（5）<p>老师你好，我在执行explain的时候，发现extra 里面 有using where，using index ，using index condition 能具体讲下这几个的区别吗？</p>2018-12-26</li><br/><li><span>饭粒</span> 👍（30） 💬（1）<p>感觉要使用索引就不能“破坏”索引原有的顺序，这节的函数操作，隐式转换都“破坏”了原有的顺序。前一节的select * from t where city in in (“杭州”,&quot; 苏州 &quot;) order by name limit 100; 同样是破坏了 (city,name) 联合索引的递增顺序，类似的还有使用联合索引，一个字段DESC，一个ASC。</p>2019-02-25</li><br/><li><span>匿名的朋友</span> 👍（26） 💬（2）<p>丁奇老师，我有个疑问，就是sql语句执行时那些order by group by  limit 以及where条件，有执行的先后顺序吗？</p>2019-01-05</li><br/><li><span>涛哥哥</span> 👍（22） 💬（11）<p>老师，您好！我是做后端开发的。想问一下 mysql in关键字 的内部原理，能抽一点点篇幅讲一下吗？比如：select * from T where id in (a,b,d,c,,e,f); id是主键。1、为什么查询出来的结果集会按照id排一次序呢（是跟去重有关系么）？2、如果 in 里面的值较多的时候，就会比较慢啊（是还不如全表扫描么）？问我们公司很多后端的，都不太清楚，问我们DBA，他说默认就是这样（这不跟没说一样吗）。希望老师可以帮忙解惑。祝老师身体健康！微笑~</p>2019-01-26</li><br/><li><span>greatcl</span> 👍（16） 💬（1）<p>刚刚帮一个同事看SQL慢的问题，帮他找出来问题，并拿出这篇文章让他看，哈哈</p>2019-05-22</li><br/><li><span>可凡不凡</span> 👍（14） 💬（2）<p>1.老师对于多表联合查询中,MySQL 对索引的选择 以后会详细介绍吗?
+</p>2018-12-24</li><br/><li><span>Wrelon</span> 👍（10） 💬（1）<p>在第10章的时候提问过一次，当时表述的不够清楚，现在知道了，应该是因为隐式类型转换导致了全索引扫描。这个课程真实太棒了，我踩过的坑都说了。</p>2018-12-25</li><br/>
 </ul>

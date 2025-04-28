@@ -329,19 +329,19 @@ func (c *Counter) Count() uint64 {
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Panmax</span> 👍（27） 💬（4）<div>原文中关于 race detector 的介绍有两句话前后矛盾，老师可否解释一下：
+<li><span>Panmax</span> 👍（27） 💬（4）<p>原文中关于 race detector 的介绍有两句话前后矛盾，老师可否解释一下：
 
 前边说：在编译（compile）、测试（test）或者运行（run）Go 代码的时候，加上 race 参数，就有可能发现并发问题。
 
 后边却又说：因为它的实现方式，只能通过真正对实际地址进行读写访问的时候才能探测，所以它并不能在编译的时候发现 data race 的问题。
 
-所以结论是 race detector 并不能在编译阶段发现并发问题？那么前边那句是不是就没必要提了，不然容易让大家误会。</div>2020-10-18</li><br/><li><span>pedro</span> 👍（21） 💬（4）<div>大家都已经解答了，就不重复了。这里给一些不熟悉 go 需要的同学补充一下，go 语言查看汇编代码命令:
+所以结论是 race detector 并不能在编译阶段发现并发问题？那么前边那句是不是就没必要提了，不然容易让大家误会。</p>2020-10-18</li><br/><li><span>pedro</span> 👍（21） 💬（4）<p>大家都已经解答了，就不重复了。这里给一些不熟悉 go 需要的同学补充一下，go 语言查看汇编代码命令:
 go tool compile -S file.go
-对于文中 counter 的例子可以过度优化一下，那就是获取计数的 Count 函数其实可以通过读写锁，也就是 RWMutex 来优化一下。</div>2020-10-13</li><br/><li><span>骁勇善战</span> 👍（14） 💬（2）<div>老师，为什么读也要加锁呢？</div>2021-06-13</li><br/><li><span>ZY</span> 👍（7） 💬（1）<div>有两种情况
+对于文中 counter 的例子可以过度优化一下，那就是获取计数的 Count 函数其实可以通过读写锁，也就是 RWMutex 来优化一下。</p>2020-10-13</li><br/><li><span>骁勇善战</span> 👍（14） 💬（2）<p>老师，为什么读也要加锁呢？</p>2021-06-13</li><br/><li><span>ZY</span> 👍（7） 💬（1）<p>有两种情况
 1. 如果当前有协程进入自旋模式，当前协程会成功获取到锁
 2. 如果没有协程进入自选模式，释放锁的协程会释放的信号量会成功唤醒等待队列中的协程，该卸程会成功获取到锁，并且把等待计数器减1.
 
-老师：在饥饿模式下，信号量唤醒的协程成功获取到锁之后，该Mutex的模式会改变吗？</div>2020-10-17</li><br/><li><span>一代咩神</span> 👍（6） 💬（1）<div>能否解答一下，为什么获取计数器的值也需要加锁？</div>2021-01-14</li><br/><li><span>chapin</span> 👍（4） 💬（1）<div>个人希望🐤 窝大佬可以多分析一些源码。</div>2020-10-13</li><br/><li><span>无名无姓</span> 👍（3） 💬（1）<div>请问老师goroutine里面自旋怎么理解</div>2021-10-10</li><br/><li><span>初学者</span> 👍（3） 💬（1）<div>老师好，“多个goroutine并发更新同一个资源”，这里的同一个资源的条件是不是应该是堆栈分析后分配到堆上的变量，因为堆上是线程共享的，如果是栈上的变量的话，因为是线程独有的就不会出现并发更新的问题，望老师解答下</div>2021-05-27</li><br/><li><span>Singin in the Rain</span> 👍（2） 💬（1）<div>在Go 1.20之后的版本，执行命令『go tool compile -race -S counter.go』会报如下的错误：
+老师：在饥饿模式下，信号量唤醒的协程成功获取到锁之后，该Mutex的模式会改变吗？</p>2020-10-17</li><br/><li><span>一代咩神</span> 👍（6） 💬（1）<p>能否解答一下，为什么获取计数器的值也需要加锁？</p>2021-01-14</li><br/><li><span>chapin</span> 👍（4） 💬（1）<p>个人希望🐤 窝大佬可以多分析一些源码。</p>2020-10-13</li><br/><li><span>无名无姓</span> 👍（3） 💬（1）<p>请问老师goroutine里面自旋怎么理解</p>2021-10-10</li><br/><li><span>初学者</span> 👍（3） 💬（1）<p>老师好，“多个goroutine并发更新同一个资源”，这里的同一个资源的条件是不是应该是堆栈分析后分配到堆上的变量，因为堆上是线程共享的，如果是栈上的变量的话，因为是线程独有的就不会出现并发更新的问题，望老师解答下</p>2021-05-27</li><br/><li><span>Singin in the Rain</span> 👍（2） 💬（1）<p>在Go 1.20之后的版本，执行命令『go tool compile -race -S counter.go』会报如下的错误：
 could not import fmt (file not found)
 could not import sync (file not found)
 导致错误的原因是：在Go 1.20之前，标准库被安装到$GOROOT&#47;pkg&#47;$GOOS_$GOARCH。从Go 1.20开始，标准库被构建和缓存但没有安装。可以通过设置GODEBUG=installgoroot=all，然后编译重新安装Go运行环境，恢复$GOROOT&#47;pkg&#47;$GOOS_$GOARCH的使用，但是改动太大。可以通过如下命令解决这个问题：
@@ -350,18 +350,18 @@ could not import sync (file not found)
 参考链接：
 https:&#47;&#47;github.com&#47;golang&#47;go&#47;issues&#47;58629
 https:&#47;&#47;pkg.go.dev&#47;cmd&#47;go
-https:&#47;&#47;go.dev&#47;doc&#47;asm</div>2023-04-04</li><br/><li><span>党</span> 👍（1） 💬（1）<div>再用boltDb数据库时候 加上-race就会报错 fatal error: checkptr: converted pointer straddles multiple allocations 去掉就不报错了，代码里只有一句创建表，报的这个错也不是 data race错 是指针转换问题 咋弄啊</div>2021-11-01</li><br/><li><span>党</span> 👍（1） 💬（1）<div>用了一个内存库 github.com&#47;boltdb&#47;bolt，在用-race 运行的时候，里边一个函数的时候报错 panic类型的，fatal error: checkptr: converted pointer straddles multiple allocations 关键的两行报错  
+https:&#47;&#47;go.dev&#47;doc&#47;asm</p>2023-04-04</li><br/><li><span>党</span> 👍（1） 💬（1）<p>再用boltDb数据库时候 加上-race就会报错 fatal error: checkptr: converted pointer straddles multiple allocations 去掉就不报错了，代码里只有一句创建表，报的这个错也不是 data race错 是指针转换问题 咋弄啊</p>2021-11-01</li><br/><li><span>党</span> 👍（1） 💬（1）<p>用了一个内存库 github.com&#47;boltdb&#47;bolt，在用-race 运行的时候，里边一个函数的时候报错 panic类型的，fatal error: checkptr: converted pointer straddles multiple allocations 关键的两行报错  
 D:&#47;GO&#47;src&#47;runtime&#47;checkptr.go:20 +0xc9 fp=0xc00029f9e8 sp=0xc00029f9b8 p
 c=0x554b89
 github.com&#47;boltdb&#47;bolt.(*freelist).write(0xc0004e5290, 0xc000508000, 0xc00050800
 0, 0x0)
-百度不出来所以然 老师这东西为啥报错啊 不带race运行好好的</div>2021-09-02</li><br/><li><span>Albert</span> 👍（1） 💬（1）<div>老师，，获取计数器的值 也加锁，解释为可能不能得到刚增加的值。&#47;&#47; 使用WaitGroup等待10个goroutine完成 既然已经完了计数的协程。为啥最后打印计数器 还可能不是最终的值啊？</div>2021-01-17</li><br/><li><span>新味道</span> 👍（1） 💬（4）<div>func (c *Counter) Incr() { c.mu.Lock() c.count++ c.mu.Unlock()}&#47;&#47; 得到计数器的值，也需要锁保护func (c *Counter) Count() uint64 { c.mu.Lock() defer c.mu.Unlock() return c.count}
+百度不出来所以然 老师这东西为啥报错啊 不带race运行好好的</p>2021-09-02</li><br/><li><span>Albert</span> 👍（1） 💬（1）<p>老师，，获取计数器的值 也加锁，解释为可能不能得到刚增加的值。&#47;&#47; 使用WaitGroup等待10个goroutine完成 既然已经完了计数的协程。为啥最后打印计数器 还可能不是最终的值啊？</p>2021-01-17</li><br/><li><span>新味道</span> 👍（1） 💬（4）<p>func (c *Counter) Incr() { c.mu.Lock() c.count++ c.mu.Unlock()}&#47;&#47; 得到计数器的值，也需要锁保护func (c *Counter) Count() uint64 { c.mu.Lock() defer c.mu.Unlock() return c.count}
 
-问题：Incr()里为什么不用defer c.mu.Unlock() ?</div>2020-10-13</li><br/><li><span>Gojustforfun</span> 👍（1） 💬（2）<div>如果可以，希望老师将完整代码发一下。
+问题：Incr()里为什么不用defer c.mu.Unlock() ?</p>2020-10-13</li><br/><li><span>Gojustforfun</span> 👍（1） 💬（2）<p>如果可以，希望老师将完整代码发一下。
 
 另外，有个长久的疑问（很多Java背景的同事都这样）——明明Counter类型本身已经具有语义&#47;上下文，其中的字段只要用Type&#47;Name命名就好，调用:counter.Type&#47;counter.Name。
 
-但常常看到的是counter.CounterType&#47;counter.CounterName？</div>2020-10-12</li><br/><li><span>寻回光明</span> 👍（0） 💬（2）<div>老师go tool compile -race -S Counter.go
+但常常看到的是counter.CounterType&#47;counter.CounterName？</p>2020-10-12</li><br/><li><span>寻回光明</span> 👍（0） 💬（2）<p>老师go tool compile -race -S Counter.go
 Counter.go:4:2: could not import fmt (file not found)
-Counter.go:5:2: could not import sync (file not found)这个什么原因呀</div>2022-12-24</li><br/>
+Counter.go:5:2: could not import sync (file not found)这个什么原因呀</p>2022-12-24</li><br/>
 </ul>

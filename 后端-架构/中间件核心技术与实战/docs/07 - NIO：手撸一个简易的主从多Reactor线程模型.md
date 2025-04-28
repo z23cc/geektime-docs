@@ -603,10 +603,10 @@ public class NioClient {
 
 欢迎你在留言区留下你的思考结果，我们下节课见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>open！？</span> 👍（2） 💬（1）<div>问题一 ：请求体很大 当前subreactor线程耗时会比较久 这时如果有别的channel来请求到当前subreactor线程会阻塞很久吧 不知道对不对</div>2022-11-22</li><br/><li><span>呢喃</span> 👍（1） 💬（1）<div>写的非常好，对我很有帮助，感谢老师</div>2022-07-31</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（4）<div>网络传输涉及带宽 就算你是nio  你也必须过带宽吧 木桶效应？</div>2022-07-03</li><br/><li><span>William Ning</span> 👍（2） 💬（0）<div>建议参考文档，对照着学习，思考
+<li><span>open！？</span> 👍（2） 💬（1）<p>问题一 ：请求体很大 当前subreactor线程耗时会比较久 这时如果有别的channel来请求到当前subreactor线程会阻塞很久吧 不知道对不对</p>2022-11-22</li><br/><li><span>呢喃</span> 👍（1） 💬（1）<p>写的非常好，对我很有帮助，感谢老师</p>2022-07-31</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（4）<p>网络传输涉及带宽 就算你是nio  你也必须过带宽吧 木桶效应？</p>2022-07-03</li><br/><li><span>William Ning</span> 👍（2） 💬（0）<p>建议参考文档，对照着学习，思考
 https:&#47;&#47;time.geekbang.org&#47;column&#47;article&#47;8697 -- 18 | 单服务器高性能模式：PPC与TPC
 https:&#47;&#47;time.geekbang.org&#47;column&#47;article&#47;8805 -- 19 | 单服务器高性能模式：Reactor与Proactor
-</div>2022-07-10</li><br/><li><span>InfoQ_09e721f0120c</span> 👍（0） 💬（0）<div>mainReactor只是用于建立连接，为什么要用线程池？一个线程不够吗？</div>2024-02-06</li><br/><li><span>哲里哲里</span> 👍（0） 💬（0）<div>建议吧图文结合起来，比如那段文字是描述图中哪个过程</div>2022-10-20</li><br/><li><span>William Ning</span> 👍（0） 💬（1）<div>老师同学好，全是java代码，不过注释还是比较清晰。
+</p>2022-07-10</li><br/><li><span>InfoQ_09e721f0120c</span> 👍（0） 💬（0）<p>mainReactor只是用于建立连接，为什么要用线程池？一个线程不够吗？</p>2024-02-06</li><br/><li><span>哲里哲里</span> 👍（0） 💬（0）<p>建议吧图文结合起来，比如那段文字是描述图中哪个过程</p>2022-10-20</li><br/><li><span>William Ning</span> 👍（0） 💬（1）<p>老师同学好，全是java代码，不过注释还是比较清晰。
 但是关于NioClient 类中
 
 &#47;&#47; 再次发送消息，重复输出
@@ -615,6 +615,6 @@ buffer.put(&quot;hello server.&quot;.getBytes());
 buffer.flip();
 sc.write(buffer);
 
-没明白，为什么在读取数据的代码里，还要写入数据？</div>2022-07-11</li><br/><li><span>William Ning</span> 👍（0） 💬（0）<div>FYI
-OP_CONNECT OP是Operation。</div>2022-07-11</li><br/>
+没明白，为什么在读取数据的代码里，还要写入数据？</p>2022-07-11</li><br/><li><span>William Ning</span> 👍（0） 💬（0）<p>FYI
+OP_CONNECT OP是Operation。</p>2022-07-11</li><br/>
 </ul>

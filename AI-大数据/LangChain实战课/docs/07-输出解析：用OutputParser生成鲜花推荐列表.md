@@ -450,17 +450,17 @@ RetryWithErrorOutputParser的parse结果：`action='search' action_input='colors
 1. 工具：[Pydantic](https://docs.pydantic.dev/latest/) 是一个Python库，用于数据验证，可以确保数据符合特定的格式
 2. 文档：LangChain中的各种 [Output Parsers](https://python.langchain.com/docs/modules/model_io/output_parsers/)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>在路上</span> 👍（23） 💬（1）<div>从源码上看，OutputFixingParser和RetryWithErrorOutputParser的本质是相同的，都是当PydanticOutputParser.parse(input)解析失败，通过语言模型分析抛出的异常，修正input。
-不同之处在于，OutputFixingParser利用input schema、input、exception来修正input，RetryWithErrorOutputParser除了利用input schema、input、exception，还利用一个额外的prompt来修正input，有了额外的prompt，自然就能够既修正input格式，又补全input内容。</div>2023-09-20</li><br/><li><span>高源</span> 👍（10） 💬（2）<div>老师有个问题请教，例如目前大模型比较多，我的理解如果满足企业内部自己使用，是需要对大模型微调吧才能完全满足定制，例如输出企业自己相关数据，文档，代码等，而不是简单把提示写好弄个差不多开源大模型上去。我的理解是需要微调吧，针对自己企业数据进行训练对模型，但这块听老师课我理解需要对模型层次熟悉才能下手进行微调吧，我自己理解目前从效果上还是gpt其它模型还是比较弱，百度说他的2.0已经超过gpt3.5，比gpt4差点，我觉得没那么快吧，另外训练模型机器硬件人员等各种因素叠加，不是说都能做好了吧，企业自己落地自己模型这块现实吗，自己做需要那些条件，例如人员要求等，谢谢</div>2023-11-01</li><br/><li><span>棟</span> 👍（1） 💬（4）<div>老师，请教一个问题，
+<li><span>在路上</span> 👍（23） 💬（1）<p>从源码上看，OutputFixingParser和RetryWithErrorOutputParser的本质是相同的，都是当PydanticOutputParser.parse(input)解析失败，通过语言模型分析抛出的异常，修正input。
+不同之处在于，OutputFixingParser利用input schema、input、exception来修正input，RetryWithErrorOutputParser除了利用input schema、input、exception，还利用一个额外的prompt来修正input，有了额外的prompt，自然就能够既修正input格式，又补全input内容。</p>2023-09-20</li><br/><li><span>高源</span> 👍（10） 💬（2）<p>老师有个问题请教，例如目前大模型比较多，我的理解如果满足企业内部自己使用，是需要对大模型微调吧才能完全满足定制，例如输出企业自己相关数据，文档，代码等，而不是简单把提示写好弄个差不多开源大模型上去。我的理解是需要微调吧，针对自己企业数据进行训练对模型，但这块听老师课我理解需要对模型层次熟悉才能下手进行微调吧，我自己理解目前从效果上还是gpt其它模型还是比较弱，百度说他的2.0已经超过gpt3.5，比gpt4差点，我觉得没那么快吧，另外训练模型机器硬件人员等各种因素叠加，不是说都能做好了吧，企业自己落地自己模型这块现实吗，自己做需要那些条件，例如人员要求等，谢谢</p>2023-11-01</li><br/><li><span>棟</span> 👍（1） 💬（4）<p>老师，请教一个问题，
 fix_parser或retry_parser中，如果错误的输出是json格式会报如下错误：
 action_input
   Field required [type=missing, input_value={&#39;action&#39;: &#39;search&#39;}, input_type=dict]
     For further information visit https:&#47;&#47;errors.pydantic.dev&#47;2.3&#47;v&#47;missing
 
 我是将错误bad_response = &#39;{&quot;action&quot;: &quot;search&quot;}&#39;  --&gt; 更改为bad_response = &quot;{&#39;action&#39;: &#39;search&#39;}&quot;才能正常调用模型，这个要怎么修复。
-知道的朋友也请指点，感谢！</div>2023-10-07</li><br/><li><span>曹胖子</span> 👍（0） 💬（1）<div>parsed_output = output_parser.parse(output.content)   会报异常， 目前我尝试打印了 output的数据类型和结构，感觉是返回的数据结构出现的变动，最终我调整为 parsed_output = output_parser.parse(output.content) 后代码可执行。</div>2024-06-03</li><br/><li><span>风隼[咖啡]</span> 👍（0） 💬（1）<div>    # parsed_output_dict = parsed_output.dict()  # 将Pydantic格式转化位字典
+知道的朋友也请指点，感谢！</p>2023-10-07</li><br/><li><span>曹胖子</span> 👍（0） 💬（1）<p>parsed_output = output_parser.parse(output.content)   会报异常， 目前我尝试打印了 output的数据类型和结构，感觉是返回的数据结构出现的变动，最终我调整为 parsed_output = output_parser.parse(output.content) 后代码可执行。</p>2024-06-03</li><br/><li><span>风隼[咖啡]</span> 👍（0） 💬（1）<p>    # parsed_output_dict = parsed_output.dict()  # 将Pydantic格式转化位字典
     # Pydantic 格式转化为字典,Pydantic V2dict 方法已经被废弃，推荐使用 model_dump 方法来代替
-    parsed_output_dict = parsed_output.model_dump()</div>2023-12-15</li><br/><li><span>rick009</span> 👍（0） 💬（1）<div>老师您好，有个问题请教一下，我想要从给定的一段文本中抽离一些FAQ，然后想返回JSON数组的格式，以下是prompt：
+    parsed_output_dict = parsed_output.model_dump()</p>2023-12-15</li><br/><li><span>rick009</span> 👍（0） 💬（1）<p>老师您好，有个问题请教一下，我想要从给定的一段文本中抽离一些FAQ，然后想返回JSON数组的格式，以下是prompt：
 template = &quot;&quot;&quot;你是一名知识库管理员，需将以下内容拆分成 {nums} 个问答对，确保准确无误且只从文献中获取，不得扩散。你的算法或流程应该能够准确抽取关键信息，并生成准确的问答对，以充分利用文献。
     {doc_content}
     {format_instructions}  
@@ -473,7 +473,7 @@ class QA(BaseModel):
 
 class QAList(RootModel):
     root: List[QA] = Field(description=&quot;FAQ问答对列表&quot;)
-但是返回的格式总是不停的在变，都无法返回希望的数据结构</div>2023-12-06</li><br/><li><span>鲸鱼</span> 👍（0） 💬（1）<div>我遇到一个问题，目前的langchain必须使用v1版本的pydantic，如果使用了v2版本抛出的异常类型不对，会导致PydanticOutputParser无法捕获正常的ValidationError异常，从而不会去请求openAI修复response。
+但是返回的格式总是不停的在变，都无法返回希望的数据结构</p>2023-12-06</li><br/><li><span>鲸鱼</span> 👍（0） 💬（1）<p>我遇到一个问题，目前的langchain必须使用v1版本的pydantic，如果使用了v2版本抛出的异常类型不对，会导致PydanticOutputParser无法捕获正常的ValidationError异常，从而不会去请求openAI修复response。
 PydanticOutputParser的具体捕获代码是这里
 
 class PydanticOutputParser(BaseOutputParser[T]):
@@ -498,14 +498,14 @@ class PydanticOutputParser(BaseOutputParser[T]):
             name = self.pydantic_object.__name__
             msg = f&quot;Failed to parse {name} from completion {text}. Got: {e}&quot;
             raise OutputParserException(msg, llm_output=text)
-</div>2023-10-25</li><br/><li><span>在路上</span> 👍（0） 💬（1）<div>佳哥好，我发现在OutputFixingParser示例中，如果做如下修改：
+</p>2023-10-25</li><br/><li><span>在路上</span> 👍（0） 💬（1）<p>佳哥好，我发现在OutputFixingParser示例中，如果做如下修改：
 new_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI(temperature=0))
 或者
 new_parser = OutputFixingParser.from_llm(parser=parser, llm=OpenAI(temperature=0))
 可以得到稳定的输出：
 name=&#39;康乃馨&#39; colors=[&#39;粉红色&#39;, &#39;白色&#39;, &#39;红色&#39;, &#39;紫色&#39;, &#39;黄色&#39;]
 而不是：
-name=&#39;Rose&#39; colors=[&#39;red&#39;, &#39;pink&#39;, &#39;white&#39;]</div>2023-09-20</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>重试解析器（RetryWithErrorOutputParser）实战学习，修改代码如下。注意：要设置max_retries=3，增加重试次数，解析成功率会极大提高
+name=&#39;Rose&#39; colors=[&#39;red&#39;, &#39;pink&#39;, &#39;white&#39;]</p>2023-09-20</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>重试解析器（RetryWithErrorOutputParser）实战学习，修改代码如下。注意：要设置max_retries=3，增加重试次数，解析成功率会极大提高
 （1）原代码：
 fix_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI())
 新代码：
@@ -527,7 +527,7 @@ baichuan_llm = BaichuanLLM()
 # 初始化RetryWithErrorOutputParser，使用百川智能模型
 retry_parser = RetryWithErrorOutputParser.from_llm(
     parser=parser, llm=baichuan_llm  , max_retries=3     # 使用百川模型
-)</div>2024-07-27</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>继续使用国产大模型替代OpenAI进行代码学习。
+)</p>2024-07-27</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>继续使用国产大模型替代OpenAI进行代码学习。
 在自动修复解析器（OutputFixingParser）实战中发现，使用通义千问模型调用时出错，无法解析。但是用百川智能模型能够正确解析。
 使用百川模型修正代码如下：
 原代码：
@@ -536,8 +536,8 @@ new_parser = OutputFixingParser.from_llm(parser=parser, llm=ChatOpenAI())
 os.environ[&quot;BAICHUAN_API_KEY&quot;] =&quot;xxx&quot; # 请替换为你的百川模型 BAICHUAN API Key
 from langchain_community.llms import BaichuanLLM
 llm = BaichuanLLM()  # 加载百川模型
-new_parser = OutputFixingParser.from_llm(parser=parser, llm=llm, max_retries=3) # 增加重试次数:3</div>2024-07-27</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>第7讲打卡~
-再补充一个最简单的StrOutputParser字符串解析器，它将LLM的输出结果直接解析成字符串，在客服系统、聊天机器人等场景中使用得比较多。</div>2024-07-13</li><br/><li><span>LVEli</span> 👍（0） 💬（0）<div>老师，请问这里提到的List Parser。在实际使用中：list_parser = ListOutputParser()时，会提示类似这样的报错：这是一个静态类。。。如果不能使用这个输出解析器，是否还有其他方法能使agent执行后输出的string类型结果，转换成列表呢，谢谢~~</div>2025-01-17</li><br/><li><span>勤小码</span> 👍（0） 💬（0）<div>2024&#47;8 目前使 langchain==0.2.12，运行文中示例代码会抛异常。参考官方文档发现需要修改两处导入：
+new_parser = OutputFixingParser.from_llm(parser=parser, llm=llm, max_retries=3) # 增加重试次数:3</p>2024-07-27</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>第7讲打卡~
+再补充一个最简单的StrOutputParser字符串解析器，它将LLM的输出结果直接解析成字符串，在客服系统、聊天机器人等场景中使用得比较多。</p>2024-07-13</li><br/><li><span>LVEli</span> 👍（0） 💬（0）<p>老师，请问这里提到的List Parser。在实际使用中：list_parser = ListOutputParser()时，会提示类似这样的报错：这是一个静态类。。。如果不能使用这个输出解析器，是否还有其他方法能使agent执行后输出的string类型结果，转换成列表呢，谢谢~~</p>2025-01-17</li><br/><li><span>勤小码</span> 👍（0） 💬（0）<p>2024&#47;8 目前使 langchain==0.2.12，运行文中示例代码会抛异常。参考官方文档发现需要修改两处导入：
 
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain.output_parsers import RetryOutputParser
@@ -546,8 +546,8 @@ from langchain.output_parsers import RetryOutputParser
 https:&#47;&#47;python.langchain.com&#47;v0.2&#47;docs&#47;how_to&#47;output_parser_retry&#47;
 
 langchain 目前更新比较快，各种API也不稳定，容易出现各种意想不到的问题。本示例异常原因后续再debug详细看看。
-</div>2024-08-14</li><br/><li><span>核桃爸爸</span> 👍（0） 💬（0）<div>2024年7月24日，最新版本的 langchain 库无法运行成功</div>2024-07-24</li><br/><li><span>chenyang</span> 👍（0） 💬（0）<div>老师你好，
+</p>2024-08-14</li><br/><li><span>核桃爸爸</span> 👍（0） 💬（0）<p>2024年7月24日，最新版本的 langchain 库无法运行成功</p>2024-07-24</li><br/><li><span>chenyang</span> 👍（0） 💬（0）<p>老师你好，
 02_OutputFixParser.py 和 03_RetryParser.py 运行时，都会报
 KeyError: &quot;Input to PromptTemplate is missing variables {&#39;completion&#39;}.  Expected: [&#39;completion&#39;, &#39;error&#39;, &#39;instructions&#39;] Received: [&#39;instructions&#39;, &#39;input&#39;, &#39;error&#39;]&quot;
-请问是什么原因呀</div>2024-07-10</li><br/>
+请问是什么原因呀</p>2024-07-10</li><br/>
 </ul>

@@ -232,7 +232,7 @@ select * from t1 join temp_t on (t1.b=temp_t.b);
 
 > @老杨同志、@poppy、@长杰 这三位同学给出了正确答案，春节期间还持续保持跟进学习，给你们点赞。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>放</span> 👍（26） 💬（1）<div>老师新年快乐！过年都不忘给我们传授知识！</div>2019-02-08</li><br/><li><span>Long</span> 👍（23） 💬（1）<div>老师新年好 :-)
+<li><span>放</span> 👍（26） 💬（1）<p>老师新年快乐！过年都不忘给我们传授知识！</p>2019-02-08</li><br/><li><span>Long</span> 👍（23） 💬（1）<p>老师新年好 :-)
 刚好遇到一个问题。 
 
 本来准备更新到，一个查询是怎么运行的里面的，看到这篇更新文章，就写在这吧，希望老师帮忙解答。
@@ -261,13 +261,13 @@ PS: 最后根据audit log分析来看，语句实际上是MySQL的一个客户�
 SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = &#39;abc&#39; AND table_type != &#39;VIEW&#39;;
 
 
-再次感谢！</div>2019-02-08</li><br/><li><span>salt</span> 👍（22） 💬（3）<div>新年好！
+再次感谢！</p>2019-02-08</li><br/><li><span>salt</span> 👍（22） 💬（3）<p>新年好！
 课后作业：在备库配置跳过该内存表的主从同步。
 
-有一个问题一直困扰着我：SSD以及云主机的广泛运用，像Innodb这种使用WAL技术似乎并不能发挥最大性能（我的理解：基于SSD的WAL更多的只是起到队列一样削峰填谷的作用）。对于一些数据量不是特别大，但读写频繁的应用（比如点赞、积分），有没有更好的引擎推荐。</div>2019-02-08</li><br/><li><span>往事随风，顺其自然</span> 👍（18） 💬（3）<div>为什么memory 引擎中数据按照数组单独存储，0索引对应的数据怎么放到数组的最后</div>2019-02-09</li><br/><li><span>lunung</span> 👍（16） 💬（1）<div>重启前 my.cnf 添加 skip-slave-errors 忽略 内存表引起的主从异常导致复制失败
+有一个问题一直困扰着我：SSD以及云主机的广泛运用，像Innodb这种使用WAL技术似乎并不能发挥最大性能（我的理解：基于SSD的WAL更多的只是起到队列一样削峰填谷的作用）。对于一些数据量不是特别大，但读写频繁的应用（比如点赞、积分），有没有更好的引擎推荐。</p>2019-02-08</li><br/><li><span>往事随风，顺其自然</span> 👍（18） 💬（3）<p>为什么memory 引擎中数据按照数组单独存储，0索引对应的数据怎么放到数组的最后</p>2019-02-09</li><br/><li><span>lunung</span> 👍（16） 💬（1）<p>重启前 my.cnf 添加 skip-slave-errors 忽略 内存表引起的主从异常导致复制失败
 
-</div>2019-02-11</li><br/><li><span>llx</span> 👍（12） 💬（1）<div>1、如果临时表读数据的次数很少（比如只读一次），是不是建临时表时不创建索引效果很更好？
-2、engine=memory 如果遇到范围查找，在使用哈希索引时应该不会使用索引吧</div>2019-02-11</li><br/><li><span>杜嘉嘉</span> 👍（11） 💬（1）<div>我的认识里，有一点不是很清楚。memory这个存储引擎，最大的特性应该是把数据存到内存。但是innodb也可以把数据存到内存，不但可以存到内存(innodb buffer size)，还可以进行持久化。这样一对比，我感觉memory的优势更没有了。不知道我讲的对不对</div>2019-02-10</li><br/><li><span>晚风·和煦</span> 👍（9） 💬（1）<div>老师，内存表就是使用memory引擎创建的表吗？😂</div>2020-01-16</li><br/><li><span>陈扬鸿</span> 👍（6） 💬（2）<div>老师你好，今天生产上出碰到一个解决不了的问题,php的yii框架，使用show full processlist 查看 全是如下语句有100多条
+</p>2019-02-11</li><br/><li><span>llx</span> 👍（12） 💬（1）<p>1、如果临时表读数据的次数很少（比如只读一次），是不是建临时表时不创建索引效果很更好？
+2、engine=memory 如果遇到范围查找，在使用哈希索引时应该不会使用索引吧</p>2019-02-11</li><br/><li><span>杜嘉嘉</span> 👍（11） 💬（1）<p>我的认识里，有一点不是很清楚。memory这个存储引擎，最大的特性应该是把数据存到内存。但是innodb也可以把数据存到内存，不但可以存到内存(innodb buffer size)，还可以进行持久化。这样一对比，我感觉memory的优势更没有了。不知道我讲的对不对</p>2019-02-10</li><br/><li><span>晚风·和煦</span> 👍（9） 💬（1）<p>老师，内存表就是使用memory引擎创建的表吗？😂</p>2020-01-16</li><br/><li><span>陈扬鸿</span> 👍（6） 💬（2）<p>老师你好，今天生产上出碰到一个解决不了的问题,php的yii框架，使用show full processlist 查看 全是如下语句有100多条
 SELECT
     kcu.constraint_name,
     kcu.column_name,
@@ -283,7 +283,7 @@ JOIN information_schema.key_column_usage AS kcu ON
     kcu.constraint_name = rc.constraint_name
 WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
 AND rc.table_name = &#39;t1&#39; AND kcu.table_name = &#39;t1&#39; 
-这个可以优化吗 这个库是数据字典的 现在数据库无法对外提供服务  请老师指教！</div>2019-03-06</li><br/><li><span>夹心面包</span> 👍（5） 💬（1）<div>我们线上就有一个因为内存表导致的主从同步异常的例子,我的做法是先跳过这个表的同步,然后开发进行改造,取消这张表的作用</div>2019-02-11</li><br/><li><span>长杰</span> 👍（2） 💬（1）<div>内存表一般数据量不大，并且更新不频繁，可以写一个定时任务，定期检测内存表的数据，如果数据不空，就将它持久化到一个innodb同结构的表中，如果为空，就反向将数据写到内存表中，这些操作可设置为不写入binlog。</div>2019-02-09</li><br/><li><span>Long</span> 👍（1） 💬（1）<div>追问更新1: 谢谢老师的答复，我看了下innodb_stats_on_metadata就是OFF，今天在5.7环境验证，发现竟然不是几百秒，而且几秒，不知道这个是代码的优化，还是参数不一致的原因，有几十个参数差异需要排查。   所以在不知道是因为参数变化导致，还是内部查询逻辑变化。如果是参数，担心有一天被人设置错，又回滚到不好的情况. 老师，我想入坑源码了… </div>2019-03-01</li><br/><li><span>Long</span> 👍（1） 💬（1）<div>追问：多谢老师回复，在上面回复中，为什么语句2会阻塞其他的线程把其他线程都卡在opening tables 和closing tables，而语句1不会.
+这个可以优化吗 这个库是数据字典的 现在数据库无法对外提供服务  请老师指教！</p>2019-03-06</li><br/><li><span>夹心面包</span> 👍（5） 💬（1）<p>我们线上就有一个因为内存表导致的主从同步异常的例子,我的做法是先跳过这个表的同步,然后开发进行改造,取消这张表的作用</p>2019-02-11</li><br/><li><span>长杰</span> 👍（2） 💬（1）<p>内存表一般数据量不大，并且更新不频繁，可以写一个定时任务，定期检测内存表的数据，如果数据不空，就将它持久化到一个innodb同结构的表中，如果为空，就反向将数据写到内存表中，这些操作可设置为不写入binlog。</p>2019-02-09</li><br/><li><span>Long</span> 👍（1） 💬（1）<p>追问更新1: 谢谢老师的答复，我看了下innodb_stats_on_metadata就是OFF，今天在5.7环境验证，发现竟然不是几百秒，而且几秒，不知道这个是代码的优化，还是参数不一致的原因，有几十个参数差异需要排查。   所以在不知道是因为参数变化导致，还是内部查询逻辑变化。如果是参数，担心有一天被人设置错，又回滚到不好的情况. 老师，我想入坑源码了… </p>2019-03-01</li><br/><li><span>Long</span> 👍（1） 💬（1）<p>追问：多谢老师回复，在上面回复中，为什么语句2会阻塞其他的线程把其他线程都卡在opening tables 和closing tables，而语句1不会.
 
 猜测是不是语句2用了lock_open的方法？
 老师有什么好的建议，我怎么能通过日志或者调试来看？
@@ -291,7 +291,7 @@ AND rc.table_name = &#39;t1&#39; AND kcu.table_name = &#39;t1&#39;
 
 语句1: SELECT table_name, table_schema, data_length, index_length FROM information_schema.TABLES WHERE ENGINE in (&#39;MyISAM&#39;,&#39;InnoDB&#39;) and table_schema &lt;&gt; &#39;information_schema&#39;;
 
-语句2:select count(1) from information_schema.tables where table_schema = &#39;abc&#39;;</div>2019-03-01</li><br/><li><span>HuaMax</span> 👍（0） 💬（1）<div>课后题。是不是可以加上创建表的操作，并且是innodb 类型的？</div>2019-02-09</li><br/><li><span>老杨同志</span> 👍（0） 💬（1）<div>安装之前学的知识，把主库delete语句的gtid，设置到从库中，就可以跳过这条语句了吧。
+语句2:select count(1) from information_schema.tables where table_schema = &#39;abc&#39;;</p>2019-03-01</li><br/><li><span>HuaMax</span> 👍（0） 💬（1）<p>课后题。是不是可以加上创建表的操作，并且是innodb 类型的？</p>2019-02-09</li><br/><li><span>老杨同志</span> 👍（0） 💬（1）<p>安装之前学的知识，把主库delete语句的gtid，设置到从库中，就可以跳过这条语句了吧。
 但是主备不一致是不是要也处理一下，将主库的内存表数据备份一下。然后delete数据，重新插入。
-等备件执行者两个语句后，主备应该都有数据了</div>2019-02-08</li><br/>
+等备件执行者两个语句后，主备应该都有数据了</p>2019-02-08</li><br/>
 </ul>

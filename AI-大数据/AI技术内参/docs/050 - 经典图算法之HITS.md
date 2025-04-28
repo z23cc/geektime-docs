@@ -62,7 +62,7 @@ HITS算法依靠这种迭代的方法来计算权威值和枢纽值，你一定�
 
 - [Authoritative sources in a hyperlinked environment](http://www.woodmann.com/searchlores/library/authoratitativesources.pdf)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>xxw</span> 👍（4） 💬（0）<div>感觉可以适量列些公式。用文字表达公司有点闷逼</div>2018-05-21</li><br/><li><span>黄德平</span> 👍（3） 💬（0）<div>理一下思路，L表示连接矩阵，Lij是矩阵i行j列的元素，这个值取1当且仅当节点有链接指向节点j，否则为0。L的转置用M表示，根据权威值X和枢纽值Y的定义，我们可以得到
+<li><span>xxw</span> 👍（4） 💬（0）<p>感觉可以适量列些公式。用文字表达公司有点闷逼</p>2018-05-21</li><br/><li><span>黄德平</span> 👍（3） 💬（0）<p>理一下思路，L表示连接矩阵，Lij是矩阵i行j列的元素，这个值取1当且仅当节点有链接指向节点j，否则为0。L的转置用M表示，根据权威值X和枢纽值Y的定义，我们可以得到
 X=MY
 Y=LX
 进一步可以得到
@@ -72,5 +72,5 @@ LM和ML分别是两个矩阵的乘积，X和Y
 可以迭代求解了。
 
 真是费劲。。。
-极客时间的回复是否可以支持latex公式渲染，或者图片</div>2018-12-16</li><br/><li><span>白杨</span> 👍（1） 💬（0）<div>某种意义上，可以把权威理解为精度，枢纽理解为广度，然后用F值的思想去合并</div>2018-05-16</li><br/>
+极客时间的回复是否可以支持latex公式渲染，或者图片</p>2018-12-16</li><br/><li><span>白杨</span> 👍（1） 💬（0）<p>某种意义上，可以把权威理解为精度，枢纽理解为广度，然后用F值的思想去合并</p>2018-05-16</li><br/>
 </ul>

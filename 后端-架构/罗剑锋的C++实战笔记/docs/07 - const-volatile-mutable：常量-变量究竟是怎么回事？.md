@@ -202,27 +202,27 @@ public:
 
 ![](https://static001.geekbang.org/resource/image/bd/dd/bdd9bb369fcbe65a8c879f37995a77dd.jpg?wh=2000%2A3156)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>无止境</span> 👍（40） 💬（9）<div>c++的指针和引用有啥区别老师？</div>2020-05-21</li><br/><li><span>Bluebuger</span> 👍（16） 💬（2）<div>volatile 在底层用的多，驱动、裸机开发这类。由于外部硬件设备，有部分处理器设计时候直接映射的内存地址，所以除了软件可以修改，硬件可能修改，所以需要让编译器不去优化这样的变量，必须从源头重新取值。</div>2020-06-17</li><br/><li><span>奋斗</span> 👍（13） 💬（1）<div>《1》volitate： cpu每次读取数据的时候，如果寄存器或者三级缓存中有该值，则直接使用，所以此时如果内存中的值被改变，值不会改变。如果加上volitate每次绕过寄存器和缓存直接从内存读取，此时内存中的值已经改变了。
+<li><span>无止境</span> 👍（40） 💬（9）<p>c++的指针和引用有啥区别老师？</p>2020-05-21</li><br/><li><span>Bluebuger</span> 👍（16） 💬（2）<p>volatile 在底层用的多，驱动、裸机开发这类。由于外部硬件设备，有部分处理器设计时候直接映射的内存地址，所以除了软件可以修改，硬件可能修改，所以需要让编译器不去优化这样的变量，必须从源头重新取值。</p>2020-06-17</li><br/><li><span>奋斗</span> 👍（13） 💬（1）<p>《1》volitate： cpu每次读取数据的时候，如果寄存器或者三级缓存中有该值，则直接使用，所以此时如果内存中的值被改变，值不会改变。如果加上volitate每次绕过寄存器和缓存直接从内存读取，此时内存中的值已经改变了。
 《2》mutable： 1、在lambal表达式中，如果捕获按值捕获，但是在函数体中想要修改，可以使用mutable
 2、多线程环境下如果某个成员函数，比如int get_count() const { }，返回类中某个成员数量，势必会进行加锁保护变量达到线程安全，此时声明mutex必须是mutable的。
 int get_count() const {
     std::lock_guard&lt;std::mutex&gt; lock(m)
     return count;
 }
-在声明mutable  std::mutex m; 需要加 mutable</div>2021-05-25</li><br/><li><span>EncodedStar</span> 👍（12） 💬（1）<div>用好const 记住文章中的“ “const &amp;”可以引用任何类型，是函数入口参数的最佳类型” 是重点</div>2020-05-22</li><br/><li><span>罗杰</span> 👍（7） 💬（2）<div>C++ 中volatile 关键字, 我感觉最关键的是要知道, 他根本不构成 同步语义, 多线程编程中要杜绝使用. 
+在声明mutable  std::mutex m; 需要加 mutable</p>2021-05-25</li><br/><li><span>EncodedStar</span> 👍（12） 💬（1）<p>用好const 记住文章中的“ “const &amp;”可以引用任何类型，是函数入口参数的最佳类型” 是重点</p>2020-05-22</li><br/><li><span>罗杰</span> 👍（7） 💬（2）<p>C++ 中volatile 关键字, 我感觉最关键的是要知道, 他根本不构成 同步语义, 多线程编程中要杜绝使用. 
 记得之前看过一个资料, volatile 从C++ 标准中出现的原因是 为了解决 &quot;硬件映射到内存上...&quot; 的问题, 也就是说 一般的开发者, 根本不会涉及到这一块. 
 
-java 中 volatile 和 C++ 中的 volatile 还不一样, java 中的volatile 是构成 happen-before的, 是可以使用在多线程编程当中的</div>2020-08-04</li><br/><li><span>Stephen</span> 👍（7） 💬（2）<div>&quot;const 定义的常量在预处理阶段并不存在，而是直到运行阶段才会出现。&quot;,老师,那编译阶段它也没有出现吗?</div>2020-07-31</li><br/><li><span>木须柄</span> 👍（3） 💬（1）<div>万能引用 (universal reference) 一般是指在函数模板时传入的 &quot;T&amp;&amp;&quot; 这种形参形式，主要作用是用来同时匹配左值和右值实参的传入，这里我觉得罗老师更多是借用了这个概念，主旨是为了说明 &quot;const &amp;&quot; 使用的广泛性</div>2021-10-04</li><br/><li><span>IMBFD</span> 👍（3） 💬（1）<div>前辈在const函数那里为什么不说明其实是const修饰了this呢？这样就很好解释了</div>2020-09-08</li><br/><li><span>宇天飞</span> 👍（3） 💬（1）<div>学完了这节课，你觉得今后应该怎么用 const 呢？
+java 中 volatile 和 C++ 中的 volatile 还不一样, java 中的volatile 是构成 happen-before的, 是可以使用在多线程编程当中的</p>2020-08-04</li><br/><li><span>Stephen</span> 👍（7） 💬（2）<p>&quot;const 定义的常量在预处理阶段并不存在，而是直到运行阶段才会出现。&quot;,老师,那编译阶段它也没有出现吗?</p>2020-07-31</li><br/><li><span>木须柄</span> 👍（3） 💬（1）<p>万能引用 (universal reference) 一般是指在函数模板时传入的 &quot;T&amp;&amp;&quot; 这种形参形式，主要作用是用来同时匹配左值和右值实参的传入，这里我觉得罗老师更多是借用了这个概念，主旨是为了说明 &quot;const &amp;&quot; 使用的广泛性</p>2021-10-04</li><br/><li><span>IMBFD</span> 👍（3） 💬（1）<p>前辈在const函数那里为什么不说明其实是const修饰了this呢？这样就很好解释了</p>2020-09-08</li><br/><li><span>宇天飞</span> 👍（3） 💬（1）<p>学完了这节课，你觉得今后应该怎么用 const 呢？
 1、修饰常量、成员变量、成员函数
 2、修饰类的时候注意const成员以及可变成员
 
 给函数的返回值加上 const，也就是说返回一个常量对象，有什么好处？
-使用更方便，防止意外修改</div>2020-09-01</li><br/><li><span>范闲</span> 👍（3） 💬（1）<div>1. effecttive里主要的用处就是const替换define，const成员函数，const &amp;入参
-2.返回常量对象就是实际上保持了内部状态的不可变。不受外部影响，实际上也是不希望外部改变对象</div>2020-05-21</li><br/><li><span>陈英桂</span> 👍（2） 💬（1）<div>1、函数的入参，返回值还有变量的定义根据实际的情况，使用const来保证变量值只可以读，不可以修改。STL的迭代器也有const和非const，使用迭代器如果没有修改操作，尽量使用const版本的迭代器。
-2、函数的返回值总const，表示返回值只可以读</div>2020-06-04</li><br/><li><span>韩泽文</span> 👍（2） 💬（1）<div>我之前的理解好像与这个有偏差：
+使用更方便，防止意外修改</p>2020-09-01</li><br/><li><span>范闲</span> 👍（3） 💬（1）<p>1. effecttive里主要的用处就是const替换define，const成员函数，const &amp;入参
+2.返回常量对象就是实际上保持了内部状态的不可变。不受外部影响，实际上也是不希望外部改变对象</p>2020-05-21</li><br/><li><span>陈英桂</span> 👍（2） 💬（1）<p>1、函数的入参，返回值还有变量的定义根据实际的情况，使用const来保证变量值只可以读，不可以修改。STL的迭代器也有const和非const，使用迭代器如果没有修改操作，尽量使用const版本的迭代器。
+2、函数的返回值总const，表示返回值只可以读</p>2020-06-04</li><br/><li><span>韩泽文</span> 👍（2） 💬（1）<p>我之前的理解好像与这个有偏差：
 const变量在未被优化时是分配到内存中，该内存页表标记为只读，不可写。 程序执行过程中尝试修改该内存就会页出错。
 同样的，const在编译阶段能够起到 安全作用，凡是同一个编译单元(同一个cc文件尝试修改它就会报错)
 上面提到的编译错误其实可以躲避编译器检查的，一般的定义时标注为const，另一cc文件引用时没有const，并且有修改操作，编译不报错的！
 以上是c语言的理解，不知道有没有问题，
-Cpp会对const变量符号修饰吗？</div>2020-05-21</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（2）<div>函数返回值如果是return by value 就没必要加const了，除非返回的是一个引用。那可不可以不返回引用就直接返回一个值呢？可能具体情况还要具体看。多数情况应该没必要</div>2022-06-03</li><br/><li><span>Geek_552f7a</span> 👍（0） 💬（1）<div>请问课外贴士第4点如何理解啊？无法声明 const this 是指什么，如果可以声明，函数应该写成什么样子呢？</div>2024-05-29</li><br/><li><span>学习者</span> 👍（0） 💬（1）<div>打卡</div>2023-05-17</li><br/>
+Cpp会对const变量符号修饰吗？</p>2020-05-21</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（2）<p>函数返回值如果是return by value 就没必要加const了，除非返回的是一个引用。那可不可以不返回引用就直接返回一个值呢？可能具体情况还要具体看。多数情况应该没必要</p>2022-06-03</li><br/><li><span>Geek_552f7a</span> 👍（0） 💬（1）<p>请问课外贴士第4点如何理解啊？无法声明 const this 是指什么，如果可以声明，函数应该写成什么样子呢？</p>2024-05-29</li><br/><li><span>学习者</span> 👍（0） 💬（1）<p>打卡</p>2023-05-17</li><br/>
 </ul>

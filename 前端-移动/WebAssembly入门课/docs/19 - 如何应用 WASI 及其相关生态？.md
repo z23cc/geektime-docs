@@ -151,5 +151,5 @@ wasmtime wasi-app.wasm --dir=.
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Yarco</span> 👍（3） 💬（2）<div>不知道chrome扩展开发是否支持wasm代码的运行... </div>2020-10-18</li><br/><li><span>慌慌张张</span> 👍（1） 💬（1）<div>老师之前我在Twitter上看到说如果wasm+wasi早点出来，就没docker什么事情了，具体原因还希望老师多说一下。</div>2020-11-04</li><br/><li><span>军秋</span> 👍（1） 💬（1）<div>WASI的目的：相对java的优势是在可以把已经存在的C&#47;C++等代码库功能变异成跨平台。不知道我理解是否对？这部分对前端会有什么影响吗？</div>2020-10-16</li><br/><li><span>Geek_362e38</span> 👍（0） 💬（0）<div>请问我想在electron主进程（nodejs环境）调用.wasm文件要怎么做？其中.wasm文件是通过wasi-sdk转化的，其中访问了操作系统功能，会在当前路径创建一个hello.txt并且写入部分内容。</div>2023-09-13</li><br/>
+<li><span>Yarco</span> 👍（3） 💬（2）<p>不知道chrome扩展开发是否支持wasm代码的运行... </p>2020-10-18</li><br/><li><span>慌慌张张</span> 👍（1） 💬（1）<p>老师之前我在Twitter上看到说如果wasm+wasi早点出来，就没docker什么事情了，具体原因还希望老师多说一下。</p>2020-11-04</li><br/><li><span>军秋</span> 👍（1） 💬（1）<p>WASI的目的：相对java的优势是在可以把已经存在的C&#47;C++等代码库功能变异成跨平台。不知道我理解是否对？这部分对前端会有什么影响吗？</p>2020-10-16</li><br/><li><span>Geek_362e38</span> 👍（0） 💬（0）<p>请问我想在electron主进程（nodejs环境）调用.wasm文件要怎么做？其中.wasm文件是通过wasi-sdk转化的，其中访问了操作系统功能，会在当前路径创建一个hello.txt并且写入部分内容。</p>2023-09-13</li><br/>
 </ul>

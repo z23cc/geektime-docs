@@ -183,5 +183,5 @@ console.log(add(1, 2));  // 3;
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>慌慌张张</span> 👍（2） 💬（1）<div>您好老师，请问一下mvp是最小稳定版，post-mvp是什么呢？还有就是这些新特性要是可以使用了，我们是不是要更新一下编译工具emscripten呀</div>2020-11-02</li><br/><li><span>黄东</span> 👍（0） 💬（1）<div>显卡这一块好像没有讲到</div>2022-04-23</li><br/><li><span>奕</span> 👍（11） 💬（0）<div>wasm 所有的提案可以在这里看到 https:&#47;&#47;github.com&#47;WebAssembly&#47;proposals，然后浏览器的支持情况或者 node 的支持情况 可以使用这个 npm 库进行判断： https:&#47;&#47;github.com&#47;GoogleChromeLabs&#47;wasm-feature-detect</div>2020-10-07</li><br/><li><span>ROME</span> 👍（0） 💬（0）<div>要走的路还很长。</div>2021-07-18</li><br/>
+<li><span>慌慌张张</span> 👍（2） 💬（1）<p>您好老师，请问一下mvp是最小稳定版，post-mvp是什么呢？还有就是这些新特性要是可以使用了，我们是不是要更新一下编译工具emscripten呀</p>2020-11-02</li><br/><li><span>黄东</span> 👍（0） 💬（1）<p>显卡这一块好像没有讲到</p>2022-04-23</li><br/><li><span>奕</span> 👍（11） 💬（0）<p>wasm 所有的提案可以在这里看到 https:&#47;&#47;github.com&#47;WebAssembly&#47;proposals，然后浏览器的支持情况或者 node 的支持情况 可以使用这个 npm 库进行判断： https:&#47;&#47;github.com&#47;GoogleChromeLabs&#47;wasm-feature-detect</p>2020-10-07</li><br/><li><span>ROME</span> 👍（0） 💬（0）<p>要走的路还很长。</p>2021-07-18</li><br/>
 </ul>

@@ -118,7 +118,7 @@ Web应用可以基于session的认证来实现保持登录，它的具体实现�
 
 欢迎在评论区留下你的思考。如果觉得今天的内容对你有所帮助的话，也欢迎你把课程分享给其他同事或朋友，我们共同学习进步！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>peter</span> 👍（2） 💬（0）<div>请教老师几个问题啊：
+<li><span>peter</span> 👍（2） 💬（0）<p>请教老师几个问题啊：
 Q1：session有哪几个方面决定？
 同一个用户，用同一个浏览器，用两个tab登录，是一个session吗？
 同一个用户，用不同浏览器登录，是一个session吗？
@@ -133,9 +133,9 @@ Q3：现在cookie还被大量使用吗？
     如果各个主流网站还依赖cookie，如果浏览器禁止cookie怎么办？另外，cookie容易被黑客破解吗？
 Q4：会话固定攻击图中，第一步login，网站为什么返回sessionid？
     既然攻击者没有用户名和密码，他也没法login啊。
-    login失败，网站怎么会返回sessionid？</div>2022-03-03</li><br/><li><span>若镜</span> 👍（1） 💬（0）<div>请问 sessionid存在cookie中  这个很容易copy走   感觉这个设计很不安全呀？ 为啥目前这是普遍的登陆认证方式呀？多谢</div>2022-03-08</li><br/><li><span>Klaus7</span> 👍（0） 💬（0）<div>为什么将 session 信息放置在 cookie 中会更加安全吗？
+    login失败，网站怎么会返回sessionid？</p>2022-03-03</li><br/><li><span>若镜</span> 👍（1） 💬（0）<p>请问 sessionid存在cookie中  这个很容易copy走   感觉这个设计很不安全呀？ 为啥目前这是普遍的登陆认证方式呀？多谢</p>2022-03-08</li><br/><li><span>Klaus7</span> 👍（0） 💬（0）<p>为什么将 session 信息放置在 cookie 中会更加安全吗？
 1.默认情况下，浏览器会强制同源策略，这意味着一个网站的JS代码不能访问其他域的 Cookie。
-2.Cookie 可以具有不同的过期时间，允许应用程序精确控制会话的持久性。</div>2023-09-14</li><br/><li><span>Klaus7</span> 👍（0） 💬（0）<div>会话固定攻击举例，感觉不严谨，受攻击网站通常会返回一个set-cookie（新的jsessionId）给受害者，攻击者此时使用原先的sessionId是无法保持登录的认证的</div>2023-09-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-30</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>补充一个问题：
+2.Cookie 可以具有不同的过期时间，允许应用程序精确控制会话的持久性。</p>2023-09-14</li><br/><li><span>Klaus7</span> 👍（0） 💬（0）<p>会话固定攻击举例，感觉不严谨，受攻击网站通常会返回一个set-cookie（新的jsessionId）给受害者，攻击者此时使用原先的sessionId是无法保持登录的认证的</p>2023-09-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-30</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>补充一个问题：
 Q5：token部分，两个header是什么关系？
-    token部分，JSW需要保存在header中；JWT的构成图中，也有一个header。我的理解：前一个header，是指http消息的请求头。后一个header，是JWT内容的构成部分。我的理解对吗？</div>2022-03-03</li><br/><li><span>clay</span> 👍（0） 💬（0）<div>在基于 session 的认证一节的攻击案例中，为什么攻击者没有登录的情况下服务器就会返回一个sessionid？而且这个sessionid还是需要用户登录后才可以通过验证？现实业务真的有这种设计逻辑吗？</div>2022-03-03</li><br/>
+    token部分，JSW需要保存在header中；JWT的构成图中，也有一个header。我的理解：前一个header，是指http消息的请求头。后一个header，是JWT内容的构成部分。我的理解对吗？</p>2022-03-03</li><br/><li><span>clay</span> 👍（0） 💬（0）<p>在基于 session 的认证一节的攻击案例中，为什么攻击者没有登录的情况下服务器就会返回一个sessionid？而且这个sessionid还是需要用户登录后才可以通过验证？现实业务真的有这种设计逻辑吗？</p>2022-03-03</li><br/>
 </ul>

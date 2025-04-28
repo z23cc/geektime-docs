@@ -565,10 +565,10 @@ internal class DispatchedContinuation<in T>(
 
 经过这节课的学习以后，请问你是否对协程的本质有了更深入的认识？请讲讲你的心得体会吧！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（10） 💬（1）<div>Kotlin在开启协程状态机之前做了大量的工作，从父协程那里继承了状态，重新设定了子协程运行线程，检查了各种异常情况，区分了程序异常和协程cancel的情况，最终在指定的线程里启动了状态机。协程的重点不在线程，而在线程之外的调度，异常处理和状态机。
-</div>2022-03-30</li><br/><li><span>Allen</span> 👍（4） 💬（1）<div>协程本质上是对线程的封装，我们在使用协程的时候，并不需要直接与线程打交道，直接使用 Coroutine 提供的相关 API 以同步的方式就可以间接完成与线程之间的交互。</div>2022-03-31</li><br/><li><span>7Promise</span> 👍（4） 💬（1）<div>kotlin的协程与java线程密不可分，协程最终是运行在线程中的Task。</div>2022-03-30</li><br/><li><span>荷兰小猪8813</span> 👍（2） 💬（1）<div>如果挂起后，再恢复，是如何恢复到之前的线程的呢？？
+<li><span>Paul Shan</span> 👍（10） 💬（1）<p>Kotlin在开启协程状态机之前做了大量的工作，从父协程那里继承了状态，重新设定了子协程运行线程，检查了各种异常情况，区分了程序异常和协程cancel的情况，最终在指定的线程里启动了状态机。协程的重点不在线程，而在线程之外的调度，异常处理和状态机。
+</p>2022-03-30</li><br/><li><span>Allen</span> 👍（4） 💬（1）<p>协程本质上是对线程的封装，我们在使用协程的时候，并不需要直接与线程打交道，直接使用 Coroutine 提供的相关 API 以同步的方式就可以间接完成与线程之间的交互。</p>2022-03-31</li><br/><li><span>7Promise</span> 👍（4） 💬（1）<p>kotlin的协程与java线程密不可分，协程最终是运行在线程中的Task。</p>2022-03-30</li><br/><li><span>荷兰小猪8813</span> 👍（2） 💬（1）<p>如果挂起后，再恢复，是如何恢复到之前的线程的呢？？
 
-这个线程的是如何保存的呢？？</div>2022-04-16</li><br/><li><span>Allen</span> 👍（0） 💬（1）<div>这里，请你留意代码中我标记出的注释，intercepted() 方法首先会判断它的成员变量 intercepted 是否为空，如果不为空，就会调用 context[ContinuationInterceptor]，获取上下文当中的 Dispatcher 对象。以代码段 3 当中的逻辑为例，这时候的 Dispatcher 肯定是 Default 线程池。
+这个线程的是如何保存的呢？？</p>2022-04-16</li><br/><li><span>Allen</span> 👍（0） 💬（1）<p>这里，请你留意代码中我标记出的注释，intercepted() 方法首先会判断它的成员变量 intercepted 是否为空，如果不为空，就会调用 context[ContinuationInterceptor]，获取上下文当中的 Dispatcher 对象。以代码段 3 当中的逻辑为例，这时候的 Dispatcher 肯定是 Default 线程池。
 
-涛哥，这里应该是 intercepted 为空才会调用 context[ContinuationInterceptor] 吧？</div>2022-03-30</li><br/>
+涛哥，这里应该是 intercepted 为空才会调用 context[ContinuationInterceptor] 吧？</p>2022-03-30</li><br/>
 </ul>

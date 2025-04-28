@@ -197,15 +197,15 @@ if __name__ == "__main__":
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>雪飞鸿</span> 👍（4） 💬（1）<div>根据业务来预判哪些数据是热数据，可提前写入redis。后续再根据访问频次（如，用有序集合记录访问次数）动态调整redis中缓存的数据。网上许多讨论热点Key的文章，所谈讨的情况还是比较复杂的。</div>2019-11-13</li><br/><li><span>往事随风，顺其自然</span> 👍（3） 💬（1）<div>通过redis 的得分来进行存储热点数据</div>2019-09-20</li><br/><li><span>jxs1211</span> 👍（1） 💬（1）<div>有些复杂的sql语句，如何转换成对应的sqlalchemy语句，有什么好的工具和方法吗</div>2019-09-20</li><br/><li><span>蒙开强</span> 👍（1） 💬（1）<div>老师，你好，用redis做缓存，那么如何保证与MySQL数据库数据一致呢，先存redis和先存mysql都会有问题</div>2019-09-20</li><br/><li><span>Demon.Lee</span> 👍（5） 💬（1）<div>1、这里，排行榜中如果要显示用户名称，需要放到有序集合中，这样就不需要再通过 MySQL 查询一次。这种需要实时排名计算的，通过 Redis 解决更适合。
+<li><span>雪飞鸿</span> 👍（4） 💬（1）<p>根据业务来预判哪些数据是热数据，可提前写入redis。后续再根据访问频次（如，用有序集合记录访问次数）动态调整redis中缓存的数据。网上许多讨论热点Key的文章，所谈讨的情况还是比较复杂的。</p>2019-11-13</li><br/><li><span>往事随风，顺其自然</span> 👍（3） 💬（1）<p>通过redis 的得分来进行存储热点数据</p>2019-09-20</li><br/><li><span>jxs1211</span> 👍（1） 💬（1）<p>有些复杂的sql语句，如何转换成对应的sqlalchemy语句，有什么好的工具和方法吗</p>2019-09-20</li><br/><li><span>蒙开强</span> 👍（1） 💬（1）<p>老师，你好，用redis做缓存，那么如何保证与MySQL数据库数据一致呢，先存redis和先存mysql都会有问题</p>2019-09-20</li><br/><li><span>Demon.Lee</span> 👍（5） 💬（1）<p>1、这里，排行榜中如果要显示用户名称，需要放到有序集合中，这样就不需要再通过 MySQL 查询一次。这种需要实时排名计算的，通过 Redis 解决更适合。
 ----老师，这里不明白，有序集合里面不是已经存放了userId，如何再存放userName
 
 2、第二个问题是，我们使用 Redis 作为 MySQL 的缓存，假设 MySQL 存储了 1000 万的数据，Redis 只保存有限的数据，比如 10 万数据量，如何保证 Redis 存储的数据都是热点数据呢？
-----把查询到的数据保存一份到redis，使用有序集合，每次如果从redis获取到，则score+1，超过10w条数据，则删除。（好像也有问题）</div>2019-09-20</li><br/><li><span>刘凯</span> 👍（1） 💬（0）<div>原来如此</div>2020-03-21</li><br/><li><span>wumin</span> 👍（1） 💬（0）<div>我生成词云的时候报这个错误。内存是20G的
+----把查询到的数据保存一份到redis，使用有序集合，每次如果从redis获取到，则score+1，超过10w条数据，则删除。（好像也有问题）</p>2019-09-20</li><br/><li><span>刘凯</span> 👍（1） 💬（0）<p>原来如此</p>2020-03-21</li><br/><li><span>wumin</span> 👍（1） 💬（0）<p>我生成词云的时候报这个错误。内存是20G的
 Traceback (most recent call last):
   File &quot;d:&#47;scripts&#47;python&#47;Python-mysql&#47;python-sqlite-weixin.py&quot;, line 61, in &lt;module&gt;
     content = get_content_from_weixin()
   File &quot;d:&#47;scripts&#47;python&#47;Python-mysql&#47;python-sqlite-weixin.py&quot;, line 53, in get_content_from_weixin
     content = content + str(temp)
-MemoryError</div>2020-02-16</li><br/><li><span>越锋利</span> 👍（0） 💬（0）<div>如何保证热点数据？需要页面置换算法，比如 LRU 或者 LFU。</div>2021-11-24</li><br/><li><span>爱思考的仙人球</span> 👍（0） 💬（1）<div>热点数据就是访问率高的那些数据吧，我有一个笨方法，就是增加一个热点数据表，首先记录所有1000万数据的id，访问次数默认为0，然后每访问一次，次数+1，倒序排名，取前10万条。</div>2019-10-28</li><br/>
+MemoryError</p>2020-02-16</li><br/><li><span>越锋利</span> 👍（0） 💬（0）<p>如何保证热点数据？需要页面置换算法，比如 LRU 或者 LFU。</p>2021-11-24</li><br/><li><span>爱思考的仙人球</span> 👍（0） 💬（1）<p>热点数据就是访问率高的那些数据吧，我有一个笨方法，就是增加一个热点数据表，首先记录所有1000万数据的id，访问次数默认为0，然后每访问一次，次数+1，倒序排名，取前10万条。</p>2019-10-28</li><br/>
 </ul>

@@ -256,18 +256,18 @@ ReDex的这个功能并不是完整的AOP工具，但它提供了一系列指令
 
 欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。最后别忘了在评论区提交今天的作业，我也为认真完成作业的同学准备了丰厚的“学习加油礼包”，期待与你一起切磋进步哦。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Eateeer</span> 👍（23） 💬（1）<div>看到这篇文章表示非常激动，这段时间自己也在尝试了解和使用编译插桩的相关技术，编译插桩涉及的东西很多，特别是 ASM 与 Transform 结合后产生的一些列化学反应，比如无埋点、增量编译、Instant Run 等，感觉像是打开了一个新世界的大门。
+<li><span>Eateeer</span> 👍（23） 💬（1）<p>看到这篇文章表示非常激动，这段时间自己也在尝试了解和使用编译插桩的相关技术，编译插桩涉及的东西很多，特别是 ASM 与 Transform 结合后产生的一些列化学反应，比如无埋点、增量编译、Instant Run 等，感觉像是打开了一个新世界的大门。
 
 给大家安利一个 IntelliJ 插件 - ASM Bytecode Outline，可以用来帮助编写字节码。
 
 再次感谢绍文大大的精彩文章！
-</div>2019-02-21</li><br/><li><span>su</span> 👍（5） 💬（1）<div>这篇含金量是目前整个专栏最好的，谢谢</div>2019-02-22</li><br/><li><span>splm</span> 👍（2） 💬（1）<div>嗯很不错啊。之前一直对插桩只有印象，但具体做什么还是不了解，但今天看了这篇文章，受益匪浅。原来插桩的技术，自己之前就用过了。
+</p>2019-02-21</li><br/><li><span>su</span> 👍（5） 💬（1）<p>这篇含金量是目前整个专栏最好的，谢谢</p>2019-02-22</li><br/><li><span>splm</span> 👍（2） 💬（1）<p>嗯很不错啊。之前一直对插桩只有印象，但具体做什么还是不了解，但今天看了这篇文章，受益匪浅。原来插桩的技术，自己之前就用过了。
 
 这个是自己之前利用APT和JavaPoet写的一个开发工具，大家可以交流探讨一下。
 https:&#47;&#47;github.com&#47;splm&#47;WeBase
-也希望大家能多点几个星。</div>2019-03-04</li><br/><li><span>seven</span> 👍（1） 💬（1）<div>文哥牛逼！这篇至少要看个十几遍~玩溜asm估计要练习个几个月了
-</div>2019-02-21</li><br/><li><span>itismelzp</span> 👍（0） 💬（3）<div>非常棒！但是我有个问题，就是asm插桩后的class行号就变了吧，这样堆栈信息就对不上了。。。</div>2019-07-15</li><br/><li><span>孫小逗</span> 👍（0） 💬（2）<div>请问，AS3.1.3，安装ASM Bytecode Outline后，没有显示字节码是什么情况？</div>2019-03-19</li><br/><li><span>X</span> 👍（0） 💬（1）<div>请问Systrace在Windows上是不是不支持，我试过在Mac上可以用的，但是Windows上就报错，Google了下好像很多人反馈这个但是没有解决方案！</div>2019-03-16</li><br/><li><span>LD</span> 👍（0） 💬（1）<div>另外一个字节码处理工具javaasist也不错哦
-使用比asm简单，达到的效果和asm一致(直接插入代码，不像aspectj需要生成包装函数)</div>2019-02-21</li><br/><li><span>王大大</span> 👍（8） 💬（0）<div>推荐一个简单轻量的asm框架lancet，https:&#47;&#47;github.com&#47;eleme&#47;lancet，通过这个库实现业务代码的动态监测</div>2019-03-28</li><br/><li><span>l晟睿致远</span> 👍（3） 💬（0）<div>这两天扣了一下asm操作字节码，把onMethodExit方法改了一下，如果time大于设定的时间就使用error级别打印。做为练习发出来共勉。内容较长分三段发，一、
+也希望大家能多点几个星。</p>2019-03-04</li><br/><li><span>seven</span> 👍（1） 💬（1）<p>文哥牛逼！这篇至少要看个十几遍~玩溜asm估计要练习个几个月了
+</p>2019-02-21</li><br/><li><span>itismelzp</span> 👍（0） 💬（3）<p>非常棒！但是我有个问题，就是asm插桩后的class行号就变了吧，这样堆栈信息就对不上了。。。</p>2019-07-15</li><br/><li><span>孫小逗</span> 👍（0） 💬（2）<p>请问，AS3.1.3，安装ASM Bytecode Outline后，没有显示字节码是什么情况？</p>2019-03-19</li><br/><li><span>X</span> 👍（0） 💬（1）<p>请问Systrace在Windows上是不是不支持，我试过在Mac上可以用的，但是Windows上就报错，Google了下好像很多人反馈这个但是没有解决方案！</p>2019-03-16</li><br/><li><span>LD</span> 👍（0） 💬（1）<p>另外一个字节码处理工具javaasist也不错哦
+使用比asm简单，达到的效果和asm一致(直接插入代码，不像aspectj需要生成包装函数)</p>2019-02-21</li><br/><li><span>王大大</span> 👍（8） 💬（0）<p>推荐一个简单轻量的asm框架lancet，https:&#47;&#47;github.com&#47;eleme&#47;lancet，通过这个库实现业务代码的动态监测</p>2019-03-28</li><br/><li><span>l晟睿致远</span> 👍（3） 💬（0）<p>这两天扣了一下asm操作字节码，把onMethodExit方法改了一下，如果time大于设定的时间就使用error级别打印。做为练习发出来共勉。内容较长分三段发，一、
 protected void onMethodExit(int opcode) {
 
             int stringBuilderIndex = newLocal(Type.getType(&quot;java&#47;lang&#47;StringBuilder&quot;));
@@ -296,7 +296,7 @@ protected void onMethodExit(int opcode) {
             mv.visitVarInsn(Opcodes.LLOAD, timeLocalIndex);
             mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, &quot;java&#47;lang&#47;StringBuilder&quot;, &quot;append&quot;, &quot;(J)Ljava&#47;lang&#47;StringBuilder;&quot;, false);
             mv.visitInsn(Opcodes.POP);
-    </div>2020-05-14</li><br/><li><span>古月弓虽1993</span> 👍（3） 💬（0）<div>如果build.gradle配置的变体buildType类型配置：shrinkResources true minifyEnabled true。第7期的练习是没法正常插桩的。因为代码里要hook的任务是写死的task名称：transformClassesWithDexBuilderFor。而在这种情况下需要hook的任务名是类似这样的：transformClassesAndResourcesWithR8For</div>2020-02-26</li><br/><li><span>。ZQN</span> 👍（2） 💬（0）<div>做了一个可视化埋点系统</div>2019-10-21</li><br/><li><span>程序员小跃</span> 👍（1） 💬（0）<div>文章只是敲门砖，还得看看虚拟机，以及课后的这些链接，Android高手之路，任重道远</div>2019-06-19</li><br/><li><span>l晟睿致远</span> 👍（0） 💬（0）<div>三、
+    </p>2020-05-14</li><br/><li><span>古月弓虽1993</span> 👍（3） 💬（0）<p>如果build.gradle配置的变体buildType类型配置：shrinkResources true minifyEnabled true。第7期的练习是没法正常插桩的。因为代码里要hook的任务是写死的task名称：transformClassesWithDexBuilderFor。而在这种情况下需要hook的任务名是类似这样的：transformClassesAndResourcesWithR8For</p>2020-02-26</li><br/><li><span>。ZQN</span> 👍（2） 💬（0）<p>做了一个可视化埋点系统</p>2019-10-21</li><br/><li><span>程序员小跃</span> 👍（1） 💬（0）<p>文章只是敲门砖，还得看看虚拟机，以及课后的这些链接，Android高手之路，任重道远</p>2019-06-19</li><br/><li><span>l晟睿致远</span> 👍（0） 💬（0）<p>三、
    mv.visitInsn(Opcodes.POP);
             mv.visitLdcInsn(&quot;Geek&quot;);
             mv.visitVarInsn(Opcodes.ALOAD, stringBuilderIndex);
@@ -310,7 +310,7 @@ protected void onMethodExit(int opcode) {
             mv.visitInsn(Opcodes.RETURN);&#47;&#47;返回
             mv.visitMaxs(2, 2);&#47;&#47;设置局部表量表和操作数栈大小
             mv.visitEnd();&#47;&#47;访问结束
-        }</div>2020-05-14</li><br/><li><span>l晟睿致远</span> 👍（0） 💬（0）<div>二、
+        }</p>2020-05-14</li><br/><li><span>l晟睿致远</span> 👍（0） 💬（0）<p>二、
         mv.visitLdcInsn(&quot;Geek&quot;);
             mv.visitVarInsn(Opcodes.ALOAD, stringBuilderIndex);
             mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, &quot;java&#47;lang&#47;StringBuilder&quot;, &quot;toString&quot;, &quot;()Ljava&#47;lang&#47;String;&quot;, false);
@@ -335,5 +335,5 @@ protected void onMethodExit(int opcode) {
             mv.visitVarInsn(Opcodes.ALOAD, stringBuilderIndex);
             mv.visitVarInsn(Opcodes.LLOAD, timeLocalIndex);
             mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, &quot;java&#47;lang&#47;StringBuilder&quot;, &quot;append&quot;, &quot;(J)Ljava&#47;lang&#47;StringBuilder;&quot;, false);
-         </div>2020-05-14</li><br/>
+         </p>2020-05-14</li><br/>
 </ul>

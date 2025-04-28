@@ -310,10 +310,10 @@ JavaScript 代码作为当前用来构建 Web 应用所必不可少的一个重�
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>zly</span> 👍（2） 💬（2）<div>看到老师在chrome浏览器上没用启用渲染的情况下帧率有200+，然后跟着搞发现自己电脑输出只有60帧，后面发现这个还是跟系统设置有关系的，我的笔记本电脑设置的帧数就60帧，所以渲染视频最高只能到60帧</div>2020-10-24</li><br/><li><span>奕</span> 👍（1） 💬（1）<div>对于不同的滤镜效果，是不是对应的卷积核都是有固定的模式的？
+<li><span>zly</span> 👍（2） 💬（2）<p>看到老师在chrome浏览器上没用启用渲染的情况下帧率有200+，然后跟着搞发现自己电脑输出只有60帧，后面发现这个还是跟系统设置有关系的，我的笔记本电脑设置的帧数就60帧，所以渲染视频最高只能到60帧</p>2020-10-24</li><br/><li><span>奕</span> 👍（1） 💬（1）<p>对于不同的滤镜效果，是不是对应的卷积核都是有固定的模式的？
 
-还有就是 对于现在的图像处理软件，比如 PS 的滤镜功能的实现是不是也使用的卷积核？</div>2020-10-09</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（1）<div>是不是应该用一个新的数组而不是直接修改原有数组，否则前面卷积后的结果会影响后面的像素</div>2022-09-30</li><br/><li><span>zzm</span> 👍（0） 💬（1）<div>您好，请问有没有完整的代码，我想运行看看，示例的代码在调用和传参方面有些不理解</div>2021-04-24</li><br/><li><span>陈。。。</span> 👍（0） 💬（1）<div>老师，有个问题
+还有就是 对于现在的图像处理软件，比如 PS 的滤镜功能的实现是不是也使用的卷积核？</p>2020-10-09</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（1）<p>是不是应该用一个新的数组而不是直接修改原有数组，否则前面卷积后的结果会影响后面的像素</p>2022-09-30</li><br/><li><span>zzm</span> 👍（0） 💬（1）<p>您好，请问有没有完整的代码，我想运行看看，示例的代码在调用和传参方面有些不理解</p>2021-04-24</li><br/><li><span>陈。。。</span> 👍（0） 💬（1）<p>老师，有个问题
 requestAnimationFrame在MDN上的描述是：
 This will request that your animation function be called before the browser performs the next repaint. The number of callbacks is usually 60 times per second
-也就是在浏览器重回前调用，一般帧率是60. 为什么案例中不开启渲染时能有300的fps呢？我不开起渲染的时候就只有40左右的fps了（用火焰图看还有60帧）</div>2023-05-20</li><br/><li><span>Jason Yu 于航</span> 👍（0） 💬（0）<div>源码可以参考这里：https:&#47;&#47;github.com&#47;Becavalier&#47;geektime-wasm-tutorial。</div>2021-04-29</li><br/>
+也就是在浏览器重回前调用，一般帧率是60. 为什么案例中不开启渲染时能有300的fps呢？我不开起渲染的时候就只有40左右的fps了（用火焰图看还有60帧）</p>2023-05-20</li><br/><li><span>Jason Yu 于航</span> 👍（0） 💬（0）<p>源码可以参考这里：https:&#47;&#47;github.com&#47;Becavalier&#47;geektime-wasm-tutorial。</p>2021-04-29</li><br/>
 </ul>

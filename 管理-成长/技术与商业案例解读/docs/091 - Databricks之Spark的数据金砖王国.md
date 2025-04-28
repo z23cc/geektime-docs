@@ -64,5 +64,5 @@ Databricks又把这个不开源的版本做成云服务卖给用户。由于这�
 
 我想，Databricks的前途是光明的，但是也会充满竞争和曲折。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>geduo4612</span> 👍（0） 💬（2）<div>为什么说jvm会影响深度学习的性能呢？</div>2019-05-24</li><br/><li><span>小孙</span> 👍（3） 💬（0）<div>flink也很老了，并没有哪个站在哪个的肩膀上，spark真正牛逼的还是在sql这块，structed streaming很好的嫁接在了spark sql上，一套处理逻辑可以无缝在流处理和批处理上迁移，不像flink两套接口，</div>2018-07-27</li><br/>
+<li><span>geduo4612</span> 👍（0） 💬（2）<p>为什么说jvm会影响深度学习的性能呢？</p>2019-05-24</li><br/><li><span>小孙</span> 👍（3） 💬（0）<p>flink也很老了，并没有哪个站在哪个的肩膀上，spark真正牛逼的还是在sql这块，structed streaming很好的嫁接在了spark sql上，一套处理逻辑可以无缝在流处理和批处理上迁移，不像flink两套接口，</p>2018-07-27</li><br/>
 </ul>

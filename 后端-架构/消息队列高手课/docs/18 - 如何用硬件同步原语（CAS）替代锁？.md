@@ -178,23 +178,23 @@ balance = 10000
 
 感谢阅读，如果你觉得这篇文章对你有一些启发，也欢迎把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ponymm</span> 👍（54） 💬（2）<div>“CAS 和 FAA 在各种编程语言中，都有相应的实现，可以来直接使用，无论你是使用哪种编程语言，它底层使用的系统调用是一样的，效果也是一样的。” 李老师这句话有点小问题：car,faa并不是通过系统调用实现的，系统调用的开销不小，cas本来就是为了提升性能，不会走系统调用。事实上是在用户态直接使用汇编指令就可以实现</div>2019-09-03</li><br/><li><span>微微一笑</span> 👍（32） 💬（3）<div>老师好，实现了下CAS,代码连接：https:&#47;&#47;github.com&#47;shenyachen&#47;JKSJ&#47;blob&#47;master&#47;study&#47;src&#47;main&#47;java&#47;com&#47;jksj&#47;study&#47;casAndFaa&#47;CASThread.java。
-对于FAA，通过查找资料，jdk1.8在调用sun.misc.Unsafe#getAndAddInt方法时，会根据系统底层是否支持FAA，来决定是使用FAA还是CAS。</div>2019-09-03</li><br/><li><span>奕</span> 👍（11） 💬（2）<div>NodeJS中，没有发现有关操作CpU原语CAS或者FAA的实现的</div>2019-09-03</li><br/><li><span>QQ怪</span> 👍（6） 💬（1）<div>MutxLock：https:&#47;&#47;github.com&#47;xqq1994&#47;algorithm&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;test&#47;concurrency&#47;MutxLock.java
+<li><span>ponymm</span> 👍（54） 💬（2）<p>“CAS 和 FAA 在各种编程语言中，都有相应的实现，可以来直接使用，无论你是使用哪种编程语言，它底层使用的系统调用是一样的，效果也是一样的。” 李老师这句话有点小问题：car,faa并不是通过系统调用实现的，系统调用的开销不小，cas本来就是为了提升性能，不会走系统调用。事实上是在用户态直接使用汇编指令就可以实现</p>2019-09-03</li><br/><li><span>微微一笑</span> 👍（32） 💬（3）<p>老师好，实现了下CAS,代码连接：https:&#47;&#47;github.com&#47;shenyachen&#47;JKSJ&#47;blob&#47;master&#47;study&#47;src&#47;main&#47;java&#47;com&#47;jksj&#47;study&#47;casAndFaa&#47;CASThread.java。
+对于FAA，通过查找资料，jdk1.8在调用sun.misc.Unsafe#getAndAddInt方法时，会根据系统底层是否支持FAA，来决定是使用FAA还是CAS。</p>2019-09-03</li><br/><li><span>奕</span> 👍（11） 💬（2）<p>NodeJS中，没有发现有关操作CpU原语CAS或者FAA的实现的</p>2019-09-03</li><br/><li><span>QQ怪</span> 👍（6） 💬（1）<p>MutxLock：https:&#47;&#47;github.com&#47;xqq1994&#47;algorithm&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;test&#47;concurrency&#47;MutxLock.java
 CAS、FFA:
 https:&#47;&#47;github.com&#47;xqq1994&#47;algorithm&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;test&#47;concurrency&#47;CAS.java
-完成了老师的作业，好高兴</div>2019-09-03</li><br/><li><span>张三</span> 👍（3） 💬（3）<div>Java里边有支持FAA这种CPU指令的实现吗？以前没听说</div>2019-09-03</li><br/><li><span>明日</span> 👍（2） 💬（1）<div>Java实现: https:&#47;&#47;gist.github.com&#47;imgaoxin&#47;a2b09715af99b993e30b44963cebc530</div>2019-09-03</li><br/><li><span>Sicily9</span> 👍（1） 💬（3）<div>有一个小疑问，关于原子性的话，有一个极端情况，多核并行情况下 两个线程 同时在执行一个cas原语 会有安全问题吗</div>2019-11-19</li><br/><li><span>衹是一支歌</span> 👍（0） 💬（1）<div>CAS FAA是不是只能用于单机情况下的资源控制访问呢？</div>2020-06-23</li><br/><li><span>长期规划</span> 👍（0） 💬（1）<div>Python没找到CAS和FAA的实现</div>2019-10-09</li><br/><li><span>青舟</span> 👍（0） 💬（2）<div>https:&#47;&#47;github.com&#47;qingzhou413&#47;geektime-mq.git
+完成了老师的作业，好高兴</p>2019-09-03</li><br/><li><span>张三</span> 👍（3） 💬（3）<p>Java里边有支持FAA这种CPU指令的实现吗？以前没听说</p>2019-09-03</li><br/><li><span>明日</span> 👍（2） 💬（1）<p>Java实现: https:&#47;&#47;gist.github.com&#47;imgaoxin&#47;a2b09715af99b993e30b44963cebc530</p>2019-09-03</li><br/><li><span>Sicily9</span> 👍（1） 💬（3）<p>有一个小疑问，关于原子性的话，有一个极端情况，多核并行情况下 两个线程 同时在执行一个cas原语 会有安全问题吗</p>2019-11-19</li><br/><li><span>衹是一支歌</span> 👍（0） 💬（1）<p>CAS FAA是不是只能用于单机情况下的资源控制访问呢？</p>2020-06-23</li><br/><li><span>长期规划</span> 👍（0） 💬（1）<p>Python没找到CAS和FAA的实现</p>2019-10-09</li><br/><li><span>青舟</span> 👍（0） 💬（2）<p>https:&#47;&#47;github.com&#47;qingzhou413&#47;geektime-mq.git
 做了1000万次加法，
 Lock: 380ms
 CAS: 200ms
-FAA: 280ms</div>2019-09-04</li><br/><li><span>潘政宇</span> 👍（0） 💬（2）<div>go的语法太奇特了，代码中的done作用是什么啊</div>2019-09-03</li><br/><li><span>刘天鹏</span> 👍（0） 💬（3）<div>对于 “CAS 和 FAA 在各种编程语言中，都有相应的实现”
+FAA: 280ms</p>2019-09-04</li><br/><li><span>潘政宇</span> 👍（0） 💬（2）<p>go的语法太奇特了，代码中的done作用是什么啊</p>2019-09-03</li><br/><li><span>刘天鹏</span> 👍（0） 💬（3）<p>对于 “CAS 和 FAA 在各种编程语言中，都有相应的实现”
 我想起之前在操作数据的时候，为了并发的修改用户数据(Money)，当时的做法是
 先Select出用户的Money
 再对Money做操作
-最后在Update的时候多附加一个条件（Money=OldMoney）</div>2019-09-03</li><br/><li><span>刘天鹏</span> 👍（0） 💬（1）<div>https:&#47;&#47;gist.github.com&#47;liutianpeng&#47;6f72bca647be41705d68736a79246c2f
+最后在Update的时候多附加一个条件（Money=OldMoney）</p>2019-09-03</li><br/><li><span>刘天鹏</span> 👍（0） 💬（1）<p>https:&#47;&#47;gist.github.com&#47;liutianpeng&#47;6f72bca647be41705d68736a79246c2f
 用Golang实现的版本,其实老师都已经实现了，Test和Benchmark都做了，果然操作时间 FAA &lt; CAS &lt; Mutex
 
 另外还有一个问题 atomic.LoadXXX 这组函数是什么作用（或者说为了解决什么问题的?）
-</div>2019-09-03</li><br/><li><span>姜戈</span> 👍（13） 💬（0）<div>JAVA中的FAA和CAS: FAA就是用CAS实现的。
+</p>2019-09-03</li><br/><li><span>姜戈</span> 👍（13） 💬（0）<p>JAVA中的FAA和CAS: FAA就是用CAS实现的。
 
 public final int getAndAddInt(Object var1, long var2, int var4) {
         int var5;
@@ -203,5 +203,5 @@ public final int getAndAddInt(Object var1, long var2, int var4) {
         } while(!this.compareAndSwapInt(var1, var2, var5, var5 + var4));
 
         return var5;
-    }</div>2019-09-03</li><br/><li><span>达文西</span> 👍（11） 💬（1）<div>cas需要注意 aba 问题吧</div>2019-10-10</li><br/>
+    }</p>2019-09-03</li><br/><li><span>达文西</span> 👍（11） 💬（1）<p>cas需要注意 aba 问题吧</p>2019-10-10</li><br/>
 </ul>

@@ -538,7 +538,7 @@ Date out = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
 
 对于日期和时间，你还遇到过什么坑吗？我是朱晔，欢迎在评论区与我留言分享你的想法，也欢迎你把今天的内容分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（55） 💬（3）<div>试着回到下问题：
+<li><span>Darren</span> 👍（55） 💬（3）<p>试着回到下问题：
 第一个：
 Date的toString()方法处理的，同String中有BaseCalendar.Date date = normalize();
 而normalize中进行这样处理cdate = (BaseCalendar.Date) cal.getCalendarDate(fastTime,TimeZone.getDefaultRef()；
@@ -564,12 +564,12 @@ Date的toString()方法处理的，同String中有BaseCalendar.Date date = norma
      		2&gt; 为该列指定NULL属性。
 
 
-    在MySQL 5.6.5版本之前，Automatic Initialization and Updating只适用于TIMESTAMP，而且一张表中，最多允许一个TIMESTAMP字段采用该特性。从MySQL 5.6.5开始，Automatic Initialization and Updating同时适用于TIMESTAMP和DATETIME，且不限制数量。</div>2020-04-16</li><br/><li><span>👽</span> 👍（20） 💬（3）<div>对于时间，我个人的理解和目前的使用经验是——能用时间戳就用时间戳。
+    在MySQL 5.6.5版本之前，Automatic Initialization and Updating只适用于TIMESTAMP，而且一张表中，最多允许一个TIMESTAMP字段采用该特性。从MySQL 5.6.5开始，Automatic Initialization and Updating同时适用于TIMESTAMP和DATETIME，且不限制数量。</p>2020-04-16</li><br/><li><span>👽</span> 👍（20） 💬（3）<p>对于时间，我个人的理解和目前的使用经验是——能用时间戳就用时间戳。
 时间戳有几个优势：
 1，便于比较和排序，无论数据库还是后台业务中都是如此。
 2，也比较便于计算，虽然文中提到了Long的问题，但是，我认为L的问题的根本在于Long类型的理解，不是时间戳这个业务的问题。对Long的基础比较好了之后，也就足以应对计算中的问题了。
 3，多端统一，现在提供给前端的很多服务都采用直接转换好年月日的字符串了，但是有时候，前端需要对时间进行比较的时候还是需要额外转化，会很麻烦。而且不利于格式化。时间戳的话就避免了这个问题，自己进行计算，自己格式化。前端自己随便玩。
-</div>2020-04-16</li><br/><li><span>pedro</span> 👍（15） 💬（1）<div>第一个问题，虽然 Date 本质是一个时间戳没有时区的概念，但是在 toString 的时候为了可读性会推测当前时区，如果得不到就会使用 GMT。</div>2020-04-16</li><br/><li><span>俊柱</span> 👍（5） 💬（1）<div>老师，映射表的bean，若数据库字段为 Timestamp，那 java 的字段应该设为 ZonedDateTime 最为合理吗？ 因为我看网上很多人都是用 LocalDateTime 进行映射</div>2020-04-16</li><br/><li><span>lee</span> 👍（4） 💬（1）<div>老师好，上海时区和纽约时区下，格式化同一个时间串得到的当前时差有时候是12小时，有时候是13小时呢，把stringDate改成2020-05-02 22:00:00得到的相差12小时
+</p>2020-04-16</li><br/><li><span>pedro</span> 👍（15） 💬（1）<p>第一个问题，虽然 Date 本质是一个时间戳没有时区的概念，但是在 toString 的时候为了可读性会推测当前时区，如果得不到就会使用 GMT。</p>2020-04-16</li><br/><li><span>俊柱</span> 👍（5） 💬（1）<p>老师，映射表的bean，若数据库字段为 Timestamp，那 java 的字段应该设为 ZonedDateTime 最为合理吗？ 因为我看网上很多人都是用 LocalDateTime 进行映射</p>2020-04-16</li><br/><li><span>lee</span> 👍（4） 💬（1）<p>老师好，上海时区和纽约时区下，格式化同一个时间串得到的当前时差有时候是12小时，有时候是13小时呢，把stringDate改成2020-05-02 22:00:00得到的相差12小时
 String stringDate = &quot;2020-05-02 22:00:00&quot;;
 SimpleDateFormat inputFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
 &#47;&#47;同一Date
@@ -578,20 +578,20 @@ Date date = inputFormat.parse(stringDate);
 System.out.println(new SimpleDateFormat(&quot;[yyyy-MM-dd HH:mm:ss Z]&quot;).format(date));
 &#47;&#47;纽约时区格式化输出
 TimeZone.setDefault(TimeZone.getTimeZone(&quot;America&#47;New_York&quot;));
-System.out.println(new SimpleDateFormat(&quot;[yyyy-MM-dd HH:mm:ss Z]&quot;).format(date));</div>2020-05-11</li><br/><li><span>Monday</span> 👍（3） 💬（1）<div>今天踩坑private static simpledateformat，高并发下出现numberformatexception错误。单笔数据重放没有问题。初看到这个异常一脸懵，完全联系不到是simpledateformat的坑。
-后面突然想起老师这篇文章。。。完全是坑二的重现。因为是jdk6所以选择了去掉static解决，每次都会新建一个对象</div>2020-06-03</li><br/><li><span>eazonshaw</span> 👍（3） 💬（1）<div>问题二：
+System.out.println(new SimpleDateFormat(&quot;[yyyy-MM-dd HH:mm:ss Z]&quot;).format(date));</p>2020-05-11</li><br/><li><span>Monday</span> 👍（3） 💬（1）<p>今天踩坑private static simpledateformat，高并发下出现numberformatexception错误。单笔数据重放没有问题。初看到这个异常一脸懵，完全联系不到是simpledateformat的坑。
+后面突然想起老师这篇文章。。。完全是坑二的重现。因为是jdk6所以选择了去掉static解决，每次都会新建一个对象</p>2020-06-03</li><br/><li><span>eazonshaw</span> 👍（3） 💬（1）<p>问题二：
 首先，为了让docker容器的时间格式和宿主机一致，可以在environment中添加TZ: Asia&#47;Shanghai。
 实验发现，切换mysql的TIME_ZONE到“america&#47;new_york”后，发现datetime格式字段不发生变化，而timestamp格式会换算成纽约时区时间，所以timestamp格式的日期保存了时区信息，而datetime没有。
-感觉在业务场景中，有可能出现服务器或容器系统时间并未设置时区，导致保存的数据并不是我们想要的。因此，是不是更推荐使用timestamp格式来保存日期，避免这种情况发生呢？</div>2020-04-16</li><br/><li><span>👽</span> 👍（3） 💬（1）<div>思考题2:
+感觉在业务场景中，有可能出现服务器或容器系统时间并未设置时区，导致保存的数据并不是我们想要的。因此，是不是更推荐使用timestamp格式来保存日期，避免这种情况发生呢？</p>2020-04-16</li><br/><li><span>👽</span> 👍（3） 💬（1）<p>思考题2:
 说实话，数据库相关知识是我的弱项。
-查了一下，大概是TIMESTAMP包含了时区信息，而DATETIME不包含。另外有一个是，我印象中5.7之后的mysql版本，最多只能有一个TIMESTAMP的字段。这也算是个区别吧。</div>2020-04-16</li><br/><li><span>俊柱</span> 👍（2） 💬（1）<div>老师，我有一个问题困扰已久，希望能够解答一下，目前我们对外输出的 API ，时间都是时间戳的形式， 内部系统的交互，时间也是时间戳的形式。 那我用 Instant 去映射数据库的 Timestamp&#47;DateTime 字段，会不会更好？ 否则的话，需要在多处都要注意 LocalDateTime 和 时间戳的相互转换 （比如 redis 的序列化反序列化，json 的序列化、反序列化）</div>2020-04-22</li><br/><li><span>大大大熊myeh</span> 👍（2） 💬（1）<div>我虽然现在用的是jdk1.8，但对于日期的操作一般还是习惯于用Date或long，以后可以尝试用LocalDateTime等类。
+查了一下，大概是TIMESTAMP包含了时区信息，而DATETIME不包含。另外有一个是，我印象中5.7之后的mysql版本，最多只能有一个TIMESTAMP的字段。这也算是个区别吧。</p>2020-04-16</li><br/><li><span>俊柱</span> 👍（2） 💬（1）<p>老师，我有一个问题困扰已久，希望能够解答一下，目前我们对外输出的 API ，时间都是时间戳的形式， 内部系统的交互，时间也是时间戳的形式。 那我用 Instant 去映射数据库的 Timestamp&#47;DateTime 字段，会不会更好？ 否则的话，需要在多处都要注意 LocalDateTime 和 时间戳的相互转换 （比如 redis 的序列化反序列化，json 的序列化、反序列化）</p>2020-04-22</li><br/><li><span>大大大熊myeh</span> 👍（2） 💬（1）<p>我虽然现在用的是jdk1.8，但对于日期的操作一般还是习惯于用Date或long，以后可以尝试用LocalDateTime等类。
 
 思考题1
 Date#toString方法中，会将当前时间转化为BaseCalendar.Date类，这个类有一个Zone属性，在toString的时候会被追加到字符串中（默认是GMT）
 
 思考题2
 datetime占用8字节，不受时区影响，表示范围&#39;1000-01-01 00:00:00&#39; to &#39;9999-12-31 23:59:59&#39;
-timestamp占用4字节，受时区影响，表示范围&#39;1970-01-01 00:00:01&#39; to &#39;2038-01-19 03:14:07&#39;，若插入null会自动转化为当前时间</div>2020-04-16</li><br/><li><span>pedro</span> 👍（2） 💬（1）<div>第二个问题，timestamp 会把传入的时间转化为 UTC 即时间戳进行存储，而 datetime 也直接将传入的时间存储。</div>2020-04-16</li><br/><li><span>VIC</span> 👍（1） 💬（1）<div>threadlocal simpledateformat，有完整例子吗</div>2020-08-21</li><br/><li><span>Michael</span> 👍（1） 💬（3）<div>private static final DateTimeFormatter df = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+timestamp占用4字节，受时区影响，表示范围&#39;1970-01-01 00:00:01&#39; to &#39;2038-01-19 03:14:07&#39;，若插入null会自动转化为当前时间</p>2020-04-16</li><br/><li><span>pedro</span> 👍（2） 💬（1）<p>第二个问题，timestamp 会把传入的时间转化为 UTC 即时间戳进行存储，而 datetime 也直接将传入的时间存储。</p>2020-04-16</li><br/><li><span>VIC</span> 👍（1） 💬（1）<p>threadlocal simpledateformat，有完整例子吗</p>2020-08-21</li><br/><li><span>Michael</span> 👍（1） 💬（3）<p>private static final DateTimeFormatter df = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);
 
 **
      * 获取本周一开始时间
@@ -637,5 +637,5 @@ timestamp占用4字节，受时区影响，表示范围&#39;1970-01-01 00:00:01&
         return monthEndDate.format(df);
     }
 
-获取本周日截止时间的时候总是获取不到时分秒的那部分:23:59:59</div>2020-04-19</li><br/><li><span>Wiggle Wiggle</span> 👍（1） 💬（1）<div>我在外企，公司大部分数据用的洛杉矶时间（带了夏令时），处理数据的时候要面对各种不带时区的string或datetime，无比酸爽</div>2020-04-18</li><br/><li><span>grandcool</span> 👍（0） 💬（1）<div>老师，为啥“不同的本地时间可能对应同一个 UTC”啊？</div>2020-04-30</li><br/>
+获取本周日截止时间的时候总是获取不到时分秒的那部分:23:59:59</p>2020-04-19</li><br/><li><span>Wiggle Wiggle</span> 👍（1） 💬（1）<p>我在外企，公司大部分数据用的洛杉矶时间（带了夏令时），处理数据的时候要面对各种不带时区的string或datetime，无比酸爽</p>2020-04-18</li><br/><li><span>grandcool</span> 👍（0） 💬（1）<p>老师，为啥“不同的本地时间可能对应同一个 UTC”啊？</p>2020-04-30</li><br/>
 </ul>

@@ -273,7 +273,7 @@ ReadinessProbe使用的是HTTP GET方式，访问容器的 `/ready` 路径，每
 
 ![图片](https://static001.geekbang.org/resource/image/5e/68/5eef65a1abf0cc4ff70c0e3df7a93168.jpg?wh=1920x2580)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>dao</span> 👍（27） 💬（1）<div>思考题：
+<li><span>dao</span> 👍（27） 💬（1）<p>思考题：
 1. 
 Liveness 和 Readiness 都是循环探测，Liveness 探测失败会重启，而 Readiness 探测失败不会重启，可以从 Pod 状态 看出重启次数。
 两者都可以单独使用，这时差异不大。
@@ -281,18 +281,18 @@ Liveness 和 Readiness 都是循环探测，Liveness 探测失败会重启，而
 
 2. 
 Shell 是从容器内部探测，TCP Socket 和 HTTP GET 都是在容器外部探测。 TCP Socket 基于端口的探测，端口打开即成功；HTTP GET 更丰富些，可以是端口 + 路径。
-</div>2022-09-25</li><br/><li><span>新时代农民工</span> 👍（25） 💬（1）<div>老师请问，Startup、Liveness、Readiness三种探针是按顺序执行还是并行呢？</div>2022-08-26</li><br/><li><span>邵涵</span> 👍（9） 💬（1）<div>如老师原文所示，在startupProbe或livenessProbe探测失败之后，pod的status初始都是running。不过，在容器重启几次之后，pod的status会变为CrashLoopBackOff
+</p>2022-09-25</li><br/><li><span>新时代农民工</span> 👍（25） 💬（1）<p>老师请问，Startup、Liveness、Readiness三种探针是按顺序执行还是并行呢？</p>2022-08-26</li><br/><li><span>邵涵</span> 👍（9） 💬（1）<p>如老师原文所示，在startupProbe或livenessProbe探测失败之后，pod的status初始都是running。不过，在容器重启几次之后，pod的status会变为CrashLoopBackOff
 
 如果startupProbe和livenessProbe探测成功，readinessProbe探测失败，pod的ready一直是0&#47;1，status一直是running，当然，也不会重启
 NAME            READY   STATUS    RESTARTS   AGE
-ngx-pod-probe   0&#47;1     Running   0          27m</div>2022-10-25</li><br/><li><span>拾掇拾掇</span> 👍（6） 💬（2）<div>Shell：不用知道端口；TCP Socket、HTTP GET这2个都得知道端口，用的时候还得显示调用端口吧</div>2022-09-12</li><br/><li><span>大毛</span> 👍（4） 💬（1）<div>思考题
+ngx-pod-probe   0&#47;1     Running   0          27m</p>2022-10-25</li><br/><li><span>拾掇拾掇</span> 👍（6） 💬（2）<p>Shell：不用知道端口；TCP Socket、HTTP GET这2个都得知道端口，用的时候还得显示调用端口吧</p>2022-09-12</li><br/><li><span>大毛</span> 👍（4） 💬（1）<p>思考题
 1.  liveness 和 readiness 探针分别代表程序正常运行和可以提供服务。要探索两者的区别就要看应用在这两种状态下的差异，即在程序运行和提供服务之间，差了些什么。程序正常运行，可能代表代码没有 bug，没有硬性的致命的问题，但是要让它达到可以提供服务的程度，还需要一些条件，比如：启动时可能需要缓存预热，这个阶段可能就是 liveness 成功但 readiness 失败。可能 pod 的负载过大，需要进行降级，这就需要将 readness 从成功改成失败。
 所以可能两种探针失败也有不同的含义：liveness 失败代表应用运行出现比较致命问题，需要重启来续命。readiness 失败代表程序不太健康，这种不健康是可以恢复的。
 2. 三种探测方式应用的使用情境不同吧，shell 是在操作系统层面上的探测，毕竟跑起来的业务代码不方便（可能也不应该？）关心 OS。TCP Socket 关心的是网络，关心的是不同进程间的基础通信？http Get 是在应用层面上的探测，感觉它应该和业务的关联比较紧密。
 
-忽然感觉 kubernetes 真厉害，三种探针和三种探测方式，基本上可以检测出各个层面的问题。</div>2023-06-26</li><br/><li><span>Lorry</span> 👍（3） 💬（2）<div>Liveness指的是进程是否存在，Readiness则是指是否能够正常提供服务，所以可以使用tcp&#39;协议检测Liveness，进程存在端口即存在，使用http检测服务，只有服务启动了参能够相应请求。
+忽然感觉 kubernetes 真厉害，三种探针和三种探测方式，基本上可以检测出各个层面的问题。</p>2023-06-26</li><br/><li><span>Lorry</span> 👍（3） 💬（2）<p>Liveness指的是进程是否存在，Readiness则是指是否能够正常提供服务，所以可以使用tcp&#39;协议检测Liveness，进程存在端口即存在，使用http检测服务，只有服务启动了参能够相应请求。
 
-Shell是系统内进程级别交互，所以只能够本地访问，Tcp可以跨机器访问，但是访问的级别比较低，不能够获得顶层数据，Http是协议层数据，可以拿到应用层的服务信息，但是关注顶层信息，底层故障，顶层无法提供有价值信息了</div>2023-02-03</li><br/><li><span>Geek_2ce074</span> 👍（3） 💬（1）<div>老师 tcpSocket探测是由谁发起的</div>2022-09-30</li><br/><li><span>YueShi</span> 👍（3） 💬（1）<div>&quot;postStart&quot;&#39;&quot;preStop&quot;感觉可以做CICD，或者各种webhock钩子，或者简单的通知</div>2022-08-31</li><br/><li><span>peter</span> 👍（1） 💬（2）<div>请教老师几个问题：
+Shell是系统内进程级别交互，所以只能够本地访问，Tcp可以跨机器访问，但是访问的级别比较低，不能够获得顶层数据，Http是协议层数据，可以拿到应用层的服务信息，但是关注顶层信息，底层故障，顶层无法提供有价值信息了</p>2023-02-03</li><br/><li><span>Geek_2ce074</span> 👍（3） 💬（1）<p>老师 tcpSocket探测是由谁发起的</p>2022-09-30</li><br/><li><span>YueShi</span> 👍（3） 💬（1）<p>&quot;postStart&quot;&#39;&quot;preStop&quot;感觉可以做CICD，或者各种webhock钩子，或者简单的通知</p>2022-08-31</li><br/><li><span>peter</span> 👍（1） 💬（2）<p>请教老师几个问题：
 Q1：第27讲中，创建4个nginx实例，没有端口冲突问题吗？
 四个nginx实例，两个在master，两个在worker。同一台机器上有两个pod，而pod的定义是一样的，即端口相同，那么，不存在端口冲突问题吗？
 
@@ -305,7 +305,7 @@ E0826 14:32:28.734987   42769 portforward.go:391] error copying from local conne
 Q3：nginx的配置文件中，竖线是什么意思？
 data: default.conf: |， 这里的竖线是什么意思？ 
 
-Q4：操作系统能够看到的CPU，是指逻辑核吗？还是时间片？</div>2022-08-26</li><br/><li><span>William</span> 👍（0） 💬（1）<div>Startup，启动探针，用来检查应用是否已经启动成功，适合那些有大量初始化工作要做，启动很慢的应用。Liveness，存活探针，用来检查应用是否正常运行，是否存在死锁、死循环。
+Q4：操作系统能够看到的CPU，是指逻辑核吗？还是时间片？</p>2022-08-26</li><br/><li><span>William</span> 👍（0） 💬（1）<p>Startup，启动探针，用来检查应用是否已经启动成功，适合那些有大量初始化工作要做，启动很慢的应用。Liveness，存活探针，用来检查应用是否正常运行，是否存在死锁、死循环。
 Readiness，就绪探针，用来检查应用是否可以接收流量，是否能够对外提供服务。
 --- 
 startupProbe        探测失败-会重启:  
@@ -332,5 +332,5 @@ readinessProbe 探测失败 也会重启:
 	ngx-pod-probe              0&#47;1     Running   1 (4s ago)   10s
 	ngx-pod-probe              0&#47;1     CrashLoopBackOff   2 (6s ago)   20s
 	ngx-pod-probe              0&#47;1     Running   3 (19s ago)   33s
-	ngx-pod-probe              0&#47;1     CrashLoopBackOff   5 (38s ago)   2m12s</div>2024-01-12</li><br/><li><span>onepieceJT2018</span> 👍（0） 💬（1）<div>探针失败了有什么发 alert 的集成方案吗 webhook 到 slack 微信 钉钉 之类</div>2023-10-22</li><br/><li><span>WenjieXu</span> 👍（0） 💬（1）<div>老师，如果一个pod需要加入到service中，是否意味着必须要配置readinessProbe？还是默认不配置的话，k8s会认为是up的，放到对应service的ep对象里？</div>2023-04-22</li><br/><li><span>Geek_60e02d</span> 👍（0） 💬（2）<div>请教下Pod启动后，什么时候会加入service的负载均衡列表？是startup probe成功后吗？然后readyness probe失败后，会从service中移除，那么，是不是说，startup probe成功到readyness失败期间，流量会进入这个没有ready的Pod呢</div>2023-01-25</li><br/><li><span>liubiqianmoney</span> 👍（0） 💬（1）<div>Cgroup除了限制CPU和内存资源外，可以限制磁盘IOPS吗？</div>2022-12-30</li><br/><li><span>静心</span> 👍（0） 💬（1）<div>终于有人把三种probe给讲清楚了，很赞</div>2022-12-11</li><br/>
+	ngx-pod-probe              0&#47;1     CrashLoopBackOff   5 (38s ago)   2m12s</p>2024-01-12</li><br/><li><span>onepieceJT2018</span> 👍（0） 💬（1）<p>探针失败了有什么发 alert 的集成方案吗 webhook 到 slack 微信 钉钉 之类</p>2023-10-22</li><br/><li><span>WenjieXu</span> 👍（0） 💬（1）<p>老师，如果一个pod需要加入到service中，是否意味着必须要配置readinessProbe？还是默认不配置的话，k8s会认为是up的，放到对应service的ep对象里？</p>2023-04-22</li><br/><li><span>Geek_60e02d</span> 👍（0） 💬（2）<p>请教下Pod启动后，什么时候会加入service的负载均衡列表？是startup probe成功后吗？然后readyness probe失败后，会从service中移除，那么，是不是说，startup probe成功到readyness失败期间，流量会进入这个没有ready的Pod呢</p>2023-01-25</li><br/><li><span>liubiqianmoney</span> 👍（0） 💬（1）<p>Cgroup除了限制CPU和内存资源外，可以限制磁盘IOPS吗？</p>2022-12-30</li><br/><li><span>静心</span> 👍（0） 💬（1）<p>终于有人把三种probe给讲清楚了，很赞</p>2022-12-11</li><br/>
 </ul>

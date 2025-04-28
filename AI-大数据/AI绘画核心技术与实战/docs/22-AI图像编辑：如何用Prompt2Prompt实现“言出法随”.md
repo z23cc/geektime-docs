@@ -186,5 +186,5 @@ Prompt2Prompt可以根据我们提供的两个prompt，生成一张原始图像�
 
 欢迎你在留言区记录自己的收获或者疑问，也推荐你把这一讲分享给身边更多朋友。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Geek_cbcfc8</span> 👍（2） 💬（2）<div>老师 ，目前Null-Text Inversion相关的模型目前有哪些？</div>2023-09-06</li><br/>
+<li><span>Geek_cbcfc8</span> 👍（2） 💬（2）<p>老师 ，目前Null-Text Inversion相关的模型目前有哪些？</p>2023-09-06</li><br/>
 </ul>

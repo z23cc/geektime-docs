@@ -224,5 +224,5 @@ FOMO，Fear of Missing Out，中文可以叫：错失恐惧症。指的是人们
 
 [资本和补贴](https://time.geekbang.org/column/article/560747)推动市场的秘密竟然是……！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（0）<div>感觉认知又到一个瓶颈了，重新来老板这里进修下</div>2023-08-14</li><br/>
+<li><span>🐑</span> 👍（0） 💬（0）<p>感觉认知又到一个瓶颈了，重新来老板这里进修下</p>2023-08-14</li><br/>
 </ul>

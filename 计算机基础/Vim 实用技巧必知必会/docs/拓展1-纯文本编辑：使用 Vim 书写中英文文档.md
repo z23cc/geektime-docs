@@ -239,7 +239,7 @@ set spelllang+=cjk
 
 我是吴咏炜，我们下一讲再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>helloworld</span> 👍（2） 💬（1）<div>拼写检查这个，老师是开启的吗，开启后，代码中很多原生关键字都会显式下划线提示错误，造成干扰，这个问题是怎么解决的呢，因为这个原因所以一直没开启这个。</div>2021-07-05</li><br/><li><span>chris</span> 👍（0） 💬（3）<div>请问老师, 插入模式下输中文, 退出后又要切回因为模式, 很麻烦, 有什么自动且输入法的标准方法吗?</div>2020-10-13</li><br/><li><span>瀚海星尘</span> 👍（0） 💬（2）<div>原以为就写写文档，应该会很简单，没想到有这么多配置。之前也好奇72是怎么来的，今天算是知道了。另外，那个分行的问题我之前也有困惑，原来是 l 选项默认设置的。</div>2020-09-22</li><br/><li><span>pyhhou</span> 👍（0） 💬（9）<div>感觉 markdown 还是很实用的。看了两遍，跟着老师的描述操作了一遍，有些地方还是不是特别清楚
+<li><span>helloworld</span> 👍（2） 💬（1）<p>拼写检查这个，老师是开启的吗，开启后，代码中很多原生关键字都会显式下划线提示错误，造成干扰，这个问题是怎么解决的呢，因为这个原因所以一直没开启这个。</p>2021-07-05</li><br/><li><span>chris</span> 👍（0） 💬（3）<p>请问老师, 插入模式下输中文, 退出后又要切回因为模式, 很麻烦, 有什么自动且输入法的标准方法吗?</p>2020-10-13</li><br/><li><span>瀚海星尘</span> 👍（0） 💬（2）<p>原以为就写写文档，应该会很简单，没想到有这么多配置。之前也好奇72是怎么来的，今天算是知道了。另外，那个分行的问题我之前也有困惑，原来是 l 选项默认设置的。</p>2020-09-22</li><br/><li><span>pyhhou</span> 👍（0） 💬（9）<p>感觉 markdown 还是很实用的。看了两遍，跟着老师的描述操作了一遍，有些地方还是不是特别清楚
 
 按我的理解，在 .vimrc 中设置了 textwidth，当一行的文字超过了 textwidth 的设定值就会自动回转到新的一行？但是调了好久，一行的长度都是vim窗口的长度。
 
@@ -247,10 +247,10 @@ formatoptions 那里，上节课，我记得老师用的是 m 选项而不是 n 
 
 看网上一些帖子， markdown 还可以和 tagbar 配合着来使用，不知道效果有没有提升。
 
-平时 markdown 用的比较多，但都是用像 macdown 那种图形编辑器。很想尝试下用 vim，但鉴于自己对 vim 的熟悉程度，还需要多多尝试😂</div>2020-08-24</li><br/><li><span>YouCompleteMe</span> 👍（0） 💬（1）<div>模式行有什么常用的组合吗，比如示例README里的 ”：
+平时 markdown 用的比较多，但都是用像 macdown 那种图形编辑器。很想尝试下用 vim，但鉴于自己对 vim 的熟悉程度，还需要多多尝试😂</p>2020-08-24</li><br/><li><span>YouCompleteMe</span> 👍（0） 💬（1）<p>模式行有什么常用的组合吗，比如示例README里的 ”：
 &lt;!--
 vim:autoindent:expandtab:formatoptions=tcqlmn:textwidth=72:
---&gt;</div>2020-08-19</li><br/><li><span>我来也</span> 👍（0） 💬（1）<div>学习了.
+--&gt;</p>2020-08-19</li><br/><li><span>我来也</span> 👍（0） 💬（1）<p>学习了.
 
 虽然平常也在用vim写markdown,但是没这么讲究过,都是自己手动处理一些边界情况.
 之前也从没有想过在这个方向上折腾.
@@ -258,5 +258,5 @@ vim:autoindent:expandtab:formatoptions=tcqlmn:textwidth=72:
 
 说起vim写markdown,我用的是插件[markdown-preview.nvim](https:&#47;&#47;github.com&#47;iamcco&#47;markdown-preview.nvim)来实时预览.
 不知道其他小伙伴有没有更好的推荐.
-</div>2020-08-19</li><br/>
+</p>2020-08-19</li><br/>
 </ul>

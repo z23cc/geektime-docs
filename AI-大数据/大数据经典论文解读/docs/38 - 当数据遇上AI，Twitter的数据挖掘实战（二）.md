@@ -144,5 +144,5 @@ Twitter为了让团队可以快速检索日志，在日志文件的block层面�
 
 欢迎在留言区说说你的观点和见解，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Geek_88604f</span> 👍（1） 💬（0）<div>这种能力在底层数据格式里默认都支持了吧，像parquet、carbon</div>2022-05-22</li><br/><li><span>靴</span> 👍（0） 💬（0）<div>这个埋点设计好妙啊</div>2024-09-24</li><br/><li><span>CRT</span> 👍（0） 💬（0）<div>是因为这样的索引不方便数据重新分配，代价太大？</div>2022-02-05</li><br/><li><span>piboye</span> 👍（0） 💬（0）<div>clickhouse 好像也是这样在block级别建立索引</div>2022-01-24</li><br/>
+<li><span>Geek_88604f</span> 👍（1） 💬（0）<p>这种能力在底层数据格式里默认都支持了吧，像parquet、carbon</p>2022-05-22</li><br/><li><span>靴</span> 👍（0） 💬（0）<p>这个埋点设计好妙啊</p>2024-09-24</li><br/><li><span>CRT</span> 👍（0） 💬（0）<p>是因为这样的索引不方便数据重新分配，代价太大？</p>2022-02-05</li><br/><li><span>piboye</span> 👍（0） 💬（0）<p>clickhouse 好像也是这样在block级别建立索引</p>2022-01-24</li><br/>
 </ul>

@@ -767,7 +767,7 @@ C++20及其后续演进标准提供的位操作库，显著改善了我们的编
 
 欢迎把你的方案贴出来，与大家一起分享。我们一同交流。下一讲见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>分享一下我的思考题答案：
+<li><span>李云龙</span> 👍（1） 💬（1）<p>分享一下我的思考题答案：
 inline constexpr uint8_t ComputeByteOrder2() {
     constexpr int16_t num = 0x0102;
     constexpr std::bitset&lt;16&gt; bs(num);
@@ -785,5 +785,5 @@ enum class endian
     little,
     big,
     native = ComputeByteOrder2()
-};</div>2024-01-21</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请问：C++20的位操作比以前版本的性能有多少提升？</div>2023-03-02</li><br/>
+};</p>2024-01-21</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请问：C++20的位操作比以前版本的性能有多少提升？</p>2023-03-02</li><br/>
 </ul>

@@ -153,7 +153,7 @@ JVM通过OOP-Klass模型在虚拟机层面实现了Java中的类和对象，其�
 
 ![](https://static001.geekbang.org/resource/image/27/3b/27635340e9dcb6df7b3b1d438994523b.jpg?wh=6666x4728)
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Nico</span> 👍（5） 💬（1）<div>public class Main {
+<li><span>Nico</span> 👍（5） 💬（1）<p>public class Main {
     public static void main(String[] args) {
         Book book =  new Book();
         Book colorBook = new ColorBook();
@@ -177,10 +177,10 @@ Code:
    20: aload_2
    21: invokevirtual #6                  &#47;&#47; Method com&#47;minis&#47;jvm&#47;Book.print:()V
    24: return
-之前看JVM类加载阶段时说 “解析” 在某些情况下可以在初始化阶段之后开始，这是为了支持 Java 语言的运行时绑定，从这个字节码上看 ColorBook.print 执行的是 Book.print，那这个初始化阶段之后，是如何把 Book.print 换成了 ColorBook.print，这一段一直有点模糊，辛苦老师空了帮忙解答下，感谢！</div>2023-09-11</li><br/><li><span>浩仔是程序员</span> 👍（3） 💬（1）<div>老师，你好！对象头的mark world有些不理解，在图中展示的意思一个对象在不同的状态存储不同的状态吗？比如在重量级锁的时候就没有储存hashcode？</div>2023-09-26</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师两个问题：
+之前看JVM类加载阶段时说 “解析” 在某些情况下可以在初始化阶段之后开始，这是为了支持 Java 语言的运行时绑定，从这个字节码上看 ColorBook.print 执行的是 Book.print，那这个初始化阶段之后，是如何把 Book.print 换成了 ColorBook.print，这一段一直有点模糊，辛苦老师空了帮忙解答下，感谢！</p>2023-09-11</li><br/><li><span>浩仔是程序员</span> 👍（3） 💬（1）<p>老师，你好！对象头的mark world有些不理解，在图中展示的意思一个对象在不同的状态存储不同的状态吗？比如在重量级锁的时候就没有储存hashcode？</p>2023-09-26</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师两个问题：
 Q1：CPU读的“字”是四个字节吗？
-Q2：klass是方法的内存地址吗？</div>2023-09-11</li><br/><li><span>^_^</span> 👍（1） 💬（1）<div>方法表是在准备阶段还是解析阶段创建的呢？</div>2023-09-11</li><br/><li><span>哪有什么胜利可言</span> 👍（0） 💬（0）<div>JVM 采用的是 OOP-Klass 对象模型，这个地方存储的就是指向 Klass 的指针，正是通过这个指针，JVM 知道当前这个对象是哪一个类的实例。
-这个地方指的是哪个地方呢？没有讲清楚啊！！！</div>2024-09-07</li><br/><li><span>静心</span> 👍（0） 💬（0）<div>也不知道是我的基本不够，还是理解有点差。总感觉没太完全理解。比如，Markword中几种锁的数据，是每个对象都会预留各种锁的数据？还是会根据情况切换不同的锁数据存储结构？</div>2024-02-04</li><br/><li><span>等风来🎧</span> 👍（0） 💬（0）<div>最后一张图，对象实例数据和类指针的位置是不是画反了？类指针不该再对象头里面吗？老师都用英文表示吧比如Book 的 Klass 指针，而不是 Book 的类指针。因为 java 的 Class 和 Klass&#39;很容易让人混淆。</div>2024-01-08</li><br/><li><span>C.</span> 👍（0） 💬（0）<div>JVM 的对象模型：对象、类、类加载器和类型信息。
+Q2：klass是方法的内存地址吗？</p>2023-09-11</li><br/><li><span>^_^</span> 👍（1） 💬（1）<p>方法表是在准备阶段还是解析阶段创建的呢？</p>2023-09-11</li><br/><li><span>哪有什么胜利可言</span> 👍（0） 💬（0）<p>JVM 采用的是 OOP-Klass 对象模型，这个地方存储的就是指向 Klass 的指针，正是通过这个指针，JVM 知道当前这个对象是哪一个类的实例。
+这个地方指的是哪个地方呢？没有讲清楚啊！！！</p>2024-09-07</li><br/><li><span>静心</span> 👍（0） 💬（0）<p>也不知道是我的基本不够，还是理解有点差。总感觉没太完全理解。比如，Markword中几种锁的数据，是每个对象都会预留各种锁的数据？还是会根据情况切换不同的锁数据存储结构？</p>2024-02-04</li><br/><li><span>等风来🎧</span> 👍（0） 💬（0）<p>最后一张图，对象实例数据和类指针的位置是不是画反了？类指针不该再对象头里面吗？老师都用英文表示吧比如Book 的 Klass 指针，而不是 Book 的类指针。因为 java 的 Class 和 Klass&#39;很容易让人混淆。</p>2024-01-08</li><br/><li><span>C.</span> 👍（0） 💬（0）<p>JVM 的对象模型：对象、类、类加载器和类型信息。
 JVM 层的数据类型：基本数据类型、引用类型、数组类型、接口类型、枚举类型。
-特殊的数据类型和机制：泛型、注解、反射。</div>2023-09-11</li><br/>
+特殊的数据类型和机制：泛型、注解、反射。</p>2023-09-11</li><br/>
 </ul>

@@ -683,20 +683,20 @@ iam-authz-server执行完资源授权之后，会将授权日志存放在一个�
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>daz2yy</span> 👍（8） 💬（1）<div>老师，请问下，数据流和控制流这个怎么来理解呢，是从什么角度来定义的服务类型的？</div>2021-08-06</li><br/><li><span>hello</span> 👍（5） 💬（2）<div>老师，咨询您一个问题，使用GiN做WEB服务，微服务间通过gRPC通讯，如何选择配置注册中心，老师能否推荐几款比较流行开源的配置注册中心。</div>2021-08-05</li><br/><li><span>静心</span> 👍（4） 💬（1）<div>本地channel缓冲和redis缓存对于性能的提高效果会很明显，设计的比较好。但同时，这样的设计会导致多存储数据同步的问题。比如，如果服务突然宕机，本地缓冲中的数据就可能丢失。不知道老师有没有什么好的办法解决？</div>2021-10-29</li><br/><li><span>Jarvis</span> 👍（3） 💬（1）<div>更新缓存时每次都 List 全部密钥&#47;策略，数据量会不会太大了？ Pub 时带上变化的策略&#47;密钥 id, 只更新该 id  的内容是不是好一点？</div>2022-06-28</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<div>总结：
+<li><span>daz2yy</span> 👍（8） 💬（1）<p>老师，请问下，数据流和控制流这个怎么来理解呢，是从什么角度来定义的服务类型的？</p>2021-08-06</li><br/><li><span>hello</span> 👍（5） 💬（2）<p>老师，咨询您一个问题，使用GiN做WEB服务，微服务间通过gRPC通讯，如何选择配置注册中心，老师能否推荐几款比较流行开源的配置注册中心。</p>2021-08-05</li><br/><li><span>静心</span> 👍（4） 💬（1）<p>本地channel缓冲和redis缓存对于性能的提高效果会很明显，设计的比较好。但同时，这样的设计会导致多存储数据同步的问题。比如，如果服务突然宕机，本地缓冲中的数据就可能丢失。不知道老师有没有什么好的办法解决？</p>2021-10-29</li><br/><li><span>Jarvis</span> 👍（3） 💬（1）<p>更新缓存时每次都 List 全部密钥&#47;策略，数据量会不会太大了？ Pub 时带上变化的策略&#47;密钥 id, 只更新该 id  的内容是不是好一点？</p>2022-06-28</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<p>总结：
 iam-authz-server 在数据流上工作，负责授权工作，对性能要求高。
 authz也需要对请求进行认证工作，authz 的认证采用 cache 方式实现 jwt token 认证，即密钥已经缓存在内存中，通过同样的加密方案，确认token的合法性。
 authz的认证工作主要交给了 landon 来完成。iam-apiserver 存储的授权策略符合landon的语法规范，iam-authz-server 接收的授权请求，也符合landon的语法规范。landon 通过接口的方式，暴露了manager、auditLogger、metric 等相关的接口。比如，我们需要为landon提供用户的 policy 列表，是否允许授权，由 landon 来做决策。
-缓存设计</div>2021-12-04</li><br/><li><span>dll</span> 👍（1） 💬（1）<div>每次从apiserver触发reload() 都是全量的拉去 s.cli.GetPolicies()，这样应该可能会产生性能问题吧 假如当Policies数量特别大的时候</div>2022-10-17</li><br/><li><span>陈先生</span> 👍（1） 💬（1）<div>如果iam-authz-server挂了，是不是有audit log丢失的可能性？</div>2021-10-07</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<div>在实际应用中，请求&#47;v1&#47;authz接口的参数体是网关根据用户实际请求的某个具体业务的api的参数、请求方法、path等，并根据提前定制的规则自动构造出来的吧，这样理解对吗</div>2021-08-16</li><br/><li><span>岑惠韬</span> 👍（0） 💬（1）<div>老师请问Load的Start函数第二个协程的作用是什么呢？是主要起解耦作用吗？假如让PubSubLoop直接操作requeue切片，让reloadLoop每秒清空切片，仅考虑当前用法的话是不是也是能跑的？还是会有什么逻辑上的问题？</div>2022-11-06</li><br/><li><span>꧁子华宝宝萌萌哒꧂</span> 👍（0） 💬（1）<div>preparedAuthzServer.Run 为啥需要一个 stopChan 来阻塞不让退出？
+缓存设计</p>2021-12-04</li><br/><li><span>dll</span> 👍（1） 💬（1）<p>每次从apiserver触发reload() 都是全量的拉去 s.cli.GetPolicies()，这样应该可能会产生性能问题吧 假如当Policies数量特别大的时候</p>2022-10-17</li><br/><li><span>陈先生</span> 👍（1） 💬（1）<p>如果iam-authz-server挂了，是不是有audit log丢失的可能性？</p>2021-10-07</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<p>在实际应用中，请求&#47;v1&#47;authz接口的参数体是网关根据用户实际请求的某个具体业务的api的参数、请求方法、path等，并根据提前定制的规则自动构造出来的吧，这样理解对吗</p>2021-08-16</li><br/><li><span>岑惠韬</span> 👍（0） 💬（1）<p>老师请问Load的Start函数第二个协程的作用是什么呢？是主要起解耦作用吗？假如让PubSubLoop直接操作requeue切片，让reloadLoop每秒清空切片，仅考虑当前用法的话是不是也是能跑的？还是会有什么逻辑上的问题？</p>2022-11-06</li><br/><li><span>꧁子华宝宝萌萌哒꧂</span> 👍（0） 💬（1）<p>preparedAuthzServer.Run 为啥需要一个 stopChan 来阻塞不让退出？
 
 按我的理解这个 stopChan 没有写，这个进程永远就退不了， 
 
-直接 return s.genericAPIServer.Run() 不可以吗？</div>2022-06-27</li><br/><li><span>xinHAOr</span> 👍（0） 💬（1）<div>func (r *Analytics) Start() 里面为什么同步执行了Stop？刚启动完就停止了吗</div>2022-04-16</li><br/><li><span>Geek_226b1b</span> 👍（0） 💬（3）<div>老师，请问为什么用Ristretto缓存数据，不直接用Redis缓存数据呢？在用Redis缓存的基础上，讲一下MySQL与Redis的数据一致性相关的缓存读写策略会不会更好一点？把所有数据都简单缓存到一个缓存包&#47;Redis里，没有淘汰机制是不是不太好？</div>2022-03-16</li><br/><li><span>RunDouble</span> 👍（0） 💬（1）<div>太强调授权相关的东西，并不是很好的 demo。</div>2022-02-27</li><br/><li><span>Sch0ng</span> 👍（2） 💬（0）<div>详细介绍了iam-authz-server的设计与实现。
-需要结合代码和跑起来的程序反复揣摩。</div>2021-08-16</li><br/><li><span>Will</span> 👍（1） 💬（0）<div>孔老师。Reload这里
+直接 return s.genericAPIServer.Run() 不可以吗？</p>2022-06-27</li><br/><li><span>xinHAOr</span> 👍（0） 💬（1）<p>func (r *Analytics) Start() 里面为什么同步执行了Stop？刚启动完就停止了吗</p>2022-04-16</li><br/><li><span>Geek_226b1b</span> 👍（0） 💬（3）<p>老师，请问为什么用Ristretto缓存数据，不直接用Redis缓存数据呢？在用Redis缓存的基础上，讲一下MySQL与Redis的数据一致性相关的缓存读写策略会不会更好一点？把所有数据都简单缓存到一个缓存包&#47;Redis里，没有淘汰机制是不是不太好？</p>2022-03-16</li><br/><li><span>RunDouble</span> 👍（0） 💬（1）<p>太强调授权相关的东西，并不是很好的 demo。</p>2022-02-27</li><br/><li><span>Sch0ng</span> 👍（2） 💬（0）<p>详细介绍了iam-authz-server的设计与实现。
+需要结合代码和跑起来的程序反复揣摩。</p>2021-08-16</li><br/><li><span>Will</span> 👍（1） 💬（0）<p>孔老师。Reload这里
 c.secrets.Clear()
 for key, val := range secrets {
 	c.secrets.Set(key, val, 1)
 }
 这里clear.另一个请求如果授权的话。还没有跑到set的方法。可能会有问题。虽然可能是毫秒级别的。
-可能是为了教学演示，如果是生产使用的话，是不是要设计成增量合理些。</div>2023-08-31</li><br/>
+可能是为了教学演示，如果是生产使用的话，是不是要设计成增量合理些。</p>2023-08-31</li><br/>
 </ul>

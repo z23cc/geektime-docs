@@ -181,21 +181,21 @@ WebComponent给出了解决思路，它提供了对局部视图封装能力，�
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>匡晨辉</span> 👍（82） 💬（0）<div>web component是通过浏览器引擎提供api接口进行操作，让后在dom，cssom生成过程中控制实现组件化的作用域&#47;执行执行上下文的隔离； vue&#47;react 是在没有浏览器引擎支持的情况下，通过采取一些取巧的手法（比如：js执行上下文的封装利用闭包；样式的封装利用文件hash值作为命名空间在css选择的时候多套一层选择条件（hash值），本质上还是全局的只是不同组件css选择的时候只能选择到组件相应的css样式，实现的隔离）</div>2019-12-18</li><br/><li><span>wubinsheng</span> 👍（50） 💬（1）<div>原来小程序用的是webComponent，控制台满屏的“#shadow-root”</div>2019-10-15</li><br/><li><span>Snail</span> 👍（32） 💬（1）<div>Vue，React是从开发者层面解决了组件化的问题，提高了效率。WebComponent是从浏览器引擎实现层面解决了组件化的问题，从社区来看，前者的发展优势更明显</div>2019-12-16</li><br/><li><span>Geek_6x3b9v</span> 👍（16） 💬（4）<div>webComponent标准可以成为框架间的桥梁.
+<li><span>匡晨辉</span> 👍（82） 💬（0）<p>web component是通过浏览器引擎提供api接口进行操作，让后在dom，cssom生成过程中控制实现组件化的作用域&#47;执行执行上下文的隔离； vue&#47;react 是在没有浏览器引擎支持的情况下，通过采取一些取巧的手法（比如：js执行上下文的封装利用闭包；样式的封装利用文件hash值作为命名空间在css选择的时候多套一层选择条件（hash值），本质上还是全局的只是不同组件css选择的时候只能选择到组件相应的css样式，实现的隔离）</p>2019-12-18</li><br/><li><span>wubinsheng</span> 👍（50） 💬（1）<p>原来小程序用的是webComponent，控制台满屏的“#shadow-root”</p>2019-10-15</li><br/><li><span>Snail</span> 👍（32） 💬（1）<p>Vue，React是从开发者层面解决了组件化的问题，提高了效率。WebComponent是从浏览器引擎实现层面解决了组件化的问题，从社区来看，前者的发展优势更明显</p>2019-12-16</li><br/><li><span>Geek_6x3b9v</span> 👍（16） 💬（4）<p>webComponent标准可以成为框架间的桥梁.
 
 组件内部可以用vue&#47;react或随便什么技术实现,只要最终实现约定接口即可.
 
 这样的话,就可以引入用react开发的A组件,同时引入用vue开发的B组件,而他们都在一个Angular项目中.就像一个原生html标签一样被使用.
 
-所以这也可以是微前端的一种实现方式</div>2020-04-15</li><br/><li><span>mfist</span> 👍（12） 💬（0）<div>下面是我的理解，请老师纠正。
+所以这也可以是微前端的一种实现方式</p>2020-04-15</li><br/><li><span>mfist</span> 👍（12） 💬（0）<p>下面是我的理解，请老师纠正。
 在没有webcomponent的时候，通过react和vue基于当前的前端特性去实现组件化，他们之间是互相影响和借鉴的，最终react和vue也会向webcomponent标准的方向演进。但是现在由于webcomponent的浏览器支持还不是太好，所以现阶段它们还是会并存的
-</div>2019-10-08</li><br/><li><span>蓝配鸡</span> 👍（9） 💬（0）<div>才疏学浅， 以下是个人的理解：
+</p>2019-10-08</li><br/><li><span>蓝配鸡</span> 👍（9） 💬（0）<p>才疏学浅， 以下是个人的理解：
 
 两者互相补充， 互不影响
 
 react提供了陈述式的方法编写网页， 让用户不需要去关心dom改变之类的细节
 
-webComponent则是提供了封装</div>2019-10-09</li><br/><li><span>张峰</span> 👍（2） 💬（0）<div>web-component之于vue&#47;react，类似于ES6789之于coffeeScript&#47;typeScript，后者只是前者的临时替补，omi和angular都已经支持web-component</div>2019-10-08</li><br/><li><span>张峰</span> 👍（2） 💬（1）<div>shadow dom 中的style使用rem，r是相对的html的font-size 这点很坑</div>2019-10-08</li><br/><li><span>君自兰芳</span> 👍（1） 💬（1）<div>“在影子 DOM 定义的 JavaScript 函数依然可以被外部访问”
+webComponent则是提供了封装</p>2019-10-09</li><br/><li><span>张峰</span> 👍（2） 💬（0）<p>web-component之于vue&#47;react，类似于ES6789之于coffeeScript&#47;typeScript，后者只是前者的临时替补，omi和angular都已经支持web-component</p>2019-10-08</li><br/><li><span>张峰</span> 👍（2） 💬（1）<p>shadow dom 中的style使用rem，r是相对的html的font-size 这点很坑</p>2019-10-08</li><br/><li><span>君自兰芳</span> 👍（1） 💬（1）<p>“在影子 DOM 定义的 JavaScript 函数依然可以被外部访问”
 
-有个疑问，在影子 DOM 定义的变量或函数是属于全局作用域吗？</div>2020-11-12</li><br/><li><span>Roy</span> 👍（1） 💬（0）<div>webcomponent很好的实现与第三方应用的组合使用。</div>2020-04-29</li><br/><li><span>HoSalt</span> 👍（1） 💬（0）<div>WebComponents 如何传递数据以及如何重置样式？</div>2020-04-12</li><br/><li><span>Jy</span> 👍（1） 💬（1）<div>WebComponent使用后，搜索引擎的SEO支持如何？</div>2020-03-02</li><br/><li><span>润曦</span> 👍（0） 💬（0）<div>Web Components 和前端框架并不是非此即彼的关系，而是可以在不同的场景中互补使用。如果你想要构建一个高度可复用、与框架无关的组件库，Web Components 是很好的选择。而 React 和 Vue 提供了强大的生态系统和开发体验，更适合开发大型复杂的应用。</div>2024-10-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-05-16</li><br/><li><span>空间</span> 👍（0） 💬（0）<div>请问web componet 有没有解决跨文件代码复用和前端工程化的问题呢？是如何做到的？</div>2023-09-24</li><br/>
+有个疑问，在影子 DOM 定义的变量或函数是属于全局作用域吗？</p>2020-11-12</li><br/><li><span>Roy</span> 👍（1） 💬（0）<p>webcomponent很好的实现与第三方应用的组合使用。</p>2020-04-29</li><br/><li><span>HoSalt</span> 👍（1） 💬（0）<p>WebComponents 如何传递数据以及如何重置样式？</p>2020-04-12</li><br/><li><span>Jy</span> 👍（1） 💬（1）<p>WebComponent使用后，搜索引擎的SEO支持如何？</p>2020-03-02</li><br/><li><span>润曦</span> 👍（0） 💬（0）<p>Web Components 和前端框架并不是非此即彼的关系，而是可以在不同的场景中互补使用。如果你想要构建一个高度可复用、与框架无关的组件库，Web Components 是很好的选择。而 React 和 Vue 提供了强大的生态系统和开发体验，更适合开发大型复杂的应用。</p>2024-10-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-05-16</li><br/><li><span>空间</span> 👍（0） 💬（0）<p>请问web componet 有没有解决跨文件代码复用和前端工程化的问题呢？是如何做到的？</p>2023-09-24</li><br/>
 </ul>

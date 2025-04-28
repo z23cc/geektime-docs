@@ -289,18 +289,18 @@ Tomcat继续接收发往Tomcat A的请求，Session 1设置为失效。请注意
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>QQ怪</span> 👍（12） 💬（1）<div>感觉这种方式应该在生产环境用的很少吧，大多数都是用redis集群来保存session</div>2019-07-25</li><br/><li><span>neohope</span> 👍（6） 💬（2）<div>老师您好，有两个问题想咨询一下：
+<li><span>QQ怪</span> 👍（12） 💬（1）<p>感觉这种方式应该在生产环境用的很少吧，大多数都是用redis集群来保存session</p>2019-07-25</li><br/><li><span>neohope</span> 👍（6） 💬（2）<p>老师您好，有两个问题想咨询一下：
 
 1、采用DeltaManager模式后，如果主节点挂掉，存在新的主节点选举的这个过程吗？如果有的话，Tomcat是如何防止产生集群分裂（脑裂）的呢？
 
 2、本节说的Tomcat集群部署，入口是Tomcat还是Apache啊？
 之前只用过Apache做负载，后面放了Tomcat集群。但说实话，Tomcat session复制的效率还是太低了。
-后面就直接Nginx+多个Tomcat，Session干脆放到了Redis里，效率高了很多。</div>2019-07-25</li><br/><li><span>chon</span> 👍（5） 💬（1）<div>生产中，如果机器多的话，很少用session复制吧</div>2019-07-25</li><br/><li><span>锦</span> 👍（2） 💬（1）<div>Tomcat的Session同步机制有两种：
+后面就直接Nginx+多个Tomcat，Session干脆放到了Redis里，效率高了很多。</p>2019-07-25</li><br/><li><span>chon</span> 👍（5） 💬（1）<p>生产中，如果机器多的话，很少用session复制吧</p>2019-07-25</li><br/><li><span>锦</span> 👍（2） 💬（1）<p>Tomcat的Session同步机制有两种：
 第一是所有集群机器中都保存一份其他机器的数据
 第二是备份模式，Session数据保存在任意两台机器中。
-我的问题是游戏服务器之间的数据同步是否也可以采用类似的机制呢？其中有两个挑战：一是玩家数据比较大，二是事务如何处理</div>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（1） 💬（1）<div>好老师哈。那些操作一般不会涉及session变化。BackupManager实现高可用，和好多中间件的原理差不多。以前都是接入层一致性hash，没有启用session集群。这个session集群同步开销高么?一次只同步一个seesion还是批量打包的?Tomcat支持把session放在redis么?我项目是token+redis。</div>2019-07-26</li><br/><li><span>a、</span> 👍（1） 💬（1）<div>今天的问题:我觉得因为一般静态资源不会涉及到session更新，所以就不需要拦截。还有个问题我想问下老师，如果我有四台机器A,B,C,D,设置了BackupManager，那A的备份机器会不会是B，B的备份机器是C，C的备份机器是D，D的备份机器是A？还是说如果A的备份机器是B，那C只能选择D做备份机器？</div>2019-07-25</li><br/><li><span>旭东(Frank)</span> 👍（3） 💬（1）<div>这个集群感觉只是教学版，不工程版。应该很少用于生产</div>2019-08-16</li><br/><li><span>业余草</span> 👍（3） 💬（3）<div>这些方法感觉有些过时了。比如我们可以自己实现一致性哈希算法，也就是说，针对不同的会话，我们给他算一个hash，让它分配到同一个tomcat上。</div>2019-07-30</li><br/><li><span>你的头发还好吗</span> 👍（1） 💬（0）<div>针对 ReplicationValve 设置 filter值，这些静态文件不会改变 session 状态，不需要进行session同步操作。
+我的问题是游戏服务器之间的数据同步是否也可以采用类似的机制呢？其中有两个挑战：一是玩家数据比较大，二是事务如何处理</p>2019-07-30</li><br/><li><span>-W.LI-</span> 👍（1） 💬（1）<p>好老师哈。那些操作一般不会涉及session变化。BackupManager实现高可用，和好多中间件的原理差不多。以前都是接入层一致性hash，没有启用session集群。这个session集群同步开销高么?一次只同步一个seesion还是批量打包的?Tomcat支持把session放在redis么?我项目是token+redis。</p>2019-07-26</li><br/><li><span>a、</span> 👍（1） 💬（1）<p>今天的问题:我觉得因为一般静态资源不会涉及到session更新，所以就不需要拦截。还有个问题我想问下老师，如果我有四台机器A,B,C,D,设置了BackupManager，那A的备份机器会不会是B，B的备份机器是C，C的备份机器是D，D的备份机器是A？还是说如果A的备份机器是B，那C只能选择D做备份机器？</p>2019-07-25</li><br/><li><span>旭东(Frank)</span> 👍（3） 💬（1）<p>这个集群感觉只是教学版，不工程版。应该很少用于生产</p>2019-08-16</li><br/><li><span>业余草</span> 👍（3） 💬（3）<p>这些方法感觉有些过时了。比如我们可以自己实现一致性哈希算法，也就是说，针对不同的会话，我们给他算一个hash，让它分配到同一个tomcat上。</p>2019-07-30</li><br/><li><span>你的头发还好吗</span> 👍（1） 💬（0）<p>针对 ReplicationValve 设置 filter值，这些静态文件不会改变 session 状态，不需要进行session同步操作。
 翻阅源码：
 if (!isRequestWithoutSessionChange(uri)) {
    sendMessage(session,manager);
-}</div>2022-04-05</li><br/><li><span>James</span> 👍（1） 💬（0）<div>小集群或者一开始没集群但是很久后流量较大或者保证可用性&#47;防止部署时单点故障时可以使用，不过大部分或者一开始就是集群都是redis session集群</div>2021-03-22</li><br/><li><span>maybe</span> 👍（1） 💬（0）<div>这些静态资源不涉及session，直接过滤就好</div>2020-08-17</li><br/><li><span>shen</span> 👍（0） 💬（0）<div>可以利用ngnix ip hash负载均衡，让请求定位到对应的tomcat上做本地的session，集中存储的session放到redis上</div>2021-01-09</li><br/><li><span>Liam</span> 👍（0） 💬（0）<div>避免复制的时候提及文件这类大数据吧？</div>2019-07-26</li><br/><li><span>Geek_xbye50</span> 👍（0） 💬（0）<div>思考题应该是静态资源不会更新session值吧！请问老师我也有跟neohope一样的一问，集群分裂的情况tomcat的处理方式</div>2019-07-25</li><br/>
+}</p>2022-04-05</li><br/><li><span>James</span> 👍（1） 💬（0）<p>小集群或者一开始没集群但是很久后流量较大或者保证可用性&#47;防止部署时单点故障时可以使用，不过大部分或者一开始就是集群都是redis session集群</p>2021-03-22</li><br/><li><span>maybe</span> 👍（1） 💬（0）<p>这些静态资源不涉及session，直接过滤就好</p>2020-08-17</li><br/><li><span>shen</span> 👍（0） 💬（0）<p>可以利用ngnix ip hash负载均衡，让请求定位到对应的tomcat上做本地的session，集中存储的session放到redis上</p>2021-01-09</li><br/><li><span>Liam</span> 👍（0） 💬（0）<p>避免复制的时候提及文件这类大数据吧？</p>2019-07-26</li><br/><li><span>Geek_xbye50</span> 👍（0） 💬（0）<p>思考题应该是静态资源不会更新session值吧！请问老师我也有跟neohope一样的一问，集群分裂的情况tomcat的处理方式</p>2019-07-25</li><br/>
 </ul>

@@ -240,5 +240,5 @@ for index, row in res.iterrows():
 
 期待你进一步探索这个主题，为推荐系统领域贡献自己的力量。留言区见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>易轻尘</span> 👍（3） 💬（0）<div>感觉用GPT开发应用需要编程思维的一种转变</div>2024-06-23</li><br/>
+<li><span>易轻尘</span> 👍（3） 💬（0）<p>感觉用GPT开发应用需要编程思维的一种转变</p>2024-06-23</li><br/>
 </ul>

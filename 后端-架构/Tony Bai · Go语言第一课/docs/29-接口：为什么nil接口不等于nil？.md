@@ -812,7 +812,7 @@ var staticuint64s = [...]uint64{
 
 欢迎在留言区分享你的经验和想法。也欢迎你把这节课分享给更多对Go接口感兴趣的朋友。我是Tony Bai，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Calvin</span> 👍（23） 💬（1）<div>思考题有2 种方法：
+<li><span>Calvin</span> 👍（23） 💬（1）<p>思考题有2 种方法：
 1）returnsError() 函数不返回 error 非空接口类型，而是直接返回结构体指针 *MyError（明确的类型，阻止自动装箱）；
 2）不要直接 err != nil 这样判断，而是使用类型断言来判断：
 if e, ok := err.(*MyError); ok &amp;&amp; e != nil {
@@ -820,11 +820,11 @@ if e, ok := err.(*MyError); ok &amp;&amp; e != nil {
     return
 }
 
-PS：Go 的“接口”在编程中需要特别注意，必须搞清楚接口类型变量在运行时的表示，以避免踩坑！！！</div>2022-01-05</li><br/><li><span>return</span> 👍（18） 💬（1）<div>老师讲的太好， 这一篇 知识密度相当大啊， 
+PS：Go 的“接口”在编程中需要特别注意，必须搞清楚接口类型变量在运行时的表示，以避免踩坑！！！</p>2022-01-05</li><br/><li><span>return</span> 👍（18） 💬（1）<p>老师讲的太好， 这一篇 知识密度相当大啊， 
 就这一篇就值专栏的价格了。
-感谢老师如此用心的输出。</div>2021-12-29</li><br/><li><span>Geralt</span> 👍（16） 💬（3）<div>修改方法:
+感谢老师如此用心的输出。</p>2021-12-29</li><br/><li><span>Geralt</span> 👍（16） 💬（3）<p>修改方法:
 1. 把returnsError()里面p的类型改为error
-2. 删除p，直接return &amp;ErrBad或者nil</div>2021-12-29</li><br/><li><span>Slowdive</span> 👍（12） 💬（1）<div>老师， 请问这里发生装箱了吗？ 返回类型是error， 是一个接口， p是*MyError， p的方法列表覆盖了error这个接口， 所以是可以赋值给error类型的变量。 
+2. 删除p，直接return &amp;ErrBad或者nil</p>2021-12-29</li><br/><li><span>Slowdive</span> 👍（12） 💬（1）<p>老师， 请问这里发生装箱了吗？ 返回类型是error， 是一个接口， p是*MyError， p的方法列表覆盖了error这个接口， 所以是可以赋值给error类型的变量。 
 这个过程发生了隐式转换，赋值给接口类型，做装箱创建iface， 
 p != nil就成了 (&amp;tab, 0x0) != (0x0, 0x0)
 
@@ -836,8 +836,8 @@ func returnsError() error {
     return p
 }
 
-这样理解对吗？</div>2022-04-20</li><br/><li><span>aoe</span> 👍（10） 💬（2）<div>原来装箱是这样：将任意类型赋值给一个接口类型变量就是装箱操作。
-接口类型的装箱实际就是创建一个 eface 或 iface 的过程</div>2022-01-03</li><br/><li><span>Geek_a6104e</span> 👍（7） 💬（1）<div>eif: (0x10b38c0,0x10e9b30)
+这样理解对吗？</p>2022-04-20</li><br/><li><span>aoe</span> 👍（10） 💬（2）<p>原来装箱是这样：将任意类型赋值给一个接口类型变量就是装箱操作。
+接口类型的装箱实际就是创建一个 eface 或 iface 的过程</p>2022-01-03</li><br/><li><span>Geek_a6104e</span> 👍（7） 💬（1）<p>eif: (0x10b38c0,0x10e9b30)
 err: (0x10eb690,0x10e9b30)
 eif = err: true
 eface: {_type:0x10b38c0 data:0x10e9b30}
@@ -849,19 +849,19 @@ iface: {tab:0x10eb690 data:0x10e9b30}
      inter: {typ:{size:16 ptrdata:16 hash:235953867 tflag:7 align:8 fieldAlign:8 kind:20 equal:0x10034c0 gcdata:0x10d2418 str:3666 ptrToThis:26848} pkgpath:{bytes:&lt;nil&gt;} mhdr:[{name:2592 ityp:43520}]}
      _type: {size:8 ptrdata:0 hash:1156555957 tflag:15 align:8 fieldAlign:8 kind:2 equal:0x10032e0 gcdata:0x10e9a60 str:4946 ptrToThis:58496}
      fun: [0x10a5780(17454976),]
-   data: bad error 请问为什么data会是bad error不应该是5吗</div>2022-07-04</li><br/><li><span>Calvin</span> 👍（6） 💬（1）<div>Go 指针这块，感觉可以单独抽出一讲来讲下，并且结合unsafe 讲解，不知道大白老师能否满足大家的愿望呢？😂</div>2022-01-05</li><br/><li><span>郑泽洲</span> 👍（5） 💬（3）<div>请教老师，接口类型装箱过程为什么普遍要把原来的值复制一份到data？（除了staticuint64s等特例）直接用原来的值不行吗，还能提升点性能</div>2022-02-26</li><br/><li><span>在下宝龙、</span> 👍（5） 💬（3）<div>老师您好，在   eif2 = 17 这个操作后，输出后的data  ,0xc00007ef48 和0x10eb3d0 不相等呀，为甚么说他们是一样的
+   data: bad error 请问为什么data会是bad error不应该是5吗</p>2022-07-04</li><br/><li><span>Calvin</span> 👍（6） 💬（1）<p>Go 指针这块，感觉可以单独抽出一讲来讲下，并且结合unsafe 讲解，不知道大白老师能否满足大家的愿望呢？😂</p>2022-01-05</li><br/><li><span>郑泽洲</span> 👍（5） 💬（3）<p>请教老师，接口类型装箱过程为什么普遍要把原来的值复制一份到data？（除了staticuint64s等特例）直接用原来的值不行吗，还能提升点性能</p>2022-02-26</li><br/><li><span>在下宝龙、</span> 👍（5） 💬（3）<p>老师您好，在   eif2 = 17 这个操作后，输出后的data  ,0xc00007ef48 和0x10eb3d0 不相等呀，为甚么说他们是一样的
 eif1: (0x10ac580,0xc00007ef48)
-eif2: (0x10ac580,0x10eb3d0)</div>2021-12-29</li><br/><li><span>lesserror</span> 👍（3） 💬（2）<div>大白老师的这一节干货很多，读的意犹未尽。有几个疑惑点，麻烦老师解忧。
+eif2: (0x10ac580,0x10eb3d0)</p>2021-12-29</li><br/><li><span>lesserror</span> 👍（3） 💬（2）<p>大白老师的这一节干货很多，读的意犹未尽。有几个疑惑点，麻烦老师解忧。
 
 1. 文中类似：“_type” 这种命名，前面加下划线，这种有什么含义呢？
 
-2. 文中关于打印两类接口内部详细信息的代码中，运用了大量的 * 还有 &amp; 再加上  unsafe.Pointer 的使用，看起来会非常困惑，希望老师后面能讲一讲Go的指针吧。刚从动态语言转过来，确实应该好好理解一下。不然后面写出来的代码一定会有很多潜在的风险。</div>2021-12-31</li><br/><li><span>lesserror</span> 👍（2） 💬（1）<div>tony bai 老师，翻看评论留言中，发现有一处你是这样写的：
+2. 文中关于打印两类接口内部详细信息的代码中，运用了大量的 * 还有 &amp; 再加上  unsafe.Pointer 的使用，看起来会非常困惑，希望老师后面能讲一讲Go的指针吧。刚从动态语言转过来，确实应该好好理解一下。不然后面写出来的代码一定会有很多潜在的风险。</p>2021-12-31</li><br/><li><span>lesserror</span> 👍（2） 💬（1）<p>tony bai 老师，翻看评论留言中，发现有一处你是这样写的：
 
 var a int = 6
 var i interface{} = a
 i.(int) = 7
 
-通过前面的知识，i.(int)  是类型断言，通常是 v，ok := i.(int)，这里的 i.(int) = 7 该怎么理解呢？</div>2023-06-22</li><br/><li><span>wu526</span> 👍（2） 💬（2）<div>白老师我将 returnsErro()改为如下的方式,
+通过前面的知识，i.(int)  是类型断言，通常是 v，ok := i.(int)，这里的 i.(int) = 7 该怎么理解呢？</p>2023-06-22</li><br/><li><span>wu526</span> 👍（2） 💬（2）<p>白老师我将 returnsErro()改为如下的方式,
 func returnsError() error {
 	var p MyError
 	return p
@@ -878,5 +878,5 @@ func (MyError) Error() string {
 }
 
 我用 dumpItabOfIface(unsafe.Pointer(&amp;err)) 查看一下输出, 发现不管是否显式实现 MyError 中的 Error(),
-tab.fun 字段都是有值的，因此就很疑惑为什么显式实现了 Error()就不会报错呢？ 麻烦白老师帮我解惑一下，谢谢~~</div>2022-11-12</li><br/><li><span>Kepler</span> 👍（2） 💬（1）<div>这篇有点高强度对抗啊</div>2022-03-27</li><br/><li><span>文经</span> 👍（2） 💬（1）<div>虽然是Go语言第一课，但这一部分讲得很深入，而且很厉害的一点是，把难以理解的技术细节隐藏的刚刚好，这一篇要再看几遍。白老师真是讲课的高手啊👍👍</div>2022-01-14</li><br/><li><span>Witt</span> 👍（2） 💬（2）<div>返回 *MyError 而不是 error</div>2021-12-29</li><br/>
+tab.fun 字段都是有值的，因此就很疑惑为什么显式实现了 Error()就不会报错呢？ 麻烦白老师帮我解惑一下，谢谢~~</p>2022-11-12</li><br/><li><span>Kepler</span> 👍（2） 💬（1）<p>这篇有点高强度对抗啊</p>2022-03-27</li><br/><li><span>文经</span> 👍（2） 💬（1）<p>虽然是Go语言第一课，但这一部分讲得很深入，而且很厉害的一点是，把难以理解的技术细节隐藏的刚刚好，这一篇要再看几遍。白老师真是讲课的高手啊👍👍</p>2022-01-14</li><br/><li><span>Witt</span> 👍（2） 💬（2）<p>返回 *MyError 而不是 error</p>2021-12-29</li><br/>
 </ul>

@@ -357,11 +357,11 @@ useState 其实也是能够在组件的多次渲染之间共享数据的，那�
 
 欢迎把你的想法和思考分享在留言区，我们一起交流讨论。下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>何以解忧</span> 👍（19） 💬（9）<div>关于子组件props 不变，可以减少不必要的渲染问题，不是特别理解。似乎只要父组件重新渲染子组件必然重新渲染，是内部有什么别的地方优化么？</div>2021-06-10</li><br/><li><span>满月</span> 👍（69） 💬（3）<div>我们能否用 state 去保存 window.setInterval() 返回的 timer 呢？
-我理解的是可以，只是没有 useRef 更优，因为在更新 state 值后会导致重新渲染，而 ref 值发生变化时，是不会触发组件的重新渲染的，这也是 useRef 区别于 useState 的地方。</div>2021-06-01</li><br/><li><span>桃翁</span> 👍（29） 💬（6）<div>useRef 如果只是用来 在多次渲染之间共享数据，是不是直接可以把变量定义到组件外面，这样也可以达到目的，感觉还更方便一点呢。</div>2021-06-01</li><br/><li><span>cyh41</span> 👍（15） 💬（6）<div>是任何场景 函数都用useCallback 包裹吗？那种轻量的函数是不是不需要？</div>2021-06-01</li><br/><li><span>七月有风</span> 👍（7） 💬（2）<div>问下老师，useCallback、useMemo 和 useEffect的依赖机制一样吗？都是浅比较吗？</div>2021-06-03</li><br/><li><span>Geek_71adef</span> 👍（6） 💬（1）<div>1 useState 实现组件共享，考虑到组件之间的通信
-2 state 去保存的话 会造成异步渲染 造成无限循环</div>2021-06-01</li><br/><li><span>闲闲</span> 👍（5） 💬（7）<div>useCallBack依赖是空数组表示什么？</div>2021-06-01</li><br/><li><span>院长。</span> 👍（4） 💬（1）<div>有个问题想问下，关于useMemo，文档说的是性能优化的保证，也就是涉及到大量计算的时候可以使用，因为依赖项的比较本身也是有开销的。
+<li><span>何以解忧</span> 👍（19） 💬（9）<p>关于子组件props 不变，可以减少不必要的渲染问题，不是特别理解。似乎只要父组件重新渲染子组件必然重新渲染，是内部有什么别的地方优化么？</p>2021-06-10</li><br/><li><span>满月</span> 👍（69） 💬（3）<p>我们能否用 state 去保存 window.setInterval() 返回的 timer 呢？
+我理解的是可以，只是没有 useRef 更优，因为在更新 state 值后会导致重新渲染，而 ref 值发生变化时，是不会触发组件的重新渲染的，这也是 useRef 区别于 useState 的地方。</p>2021-06-01</li><br/><li><span>桃翁</span> 👍（29） 💬（6）<p>useRef 如果只是用来 在多次渲染之间共享数据，是不是直接可以把变量定义到组件外面，这样也可以达到目的，感觉还更方便一点呢。</p>2021-06-01</li><br/><li><span>cyh41</span> 👍（15） 💬（6）<p>是任何场景 函数都用useCallback 包裹吗？那种轻量的函数是不是不需要？</p>2021-06-01</li><br/><li><span>七月有风</span> 👍（7） 💬（2）<p>问下老师，useCallback、useMemo 和 useEffect的依赖机制一样吗？都是浅比较吗？</p>2021-06-03</li><br/><li><span>Geek_71adef</span> 👍（6） 💬（1）<p>1 useState 实现组件共享，考虑到组件之间的通信
+2 state 去保存的话 会造成异步渲染 造成无限循环</p>2021-06-01</li><br/><li><span>闲闲</span> 👍（5） 💬（7）<p>useCallBack依赖是空数组表示什么？</p>2021-06-01</li><br/><li><span>院长。</span> 👍（4） 💬（1）<p>有个问题想问下，关于useMemo，文档说的是性能优化的保证，也就是涉及到大量计算的时候可以使用，因为依赖项的比较本身也是有开销的。
 
-那如果我就只是很简单的计算，或者就只是返回一个固定的对象，有必要使用吗</div>2021-06-11</li><br/><li><span>开开之之</span> 👍（2） 💬（5）<div>老师，我也有同样的疑问，定时器的例子，不能用一个常量去保存吗？
+那如果我就只是很简单的计算，或者就只是返回一个固定的对象，有必要使用吗</p>2021-06-11</li><br/><li><span>开开之之</span> 👍（2） 💬（5）<p>老师，我也有同样的疑问，定时器的例子，不能用一个常量去保存吗？
 import React, { useState, useCallback, useRef } from &#39;react&#39;
 
 export default function Timer() {
@@ -390,18 +390,18 @@ export default function Timer() {
       &lt;button onClick={handleStop}&gt;stop&lt;&#47;button&gt;
     &lt;&#47;div&gt;
   )
-}</div>2021-06-06</li><br/><li><span>琼斯基亚</span> 👍（1） 💬（4）<div>老师，请问：
+}</p>2021-06-06</li><br/><li><span>琼斯基亚</span> 👍（1） 💬（4）<p>老师，请问：
 const handleIncrement = useCallback(() =&gt; setCount(count + 1), [count]);
 const handleIncrement = useCallback(() =&gt; setCount(q =&gt; q + 1), []);
 在性能方面是否后者优于前者？我的理解：
 后者只创建了一次函数，但是又调用了多次在setCount的回调函数
 前者只会在count变化的时候创建新的回调函数
 这样分析下来我又觉得两者没什么差异
-我不是太清楚这两者的优缺点，希望得到老师的解答。</div>2021-06-03</li><br/><li><span>Isaac</span> 👍（1） 💬（4）<div>&lt;button onClick={() =&gt; handleClick(&#39;hi&#39;)}&gt;&lt;&#47;button&gt;
+我不是太清楚这两者的优缺点，希望得到老师的解答。</p>2021-06-03</li><br/><li><span>Isaac</span> 👍（1） 💬（4）<p>&lt;button onClick={() =&gt; handleClick(&#39;hi&#39;)}&gt;&lt;&#47;button&gt;
 
 老师，上面这种写法，直接将箭头函数作为 props 传递给 button，是不是每次 render 的时候，也会生成一个新的箭头函数？
 
-如果是的话，怎么避免呢？</div>2021-06-03</li><br/><li><span>Sunny</span> 👍（1） 💬（4）<div>import React, {
+如果是的话，怎么避免呢？</p>2021-06-03</li><br/><li><span>Sunny</span> 👍（1） 💬（4）<p>import React, {
   useCallback,
   useRef,
   useReducer,
@@ -478,7 +478,7 @@ const setIntervalCallback = useCallback( () =&gt; {
     dispatch({type: &#39;increment&#39;});
     console.log(&#39;setinterval time:&#39;, state.time)  &#47;&#47;为什么这里的state.time不变？
   }, [state.time]);&#47;&#47;这里的state.time变化被监听到了
-*&#47;</div>2021-06-01</li><br/><li><span>快扶我起来学习</span> 👍（0） 💬（1）<div>const ThemeContext = React.createContext(themes.light);  这里的themes. Light参数有什么作用呢？我传null也正常work了
-</div>2021-08-05</li><br/><li><span>花儿与少年</span> 👍（0） 💬（2）<div>useContext的官方例子中，子组件中 const theme = useContext(ThemeContext);  那是需要子组件 引用ThemeContext 这个变量吗， 实际开发中这个子组件可能是单独的一个jsx文件，需要每个用到的子组件 import 这个变量？</div>2021-08-01</li><br/><li><span>rookielink</span> 👍（0） 💬（1）<div>useRef示例中替换这个有什么区别呢？ 
-const timer = useRef(null);  =&gt;  const timer = {}; </div>2021-07-30</li><br/>
+*&#47;</p>2021-06-01</li><br/><li><span>快扶我起来学习</span> 👍（0） 💬（1）<p>const ThemeContext = React.createContext(themes.light);  这里的themes. Light参数有什么作用呢？我传null也正常work了
+</p>2021-08-05</li><br/><li><span>花儿与少年</span> 👍（0） 💬（2）<p>useContext的官方例子中，子组件中 const theme = useContext(ThemeContext);  那是需要子组件 引用ThemeContext 这个变量吗， 实际开发中这个子组件可能是单独的一个jsx文件，需要每个用到的子组件 import 这个变量？</p>2021-08-01</li><br/><li><span>rookielink</span> 👍（0） 💬（1）<p>useRef示例中替换这个有什么区别呢？ 
+const timer = useRef(null);  =&gt;  const timer = {}; </p>2021-07-30</li><br/>
 </ul>

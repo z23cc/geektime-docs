@@ -132,7 +132,7 @@
 
 介绍了这么多，希望上面的这些方法和工具能够对你有一些启发。伴随着AIGC和ChatGPT的出现，我相信这个时代发生了一个根本性的转变。我们每一个人都需要去拥抱AI，也希望你通过我今天分享的这些内容，找到你自己学习新的AI应用开发、使用最新的AI工具的方法和思路。获得一张属于自己的AI时代的船票。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>aoe</span> 👍（107） 💬（5）<div>图文并貌，妥妥 AI 范儿！
+<li><span>aoe</span> 👍（107） 💬（5）<p>图文并貌，妥妥 AI 范儿！
 按收藏顺序分享一下我知道的：
 
 Audio2Face 面部动画
@@ -147,7 +147,7 @@ aiva.ai 人工智能音乐创作
 
 Playground AI: https:&#47;&#47;playgroundai.com&#47;
 Clip Drop: https:&#47;&#47;clipdrop.co&#47;relight
-Astria: https:&#47;&#47;www.strmr.com&#47;examples</div>2023-03-21</li><br/><li><span>枫.二</span> 👍（27） 💬（1）<div>推荐一些常用和收藏的ai网站吧，
+Astria: https:&#47;&#47;www.strmr.com&#47;examples</p>2023-03-21</li><br/><li><span>枫.二</span> 👍（27） 💬（1）<p>推荐一些常用和收藏的ai网站吧，
 
 ChatGPT聚合站：https:&#47;&#47;hokex.com
 游戏生成站：https:&#47;&#47;latitude.io&#47;
@@ -160,7 +160,7 @@ ai写作站：https:&#47;&#47;www.getconch.ai&#47;
 音乐制作站：https:&#47;&#47;soundraw.io&#47;
 声音模拟站：https:&#47;&#47;fakeyou.com&#47;
 一句话生成一段视频：https:&#47;&#47;runwayml.com&#47;
-文字转语音：https:&#47;&#47;murf.ai&#47;</div>2023-04-20</li><br/><li><span>inrtyx</span> 👍（11） 💬（4）<div>Copilot 只能付费使用吗？</div>2023-03-23</li><br/><li><span>piboye</span> 👍（5） 💬（1）<div>彩云好贵啊</div>2023-03-21</li><br/><li><span>piboye</span> 👍（4） 💬（2）<div>沉浸式翻译 插件不错, 可以用免费的谷歌,微软翻译, 还可以用OpenAI,  也跟彩云一样,  一行中文, 一行英文</div>2023-03-21</li><br/><li><span>遇镜</span> 👍（3） 💬（1）<div>这个专栏是ai在写么</div>2023-03-22</li><br/><li><span>ruixj</span> 👍（2） 💬（1）<div>!conda install openai
+文字转语音：https:&#47;&#47;murf.ai&#47;</p>2023-04-20</li><br/><li><span>inrtyx</span> 👍（11） 💬（4）<p>Copilot 只能付费使用吗？</p>2023-03-23</li><br/><li><span>piboye</span> 👍（5） 💬（1）<p>彩云好贵啊</p>2023-03-21</li><br/><li><span>piboye</span> 👍（4） 💬（2）<p>沉浸式翻译 插件不错, 可以用免费的谷歌,微软翻译, 还可以用OpenAI,  也跟彩云一样,  一行中文, 一行英文</p>2023-03-21</li><br/><li><span>遇镜</span> 👍（3） 💬（1）<p>这个专栏是ai在写么</p>2023-03-22</li><br/><li><span>ruixj</span> 👍（2） 💬（1）<p>!conda install openai
 这个命令执行失败：
 Collecting package metadata (current_repodata.json): ...working... done
 Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
@@ -185,5 +185,5 @@ looking for, navigate to
 
     https:&#47;&#47;anaconda.org
 
-and use the search bar at the top of the page.</div>2023-04-03</li><br/><li><span>kivi</span> 👍（1） 💬（1）<div>chatgpt腾空出世，还这么牛。下意识问题，其他的大模型、研发的公司、国家是不是不再有机会？</div>2023-04-01</li><br/><li><span>刘丹</span> 👍（1） 💬（2）<div>彩云小译的翻译效果质量和百度翻译、谷歌翻译这些大厂产品对比怎样？</div>2023-03-25</li><br/><li><span>horn</span> 👍（0） 💬（1）<div>念稿的是AI徐文浩吗</div>2023-05-11</li><br/><li><span>haha</span> 👍（0） 💬（1）<div>加个群</div>2023-05-09</li><br/><li><span>吉祥</span> 👍（0） 💬（1）<div>请问老师，使用Glarity来总结youtube视频的时候，点击summary的时候，提示Please login and pass Cloudflare check at chat.openai.com.已登录openai，但是pass  Cloudflare check在哪里？</div>2023-04-25</li><br/><li><span>滴掉的华丽</span> 👍（0） 💬（1）<div>课程有微信交流群吗？</div>2023-04-24</li><br/><li><span>Just Do IT</span> 👍（0） 💬（3）<div>老师，有把视频和音频转换为文本的工具么(音视频中的语音转文字)？</div>2023-04-19</li><br/><li><span>Allan</span> 👍（0） 💬（1）<div>授人以鱼不如授人以渔，这些学习的方式？这些工具？如何学习一个新技术的入手点？一手资料？是怎么找到的？</div>2023-03-21</li><br/>
+and use the search bar at the top of the page.</p>2023-04-03</li><br/><li><span>kivi</span> 👍（1） 💬（1）<p>chatgpt腾空出世，还这么牛。下意识问题，其他的大模型、研发的公司、国家是不是不再有机会？</p>2023-04-01</li><br/><li><span>刘丹</span> 👍（1） 💬（2）<p>彩云小译的翻译效果质量和百度翻译、谷歌翻译这些大厂产品对比怎样？</p>2023-03-25</li><br/><li><span>horn</span> 👍（0） 💬（1）<p>念稿的是AI徐文浩吗</p>2023-05-11</li><br/><li><span>haha</span> 👍（0） 💬（1）<p>加个群</p>2023-05-09</li><br/><li><span>吉祥</span> 👍（0） 💬（1）<p>请问老师，使用Glarity来总结youtube视频的时候，点击summary的时候，提示Please login and pass Cloudflare check at chat.openai.com.已登录openai，但是pass  Cloudflare check在哪里？</p>2023-04-25</li><br/><li><span>滴掉的华丽</span> 👍（0） 💬（1）<p>课程有微信交流群吗？</p>2023-04-24</li><br/><li><span>Just Do IT</span> 👍（0） 💬（3）<p>老师，有把视频和音频转换为文本的工具么(音视频中的语音转文字)？</p>2023-04-19</li><br/><li><span>Allan</span> 👍（0） 💬（1）<p>授人以鱼不如授人以渔，这些学习的方式？这些工具？如何学习一个新技术的入手点？一手资料？是怎么找到的？</p>2023-03-21</li><br/>
 </ul>

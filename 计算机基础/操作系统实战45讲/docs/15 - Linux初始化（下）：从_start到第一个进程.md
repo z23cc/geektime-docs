@@ -602,7 +602,7 @@ Linux之所以如此复杂，是因为它把完成各种功能的模块组装了
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>neohope</span> 👍（35） 💬（3）<div>大体上整理了一下，有问题欢迎帮忙指正【上】：
+<li><span>neohope</span> 👍（35） 💬（3）<p>大体上整理了一下，有问题欢迎帮忙指正【上】：
 Grub在&#47;boot目录下找到的linux内核，是bzImage格式
 1、bzImage格式生成：
 1.1、head_64.S+其他源文件-&gt;编译-&gt; vmlinux【A】
@@ -675,7 +675,7 @@ Header.S文件中从start_of_setup开始，其实就是这个setup_header的结�
 
 13、返回到.Lrelocated继续执行
 跳转到%rax【解压后内核地址】，继续执行
-解压后的内核文件，入口函数为【arch&#47;x86&#47;kernel&#47;head_64.S】</div>2021-06-12</li><br/><li><span>neohope</span> 👍（18） 💬（2）<div>大体上整理了一下，有问题欢迎帮忙指正【下】：
+解压后的内核文件，入口函数为【arch&#47;x86&#47;kernel&#47;head_64.S】</p>2021-06-12</li><br/><li><span>neohope</span> 👍（18） 💬（2）<p>大体上整理了一下，有问题欢迎帮忙指正【下】：
 14、SYM_CODE_START_NOALIGN(startup_64)【arch&#47;x86&#47;kernel&#47;head_64.S】
 SMP 系统加电之后，总线仲裁机制会选出多个 CPU 中的一个 CPU，称为 BSP，也叫第一个 CPU。它负责让 BSP CPU 先启动，其它 CPU 则等待 BSP CPU 的唤醒。
 第一个启动的 CPU，会跳转 secondary_startup_64 函数中 1 标号处，对于其它被唤醒的 CPU 则会直接执行 secondary_startup_64 函数。
@@ -716,13 +716,13 @@ start_thread
 start_thread_common，会将寄存器地址，设置为ELF启动地址
 当从系统调用返回用户态时，init进程【1号进程】，就从ELF执行了
 
-到此为止，系统的启动过程结束。</div>2021-06-12</li><br/><li><span>pedro</span> 👍（6） 💬（1）<div>_start在setup.bin的开头， x86_64_start_kernel在vmlinux.bin的开头，然后start_kernel初始化，然后rest_init初始化第一个用户进程和第一个内核进程，开始操作系统罪恶的一生。</div>2021-06-11</li><br/><li><span>Geek_59a6f9</span> 👍（2） 💬（2）<div>老师，你这里说的grub是grub legacy还是grub2啊？grub2应该首先会进入保护模式，那grub2还会跳转到inux&#47;arch&#47;x86&#47;boot&#47;head.S 里的main函数 再去执行一次切换保护模式吗？这个时候应该早就是保护模式了吧</div>2021-06-24</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<div>课程已经快进入正题了，下一步就是内存了吧</div>2021-07-06</li><br/><li><span>blentle</span> 👍（1） 💬（1）<div>收获盛大，终于看到了稍微能消化的一篇了</div>2021-06-11</li><br/><li><span>springXu</span> 👍（1） 💬（1）<div>这个问题是考对Linux熟悉程度了。哈</div>2021-06-11</li><br/><li><span>Qfeng</span> 👍（0） 💬（1）<div>内核启动最后创建了两个进程：kernel_init和kernel_thread，前面是第一个用户进程，后续用户进程都是从它fork而来，后面是内核进程，用来管理后续内核线程调度。这两个进程令我印象深刻。
-</div>2022-06-19</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<div>这节终于结束了，计划俩月完成，感觉进度有点慢了，到现在快20天了，应该去年来参与这门课的</div>2022-04-10</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>果然厉害了</div>2022-02-13</li><br/><li><span>kocgockohgoh王裒</span> 👍（0） 💬（1）<div>请问为什么有两个重名的startup_64啊  名字不回冲突么</div>2021-12-12</li><br/><li><span>日就月将</span> 👍（0） 💬（1）<div>老师，自动编译配置文件里有修改grub menuentry选项吗 要是想修改在哪里改啊</div>2021-11-02</li><br/><li><span>Geek_59a6f9</span> 👍（0） 💬（2）<div>老师，对于非boot cpu的启动不是很清楚。是BSP启动以后发一个中断唤醒其他cpu，然后执行到secondary_startup_64吗？接着还是会去执行start_kernel? 可是我们主cpu已经初始化内核里内存部分了，其他cpu再去执行的话就会有问题吧？</div>2021-06-19</li><br/><li><span>Geek_009bb2</span> 👍（0） 💬（0）<div>&quot;通常我们不会传递参数，所以这个函数会执行到上述代码的 15 行，依次尝试以 &#47;sbin&#47;init、&#47;etc&#47;init、&#47;bin&#47;init、&#47;bin&#47;sh 这些文件为可执行文件建立进程，但是只要其中之一成功就行了&quot; 麻烦问一下这里是不是如果grub中设置了initrd 则会执行initramfs中的 init，最终由initramfs中的init通过switch root 切换到根文件系统的 init </div>2024-09-12</li><br/><li><span>1+1=2</span> 👍（0） 💬（0）<div>总结的很浅显，欢迎大家指导：
+到此为止，系统的启动过程结束。</p>2021-06-12</li><br/><li><span>pedro</span> 👍（6） 💬（1）<p>_start在setup.bin的开头， x86_64_start_kernel在vmlinux.bin的开头，然后start_kernel初始化，然后rest_init初始化第一个用户进程和第一个内核进程，开始操作系统罪恶的一生。</p>2021-06-11</li><br/><li><span>Geek_59a6f9</span> 👍（2） 💬（2）<p>老师，你这里说的grub是grub legacy还是grub2啊？grub2应该首先会进入保护模式，那grub2还会跳转到inux&#47;arch&#47;x86&#47;boot&#47;head.S 里的main函数 再去执行一次切换保护模式吗？这个时候应该早就是保护模式了吧</p>2021-06-24</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<p>课程已经快进入正题了，下一步就是内存了吧</p>2021-07-06</li><br/><li><span>blentle</span> 👍（1） 💬（1）<p>收获盛大，终于看到了稍微能消化的一篇了</p>2021-06-11</li><br/><li><span>springXu</span> 👍（1） 💬（1）<p>这个问题是考对Linux熟悉程度了。哈</p>2021-06-11</li><br/><li><span>Qfeng</span> 👍（0） 💬（1）<p>内核启动最后创建了两个进程：kernel_init和kernel_thread，前面是第一个用户进程，后续用户进程都是从它fork而来，后面是内核进程，用来管理后续内核线程调度。这两个进程令我印象深刻。
+</p>2022-06-19</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<p>这节终于结束了，计划俩月完成，感觉进度有点慢了，到现在快20天了，应该去年来参与这门课的</p>2022-04-10</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>果然厉害了</p>2022-02-13</li><br/><li><span>kocgockohgoh王裒</span> 👍（0） 💬（1）<p>请问为什么有两个重名的startup_64啊  名字不回冲突么</p>2021-12-12</li><br/><li><span>日就月将</span> 👍（0） 💬（1）<p>老师，自动编译配置文件里有修改grub menuentry选项吗 要是想修改在哪里改啊</p>2021-11-02</li><br/><li><span>Geek_59a6f9</span> 👍（0） 💬（2）<p>老师，对于非boot cpu的启动不是很清楚。是BSP启动以后发一个中断唤醒其他cpu，然后执行到secondary_startup_64吗？接着还是会去执行start_kernel? 可是我们主cpu已经初始化内核里内存部分了，其他cpu再去执行的话就会有问题吧？</p>2021-06-19</li><br/><li><span>Geek_009bb2</span> 👍（0） 💬（0）<p>&quot;通常我们不会传递参数，所以这个函数会执行到上述代码的 15 行，依次尝试以 &#47;sbin&#47;init、&#47;etc&#47;init、&#47;bin&#47;init、&#47;bin&#47;sh 这些文件为可执行文件建立进程，但是只要其中之一成功就行了&quot; 麻烦问一下这里是不是如果grub中设置了initrd 则会执行initramfs中的 init，最终由initramfs中的init通过switch root 切换到根文件系统的 init </p>2024-09-12</li><br/><li><span>1+1=2</span> 👍（0） 💬（0）<p>总结的很浅显，欢迎大家指导：
 加电→BIOS→引导设备（硬盘&#47;U盘）的引导扇区→加载GRUB→加载vmlinuz
 
 加电瞬间，CS=0xF000*16+IP=0xFFF0→0xFFFF0（此时BIOS正式启动）→进行设备初始化和检查（跳转到内存运行）→在内存中建立中断表和中断服务程序（从0x00000开始1kb构建中断表，在中断表位置用256kb构建BIOS数据区（0x00400~0x004FF），在0x0e05b加载8kb的中断服务程序）→启动引导设备（Linux中的MBR即第一个扇区512kb）→boot.img写入硬盘的MBR，并且记录core.img文件占用的第一个扇区的扇区号→硬盘启动diskboot.img，读取core.img其余部分到内存中→控制权交给kernel.img→具有文件识别功能，访问&#47;boot&#47;grub目录并加载相关配置文件和功能→加载Linux的vmliuz内核文件→setup.bin&#47;_start→将vmlinuz的setup.bin读到内存地址0x90000处，然后跳转到0x90200（跳过bootsector，从_start开始）→调用head.S&#47;main执行初始化，进入
 
 保护模式（go_to_protected_mode）→跳转到boot_params.hdr.code32_start的地址（0x100000）→且vmlinux.bin在1MB中，跳转后进入到vmlinux.bin→调用startup_32函数，重新加载段描述符→（支持长模式）设置64位的全局描述符、设置MMU页表、开启分页进入长模式→跳转到startup_64函数（进入64位）→初始化长模式数据段寄存器，确定解压缩地址→拷贝压缩vmlinux.bin到该地址→跳转到decompress_kernel地址处，解压vmlinux.bin.gz→函数中调用extract_kernel()，并根据piggy.o中信息解压vmlinux.bin.gz出vmlinux（elf）→调用parse_elf解析elf格式：将vmlinux中的指令段、数据段、BSS段，根据elf信息放入指定的内存空间，返回指令段的入口地址→通过jmp *rax进入内核→调用secondary_startup_64（）→x86_ 64start_kernel()，处理页表→start_kernel(),调用内核初始化函数，具备了提供功能服务能力→建立第一个进程
 
-</div>2024-08-06</li><br/>
+</p>2024-08-06</li><br/>
 </ul>

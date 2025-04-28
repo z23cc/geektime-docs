@@ -318,6 +318,6 @@ const interceptFetch = ({
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。我们下节课见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>苏果果</span> 👍（1） 💬（0）<div>完整源码入口：
-https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</div>2024-07-18</li><br/><li><span>行云流水</span> 👍（0） 💬（0）<div>课程实现的代码中,用户相关标识，需要和后台日志相关联就行？ 至于后台使用那个监控手段不必那么关心？</div>2024-09-17</li><br/><li><span>行云流水</span> 👍（0） 💬（0）<div>大致看了下,源码中没有skywalking-client-js相关应用？</div>2024-09-17</li><br/>
+<li><span>苏果果</span> 👍（1） 💬（0）<p>完整源码入口：
+https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</p>2024-07-18</li><br/><li><span>行云流水</span> 👍（0） 💬（0）<p>课程实现的代码中,用户相关标识，需要和后台日志相关联就行？ 至于后台使用那个监控手段不必那么关心？</p>2024-09-17</li><br/><li><span>行云流水</span> 👍（0） 💬（0）<p>大致看了下,源码中没有skywalking-client-js相关应用？</p>2024-09-17</li><br/>
 </ul>

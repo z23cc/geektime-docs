@@ -557,7 +557,7 @@ public class HelloWorldBean {
 
 学完这节课，我也给你留一道思考题。我们在MVC中也使用了Bean这个概念，它跟我们以前章节中的Bean是什么关系？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek4329</span> 👍（2） 💬（3）<div>    private List&lt;String&gt; scanPackage(String packageName) {
+<li><span>Geek4329</span> 👍（2） 💬（3）<p>    private List&lt;String&gt; scanPackage(String packageName) {
     	List&lt;String&gt; tempControllerNames = new ArrayList&lt;&gt;();
         URL url  =this.getClass().getClassLoader().getResource(&quot;&#47;&quot;+packageName.replaceAll(&quot;\\.&quot;, &quot;&#47;&quot;));
         File dir = new File(url.getFile());
@@ -572,16 +572,16 @@ public class HelloWorldBean {
         return tempControllerNames;
     }
 这个方法写的没问题么？照理说应该是递归把所有的类文件都加载进去，应该是tempControllerNames.addAll(scanPackage(packageName+&quot;.&quot;+file.getName()))
-是我理解有问题么？</div>2024-02-28</li><br/><li><span>风轻扬</span> 👍（2） 💬（4）<div>思考题。我理解：MVC中的bean是为了标识这是一个controller，用来接收处理web层请求，而Spring中的bean感觉是一种服务能力，哪个地方需要这种能力，注入后就可以使用。不知道理解的对不对。
-另外，跟代码的过程中，发现一个问题，如果包下有接口，Class.newInstance就会报错的。老师，将controller实例化处的代码是不是应该加个Class.isInstance()的判断呢？</div>2023-04-02</li><br/><li><span>KernelStone</span> 👍（1） 💬（1）<div>搞了半天这节内容对我这种工程小白而言，难是难在从IDEA中进行项目部署。终于跑通了，参考链接如下：
+是我理解有问题么？</p>2024-02-28</li><br/><li><span>风轻扬</span> 👍（2） 💬（4）<p>思考题。我理解：MVC中的bean是为了标识这是一个controller，用来接收处理web层请求，而Spring中的bean感觉是一种服务能力，哪个地方需要这种能力，注入后就可以使用。不知道理解的对不对。
+另外，跟代码的过程中，发现一个问题，如果包下有接口，Class.newInstance就会报错的。老师，将controller实例化处的代码是不是应该加个Class.isInstance()的判断呢？</p>2023-04-02</li><br/><li><span>KernelStone</span> 👍（1） 💬（1）<p>搞了半天这节内容对我这种工程小白而言，难是难在从IDEA中进行项目部署。终于跑通了，参考链接如下：
 1、https:&#47;&#47;blog.csdn.net&#47;Wxy971122&#47;article&#47;details&#47;123508532
 2、https:&#47;&#47;blog.csdn.net&#47;fannyoona&#47;article&#47;details&#47;113933113
 3、另外有需要可以搜一下Tomcat控制台乱码问题
 
-还有感谢评论区的帮助！</div>2023-06-03</li><br/><li><span>零零后糖豆豆</span> 👍（1） 💬（1）<div>response设置contentType避免返回中文乱码
-response.setContentType(&quot;text&#47;html; charset=UTF-8&quot;);</div>2023-05-12</li><br/><li><span>云韵</span> 👍（1） 💬（1）<div>老师 文中的代码和下载的代码分支geek-mvc1 对应不上</div>2023-03-29</li><br/><li><span>x-arts</span> 👍（1） 💬（2）<div>源码给的过于随意了。。。。</div>2023-03-28</li><br/><li><span>睿智的仓鼠</span> 👍（1） 💬（1）<div>加入注解后改造的initMapping()方法中
+还有感谢评论区的帮助！</p>2023-06-03</li><br/><li><span>零零后糖豆豆</span> 👍（1） 💬（1）<p>response设置contentType避免返回中文乱码
+response.setContentType(&quot;text&#47;html; charset=UTF-8&quot;);</p>2023-05-12</li><br/><li><span>云韵</span> 👍（1） 💬（1）<p>老师 文中的代码和下载的代码分支geek-mvc1 对应不上</p>2023-03-29</li><br/><li><span>x-arts</span> 👍（1） 💬（2）<p>源码给的过于随意了。。。。</p>2023-03-28</li><br/><li><span>睿智的仓鼠</span> 👍（1） 💬（1）<p>加入注解后改造的initMapping()方法中
 Class&lt;?&gt; clazz = this.controllerClasses.get(controllerName);下面缺少了一行：
-Object obj = this.controllerObjs.get(controllerName);</div>2023-03-27</li><br/><li><span>Yangjing</span> 👍（0） 💬（2）<div>老师，扩展MVC前，启动 Tomcat，是要怎么配置 Tomcat、MiniS 配合启动的呢</div>2023-04-09</li><br/><li><span>睿智的仓鼠</span> 👍（0） 💬（1）<div>请问郭老师，最后DispatcherServlet中的controllerObjs和mappingObjs这两个map，存储的都是请求地址和处理请求的bean的映射关系，这里为什么要维护两份？我能理解它们的思想不同，但也想不出维护两份后期会有什么扩展。后期会体现出这样做的好处吗？</div>2023-03-28</li><br/><li><span>Ben Guo</span> 👍（5） 💬（1）<div>关于启动Tomcat，可以加入 embeded tomcat的依赖，然后用下面的代码 跑起来
+Object obj = this.controllerObjs.get(controllerName);</p>2023-03-27</li><br/><li><span>Yangjing</span> 👍（0） 💬（2）<p>老师，扩展MVC前，启动 Tomcat，是要怎么配置 Tomcat、MiniS 配合启动的呢</p>2023-04-09</li><br/><li><span>睿智的仓鼠</span> 👍（0） 💬（1）<p>请问郭老师，最后DispatcherServlet中的controllerObjs和mappingObjs这两个map，存储的都是请求地址和处理请求的bean的映射关系，这里为什么要维护两份？我能理解它们的思想不同，但也想不出维护两份后期会有什么扩展。后期会体现出这样做的好处吗？</p>2023-03-28</li><br/><li><span>Ben Guo</span> 👍（5） 💬（1）<p>关于启动Tomcat，可以加入 embeded tomcat的依赖，然后用下面的代码 跑起来
 
 public class App 
 {
@@ -596,7 +596,7 @@ public class App
         tomcat.start();
         tomcat.getServer().await();
     }
-}</div>2023-07-11</li><br/><li><span>adelyn</span> 👍（2） 💬（0）<div>感谢老师，之前没注意过requestMapping为什么是mapping，今天恍然大悟，原来是用url做key维护了一个mapping，</div>2023-04-09</li><br/><li><span>adelyn</span> 👍（1） 💬（0）<div>上条写错了，维护了三个mapping，三个mapping正好提供了反射的三个条件，看源码太爽了</div>2023-04-09</li><br/><li><span>马儿</span> 👍（1） 💬（0）<div>思考题：mvc中的bean只是项目中的一种bean，而ioc管理的是整个项目的bean。可以说mvc中的bean是整个ioc bean的子集</div>2023-03-28</li><br/><li><span>撇目双人聿</span> 👍（0） 💬（0）<div>Mac OS 上 Tomcat的启动参考：https:&#47;&#47;medium.com&#47;@raju6508&#47;a-beginners-guide-installing-apache-tomcat-on-your-mac-11fa0995f3c7 (一步
+}</p>2023-07-11</li><br/><li><span>adelyn</span> 👍（2） 💬（0）<p>感谢老师，之前没注意过requestMapping为什么是mapping，今天恍然大悟，原来是用url做key维护了一个mapping，</p>2023-04-09</li><br/><li><span>adelyn</span> 👍（1） 💬（0）<p>上条写错了，维护了三个mapping，三个mapping正好提供了反射的三个条件，看源码太爽了</p>2023-04-09</li><br/><li><span>马儿</span> 👍（1） 💬（0）<p>思考题：mvc中的bean只是项目中的一种bean，而ioc管理的是整个项目的bean。可以说mvc中的bean是整个ioc bean的子集</p>2023-03-28</li><br/><li><span>撇目双人聿</span> 👍（0） 💬（0）<p>Mac OS 上 Tomcat的启动参考：https:&#47;&#47;medium.com&#47;@raju6508&#47;a-beginners-guide-installing-apache-tomcat-on-your-mac-11fa0995f3c7 (一步
 一步照着做就可以正常启动，特别要注意的是去官网下载 tomcat 的 tar 文件不要下载错了!)
-</div>2024-11-09</li><br/><li><span>dirtychill</span> 👍（0） 💬（0）<div>MVC的bean指的是controller，是一种特殊的bean</div>2024-05-20</li><br/>
+</p>2024-11-09</li><br/><li><span>dirtychill</span> 👍（0） 💬（0）<p>MVC的bean指的是controller，是一种特殊的bean</p>2024-05-20</li><br/>
 </ul>

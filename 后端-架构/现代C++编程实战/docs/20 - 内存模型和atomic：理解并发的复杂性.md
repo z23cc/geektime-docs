@@ -320,7 +320,7 @@ public:
 
 \[9] 陈皓, 《无锁队列的实现》. [https://coolshell.cn/articles/8239.html](https://coolshell.cn/articles/8239.html)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>tt</span> 👍（25） 💬（1）<div>感觉这里的无锁操作就像分布式系统里面谈到的乐观锁，普通的互斥量就像悲观锁。只是CPU级的乐观锁由CPU提供指令集级别的支持。
+<li><span>tt</span> 👍（25） 💬（1）<p>感觉这里的无锁操作就像分布式系统里面谈到的乐观锁，普通的互斥量就像悲观锁。只是CPU级的乐观锁由CPU提供指令集级别的支持。
 
 内存重排会引起内存数据的不一致性，尤其是在多CPU的系统里。这又让我想起分布式系统里讲的CAP理论。
 
@@ -334,7 +334,7 @@ public:
 
 看资料里，多CPU同步时，也有在CPU之间引入对列。当需要“释放前对内存的修改都在另一个线程的获取操作后可见”时，我的理解就是用了所谓的“内存屏障”强制让消费者消费完对列里的&quot;CPU级的事物&quot;。所以才会在达到严格内存序的过程中降低了程序的性能。
 
-也许，这个和操作系统在调度线程时，过多的上下文切换会导致系统性能降低有关系。</div>2020-01-10</li><br/><li><span>木瓜777</span> 👍（8） 💬（1）<div>您好，看了这篇后，对互斥量和原子量的使用 有些不明白，什么时候应该用互斥量，什么时候用原子量，什么时候一起使用？</div>2020-01-12</li><br/><li><span>czh</span> 👍（4） 💬（2）<div>专栏里面的评论都满地是宝，这就是比啃书本强太多的地方，大家可以讨论请教。文章需要复习，评论也同样需要复习，看看是否有了新的想法💡。
+也许，这个和操作系统在调度线程时，过多的上下文切换会导致系统性能降低有关系。</p>2020-01-10</li><br/><li><span>木瓜777</span> 👍（8） 💬（1）<p>您好，看了这篇后，对互斥量和原子量的使用 有些不明白，什么时候应该用互斥量，什么时候用原子量，什么时候一起使用？</p>2020-01-12</li><br/><li><span>czh</span> 👍（4） 💬（2）<p>专栏里面的评论都满地是宝，这就是比啃书本强太多的地方，大家可以讨论请教。文章需要复习，评论也同样需要复习，看看是否有了新的想法💡。
 
 在阅读的时候，我心里也有前面几个读者的关于锁、互斥量、原子操作的区别与联系的疑问🤔️。
 
@@ -348,13 +348,13 @@ ps：互斥量+锁的操作   可取代  原子量。反之不可。
 1.互斥量的定义中，一个互斥量只允许在多线程中加一把锁，那么是否可以说互斥量只有和锁配合达到保护代码段的作用，互斥量还有其他单独的用法吗？
 2.更近一步，原子量+锁，是否可以完成对代码段的保护？而吴老师也在评论区里提到：锁是由原子量构成的。
 
-望老师解答，纠正。</div>2020-02-05</li><br/><li><span>禾桃</span> 👍（4） 💬（4）<div>和大家分享一个链接
+望老师解答，纠正。</p>2020-02-05</li><br/><li><span>禾桃</span> 👍（4） 💬（4）<p>和大家分享一个链接
 
 
 操作系统中锁的实现原理
 
 
-https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;6MRi_UEcMybKn4YXi6qWng</div>2020-01-14</li><br/><li><span>prowu</span> 👍（4） 💬（1）<div>吴老师，您好！有两个问题请帮忙解答下：
+https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;6MRi_UEcMybKn4YXi6qWng</p>2020-01-14</li><br/><li><span>prowu</span> 👍（4） 💬（1）<p>吴老师，您好！有两个问题请帮忙解答下：
 1、在解释相关memory_order_acquire, memory_order_release等时，都有提到“当前线程可见”，这个“可见”该怎么理解？
 2、可以帮忙总结下，在什么场景下需要保证内存序，比如：满足了以下条件，就需要考虑是否保证内存序了：
 （1）多线程环境下
@@ -362,7 +362,7 @@ https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;6MRi_UEcMybKn4YXi6qWng</div>2020-01-1
 （3）这多个共享变量在实现逻辑上存在相互依赖的关系
 （4）...
 
-谢谢！</div>2020-01-14</li><br/><li><span>Counting stars</span> 👍（2） 💬（2）<div>链接[2]的代码在msvc编译器release模式下用atomic int测试了一下，X Y通过 store的指定memory_order_release并没有达到期望的内存屏障效果，仍然出现了写读序列变成读写序列的问题，仔细分析了一下：
+谢谢！</p>2020-01-14</li><br/><li><span>Counting stars</span> 👍（2） 💬（2）<p>链接[2]的代码在msvc编译器release模式下用atomic int测试了一下，X Y通过 store的指定memory_order_release并没有达到期望的内存屏障效果，仍然出现了写读序列变成读写序列的问题，仔细分析了一下：
 memory_order_release在x86&#47;64上看源码有一个提示，
 case memory_order_release:
             _Compiler_or_memory_barrier();
@@ -376,7 +376,7 @@ case memory_order_release:
 参考老师提供示例连接中的例子MemoryBarrier()是可以手动效果实现这一个效果
 最终结论如下：
 msvc2019下，memory_order_release并不能保证内存屏障效果，只能通过默认的memory_order_seq_cst来保证
-老师可以和您交流一下我的观点吗</div>2021-05-16</li><br/><li><span>fengbeihong</span> 👍（1） 💬（1）<div>老师请教下单例的实现：
+老师可以和您交流一下我的观点吗</p>2021-05-16</li><br/><li><span>fengbeihong</span> 👍（1） 💬（1）<p>老师请教下单例的实现：
 一种是利用static变量的初始化：
 Foo&amp; getInst()
 {
@@ -386,8 +386,8 @@ Foo&amp; getInst()
 
 一种是利用pthread_once来保证线程安全
 
-这两种方式是否可行呢，应该可以简化单例模式的代码实现吧</div>2023-11-06</li><br/><li><span>李云龙</span> 👍（1） 💬（1）<div>老师，单例类的加锁过程如果用读取-修改-写入的方式，比如compare_exchange_strong，也是可以的吗？我觉得这种方式写起来会更简单。</div>2023-10-27</li><br/><li><span>王大为</span> 👍（1） 💬（1）<div>y.store(4, memory_order_relaxed);
-应该是released吧？某段代码第4行</div>2020-09-11</li><br/><li><span>禾桃</span> 👍（1） 💬（3）<div>is_lock_free，判断对原子对象的操作是否无锁（是否可以用处理器的指令直接完成原子操作）
+这两种方式是否可行呢，应该可以简化单例模式的代码实现吧</p>2023-11-06</li><br/><li><span>李云龙</span> 👍（1） 💬（1）<p>老师，单例类的加锁过程如果用读取-修改-写入的方式，比如compare_exchange_strong，也是可以的吗？我觉得这种方式写起来会更简单。</p>2023-10-27</li><br/><li><span>王大为</span> 👍（1） 💬（1）<p>y.store(4, memory_order_relaxed);
+应该是released吧？某段代码第4行</p>2020-09-11</li><br/><li><span>禾桃</span> 👍（1） 💬（3）<p>is_lock_free，判断对原子对象的操作是否无锁（是否可以用处理器的指令直接完成原子操作）
 
 #1
 这里的处理器的指令指的是，
@@ -399,7 +399,7 @@ Foo&amp; getInst()
 #3
 能麻烦给个is_not_lock_free的对原子对象的操作的大概什么样子吗？
 
-谢谢！</div>2020-01-12</li><br/><li><span>花晨少年</span> 👍（1） 💬（3）<div>这一节讲的实在是太好了，我对前几节的编译器模版相关的不是很感冒，要是能把这期更深入的细节探讨一下，多做几节，就更好了。
+谢谢！</p>2020-01-12</li><br/><li><span>花晨少年</span> 👍（1） 💬（3）<p>这一节讲的实在是太好了，我对前几节的编译器模版相关的不是很感冒，要是能把这期更深入的细节探讨一下，多做几节，就更好了。
 
 singleton* singleton::instance()
 {
@@ -437,7 +437,7 @@ singleton* singleton::instance()
     }
   }
   return inst_ptr_;
-}</div>2020-01-12</li><br/><li><span>禾桃</span> 👍（1） 💬（1）<div>Preshing 
+}</p>2020-01-12</li><br/><li><span>禾桃</span> 👍（1） 💬（1）<p>Preshing 
 
 “In particular, each processor is allowed to delay the effect of a store past any load from a different location. “
 
@@ -460,8 +460,8 @@ r1 = Y;
 
 上面的代码，cpu 执行到mfence时，会确保1从X_cpu_cache推送到X_memory, 然后再去读Y?
 
-谢谢！</div>2020-01-10</li><br/><li><span>少年</span> 👍（0） 💬（1）<div>由于 volatile 不能在多处理器的环境下确保多个线程能看到同样顺序的数据变化，在今天的通用应用程序中，不应该再看到 volatile 的出现。
-这句话并不是太理解，想问下:如果只有一个线程修改某一变量，其他线程对此变量只读，那么是否应该用volatile?或者不用volatile也可?</div>2024-12-16</li><br/><li><span>nxt</span> 👍（0） 💬（1）<div>老师您好，有两个线程T1和T2，分别执行如下代码的话，有可能会print出“bug”么。
+谢谢！</p>2020-01-10</li><br/><li><span>少年</span> 👍（0） 💬（1）<p>由于 volatile 不能在多处理器的环境下确保多个线程能看到同样顺序的数据变化，在今天的通用应用程序中，不应该再看到 volatile 的出现。
+这句话并不是太理解，想问下:如果只有一个线程修改某一变量，其他线程对此变量只读，那么是否应该用volatile?或者不用volatile也可?</p>2024-12-16</li><br/><li><span>nxt</span> 👍（0） 💬（1）<p>老师您好，有两个线程T1和T2，分别执行如下代码的话，有可能会print出“bug”么。
 主要是想问“T1读到x的旧值，memory_order_seq_cst语义” 是否happen before于“T2修改x为新值，memory_order_seq_cst语义”
 int x=0;
 int y=0;
@@ -479,7 +479,7 @@ if( CAS(x, 0, 1, memory_order_seq_cst, memory_order_seq_cst) )
    {
       printf(&quot;bug&quot;);
    }
-}</div>2023-11-02</li><br/><li><span>Geek_26c53e</span> 👍（0） 💬（2）<div>请教一下，如果在获取锁之前，别的线程对inst_ptr_进行了store，那加锁之后走到load时，由于是松散的load，会不会读取到旧的inst_ptr_（null）啊？
+}</p>2023-11-02</li><br/><li><span>Geek_26c53e</span> 👍（0） 💬（2）<p>请教一下，如果在获取锁之前，别的线程对inst_ptr_进行了store，那加锁之后走到load时，由于是松散的load，会不会读取到旧的inst_ptr_（null）啊？
 
 &#47;&#47; 头文件
 class singleton {
@@ -503,5 +503,5 @@ singleton* singleton::instance()
     }
   }
   return inst_ptr_;
-}</div>2023-09-05</li><br/>
+}</p>2023-09-05</li><br/>
 </ul>

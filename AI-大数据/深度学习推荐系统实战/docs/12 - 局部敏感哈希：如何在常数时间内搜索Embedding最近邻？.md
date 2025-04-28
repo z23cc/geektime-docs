@@ -165,30 +165,30 @@ def embeddingLSH(spark:SparkSession, movieEmbMap:Map[String, Array[Float]]): Uni
 
 欢迎你在留言区写出你的答案，更欢迎你把这一过程的实现提交Pull Request到Sparrow Resys项目，如果能够被采纳，你将成为这一开源项目的贡献者之一。我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Dikiwi</span> 👍（64） 💬（1）<div>b 是 0 到 w 间的一个均匀分布随机变量，避免分桶边界固化。这是什么意思呢？是说可以通过调整b来形成另外一个一个hash函数？</div>2020-11-01</li><br/><li><span>Alan</span> 👍（40） 💬（4）<div>悄悄告诉大家：embedding层K值的初始判断，有个经验公式:K= Embedding维数开4次方 ,x=初始的维度数；
-后续，K值调参按照2的倍数进行调整，例如：2，4，8，16；</div>2021-03-03</li><br/><li><span>kaijien</span> 👍（40） 💬（2）<div>老师您好，您提到点数越多越应该增加桶的个数，还有Embedding维度越大越应该增加哈希函数并多用且的方式，那从您的经验上:
+<li><span>Dikiwi</span> 👍（64） 💬（1）<p>b 是 0 到 w 间的一个均匀分布随机变量，避免分桶边界固化。这是什么意思呢？是说可以通过调整b来形成另外一个一个hash函数？</p>2020-11-01</li><br/><li><span>Alan</span> 👍（40） 💬（4）<p>悄悄告诉大家：embedding层K值的初始判断，有个经验公式:K= Embedding维数开4次方 ,x=初始的维度数；
+后续，K值调参按照2的倍数进行调整，例如：2，4，8，16；</p>2021-03-03</li><br/><li><span>kaijien</span> 👍（40） 💬（2）<p>老师您好，您提到点数越多越应该增加桶的个数，还有Embedding维度越大越应该增加哈希函数并多用且的方式，那从您的经验上:
 1 每个桶维持多少个点比较好？
-2 Embedding一般多少算大？比如768维是否应该用且的方式？应该用多少哈希函数比较好？</div>2020-10-31</li><br/><li><span>Alr</span> 👍（26） 💬（1）<div>课后思考问题：以item_id作为key， item_id对应的BucketId作为value存储在redis， 再以每个BucketId作为key， item_id作为value存储在redis， 在召回的时候遍历item_id的所有BucketId，获取BucketId对应的item_id就是需要召回的item， 请问老师这个思路对吗 </div>2020-12-25</li><br/><li><span>浣熊当家</span> 👍（17） 💬（2）<div>请问老师关于这句话 “在训练物品和用户的 Embedding 向量时，如果二者的 Embedding 在同一个向量空间内”， 我们在之前6-7节embedding的中，讲了怎么把物品序列信息转化为embedding， 想知道，用户的embedding是怎么生成的呢？ 然后，物品和用户在同一个向量空间，这个是怎么得到的呢？</div>2020-10-31</li><br/><li><span>范闲</span> 👍（12） 💬（1）<div>LSH也有自己的问题。数据量太大的时候，hash的个数不好选择，另外存在hash冲突，容易降低召回率。
+2 Embedding一般多少算大？比如768维是否应该用且的方式？应该用多少哈希函数比较好？</p>2020-10-31</li><br/><li><span>Alr</span> 👍（26） 💬（1）<p>课后思考问题：以item_id作为key， item_id对应的BucketId作为value存储在redis， 再以每个BucketId作为key， item_id作为value存储在redis， 在召回的时候遍历item_id的所有BucketId，获取BucketId对应的item_id就是需要召回的item， 请问老师这个思路对吗 </p>2020-12-25</li><br/><li><span>浣熊当家</span> 👍（17） 💬（2）<p>请问老师关于这句话 “在训练物品和用户的 Embedding 向量时，如果二者的 Embedding 在同一个向量空间内”， 我们在之前6-7节embedding的中，讲了怎么把物品序列信息转化为embedding， 想知道，用户的embedding是怎么生成的呢？ 然后，物品和用户在同一个向量空间，这个是怎么得到的呢？</p>2020-10-31</li><br/><li><span>范闲</span> 👍（12） 💬（1）<p>LSH也有自己的问题。数据量太大的时候，hash的个数不好选择，另外存在hash冲突，容易降低召回率。
 
-同基于树的，基于量化的，基于的图的方法来比，在召回率，速度和内存使用上都不占优势。</div>2020-12-02</li><br/><li><span>haydenlo</span> 👍（9） 💬（1）<div>请问对于计算距离，欧几里得距离和余弦距离等应该怎么选择？</div>2020-11-07</li><br/><li><span>Infp</span> 👍（8） 💬（1）<div>本人用过faiss，LSH无论是召回率还是速度方面都不是很好。基于图的HNSW或者HNSWSQ是比较好的索引方式，当然缺点是会占用较大的存储空间，还有很多其他索引方式，可参考faiss的GitHub介绍。另外，faiss的wiki里面有关于如何选择索引的指南，有需要的同学可以去了解一下：https:&#47;&#47;github.com&#47;facebookresearch&#47;faiss&#47;wiki&#47;Guidelines-to-choose-an-index。</div>2021-07-26</li><br/><li><span>Yang Hong</span> 👍（6） 💬（1）<div>课后思考：
+同基于树的，基于量化的，基于的图的方法来比，在召回率，速度和内存使用上都不占优势。</p>2020-12-02</li><br/><li><span>haydenlo</span> 👍（9） 💬（1）<p>请问对于计算距离，欧几里得距离和余弦距离等应该怎么选择？</p>2020-11-07</li><br/><li><span>Infp</span> 👍（8） 💬（1）<p>本人用过faiss，LSH无论是召回率还是速度方面都不是很好。基于图的HNSW或者HNSWSQ是比较好的索引方式，当然缺点是会占用较大的存储空间，还有很多其他索引方式，可参考faiss的GitHub介绍。另外，faiss的wiki里面有关于如何选择索引的指南，有需要的同学可以去了解一下：https:&#47;&#47;github.com&#47;facebookresearch&#47;faiss&#47;wiki&#47;Guidelines-to-choose-an-index。</p>2021-07-26</li><br/><li><span>Yang Hong</span> 👍（6） 💬（1）<p>课后思考：
 离线训练：LSH model为每个item embedding生成m个分桶，同时为每个user embedding生成m个分桶。
 
 离线存储：1）在redis中存储item的分桶结果，key为item_id， value为item对应的BucketId；建立倒排索引，再以每个BucketId作为key， value为对应的item_id；2）在redis中存储user的分桶结果，key为user_id， value为user对应的BucketId；
 
 在线召回：1）取出目标user的user embedding，和user对应的BucketId；2）查询redis分别获取m个BucketId对应的item_id，用且&#47;或的多桶策略找到需要召回的item。
 
-不知道这个思路对不对。</div>2021-07-20</li><br/><li><span>JustDoDT</span> 👍（6） 💬（1）<div>如何精确的控制每个桶内的点的规模是 C？</div>2020-11-01</li><br/><li><span>梁栋💝</span> 👍（4） 💬（3）<div>课后思考：
+不知道这个思路对不对。</p>2021-07-20</li><br/><li><span>JustDoDT</span> 👍（6） 💬（1）<p>如何精确的控制每个桶内的点的规模是 C？</p>2020-11-01</li><br/><li><span>梁栋💝</span> 👍（4） 💬（3）<p>课后思考：
 1）首先user embedding是基于历史浏览item embedding平均后生成的，这个一般是online实时计算的。
 2）当拿到user embedding后，我们需要离线训练好的LSH model对这个emb向量求出3个分桶。
 3）拿到3个分桶，我们需要召回3个桶内的item embedding到内存，再进行Online计算求最近距离。
 
 那么难点在于：
 1）冷启动用户没有历史行为，无法用。
-2）LSH model怎么导出到online服务使用。</div>2021-01-06</li><br/><li><span>马龙流</span> 👍（4） 💬（1）<div>Embedding 向量的维度越大，我们越应该增加哈希函数的数量，尽量采用且的方式作为多桶策略；这话怎么理解呢？还有就是faiss这种，里面用到的就是局部哈希原理?</div>2020-11-14</li><br/><li><span>那时刻</span> 👍（4） 💬（2）<div>请问老师局部敏感哈希里的minhash和simhash是否有应用呢？</div>2020-10-30</li><br/><li><span>挖掘机</span> 👍（3） 💬（1）<div>如何判断用户和物品是否在一个向量空间呢？我看后面双塔的时候又说物品和向量不在一个空间，这是如何判断的呢？</div>2021-06-15</li><br/><li><span>杨佳亦</span> 👍（2） 💬（2）<div>请问老师，为什么：
+2）LSH model怎么导出到online服务使用。</p>2021-01-06</li><br/><li><span>马龙流</span> 👍（4） 💬（1）<p>Embedding 向量的维度越大，我们越应该增加哈希函数的数量，尽量采用且的方式作为多桶策略；这话怎么理解呢？还有就是faiss这种，里面用到的就是局部哈希原理?</p>2020-11-14</li><br/><li><span>那时刻</span> 👍（4） 💬（2）<p>请问老师局部敏感哈希里的minhash和simhash是否有应用呢？</p>2020-10-30</li><br/><li><span>挖掘机</span> 👍（3） 💬（1）<p>如何判断用户和物品是否在一个向量空间呢？我看后面双塔的时候又说物品和向量不在一个空间，这是如何判断的呢？</p>2021-06-15</li><br/><li><span>杨佳亦</span> 👍（2） 💬（2）<p>请问老师，为什么：
 
 Embedding 向量维度越大，越应增加哈希函数的数量，用“且”分桶；相反，Embedding 向量维度越小，我们越应减少哈希函数的数量，用“或”分桶？
 
 我的理解是，Embedding维度较大，特征密集不好分，采用多个哈希函数做映射再取交的确可以找到相似的Embedding；Embedding维度较小，特征分散，需要的桶不多，用或可以增加结果数量。
 
-但是疑虑在于，Embedding大，需要的桶也多，计算量岂不是会变得非常大？</div>2020-12-31</li><br/>
+但是疑虑在于，Embedding大，需要的桶也多，计算量岂不是会变得非常大？</p>2020-12-31</li><br/>
 </ul>

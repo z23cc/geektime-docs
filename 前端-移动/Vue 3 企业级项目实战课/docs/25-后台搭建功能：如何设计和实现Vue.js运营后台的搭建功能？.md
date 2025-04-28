@@ -372,7 +372,7 @@ function createEditModule(params: {
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/25)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>cyw0220</span> 👍（1） 💬（1）<div>AMD动态加载比较方便吧</div>2023-02-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-27</li><br/><li><span>Geek_12e8fd</span> 👍（0） 💬（0）<div>在页面搭建技术方案设计中，选择使用AMD模块格式而不是ESM模块格式来渲染物料组件，主要是基于以下几个方面的考虑：
+<li><span>cyw0220</span> 👍（1） 💬（1）<p>AMD动态加载比较方便吧</p>2023-02-13</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-27</li><br/><li><span>Geek_12e8fd</span> 👍（0） 💬（0）<p>在页面搭建技术方案设计中，选择使用AMD模块格式而不是ESM模块格式来渲染物料组件，主要是基于以下几个方面的考虑：
 
 异步加载：AMD（Asynchronous Module Definition）模块允许模块在需要时异步加载，这对于页面搭建来说非常有用。因为页面搭建过程中，可能需要根据用户的操作动态地加载和渲染不同的物料组件。AMD的异步加载特性可以确保在需要某个组件时再进行加载，从而优化页面加载性能。
 浏览器兼容性：虽然现代浏览器普遍支持ESM（ECMAScript Modules），但在一些较旧的浏览器版本中，ESM的支持可能不够完善。使用AMD模块可以确保更好的浏览器兼容性，特别是对于那些需要支持旧版本浏览器的页面搭建场景。
@@ -380,5 +380,5 @@ function createEditModule(params: {
 模块依赖管理：AMD模块定义中明确指出了模块的依赖关系，这有助于在模块加载过程中进行依赖管理。在页面搭建过程中，物料组件之间可能存在复杂的依赖关系，使用AMD模块可以确保这些依赖关系得到正确的处理。
 需要注意的是，随着现代前端技术的发展和浏览器对ESM支持的不断完善，ESM模块格式在前端项目中的应用也越来越广泛。因此，在选择使用AMD还是ESM模块格式时，需要根据具体的项目需求和场景来做出决策。在一些新的或者对性能要求较高的项目中，ESM模块格式可能是一个更好的选择。
 
-</div>2024-06-14</li><br/><li><span>Geek_c5f625</span> 👍（0） 💬（0）<div>老师能帮忙看下具体的错误吗，按照课程代码运行在page-editor.tsx中出现 ReferenceError: __VUE_HMR_RUNTIME__ is not defined</div>2023-09-16</li><br/>
+</p>2024-06-14</li><br/><li><span>Geek_c5f625</span> 👍（0） 💬（0）<p>老师能帮忙看下具体的错误吗，按照课程代码运行在page-editor.tsx中出现 ReferenceError: __VUE_HMR_RUNTIME__ is not defined</p>2023-09-16</li><br/>
 </ul>

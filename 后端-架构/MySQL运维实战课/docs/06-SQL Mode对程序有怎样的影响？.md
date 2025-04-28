@@ -732,7 +732,7 @@ Create Table: CREATE TABLE `t_inno1` (
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>一本书</span> 👍（0） 💬（1）<div>如果同时设置STRICT_TRANS_TABLES、STRICT_ALL_TABLES，那在非事务表中 INSERT 超出范围的值，处理方式是什么呢？</div>2024-09-11</li><br/><li><span>Amosヾ</span> 👍（0） 💬（1）<div>为什么建议设置严格模式？非严格模式会有哪些危害呢？</div>2024-08-31</li><br/><li><span>123</span> 👍（0） 💬（1）<div>思考题：
+<li><span>一本书</span> 👍（0） 💬（1）<p>如果同时设置STRICT_TRANS_TABLES、STRICT_ALL_TABLES，那在非事务表中 INSERT 超出范围的值，处理方式是什么呢？</p>2024-09-11</li><br/><li><span>Amosヾ</span> 👍（0） 💬（1）<p>为什么建议设置严格模式？非严格模式会有哪些危害呢？</p>2024-08-31</li><br/><li><span>123</span> 👍（0） 💬（1）<p>思考题：
 
 首先查看数据库的版本是否一致，mysql在5.7默认开启严格模式，通过show variables like &#39;innodb_strict_mode&#39;查看，当前情况下，主库是在非严格模式下，而备库在严格模式下
 
@@ -740,5 +740,5 @@ Create Table: CREATE TABLE `t_inno1` (
 1、设置备库为非严格模式，除非是业务需求，尽量不要使用非严格模式
 2、修改主库表的DDL，开启严格模式（在业务改动不大的情况下），让备库忽略该GTID，不执行该语句，后由主库重新创建后会自动同步
 
-另外，请教下老师，非严格模式使用会多吗，我们生产要求必须要使用严格模式</div>2024-08-30</li><br/>
+另外，请教下老师，非严格模式使用会多吗，我们生产要求必须要使用严格模式</p>2024-08-30</li><br/>
 </ul>

@@ -409,11 +409,11 @@ Hi, g3
 
 欢迎你在评论区写下你的思考，我会和你一起交流这些问题。如果这篇文章帮你弄懂了本地套接字，不妨把它分享给你的朋友或者同事，一起交流一下它吧！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>supermouse</span> 👍（96） 💬（6）<div>问题一：连接不上。错误提示是“Permission denied”
+<li><span>supermouse</span> 👍（96） 💬（6）<p>问题一：连接不上。错误提示是“Permission denied”
 
 问题二：在服务端的代码中，对收到的客户端发送的数据长度做了判断，如果长度为0，则主动关闭服务端程序。这是杀死客户端后引发服务端关闭的原因。这也说明客户端在被强行终止的时候，会最后向服务端发送一条空消息，告知服务器自己这边的程序关闭了。
 
-问题三：客户端在连接时会报错，错误提示是“Protocol wrong type for socket (91)”</div>2019-11-03</li><br/><li><span>GeekAmI</span> 👍（23） 💬（2）<div>问题1：
+问题三：客户端在连接时会报错，错误提示是“Protocol wrong type for socket (91)”</p>2019-11-03</li><br/><li><span>GeekAmI</span> 👍（23） 💬（2）<p>问题1：
 $ sudo .&#47;unixstreamserver &#47;var&#47;lib&#47;unixstream.sock
 
 $ .&#47;unixstreamclient &#47;var&#47;lib&#47;unixstream.sock
@@ -427,18 +427,18 @@ server:满足条件read(connfd, buf, BUFFER_SIZE) == 0，结束。
 $ .&#47;unixdataserver &#47;tmp&#47;unixdata.sock
 
 $ .&#47;unixstreamclient &#47;tmp&#47;unixdata.sock
-connect failed: Protocol wrong type for socket (41)</div>2019-10-17</li><br/><li><span>衬衫的价格是19美元</span> 👍（20） 💬（1）<div>为什么AF_LOCAL+DGRAM的时候,客户端需要bind一个本地文件？
+connect failed: Protocol wrong type for socket (41)</p>2019-10-17</li><br/><li><span>衬衫的价格是19美元</span> 👍（20） 💬（1）<p>为什么AF_LOCAL+DGRAM的时候,客户端需要bind一个本地文件？
 因为服务器收到来自客户端的数据想要给客户端回复的时候，需要知道发给谁。在其他情况下，服务器都有办法：
 1.当使用STREAM时，不管是AF_INET还是AF_LOCAL, 都有连接的概念，所以服务器可以使用原来的连接
 2.当使用AF_INET时，不管是DGRAM还是STREAM, 都能知道对方的ip+port, 也能确定一个唯一的进程
 只有AF_LOCAL+DGRAM的时候，没有连接，也没有ip_+port,   只能显式的指定一个标志告诉服务端
-</div>2020-06-26</li><br/><li><span>15652790052</span> 👍（6） 💬（1）<div>1.sock文件具体内容什么呢，为什么需要sock文件？
+</p>2020-06-26</li><br/><li><span>15652790052</span> 👍（6） 💬（1）<p>1.sock文件具体内容什么呢，为什么需要sock文件？
 2.本地套接字底层时怎么实现的呢？
-3.为什么没有了端口的概念？</div>2019-08-29</li><br/><li><span>奕</span> 👍（6） 💬（5）<div>文章中说 TCP 和 UDP 的scoket 通讯 是走网络协议的，本地socket 通讯减少了网络协议的实现，是说明本地scoket通讯一点都不走网络协议吗？ 还是会走其中的一部分网络协议？ 
+3.为什么没有了端口的概念？</p>2019-08-29</li><br/><li><span>奕</span> 👍（6） 💬（5）<p>文章中说 TCP 和 UDP 的scoket 通讯 是走网络协议的，本地socket 通讯减少了网络协议的实现，是说明本地scoket通讯一点都不走网络协议吗？ 还是会走其中的一部分网络协议？ 
 
-如果本地 socket 通讯不走网络协议，那通讯的标准是什么呢？ 只是对 socket 文件的读写操作吗？</div>2019-08-17</li><br/><li><span>Sylar.</span> 👍（6） 💬（1）<div>老师您好，方便把全部代码放git吗，因为示例缺少依赖</div>2019-08-17</li><br/><li><span>J.M.Liu</span> 👍（3） 💬（1）<div>datagram client中，为什么还要bind一个本地地址呀？没有看出这个这个本地地址有什么用呀。难道它是用来作为接受数据的缓冲区的吗？好像没有它也并不影响数据收发，换句话说，client_addr.sun_path填什么好像都无所谓啊。</div>2019-08-30</li><br/><li><span>刘丹</span> 👍（3） 💬（3）<div>请问老师本地套接字是否支持一对多、多对多通信？</div>2019-08-16</li><br/><li><span>重小楼不吃素</span> 👍（2） 💬（2）<div>老师你好，我在讨论区看到“一对多，多对多通信”这样的概念，有点不明白。请问一对多指的是建立一个套接字可以允许多个客户端连接的意思吗？  如果是的话，本地套接字的 SOCK_STREAM 方式也能一对多呀，老师为什么只提到 SOCK_DGRAM 可以？
+如果本地 socket 通讯不走网络协议，那通讯的标准是什么呢？ 只是对 socket 文件的读写操作吗？</p>2019-08-17</li><br/><li><span>Sylar.</span> 👍（6） 💬（1）<p>老师您好，方便把全部代码放git吗，因为示例缺少依赖</p>2019-08-17</li><br/><li><span>J.M.Liu</span> 👍（3） 💬（1）<p>datagram client中，为什么还要bind一个本地地址呀？没有看出这个这个本地地址有什么用呀。难道它是用来作为接受数据的缓冲区的吗？好像没有它也并不影响数据收发，换句话说，client_addr.sun_path填什么好像都无所谓啊。</p>2019-08-30</li><br/><li><span>刘丹</span> 👍（3） 💬（3）<p>请问老师本地套接字是否支持一对多、多对多通信？</p>2019-08-16</li><br/><li><span>重小楼不吃素</span> 👍（2） 💬（2）<p>老师你好，我在讨论区看到“一对多，多对多通信”这样的概念，有点不明白。请问一对多指的是建立一个套接字可以允许多个客户端连接的意思吗？  如果是的话，本地套接字的 SOCK_STREAM 方式也能一对多呀，老师为什么只提到 SOCK_DGRAM 可以？
 问题二：
-TCP\UDP\本地套接字 是否都有发送缓冲区、接收缓冲区，TCP的发送&#47;接收缓冲区很好理解，其余两个我没有查找到说得比较透彻的资料</div>2020-08-24</li><br/><li><span>蚂蚁哈哈哈</span> 👍（1） 💬（1）<div>答案：
+TCP\UDP\本地套接字 是否都有发送缓冲区、接收缓冲区，TCP的发送&#47;接收缓冲区很好理解，其余两个我没有查找到说得比较透彻的资料</p>2020-08-24</li><br/><li><span>蚂蚁哈哈哈</span> 👍（1） 💬（1）<p>答案：
 问题1: 客户端报错： &quot;connect failed: Permission denied&quot;
 问题2:  下面这段代码中 == 0 的代码表示的就是客户端推出，这时候服务端打印 &quot;client quit&quot;, 然后推出 read 循环，关闭服务端程序。
 
@@ -447,10 +447,10 @@ TCP\UDP\本地套接字 是否都有发送缓冲区、接收缓冲区，TCP的�
       break;
     }`
 
-问题三： 客户端报错 &quot;connect failed: Protocol wrong type for socket&quot;</div>2021-01-30</li><br/><li><span>夏雨</span> 👍（1） 💬（2）<div>既然是本地套接字不走网路协议， 那本地套接字的TCP 和 UDP 又有什么去别， UDP在缓存里也不会丢包乱序。</div>2020-06-24</li><br/><li><span>郑祖煌</span> 👍（1） 💬（1）<div>这边举例的本地套接字是一个服务器对应着一个客户端。 那想问一下能不能一个服务器对应着多个客户端。如果对应的多个客户端，他们还是通过一个文件就可以进行通信？ 还是要设置说一对关系要通过一个文件进行通信？</div>2020-06-12</li><br/><li><span>HunterYuan</span> 👍（1） 💬（1）<div>对于第二个问题，第五讲已进行了充分说明：read 函数要求操作系统内核从套接字描述字 socketfd读取最多多少个字节（size），并将结果存储到 buffer 中。返回值告诉我们实际读取的字节数目，也有一些特殊情况，如果返回值为 0，表示 EOF（end-of-file），这在网络中表示对端发送了 FIN 包，要处理断连的情况。
+问题三： 客户端报错 &quot;connect failed: Protocol wrong type for socket&quot;</p>2021-01-30</li><br/><li><span>夏雨</span> 👍（1） 💬（2）<p>既然是本地套接字不走网路协议， 那本地套接字的TCP 和 UDP 又有什么去别， UDP在缓存里也不会丢包乱序。</p>2020-06-24</li><br/><li><span>郑祖煌</span> 👍（1） 💬（1）<p>这边举例的本地套接字是一个服务器对应着一个客户端。 那想问一下能不能一个服务器对应着多个客户端。如果对应的多个客户端，他们还是通过一个文件就可以进行通信？ 还是要设置说一对关系要通过一个文件进行通信？</p>2020-06-12</li><br/><li><span>HunterYuan</span> 👍（1） 💬（1）<p>对于第二个问题，第五讲已进行了充分说明：read 函数要求操作系统内核从套接字描述字 socketfd读取最多多少个字节（size），并将结果存储到 buffer 中。返回值告诉我们实际读取的字节数目，也有一些特殊情况，如果返回值为 0，表示 EOF（end-of-file），这在网络中表示对端发送了 FIN 包，要处理断连的情况。
 也就是说，只有流方式会遇到这种情况：
 client: Ctrl + C -&gt; exit(0) -&gt; 发送FIN包；
-server:满足条件read(connfd, buf, BUFFER_SIZE) == 0，结束。</div>2019-11-28</li><br/><li><span>Kepler</span> 👍（1） 💬（1）<div>lib&#47;common.h 的绝对路径是啥，有这个文件吗？</div>2019-09-22</li><br/><li><span>knull</span> 👍（1） 💬（2）<div>老师，你好，我练习写了一个echoserver（用AF_UNIX）,客户端主动断链。
+server:满足条件read(connfd, buf, BUFFER_SIZE) == 0，结束。</p>2019-11-28</li><br/><li><span>Kepler</span> 👍（1） 💬（1）<p>lib&#47;common.h 的绝对路径是啥，有这个文件吗？</p>2019-09-22</li><br/><li><span>knull</span> 👍（1） 💬（2）<p>老师，你好，我练习写了一个echoserver（用AF_UNIX）,客户端主动断链。
 发现在客户端close的时候，echoserver会读取到数据，并且最后一次write。但是，这个时候连接已经断了，会报错broken pipe。程序直接挂掉了。。。
-这种情况该怎么处理呢？</div>2019-08-26</li><br/>
+这种情况该怎么处理呢？</p>2019-08-26</li><br/>
 </ul>

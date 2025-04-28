@@ -367,7 +367,7 @@ if (payload_length < 7) {
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>按照上述文章中的代码编写，在加载 ebpf 程序时会产生错误信息：
+<li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>按照上述文章中的代码编写，在加载 ebpf 程序时会产生错误信息：
 139: (85) call bpf_skb_load_bytes#26
 R4 invalid zero-sized read: u64=[0,99]
 processed 159 insns (limit 1000000) max_states_per_insn 1 total_states 12 peak_states 12 mark_read 5
@@ -405,5 +405,5 @@ static const struct bpf_func_proto bpf_skb_load_bytes_proto = {
 	.arg3_type	= ARG_PTR_TO_UNINIT_MEM,
 	.arg4_type	= ARG_CONST_SIZE,
 };
-至此可以确定 bpf_skb_load_bytes 要求第四个参数 len 的类型必须是常量类型</div>2024-12-31</li><br/>
+至此可以确定 bpf_skb_load_bytes 要求第四个参数 len 的类型必须是常量类型</p>2024-12-31</li><br/>
 </ul>

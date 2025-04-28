@@ -152,7 +152,7 @@ channel error; protocol method: #method&lt;channel.close&gt;(reply-code=406, rep
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>javaadu</span> 👍（4） 💬（1）<div>事务消息是针对发送者的，消费者要确保做好异常处理和重试逻辑。
+<li><span>javaadu</span> 👍（4） 💬（1）<p>事务消息是针对发送者的，消费者要确保做好异常处理和重试逻辑。
 
 
 基于RocketMQ或Kafka的事务消息，实现分布式事务：
@@ -160,7 +160,7 @@ channel error; protocol method: #method&lt;channel.close&gt;(reply-code=406, rep
 （2）订单系统给消息服务器发送一个“半消息”，半消息和普通消息的唯一区别是，在事务提交之前，对于消费者来说，这个消息是不可见的。
 （3）半消息发送成功后，订单系统就可以执行本地事务了，在订单库中创建一条订单记录，并提交订单库的数据库事务。
 （4）根据本地事务的执行结果决定提交或者回滚事务消息。如果这一步失败，kafka是直接抛出异常，让用户在业务层代码自己处理；RocketMQ 中的事务实现中，增加了事务反查的机制来解决事务消息提交失败的问题。
-（5）投递消息，消费者先执行消费的逻辑，只有消费逻辑执行成果后再进行消息的ack确认</div>2022-08-07</li><br/><li><span>so long</span> 👍（3） 💬（1）<div>老师，我在测试requeue的时候，只设置requeue-rejected: true无法生效，需要同步设置auto-bind-dlq: false,这样才能生效，是不是我的版本问题？</div>2022-02-25</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师两个关于Gateway的问题：
+（5）投递消息，消费者先执行消费的逻辑，只有消费逻辑执行成果后再进行消息的ack确认</p>2022-08-07</li><br/><li><span>so long</span> 👍（3） 💬（1）<p>老师，我在测试requeue的时候，只设置requeue-rejected: true无法生效，需要同步设置auto-bind-dlq: false,这样才能生效，是不是我的版本问题？</p>2022-02-25</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师两个关于Gateway的问题：
 Q1：Spring Gateway和Nacos、微服务应用通信是用RPC还是Rest API？
-Q2：Spring Gateway内部有“微服务客户端”吗？</div>2022-02-21</li><br/>
+Q2：Spring Gateway内部有“微服务客户端”吗？</p>2022-02-21</li><br/>
 </ul>

@@ -189,8 +189,8 @@ WAT 还有与之相对应的 Flat-WAT 形式的代码。在这个类型的代码
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>慌慌张张</span> 👍（7） 💬（3）<div>老师您好，请教一个问题。我们一般都是把c或者c++直接编译成wasm，只要native通了，wasm也没问题。那么出现wat得意义在哪里？貌似不需要通过wat来调试之类的……</div>2020-10-20</li><br/><li><span>weineel</span> 👍（3） 💬（1）<div>感觉 Flat-WAT，比 WAT 看着好懂，为啥不直接只用 Flat-WAT？</div>2020-10-02</li><br/><li><span>军秋</span> 👍（2） 💬（1）<div>老师能在浏览器中像调试js一样调试wasm的C代码吗？（浏览器source中显示C代码，断点单步调试？）我自己尝试了一些方法还没成功</div>2020-09-26</li><br/><li><span>Running</span> 👍（1） 💬（1）<div>因为最近工作涉及到一些WASM，及时购买了这个课程恶补基础，很好的一门课程。最近遇到一点技术问题想请教一下于老师，Chrome Web Store要求新上架的应用需要支持Manifest V3, 由于应用有部分代码是使用C语言实现的，编译成WASM，那么问题是WASM 在支持 Manifest V3 遇到了加载的问题。 在Manifest V2使用CSP unsafe-eval 是可以运行的，但是V3 已经禁止了eval运行。
-https:&#47;&#47;bugs.chromium.org&#47;p&#47;chromium&#47;issues&#47;detail?id=1173354#c19  于老师，对于这个问题有什么建议吗?这个问题困扰了好久 </div>2022-05-21</li><br/><li><span>纳兰容若</span> 👍（0） 💬（1）<div>老师您好 有个问题请教一下：
+<li><span>慌慌张张</span> 👍（7） 💬（3）<p>老师您好，请教一个问题。我们一般都是把c或者c++直接编译成wasm，只要native通了，wasm也没问题。那么出现wat得意义在哪里？貌似不需要通过wat来调试之类的……</p>2020-10-20</li><br/><li><span>weineel</span> 👍（3） 💬（1）<p>感觉 Flat-WAT，比 WAT 看着好懂，为啥不直接只用 Flat-WAT？</p>2020-10-02</li><br/><li><span>军秋</span> 👍（2） 💬（1）<p>老师能在浏览器中像调试js一样调试wasm的C代码吗？（浏览器source中显示C代码，断点单步调试？）我自己尝试了一些方法还没成功</p>2020-09-26</li><br/><li><span>Running</span> 👍（1） 💬（1）<p>因为最近工作涉及到一些WASM，及时购买了这个课程恶补基础，很好的一门课程。最近遇到一点技术问题想请教一下于老师，Chrome Web Store要求新上架的应用需要支持Manifest V3, 由于应用有部分代码是使用C语言实现的，编译成WASM，那么问题是WASM 在支持 Manifest V3 遇到了加载的问题。 在Manifest V2使用CSP unsafe-eval 是可以运行的，但是V3 已经禁止了eval运行。
+https:&#47;&#47;bugs.chromium.org&#47;p&#47;chromium&#47;issues&#47;detail?id=1173354#c19  于老师，对于这个问题有什么建议吗?这个问题困扰了好久 </p>2022-05-21</li><br/><li><span>纳兰容若</span> 👍（0） 💬（1）<p>老师您好 有个问题请教一下：
 正文中 “经过编译和转换后，该函数对应的 WAT 文本代码如下所示。”下面的wat代码，我使用WABT中的wat-desugar进行flat时候出现错误：
 ASM&#47;test.wat:8:6: error: unexpected token &quot;get_local&quot;, expected an expr.
 ..&#47;..&#47;WASM&#47;test.wat:11:4: error: unexpected token set_local.
@@ -202,5 +202,5 @@ ASM&#47;test.wat:8:6: error: unexpected token &quot;get_local&quot;, expected an
 ..&#47;..&#47;WASM&#47;test.wat:22:6: error: unexpected token tee_local.
 ..&#47;..&#47;WASM&#47;test.wat:24:8: error: unexpected token &quot;get_local&quot;, expected an expr.
 ..&#47;..&#47;WASM&#47;test.wat:27:5: error: unexpected token ), expected EOF.
-这个是什么原因呢 是我的wabt安装的不正确么</div>2022-05-20</li><br/><li><span>Clearly</span> 👍（0） 💬（1）<div>老师那个给的演示地址，查看对应生成的 WAT 可读文本代码，怎么用啊，一直在build状态</div>2021-12-20</li><br/><li><span>Jason</span> 👍（0） 💬（1）<div>老师的原理讲解很细致，受益匪浅，以前自认为自己了解了 wasm，课程看到此意识到自己所知甚少。谢谢于老师的讲解，期待于航老师的实战讲解！</div>2020-09-17</li><br/><li><span>Bachue Zhou</span> 👍（1） 💬（0）<div>wat 代码里出现了多次 255 立即数，请问是用来做什么的？按理说 i32 的最大值也不是 255 吧。</div>2023-05-04</li><br/>
+这个是什么原因呢 是我的wabt安装的不正确么</p>2022-05-20</li><br/><li><span>Clearly</span> 👍（0） 💬（1）<p>老师那个给的演示地址，查看对应生成的 WAT 可读文本代码，怎么用啊，一直在build状态</p>2021-12-20</li><br/><li><span>Jason</span> 👍（0） 💬（1）<p>老师的原理讲解很细致，受益匪浅，以前自认为自己了解了 wasm，课程看到此意识到自己所知甚少。谢谢于老师的讲解，期待于航老师的实战讲解！</p>2020-09-17</li><br/><li><span>Bachue Zhou</span> 👍（1） 💬（0）<p>wat 代码里出现了多次 255 立即数，请问是用来做什么的？按理说 i32 的最大值也不是 255 吧。</p>2023-05-04</li><br/>
 </ul>

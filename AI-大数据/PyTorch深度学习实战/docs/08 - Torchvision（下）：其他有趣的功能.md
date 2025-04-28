@@ -214,7 +214,7 @@ torchvision.utils.save_image(img_tensor, 'grid2.jpg', nrow=5, padding=2)
 
 我是方远，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>AstrHan</span> 👍（17） 💬（2）<div>老师，微调的原理是什么啊？image net训练出来的倒数第二层应该是包含1000个类型的特征，那微调训练之后这层输出的会全部变成狗相关的特征吗？如果这样，那训练过程感觉反而会更慢啊。还是说微调训练最多的是输出层，降低倒数第二层里非狗的特征权重？</div>2021-10-28</li><br/><li><span>autiplex</span> 👍（16） 💬（1）<div>
+<li><span>AstrHan</span> 👍（17） 💬（2）<p>老师，微调的原理是什么啊？image net训练出来的倒数第二层应该是包含1000个类型的特征，那微调训练之后这层输出的会全部变成狗相关的特征吗？如果这样，那训练过程感觉反而会更慢啊。还是说微调训练最多的是输出层，降低倒数第二层里非狗的特征权重？</p>2021-10-28</li><br/><li><span>autiplex</span> 👍（16） 💬（1）<p>
 import torch
 import torchvision.models as models
 
@@ -237,8 +237,8 @@ fc_in_features: 1024
 fc_out_features: 1000
 &#39;&#39;&#39;
 
-老师这段代码里 torch.nn.Linear里是不是应该是fc_out_features，因为不是要转换输出分类数为10么</div>2021-11-11</li><br/><li><span>vcjmhg</span> 👍（6） 💬（1）<div>vgg16 = models.vgg16(pretrained=True)</div>2021-10-27</li><br/><li><span>..................</span> 👍（5） 💬（1）<div>老师请问这句话“tensor：类型是 Tensor 或列表，如果输入类型是 Tensor，其形状应是 (B x C x H x W)；”中的B,C,H,W分别是什么意思？实在想不明白</div>2022-04-23</li><br/><li><span>徐洲更</span> 👍（3） 💬（2）<div>老师您好，请教一个可能跟计算机视觉相关的深度学习的问题。假如一款3D的赛车类游戏，我在里面做了一系列操作，从起点开到了终点，我能否让神经网络根据我的操作和对应的录屏学会我的操作，并大致重复出来呢？这需要什么样的深度学习模型呢？</div>2021-12-02</li><br/><li><span>奔跑的火龙果</span> 👍（1） 💬（1）<div>iter(tensor_dataloader)和next()分别是什么意思呢？
-</div>2022-08-23</li><br/><li><span>John(易筋)</span> 👍（1） 💬（1）<div>解决 AttributeError: module &#39;torchvision.models&#39; has no attribute &#39;googlenet&#39;
+老师这段代码里 torch.nn.Linear里是不是应该是fc_out_features，因为不是要转换输出分类数为10么</p>2021-11-11</li><br/><li><span>vcjmhg</span> 👍（6） 💬（1）<p>vgg16 = models.vgg16(pretrained=True)</p>2021-10-27</li><br/><li><span>..................</span> 👍（5） 💬（1）<p>老师请问这句话“tensor：类型是 Tensor 或列表，如果输入类型是 Tensor，其形状应是 (B x C x H x W)；”中的B,C,H,W分别是什么意思？实在想不明白</p>2022-04-23</li><br/><li><span>徐洲更</span> 👍（3） 💬（2）<p>老师您好，请教一个可能跟计算机视觉相关的深度学习的问题。假如一款3D的赛车类游戏，我在里面做了一系列操作，从起点开到了终点，我能否让神经网络根据我的操作和对应的录屏学会我的操作，并大致重复出来呢？这需要什么样的深度学习模型呢？</p>2021-12-02</li><br/><li><span>奔跑的火龙果</span> 👍（1） 💬（1）<p>iter(tensor_dataloader)和next()分别是什么意思呢？
+</p>2022-08-23</li><br/><li><span>John(易筋)</span> 👍（1） 💬（1）<p>解决 AttributeError: module &#39;torchvision.models&#39; has no attribute &#39;googlenet&#39;
 运行以下命令报错
 googlenet = models.googlenet()
 解决方法
@@ -251,25 +251,25 @@ AttributeError                            Traceback (most recent call last)
 
 AttributeError: module &#39;torchvision.models&#39; has no attribute &#39;googlenet&#39;
 
-ref: https:&#47;&#47;stackoverflow.com&#47;questions&#47;55762706&#47;how-to-load-pretrained-googlenet-model-in-pytorch</div>2022-07-30</li><br/><li><span>度</span> 👍（1） 💬（1）<div>googlenet.fc = torch.nn.Linear(fc_in_features, 10)
+ref: https:&#47;&#47;stackoverflow.com&#47;questions&#47;55762706&#47;how-to-load-pretrained-googlenet-model-in-pytorch</p>2022-07-30</li><br/><li><span>度</span> 👍（1） 💬（1）<p>googlenet.fc = torch.nn.Linear(fc_in_features, 10)
 print(&quot;fc_out_features:&quot;, fc_out_features)
-老师，我更改后得到的输出特征数还是 fc_out_features: 1000 这个结果。请赐教！</div>2021-11-16</li><br/><li><span>clee</span> 👍（1） 💬（1）<div>vgg16 = models.vgg16(pretrained=True)</div>2021-11-07</li><br/><li><span>夏阳</span> 👍（1） 💬（4）<div>老师，这段段代码会报错
+老师，我更改后得到的输出特征数还是 fc_out_features: 1000 这个结果。请赐教！</p>2021-11-16</li><br/><li><span>clee</span> 👍（1） 💬（1）<p>vgg16 = models.vgg16(pretrained=True)</p>2021-11-07</li><br/><li><span>夏阳</span> 👍（1） 💬（4）<p>老师，这段段代码会报错
 torchvision.utils.save_image(grid_tensor, &#39;grid.jpg&#39;)
 
 ValueError: unknown file extension: 
 
-搞不清楚什么状况，请帮忙指教</div>2021-10-30</li><br/><li><span>勿更改任何信息</span> 👍（1） 💬（1）<div>老师，代码太分散了，后期是否可以在github上统一存储呢？</div>2021-10-27</li><br/><li><span>超人不会飞</span> 👍（1） 💬（1）<div>vgg16net=torchvision.models.vgg16(pretrained=True)</div>2021-10-27</li><br/><li><span>方华Elton</span> 👍（0） 💬（1）<div>import torch
+搞不清楚什么状况，请帮忙指教</p>2021-10-30</li><br/><li><span>勿更改任何信息</span> 👍（1） 💬（1）<p>老师，代码太分散了，后期是否可以在github上统一存储呢？</p>2021-10-27</li><br/><li><span>超人不会飞</span> 👍（1） 💬（1）<p>vgg16net=torchvision.models.vgg16(pretrained=True)</p>2021-10-27</li><br/><li><span>方华Elton</span> 👍（0） 💬（1）<p>import torch
 import torchvision.models as models
 
 # 加载预训练模型
-vgg16 = models.vgg16(pretrained=True)</div>2023-12-18</li><br/><li><span>逍遥思</span> 👍（0） 💬（1）<div>img_tensor, label_tensor = data_iter.next()会遇到这样一个问题：
+vgg16 = models.vgg16(pretrained=True)</p>2023-12-18</li><br/><li><span>逍遥思</span> 👍（0） 💬（1）<p>img_tensor, label_tensor = data_iter.next()会遇到这样一个问题：
 AttributeError: &#39;_SingleProcessDataLoaderIter&#39; object has no attribute &#39;next&#39;
 改为以下可解决：
-img_tensor, label_tensor = next(data_iter)</div>2023-07-14</li><br/><li><span>dao</span> 👍（0） 💬（1）<div>思考题，也不懂 VGG 是什么，直接找文档 https:&#47;&#47;pytorch.org&#47;vision&#47;stable&#47;models&#47;generated&#47;torchvision.models.vgg16.html#torchvision.models.vgg16
+img_tensor, label_tensor = next(data_iter)</p>2023-07-14</li><br/><li><span>dao</span> 👍（0） 💬（1）<p>思考题，也不懂 VGG 是什么，直接找文档 https:&#47;&#47;pytorch.org&#47;vision&#47;stable&#47;models&#47;generated&#47;torchvision.models.vgg16.html#torchvision.models.vgg16
 ---
 from torchvision.models import VGG16_Weights
 vgg16 = models.vgg16(weights=VGG16_Weights.DEFAULT)
 ---
 
-老师的课程里，挺多名词我都看不懂，接着看吧，希望后面能豁然开朗。</div>2022-11-26</li><br/>
+老师的课程里，挺多名词我都看不懂，接着看吧，希望后面能豁然开朗。</p>2022-11-26</li><br/>
 </ul>

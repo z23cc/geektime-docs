@@ -48,5 +48,5 @@ Hacker News自然是成名了，但是Arc没有什么人搭理。作为LISP骨�
 
 格雷厄姆，是值得我们每个人尊敬的“教父”。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>俊釆</span> 👍（12） 💬（0）<div>他的 &lt;&lt;黑客与画家&gt;&gt; 一直都是我的最爱读物。</div>2019-05-04</li><br/>
+<li><span>俊釆</span> 👍（12） 💬（0）<p>他的 &lt;&lt;黑客与画家&gt;&gt; 一直都是我的最爱读物。</p>2019-05-04</li><br/>
 </ul>

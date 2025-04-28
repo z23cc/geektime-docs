@@ -273,16 +273,16 @@ let myname= '极客时间'
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>coolseaman</span> 👍（555） 💬（37）<div>【最终打印结果】：VM6277:3 Uncaught ReferenceError: Cannot access &#39;myname&#39; before initialization
+<li><span>coolseaman</span> 👍（555） 💬（37）<p>【最终打印结果】：VM6277:3 Uncaught ReferenceError: Cannot access &#39;myname&#39; before initialization
 【分析原因】：在块作用域内，let声明的变量被提升，但变量只是创建被提升，初始化并没有被提升，在初始化之前使用变量，就会形成一个暂时性死区。
 【拓展】
 var的创建和初始化被提升，赋值不会被提升。
 let的创建被提升，初始化和赋值不会被提升。
-function的创建、初始化和赋值均会被提升。</div>2019-08-24</li><br/><li><span>朙</span> 👍（73） 💬（11）<div>这篇真的是神作啊。 有一个疑问，在abcd那个例子里，第一步&lt;编译并创建执行上下文&gt;的图里并没有块级作用域的b=undefined; d=undefined。而在第二步里&lt;继续执行代码&gt;的图中才出现b=undefined; d=undefined。想问下这个块级作用域的b=undefined; d=undefined是不是应该在第一步的编译阶段里就有。还是说在执行阶段像函数那样，块级作用域会有一个自己的编译阶段
+function的创建、初始化和赋值均会被提升。</p>2019-08-24</li><br/><li><span>朙</span> 👍（73） 💬（11）<p>这篇真的是神作啊。 有一个疑问，在abcd那个例子里，第一步&lt;编译并创建执行上下文&gt;的图里并没有块级作用域的b=undefined; d=undefined。而在第二步里&lt;继续执行代码&gt;的图中才出现b=undefined; d=undefined。想问下这个块级作用域的b=undefined; d=undefined是不是应该在第一步的编译阶段里就有。还是说在执行阶段像函数那样，块级作用域会有一个自己的编译阶段
 
-</div>2019-08-24</li><br/><li><span>YBB</span> 👍（65） 💬（4）<div>有个问题，在一个块级作用域中，let和const声明的变量是在编译阶段被压入栈中还是执行阶段被压入栈中？在文中的表述来看，第一个let声明的变量是在编译阶段就压入栈中的，但是后面的变量又感觉是在执行是压入栈中，有点混乱。</div>2019-08-26</li><br/><li><span>Tim</span> 👍（55） 💬（11）<div>看得很生气，全篇文章不提变量的「创建」「初始化」「赋值」这三种区别，把创建和初始化揉在一起了，也是看了精选留言里第一条评论之后Google才查找到，否则刚开始我真的不理解为啥都已经在词法环境找到了变量却报错了！按照这种理论的话，是否说明词法环境只有变量，并没有等于undefined？
-真的不需要更新一下吗？？？？？</div>2020-01-12</li><br/><li><span>晓小东</span> 👍（27） 💬（3）<div>在ES3开始，try &#47;catch 分句结构中也具有块作用域。补充……</div>2019-08-25</li><br/><li><span>李懂</span> 👍（18） 💬（7）<div>执行上下文是在编译时创建的，在执行代码的时候已经有词法环境了，而且变量已经默认初始化了undefiend，为什么还会存在暂时性死区，老师解答一下！</div>2019-08-24</li><br/><li><span>William</span> 👍（10） 💬（8）<div>第二步，继续执行代码。 这张图我觉得有错误，当进入foo函数内部的代码块之后，并没有了编译阶段，此时，新创建的栈顶块级作用域的内容为空，而并没有 b = undefined 和 d = undefined 两项内容。 执行完 let b = 3 之后，分配内存，块级作用域出现 b = 3 一项。 执行 let d = 5 之后，为d分配内存，栈顶块级作用域增加一项 d = 5。</div>2019-08-24</li><br/><li><span>朙</span> 👍（9） 💬（2）<div>if(0){ var myname = &quot; 极客邦 &quot;} 这段代码里的if条件是false很有意思。是说编译阶段不管if会不会执行。里面的代码都会编译，因此这里的myname变量提升，从而导致上面的console.log(myname)输出undefined吗？ 
-另外let 声明的变量会提升吗？</div>2019-08-24</li><br/><li><span>小锅锅</span> 👍（8） 💬（1）<div>老师，听你对比了c语言，既然let const存在暂时性死区，那么c语言的变量也存在同样的暂时性死区报错吗？</div>2019-08-25</li><br/><li><span>Geek_East</span> 👍（1） 💬（1）<div>我想，理解execution context和scope的区别是理解这个问题的一个关键；很多时候执行上下文和作用域都混着说</div>2019-12-06</li><br/><li><span>蓝配鸡</span> 👍（1） 💬（3）<div>let myname= &#39;极客时间&#39;
+</p>2019-08-24</li><br/><li><span>YBB</span> 👍（65） 💬（4）<p>有个问题，在一个块级作用域中，let和const声明的变量是在编译阶段被压入栈中还是执行阶段被压入栈中？在文中的表述来看，第一个let声明的变量是在编译阶段就压入栈中的，但是后面的变量又感觉是在执行是压入栈中，有点混乱。</p>2019-08-26</li><br/><li><span>Tim</span> 👍（55） 💬（11）<p>看得很生气，全篇文章不提变量的「创建」「初始化」「赋值」这三种区别，把创建和初始化揉在一起了，也是看了精选留言里第一条评论之后Google才查找到，否则刚开始我真的不理解为啥都已经在词法环境找到了变量却报错了！按照这种理论的话，是否说明词法环境只有变量，并没有等于undefined？
+真的不需要更新一下吗？？？？？</p>2020-01-12</li><br/><li><span>晓小东</span> 👍（27） 💬（3）<p>在ES3开始，try &#47;catch 分句结构中也具有块作用域。补充……</p>2019-08-25</li><br/><li><span>李懂</span> 👍（18） 💬（7）<p>执行上下文是在编译时创建的，在执行代码的时候已经有词法环境了，而且变量已经默认初始化了undefiend，为什么还会存在暂时性死区，老师解答一下！</p>2019-08-24</li><br/><li><span>William</span> 👍（10） 💬（8）<p>第二步，继续执行代码。 这张图我觉得有错误，当进入foo函数内部的代码块之后，并没有了编译阶段，此时，新创建的栈顶块级作用域的内容为空，而并没有 b = undefined 和 d = undefined 两项内容。 执行完 let b = 3 之后，分配内存，块级作用域出现 b = 3 一项。 执行 let d = 5 之后，为d分配内存，栈顶块级作用域增加一项 d = 5。</p>2019-08-24</li><br/><li><span>朙</span> 👍（9） 💬（2）<p>if(0){ var myname = &quot; 极客邦 &quot;} 这段代码里的if条件是false很有意思。是说编译阶段不管if会不会执行。里面的代码都会编译，因此这里的myname变量提升，从而导致上面的console.log(myname)输出undefined吗？ 
+另外let 声明的变量会提升吗？</p>2019-08-24</li><br/><li><span>小锅锅</span> 👍（8） 💬（1）<p>老师，听你对比了c语言，既然let const存在暂时性死区，那么c语言的变量也存在同样的暂时性死区报错吗？</p>2019-08-25</li><br/><li><span>Geek_East</span> 👍（1） 💬（1）<p>我想，理解execution context和scope的区别是理解这个问题的一个关键；很多时候执行上下文和作用域都混着说</p>2019-12-06</li><br/><li><span>蓝配鸡</span> 👍（1） 💬（3）<p>let myname= &#39;极客时间&#39;
 {
   console.log(myname) 
   let myname= &#39;极客邦&#39;
@@ -302,10 +302,10 @@ pop栈头
 
 结束
 
-</div>2019-08-24</li><br/><li><span>爱吃锅巴的沐泡</span> 👍（1） 💬（1）<div>有个疑问：
+</p>2019-08-24</li><br/><li><span>爱吃锅巴的沐泡</span> 👍（1） 💬（1）<p>有个疑问：
 在思考题中，
 1、执行到console.log(myname)这句话时，编译阶段已经完成，那么词法环境中的栈顶 是不是已经有了该作用域块了，let myname =‘极客邦’  是不是也已经在栈顶的作用域快中了？
-2、执行到console.log(myname)这句话时，是按着从词法环境栈顶到栈底到变量环境的顺序查找，栈底已经存在了函数级的 let myname了，那为什么还是会报错呢？</div>2019-08-24</li><br/><li><span>pyhhou</span> 👍（1） 💬（5）<div>思考题中，在 node 环境中 run 的话，console.log(myname) 这一行会报错，但是在网上的一些 JavaScript 的 editor 中 run，输出就是 undefined。一开始没有 run 代码，把词法环境当作变量环境来分析的话，我认为会输出 undefined，可能在 node 环境下，词法环境中可能还是会有逻辑去判断一个声明是在运行代码前还是后，比如
+2、执行到console.log(myname)这句话时，是按着从词法环境栈顶到栈底到变量环境的顺序查找，栈底已经存在了函数级的 let myname了，那为什么还是会报错呢？</p>2019-08-24</li><br/><li><span>pyhhou</span> 👍（1） 💬（5）<p>思考题中，在 node 环境中 run 的话，console.log(myname) 这一行会报错，但是在网上的一些 JavaScript 的 editor 中 run，输出就是 undefined。一开始没有 run 代码，把词法环境当作变量环境来分析的话，我认为会输出 undefined，可能在 node 环境下，词法环境中可能还是会有逻辑去判断一个声明是在运行代码前还是后，比如
 let a;
 console.log(a);    &#47;&#47; undefined
 
@@ -314,7 +314,7 @@ console.log(a);  &#47;&#47; 报错
 let a;
 
 想请教老师的一点细节方面的问题，就是平时写 JavaScript 代码每行结束后需要带上分号吗？看老师您这里写的代码有很多结束都没有带分号，但是之前看到过一篇文章说 JavaScript 里面是通过分号去判断一个语句的结束，不知道这一点在实际的开发中是否有影响？
-</div>2019-08-24</li><br/><li><span>mmma</span> 👍（0） 💬（1）<div>为什么不创建一个块级执行上下文，而是放入词法环境？</div>2019-09-27</li><br/><li><span>假面猫</span> 👍（0） 💬（1）<div>let myname= &#39;极客时间&#39;
+</p>2019-08-24</li><br/><li><span>mmma</span> 👍（0） 💬（1）<p>为什么不创建一个块级执行上下文，而是放入词法环境？</p>2019-09-27</li><br/><li><span>假面猫</span> 👍（0） 💬（1）<p>let myname= &#39;极客时间&#39;
 {
   console.log(myname) 
   let myname= &#39;极客邦&#39;
@@ -322,5 +322,5 @@ let a;
 VM20209:3 Uncaught ReferenceError: myname is not defined
     at &lt;anonymous&gt;:3:15
 
-奇怪，我在控制台输入竟然是 myname 未定义。</div>2019-09-11</li><br/>
+奇怪，我在控制台输入竟然是 myname 未定义。</p>2019-09-11</li><br/>
 </ul>

@@ -120,5 +120,5 @@ LangChain是最早的RAG框架之一，也是至今名气最响的RAG框架。�
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Jamysp</span> 👍（0） 💬（0）<div>通过大模型，将C#代码转换为自己熟悉的代码，比如python</div>2024-11-14</li><br/><li><span>kevin</span> 👍（0） 💬（0）<div>老师整合LlamaIndex代码能分享吗？</div>2024-10-24</li><br/>
+<li><span>Jamysp</span> 👍（0） 💬（0）<p>通过大模型，将C#代码转换为自己熟悉的代码，比如python</p>2024-11-14</li><br/><li><span>kevin</span> 👍（0） 💬（0）<p>老师整合LlamaIndex代码能分享吗？</p>2024-10-24</li><br/>
 </ul>

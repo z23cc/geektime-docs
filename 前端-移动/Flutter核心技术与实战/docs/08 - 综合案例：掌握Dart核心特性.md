@@ -370,11 +370,11 @@ void main() {
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>relax</span> 👍（4） 💬（3）<div>能不能所有的示例代码放到一个git下面</div>2019-08-14</li><br/><li><span>Ω</span> 👍（36） 💬（3）<div>Item operator+(Item item) =&gt; I...
+<li><span>relax</span> 👍（4） 💬（3）<p>能不能所有的示例代码放到一个git下面</p>2019-08-14</li><br/><li><span>Ω</span> 👍（36） 💬（3）<p>Item operator+(Item item) =&gt; I...
 double get price =&gt; bookings...
 
 这个改造+号的代码还是无法看懂
-</div>2019-07-16</li><br/><li><span>bytecode</span> 👍（13） 💬（1）<div>double get price() {
+</p>2019-07-16</li><br/><li><span>bytecode</span> 👍（13） 💬（1）<p>double get price() {
   double sum = 0.0;
   for(var i in bookings) {
     sum += i.price;
@@ -382,7 +382,7 @@ double get price =&gt; bookings...
   return sum;
 } 
 
-文中这里的price()是多了括号()，要去掉()</div>2019-07-16</li><br/><li><span>jia58960</span> 👍（10） 💬（2）<div>大概能看懂并实现代码，但构造函数中的属性什么时候用this.属性，什么时候不用this，希望老师能回答下。</div>2019-07-24</li><br/><li><span>灰灰</span> 👍（5） 💬（2）<div>abstract class PrintHelper {
+文中这里的price()是多了括号()，要去掉()</p>2019-07-16</li><br/><li><span>jia58960</span> 👍（10） 💬（2）<p>大概能看懂并实现代码，但构造函数中的属性什么时候用this.属性，什么时候不用this，希望老师能回答下。</p>2019-07-24</li><br/><li><span>灰灰</span> 👍（5） 💬（2）<p>abstract class PrintHelper {
   printInfo() =&gt; print(getInfo());
   getInfo();
 }
@@ -434,7 +434,7 @@ void main() {
   ShoppingCart(name: &#39;李四&#39;)
   ..bookings = [Item(&#39;香蕉&#39;, 2.4, 2), Item(&#39;芒果&#39;, 6.8, 4)]
   ..printInfo();
-}</div>2019-07-27</li><br/><li><span>Uncle.Wang</span> 👍（3） 💬（1）<div>class Meta {
+}</p>2019-07-27</li><br/><li><span>Uncle.Wang</span> 👍（3） 💬（1）<p>class Meta {
   double price;
   String name;
   &#47;&#47; 成员变量初始化语法糖
@@ -507,7 +507,7 @@ void main() {
   ..bookings = [Item(&#39;香蕉&#39;,15.0), Item(&#39;西瓜&#39;,40.0)]
   ..printInfo();
 }
-</div>2019-08-20</li><br/><li><span>江宁彭于晏</span> 👍（3） 💬（1）<div>class Meta {
+</p>2019-08-20</li><br/><li><span>江宁彭于晏</span> 👍（3） 💬（1）<p>class Meta {
   double price;
   String name;
   &#47;&#47; 成员变量初始化语法糖
@@ -577,7 +577,7 @@ void main() {
   ..bookings = [Items(Item(&#39;香蕉&#39;,15.0),10.0), Items(Item(&#39;西瓜&#39;,40.0),1.0)]
   ..printInfo();
 }
-</div>2019-07-19</li><br/><li><span>Carlo</span> 👍（1） 💬（1）<div>看到一段代码：
+</p>2019-07-19</li><br/><li><span>Carlo</span> 👍（1） 💬（1）<p>看到一段代码：
 firebaseService.login().then(
                         (value) {
                           print(value.toJson());
@@ -592,7 +592,7 @@ firebaseService.login().then(
 
 thisFunction()
     .catch(console.error)
-    .then(() =&gt; console.log(&#39;We do cleanup here&#39;));</div>2019-10-15</li><br/><li><span>和小胖</span> 👍（1） 💬（1）<div>老师您的第二个题目，我理解是要做每一种商品的分类，但是我还是用了以前语言的思路来做了。麻烦老师，看看是否正确。
+    .then(() =&gt; console.log(&#39;We do cleanup here&#39;));</p>2019-10-15</li><br/><li><span>和小胖</span> 👍（1） 💬（1）<p>老师您的第二个题目，我理解是要做每一种商品的分类，但是我还是用了以前语言的思路来做了。麻烦老师，看看是否正确。
 
 关键代码如下：
 &#47;&#47;定义购物车类
@@ -664,14 +664,14 @@ class ShoppingCar extends Meta with PrintHelper {
       日期：2019-08-14 22:01:24.437085
       商品名称：苹果,该种商品数量：2,该种商品单价：10.0元
       商品名称：梨,该种商品数量：1,该种商品单价：9.0元
-      ----------------------</div>2019-08-14</li><br/><li><span>刘荣清</span> 👍（1） 💬（1）<div>在vs code已经安装dart、code runner插件，本地也安装完dart SDK，然后通过vs code运行dart 提示：dart : 无法将“dart”项识别为 cmdlet、函数...
-但在cmd 控制板中就可以正常运行，这是为咋啊，vs code需要额外配置咋吗</div>2019-08-03</li><br/><li><span>加温后的啤酒</span> 👍（0） 💬（1）<div>直接通过mixin关键字定义PrintHelper也比较简单：
+      ----------------------</p>2019-08-14</li><br/><li><span>刘荣清</span> 👍（1） 💬（1）<p>在vs code已经安装dart、code runner插件，本地也安装完dart SDK，然后通过vs code运行dart 提示：dart : 无法将“dart”项识别为 cmdlet、函数...
+但在cmd 控制板中就可以正常运行，这是为咋啊，vs code需要额外配置咋吗</p>2019-08-03</li><br/><li><span>加温后的啤酒</span> 👍（0） 💬（1）<p>直接通过mixin关键字定义PrintHelper也比较简单：
 mixin  PrintHelper {
   void printInfo() =&gt; print(getInfo());
   String getInfo();
 }
 
-</div>2019-12-23</li><br/><li><span>庆</span> 👍（0） 💬（1）<div>
+</p>2019-12-23</li><br/><li><span>庆</span> 👍（0） 💬（1）<p>
 class Meta {
   double price;
   String name;
@@ -735,7 +735,7 @@ void main() {
   ..bookings = [Item(&#39;香蕉&#39;,15.0), Item(&#39;西瓜&#39;,40.0)]
   ..printInfo()
   ..printDetails();
-}</div>2019-12-23</li><br/><li><span>DERUWE</span> 👍（0） 💬（1）<div>使用了这个Item operator+(Item item) =&gt; Item(name + item.name, price + item.price);最后的bookings就变为长度为1的吗</div>2019-12-09</li><br/><li><span>icer</span> 👍（0） 💬（1）<div>class Meta {
+}</p>2019-12-23</li><br/><li><span>DERUWE</span> 👍（0） 💬（1）<p>使用了这个Item operator+(Item item) =&gt; Item(name + item.name, price + item.price);最后的bookings就变为长度为1的吗</p>2019-12-09</li><br/><li><span>icer</span> 👍（0） 💬（1）<p>class Meta {
   double price;
   String name;
   Meta(this.name,this.price);
@@ -782,7 +782,7 @@ class ShoppingCart2 extends Meta with printHelper {
         -----------------------------
         &quot;&quot;&quot;;
   }
-</div>2019-11-19</li><br/><li><span>入夜、渐微凉</span> 👍（0） 💬（1）<div>在一个道友的回答上稍加改动，加了一个商品总数和购物车为空的情况，老师帮忙看看有没有可以优化的地方。
+</p>2019-11-19</li><br/><li><span>入夜、渐微凉</span> 👍（0） 💬（1）<p>在一个道友的回答上稍加改动，加了一个商品总数和购物车为空的情况，老师帮忙看看有没有可以优化的地方。
 class Meta {
   double price;
   String name;
@@ -864,5 +864,5 @@ void main() {
     ..printInfo();
 
   ShoppingCart(name: &#39;王五&#39;)..printInfo();
-}</div>2019-11-07</li><br/>
+}</p>2019-11-07</li><br/>
 </ul>

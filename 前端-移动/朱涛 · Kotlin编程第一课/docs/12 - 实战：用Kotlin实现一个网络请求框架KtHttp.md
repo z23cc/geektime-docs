@@ -625,9 +625,9 @@ object KtHttpV1 {
 
 好了，学完这节课以后，请问你有哪些感悟和收获？请在评论区里分享出来，我们一起交流吧！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>白乾涛</span> 👍（8） 💬（1）<div>勉强能看明白，但这代码谁能手写的出来呀？
+<li><span>白乾涛</span> 👍（8） 💬（1）<p>勉强能看明白，但这代码谁能手写的出来呀？
 
-就算写出来了，谁保证没 bug？谁能保证别人能看明白？谁能保证后续能维护？</div>2022-02-19</li><br/><li><span>木易杨</span> 👍（3） 💬（1）<div>Kotlin这语法越写越变态。Java啰嗦吧，起码能看懂，没那么多语法题</div>2022-01-24</li><br/><li><span>$Kotlin</span> 👍（3） 💬（1）<div>动图看起来不太方便，不能暂停，而且这个动图好长。</div>2022-01-24</li><br/><li><span>syz</span> 👍（2） 💬（1）<div>动态代理的那张动图，播放中不能暂停，要懂这样过一遍没毛病。建议将每一次停顿变成带序号的标注，贴代码上来感觉会好点。</div>2022-03-09</li><br/><li><span>面无表情的生鱼片</span> 👍（2） 💬（1）<div>请教老师，如果 method.genericType 是 kotlin 的 Basic Type 的话（例如：String、Int），要怎么做兼容比较好呢？</div>2022-02-12</li><br/><li><span>阿康</span> 👍（2） 💬（3）<div>Lambda 表达式当中的返回语法 能讲下吗？或者给个相关的博客连接</div>2022-01-24</li><br/><li><span>河山</span> 👍（1） 💬（1）<div>请问老师 像如下代码 
+就算写出来了，谁保证没 bug？谁能保证别人能看明白？谁能保证后续能维护？</p>2022-02-19</li><br/><li><span>木易杨</span> 👍（3） 💬（1）<p>Kotlin这语法越写越变态。Java啰嗦吧，起码能看懂，没那么多语法题</p>2022-01-24</li><br/><li><span>$Kotlin</span> 👍（3） 💬（1）<p>动图看起来不太方便，不能暂停，而且这个动图好长。</p>2022-01-24</li><br/><li><span>syz</span> 👍（2） 💬（1）<p>动态代理的那张动图，播放中不能暂停，要懂这样过一遍没毛病。建议将每一次停顿变成带序号的标注，贴代码上来感觉会好点。</p>2022-03-09</li><br/><li><span>面无表情的生鱼片</span> 👍（2） 💬（1）<p>请教老师，如果 method.genericType 是 kotlin 的 Basic Type 的话（例如：String、Int），要怎么做兼容比较好呢？</p>2022-02-12</li><br/><li><span>阿康</span> 👍（2） 💬（3）<p>Lambda 表达式当中的返回语法 能讲下吗？或者给个相关的博客连接</p>2022-01-24</li><br/><li><span>河山</span> 👍（1） 💬（1）<p>请问老师 像如下代码 
 fun &lt;T&gt; Int.toType():T{
     return (this as T)
 }
@@ -635,13 +635,13 @@ class Animal{}
 fun main() {
     println(100.toType&lt;Animal&gt;())
 }
-这个不应该有类型转换异常吗 为什么我运行没有报异常 而且会输出100  但是debug模式 去运行100.toType&lt;Animal&gt;()  这个表达式 却的确会提示类型转换异常 老师 为什么运行没问题啊 </div>2022-03-09</li><br/><li><span>PoPlus</span> 👍（0） 💬（3）<div>操作符太多了，日常写业务不常用的话很快就忘了。不知道老师是如何知道这么多没听过的操作符（filterIsInstance、fold）🥲。</div>2022-02-27</li><br/><li><span>山河入梦</span> 👍（0） 💬（1）<div>&#47;&#47; 这种写法是有问题的，但这节课我们先不管。
-我想问下老师，这种写法的问题在哪，因为我一直这样写来着，从昨天看了文章，就一直纠结着</div>2022-02-16</li><br/><li><span>jim</span> 👍（0） 💬（1）<div>kotlin确实很优雅，有时候写着写着看不懂了！</div>2022-02-15</li><br/><li><span>梦佳</span> 👍（0） 💬（3）<div>运行不起来</div>2022-01-31</li><br/><li><span>只为你停留</span> 👍（0） 💬（3）<div>mapIndexed { index, it -&gt; Pair(it, args[index]) }
-这个函数中 it -&gt; Pair(it, args[index] 怎么理解呢，尤其不理解 it -&gt;</div>2022-01-28</li><br/><li><span>l-zesong</span> 👍（0） 💬（1）<div>return@newProxyInstance  是什么意思啊？没看懂</div>2022-01-25</li><br/><li><span>sunlight</span> 👍（0） 💬（2）<div>有个地方疑惑，动态代理一般会有两种使用方式吗？
+这个不应该有类型转换异常吗 为什么我运行没有报异常 而且会输出100  但是debug模式 去运行100.toType&lt;Animal&gt;()  这个表达式 却的确会提示类型转换异常 老师 为什么运行没问题啊 </p>2022-03-09</li><br/><li><span>PoPlus</span> 👍（0） 💬（3）<p>操作符太多了，日常写业务不常用的话很快就忘了。不知道老师是如何知道这么多没听过的操作符（filterIsInstance、fold）🥲。</p>2022-02-27</li><br/><li><span>山河入梦</span> 👍（0） 💬（1）<p>&#47;&#47; 这种写法是有问题的，但这节课我们先不管。
+我想问下老师，这种写法的问题在哪，因为我一直这样写来着，从昨天看了文章，就一直纠结着</p>2022-02-16</li><br/><li><span>jim</span> 👍（0） 💬（1）<p>kotlin确实很优雅，有时候写着写着看不懂了！</p>2022-02-15</li><br/><li><span>梦佳</span> 👍（0） 💬（3）<p>运行不起来</p>2022-01-31</li><br/><li><span>只为你停留</span> 👍（0） 💬（3）<p>mapIndexed { index, it -&gt; Pair(it, args[index]) }
+这个函数中 it -&gt; Pair(it, args[index] 怎么理解呢，尤其不理解 it -&gt;</p>2022-01-28</li><br/><li><span>l-zesong</span> 👍（0） 💬（1）<p>return@newProxyInstance  是什么意思啊？没看懂</p>2022-01-25</li><br/><li><span>sunlight</span> 👍（0） 💬（2）<p>有个地方疑惑，动态代理一般会有两种使用方式吗？
 
 方式一 create()方法中会多传个被代理对象，通过method.invoke(被代理对象)，实现拦截。外层返回代理对象
 方式二 create()方法中只会有接口，没有手动实现被代理对象。因为我们不关心接口的具体实现，只关心接口中的注解参数，拦截获取到参数即可
 
 文中是使用第二种，并没有手动实现被代理对象，只是最终返回了代理对象。请问这样理解对么
-</div>2022-01-25</li><br/><li><span>7Promise</span> 👍（0） 💬（1）<div>深奥的东西在经过学习原理后都是会有恍然开朗的感觉。</div>2022-01-24</li><br/>
+</p>2022-01-25</li><br/><li><span>7Promise</span> 👍（0） 💬（1）<p>深奥的东西在经过学习原理后都是会有恍然开朗的感觉。</p>2022-01-24</li><br/>
 </ul>

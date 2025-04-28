@@ -215,9 +215,9 @@ IntegerCache只能缓存事先指定好的整型对象，那我们是否可以�
 
 欢迎留言和我分享你的想法，如果有收获，欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>一丨丿丶乙</span> 👍（1） 💬（1）<div>享元---&gt;复用，线程池等。通过复用对象，以达到节省内存的目的
+<li><span>一丨丿丶乙</span> 👍（1） 💬（1）<p>享元---&gt;复用，线程池等。通过复用对象，以达到节省内存的目的
 1.懒加载，dubble check
-2.weak reference持有享元对象</div>2020-11-18</li><br/><li><span>张三丰</span> 👍（1） 💬（1）<div>为什么说垃圾回收的时候如果保存了对象的&quot;引用&quot;就不友好，垃圾回收的依据不是只看这个对象还有没有被&quot;使用&quot;吗？ </div>2020-07-31</li><br/><li><span>Liam</span> 👍（76） 💬（7）<div>享元池用weak reference持有享元对象</div>2020-03-09</li><br/><li><span>小晏子</span> 👍（52） 💬（8）<div>如果IntegerCache不事先指定缓存哪些整形对象，那么每次用到的时候去new一个，这样会稍微影响一些效率，尤其在某些情况下如果常用到-128~127之间的数，可能会不停的new&#47;delete, 不过这个性能问题在大部分时候影响不是很大，所以按照string的设计思路也是可行的，
+2.weak reference持有享元对象</p>2020-11-18</li><br/><li><span>张三丰</span> 👍（1） 💬（1）<p>为什么说垃圾回收的时候如果保存了对象的&quot;引用&quot;就不友好，垃圾回收的依据不是只看这个对象还有没有被&quot;使用&quot;吗？ </p>2020-07-31</li><br/><li><span>Liam</span> 👍（76） 💬（7）<p>享元池用weak reference持有享元对象</p>2020-03-09</li><br/><li><span>小晏子</span> 👍（52） 💬（8）<p>如果IntegerCache不事先指定缓存哪些整形对象，那么每次用到的时候去new一个，这样会稍微影响一些效率，尤其在某些情况下如果常用到-128~127之间的数，可能会不停的new&#47;delete, 不过这个性能问题在大部分时候影响不是很大，所以按照string的设计思路也是可行的，
 按照这个思路设计IntegerCache类的话，如下
 private static class IntegerCache {
 
@@ -238,15 +238,15 @@ public static Integer valueOf(int i) {
     WeakReference&lt;Integer&gt; val = new WeakReference&lt;Integer&gt;(i);
     IntegerCache.cache.put(i, val);
     return val.get(); 
-}</div>2020-03-09</li><br/><li><span>辣么大</span> 👍（48） 💬（7）<div>谢谢各位的讨论，今天学到了软引用，弱引用，和WeakHashMap。内存吃紧的时候可以考虑使用WeakHashMap。
+}</p>2020-03-09</li><br/><li><span>辣么大</span> 👍（48） 💬（7）<p>谢谢各位的讨论，今天学到了软引用，弱引用，和WeakHashMap。内存吃紧的时候可以考虑使用WeakHashMap。
 https:&#47;&#47;www.baeldung.com&#47;java-weakhashmap
 https:&#47;&#47;www.baeldung.com&#47;java-soft-references
-https:&#47;&#47;www.baeldung.com&#47;java-weak-reference</div>2020-03-11</li><br/><li><span>李小四</span> 👍（32） 💬（0）<div>设计模式_55:
+https:&#47;&#47;www.baeldung.com&#47;java-weak-reference</p>2020-03-11</li><br/><li><span>李小四</span> 👍（32） 💬（0）<p>设计模式_55:
 # 作业
 原来还有个WeakHashMap，学习了。
 
 # 感想
-自己尝试了写了一个，然后分别测试了10,000次、100,000次，1,000,000次创建，value从1-100，100-200，10000-10100，发现不管哪个场景，总是JVM的Integer时间更短，我写的要3倍左右的时间，不禁感叹，Java二十几年了，大部分的优化应该都做了，不要期望自己花20分钟能改出超过JVM的性能。</div>2020-03-17</li><br/><li><span>3Spiders</span> 👍（25） 💬（1）<div>课后题。因为整型对象长度固定，且内容固定，可以直接申请一块连续的内存地址，可以加快访问，节省内存？而String类不行。</div>2020-03-09</li><br/><li><span>Geek_41d472</span> 👍（14） 💬（0）<div>我勒个擦 ,这好像是我碰到的两道面试题,包装和拆箱这道题简直就是个坑,有踩坑的举个手</div>2020-03-10</li><br/><li><span>webmin</span> 👍（10） 💬（1）<div>抛砖引玉实现了一个有限范围的缓存（-128~2048383(127 * 127 * 127)）
+自己尝试了写了一个，然后分别测试了10,000次、100,000次，1,000,000次创建，value从1-100，100-200，10000-10100，发现不管哪个场景，总是JVM的Integer时间更短，我写的要3倍左右的时间，不禁感叹，Java二十几年了，大部分的优化应该都做了，不要期望自己花20分钟能改出超过JVM的性能。</p>2020-03-17</li><br/><li><span>3Spiders</span> 👍（25） 💬（1）<p>课后题。因为整型对象长度固定，且内容固定，可以直接申请一块连续的内存地址，可以加快访问，节省内存？而String类不行。</p>2020-03-09</li><br/><li><span>Geek_41d472</span> 👍（14） 💬（0）<p>我勒个擦 ,这好像是我碰到的两道面试题,包装和拆箱这道题简直就是个坑,有踩坑的举个手</p>2020-03-10</li><br/><li><span>webmin</span> 👍（10） 💬（1）<p>抛砖引玉实现了一个有限范围的缓存（-128~2048383(127 * 127 * 127)）
 public class IntegerCache {
     private static final int bucketSize = 127;
     private static final int level1Max = bucketSize * bucketSize;
@@ -297,7 +297,7 @@ public class IntegerCache {
             return sum;
         }
     }
-}</div>2020-03-09</li><br/><li><span>Eden Ma</span> 👍（9） 💬（2）<div>突然理解OC中NSString等也用到了享元设计模式.</div>2020-03-09</li><br/><li><span>，</span> 👍（7） 💬（9）<div>补充 深入理解java虚拟机 里的两道有意思的题,请思考输出结果:
+}</p>2020-03-09</li><br/><li><span>Eden Ma</span> 👍（9） 💬（2）<p>突然理解OC中NSString等也用到了享元设计模式.</p>2020-03-09</li><br/><li><span>，</span> 👍（7） 💬（9）<p>补充 深入理解java虚拟机 里的两道有意思的题,请思考输出结果:
 自动装箱 拆箱:
  public static void main(String[] args){
         Integer a = 1;
@@ -323,5 +323,5 @@ public class IntegerCache {
         String str2 = new StringBuilder(&quot;ja&quot;).append(&quot;va&quot;).toString();
         System.out.println(str2==str2.intern());
     }
-考察知识点:1.intern的作用;2.玩</div>2020-03-09</li><br/><li><span>柠檬C</span> 👍（5） 💬（0）<div>可以使用weakReference，当没有其他变量引用时，被JVM回收</div>2020-03-14</li><br/><li><span>Jackey</span> 👍（5） 💬（0）<div>这节的例子可以拿来做笔试的题目😃</div>2020-03-09</li><br/><li><span>Q罗</span> 👍（4） 💬（0）<div>享元模式讲解很透彻，赞👍</div>2020-03-24</li><br/><li><span>李德政</span> 👍（3） 💬（0）<div>终于明白了Python中[-5,256)之间的整数的地址id都是一样的</div>2020-06-19</li><br/>
+考察知识点:1.intern的作用;2.玩</p>2020-03-09</li><br/><li><span>柠檬C</span> 👍（5） 💬（0）<p>可以使用weakReference，当没有其他变量引用时，被JVM回收</p>2020-03-14</li><br/><li><span>Jackey</span> 👍（5） 💬（0）<p>这节的例子可以拿来做笔试的题目😃</p>2020-03-09</li><br/><li><span>Q罗</span> 👍（4） 💬（0）<p>享元模式讲解很透彻，赞👍</p>2020-03-24</li><br/><li><span>李德政</span> 👍（3） 💬（0）<p>终于明白了Python中[-5,256)之间的整数的地址id都是一样的</p>2020-06-19</li><br/>
 </ul>

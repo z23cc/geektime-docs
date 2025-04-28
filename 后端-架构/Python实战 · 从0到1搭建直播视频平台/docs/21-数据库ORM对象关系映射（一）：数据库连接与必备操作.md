@@ -207,6 +207,6 @@ alter user 'root'@'localhost' identified with mysql_native_password by 'flask_pr
 
 欢迎你在留言区和我交流互动。如果这节课对你有帮助，也推荐你分享给身边更多朋友。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Aegean Sea</span> 👍（0） 💬（2）<div>那个可视化工具怎么不见了老师</div>2023-10-25</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>Q1：一台PC上部署一个MySQL实例，一般情况下，能支持多大并发请求？ 
-Q2：MySQL的主键一般用什么？用自增ID吗？好像不能用uuid。</div>2023-06-09</li><br/>
+<li><span>Aegean Sea</span> 👍（0） 💬（2）<p>那个可视化工具怎么不见了老师</p>2023-10-25</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>Q1：一台PC上部署一个MySQL实例，一般情况下，能支持多大并发请求？ 
+Q2：MySQL的主键一般用什么？用自增ID吗？好像不能用uuid。</p>2023-06-09</li><br/>
 </ul>

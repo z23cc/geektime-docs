@@ -132,7 +132,7 @@ etcd将watch对象分为了unsynced watcher 与synced watcher，其中synced wat
 
 欢迎你在留言区与我交流讨论，我们下节课见。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Realm</span> 👍（3） 💬（1）<div>思考题：
+<li><span>Realm</span> 👍（3） 💬（1）<p>思考题：
 一 treeIndex 的结构为什么是 B 树而不是哈希表或者是二叉树？
 不使用【hash表】的原因：
 1. hash表不支持范围查询；
@@ -146,5 +146,5 @@ etcd将watch对象分为了unsynced watcher 与synced watcher，其中synced wat
 二 如果这个时候节点崩溃了，如何保证数据不丢失呢？
 应该是通过WAL进行保障，先写日志在提交.
 
-这样看，很多思路与MySQL相似.</div>2023-01-17</li><br/><li><span>Geek_c3c15b</span> 👍（0） 💬（2）<div>怎么又是一整篇理论知识，实战课的重点不是实战吗？极客时间已经有etcd的专栏了</div>2023-02-22</li><br/>
+这样看，很多思路与MySQL相似.</p>2023-01-17</li><br/><li><span>Geek_c3c15b</span> 👍（0） 💬（2）<p>怎么又是一整篇理论知识，实战课的重点不是实战吗？极客时间已经有etcd的专栏了</p>2023-02-22</li><br/>
 </ul>

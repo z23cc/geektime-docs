@@ -265,7 +265,7 @@ React Native 的样式大都是从 Web 中借鉴过来的，并且还进行了�
 
 欢迎在评论区写下你的想法。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>AEPKILL</span> 👍（11） 💬（2）<div>设置 Text 默认样式之前我们用的非常 hack 的方案，是这样写的:
+<li><span>AEPKILL</span> 👍（11） 💬（2）<p>设置 Text 默认样式之前我们用的非常 hack 的方案，是这样写的:
 ```tsx
 &#47;&#47; fix: 安卓 Text 组件的文字会被截断
 &#47;&#47; issue: https:&#47;&#47;github.com&#47;facebook&#47;react-native&#47;issues&#47;15114
@@ -290,16 +290,16 @@ if (RN.Platform.OS === &#39;android&#39;) {
 
 ```
 
-</div>2022-04-14</li><br/><li><span>大神博士</span> 👍（1） 💬（1）<div>includeFontPadding: false, textAlignVertical: &#39;center&#39;,
+</p>2022-04-14</li><br/><li><span>大神博士</span> 👍（1） 💬（1）<p>includeFontPadding: false, textAlignVertical: &#39;center&#39;,
 
-这是说的android 字体居中的问题的处理吗</div>2022-05-24</li><br/><li><span>AEPKILL</span> 👍（1） 💬（1）<div>请问该如何实现图文混排类似 float: left 这种效果?</div>2022-04-14</li><br/><li><span>Archer_Shu</span> 👍（0） 💬（1）<div>设计部门如果缺失开发背景，设计的组件属性不统一（比如文字标题使用多种字体和颜色），导致更多时候只能使用绝对定位。开发和QA也因此难以使用可复用的样式。最终也就导致了代码的冗长以及难以维护。</div>2022-04-26</li><br/><li><span>yuxizhe</span> 👍（0） 💬（1）<div>请问 Text 组件设置全局默认样式，一般是用组件进行封装，相当于每个Text都会重新调用 StyleSheet 来生成样式，会有性能问题么？</div>2022-04-16</li><br/><li><span>hawksun</span> 👍（0） 💬（2）<div>写样式的时候怎么处理不同机型适配的问题呢？</div>2022-04-14</li><br/><li><span>大神博士</span> 👍（2） 💬（0）<div>作业2:
+这是说的android 字体居中的问题的处理吗</p>2022-05-24</li><br/><li><span>AEPKILL</span> 👍（1） 💬（1）<p>请问该如何实现图文混排类似 float: left 这种效果?</p>2022-04-14</li><br/><li><span>Archer_Shu</span> 👍（0） 💬（1）<p>设计部门如果缺失开发背景，设计的组件属性不统一（比如文字标题使用多种字体和颜色），导致更多时候只能使用绝对定位。开发和QA也因此难以使用可复用的样式。最终也就导致了代码的冗长以及难以维护。</p>2022-04-26</li><br/><li><span>yuxizhe</span> 👍（0） 💬（1）<p>请问 Text 组件设置全局默认样式，一般是用组件进行封装，相当于每个Text都会重新调用 StyleSheet 来生成样式，会有性能问题么？</p>2022-04-16</li><br/><li><span>hawksun</span> 👍（0） 💬（2）<p>写样式的时候怎么处理不同机型适配的问题呢？</p>2022-04-14</li><br/><li><span>大神博士</span> 👍（2） 💬（0）<p>作业2:
 方法1. 封装通用 Text 组件
-方法2: 重写 Text 组件的 Render 方法</div>2022-07-04</li><br/><li><span>Geek_e4a05b</span> 👍（1） 💬（2）<div>瀑布流目前开源的MasonryList使用的是Flatlist嵌套左右两个Flatlist方式。这种方式在数据变多快速滑动情况下白屏现象严重，请问老师有什么好的实现方式吗？</div>2022-04-01</li><br/><li><span>稀饭</span> 👍（0） 💬（0）<div>作业一没有参考答案吗？</div>2024-09-20</li><br/><li><span>Geek_cf32ac</span> 👍（0） 💬（0）<div>使用 React Native 提供的 &quot;Text.defaultProps&quot; 属性。这个属性允许设置 Text 组件的默认属性，包括样式。
+方法2: 重写 Text 组件的 Render 方法</p>2022-07-04</li><br/><li><span>Geek_e4a05b</span> 👍（1） 💬（2）<p>瀑布流目前开源的MasonryList使用的是Flatlist嵌套左右两个Flatlist方式。这种方式在数据变多快速滑动情况下白屏现象严重，请问老师有什么好的实现方式吗？</p>2022-04-01</li><br/><li><span>稀饭</span> 👍（0） 💬（0）<p>作业一没有参考答案吗？</p>2024-09-20</li><br/><li><span>Geek_cf32ac</span> 👍（0） 💬（0）<p>使用 React Native 提供的 &quot;Text.defaultProps&quot; 属性。这个属性允许设置 Text 组件的默认属性，包括样式。
 import { Text } from &#39;react-native&#39;;
 
 Text.defaultProps = Text.defaultProps || {};
-Text.defaultProps.style = { fontFamily: &#39;Arial&#39;, fontSize: 16 };</div>2023-06-06</li><br/><li><span>风会停息</span> 👍（0） 💬（1）<div>老师您好，我想问下，RN的原理不是相当于说  用JS描述ui然后底层其实是映射的原生api去实现的吗，原生的api再去进行渲染绘制，也就是说最后运行的时候Android还是绘制的原生View 使用Android的引擎 ios也一样用ios的引擎，那么为什么还说React Native 的布局引擎 Yoga， 是 Android、iOS 通用的，如何做到的呢？</div>2023-02-21</li><br/><li><span>王昭策</span> 👍（0） 💬（0）<div>学完react的直接来听老师的这些课可以吗？</div>2022-10-14</li><br/><li><span>黄金分割</span> 👍（0） 💬（0）<div>关于第二个问题, 我们不能直接简单的直接使用react native自带的text组件, 需要对text进行封装.
+Text.defaultProps.style = { fontFamily: &#39;Arial&#39;, fontSize: 16 };</p>2023-06-06</li><br/><li><span>风会停息</span> 👍（0） 💬（1）<p>老师您好，我想问下，RN的原理不是相当于说  用JS描述ui然后底层其实是映射的原生api去实现的吗，原生的api再去进行渲染绘制，也就是说最后运行的时候Android还是绘制的原生View 使用Android的引擎 ios也一样用ios的引擎，那么为什么还说React Native 的布局引擎 Yoga， 是 Android、iOS 通用的，如何做到的呢？</p>2023-02-21</li><br/><li><span>王昭策</span> 👍（0） 💬（0）<p>学完react的直接来听老师的这些课可以吗？</p>2022-10-14</li><br/><li><span>黄金分割</span> 👍（0） 💬（0）<p>关于第二个问题, 我们不能直接简单的直接使用react native自带的text组件, 需要对text进行封装.
 这里需要和ui同事沟通好, 定制统一的字体, 字重, 大小的规格.
 在自己的text组件中自己枚举所有的规格参数.
-使用时直接根据ui的规格引用自己的规格参数即可.</div>2022-06-26</li><br/><li><span>浩明啦</span> 👍（0） 💬（0）<div>老师，使用tailwind 来写会不会更好维护呢</div>2022-06-23</li><br/><li><span>小天儿</span> 👍（0） 💬（1）<div>老师，我是初学者，抱歉，这个作业想了很久还是没想出来如何实现，`Image`组件在使用的时候好像必须指定固定宽高，否则图片就不显示了，这个到底是怎么做到的呀</div>2022-05-07</li><br/>
+使用时直接根据ui的规格引用自己的规格参数即可.</p>2022-06-26</li><br/><li><span>浩明啦</span> 👍（0） 💬（0）<p>老师，使用tailwind 来写会不会更好维护呢</p>2022-06-23</li><br/><li><span>小天儿</span> 👍（0） 💬（1）<p>老师，我是初学者，抱歉，这个作业想了很久还是没想出来如何实现，`Image`组件在使用的时候好像必须指定固定宽高，否则图片就不显示了，这个到底是怎么做到的呀</p>2022-05-07</li><br/>
 </ul>

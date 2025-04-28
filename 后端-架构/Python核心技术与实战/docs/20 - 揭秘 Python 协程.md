@@ -477,7 +477,7 @@ Wall time: 4.98 s
 
 最后给你留一个思考题。协程怎么实现回调函数呢？欢迎留言和我讨论，也欢迎你把这篇文章分享给你的同事朋友，我们一起交流，一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（45） 💬（0）<div>思考题答案：
+<li><span>Jingxiao</span> 👍（45） 💬（0）<p>思考题答案：
 
 在 python 3.7 及以上的版本中，我们对 task 对象调用 add_done_callback() 函数，即可绑定特定回调函数。回调函数接受一个 future 对象，可以通过 future.result() 来获取协程函数的返回值。
 
@@ -509,34 +509,34 @@ result:  OK url_1
 result:  OK url_2
 result:  OK url_3
 result:  OK url_4
-Wall time: 4 s</div>2019-07-01</li><br/><li><span>Jingxiao</span> 👍（77） 💬（10）<div>发现评论区好多朋友说无法运行，在这里统一解释下：
+Wall time: 4 s</p>2019-07-01</li><br/><li><span>Jingxiao</span> 👍（77） 💬（10）<p>发现评论区好多朋友说无法运行，在这里统一解释下：
 1. %time 是 jupyter notebook 自带的语法糖，用来统计一行命令的运行时间；如果你的运行时是纯粹的命令行 python，或者 pycharm，那么请把 %time 删掉，自己用传统的时间戳方法来记录时间也可以；或者使用 jupyter notebook
 2. 我的本地解释器是 Anaconda Python 3.7.3，亲测 windows &#47; ubuntu 均可正常运行，如无法执行可以试试 pip install nest-asyncio，依然无法解决请尝试安装 Anaconda Python
-3. 这次代码因为使用了较新的 API，所以需要较新的版本号，但是朋友们依然出现了一些运行时问题，这里先表示下歉意；同时也想说明的是，在提问之前自己经过充分搜索，尝试后解决问题，带来的快感，和能力的提升，相应也是很大的，一门工程最需要的是 hands on dirty work（动手做脏活），才能让自己的能力得到本质的提升，加油！</div>2019-06-25</li><br/><li><span>Airnm.毁</span> 👍（8） 💬（3）<div>豆瓣那个发现requests.get(url).content&#47;text返回都为空，然后打了下status_code发现是418，网上找418的解释，一般是网站反爬虫基础机制，需要加请求头模仿浏览器就可跳过，改为下面的样子就可通过：url = &quot;https:&#47;&#47;movie.douban.com&#47;cinema&#47;later&#47;beijing&#47;&quot;
+3. 这次代码因为使用了较新的 API，所以需要较新的版本号，但是朋友们依然出现了一些运行时问题，这里先表示下歉意；同时也想说明的是，在提问之前自己经过充分搜索，尝试后解决问题，带来的快感，和能力的提升，相应也是很大的，一门工程最需要的是 hands on dirty work（动手做脏活），才能让自己的能力得到本质的提升，加油！</p>2019-06-25</li><br/><li><span>Airnm.毁</span> 👍（8） 💬（3）<p>豆瓣那个发现requests.get(url).content&#47;text返回都为空，然后打了下status_code发现是418，网上找418的解释，一般是网站反爬虫基础机制，需要加请求头模仿浏览器就可跳过，改为下面的样子就可通过：url = &quot;https:&#47;&#47;movie.douban.com&#47;cinema&#47;later&#47;beijing&#47;&quot;
 head={
     &#39;User-Agent&#39;:&#39;Mozilla&#47;5.0 (Windows NT 6.1; Win64; x64) AppleWebKit&#47;537.36 (KHTML, like Gecko) Chrome&#47;81.0.4044.113 Safari&#47;537.36&#39;,
     &#39;Referer&#39;:&#39;https:&#47;&#47;time.geekbang.org&#47;column&#47;article&#47;101855&#39;,
     &#39;Connection&#39;:&#39;keep-alive&#39;}
-res = requests.get(url,headers=head)</div>2020-04-18</li><br/><li><span>jackstraw</span> 👍（4） 💬（2）<div>有点没明白，前面说任务创建后立马就开始执行了么？怎么后面在解密底层运行过程的时候，说任务创建后等待执行？到底是哪一个呀？</div>2020-01-14</li><br/><li><span>长期规划</span> 👍（2） 💬（1）<div>老师，在最后那个协程例子中为何没用requests库呢？是因为它不支持协程吗</div>2019-12-20</li><br/><li><span>一凡</span> 👍（1） 💬（1）<div>协程是单线程怎么理解？所有的协程都是吗</div>2020-06-18</li><br/><li><span>苹果</span> 👍（1） 💬（1）<div>asyncio.run() cannot be called from a running event loop
+res = requests.get(url,headers=head)</p>2020-04-18</li><br/><li><span>jackstraw</span> 👍（4） 💬（2）<p>有点没明白，前面说任务创建后立马就开始执行了么？怎么后面在解密底层运行过程的时候，说任务创建后等待执行？到底是哪一个呀？</p>2020-01-14</li><br/><li><span>长期规划</span> 👍（2） 💬（1）<p>老师，在最后那个协程例子中为何没用requests库呢？是因为它不支持协程吗</p>2019-12-20</li><br/><li><span>一凡</span> 👍（1） 💬（1）<p>协程是单线程怎么理解？所有的协程都是吗</p>2020-06-18</li><br/><li><span>苹果</span> 👍（1） 💬（1）<p>asyncio.run() cannot be called from a running event loop
 这个问题是如何解决，
-</div>2020-02-02</li><br/><li><span>隰有荷</span> 👍（1） 💬（1）<div>老师，在如下代码中：
+</p>2020-02-02</li><br/><li><span>隰有荷</span> 👍（1） 💬（1）<p>老师，在如下代码中：
 async def worker_2():
     print(&#39;worker_2 start&#39;)
     await asyncio.sleep(2)
     print(&#39;worker_2 done&#39;)
 
 其中的await asyncio.sleep(2)是否可以理解为在切出当前程序，2秒后再继续执行print(&#39;worker_2 done&#39;)代码？
-那么如果我有个耗时任务 def xxx(): ...，那么该如何用await asyncio来让这个xxx函数运行并切出当前程序呢？</div>2019-11-28</li><br/><li><span>扶幽</span> 👍（1） 💬（1）<div>请问下有木有相关的书籍，来进行这块的学习呢！有些原理性的东西还是没办法深入理解，谢谢。</div>2019-10-12</li><br/><li><span>cotter</span> 👍（1） 💬（3）<div>受教了，第一次听说这个高级功能！
+那么如果我有个耗时任务 def xxx(): ...，那么该如何用await asyncio来让这个xxx函数运行并切出当前程序呢？</p>2019-11-28</li><br/><li><span>扶幽</span> 👍（1） 💬（1）<p>请问下有木有相关的书籍，来进行这块的学习呢！有些原理性的东西还是没办法深入理解，谢谢。</p>2019-10-12</li><br/><li><span>cotter</span> 👍（1） 💬（3）<p>受教了，第一次听说这个高级功能！
 我在工作中遇到一个需要并发的问题，用python在后台并发执行shell ,并发数量用时间范围控制，要不停的改时间分多次串行，方法比较笨拙。协程可以简化我的代码。
-老师，并发很多事件应该也是需要消耗很多资源，协程改如何控制并发数量？</div>2019-06-24</li><br/><li><span>SUN</span> 👍（0） 💬（2）<div>Jupyter 中运行 %time asyncio.run(main([&#39;url_1&#39;, &#39;url_2&#39;, &#39;url_3&#39;, &#39;url_4&#39;])) 会报错：
+老师，并发很多事件应该也是需要消耗很多资源，协程改如何控制并发数量？</p>2019-06-24</li><br/><li><span>SUN</span> 👍（0） 💬（2）<p>Jupyter 中运行 %time asyncio.run(main([&#39;url_1&#39;, &#39;url_2&#39;, &#39;url_3&#39;, &#39;url_4&#39;])) 会报错：
 RuntimeError: asyncio.run() cannot be called from a running event loop
 Python、Anaconda、Jupyter都安装了。
 话说：Jupyter不就是为了消除个人本地开发环境差异性而诞生的吗？这个结果有点反讽。
 各位学员的留言都看了，没人解决了此问题……
-</div>2019-10-27</li><br/><li><span>36度道</span> 👍（0） 💬（1）<div>老师，课程的代码是基于py3的吗？</div>2019-06-24</li><br/><li><span>helloworld</span> 👍（72） 💬（7）<div>说一下我对await的理解：
+</p>2019-10-27</li><br/><li><span>36度道</span> 👍（0） 💬（1）<p>老师，课程的代码是基于py3的吗？</p>2019-06-24</li><br/><li><span>helloworld</span> 👍（72） 💬（7）<p>说一下我对await的理解：
 开发者要提前知道一个任务的哪个环节会造成I&#47;O阻塞，然后把这个环节的代码异步化处理，并且通过await来标识在任务的该环节中断该任务执行，从而去执行下一个事件循环任务。这样可以充分利用CPU资源，避免CPU等待I&#47;O造成CPU资源白白浪费。当之前任务的那个环节的I&#47;O完成后，线程可以从await获取返回值，然后继续执行没有完成的剩余代码。
-由上面分析可知，如果一个任务不涉及到网络或磁盘I&#47;O这种耗时的操作，而只有CPU计算和内存I&#47;O的操作时，协程并发的性能还不如单线程loop循环的性能高。</div>2019-06-27</li><br/><li><span>大侠110</span> 👍（45） 💬（1）<div>感觉还是有很多人看不懂，我试着用通俗的语句讲一下：协成里面重要的是一个关键字await的理解，async表示其修饰的是协程任务即task，await表示的是当线程执行到这一句，此时该task在此处挂起，然后调度器去执行其他的task，当这个挂起的部分处理完，会调用回掉函数告诉调度器我已经执行完了，那么调度器就返回来处理这个task的余下语句。
-      </div>2019-12-03</li><br/><li><span>Wing·三金</span> 👍（36） 💬（1）<div>思考题：简单的理解是每个新建的协程对象都会自动调用 add_done_callback() 函数来添加一个回调函数，当协程对象的 Future 状态启动时就会调用该回调函数，从而实现回调。
+由上面分析可知，如果一个任务不涉及到网络或磁盘I&#47;O这种耗时的操作，而只有CPU计算和内存I&#47;O的操作时，协程并发的性能还不如单线程loop循环的性能高。</p>2019-06-27</li><br/><li><span>大侠110</span> 👍（45） 💬（1）<p>感觉还是有很多人看不懂，我试着用通俗的语句讲一下：协成里面重要的是一个关键字await的理解，async表示其修饰的是协程任务即task，await表示的是当线程执行到这一句，此时该task在此处挂起，然后调度器去执行其他的task，当这个挂起的部分处理完，会调用回掉函数告诉调度器我已经执行完了，那么调度器就返回来处理这个task的余下语句。
+      </p>2019-12-03</li><br/><li><span>Wing·三金</span> 👍（36） 💬（1）<p>思考题：简单的理解是每个新建的协程对象都会自动调用 add_done_callback() 函数来添加一个回调函数，当协程对象的 Future 状态启动时就会调用该回调函数，从而实现回调。
 
 综合下前面的留言和个人的学习，总结下 py 3.6 版本下 asyncio 的主要不同：
 1、没有 run(), create_task()，可以用 asyncio.get_even_loop().run_until_complete() 来代替 run()，用 ensure_future() 来代替 create_task()；
@@ -547,5 +547,5 @@ Python、Anaconda、Jupyter都安装了。
 约等于
 tasks = [crawl_page(url) for url in urls]; asyncio.get_even_loop().run_until_complete(asyncio.wait(tasks));
 或
-tasks = [asyncio.ensure_future(crawl_page(url)) for url in urls]; await asyncio.gather(*tasks);</div>2019-06-27</li><br/>
+tasks = [asyncio.ensure_future(crawl_page(url)) for url in urls]; await asyncio.gather(*tasks);</p>2019-06-27</li><br/>
 </ul>

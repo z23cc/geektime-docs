@@ -99,5 +99,5 @@ class RootResourceClass implements ResourceRouter.RootResource {
 
 Sub Resource Locator要如何构造测试数据？
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>原来 @ParameterizedTest(name = &quot;{2}&quot;) 这样就可以从参数中选一个做测试展示的名称</div>2022-07-30</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>原来 @ParameterizedTest(name = &quot;{2}&quot;) 这样就可以从参数中选一个做测试展示的名称</p>2022-07-30</li><br/>
 </ul>

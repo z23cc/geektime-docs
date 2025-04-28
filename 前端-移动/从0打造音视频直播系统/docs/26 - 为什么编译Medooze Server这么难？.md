@@ -230,7 +230,7 @@ ninja -f xxxxx.ninja
 GYP规则含义表：  
 ![](https://static001.geekbang.org/resource/image/56/7a/56359e4a988c2cfe2acaced69b974b7a.png?wh=1142%2A927)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jason</span> 👍（4） 💬（1）<div>很赞，不但能学到视频知识，还熟悉了很多工具</div>2019-09-22</li><br/><li><span>helloa</span> 👍（3） 💬（1）<div>medooze支持手机吗？</div>2019-09-17</li><br/><li><span>颜广杰</span> 👍（2） 💬（4）<div>老师，我用这个optimizations分支也编译失败，能麻烦帮我看一下吗？
+<li><span>Jason</span> 👍（4） 💬（1）<p>很赞，不但能学到视频知识，还熟悉了很多工具</p>2019-09-22</li><br/><li><span>helloa</span> 👍（3） 💬（1）<p>medooze支持手机吗？</p>2019-09-17</li><br/><li><span>颜广杰</span> 👍（2） 💬（4）<p>老师，我用这个optimizations分支也编译失败，能麻烦帮我看一下吗？
 root@iZwz9isydglfcdgnqd84a4Z:&#47;home&#47;media-server# make
 mkdir -p &#47;home&#47;media-server&#47;build&#47;debug
 mkdir -p &#47;home&#47;media-server&#47;build&#47;debug&#47;test
@@ -240,7 +240,7 @@ In file included from &#47;home&#47;media-server&#47;include&#47;participant.h:1
                  from &#47;home&#47;media-server&#47;include&#47;multiconf.h:9,
                  from &#47;home&#47;media-server&#47;include&#47;mcu.h:6,
                  from &#47;home&#47;media-server&#47;src&#47;mcu.cpp:5:
-&#47;home&#47;media-server&#47;include&#47;rtpsession.h:10:10: fatal error: srtp2&#47;srtp.h: No such file or directory</div>2019-12-28</li><br/><li><span>piboye</span> 👍（1） 💬（1）<div>怎么这么多人叫李工啊😂</div>2020-12-31</li><br/><li><span>火哥</span> 👍（1） 💬（1）<div>李工，你好，Medooze支持多路合成吗?</div>2020-01-02</li><br/><li><span>一支箭💯¹⁰²⁴</span> 👍（1） 💬（1）<div>Media-server-go这个项目有什么教程吗？</div>2019-10-29</li><br/><li><span>Geek_82d1fd</span> 👍（0） 💬（1）<div>老师，medooze有没有什么集成开发工具可以断点调试</div>2021-05-21</li><br/><li><span>阿良</span> 👍（0） 💬（1）<div>老师好，我需要浏览器端的WebRTC与小程序端进行视频通话，小程序端推拉流采用的是rtmp协议(使用的是node-media-server)，请问Medooze能否满足这个需求？</div>2021-04-23</li><br/><li><span>宇宙之王</span> 👍（0） 💬（1）<div>老师近期有计划整理一套在CentOS下的Medooze部署教程吗？？</div>2020-10-09</li><br/><li><span>sam</span> 👍（0） 💬（1）<div>在media-server-node目录下执行npm install medooze-media-server --save 出现这个错误
+&#47;home&#47;media-server&#47;include&#47;rtpsession.h:10:10: fatal error: srtp2&#47;srtp.h: No such file or directory</p>2019-12-28</li><br/><li><span>piboye</span> 👍（1） 💬（1）<p>怎么这么多人叫李工啊😂</p>2020-12-31</li><br/><li><span>火哥</span> 👍（1） 💬（1）<p>李工，你好，Medooze支持多路合成吗?</p>2020-01-02</li><br/><li><span>一支箭💯¹⁰²⁴</span> 👍（1） 💬（1）<p>Media-server-go这个项目有什么教程吗？</p>2019-10-29</li><br/><li><span>Geek_82d1fd</span> 👍（0） 💬（1）<p>老师，medooze有没有什么集成开发工具可以断点调试</p>2021-05-21</li><br/><li><span>阿良</span> 👍（0） 💬（1）<p>老师好，我需要浏览器端的WebRTC与小程序端进行视频通话，小程序端推拉流采用的是rtmp协议(使用的是node-media-server)，请问Medooze能否满足这个需求？</p>2021-04-23</li><br/><li><span>宇宙之王</span> 👍（0） 💬（1）<p>老师近期有计划整理一套在CentOS下的Medooze部署教程吗？？</p>2020-10-09</li><br/><li><span>sam</span> 👍（0） 💬（1）<p>在media-server-node目录下执行npm install medooze-media-server --save 出现这个错误
 
 npm ERR! code ENOSELF
 npm ERR! Refusing to install package with name &quot;medooze-media-server&quot; under a package
@@ -249,5 +249,5 @@ npm ERR! as the dependency you&#39;re installing?
 npm ERR! 
 npm ERR! For more information, see:
 npm ERR!     &lt;https:&#47;&#47;docs.npmjs.com&#47;cli&#47;install#limitations-of-npms-install-algorithm&gt;
-</div>2020-07-10</li><br/><li><span>平衡之美</span> 👍（0） 💬（1）<div>老师可以 弄个 centos7 安装的教程吗  我们服务器全部是centos7的</div>2020-06-15</li><br/><li><span>Geek_8a57ad</span> 👍（0） 💬（1）<div>medooze有c++客户端sdk吗?</div>2020-05-27</li><br/><li><span>taotao</span> 👍（0） 💬（1）<div>李工，你好 licode mcu 具体怎么配置了，我看源码 没看到支持多路合成了</div>2020-03-19</li><br/><li><span>火哥</span> 👍（0） 💬（2）<div>李工，你好，咨询一下，我们现在只是将点对点的两人音视频通话过程合成并录制。也是需要Medooze商业版吗？有没有开源的webrtc流媒体服务架构推荐一下，支持音视频通话&#47;合成&#47;录制.感谢！</div>2020-01-15</li><br/><li><span>yang</span> 👍（0） 💬（2）<div>呃，坑大了，云上装的是centos7,  官方推荐编译环境ubuntu.一个一个源码下来编译吧。哎.....</div>2020-01-02</li><br/>
+</p>2020-07-10</li><br/><li><span>平衡之美</span> 👍（0） 💬（1）<p>老师可以 弄个 centos7 安装的教程吗  我们服务器全部是centos7的</p>2020-06-15</li><br/><li><span>Geek_8a57ad</span> 👍（0） 💬（1）<p>medooze有c++客户端sdk吗?</p>2020-05-27</li><br/><li><span>taotao</span> 👍（0） 💬（1）<p>李工，你好 licode mcu 具体怎么配置了，我看源码 没看到支持多路合成了</p>2020-03-19</li><br/><li><span>火哥</span> 👍（0） 💬（2）<p>李工，你好，咨询一下，我们现在只是将点对点的两人音视频通话过程合成并录制。也是需要Medooze商业版吗？有没有开源的webrtc流媒体服务架构推荐一下，支持音视频通话&#47;合成&#47;录制.感谢！</p>2020-01-15</li><br/><li><span>yang</span> 👍（0） 💬（2）<p>呃，坑大了，云上装的是centos7,  官方推荐编译环境ubuntu.一个一个源码下来编译吧。哎.....</p>2020-01-02</li><br/>
 </ul>

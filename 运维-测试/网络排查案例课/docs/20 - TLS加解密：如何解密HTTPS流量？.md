@@ -317,7 +317,7 @@ SSLKEYLOGFILE日志文件格式我们了解了，接下来了解Wireshark是怎�
 
 欢迎你把答案分享到留言区，我们一起交流、进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Realm</span> 👍（5） 💬（3）<div>问题一：
+<li><span>Realm</span> 👍（5） 💬（3）<p>问题一：
 1 DH算法是为了解决密钥协商的算法,Bob和Alice分别用对方的公钥和自己的私钥，一通骚操作后，得到相同的会话密钥k,这就解决了密钥不直接传输而通过协商出来；
 2 DH有static DH和DHE两种实现，static的方式，私钥是不变的，有被破解的可能性，进而搞出来DHE,每次双方的私钥都变化，安全性提高了不少；
 3 DHE算法性能不行，然后出现基于椭圆曲线的ECDHE;
@@ -326,7 +326,7 @@ SSLKEYLOGFILE日志文件格式我们了解了，接下来了解Wireshark是怎�
 问题二：
 经过测试curl也会读取SSLKEYLOGFILE，并把随机数和secret写入到这个文件中
 SSLKEYLOGFILE=&#47;my&#47;path&#47;to&#47;file.log curl https:&#47;&#47;example.com
-参考:https:&#47;&#47;davidhamann.de&#47;2019&#47;08&#47;06&#47;sniffing-ssl-traffic-with-curl-wireshark&#47;</div>2022-03-07</li><br/><li><span>kissingers</span> 👍（3） 💬（1）<div>Secret：这就是 Master secret，也就是通过它可以生成对称密钥。----------&gt;老师，这个应该是premaster吧，fun(client 随机数+server 随机数+premaster） 才算出master 吧</div>2022-05-11</li><br/><li><span>晴天了</span> 👍（2） 💬（1）<div>对如何在linux抓取https明文包有点困惑 老师有什么工具推荐吗</div>2022-04-08</li><br/><li><span>小禾先生</span> 👍（1） 💬（1）<div>老师您好，在 linux 服务端抓包，如何通过私钥 key 文件与 wireshark 解密呢？</div>2024-04-18</li><br/><li><span>walker</span> 👍（1） 💬（2）<div>我在抓极客的页面是发现了protocol类型多了一个HTTP&#47;JSON,为什么协议会有 http&#47;json 类型的</div>2022-08-24</li><br/><li><span>蔡俊贤</span> 👍（0） 💬（1）<div>老师您好，想问一下如果是用postman这类工具请求，有没有办法像浏览器那样解密呢？</div>2024-12-13</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（2）<div>大佬请教一个网络方面的问题：用charles抓app包，抓不到正常的https包，但是app一直加载数据，感觉是请求服务端api接口了，为啥charles抓不到，charles抓其他app正常！通过charles界面观察到的情况是，没法发送任何http请求，但是往下拉一直在加载数据，有遇到么</div>2024-12-11</li><br/><li><span>ray</span> 👍（0） 💬（1）<div>老师您好，
+参考:https:&#47;&#47;davidhamann.de&#47;2019&#47;08&#47;06&#47;sniffing-ssl-traffic-with-curl-wireshark&#47;</p>2022-03-07</li><br/><li><span>kissingers</span> 👍（3） 💬（1）<p>Secret：这就是 Master secret，也就是通过它可以生成对称密钥。----------&gt;老师，这个应该是premaster吧，fun(client 随机数+server 随机数+premaster） 才算出master 吧</p>2022-05-11</li><br/><li><span>晴天了</span> 👍（2） 💬（1）<p>对如何在linux抓取https明文包有点困惑 老师有什么工具推荐吗</p>2022-04-08</li><br/><li><span>小禾先生</span> 👍（1） 💬（1）<p>老师您好，在 linux 服务端抓包，如何通过私钥 key 文件与 wireshark 解密呢？</p>2024-04-18</li><br/><li><span>walker</span> 👍（1） 💬（2）<p>我在抓极客的页面是发现了protocol类型多了一个HTTP&#47;JSON,为什么协议会有 http&#47;json 类型的</p>2022-08-24</li><br/><li><span>蔡俊贤</span> 👍（0） 💬（1）<p>老师您好，想问一下如果是用postman这类工具请求，有没有办法像浏览器那样解密呢？</p>2024-12-13</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（2）<p>大佬请教一个网络方面的问题：用charles抓app包，抓不到正常的https包，但是app一直加载数据，感觉是请求服务端api接口了，为啥charles抓不到，charles抓其他app正常！通过charles界面观察到的情况是，没法发送任何http请求，但是往下拉一直在加载数据，有遇到么</p>2024-12-11</li><br/><li><span>ray</span> 👍（0） 💬（1）<p>老师您好，
 验证server这环节有点不明白。请老师看看我的思考脉络是否正确。
 client拿到server回传的证书后，会验证证书是否有CA的签名，验证通过后即确认server的身份是合法的。
 问题是，CA签发给server的证书所有人都拿的到，这表示所有人都可以伪装成server。
@@ -334,5 +334,5 @@ client拿到server回传的证书后，会验证证书是否有CA的签名，验
 请问验证server这个环节，client是不是还会用server的公钥加密一个字串给server用私钥解密，以确认server的真实身份（因为私钥在不外泄的状况下只有server才有）？
 
 感谢老师的解答^^
-</div>2023-09-10</li><br/><li><span>仄言</span> 👍（0） 💬（1）<div>linux  客户端 使用tcpdump  怎么抓取https 解密?</div>2022-09-13</li><br/><li><span>piboye</span> 👍（0） 💬（2）<div>Just TrustMe 解决 ssl pin 的方法， 老师可以也一块介绍吗？</div>2022-08-06</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（1）<div>为什么curl的时候，有的可以解析，有的不可以，比如https:&#47;&#47;www.baidu.com可以解密出https，但是curl  https:&#47;&#47;openapi-fxg.jinritemai.com 就解密不出来？</div>2022-07-28</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（1）<div>如果是命令行curl请求，不是通过浏览器访问，是否能解密呢？</div>2022-07-28</li><br/><li><span>青梅煮酒</span> 👍（0） 💬（1）<div>请问Windows上配置了SSLKEYLOGFILE环境变量后，重启浏览器抓包，文件里面sslkey.log不会写入东西，老师有遇到吗</div>2022-05-26</li><br/><li><span>woJA1wCgAASVwFBCYVuFLQY8_9xjIc3w</span> 👍（0） 💬（1）<div>可以看下这https:&#47;&#47;github.com&#47;ehids&#47;ecapture ，不需要CA证书，即可捕获HTTPS&#47;TLS通信数据的明文</div>2022-03-29</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>只要 不乱抓信任其他不明来源的 证书，就没有人可以破解加密的信息。 聊天记录什么的都拿不到</div>2022-03-19</li><br/>
+</p>2023-09-10</li><br/><li><span>仄言</span> 👍（0） 💬（1）<p>linux  客户端 使用tcpdump  怎么抓取https 解密?</p>2022-09-13</li><br/><li><span>piboye</span> 👍（0） 💬（2）<p>Just TrustMe 解决 ssl pin 的方法， 老师可以也一块介绍吗？</p>2022-08-06</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（1）<p>为什么curl的时候，有的可以解析，有的不可以，比如https:&#47;&#47;www.baidu.com可以解密出https，但是curl  https:&#47;&#47;openapi-fxg.jinritemai.com 就解密不出来？</p>2022-07-28</li><br/><li><span>斯蒂芬.赵</span> 👍（0） 💬（1）<p>如果是命令行curl请求，不是通过浏览器访问，是否能解密呢？</p>2022-07-28</li><br/><li><span>青梅煮酒</span> 👍（0） 💬（1）<p>请问Windows上配置了SSLKEYLOGFILE环境变量后，重启浏览器抓包，文件里面sslkey.log不会写入东西，老师有遇到吗</p>2022-05-26</li><br/><li><span>woJA1wCgAASVwFBCYVuFLQY8_9xjIc3w</span> 👍（0） 💬（1）<p>可以看下这https:&#47;&#47;github.com&#47;ehids&#47;ecapture ，不需要CA证书，即可捕获HTTPS&#47;TLS通信数据的明文</p>2022-03-29</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>只要 不乱抓信任其他不明来源的 证书，就没有人可以破解加密的信息。 聊天记录什么的都拿不到</p>2022-03-19</li><br/>
 </ul>

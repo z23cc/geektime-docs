@@ -303,16 +303,16 @@ Kubernetes的网络模型以及大多数容器网络实现，其实既不会保�
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>风轨</span> 👍（128） 💬（1）<div>job，cronjob这类计算型pod不需要也不应该对外提供服务，可以拒绝所有流入流量，提高系统安全。</div>2018-11-14</li><br/><li><span>mazhen</span> 👍（13） 💬（1）<div>iptables -A FORWARD -d $podIP -m physdev --physdev-is-bridged -j KUBE-POD-SPECIFIC-FW-CHAIN
+<li><span>风轨</span> 👍（128） 💬（1）<p>job，cronjob这类计算型pod不需要也不应该对外提供服务，可以拒绝所有流入流量，提高系统安全。</p>2018-11-14</li><br/><li><span>mazhen</span> 👍（13） 💬（1）<p>iptables -A FORWARD -d $podIP -m physdev --physdev-is-bridged -j KUBE-POD-SPECIFIC-FW-CHAIN
 
 文中提到，上面这条iptables规则的作用是：“拦截”在同一个宿主机、接入同一个bridge上的容器发送过来的数据包。
 
-iptables设置的是IP包被过滤处理的规则，而bridge是二层设备，数据包在bridge上的流动，如果受到上面规则的控制，就是说iptables还能设置二层链路的过滤规则？</div>2018-11-14</li><br/><li><span>po</span> 👍（4） 💬（1）<div>老师你好，我想确认下基于ovs的网络，是不是不用iptables了，使用openflow实现networkpolicy，使用vni实现多租户，谢谢。</div>2019-05-14</li><br/><li><span>OldGood</span> 👍（2） 💬（1）<div>老师，什么时候讲ingress？</div>2018-11-15</li><br/><li><span>johnson.skiii</span> 👍（17） 💬（5）<div>张大请教一下；本来kube-proxy就会写大量的iptables规则，如果网络情况复杂，实施的networkpolicy又多的话，那么iptables会不会成为比较大的瓶颈，有什么好的解决方案吗？</div>2018-12-17</li><br/><li><span>helloworld</span> 👍（14） 💬（0）<div>文章中对iptables的讲解, 是我见过的对iptables讲解的最好的一个, 厉害</div>2021-02-18</li><br/><li><span>CYH</span> 👍（4） 💬（2）<div>hi，老师：请问我安照k8s官网拒绝所有进出流量，为什么该pod还是能ping通外部的ip呢？</div>2018-11-29</li><br/><li><span>Jerome</span> 👍（3） 💬（2）<div>2021-11-23，第四遍学习打卡。</div>2021-11-23</li><br/><li><span>lfn</span> 👍（3） 💬（0）<div>2020-04-06，打卡。</div>2020-04-06</li><br/><li><span>heartbeat</span> 👍（2） 💬（2）<div>任何 Namespace 里的、携带了 project=myproject 标签的 Pod； namespaceselector应该是选择namespace的吧，project=myproject这个标签应该是匹配namespace的而不是匹配pod的，所以上面那个解释应该是携带了project=myproject 标签的所有namespace下的所有pod 不知道这个理解是否正确</div>2019-07-27</li><br/><li><span>gogo</span> 👍（2） 💬（0）<div>老师您好，请教一个问题，我在阿里云测试环境部署的高可用集群，部署的时候关闭了iptables service，后来尝试开启，但是遇到容器内无法跟kubernetes 的cluster通信的问题。我看了&#47;etc&#47;sysconfig&#47;iptables的配置，input配置的是drop，然后开放一些常用端口和所有内网ip，不知道应该如何排查了</div>2018-11-14</li><br/><li><span>ryan</span> 👍（1） 💬（0）<div>第二遍终于看懂一些了，老师太厉害了</div>2022-03-25</li><br/><li><span>killua</span> 👍（1） 💬（1）<div>iptable的规则多的话 会有性能问题吗？</div>2020-07-09</li><br/><li><span>0mfg</span> 👍（1） 💬（0）<div>[BGP 消息]
+iptables设置的是IP包被过滤处理的规则，而bridge是二层设备，数据包在bridge上的流动，如果受到上面规则的控制，就是说iptables还能设置二层链路的过滤规则？</p>2018-11-14</li><br/><li><span>po</span> 👍（4） 💬（1）<p>老师你好，我想确认下基于ovs的网络，是不是不用iptables了，使用openflow实现networkpolicy，使用vni实现多租户，谢谢。</p>2019-05-14</li><br/><li><span>OldGood</span> 👍（2） 💬（1）<p>老师，什么时候讲ingress？</p>2018-11-15</li><br/><li><span>johnson.skiii</span> 👍（17） 💬（5）<p>张大请教一下；本来kube-proxy就会写大量的iptables规则，如果网络情况复杂，实施的networkpolicy又多的话，那么iptables会不会成为比较大的瓶颈，有什么好的解决方案吗？</p>2018-12-17</li><br/><li><span>helloworld</span> 👍（14） 💬（0）<p>文章中对iptables的讲解, 是我见过的对iptables讲解的最好的一个, 厉害</p>2021-02-18</li><br/><li><span>CYH</span> 👍（4） 💬（2）<p>hi，老师：请问我安照k8s官网拒绝所有进出流量，为什么该pod还是能ping通外部的ip呢？</p>2018-11-29</li><br/><li><span>Jerome</span> 👍（3） 💬（2）<p>2021-11-23，第四遍学习打卡。</p>2021-11-23</li><br/><li><span>lfn</span> 👍（3） 💬（0）<p>2020-04-06，打卡。</p>2020-04-06</li><br/><li><span>heartbeat</span> 👍（2） 💬（2）<p>任何 Namespace 里的、携带了 project=myproject 标签的 Pod； namespaceselector应该是选择namespace的吧，project=myproject这个标签应该是匹配namespace的而不是匹配pod的，所以上面那个解释应该是携带了project=myproject 标签的所有namespace下的所有pod 不知道这个理解是否正确</p>2019-07-27</li><br/><li><span>gogo</span> 👍（2） 💬（0）<p>老师您好，请教一个问题，我在阿里云测试环境部署的高可用集群，部署的时候关闭了iptables service，后来尝试开启，但是遇到容器内无法跟kubernetes 的cluster通信的问题。我看了&#47;etc&#47;sysconfig&#47;iptables的配置，input配置的是drop，然后开放一些常用端口和所有内网ip，不知道应该如何排查了</p>2018-11-14</li><br/><li><span>ryan</span> 👍（1） 💬（0）<p>第二遍终于看懂一些了，老师太厉害了</p>2022-03-25</li><br/><li><span>killua</span> 👍（1） 💬（1）<p>iptable的规则多的话 会有性能问题吗？</p>2020-07-09</li><br/><li><span>0mfg</span> 👍（1） 💬（0）<p>[BGP 消息]
 我是宿主机 192.168.1.2
 10.233.2.0&#47;24 网段的容器都在我这里
 这些容器的下一跳地址是我
 
-和老师确认一下对应图例10.233.2.0&#47;24应该是10.233.1.0&#47;24吧</div>2019-02-01</li><br/><li><span>blackpiglet</span> 👍（1） 💬（0）<div>apiVersion: extensions&#47;v1beta1
+和老师确认一下对应图例10.233.2.0&#47;24应该是10.233.1.0&#47;24吧</p>2019-02-01</li><br/><li><span>blackpiglet</span> 👍（1） 💬（0）<p>apiVersion: extensions&#47;v1beta1
 kind: NetworkPolicy
 metadata:
   name: my-network-policy
@@ -322,5 +322,5 @@ spec:
   policyTypes:
   - Ingress
 
-我只能想到一种情况：随机数生成器，因为要保证产生的随机数不受任何干扰，所以可以禁掉所有内网访问，只要把产生的结果发送出去就可以。</div>2018-11-14</li><br/>
+我只能想到一种情况：随机数生成器，因为要保证产生的随机数不受任何干扰，所以可以禁掉所有内网访问，只要把产生的结果发送出去就可以。</p>2018-11-14</li><br/>
 </ul>

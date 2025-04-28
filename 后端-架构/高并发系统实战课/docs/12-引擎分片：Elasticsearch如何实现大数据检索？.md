@@ -119,12 +119,12 @@ Elasticsearch支持多种查询方式不仅仅是全文检索，如数值类使�
 
 欢迎你在评论区与我交流讨论，我们下节课见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Geek4892</span> 👍（0） 💬（1）<div>老师好，答疑课堂后续还会更新吗</div>2023-10-19</li><br/><li><span>衣舞晨风</span> 👍（0） 💬（1）<div>es是先获取到shardid集合然后再去请求这些shard来获取数据(https:&#47;&#47;jiankunking.com&#47;elasticsearch-search-source-code-analysis.html)；
-文中说的，请求所有data节点是指到shardid集合获取数据？</div>2023-05-22</li><br/><li><span>Spoon</span> 👍（0） 💬（1）<div>文章：Elasticsearch 每次查询都是请求所有索引所在的 Data 节点，查询请求时协调节点会在相同数据分片多个副本中，随机选出一个节点发送查询请求，从而实现负载均衡
+<li><span>Geek4892</span> 👍（0） 💬（1）<p>老师好，答疑课堂后续还会更新吗</p>2023-10-19</li><br/><li><span>衣舞晨风</span> 👍（0） 💬（1）<p>es是先获取到shardid集合然后再去请求这些shard来获取数据(https:&#47;&#47;jiankunking.com&#47;elasticsearch-search-source-code-analysis.html)；
+文中说的，请求所有data节点是指到shardid集合获取数据？</p>2023-05-22</li><br/><li><span>Spoon</span> 👍（0） 💬（1）<p>文章：Elasticsearch 每次查询都是请求所有索引所在的 Data 节点，查询请求时协调节点会在相同数据分片多个副本中，随机选出一个节点发送查询请求，从而实现负载均衡
 问题：
 1.请求所有索引所在的 Data 节点，这个Data节点是什么？和普通数据节点有什么区别？
 2.如果所有索引放在一个Data节点，是不是会有容量限制？
 3.如果将索引分片，放在多个节点，是不是又陷入了数据定位的问题？
-</div>2023-04-02</li><br/><li><span>徐石头</span> 👍（0） 💬（1）<div>来公司做的第一件事就是把搜索从mysql迁移到Elasticsearch，然后用CQRS架构解析binlog写入，Elasticsearch，用Elasticsearch做app内的内容搜索功能，我猜测极客时间的搜索功能也是用的Elasticsearch。
-在做搜索相关的业务首选的便是Elasticsearch，所以如果我来实现Elasticsearch最先解决的功能便是分词和倒排索引设计，至于链路追踪和日志采集相关的组件，从业务角度我觉得地位没有搜索重要，优先级没有那么高。</div>2022-12-16</li><br/><li><span>John</span> 👍（0） 💬（1）<div>老师能否列一下相关的扩展阅读资料，比如词频统计，search_type 详解之类的，不胜感激</div>2022-11-20</li><br/>
+</p>2023-04-02</li><br/><li><span>徐石头</span> 👍（0） 💬（1）<p>来公司做的第一件事就是把搜索从mysql迁移到Elasticsearch，然后用CQRS架构解析binlog写入，Elasticsearch，用Elasticsearch做app内的内容搜索功能，我猜测极客时间的搜索功能也是用的Elasticsearch。
+在做搜索相关的业务首选的便是Elasticsearch，所以如果我来实现Elasticsearch最先解决的功能便是分词和倒排索引设计，至于链路追踪和日志采集相关的组件，从业务角度我觉得地位没有搜索重要，优先级没有那么高。</p>2022-12-16</li><br/><li><span>John</span> 👍（0） 💬（1）<p>老师能否列一下相关的扩展阅读资料，比如词频统计，search_type 详解之类的，不胜感激</p>2022-11-20</li><br/>
 </ul>

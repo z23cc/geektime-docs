@@ -448,8 +448,8 @@ export async function createUser(params: {
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/22)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>蒙</span> 👍（2） 💬（1）<div>加解密可以直接用node的加密函数不用jwt吗，
-用jwt加解密有什么额外好处吗</div>2023-01-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-22</li><br/><li><span>escray</span> 👍（0） 💬（0）<div>在本课附带的源码中，如果分别启动前后端
+<li><span>蒙</span> 👍（2） 💬（1）<p>加解密可以直接用node的加密函数不用jwt吗，
+用jwt加解密有什么额外好处吗</p>2023-01-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-22</li><br/><li><span>escray</span> 👍（0） 💬（0）<p>在本课附带的源码中，如果分别启动前后端
 
 npm run dev:work-front
 npm run dev:work-server
@@ -484,5 +484,5 @@ JSX element implicitly has type &#39;any&#39; because no interface &#39;JSX.Intr
      |           ^
   5  |      :fieldList=&quot;fieldList&quot;
   6  |      @finish=&quot;onFinish&quot;
-</div>2024-01-16</li><br/>
+</p>2024-01-16</li><br/>
 </ul>

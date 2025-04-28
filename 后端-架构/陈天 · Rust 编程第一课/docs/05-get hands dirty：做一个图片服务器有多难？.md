@@ -913,24 +913,24 @@ Aug 25 15:09:35.254  INFO thumbor: Finished processing: image size 52674
 
 欢迎在留言区分享你的思考，如果你觉得有收获，也欢迎你分享给你身边的朋友，邀他一起挑战。你的 Rust 学习第五次打卡成功，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>大汉十三将</span> 👍（9） 💬（2）<div>这一章学了 3 天， 终于能看懂一点了 ： 
+<li><span>大汉十三将</span> 👍（9） 💬（2）<p>这一章学了 3 天， 终于能看懂一点了 ： 
 - 1.2:  开始接触, 一脸懵逼, 所有的代码个顶个的都看不懂, 极其痛苦的 1 个半小时
 - 1.3:  通过强制自己问 chatgpt: xx 这段代码是干什么用的, 强制自己去熟悉 rust 的相关 library, 终于看懂了一些文件的一部分代码 2 h
-- 1.4:  基本把不会的都询问 Chatgpt 整理了一遍, 逻辑上都顺了, 剩下一些小的语法问题需要继续记笔记 1.5 h</div>2023-01-04</li><br/><li><span>葡萄</span> 👍（56） 💬（2）<div>看老师的项目，语言已经不是最重要的了。思路和组织结构真是赏心悦目。</div>2021-09-01</li><br/><li><span>wzx</span> 👍（21） 💬（1）<div>为什么在main.rs中并没有见到引入：
+- 1.4:  基本把不会的都询问 Chatgpt 整理了一遍, 逻辑上都顺了, 剩下一些小的语法问题需要继续记笔记 1.5 h</p>2023-01-04</li><br/><li><span>葡萄</span> 👍（56） 💬（2）<p>看老师的项目，语言已经不是最重要的了。思路和组织结构真是赏心悦目。</p>2021-09-01</li><br/><li><span>wzx</span> 👍（21） 💬（1）<p>为什么在main.rs中并没有见到引入：
 use tracing_subscriber;
 use reqwest;
-却可以直接使用？</div>2021-09-02</li><br/><li><span>pedro</span> 👍（21） 💬（4）<div>最让人无法接受的点：
+却可以直接使用？</p>2021-09-02</li><br/><li><span>pedro</span> 👍（21） 💬（4）<p>最让人无法接受的点：
 
 ```shell
 du -h -d 1 .&#47;target
 395M	.&#47;target&#47;rls
 901M	.&#47;target&#47;debug
 1.3G	.&#47;target
-```</div>2021-09-01</li><br/><li><span>Christian</span> 👍（19） 💬（1）<div>感概什么时候才能达到老师这样的高度？</div>2021-09-01</li><br/><li><span>Fan</span> 👍（15） 💬（1）<div>逻辑清晰，喜欢这种教学方式。从项目，问题入手，也不是纠结于语法细节。</div>2021-09-01</li><br/><li><span>Michael</span> 👍（8） 💬（1）<div> Rust，相比起有运行时Go语言，运行效率不再话下。另外，作为现代系统级编程语言，在工程实践，依赖管理，相比起C、C++要好很多，但是比起Go稍微复杂一些。
+```</p>2021-09-01</li><br/><li><span>Christian</span> 👍（19） 💬（1）<p>感概什么时候才能达到老师这样的高度？</p>2021-09-01</li><br/><li><span>Fan</span> 👍（15） 💬（1）<p>逻辑清晰，喜欢这种教学方式。从项目，问题入手，也不是纠结于语法细节。</p>2021-09-01</li><br/><li><span>Michael</span> 👍（8） 💬（1）<p> Rust，相比起有运行时Go语言，运行效率不再话下。另外，作为现代系统级编程语言，在工程实践，依赖管理，相比起C、C++要好很多，但是比起Go稍微复杂一些。
 
 语言学习难度还是挺大的，很多新概念，新名词都要理解，不过写起来还是挺爽的。用半年实践反复学习实践，希望能啃下这门语言。
 
-希望老师从先行者的角度，对一些难点，易错点，平时不容易接触的到的地方给学生们做下讲解，看书和看网上资料千篇一律，没什么新奇的地方，大多讲的不够透。</div>2021-09-03</li><br/><li><span>Quincy</span> 👍（8） 💬（2）<div>请问老师还有什么新的图片引擎吗？可以推荐一个吗？在 github 和 crates.io 上没有找到相似的，谢谢老师</div>2021-09-01</li><br/><li><span>Quincy</span> 👍（8） 💬（2）<div>添加新功能：
+希望老师从先行者的角度，对一些难点，易错点，平时不容易接触的到的地方给学生们做下讲解，看书和看网上资料千篇一律，没什么新奇的地方，大多讲的不够透。</p>2021-09-03</li><br/><li><span>Quincy</span> 👍（8） 💬（2）<p>请问老师还有什么新的图片引擎吗？可以推荐一个吗？在 github 和 crates.io 上没有找到相似的，谢谢老师</p>2021-09-01</li><br/><li><span>Quincy</span> 👍（8） 💬（2）<p>添加新功能：
 1. 首先添加新的 proto
 ```proto
 message PaddingBottom {
@@ -995,8 +995,8 @@ fn print_test_url(url: &amp;str) {
     let test_image = percent_encode(url.as_bytes(), NON_ALPHANUMERIC).to_string();
     println!(&quot;test url: http:&#47;&#47;localhost:3000&#47;image&#47;{}&#47;{}&quot;, s, test_image);
 }
-```</div>2021-09-01</li><br/><li><span>茶底</span> 👍（6） 💬（1）<div>逻辑清晰，泪目了，我咋就这么菜</div>2021-09-01</li><br/><li><span>记事本</span> 👍（4） 💬（1）<div>老师，现在只能硬抄，以后会把基础知识都讲一遍的吗？</div>2021-09-12</li><br/><li><span>Geek_ff1914</span> 👍（3） 💬（1）<div>总有一天，我也会像你一样强！</div>2021-09-01</li><br/><li><span>老实人Honey</span> 👍（2） 💬（1）<div>用opencv-rust实现了fliph，挺艰辛的
-https:&#47;&#47;github.com&#47;honwhy&#47;first_rs&#47;tree&#47;opencv&#47;thumbor</div>2022-01-11</li><br/><li><span>老实人Honey</span> 👍（2） 💬（1）<div>增加了一个油画效果
+```</p>2021-09-01</li><br/><li><span>茶底</span> 👍（6） 💬（1）<p>逻辑清晰，泪目了，我咋就这么菜</p>2021-09-01</li><br/><li><span>记事本</span> 👍（4） 💬（1）<p>老师，现在只能硬抄，以后会把基础知识都讲一遍的吗？</p>2021-09-12</li><br/><li><span>Geek_ff1914</span> 👍（3） 💬（1）<p>总有一天，我也会像你一样强！</p>2021-09-01</li><br/><li><span>老实人Honey</span> 👍（2） 💬（1）<p>用opencv-rust实现了fliph，挺艰辛的
+https:&#47;&#47;github.com&#47;honwhy&#47;first_rs&#47;tree&#47;opencv&#47;thumbor</p>2022-01-11</li><br/><li><span>老实人Honey</span> 👍（2） 💬（1）<p>增加了一个油画效果
 message Oil {
     int32 radius = 1;
     double intensity = 2;
@@ -1024,5 +1024,5 @@ impl SpecTransform&lt;&amp;Oil&gt; for Photon {
     let spec2 = Spec::new_watermark(20, 20);
     let spec3 = Spec::new_filter(filter::Filter::Marine);
     let spec4 = Spec::new_oil(4, 55.0);
-    let image_spec = ImageSpec::new(vec![spec1, spec2, spec3, spec4]);</div>2022-01-08</li><br/><li><span>ㅤ</span> 👍（2） 💬（1）<div>陈老师，我想问一下  prost这个依赖的tag是有什么作用么？看了文档也不大理解。</div>2021-09-10</li><br/>
+    let image_spec = ImageSpec::new(vec![spec1, spec2, spec3, spec4]);</p>2022-01-08</li><br/><li><span>ㅤ</span> 👍（2） 💬（1）<p>陈老师，我想问一下  prost这个依赖的tag是有什么作用么？看了文档也不大理解。</p>2021-09-10</li><br/>
 </ul>

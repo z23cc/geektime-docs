@@ -359,24 +359,24 @@ predict_sentiment(text, model, tokenizer, vocab, device)
 
 欢迎你在留言区跟我交流互动，也推荐你把今天学到的内容分享给更多朋友，跟他一起学习进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李雄</span> 👍（1） 💬（0）<div>如果是使用torchtext==0.8.1以下的版本建议看官网文档：
-https:&#47;&#47;pytorch.org&#47;text&#47;0.8.1&#47;datasets.html</div>2021-12-31</li><br/><li><span>快乐小夜曲</span> 👍（1） 💬（1）<div>packed_embedded = torch.nn.utils.rnn.pack_padded_sequence(embedded, length.to(&#39;cpu&#39;), batch_first=True,  enforce_sorted=False)
-这里length必须转为成cpu，否则会报错。</div>2022-01-02</li><br/><li><span>林于翔</span> 👍（1） 💬（1）<div>LSTM模型定义中:
+<li><span>李雄</span> 👍（1） 💬（0）<p>如果是使用torchtext==0.8.1以下的版本建议看官网文档：
+https:&#47;&#47;pytorch.org&#47;text&#47;0.8.1&#47;datasets.html</p>2021-12-31</li><br/><li><span>快乐小夜曲</span> 👍（1） 💬（1）<p>packed_embedded = torch.nn.utils.rnn.pack_padded_sequence(embedded, length.to(&#39;cpu&#39;), batch_first=True,  enforce_sorted=False)
+这里length必须转为成cpu，否则会报错。</p>2022-01-02</li><br/><li><span>林于翔</span> 👍（1） 💬（1）<p>LSTM模型定义中:
  if self.lstm.bidirectional:
             hidden = self.dropout(torch.cat([hidden[-1], hidden[-2]], dim=-1))
-这里不太理解，最后连接的不是最后一层hidden的第一个时间步和最后一个时间步嘛？另外dim为什么会是-1。</div>2021-12-17</li><br/><li><span>hallo128</span> 👍（0） 💬（1）<div>torchtext可以支持中文分词吗</div>2022-06-30</li><br/><li><span>Geek_a82ba7</span> 👍（0） 💬（4）<div>import torchtext
+这里不太理解，最后连接的不是最后一层hidden的第一个时间步和最后一个时间步嘛？另外dim为什么会是-1。</p>2021-12-17</li><br/><li><span>hallo128</span> 👍（0） 💬（1）<p>torchtext可以支持中文分词吗</p>2022-06-30</li><br/><li><span>Geek_a82ba7</span> 👍（0） 💬（4）<p>import torchtext
 train_iter = torchtext.datasets.IMDB(root=&#39;.&#47;data&#39;, split=&#39;train&#39;)
 next(train_iter)
 &#39;MapperIterDataPipe&#39; object is not an iterator
 为什么说这个不是一个迭代器，查了很多资料都没有解决，老师能回答一下吗？
-c</div>2022-06-21</li><br/><li><span>Sarai青霞</span> 👍（0） 💬（1）<div>方老师，我试了代码，输出显示：
+c</p>2022-06-21</li><br/><li><span>Sarai青霞</span> 👍（0） 💬（1）<p>方老师，我试了代码，输出显示：
 &quot;\n输出：[&#39;here&#39;, &#39;is&#39;, &#39;the&#39;, &#39;an&#39;, &#39;example&#39;, &#39;!&#39;]\n&quot;
 是断行出现问题了吗？
-谢谢！</div>2022-06-01</li><br/><li><span>Ringcoo</span> 👍（0） 💬（1）<div>老师好，请问
+谢谢！</p>2022-06-01</li><br/><li><span>Ringcoo</span> 👍（0） 💬（1）<p>老师好，请问
 packed_output, (hidden, cell) = self.lstm(packed_embedded)       
  output, output_length = torch.nn.utils.rnn.pad_packed_sequence(packed_output)
-为什么从lstm层出来以后 会有(hidden, cell) ，我不太理解，以及为什么lstm层出来以后还有在进RNN层，底下的流程图上明明是lstm层出来以后进入了fc全连接层。麻烦您讲解一下</div>2022-05-01</li><br/><li><span>赵心睿</span> 👍（0） 💬（1）<div>请问使用的torchtext是哪个版本的呢？
-</div>2022-03-14</li><br/><li><span>李雄</span> 👍（0） 💬（1）<div>请问这是那个版本的torchtext</div>2021-12-31</li><br/><li><span>吴十一</span> 👍（1） 💬（0）<div>def predict_sentiment(text, model, tokenizer, vocab, device):
+为什么从lstm层出来以后 会有(hidden, cell) ，我不太理解，以及为什么lstm层出来以后还有在进RNN层，底下的流程图上明明是lstm层出来以后进入了fc全连接层。麻烦您讲解一下</p>2022-05-01</li><br/><li><span>赵心睿</span> 👍（0） 💬（1）<p>请问使用的torchtext是哪个版本的呢？
+</p>2022-03-14</li><br/><li><span>李雄</span> 👍（0） 💬（1）<p>请问这是那个版本的torchtext</p>2021-12-31</li><br/><li><span>吴十一</span> 👍（1） 💬（0）<p>def predict_sentiment(text, model, tokenizer, vocab, device):
     max_length = 256
     pad = text_pipeline(&#39;&lt;pad&gt;&#39;)
     processed_text = text_pipeline(text)[:max_length]
@@ -406,7 +406,7 @@ pred = predict_sentiment(text, model, tokenizer, vocab, device)
 &#39;&#39;&#39;
 输出：(&#39;neg&#39;, 0.8874172568321228)
 &#39;&#39;&#39;
-tips：一定要安装torchtext 稍微新点的版本，0.6.0 IDMB数据set跑报错，会一直要求用tensorflow v1 版本兼容</div>2022-06-12</li><br/><li><span>李雄</span> 👍（1） 💬（0）<div>import torch
+tips：一定要安装torchtext 稍微新点的版本，0.6.0 IDMB数据set跑报错，会一直要求用tensorflow v1 版本兼容</p>2022-06-12</li><br/><li><span>李雄</span> 👍（1） 💬（0）<p>import torch
 import torchtext
 torchtext.__version__
 dir(torchtext)
@@ -431,7 +431,7 @@ LABEL.build_vocab(train)
 
 # make iterator for splits
 train_iter, test_iter = data.BucketIterator.splits(
-    (train, test), batch_size=3, device=0)</div>2021-12-31</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-12</li><br/><li><span>John(易筋)</span> 👍（0） 💬（0）<div>最后一块代码跑出错
+    (train, test), batch_size=3, device=0)</p>2021-12-31</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-12</li><br/><li><span>John(易筋)</span> 👍（0） 💬（0）<p>最后一块代码跑出错
 版本 torchtext
 print(torchtext.__version__)  # 0.13.1
 出错的代码
@@ -474,7 +474,7 @@ TypeError                                 Traceback (most recent call last)
      10         length_list.append(len(processed_text))
 ---&gt; 11         text_list.append((processed_text + max_length)[:max_length])
 
-TypeError: can only concatenate list (not &quot;int&quot;) to list</div>2022-09-13</li><br/><li><span>John(易筋)</span> 👍（0） 💬（0）<div>torchtext.datasets.IMDB 改为如下可以正确运行
+TypeError: can only concatenate list (not &quot;int&quot;) to list</p>2022-09-13</li><br/><li><span>John(易筋)</span> 👍（0） 💬（0）<p>torchtext.datasets.IMDB 改为如下可以正确运行
 
 # pip install torchtext
 # pip install torchdata
@@ -482,5 +482,5 @@ import torchtext
 # 读取IMDB数据集
 train_iter = torchtext.datasets.IMDB(root=&#39;.&#47;data&#39;, split=&#39;train&#39;)
 train_iter = iter(train_iter)
-next(train_iter)</div>2022-09-10</li><br/><li><span>hallo128</span> 👍（0） 💬（0）<div>torchtext说明文档：https:&#47;&#47;pytorch.org&#47;text&#47;stable&#47;index.html</div>2022-06-30</li><br/>
+next(train_iter)</p>2022-09-10</li><br/><li><span>hallo128</span> 👍（0） 💬（0）<p>torchtext说明文档：https:&#47;&#47;pytorch.org&#47;text&#47;stable&#47;index.html</p>2022-06-30</li><br/>
 </ul>

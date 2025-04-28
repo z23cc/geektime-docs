@@ -474,14 +474,14 @@ Unsafe Rust编程大量出现在底层性能的优化和与其他语言交互的
 
 请你聊一聊，C语言中的char与Rust中的char的区别在哪里？C语言的字符串与Rust中的String区别在哪里？如何将C语言的字符串类型映射到Rust的类型中来？欢迎你把自己的思考分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>小可爱(`へ´*)ノ</span> 👍（1） 💬（1）<div>跟完了，很值得的，老师功底很厚。</div>2024-03-08</li><br/><li><span>一带一路</span> 👍（1） 💬（1）<div>Rust 与 Python 绑定未来可期！</div>2024-01-01</li><br/><li><span>A0.何文祥</span> 👍（0） 💬（1）<div>老师，我根据文档https:&#47;&#47;pyo3.rs&#47;v0.20.2&#47;parallelism了解到，如果要在PyO3里Release GIL需要执行Python::allow_threads，咱们实例是不是遗漏了这一步，实际跑的还是single CPU core。</div>2024-01-31</li><br/><li><span>tan</span> 👍（0） 💬（1）<div>window 观测时间： Measure-Command {python .\fib_rust.py}    。
+<li><span>小可爱(`へ´*)ノ</span> 👍（1） 💬（1）<p>跟完了，很值得的，老师功底很厚。</p>2024-03-08</li><br/><li><span>一带一路</span> 👍（1） 💬（1）<p>Rust 与 Python 绑定未来可期！</p>2024-01-01</li><br/><li><span>A0.何文祥</span> 👍（0） 💬（1）<p>老师，我根据文档https:&#47;&#47;pyo3.rs&#47;v0.20.2&#47;parallelism了解到，如果要在PyO3里Release GIL需要执行Python::allow_threads，咱们实例是不是遗漏了这一步，实际跑的还是single CPU core。</p>2024-01-31</li><br/><li><span>tan</span> 👍（0） 💬（1）<p>window 观测时间： Measure-Command {python .\fib_rust.py}    。
 ps: 为什么我在window10上测试 python自己写的函数只要 0.49s, 调用rust的需要12s
-ps: 如果有同学不关心执行时间想要确定调用成功与否，需要`calc_fib` 把给这个函数返回值</div>2024-01-20</li><br/><li><span>zxk</span> 👍（0） 💬（1）<div>C 语言中的 char 是一个 8bit 大小的类型，一个 char 可以覆盖 ASCII 码表；而在 Rust 中 char 是一个 Unicode 字符，使用 32bit（即 UTF-32）进行存储。
+ps: 如果有同学不关心执行时间想要确定调用成功与否，需要`calc_fib` 把给这个函数返回值</p>2024-01-20</li><br/><li><span>zxk</span> 👍（0） 💬（1）<p>C 语言中的 char 是一个 8bit 大小的类型，一个 char 可以覆盖 ASCII 码表；而在 Rust 中 char 是一个 Unicode 字符，使用 32bit（即 UTF-32）进行存储。
 
 C 语言中的字符串其实就是一个 char 数组，并以 `\0` 作为结束标志；而 Rust 中的 String 是经过 UTF-8 编码后的字节数组，一个实际的字符对应一个或多个字节（UTF-8 是可变长编码），通过一个长度来得出字符串的结束位置。
 
 若要将 C 语言的字符串类型映射到 Rust 中的类型，目前能想到两种方案：
 1. C 端以 UTF-8 的方式编码存储字符串，并传递给 Rust； Rust 可以选择使用 CString 存储在转化，或者自行解析并注意 `\0` 的标识符；
-2. C 端自由选择编码，在传给 Rust 时告诉 Rust 编码方式，并由 Rust 自行解码，并转为内部的 UTF-8 编码。</div>2024-01-20</li><br/><li><span>Noya</span> 👍（0） 💬（1）<div>完结!</div>2024-01-04</li><br/><li><span>刘丹</span> 👍（0） 💬（2）<div>请问在 calc_fib 函数里，为什么 fib 的计算结果被丢弃，而返回 Ok(()) 呢？
-</div>2024-01-01</li><br/><li><span>刘丹</span> 👍（0） 💬（3）<div>请问老师，pyproject.toml 这个文件是哪个工具需要的？ 我按本课教程操作，没有创建这个文件也能正常运行。</div>2024-01-01</li><br/><li><span>Geek_72807e</span> 👍（0） 💬（2）<div>基本跟完了老师的课程，还有哪些进阶内容或参考资料老师推荐一下？！</div>2024-01-01</li><br/><li><span>陈卧虫</span> 👍（0） 💬（0）<div>真的讲的很好，我学习 rust 的第一课，谢谢老师🙏</div>2024-12-12</li><br/>
+2. C 端自由选择编码，在传给 Rust 时告诉 Rust 编码方式，并由 Rust 自行解码，并转为内部的 UTF-8 编码。</p>2024-01-20</li><br/><li><span>Noya</span> 👍（0） 💬（1）<p>完结!</p>2024-01-04</li><br/><li><span>刘丹</span> 👍（0） 💬（2）<p>请问在 calc_fib 函数里，为什么 fib 的计算结果被丢弃，而返回 Ok(()) 呢？
+</p>2024-01-01</li><br/><li><span>刘丹</span> 👍（0） 💬（3）<p>请问老师，pyproject.toml 这个文件是哪个工具需要的？ 我按本课教程操作，没有创建这个文件也能正常运行。</p>2024-01-01</li><br/><li><span>Geek_72807e</span> 👍（0） 💬（2）<p>基本跟完了老师的课程，还有哪些进阶内容或参考资料老师推荐一下？！</p>2024-01-01</li><br/><li><span>陈卧虫</span> 👍（0） 💬（0）<p>真的讲的很好，我学习 rust 的第一课，谢谢老师🙏</p>2024-12-12</li><br/>
 </ul>

@@ -48,5 +48,5 @@ SG和CBOW在具体的应用中，常常需要比较复杂的训练算法，我�
 
 欢迎你给我留言，和我一起讨论。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>hayley</span> 👍（0） 💬（0）<div>对于短文本，怎么提升word2vec的效果？</div>2018-07-19</li><br/><li><span>arfa</span> 👍（0） 💬（0）<div>LDA得到的是主题及主题的词分布，word2vec计算的是是词向量</div>2018-05-11</li><br/>
+<li><span>hayley</span> 👍（0） 💬（0）<p>对于短文本，怎么提升word2vec的效果？</p>2018-07-19</li><br/><li><span>arfa</span> 👍（0） 💬（0）<p>LDA得到的是主题及主题的词分布，word2vec计算的是是词向量</p>2018-05-11</li><br/>
 </ul>

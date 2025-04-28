@@ -761,7 +761,7 @@ func Register(r *gin.Engine) error {
 
 欢迎在留言区分享你的思考。感谢你的收听，如果你觉得今天的内容对你有所帮助，也欢迎分享给你身边的朋友，邀请他一起学习。我们下节课见～
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>功夫熊猫</span> 👍（0） 💬（2）<div>我都是直接靠Raw直接写sql语句的。因为有时候不太好定义模型</div>2021-11-19</li><br/><li><span>宁建峰</span> 👍（2） 💬（0）<div>api_orm.go中，以下代码gin1.8.1已经过过限制了，999&lt;code&gt;100，所以这里使用50001，会发生panic：invalid WriteHeader code 50001
+<li><span>功夫熊猫</span> 👍（0） 💬（2）<p>我都是直接靠Raw直接写sql语句的。因为有时候不太好定义模型</p>2021-11-19</li><br/><li><span>宁建峰</span> 👍（2） 💬（0）<p>api_orm.go中，以下代码gin1.8.1已经过过限制了，999&lt;code&gt;100，所以这里使用50001，会发生panic：invalid WriteHeader code 50001
 if err != nil { 
    logger.Error(c, err.Error(), nil) 
    c.AbortWithError(50001, err) 
@@ -783,7 +783,7 @@ func checkWriteHeaderCode(code int) {
 	if code &lt; 100 || code &gt; 999 {
 		panic(fmt.Sprintf(&quot;invalid WriteHeader code %v&quot;, code))
 	}
-}</div>2022-08-24</li><br/><li><span>老兵</span> 👍（0） 💬（0）<div>不知道是不是我理解不对，感觉目前gorm在数据库字段的迁移的方案还是不行。比如数据库表加一个字段，删除一个字段，用auto-migrate还是无法做到精准像active_record那样的方便吧？
+}</p>2022-08-24</li><br/><li><span>老兵</span> 👍（0） 💬（0）<p>不知道是不是我理解不对，感觉目前gorm在数据库字段的迁移的方案还是不行。比如数据库表加一个字段，删除一个字段，用auto-migrate还是无法做到精准像active_record那样的方便吧？
 不知道叶老师是否有一些golang下orm+migration的经验？
-</div>2022-01-12</li><br/><li><span>无笔秀才</span> 👍（0） 💬（1）<div>我觉得除了orm 还应该支持直接sql,毕竟很多人不喜欢用orm</div>2022-01-11</li><br/>
+</p>2022-01-12</li><br/><li><span>无笔秀才</span> 👍（0） 💬（1）<p>我觉得除了orm 还应该支持直接sql,毕竟很多人不喜欢用orm</p>2022-01-11</li><br/>
 </ul>

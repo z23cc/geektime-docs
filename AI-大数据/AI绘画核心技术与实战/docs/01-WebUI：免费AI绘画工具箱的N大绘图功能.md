@@ -226,19 +226,19 @@ Stable Diffusion模型是一种基于噪声图像逐步演化的生成模型。�
 
 欢迎你在留言区与我交流讨论，并把今天的内容分享给身边的同事和朋友，和他一同探索AI绘画的无限可能！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>yanyu-xin</span> 👍（20） 💬（2）<div>在https:&#47;&#47;space.bilibili.com&#47;12566101下载了Stable Diffusion整合包，win版安装很简单。内置了很多模型和扩展，秋叶aaaki的一键启动器很好用。
+<li><span>yanyu-xin</span> 👍（20） 💬（2）<p>在https:&#47;&#47;space.bilibili.com&#47;12566101下载了Stable Diffusion整合包，win版安装很简单。内置了很多模型和扩展，秋叶aaaki的一键启动器很好用。
 我的MateBook笔记本只有内置显卡，在启动器性能设置选择硬件引擎为CPU后也能绘图，CPU绘图一幅图都要20多分钟左右。尝试一下新技术勉强可以，只是确实太慢了。
 找了一个云算力市场，不用翻墙，价格低廉，国内的“揽睿星舟”。https:&#47;&#47;www.lanrui-ai.com&#47;register?invitation_code=1643301013。
-该云在云应用市场中，直接内置了最新版的基于Stable Diffusion Web UI打包的应用。已预装所有依赖和常见模型，一键即可启动。如果家里有矿，可以直接选A100-80G显卡的。我选了特价3090-24G显卡，速度挺快。用来学习或者训练自己的小模型也是挺香的。</div>2023-07-19</li><br/><li><span>IT蜗壳-Tango</span> 👍（19） 💬（2）<div>Win11 搭建笔记：https:&#47;&#47;xie.infoq.cn&#47;article&#47;62e1d389d8a0c4c7638ba610d
+该云在云应用市场中，直接内置了最新版的基于Stable Diffusion Web UI打包的应用。已预装所有依赖和常见模型，一键即可启动。如果家里有矿，可以直接选A100-80G显卡的。我选了特价3090-24G显卡，速度挺快。用来学习或者训练自己的小模型也是挺香的。</p>2023-07-19</li><br/><li><span>IT蜗壳-Tango</span> 👍（19） 💬（2）<p>Win11 搭建笔记：https:&#47;&#47;xie.infoq.cn&#47;article&#47;62e1d389d8a0c4c7638ba610d
 Mac M1版本搭建笔记：https:&#47;&#47;xie.infoq.cn&#47;article&#47;5fd4d53d1ed467f51c4c7f7a2
 
-Mac 的版本是很早前的笔记了，如果使用win11中的方法，大概率应该也不会再报那些奇怪的错误了。</div>2023-07-18</li><br/><li><span>Geek_ac422d</span> 👍（6） 💬（1）<div>推荐几个低成本体验ai绘画的方式：https:&#47;&#47;note.youdao.com&#47;s&#47;XwhBsykQ</div>2023-07-18</li><br/><li><span>互联网砖瓦匠</span> 👍（4） 💬（3）<div>我的3080终于要在AI这块排上用场了，不知道老师了解RTX4090对AI这块提升大不大。</div>2023-07-18</li><br/><li><span>虹炎</span> 👍（2） 💬（2）<div>一次性安装成功，但是老师省略了耗时步骤，我说一下
+Mac 的版本是很早前的笔记了，如果使用win11中的方法，大概率应该也不会再报那些奇怪的错误了。</p>2023-07-18</li><br/><li><span>Geek_ac422d</span> 👍（6） 💬（1）<p>推荐几个低成本体验ai绘画的方式：https:&#47;&#47;note.youdao.com&#47;s&#47;XwhBsykQ</p>2023-07-18</li><br/><li><span>互联网砖瓦匠</span> 👍（4） 💬（3）<p>我的3080终于要在AI这块排上用场了，不知道老师了解RTX4090对AI这块提升大不大。</p>2023-07-18</li><br/><li><span>虹炎</span> 👍（2） 💬（2）<p>一次性安装成功，但是老师省略了耗时步骤，我说一下
 1，win11 第一次运行webui.bat  会要安装 Installing torch and torchvision  （2.6GB） 耗时一会儿
 2，前面成功，会要求更新pip ,根据提示操作python.exe -m pip install --upgrade pip
-3，更新pip后， 再次运行webui.bat 则可以启动成功</div>2023-08-09</li><br/><li><span>AI悦创</span> 👍（2） 💬（1）<div>强调 prompt 的关键词 这个部分中，右边图片的指令，：a photo of boy with (((curly hair))), Greg Rutkowski
+3，更新pip后， 再次运行webui.bat 则可以启动成功</p>2023-08-09</li><br/><li><span>AI悦创</span> 👍（2） 💬（1）<p>强调 prompt 的关键词 这个部分中，右边图片的指令，：a photo of boy with (((curly hair))), Greg Rutkowski
 
-为什么是三个括号？不是一个括号？</div>2023-07-23</li><br/><li><span>黄马</span> 👍（2） 💬（1）<div>老师哪里有免费的GPU可以做实验</div>2023-07-19</li><br/><li><span>Aā 阳～</span> 👍（1） 💬（2）<div>老师，生成出来得图片黑屏是什么原因啊</div>2023-07-29</li><br/><li><span>啥也不会</span> 👍（1） 💬（1）<div>麻烦请问老师，是否可以使用 java 来调用Stable Diffusion模型实现类似 WEBUI 的效果呢？没有检索到相关的资料。</div>2023-07-19</li><br/><li><span>清风明月</span> 👍（1） 💬（2）<div>webui是通过调用sd API还是自己本地集成了模型？</div>2023-07-18</li><br/><li><span>Short Hair Girl</span> 👍（0） 💬（1）<div>我可能比较小白，我就没看到这Python 3.10.6安装包再哪里找？</div>2023-09-27</li><br/><li><span>贾维斯Echo</span> 👍（0） 💬（1）<div>Mac 执行.&#47;webui.sh 后终端提示Warning: caught exception &#39;Torch not compiled with CUDA enabled&#39;, memory monitor disabled,然后打开页面一堆报错提示这个Error
-Expecting value: line 1 column 1 (char 0),请问老师这个怎么解决?</div>2023-09-07</li><br/><li><span>Zeke</span> 👍（0） 💬（1）<div>执行 .&#47;webui.sh后，Downloading torch-2.0.1-cp310-none-macosx_10_9_x86_64.whl 到一半报错
+为什么是三个括号？不是一个括号？</p>2023-07-23</li><br/><li><span>黄马</span> 👍（2） 💬（1）<p>老师哪里有免费的GPU可以做实验</p>2023-07-19</li><br/><li><span>Aā 阳～</span> 👍（1） 💬（2）<p>老师，生成出来得图片黑屏是什么原因啊</p>2023-07-29</li><br/><li><span>啥也不会</span> 👍（1） 💬（1）<p>麻烦请问老师，是否可以使用 java 来调用Stable Diffusion模型实现类似 WEBUI 的效果呢？没有检索到相关的资料。</p>2023-07-19</li><br/><li><span>清风明月</span> 👍（1） 💬（2）<p>webui是通过调用sd API还是自己本地集成了模型？</p>2023-07-18</li><br/><li><span>Short Hair Girl</span> 👍（0） 💬（1）<p>我可能比较小白，我就没看到这Python 3.10.6安装包再哪里找？</p>2023-09-27</li><br/><li><span>贾维斯Echo</span> 👍（0） 💬（1）<p>Mac 执行.&#47;webui.sh 后终端提示Warning: caught exception &#39;Torch not compiled with CUDA enabled&#39;, memory monitor disabled,然后打开页面一堆报错提示这个Error
+Expecting value: line 1 column 1 (char 0),请问老师这个怎么解决?</p>2023-09-07</li><br/><li><span>Zeke</span> 👍（0） 💬（1）<p>执行 .&#47;webui.sh后，Downloading torch-2.0.1-cp310-none-macosx_10_9_x86_64.whl 到一半报错
 ERROR: Exception:
 Traceback (most recent call last):
   File &quot;&#47;usr&#47;local&#47;lib&#47;python3.10&#47;site-packages&#47;pip&#47;_vendor&#47;urllib3&#47;response.py&quot;, line 438, in _error_catcher
@@ -257,5 +257,5 @@ Traceback (most recent call last):
     return self.read(nbytes, buffer)
   File &quot;&#47;usr&#47;local&#47;Cellar&#47;python@3.10&#47;3.10.12_1&#47;Frameworks&#47;Python.framework&#47;Versions&#47;3.10&#47;lib&#47;python3.10&#47;ssl.py&quot;, line 1130, in read
     return self._sslobj.read(len, buffer)
-TimeoutError: The read operation timed out</div>2023-09-03</li><br/><li><span>a</span> 👍（0） 💬（1）<div>你好，我在M2版的MacbookPro上安装了webUI，但是生成一张图片需要两个多小时，是什么原因呢</div>2023-09-03</li><br/><li><span>谭小龙</span> 👍（0） 💬（1）<div>请问自己配置台式 AMD的主板和CPU对软件的支持怎么样呢，是否存在限制？哪些型号是由限制的？</div>2023-08-17</li><br/>
+TimeoutError: The read operation timed out</p>2023-09-03</li><br/><li><span>a</span> 👍（0） 💬（1）<p>你好，我在M2版的MacbookPro上安装了webUI，但是生成一张图片需要两个多小时，是什么原因呢</p>2023-09-03</li><br/><li><span>谭小龙</span> 👍（0） 💬（1）<p>请问自己配置台式 AMD的主板和CPU对软件的支持怎么样呢，是否存在限制？哪些型号是由限制的？</p>2023-08-17</li><br/>
 </ul>

@@ -181,7 +181,7 @@ public:
 
 欢迎你在评论区留下你的思考，如果觉得这篇文章对你有帮助的话，也欢迎转发给你的朋友一起学习～
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>csyangchsh</span> 👍（1） 💬（1）<div>radix trie</div>2022-03-13</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<div>前缀树的空间浪费可以用hashmap来优化，key对应的字母，value对应下一层的指针。这种方案在节点数量多的时候反而要浪费更大的空间，因为hashmap需要一定的空余空间，而且key之间的顺序信息也丢失了。</div>2022-03-12</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师一个问题：
+<li><span>csyangchsh</span> 👍（1） 💬（1）<p>radix trie</p>2022-03-13</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<p>前缀树的空间浪费可以用hashmap来优化，key对应的字母，value对应下一层的指针。这种方案在节点数量多的时候反而要浪费更大的空间，因为hashmap需要一定的空余空间，而且key之间的顺序信息也丢失了。</p>2022-03-12</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师一个问题：
 Q1：如果是中文，字符集怎么处理？
-文中例子是英文，字符集确定而且很小。但如果是中文，字符集太大了，怎么处理？</div>2022-03-13</li><br/><li><span>nbsp;</span> 👍（0） 💬（0）<div>前缀树里字母是路径不是节点</div>2022-05-16</li><br/>
+文中例子是英文，字符集确定而且很小。但如果是中文，字符集太大了，怎么处理？</p>2022-03-13</li><br/><li><span>nbsp;</span> 👍（0） 💬（0）<p>前缀树里字母是路径不是节点</p>2022-05-16</li><br/>
 </ul>

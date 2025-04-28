@@ -437,12 +437,12 @@ function PanAndScrollView() {
 
 欢迎在评论区写下你的观点和想法。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>abc🙂</span> 👍（2） 💬（1）<div>有没有可能跟RecyclerListView组件结合起来，实现andaroid高性能的长列表弹性滚动</div>2022-05-10</li><br/><li><span>风星舞</span> 👍（0） 💬（1）<div>请问GitHub仓库中运行android时的这个 yarn install-android-hermes 命令是什么作用？</div>2022-05-07</li><br/><li><span>Geek_84d08b</span> 👍（0） 💬（0）<div>请问：tapGesture onTouchesMove 中 refreshY.value 获取到的值一直是 -200，这个是什么原因呢？</div>2024-12-07</li><br/><li><span>*****</span> 👍（0） 💬（0）<div>现在国内的大厂有使用这手势和动画库吗</div>2024-03-29</li><br/><li><span>侯同学</span> 👍（0） 💬（0）<div>蒋老师好
+<li><span>abc🙂</span> 👍（2） 💬（1）<p>有没有可能跟RecyclerListView组件结合起来，实现andaroid高性能的长列表弹性滚动</p>2022-05-10</li><br/><li><span>风星舞</span> 👍（0） 💬（1）<p>请问GitHub仓库中运行android时的这个 yarn install-android-hermes 命令是什么作用？</p>2022-05-07</li><br/><li><span>Geek_84d08b</span> 👍（0） 💬（0）<p>请问：tapGesture onTouchesMove 中 refreshY.value 获取到的值一直是 -200，这个是什么原因呢？</p>2024-12-07</li><br/><li><span>*****</span> 👍（0） 💬（0）<p>现在国内的大厂有使用这手势和动画库吗</p>2024-03-29</li><br/><li><span>侯同学</span> 👍（0） 💬（0）<p>蒋老师好
 
 处理单视图多手势冲突的 Race Exclusive Simultaneous 与处理多视图多手势的 simultaneousWithExternalGesture requireExternalGestureToFail 有什么关系、区别 ？
 只是处理单视图多手势冲突的 API 是在组件的角度，处理多视图多手势冲突的 API 是在手势的角度吗 ？
 特别是 Simultaneous 与 simultaneousWithExternalGesture 感觉很像
 
 另外上面代码中的 panGesture 调用 simultaneousWithExternalGesture 时为什么还要传入 scrollGesture tapGesture 
-外部组件为什么还要响应这两个事件，虽然我测试不传确实不行</div>2023-09-03</li><br/><li><span>songyq</span> 👍（0） 💬（0）<div>Gesture 手势库解决手势冲突的方案 确定不是抄的apple的手势代理么？</div>2022-08-17</li><br/>
+外部组件为什么还要响应这两个事件，虽然我测试不传确实不行</p>2023-09-03</li><br/><li><span>songyq</span> 👍（0） 💬（0）<p>Gesture 手势库解决手势冲突的方案 确定不是抄的apple的手势代理么？</p>2022-08-17</li><br/>
 </ul>

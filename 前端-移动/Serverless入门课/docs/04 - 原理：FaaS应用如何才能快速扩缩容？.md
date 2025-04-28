@@ -113,7 +113,7 @@ BaaS化的概念容易理解，但实际上要实践，将我们的网站后端�
 \[2] [https://restfulapi.net/http-methods/](https://restfulapi.net/http-methods/)  
 \[3] [https://github.com/typicode/lowdb](https://github.com/typicode/lowdb)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>蒲松洋</span> 👍（8） 💬（0）<div>看来很多同学都没有了解过egg.js框架，这里我需要补充一下，我Node.js的主进程和子进程的例子，其实是用了egg.js的进程模型，想跟大家解释这点知识内容。但我代码中的Express.js框架，要使用子进程要额外使用node.js的cluster模块。Node.js是单线程的，但实际它是用event loop让内核的线程去处理事件，响应时再回调handle，其实协程。</div>2020-04-24</li><br/><li><span>我来也</span> 👍（14） 💬（11）<div>我比较好奇老师在实践Serverless的过程中踩了多少坑.
+<li><span>蒲松洋</span> 👍（8） 💬（0）<p>看来很多同学都没有了解过egg.js框架，这里我需要补充一下，我Node.js的主进程和子进程的例子，其实是用了egg.js的进程模型，想跟大家解释这点知识内容。但我代码中的Express.js框架，要使用子进程要额外使用node.js的cluster模块。Node.js是单线程的，但实际它是用event loop让内核的线程去处理事件，响应时再回调handle，其实协程。</p>2020-04-24</li><br/><li><span>我来也</span> 👍（14） 💬（11）<p>我比较好奇老师在实践Serverless的过程中踩了多少坑.
 
 # 我来说说我昨天在阿里云上体验Faas时的采坑记录
 
@@ -171,7 +171,7 @@ BaaS化的概念容易理解，但实际上要实践，将我们的网站后端�
    我就发现,我用`Custom Runtime`打包的golang服务
    显示的函数平均执行时间始终是100ms,而node.js和python的服务耗时时间就是动态的,只有20ms+,远没有到100ms.
 
-</div>2020-04-24</li><br/><li><span>我来也</span> 👍（5） 💬（2）<div># 对于 用完即毁型和常驻进程型 的体会
+</p>2020-04-24</li><br/><li><span>我来也</span> 👍（5） 💬（2）<p># 对于 用完即毁型和常驻进程型 的体会
 以前我做游戏时,很多状态都是维护在内存中.
 这种服务如果迁移到FaaS就很困难.需要做改造,把需要持久化的数据存储到其他地方.
 
@@ -240,12 +240,12 @@ Resources:
 
 仅仅只是测试,并未考虑到多实例并发访问的问题.
 
-</div>2020-04-24</li><br/><li><span>NO.9</span> 👍（1） 💬（1）<div>今天终于有空做作业。我是aws Lambda+api Gateway 。说实话 我没看懂应该部署哪个文件。我先尝试用aws的示例代码 invoke了一次 成功了？但是把index.js的内容贴进去(是的，我只粘贴了这一个文件内容) 显示失败。。。</div>2020-06-19</li><br/><li><span>Geek_f7f72f</span> 👍（1） 💬（1）<div>对于传统数据库那块，还有一点疑问。文中提到传统数据库同样的操作会比 HTTP 快，同时又提到FaaS直连数据库增加了冷启动时间。那么改造后的BaaS又是如何避免这个问题的？</div>2020-05-14</li><br/><li><span>奕</span> 👍（1） 💬（10）<div>用 fun 部署完成只会，访问 报错啊
-The CA process either cannot be started or exited:ContainerStartDuration:25516062312， 又没用用 https 咋还有CA证书了？</div>2020-04-24</li><br/><li><span>奕</span> 👍（1） 💬（3）<div>当 Nodejs 处理并发请求的并不会自动创建子进程，利多核CPU的的特性。 Nodejs一直都是单线程的
+</p>2020-04-24</li><br/><li><span>NO.9</span> 👍（1） 💬（1）<p>今天终于有空做作业。我是aws Lambda+api Gateway 。说实话 我没看懂应该部署哪个文件。我先尝试用aws的示例代码 invoke了一次 成功了？但是把index.js的内容贴进去(是的，我只粘贴了这一个文件内容) 显示失败。。。</p>2020-06-19</li><br/><li><span>Geek_f7f72f</span> 👍（1） 💬（1）<p>对于传统数据库那块，还有一点疑问。文中提到传统数据库同样的操作会比 HTTP 快，同时又提到FaaS直连数据库增加了冷启动时间。那么改造后的BaaS又是如何避免这个问题的？</p>2020-05-14</li><br/><li><span>奕</span> 👍（1） 💬（10）<p>用 fun 部署完成只会，访问 报错啊
+The CA process either cannot be started or exited:ContainerStartDuration:25516062312， 又没用用 https 咋还有CA证书了？</p>2020-04-24</li><br/><li><span>奕</span> 👍（1） 💬（3）<p>当 Nodejs 处理并发请求的并不会自动创建子进程，利多核CPU的的特性。 Nodejs一直都是单线程的
 A single instance of Node.js runs in a single thread. To take advantage of multi-core systems, the user will sometimes want to launch a cluster of Node.js processes to handle the load
 如果想利用多核 就要使用 cluster 模块
 
-还有就是 并发 是在一个 CPU 核心上交替执行， 在多个 CPU 核心上执行这叫做并行</div>2020-04-24</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<div>看了下代码似乎并没有开node多进程...如果是挂在nginx上面的话nginx确实会创建worker进程，但也不是每次请求来都会创建新进程...</div>2020-04-24</li><br/><li><span>有一种踏实</span> 👍（0） 💬（1）<div>用的阿里云，配置自定义域名太麻烦了，还要花钱，我注意到生成的函数 url 不能通过浏览器直接访问，但可以通过 script 以 http api 的形式访问，所以本地起个 express，做一个透传 server 即可看到一样的效果
+还有就是 并发 是在一个 CPU 核心上交替执行， 在多个 CPU 核心上执行这叫做并行</p>2020-04-24</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<p>看了下代码似乎并没有开node多进程...如果是挂在nginx上面的话nginx确实会创建worker进程，但也不是每次请求来都会创建新进程...</p>2020-04-24</li><br/><li><span>有一种踏实</span> 👍（0） 💬（1）<p>用的阿里云，配置自定义域名太麻烦了，还要花钱，我注意到生成的函数 url 不能通过浏览器直接访问，但可以通过 script 以 http api 的形式访问，所以本地起个 express，做一个透传 server 即可看到一样的效果
 
 &#47;&#47; 透传 server 代码
 const express = require(&#39;express&#39;);
@@ -286,5 +286,5 @@ app.all(&quot;&#47;*&quot;, async (req, res) =&gt; {
 app.listen(port, () =&gt; {
   console.log(`Example app listening at http:&#47;&#47;localhost:${port}`);
 });
-</div>2023-08-24</li><br/><li><span>周科</span> 👍（0） 💬（2）<div>Node.js处理请求，并不是来一个请求就创建一个子进程去处理啊，应该说是来一个请求就创建一个context。4核机器跑egg.js应用，默认也是4个子进程吧，而且Node.js进程一直常驻内存的，不会根据请求动态创建或回收。</div>2021-03-04</li><br/><li><span>技术修行者</span> 👍（0） 💬（1）<div>问一个问题，后端存储变为BaaS后，传统的数据库事务怎么处理呀？</div>2020-10-16</li><br/><li><span>PP-CIPDS-GRC</span> 👍（0） 💬（1）<div>所以其实是每个调用阶段的管控颗粒度更细了，stateful 服务调用采用 BaaS 服务和数据持久化，费用单独算。前端的数据编排接口采用 FaaS 按次数调用，可以这么理解？静态的还是静态，动态的保持动态。整个调用 Pipeline 的各个动静部分解耦。</div>2020-09-06</li><br/><li><span>piboye</span> 👍（0） 💬（1）<div>BaaS 的数据库， 可以像FaaS 一样按使用量收费吗？</div>2020-06-08</li><br/><li><span>笨笨</span> 👍（0） 💬（1）<div>个人感悟：GraphQL就是BaaS的一种实践。</div>2020-05-29</li><br/><li><span>深黑色</span> 👍（0） 💬（1）<div>老师，请教一下在阿里云上貌似没有看见用完即毁型和常驻型的区分选项呢？</div>2020-05-03</li><br/>
+</p>2023-08-24</li><br/><li><span>周科</span> 👍（0） 💬（2）<p>Node.js处理请求，并不是来一个请求就创建一个子进程去处理啊，应该说是来一个请求就创建一个context。4核机器跑egg.js应用，默认也是4个子进程吧，而且Node.js进程一直常驻内存的，不会根据请求动态创建或回收。</p>2021-03-04</li><br/><li><span>技术修行者</span> 👍（0） 💬（1）<p>问一个问题，后端存储变为BaaS后，传统的数据库事务怎么处理呀？</p>2020-10-16</li><br/><li><span>PP-CIPDS-GRC</span> 👍（0） 💬（1）<p>所以其实是每个调用阶段的管控颗粒度更细了，stateful 服务调用采用 BaaS 服务和数据持久化，费用单独算。前端的数据编排接口采用 FaaS 按次数调用，可以这么理解？静态的还是静态，动态的保持动态。整个调用 Pipeline 的各个动静部分解耦。</p>2020-09-06</li><br/><li><span>piboye</span> 👍（0） 💬（1）<p>BaaS 的数据库， 可以像FaaS 一样按使用量收费吗？</p>2020-06-08</li><br/><li><span>笨笨</span> 👍（0） 💬（1）<p>个人感悟：GraphQL就是BaaS的一种实践。</p>2020-05-29</li><br/><li><span>深黑色</span> 👍（0） 💬（1）<p>老师，请教一下在阿里云上貌似没有看见用完即毁型和常驻型的区分选项呢？</p>2020-05-03</li><br/>
 </ul>

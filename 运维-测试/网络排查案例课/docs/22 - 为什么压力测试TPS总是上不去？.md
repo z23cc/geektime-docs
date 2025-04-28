@@ -425,7 +425,7 @@ sysctl net.ipv4.ip_local_port_range
 
 抓包示例文件：[https://gitee.com/steelvictor/network-analysis/tree/master/22](https://gitee.com/steelvictor/network-analysis/tree/master/22)
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>那时刻</span> 👍（6） 💬（3）<div>请问老师，文中提到：对于网络处理来说，主要的开销在包的头部的处理上，而载荷本身的处理是很快的。指的是内核需要处理头部信息所消耗的开销么？而载荷是由应用程序处理，不计入网络处理？</div>2022-03-11</li><br/><li><span>JianXu</span> 👍（5） 💬（1）<div>当年蒋公领导Cms 项目，压测必须见到cpu , mem 或者IO 之一见顶，不然不算过。客户端压测必须有多机并发避免受限单机性能。需要做大小包测试，对应到cms 就是小的文档和大的文档压测。目标机也需要多机集群，因为牵涉到服务端同步。</div>2022-03-12</li><br/><li><span>holiday</span> 👍（2） 💬（6）<div>案例一的5万pck&#47;s达到这台云主机的上限，这个老师能否详细解释一下？</div>2022-04-02</li><br/><li><span>Realm</span> 👍（2） 💬（2）<div>
+<li><span>那时刻</span> 👍（6） 💬（3）<p>请问老师，文中提到：对于网络处理来说，主要的开销在包的头部的处理上，而载荷本身的处理是很快的。指的是内核需要处理头部信息所消耗的开销么？而载荷是由应用程序处理，不计入网络处理？</p>2022-03-11</li><br/><li><span>JianXu</span> 👍（5） 💬（1）<p>当年蒋公领导Cms 项目，压测必须见到cpu , mem 或者IO 之一见顶，不然不算过。客户端压测必须有多机并发避免受限单机性能。需要做大小包测试，对应到cms 就是小的文档和大的文档压测。目标机也需要多机集群，因为牵涉到服务端同步。</p>2022-03-12</li><br/><li><span>holiday</span> 👍（2） 💬（6）<p>案例一的5万pck&#47;s达到这台云主机的上限，这个老师能否详细解释一下？</p>2022-04-02</li><br/><li><span>Realm</span> 👍（2） 💬（2）<p>
 1 iperf 和 netperf 都是最常用的网络性能测试工具；
 
 2 也可以通过修改内核参数，优化tw的问题
@@ -433,11 +433,11 @@ sysctl net.ipv4.ip_local_port_range
 net.ipv4.tcp_tw_recycle = 1
 
 #开启重用。允许将 TIME-WAIT sockets 重新用于新的 TCP 连接。
-net.ipv4.tcp_tw_reuse = 1</div>2022-03-11</li><br/><li><span>朱林浩</span> 👍（0） 💬（1）<div>net.ipv4.tcp_max_tw_buckets参数默认值不应该是16384吧！超过这个值被清理，那怎么来的28231个TIME_WAIT呢？</div>2024-09-29</li><br/><li><span>陈海松</span> 👍（0） 💬（1）<div>请问老师，最近我们这边遇到一个问题，2个系统建立tCP连接总是在1500个左右，超不过1600.遇到业务高峰期，就会出现连运维中心维护终端SSH都连接不上或者需要多次尝试才能登录系统。系统允许打开文件数、文件句柄数调整了，没有效果。系统负荷、内存占用率都不高，网络带宽也足够，麻烦老师协助帮忙分析分项，盼复，谢谢！</div>2022-05-14</li><br/><li><span>汤玉民</span> 👍（0） 💬（1）<div>包量的上限是算的还是测试得到的</div>2022-03-30</li><br/><li><span>那时刻</span> 👍（0） 💬（1）<div>1.测试带宽，可以使用iPerf工具 
+net.ipv4.tcp_tw_reuse = 1</p>2022-03-11</li><br/><li><span>朱林浩</span> 👍（0） 💬（1）<p>net.ipv4.tcp_max_tw_buckets参数默认值不应该是16384吧！超过这个值被清理，那怎么来的28231个TIME_WAIT呢？</p>2024-09-29</li><br/><li><span>陈海松</span> 👍（0） 💬（1）<p>请问老师，最近我们这边遇到一个问题，2个系统建立tCP连接总是在1500个左右，超不过1600.遇到业务高峰期，就会出现连运维中心维护终端SSH都连接不上或者需要多次尝试才能登录系统。系统允许打开文件数、文件句柄数调整了，没有效果。系统负荷、内存占用率都不高，网络带宽也足够，麻烦老师协助帮忙分析分项，盼复，谢谢！</p>2022-05-14</li><br/><li><span>汤玉民</span> 👍（0） 💬（1）<p>包量的上限是算的还是测试得到的</p>2022-03-30</li><br/><li><span>那时刻</span> 👍（0） 💬（1）<p>1.测试带宽，可以使用iPerf工具 
 2.Linux的TIME_WAIT貌似是hard code为60秒。而阿里云的机器可以通过 sysctl -w &quot;net.ipv4.tcp_tw_timeout=[$TIME_VALUE] 来修改TIME_WAIT。
-window下可以通过修改注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters] &quot;TcpTimedWaitDelay&quot;=dword:0000001E </div>2022-03-11</li><br/><li><span>Chao</span> 👍（0） 💬（2）<div>Idle timeout  导致连接被rest。 遇到一个相同案例， 浏览器做法是遇到这种情况 进行了重试。 虽然有http headers 里可以申明 keepalive 超时时间 。 但好像没有客户端实现其读取并主动断开。</div>2022-03-11</li><br/><li><span>Liam</span> 👍（0） 💬（3）<div>带宽测试：iperf, pktgen
+window下可以通过修改注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters] &quot;TcpTimedWaitDelay&quot;=dword:0000001E </p>2022-03-11</li><br/><li><span>Chao</span> 👍（0） 💬（2）<p>Idle timeout  导致连接被rest。 遇到一个相同案例， 浏览器做法是遇到这种情况 进行了重试。 虽然有http headers 里可以申明 keepalive 超时时间 。 但好像没有客户端实现其读取并主动断开。</p>2022-03-11</li><br/><li><span>Liam</span> 👍（0） 💬（3）<p>带宽测试：iperf, pktgen
 修改timewait的时间： 修改TCP_TIME_WAIT, 重新编译内核。默认2MSL是60s
-</div>2022-03-11</li><br/><li><span>我想静静</span> 👍（0） 💬（0）<div>案列3中，我们的 LB 上的 VIP 有一个 idle timeout 的设置，如果客户端在一定时限内不发任何报文，那么这条连接将被回收。这个时限是 180 秒，而且回收时不向客户端发送 FIN 或者 RST 报文。
+</p>2022-03-11</li><br/><li><span>我想静静</span> 👍（0） 💬（0）<p>案列3中，我们的 LB 上的 VIP 有一个 idle timeout 的设置，如果客户端在一定时限内不发任何报文，那么这条连接将被回收。这个时限是 180 秒，而且回收时不向客户端发送 FIN 或者 RST 报文。
 
-请问LB为什么不向客户端发送FIN呢？</div>2023-10-15</li><br/>
+请问LB为什么不向客户端发送FIN呢？</p>2023-10-15</li><br/>
 </ul>

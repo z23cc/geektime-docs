@@ -609,30 +609,30 @@ ref="basebaseservice" />-->
 
 学完这节课，我也给你留一道思考题。我们实现了Autowired注解，在现有框架中能否支持多个注解？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>一念之间</span> 👍（4） 💬（1）<div>有一个简单的问题 为什么处理器要叫做PostProcessor呢？ 这里的post到底是对于什么动作而言的呢？</div>2023-03-26</li><br/><li><span>三太子</span> 👍（4） 💬（1）<div>https:&#47;&#47;github.com&#47;yx-Yaoxaing&#47;minispring&#47;wiki&#47;%E5%85%B3%E4%BA%8Emini-spring
-自己写的代码提到github上  每日打卡！ 遇到的基础问题 都写在了wiki</div>2023-03-25</li><br/><li><span>睿智的仓鼠</span> 👍（4） 💬（1）<div>通过这节课真的是感受到Spring设计的巧妙之处了，我目前的理解是，解耦分为两种：设计上的解耦、实现类上的解耦。通过抽取AbstractBeanFactory，把BeanPostProcessor的设计与BeanFactory本身解耦，AutowireCapableBeanFactory再通过定义BeanPostProcessor接口类型的属性，向外提供属性设置的方法，做到了和BeanPostProcessor实现类的解耦，最后在ClassPathXmlApplicationContext中统一注册BeanPostProcessor，再抽取成一个启动方法，非常优雅。AbstractBeanFactory的“接口抽象类”思想也很巧妙。这些思想在学Spring源码时早已听说，当时只觉得这样设计是灵活的，但不知道具体灵活在何处，通过自己手写实现下来真的是越来越清晰了，实属好课！</div>2023-03-21</li><br/><li><span>Geek_7jwpfc</span> 👍（3） 💬（2）<div>老师：
+<li><span>一念之间</span> 👍（4） 💬（1）<p>有一个简单的问题 为什么处理器要叫做PostProcessor呢？ 这里的post到底是对于什么动作而言的呢？</p>2023-03-26</li><br/><li><span>三太子</span> 👍（4） 💬（1）<p>https:&#47;&#47;github.com&#47;yx-Yaoxaing&#47;minispring&#47;wiki&#47;%E5%85%B3%E4%BA%8Emini-spring
+自己写的代码提到github上  每日打卡！ 遇到的基础问题 都写在了wiki</p>2023-03-25</li><br/><li><span>睿智的仓鼠</span> 👍（4） 💬（1）<p>通过这节课真的是感受到Spring设计的巧妙之处了，我目前的理解是，解耦分为两种：设计上的解耦、实现类上的解耦。通过抽取AbstractBeanFactory，把BeanPostProcessor的设计与BeanFactory本身解耦，AutowireCapableBeanFactory再通过定义BeanPostProcessor接口类型的属性，向外提供属性设置的方法，做到了和BeanPostProcessor实现类的解耦，最后在ClassPathXmlApplicationContext中统一注册BeanPostProcessor，再抽取成一个启动方法，非常优雅。AbstractBeanFactory的“接口抽象类”思想也很巧妙。这些思想在学Spring源码时早已听说，当时只觉得这样设计是灵活的，但不知道具体灵活在何处，通过自己手写实现下来真的是越来越清晰了，实属好课！</p>2023-03-21</li><br/><li><span>Geek_7jwpfc</span> 👍（3） 💬（2）<p>老师：
 1. Autowire注入对象B，此时B的beanDefinnition还没有加载进来,会报错！设置lazy = ture 也不行，只能把if( !beanDefinition.isLazyInit() )注释掉, 还有其它方法吗！
 2.AutowiredAnnotationBeanPostProcessor#postProcessBeforeInitialization()方法：
                     String fieldName = field.getName();
                     Object autowiredObj = this.getBeanFactory().getBean(fieldName);
 这段代码，类的属性字段名要和xml配置的beanId相同，否则找不到！
 
-</div>2023-05-26</li><br/><li><span>杨松</span> 👍（3） 💬（4）<div>老师，请教下关于AutowiredAnnotationBeanPostProcessor的时机问题，为什么不是在处理属性handleProperties的位置，这个方法正好是设置bean实例的属性啊，我一直没弄懂为啥不放在这里？</div>2023-04-14</li><br/><li><span>马儿</span> 👍（3） 💬（1）<div>ClassPathXmlApplicationContext增加了一个BeanFactoryPostProcessor属性，本文中没有给出定义，看了GitHub源码把这个类拷贝出来。这个类的作用是什么呢？是像对BeanPostProcessor一样对BeanFactory进行特殊处理的吗？</div>2023-03-22</li><br/><li><span>爪哇夜未眠</span> 👍（2） 💬（2）<div>文章里的代码，AbstractBeanFactory.doCreateBean()方法里，if (!constructorArgumentValues.isEmpty()) 后面少了一个else，里面是无参构造方法创建对象
+</p>2023-05-26</li><br/><li><span>杨松</span> 👍（3） 💬（4）<p>老师，请教下关于AutowiredAnnotationBeanPostProcessor的时机问题，为什么不是在处理属性handleProperties的位置，这个方法正好是设置bean实例的属性啊，我一直没弄懂为啥不放在这里？</p>2023-04-14</li><br/><li><span>马儿</span> 👍（3） 💬（1）<p>ClassPathXmlApplicationContext增加了一个BeanFactoryPostProcessor属性，本文中没有给出定义，看了GitHub源码把这个类拷贝出来。这个类的作用是什么呢？是像对BeanPostProcessor一样对BeanFactory进行特殊处理的吗？</p>2023-03-22</li><br/><li><span>爪哇夜未眠</span> 👍（2） 💬（2）<p>文章里的代码，AbstractBeanFactory.doCreateBean()方法里，if (!constructorArgumentValues.isEmpty()) 后面少了一个else，里面是无参构造方法创建对象
 else {
     obj = clz.newInstance();
-}</div>2023-06-02</li><br/><li><span>陈小远</span> 👍（2） 💬（3）<div>跟到第四节了，单纯看文章逻辑来说还能理解一些实现，但是结合github上的源码（对照的是ioc4分支，不知道是否找对），发现源码和文章逻辑叙述的时候同一个类贴的代码实现是不一样的，导致对照学习的时候产生混乱。比如源码中AutowireCapableBeanFactory是直接实现的BeanFactory，但在文章的表述中是继承的AbstractBeanFactory，由此就在此节无法对照源码和文章表述自我参照着来完成注解的功能。看了四节后说说自己的一些看法或观点：
+}</p>2023-06-02</li><br/><li><span>陈小远</span> 👍（2） 💬（3）<p>跟到第四节了，单纯看文章逻辑来说还能理解一些实现，但是结合github上的源码（对照的是ioc4分支，不知道是否找对），发现源码和文章逻辑叙述的时候同一个类贴的代码实现是不一样的，导致对照学习的时候产生混乱。比如源码中AutowireCapableBeanFactory是直接实现的BeanFactory，但在文章的表述中是继承的AbstractBeanFactory，由此就在此节无法对照源码和文章表述自我参照着来完成注解的功能。看了四节后说说自己的一些看法或观点：
 1、源码在github上，因为不是整个分支全克隆下来学习，单独的点击查看某个类的代码比较慢，影响学习效率，如果码云上有学习地址可能会好很多；
 2、文章代码和源码不一致的问题不知道是跳跃太大还是个人没找对位置，很多人可能会渐渐的迷乱从而无法继续跟进学习；
 3、源码相对于文章来说跳跃性比较大，如果正文中没法完全交代清楚，建议在源码的readme文件尽可能详细的给出一些突然出现的类的说明和设计意图
 
-总的来说，通过老师的引导，再结合Spring的源码，还是有那么点感觉的，不过今天这节课实在没跟下来，可能还需要多花点时间自己琢磨琢磨</div>2023-03-20</li><br/><li><span>Michael</span> 👍（1） 💬（1）<div>想请教一下老师，那现在是不是SimpleBeanFactory完全没用了？</div>2023-04-17</li><br/><li><span>风轻扬</span> 👍（1） 💬（3）<div>老师，有几个问题请教一下。
+总的来说，通过老师的引导，再结合Spring的源码，还是有那么点感觉的，不过今天这节课实在没跟下来，可能还需要多花点时间自己琢磨琢磨</p>2023-03-20</li><br/><li><span>Michael</span> 👍（1） 💬（1）<p>想请教一下老师，那现在是不是SimpleBeanFactory完全没用了？</p>2023-04-17</li><br/><li><span>风轻扬</span> 👍（1） 💬（3）<p>老师，有几个问题请教一下。
 1、AutowireCapableBeanFactory类中的addBeanPostProcessor为什么要先remove再add呢？
 2、代码里出现异常的时候，老师都是只写一个try，这貌似不行吧，我是java8，这是高版本jdk的新特性吗？
-3、AutowireCapableBeanFactory类中的invokeInitMethod方法，您的代码逻辑中，获取Class对象用的是BeanDefinition.getClass()，我理解，应该用Class.forName(BeanDefinition.getClassName())，init方法应该是我们业务类上定义的init方法吧？</div>2023-03-22</li><br/><li><span>杨松</span> 👍（0） 💬（1）<div>老师请教下，包factory.support和包factory.config划分上有什么依据，不太明白为什么这么划分</div>2023-04-13</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（3）<div>```
+3、AutowireCapableBeanFactory类中的invokeInitMethod方法，您的代码逻辑中，获取Class对象用的是BeanDefinition.getClass()，我理解，应该用Class.forName(BeanDefinition.getClassName())，init方法应该是我们业务类上定义的init方法吧？</p>2023-03-22</li><br/><li><span>杨松</span> 👍（0） 💬（1）<p>老师请教下，包factory.support和包factory.config划分上有什么依据，不太明白为什么这么划分</p>2023-04-13</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（3）<p>```
 @Override public void registerBeanDefinition(String name, BeanDefinition beanDefinition) { this.beanDefinitionMap.put(name, beanDefinition); this.beanDefinitionNames.add(name); if (!beanDefinition.isLazyInit()) { try { getBean(name); } } }
 
 ```
-这里我有个问题，就是这个如果在设置BeanDefinition的时候，执行getBean方法，但是如果Bean里面注入了第三方Bean，这时候，有可能这个第三方Bean的BeanDefinition还没有实例化的，很明显不能循环注入Bean的啊？这个应该怎么处理的呢？延迟等待？或者说主动去遍历Resource接口获取资源，当也拿不到的时候，直接报编译器异常？</div>2023-04-03</li><br/><li><span>追梦</span> 👍（0） 💬（1）<div>老师好，您说在beans.xml配置的bean别名和被@Autowire修饰的属性名必须一样，但是我觉得这样不够完整，我使用了@Autowire自然是希望所有该类型都被注入无论其属性名是什么，我想记录一个属性值映射signleton的hashMap对象来存储，老师觉得这个思路怎么样？或者老师有什么其他看法嘛对于文件中bean的别名和属性名必须相同</div>2023-03-31</li><br/><li><span>努力呼吸</span> 👍（0） 💬（1）<div>老师，为什么beanDefinitionMap是线程安全的容器；beanDefinitionNames和earlySingletonObject不需要呢？</div>2023-03-29</li><br/><li><span>梦某人</span> 👍（0） 💬（2）<div>个人实现地址如下：https:&#47;&#47;github.com&#47;DDreame&#47;myMiniSpring
+这里我有个问题，就是这个如果在设置BeanDefinition的时候，执行getBean方法，但是如果Bean里面注入了第三方Bean，这时候，有可能这个第三方Bean的BeanDefinition还没有实例化的，很明显不能循环注入Bean的啊？这个应该怎么处理的呢？延迟等待？或者说主动去遍历Resource接口获取资源，当也拿不到的时候，直接报编译器异常？</p>2023-04-03</li><br/><li><span>追梦</span> 👍（0） 💬（1）<p>老师好，您说在beans.xml配置的bean别名和被@Autowire修饰的属性名必须一样，但是我觉得这样不够完整，我使用了@Autowire自然是希望所有该类型都被注入无论其属性名是什么，我想记录一个属性值映射signleton的hashMap对象来存储，老师觉得这个思路怎么样？或者老师有什么其他看法嘛对于文件中bean的别名和属性名必须相同</p>2023-03-31</li><br/><li><span>努力呼吸</span> 👍（0） 💬（1）<p>老师，为什么beanDefinitionMap是线程安全的容器；beanDefinitionNames和earlySingletonObject不需要呢？</p>2023-03-29</li><br/><li><span>梦某人</span> 👍（0） 💬（2）<p>个人实现地址如下：https:&#47;&#47;github.com&#47;DDreame&#47;myMiniSpring
 欢迎其他同学参考以及 Star，根据 Commit history 查看我根据课程内容分割的实现过程。
 提问1: applyBeanPostProcessorAfterInitialization 方法在 AbstractFactory 中存在了返回值，有什么存在的必要性，但是， obj 作为一个引用对象，需要返回吗？ 在 AbstractFactory 中也并没有使用到其返回值。（另外方法如果直接为 void 依然有效，我已经测试过。）
 提问2: AbstractFactory 这个似乎过于单例了？ 可能是因为 mini 实现的原因？ 因为目前的 AbstractFactory 基本等于修改了 SimpleSingletonFactory。
@@ -640,5 +640,5 @@ else {
 由于没看源码，是按照老师给出的代码和讲解实现的，所以可能存在一定理解偏差，希望老师指正一下。
 
 关于课后题：
-可以实现，这部分在 Processor 部分进行了解耦合，只要实现相关注解的 Processor，并在 Context 中进行加载，即可。</div>2023-03-29</li><br/>
+可以实现，这部分在 Processor 部分进行了解耦合，只要实现相关注解的 Processor，并在 Context 中进行加载，即可。</p>2023-03-29</li><br/>
 </ul>

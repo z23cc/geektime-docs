@@ -226,7 +226,7 @@ tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (1
 
 欢迎你在评论区写下你的答案，我会和你一起交流，也欢迎把这篇文章分享给你的朋友或者同事，与他们一起交流一下。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Middleware</span> 👍（11） 💬（2）<div>```php
+<li><span>Middleware</span> 👍（11） 💬（2）<p>```php
 &lt;body&gt;
     &lt;div class=&quot;content&quot;&gt;
         &lt;label for=&quot;name&quot;&gt;&lt;&#47;label&gt;
@@ -268,7 +268,7 @@ tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (1
          }
     &lt;&#47;script&gt;
 &lt;&#47;body&gt;
-```</div>2019-09-02</li><br/><li><span>ABC</span> 👍（6） 💬（2）<div>localForage这个库可以兼容处理IndexDB,localStorage,webSQL等</div>2019-11-25</li><br/><li><span>Middleware</span> 👍（6） 💬（1）<div>WebSQL 这项标准已经废弃了吧
+```</p>2019-09-02</li><br/><li><span>ABC</span> 👍（6） 💬（2）<p>localForage这个库可以兼容处理IndexDB,localStorage,webSQL等</p>2019-11-25</li><br/><li><span>Middleware</span> 👍（6） 💬（1）<p>WebSQL 这项标准已经废弃了吧
 
-https:&#47;&#47;dev.w3.org&#47;html5&#47;webdatabase&#47;</div>2019-09-02</li><br/><li><span>许童童</span> 👍（4） 💬（1）<div>WebSQL的功能确实很强大，但是在目前的项目中还没有用到过。</div>2019-09-02</li><br/><li><span>nimil</span> 👍（3） 💬（2）<div>这个功能厉害了</div>2019-09-02</li><br/><li><span>cfanbo</span> 👍（1） 💬（2）<div>这两个都是长期有效，只能用户手动删除才可以的吗？</div>2019-09-03</li><br/><li><span>雪飞鸿</span> 👍（0） 💬（3）<div>看了下文档IndexedDB虽然是NoSql，但也是基于事务来处理数据的。</div>2019-11-12</li><br/><li><span>RRR</span> 👍（2） 💬（0）<div>webSQL 已经被规范废弃，现在只支持 IndexDB。</div>2020-06-15</li><br/><li><span>博弈</span> 👍（2） 💬（0）<div>了解了浏览器端的五种存储方式：Cookie,Local storage,Session storage,WebSQL,IndexedDB</div>2020-03-26</li><br/><li><span>victor666</span> 👍（2） 💬（0）<div>挺有意思的。可以拿来做SQL语句测试</div>2020-03-22</li><br/><li><span>humor</span> 👍（1） 💬（1）<div>session是什么概念呢？http请求不是无状态的么，难道一次http请求就是一个session吗</div>2019-09-02</li><br/><li><span>钱</span> 👍（0） 💬（0）<div>长见识了</div>2024-08-26</li><br/>
+https:&#47;&#47;dev.w3.org&#47;html5&#47;webdatabase&#47;</p>2019-09-02</li><br/><li><span>许童童</span> 👍（4） 💬（1）<p>WebSQL的功能确实很强大，但是在目前的项目中还没有用到过。</p>2019-09-02</li><br/><li><span>nimil</span> 👍（3） 💬（2）<p>这个功能厉害了</p>2019-09-02</li><br/><li><span>cfanbo</span> 👍（1） 💬（2）<p>这两个都是长期有效，只能用户手动删除才可以的吗？</p>2019-09-03</li><br/><li><span>雪飞鸿</span> 👍（0） 💬（3）<p>看了下文档IndexedDB虽然是NoSql，但也是基于事务来处理数据的。</p>2019-11-12</li><br/><li><span>RRR</span> 👍（2） 💬（0）<p>webSQL 已经被规范废弃，现在只支持 IndexDB。</p>2020-06-15</li><br/><li><span>博弈</span> 👍（2） 💬（0）<p>了解了浏览器端的五种存储方式：Cookie,Local storage,Session storage,WebSQL,IndexedDB</p>2020-03-26</li><br/><li><span>victor666</span> 👍（2） 💬（0）<p>挺有意思的。可以拿来做SQL语句测试</p>2020-03-22</li><br/><li><span>humor</span> 👍（1） 💬（1）<p>session是什么概念呢？http请求不是无状态的么，难道一次http请求就是一个session吗</p>2019-09-02</li><br/><li><span>钱</span> 👍（0） 💬（0）<p>长见识了</p>2024-08-26</li><br/>
 </ul>

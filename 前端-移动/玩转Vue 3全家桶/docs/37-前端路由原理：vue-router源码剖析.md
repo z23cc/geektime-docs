@@ -550,11 +550,11 @@ export function createWebHistory(base?: string): RouterHistory {
 
 欢迎在评论区分享你的答案，我们下一讲再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>InfoQ_e521a4ce8a54</span> 👍（2） 💬（0）<div>navigate 函数主要是执行一个异步队列；核心代码
+<li><span>InfoQ_e521a4ce8a54</span> 👍（2） 💬（0）<p>navigate 函数主要是执行一个异步队列；核心代码
 function runGuardQueue(guards: Lazy&lt;any&gt;[]): Promise&lt;void&gt; {
   return guards.reduce(
     (promise, guard) =&gt; promise.then(() =&gt; guard()),
     Promise.resolve()
   )
-}</div>2022-01-14</li><br/><li><span>becky</span> 👍（0） 💬（0）<div>navigate应该是按官方文章https:&#47;&#47;router.vuejs.org&#47;guide&#47;advanced&#47;navigation-guards.html#the-full-navigation-resolution-flow 所写的顺序执行路由守卫</div>2023-07-18</li><br/><li><span>Merlin_nil</span> 👍（0） 💬（0）<div>大圣老师好，install逻辑中似乎有个小错误，文中「通过 app.provide 给全局注册了 route 和 reactive 包裹后的 reactiveRoute 对象」，应该把route改为router吧？</div>2022-04-11</li><br/>
+}</p>2022-01-14</li><br/><li><span>becky</span> 👍（0） 💬（0）<p>navigate应该是按官方文章https:&#47;&#47;router.vuejs.org&#47;guide&#47;advanced&#47;navigation-guards.html#the-full-navigation-resolution-flow 所写的顺序执行路由守卫</p>2023-07-18</li><br/><li><span>Merlin_nil</span> 👍（0） 💬（0）<p>大圣老师好，install逻辑中似乎有个小错误，文中「通过 app.provide 给全局注册了 route 和 reactive 包裹后的 reactiveRoute 对象」，应该把route改为router吧？</p>2022-04-11</li><br/>
 </ul>

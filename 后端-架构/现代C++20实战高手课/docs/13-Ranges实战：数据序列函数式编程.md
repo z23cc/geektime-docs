@@ -1105,7 +1105,7 @@ auto operator | (R r, P p) {
 
 欢迎把你的代码贴出来，与大家一起分享。我们一同交流。下一讲见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>按照老师上次留言给出的指导意见，已修改代码，这里给出关键代码：
+<li><span>李云龙</span> 👍（1） 💬（1）<p>按照老师上次留言给出的指导意见，已修改代码，这里给出关键代码：
 协程类修改成下面的代码，注意 final_suspend 的返回值需要修改成suspend_always，否则在我的这个使用场景中，协程退出时会抛异常：
 export struct Coroutine {
     struct promise_type {
@@ -1168,7 +1168,7 @@ int main()
     h.destroy();
 
     return 0;
-}</div>2024-01-27</li><br/><li><span>李云龙</span> 👍（1） 💬（2）<div>分享一下我的思考题的答案，我这里只给出关键代码：
+}</p>2024-01-27</li><br/><li><span>李云龙</span> 👍（1） 💬（2）<p>分享一下我的思考题的答案，我这里只给出关键代码：
 export module asyncString.stringHandle:handler;
 
 import asyncString.utils;
@@ -1221,5 +1221,5 @@ namespace asyncString::stringHandle {
             });
     }
 }
-完整代码，请参阅gitee仓库：https:&#47;&#47;gitee.com&#47;devin21&#47;rangeAssignment&#47;tree&#47;master</div>2024-01-14</li><br/><li><span>常振华</span> 👍（0） 💬（0）<div>还是更喜欢传统的方式，可以用不修改原来变量的方式去实现多线程处理</div>2023-10-19</li><br/>
+完整代码，请参阅gitee仓库：https:&#47;&#47;gitee.com&#47;devin21&#47;rangeAssignment&#47;tree&#47;master</p>2024-01-14</li><br/><li><span>常振华</span> 👍（0） 💬（0）<p>还是更喜欢传统的方式，可以用不修改原来变量的方式去实现多线程处理</p>2023-10-19</li><br/>
 </ul>

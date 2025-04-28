@@ -165,7 +165,7 @@
 
 欢迎在评论区和我们分享。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>dao</span> 👍（9） 💬（1）<div>老师分享了很好的 RN 的实践技术栈。
+<li><span>dao</span> 👍（9） 💬（1）<p>老师分享了很好的 RN 的实践技术栈。
 
 我也找了些我学习的资料分享：
 https:&#47;&#47;javascript.info&#47; （中英文）
@@ -180,9 +180,9 @@ https:&#47;&#47;egghead.io&#47;q&#47;graphql-and-javascript-and-react-and-typesc
 极客时间的几个课程也蛮好： 前端、typescript、react 。
 技术英文相对简单，英文可能不那么重要，但好的英文阅读能力绝对是有助于拓展学习和了解技术前沿。（毕竟说中文的人口不到1&#47;5）
 另外，别忙着学习框架&#47;组件，会永远学不完，要思考框架&#47;组件解决了什么和怎么解决的。
-</div>2022-05-17</li><br/><li><span>若川</span> 👍（1） 💬（2）<div>老师列举的学习资料很有参考价值！
+</p>2022-05-17</li><br/><li><span>若川</span> 👍（1） 💬（2）<p>老师列举的学习资料很有参考价值！
 
-其中ts列举的是我熟知的社区活跃的阿宝哥的文章~</div>2022-04-28</li><br/><li><span>长林啊</span> 👍（0） 💬（1）<div>老师，最近做RN开发遇到一些问题，烦请老师指点迷津。
+其中ts列举的是我熟知的社区活跃的阿宝哥的文章~</p>2022-04-28</li><br/><li><span>长林啊</span> 👍（0） 💬（1）<p>老师，最近做RN开发遇到一些问题，烦请老师指点迷津。
 1、沉浸式导航、非沉浸式导航页面跳转的时候页面抖动
-2、在使用react-native-webview的时候，直接渲染html在部分机型（荣耀 magic2）中持续上下抖动，当加载url网页的时候，因为网页内容高度不固定，所以就会导致瞬间滚动（原因是：进入页面后滑到底部，如果webview中的内容还没有加载完成就会出现这种情况）</div>2022-05-18</li><br/><li><span>woJA1wCgAA0KlkYM2ua-rXEtkJvL7OUQ</span> 👍（0） 💬（1）<div>老师，最近我们想接RN，重构了一个模块，cookie方面遇到些问题，原生传给RN容器一个token，用了 react-native-cookie 这个库，RNCookie.set(baseUrl, token, &#39;asd&#39;).then(() =&gt; {  请求列表数据  })。感觉这样解决cookie的问题不是很好，有没有更好的解决方式。或者原生能直接把RN容器的cookie设置好么？</div>2022-04-28</li><br/><li><span>夏目🐳</span> 👍（0） 💬（0）<div>你好，手机登录的第三方ask哪个比较流行</div>2022-12-18</li><br/><li><span>见字如晤</span> 👍（0） 💬（1）<div>react-native数据可视化图表好像三方库都不是很好（弄了很久），请问老师目前业内有成熟的实践吗</div>2022-05-30</li><br/><li><span>chenzesam</span> 👍（0） 💬（0）<div>weekly 系列都挺好的。</div>2022-05-10</li><br/>
+2、在使用react-native-webview的时候，直接渲染html在部分机型（荣耀 magic2）中持续上下抖动，当加载url网页的时候，因为网页内容高度不固定，所以就会导致瞬间滚动（原因是：进入页面后滑到底部，如果webview中的内容还没有加载完成就会出现这种情况）</p>2022-05-18</li><br/><li><span>woJA1wCgAA0KlkYM2ua-rXEtkJvL7OUQ</span> 👍（0） 💬（1）<p>老师，最近我们想接RN，重构了一个模块，cookie方面遇到些问题，原生传给RN容器一个token，用了 react-native-cookie 这个库，RNCookie.set(baseUrl, token, &#39;asd&#39;).then(() =&gt; {  请求列表数据  })。感觉这样解决cookie的问题不是很好，有没有更好的解决方式。或者原生能直接把RN容器的cookie设置好么？</p>2022-04-28</li><br/><li><span>夏目🐳</span> 👍（0） 💬（0）<p>你好，手机登录的第三方ask哪个比较流行</p>2022-12-18</li><br/><li><span>见字如晤</span> 👍（0） 💬（1）<p>react-native数据可视化图表好像三方库都不是很好（弄了很久），请问老师目前业内有成熟的实践吗</p>2022-05-30</li><br/><li><span>chenzesam</span> 👍（0） 💬（0）<p>weekly 系列都挺好的。</p>2022-05-10</li><br/>
 </ul>

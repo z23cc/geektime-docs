@@ -277,5 +277,5 @@ GOOS=linux GOARCH=amd64 go build -o main main.go
 
 感谢你的阅读，也欢迎你把这节课分享给更多的朋友一起交流学习。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>AcelXiao</span> 👍（0） 💬（1）<div>传统服务一个业务函数有大量第三方依赖，如会查db，会发mq，会依赖其他服务接口， 这种怎么迁移？适合迁移吗？</div>2024-04-02</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<div>最小实例为1，为什么费用会降低10倍呢</div>2023-08-04</li><br/><li><span>xiaojuan200804</span> 👍（0） 💬（1）<div>而目前 Serverless 托管服务最小实例为 1，这块应该是指paas吧</div>2023-03-10</li><br/>
+<li><span>AcelXiao</span> 👍（0） 💬（1）<p>传统服务一个业务函数有大量第三方依赖，如会查db，会发mq，会依赖其他服务接口， 这种怎么迁移？适合迁移吗？</p>2024-04-02</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<p>最小实例为1，为什么费用会降低10倍呢</p>2023-08-04</li><br/><li><span>xiaojuan200804</span> 👍（0） 💬（1）<p>而目前 Serverless 托管服务最小实例为 1，这块应该是指paas吧</p>2023-03-10</li><br/>
 </ul>

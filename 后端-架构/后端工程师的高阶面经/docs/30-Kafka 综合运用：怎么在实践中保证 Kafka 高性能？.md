@@ -231,7 +231,7 @@ Kafka 是运行在 JVM 上的，所以理论上来说任何优化 Java 性能的
 
 欢迎你把你思考后的答案分享到评论区，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>kai</span> 👍（3） 💬（1）<div>请问一下老师：
+<li><span>kai</span> 👍（3） 💬（1）<p>请问一下老师：
 
 问题1：这几个参数的修改是指修改 linux 系统的参数吗？
 net.core.rmem_default 和 net.core.wmem_default：Socket 默认读写缓冲区大小。
@@ -241,10 +241,10 @@ net.ipv4.tcp_wmem 和 net.ipv4.tcp_rmem：TCP 读写缓冲区。它们的值由�
 问题2：
 Kafka 客户端 receive.buffer.bytes 也是修改 TCP receive buffer 的值，请问一下这个参数的修改和上述 linux 系统的修改是什么关系呢？
 
-谢谢老师</div>2023-10-18</li><br/><li><span>王韬</span> 👍（1） 💬（1）<div>优化主从那里，如果acks设置为all的话，是不是这两部分是不是相反的影响啊？</div>2024-01-30</li><br/><li><span>ZhiguoXue_IT</span> 👍（1） 💬（1）<div>请教一下， 优化jvm，g1性能好只是因为g1的垃圾回收算法，多cms标记整理吗，还有哪些点呢</div>2023-09-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+谢谢老师</p>2023-10-18</li><br/><li><span>王韬</span> 👍（1） 💬（1）<p>优化主从那里，如果acks设置为all的话，是不是这两部分是不是相反的影响啊？</p>2024-01-30</li><br/><li><span>ZhiguoXue_IT</span> 👍（1） 💬（1）<p>请教一下， 优化jvm，g1性能好只是因为g1的垃圾回收算法，多cms标记整理吗，还有哪些点呢</p>2023-09-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：缓冲池太小为什么会阻塞发送者？
 文中有这样一句话：“发送者被阻塞也可能是因为缓冲池太小”，缓冲池小，很快就会装满，就可以发送，这样发送速度更快啊。缓冲池大才会阻塞发送者吧。
 Q2：atime禁用怎么理解？
 不让kafka使用文件的atime属性？还是从操作系统层面上禁止给忘记设置atime属性？
-Q3：Redis性能和TCP参数有关吗？</div>2023-08-25</li><br/>
+Q3：Redis性能和TCP参数有关吗？</p>2023-08-25</li><br/>
 </ul>

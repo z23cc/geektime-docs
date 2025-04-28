@@ -329,8 +329,8 @@ public class UserRepo {
 
 欢迎在留言区写下你的想法，和同学一起交流和分享。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>花颜</span> 👍（11） 💬（2）<div>老师，我有个问题，在大型多人协作项目当中，类、功能都是分散给不同的人开发的，不同的开发者质量良莠不齐，而实现逻辑重复有代码重复率校验工具可以做检测，而功能语义重复和代码执行重复其实不是那么容易能够发现，即使通过有效的codeReview，有没有什么工具可以辅助我们查找功能语义重复和代码执行重复这两类重复，以及在大型团队项目下，如何应用这些原则呢？毕竟靠自觉总是很难的</div>2019-12-30</li><br/><li><span>黄林晴</span> 👍（4） 💬（8）<div>“Rule of Three”中的“Three”并不是真的就指确切的“三”，这里就是指“二”。😂
-这句话看了好几遍</div>2019-12-20</li><br/><li><span>blacknhole</span> 👍（3） 💬（3）<div>1，提个小问题：
+<li><span>花颜</span> 👍（11） 💬（2）<p>老师，我有个问题，在大型多人协作项目当中，类、功能都是分散给不同的人开发的，不同的开发者质量良莠不齐，而实现逻辑重复有代码重复率校验工具可以做检测，而功能语义重复和代码执行重复其实不是那么容易能够发现，即使通过有效的codeReview，有没有什么工具可以辅助我们查找功能语义重复和代码执行重复这两类重复，以及在大型团队项目下，如何应用这些原则呢？毕竟靠自觉总是很难的</p>2019-12-30</li><br/><li><span>黄林晴</span> 👍（4） 💬（8）<p>“Rule of Three”中的“Three”并不是真的就指确切的“三”，这里就是指“二”。😂
+这句话看了好几遍</p>2019-12-20</li><br/><li><span>blacknhole</span> 👍（3） 💬（3）<p>1，提个小问题：
 
 “实现逻辑重复”一节的代码是不是有点问题啊？
 
@@ -342,7 +342,7 @@ if (!(c &gt;= &#39;a&#39; &amp;&amp; c &lt;= &#39;z&#39;) || (c &gt;= &#39;0&#39
 
 比如，可复用性高，说明能够复用，与当前是否已经复用无关。复用性高，是指当前已经大量复用，说明在这之前可复用性高。已经大量复用时，依然可以更多地复用，也即：复用性高，意味着可复用性依然高。
 
-通常的语境中，也即通常提到“复用性”时，人们几乎只关注能不能复用，而不是已经复用了多少。所以，可以认为，可复用性高等同于复用性高。</div>2019-12-20</li><br/><li><span>柴柴777</span> 👍（1） 💬（1）<div>我 之前就有个问题就说 我们如果用了组件化 每个模块算是单独的  尽管可能会写一个单独的util模块但是 还是存在着 重复代码,但是这些重复代码不在一个module里,那这样的到底算不算重复呢,,这些简单的部分的少量的重复不值得去单独加一个module</div>2020-01-06</li><br/><li><span>🐝</span> 👍（0） 💬（1）<div>为了不重复，在合并代码里写if else 是否合适</div>2020-11-23</li><br/><li><span>辣么大</span> 👍（204） 💬（20）<div>1、注释或者文档违反DRY
+通常的语境中，也即通常提到“复用性”时，人们几乎只关注能不能复用，而不是已经复用了多少。所以，可以认为，可复用性高等同于复用性高。</p>2019-12-20</li><br/><li><span>柴柴777</span> 👍（1） 💬（1）<p>我 之前就有个问题就说 我们如果用了组件化 每个模块算是单独的  尽管可能会写一个单独的util模块但是 还是存在着 重复代码,但是这些重复代码不在一个module里,那这样的到底算不算重复呢,,这些简单的部分的少量的重复不值得去单独加一个module</p>2020-01-06</li><br/><li><span>🐝</span> 👍（0） 💬（1）<p>为了不重复，在合并代码里写if else 是否合适</p>2020-11-23</li><br/><li><span>辣么大</span> 👍（204） 💬（20）<p>1、注释或者文档违反DRY
 2、数据对象违反DRY
 
 对于1，例如一个方法。写了好多的注释解释代码的执行逻辑，后续修改的这个方法的时候可能，忘记修改注释，造成对代码理解的困难。实际应用应该使用KISS原则，将方法写的见名知意，尽量容易阅读。注释不必过多。
@@ -364,7 +364,7 @@ DRY is about the duplication of knowledge, of intent. It’s about expressing th
 when some single facet of the code has to change, do you find yourself making that change in multiple places, and in multiple different formats? Do you have to change code and documentation, or a database schema and a structure that holds it, or…? If so, your code isn’t DRY.
 
 参考：
-The Pragmatic Programmer: your journey to mastery, 20th Anniversary Edition (2nd Edition)</div>2019-12-20</li><br/><li><span>岁月</span> 👍（30） 💬（18）<div>加油啊感觉更新太慢了一个下午就看完了..,一个星期至少更新10课吧.</div>2019-12-20</li><br/><li><span>啦啦啦</span> 👍（27） 💬（5）<div>产品经理有时候设计产品功能的时候也会重复</div>2019-12-20</li><br/><li><span>magict4</span> 👍（20） 💬（5）<div>&gt; 重复执行最明显的一个地方，就是在 login() 函数中，email 的校验逻辑被执行了两次。一次是在调用 checkIfUserExisted() 函数的时候，另一次是调用 getUserByEmail() 函数的时候。这个问题解决起来比较简单，我们只需要将校验逻辑从 UserRepo 中移除，统一放到 UserService 中就可以了。
+The Pragmatic Programmer: your journey to mastery, 20th Anniversary Edition (2nd Edition)</p>2019-12-20</li><br/><li><span>岁月</span> 👍（30） 💬（18）<p>加油啊感觉更新太慢了一个下午就看完了..,一个星期至少更新10课吧.</p>2019-12-20</li><br/><li><span>啦啦啦</span> 👍（27） 💬（5）<p>产品经理有时候设计产品功能的时候也会重复</p>2019-12-20</li><br/><li><span>magict4</span> 👍（20） 💬（5）<p>&gt; 重复执行最明显的一个地方，就是在 login() 函数中，email 的校验逻辑被执行了两次。一次是在调用 checkIfUserExisted() 函数的时候，另一次是调用 getUserByEmail() 函数的时候。这个问题解决起来比较简单，我们只需要将校验逻辑从 UserRepo 中移除，统一放到 UserService 中就可以了。
 
 这样处理会有一个问题：如果别的 xxxService 也需要用到 UserRepo，而且没有对 email 跟 password 进行校验，直接调用了 UserRepo.checkIfUserExisted() ，会产生异常。
 
@@ -374,7 +374,7 @@ The Pragmatic Programmer: your journey to mastery, 20th Anniversary Edition (2nd
 
 UserRepo.checkIfUserExisted(Email email, Password password)
 
-并且把 validation 的逻辑封装在 Email 跟  Password 类的构造函数中。这样 xxxService 必须先把 email 跟 password 从 String 类型转成对应的 Email&#47;Password 类，才能调用 UserRepo，validation 的逻辑会在转换中被强制执行。</div>2019-12-20</li><br/><li><span>AaronChun</span> 👍（17） 💬（1）<div>数据库转换对象beanDb和数据展现beanVo，从属性定义上来看可能存在大量重复，但从业务或系统分层来看，却是职责明确，功能单一的对象，所以这并不违反DRY原则。相反如果将两者共性部分抽离提取，后期倘若业务变更，修改就会牵扯到前台和后台，不符合单一职责和接口隔离原则。</div>2019-12-24</li><br/><li><span>李小四</span> 👍（8） 💬（0）<div>设计模式_20
+并且把 validation 的逻辑封装在 Email 跟  Password 类的构造函数中。这样 xxxService 必须先把 email 跟 password 从 String 类型转成对应的 Email&#47;Password 类，才能调用 UserRepo，validation 的逻辑会在转换中被强制执行。</p>2019-12-20</li><br/><li><span>AaronChun</span> 👍（17） 💬（1）<p>数据库转换对象beanDb和数据展现beanVo，从属性定义上来看可能存在大量重复，但从业务或系统分层来看，却是职责明确，功能单一的对象，所以这并不违反DRY原则。相反如果将两者共性部分抽离提取，后期倘若业务变更，修改就会牵扯到前台和后台，不符合单一职责和接口隔离原则。</p>2019-12-24</li><br/><li><span>李小四</span> 👍（8） 💬（0）<p>设计模式_20
 
 # 作业：
 想到的只有文档和注释的重复了，比如两个不同功能的文档，同时描写一个细节时，可能“负责”的产品经理会各自清清楚楚地写一遍。然后：
@@ -385,7 +385,7 @@ UserRepo.checkIfUserExisted(Email email, Password password)
 #感想：
 回到“少干活 和 少犯错”的宗旨，重复的代码不仅写的时候会多些一遍，改的时候也要多看很多地方，多想很多差异性，多改很多地方，这样就违背了“少干活”；改的时候，容易忘记一些地方，维护多种逻辑实现的同一个逻辑，也容易疏忽而出错，这样就违背了“少出错”。
 
-说句题外话，文中提到“Rule of Three”时，原来外国人也用“三”表示多个，而且表示的还是2个。。。</div>2019-12-20</li><br/><li><span>人月聊IT</span> 👍（6） 💬（0）<div>总结：功能语义重复才是真的重复，实现逻辑重复不一定就是重复，代码执行重复就一定是重复</div>2021-05-06</li><br/><li><span>Kang</span> 👍（5） 💬（0）<div>是不是所有包含or and的方法名的函数其实都不满足单一职责？</div>2020-09-12</li><br/><li><span>Wh1</span> 👍（4） 💬（0）<div>二刷时存在一个小问题，&quot;只能允许用户名、密码字符串为小写字符&quot; 与 &quot;字符范围只能是a-z、0-9、.&quot; 这个条件是不是也存在重复？按理说，只需要判断&quot;字符范围只能是 a-z、0-9、.&quot; 这个条件就满足字符全是小写了。</div>2020-03-11</li><br/><li><span>江小田</span> 👍（3） 💬（0）<div>收货最大的就是复用的范围定义：
+说句题外话，文中提到“Rule of Three”时，原来外国人也用“三”表示多个，而且表示的还是2个。。。</p>2019-12-20</li><br/><li><span>人月聊IT</span> 👍（6） 💬（0）<p>总结：功能语义重复才是真的重复，实现逻辑重复不一定就是重复，代码执行重复就一定是重复</p>2021-05-06</li><br/><li><span>Kang</span> 👍（5） 💬（0）<p>是不是所有包含or and的方法名的函数其实都不满足单一职责？</p>2020-09-12</li><br/><li><span>Wh1</span> 👍（4） 💬（0）<p>二刷时存在一个小问题，&quot;只能允许用户名、密码字符串为小写字符&quot; 与 &quot;字符范围只能是a-z、0-9、.&quot; 这个条件是不是也存在重复？按理说，只需要判断&quot;字符范围只能是 a-z、0-9、.&quot; 这个条件就满足字符全是小写了。</p>2020-03-11</li><br/><li><span>江小田</span> 👍（3） 💬（0）<p>收货最大的就是复用的范围定义：
 业务语意层面的重复违反DRY原则；
-代码写法角度的重复不违反DRY原则。</div>2021-03-13</li><br/>
+代码写法角度的重复不违反DRY原则。</p>2021-03-13</li><br/>
 </ul>

@@ -208,7 +208,7 @@ export default function Product({product}) {}
 
 欢迎你在评论区分享你的观点，我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>huangshan</span> 👍（8） 💬（2）<div>我之前写组件库的时候，是很坚持单一职责和OCP的，认为组件无状态灵活性很高。但是复杂组件经过组合和增强之后，感觉dom节点层数过多、数据流维护和状态更新成本变高。请问蒋老师对这一块有什么建议吗？</div>2022-04-13</li><br/><li><span>Asterisk</span> 👍（1） 💬（1）<div>应该讲一下clas风格组件和 function风格组件</div>2022-10-12</li><br/><li><span>Geek_ce9101</span> 👍（0） 💬（3）<div>你好，github 的项目我用安卓的没跑起来，有个疑问，package 里面并没有 install-android-hermes script，但 readme 里面却第一步就是：yarn install-android-hermes ？</div>2022-05-23</li><br/><li><span>Geek_51b2dc</span> 👍（1） 💬（0）<div>https:&#47;&#47;github.com&#47;facebook&#47;react-native&#47;issues&#47;33698 有同学搭建andriod环境的时候遇到这个问题 吗？怎么解决的能告知一下吗？</div>2022-07-25</li><br/><li><span>Geek_140294</span> 👍（0） 💬（0）<div>有没有环境搭建的内容啊？我跑项目都还跑不起来</div>2024-03-11</li><br/><li><span>angelajing</span> 👍（0） 💬（0）<div>因为我本地环境npm等各种软件包的版本和github上下载的代码版本不一致（参见package.json），需要适当的更新dependencies的版本信息。例如，
+<li><span>huangshan</span> 👍（8） 💬（2）<p>我之前写组件库的时候，是很坚持单一职责和OCP的，认为组件无状态灵活性很高。但是复杂组件经过组合和增强之后，感觉dom节点层数过多、数据流维护和状态更新成本变高。请问蒋老师对这一块有什么建议吗？</p>2022-04-13</li><br/><li><span>Asterisk</span> 👍（1） 💬（1）<p>应该讲一下clas风格组件和 function风格组件</p>2022-10-12</li><br/><li><span>Geek_ce9101</span> 👍（0） 💬（3）<p>你好，github 的项目我用安卓的没跑起来，有个疑问，package 里面并没有 install-android-hermes script，但 readme 里面却第一步就是：yarn install-android-hermes ？</p>2022-05-23</li><br/><li><span>Geek_51b2dc</span> 👍（1） 💬（0）<p>https:&#47;&#47;github.com&#47;facebook&#47;react-native&#47;issues&#47;33698 有同学搭建andriod环境的时候遇到这个问题 吗？怎么解决的能告知一下吗？</p>2022-07-25</li><br/><li><span>Geek_140294</span> 👍（0） 💬（0）<p>有没有环境搭建的内容啊？我跑项目都还跑不起来</p>2024-03-11</li><br/><li><span>angelajing</span> 👍（0） 💬（0）<p>因为我本地环境npm等各种软件包的版本和github上下载的代码版本不一致（参见package.json），需要适当的更新dependencies的版本信息。例如，
 ---- package.json-----
 19  &quot;@apollo&#47;client&quot;:&quot;^3.5.6&quot;
 --------------------
@@ -220,9 +220,9 @@ $ npm search @apollo&#47;client
 ------ terminal ----
 $ npm install
 $ npm start
------------------</div>2023-11-23</li><br/><li><span>kittyE</span> 👍（0） 💬（0）<div>MVC的数据流向是C(5, 2) * 2
+-----------------</p>2023-11-23</li><br/><li><span>kittyE</span> 👍（0） 💬（0）<p>MVC的数据流向是C(5, 2) * 2
 优点是：代码颗粒度小
-缺点是：数据流向复杂，组件越多可能的数据流向更多</div>2023-07-23</li><br/><li><span>Geek_ae84e1</span> 👍（0） 💬（0）<div>居然是音频课，大家要小心</div>2023-06-19</li><br/><li><span>Asterisk</span> 👍（0） 💬（1）<div>确实只讲了一个思虑，我还需要再看看 https:&#47;&#47;reactjs.org&#47;docs&#47;components-and-props.html</div>2022-10-12</li><br/><li><span>Geek_b056e8</span> 👍（0） 💬（5）<div>我下载了课件，但是怎么才能运行Demo里不同章节的代码呀？</div>2022-06-21</li><br/><li><span>涂海生</span> 👍（0） 💬（1）<div>实战例子是否可以多来些</div>2022-06-21</li><br/><li><span>Geek_b056e8</span> 👍（0） 💬（2）<div>大神 由于我是刚学习RN，所以有个环境配置的问题想问一下。
+缺点是：数据流向复杂，组件越多可能的数据流向更多</p>2023-07-23</li><br/><li><span>Geek_ae84e1</span> 👍（0） 💬（0）<p>居然是音频课，大家要小心</p>2023-06-19</li><br/><li><span>Asterisk</span> 👍（0） 💬（1）<p>确实只讲了一个思虑，我还需要再看看 https:&#47;&#47;reactjs.org&#47;docs&#47;components-and-props.html</p>2022-10-12</li><br/><li><span>Geek_b056e8</span> 👍（0） 💬（5）<p>我下载了课件，但是怎么才能运行Demo里不同章节的代码呀？</p>2022-06-21</li><br/><li><span>涂海生</span> 👍（0） 💬（1）<p>实战例子是否可以多来些</p>2022-06-21</li><br/><li><span>Geek_b056e8</span> 👍（0） 💬（2）<p>大神 由于我是刚学习RN，所以有个环境配置的问题想问一下。
  我这边按照官网的环境配置完成后。可以运行AwesomeProject 模版项目。
  但是从GitHub 上下的Demo工程 运行yarn android命令
 一直报错：
@@ -234,6 +234,6 @@ Error: Command failed: .&#47;gradlew app:installDebug -PreactNativeDevServerPort
 error Command failed with exit code 1.
 info Visit https:&#47;&#47;yarnpkg.com&#47;en&#47;docs&#47;cli&#47;run for documentation about this command.
 
-这是什么原因呀？</div>2022-06-14</li><br/><li><span>worm</span> 👍（0） 💬（2）<div>老师您好，registerComponent() 第二个参数为什么设计为传入一个函数(ComponentProvider)？这样比设计为直接传入 Component 的好处是什么呢？ 
-</div>2022-05-09</li><br/><li><span>山丘smith18651579836</span> 👍（0） 💬（2）<div>ProductTable.js中不需要通过数组的map函数来循环生成生成列表吗？</div>2022-04-01</li><br/>
+这是什么原因呀？</p>2022-06-14</li><br/><li><span>worm</span> 👍（0） 💬（2）<p>老师您好，registerComponent() 第二个参数为什么设计为传入一个函数(ComponentProvider)？这样比设计为直接传入 Component 的好处是什么呢？ 
+</p>2022-05-09</li><br/><li><span>山丘smith18651579836</span> 👍（0） 💬（2）<p>ProductTable.js中不需要通过数组的map函数来循环生成生成列表吗？</p>2022-04-01</li><br/>
 </ul>

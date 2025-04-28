@@ -362,5 +362,5 @@ for(int i = 0; i < sizeof(weighLst) / sizeof(weighLst[0]); ++i)
 
 欢迎你在留言区和我互动交流，如果觉得有所收获，也可以把课程分享给更多的朋友一起学习进步。我们下节课见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>鲁米</span> 👍（0） 💬（2）<div>Huffman 树，可以归类于二叉搜索树吗？与 AVL R-B 树属于不同的演化方向了</div>2023-07-17</li><br/>
+<li><span>鲁米</span> 👍（0） 💬（2）<p>Huffman 树，可以归类于二叉搜索树吗？与 AVL R-B 树属于不同的演化方向了</p>2023-07-17</li><br/>
 </ul>

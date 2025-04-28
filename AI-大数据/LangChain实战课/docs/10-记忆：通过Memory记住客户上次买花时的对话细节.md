@@ -350,7 +350,7 @@ ConversationSummaryBufferMemory的优势是通过总结可以回忆起较早的�
 1. 代码，ConversationBufferMemory的[实现细节](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/memory/buffer.py)
 2. 代码，ConversationSummaryMemory的[实现细节](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/memory/summary.py)
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>在路上</span> 👍（13） 💬（3）<div>我们可以通过源码来分析ConversationSummaryBufferMemory是如何实现长短期记忆的。首先要关注ConversationSummaryBufferMemory.save_context()方法，它将每轮对话的inputs和outputs成对加入memory，然后调用self.prune()方法。prune()方法会计算memory的当前token数，如果超过self.max_token_limit，则对超出的messages总结，调用的方法是self.predict_new_summary(pruned_memory, self.moving_summary_buffer)。总结时使用的PromptTemplate来自prompt.py的_DEFAULT_SUMMARIZER_TEMPLATE，_DEFAULT_SUMMARIZER_TEMPLATE的部分内容如下：
+<li><span>在路上</span> 👍（13） 💬（3）<p>我们可以通过源码来分析ConversationSummaryBufferMemory是如何实现长短期记忆的。首先要关注ConversationSummaryBufferMemory.save_context()方法，它将每轮对话的inputs和outputs成对加入memory，然后调用self.prune()方法。prune()方法会计算memory的当前token数，如果超过self.max_token_limit，则对超出的messages总结，调用的方法是self.predict_new_summary(pruned_memory, self.moving_summary_buffer)。总结时使用的PromptTemplate来自prompt.py的_DEFAULT_SUMMARIZER_TEMPLATE，_DEFAULT_SUMMARIZER_TEMPLATE的部分内容如下：
 EXAMPLE
 ...
 Current summary:
@@ -359,7 +359,7 @@ New lines of conversation:
 {new_lines}
 也就是通过示例，让llm学习如何完成长期记忆的总结。
 
-ConversationSummaryBufferMemory是在应用层平衡长短期记忆，我们也可以看看模型层是如何平衡长短期记忆的。RNN模型t时间步的隐藏层参数H_t计算公式为：H_t = phi(X_t*W_xh+H_(t-1)*W_hh+b_h)，X_t*W_xh表示短期记忆，H_(t-1)*W_hh表示长期记忆，平衡长短期记忆，就是给短期记忆和长期记忆加一个权重，来控制对整体记忆（H_t）的影响。现代循环神经网络GRU和LSTM的模型有区别，但是原理上都是为短期记忆和长期记忆加权重。</div>2023-09-25</li><br/><li><span>iLeGeND</span> 👍（4） 💬（1）<div>github代码是不是没更新呢</div>2023-09-25</li><br/><li><span>aloha66</span> 👍（1） 💬（2）<div>为什么我的ConversationSummaryBufferMemory没记住我昨天为什么要来买花。
+ConversationSummaryBufferMemory是在应用层平衡长短期记忆，我们也可以看看模型层是如何平衡长短期记忆的。RNN模型t时间步的隐藏层参数H_t计算公式为：H_t = phi(X_t*W_xh+H_(t-1)*W_hh+b_h)，X_t*W_xh表示短期记忆，H_(t-1)*W_hh表示长期记忆，平衡长短期记忆，就是给短期记忆和长期记忆加一个权重，来控制对整体记忆（H_t）的影响。现代循环神经网络GRU和LSTM的模型有区别，但是原理上都是为短期记忆和长期记忆加权重。</p>2023-09-25</li><br/><li><span>iLeGeND</span> 👍（4） 💬（1）<p>github代码是不是没更新呢</p>2023-09-25</li><br/><li><span>aloha66</span> 👍（1） 💬（2）<p>为什么我的ConversationSummaryBufferMemory没记住我昨天为什么要来买花。
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationSummaryBufferMemory
@@ -394,13 +394,13 @@ print(&quot;回合3&quot;, result)
 哇，生日快乐给您的姐姐！您想要什么样的花束呢？玫瑰、郁金香、百合还是其他花卉？您可以选择她喜欢的颜色和花材，我可以帮您找到最合
 适的花束。您知道她喜欢的花吗？\nHuman: 她喜欢粉色玫瑰，颜色是粉色的。\nAI: 粉色玫瑰是一个很浪漫的选择！我会帮您找到一束粉色玫 
 瑰花束。您希望花束里还有其他花卉搭配吗？比如一些绿叶或者其他颜色的花朵？您还有其他要求吗？让我知道，我会为您找到完美的生日花束
-。&#39;, &#39;response&#39;: &#39;抱歉，我无法记住之前的对话内容。您可以告诉我您昨天为什么要来买花吗？我会尽力帮助您找到合适的花束。&#39;} </div>2024-03-27</li><br/><li><span>Webber</span> 👍（1） 💬（2）<div>老师，ConversationChain中可以加入memory机制，但是agents中怎么加入memory机制中呢。initialize_agent函数中的参数没有Chain类型，只是LLM类型。</div>2023-10-12</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<div>如果对话的内容跨度比较广，是不是总结出来的就不太准确了？</div>2023-09-28</li><br/><li><span>humor</span> 👍（0） 💬（1）<div>老师，问个题外话
+。&#39;, &#39;response&#39;: &#39;抱歉，我无法记住之前的对话内容。您可以告诉我您昨天为什么要来买花吗？我会尽力帮助您找到合适的花束。&#39;} </p>2024-03-27</li><br/><li><span>Webber</span> 👍（1） 💬（2）<p>老师，ConversationChain中可以加入memory机制，但是agents中怎么加入memory机制中呢。initialize_agent函数中的参数没有Chain类型，只是LLM类型。</p>2023-10-12</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<p>如果对话的内容跨度比较广，是不是总结出来的就不太准确了？</p>2023-09-28</li><br/><li><span>humor</span> 👍（0） 💬（1）<p>老师，问个题外话
 
 说到记忆，我们人类的大脑也不是无穷无尽的。所以说，有的时候事情太多，我们只能把有些遥远的记忆抹掉。毕竟，最新的经历最鲜活，也最重要。
 
-你在文中说人类的记忆不是无穷无尽的，我们只能把遥远的记忆抹掉。但是我觉得人类的记忆可以认为是无穷无尽的，因为我们几乎不可能耗尽我们的记忆空间，大脑还有极强的可塑性，而且我们人类也没办法直接抹去遥远的记忆吧。人类会对于印象深刻的记忆或者经常重复的记忆保留很长时间，并不仅仅与时间有关，如果仅与时间有关的话，我们学习的意义就没了啊，因为我们就只记得刚学过的东西了🤔</div>2024-01-05</li><br/><li><span>阿斯蒂芬</span> 👍（0） 💬（3）<div>“汇总”的理念跟“摘要”的理念是一致的吗？所以是不是实际应用中，专门的“汇总”模型或许价格比Completions 和 chat  模型更便宜？</div>2023-09-25</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<div>老师，可以认为不同的chain都对应一个prompt，约定了很多 变量，memory 这些机制都预定了自己可以提供哪些变量嘛？
-</div>2023-09-25</li><br/><li><span>张申傲</span> 👍（2） 💬（0）<div>第10讲打卡~
-对于记忆系统，可以尝试结合ConversationSummaryBufferMemory+RAG的方案，即短期全量记忆+长期摘要记忆+向量数据库辅助记忆，这样的记忆方式可能更好地平衡性能、准确性和Token成本</div>2024-07-16</li><br/><li><span>王凯</span> 👍（2） 💬（0）<div>langchian里的memory记忆机制面对多用户同时提问，是怎么区分不同的用户的历史记录的？</div>2024-04-17</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>用以下通义千问代码代替OpenAI ，学习课程代码。
+你在文中说人类的记忆不是无穷无尽的，我们只能把遥远的记忆抹掉。但是我觉得人类的记忆可以认为是无穷无尽的，因为我们几乎不可能耗尽我们的记忆空间，大脑还有极强的可塑性，而且我们人类也没办法直接抹去遥远的记忆吧。人类会对于印象深刻的记忆或者经常重复的记忆保留很长时间，并不仅仅与时间有关，如果仅与时间有关的话，我们学习的意义就没了啊，因为我们就只记得刚学过的东西了🤔</p>2024-01-05</li><br/><li><span>阿斯蒂芬</span> 👍（0） 💬（3）<p>“汇总”的理念跟“摘要”的理念是一致的吗？所以是不是实际应用中，专门的“汇总”模型或许价格比Completions 和 chat  模型更便宜？</p>2023-09-25</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<p>老师，可以认为不同的chain都对应一个prompt，约定了很多 变量，memory 这些机制都预定了自己可以提供哪些变量嘛？
+</p>2023-09-25</li><br/><li><span>张申傲</span> 👍（2） 💬（0）<p>第10讲打卡~
+对于记忆系统，可以尝试结合ConversationSummaryBufferMemory+RAG的方案，即短期全量记忆+长期摘要记忆+向量数据库辅助记忆，这样的记忆方式可能更好地平衡性能、准确性和Token成本</p>2024-07-16</li><br/><li><span>王凯</span> 👍（2） 💬（0）<p>langchian里的memory记忆机制面对多用户同时提问，是怎么区分不同的用户的历史记录的？</p>2024-04-17</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>用以下通义千问代码代替OpenAI ，学习课程代码。
 旧代码：
 # 初始化大语言模型
  llm = OpenAI(
@@ -417,5 +417,5 @@ llm = ChatOpenAI(
     model=&quot;qwen-plus&quot;
     )
 
-但是使用ConversationSummaryBufferMemory 时，出现NotImplementedError: get_num_tokens_from_messages() is not presently implemented for model cl100k_base.  搜索了很多资料，没有找到简单的替代方法。可能是阿里云的某些特定模型不支持某些功能。</div>2024-08-01</li><br/><li><span>刘双荣</span> 👍（0） 💬（0）<div>提到了4种会义记忆模式，</div>2024-09-18</li><br/><li><span>onemao</span> 👍（0） 💬（0）<div>使用ConversationSummaryMemory, 后面AI的回复姐姐编程妹妹了😄</div>2024-04-16</li><br/><li><span>大师兄</span> 👍（0） 💬（1）<div>请问ConversationSummaryBufferMemory在超过max_token_limit以后是将所有内容进行总结还是将超过max_token_limit的内容进行总结？</div>2024-03-15</li><br/>
+但是使用ConversationSummaryBufferMemory 时，出现NotImplementedError: get_num_tokens_from_messages() is not presently implemented for model cl100k_base.  搜索了很多资料，没有找到简单的替代方法。可能是阿里云的某些特定模型不支持某些功能。</p>2024-08-01</li><br/><li><span>刘双荣</span> 👍（0） 💬（0）<p>提到了4种会义记忆模式，</p>2024-09-18</li><br/><li><span>onemao</span> 👍（0） 💬（0）<p>使用ConversationSummaryMemory, 后面AI的回复姐姐编程妹妹了😄</p>2024-04-16</li><br/><li><span>大师兄</span> 👍（0） 💬（1）<p>请问ConversationSummaryBufferMemory在超过max_token_limit以后是将所有内容进行总结还是将超过max_token_limit的内容进行总结？</p>2024-03-15</li><br/>
 </ul>

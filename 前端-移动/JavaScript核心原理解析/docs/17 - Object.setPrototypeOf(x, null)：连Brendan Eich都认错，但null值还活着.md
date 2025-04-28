@@ -227,9 +227,9 @@ null
 
 从下一讲开始，我会与你聊聊“动态语言”，希望你喜欢我的分享，也欢迎你把文章分享给你的朋友。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>行问</span> 👍（12） 💬（1）<div>多看看技术在历史上是怎么出现的，怎么解决问题的，溯源这种“原型链”让我大呼过瘾。一路学习下来，有完全不懂，有闻所未闻，有懵逼，有茅塞顿开等。今天的这一讲，让我理解了 &quot;null&quot; 在实际开发中的合理运用。</div>2019-12-23</li><br/><li><span>程序员劝退师</span> 👍（3） 💬（1）<div>这是除了加餐课外，我能最快理解的一节课，嗯一定是我进步了😁</div>2019-12-26</li><br/><li><span>小炭</span> 👍（2） 💬（1）<div>“原子对象” 这一概念只有Javascript才会有吗，在C和C ++的标准术语也有这个“原子对象” 的定义。不知道他们之间有什么区别，或者这个定义的源头来自哪里？</div>2020-11-10</li><br/><li><span>蛋黄酱</span> 👍（2） 💬（2）<div>&gt; 如果 MyClass.prototype 指向 null，而 super 指向一个有效的父类，其结果如何呢
+<li><span>行问</span> 👍（12） 💬（1）<p>多看看技术在历史上是怎么出现的，怎么解决问题的，溯源这种“原型链”让我大呼过瘾。一路学习下来，有完全不懂，有闻所未闻，有懵逼，有茅塞顿开等。今天的这一讲，让我理解了 &quot;null&quot; 在实际开发中的合理运用。</p>2019-12-23</li><br/><li><span>程序员劝退师</span> 👍（3） 💬（1）<p>这是除了加餐课外，我能最快理解的一节课，嗯一定是我进步了😁</p>2019-12-26</li><br/><li><span>小炭</span> 👍（2） 💬（1）<p>“原子对象” 这一概念只有Javascript才会有吗，在C和C ++的标准术语也有这个“原子对象” 的定义。不知道他们之间有什么区别，或者这个定义的源头来自哪里？</p>2020-11-10</li><br/><li><span>蛋黄酱</span> 👍（2） 💬（2）<p>&gt; 如果 MyClass.prototype 指向 null，而 super 指向一个有效的父类，其结果如何呢
 
-这配上示例代码，意思是说setPrototypeOf虽然字面上的意思是改变prototype但本质上只改变了super执行的对象? 我觉得不对吧？</div>2020-03-15</li><br/><li><span>卡尔</span> 👍（0） 💬（1）<div>老师，我记得有一本书里说，undefined派生于null。老师这句话怎么去理解，他俩到底是什么关系？有什么区别？</div>2021-01-12</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>class A {}
+这配上示例代码，意思是说setPrototypeOf虽然字面上的意思是改变prototype但本质上只改变了super执行的对象? 我觉得不对吧？</p>2020-03-15</li><br/><li><span>卡尔</span> 👍（0） 💬（1）<p>老师，我记得有一本书里说，undefined派生于null。老师这句话怎么去理解，他俩到底是什么关系？有什么区别？</p>2021-01-12</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>class A {}
 class B extends A {}
 B.__proto__ === A &#47;&#47; true
 
@@ -238,5 +238,5 @@ B.__proto__.__proto__ === Function.prototype &#47;&#47; true
 class MyClass extends null {}
 
 MyClass.__proto__ === Function.prototype &#47;&#47; true
-老师继承自null的类的原型链直接指向了Function.prototype，而其它的是在中间加了一层，这是一种特殊处理？</div>2020-05-25</li><br/><li><span>新哥</span> 👍（0） 💬（0）<div>是时候讲一下 prototype和__proto__了😄</div>2020-06-21</li><br/><li><span>t86</span> 👍（0） 💬（0）<div>老师的功力真的是深，佩服</div>2020-01-16</li><br/><li><span>水木年华</span> 👍（0） 💬（0）<div>老师讲的真好，有体会有收获😄</div>2020-01-05</li><br/><li><span>许童童</span> 👍（0） 💬（0）<div>老师讲得太好了。</div>2019-12-24</li><br/>
+老师继承自null的类的原型链直接指向了Function.prototype，而其它的是在中间加了一层，这是一种特殊处理？</p>2020-05-25</li><br/><li><span>新哥</span> 👍（0） 💬（0）<p>是时候讲一下 prototype和__proto__了😄</p>2020-06-21</li><br/><li><span>t86</span> 👍（0） 💬（0）<p>老师的功力真的是深，佩服</p>2020-01-16</li><br/><li><span>水木年华</span> 👍（0） 💬（0）<p>老师讲的真好，有体会有收获😄</p>2020-01-05</li><br/><li><span>许童童</span> 👍（0） 💬（0）<p>老师讲得太好了。</p>2019-12-24</li><br/>
 </ul>

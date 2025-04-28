@@ -393,17 +393,17 @@ Client会请求Builder和Signer来构建HTTP请求的各项参数：HTTP请求�
 
 期待你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>你赖东东不错嘛</span> 👍（8） 💬（1）<div>Q1:构建Request时将API版本作为可选参数传入</div>2021-08-11</li><br/><li><span>return</span> 👍（6） 💬（2）<div>老师讲的太好了，
+<li><span>你赖东东不错嘛</span> 👍（8） 💬（1）<p>Q1:构建Request时将API版本作为可选参数传入</p>2021-08-11</li><br/><li><span>return</span> 👍（6） 💬（2）<p>老师讲的太好了，
 请教老师一个问题：
 sdk中 日志应该如何设计比较好，
 我看 阿里云是 默认了一个实现，用的标准log。
 这样好吗， 如果用户使用的是  zap，那是不是得分文件，用同一个文件会不会冲突。
-感觉都不优雅</div>2021-12-06</li><br/><li><span>fliyu</span> 👍（4） 💬（1）<div>openapi-generator是个非常不错的项目：https:&#47;&#47;github.com&#47;openapitools&#47;openapi-generator，支持生成几十种客户端语言，安装简单，使用简单，生成的代码质量高，还有特别详细的markdown使用文档，超级推荐</div>2022-01-19</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<div>总结：
+感觉都不优雅</p>2021-12-06</li><br/><li><span>fliyu</span> 👍（4） 💬（1）<p>openapi-generator是个非常不错的项目：https:&#47;&#47;github.com&#47;openapitools&#47;openapi-generator，支持生成几十种客户端语言，安装简单，使用简单，生成的代码质量高，还有特别详细的markdown使用文档，超级推荐</p>2022-01-19</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<p>总结：
 SDK的命名规范、目录结构、以及各个云厂商的逻辑架构。
 云厂商的SDK的实现分为两层：API层和基础层。
 API 层实现一个Client对象，每个方法对应了一个API接口
 基础层：主要负责，请求的Marshall、Unmarshal、签名等功能。
-API 层的 Client 通过匿名的方式继承了基础层的 Client。</div>2021-12-04</li><br/><li><span>ppd0705</span> 👍（2） 💬（1）<div>云厂商python版本sdk感觉代码质量ucloud最好</div>2021-10-31</li><br/><li><span>⁶₆⁶₆⁶₆</span> 👍（2） 💬（1）<div>你讲义里面提供的客户端调用示例执行失败了，也就是你https:&#47;&#47;github.com&#47;marmotedu&#47;medu-sdk-go里面提供的那个示例代码，错误提示如下，提示找不到对应的包，但是明明已经拉下来了呀，没看出原因，希望大佬能解答下。
+API 层的 Client 通过匿名的方式继承了基础层的 Client。</p>2021-12-04</li><br/><li><span>ppd0705</span> 👍（2） 💬（1）<p>云厂商python版本sdk感觉代码质量ucloud最好</p>2021-10-31</li><br/><li><span>⁶₆⁶₆⁶₆</span> 👍（2） 💬（1）<p>你讲义里面提供的客户端调用示例执行失败了，也就是你https:&#47;&#47;github.com&#47;marmotedu&#47;medu-sdk-go里面提供的那个示例代码，错误提示如下，提示找不到对应的包，但是明明已经拉下来了呀，没看出原因，希望大佬能解答下。
 
 [root@dev sdk]# go mod init sdk
 go: creating new go.mod: module sdk
@@ -432,12 +432,12 @@ dr-xr-xr-x  5 root root  261 Sep 16 01:16 log@v0.0.1
 dr-xr-xr-x  8 root root  233 Sep 16 01:18 marmotedu-sdk-go@v1.0.2-0.20210528170801-2c91b80cb4cf
 dr-xr-xr-x  5 root root  112 Sep 25 17:48 medu-sdk-go@v1.0.0
 [root@dev sdk]#
-</div>2021-09-25</li><br/><li><span>Geek_d71d64</span> 👍（0） 💬（1）<div>sdk的api和前端网页的api如何区分开来呢？</div>2022-11-18</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<div>前端比如安卓的sdk也是这个设计思路吗</div>2022-10-26</li><br/><li><span>阿波罗尼斯圆</span> 👍（0） 💬（2）<div>doc.go是干啥的</div>2022-10-17</li><br/><li><span>Sch0ng</span> 👍（2） 💬（0）<div>sdk为服务使用方提供了方便的同时，也为服务提供方省去很多不必要的沟通培训成本。
-文中介绍了go sdk的目录结构，架构和云厂商常用的设计实现方案。</div>2021-08-17</li><br/><li><span>Joeforfun</span> 👍（1） 💬（8）<div>很赞，准备给没有go-sdk的某云厂商写个简单的demo</div>2021-08-31</li><br/><li><span>SmartsYoung</span> 👍（0） 💬（0）<div>doSend 方法中 err = sign(req)  这个函数调用没有看懂，SignFunc 是 func(*http.Request) error 的别名，但这个函数只定义，并没有实现啊，这样调用的目的是什么呢？</div>2024-05-16</li><br/><li><span>@噜咪啦</span> 👍（0） 💬（0）<div>func (v1 SignatureV1) Sign(serviceName string, r *http.Request, body io.ReadSeeker) http.Header {
+</p>2021-09-25</li><br/><li><span>Geek_d71d64</span> 👍（0） 💬（1）<p>sdk的api和前端网页的api如何区分开来呢？</p>2022-11-18</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<p>前端比如安卓的sdk也是这个设计思路吗</p>2022-10-26</li><br/><li><span>阿波罗尼斯圆</span> 👍（0） 💬（2）<p>doc.go是干啥的</p>2022-10-17</li><br/><li><span>Sch0ng</span> 👍（2） 💬（0）<p>sdk为服务使用方提供了方便的同时，也为服务提供方省去很多不必要的沟通培训成本。
+文中介绍了go sdk的目录结构，架构和云厂商常用的设计实现方案。</p>2021-08-17</li><br/><li><span>Joeforfun</span> 👍（1） 💬（8）<p>很赞，准备给没有go-sdk的某云厂商写个简单的demo</p>2021-08-31</li><br/><li><span>SmartsYoung</span> 👍（0） 💬（0）<p>doSend 方法中 err = sign(req)  这个函数调用没有看懂，SignFunc 是 func(*http.Request) error 的别名，但这个函数只定义，并没有实现啊，这样调用的目的是什么呢？</p>2024-05-16</li><br/><li><span>@噜咪啦</span> 👍（0） 💬（0）<p>func (v1 SignatureV1) Sign(serviceName string, r *http.Request, body io.ReadSeeker) http.Header {
   tokenString := auth.Sign(v1.Credentials.SecretID, v1.Credentials.SecretKey, &quot;medu-sdk-go&quot;, serviceName+&quot;.marmotedu.com&quot;)
   r.Header.Set(&quot;Authorization&quot;, fmt.Sprintf(&quot;Bearer %s&quot;, tokenString))
   return r.Header
 
 }
-我的理解，这段是签发token的代码吗，为什么SDK里会有这个代码啊，不应该在服务端签发token吗</div>2023-09-24</li><br/>
+我的理解，这段是签发token的代码吗，为什么SDK里会有这个代码啊，不应该在服务端签发token吗</p>2023-09-24</li><br/>
 </ul>

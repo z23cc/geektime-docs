@@ -225,18 +225,18 @@ GPU栅格化
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Hurry</span> 👍（212） 💬（16）<div>减少重排重绘, 方法很多：
+<li><span>Hurry</span> 👍（212） 💬（16）<p>减少重排重绘, 方法很多：
 1. 使用 class 操作样式，而不是频繁操作 style
 2. 避免使用 table 布局
 3. 批量dom 操作，例如 createDocumentFragment，或者使用框架，例如 React
 4. Debounce window resize 事件
 5. 对 dom 属性的读写要分离 
-6. will-change: transform 做优化</div>2019-08-18</li><br/><li><span>Luke</span> 👍（124） 💬（1）<div>关于浏览器渲染的知识点讲的很细致，我想问下，关于浏览器的渲染细节的知识老师是从哪里学到的？，是通过研究源码学习的吗？有没有一些好的学习资料或者学习方法推荐？能否专门出一篇“授人以渔”的文章，谢谢！</div>2019-09-27</li><br/><li><span>朙</span> 👍（63） 💬（6）<div>渲染进程里的帧的概念是什么样子的呢？一个page是一帧吗</div>2019-08-17</li><br/><li><span>mfist</span> 👍（42） 💬（3）<div>减少重排重绘，相当于少了渲染进程的主线程和非主线程的很多计算和操作，能够加快web的展示。
+6. will-change: transform 做优化</p>2019-08-18</li><br/><li><span>Luke</span> 👍（124） 💬（1）<p>关于浏览器渲染的知识点讲的很细致，我想问下，关于浏览器的渲染细节的知识老师是从哪里学到的？，是通过研究源码学习的吗？有没有一些好的学习资料或者学习方法推荐？能否专门出一篇“授人以渔”的文章，谢谢！</p>2019-09-27</li><br/><li><span>朙</span> 👍（63） 💬（6）<p>渲染进程里的帧的概念是什么样子的呢？一个page是一帧吗</p>2019-08-17</li><br/><li><span>mfist</span> 👍（42） 💬（3）<p>减少重排重绘，相当于少了渲染进程的主线程和非主线程的很多计算和操作，能够加快web的展示。
 1 触发repaint reflow的操作尽量放在一起，比如改变dom高度和设置margin分开写，可能会出发两次重排
 2 通过虚拟dom层计算出操作总得差异，一起提交给浏览器。之前还用过createdocumentfragment来汇总append的dom,来减少触发重排重绘次数。
-</div>2019-08-17</li><br/><li><span>Geek_East</span> 👍（29） 💬（8）<div>渲染流程的最后，应该是浏览器进程将Compositor Frame发送到GPU, GPU进行显示吧？</div>2019-11-28</li><br/><li><span>杨陆伟</span> 👍（25） 💬（1）<div>最后的一段话非常经典，赞！大道至简，这真是做软件该秉持的原则，如果实现功能时感受到复杂和无序，那一定是那里错了</div>2019-08-17</li><br/><li><span>ytd</span> 👍（19） 💬（6）<div>请教下老师，canvas的渲染流程是什么样的呢？它不涉及dom，也就不涉及dom树、样式计算、布局、分层，canvas的绘制过程也是在渲染进程中进行的吗？</div>2019-08-17</li><br/><li><span>tokey</span> 👍（11） 💬（4）<div>老师您好！
+</p>2019-08-17</li><br/><li><span>Geek_East</span> 👍（29） 💬（8）<p>渲染流程的最后，应该是浏览器进程将Compositor Frame发送到GPU, GPU进行显示吧？</p>2019-11-28</li><br/><li><span>杨陆伟</span> 👍（25） 💬（1）<p>最后的一段话非常经典，赞！大道至简，这真是做软件该秉持的原则，如果实现功能时感受到复杂和无序，那一定是那里错了</p>2019-08-17</li><br/><li><span>ytd</span> 👍（19） 💬（6）<p>请教下老师，canvas的渲染流程是什么样的呢？它不涉及dom，也就不涉及dom树、样式计算、布局、分层，canvas的绘制过程也是在渲染进程中进行的吗？</p>2019-08-17</li><br/><li><span>tokey</span> 👍（11） 💬（4）<p>老师您好！
 我想问以下两个问题：
 问题1：手机端开发，body 被内容撑开了，超过一屏，在滑动的过程中会不会触发重排，为什么？
-问题2：如果 body 高度设置了100%</div>2019-08-17</li><br/><li><span>不存在的</span> 👍（9） 💬（1）<div>什么叫既不要布局也不要绘制的属性呢?</div>2019-10-20</li><br/><li><span>Warrior</span> 👍（5） 💬（1）<div>重排是否只在当前分层中，会不会影响其他分层的重排？</div>2019-09-20</li><br/><li><span>帅气小熊猫</span> 👍（4） 💬（1）<div>这里的合成线程属于哪个进程？浏览器进程是指主进程吗？前面进程线程那块没有啊</div>2019-08-19</li><br/><li><span>frankh</span> 👍（3） 💬（2）<div>transform为什么可以避免重排和重绘啊</div>2019-08-21</li><br/><li><span>Rahim</span> 👍（2） 💬（3）<div>http:&#47;&#47;www.chromium.org&#47;developers&#47;design-documents&#47;gpu-accelerated-compositing-in-chrome?spm=taofed.bloginfo.blog.1.19585ac8aQLUrh
-你好，源码中到RenderLayer跟教程中到图层树是同一个意思吗？那后续GraphicsLayer是什么意思</div>2019-12-15</li><br/><li><span>晓东</span> 👍（1） 💬（1）<div>老师，关于视口附近的图块会优先生成位图这块有点疑惑。因为当所有图块都栅格化后，才会通知浏览器进程去合成图层并显示，那么视口图块优先栅格化的意义体现在哪里？</div>2019-11-12</li><br/><li><span>(ಡωಡ)hahaha</span> 👍（1） 💬（1）<div>老师，你好，我想请教一下，渲染进程中，有哪些线程，以及各线程的作用，可以讲解一下吗</div>2019-11-07</li><br/>
+问题2：如果 body 高度设置了100%</p>2019-08-17</li><br/><li><span>不存在的</span> 👍（9） 💬（1）<p>什么叫既不要布局也不要绘制的属性呢?</p>2019-10-20</li><br/><li><span>Warrior</span> 👍（5） 💬（1）<p>重排是否只在当前分层中，会不会影响其他分层的重排？</p>2019-09-20</li><br/><li><span>帅气小熊猫</span> 👍（4） 💬（1）<p>这里的合成线程属于哪个进程？浏览器进程是指主进程吗？前面进程线程那块没有啊</p>2019-08-19</li><br/><li><span>frankh</span> 👍（3） 💬（2）<p>transform为什么可以避免重排和重绘啊</p>2019-08-21</li><br/><li><span>Rahim</span> 👍（2） 💬（3）<p>http:&#47;&#47;www.chromium.org&#47;developers&#47;design-documents&#47;gpu-accelerated-compositing-in-chrome?spm=taofed.bloginfo.blog.1.19585ac8aQLUrh
+你好，源码中到RenderLayer跟教程中到图层树是同一个意思吗？那后续GraphicsLayer是什么意思</p>2019-12-15</li><br/><li><span>晓东</span> 👍（1） 💬（1）<p>老师，关于视口附近的图块会优先生成位图这块有点疑惑。因为当所有图块都栅格化后，才会通知浏览器进程去合成图层并显示，那么视口图块优先栅格化的意义体现在哪里？</p>2019-11-12</li><br/><li><span>(ಡωಡ)hahaha</span> 👍（1） 💬（1）<p>老师，你好，我想请教一下，渲染进程中，有哪些线程，以及各线程的作用，可以讲解一下吗</p>2019-11-07</li><br/>
 </ul>

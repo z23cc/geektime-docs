@@ -330,7 +330,7 @@ async fn main() -> Result<()> {
 
 感谢你的阅读，下一讲我们继续学习网络开发的通讯模型，我们下一讲见～
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>罗杰</span> 👍（6） 💬（1）<div>Protobuf 和二进制数据解析都是我一直在寻找的，非常赞</div>2021-11-01</li><br/><li><span>springXu</span> 👍（3） 💬（2）<div>请教要实现socks5的服务程序，您建议用什么库？为什么推荐这个？</div>2021-11-02</li><br/><li><span>dva</span> 👍（1） 💬（1）<div>试着做一下思考题
+<li><span>罗杰</span> 👍（6） 💬（1）<p>Protobuf 和二进制数据解析都是我一直在寻找的，非常赞</p>2021-11-01</li><br/><li><span>springXu</span> 👍（3） 💬（2）<p>请教要实现socks5的服务程序，您建议用什么库？为什么推荐这个？</p>2021-11-02</li><br/><li><span>dva</span> 👍（1） 💬（1）<p>试着做一下思考题
 
 use anyhow::Result;
 use async_prost::AsyncProstStream;
@@ -375,7 +375,7 @@ async fn main() -&gt; Result&lt;()&gt; {
         });
     }
 }
-</div>2021-11-29</li><br/><li><span>进击的Lancelot</span> 👍（3） 💬（0）<div>思考题可以参考 dva 同学的实现，我这里也提供一个关于 client 的修改:
+</p>2021-11-29</li><br/><li><span>进击的Lancelot</span> 👍（3） 💬（0）<p>思考题可以参考 dva 同学的实现，我这里也提供一个关于 client 的修改:
 
 ```rust
 use anyhow::Result;
@@ -401,5 +401,5 @@ async fn main() -&gt; Result&lt;()&gt; {
     }
     Ok(())
 }
-```</div>2022-09-16</li><br/><li><span>贱猴🐔哥的室友</span> 👍（0） 💬（0）<div>之前以为protobuf必须和grpc等一起用比较好，发现自定义的格式其实跟 TLV（Type-Length-Value）是一样的原理，而且更简单，这种方式应该比较好</div>2022-10-10</li><br/>
+```</p>2022-09-16</li><br/><li><span>贱猴🐔哥的室友</span> 👍（0） 💬（0）<p>之前以为protobuf必须和grpc等一起用比较好，发现自定义的格式其实跟 TLV（Type-Length-Value）是一样的原理，而且更简单，这种方式应该比较好</p>2022-10-10</li><br/>
 </ul>

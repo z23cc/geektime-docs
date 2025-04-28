@@ -236,14 +236,14 @@ final class TestClass {
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>李孟聊AI</span> 👍（0） 💬（1）<div>Beam 有类似sparksql的api吗？</div>2019-07-08</li><br/><li><span>明翼</span> 👍（7） 💬（0）<div>我期望是基于spark或flink讲解的重实践思想，轻知识，这个可以自己下去学</div>2019-07-02</li><br/><li><span>JustDoDT</span> 👍（2） 💬（0）<div>看来我得先去学学Java了，不会java，看不太懂。</div>2019-09-10</li><br/><li><span>Ming</span> 👍（2） 💬（0）<div>我觉得测试的话，相对麻烦的地方还是在工程脚手架的设计上。
+<li><span>李孟聊AI</span> 👍（0） 💬（1）<p>Beam 有类似sparksql的api吗？</p>2019-07-08</li><br/><li><span>明翼</span> 👍（7） 💬（0）<p>我期望是基于spark或flink讲解的重实践思想，轻知识，这个可以自己下去学</p>2019-07-02</li><br/><li><span>JustDoDT</span> 👍（2） 💬（0）<p>看来我得先去学学Java了，不会java，看不太懂。</p>2019-09-10</li><br/><li><span>Ming</span> 👍（2） 💬（0）<p>我觉得测试的话，相对麻烦的地方还是在工程脚手架的设计上。
 显然代码本身要抽象封装好，确保测试能覆盖生产代码，而不是生产代码的“拷贝”。
 但有些在代码之外的问题让我挺好奇的：
 如何保证测试数据的格式和生产数据的格式同步？
 流处理的测试怎么模拟时间？
 团队是如何在流程上确保pipeline必须经过测试才能运行的，是通过CI&#47;CD来自动执行pipeline？还是往往通过人力把关？
-</div>2019-06-30</li><br/><li><span>之渊</span> 👍（0） 💬（0）<div>我觉得挺好的，对于我们新手来说很友好。
+</p>2019-06-30</li><br/><li><span>之渊</span> 👍（0） 💬（0）<p>我觉得挺好的，对于我们新手来说很友好。
 谁都是从新手过来的，感谢大佬对新手的支持。
 代码示例：
-https:&#47;&#47;gitee.com&#47;oumin12345&#47;daimademojihe&#47;tree&#47;master&#47;cloudx&#47;bigdata&#47;src&#47;main&#47;java&#47;test&#47;beam</div>2020-08-22</li><br/><li><span>杰洛特</span> 👍（0） 💬（1）<div>TestClass 里的这个 PCollection&lt;String&gt; output = input.apply(ParDo.of(new EvenNumberFn())); 里面的泛型是不是写错了？偶数是 Integer 吧？</div>2019-11-14</li><br/>
+https:&#47;&#47;gitee.com&#47;oumin12345&#47;daimademojihe&#47;tree&#47;master&#47;cloudx&#47;bigdata&#47;src&#47;main&#47;java&#47;test&#47;beam</p>2020-08-22</li><br/><li><span>杰洛特</span> 👍（0） 💬（1）<p>TestClass 里的这个 PCollection&lt;String&gt; output = input.apply(ParDo.of(new EvenNumberFn())); 里面的泛型是不是写错了？偶数是 Integer 吧？</p>2019-11-14</li><br/>
 </ul>

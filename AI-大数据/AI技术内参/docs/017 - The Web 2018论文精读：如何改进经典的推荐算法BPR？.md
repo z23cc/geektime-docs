@@ -42,5 +42,5 @@ BPR主要是解决了在推荐系统中长期以来只对单个数据点进行�
 
 1\. Steffen Rendle, Christoph Freudenthaler, Zeno Gantner, and Lars Schmidt-Thieme. BPR: Bayesian personalized ranking from implicit feedback. Proceedings of the Twenty-Fifth Conference on Uncertainty in Artificial Intelligence (UAI '09). AUAI Press, Arlington, Virginia, United States, 452-461, 2009.
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>吴文敏</span> 👍（2） 💬（0）<div>对这个思路稍作拓展，我们只要定义隐反馈行为间的偏序关系，就可以基于多种隐反馈（浏览、点击、购买、加入购物车）进行配对采样</div>2018-07-20</li><br/>
+<li><span>吴文敏</span> 👍（2） 💬（0）<p>对这个思路稍作拓展，我们只要定义隐反馈行为间的偏序关系，就可以基于多种隐反馈（浏览、点击、购买、加入购物车）进行配对采样</p>2018-07-20</li><br/>
 </ul>

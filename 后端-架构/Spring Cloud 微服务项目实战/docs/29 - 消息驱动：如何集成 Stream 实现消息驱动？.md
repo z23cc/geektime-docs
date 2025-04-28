@@ -221,7 +221,7 @@ spring:
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>Carla</span> 👍（6） 💬（1）<div>约定的多了，怎么感觉反而变得麻烦了😂</div>2022-05-12</li><br/><li><span>曹亮</span> 👍（5） 💬（1）<div>老师，请教一下，在微服务项目中Stream和mq结合使用，和直接在服务里将消息发送到mq，这两种有什么区别？用stream的优势体现在哪里？</div>2022-06-17</li><br/><li><span>密码123456</span> 👍（3） 💬（1）<div>感觉，这配置好难。配了好几天都没有配好。</div>2022-05-25</li><br/><li><span>wake</span> 👍（1） 💬（3）<div>老师如果我其它方法名也叫addCoupon会被误认为消费者吗？或者说只有返回值为Consumer才会被认定为消费者，那如果有两个同样的返回Consumer的addCoupon方法呢</div>2022-02-22</li><br/><li><span>奔跑的蚂蚁</span> 👍（1） 💬（1）<div>我们项目用了spirng.cloud.stream.rocketMq  出了异常是自动重试，老师能讲讲原理嘛  能自定义重试间隔是次数嘛（是不是mq里面配置的）</div>2022-02-18</li><br/><li><span>zkr</span> 👍（0） 💬（1）<div>为啥生产者发消息，消费者接受消息不用指定队列名和routing key？队列这个我还能理解，我试了下是按topic名+group名自动生成了一个，但是为啥topic模式不用指定routing key？</div>2022-07-26</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（2）<div>试了下spring-cloud-starter-stream-rocketmq 的 function binding 
+<li><span>Carla</span> 👍（6） 💬（1）<p>约定的多了，怎么感觉反而变得麻烦了😂</p>2022-05-12</li><br/><li><span>曹亮</span> 👍（5） 💬（1）<p>老师，请教一下，在微服务项目中Stream和mq结合使用，和直接在服务里将消息发送到mq，这两种有什么区别？用stream的优势体现在哪里？</p>2022-06-17</li><br/><li><span>密码123456</span> 👍（3） 💬（1）<p>感觉，这配置好难。配了好几天都没有配好。</p>2022-05-25</li><br/><li><span>wake</span> 👍（1） 💬（3）<p>老师如果我其它方法名也叫addCoupon会被误认为消费者吗？或者说只有返回值为Consumer才会被认定为消费者，那如果有两个同样的返回Consumer的addCoupon方法呢</p>2022-02-22</li><br/><li><span>奔跑的蚂蚁</span> 👍（1） 💬（1）<p>我们项目用了spirng.cloud.stream.rocketMq  出了异常是自动重试，老师能讲讲原理嘛  能自定义重试间隔是次数嘛（是不是mq里面配置的）</p>2022-02-18</li><br/><li><span>zkr</span> 👍（0） 💬（1）<p>为啥生产者发消息，消费者接受消息不用指定队列名和routing key？队列这个我还能理解，我试了下是按topic名+group名自动生成了一个，但是为啥topic模式不用指定routing key？</p>2022-07-26</li><br/><li><span>奔跑的蚂蚁</span> 👍（0） 💬（2）<p>试了下spring-cloud-starter-stream-rocketmq 的 function binding 
 第一次发送消息会报日志
 DefaultBinderFactory      : Retrieving cached binder: rocketmq
 DirectWithAttributesChannel    : Channel &#39;unknown.channel.name&#39; has 1 subscriber(s).
@@ -231,7 +231,7 @@ BeanFactoryAwareFunctionRegistry : Looking up function &#39;streamBridge&#39; wi
 
 
 这些都正常嘛
-</div>2022-02-24</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>请教老师几个问题：
+</p>2022-02-24</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>请教老师几个问题：
 Q1：消费者标识是否可以不用方法名，另外指定一个？
 Q2：“采用了 Consumer 的实现方式”，“添加消息消费者”部分的这句话中，consumer的实现方式是指什么？笔误吗？
 Q3 ：“return request -&gt; ”，request从哪里来？
@@ -241,5 +241,5 @@ Q4：配置文件中，binders下面的my-rabbit，这个名字是任意的吗�
   my-kafka等
 Q5： 交换机和队列是怎么对应的？
 A 两个交换机，两个队列，每个交换机都可以将消息发送到两个队列吗？
-B 队列的名字，用点号分成两部分，有什么含义吗？</div>2022-02-18</li><br/><li><span>kimoti</span> 👍（1） 💬（0）<div>消费消息发生异常,消息重新进入队列重新消费</div>2022-05-06</li><br/>
+B 队列的名字，用点号分成两部分，有什么含义吗？</p>2022-02-18</li><br/><li><span>kimoti</span> 👍（1） 💬（0）<p>消费消息发生异常,消息重新进入队列重新消费</p>2022-05-06</li><br/>
 </ul>

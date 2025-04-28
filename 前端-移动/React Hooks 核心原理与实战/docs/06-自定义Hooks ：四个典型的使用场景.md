@@ -444,7 +444,7 @@ export default function BlogList() {
 
 欢迎在留言区分享你的思考和想法，我会和你交流讨论。我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Bug般的存在</span> 👍（32） 💬（1）<div>《拆分复杂组件》 这个例子，有种醍醐灌顶的感觉，豁然开朗，感谢-</div>2021-06-06</li><br/><li><span>凡凡</span> 👍（17） 💬（1）<div>import { useState, useCallback } from &#39;react&#39;;
+<li><span>Bug般的存在</span> 👍（32） 💬（1）<p>《拆分复杂组件》 这个例子，有种醍醐灌顶的感觉，豁然开朗，感谢-</p>2021-06-06</li><br/><li><span>凡凡</span> 👍（17） 💬（1）<p>import { useState, useCallback } from &#39;react&#39;;
 
 const useCounter = (step) =&gt; {
   const [counter, setCounter] = useState(0);
@@ -455,7 +455,7 @@ const useCounter = (step) =&gt; {
   return {counter, increment, decrement, reset};
 }
 
-export default useCounter;</div>2021-06-05</li><br/><li><span>Tristan</span> 👍（2） 💬（1）<div>醍醐灌顶啊，敢问如何保养头发？</div>2021-07-29</li><br/><li><span>江谢木</span> 👍（1） 💬（2）<div>老师，useMemo、useCallback对数据进行缓存时，依赖项是进行浅比较？ 如果存在依赖项是深层对象的数据发生变化会影响缓存计算结果？</div>2021-08-17</li><br/><li><span>Free fall</span> 👍（1） 💬（1）<div>const useCounter = (initCount = 0) =&gt; {
+export default useCounter;</p>2021-06-05</li><br/><li><span>Tristan</span> 👍（2） 💬（1）<p>醍醐灌顶啊，敢问如何保养头发？</p>2021-07-29</li><br/><li><span>江谢木</span> 👍（1） 💬（2）<p>老师，useMemo、useCallback对数据进行缓存时，依赖项是进行浅比较？ 如果存在依赖项是深层对象的数据发生变化会影响缓存计算结果？</p>2021-08-17</li><br/><li><span>Free fall</span> 👍（1） 💬（1）<p>const useCounter = (initCount = 0) =&gt; {
   const [count, setCount] = useState(initCount)
 
   const increase = useCallback((body) =&gt; {
@@ -463,7 +463,7 @@ export default useCounter;</div>2021-06-05</li><br/><li><span>Tristan</span> �
   }, [])
 
   return [count, increase]
-}</div>2021-06-05</li><br/><li><span>重生</span> 👍（0） 💬（1）<div>自定义hooks一般放在哪个文件夹下</div>2021-06-18</li><br/><li><span>Isaac</span> 👍（0） 💬（2）<div>老师，自定义 hooks 必须要以 usexxx开头吗？</div>2021-06-09</li><br/><li><span>小个子外星人：）</span> 👍（0） 💬（1）<div>这节课超级棒！谢谢老师。努力在实践中，使用这节课的内容</div>2021-06-08</li><br/><li><span>满月</span> 👍（0） 💬（1）<div>import React, { useState, useCallback } from &#39;react&#39;;
+}</p>2021-06-05</li><br/><li><span>重生</span> 👍（0） 💬（1）<p>自定义hooks一般放在哪个文件夹下</p>2021-06-18</li><br/><li><span>Isaac</span> 👍（0） 💬（2）<p>老师，自定义 hooks 必须要以 usexxx开头吗？</p>2021-06-09</li><br/><li><span>小个子外星人：）</span> 👍（0） 💬（1）<p>这节课超级棒！谢谢老师。努力在实践中，使用这节课的内容</p>2021-06-08</li><br/><li><span>满月</span> 👍（0） 💬（1）<p>import React, { useState, useCallback } from &#39;react&#39;;
 
 function useCounter() {
   const [count, setCount] = useState(0);
@@ -497,14 +497,14 @@ export default function Counter() {
       &lt;button onClick={reset}&gt; reset &lt;&#47;button&gt;
     &lt;&#47;div&gt;
   );
-}</div>2021-06-06</li><br/><li><span>Geek_71adef</span> 👍（0） 💬（1）<div>请问如何区别 自定义hook是在usehook传参，还是在usehook里面的方法传参？</div>2021-06-06</li><br/><li><span>xgqfrms</span> 👍（0） 💬（7）<div>完全没有必要使用 await 处理 res 呀
+}</p>2021-06-06</li><br/><li><span>Geek_71adef</span> 👍（0） 💬（1）<p>请问如何区别 自定义hook是在usehook传参，还是在usehook里面的方法传参？</p>2021-06-06</li><br/><li><span>xgqfrms</span> 👍（0） 💬（7）<p>完全没有必要使用 await 处理 res 呀
 
 ```js
 &#47;&#47; return await res.json();
 
  return res.json();
 
-```</div>2021-06-05</li><br/><li><span>余熙</span> 👍（9） 💬（0）<div>这一节总结得非常好，官方文档和网上文章没写出来的干货👍</div>2021-06-27</li><br/><li><span>傻子来了快跑丶</span> 👍（3） 💬（0）<div>老师，后面的课程能不能出门更深入的，比如fibier，hooks的底层实现啊，这种，以及fiber的各种调度，啥的</div>2021-12-03</li><br/><li><span>别拦我让我学</span> 👍（3） 💬（0）<div>useScroll中getPosition中应该将document.body.scrollTop改为document.documentElement.scrollTop。</div>2021-07-09</li><br/><li><span>山城旧客</span> 👍（3） 💬（5）<div>
+```</p>2021-06-05</li><br/><li><span>余熙</span> 👍（9） 💬（0）<p>这一节总结得非常好，官方文档和网上文章没写出来的干货👍</p>2021-06-27</li><br/><li><span>傻子来了快跑丶</span> 👍（3） 💬（0）<p>老师，后面的课程能不能出门更深入的，比如fibier，hooks的底层实现啊，这种，以及fiber的各种调度，啥的</p>2021-12-03</li><br/><li><span>别拦我让我学</span> 👍（3） 💬（0）<p>useScroll中getPosition中应该将document.body.scrollTop改为document.documentElement.scrollTop。</p>2021-07-09</li><br/><li><span>山城旧客</span> 👍（3） 💬（5）<p>
 import React from &quot;react&quot;;
 import useAsync from &#39;.&#47;useAsync&#39;;
 
@@ -526,5 +526,5 @@ export default function UserList() {
   );
 }
 
-我验证了这个案例必须执行副作用useEffect(() =&gt; fetchUsers(), []);才能发起异步数据请求，如果在依赖项数组中再传入useEffect(() =&gt; fetchUsers(), [fetchUsers]);会陷入异步数据请求死循环。</div>2021-06-09</li><br/>
+我验证了这个案例必须执行副作用useEffect(() =&gt; fetchUsers(), []);才能发起异步数据请求，如果在依赖项数组中再传入useEffect(() =&gt; fetchUsers(), [fetchUsers]);会陷入异步数据请求死循环。</p>2021-06-09</li><br/>
 </ul>

@@ -175,15 +175,15 @@ Chromium为了解决任务饿死的问题，给每个队列设置了执行权重
 
 欢迎在留言区分享你的想法。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>木瓜777</span> 👍（35） 💬（2）<div>window.requestAnimationFrame 应该是在每一帧的开始就执行吧？</div>2019-11-29</li><br/><li><span>Geek_0d3179</span> 👍（16） 💬（1）<div>如果raf的回调任务会在每一帧的开始执行，如果它执行时间很长（超过一帧），那就会阻碍后面所有任务的执行么？比如说用户的交互事件等高优先级任务也会受到影响导致卡顿么？
-我在网上看到的资料：为啥是先执行用户的交互任务，在执行raf的回调？？？</div>2019-12-03</li><br/><li><span>gigot</span> 👍（6） 💬（3）<div>老师，我想问下在 primose.then 中执行宏任务（setTimeout或 ajax），其中该宏任务应该加入哪个事件队列。
-是说微任务队列都是按顺序执行，其中每个微任务又有新的事件循环（包括宏任务和微任务），类似于新得全局环境，这样理解对吗</div>2019-11-29</li><br/><li><span>王博</span> 👍（0） 💬（3）<div>觉得老师的绘图工具挺好的，老师可以推荐一下吗？谢谢</div>2019-11-26</li><br/><li><span>wens</span> 👍（12） 💬（1）<div>react fiber的实现应该是借鉴了chromium的消息队列机制</div>2020-05-25</li><br/><li><span>刘弥</span> 👍（8） 💬（0）<div>老师的图其实已经给出了答案，VSync 的开始就会执行 RAF 的回调。</div>2020-02-18</li><br/><li><span>Geek_0d3179</span> 👍（8） 💬（3）<div>老师您好~ 在网上搜了一大圈之后还是存在疑惑，非常希望您的解惑~十分感谢！
+<li><span>木瓜777</span> 👍（35） 💬（2）<p>window.requestAnimationFrame 应该是在每一帧的开始就执行吧？</p>2019-11-29</li><br/><li><span>Geek_0d3179</span> 👍（16） 💬（1）<p>如果raf的回调任务会在每一帧的开始执行，如果它执行时间很长（超过一帧），那就会阻碍后面所有任务的执行么？比如说用户的交互事件等高优先级任务也会受到影响导致卡顿么？
+我在网上看到的资料：为啥是先执行用户的交互任务，在执行raf的回调？？？</p>2019-12-03</li><br/><li><span>gigot</span> 👍（6） 💬（3）<p>老师，我想问下在 primose.then 中执行宏任务（setTimeout或 ajax），其中该宏任务应该加入哪个事件队列。
+是说微任务队列都是按顺序执行，其中每个微任务又有新的事件循环（包括宏任务和微任务），类似于新得全局环境，这样理解对吗</p>2019-11-29</li><br/><li><span>王博</span> 👍（0） 💬（3）<p>觉得老师的绘图工具挺好的，老师可以推荐一下吗？谢谢</p>2019-11-26</li><br/><li><span>wens</span> 👍（12） 💬（1）<p>react fiber的实现应该是借鉴了chromium的消息队列机制</p>2020-05-25</li><br/><li><span>刘弥</span> 👍（8） 💬（0）<p>老师的图其实已经给出了答案，VSync 的开始就会执行 RAF 的回调。</p>2020-02-18</li><br/><li><span>Geek_0d3179</span> 👍（8） 💬（3）<p>老师您好~ 在网上搜了一大圈之后还是存在疑惑，非常希望您的解惑~十分感谢！
 1、我了解到event loop的流程是：一个macrotask &gt;&gt; UI 渲染 &gt;&gt; 任务队列取下一个macrotask
 疑问：每执行一个macrotask后面一定会UI 渲染吗？如果此时DOM和样式并没有改变，根本不需要重新渲染呢？也就是根本不需要回流、重绘和合成。
 2、听了老师的讲解后，得知渲染进程在每一帧时间里都会重新绘制，合成一帧图片推到后缓冲区，就算UI没有变化也会执行吗？那这个执行的时机是？是得到VSync信号的时候吗？那这是作为一个宏任务执行的吗？
 3、我并没有搞清楚上面1和2的关系。也就是event loop 和 一帧时间的关系。我的理解：在一帧的时间里会不断的从任务队列中取出任务执行，那如果任务队列有太多任务，“重新绘制一帧推到后缓冲区”这个操作会被延迟吗？
-</div>2019-12-03</li><br/><li><span>一七</span> 👍（6） 💬（0）<div>https:&#47;&#47;www.bilibili.com&#47;video&#47;BV1K4411D7Jb?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click
-强烈推荐大家看一下这个视频，讲事件循环的</div>2022-03-20</li><br/><li><span>Trust_</span> 👍（3） 💬（0）<div>&lt;html&gt;
+</p>2019-12-03</li><br/><li><span>一七</span> 👍（6） 💬（0）<p>https:&#47;&#47;www.bilibili.com&#47;video&#47;BV1K4411D7Jb?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click
+强烈推荐大家看一下这个视频，讲事件循环的</p>2022-03-20</li><br/><li><span>Trust_</span> 👍（3） 💬（0）<p>&lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;Main&lt;&#47;title&gt;
   &lt;style&gt;
@@ -217,6 +217,6 @@ Chromium为了解决任务饿死的问题，给每个队列设置了执行权重
 这段代码在Chrome执行之后，元素是从右往左移动的，说明是先绘制然后才执行的rAf
 在火狐执行之后相反，是从右往左移动的
 
-老师能解答一下吗</div>2021-07-05</li><br/><li><span>暖桔灯笼</span> 👍（3） 💬（1）<div>老师，在 宏任务与微任务 那一章的讲解中，下面有一个您的回答说在浏览器的实现中目前只实现了一个消息队列和一个延迟队列？这和这里第二次迭代--根据消息类型来实现消息队列 说法是不是冲突？如果确实实现了多个消息队列，会不会跟之前说的&quot;循环系统的一个循环中，先从消息队列头部取出一个任务执行，该任务执行完后，再去延迟队列中找到所有的过期任务依次执行完&quot;有冲突？我现在有点迷惑浏览器到底实现了几个几个消息队列？囧。。。</div>2020-05-11</li><br/><li><span>神三元</span> 👍（2） 💬（13）<div>讲的有问题，rAF的回调在微任务执行完成之后才会进行</div>2020-03-21</li><br/><li><span>猫叔</span> 👍（2） 💬（3）<div>老师，通过window.postMessage 发送的消息执行回调也是在空闲时间内执行的吗。因为我看到react框架为了模拟兼容requestIdleCallback。使用了postMessage</div>2019-12-04</li><br/><li><span>陈坚泓</span> 👍（1） 💬（0）<div>标题的 setTimeOut 是固定把小写的o改为大写的 O 嘛   setTimeout</div>2022-11-14</li><br/><li><span>Geek_aa1c31</span> 👍（1） 💬（1）<div>这里有一篇将eventloop，rAF, rIC的文章， 强烈建议可以去看一下。
-https:&#47;&#47;developpaper.com&#47;in-depth-analysis-of-event-loop-and-browser-rendering-frame-animation-idle-callback-animation-demonstration&#47;</div>2022-07-03</li><br/><li><span>Geek_88dd24</span> 👍（1） 💬（1）<div>老师有个问题，如果浏览器在下一次收到vsyncA信号时，上次绘制还没完成，那么浏览器会怎么处理这个vsyncA</div>2022-01-26</li><br/>
+老师能解答一下吗</p>2021-07-05</li><br/><li><span>暖桔灯笼</span> 👍（3） 💬（1）<p>老师，在 宏任务与微任务 那一章的讲解中，下面有一个您的回答说在浏览器的实现中目前只实现了一个消息队列和一个延迟队列？这和这里第二次迭代--根据消息类型来实现消息队列 说法是不是冲突？如果确实实现了多个消息队列，会不会跟之前说的&quot;循环系统的一个循环中，先从消息队列头部取出一个任务执行，该任务执行完后，再去延迟队列中找到所有的过期任务依次执行完&quot;有冲突？我现在有点迷惑浏览器到底实现了几个几个消息队列？囧。。。</p>2020-05-11</li><br/><li><span>神三元</span> 👍（2） 💬（13）<p>讲的有问题，rAF的回调在微任务执行完成之后才会进行</p>2020-03-21</li><br/><li><span>猫叔</span> 👍（2） 💬（3）<p>老师，通过window.postMessage 发送的消息执行回调也是在空闲时间内执行的吗。因为我看到react框架为了模拟兼容requestIdleCallback。使用了postMessage</p>2019-12-04</li><br/><li><span>陈坚泓</span> 👍（1） 💬（0）<p>标题的 setTimeOut 是固定把小写的o改为大写的 O 嘛   setTimeout</p>2022-11-14</li><br/><li><span>Geek_aa1c31</span> 👍（1） 💬（1）<p>这里有一篇将eventloop，rAF, rIC的文章， 强烈建议可以去看一下。
+https:&#47;&#47;developpaper.com&#47;in-depth-analysis-of-event-loop-and-browser-rendering-frame-animation-idle-callback-animation-demonstration&#47;</p>2022-07-03</li><br/><li><span>Geek_88dd24</span> 👍（1） 💬（1）<p>老师有个问题，如果浏览器在下一次收到vsyncA信号时，上次绘制还没完成，那么浏览器会怎么处理这个vsyncA</p>2022-01-26</li><br/>
 </ul>

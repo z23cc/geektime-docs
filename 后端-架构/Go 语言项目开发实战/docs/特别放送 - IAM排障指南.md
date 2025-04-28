@@ -493,5 +493,5 @@ $ echo $token
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>随风而过</span> 👍（2） 💬（1）<div>借助前面讲过的日志工具辅助快速定位，token为空这个是最常见的错误，生成token的重要信息显示日志，为空的情况做一些处理，禁止token 值为空</div>2021-09-22</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<div>文中提到添加已存在用户导致的500错误db error，个人认为用户已存在这种是否应该加一层校验，返回400错误，直接提示用户已存在信息</div>2021-11-14</li><br/><li><span>文武木子</span> 👍（1） 💬（1）<div>systemtcl和supervisor哪个好点，我们公司运维都用supervisor管理部署发布的应用进程</div>2021-10-19</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<div>多谢老师，这些排障技巧在日常开发中也很用。</div>2021-09-18</li><br/>
+<li><span>随风而过</span> 👍（2） 💬（1）<p>借助前面讲过的日志工具辅助快速定位，token为空这个是最常见的错误，生成token的重要信息显示日志，为空的情况做一些处理，禁止token 值为空</p>2021-09-22</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<p>文中提到添加已存在用户导致的500错误db error，个人认为用户已存在这种是否应该加一层校验，返回400错误，直接提示用户已存在信息</p>2021-11-14</li><br/><li><span>文武木子</span> 👍（1） 💬（1）<p>systemtcl和supervisor哪个好点，我们公司运维都用supervisor管理部署发布的应用进程</p>2021-10-19</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<p>多谢老师，这些排障技巧在日常开发中也很用。</p>2021-09-18</li><br/>
 </ul>

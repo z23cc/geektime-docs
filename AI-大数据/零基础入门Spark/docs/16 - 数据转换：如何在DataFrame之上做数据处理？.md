@@ -429,7 +429,7 @@ aggResult.orderBy(desc("sum_salary"), asc("gender")).show
 
 欢迎你在留言区跟我交流互动，也推荐你把这一讲分享给有需要的朋友。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>kingcall</span> 👍（11） 💬（3）<div>explode 不会引入shuffle,因为shuffle是在众多计算节点进行数据传输，explode虽然会导致数据条数变多但是都是在一台节点上的</div>2021-10-28</li><br/><li><span>火炎焱燚</span> 👍（2） 💬（1）<div>python 代码为：
+<li><span>kingcall</span> 👍（11） 💬（3）<p>explode 不会引入shuffle,因为shuffle是在众多计算节点进行数据传输，explode虽然会导致数据条数变多但是都是在一台节点上的</p>2021-10-28</li><br/><li><span>火炎焱燚</span> 👍（2） 💬（1）<p>python 代码为：
 
 # 1-SQL语句：
 from pyspark import SparkContext, SparkConf
@@ -482,7 +482,7 @@ seq2 =[(1, &quot;John&quot;, 26, &quot;Male&quot;,[&quot;Sports&quot;, &quot;New
 (3, &quot;Raymond&quot;, 30, &quot;Male&quot;, [&quot;Sports&quot;, &quot;Reading&quot;])]
 employeesDF2=spark.createDataFrame(seq2,[&#39;id&#39;,&#39;name&#39;,&#39;age&#39;,&#39;gender&#39;,&#39;interests&#39;])
 from pyspark.sql.functions import explode
-employeesDF2.withColumn(&#39;interest&#39;,explode(employeesDF2[&#39;interests&#39;])).show()</div>2021-10-23</li><br/><li><span>Geek_935079</span> 👍（1） 💬（2）<div>val aggResult = fullInfo.groupBy这里是不是要改为val aggResult = jointDF.groupBy</div>2021-11-25</li><br/><li><span>小李</span> 👍（0） 💬（1）<div>请问一下：df.select().groupBy().count()与df.select().groupBy().agg(count(lit(1)))内部处理逻辑会不一样吗，还是会都会经过spark sql优化引擎优化成map阶段预聚合？比如会不会像rdd的aggregateByKey或者reduceByKey一样在shuffle write阶段做partition内的预聚合。</div>2022-01-14</li><br/><li><span>火炎焱燚</span> 👍（0） 💬（1）<div>
+employeesDF2.withColumn(&#39;interest&#39;,explode(employeesDF2[&#39;interests&#39;])).show()</p>2021-10-23</li><br/><li><span>Geek_935079</span> 👍（1） 💬（2）<p>val aggResult = fullInfo.groupBy这里是不是要改为val aggResult = jointDF.groupBy</p>2021-11-25</li><br/><li><span>小李</span> 👍（0） 💬（1）<p>请问一下：df.select().groupBy().count()与df.select().groupBy().agg(count(lit(1)))内部处理逻辑会不一样吗，还是会都会经过spark sql优化引擎优化成map阶段预聚合？比如会不会像rdd的aggregateByKey或者reduceByKey一样在shuffle write阶段做partition内的预聚合。</p>2022-01-14</li><br/><li><span>火炎焱燚</span> 👍（0） 💬（1）<p>
 # 5-分析类算子
 # 创建员工df
 seq=[(1,&#39;Mike&#39;,28,&#39;Male&#39;),
@@ -507,6 +507,6 @@ aggResult.show()
 
 # 排序，sort方法和orderBy方法一样
 aggResult.sort(f.desc(&#39;sum_salary&#39;),f.asc(&#39;gender&#39;)).show()
-aggResult.orderBy(f.desc(&#39;sum_salary&#39;),f.asc(&#39;gender&#39;)).show()</div>2021-10-23</li><br/><li><span>小玲铛🍯</span> 👍（0） 💬（1）<div>自己开发的时候createTempView会在内存中创建临时表,重新运行的话会报table is exist 错误,建议使用 createOrReplaceTempView</div>2021-10-18</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<div>Spark中Shuffle算子的分类：重分区算子、ByKey算子、Join算子</div>2021-10-16</li><br/><li><span>Spoon</span> 👍（2） 💬（0）<div>Java代码实现
-https:&#47;&#47;github.com&#47;Spoon94&#47;spark-practice&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;spoon&#47;spark&#47;sql&#47;DataFrameOperatorJob.java</div>2022-04-10</li><br/><li><span>嬴梦川</span> 👍（0） 💬（0）<div>从我的开发经验发现explode不会引入shuffle</div>2023-09-24</li><br/><li><span>Geek_b2839b</span> 👍（0） 💬（0）<div>老师请问一下，使用spark同步hive数据到Oracle的时候，由于executor失败重试，导致偶尔出现同步时hive数据和Oracle数据不一致的情况，这个该怎么解决呢</div>2022-05-28</li><br/>
+aggResult.orderBy(f.desc(&#39;sum_salary&#39;),f.asc(&#39;gender&#39;)).show()</p>2021-10-23</li><br/><li><span>小玲铛🍯</span> 👍（0） 💬（1）<p>自己开发的时候createTempView会在内存中创建临时表,重新运行的话会报table is exist 错误,建议使用 createOrReplaceTempView</p>2021-10-18</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<p>Spark中Shuffle算子的分类：重分区算子、ByKey算子、Join算子</p>2021-10-16</li><br/><li><span>Spoon</span> 👍（2） 💬（0）<p>Java代码实现
+https:&#47;&#47;github.com&#47;Spoon94&#47;spark-practice&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;spoon&#47;spark&#47;sql&#47;DataFrameOperatorJob.java</p>2022-04-10</li><br/><li><span>嬴梦川</span> 👍（0） 💬（0）<p>从我的开发经验发现explode不会引入shuffle</p>2023-09-24</li><br/><li><span>Geek_b2839b</span> 👍（0） 💬（0）<p>老师请问一下，使用spark同步hive数据到Oracle的时候，由于executor失败重试，导致偶尔出现同步时hive数据和Oracle数据不一致的情况，这个该怎么解决呢</p>2022-05-28</li><br/>
 </ul>

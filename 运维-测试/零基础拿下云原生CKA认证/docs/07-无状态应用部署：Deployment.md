@@ -294,5 +294,5 @@ kubectl rollout undo deployment <deployment名称> --to-revision=2
 
 相信经过动手实践，会让你对知识的理解更加深刻。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>子路无倦</span> 👍（0） 💬（0）<div>kubectl scale deploy nginx-deploy --replicas=5</div>2024-12-26</li><br/>
+<li><span>子路无倦</span> 👍（0） 💬（0）<p>kubectl scale deploy nginx-deploy --replicas=5</p>2024-12-26</li><br/>
 </ul>

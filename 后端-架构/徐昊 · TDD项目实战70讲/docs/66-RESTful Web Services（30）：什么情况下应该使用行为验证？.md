@@ -190,11 +190,11 @@ class ResourceHandler implements ResourceRouter.Resource {
 
 这个项目的内容也接近尾声了，为你的坚持学习和思考点赞，同时也再为你加油鼓劲儿！我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>忘川</span> 👍（0） 💬（0）<div>- 行为测试
+<li><span>忘川</span> 👍（0） 💬（0）<p>- 行为测试
 	- 是在测试约定 或者 规范
 	- 更多用在测试刚开始的时候 
 	- 使用行为测试 制定好规范后 就可以在更小 更可控的范围内 使用状态 进行测试
-</div>2023-01-09</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>可以极大简化测试的时候，可以使用行为验证。
+</p>2023-01-09</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>可以极大简化测试的时候，可以使用行为验证。
 KISS原则：Keep It Simple, Stupid. 维基百科上说美国军方都在使用！
-链接：https:&#47;&#47;zh.m.wikipedia.org&#47;zh&#47;KISS%E5%8E%9F%E5%88%99</div>2022-08-20</li><br/>
+链接：https:&#47;&#47;zh.m.wikipedia.org&#47;zh&#47;KISS%E5%8E%9F%E5%88%99</p>2022-08-20</li><br/>
 </ul>

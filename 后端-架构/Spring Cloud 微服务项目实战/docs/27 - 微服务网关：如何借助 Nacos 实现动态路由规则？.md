@@ -193,11 +193,11 @@ spring:
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Ever</span> 👍（10） 💬（6）<div>没明白为啥不直接在nacos上用spring.cloud.gateway.routes配置项配置路由，明明本身就支持动态刷新，哪里需要画蛇添足自定义监听配置和刷新路由。
-RefreshRoutesEvent 事件会触发路由刷新，这一步本身就比较耗CPU（可以自己抓个火焰图），这里在forEach里还不停触发是否合理（放在循环外面不是更好）。</div>2022-05-21</li><br/><li><span>theodore</span> 👍（4） 💬（1）<div>我们的路由是自己实现的前后端分离的服务，增删改查都在上面操作 没有依靠nacos config</div>2022-04-07</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师四个问题啊：
+<li><span>Ever</span> 👍（10） 💬（6）<p>没明白为啥不直接在nacos上用spring.cloud.gateway.routes配置项配置路由，明明本身就支持动态刷新，哪里需要画蛇添足自定义监听配置和刷新路由。
+RefreshRoutesEvent 事件会触发路由刷新，这一步本身就比较耗CPU（可以自己抓个火焰图），这里在forEach里还不停触发是否合理（放在循环外面不是更好）。</p>2022-05-21</li><br/><li><span>theodore</span> 👍（4） 💬（1）<p>我们的路由是自己实现的前后端分离的服务，增删改查都在上面操作 没有依靠nacos config</p>2022-04-07</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师四个问题啊：
 Q1：Gateway内置的actuator endpoint是Gateway独有的？还是具有通用性？比如其他的组件(e.g,nacos)也可以加入actuator endpoint?
 Q2：DynamicRoutesListener是观察者模式吗？
 Q3：DynamicRoutesLoader是把Nacos中的文件“routes-config.json”读取过来吗？（相当于跨进程或跨机器传输文件）
-Q4：在middleware下面的Gateway这个module本身是个独立的服务，它不同于Gateway组件，对吗？ 如果是这样，GatewayService是定义在Gateway这个服务中的，GatewayService要把路由信息更新到Gateway组件的上下文中，是通过跨进程或跨机器通信，对吗？</div>2022-02-14</li><br/><li><span>so long</span> 👍（0） 💬（4）<div> 请教老师一个问题：publisher.publishEvent(new RefreshRoutesEvent(this));这行代码是必须的吗？我自己测试的时候执行该行代码后就卡主不会往下执行了，然后我注释掉该行代码，也可以实现路由的动态刷新。</div>2022-03-01</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（1）<div> publisher.publishEvent(new RefreshRoutesEvent(this));
-这行代码会导致gateway项目起不来，卡住，怎么解决呢？</div>2023-10-12</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（0）<div> publisher.publishEvent(new RefreshRoutesEvent(this));  </div>2023-10-12</li><br/><li><span>安静的美男子</span> 👍（0） 💬（0）<div>看起来没有支持路由删除的场景，updateRoutes 实现的只支持新增、修改，不支持删除呀，如果删除了路由会不起效</div>2023-04-25</li><br/>
+Q4：在middleware下面的Gateway这个module本身是个独立的服务，它不同于Gateway组件，对吗？ 如果是这样，GatewayService是定义在Gateway这个服务中的，GatewayService要把路由信息更新到Gateway组件的上下文中，是通过跨进程或跨机器通信，对吗？</p>2022-02-14</li><br/><li><span>so long</span> 👍（0） 💬（4）<p> 请教老师一个问题：publisher.publishEvent(new RefreshRoutesEvent(this));这行代码是必须的吗？我自己测试的时候执行该行代码后就卡主不会往下执行了，然后我注释掉该行代码，也可以实现路由的动态刷新。</p>2022-03-01</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（1）<p> publisher.publishEvent(new RefreshRoutesEvent(this));
+这行代码会导致gateway项目起不来，卡住，怎么解决呢？</p>2023-10-12</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（0）<p> publisher.publishEvent(new RefreshRoutesEvent(this));  </p>2023-10-12</li><br/><li><span>安静的美男子</span> 👍（0） 💬（0）<p>看起来没有支持路由删除的场景，updateRoutes 实现的只支持新增、修改，不支持删除呀，如果删除了路由会不起效</p>2023-04-25</li><br/>
 </ul>

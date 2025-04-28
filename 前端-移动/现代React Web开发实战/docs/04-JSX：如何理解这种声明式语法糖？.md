@@ -447,31 +447,31 @@ const KanbanColumn = enhance(({ showAdd, setShowAdd }) => (
 
 欢迎把你的想法分享在留言区，我会和你交流。相信经过你的深度思考，学习效果会更好！我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_fcdf7b</span> 👍（16） 💬（1）<div>首先，感谢老师对于评论区的每个问题几乎都在回复，从评论中也学到了很多东西。然后，请教一下，V17之后，JSX好像不一定是编译成React.createElement了吧，好像有个react&#47;jsx-runtime</div>2022-09-03</li><br/><li><span>ZENG</span> 👍（8） 💬（1）<div>1. JSX 是函数的语法糖，那 JS 相关框架函数都能实现 JSX
+<li><span>Geek_fcdf7b</span> 👍（16） 💬（1）<p>首先，感谢老师对于评论区的每个问题几乎都在回复，从评论中也学到了很多东西。然后，请教一下，V17之后，JSX好像不一定是编译成React.createElement了吧，好像有个react&#47;jsx-runtime</p>2022-09-03</li><br/><li><span>ZENG</span> 👍（8） 💬（1）<p>1. JSX 是函数的语法糖，那 JS 相关框架函数都能实现 JSX
 2. 函数的原理就是输入什么会得到一个确定的结果返回，理论上就可以输出成其他需要的结果
-</div>2022-08-31</li><br/><li><span>null</span> 👍（4） 💬（1）<div>这一节课下来干货好多哇</div>2022-08-30</li><br/><li><span>学习前端-react</span> 👍（3） 💬（1）<div>请问：如上我们理解的声明式在编程上便是函数式编程，在jsx上便是 三目运算符 和 Function map，所有在vue的模板里，v-if v-for 是不是不太声明式？</div>2022-09-01</li><br/><li><span>东方奇骥</span> 👍（3） 💬（1）<div>1. JSX 一定得是 React 吗？React 以外的技术能不能使用 JSX？
+</p>2022-08-31</li><br/><li><span>null</span> 👍（4） 💬（1）<p>这一节课下来干货好多哇</p>2022-08-30</li><br/><li><span>学习前端-react</span> 👍（3） 💬（1）<p>请问：如上我们理解的声明式在编程上便是函数式编程，在jsx上便是 三目运算符 和 Function map，所有在vue的模板里，v-if v-for 是不是不太声明式？</p>2022-09-01</li><br/><li><span>东方奇骥</span> 👍（3） 💬（1）<p>1. JSX 一定得是 React 吗？React 以外的技术能不能使用 JSX？
 答：不一定。JSX 并不是一个新的模板语言，可以认为是一个语法糖。比如Vue也有JSX。
 
 2. JSX 一定得生成 HTML 吗？可以用 JSX 生成其他模版吗？
-答：课程中讲到，本质上来说，JSX可以认为是一个语法糖，最终还是调用React.createElement. 所以理解重写一个createElement也可能生成别的，不一定是HTML。</div>2022-08-31</li><br/><li><span>心叶</span> 👍（3） 💬（1）<div>讲到jsx，为什么不直接拿出官方文档呢？
+答：课程中讲到，本质上来说，JSX可以认为是一个语法糖，最终还是调用React.createElement. 所以理解重写一个createElement也可能生成别的，不一定是HTML。</p>2022-08-31</li><br/><li><span>心叶</span> 👍（3） 💬（1）<p>讲到jsx，为什么不直接拿出官方文档呢？
 
 https:&#47;&#47;facebook.github.io&#47;jsx&#47;
 
 从文档你可以知道：
 jsx不是react的api，虽然是react团队搞出来的
 他的灵感是es4里面的e4x，但原本的e4x因为涉及到语法和语义的定义，实现过于复杂所以被弃用。
-jsx的目标是供预处理器使用，将其转换成es</div>2022-08-31</li><br/><li><span>学习前端-react</span> 👍（1） 💬（1）<div>JSX 一定得是 React 吗？React 以外的技术能不能使用 JSX？
+jsx的目标是供预处理器使用，将其转换成es</p>2022-08-31</li><br/><li><span>学习前端-react</span> 👍（1） 💬（1）<p>JSX 一定得是 React 吗？React 以外的技术能不能使用 JSX？
  不是 这是一个dsl ，其他语言只要实现其底层，便可使用其上层的jsx
 JSX 一定得生成 HTML 吗？可以用 JSX 生成其他模版吗？
-如上。</div>2022-09-01</li><br/><li><span>阿阳</span> 👍（1） 💬（1）<div>最近在vue项目中引入了jsx，在自定义组件的时候，恰好踩到了这节课说的几个坑。帮助很大。
-jsx应该不是react独有的，它只是个语法糖，它可以被编译为任意的其他渲染函数。</div>2022-09-01</li><br/><li><span>杨永安</span> 👍（1） 💬（4）<div>jsx本质是一个返回格式为json的node节点描述信息。可以用在跨端跨平台的用途，比如拿到json作为render蓝本的时候，最后的render会根据宿主环境对应调用相应API。
+如上。</p>2022-09-01</li><br/><li><span>阿阳</span> 👍（1） 💬（1）<p>最近在vue项目中引入了jsx，在自定义组件的时候，恰好踩到了这节课说的几个坑。帮助很大。
+jsx应该不是react独有的，它只是个语法糖，它可以被编译为任意的其他渲染函数。</p>2022-09-01</li><br/><li><span>杨永安</span> 👍（1） 💬（4）<p>jsx本质是一个返回格式为json的node节点描述信息。可以用在跨端跨平台的用途，比如拿到json作为render蓝本的时候，最后的render会根据宿主环境对应调用相应API。
 
 
-话说这课没有了吗？</div>2022-08-31</li><br/><li><span>Hello,Tomrrow</span> 👍（1） 💬（1）<div>JSX 不是在 React 中发明的，二者的关系更像是相互成就。
+话说这课没有了吗？</p>2022-08-31</li><br/><li><span>Hello,Tomrrow</span> 👍（1） 💬（1）<p>JSX 不是在 React 中发明的，二者的关系更像是相互成就。
 
-</div>2022-08-30</li><br/><li><span>即将暴富的木杉</span> 👍（1） 💬（1）<div>vue  的  template 的实现就是基于jsx的吧</div>2022-08-30</li><br/><li><span>癡癡的等你歸</span> 👍（0） 💬（2）<div>老师，这段话是否有问题？
+</p>2022-08-30</li><br/><li><span>即将暴富的木杉</span> 👍（1） 💬（1）<p>vue  的  template 的实现就是基于jsx的吧</p>2022-08-30</li><br/><li><span>癡癡的等你歸</span> 👍（0） 💬（2）<p>老师，这段话是否有问题？
 
 其中 type 参数是必须的，props 可选，当参数数量大于等于 3 时，可以有一个或多个 children。
 
-参数数量和children有什么必然联系吗？🤔️</div>2022-11-12</li><br/><li><span>灵感_idea</span> 👍（0） 💬（1）<div>讲解确实系统又全面，也可以看出作者的经历和经验都比较丰富，只是暂时还未进入比较深入的部分，希望加油做成一个精品课！</div>2022-11-06</li><br/><li><span>狗蛋。</span> 👍（0） 💬（1）<div>如果todoList中有一个空对象，还会遍历出KanbanCard吗？如果遍历出来只是title和status没有值 是一个空的dom？</div>2022-10-19</li><br/><li><span>永不放弃</span> 👍（0） 💬（1）<div>老师 这篇适合0基础开发吗？ 了解html css  flutter，js部分</div>2022-10-14</li><br/>
+参数数量和children有什么必然联系吗？🤔️</p>2022-11-12</li><br/><li><span>灵感_idea</span> 👍（0） 💬（1）<p>讲解确实系统又全面，也可以看出作者的经历和经验都比较丰富，只是暂时还未进入比较深入的部分，希望加油做成一个精品课！</p>2022-11-06</li><br/><li><span>狗蛋。</span> 👍（0） 💬（1）<p>如果todoList中有一个空对象，还会遍历出KanbanCard吗？如果遍历出来只是title和status没有值 是一个空的dom？</p>2022-10-19</li><br/><li><span>永不放弃</span> 👍（0） 💬（1）<p>老师 这篇适合0基础开发吗？ 了解html css  flutter，js部分</p>2022-10-14</li><br/>
 </ul>

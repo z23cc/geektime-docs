@@ -844,7 +844,7 @@ Node.js 的处理和 Python 非常类似，但接口不太一样，就作为今�
 我写了一个简单的 tuari App 叫 data-viewer，如果你感兴趣的话，可以在 [github repo](https://github.com/tyrchen/geektime-rust/blob/master/06_queryer/data-viewer) 下的 data-viewer 目录下看 tauri 使用 queryer 的代码，下面是运行后的效果。为了让代码最简单，前端没有用任何框架，如果你是一名前端开发者，可以用 Vue 或者 React 加上一个合适的 CSS 库让整个界面变得更加友好。  
 ![](https://static001.geekbang.org/resource/image/82/e7/826ef4913c54c81f8a5fa25ca92481e7.png?wh=2000x1433)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>leesper</span> 👍（33） 💬（1）<div>
+<li><span>leesper</span> 👍（33） 💬（1）<p>
 陈天老师，学完了这节课程，我觉得你和陈皓老师给了我新的启发。
 
 在陈皓老师的《左耳听风》的《编程的本质》一节，提到了这么两个公式
@@ -885,7 +885,7 @@ Node.js 的处理和 Python 非常类似，但接口不太一样，就作为今�
 （4）要避免复杂业务逻辑占用IO线程资源，就要引入工作者线程池，把服务端对消息的处理放到另一个线程中执行，并做好IO线程和工作者线程的同步
 （5）如果服务端要访问远程资源，就要引入配置，在服务启动时装配好各种mysql或者redis的handle，甚至自己实现一个connector访问其他的服务
 
-这些都是属于Control范畴要考虑的东西。Logic决定了程序复杂度的下限，Control决定了上限。把Logic和Control混在一起，往往是写出来的代码难以维护的原因。</div>2021-09-20</li><br/><li><span>葡萄</span> 👍（20） 💬（2）<div>老师的课程消除了对解决这类问题(自己实现一个解析器的扩展)的恐惧，或者说以前一直在使用高级封装的语言，对这些偏低层一点的东西总是不敢触碰，一点点分析下来，完全没有想象中的那么难。哈哈，这就是get hands dirty的精要吧。学习rust很好，听老师讲课更好，感谢老师。</div>2021-09-03</li><br/><li><span>pedro</span> 👍（7） 💬（1）<div>In [1]:  import queryer_py
+这些都是属于Control范畴要考虑的东西。Logic决定了程序复杂度的下限，Control决定了上限。把Logic和Control混在一起，往往是写出来的代码难以维护的原因。</p>2021-09-20</li><br/><li><span>葡萄</span> 👍（20） 💬（2）<p>老师的课程消除了对解决这类问题(自己实现一个解析器的扩展)的恐惧，或者说以前一直在使用高级封装的语言，对这些偏低层一点的东西总是不敢触碰，一点点分析下来，完全没有想象中的那么难。哈哈，这就是get hands dirty的精要吧。学习rust很好，听老师讲课更好，感谢老师。</p>2021-09-03</li><br/><li><span>pedro</span> 👍（7） 💬（1）<p>In [1]:  import queryer_py
 
 In [2]: sql = queryer_py.example_sql()
 
@@ -917,9 +917,9 @@ $ tree .
 ├── thumbor
 │   ├── src
 │   └── target
-```</div>2021-09-03</li><br/><li><span>Fenix</span> 👍（14） 💬（1）<div>太赞了，这种教学模式，处理问题的思路很有启发</div>2021-09-03</li><br/><li><span>Geek_01c6d8</span> 👍（9） 💬（1）<div>全网最好的rust课程，没有之一！！！</div>2021-09-24</li><br/><li><span>bearlu</span> 👍（6） 💬（1）<div>老师如何有效阅读docs.rs，我看你引入来的crate的文档，但是不知道如何有效学习？</div>2021-09-04</li><br/><li><span>拉斯特</span> 👍（6） 💬（1）<div>通过一个实际案例展现了rust的特性，设计模式的使用，决解问题的思路和设计过程。简直不要太棒～</div>2021-09-03</li><br/><li><span>Colt</span> 👍（5） 💬（1）<div>老师的思路非常正，这几次实践课可以看出RUST的魅力和优雅，能力有限需要多品几次</div>2021-09-10</li><br/><li><span>老荀</span> 👍（5） 💬（1）<div>太强了！这种实战性质的教学正是大家都需要的！不是那种重复啰嗦语法细节的烂课程</div>2021-09-03</li><br/><li><span>玄澈</span> 👍（4） 💬（1）<div>老师你好，有观点认为用 Deref 模拟继承通常不是好的做法。例如：https:&#47;&#47;www.zhihu.com&#47;question&#47;36488041
+```</p>2021-09-03</li><br/><li><span>Fenix</span> 👍（14） 💬（1）<p>太赞了，这种教学模式，处理问题的思路很有启发</p>2021-09-03</li><br/><li><span>Geek_01c6d8</span> 👍（9） 💬（1）<p>全网最好的rust课程，没有之一！！！</p>2021-09-24</li><br/><li><span>bearlu</span> 👍（6） 💬（1）<p>老师如何有效阅读docs.rs，我看你引入来的crate的文档，但是不知道如何有效学习？</p>2021-09-04</li><br/><li><span>拉斯特</span> 👍（6） 💬（1）<p>通过一个实际案例展现了rust的特性，设计模式的使用，决解问题的思路和设计过程。简直不要太棒～</p>2021-09-03</li><br/><li><span>Colt</span> 👍（5） 💬（1）<p>老师的思路非常正，这几次实践课可以看出RUST的魅力和优雅，能力有限需要多品几次</p>2021-09-10</li><br/><li><span>老荀</span> 👍（5） 💬（1）<p>太强了！这种实战性质的教学正是大家都需要的！不是那种重复啰嗦语法细节的烂课程</p>2021-09-03</li><br/><li><span>玄澈</span> 👍（4） 💬（1）<p>老师你好，有观点认为用 Deref 模拟继承通常不是好的做法。例如：https:&#47;&#47;www.zhihu.com&#47;question&#47;36488041
 https:&#47;&#47;rust-unofficial.github.io&#47;patterns&#47;anti_patterns&#47;deref.html
-有好处也有坏处，我们该如何权衡以至于防止滥用呢。</div>2021-09-05</li><br/><li><span>yyxxccc</span> 👍（3） 💬（1）<div>陈老师再来几个白金，王者级难度的👍，这一讲看得我地铁坐过站了😂。</div>2021-09-09</li><br/><li><span>pedro</span> 👍（3） 💬（1）<div>Node 来了：
+有好处也有坏处，我们该如何权衡以至于防止滥用呢。</p>2021-09-05</li><br/><li><span>yyxxccc</span> 👍（3） 💬（1）<p>陈老师再来几个白金，王者级难度的👍，这一讲看得我地铁坐过站了😂。</p>2021-09-09</li><br/><li><span>pedro</span> 👍（3） 💬（1）<p>Node 来了：
 
 ```js
 node 
@@ -931,5 +931,5 @@ undefined
 &#39;SELECT location name, total_cases, new_cases, total_deaths, new_deaths FROM https:&#47;&#47;raw.githubusercontent.com&#47;owid&#47;covid-19-data&#47;master&#47;public&#47;data&#47;latest&#47;owid-covid-latest.csv where new_deaths &gt;= 500 ORDER BY new_cases DESC LIMIT 6 OFFSET 5&#39;
 ```
 
-爽～</div>2021-09-03</li><br/><li><span>茶底</span> 👍（3） 💬（1）<div>今天这个雀食帅</div>2021-09-03</li><br/><li><span>施泰博</span> 👍（2） 💬（1）<div>reqwest 请求，broken pipe怎么破？</div>2021-11-26</li><br/><li><span>null</span> 👍（2） 💬（1）<div>理论时长：24:58，实际时常：24小时</div>2021-10-11</li><br/>
+爽～</p>2021-09-03</li><br/><li><span>茶底</span> 👍（3） 💬（1）<p>今天这个雀食帅</p>2021-09-03</li><br/><li><span>施泰博</span> 👍（2） 💬（1）<p>reqwest 请求，broken pipe怎么破？</p>2021-11-26</li><br/><li><span>null</span> 👍（2） 💬（1）<p>理论时长：24:58，实际时常：24小时</p>2021-10-11</li><br/>
 </ul>

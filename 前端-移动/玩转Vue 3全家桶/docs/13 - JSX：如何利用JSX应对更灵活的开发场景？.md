@@ -238,7 +238,7 @@ JSX的语法来源于React，在Vue 3中会直接解析成h函数执行，所以
 
 欢迎在留言区分享你的看法，也欢迎你把这一讲推荐给你的同事和朋友们，我们下一讲再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ll</span> 👍（28） 💬（1）<div>厉害，看大圣的课，脑中就会涌现出以前学过用过的知识，然后随着文章的推进，这些知识就分条屡清了；然后查漏补缺，最后汇聚到一起，为自己所用。
+<li><span>ll</span> 👍（28） 💬（1）<p>厉害，看大圣的课，脑中就会涌现出以前学过用过的知识，然后随着文章的推进，这些知识就分条屡清了；然后查漏补缺，最后汇聚到一起，为自己所用。
 一点回顾：
       1. template vs Jsx
          直观感觉是“殊途同归”。
@@ -261,17 +261,17 @@ JSX的语法来源于React，在Vue 3中会直接解析成h函数执行，所以
       3. 一点感想
          要说殊途同归，框架最终还是一样，用JS在浏览器上操纵DOM；这里有几个点，JS，浏览
          器，DOM；你看这几个怎么联系起来？很神奇，vue-devtools，上节课的 devtools，这
-         是不是 callback 呢。</div>2021-11-15</li><br/><li><span>关关君</span> 👍（3） 💬（1）<div>今天跟着老师的代码做练习的时候控制台报错说没有 defineConfig 一看版本vite才是1.0的，如果遇到和我一样的问题的同学先卸载 &quot;npm un vite&quot; 然后重新安装新版本的vite  &quot;npm install vite@latest -D&quot;</div>2021-11-19</li><br/><li><span>gongshun</span> 👍（2） 💬（1）<div>&lt;component :is=&quot;&#39;h&#39;+ level&quot;&gt;&lt;&#47;component&gt; 这样就可以实现了，jsx是多余</div>2021-11-16</li><br/><li><span>mixiuu</span> 👍（1） 💬（1）<div>老师，我想问下，在cli创建的vue3中，使用setup+jsx的方式会报错（TypeError: Cannot read properties of undefined (reading &#39;$createElement&#39;)），我在babel.config.js中已添加： &quot;plugins&quot;: [&quot;@vue&#47;babel-plugin-jsx&quot;]，这是为什么呢</div>2021-11-16</li><br/><li><span>酱汁</span> 👍（1） 💬（3）<div>想问下老师开源组件库种中 这种组合方式  jsx怎么实现的
+         是不是 callback 呢。</p>2021-11-15</li><br/><li><span>关关君</span> 👍（3） 💬（1）<p>今天跟着老师的代码做练习的时候控制台报错说没有 defineConfig 一看版本vite才是1.0的，如果遇到和我一样的问题的同学先卸载 &quot;npm un vite&quot; 然后重新安装新版本的vite  &quot;npm install vite@latest -D&quot;</p>2021-11-19</li><br/><li><span>gongshun</span> 👍（2） 💬（1）<p>&lt;component :is=&quot;&#39;h&#39;+ level&quot;&gt;&lt;&#47;component&gt; 这样就可以实现了，jsx是多余</p>2021-11-16</li><br/><li><span>mixiuu</span> 👍（1） 💬（1）<p>老师，我想问下，在cli创建的vue3中，使用setup+jsx的方式会报错（TypeError: Cannot read properties of undefined (reading &#39;$createElement&#39;)），我在babel.config.js中已添加： &quot;plugins&quot;: [&quot;@vue&#47;babel-plugin-jsx&quot;]，这是为什么呢</p>2021-11-16</li><br/><li><span>酱汁</span> 👍（1） 💬（3）<p>想问下老师开源组件库种中 这种组合方式  jsx怎么实现的
  &lt;tabs&gt;
    &lt;tab-pane&gt; 内容1  &lt;&#47;tab-pane&gt;
    &lt;tab-pane&gt; 内容2 &lt;&#47;tab-pane&gt;
    &lt;tab-pane&gt; 内容3 &lt;&#47;tab-pane&gt;
- &lt;&#47;tabs&gt;</div>2021-11-15</li><br/><li><span>张飞蓬</span> 👍（0） 💬（2）<div>然后是 @click 函数增加了一个 cache 缓存层，这样实现出来的效果也是和静态提升类似，尽可能高效地利用缓存。最后是，由于在下面代码中的属性里，那些带冒号的属性是动态属性，因而存在使用一个数字去标记标签的动态情况。比如在 p 标签上，使用 8 这个数字标记当前标签时，只有 props 是动态的。而在虚拟 DOM 计算 Diff 的过程中，可以忽略掉 class 和文本的计算，这也是 Vue 3 的虚拟 DOM 能够比 Vue 2 快的一个重要原因。
+ &lt;&#47;tabs&gt;</p>2021-11-15</li><br/><li><span>张飞蓬</span> 👍（0） 💬（2）<p>然后是 @click 函数增加了一个 cache 缓存层，这样实现出来的效果也是和静态提升类似，尽可能高效地利用缓存。最后是，由于在下面代码中的属性里，那些带冒号的属性是动态属性，因而存在使用一个数字去标记标签的动态情况。比如在 p 标签上，使用 8 这个数字标记当前标签时，只有 props 是动态的。而在虚拟 DOM 计算 Diff 的过程中，可以忽略掉 class 和文本的计算，这也是 Vue 3 的虚拟 DOM 能够比 Vue 2 快的一个重要原因。
 
-没看懂这个啥缓存层呢</div>2022-01-12</li><br/><li><span>百事可乐</span> 👍（0） 💬（3）<div>大圣老师。 我怎么从vue 文件向  jsx文件中传递参数呢？
+没看懂这个啥缓存层呢</p>2022-01-12</li><br/><li><span>百事可乐</span> 👍（0） 💬（3）<p>大圣老师。 我怎么从vue 文件向  jsx文件中传递参数呢？
 &lt;Todolist :valueData=&#39;123&#39;&#47;&gt; 
 setup(props) {
         console.log(props);
-}    这个 props  是这个空对象 </div>2021-11-19</li><br/><li><span>小余GUNDAM</span> 👍（0） 💬（1）<div>老师 vue3的 jsx能享受 编译优化 例如静态节点跳过diff吗 </div>2021-11-19</li><br/><li><span>uncle 邦</span> 👍（0） 💬（1）<div>vue2 可以使用jsx么？</div>2021-11-15</li><br/><li><span>tequ1lAneio</span> 👍（0） 💬（2）<div>为什么我的input用jsx的话无论是keyup还是keydown都绑定不上事件？</div>2021-11-15</li><br/><li><span>台灯下的我</span> 👍（12） 💬（0）<div>我的理解是优先使用template，如果当用template的时候感觉很麻烦很繁琐的时候，这个时候可以考虑下jsx能不能更方便一点</div>2021-11-19</li><br/><li><span>cwang</span> 👍（4） 💬（0）<div>补充了解：https:&#47;&#47;v3.cn.vuejs.org&#47;guide&#47;render-function.html</div>2021-12-02</li><br/><li><span>海阔天空</span> 👍（2） 💬（0）<div>template 和 JSX 都有各自的优点，template 算是vue的标配吧，因为其中规中矩（标签化），所以在vue页面或是主要架构，动态性比较低的场景下使用。而JSX则更适合来做小组件和公共组件这些动态性比较高的组件。
-</div>2021-11-15</li><br/><li><span>猹子哥一个月要瘦十斤</span> 👍（1） 💬（1）<div>我觉得做动态表单的时候用jsx更舒服一点</div>2022-08-12</li><br/><li><span>Spike Jim.Fun</span> 👍（1） 💬（1）<div>export default defineComponent({ 这里可以不需要使用defineComponent</div>2022-05-22</li><br/>
+}    这个 props  是这个空对象 </p>2021-11-19</li><br/><li><span>小余GUNDAM</span> 👍（0） 💬（1）<p>老师 vue3的 jsx能享受 编译优化 例如静态节点跳过diff吗 </p>2021-11-19</li><br/><li><span>uncle 邦</span> 👍（0） 💬（1）<p>vue2 可以使用jsx么？</p>2021-11-15</li><br/><li><span>tequ1lAneio</span> 👍（0） 💬（2）<p>为什么我的input用jsx的话无论是keyup还是keydown都绑定不上事件？</p>2021-11-15</li><br/><li><span>台灯下的我</span> 👍（12） 💬（0）<p>我的理解是优先使用template，如果当用template的时候感觉很麻烦很繁琐的时候，这个时候可以考虑下jsx能不能更方便一点</p>2021-11-19</li><br/><li><span>cwang</span> 👍（4） 💬（0）<p>补充了解：https:&#47;&#47;v3.cn.vuejs.org&#47;guide&#47;render-function.html</p>2021-12-02</li><br/><li><span>海阔天空</span> 👍（2） 💬（0）<p>template 和 JSX 都有各自的优点，template 算是vue的标配吧，因为其中规中矩（标签化），所以在vue页面或是主要架构，动态性比较低的场景下使用。而JSX则更适合来做小组件和公共组件这些动态性比较高的组件。
+</p>2021-11-15</li><br/><li><span>猹子哥一个月要瘦十斤</span> 👍（1） 💬（1）<p>我觉得做动态表单的时候用jsx更舒服一点</p>2022-08-12</li><br/><li><span>Spike Jim.Fun</span> 👍（1） 💬（1）<p>export default defineComponent({ 这里可以不需要使用defineComponent</p>2022-05-22</li><br/>
 </ul>

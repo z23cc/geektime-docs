@@ -281,9 +281,9 @@ Dashboard里的可操作的地方还有很多，这里我只是一个非常简�
 
 ![图片](https://static001.geekbang.org/resource/image/3c/ea/3c3036bc56bb9ec14598342e56c11bea.jpg?wh=1920x1544)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>YueShi</span> 👍（18） 💬（7）<div>Mac上或者Window上，可能出现访问不到问题，这里写了一篇排查问题的思路，期望能帮到各位老板
+<li><span>YueShi</span> 👍（18） 💬（7）<p>Mac上或者Window上，可能出现访问不到问题，这里写了一篇排查问题的思路，期望能帮到各位老板
 
-https:&#47;&#47;juejin.cn&#47;post&#47;7127679053242302477</div>2022-08-04</li><br/><li><span>pyhhou</span> 👍（18） 💬（3）<div>思考题 2，
+https:&#47;&#47;juejin.cn&#47;post&#47;7127679053242302477</p>2022-08-04</li><br/><li><span>pyhhou</span> 👍（18） 💬（3）<p>思考题 2，
 
 试着写出了 Pod 的 YAML 文件
 
@@ -332,8 +332,8 @@ spec:
     ports:
     - containerPort: 80
 
-可以成功创建 Pod，nginx 的配置文件也被挂载到指定的位置，但是浏览器还是无法访问 wordpress，不知道是不是我的 YAML 文件中少了什么🤔，还望老师指点</div>2022-07-25</li><br/><li><span>朱雯</span> 👍（11） 💬（1）<div>学了这一节，没感觉到容器编排的好用，反而遇到了一个问题，在配置中，我把wordpress链接数据库的host给小写了，结果一直告诉我链接数据库失败，我也没有排查手段，一直失败，我想的是，这个k8s的部署步骤实在是太复杂了，复杂到配置需要一个yaml，容器需要一个yaml，port-forward也需要一个yaml，我想如果是docker直接部署，其实就需要两条命令，所有参数都放到env中，或者放到配置文件中，也比检查yaml文件强，在入门篇中没感受到k8s的好用，只感觉到琐碎，是因为服务太小，还是因为没用好的原因呢
-</div>2022-07-28</li><br/><li><span>马以</span> 👍（9） 💬（7）<div>写一下第2题吧解题步骤：
+可以成功创建 Pod，nginx 的配置文件也被挂载到指定的位置，但是浏览器还是无法访问 wordpress，不知道是不是我的 YAML 文件中少了什么🤔，还望老师指点</p>2022-07-25</li><br/><li><span>朱雯</span> 👍（11） 💬（1）<p>学了这一节，没感觉到容器编排的好用，反而遇到了一个问题，在配置中，我把wordpress链接数据库的host给小写了，结果一直告诉我链接数据库失败，我也没有排查手段，一直失败，我想的是，这个k8s的部署步骤实在是太复杂了，复杂到配置需要一个yaml，容器需要一个yaml，port-forward也需要一个yaml，我想如果是docker直接部署，其实就需要两条命令，所有参数都放到env中，或者放到配置文件中，也比检查yaml文件强，在入门篇中没感受到k8s的好用，只感觉到琐碎，是因为服务太小，还是因为没用好的原因呢
+</p>2022-07-28</li><br/><li><span>马以</span> 👍（9） 💬（7）<p>写一下第2题吧解题步骤：
 首先如果我们把docker 形式改成pod形式这里存在两个问题（1）网络问题，（2）nginx配置文件加载问题，
 第一个问题k8s的插件会处理节点内以及节点间网络通信问题，这个我们这里暂时不需要考虑，
 那么需要我们处理的就是配置文件问题：这里我们可以用多个方法处理
@@ -405,7 +405,7 @@ server {
 启动，
 然后使用 kubectl port-forward ngx-pod 8888:8080 &amp; 做转发
 
-访问 http:&#47;&#47;192.168.56.208&#47; 正常访问</div>2022-08-12</li><br/><li><span>椰子</span> 👍（7） 💬（1）<div>老师，目前Pod配置中使用了固定IP。如果pod被重启了，ip 是否会变化？如果有变化，这样配置是否有点不合理？</div>2022-07-25</li><br/><li><span>wcy</span> 👍（4） 💬（1）<div>作业1：改用secret可以，这个简单，把data里对应的值用base64编码就行，对应pod的yml改下
+访问 http:&#47;&#47;192.168.56.208&#47; 正常访问</p>2022-08-12</li><br/><li><span>椰子</span> 👍（7） 💬（1）<p>老师，目前Pod配置中使用了固定IP。如果pod被重启了，ip 是否会变化？如果有变化，这样配置是否有点不合理？</p>2022-07-25</li><br/><li><span>wcy</span> 👍（4） 💬（1）<p>作业1：改用secret可以，这个简单，把data里对应的值用base64编码就行，对应pod的yml改下
 作业2：nginx改成pod 运行是成功的， 但是port-forward出来，linux虚机上用firefox打开页面是ok的。但在shell终端本地浏览器访问不了，看了下应该是port-forward的问题，映射的端口绑定在Linux虚机127.0.0.1上，所以virtualbox转发不出来。
 nginx cm:
 apiVersion: v1
@@ -451,7 +451,7 @@ spec:
       items:
       - key: nginx.conf
         path: default.conf
-</div>2022-08-04</li><br/><li><span>edward</span> 👍（3） 💬（2）<div>kubectl port-forward 老师请教下 这个命令设置端口转发后，怎么查看和取消？</div>2022-11-08</li><br/><li><span>peter</span> 👍（3） 💬（2）<div>请教老师几个问题：
+</p>2022-08-04</li><br/><li><span>edward</span> 👍（3） 💬（2）<p>kubectl port-forward 老师请教下 这个命令设置端口转发后，怎么查看和取消？</p>2022-11-08</li><br/><li><span>peter</span> 👍（3） 💬（2）<p>请教老师几个问题：
 Q1：MariaDB和WP可以跑在一个POD里面吗？
 
 Q2：文中的prefix是什么意思？
@@ -459,7 +459,7 @@ Q2：文中的prefix是什么意思？
 是把configMap中的变量名字前面加上这个前缀作为pod中的变量名称吗？
 即：pod中的变量名称 = MARIADB_&#39; + configMap中的变量名称。
 Q3：关于转发的疑问
-文中有一句：“因为 WordPress 网站使用了 URL 重定向，直接使用“8080”会导致跳转故障”。 如果没有nginx，宿主机上用浏览器直接访问WP的8080端口，则会因为WP内部实现机制而产生错误； 如果加上nginx，nginx去访问WP的8080端口，就没事。 是这样吗？</div>2022-07-25</li><br/><li><span>pyhhou</span> 👍（3） 💬（3）<div>有在操作过程中遇到几个问题，还烦请老师指点
+文中有一句：“因为 WordPress 网站使用了 URL 重定向，直接使用“8080”会导致跳转故障”。 如果没有nginx，宿主机上用浏览器直接访问WP的8080端口，则会因为WP内部实现机制而产生错误； 如果加上nginx，nginx去访问WP的8080端口，就没事。 是这样吗？</p>2022-07-25</li><br/><li><span>pyhhou</span> 👍（3） 💬（3）<p>有在操作过程中遇到几个问题，还烦请老师指点
 
 1、前面 2 个步骤中，在 kubectl apply -f *-pod.yml 之前是不是也得 apply 一下之前定义的 configMap 对象？
 
@@ -469,15 +469,15 @@ Q3：关于转发的疑问
 Opening http:&#47;&#47;127.0.0.1:38539&#47;api&#47;v1&#47;namespaces&#47;kubernetes-dashboard&#47;services&#47;http:kubernetes-dashboard:&#47;proxy&#47; in your default browser...
 Error: no DISPLAY environment variable specified
 
-4、对于思考题的 2，我创建一个了 nginx Pod，然后将其配置文件通过 kubectl cp 拷贝到 Pod 容器中的对应位置，但是发现并不起作用，本来想着重启 Pod 让配置生效，但是并没有找到对应的指令。这里是不是需要其他的 K8S API 对象的帮助？</div>2022-07-25</li><br/><li><span>未来已来</span> 👍（2） 💬（1）<div>第四步 Nginx 部分使用 docker 启动命令把 -v 后面的 &#47;tmp&#47;proxy.conf 改为 `pwd`&#47;proxy.conf 即可，跟 dokcer 实战部分保持一致</div>2023-05-14</li><br/><li><span>Geek_f2f06e</span> 👍（2） 💬（1）<div>老师我有一个疑问想请教您：
-这里把每个应用都封装成pod，为什么不将MariaDB和WordPress封装到一个pod里面，pod的意义不就是将多个密切的容器封装在一起</div>2023-04-02</li><br/><li><span>doos</span> 👍（2） 💬（1）<div>这个入门写的太好了，我当时学是先学习docker，研究了3个月docker，后来才慢慢去接触k8s学了半年，感觉内容太多了，而且知识比较分散</div>2023-02-23</li><br/><li><span>Geek_39bdd5</span> 👍（2） 💬（4）<div>kubectl get pod -o wide查看的时候ip显示是none是怎么回事
-</div>2022-08-10</li><br/><li><span>RRR</span> 👍（2） 💬（2）<div>两个问题
+4、对于思考题的 2，我创建一个了 nginx Pod，然后将其配置文件通过 kubectl cp 拷贝到 Pod 容器中的对应位置，但是发现并不起作用，本来想着重启 Pod 让配置生效，但是并没有找到对应的指令。这里是不是需要其他的 K8S API 对象的帮助？</p>2022-07-25</li><br/><li><span>未来已来</span> 👍（2） 💬（1）<p>第四步 Nginx 部分使用 docker 启动命令把 -v 后面的 &#47;tmp&#47;proxy.conf 改为 `pwd`&#47;proxy.conf 即可，跟 dokcer 实战部分保持一致</p>2023-05-14</li><br/><li><span>Geek_f2f06e</span> 👍（2） 💬（1）<p>老师我有一个疑问想请教您：
+这里把每个应用都封装成pod，为什么不将MariaDB和WordPress封装到一个pod里面，pod的意义不就是将多个密切的容器封装在一起</p>2023-04-02</li><br/><li><span>doos</span> 👍（2） 💬（1）<p>这个入门写的太好了，我当时学是先学习docker，研究了3个月docker，后来才慢慢去接触k8s学了半年，感觉内容太多了，而且知识比较分散</p>2023-02-23</li><br/><li><span>Geek_39bdd5</span> 👍（2） 💬（4）<p>kubectl get pod -o wide查看的时候ip显示是none是怎么回事
+</p>2022-08-10</li><br/><li><span>RRR</span> 👍（2） 💬（2）<p>两个问题
 
 1. port-forward 实际在生产用的多么？应该都是 ingress 吧
-2. 老师后面能讲讲 helm 和 Istio 吗，他们和 k8s 关系是什么，我看不明白</div>2022-07-27</li><br/><li><span>牙小木</span> 👍（1） 💬（1）<div>注意wp-pod.yaml中的HOST值，需要按照自己机器上的来。
+2. 老师后面能讲讲 helm 和 Istio 吗，他们和 k8s 关系是什么，我看不明白</p>2022-07-27</li><br/><li><span>牙小木</span> 👍（1） 💬（1）<p>注意wp-pod.yaml中的HOST值，需要按照自己机器上的来。
 tb@tb-laptop:~$ k get pod maria-pod -o wide
 NAME        READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
 maria-pod   1&#47;1     Running   0          26m   10.244.0.76   minikube   &lt;none&gt;           &lt;none&gt;
 
-</div>2023-07-26</li><br/>
+</p>2023-07-26</li><br/>
 </ul>

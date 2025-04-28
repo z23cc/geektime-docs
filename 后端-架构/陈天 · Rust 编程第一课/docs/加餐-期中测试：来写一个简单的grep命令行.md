@@ -52,7 +52,7 @@ abc.txt:
 
 加油，我们下节课作业讲解见。
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>Quincy</span> 👍（3） 💬（1）<div>
+<li><span>Quincy</span> 👍（3） 💬（1）<p>
 1. 最简单的
 ```rust
 use std::error::Error;
@@ -141,7 +141,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     }
     Ok(())
 }
-```</div>2021-10-15</li><br/><li><span>余泽锋</span> 👍（2） 💬（1）<div>时间比较紧，先写个初始版本：
+```</p>2021-10-15</li><br/><li><span>余泽锋</span> 👍（2） 💬（1）<p>时间比较紧，先写个初始版本：
 
 extern crate clap;
 
@@ -194,12 +194,12 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
 
     Ok(())
 }
-</div>2021-10-17</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（1）<div>磕磕盼盼搞了一天终于实现了这一讲的需求，期中测试算是通过了。自己动手实现的过程中收获了非常多的东西。代码结构前前后后改了许多次，还达不到开发过程中接口不变只是实现变的能力。我把代码仓库链接贴在下面算是献丑了，说实话有点不好意思拿出来哈哈。
+</p>2021-10-17</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（1）<p>磕磕盼盼搞了一天终于实现了这一讲的需求，期中测试算是通过了。自己动手实现的过程中收获了非常多的东西。代码结构前前后后改了许多次，还达不到开发过程中接口不变只是实现变的能力。我把代码仓库链接贴在下面算是献丑了，说实话有点不好意思拿出来哈哈。
 
-https:&#47;&#47;github.com&#47;LgnMs&#47;rgrep</div>2021-10-14</li><br/><li><span>D. D</span> 👍（1） 💬（1）<div>试着写了一下，实现得比较匆忙。
+https:&#47;&#47;github.com&#47;LgnMs&#47;rgrep</p>2021-10-14</li><br/><li><span>D. D</span> 👍（1） 💬（1）<p>试着写了一下，实现得比较匆忙。
 为了练习之前学过的内容，试了各种写法，应该会有很多不合理的地方。
 而且没有做并行化，希望以后有时间可以加上，并把代码重构得更好。
-https:&#47;&#47;github.com&#47;imag1ne&#47;grepr</div>2021-10-15</li><br/><li><span>记事本</span> 👍（1） 💬（1）<div> let filename = std::env::args().nth(2).unwrap();
+https:&#47;&#47;github.com&#47;imag1ne&#47;grepr</p>2021-10-15</li><br/><li><span>记事本</span> 👍（1） 💬（1）<p> let filename = std::env::args().nth(2).unwrap();
     let query = std::env::args().nth(1).unwrap();
     let case_sensitive = std::env::var(&quot;is_sens&quot;).is_err();
 
@@ -219,7 +219,7 @@ https:&#47;&#47;github.com&#47;imag1ne&#47;grepr</div>2021-10-15</li><br/><li><s
             println!(&quot;{}:{}&quot;,i,c[i]);
         }
     }
-</div>2021-10-13</li><br/><li><span>目标</span> 👍（0） 💬（0）<div>pub fn search_in(k: &amp;str, file_path: &amp;str) -&gt; Result&lt;Vec&lt;Match&gt;, Error&gt; {
+</p>2021-10-13</li><br/><li><span>目标</span> 👍（0） 💬（0）<p>pub fn search_in(k: &amp;str, file_path: &amp;str) -&gt; Result&lt;Vec&lt;Match&gt;, Error&gt; {
     let mut result = Vec::new();
     let file = std::fs::File::open(file_path)?;
     let reader = std::io::BufReader::new(file);
@@ -240,7 +240,7 @@ https:&#47;&#47;github.com&#47;imag1ne&#47;grepr</div>2021-10-15</li><br/><li><s
         }
     }
     Ok(result)
-}</div>2024-04-08</li><br/><li><span>支离益</span> 👍（0） 💬（0）<div>我碰到一个问题，loop中的print！:
+}</p>2024-04-08</li><br/><li><span>支离益</span> 👍（0） 💬（0）<p>我碰到一个问题，loop中的print！:
 loop {
         print!(&quot;&gt; &quot;);
 
@@ -253,7 +253,7 @@ loop {
 
 为什么实际执行中，&gt;不会第一时间显示，会显示在回车之后回显的第一个字符，输入行是空白，回显的时候是&gt;+刚刚输入的字符
 
-用println！就能正常第一行显示&gt;，然后输入，回显</div>2023-10-29</li><br/><li><span>鞠文桦</span> 👍（0） 💬（0）<div>
+用println！就能正常第一行显示&gt;，然后输入，回显</p>2023-10-29</li><br/><li><span>鞠文桦</span> 👍（0） 💬（0）<p>
 error: The following required arguments were not provided:
     &lt;PATTERN&gt;
     &lt;GLOB&gt;
@@ -265,7 +265,7 @@ For more information try --help
 error: process didn&#39;t exit successfully: `E:\geektime-Rust-master\geektime-rust-master\target\debug\rgrep.exe` (exit code: 2)
 
 Process finished with exit code 2
-求助。。。不知道为什么总输出这个</div>2022-06-09</li><br/><li><span>鞠文桦</span> 👍（0） 💬（0）<div>error: The following required arguments were not provided:
+求助。。。不知道为什么总输出这个</p>2022-06-09</li><br/><li><span>鞠文桦</span> 👍（0） 💬（0）<p>error: The following required arguments were not provided:
     &lt;PATTERN&gt;
     &lt;GLOB&gt;
 
@@ -273,7 +273,7 @@ USAGE:
     rgrep.exe &lt;PATTERN&gt; &lt;GLOB&gt;
 
 For more information try --help
-error: process didn&#39;t exit successfully: `E:\geektime-Rust-master\geektime-rust-master\target\debug\rgrep.exe` (exit code: 2)求助</div>2022-06-08</li><br/><li><span>gt</span> 👍（0） 💬（0）<div>交个作业：https:&#47;&#47;github.com&#47;ForInfinity&#47;rgrep
+error: process didn&#39;t exit successfully: `E:\geektime-Rust-master\geektime-rust-master\target\debug\rgrep.exe` (exit code: 2)求助</p>2022-06-08</li><br/><li><span>gt</span> 👍（0） 💬（0）<p>交个作业：https:&#47;&#47;github.com&#47;ForInfinity&#47;rgrep
 把整个程序分成了fs、pattern、formatter三个部分，分别负责文件读写、匹配和高亮及输出console。先分别敲定了trait，然后实现。以后可以扩展使用不同的fs来源、更多的匹配模式、不同的formatter。
 不过在编写泛型的时候遇到了个问题：
 首先存在一个trait MatchOutput:
@@ -303,5 +303,5 @@ pub struct Printer&lt;M: Display, T: MatchOutput&lt;M&gt;&gt;
     pub formatter: T,
 }
 ```
-蹲个老师的解答。</div>2022-03-19</li><br/><li><span>Geek_994f3b</span> 👍（0） 💬（0）<div>也写了个：https:&#47;&#47;github.com&#47;startdusk&#47;rgrep，欢迎老师指正</div>2022-03-08</li><br/>
+蹲个老师的解答。</p>2022-03-19</li><br/><li><span>Geek_994f3b</span> 👍（0） 💬（0）<p>也写了个：https:&#47;&#47;github.com&#47;startdusk&#47;rgrep，欢迎老师指正</p>2022-03-08</li><br/>
 </ul>

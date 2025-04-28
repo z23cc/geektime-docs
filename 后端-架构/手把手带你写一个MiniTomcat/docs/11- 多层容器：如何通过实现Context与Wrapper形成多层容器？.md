@@ -788,7 +788,7 @@ public class StandardSession implements HttpSession, Session {
 
 欢迎你把你想到的方案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：Tomcat中怎么表示多个Host？用不同的IP吗？
-Q2：Engine主要功能是什么？感觉所有的主要功能都已经包含在连接处理、servlet处理了，还能有什么比较大的功能由Engine来处理？</div>2024-01-01</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>加入本层特殊逻辑，我的想法是加入一个前置方法和后置方法， 并且子类可以重写这两个方法。</div>2024-01-01</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（0）<div>文章一开头说的【并且在第二个部分中，把 Container 进一步封装成 Wrapper，实现 Servlet 更加精确、完善的管理。】，是不是应该是【把 Servlet 进一步封装成 Wrapper，】呀？</div>2024-05-26</li><br/>
+Q2：Engine主要功能是什么？感觉所有的主要功能都已经包含在连接处理、servlet处理了，还能有什么比较大的功能由Engine来处理？</p>2024-01-01</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>加入本层特殊逻辑，我的想法是加入一个前置方法和后置方法， 并且子类可以重写这两个方法。</p>2024-01-01</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（0）<p>文章一开头说的【并且在第二个部分中，把 Container 进一步封装成 Wrapper，实现 Servlet 更加精确、完善的管理。】，是不是应该是【把 Servlet 进一步封装成 Wrapper，】呀？</p>2024-05-26</li><br/>
 </ul>

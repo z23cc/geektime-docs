@@ -99,7 +99,7 @@ TTS技术中，WaveNet声码器已经可以让合成语音得到媲美真人声�
 
 你可以把你的答案和疑惑写下来，分享到留言区，与我一起讨论。我们下节课再见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_wad2tx</span> 👍（1） 💬（1）<div>为什么不引入延迟变声的效果就会变差呢？
+<li><span>Geek_wad2tx</span> 👍（1） 💬（1）<p>为什么不引入延迟变声的效果就会变差呢？
 
-因为说话有语境，有上下文，说话不止需要前参考，还需要后参考，人在说话时，大脑已经预先处理了，说出来就很自然，但是机器不知道你的下一句是什么？所以只能依据前参考，预测后参考，有偏差，自然度就比较差。</div>2021-12-27</li><br/><li><span>data</span> 👍（0） 💬（0）<div>老师想问一下 微信长按发送语音功能使用什么技术实现的，有相关文章吗</div>2022-07-24</li><br/><li><span>jcy</span> 👍（0） 💬（0）<div>Ligusitic Decoding and search algorithm 这里 Ligusitic 是不是应该是 Linguistic</div>2022-05-22</li><br/>
+因为说话有语境，有上下文，说话不止需要前参考，还需要后参考，人在说话时，大脑已经预先处理了，说出来就很自然，但是机器不知道你的下一句是什么？所以只能依据前参考，预测后参考，有偏差，自然度就比较差。</p>2021-12-27</li><br/><li><span>data</span> 👍（0） 💬（0）<p>老师想问一下 微信长按发送语音功能使用什么技术实现的，有相关文章吗</p>2022-07-24</li><br/><li><span>jcy</span> 👍（0） 💬（0）<p>Ligusitic Decoding and search algorithm 这里 Ligusitic 是不是应该是 Linguistic</p>2022-05-22</li><br/>
 </ul>

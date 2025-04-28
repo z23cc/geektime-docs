@@ -153,12 +153,12 @@ Poller类：
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>彩笔采购</span> 👍（1） 💬（1）<div>这两节很赞啊。“Tomcat NioEndPoint结构”还有“NIO模拟BIO的方式”让我有了很直观的了解</div>2024-01-19</li><br/><li><span>风轻扬</span> 👍（0） 💬（1）<div>老师，miniRedis有想法吗？最近一直在学redis源码，很想自己从头实现一个redis</div>2024-01-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>彩笔采购</span> 👍（1） 💬（1）<p>这两节很赞啊。“Tomcat NioEndPoint结构”还有“NIO模拟BIO的方式”让我有了很直观的了解</p>2024-01-19</li><br/><li><span>风轻扬</span> 👍（0） 💬（1）<p>老师，miniRedis有想法吗？最近一直在学redis源码，很想自己从头实现一个redis</p>2024-01-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：SocketChannel与Socket是什么关系吗？
 Q2：第16课的代码链接打开后是第七课的链接
 第16课的末尾放的链接是：
 https:&#47;&#47;gitee.com&#47;yaleguo1&#47;minit-learning-demo&#47;tree&#47;geek_chapter16
 点击以后，浏览器地址栏中显示的是：
 https:&#47;&#47;gitee.com&#47;yaleguo1&#47;minit-learning-demo&#47;tree&#47;geek_chapter07
-Q3：能否讲一下Tomcat中的设计模式？</div>2024-01-21</li><br/>
+Q3：能否讲一下Tomcat中的设计模式？</p>2024-01-21</li><br/>
 </ul>

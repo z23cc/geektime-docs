@@ -304,7 +304,7 @@ MP4格式因其开放性和灵活性，使用范围非常广泛，用MP4做切�
 
 一个视频流转成MP4文件时，如何用FFmpeg对视频流内容做加密呢？加密之后如何用FFmpeg解密并顺利地播放出来呢？欢迎在评论区留下你的思考，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：FFmpeg能够生成MP4文件吗？
 文中提高用GPAC等工具MP4文件，请问FFmpeg能生成MP4文件吗？
 
@@ -326,11 +326,11 @@ Q3：FFmpeg，老师用的时候版本是多少？
 Q4：moov 与 mdat 的前后位置关系，对播放有什么影响？
 
 Q5：能否提供可执行的mp4info，以及GPAC和Shaka-Packager？
-我从官网下载了mp4info,解压后是“MP4Info-0.3.3.gem”，无法执行。老师如果有可执行的mp4info，能否提供一个下载地址？还有GPAC和Shaka-Packager等工具，能否放到一个地方供下载？ （这个有点难为老师，抱歉，不方便的话可以忽略这个问题；我的工作和音视频无关，平时工作忙，每天只能抽出部分时间看专栏，实在没有时间）</div>2022-08-10</li><br/><li><span>jcy</span> 👍（1） 💬（0）<div>简单解答思考题：
+我从官网下载了mp4info,解压后是“MP4Info-0.3.3.gem”，无法执行。老师如果有可执行的mp4info，能否提供一个下载地址？还有GPAC和Shaka-Packager等工具，能否放到一个地方供下载？ （这个有点难为老师，抱歉，不方便的话可以忽略这个问题；我的工作和音视频无关，平时工作忙，每天只能抽出部分时间看专栏，实在没有时间）</p>2022-08-10</li><br/><li><span>jcy</span> 👍（1） 💬（0）<p>简单解答思考题：
 
 加密视频
 ffmpeg -i test.mkv -vcodec copy -acodec copy -t 5 -encryption_scheme cenc-aes-ctr -encryption_key 76a6c65c5ea762046bd749a2e632ccbb -encryption_kid a7e61c373e219033c21091fa607bf3b8 test.mp4
 
 解密播放：
-ffplay SampleVideo_1280x720_1mb_encrypted.mp4 -decryption_key 76a6c65c5ea762046bd749a2e632ccbb</div>2022-08-24</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-26</li><br/><li><span>木偶人King</span> 👍（0） 💬（0）<div>打卡</div>2023-07-05</li><br/>
+ffplay SampleVideo_1280x720_1mb_encrypted.mp4 -decryption_key 76a6c65c5ea762046bd749a2e632ccbb</p>2022-08-24</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-26</li><br/><li><span>木偶人King</span> 👍（0） 💬（0）<p>打卡</p>2023-07-05</li><br/>
 </ul>

@@ -834,11 +834,11 @@ INFO cargo_tarpaulin::report: Coverage Results:
 
 如果觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见～
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>罗杰</span> 👍（2） 💬（1）<div>越来越接近实际工作了，老师特别用心，目前没找到网络这块讲解这么详细的内容了。</div>2021-11-23</li><br/><li><span>荒野林克</span> 👍（1） 💬（1）<div>老师，代码里当 frame 刚好是 2G 时，按理说应该已经越界了吧？</div>2021-12-17</li><br/><li><span>Rex Wang</span> 👍（4） 💬（0）<div>GitHub代码里36_kv&#47;src&#47;error.rs中，KvError去掉了PartialEq属性宏，这是因为std::io::Error不支持binary操作符。
+<li><span>罗杰</span> 👍（2） 💬（1）<p>越来越接近实际工作了，老师特别用心，目前没找到网络这块讲解这么详细的内容了。</p>2021-11-23</li><br/><li><span>荒野林克</span> 👍（1） 💬（1）<p>老师，代码里当 frame 刚好是 2G 时，按理说应该已经越界了吧？</p>2021-12-17</li><br/><li><span>Rex Wang</span> 👍（4） 💬（0）<p>GitHub代码里36_kv&#47;src&#47;error.rs中，KvError去掉了PartialEq属性宏，这是因为std::io::Error不支持binary操作符。
 
-为了保证之前的test依然有效，可以自己定义一个IoError替换原文中KvError中的std::io::Error，手动实现impl From&lt;std::io::Error&gt; for KvError。</div>2022-08-19</li><br/><li><span>进击的Lancelot</span> 👍（3） 💬（0）<div>思考题 1: 如果要压缩方式需要同时支持 gzip、lz4、zstd 这三种，则需要 2bit 的标记位，00 表示不压缩、01 表示 gzip、10 表示 lz4、11 表示 zstd，同样也是提取出一个 compressor 的 trait 并针对不同的压缩算法实现相应的 compress 和 decompress 方法，具体可以参考我的代码仓库：https:&#47;&#47;github.com&#47;Phoenix500526&#47;simple_kv&#47;blob&#47;main&#47;src&#47;network&#47;compress 下的文件
+为了保证之前的test依然有效，可以自己定义一个IoError替换原文中KvError中的std::io::Error，手动实现impl From&lt;std::io::Error&gt; for KvError。</p>2022-08-19</li><br/><li><span>进击的Lancelot</span> 👍（3） 💬（0）<p>思考题 1: 如果要压缩方式需要同时支持 gzip、lz4、zstd 这三种，则需要 2bit 的标记位，00 表示不压缩、01 表示 gzip、10 表示 lz4、11 表示 zstd，同样也是提取出一个 compressor 的 trait 并针对不同的压缩算法实现相应的 compress 和 decompress 方法，具体可以参考我的代码仓库：https:&#47;&#47;github.com&#47;Phoenix500526&#47;simple_kv&#47;blob&#47;main&#47;src&#47;network&#47;compress 下的文件
 
-思考题 2: 我采用了 shellfish 实现了 simple-kv-cli，代码可以参考：https:&#47;&#47;github.com&#47;Phoenix500526&#47;simple_kv&#47;blob&#47;main&#47;src&#47;kvc-cli.rs</div>2022-10-13</li><br/><li><span>乌龙猹</span> 👍（3） 💬（0）<div>内容夯实 思路清晰  结构完整  循序渐进 每周都期待着老师更新课程内容 </div>2021-11-22</li><br/><li><span>L-Castle</span> 👍（0） 💬（0）<div>要如何实现TCP的长连接和心跳检测？而不用每次都客户端发起连接请求</div>2024-10-05</li><br/><li><span>sonald</span> 👍（0） 💬（0）<div>```
+思考题 2: 我采用了 shellfish 实现了 simple-kv-cli，代码可以参考：https:&#47;&#47;github.com&#47;Phoenix500526&#47;simple_kv&#47;blob&#47;main&#47;src&#47;kvc-cli.rs</p>2022-10-13</li><br/><li><span>乌龙猹</span> 👍（3） 💬（0）<p>内容夯实 思路清晰  结构完整  循序渐进 每周都期待着老师更新课程内容 </p>2021-11-22</li><br/><li><span>L-Castle</span> 👍（0） 💬（0）<p>要如何实现TCP的长连接和心跳检测？而不用每次都客户端发起连接请求</p>2024-10-05</li><br/><li><span>sonald</span> 👍（0） 💬（0）<p>```
 &#47;&#47;&#47; 从 stream 中读取一个完整的 frame
 pub async fn read_frame&lt;S&gt;(stream: &amp;mut S, buf: &amp;mut BytesMut) -&gt; Result&lt;(), KvError&gt;
 where
@@ -861,5 +861,5 @@ where
 ```
   let start = len - size;
   stream.read_exact(&amp;mut buf[start..]).await?;
-```</div>2023-01-17</li><br/>
+```</p>2023-01-17</li><br/>
 </ul>

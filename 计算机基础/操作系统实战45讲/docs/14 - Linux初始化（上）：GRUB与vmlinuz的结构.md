@@ -292,7 +292,7 @@ output_len:4424772
 
 好，我是LMOS，我们下节课见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>neohope</span> 👍（57） 💬（7）<div>大体上整理了一下，有问题欢迎帮忙指出【上】：
+<li><span>neohope</span> 👍（57） 💬（7）<p>大体上整理了一下，有问题欢迎帮忙指出【上】：
 
 操作系统的启动分为两个阶段：引导boot和启动startup，本节主要还是boot过程：
 BIOS-&gt;GRUG1-&gt;GRUB1.5-&gt;GRUB2-&gt;Linux内核【环境硬盘引导、MBR分区】
@@ -349,7 +349,7 @@ diskboot.img知道后续每个文件的位置，会继续通过BIOS中断读取�
 加载lzma_decompress.img，从而可以解压被压缩的模块
 加载kernel.img，并转交控制权给kernel.img
 kernel.img的grub_main函数会调用grub_load_modules函数加载各个mod模块
-加载各个mod后，grub就支持文件系统了，访问磁盘不需要再依靠BIOS的中断以扇区为单位读取了，终于可以使用文件系统了</div>2021-06-10</li><br/><li><span>neohope</span> 👍（35） 💬（1）<div>大体上整理了一下，有问题欢迎帮忙指出【下】：
+加载各个mod后，grub就支持文件系统了，访问磁盘不需要再依靠BIOS的中断以扇区为单位读取了，终于可以使用文件系统了</p>2021-06-10</li><br/><li><span>neohope</span> 👍（35） 💬（1）<p>大体上整理了一下，有问题欢迎帮忙指出【下】：
 6、GRUB2阶段
 现在grub就能访问boot&#47;grub及其子目录了
 kernel.img接着调用grub_load_normal_mode加载normal模块
@@ -369,15 +369,15 @@ Linux内核的相关文件位于&#47;boot 目录下，文件名均带有前缀 v
 调用linux模块中的linux命令，加载linux内核
 调用linux模块中的initrd命令，填充initramfs信息，然后Grub会把控制权移交给内核。
 内核此时开始执行，同时也就可以读取linux_kernel_params结构体的数据了
-boot阶段结束，开始进入startup阶段。</div>2021-06-10</li><br/><li><span>178</span> 👍（6） 💬（1）<div>vmlinuz是可引导的、压缩的内核。“vm”代表 “Virtual Memory”，linu代表“Linux”，z代表压缩。是个有故事的缩写</div>2021-11-10</li><br/><li><span>Fan</span> 👍（6） 💬（1）<div>请问，为什么要用 C 代码 mkpiggy 程序生成 piggy.S 文件，并包含 vmlinux.bin.gz 文件呢？
+boot阶段结束，开始进入startup阶段。</p>2021-06-10</li><br/><li><span>178</span> 👍（6） 💬（1）<p>vmlinuz是可引导的、压缩的内核。“vm”代表 “Virtual Memory”，linu代表“Linux”，z代表压缩。是个有故事的缩写</p>2021-11-10</li><br/><li><span>Fan</span> 👍（6） 💬（1）<p>请问，为什么要用 C 代码 mkpiggy 程序生成 piggy.S 文件，并包含 vmlinux.bin.gz 文件呢？
 
 看了这下生成的这个piggy.S 文件
 主要的就是这行代码
 .incbin &quot;arch&#47;x86&#47;boot&#47;compressed&#47;vmlinux.bin.gz&quot;
 通过C 代码的形式，可以传入不同的参数来设置不同的压缩包vmlinux.bin.xx  来生成piggy.S 。
-</div>2021-06-09</li><br/><li><span>孤星可</span> 👍（5） 💬（1）<div>尝试实现了 lmoskrlimg 的逻辑（即 Cosmos.eki 的生成），有兴趣可以看看。
+</p>2021-06-09</li><br/><li><span>孤星可</span> 👍（5） 💬（1）<p>尝试实现了 lmoskrlimg 的逻辑（即 Cosmos.eki 的生成），有兴趣可以看看。
 
-https:&#47;&#47;github.com&#47;guxingke&#47;demo&#47;blob&#47;master&#47;bytes-demo&#47;src&#47;main&#47;java&#47;com&#47;gxk&#47;demo&#47;Main.java</div>2021-06-10</li><br/><li><span>Qfeng</span> 👍（4） 💬（1）<div>一、简单总结：
+https:&#47;&#47;github.com&#47;guxingke&#47;demo&#47;blob&#47;master&#47;bytes-demo&#47;src&#47;main&#47;java&#47;com&#47;gxk&#47;demo&#47;Main.java</p>2021-06-10</li><br/><li><span>Qfeng</span> 👍（4） 💬（1）<p>一、简单总结：
 1. CPU上电启动BIOS（ROM）
 CPU硬件被设计成在加电的瞬间，强制将 CS 寄存器的值设置为 0XF000，IP 寄存器的值设置为 0XFFF0。
 CS:IP 为 0XFFFF0 的这个物理地址上连接了主板上的一块小的 ROM 芯片，BIOS 程序就被固化在该 ROM 芯片里。
@@ -407,5 +407,5 @@ GRUB 的 core.img 文件一旦开始工作，就可以加载 Linux 系统的 vml
 
 二、思考题
 为什么要用 C 代码 mkpiggy 程序生成 piggy.S 文件，并包含 vmlinux.bin.gz 文件呢？
-==》通过main函数传入的可变参数可以根据需要灵活扩展piggy.S的内容？</div>2022-06-19</li><br/><li><span>pedro</span> 👍（3） 💬（1）<div>工具生成方式灵活，支持多种配置，且能满足各种场景下的需求~</div>2021-06-09</li><br/><li><span>springXu</span> 👍（2） 💬（4）<div>程序来生成汇编代码，这个是有多种配置让使用者根据自己的需求来生成。比如vmlinuz.bin压缩的方式的不同又或者是cpu的指令不同。  产生的汇编代码也不同。 另外Cosmos.eki的生成过程能有个说明不？ </div>2021-06-09</li><br/><li><span>blentle</span> 👍（1） 💬（1）<div>不管肚子多少遍启动流程，还是记不住各种地址，除了0×7c00，哈哈</div>2021-06-10</li><br/><li><span>Fan</span> 👍（1） 💬（1）<div>又学习了一遍启动流程。😂</div>2021-06-09</li><br/><li><span>搬铁少年ai</span> 👍（0） 💬（1）<div>请问老师，boot.img 是 512B 大小，MBR 也是 512，难道 boot.img 安装到 MBR 的时候会把 MBR 全部覆盖掉吗？</div>2021-10-26</li><br/><li><span>搬铁少年ai</span> 👍（0） 💬（2）<div>老师好，我看别的书里面将上电后先跳转到 reset vector(0xFFFFFFF0)，然后 reset vector 会跳转到 BIOS 的入口（0xFFFF0），您这里为什么没有这个恢复向量呢</div>2021-10-24</li><br/><li><span>老王</span> 👍（0） 💬（1）<div>需要多分析各个脚本的功能，才能把握住脉络</div>2021-06-09</li><br/><li><span>WGJ</span> 👍（0） 💬（1）<div>老师，这里面好像piggy.s依赖vmlinux目标，然后vmlinux 目标又依赖piggy.s，这种互相依赖是怎么解决的啊</div>2024-02-02</li><br/>
+==》通过main函数传入的可变参数可以根据需要灵活扩展piggy.S的内容？</p>2022-06-19</li><br/><li><span>pedro</span> 👍（3） 💬（1）<p>工具生成方式灵活，支持多种配置，且能满足各种场景下的需求~</p>2021-06-09</li><br/><li><span>springXu</span> 👍（2） 💬（4）<p>程序来生成汇编代码，这个是有多种配置让使用者根据自己的需求来生成。比如vmlinuz.bin压缩的方式的不同又或者是cpu的指令不同。  产生的汇编代码也不同。 另外Cosmos.eki的生成过程能有个说明不？ </p>2021-06-09</li><br/><li><span>blentle</span> 👍（1） 💬（1）<p>不管肚子多少遍启动流程，还是记不住各种地址，除了0×7c00，哈哈</p>2021-06-10</li><br/><li><span>Fan</span> 👍（1） 💬（1）<p>又学习了一遍启动流程。😂</p>2021-06-09</li><br/><li><span>搬铁少年ai</span> 👍（0） 💬（1）<p>请问老师，boot.img 是 512B 大小，MBR 也是 512，难道 boot.img 安装到 MBR 的时候会把 MBR 全部覆盖掉吗？</p>2021-10-26</li><br/><li><span>搬铁少年ai</span> 👍（0） 💬（2）<p>老师好，我看别的书里面将上电后先跳转到 reset vector(0xFFFFFFF0)，然后 reset vector 会跳转到 BIOS 的入口（0xFFFF0），您这里为什么没有这个恢复向量呢</p>2021-10-24</li><br/><li><span>老王</span> 👍（0） 💬（1）<p>需要多分析各个脚本的功能，才能把握住脉络</p>2021-06-09</li><br/><li><span>WGJ</span> 👍（0） 💬（1）<p>老师，这里面好像piggy.s依赖vmlinux目标，然后vmlinux 目标又依赖piggy.s，这种互相依赖是怎么解决的啊</p>2024-02-02</li><br/>
 </ul>

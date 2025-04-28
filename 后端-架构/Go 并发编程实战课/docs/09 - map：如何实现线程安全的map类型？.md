@@ -514,25 +514,25 @@ Go内置的map类型使用起来很方便，但是它有一个非常致命的缺
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>蜉蝣</span> 👍（9） 💬（3）<div>老师好，我看到 read 中 key 被删除会有两个状态：nil 和 expunged。我会有些不明白，要么都用 nil 或者都用 expunged，这样会不会更好一些？</div>2020-11-12</li><br/><li><span>tingting</span> 👍（1） 💬（1）<div>想问一下老师，以下这种情况会有data race吗？
+<li><span>蜉蝣</span> 👍（9） 💬（3）<p>老师好，我看到 read 中 key 被删除会有两个状态：nil 和 expunged。我会有些不明白，要么都用 nil 或者都用 expunged，这样会不会更好一些？</p>2020-11-12</li><br/><li><span>tingting</span> 👍（1） 💬（1）<p>想问一下老师，以下这种情况会有data race吗？
 m:=make(map[string]int)
 Goroutine A: 不停地覆盖m指向新的map值
-Goroutine B: 不停地读m里面的某个key</div>2022-03-24</li><br/><li><span>叶小彬</span> 👍（0） 💬（1）<div>老师，我看了sync.Map 源码，有两点不是很懂
+Goroutine B: 不停地读m里面的某个key</p>2022-03-24</li><br/><li><span>叶小彬</span> 👍（0） 💬（1）<p>老师，我看了sync.Map 源码，有两点不是很懂
 1、设计read和dirty的想法是什么
 因为sync.Map里，read结构本身就是atomic.Value，增加和修改有Store方法，本身就可以防止幻读，脏读的问题，如果是为了delete的逻辑（我发现atomic.Value里是没有delete方法的），那完全可以写一个加锁逻辑的delete，个人感觉dirty的没什么用
-2、源码里的逻辑是，当read 的miss次数大于等于dirty的长度的时候，就将dirty转成read，这个是什么设计想法</div>2021-11-07</li><br/><li><span>徐改</span> 👍（0） 💬（1）<div>还是不太明白为什么在创建dirty的时候，要将read中未删除的entry拷贝给dirty.
-sync.map一个优秀的地方是当我们访问read的时候不需要上锁，访问dirty的时候需要加锁。在Load()方法中，我们每次都是先访问read，如果read中没有的话才访问dirty。那么对于dirty来说，dirty中的数据可能read没有，或者read有。read中有的数据，dirty有；read中没有的数据，dirty可能会有。而我们的程序每次都是先访问read，如果read没有后续才会访问dirty，那这样的话创建dirty的时候，感觉可以不用将read中的entry一个一个拷贝到dirty中，因为我们访问是先访问read的。</div>2021-10-27</li><br/><li><span>校歌</span> 👍（0） 💬（1）<div>老师，发现有个地方不严谨，”map不可比较”。我写了个小程序，提示map只可以跟nil比较，而不是不能比较。（可能有点扣字眼了）
-.&#47;main.go:11:12: invalid operation: resMap == resMap (map can only be compared to nil)</div>2021-05-14</li><br/><li><span>新味道</span> 👍（0） 💬（1）<div>新加的元素需要放入到 dirty 中，如果 dirty 为 nil，那么需要从 read 字段中复制出来一个 dirty 对象。
+2、源码里的逻辑是，当read 的miss次数大于等于dirty的长度的时候，就将dirty转成read，这个是什么设计想法</p>2021-11-07</li><br/><li><span>徐改</span> 👍（0） 💬（1）<p>还是不太明白为什么在创建dirty的时候，要将read中未删除的entry拷贝给dirty.
+sync.map一个优秀的地方是当我们访问read的时候不需要上锁，访问dirty的时候需要加锁。在Load()方法中，我们每次都是先访问read，如果read中没有的话才访问dirty。那么对于dirty来说，dirty中的数据可能read没有，或者read有。read中有的数据，dirty有；read中没有的数据，dirty可能会有。而我们的程序每次都是先访问read，如果read没有后续才会访问dirty，那这样的话创建dirty的时候，感觉可以不用将read中的entry一个一个拷贝到dirty中，因为我们访问是先访问read的。</p>2021-10-27</li><br/><li><span>校歌</span> 👍（0） 💬（1）<p>老师，发现有个地方不严谨，”map不可比较”。我写了个小程序，提示map只可以跟nil比较，而不是不能比较。（可能有点扣字眼了）
+.&#47;main.go:11:12: invalid operation: resMap == resMap (map can only be compared to nil)</p>2021-05-14</li><br/><li><span>新味道</span> 👍（0） 💬（1）<p>新加的元素需要放入到 dirty 中，如果 dirty 为 nil，那么需要从 read 字段中复制出来一个 dirty 对象。
 
 ---
 为什么需要从 read 字段中复制出来一个 dirty 对象？
-</div>2020-11-26</li><br/><li><span>Geek_zbvt62</span> 👍（0） 💬（3）<div>应该着重说明一下为什么有expunged这种状态,这点比较迷惑。我能理解expunged的entry代表read中存在而dirty中不存在。但为什么在read向dirty复制时，需要将nil的entry变为expunged？</div>2020-11-13</li><br/><li><span>Panmax</span> 👍（0） 💬（1）<div>文章中写到「所以，这里我们就超前一把，我带你直接体验这个即将要发布的泛型方案。」
+</p>2020-11-26</li><br/><li><span>Geek_zbvt62</span> 👍（0） 💬（3）<p>应该着重说明一下为什么有expunged这种状态,这点比较迷惑。我能理解expunged的entry代表read中存在而dirty中不存在。但为什么在read向dirty复制时，需要将nil的entry变为expunged？</p>2020-11-13</li><br/><li><span>Panmax</span> 👍（0） 💬（1）<p>文章中写到「所以，这里我们就超前一把，我带你直接体验这个即将要发布的泛型方案。」
 
-是我对泛型的理解有什么误会吗，下文中并没有看到使用泛型的地方������。</div>2020-10-31</li><br/><li><span>Junes</span> 👍（32） 💬（5）<div>1. 双检查主要是针对高并发的场景：
+是我对泛型的理解有什么误会吗，下文中并没有看到使用泛型的地方������。</p>2020-10-31</li><br/><li><span>Junes</span> 👍（32） 💬（5）<p>1. 双检查主要是针对高并发的场景：
 第一次先用CAS快速尝试，失败后进行加锁，然后进行第二次CAS检查，再进行修改；
 在高并发的情况下，存在多个goroutine在修改同一个Key，第一次CAS都失败了，在竞争锁；如果不进行第二次CAS检查就直接修改，这个Key就会被多次修改；
 
-2. 真正删除key的操作是在数据从read往dirty迁移的过程中（往dirty写数据时，发现dirty没有数据，就会触发迁移），只迁移没有被标记为删除的KV</div>2020-10-30</li><br/><li><span>我来也</span> 👍（14） 💬（1）<div>看到本文的标题,就让我想到之前看过的一篇文章:
+2. 真正删除key的操作是在数据从read往dirty迁移的过程中（往dirty写数据时，发现dirty没有数据，就会触发迁移），只迁移没有被标记为删除的KV</p>2020-10-30</li><br/><li><span>我来也</span> 👍（14） 💬（1）<p>看到本文的标题,就让我想到之前看过的一篇文章:
 [踩了 Golang sync.Map 的一个坑](https:&#47;&#47;gocn.vip&#47;topics&#47;10860)
 
 就是老师文章代码中的一行注释的由来:
@@ -542,13 +542,13 @@ sync.map一个优秀的地方是当我们访问read的时候不需要上锁，�
 虽然才短短384行代码,但还是花了不少功夫.
 
 另外,推荐一个 欧长坤 未完工的开源电子书 [Go 语言原本](https:&#47;&#47;github.com&#47;golang-design&#47;under-the-hood).
-</div>2020-10-30</li><br/><li><span>NULL</span> 👍（9） 💬（2）<div>感觉有两个地方写的有点模糊，导致对后面的内容有些不明所以_(:з」∠)_
+</p>2020-10-30</li><br/><li><span>NULL</span> 👍（9） 💬（2）<p>感觉有两个地方写的有点模糊，导致对后面的内容有些不明所以_(:з」∠)_
 1是 “通过冗余的两个数据结构（只读的 read 字段、可以 dirty）”，可以 dirty 是笔误吗
 2是 “动态调整。miss 次数多了之后”，miss是什么？
 
 查了下其他资料，dirty指 将最新写入的数据则存在 dirty 字段上
 misses 字段用来统计 read 被穿透的次数（被穿透指需要读 dirty 的情况）
-这样理解起来好多了_(:з」∠)_</div>2020-11-02</li><br/><li><span>TT</span> 👍（5） 💬（0）<div> 1. 为什么说 read 是并发读写安全的？
+这样理解起来好多了_(:з」∠)_</p>2020-11-02</li><br/><li><span>TT</span> 👍（5） 💬（0）<p> 1. 为什么说 read 是并发读写安全的？
  2. read 为什么可以更新 key 对应的 value？dirty 中会同步更新吗？
  3. map 的 misses 是什么？干嘛用的？
  4. 什么时候 misses 会变化？
@@ -556,7 +556,7 @@ misses 字段用来统计 read 被穿透的次数（被穿透指需要读 dirty 
  6. 什么时候会改变 amended？
  7. 定义 expunged 是干什么用的？标记清除到底是怎么标记的？又是怎么清除的？
 
-自己写了一篇总结 http:&#47;&#47;zero-tt.fun&#47;go&#47;sync-map&#47; ，希望可以和大家讨论</div>2021-05-21</li><br/><li><span>阿梅</span> 👍（1） 💬（0）<div>map并发读写不只是panic，而是直接宕机， 也就是无法通过recover捕获后继续执行程序</div>2023-11-15</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>concurrent-map，新知识点get，项目中用起来。</div>2022-04-14</li><br/><li><span>while (1)等;</span> 👍（0） 💬（0）<div>老师好！
+自己写了一篇总结 http:&#47;&#47;zero-tt.fun&#47;go&#47;sync-map&#47; ，希望可以和大家讨论</p>2021-05-21</li><br/><li><span>阿梅</span> 👍（1） 💬（0）<p>map并发读写不只是panic，而是直接宕机， 也就是无法通过recover捕获后继续执行程序</p>2023-11-15</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>concurrent-map，新知识点get，项目中用起来。</p>2022-04-14</li><br/><li><span>while (1)等;</span> 👍（0） 💬（0）<p>老师好！
 type RWMap struct { &#47;&#47; 一个读写锁保护的线程安全的map
     sync.RWMutex &#47;&#47; 读写锁保护下面的map字段
     m map[int]int
@@ -567,5 +567,5 @@ func NewRWMap(n int) *RWMap {
         m: make(map[int]int, n),
     }
 }
-这里初始化map的时候为什么用的是&amp;RWMap</div>2021-07-04</li><br/>
+这里初始化map的时候为什么用的是&amp;RWMap</p>2021-07-04</li><br/>
 </ul>

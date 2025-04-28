@@ -165,5 +165,5 @@ Live Photos 是当前 iOS 系统相机里提供的一个特色功能，它是一
 
 注：iOS 由于系统限制，第三方软件的长曝光效果最多也只能到 1/4s，所以 iOS 用户使用 Live Photos 功能来模拟即可。但建议下载 VSCO 或 Lightroom，使用它们内置的专业相机模式来学习理解对应参数。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>风</span> 👍（1） 💬（1）<div>老师现在vsco的相机好像改版了，没有专业模式了</div>2020-12-01</li><br/><li><span>Katherine</span> 👍（2） 💬（1）<div>人像Live转长曝光开启新世界</div>2020-11-13</li><br/>
+<li><span>风</span> 👍（1） 💬（1）<p>老师现在vsco的相机好像改版了，没有专业模式了</p>2020-12-01</li><br/><li><span>Katherine</span> 👍（2） 💬（1）<p>人像Live转长曝光开启新世界</p>2020-11-13</li><br/>
 </ul>

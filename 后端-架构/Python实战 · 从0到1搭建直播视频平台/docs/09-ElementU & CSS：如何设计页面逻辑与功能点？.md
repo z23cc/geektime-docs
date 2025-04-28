@@ -558,9 +558,9 @@ display:inline-block
 
 期待你在留言区和我交流互动，也推荐你把这节课分享给身边更多朋友，和他一起学习进步。
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>radeon</span> 👍（2） 💬（1）<div>根据老师的vue2代码主体逻辑，我使用vue3+ts搭建了项目，对于项目文件结构不清晰或者想用vue3的朋友们可以看过来，现在已完成首页静态页面部分，代码已发布在github以及gitee，并使用MIT协议开源，欢迎大家前来指点或者在此基础上继续开发或改进！
+<li><span>radeon</span> 👍（2） 💬（1）<p>根据老师的vue2代码主体逻辑，我使用vue3+ts搭建了项目，对于项目文件结构不清晰或者想用vue3的朋友们可以看过来，现在已完成首页静态页面部分，代码已发布在github以及gitee，并使用MIT协议开源，欢迎大家前来指点或者在此基础上继续开发或改进！
 github: https:&#47;&#47;github.com&#47;0x3147&#47;just-see-it 
-gitee: https:&#47;&#47;gitee.com&#47;kang-jiaxing&#47;just-see-it</div>2023-07-03</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<div>sudo npm install --save vue-content-loader
+gitee: https:&#47;&#47;gitee.com&#47;kang-jiaxing&#47;just-see-it</p>2023-07-03</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<p>sudo npm install --save vue-content-loader
 Password:
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
@@ -582,7 +582,7 @@ npm ERR!
 npm ERR! See &#47;Users&#47;kindyli&#47;.npm&#47;eresolve-report.txt for a full report.
 
 npm ERR! A complete log of this run can be found in:
-npm ERR!     &#47;Users&#47;kindyli&#47;.npm&#47;_logs&#47;2023-06-17T12_56_24_738Z-debug-0.log</div>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（4）<div>老师，求助
+npm ERR!     &#47;Users&#47;kindyli&#47;.npm&#47;_logs&#47;2023-06-17T12_56_24_738Z-debug-0.log</p>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（4）<p>老师，求助
 Module build failed: 
 
     .icon-fire {
@@ -590,7 +590,7 @@ Module build failed:
       ^
 .icon is undefined
 
-这个.icon是需要在哪里定义的</div>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（2）<div>老师上传的代码好像只有对应的文件，没有完整的项目结构，会缺少部分文件依赖，比如这节这个组件BulletListLoader</div>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<div>老师，你好，点击事件 goDetail(main_recommend) 这个main_recommend这个参数是如何传递的，或者说，一个点击事件，处理点击函数可以传递哪些参数</div>2023-06-17</li><br/><li><span>Geek_d671c1</span> 👍（0） 💬（2）<div>index文件报错：Cannot find module &#39;vue-content-loader&#39; or its corresponding type declarations.ts(2307)
+这个.icon是需要在哪里定义的</p>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（2）<p>老师上传的代码好像只有对应的文件，没有完整的项目结构，会缺少部分文件依赖，比如这节这个组件BulletListLoader</p>2023-06-17</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<p>老师，你好，点击事件 goDetail(main_recommend) 这个main_recommend这个参数是如何传递的，或者说，一个点击事件，处理点击函数可以传递哪些参数</p>2023-06-17</li><br/><li><span>Geek_d671c1</span> 👍（0） 💬（2）<p>index文件报错：Cannot find module &#39;vue-content-loader&#39; or its corresponding type declarations.ts(2307)
 
-你好，请问这个问题如何解决？</div>2023-06-15</li><br/><li><span>ZENG</span> 👍（0） 💬（2）<div>老师，请问一下在 MyHeader 组件中使用 ElementUI 下拉菜单，其中每个 item 都有加上 @click.native，这个和原来不加上 native 有什么区别呢？我搜索了一下我的理解是父组件引入的子组件，如果直接使用@click事件是不会有作用的，使用@click.native就可以触发事件，是不是相当代替$emit的作用呢</div>2023-06-14</li><br/><li><span>Geek_d671c1</span> 👍（0） 💬（1）<div>你好，有整个项目的源码吗，不按照课时区分？</div>2023-06-14</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<div>老师能放一下前端部分的项目结构吗？初学者有点懵</div>2023-05-25</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<div>JSX 表达式必须具有一个父元素?请问这个怎么处理？</div>2023-05-19</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<div> For Vue 2 &amp; Nuxt 2, use vue-content-loader@^0.2 instead.</div>2023-06-17</li><br/>
+你好，请问这个问题如何解决？</p>2023-06-15</li><br/><li><span>ZENG</span> 👍（0） 💬（2）<p>老师，请问一下在 MyHeader 组件中使用 ElementUI 下拉菜单，其中每个 item 都有加上 @click.native，这个和原来不加上 native 有什么区别呢？我搜索了一下我的理解是父组件引入的子组件，如果直接使用@click事件是不会有作用的，使用@click.native就可以触发事件，是不是相当代替$emit的作用呢</p>2023-06-14</li><br/><li><span>Geek_d671c1</span> 👍（0） 💬（1）<p>你好，有整个项目的源码吗，不按照课时区分？</p>2023-06-14</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<p>老师能放一下前端部分的项目结构吗？初学者有点懵</p>2023-05-25</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<p>JSX 表达式必须具有一个父元素?请问这个怎么处理？</p>2023-05-19</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<p> For Vue 2 &amp; Nuxt 2, use vue-content-loader@^0.2 instead.</p>2023-06-17</li><br/>
 </ul>

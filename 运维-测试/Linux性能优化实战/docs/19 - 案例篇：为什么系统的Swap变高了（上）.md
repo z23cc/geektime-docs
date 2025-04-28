@@ -177,31 +177,31 @@ swappiness的范围是0-100，数值越大，越积极使用Swap，也就是更�
 
 欢迎在留言区和我讨论，也欢迎把这篇文章分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Ray</span> 👍（90） 💬（6）<div>关于上面有同学表示 hadoop 集群建议关 swap 提升性能。事实上不仅 hadoop，包括 ES 在内绝大部分 Java 的应用都建议关 swap，这个和 JVM 的 gc 有关，它在 gc 的时候会遍历所有用到的堆的内存，如果这部分内存是被 swap 出去了，遍历的时候就会有磁盘IO
+<li><span>Ray</span> 👍（90） 💬（6）<p>关于上面有同学表示 hadoop 集群建议关 swap 提升性能。事实上不仅 hadoop，包括 ES 在内绝大部分 Java 的应用都建议关 swap，这个和 JVM 的 gc 有关，它在 gc 的时候会遍历所有用到的堆的内存，如果这部分内存是被 swap 出去了，遍历的时候就会有磁盘IO
 
 可以参考这两篇文章：
 https:&#47;&#47;www.elastic.co&#47;guide&#47;en&#47;elasticsearch&#47;reference&#47;current&#47;setup-configuration-memory.html
 
-https:&#47;&#47;dzone.com&#47;articles&#47;just-say-no-swapping</div>2019-01-22</li><br/><li><span>爱学习的小学生</span> 👍（69） 💬（2）<div>请问老师、为什么kubernetes要关闭swap呢？</div>2019-02-21</li><br/><li><span>某、人</span> 👍（33） 💬（1）<div>swap应该是针对以前内存小的一种优化吧,不过现在内存没那么昂贵之后,所以就没那么大的必要开启了
+https:&#47;&#47;dzone.com&#47;articles&#47;just-say-no-swapping</p>2019-01-22</li><br/><li><span>爱学习的小学生</span> 👍（69） 💬（2）<p>请问老师、为什么kubernetes要关闭swap呢？</p>2019-02-21</li><br/><li><span>某、人</span> 👍（33） 💬（1）<p>swap应该是针对以前内存小的一种优化吧,不过现在内存没那么昂贵之后,所以就没那么大的必要开启了
 numa感觉是对系统资源做的隔离分区,不过目前虚拟化和docker这么流行。而且node与node之间访问更耗时,针对大程序不一定启到了优化作用,针对小程序,也没有太大必要。所以numa也没必要开启。
-不知道我的理解对否,老师</div>2019-01-02</li><br/><li><span>bob</span> 👍（18） 💬（4）<div>swappiness=0
+不知道我的理解对否,老师</p>2019-01-02</li><br/><li><span>bob</span> 👍（18） 💬（4）<p>swappiness=0
 Kernel version 3.5 and newer: disables swapiness.
 Kernel version older than 3.5: avoids swapping processes out of physical memory for as long as possible.
 如果linux内核是3.5及以后的，最好是设置swappiness=10，不要设置swappiness=0
 
-以前整理的说明，供大家参考。</div>2019-01-03</li><br/><li><span>Days</span> 👍（13） 💬（1）<div>我们公司处理嵌入式系统都是关闭swap分区，具体不知道什么原因？</div>2019-01-02</li><br/><li><span>日行一善520</span> 👍（12） 💬（1）<div>看到评论有人问
+以前整理的说明，供大家参考。</p>2019-01-03</li><br/><li><span>Days</span> 👍（13） 💬（1）<p>我们公司处理嵌入式系统都是关闭swap分区，具体不知道什么原因？</p>2019-01-02</li><br/><li><span>日行一善520</span> 👍（12） 💬（1）<p>看到评论有人问
 hadoop集群服务器一般是建议关闭swap交换空间，这样可提高性能。在什么情况下开swap、什么情况下关swap？
 
 为了性能关闭swap，这样就不会交换也不会慢了。内核里有个vm.xx的值可以调节swap和内存的比例，在使用内存90%时才交换到swap，可以设置这个来保持性能。在内存比较少的时候，还可以交换，就好了。
 
-</div>2019-01-16</li><br/><li><span>刘政伟</span> 👍（11） 💬（1）<div>老师，在工作中经常会遇到这种情况，系统中的剩余内存较小、缓存内存较大的，也就是整体可用内存较高的情况下，就开始使用swap了，而查看swappiness的配置为10，理论上不应该使用swap的；具体看下面的free命令，麻烦老师看下是什么原因？
+</p>2019-01-16</li><br/><li><span>刘政伟</span> 👍（11） 💬（1）<p>老师，在工作中经常会遇到这种情况，系统中的剩余内存较小、缓存内存较大的，也就是整体可用内存较高的情况下，就开始使用swap了，而查看swappiness的配置为10，理论上不应该使用swap的；具体看下面的free命令，麻烦老师看下是什么原因？
 [root@shvsolman ~]# free -m
              total       used       free     shared    buffers     cached
 Mem:         32107      31356        750          0         15      12514
 -&#47;+ buffers&#47;cache:      18825      13281
 Swap:         3071       1581       1490
 [root@shvsolman ~]# sysctl -a | grep swappiness
-vm.swappiness = 10</div>2019-03-11</li><br/><li><span>我来也</span> 👍（7） 💬（1）<div>[D19打卡]
+vm.swappiness = 10</p>2019-03-11</li><br/><li><span>我来也</span> 👍（7） 💬（1）<p>[D19打卡]
 很遗憾,还未遇到过swap导致的性能问题.
 刚买电脑时,512M内存要四百多,可是当时也不玩linux.
 等工作了,用linux了,内存相对来说已经比较便宜了.
@@ -209,6 +209,6 @@ vm.swappiness = 10</div>2019-03-11</li><br/><li><span>我来也</span> 👍（7�
 --------------------
 以前的程序喜欢在启动时预分配很多内存,可是现在的几乎都是动态分配了.
 以前一个程序动辄实际使用内存2-3G.
-现在即使重构后,只需要100M内存,老板都不愿意换了.[稳定第一]</div>2019-01-02</li><br/><li><span>路过</span> 👍（6） 💬（3）<div>老师，前面你写只有当剩余内存落在页最小阈值和页低阈值中间，才开始回收内存。后面讲即使把 swappiness 设置为0，当剩余内存 + 文件页小于页高阈值时，还是会发生 Swap。我理解，这里是不是应该是：当剩余内存 + 文件页小于页低阈值时，还是会发生 Swap。谢谢！</div>2019-01-03</li><br/><li><span>DJH</span> 👍（3） 💬（1）<div>倪老师，请教一下，Linux下怎么关闭SWAP功能？直接不分配SWAP卷（或者分区、文件），还是通过某个关闭SWAP功能的系统选项？</div>2019-01-02</li><br/><li><span>ninuxer</span> 👍（3） 💬（1）<div>打卡day20
-我们机器上，都不启用swap😂</div>2019-01-02</li><br/><li><span>Adam</span> 👍（2） 💬（1）<div>数据库应用一般都需要调整下numa。不然跨node访问内存性能就变差了。</div>2019-01-04</li><br/><li><span>爆爱渣科_无良🌾 🐖</span> 👍（2） 💬（3）<div>感觉后面越写越变成讲述linux工具的文章。。。</div>2019-01-02</li><br/><li><span>React</span> 👍（2） 💬（1）<div>老师好，文中说电脑的休眠是基于swap.如果系统没有分配swap分区，还会将内存数据写入磁盘吗</div>2019-01-02</li><br/><li><span>徳柏</span> 👍（1） 💬（1）<div>嵌入式系统一般都启用了zram技术，小内存swap还是要开启的，很有好处，跟swap到磁盘不是一个事</div>2019-07-17</li><br/>
+现在即使重构后,只需要100M内存,老板都不愿意换了.[稳定第一]</p>2019-01-02</li><br/><li><span>路过</span> 👍（6） 💬（3）<p>老师，前面你写只有当剩余内存落在页最小阈值和页低阈值中间，才开始回收内存。后面讲即使把 swappiness 设置为0，当剩余内存 + 文件页小于页高阈值时，还是会发生 Swap。我理解，这里是不是应该是：当剩余内存 + 文件页小于页低阈值时，还是会发生 Swap。谢谢！</p>2019-01-03</li><br/><li><span>DJH</span> 👍（3） 💬（1）<p>倪老师，请教一下，Linux下怎么关闭SWAP功能？直接不分配SWAP卷（或者分区、文件），还是通过某个关闭SWAP功能的系统选项？</p>2019-01-02</li><br/><li><span>ninuxer</span> 👍（3） 💬（1）<p>打卡day20
+我们机器上，都不启用swap😂</p>2019-01-02</li><br/><li><span>Adam</span> 👍（2） 💬（1）<p>数据库应用一般都需要调整下numa。不然跨node访问内存性能就变差了。</p>2019-01-04</li><br/><li><span>爆爱渣科_无良🌾 🐖</span> 👍（2） 💬（3）<p>感觉后面越写越变成讲述linux工具的文章。。。</p>2019-01-02</li><br/><li><span>React</span> 👍（2） 💬（1）<p>老师好，文中说电脑的休眠是基于swap.如果系统没有分配swap分区，还会将内存数据写入磁盘吗</p>2019-01-02</li><br/><li><span>徳柏</span> 👍（1） 💬（1）<p>嵌入式系统一般都启用了zram技术，小内存swap还是要开启的，很有好处，跟swap到磁盘不是一个事</p>2019-07-17</li><br/>
 </ul>

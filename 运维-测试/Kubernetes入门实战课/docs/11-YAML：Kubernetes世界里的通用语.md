@@ -313,8 +313,8 @@ Kubernetes采用YAML作为工作语言是它有别与其他系统的一大特色
 
 ![](https://static001.geekbang.org/resource/image/13/36/13dc437dda840dda4850fb72237b8e36.jpg?wh=1920x2868)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>nada</span> 👍（29） 💬（4）<div>1. 因为空调的使用是我们设置温度，然后空调尽量去达成设置的温度，即我们设置的是我们想要达成的效果，而不像电视遥控器，每次操作都发送一个指令，声明式还有一个特点是容易 patch，拿空调举例，当前气温 30 度，我们先设置了 24 度，然后升高到 26 度，空调并不会先降低到 24 度，再升高到 26 度，而是将两次传递的意图 patch，直接降低到 26 度，k8s 也是这样
-2. yaml 转换 json 的过程基本上字段一一对应，除了最后会把当前的 json 再序列化为字符串，存储到 &quot;kubectl.kubernetes.io&#47;last-applied-configuration&quot; 这个 annotations 中</div>2022-07-15</li><br/><li><span>psoracle</span> 👍（13） 💬（1）<div>回答一下作业
+<li><span>nada</span> 👍（29） 💬（4）<p>1. 因为空调的使用是我们设置温度，然后空调尽量去达成设置的温度，即我们设置的是我们想要达成的效果，而不像电视遥控器，每次操作都发送一个指令，声明式还有一个特点是容易 patch，拿空调举例，当前气温 30 度，我们先设置了 24 度，然后升高到 26 度，空调并不会先降低到 24 度，再升高到 26 度，而是将两次传递的意图 patch，直接降低到 26 度，k8s 也是这样
+2. yaml 转换 json 的过程基本上字段一一对应，除了最后会把当前的 json 再序列化为字符串，存储到 &quot;kubectl.kubernetes.io&#47;last-applied-configuration&quot; 这个 annotations 中</p>2022-07-15</li><br/><li><span>psoracle</span> 👍（13） 💬（1）<p>回答一下作业
 1. 你是如何理解“命令式”和“声明式”的？为什么说空调是“声明式”的？
 我现在从kubernetes相关知识点中学习并理解到的“声明式”一个最直白的地方是新增与修改两个命令式操作写成apply，如果创建对象不存在则创建、对象已存在就比较spec进行相应变更，当然k8s的修改实际上是先delete再create。至于kubectl create、kubectl edit、kubectl delete等都是&quot;命令式&quot;操作，告诉k8s应该怎么做。
 空调是“声明式”的原因是我不知道当前温度是多少，只需要我知道应该开成多少度即可，即我们在操作遥控器之前就知道我们要将空调调成多少度，这是预期值。
@@ -323,9 +323,9 @@ Kubernetes采用YAML作为工作语言是它有别与其他系统的一大特色
 虽然yaml格式是json的超集，但在k8s中的yaml文件最终都是被转换为json格式字符串放在request body中提交到apiserver的，从`kubectl -v=9`对各种操作的调试中可以看到。
 除此之外，还发现一些有规律的地方，如下：
 可见简单对象（如pod, configmap, secret, serviceaccount等）调用的接口形式如 `&#47;api&#47;&lt;apiVersion&gt;&#47;namespaces&#47;&lt;namespace&gt;&#47;&lt;kinds&gt;[&#47;&lt;name&gt;]`，其中对象类型为复数形式即`kubectl api-resources`中的name字段，修改、删除与查询具体对象时在URL中有`&#47;&lt;name&gt;`部分，其它如创建、查询所有就没有。对于复合对象（简单对象的包装对象，如replicaset, deployment, statefulset, cronjob等）的URL不同的是以`&#47;apis`开头，说明是属于复合型的接口（组合服务）。
-</div>2022-07-15</li><br/><li><span>陶乐思</span> 👍（9） 💬（2）<div>请问一下老师, —dry-run=client -o yaml生成的YAML默认情况下会将文件保存在哪里啊？没有找到呢…环境：windows+minikube</div>2022-07-15</li><br/><li><span>aoe</span> 👍（8） 💬（1）<div>终于对一头雾水的yaml文件有了一个正确的了解，感谢老师</div>2022-07-21</li><br/><li><span>安迪密恩</span> 👍（5） 💬（1）<div>这门课太棒了，以前接触的杂乱的知识点在学完这一章之后逐渐变得脉络清晰！</div>2022-07-20</li><br/><li><span>郑海成</span> 👍（3） 💬（2）<div>有了刚才 YAML 语言知识“打底”，相信你基本上能够把它看明白，知道它是一个 Pod，要使用 nginx:alpine 镜像创建一个容器，开放端口 80，而其他的部分，就是 Kubernetes 对 API 对象强制的格式要求了。
+</p>2022-07-15</li><br/><li><span>陶乐思</span> 👍（9） 💬（2）<p>请问一下老师, —dry-run=client -o yaml生成的YAML默认情况下会将文件保存在哪里啊？没有找到呢…环境：windows+minikube</p>2022-07-15</li><br/><li><span>aoe</span> 👍（8） 💬（1）<p>终于对一头雾水的yaml文件有了一个正确的了解，感谢老师</p>2022-07-21</li><br/><li><span>安迪密恩</span> 👍（5） 💬（1）<p>这门课太棒了，以前接触的杂乱的知识点在学完这一章之后逐渐变得脉络清晰！</p>2022-07-20</li><br/><li><span>郑海成</span> 👍（3） 💬（2）<p>有了刚才 YAML 语言知识“打底”，相信你基本上能够把它看明白，知道它是一个 Pod，要使用 nginx:alpine 镜像创建一个容器，开放端口 80，而其他的部分，就是 Kubernetes 对 API 对象强制的格式要求了。
 ————
-查了一下官方文档，其实不是“开放”，好像是是“说明”容器中暴露的端口是80</div>2022-07-22</li><br/><li><span>aLong</span> 👍（2） 💬（1）<div>首先感谢老师三个技巧。这块配置的内容我确实很头大啊。初学时看书都想跳过去看看后面内容。今天看完老师讲的有点意思啊。尤其是我喜欢那种比喻生动的多。
+查了一下官方文档，其实不是“开放”，好像是是“说明”容器中暴露的端口是80</p>2022-07-22</li><br/><li><span>aLong</span> 👍（2） 💬（1）<p>首先感谢老师三个技巧。这块配置的内容我确实很头大啊。初学时看书都想跳过去看看后面内容。今天看完老师讲的有点意思啊。尤其是我喜欢那种比喻生动的多。
 
 两种方式进行比较：
 命令：简单、直观、快捷，上手快。 适合临时测试或实验。
@@ -333,7 +333,7 @@ yaml文件：文件描述了What，即应用最终要达到的状态。配置文
 另外 kubectl apply不但能够创建Kubernetes资源，也能对资源进行更新，非常方便。
 
 
-空调这种有些需求没办法直接达到预期工作，比如制冷、制热、温度调整。 反观：电视，你想换台就换了，声音控制多少按+ -就行了。 所以空调很多功能更像是声明式。</div>2023-01-06</li><br/><li><span>bruce</span> 👍（2） 💬（2）<div>
+空调这种有些需求没办法直接达到预期工作，比如制冷、制热、温度调整。 反观：电视，你想换台就换了，声音控制多少按+ -就行了。 所以空调很多功能更像是声明式。</p>2023-01-06</li><br/><li><span>bruce</span> 👍（2） 💬（2）<p>
 apiVersion: v1
 kind: Pod
 metadata:
@@ -349,7 +349,7 @@ spec:
     ports:
     - containerPort: 80
 
-metadata里的name和spec里的name有啥区别？</div>2022-12-20</li><br/><li><span>沃德天·泥维森陌·拉莫帅</span> 👍（2） 💬（1）<div>1. “命令式”是指采用命令式语言编写的程序，这种语言通常会指定程序执行的每一个步骤，并指定具体的操作来完成每一个步骤。
+metadata里的name和spec里的name有啥区别？</p>2022-12-20</li><br/><li><span>沃德天·泥维森陌·拉莫帅</span> 👍（2） 💬（1）<p>1. “命令式”是指采用命令式语言编写的程序，这种语言通常会指定程序执行的每一个步骤，并指定具体的操作来完成每一个步骤。
 
 “声明式”是指采用声明式语言编写的程序。这种语言通常会指定程序的输出，而不是具体的操作。
 
@@ -365,7 +365,7 @@ metadata里的name和spec里的name有啥区别？</div>2022-12-20</li><br/><li>
 具体过程：
 kubectl 会使用一个 HTTP 客户端库（比如 http.Client）来将这个 JSON 对象转换成一个 HTTP 请求。这个 HTTP 请求会包含一些基本信息，比如请求方法（比如 POST）、请求路径（比如 &#47;apis&#47;apps&#47;v1&#47;namespaces&#47;default&#47;deployments）和请求内容（比如转换后的 JSON 对象）。
 
-一旦这个 HTTP 请求被创建，kubectl 就可以使用这个 HTTP 客户端库来发送这个请求到 Kubernetes API 服务器。Kubernetes API 服务器会根据这个 HTTP 请求来执行相应的操作。</div>2022-12-11</li><br/><li><span>pyhhou</span> 👍（2） 💬（2）<div>有两个问题想请教老师，
+一旦这个 HTTP 请求被创建，kubectl 就可以使用这个 HTTP 客户端库来发送这个请求到 Kubernetes API 服务器。Kubernetes API 服务器会根据这个 HTTP 请求来执行相应的操作。</p>2022-12-11</li><br/><li><span>pyhhou</span> 👍（2） 💬（2）<p>有两个问题想请教老师，
 
 1. 通过 `kubectl api-resources` 看到的资源名称中其实没有 pod 而是 pods，但是我们依旧可以通过 pod 来访问对应的资源，这里是否可以理解为 k8s 自动帮忙做了单复数转换？
 
@@ -376,10 +376,10 @@ kubectl 会使用一个 HTTP 客户端库（比如 http.Client）来将这个 JS
 yaml错误:
 TypeError: Cannot read properties of undefined (reading &#39;split&#39;)
 
-感觉像是缩进的问题</div>2022-07-21</li><br/><li><span>赤色闪电</span> 👍（2） 💬（1）<div>“声明式”：空调遥控器操控空调设定想要的温度和模式即可。“命令式”：电视遥控器操控电视，按一个钮换一个台。</div>2022-07-15</li><br/><li><span>Geek_adb513</span> 👍（1） 💬（1）<div>yaml 以前都是直接抄现成的用法，只知道必须这么用，这里把为什么讲解的很到位，的确让思绪一下明朗了，三要素 和 自定义</div>2023-01-02</li><br/><li><span>Liang Li</span> 👍（1） 💬（1）<div>一个好的老师能在一堆复杂的网状知识中，找到非常清晰的线性脉络，并把这些知识给串联表达起来，难得的好文章。</div>2022-12-15</li><br/><li><span>云韵</span> 👍（1） 💬（6）<div>老师 我执行了这些命令  （环境是 mac m1 直接在本机上运行的 docker minikube）
+感觉像是缩进的问题</p>2022-07-21</li><br/><li><span>赤色闪电</span> 👍（2） 💬（1）<p>“声明式”：空调遥控器操控空调设定想要的温度和模式即可。“命令式”：电视遥控器操控电视，按一个钮换一个台。</p>2022-07-15</li><br/><li><span>Geek_adb513</span> 👍（1） 💬（1）<p>yaml 以前都是直接抄现成的用法，只知道必须这么用，这里把为什么讲解的很到位，的确让思绪一下明朗了，三要素 和 自定义</p>2023-01-02</li><br/><li><span>Liang Li</span> 👍（1） 💬（1）<p>一个好的老师能在一堆复杂的网状知识中，找到非常清晰的线性脉络，并把这些知识给串联表达起来，难得的好文章。</p>2022-12-15</li><br/><li><span>云韵</span> 👍（1） 💬（6）<p>老师 我执行了这些命令  （环境是 mac m1 直接在本机上运行的 docker minikube）
 export out=&quot;--dry-run=client -o yaml&quot;
 kubectl run ngx --image=nginx:alpine $out
 但是报这个错 error: Invalid dry-run value (client -o yaml). Must be &quot;none&quot;, &quot;server&quot;, or &quot;client&quot;.
 请老师帮忙解答一下，谢谢
-</div>2022-11-18</li><br/><li><span>静心</span> 👍（1） 💬（1）<div>很棒，讲的很清楚</div>2022-11-16</li><br/>
+</p>2022-11-18</li><br/><li><span>静心</span> 👍（1） 💬（1）<p>很棒，讲的很清楚</p>2022-11-16</li><br/>
 </ul>

@@ -915,9 +915,9 @@ trait定义好后，可以作为代码与代码之间、代码与开发者之间
 
 欢迎你把思考后的结果分享到评论区，也欢迎你把这节课的内容分享给对Rust感兴趣的朋友，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Mike Tang</span> 👍（11） 💬（1）<div>神说，众生平等。Rust说，众trait平等。</div>2023-11-09</li><br/><li><span>下雨天</span> 👍（30） 💬（5）<div>trait 的依赖：小明要听从数学老师，语文老师，英语老师的话。老师之间是平等关系，多个依赖平等，最小依赖选择自己喜欢滴功能。
-OOP 继承：小明要听他爸，他爷爷，他曾祖父的话。继承之间存在父子关系，继承过来一堆破属性和方法，也许根本不是自己想要滴，还要负重前行。</div>2023-11-08</li><br/><li><span>weineel</span> 👍（7） 💬（1）<div>在语法层面实践了组合优于继承。</div>2024-01-01</li><br/><li><span>独钓寒江</span> 👍（3） 💬（1）<div>看到supertrait 和 subtrait， Shape 和 Circle 的时候， 的确联想到继承了，不过作者强调平等，那就打消了这个念头</div>2024-04-06</li><br/><li><span>cluski</span> 👍（2） 💬（1）<div>个人理解，trait很像Java中的interface。Java的interface可以作为某种能力的抽象，并且在泛型的使用中，可以起到限制的作用。
-Java、C++等OOP语言中的继承个人感觉更多是在强调is-a这个概念。例如，男人是一个人，鸽子是一个鸟这类。与Rust的trait更加强调的一种能力和约束。</div>2023-11-08</li><br/><li><span>superggn</span> 👍（1） 💬（1）<div>笔记
+<li><span>Mike Tang</span> 👍（11） 💬（1）<p>神说，众生平等。Rust说，众trait平等。</p>2023-11-09</li><br/><li><span>下雨天</span> 👍（30） 💬（5）<p>trait 的依赖：小明要听从数学老师，语文老师，英语老师的话。老师之间是平等关系，多个依赖平等，最小依赖选择自己喜欢滴功能。
+OOP 继承：小明要听他爸，他爷爷，他曾祖父的话。继承之间存在父子关系，继承过来一堆破属性和方法，也许根本不是自己想要滴，还要负重前行。</p>2023-11-08</li><br/><li><span>weineel</span> 👍（7） 💬（1）<p>在语法层面实践了组合优于继承。</p>2024-01-01</li><br/><li><span>独钓寒江</span> 👍（3） 💬（1）<p>看到supertrait 和 subtrait， Shape 和 Circle 的时候， 的确联想到继承了，不过作者强调平等，那就打消了这个念头</p>2024-04-06</li><br/><li><span>cluski</span> 👍（2） 💬（1）<p>个人理解，trait很像Java中的interface。Java的interface可以作为某种能力的抽象，并且在泛型的使用中，可以起到限制的作用。
+Java、C++等OOP语言中的继承个人感觉更多是在强调is-a这个概念。例如，男人是一个人，鸽子是一个鸟这类。与Rust的trait更加强调的一种能力和约束。</p>2023-11-08</li><br/><li><span>superggn</span> 👍（1） 💬（1）<p>笔记
 
 一般我们说关联类型 &#47; associated types 的时候， 说的是 trait 底下的 type
 
@@ -941,7 +941,7 @@ Java、C++等OOP语言中的继承个人感觉更多是在强调is-a这个概念
 
 因为 rust 不会大海捞针遍历所有 trait 找方法， 你得先指定在哪儿找
 
-</div>2023-12-15</li><br/><li><span>$侯</span> 👍（1） 💬（1）<div>既然关联类型作为占位符，那为什么这样会报错呢，按我理解理占位符应该不需要事先声明
+</p>2023-12-15</li><br/><li><span>$侯</span> 👍（1） 💬（1）<p>既然关联类型作为占位符，那为什么这样会报错呢，按我理解理占位符应该不需要事先声明
 pub trait Sport {
     type SportType;
 
@@ -956,8 +956,8 @@ error[E0412]: cannot find type `SportType` in this scope
   |
 4 |     fn play(&amp;self, st: SportType);
   |                        ^^^^^^^^^ help: you might have meant to use the associated type: `Self::SportType`
-</div>2023-11-17</li><br/><li><span>duwoodly</span> 👍（1） 💬（1）<div>CPP的继承，子类会继承父类的属性和方法，子类可以重写父类的方法。 继承引起的耦合性很强。 所以新产生的语言都不再支持继承，像go和rust使用组合，降低了耦合性。
-Rust 的trait 是一种约束，也是一种能力，避免了继承的强耦合，又提供了灵活性。</div>2023-11-08</li><br/><li><span>王晓宇</span> 👍（0） 💬（1）<div>老师，在T上使用关联类型那个示例编译不通过
+</p>2023-11-17</li><br/><li><span>duwoodly</span> 👍（1） 💬（1）<p>CPP的继承，子类会继承父类的属性和方法，子类可以重写父类的方法。 继承引起的耦合性很强。 所以新产生的语言都不再支持继承，像go和rust使用组合，降低了耦合性。
+Rust 的trait 是一种约束，也是一种能力，避免了继承的强耦合，又提供了灵活性。</p>2023-11-08</li><br/><li><span>王晓宇</span> 👍（0） 💬（1）<p>老师，在T上使用关联类型那个示例编译不通过
 trait TraitA {
   type Mytype;
 }
@@ -971,8 +971,8 @@ impl TraitA for TypeA {
 
 fn main() {
   doit::&lt;TypeA&gt;(&quot;abc&quot;.to_string());  &#47;&#47; 给Rustc小助手喂信息：T具化为TypeA
-}</div>2024-03-28</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（1）<div>有没有入门项目来练练手，
-看完就忘了，不上手的话</div>2024-03-06</li><br/><li><span>飞了的鸭子被煮了</span> 👍（0） 💬（1）<div>trait 不需要考虑层级关系，感觉类型的约束更加原子化了，被消费时不需要考虑那么多的耦合。</div>2024-01-22</li><br/><li><span>千回百转无劫山</span> 👍（0） 💬（1）<div>从python过来的，只能说打开了新世界的大门</div>2023-12-27</li><br/><li><span>superggn</span> 👍（0） 💬（1）<div>思考题（我从 python 来的， cpp 和 java 没学过）
+}</p>2024-03-28</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（1）<p>有没有入门项目来练练手，
+看完就忘了，不上手的话</p>2024-03-06</li><br/><li><span>飞了的鸭子被煮了</span> 👍（0） 💬（1）<p>trait 不需要考虑层级关系，感觉类型的约束更加原子化了，被消费时不需要考虑那么多的耦合。</p>2024-01-22</li><br/><li><span>千回百转无劫山</span> 👍（0） 💬（1）<p>从python过来的，只能说打开了新世界的大门</p>2023-12-27</li><br/><li><span>superggn</span> 👍（0） 💬（1）<p>思考题（我从 python 来的， cpp 和 java 没学过）
 
 OOP
 
@@ -994,7 +994,7 @@ trait 类似于 OOP 里搞一个标准基类， 然后来回继承， 不同点�
 
 
 
-这种思考题没啥感觉， 反正我也不会写， 随便叨叨， 等全都刷一遍之后可能会有别的感想</div>2023-12-15</li><br/><li><span>superggn</span> 👍（0） 💬（2）<div>我记得 trait 底下定义的函数里， 有 self 参数的叫方法（method, called on instance）， 没 self 参数的才叫 关联函数（associated function, called on type)?
+这种思考题没啥感觉， 反正我也不会写， 随便叨叨， 等全都刷一遍之后可能会有别的感想</p>2023-12-15</li><br/><li><span>superggn</span> 👍（0） 💬（2）<p>我记得 trait 底下定义的函数里， 有 self 参数的叫方法（method, called on instance）， 没 self 参数的才叫 关联函数（associated function, called on type)?
 =================
 刚才查了下， duckduckgo 搜出来的 rust associated function 跟我记得一样， 区分 method 和 associated function， 但 Rust By Practice (RBP) 和 Rust By Example (RBE) 说的不一样...
 
@@ -1005,7 +1005,7 @@ https:&#47;&#47;practice.rs&#47;method.html
 RBE
 https:&#47;&#47;doc.rust-lang.org&#47;rust-by-example&#47;fn&#47;methods.html
 =&gt; &quot;Some functions are connected to a particular type. These come in two forms: associated functions, and methods.&quot;
-</div>2023-12-15</li><br/><li><span>plh</span> 👍（0） 💬（1）<div>老师你好: 原文 [因为同一个 trait 只能实现一次到某个类型上。]  这个 &quot;某个类型&quot; 怎么理解? 
+</p>2023-12-15</li><br/><li><span>plh</span> 👍（0） 💬（1）<p>老师你好: 原文 [因为同一个 trait 只能实现一次到某个类型上。]  这个 &quot;某个类型&quot; 怎么理解? 
 比如: 标准库上有 Option 上面 就有这么3个方法: 感觉这个有点迷惑?  
 
 impl&lt;T&gt; IntoIterator for Option&lt;T&gt;
@@ -1015,5 +1015,5 @@ impl&lt;&#39;a, T&gt; IntoIterator for &amp;&#39;a mut Option&lt;T&gt;
 
 
 
-</div>2023-11-29</li><br/>
+</p>2023-11-29</li><br/>
 </ul>

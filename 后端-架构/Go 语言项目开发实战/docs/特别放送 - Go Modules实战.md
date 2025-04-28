@@ -382,13 +382,13 @@ go.mod  go.sum  hello.go  hello_test.go  vendor  world
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>你赖东东不错嘛</span> 👍（5） 💬（1）<div>1. 项目根目录下，执行go get -d -u .&#47;...
-2. 在外网环境把package下载到vendor目录下，在无网环境用go vendor构建应用。</div>2021-09-22</li><br/><li><span>2035去台湾</span> 👍（1） 💬（1）<div>客户练习2目前我们使用了nexus代理</div>2021-09-21</li><br/><li><span>奕</span> 👍（0） 💬（2）<div>go test 没有自动下载依赖，是需要配置什么吗？</div>2022-04-14</li><br/><li><span>陈东</span> 👍（0） 💬（1）<div>go构建约束问题，Build constraints exclude all Go files in ？
+<li><span>你赖东东不错嘛</span> 👍（5） 💬（1）<p>1. 项目根目录下，执行go get -d -u .&#47;...
+2. 在外网环境把package下载到vendor目录下，在无网环境用go vendor构建应用。</p>2021-09-22</li><br/><li><span>2035去台湾</span> 👍（1） 💬（1）<p>客户练习2目前我们使用了nexus代理</p>2021-09-21</li><br/><li><span>奕</span> 👍（0） 💬（2）<p>go test 没有自动下载依赖，是需要配置什么吗？</p>2022-04-14</li><br/><li><span>陈东</span> 👍（0） 💬（1）<p>go构建约束问题，Build constraints exclude all Go files in ？
 尝试以下办法解决不了
 1、searcheverything 搜索后删除所有包,
 $GOPATH目录下，把对应的包删除，重新go get,还是不行.
 2、go get -u -v github.com&#47;karalabe&#47;xgo
 3、Right click -&gt; Mark folder as not excluded.
 4、引用包报错，重启电脑，查看goproxy配置，还不行重装goland
-怎么解决，寻求老师帮助，谢谢。</div>2021-12-18</li><br/><li><span>功夫熊猫</span> 👍（0） 💬（1）<div>有没有办法就是直接导入本地包。而不是设置代理</div>2021-11-03</li><br/><li><span>yss</span> 👍（0） 💬（2）<div>2. 我们内网机是与外网物理隔离的机器，使用 vendor在内网机构建是我们的解决方案。</div>2021-10-28</li><br/>
+怎么解决，寻求老师帮助，谢谢。</p>2021-12-18</li><br/><li><span>功夫熊猫</span> 👍（0） 💬（1）<p>有没有办法就是直接导入本地包。而不是设置代理</p>2021-11-03</li><br/><li><span>yss</span> 👍（0） 💬（2）<p>2. 我们内网机是与外网物理隔离的机器，使用 vendor在内网机构建是我们的解决方案。</p>2021-10-28</li><br/>
 </ul>

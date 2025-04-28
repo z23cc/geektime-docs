@@ -217,20 +217,20 @@ public class ConsumerProducer {
 
 你的朋友是不是也在准备面试呢？你可以“请朋友读”，把今天的题目分享给好友，或许你能帮到他。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>爱新觉罗老流氓</span> 👍（4） 💬（2）<div>杨老师，“与弱一致性对应的，就是我介绍过的同步容器常见的行为“fast-fail”，也就是检测到容器在遍历过程中发生了修改，则抛出 ConcurrentModificationException，不再继续遍历。” 
+<li><span>爱新觉罗老流氓</span> 👍（4） 💬（2）<p>杨老师，“与弱一致性对应的，就是我介绍过的同步容器常见的行为“fast-fail”，也就是检测到容器在遍历过程中发生了修改，则抛出 ConcurrentModificationException，不再继续遍历。” 
 这一段落里，快速失败的英文在doc上是“fail-fast”，在ArrayList源码中文档可以搜到。
-还有，同步容器不应该是“fail-safe”吗？</div>2018-07-03</li><br/><li><span>灰飞灰猪不会灰飞.烟灭</span> 👍（3） 💬（1）<div>老师 线程池中如果线程已经运行结束则删除该线程。如何判断线程已经运行结束了呢？源码中我看见按照线程的状态，我不清楚这些状态值哪来的。java代码有判断线程状态的方法吗？谢谢老师</div>2018-06-21</li><br/><li><span>Invocker.C</span> 👍（2） 💬（2）<div>求老师解答一个困扰已久的问题，就是初始化arrayblockingqueue的时候，capacity的大小如何评估和设置？望解答</div>2018-06-27</li><br/><li><span>杭州</span> 👍（0） 💬（1）<div>杨老师你好，遇到个问题，200个并发线程池阻塞读linkBlockingQueue队列，偶尔会出现阻塞时会线程cpu很好。jstack看了很多lock。会不会出现线程离开线程池，去干别的任务，干了一半又回到线程池中干活。两边出现死锁？</div>2018-11-10</li><br/><li><span>夏洛克的救赎</span> 👍（0） 💬（1）<div>老师你好，问个题外问题，在jdk10源码  string类中，成员变量coder起到什么作用？如何理解？</div>2018-06-21</li><br/><li><span>sunlight001</span> 👍（94） 💬（0）<div>这个看着很吃力啊，都没接触过😂</div>2018-06-21</li><br/><li><span>丘壑</span> 👍（49） 💬（7）<div>栈来实现blockqueue，个人感觉比较好的有
+还有，同步容器不应该是“fail-safe”吗？</p>2018-07-03</li><br/><li><span>灰飞灰猪不会灰飞.烟灭</span> 👍（3） 💬（1）<p>老师 线程池中如果线程已经运行结束则删除该线程。如何判断线程已经运行结束了呢？源码中我看见按照线程的状态，我不清楚这些状态值哪来的。java代码有判断线程状态的方法吗？谢谢老师</p>2018-06-21</li><br/><li><span>Invocker.C</span> 👍（2） 💬（2）<p>求老师解答一个困扰已久的问题，就是初始化arrayblockingqueue的时候，capacity的大小如何评估和设置？望解答</p>2018-06-27</li><br/><li><span>杭州</span> 👍（0） 💬（1）<p>杨老师你好，遇到个问题，200个并发线程池阻塞读linkBlockingQueue队列，偶尔会出现阻塞时会线程cpu很好。jstack看了很多lock。会不会出现线程离开线程池，去干别的任务，干了一半又回到线程池中干活。两边出现死锁？</p>2018-11-10</li><br/><li><span>夏洛克的救赎</span> 👍（0） 💬（1）<p>老师你好，问个题外问题，在jdk10源码  string类中，成员变量coder起到什么作用？如何理解？</p>2018-06-21</li><br/><li><span>sunlight001</span> 👍（94） 💬（0）<p>这个看着很吃力啊，都没接触过😂</p>2018-06-21</li><br/><li><span>丘壑</span> 👍（49） 💬（7）<p>栈来实现blockqueue，个人感觉比较好的有
 方案一：总共3个栈，其中2个写入栈（A、B），1个消费栈栈C（消费数据），但是有1个写入栈是空闲的栈（B），随时等待写入，当消费栈(C)中数据为空的时候，消费线程（await），触发数据转移，原写入栈(A)停止写入，，由空闲栈（B）接受写入的工作，原写入栈(A)中的数据转移到消费栈（C）中，转移完成后继续（sign）继续消费，2个写入栈，1个消费栈优点是：不会堵塞写入，但是消费会有暂停
 
 方案二：总共4个栈，其中2个写入栈（A、B），2个消费栈（C、D）,其中B为空闲的写入栈，D为空闲的消费栈，当消费栈（C）中的数据下降到一定的数量，则触发数据转移，这时候A栈停止写入，由B栈接受写入数据，然后将A栈中的数据转入空闲的消费栈D，当C中的数据消费完了后，则C栈转为空闲，D栈转为激活消费状态，当D栈中的数据消费到一定比例后，重复上面过程，该方案优点即不堵塞写入，也不会造成消费线程暂停
 
 
-</div>2018-09-13</li><br/><li><span>吕倩</span> 👍（20） 💬（2）<div>老师你好，在读ArrayBlockingQueue源码的时候，发现很多地方都有 final ReentrantLock lock = this.lock; 这样的语句，处于什么原因会将类变量复制一份到局部变量，然后再使用呢？</div>2018-12-03</li><br/><li><span>Lighters</span> 👍（14） 💬（0）<div>希望能够增加一些具体的业务使用场景，否则只是单纯的分析，太抽象了
-</div>2019-04-27</li><br/><li><span>石头狮子</span> 👍（13） 💬（0）<div>实现课后题过程中把握以下几个维度，
+</p>2018-09-13</li><br/><li><span>吕倩</span> 👍（20） 💬（2）<p>老师你好，在读ArrayBlockingQueue源码的时候，发现很多地方都有 final ReentrantLock lock = this.lock; 这样的语句，处于什么原因会将类变量复制一份到局部变量，然后再使用呢？</p>2018-12-03</li><br/><li><span>Lighters</span> 👍（14） 💬（0）<p>希望能够增加一些具体的业务使用场景，否则只是单纯的分析，太抽象了
+</p>2019-04-27</li><br/><li><span>石头狮子</span> 👍（13） 💬（0）<p>实现课后题过程中把握以下几个维度，
 1，数据操作的锁粒度。
 2，计数，遍历方式。
 3，数据结构空，满时线程的等待方式，有锁或无锁方式。
-4，使用离散还是连续的存储结构。</div>2018-06-21</li><br/><li><span>crazyone</span> 👍（8） 💬（0）<div>从上面这些角度，能够理解 ConcurrentLinkedDeque 和 LinkedBlockingQueue 的主要功能区别。  这段应该是 &quot;ConcurrentLinkedDeque 和 LinkedBlockingDeque 的主要功能区别&quot;</div>2018-06-22</li><br/><li><span>猕猴桃 盛哥</span> 👍（8） 💬（2）<div>{
+4，使用离散还是连续的存储结构。</p>2018-06-21</li><br/><li><span>crazyone</span> 👍（8） 💬（0）<p>从上面这些角度，能够理解 ConcurrentLinkedDeque 和 LinkedBlockingQueue 的主要功能区别。  这段应该是 &quot;ConcurrentLinkedDeque 和 LinkedBlockingDeque 的主要功能区别&quot;</p>2018-06-22</li><br/><li><span>猕猴桃 盛哥</span> 👍（8） 💬（2）<p>{
     &quot;test&quot;:[
         [
             89,
@@ -249,11 +249,11 @@ public class ConsumerProducer {
     ]
 }
 
-测试题：这个json用java对象怎么表示？</div>2018-06-22</li><br/><li><span>无呢可称</span> 👍（4） 💬（3）<div>@Jerry银银。用两个栈可以实现fifo的队列
+测试题：这个json用java对象怎么表示？</p>2018-06-22</li><br/><li><span>无呢可称</span> 👍（4） 💬（3）<p>@Jerry银银。用两个栈可以实现fifo的队列
 
-</div>2018-06-27</li><br/><li><span>石头狮子</span> 👍（4） 💬（0）<div>实现课后题过程中把握以下几个维度，
+</p>2018-06-27</li><br/><li><span>石头狮子</span> 👍（4） 💬（0）<p>实现课后题过程中把握以下几个维度，
 1，数据操作的锁粒度。
 2，计数，遍历方式。
 3，数据结构空，满时线程的等待方式，有锁或无锁方式。
-4，使用离散还是连续的存储结构。</div>2018-06-21</li><br/><li><span>Geek_8c5f9c</span> 👍（3） 💬（2）<div>fail-fast不是同步容器的行为， fail-safe才是。</div>2020-02-03</li><br/>
+4，使用离散还是连续的存储结构。</p>2018-06-21</li><br/><li><span>Geek_8c5f9c</span> 👍（3） 💬（2）<p>fail-fast不是同步容器的行为， fail-safe才是。</p>2020-02-03</li><br/>
 </ul>

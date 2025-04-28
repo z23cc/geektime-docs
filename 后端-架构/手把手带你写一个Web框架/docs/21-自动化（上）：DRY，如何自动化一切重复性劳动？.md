@@ -613,7 +613,7 @@ func Routes(r *gin.Engine) {
 
 欢迎在留言区分享你的思考。我们下节课见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>zzq</span> 👍（0） 💬（1）<div>大佬， 在 framework&#47;command&#47;middleware.go 文件中缺少了    默认: 同中间件名称。 if folder == &quot;&quot; {folder = name}   </div>2021-12-01</li><br/><li><span>kkxue</span> 👍（3） 💬（0）<div>课程设计的好棒</div>2021-11-05</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<div>中间件也要拷贝代码吗...是否可以安装以后在go.mod里replace呢？</div>2021-11-05</li><br/><li><span>taoist</span> 👍（0） 💬（0）<div>go-git 配置http代理：
+<li><span>zzq</span> 👍（0） 💬（1）<p>大佬， 在 framework&#47;command&#47;middleware.go 文件中缺少了    默认: 同中间件名称。 if folder == &quot;&quot; {folder = name}   </p>2021-12-01</li><br/><li><span>kkxue</span> 👍（3） 💬（0）<p>课程设计的好棒</p>2021-11-05</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<p>中间件也要拷贝代码吗...是否可以安装以后在go.mod里replace呢？</p>2021-11-05</li><br/><li><span>taoist</span> 👍（0） 💬（0）<p>go-git 配置http代理：
 		res_url := &quot;https:&#47;&#47;github.com&#47;gin-contrib&#47;&quot; + repo + &quot;.git&quot;
 		fmt.Println(&quot;下载中间件 gin-contrib:&quot;, res_url)
 	
@@ -628,5 +628,5 @@ func Routes(r *gin.Engine) {
 		_, err := git.PlainClone(path.Join(middlewarePath, repo), false, &amp;git.CloneOptions{
 			URL:      res_url,
 			Progress: os.Stdout,
-		})</div>2024-01-20</li><br/>
+		})</p>2024-01-20</li><br/>
 </ul>

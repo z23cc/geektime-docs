@@ -225,7 +225,7 @@ class VIPOnlyMerchant extends Merchant<VIP> {
 \[4]  
 [https://wiki.openjdk.java.net/display/HotSpot/InterfaceCalls](https://wiki.openjdk.java.net/display/HotSpot/InterfaceCalls)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Thomas</span> 👍（41） 💬（10）<div>看明白了......这篇真好</div>2018-07-27</li><br/><li><span>jiaobuchongจุ๊บ</span> 👍（47） 💬（2）<div>参考老师最后的例子，写了博客总结了一下：https:&#47;&#47;blog.csdn.net&#47;jiaobuchong&#47;article&#47;details&#47;83722193，欢迎拍砖。</div>2018-11-06</li><br/><li><span>曲东方</span> 👍（7） 💬（1）<div>Merchant类中actionPrice方法返回值类型为Number
+<li><span>Thomas</span> 👍（41） 💬（10）<p>看明白了......这篇真好</p>2018-07-27</li><br/><li><span>jiaobuchongจุ๊บ</span> 👍（47） 💬（2）<p>参考老师最后的例子，写了博客总结了一下：https:&#47;&#47;blog.csdn.net&#47;jiaobuchong&#47;article&#47;details&#47;83722193，欢迎拍砖。</p>2018-11-06</li><br/><li><span>曲东方</span> 👍（7） 💬（1）<p>Merchant类中actionPrice方法返回值类型为Number
 NaiveMerchant类中actionPrice方法返回值类型为Double
 
 NaiveMerchant类生成的字节码中有两个参数类型相同返回值类型不同的actionPrice方法
@@ -247,10 +247,10 @@ Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
 GraalVM 1.0.0-rc5 (build 25.71-b01-internal-jvmci-0.46, mixed mode)
 
 
-</div>2018-08-11</li><br/><li><span>vimfun</span> 👍（6） 💬（1）<div>老师，public final 或 public static final 的方法，是不是在 虚拟机中解析为静态绑定的</div>2018-07-27</li><br/><li><span>杨春鹏</span> 👍（4） 💬（3）<div>老师，关于方法调用的字节码指令中的invokespecial:调用实现接口的默认方法。
+</p>2018-08-11</li><br/><li><span>vimfun</span> 👍（6） 💬（1）<p>老师，public final 或 public static final 的方法，是不是在 虚拟机中解析为静态绑定的</p>2018-07-27</li><br/><li><span>杨春鹏</span> 👍（4） 💬（3）<p>老师，关于方法调用的字节码指令中的invokespecial:调用实现接口的默认方法。
 我测试了一下，发现子类中调用实现接口的默认方法还是使用的invokeinrerface。
-</div>2018-07-27</li><br/><li><span>小兵</span> 👍（2） 💬（2）<div>invokespecial：用于调用私有实例方法、构造器，以...和所实现接口的默认方法。
+</p>2018-07-27</li><br/><li><span>小兵</span> 👍（2） 💬（2）<p>invokespecial：用于调用私有实例方法、构造器，以...和所实现接口的默认方法。
 这里所实现接口的默认方法具体是指什么？
-</div>2018-12-06</li><br/><li><span>王侦</span> 👍（2） 💬（1）<div>老师，最后那个例子能不能重新整理一下？说明一下操作步骤。不知道怎么操作！是写在一个文件还是多个文件？而且编译时报两个错误：一个是VIP要有一个类，一个是NaiveMerchant报错？</div>2018-10-26</li><br/><li><span>陈树义</span> 👍（2） 💬（1）<div>文章开头的例子，我在JDK8环境下写了个例子测试，发现貌似和文中所说的不一致。  不知道是不是因为JDK版本问题，还是我例子有问题？  </div>2018-07-27</li><br/><li><span>易水寒</span> 👍（1） 💬（1）<div>给下面某人解释一个问题，final[3][4]指的是参考下面的链接3，4链接，论文当中引用了别人的东西都这么写</div>2018-09-26</li><br/><li><span>Go Ashton</span> 👍（1） 💬（2）<div>如果没有找到，在 C 所直接实现或间接实现的接口中搜索” 能否有个例子，什么是直接实现？什么是间接实现？ 可能我知道这是什么，但叫法不同</div>2018-09-18</li><br/><li><span>preston</span> 👍（1） 💬（1）<div>请问子类可以调用父类的静态方法是什么意思？我有点不太明白。</div>2018-08-21</li><br/><li><span>陈勇明</span> 👍（1） 💬（1）<div>如果这两个方法都是静态的，那么子类中的方法隐藏了父类中的方法，这里的隐藏是什么意思？父类的方法调用不到了吗？类C及子类C1都有静态方法m,那么C.m()与C.m()，以及这两个类的实例调用该方法应该都互不影响吧</div>2018-08-09</li><br/><li><span>Eric</span> 👍（0） 💬（1）<div>每节课布置的题都没有讲解，让人很困扰。</div>2018-09-25</li><br/><li><span>哇！怎么这么大个</span> 👍（0） 💬（1）<div>”Java 虚拟机识别方法的方式略有不同，除了方法名和参数类型之外，它还会考虑返回类型。”
-如果JAVA虚拟机考虑到了返回类型，那么是否可以定义同名类且同名方法相同参数不同返回类型的方法（实际上在ide中会报错，那JAVA虚拟机是出于怎么样的考虑会将返回类型也加入到方法描述符中去）</div>2018-08-29</li><br/><li><span>灵活工作</span> 👍（0） 💬（1）<div>这篇文章的课后习题，一个是class merchant一个是class merchant&lt;T extends Merchant&gt;,把这段代码写在一个文件里面会报编译错误，请问老师怎么解决</div>2018-08-09</li><br/>
+</p>2018-12-06</li><br/><li><span>王侦</span> 👍（2） 💬（1）<p>老师，最后那个例子能不能重新整理一下？说明一下操作步骤。不知道怎么操作！是写在一个文件还是多个文件？而且编译时报两个错误：一个是VIP要有一个类，一个是NaiveMerchant报错？</p>2018-10-26</li><br/><li><span>陈树义</span> 👍（2） 💬（1）<p>文章开头的例子，我在JDK8环境下写了个例子测试，发现貌似和文中所说的不一致。  不知道是不是因为JDK版本问题，还是我例子有问题？  </p>2018-07-27</li><br/><li><span>易水寒</span> 👍（1） 💬（1）<p>给下面某人解释一个问题，final[3][4]指的是参考下面的链接3，4链接，论文当中引用了别人的东西都这么写</p>2018-09-26</li><br/><li><span>Go Ashton</span> 👍（1） 💬（2）<p>如果没有找到，在 C 所直接实现或间接实现的接口中搜索” 能否有个例子，什么是直接实现？什么是间接实现？ 可能我知道这是什么，但叫法不同</p>2018-09-18</li><br/><li><span>preston</span> 👍（1） 💬（1）<p>请问子类可以调用父类的静态方法是什么意思？我有点不太明白。</p>2018-08-21</li><br/><li><span>陈勇明</span> 👍（1） 💬（1）<p>如果这两个方法都是静态的，那么子类中的方法隐藏了父类中的方法，这里的隐藏是什么意思？父类的方法调用不到了吗？类C及子类C1都有静态方法m,那么C.m()与C.m()，以及这两个类的实例调用该方法应该都互不影响吧</p>2018-08-09</li><br/><li><span>Eric</span> 👍（0） 💬（1）<p>每节课布置的题都没有讲解，让人很困扰。</p>2018-09-25</li><br/><li><span>哇！怎么这么大个</span> 👍（0） 💬（1）<p>”Java 虚拟机识别方法的方式略有不同，除了方法名和参数类型之外，它还会考虑返回类型。”
+如果JAVA虚拟机考虑到了返回类型，那么是否可以定义同名类且同名方法相同参数不同返回类型的方法（实际上在ide中会报错，那JAVA虚拟机是出于怎么样的考虑会将返回类型也加入到方法描述符中去）</p>2018-08-29</li><br/><li><span>灵活工作</span> 👍（0） 💬（1）<p>这篇文章的课后习题，一个是class merchant一个是class merchant&lt;T extends Merchant&gt;,把这段代码写在一个文件里面会报编译错误，请问老师怎么解决</p>2018-08-09</li><br/>
 </ul>

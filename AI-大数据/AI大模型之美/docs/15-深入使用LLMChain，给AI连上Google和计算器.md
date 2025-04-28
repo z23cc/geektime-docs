@@ -328,14 +328,14 @@ print(result)
 
 我们目前对于Langchain的讲解，都是通过Python编程的方式来实现真实业务场景的需求的。有人直接为Langchain做了一个可以拖拽的图形界面叫做 [LangFlow](https://github.com/logspace-ai/langflow)。你可以试着下载体验一下，看看图形界面是不是可以进一步提升你的效率。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>君为</span> 👍（8） 💬（2）<div>老师你好，chain和pipe的原理还是比较像，学完这讲打开了我对ChatGPT可应用空间。实际应用中最大的问题还是api 的响应速度和接口限流。
-请问老师有没有更好的解决办法？目前我知道的是多个账号负载均衡和调用容错重试。</div>2023-04-12</li><br/><li><span>hhh</span> 👍（4） 💬（1）<div>浩哥，文稿中代码、类库都是python脚步的，有java相关的生态推进吗？</div>2023-04-12</li><br/><li><span>Yezhiwei</span> 👍（3） 💬（1）<div>之前自己试过 LangFlow 非常简单，把步骤记录下来了，难道在网络，如果网络稳定，很快看到效果 
-https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;jjNkkoUu-q8Yb1J6_u6WGg</div>2023-04-13</li><br/><li><span>金</span> 👍（2） 💬（2）<div>怎么让模板更通用呢？比如那个算术问题，如何判断是个计算问题，感觉模板只能解决调用问题.</div>2023-04-14</li><br/><li><span>自然卷的Neil</span> 👍（1） 💬（3）<div>&quot;url&quot;: &quot;https:&#47;&#47;www.google.com&#47;search?q=&quot; + question.replace(&quot; &quot;, &quot;+&quot;)
+<li><span>君为</span> 👍（8） 💬（2）<p>老师你好，chain和pipe的原理还是比较像，学完这讲打开了我对ChatGPT可应用空间。实际应用中最大的问题还是api 的响应速度和接口限流。
+请问老师有没有更好的解决办法？目前我知道的是多个账号负载均衡和调用容错重试。</p>2023-04-12</li><br/><li><span>hhh</span> 👍（4） 💬（1）<p>浩哥，文稿中代码、类库都是python脚步的，有java相关的生态推进吗？</p>2023-04-12</li><br/><li><span>Yezhiwei</span> 👍（3） 💬（1）<p>之前自己试过 LangFlow 非常简单，把步骤记录下来了，难道在网络，如果网络稳定，很快看到效果 
+https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;jjNkkoUu-q8Yb1J6_u6WGg</p>2023-04-13</li><br/><li><span>金</span> 👍（2） 💬（2）<p>怎么让模板更通用呢？比如那个算术问题，如何判断是个计算问题，感觉模板只能解决调用问题.</p>2023-04-14</li><br/><li><span>自然卷的Neil</span> 👍（1） 💬（3）<p>&quot;url&quot;: &quot;https:&#47;&#47;www.google.com&#47;search?q=&quot; + question.replace(&quot; &quot;, &quot;+&quot;)
 这一段代码为什么需要加上+ question.replace(&quot; &quot;, &quot;+&quot;)
 我看了langchain的手册也是这么写的，
 如果输入是&#39;query&#39;: &#39;What are the Three (3) biggest countries, and their respective sizes?&#39;,
 输出会变成&#39;url&#39;: &#39;https:&#47;&#47;www.google.com&#47;search?q=What+are+the+Three+(3)+biggest+countries,+and+their+respective+sizes?&#39;
-不太理解这样做的意义是啥</div>2023-04-12</li><br/><li><span>金</span> 👍（1） 💬（1）<div>这个确实不错，我一直在思考如何让chatgpt优雅的完成最后一步，langchain这个工具能很大程度解决这个问题。这个工具支持清华的那个开源大模型吗？</div>2023-04-12</li><br/><li><span>厚积薄发</span> 👍（0） 💬（1）<div>from langchain.chains import LLMRequestsChain
+不太理解这样做的意义是啥</p>2023-04-12</li><br/><li><span>金</span> 👍（1） 💬（1）<p>这个确实不错，我一直在思考如何让chatgpt优雅的完成最后一步，langchain这个工具能很大程度解决这个问题。这个工具支持清华的那个开源大模型吗？</p>2023-04-12</li><br/><li><span>厚积薄发</span> 👍（0） 💬（1）<p>from langchain.chains import LLMRequestsChain
 
 template = &quot;&quot;&quot;在 &gt;&gt;&gt; 和 &lt;&lt;&lt; 直接是来自Google的原始搜索结果.
 请把对于问题 &#39;{query}&#39; 的答案从里面提取出来，如果里面没有相关信息的话就说 &quot;找不到&quot;
@@ -359,16 +359,16 @@ print(result)
 print(result[&#39;output&#39;])
 
 老师，我测试这段代码，返回值是找不到 ，是什么原因哈
-</div>2023-05-11</li><br/><li><span>Geek_9691fb</span> 👍（0） 💬（1）<div>ecommerce_faq.txt 在哪里可以找到</div>2023-05-06</li><br/><li><span>沐瑞Lynn</span> 👍（0） 💬（2）<div>用LLMRequestsChain想谷歌提问，总是回答找不到；然后用requests直接写了个程序调google 页面，发现可能被拦截。然后问题了GPT，得到回答
+</p>2023-05-11</li><br/><li><span>Geek_9691fb</span> 👍（0） 💬（1）<p>ecommerce_faq.txt 在哪里可以找到</p>2023-05-06</li><br/><li><span>沐瑞Lynn</span> 👍（0） 💬（2）<p>用LLMRequestsChain想谷歌提问，总是回答找不到；然后用requests直接写了个程序调google 页面，发现可能被拦截。然后问题了GPT，得到回答
 “这段代码使用 requests 模块向 Google 搜索发出 GET 请求来获取指定问题的搜索结果页面的 HTML 代码。然后使用 print() 函数将 HTML 代码打印出来。
-但是使用该方法获取 Google 搜索结果可能会被 Google 识别为机器行为，并被阻拦。建议使用 Google 提供的 API 来获取搜索结果。” 记录一下，看看大家是不是有同样的问题吧。</div>2023-04-27</li><br/><li><span>旭</span> 👍（0） 💬（1）<div>如果是提供服务的话，链式计算中间步骤的容错性有没有好办法保证？</div>2023-04-26</li><br/><li><span>慕枫</span> 👍（0） 💬（1）<div>RequestsChain怎么判断是问题是否需要调用外部api？</div>2023-04-17</li><br/><li><span>凝望</span> 👍（0） 💬（4）<div>RAyH4c
+但是使用该方法获取 Google 搜索结果可能会被 Google 识别为机器行为，并被阻拦。建议使用 Google 提供的 API 来获取搜索结果。” 记录一下，看看大家是不是有同样的问题吧。</p>2023-04-27</li><br/><li><span>旭</span> 👍（0） 💬（1）<p>如果是提供服务的话，链式计算中间步骤的容错性有没有好办法保证？</p>2023-04-26</li><br/><li><span>慕枫</span> 👍（0） 💬（1）<p>RequestsChain怎么判断是问题是否需要调用外部api？</p>2023-04-17</li><br/><li><span>凝望</span> 👍（0） 💬（4）<p>RAyH4c
 微博
 给开发和使用LLM应用的各位提个醒，各路聊天
 机器人和ChatXXx应用都使用的LangChain库，
 对输入的提示词包了一层exec和eval函数，导致
 所有提示词都能远程执行任意python代码...
 
-老师好，看微博有人说这个问题，请问影响大吗？</div>2023-04-16</li><br/><li><span>榕</span> 👍（0） 💬（2）<div>老师好，通过langchain等武器库确实给了我们使用大语言模型很大的想象空间，但前提得有大语言模型支持。对于地区限制访问的问题，那对于国内的个人或企业要真正落地这些能力，目前是通过哪些方式来做呢？谢谢</div>2023-04-13</li><br/><li><span>一叶</span> 👍（0） 💬（1）<div>老师这段代码里面:
+老师好，看微博有人说这个问题，请问影响大吗？</p>2023-04-16</li><br/><li><span>榕</span> 👍（0） 💬（2）<p>老师好，通过langchain等武器库确实给了我们使用大语言模型很大的想象空间，但前提得有大语言模型支持。对于地区限制访问的问题，那对于国内的个人或企业要真正落地这些能力，目前是通过哪些方式来做呢？谢谢</p>2023-04-13</li><br/><li><span>一叶</span> 👍（0） 💬（1）<p>老师这段代码里面:
 
 
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -388,5 +388,5 @@ docsearch = FAISS.from_documents(texts, embeddings)
 
 faq_chain = VectorDBQA.from_chain_type(llm=llm, vectorstore=docsearch, verbose=True)
 
-可以把索引给保存到数据库吗? 以后再继续使用?</div>2023-04-12</li><br/><li><span>一叶</span> 👍（0） 💬（2）<div>老师,我有个问题可以解答一下吗?我们目前开发的一款app,就有客户问到类似的问题,比如今天的时间,Chatgpt就没办法完整的回答,我看到上面的编译Python的方式似乎可行,但是似乎用户的问题千奇百怪,比如有的又会问到数学...而有的llm直接就能解决,在这种情况下,我要怎么实现会更好?</div>2023-04-12</li><br/>
+可以把索引给保存到数据库吗? 以后再继续使用?</p>2023-04-12</li><br/><li><span>一叶</span> 👍（0） 💬（2）<p>老师,我有个问题可以解答一下吗?我们目前开发的一款app,就有客户问到类似的问题,比如今天的时间,Chatgpt就没办法完整的回答,我看到上面的编译Python的方式似乎可行,但是似乎用户的问题千奇百怪,比如有的又会问到数学...而有的llm直接就能解决,在这种情况下,我要怎么实现会更好?</p>2023-04-12</li><br/>
 </ul>

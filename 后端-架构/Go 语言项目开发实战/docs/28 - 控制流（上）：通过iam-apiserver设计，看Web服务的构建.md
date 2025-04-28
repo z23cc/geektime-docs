@@ -644,7 +644,7 @@ iam-apiserver采用了简洁架构，整个应用分为4层：模型层、控制
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>yandongxiao</span> 👍（14） 💬（1）<div>总结：
+<li><span>yandongxiao</span> 👍（14） 💬（1）<p>总结：
 介绍了 internal&#47;pkg&#47;apiserver 内部的组织结构
 1. 最外层的Go文件主要完成：
    1. 构建应用框架（app.go）
@@ -660,22 +660,22 @@ iam-apiserver采用了简洁架构，整个应用分为4层：模型层、控制
 2. service层和store层的实例，是在请求执行过程中动态创建，它们都依赖一个工厂对象，作为实例化的输入。
 3. 工厂对象 store store.Factory 不与具体的表、具体的操作绑定，通过store对象，你可以执行数据库的任何操作。类似的，srv srvv1.Service 工厂也不与具体的业务绑定，通过srv对象，你可以执行任何业务逻辑。
 
-服务启动流程分为三个阶段：配置阶段、PreRun阶段、Run阶段。配置相关的对象有：Options、Config、HTTP&#47;GRPC 相关的配置对象。</div>2021-12-02</li><br/><li><span>Sch0ng</span> 👍（7） 💬（1）<div>结合前面章节的铺垫，介绍iam-apiserver的使用方法、架构和代码实现，前后连贯，逻辑清晰，简洁易懂。
-顺便一提，跟郑晔老师的《软件设计之美》中讲到的：快速了解一个项目时，要了解项目的模型、接口、实现，核心思想如出一辙。软件设计的路上，殊途同归。</div>2021-08-15</li><br/><li><span>Jasper</span> 👍（6） 💬（3）<div>var _ UserSrv = (*userService)(nil)  我是go初学者，这种语法表示没看明白</div>2021-08-23</li><br/><li><span>徐海浪</span> 👍（4） 💬（1）<div>练习1：通过component-base共享 REST API 相关代码</div>2021-08-27</li><br/><li><span>Geek_cede76</span> 👍（2） 💬（1）<div>这里使用到了设计模式中的工厂方法模式。Service是工厂接口，里面包含了一系列创建具体业务层对象的工厂函数：Users()、Secrets()、Policies()。通过工厂方法模式，不仅隐藏了业务层对象的创建细节，而且还可以很方便地在Service工厂接口实现方法中添加新的业务层对象</div>2022-11-18</li><br/><li><span>hiDaLao</span> 👍（2） 💬（1）<div>老师，请问下context作为参数一直传下去的目的是什么呢</div>2022-08-30</li><br/><li><span>左耳朵东</span> 👍（2） 💬（2）<div>业务层和仓库层那里都做了两层抽象，比如仓库层有 Factory 和 SecretStore 两类接口，业务层调用的时候要这样写 s.store.Secrets().Create()。我的疑问是 Factory 这层抽象是不是可以省掉，业务层调用直接这样写 store.Secrets(dbIns).Create() 貌似也可以，这样有什么缺点吗？</div>2022-03-08</li><br/><li><span>Summer  空城</span> 👍（2） 💬（2）<div>老师，您好，在app&#47;app.go 中 func NewApp(name string, basename string, opts ...Option) *App内部执行Option的方法，其实就是给App设置参数。为什么不来个set方法直接设置，现在这种设置方法感觉绕了一圈。。。。。</div>2021-09-02</li><br/><li><span>Geek_cede76</span> 👍（1） 💬（1）<div>这里使用到了设计模式中的工厂方法模式。Service是工厂接口，里面包含了一系列创建具体业务层对象的工厂函数：Users()、Secrets()、Policies()。通过工厂方法模式，不仅隐藏了业务层对象的创建细节，而且还可以很方便地在Service工厂接口实现方法中添加新的业务层对象
+服务启动流程分为三个阶段：配置阶段、PreRun阶段、Run阶段。配置相关的对象有：Options、Config、HTTP&#47;GRPC 相关的配置对象。</p>2021-12-02</li><br/><li><span>Sch0ng</span> 👍（7） 💬（1）<p>结合前面章节的铺垫，介绍iam-apiserver的使用方法、架构和代码实现，前后连贯，逻辑清晰，简洁易懂。
+顺便一提，跟郑晔老师的《软件设计之美》中讲到的：快速了解一个项目时，要了解项目的模型、接口、实现，核心思想如出一辙。软件设计的路上，殊途同归。</p>2021-08-15</li><br/><li><span>Jasper</span> 👍（6） 💬（3）<p>var _ UserSrv = (*userService)(nil)  我是go初学者，这种语法表示没看明白</p>2021-08-23</li><br/><li><span>徐海浪</span> 👍（4） 💬（1）<p>练习1：通过component-base共享 REST API 相关代码</p>2021-08-27</li><br/><li><span>Geek_cede76</span> 👍（2） 💬（1）<p>这里使用到了设计模式中的工厂方法模式。Service是工厂接口，里面包含了一系列创建具体业务层对象的工厂函数：Users()、Secrets()、Policies()。通过工厂方法模式，不仅隐藏了业务层对象的创建细节，而且还可以很方便地在Service工厂接口实现方法中添加新的业务层对象</p>2022-11-18</li><br/><li><span>hiDaLao</span> 👍（2） 💬（1）<p>老师，请问下context作为参数一直传下去的目的是什么呢</p>2022-08-30</li><br/><li><span>左耳朵东</span> 👍（2） 💬（2）<p>业务层和仓库层那里都做了两层抽象，比如仓库层有 Factory 和 SecretStore 两类接口，业务层调用的时候要这样写 s.store.Secrets().Create()。我的疑问是 Factory 这层抽象是不是可以省掉，业务层调用直接这样写 store.Secrets(dbIns).Create() 貌似也可以，这样有什么缺点吗？</p>2022-03-08</li><br/><li><span>Summer  空城</span> 👍（2） 💬（2）<p>老师，您好，在app&#47;app.go 中 func NewApp(name string, basename string, opts ...Option) *App内部执行Option的方法，其实就是给App设置参数。为什么不来个set方法直接设置，现在这种设置方法感觉绕了一圈。。。。。</p>2021-09-02</li><br/><li><span>Geek_cede76</span> 👍（1） 💬（1）<p>这里使用到了设计模式中的工厂方法模式。Service是工厂接口，里面包含了一系列创建具体业务层对象的工厂函数：Users()、Secrets()、Policies()。通过工厂方法模式，不仅隐藏了业务层对象的创建细节，而且还可以很方便地在Service工厂接口实现方法中添加新的业务层对象
 
-老师，我感觉这里更像是抽象工厂方法模式</div>2022-11-18</li><br/><li><span>3608375821</span> 👍（1） 💬（1）<div>api接口是在哪里注册到router上面的啊，没找到，比如&#47;v1&#47;secrets&#47;</div>2022-10-06</li><br/><li><span>呆呆</span> 👍（1） 💬（1）<div>func initRouter(g *gin.Engine) {
+老师，我感觉这里更像是抽象工厂方法模式</p>2022-11-18</li><br/><li><span>3608375821</span> 👍（1） 💬（1）<p>api接口是在哪里注册到router上面的啊，没找到，比如&#47;v1&#47;secrets&#47;</p>2022-10-06</li><br/><li><span>呆呆</span> 👍（1） 💬（1）<p>func initRouter(g *gin.Engine) {
 	installMiddleware(g)
 	installController(g)
 }
 如上apiserver&#47;router.go的函数参数都为gin.Engine，是不是不太对？apiserver应该只与genericapiserver有关系，genericapiserver中集成了gin.Engine， genericapiserver中提供路由注册接口会不会更好些。
-</div>2022-08-29</li><br/><li><span>Jone_乔泓恺</span> 👍（1） 💬（1）<div>请教：在仓库层如果不在想使用 mysql ，而是换成 etcd ，应该如何修改代码呢？</div>2022-08-10</li><br/><li><span>船长</span> 👍（1） 💬（2）<div>大佬，在模型层中依赖gorm，这种设计好吗？个人感觉模型层中是尽量不要依赖第三方跟某种实现强相关的东西，不知道大佬这么设计是出于什么样的考虑。
+</p>2022-08-29</li><br/><li><span>Jone_乔泓恺</span> 👍（1） 💬（1）<p>请教：在仓库层如果不在想使用 mysql ，而是换成 etcd ，应该如何修改代码呢？</p>2022-08-10</li><br/><li><span>船长</span> 👍（1） 💬（2）<p>大佬，在模型层中依赖gorm，这种设计好吗？个人感觉模型层中是尽量不要依赖第三方跟某种实现强相关的东西，不知道大佬这么设计是出于什么样的考虑。
 func (u *User) AfterCreate(tx *gorm.DB) error {
 	u.InstanceID = idutil.GetInstanceID(u.ID, &quot;user-&quot;)
 
 	return tx.Save(u).Error
-}</div>2022-04-05</li><br/><li><span>Dragon Frog</span> 👍（1） 💬（2）<div>老师好，有个问题，想麻烦老师解惑一下。
+}</p>2022-04-05</li><br/><li><span>Dragon Frog</span> 👍（1） 💬（2）<p>老师好，有个问题，想麻烦老师解惑一下。
 
 在前面的课程谈到 “go 的设计哲学是模块划分而不鼓励 mvc 分层结构”，但是实际上我们这个项目的模型仍然是 MVC 划分的，想问问老师为什么最后决定这么设计。
 
-另外我也大概搜索了一些 Go 的 web 项目，发现大家其实受 MVC 风格影响还是很深的，基本都采用这种设计风格去设计自己的代码架构而不是按功能划分。我目前没有找到一些按功能划分的 Go web 项目，想问问老师有没有知道类似的项目并能推荐一二供大家学习</div>2022-01-30</li><br/><li><span>Geek_63505f</span> 👍（1） 💬（2）<div>老师你好！ 我看很多接口都是 &#47;v1&#47;users&#47;:name 这样的用name去定位话会不会不太好，name如果相同的话是不是就有问题了？</div>2022-01-12</li><br/>
+另外我也大概搜索了一些 Go 的 web 项目，发现大家其实受 MVC 风格影响还是很深的，基本都采用这种设计风格去设计自己的代码架构而不是按功能划分。我目前没有找到一些按功能划分的 Go web 项目，想问问老师有没有知道类似的项目并能推荐一二供大家学习</p>2022-01-30</li><br/><li><span>Geek_63505f</span> 👍（1） 💬（2）<p>老师你好！ 我看很多接口都是 &#47;v1&#47;users&#47;:name 这样的用name去定位话会不会不太好，name如果相同的话是不是就有问题了？</p>2022-01-12</li><br/>
 </ul>

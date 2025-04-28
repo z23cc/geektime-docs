@@ -388,7 +388,7 @@ for _, item := range resources.Items {
 
 欢迎你在留言区展示你的思考和测试结果，我们一起来讨论。如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>王建</span> 👍（0） 💬（0）<div>您好，思考题我测试了一下，mappingFor 不管传入的是 resource（比如：pods) 还是 kind（比如 Pod），都是能正确返回 RESTMapping 的，所以是代码不用改？
+<li><span>王建</span> 👍（0） 💬（0）<p>您好，思考题我测试了一下，mappingFor 不管传入的是 resource（比如：pods) 还是 kind（比如 Pod），都是能正确返回 RESTMapping 的，所以是代码不用改？
 
 测试代码如下：
 package main
@@ -468,5 +468,5 @@ func main() {
 		fmt.Printf(&quot;Resource Name: %s\n&quot;, item.GetName())
 	}
 }
-</div>2025-02-20</li><br/>
+</p>2025-02-20</li><br/>
 </ul>

@@ -225,24 +225,24 @@ Raft日志复制确保了etcd多节点间的数据一致性，我通过一个etc
 
 在etcd 3.4中，实现了全并发读，创建读事务的时候会全量拷贝buffer, 读写事务不再因为buffer阻塞，大大缓解了expensive request对etcd性能的影响。尤其是Kubernetes List Pod等资源场景来说，etcd稳定性显著提升。在后面的实践篇中，我会和你再次深入讨论以上问题。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>blentle</span> 👍（35） 💬（1）<div>老师，如果一个日志完整度相对较高的节点因为自己随机时间比其他节点的长，没能最先发起竞选，其他节点当上leader后同步自己的日志岂不是冲突了？</div>2021-01-27</li><br/><li><span>mckee</span> 👍（29） 💬（1）<div>思考题：
+<li><span>blentle</span> 👍（35） 💬（1）<p>老师，如果一个日志完整度相对较高的节点因为自己随机时间比其他节点的长，没能最先发起竞选，其他节点当上leader后同步自己的日志岂不是冲突了？</p>2021-01-27</li><br/><li><span>mckee</span> 👍（29） 💬（1）<p>思考题：
 1.哪些场景会出现 Follower 日志与 Leader 冲突？
 leader崩溃的情况下可能(如老的leader可能还没有完全复制所有的日志条目)，如果leader和follower出现持续崩溃会加剧这个现象。follower可能会丢失一些在新的leader中有的日志条目，他也可能拥有一些leader没有的日志条目，或者两者都发生。
 2.follower如何删除无效日志？
 leader处理不一致是通过强制follower直接复制自己的日志来解决了。因此在follower中的冲突的日志条目会被leader的日志覆盖。leader会记录follower的日志复制进度nextIndex，如果follower在追加日志时一致性检查失败，就会拒绝请求，此时leader就会减小 nextIndex 值并进行重试，最终在某个位置让follower跟leader一致。
-</div>2021-01-31</li><br/><li><span>jeffery</span> 👍（12） 💬（2）<div>讲的太好了、图文并貌、形象生动、raft这章就够本了！老师问下.es 也用raft！为啥会出现数据不一致性？部署etcd高可用有运维有最佳实践建议吗？谢谢老师</div>2021-01-28</li><br/><li><span>写点啥呢</span> 👍（11） 💬（6）<div>谢谢老师的回答，关于第三个问题，“3. 如果在写数据过程中leader崩溃了。比如在leader完成自身WAL并发送MsgApp后崩溃了，本次写提案没有完成，重新选leader之后新leader有这次写记录的log，它会怎么恢复数据？” 我详细描述下，请老师帮忙解答下：
+</p>2021-01-31</li><br/><li><span>jeffery</span> 👍（12） 💬（2）<p>讲的太好了、图文并貌、形象生动、raft这章就够本了！老师问下.es 也用raft！为啥会出现数据不一致性？部署etcd高可用有运维有最佳实践建议吗？谢谢老师</p>2021-01-28</li><br/><li><span>写点啥呢</span> 👍（11） 💬（6）<p>谢谢老师的回答，关于第三个问题，“3. 如果在写数据过程中leader崩溃了。比如在leader完成自身WAL并发送MsgApp后崩溃了，本次写提案没有完成，重新选leader之后新leader有这次写记录的log，它会怎么恢复数据？” 我详细描述下，请老师帮忙解答下：
 1. Leader收到用户put请求后，完成自己的WAL日志及raft日志持久化后发送MsgApp到其它follower节点。
 2. 其它follower节点接收到MsgApp后也完成自己的WAL及raft日志操作。
 3. 此时Leader节点崩溃了，follower节点无法发送自己日志MsgAppResp给已经崩溃的Leader。此时集群开始新一轮选举并选出一个Leader
 4. 新的Leader接收过之前的put提案并在日志中找到它，新的Leader如何恢复这条提案到提交状态？新的leader是不是在日志中看到这条没有完成提案后重新在做一轮提案？
 
 谢谢老师
-</div>2021-01-29</li><br/><li><span>写点啥呢</span> 👍（9） 💬（1）<div>关于选举过程和节点崩溃后恢复有几个问题请教老师：
+</p>2021-01-29</li><br/><li><span>写点啥呢</span> 👍（9） 💬（1）<p>关于选举过程和节点崩溃后恢复有几个问题请教老师：
 1. 如果多数follower崩溃后重启恢复（比如极端情况只剩下Leader其它follower同时重启），根据选举规则是不是会出现重启follower占多数投票给了一个数据不是最新的节点而导致数据丢失。我理解这种情况不满足法定票算法前提，所以是无法保障数据一致的。
 2. 对于少数节点崩溃恢复后，它是如何追上leader的最新数据的呢？比如对于日志复制过程，leader完成自身的WAL及raft日志然后发送MsgApp，但是其它follower没有来得及发送MsgResp就崩溃了，那么这条raft日志其实没有得到法定票数的提交信息，raft模块应该通过什么方式来让follower恢复这份数据，让它能够最终在恢复的节点得到法定票数提交，然后应用到上层状态机？
 3.  如果在写数据过程中leader崩溃了。比如在leader完成自身WAL并发送MsgApp后崩溃了，本次写提案没有完成，重新选leader之后新leader有这次写记录的log，它会怎么恢复数据？
 
-谢谢老师</div>2021-01-27</li><br/><li><span>Index</span> 👍（4） 💬（2）<div>关于etcd的raft实现源码有个问题
+谢谢老师</p>2021-01-27</li><br/><li><span>Index</span> 👍（4） 💬（2）<p>关于etcd的raft实现源码有个问题
 func ExampleNode() {
 	c := &amp;Config{}
 	n := StartNode(c, nil)
@@ -266,10 +266,10 @@ func ExampleNode() {
 	}
 }
 
-网络，存储都是用户自己实现的，如果这里在处理存储和发送消息很慢，这样不会影响到心跳吗？比如心跳默认是1s，那如果处理存储和网络的时间经常超过1s，岂不是心跳就时常超时，集群经常处于选举的状态吗？求解答</div>2021-01-29</li><br/><li><span>青鸟飞鱼</span> 👍（4） 💬（5）<div>主从复制缺点是因为主节点崩溃后，没有选主机制（是否可以考虑redis的哨兵选主）呢？还是因为数据一致性呢（raft保持强一致性的话，也是通过某些机制保证强一致性（主节点读或者ReadIndex））</div>2021-01-27</li><br/><li><span>Geek_aaa517</span> 👍（3） 💬（2）<div>raft日志跟wal日志没太搞明白，分别是什么作用呢</div>2021-03-20</li><br/><li><span>春风</span> 👍（3） 💬（1）<div>假如老的 Leader A 因为网络问题无法连通 B、C 节点，这时候根据状态图，我们知道它将不停自增任期号，发起选举。等 A 节点网络异常恢复后，那么现有 Leader 收到了新的任期号，就会触发新一轮 Leader 选举，影响服务的可用性。
+网络，存储都是用户自己实现的，如果这里在处理存储和发送消息很慢，这样不会影响到心跳吗？比如心跳默认是1s，那如果处理存储和网络的时间经常超过1s，岂不是心跳就时常超时，集群经常处于选举的状态吗？求解答</p>2021-01-29</li><br/><li><span>青鸟飞鱼</span> 👍（4） 💬（5）<p>主从复制缺点是因为主节点崩溃后，没有选主机制（是否可以考虑redis的哨兵选主）呢？还是因为数据一致性呢（raft保持强一致性的话，也是通过某些机制保证强一致性（主节点读或者ReadIndex））</p>2021-01-27</li><br/><li><span>Geek_aaa517</span> 👍（3） 💬（2）<p>raft日志跟wal日志没太搞明白，分别是什么作用呢</p>2021-03-20</li><br/><li><span>春风</span> 👍（3） 💬（1）<p>假如老的 Leader A 因为网络问题无法连通 B、C 节点，这时候根据状态图，我们知道它将不停自增任期号，发起选举。等 A 节点网络异常恢复后，那么现有 Leader 收到了新的任期号，就会触发新一轮 Leader 选举，影响服务的可用性。
 
-老师，这里没太懂，A不是本身是leader吗，为什么还要发起选举？</div>2021-01-27</li><br/><li><span>HelloBug</span> 👍（2） 💬（2）<div>老师在讲解流程的时候，会说raft模块，kvserver模块，这些都好理解。但又会说etcd发送什么消息，或者etcdserver怎么怎么样，具体是什么模块呢？我之前以为这两者不指哪个模块，就是etcd的框架代码，但是这篇文章里又看到etcdserver模块，着实不知道怎么理解了</div>2021-12-02</li><br/><li><span>写点啥呢</span> 👍（1） 💬（2）<div>请问唐老师，我理解follower上的WAL和稳定raft日志是通过接收leader的MsgApp消息来更新的。那如果leader是在发送MsgApp之后接收MsgResp之前崩溃，选举完成的新集群如何知道一个日志条目已经被多数follower持久化了呢？是不是选举后集群中的新leader和follower是不是根据自己raft模块中的提案日志来确定的？谢谢</div>2021-01-29</li><br/><li><span>java</span> 👍（0） 💬（1）<div>额 老师 上节课的思考题答案呢.,是xpensive read会导致频繁升级读写锁.导致写请求往后推迟,然后就超时了.吗</div>2021-01-27</li><br/><li><span>Simon</span> 👍（0） 💬（2）<div>在日志图 2 中，Follower B 返回给 client 成功后若突然 crash 了，此时可能还并未将 6 号日志条目已提交的消息通知到 Follower A 和 C
+老师，这里没太懂，A不是本身是leader吗，为什么还要发起选举？</p>2021-01-27</li><br/><li><span>HelloBug</span> 👍（2） 💬（2）<p>老师在讲解流程的时候，会说raft模块，kvserver模块，这些都好理解。但又会说etcd发送什么消息，或者etcdserver怎么怎么样，具体是什么模块呢？我之前以为这两者不指哪个模块，就是etcd的框架代码，但是这篇文章里又看到etcdserver模块，着实不知道怎么理解了</p>2021-12-02</li><br/><li><span>写点啥呢</span> 👍（1） 💬（2）<p>请问唐老师，我理解follower上的WAL和稳定raft日志是通过接收leader的MsgApp消息来更新的。那如果leader是在发送MsgApp之后接收MsgResp之前崩溃，选举完成的新集群如何知道一个日志条目已经被多数follower持久化了呢？是不是选举后集群中的新leader和follower是不是根据自己raft模块中的提案日志来确定的？谢谢</p>2021-01-29</li><br/><li><span>java</span> 👍（0） 💬（1）<p>额 老师 上节课的思考题答案呢.,是xpensive read会导致频繁升级读写锁.导致写请求往后推迟,然后就超时了.吗</p>2021-01-27</li><br/><li><span>Simon</span> 👍（0） 💬（2）<p>在日志图 2 中，Follower B 返回给 client 成功后若突然 crash 了，此时可能还并未将 6 号日志条目已提交的消息通知到 Follower A 和 C
 
-老师, 这里的Follower B是不是Leader B啊?</div>2021-01-27</li><br/><li><span>科精</span> 👍（79） 💬（1）<div>Raft分布式算法，打开连接玩1分钟就能学会
-http:&#47;&#47;kailing.pub&#47;raft&#47;index.html</div>2021-02-20</li><br/><li><span>云原生工程师</span> 👍（3） 💬（0）<div>日志复制流程图很赞，清晰易懂</div>2021-01-27</li><br/>
+老师, 这里的Follower B是不是Leader B啊?</p>2021-01-27</li><br/><li><span>科精</span> 👍（79） 💬（1）<p>Raft分布式算法，打开连接玩1分钟就能学会
+http:&#47;&#47;kailing.pub&#47;raft&#47;index.html</p>2021-02-20</li><br/><li><span>云原生工程师</span> 👍（3） 💬（0）<p>日志复制流程图很赞，清晰易懂</p>2021-01-27</li><br/>
 </ul>

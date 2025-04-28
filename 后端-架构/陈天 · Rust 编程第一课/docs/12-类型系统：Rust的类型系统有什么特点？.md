@@ -449,7 +449,7 @@ fn main() {
 
 5.如果你对各个语言是如何实现和处理泛型比较感兴趣的话，可以参考下图（[来源](https://thume.ca/2019/07/14/a-tour-of-metaprogramming-models-for-generics/)）：![](https://static001.geekbang.org/resource/image/3f/82/3fc003544b098d275e194fd4004e7a82.png?wh=1646x3136)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>lisiur</span> 👍（90） 💬（20）<div>思考题代码报错的主要原因是，实现 new 方法时，对泛型的约束要求要满足 W: Write，而 new 的声明返回值是 Self，也就是说 self.wirter 必须是 W: Write 类型(泛型)，但实际返回值是一个确定的类型 BufWriter&lt;TcpStream&gt;，这不满足要求。
+<li><span>lisiur</span> 👍（90） 💬（20）<p>思考题代码报错的主要原因是，实现 new 方法时，对泛型的约束要求要满足 W: Write，而 new 的声明返回值是 Self，也就是说 self.wirter 必须是 W: Write 类型(泛型)，但实际返回值是一个确定的类型 BufWriter&lt;TcpStream&gt;，这不满足要求。
 
 修改方法有这么几个思路
 
@@ -533,7 +533,7 @@ fn main() {
     let mut writer = MyWriter::&lt;File&gt;::new(&quot;&#47;etc&#47;hosts&quot;);
     writer.write(&quot;127.0.0.1 localhost&quot;);
 }
-```</div>2021-09-20</li><br/><li><span>核桃</span> 👍（22） 💬（4）<div>老师你好，这里遇到一个需求，就是想实现一个类似二维动态数组的，然后数组里面的元素是一个指针，指向另外一个随机数组，因为这里是同事强制要求的，后面调用了一个封装第三方的C库接口，因此这里我的代码实现思路如下所示:
+```</p>2021-09-20</li><br/><li><span>核桃</span> 👍（22） 💬（4）<p>老师你好，这里遇到一个需求，就是想实现一个类似二维动态数组的，然后数组里面的元素是一个指针，指向另外一个随机数组，因为这里是同事强制要求的，后面调用了一个封装第三方的C库接口，因此这里我的代码实现思路如下所示:
 
 
 代码:
@@ -563,9 +563,9 @@ num is : [252, 123, 170, 107, 232, 186, 203, 91, 130, 11, 92, 48, 39, 36, 10, 19
 num is : [143, 52, 155, 135, 50, 50, 133, 105, 143, 62, 120, 125, 88, 58, 99, 19],num.as_ptr(): 0x7ff6ec000bc0
 data is: [0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6ec000bc0]
 
-搞不明白的是，这里为什么new了之后，还是会导致地址不变，有没有办法强制让变量num每次new之后就是会改变的？多谢了</div>2021-09-22</li><br/><li><span>荒野林克</span> 👍（11） 💬（1）<div>老师，这里有一个疑惑：
+搞不明白的是，这里为什么new了之后，还是会导致地址不变，有没有办法强制让变量num每次new之后就是会改变的？多谢了</p>2021-09-22</li><br/><li><span>荒野林克</span> 👍（11） 💬（1）<p>老师，这里有一个疑惑：
 ```impl&lt;W: Write&gt; MyWriter&lt;W&gt;``` 
-里，impl 后面以及指明约束，为什么 MyWriter 后面还要单独写一次呢？</div>2021-09-28</li><br/><li><span>罗杰</span> 👍（3） 💬（3）<div>追老师的更新比追剧有趣多了，配合张老师的视频课，还有陈老师 B 站的 Rust 培训视频，真的很舒服。</div>2021-09-20</li><br/><li><span>核桃</span> 👍（2） 💬（1）<div>fn main() {
+里，impl 后面以及指明约束，为什么 MyWriter 后面还要单独写一次呢？</p>2021-09-28</li><br/><li><span>罗杰</span> 👍（3） 💬（3）<p>追老师的更新比追剧有趣多了，配合张老师的视频课，还有陈老师 B 站的 Rust 培训视频，真的很舒服。</p>2021-09-20</li><br/><li><span>核桃</span> 👍（2） 💬（1）<p>fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let even_numbers = numbers
         .into_iter()
@@ -575,7 +575,7 @@ data is: [0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6ec000bc0, 0x7ff6
 }
 
 
-请教一下这段代码为什么就无法推导类型呢？对于编译器来说，应该是知道number是vec的呀。不太懂，这里可能是我对编译原理理解不够扎实。</div>2021-11-17</li><br/><li><span>Marvichov</span> 👍（2） 💬（1）<div>W会被resolve成一个实际类型, 也就是`BufferWriter::new(stream)`的类型. 而rust要求W是一个泛型. 我的下面的改动有点多...
+请教一下这段代码为什么就无法推导类型呢？对于编译器来说，应该是知道number是vec的呀。不太懂，这里可能是我对编译原理理解不够扎实。</p>2021-11-17</li><br/><li><span>Marvichov</span> 👍（2） 💬（1）<p>W会被resolve成一个实际类型, 也就是`BufferWriter::new(stream)`的类型. 而rust要求W是一个泛型. 我的下面的改动有点多...
 
 有一点我就有点不明白了, 声明的时候都说了W: Write, 为啥impl的时候还要说一遍呢 (不说不让编译)? 
 
@@ -609,13 +609,13 @@ fn main() {
     let mut writer = MyWriter::new(stream);
     writer.write(&quot;hello world!&quot;).unwrap();
 }
-```</div>2021-09-20</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<div>不确定最后的代码里为什么要用泛型，改了几个不同的版本：
+```</p>2021-09-20</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<p>不确定最后的代码里为什么要用泛型，改了几个不同的版本：
 
 https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=f21447a10eac4e3b77d39aefbd93ab6b
 
 https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=2d8037d4059efe15c3d15cfa2267bb70
 
-https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=c57f2abe9756bf021241c63e1b944af8</div>2021-09-20</li><br/><li><span>c4f</span> 👍（1） 💬（1）<div>不能编译是因为第 14 行 writer 期待的值的类型也是 W，但收到的却是 BufWriter&lt;TcpStream&gt; 因此不匹配。
+https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=c57f2abe9756bf021241c63e1b944af8</p>2021-09-20</li><br/><li><span>c4f</span> 👍（1） 💬（1）<p>不能编译是因为第 14 行 writer 期待的值的类型也是 W，但收到的却是 BufWriter&lt;TcpStream&gt; 因此不匹配。
 参考 MyReader 进行了修改，不过这种方法修改了 MyWriter 对外提供的接口（new），应该还有别的方法，不过没找出来 hh
 
 ```
@@ -664,8 +664,8 @@ where
     ...
 }
 ```
-</div>2021-09-20</li><br/><li><span>随风wli</span> 👍（0） 💬（1）<div>老师，因为单态化，代码以二进制分发会损失泛型的信息，这里以二进制分发是指库代码编译成了类似可执行文件，然后rust直接调用吗</div>2021-12-30</li><br/><li><span>Geek_2b06a7</span> 👍（0） 💬（1）<div>文中说 Rust 是显式静态类型，支持作用域内的类型推导，而 ML 和 Haskell 是隐式类型。
-这其中的差异提现在什么地方？我没有明白他们类型系统的差异。</div>2021-12-22</li><br/><li><span>阿成</span> 👍（0） 💬（2）<div>老师你在对“核桃”的解答中说：
+</p>2021-09-20</li><br/><li><span>随风wli</span> 👍（0） 💬（1）<p>老师，因为单态化，代码以二进制分发会损失泛型的信息，这里以二进制分发是指库代码编译成了类似可执行文件，然后rust直接调用吗</p>2021-12-30</li><br/><li><span>Geek_2b06a7</span> 👍（0） 💬（1）<p>文中说 Rust 是显式静态类型，支持作用域内的类型推导，而 ML 和 Haskell 是隐式类型。
+这其中的差异提现在什么地方？我没有明白他们类型系统的差异。</p>2021-12-22</li><br/><li><span>阿成</span> 👍（0） 💬（2）<p>老师你在对“核桃”的解答中说：
 “as_ptr() 拿到的是栈上的指针，你应该需要堆上指向实际内容的指针。所以应该用 Vec::into_boxed_slice(), 然后再用 Box::into_raw 拿到裸指针。”
 1. 没看明白啊，as_ptr() 怎么就是栈上的指针了？看下面的代码，打印出来明明都是同一个地址啊...
 https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5b74ccf59b05b507d588e5e0297f9448
@@ -673,7 +673,7 @@ https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;editio
 
 我发现在你的代码中真正起作用的是 `Box::into_raw(boxed)` 这个表达式……
 
-2. 还有 Vec&lt;*const u8&gt; 可以理解为指向数组的首元素啊……为啥不行呢……</div>2021-11-22</li><br/><li><span>noisyes</span> 👍（0） 💬（2）<div>代码不以二进制分发就没问题吧</div>2021-09-23</li><br/><li><span>史双龙</span> 👍（0） 💬（1）<div>有点要跟不上节奏了，改了半天，跟榜一大佬差不多。
+2. 还有 Vec&lt;*const u8&gt; 可以理解为指向数组的首元素啊……为啥不行呢……</p>2021-11-22</li><br/><li><span>noisyes</span> 👍（0） 💬（2）<p>代码不以二进制分发就没问题吧</p>2021-09-23</li><br/><li><span>史双龙</span> 👍（0） 💬（1）<p>有点要跟不上节奏了，改了半天，跟榜一大佬差不多。
 use std::io::{BufWriter, Write};
 use std::net::TcpStream;
 
@@ -698,7 +698,7 @@ impl&lt;W: Write&gt; MyWriter&lt;W&gt; {
 fn main() {
     let mut writer = MyWriter::&lt;BufWriter&lt;TcpStream&gt;&gt;::new(&quot;127.0.0.1:8080&quot;);
     writer.write(&quot;hello world!&quot;).unwrap();
-}</div>2021-09-22</li><br/><li><span>记事本</span> 👍（0） 💬（3）<div>改进了看符不符合要求，记事本写的
+}</p>2021-09-22</li><br/><li><span>记事本</span> 👍（0） 💬（3）<p>改进了看符不符合要求，记事本写的
 use std::io::{BufWriter,Write};
 use std::net::TcpStream;
 
@@ -726,5 +726,5 @@ fn main() {
     s.write(&quot;hello world&quot;);
 
 }
-</div>2021-09-21</li><br/><li><span>Fenix</span> 👍（0） 💬（1）<div>想问下，看到各种文章都说python是强类型的语言呀</div>2021-09-21</li><br/>
+</p>2021-09-21</li><br/><li><span>Fenix</span> 👍（0） 💬（1）<p>想问下，看到各种文章都说python是强类型的语言呀</p>2021-09-21</li><br/>
 </ul>

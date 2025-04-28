@@ -121,7 +121,7 @@ zone_end=0x4080000, mode=async status=contended
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，我们下一讲见。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>邵亚方</span> 👍（18） 💬（0）<div>课后作业答案：
+<li><span>邵亚方</span> 👍（18） 💬（0）<p>课后作业答案：
 - 假设现在内存紧张， 有很多进程都在进行直接内存回收，如何统计出来都是哪些进程在进行直接内存回收呢？
 评论区里有人已经很好的回答了这个问题，使用tracepoint是最简单的方法。
 “已经得知是直接内存回收引起的问题，一次执行
@@ -129,7 +129,7 @@ echo 1 &gt;&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;vmscan&#47;m
 echo 1 &gt;&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;vmscan&#47;mm_vmscan_direct_reclaim_end
 打开直接内存回收相关的tracepoint，然后
 cat &#47;sys&#47;kernel&#47;debug&#47;tracing&#47;trace_pipe
-查看跟踪输出，得到进程号“</div>2020-10-11</li><br/><li><span>我来也</span> 👍（12） 💬（1）<div>邵老师，看了文中的一句话，正好有个困扰很久的疑问请教一下：
+查看跟踪输出，得到进程号“</p>2020-10-11</li><br/><li><span>我来也</span> 👍（12） 💬（1）<p>邵老师，看了文中的一句话，正好有个困扰很久的疑问请教一下：
 我们什么时候会真的遇到需要申请连续物理内存的情况？
 
 &gt; “单位时间内 compact_fail 变化很大时，那往往意味着系统内存碎片很严重，已经很难申请到连续物理内存了”
@@ -144,14 +144,14 @@ cat &#47;sys&#47;kernel&#47;debug&#47;tracing&#47;trace_pipe
 很有可能在进程中连续的虚拟内存地址，在实际的物理内存中并不是连续的。
 现在几乎都只有内核有权限直接操作物理内存了。
 
-所以我就有了开头的那个疑问。</div>2020-08-30</li><br/><li><span>J.Smile</span> 👍（9） 💬（2）<div>sar 里面记录的 PSI（Pressure-Stall Information）具体怎么用啊？</div>2020-08-29</li><br/><li><span>KennyQ</span> 👍（6） 💬（1）<div>很多生产问题都是要对秒级甚至毫秒级的行为进行分析，而业务一旦向运维部门反馈了问题以后，一般都是要做事后分析， 那么一般如何应对这样的问题分析场景？
-是针对一些重要指标在事前就进行秒级监控？分钟级监控？还是等待事后部署秒级的监控脚本进行信息抓取？</div>2020-09-05</li><br/><li><span>Eria</span> 👍（6） 💬（1）<div>请教老师一个问题：我们两个机器上一样的系统和硬件配置和服务，运行相同的测试：
+所以我就有了开头的那个疑问。</p>2020-08-30</li><br/><li><span>J.Smile</span> 👍（9） 💬（2）<p>sar 里面记录的 PSI（Pressure-Stall Information）具体怎么用啊？</p>2020-08-29</li><br/><li><span>KennyQ</span> 👍（6） 💬（1）<p>很多生产问题都是要对秒级甚至毫秒级的行为进行分析，而业务一旦向运维部门反馈了问题以后，一般都是要做事后分析， 那么一般如何应对这样的问题分析场景？
+是针对一些重要指标在事前就进行秒级监控？分钟级监控？还是等待事后部署秒级的监控脚本进行信息抓取？</p>2020-09-05</li><br/><li><span>Eria</span> 👍（6） 💬（1）<p>请教老师一个问题：我们两个机器上一样的系统和硬件配置和服务，运行相同的测试：
 
     1. 系统 A 的磁盘 util 很小（3%-10%），但是可以看到 80G 左右的 buffer&#47;cache，系统 A 的服务延迟非常小
     2. 系统 B 的磁盘 util 很高（大于 30%)，buffer&#47;cache 10G 左右，系统 B 的服务延迟是 A 的好几倍
 
-系统 B 是否可能由于太小的 buffer&#47;cache 导致 disk util 飙高进而导致延迟上升？两个系统的 cahce 参数配置是一样的，所以为什么系统 B 的 buffer&#47;cache 会比系统 A 小那么多？</div>2020-09-02</li><br/><li><span>Geek_circle</span> 👍（5） 💬（1）<div>老师好，想确认下页面的换出是否依赖系统开启的swap分区（一般linux系统为了避免影响性能，都是关闭不启用swap的），如果不依赖，这个换出的页面是放置在物理硬盘的哪里呢？
-.这个sar统计的pgpgin和pgpgout 如何解读呢</div>2020-09-13</li><br/><li><span>ray</span> 👍（5） 💬（2）<div>老师您好，请问
+系统 B 是否可能由于太小的 buffer&#47;cache 导致 disk util 飙高进而导致延迟上升？两个系统的 cahce 参数配置是一样的，所以为什么系统 B 的 buffer&#47;cache 会比系统 A 小那么多？</p>2020-09-02</li><br/><li><span>Geek_circle</span> 👍（5） 💬（1）<p>老师好，想确认下页面的换出是否依赖系统开启的swap分区（一般linux系统为了避免影响性能，都是关闭不启用swap的），如果不依赖，这个换出的页面是放置在物理硬盘的哪里呢？
+.这个sar统计的pgpgin和pgpgout 如何解读呢</p>2020-09-13</li><br/><li><span>ray</span> 👍（5） 💬（2）<p>老师您好，请问
 ==&gt; &#47;proc&#47;pressure&#47;cpu &lt;==
 some avg10=0.00 avg60=0.00 avg300=0.00 total=10078249
 
@@ -167,13 +167,13 @@ full avg10=0.00 avg60=0.00 avg300=0.00 total=0
 
 2. total代表的意思是什么？
 
-谢谢老师的解答^^</div>2020-08-30</li><br/><li><span>Linuxer</span> 👍（3） 💬（1）<div>请问一下邵老师，如何确定负载高是锁冲突导致的呢？还有就是象 resource temporarily unavailable这种报错我想知道具体是哪一种资源，是不是可以通过系统快照找到呢？</div>2020-10-22</li><br/><li><span>Geek_b85295</span> 👍（2） 💬（1）<div>关于课后作业，我来依葫芦画瓢，还望老师指教。
+谢谢老师的解答^^</p>2020-08-30</li><br/><li><span>Linuxer</span> 👍（3） 💬（1）<p>请问一下邵老师，如何确定负载高是锁冲突导致的呢？还有就是象 resource temporarily unavailable这种报错我想知道具体是哪一种资源，是不是可以通过系统快照找到呢？</p>2020-10-22</li><br/><li><span>Geek_b85295</span> 👍（2） 💬（1）<p>关于课后作业，我来依葫芦画瓢，还望老师指教。
 已经得知是直接内存回收引起的问题，一次执行
 echo 1 &gt;&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;vmscan&#47;mm_vmscan_direct_reclaim_begin
 echo 1 &gt;&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;vmscan&#47;mm_vmscan_direct_reclaim_end
 打开直接内存回收相关的tracepoint，然后
 cat &#47;sys&#47;kernel&#47;debug&#47;tracing&#47;trace_pipe
-查看跟踪输出，得到进程号</div>2020-09-29</li><br/><li><span>jssfy</span> 👍（2） 💬（1）<div>请问老师你们生产环境是否用4.18+内核多? 还是定制迁移相关特性到自维护版本内核?</div>2020-08-30</li><br/><li><span>Bryant.C</span> 👍（0） 💬（1）<div>老师好，在老版本(2.6.32)里面有没有比较好的方式检测机器整体page cache的命中率呢？page cache命中这个指标对于我们的服务还是相当重要的，如果使用systemtap监控函数调用的话会不会有很高的开销呢？</div>2020-10-15</li><br/><li><span>Arcoo</span> 👍（1） 💬（0）<div>【你需要重点关注 avg10 这一列，它表示最近 10s 内存的平均压力情况，如果它很大（比如大于 40）那 load 飙高大概率是由于内存压力，尤其是 Page Cache 的压力引起的。】
+查看跟踪输出，得到进程号</p>2020-09-29</li><br/><li><span>jssfy</span> 👍（2） 💬（1）<p>请问老师你们生产环境是否用4.18+内核多? 还是定制迁移相关特性到自维护版本内核?</p>2020-08-30</li><br/><li><span>Bryant.C</span> 👍（0） 💬（1）<p>老师好，在老版本(2.6.32)里面有没有比较好的方式检测机器整体page cache的命中率呢？page cache命中这个指标对于我们的服务还是相当重要的，如果使用systemtap监控函数调用的话会不会有很高的开销呢？</p>2020-10-15</li><br/><li><span>Arcoo</span> 👍（1） 💬（0）<p>【你需要重点关注 avg10 这一列，它表示最近 10s 内存的平均压力情况，如果它很大（比如大于 40）那 load 飙高大概率是由于内存压力，尤其是 Page Cache 的压力引起的。】
 压力的大小该如何界定，40代表压力很大，那 10、20 就表示压力不大？
-我该如何评估系统的压力是否大？</div>2022-06-08</li><br/><li><span>费曼先生</span> 👍（0） 💬（0）<div>邵老师，目前我这边操作系统版本是 CentOS Linux release 7.9.2009 (Core) 为什么我在主机上无法找到&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;compaction&#47;mm_compaction_begin&#47;enable这个文件呐？是因为操作系统不同引起的嘛？</div>2022-10-09</li><br/>
+我该如何评估系统的压力是否大？</p>2022-06-08</li><br/><li><span>费曼先生</span> 👍（0） 💬（0）<p>邵老师，目前我这边操作系统版本是 CentOS Linux release 7.9.2009 (Core) 为什么我在主机上无法找到&#47;sys&#47;kernel&#47;debug&#47;tracing&#47;events&#47;compaction&#47;mm_compaction_begin&#47;enable这个文件呐？是因为操作系统不同引起的嘛？</p>2022-10-09</li><br/>
 </ul>

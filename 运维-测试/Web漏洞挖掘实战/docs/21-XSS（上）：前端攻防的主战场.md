@@ -175,6 +175,6 @@ http://51277f5dd0db4fd0a6272f5f647b27b8.app.mituan.zone/vulnerabilities/xss_d/?d
 
 欢迎在评论区留下你的思考。如果觉得今天的内容对你有所帮助的话，也欢迎你把课程分享给其他同事或朋友，我们共同学习进步！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>DoHer4S</span> 👍（3） 💬（0）<div>防范XSS的方法有：(1) 严格的输入检测以及对恶意字符的过滤，在接收从用户端输入的进行验证和限制，对非法的字符进行过滤；(2) 对后端传输到前端的输出进行编码，防止其被解析成为动态内容；(3) 使用HTTP Content_Type &#47; X-Content-Type-Options 的字段对非引用HTML和JavaScript的HTTP响应进行限制；(4) 使用 HTTP 协议中的 Content-Security-Policy 来对引用外部的JavaScript资源进行限制；</div>2022-02-11</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师一个问题啊：
-DOM型XSS攻击，只是修改页面，能造成什么危害吗？</div>2022-02-12</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-20</li><br/>
+<li><span>DoHer4S</span> 👍（3） 💬（0）<p>防范XSS的方法有：(1) 严格的输入检测以及对恶意字符的过滤，在接收从用户端输入的进行验证和限制，对非法的字符进行过滤；(2) 对后端传输到前端的输出进行编码，防止其被解析成为动态内容；(3) 使用HTTP Content_Type &#47; X-Content-Type-Options 的字段对非引用HTML和JavaScript的HTTP响应进行限制；(4) 使用 HTTP 协议中的 Content-Security-Policy 来对引用外部的JavaScript资源进行限制；</p>2022-02-11</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师一个问题啊：
+DOM型XSS攻击，只是修改页面，能造成什么危害吗？</p>2022-02-12</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-20</li><br/>
 </ul>

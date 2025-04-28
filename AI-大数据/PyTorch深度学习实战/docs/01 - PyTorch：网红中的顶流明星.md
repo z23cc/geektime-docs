@@ -230,7 +230,7 @@ torch.__version__
 
 我是方远，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>bbbbbbbbbb</span> 👍（7） 💬（2）<div>请问没有显卡，可以有什么不用买显卡的解决方案吗</div>2021-10-12</li><br/><li><span>悠闲不自得</span> 👍（6） 💬（1）<div>请问老师，这个没有视频吗？</div>2021-10-12</li><br/><li><span>Swaggy</span> 👍（4） 💬（1）<div>老师可以讲一点网络训练技巧吗，比如如何应对循环神经网络梯度弥散的意思。</div>2021-10-11</li><br/><li><span>Zeurd</span> 👍（2） 💬（1）<div>老师好，要是用的是A卡就没办法了只能用cpu对么</div>2022-03-23</li><br/><li><span>Geek_ce0dd6</span> 👍（1） 💬（1）<div>老师请教几个神经网络训练模型的问题，假设我需要训练一个识别猫的模型，我准备了3000张猫的图片
+<li><span>bbbbbbbbbb</span> 👍（7） 💬（2）<p>请问没有显卡，可以有什么不用买显卡的解决方案吗</p>2021-10-12</li><br/><li><span>悠闲不自得</span> 👍（6） 💬（1）<p>请问老师，这个没有视频吗？</p>2021-10-12</li><br/><li><span>Swaggy</span> 👍（4） 💬（1）<p>老师可以讲一点网络训练技巧吗，比如如何应对循环神经网络梯度弥散的意思。</p>2021-10-11</li><br/><li><span>Zeurd</span> 👍（2） 💬（1）<p>老师好，要是用的是A卡就没办法了只能用cpu对么</p>2022-03-23</li><br/><li><span>Geek_ce0dd6</span> 👍（1） 💬（1）<p>老师请教几个神经网络训练模型的问题，假设我需要训练一个识别猫的模型，我准备了3000张猫的图片
 
 问题1：3000张猫的图片意味着有3000个猫的模型吗？这里我的想法是因为每个照片不一样所以每个照片都是一个模型都有单独的权重值
 
@@ -240,6 +240,6 @@ torch.__version__
 
 问题4：如果问题1不成立，训练的3000张照片只会存在一个模型，那么输入测试照片的时候他是会如何找到匹配的权重值得呢？
 
-</div>2023-01-13</li><br/><li><span>🌟</span> 👍（1） 💬（1）<div>
-torch.cuda.is_available()后直接到下一行了，没反应是怎么回事呀？</div>2022-09-04</li><br/><li><span>zhbr001</span> 👍（1） 💬（1）<div>项目的工具是什么</div>2022-06-24</li><br/><li><span>张昊</span> 👍（1） 💬（1）<div>昨天看到pytorch支持Mac M1的芯片了，马上装了一个，从头来学习。</div>2022-06-17</li><br/><li><span>Geek_fc975d</span> 👍（1） 💬（2）<div>很喜欢老师的图文方式</div>2022-03-29</li><br/><li><span>度</span> 👍（1） 💬（4）<div>老师，你好。我在新建一个 Python 的 Notebook时，“New”下拉菜单，并没有“Python 3”选项，而是Python 3（ipykernel）,点击后出现创建错误。特想请教是为什么？谢谢</div>2021-10-23</li><br/><li><span>guang384</span> 👍（1） 💬（1）<div>期待更新</div>2021-10-12</li><br/><li><span>Ethan New</span> 👍（0） 💬（1）<div>第一课学习打卡，PyTorch环境已经安装成功</div>2023-12-01</li><br/><li><span>小林子</span> 👍（0） 💬（1）<div>老师你好，我想问一下cudnn有必要装吗</div>2022-07-04</li><br/><li><span>Miss</span> 👍（0） 💬（2）<div>老师你好，我手上只有mac，一开始用mac学习，后面换成win系统可以吗？</div>2022-06-03</li><br/><li><span>曾小福气</span> 👍（0） 💬（1）<div>请问下老师，如果直接用pip install torch==1.9.0安装的是cpu还是gpu的版本呀？还是两者都有？</div>2022-05-01</li><br/>
+</p>2023-01-13</li><br/><li><span>🌟</span> 👍（1） 💬（1）<p>
+torch.cuda.is_available()后直接到下一行了，没反应是怎么回事呀？</p>2022-09-04</li><br/><li><span>zhbr001</span> 👍（1） 💬（1）<p>项目的工具是什么</p>2022-06-24</li><br/><li><span>张昊</span> 👍（1） 💬（1）<p>昨天看到pytorch支持Mac M1的芯片了，马上装了一个，从头来学习。</p>2022-06-17</li><br/><li><span>Geek_fc975d</span> 👍（1） 💬（2）<p>很喜欢老师的图文方式</p>2022-03-29</li><br/><li><span>度</span> 👍（1） 💬（4）<p>老师，你好。我在新建一个 Python 的 Notebook时，“New”下拉菜单，并没有“Python 3”选项，而是Python 3（ipykernel）,点击后出现创建错误。特想请教是为什么？谢谢</p>2021-10-23</li><br/><li><span>guang384</span> 👍（1） 💬（1）<p>期待更新</p>2021-10-12</li><br/><li><span>Ethan New</span> 👍（0） 💬（1）<p>第一课学习打卡，PyTorch环境已经安装成功</p>2023-12-01</li><br/><li><span>小林子</span> 👍（0） 💬（1）<p>老师你好，我想问一下cudnn有必要装吗</p>2022-07-04</li><br/><li><span>Miss</span> 👍（0） 💬（2）<p>老师你好，我手上只有mac，一开始用mac学习，后面换成win系统可以吗？</p>2022-06-03</li><br/><li><span>曾小福气</span> 👍（0） 💬（1）<p>请问下老师，如果直接用pip install torch==1.9.0安装的是cpu还是gpu的版本呀？还是两者都有？</p>2022-05-01</li><br/>
 </ul>

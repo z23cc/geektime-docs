@@ -536,7 +536,7 @@ run_swarm_app play_24_points_game_v2.py
 
 **小编留言**：马上就要到春节假期啦！祝大家新春大吉，春节期间我们的课程暂停更新，到2月5日0点恢复正常更新。希望春节期间你可以好好休息，合家团圆！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>糍粑不是饭</span> 👍（1） 💬（2）<div>老师您好，请问这是什么原因造成的呢？
+<li><span>糍粑不是饭</span> 👍（1） 💬（2）<p>老师您好，请问这是什么原因造成的呢？
 定义玩家 agent, 有函数 get_human_reply_func获取 用户输入。
 ```python
 agent_david = Agent(
@@ -560,6 +560,6 @@ agent_david = Agent(
     print(human_reply)
     return human_reply
 ```
-是 client.run() 运行后，是先运行的 get_human_reply_func 吗？ 然后再去获取 user_prompt?  为什么response 会有好几个呢（数学表达式也捕获了，deal 也错误捕获了）？</div>2025-02-17</li><br/><li><span>YX</span> 👍（0） 💬（2）<div>在使用GamePlayer的时候，发现不知道什么原因，当输入算术表达式的时候，模型最后会返回deal，我稍微把提示词改了下：
-What&#39;s the human reply of {last_cards_posted}? Just return the human reply itself and do not add anything else, such as &#39;The human reply ...&#39;. If the input is an arithmetic expression, return it as is.</div>2025-02-01</li><br/>
+是 client.run() 运行后，是先运行的 get_human_reply_func 吗？ 然后再去获取 user_prompt?  为什么response 会有好几个呢（数学表达式也捕获了，deal 也错误捕获了）？</p>2025-02-17</li><br/><li><span>YX</span> 👍（0） 💬（2）<p>在使用GamePlayer的时候，发现不知道什么原因，当输入算术表达式的时候，模型最后会返回deal，我稍微把提示词改了下：
+What&#39;s the human reply of {last_cards_posted}? Just return the human reply itself and do not add anything else, such as &#39;The human reply ...&#39;. If the input is an arithmetic expression, return it as is.</p>2025-02-01</li><br/>
 </ul>

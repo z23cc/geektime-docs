@@ -510,7 +510,7 @@ Linux的SLAB，使用kmalloc函数能分配多大的内存对象呢？
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>搬铁少年ai</span> 👍（5） 💬（2）<div>回答有的同学关于为什么是196大小的问题
+<li><span>搬铁少年ai</span> 👍（5） 💬（2）<p>回答有的同学关于为什么是196大小的问题
 
 这里196大小的对象，应该是专门针对256B以下小内存进行的优化，正常情况支持的对象大小都是2的n次方，2的七次方是128，8次方就是256了。所以这里在不违反缓存对其的前提下，单独支持了196大小的对象。
 
@@ -518,7 +518,7 @@ Linux的SLAB，使用kmalloc函数能分配多大的内存对象呢？
 
 除了192，另外在2的6次方和7次方之间，也特殊支持了96b大小的对象，同样是类似的原理。
 
-理论上能够背cache line大小整除的都可以特殊支持，只不过256以上的对象可能不常见，slab申请了特殊大小的对象却没有人用，反倒是一种浪费</div>2021-11-05</li><br/><li><span>neohope</span> 👍（15） 💬（2）<div>一、数据结构
+理论上能够背cache line大小整除的都可以特殊支持，只不过256以上的对象可能不常见，slab申请了特殊大小的对象却没有人用，反倒是一种浪费</p>2021-11-05</li><br/><li><span>neohope</span> 👍（15） 💬（2）<p>一、数据结构
 系统有一个全局kmem_cache_node数组，每一个kmem_cache_node结构，对应一个内存节点
 
 kmem_cache_node结构，用三个链表管理内存节点的全部kmem_cache【slab管理结构】，包括：
@@ -570,7 +570,7 @@ kmalloc-&gt;__kmalloc-&gt;__do_kmalloc
 四、对象回收
 kfree-&gt;__cache_free-&gt;___cache_free-&gt;__free_one
 将对象清空后，还给了CPU的对应的array_cache
-</div>2021-07-07</li><br/><li><span>tony</span> 👍（2） 💬（1）<div>既然已经有了slab分配机制，为什么在用户态还有ptmalloc以及tcmalloc？它们侧重点有什么不一样</div>2022-11-21</li><br/><li><span>西门吹牛</span> 👍（2） 💬（1）<div>之前学 netty，netty 中用到了伙伴算法实现内存分配与释放，说下 netty 中的实现吧：
+</p>2021-07-07</li><br/><li><span>tony</span> 👍（2） 💬（1）<p>既然已经有了slab分配机制，为什么在用户态还有ptmalloc以及tcmalloc？它们侧重点有什么不一样</p>2022-11-21</li><br/><li><span>西门吹牛</span> 👍（2） 💬（1）<p>之前学 netty，netty 中用到了伙伴算法实现内存分配与释放，说下 netty 中的实现吧：
 首先会预申请一大块内存 PoolArena，内部由 6 个 PoolChunkList，和俩个 PoolSubpage[]
 ● 6 个 PoolChunkList：分别是 qInit、q000、q025、q050、q075、q100
   ○ Netty 根据 PoolChunk 的使用率，将他们分别放入对应的 PoolChunkList 中，目的减少内存碎片
@@ -595,10 +595,10 @@ kfree-&gt;__cache_free-&gt;___cache_free-&gt;__free_one
 
 当然，其中还有很多细节，比如是否池化，内存释放之后，是直接归还，还是先缓存起来，下次在用，多线程申请的时候，怎么避免竞争等问题
 
-</div>2022-07-06</li><br/><li><span>朱熙</span> 👍（2） 💬（1）<div>linux内核包括三种小对象管理方式，slab，slub和slob，其中slob效率较低用于嵌入式等，linux默认使用slub</div>2021-07-03</li><br/><li><span>艾恩凝</span> 👍（1） 💬（1）<div>打卡，看了记，记了忘，忘了看，内存的相关学习，我在路上</div>2022-04-22</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（1）<div>请教老师，为什么有的资料说struct page就是slab，您这里说kmem_cache是描述slab，有点糊涂。</div>2021-11-03</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（1）<div>请教老师，我看kmem_cache源码里的node是一个指向kmem_cache_node的指针数组，您这里给的是一个指针，如果是指针我是理解的，但是如果是指针数组，我不明白为什么需要多个node管理kmem_cache(slab头)</div>2021-11-02</li><br/><li><span>Samaritan.</span> 👍（1） 💬（1）<div>“在 Linux 中，SLAB 管理头用 kmem_cache 结构来表示，代码如下”，请问一下，作者引用的是linux的哪个内核版本的代码呀？</div>2021-09-22</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<div>其实在 kmalloc_slab 函数已经写明了，最大是192，单位应该是B吧？</div>2021-07-13</li><br/><li><span>pedro</span> 👍（1） 💬（1）<div>Cosmos YYDS！！！
-问题答案看代码注释，最大192</div>2021-06-30</li><br/><li><span>小灰象</span> 👍（0） 💬（1）<div>翻过内存管理的大山啦！可喜可贺！！！</div>2024-08-26</li><br/><li><span>弘文要努力</span> 👍（0） 💬（1）<div>请问老师的源码从哪里获取呢？</div>2022-04-17</li><br/><li><span>青玉白露</span> 👍（0） 💬（1）<div>思考题有点像脑筋急转弯······
+</p>2022-07-06</li><br/><li><span>朱熙</span> 👍（2） 💬（1）<p>linux内核包括三种小对象管理方式，slab，slub和slob，其中slob效率较低用于嵌入式等，linux默认使用slub</p>2021-07-03</li><br/><li><span>艾恩凝</span> 👍（1） 💬（1）<p>打卡，看了记，记了忘，忘了看，内存的相关学习，我在路上</p>2022-04-22</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（1）<p>请教老师，为什么有的资料说struct page就是slab，您这里说kmem_cache是描述slab，有点糊涂。</p>2021-11-03</li><br/><li><span>搬铁少年ai</span> 👍（1） 💬（1）<p>请教老师，我看kmem_cache源码里的node是一个指向kmem_cache_node的指针数组，您这里给的是一个指针，如果是指针我是理解的，但是如果是指针数组，我不明白为什么需要多个node管理kmem_cache(slab头)</p>2021-11-02</li><br/><li><span>Samaritan.</span> 👍（1） 💬（1）<p>“在 Linux 中，SLAB 管理头用 kmem_cache 结构来表示，代码如下”，请问一下，作者引用的是linux的哪个内核版本的代码呀？</p>2021-09-22</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<p>其实在 kmalloc_slab 函数已经写明了，最大是192，单位应该是B吧？</p>2021-07-13</li><br/><li><span>pedro</span> 👍（1） 💬（1）<p>Cosmos YYDS！！！
+问题答案看代码注释，最大192</p>2021-06-30</li><br/><li><span>小灰象</span> 👍（0） 💬（1）<p>翻过内存管理的大山啦！可喜可贺！！！</p>2024-08-26</li><br/><li><span>弘文要努力</span> 👍（0） 💬（1）<p>请问老师的源码从哪里获取呢？</p>2022-04-17</li><br/><li><span>青玉白露</span> 👍（0） 💬（1）<p>思考题有点像脑筋急转弯······
 几处的注释都表明了最大值是192
-不过这个值是怎么定的呢？</div>2021-06-30</li><br/><li><span>blentle</span> 👍（0） 💬（1）<div>最多192吧，
+不过这个值是怎么定的呢？</p>2021-06-30</li><br/><li><span>blentle</span> 👍（0） 💬（1）<p>最多192吧，
 
 &#47;&#47;计算出index
     if (size &lt;= 192) {
@@ -609,5 +609,5 @@ kfree-&gt;__cache_free-&gt;___cache_free-&gt;__free_one
         if (WARN_ON_ONCE(size &gt; KMALLOC_MAX_CACHE_SIZE))
             return NULL;
         index = fls(size - 1);
-    }</div>2021-06-30</li><br/>
+    }</p>2021-06-30</li><br/>
 </ul>

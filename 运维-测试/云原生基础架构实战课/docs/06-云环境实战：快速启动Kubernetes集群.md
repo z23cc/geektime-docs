@@ -350,13 +350,13 @@ module.eks.aws_eks_cluster.this[0]: Still modifying... [id=education-eks-4hrTXxa
 
 欢迎你在留言区和我交流探讨，我们下一讲见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Geek_45a572</span> 👍（2） 💬（1）<div>老师您好，有一个场景，我的vpc使用tf创建之后。创建了rds也使用了这个vpc.  因为是在eks创建的脚本中写的vpc. 我此时释放eks，那么这个vpc也被释放了这个问题应该如何处理？</div>2024-04-10</li><br/><li><span>发条橙</span> 👍（0） 💬（3）<div>$ terraform apply
+<li><span>Geek_45a572</span> 👍（2） 💬（1）<p>老师您好，有一个场景，我的vpc使用tf创建之后。创建了rds也使用了这个vpc.  因为是在eks创建的脚本中写的vpc. 我此时释放eks，那么这个vpc也被释放了这个问题应该如何处理？</p>2024-04-10</li><br/><li><span>发条橙</span> 👍（0） 💬（3）<p>$ terraform apply
 ╷
 │ Error: error configuring Terraform AWS Provider: error validating provider credentials: error calling sts:GetCallerIdentity: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: afe63bae-7f5f-45b2-a3b5-80364f4a5f34, api error InvalidClientTokenId: The security token included in the request is invalid.
 │ 
 │   with provider[&quot;registry.terraform.io&#47;hashicorp&#47;aws&quot;],
 │   on main.tf line 11, in provider &quot;aws&quot;:
 │   11: provider &quot;aws&quot; {
-</div>2024-04-15</li><br/><li><span>Eason Lau</span> 👍（0） 💬（1）<div>老师请问你在创建过程中有在哪里指定node的数量么？
-另外就是eks集群是不是得挺贵啊？自己做实验的话😭</div>2024-04-08</li><br/><li><span>🐭 🐹 🐭 🐹 🐭</span> 👍（0） 💬（1）<div>为什么现在遇到的场景基本上是一个集群呢？是因为私有云的原因吗</div>2024-04-07</li><br/><li><span>首富手记</span> 👍（0） 💬（0）<div>多集群管理的时候，就把每个集群的差异地方抽出来 用变量的方式来管理应该就可以了</div>2024-04-29</li><br/><li><span>良凯尔</span> 👍（0） 💬（0）<div>针对Kubernetes集群的生命周期管理，比如说部署集群、扩容节点等等操作，使用Kubernetes SIGs 的 Cluster API（基于k8s CRD的方式来管理Kubernetes集群）会更加方便，众多云厂商都提供了自己的provider，使得可以基于不同云厂商的基础设施来部署Kubernetes集群；    </div>2024-04-06</li><br/>
+</p>2024-04-15</li><br/><li><span>Eason Lau</span> 👍（0） 💬（1）<p>老师请问你在创建过程中有在哪里指定node的数量么？
+另外就是eks集群是不是得挺贵啊？自己做实验的话😭</p>2024-04-08</li><br/><li><span>🐭 🐹 🐭 🐹 🐭</span> 👍（0） 💬（1）<p>为什么现在遇到的场景基本上是一个集群呢？是因为私有云的原因吗</p>2024-04-07</li><br/><li><span>首富手记</span> 👍（0） 💬（0）<p>多集群管理的时候，就把每个集群的差异地方抽出来 用变量的方式来管理应该就可以了</p>2024-04-29</li><br/><li><span>良凯尔</span> 👍（0） 💬（0）<p>针对Kubernetes集群的生命周期管理，比如说部署集群、扩容节点等等操作，使用Kubernetes SIGs 的 Cluster API（基于k8s CRD的方式来管理Kubernetes集群）会更加方便，众多云厂商都提供了自己的provider，使得可以基于不同云厂商的基础设施来部署Kubernetes集群；    </p>2024-04-06</li><br/>
 </ul>

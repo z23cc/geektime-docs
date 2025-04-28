@@ -279,15 +279,15 @@ systemd的机制十分复杂，这里咱们不讨论。如果有兴趣，你可�
 
 欢迎留言和我分享你的疑惑和见解，也欢迎你收藏本节内容，反复研读。你也可以把今天的内容分享给你的朋友，和他一起学习、进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李 P</span> 👍（24） 💬（2）<div>留的题和本课讲的有啥关系啊？</div>2019-04-08</li><br/><li><span>lujg</span> 👍（79） 💬（3）<div>.bash_profile是系统配置信息存储文件，写在里面的系统变量是所有用户共用的，而.bashrc是个人的配置信息存储文件，只是单用户有效。也就是说，配置了.bashrc后切换用户可能需要重新配置系统变量。</div>2019-04-04</li><br/><li><span>plasmatium</span> 👍（57） 💬（10）<div>老师不说下rm -rf &#47;和alias cd=&quot;rm -rf *&quot;吗，一是帮助小伙伴们避坑，二是get到黑话和笑点</div>2019-04-03</li><br/><li><span>Kouei</span> 👍（25） 💬（2）<div>有两个小想法：
+<li><span>李 P</span> 👍（24） 💬（2）<p>留的题和本课讲的有啥关系啊？</p>2019-04-08</li><br/><li><span>lujg</span> 👍（79） 💬（3）<p>.bash_profile是系统配置信息存储文件，写在里面的系统变量是所有用户共用的，而.bashrc是个人的配置信息存储文件，只是单用户有效。也就是说，配置了.bashrc后切换用户可能需要重新配置系统变量。</p>2019-04-04</li><br/><li><span>plasmatium</span> 👍（57） 💬（10）<p>老师不说下rm -rf &#47;和alias cd=&quot;rm -rf *&quot;吗，一是帮助小伙伴们避坑，二是get到黑话和笑点</p>2019-04-03</li><br/><li><span>Kouei</span> 👍（25） 💬（2）<p>有两个小想法：
 
 1. 进入上级目录应该是 cd .. 而文中写成了cd ...
-2. 查询命令的帮助用-h不一定总是能奏效，比如df dh等命令-h表示以人类可读的方式显示各类数值。用--help来打印帮助也许更普适一些吧。</div>2019-04-03</li><br/><li><span>Liam</span> 👍（23） 💬（14）<div>其实没必要类比windows,  因为可能很多程序员用的是mac</div>2019-04-06</li><br/><li><span>LOOK</span> 👍（18） 💬（7）<div>好复杂，感觉坚持不下去了</div>2019-04-03</li><br/><li><span>登高</span> 👍（9） 💬（2）<div>感觉自己所学的Linux在一课里就被讲了70%， 期待接下来的课程，够硬
-</div>2019-04-03</li><br/><li><span>星光</span> 👍（8） 💬（2）<div>老师我最近在Ubuntu下搭建Go的环境，看网上说的是在&#47;etc&#47;profile中添加export GOROOT和GOPATH，我很好奇Linux下这个&#47;etc&#47;profile是干嘛的，因为我用vim打开看了一下，就是一个脚本。</div>2019-04-04</li><br/><li><span>Teresa</span> 👍（5） 💬（1）<div>老师，使用以下命令kill进程的时候，如果关键字不准确导致搜索范围扩大，会误杀进程的吧。
-ps -ef |grep 关键字  |awk &#39;{print $2}&#39;|xargs kill -9</div>2020-04-19</li><br/><li><span>t-mac</span> 👍（5） 💬（1）<div>请问下老师，后台运行与服务运行程序有什么本质区别吗？ 除了启动方式不一样</div>2019-06-09</li><br/><li><span>bye</span> 👍（4） 💬（1）<div>推荐一个tldr命令(Too long don’t read)
+2. 查询命令的帮助用-h不一定总是能奏效，比如df dh等命令-h表示以人类可读的方式显示各类数值。用--help来打印帮助也许更普适一些吧。</p>2019-04-03</li><br/><li><span>Liam</span> 👍（23） 💬（14）<p>其实没必要类比windows,  因为可能很多程序员用的是mac</p>2019-04-06</li><br/><li><span>LOOK</span> 👍（18） 💬（7）<p>好复杂，感觉坚持不下去了</p>2019-04-03</li><br/><li><span>登高</span> 👍（9） 💬（2）<p>感觉自己所学的Linux在一课里就被讲了70%， 期待接下来的课程，够硬
+</p>2019-04-03</li><br/><li><span>星光</span> 👍（8） 💬（2）<p>老师我最近在Ubuntu下搭建Go的环境，看网上说的是在&#47;etc&#47;profile中添加export GOROOT和GOPATH，我很好奇Linux下这个&#47;etc&#47;profile是干嘛的，因为我用vim打开看了一下，就是一个脚本。</p>2019-04-04</li><br/><li><span>Teresa</span> 👍（5） 💬（1）<p>老师，使用以下命令kill进程的时候，如果关键字不准确导致搜索范围扩大，会误杀进程的吧。
+ps -ef |grep 关键字  |awk &#39;{print $2}&#39;|xargs kill -9</p>2020-04-19</li><br/><li><span>t-mac</span> 👍（5） 💬（1）<p>请问下老师，后台运行与服务运行程序有什么本质区别吗？ 除了启动方式不一样</p>2019-06-09</li><br/><li><span>bye</span> 👍（4） 💬（1）<p>推荐一个tldr命令(Too long don’t read)
 比man的帮助命令好用
 可以在系统里通过pip install tldr 安装
 
 使用方法示例 tldr tar
-就会打印出 常用的tar命令用法</div>2019-04-15</li><br/><li><span>小刚</span> 👍（4） 💬（1）<div>nohup command &gt;out.file 2&gt;&amp;1 &amp; 这个如果程序长时间运行会造成日志文件超大的问题，有没有好的解决方法</div>2019-04-10</li><br/><li><span>Calios</span> 👍（3） 💬（1）<div>果然是一图胜千言~！运行程序的三种方式，命令行运行、后台运行、服务方式运行，虽然之前也都知道，但是从没想过它们之间的关联。好像是一些个点被串成了树。好开心~！感谢老师~！</div>2020-05-05</li><br/><li><span>极意。</span> 👍（2） 💬（3）<div>ls-l 第五列，好像不是文件大小，文件大小用du -sh *可以看到，这个第五列很多时候显示4k是啥意思呢？</div>2020-01-07</li><br/><li><span>鹅鹅鹅</span> 👍（2） 💬（1）<div>老师我一直比较迷惑，都说bashrc是shell变量，profile是环境变量，但是linux中用户无法与内核直接交互，只能通过shell去和内核交互，所以这两个东西到底有什么区别？</div>2019-07-01</li><br/>
+就会打印出 常用的tar命令用法</p>2019-04-15</li><br/><li><span>小刚</span> 👍（4） 💬（1）<p>nohup command &gt;out.file 2&gt;&amp;1 &amp; 这个如果程序长时间运行会造成日志文件超大的问题，有没有好的解决方法</p>2019-04-10</li><br/><li><span>Calios</span> 👍（3） 💬（1）<p>果然是一图胜千言~！运行程序的三种方式，命令行运行、后台运行、服务方式运行，虽然之前也都知道，但是从没想过它们之间的关联。好像是一些个点被串成了树。好开心~！感谢老师~！</p>2020-05-05</li><br/><li><span>极意。</span> 👍（2） 💬（3）<p>ls-l 第五列，好像不是文件大小，文件大小用du -sh *可以看到，这个第五列很多时候显示4k是啥意思呢？</p>2020-01-07</li><br/><li><span>鹅鹅鹅</span> 👍（2） 💬（1）<p>老师我一直比较迷惑，都说bashrc是shell变量，profile是环境变量，但是linux中用户无法与内核直接交互，只能通过shell去和内核交互，所以这两个东西到底有什么区别？</p>2019-07-01</li><br/>
 </ul>

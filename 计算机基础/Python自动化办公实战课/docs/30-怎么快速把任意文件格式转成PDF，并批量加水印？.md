@@ -200,10 +200,10 @@ def watermark(pdfWithoutWatermark, watermarkfile, pdfWithWatermark):
 
 按照惯例，我来为你留一道思考题。如果在一个文件夹中既有Word文件，又有PowerPoint文件，你该如何将文件夹中的这些类型的文件，批量转换为PDF文件呢？
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>天国之影</span> 👍（3） 💬（1）<div>【增加水印章节】
+<li><span>天国之影</span> 👍（3） 💬（1）<p>【增加水印章节】
 pdf合并后会出现乱码，可以通过更换pyPDF4这个库解决这个问题
-具体代码可参考：https:&#47;&#47;relph1119.github.io&#47;TechBooks-ReadingNote&#47;#&#47;python_office_automation&#47;section05</div>2021-12-11</li><br/><li><span>小pawn爷</span> 👍（1） 💬（1）<div>没有HTML转PDF的安全方法？</div>2021-07-13</li><br/><li><span>LDxy</span> 👍（1） 💬（1）<div>COM编程接口是一种接口类型吗？</div>2021-04-20</li><br/><li><span>ty</span> 👍（0） 💬（1）<div>有没有pdf转word
-</div>2023-06-01</li><br/><li><span>somenzz</span> 👍（0） 💬（1）<div>def word2pdf(word_path, pdf_path):
+具体代码可参考：https:&#47;&#47;relph1119.github.io&#47;TechBooks-ReadingNote&#47;#&#47;python_office_automation&#47;section05</p>2021-12-11</li><br/><li><span>小pawn爷</span> 👍（1） 💬（1）<p>没有HTML转PDF的安全方法？</p>2021-07-13</li><br/><li><span>LDxy</span> 👍（1） 💬（1）<p>COM编程接口是一种接口类型吗？</p>2021-04-20</li><br/><li><span>ty</span> 👍（0） 💬（1）<p>有没有pdf转word
+</p>2023-06-01</li><br/><li><span>somenzz</span> 👍（0） 💬（1）<p>def word2pdf(word_path, pdf_path):
 
     # 指定Word类型
     word = client.DispatchEx(&quot;Word.Application&quot;)
@@ -217,13 +217,13 @@ pdf合并后会出现乱码，可以通过更换pyPDF4这个库解决这个问�
     word.Quit()
 
 请问老师，这段代码运行时会卡在    # 使用Word软件打开a.doc
-    file = word.Documents.Open(word_path, ReadOnly=1) 不动 ，请问怎么解决？</div>2021-08-17</li><br/><li><span>Wang</span> 👍（0） 💬（2）<div>中文会出现，合并后会出现乱码</div>2021-07-09</li><br/><li><span>鏡墨山人</span> 👍（0） 💬（1）<div>自己的电脑从Microsoft Office换用WPS Office之后转换会出错，请问有什么解决的方法嘛？</div>2021-05-04</li><br/><li><span>innovator琳</span> 👍（0） 💬（2）<div>Mac os 上怎么操作？</div>2021-04-25</li><br/><li><span>somenzz</span> 👍（2） 💬（0）<div>代码里面有中文逗号，这种经过测试吗？</div>2021-08-17</li><br/><li><span>天国之影</span> 👍（1） 💬（0）<div>“将PowerPoint 幻灯片转换为PDF”这一节中
+    file = word.Documents.Open(word_path, ReadOnly=1) 不动 ，请问怎么解决？</p>2021-08-17</li><br/><li><span>Wang</span> 👍（0） 💬（2）<p>中文会出现，合并后会出现乱码</p>2021-07-09</li><br/><li><span>鏡墨山人</span> 👍（0） 💬（1）<p>自己的电脑从Microsoft Office换用WPS Office之后转换会出错，请问有什么解决的方法嘛？</p>2021-05-04</li><br/><li><span>innovator琳</span> 👍（0） 💬（2）<p>Mac os 上怎么操作？</p>2021-04-25</li><br/><li><span>somenzz</span> 👍（2） 💬（0）<p>代码里面有中文逗号，这种经过测试吗？</p>2021-08-17</li><br/><li><span>天国之影</span> 👍（1） 💬（0）<p>“将PowerPoint 幻灯片转换为PDF”这一节中
 会遇到报错&quot;TypeError: The Python instance can not be converted to a COM object&quot;
 在文件另存为当前目录下的pdf文件，请改为下面代码
 file.ExportAsFixedFormat(&#39;\\&#39;.join([pptdir, pdfname]), FixedFormatType=2, 
-                             PrintRange=None)</div>2021-12-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-27</li><br/><li><span>阿牛</span> 👍（0） 💬（0）<div>文章源代码 写入新的pdf文件出错
+                             PrintRange=None)</p>2021-12-11</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-27</li><br/><li><span>阿牛</span> 👍（0） 💬（0）<p>文章源代码 写入新的pdf文件出错
 错误提示`ValueError: I&#47;O operation on closed file: test.pdf`
 
 解决办法：
-把写入语句缩进到读取没有水印的with语句内</div>2022-08-27</li><br/><li><span>ycc</span> 👍（0） 💬（0）<div>请问linux下如何比较完美地实现word转pdf，使用lib office效果很差啊？</div>2022-06-23</li><br/>
+把写入语句缩进到读取没有水印的with语句内</p>2022-08-27</li><br/><li><span>ycc</span> 👍（0） 💬（0）<p>请问linux下如何比较完美地实现word转pdf，使用lib office效果很差啊？</p>2022-06-23</li><br/>
 </ul>

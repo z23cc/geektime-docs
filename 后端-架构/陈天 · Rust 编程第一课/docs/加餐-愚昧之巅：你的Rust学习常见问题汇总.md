@@ -232,11 +232,11 @@ fn lifetime3(name: &str) -> Chars {
 
 欢迎在留言区抢答，也非常欢迎你分享这段时间的学习感受，一起交流进步。我们下节课回归正文讲Rust的类型系统，下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>秋声赋</span> 👍（2） 💬（1）<div>我看到用了很多的宏，这个有没有详细的说明呢？</div>2022-01-11</li><br/><li><span>lisiur</span> 👍（49） 💬（1）<div>第一个，没有标注生命周期，但即使标注也不对，因为返回值引用了本地已经 drop 的 String，会造成悬垂指针问题；
+<li><span>秋声赋</span> 👍（2） 💬（1）<p>我看到用了很多的宏，这个有没有详细的说明呢？</p>2022-01-11</li><br/><li><span>lisiur</span> 👍（49） 💬（1）<p>第一个，没有标注生命周期，但即使标注也不对，因为返回值引用了本地已经 drop 的 String，会造成悬垂指针问题；
 
 第二个，和第一个类似，因为参数是具有所有权的 String，该 String 会在函数执行完后被 drop，返回值不能引用该 String；
 
-第三个，因为 Chars 的完整定义是 Chars&lt;&#39;a&gt;，根据生命周期标注规则，Chars 内部的引用的生命周期和参数 name 一致，所以不会产生问题。</div>2021-09-17</li><br/><li><span>乌龙猹</span> 👍（22） 💬（8）<div>陈老师，啥时候再出一门 Elixir 编程的第一课啊 </div>2021-09-17</li><br/><li><span>Arthur</span> 👍（12） 💬（1）<div>lifetime1:
+第三个，因为 Chars 的完整定义是 Chars&lt;&#39;a&gt;，根据生命周期标注规则，Chars 内部的引用的生命周期和参数 name 一致，所以不会产生问题。</p>2021-09-17</li><br/><li><span>乌龙猹</span> 👍（22） 💬（8）<p>陈老师，啥时候再出一门 Elixir 编程的第一课啊 </p>2021-09-17</li><br/><li><span>Arthur</span> 👍（12） 💬（1）<p>lifetime1:
 name为函数内部的临时变量，类型是String，函数返回值为其引用，但引用的变量name生命周期在函数结束时，会被drop，因此此处引用失效，无值可借；
 
 lifetime2:
@@ -270,7 +270,7 @@ pub fn chars(&amp;self) -&gt; Chars&lt;&#39;_&gt;
 
 &#47;&#47; Converts the given value to a String.
 fn to_string(&amp;self) -&gt; String
-```</div>2021-09-17</li><br/><li><span>gnu</span> 👍（10） 💬（1）<div>lifetime1: 
+```</p>2021-09-17</li><br/><li><span>gnu</span> 👍（10） 💬（1）<p>lifetime1: 
 返回的引用是在 lifetime1 里被分配，lifetime1 结束后引用就被回收，所以错误。
 改为转成 string 后返回。
 ```
@@ -291,12 +291,12 @@ fn lifetime2(name: &amp;String) -&gt; &amp;str {
 ```
 
 lifetime3:
-返回 Chars 类型的生命周期与参数 name 关联，所以正确。</div>2021-09-17</li><br/><li><span>记事本</span> 👍（6） 💬（2）<div>老师，关于智能指针一些问题：
+返回 Chars 类型的生命周期与参数 name 关联，所以正确。</p>2021-09-17</li><br/><li><span>记事本</span> 👍（6） 💬（2）<p>老师，关于智能指针一些问题：
 数据放在堆上，返回指针给栈上的结构体
 智能指针有个特点，*解耦到原型，&amp;*就是获取数据的引用，单&amp;栈上结构体的地址
-*因为会解耦出原型，所以原数据是否实现copy trait，否则会move，智能指针就没有所有权了</div>2021-09-17</li><br/><li><span>彭亚伦</span> 👍（5） 💬（1）<div>关于String 和 &amp;str相关的各种问题,  我的经验, 一个核心原因是因为 String 实现了Deref&lt;Target = str&gt;,  String和&amp;str是通过这个Deref Trait建立了互换的关系; 
+*因为会解耦出原型，所以原数据是否实现copy trait，否则会move，智能指针就没有所有权了</p>2021-09-17</li><br/><li><span>彭亚伦</span> 👍（5） 💬（1）<p>关于String 和 &amp;str相关的各种问题,  我的经验, 一个核心原因是因为 String 实现了Deref&lt;Target = str&gt;,  String和&amp;str是通过这个Deref Trait建立了互换的关系; 
 
-这样做带来了很多便利, 同时也有个side effect, 就是当参数要求是 &amp;str 时, 实参可能是&amp;str也可能是&amp;String, 而两者的生命周期明显是不一样的, 于是就产生了各种看似比较难以琢磨的问题.</div>2021-10-26</li><br/><li><span>Kerry</span> 👍（3） 💬（1）<div>例子一：
+这样做带来了很多便利, 同时也有个side effect, 就是当参数要求是 &amp;str 时, 实参可能是&amp;str也可能是&amp;String, 而两者的生命周期明显是不一样的, 于是就产生了各种看似比较难以琢磨的问题.</p>2021-10-26</li><br/><li><span>Kerry</span> 👍（3） 💬（1）<p>例子一：
 
 1. &amp;str生命周期不明确
 2. 返回了局部函数拥有所有权的引用，也是生命周期问题
@@ -328,9 +328,9 @@ pub fn chars(&amp;self) -&gt; Chars&lt;&#39;_&gt;
 &#47;&#47; std::str::Chars
 pub struct Chars&lt;&#39;a&gt; {
     pub(super) iter: slice::Iter&lt;&#39;a, u8&gt;,
-}</div>2021-09-18</li><br/><li><span>罗杰</span> 👍（3） 💬（1）<div>比较简单的问题，第一个 name 在函数里面创建的 String，函数返回时就释放掉了，这是最直白的悬垂引用。第二个 name 是从调用者 move 过来的 String，进入该函数，所有权就归函数了，返回时 name 也将被释放。第三个 name 不用加生命周期标注可以正常工作，参数是引用，返回的数据与该参数的生命周期相同，没有问题，可以编译通过。</div>2021-09-17</li><br/><li><span>亚伦碎语</span> 👍（2） 💬（1）<div>对&amp;str 和 &amp;String的区别，更新一点：
+}</p>2021-09-18</li><br/><li><span>罗杰</span> 👍（3） 💬（1）<p>比较简单的问题，第一个 name 在函数里面创建的 String，函数返回时就释放掉了，这是最直白的悬垂引用。第二个 name 是从调用者 move 过来的 String，进入该函数，所有权就归函数了，返回时 name 也将被释放。第三个 name 不用加生命周期标注可以正常工作，参数是引用，返回的数据与该参数的生命周期相同，没有问题，可以编译通过。</p>2021-09-17</li><br/><li><span>亚伦碎语</span> 👍（2） 💬（1）<p>对&amp;str 和 &amp;String的区别，更新一点：
 String可以动态的调整内存大小。 str不能resize. 
 &amp;str直接是指到了String存储的引用，&amp;String是对于String内存对象的引用。
 参考：
-https:&#47;&#47;users.rust-lang.org&#47;t&#47;whats-the-difference-between-string-and-str&#47;10177&#47;8</div>2021-09-23</li><br/><li><span>丁卯</span> 👍（1） 💬（1）<div>to_owned() 什么意思？</div>2021-10-30</li><br/><li><span>记事本</span> 👍（1） 💬（1）<div>老师，String，Vec算是智能指针吗？*String解除str，然后&amp;*String就是&amp;str了，Box::new()好像也可以这样用，Box::new(String::new)这样的使用，内存发生了什么变化啊</div>2021-09-17</li><br/><li><span>手机失联户</span> 👍（0） 💬（1）<div>老师，我看课程里没有提到rust宏相关的知识点，请问后续会讲这个吗？因为有些rust项目，比如tokio都会用到宏，导致代码不是很容易懂，老师能不能后续专门出一期讲一下。</div>2021-11-30</li><br/><li><span>mobus</span> 👍（0） 💬（1）<div>老师，有没有办法快速提取 枚举值？比如jsonrpc request ，为了匹配最终请求值，代码膨胀的太厉害了</div>2021-11-11</li><br/><li><span>活着</span> 👍（0） 💬（1）<div>老师辛苦了，课程非常好👍</div>2021-11-03</li><br/>
+https:&#47;&#47;users.rust-lang.org&#47;t&#47;whats-the-difference-between-string-and-str&#47;10177&#47;8</p>2021-09-23</li><br/><li><span>丁卯</span> 👍（1） 💬（1）<p>to_owned() 什么意思？</p>2021-10-30</li><br/><li><span>记事本</span> 👍（1） 💬（1）<p>老师，String，Vec算是智能指针吗？*String解除str，然后&amp;*String就是&amp;str了，Box::new()好像也可以这样用，Box::new(String::new)这样的使用，内存发生了什么变化啊</p>2021-09-17</li><br/><li><span>手机失联户</span> 👍（0） 💬（1）<p>老师，我看课程里没有提到rust宏相关的知识点，请问后续会讲这个吗？因为有些rust项目，比如tokio都会用到宏，导致代码不是很容易懂，老师能不能后续专门出一期讲一下。</p>2021-11-30</li><br/><li><span>mobus</span> 👍（0） 💬（1）<p>老师，有没有办法快速提取 枚举值？比如jsonrpc request ，为了匹配最终请求值，代码膨胀的太厉害了</p>2021-11-11</li><br/><li><span>活着</span> 👍（0） 💬（1）<p>老师辛苦了，课程非常好👍</p>2021-11-03</li><br/>
 </ul>

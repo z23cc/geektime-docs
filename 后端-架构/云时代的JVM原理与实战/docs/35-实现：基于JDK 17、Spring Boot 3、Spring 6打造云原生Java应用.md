@@ -271,13 +271,13 @@ spring.native.image.args=-Xshare -Xverify=none -Dspring.config.location=file:/pa
 2. [Java 近期新闻：JDK 21、面向 JDK 21 的 GraalVM、Apache Pinot 1.0 和 Eclipse Epicyro 3.0](https://www.infoq.cn/article/0hhqSZ0mg99KVNwGtzmG?utm_campaign=geek_search&utm_content=geek_search&utm_medium=geek_search&utm_source=geek_search&utm_term=geek_search)
 3. [JEP 444：JDK 21 中出现虚拟线程，开创并发新纪元](https://www.infoq.cn/article/0hhqSZ0mg99KVNwGtzmG?utm_campaign=geek_search&utm_content=geek_search&utm_medium=geek_search&utm_source=geek_search&utm_term=geek_search)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>张立勋</span> 👍（6） 💬（1）<div>请问一下：
+<li><span>张立勋</span> 👍（6） 💬（1）<p>请问一下：
 第5步：使用Dockerfile打包镜像，并且运行docker镜像，这个是单独运行，没有在K8S里面的相关配置和操作，和云原生还是差了一截，建议可以增加这部分的描述，以紧跟前面的主题 云原生。
 第6步：生成 Native Image，并且用 .&#47;target&#47;my-spring-boot-app 直接启动，也没有打镜像，也没有在 K8S里面去 运行这个原生镜像文件，那我生成原生镜像，就是为了这样运行吗？这个还是差了一截吧。
 
-建议作者这两个点，能否在更新完备一下，毕竟我们来这里看文章，这两个点，才是真正的关键点所在。</div>2023-11-17</li><br/><li><span>静心</span> 👍（0） 💬（0）<div>这节课讲得好杂呀！不过有些点倒是挺新鲜，比如，Native Image</div>2024-02-05</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>请教老师两个问题：
+建议作者这两个点，能否在更新完备一下，毕竟我们来这里看文章，这两个点，才是真正的关键点所在。</p>2023-11-17</li><br/><li><span>静心</span> 👍（0） 💬（0）<p>这节课讲得好杂呀！不过有些点倒是挺新鲜，比如，Native Image</p>2024-02-05</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>请教老师两个问题：
 Q1：例子是windows下的操作吗？
 命令行好像是Linxu下的操作，但有的操作又好像是在windows下。
 Q2：Native Image不需要Docker吗？
-Step6中的Native Image，直接运行，不需要docker。Native Image和docker哪种方式更好？</div>2023-11-17</li><br/>
+Step6中的Native Image，直接运行，不需要docker。Native Image和docker哪种方式更好？</p>2023-11-17</li><br/>
 </ul>

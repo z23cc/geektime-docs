@@ -373,7 +373,7 @@ D(C)(R)
 
 欢迎把你的代码贴出来，与大家一起分享。我们一同交流。下一讲见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>tang_ming_wu</span> 👍（5） 💬（1）<div>对比函数式编程实现和传统编程实现，我个人觉得函数式编程只是伪需求和一小部分人的自嗨：（1）不方便调试（2）不方便设计解耦（3）不方便维护（4）不方便阅读理解。</div>2023-03-14</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<div>views::reverse和ranges::reverse_view的使用
+<li><span>tang_ming_wu</span> 👍（5） 💬（1）<p>对比函数式编程实现和传统编程实现，我个人觉得函数式编程只是伪需求和一小部分人的自嗨：（1）不方便调试（2）不方便设计解耦（3）不方便维护（4）不方便阅读理解。</p>2023-03-14</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<p>views::reverse和ranges::reverse_view的使用
 #include &lt;iostream&gt;
 #include &lt;ranges&gt;
  
@@ -396,10 +396,10 @@ int main()
     for (auto i{0U}; i != rv.size(); ++i)
         std::cout &lt;&lt; rv[i] &lt;&lt; &#39; &#39;;
     std::cout &lt;&lt; &#39;\n&#39;;
-}</div>2023-12-13</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<div>作者你好，感觉ranges作用以及功能性都不错，请教个问题
+}</p>2023-12-13</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<p>作者你好，感觉ranges作用以及功能性都不错，请教个问题
 template &lt;class Element, size_t Size&gt;
 class ArrayView : public std::ranges::view_interface&lt;ArrayView&lt;Element, Size&gt;&gt; {
-中class ArrayView 继承std::ranges::view_interface&lt;ArrayView&lt;Element, Size&gt;&gt;不太理解的点是继承模板类不都是类名&lt;模板类型&gt;这种么，这个写法是两个尖括号是啥意思</div>2023-12-13</li><br/><li><span>常振华</span> 👍（0） 💬（1）<div>函数式编程的可读性真是差，非常差，C++发展越来越倒退了</div>2023-10-18</li><br/><li><span>大熊猫有宝贝</span> 👍（0） 💬（1）<div>工厂和工具函数之间的关系该怎么理解呢？</div>2023-04-03</li><br/><li><span>📷全程不笑🏀</span> 👍（0） 💬（1）<div>老师好，请教个问题，我的环境是ubuntu20.04， gcc版本11.1.0。
+中class ArrayView 继承std::ranges::view_interface&lt;ArrayView&lt;Element, Size&gt;&gt;不太理解的点是继承模板类不都是类名&lt;模板类型&gt;这种么，这个写法是两个尖括号是啥意思</p>2023-12-13</li><br/><li><span>常振华</span> 👍（0） 💬（1）<p>函数式编程的可读性真是差，非常差，C++发展越来越倒退了</p>2023-10-18</li><br/><li><span>大熊猫有宝贝</span> 👍（0） 💬（1）<p>工厂和工具函数之间的关系该怎么理解呢？</p>2023-04-03</li><br/><li><span>📷全程不笑🏀</span> 👍（0） 💬（1）<p>老师好，请教个问题，我的环境是ubuntu20.04， gcc版本11.1.0。
 工厂小节中的示例代码编译报错了， istream_view与istream相关。
-第25行的视图初始化应该为小括号吧，大括号{}我这边编译报错。另外28行的views::istream也编译报错，替换成ranges::istream_view运行正常，不知道是不是我环境的问题？</div>2023-02-10</li><br/>
+第25行的视图初始化应该为小括号吧，大括号{}我这边编译报错。另外28行的views::istream也编译报错，替换成ranges::istream_view运行正常，不知道是不是我环境的问题？</p>2023-02-10</li><br/>
 </ul>

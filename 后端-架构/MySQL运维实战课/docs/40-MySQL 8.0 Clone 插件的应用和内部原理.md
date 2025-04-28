@@ -266,5 +266,5 @@ Clone插件如何保证最终得到的数据的一致性呢？假设clone开始�
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>范特西</span> 👍（1） 💬（1）<div>课后问题，我觉得应该查看：select * from performance_schema.clone_status 表</div>2024-12-12</li><br/><li><span>ls</span> 👍（0） 💬（1）<div>mysql.slave_master_info 表是不是有 Binlog 文件和位点信息？</div>2024-12-09</li><br/>
+<li><span>范特西</span> 👍（1） 💬（1）<p>课后问题，我觉得应该查看：select * from performance_schema.clone_status 表</p>2024-12-12</li><br/><li><span>ls</span> 👍（0） 💬（1）<p>mysql.slave_master_info 表是不是有 Binlog 文件和位点信息？</p>2024-12-09</li><br/>
 </ul>

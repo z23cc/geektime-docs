@@ -251,5 +251,5 @@ func merge(cs []<-chan int) <-chan int {
 
 好了，这节课就到这里。如果你觉得今天的内容对你有所帮助，欢迎你帮我分享给更多人。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Geek_Fantasy</span> 👍（5） 💬（0）<div>判断一个数是否是质数的方法可以优化一下。只需要枚举到value的平方根就可以，可以把复杂度从O(n)降到O(sqrt(n))。</div>2021-01-20</li><br/><li><span>ano</span> 👍（0） 💬（0）<div>merge 中的  wg.Wait() 为什么必须要放到一个单独的 goroutine 中呢？</div>2022-09-03</li><br/><li><span>Geek_ce6971</span> 👍（0） 💬（0）<div>pipeline 最后返回 &lt;- chan  类型，就像 java stream编程的输出流</div>2022-01-29</li><br/><li><span>方勇(gopher)</span> 👍（0） 💬（0）<div>Pipeline使用场景还是很多的，在做任务发布的时候会经常用到</div>2021-12-27</li><br/><li><span>你为啥那么牛</span> 👍（0） 💬（1）<div>没看明白 你是怎么分组的</div>2021-08-16</li><br/>
+<li><span>Geek_Fantasy</span> 👍（5） 💬（0）<p>判断一个数是否是质数的方法可以优化一下。只需要枚举到value的平方根就可以，可以把复杂度从O(n)降到O(sqrt(n))。</p>2021-01-20</li><br/><li><span>ano</span> 👍（0） 💬（0）<p>merge 中的  wg.Wait() 为什么必须要放到一个单独的 goroutine 中呢？</p>2022-09-03</li><br/><li><span>Geek_ce6971</span> 👍（0） 💬（0）<p>pipeline 最后返回 &lt;- chan  类型，就像 java stream编程的输出流</p>2022-01-29</li><br/><li><span>方勇(gopher)</span> 👍（0） 💬（0）<p>Pipeline使用场景还是很多的，在做任务发布的时候会经常用到</p>2021-12-27</li><br/><li><span>你为啥那么牛</span> 👍（0） 💬（1）<p>没看明白 你是怎么分组的</p>2021-08-16</li><br/>
 </ul>

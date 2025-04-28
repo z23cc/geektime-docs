@@ -448,13 +448,13 @@ final Node<K,V>[] resize() {
 关于HashMap的put操作，美团总结了一个非常不错的[流程图](https://tech.meituan.com/2016/06/24/java-hashmap.html)，可以参考。  
 ![图片](https://static001.geekbang.org/resource/image/04/0a/0473076342b5be15bc9dyy50280e830a.png?wh=1716x1360)
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（6） 💬（1）<div>负载因子定义了扩容时机，在容量和冲突数目取得均衡，一般默认值适合多数情况。个人猜测hashmap用在内存较小的情况下（例如嵌入式系统）应该调整loadfactor，因为这个时候的环境就不是通常环境，需要增加冲突来降低存储。
-</div>2021-12-21</li><br/><li><span>吴钩</span> 👍（3） 💬（1）<div>我的理解是：load factor是时间空间权衡的经验参数，当我们明确有时间空间的侧重点时可以改。比如空间不是问题，get的场景多且性能要求高，put的扩容时间损失可以接受，就可以调低load factor，让HashMap多多扩容。</div>2021-12-30</li><br/><li><span>友</span> 👍（0） 💬（1）<div>假设 n=3
+<li><span>Paul Shan</span> 👍（6） 💬（1）<p>负载因子定义了扩容时机，在容量和冲突数目取得均衡，一般默认值适合多数情况。个人猜测hashmap用在内存较小的情况下（例如嵌入式系统）应该调整loadfactor，因为这个时候的环境就不是通常环境，需要增加冲突来降低存储。
+</p>2021-12-21</li><br/><li><span>吴钩</span> 👍（3） 💬（1）<p>我的理解是：load factor是时间空间权衡的经验参数，当我们明确有时间空间的侧重点时可以改。比如空间不是问题，get的场景多且性能要求高，put的扩容时间损失可以接受，就可以调低load factor，让HashMap多多扩容。</p>2021-12-30</li><br/><li><span>友</span> 👍（0） 💬（1）<p>假设 n=3
 i=0 -&gt; h = 31 * 0 + val[0]
 i=1 -&gt; h = 31 * (31 * 0 + val[0]) + val[1]
 i=2 -&gt; h = 31 * (31 * (31 * 0 + val[0]) + val[1]) + val[2]
        h = 31*31*31*0 + 31*31*val[0] + 31*val[1] + val[2]
-       h = 31^(n-1)*val[0] + 31^(n-2)*val[1] + val[2]</div>2021-12-23</li><br/><li><span>友</span> 👍（0） 💬（1）<div>
+       h = 31^(n-1)*val[0] + 31^(n-2)*val[1] + val[2]</p>2021-12-23</li><br/><li><span>友</span> 👍（0） 💬（1）<p>
 复习 : 如果是2^n 那么只有最高位为1，所以 num &amp; 2^n -1 
 也就是 低位全是1 就获取到了取余的数据
 
@@ -462,10 +462,10 @@ i=2 -&gt; h = 31 * (31 * (31 * 0 + val[0]) + val[1]) + val[2]
 
 1011 &amp;
 0001
-= 1</div>2021-12-22</li><br/><li><span>友</span> 👍（0） 💬（1）<div>31*i 可以直接转化为(i &lt;&lt; 5)- i 看到这句就想起csapp第二章（应该是第二章）</div>2021-12-22</li><br/><li><span>毛小树</span> 👍（1） 💬（0）<div>为什么hashCode的计算选择31?  1. 一定要奇数。不能用偶数。
+= 1</p>2021-12-22</li><br/><li><span>友</span> 👍（0） 💬（1）<p>31*i 可以直接转化为(i &lt;&lt; 5)- i 看到这句就想起csapp第二章（应该是第二章）</p>2021-12-22</li><br/><li><span>毛小树</span> 👍（1） 💬（0）<p>为什么hashCode的计算选择31?  1. 一定要奇数。不能用偶数。
 2. 素数不素数其实关系不大。
 3. 用31是因为31=2^5-1。可以把乘法转换成开销更小的位移操作。提高效率。
-</div>2022-06-19</li><br/><li><span>拓山</span> 👍（0） 💬（0）<div>为什么是31?
+</p>2022-06-19</li><br/><li><span>拓山</span> 👍（0） 💬（0）<p>为什么是31?
 https:&#47;&#47;stackoverflow.com&#47;questions&#47;299304&#47;why-does-javas-hashcode-in-string-use-31-as-a-multiplier&#47;299748#299748
 排名第一的回答给出了理论公式：31 * i == (i &lt;&lt; 5) - i，但对工程实践意义不大。
 
@@ -474,5 +474,5 @@ https:&#47;&#47;stackoverflow.com&#47;questions&#47;299304&#47;why-does-javas-ha
 正如 Goodrich 和 Tamassia 指出的那样，如果你对超过 50,000 个英文单词（由两个不同版本的 Unix 字典合并而成）进行 hash code 运算，并使用常数 31, 33, 37, 39 和 41 作为乘子，每个常数算出的哈希值冲突数都小于7个，所以在上面几个常数中，常数 31 被 Java 实现所选用也就不足为奇了。
 
 可以看到31是乘子效果最好的最小值，因此选择31是理论+实践的完美数字
-</div>2023-08-09</li><br/><li><span>A君</span> 👍（0） 💬（0）<div>哈希表目的是将巨大的稀疏的空间映射到小的连续空间，方法是散列化后再取模，遇到哈希冲突后，可以通过数组+链表的方式解决</div>2023-02-07</li><br/><li><span>SevenHe</span> 👍（0） 💬（2）<div>我有个疑问，当HashMap量足够大时，扩容所需的rehash开销可能会很大。如果为了保证HashMap的即时可用性，是不是要先在另外开个线程里扩容，在没ready之前，原有容器还可以继续对外提供hash服务。</div>2022-03-21</li><br/><li><span>猫头鹰爱拿铁</span> 👍（0） 💬（0）<div>resize方法里都会执行lotail=e和hitail=e这个和lotail=lotail.next和hitail=hitail.next是不是等价</div>2022-02-23</li><br/>
+</p>2023-08-09</li><br/><li><span>A君</span> 👍（0） 💬（0）<p>哈希表目的是将巨大的稀疏的空间映射到小的连续空间，方法是散列化后再取模，遇到哈希冲突后，可以通过数组+链表的方式解决</p>2023-02-07</li><br/><li><span>SevenHe</span> 👍（0） 💬（2）<p>我有个疑问，当HashMap量足够大时，扩容所需的rehash开销可能会很大。如果为了保证HashMap的即时可用性，是不是要先在另外开个线程里扩容，在没ready之前，原有容器还可以继续对外提供hash服务。</p>2022-03-21</li><br/><li><span>猫头鹰爱拿铁</span> 👍（0） 💬（0）<p>resize方法里都会执行lotail=e和hitail=e这个和lotail=lotail.next和hitail=hitail.next是不是等价</p>2022-02-23</li><br/>
 </ul>

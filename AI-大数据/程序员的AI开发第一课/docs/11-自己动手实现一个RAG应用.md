@@ -309,7 +309,7 @@ You:> 作者还写过哪些专栏？
 
 这一讲我们实现的 RAG 应用采用了我的开篇词作为原始信息，你可以尝试改造一下，把你的业务资料索引到向量数据库里。欢迎在留言区分享你的改造心得。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>高并发</span> 👍（2） 💬（1）<div>关于embeddings的替换,可以参考这个文章: https:&#47;&#47;www.langchain.com.cn&#47;docs&#47;integrations&#47;vectorstores&#47;chroma&#47;</div>2024-12-08</li><br/><li><span>晴天了</span> 👍（2） 💬（2）<div>不需要先安装Chroma数据库吗? </div>2024-11-26</li><br/><li><span>MClink</span> 👍（0） 💬（1）<div>跑例子总是遇到库不存的报错，用pip 安装库后还是不行，大家有遇到类似的问题吗，Macbook Pro M4芯片 。  from langchain_chroma import Chroma
+<li><span>高并发</span> 👍（2） 💬（1）<p>关于embeddings的替换,可以参考这个文章: https:&#47;&#47;www.langchain.com.cn&#47;docs&#47;integrations&#47;vectorstores&#47;chroma&#47;</p>2024-12-08</li><br/><li><span>晴天了</span> 👍（2） 💬（2）<p>不需要先安装Chroma数据库吗? </p>2024-11-26</li><br/><li><span>MClink</span> 👍（0） 💬（1）<p>跑例子总是遇到库不存的报错，用pip 安装库后还是不行，大家有遇到类似的问题吗，Macbook Pro M4芯片 。  from langchain_chroma import Chroma
 ModuleNotFoundError: No module named &#39;langchain_chroma&#39; 
 
 执行 pip3 install chromadb安装后仍然报错。
@@ -325,7 +325,7 @@ License: MIT
 Location: &#47;Library&#47;Frameworks&#47;Python.framework&#47;Versions&#47;3.12&#47;lib&#47;python3.12&#47;site-packages
 Requires: aiohttp, langchain-core, langchain-text-splitters, langsmith, numpy, pydantic, PyYAML, requests, SQLAlchemy, tenacity
 Required-by: langchain-community
-</div>2025-01-18</li><br/><li><span>CPF</span> 👍（0） 💬（1）<div>感觉Text split的chunk size是个很有意思的东西。太小太碎了检索的时候容易漏东西。太大了又容易让generation吃的context太多，浪费token。</div>2025-01-06</li><br/><li><span>CPF</span> 👍（0） 💬（2）<div>每次从chroma里检索，也要消耗embedding model的token吗？如果是的话，这个消耗量和chroma里存储的数据总量呈正相关吗？</div>2025-01-04</li><br/><li><span>范</span> 👍（0） 💬（1）<div>对于OpenAI兼容性的向量接口，可以参考如下：
+</p>2025-01-18</li><br/><li><span>CPF</span> 👍（0） 💬（1）<p>感觉Text split的chunk size是个很有意思的东西。太小太碎了检索的时候容易漏东西。太大了又容易让generation吃的context太多，浪费token。</p>2025-01-06</li><br/><li><span>CPF</span> 👍（0） 💬（2）<p>每次从chroma里检索，也要消耗embedding model的token吗？如果是的话，这个消耗量和chroma里存储的数据总量呈正相关吗？</p>2025-01-04</li><br/><li><span>范</span> 👍（0） 💬（1）<p>对于OpenAI兼容性的向量接口，可以参考如下：
 embeddings=OpenAIEmbeddings(
    openai_api_key=os.getenv(&#39;OPENAI_API_KEY&#39;),
     openai_api_base=os.getenv(&#39;OPENAI_API_BASE&#39;),
@@ -337,7 +337,7 @@ vector_store = Chroma(
     embedding_function=embeddings,
     persist_directory=&quot;.&#47;chroma_langchain_db&quot;,  # Where to save data locally, remove if not necessary
 )
-</div>2024-12-28</li><br/><li><span>CPF</span> 👍（0） 💬（1）<div>经过Retriever加持的prompt，是否会容易超长？</div>2024-12-24</li><br/><li><span>grok</span> 👍（5） 💬（0）<div>本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec11.ipynb</div>2024-11-26</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>第11讲打卡~
+</p>2024-12-28</li><br/><li><span>CPF</span> 👍（0） 💬（1）<p>经过Retriever加持的prompt，是否会容易超长？</p>2024-12-24</li><br/><li><span>grok</span> 👍（5） 💬（0）<p>本节代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec11.ipynb</p>2024-11-26</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>第11讲打卡~
 实现了一个增强版的RAG应用，主要功能包括:
 1. 使用Pinecone向量数据库，持久化向量。
 2. 实现了文档加载器的映射，可以根据文件的扩展类型，选择对应的加载器。
@@ -345,7 +345,7 @@ vector_store = Chroma(
 4. 实现了重排序机制，将权重较高的检索结果优先返回。
 
 完整代码：
-https:&#47;&#47;gitee.com&#47;zhangshenao&#47;happy-rag&#47;tree&#47;master&#47;RAG%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98&#47;1-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BARAG%E5%BA%94%E7%94%A8</div>2025-01-21</li><br/><li><span>MClink</span> 👍（1） 💬（0）<div>还是建议作者把完整可运行例子全部提供下，统一可以放在仓库里。对新手友好一些。</div>2025-01-18</li><br/><li><span>CPF</span> 👍（1） 💬（0）<div>评论区不能贴图，那放链接吧 https:&#47;&#47;askurl.cn&#47;qjK8W3ot</div>2025-01-04</li><br/><li><span>XXL</span> 👍（0） 💬（0）<div>老师提供一下代码仓库吧，这个成本应该不高，不然对新手很不友好</div>2025-02-10</li><br/><li><span>MClink</span> 👍（0） 💬（0）<div>有没有把老师的例子都跑通的大佬，联系我，可以有偿</div>2025-01-18</li><br/><li><span>MClink</span> 👍（0） 💬（0）<div>import chromadb
+https:&#47;&#47;gitee.com&#47;zhangshenao&#47;happy-rag&#47;tree&#47;master&#47;RAG%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98&#47;1-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BARAG%E5%BA%94%E7%94%A8</p>2025-01-21</li><br/><li><span>MClink</span> 👍（1） 💬（0）<p>还是建议作者把完整可运行例子全部提供下，统一可以放在仓库里。对新手友好一些。</p>2025-01-18</li><br/><li><span>CPF</span> 👍（1） 💬（0）<p>评论区不能贴图，那放链接吧 https:&#47;&#47;askurl.cn&#47;qjK8W3ot</p>2025-01-04</li><br/><li><span>XXL</span> 👍（0） 💬（0）<p>老师提供一下代码仓库吧，这个成本应该不高，不然对新手很不友好</p>2025-02-10</li><br/><li><span>MClink</span> 👍（0） 💬（0）<p>有没有把老师的例子都跑通的大佬，联系我，可以有偿</p>2025-01-18</li><br/><li><span>MClink</span> 👍（0） 💬（0）<p>import chromadb
 from langchain.vectorstores import Chroma
 
 # 使用 Chroma 初始化存储
@@ -353,5 +353,5 @@ client = chromadb.Client()
 vector_store = Chroma(client=client)
 
 
-这个才是对的</div>2025-01-18</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<div>LangChain 的声明式编程体现了软件设计是一门艺术，很美～</div>2025-01-10</li><br/>
+这个才是对的</p>2025-01-18</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<p>LangChain 的声明式编程体现了软件设计是一门艺术，很美～</p>2025-01-10</li><br/>
 </ul>

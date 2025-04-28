@@ -286,12 +286,12 @@ response = agent.run(user_question)
 print(response)
 ```
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（1） 💬（0）<div>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</div>2024-11-25</li><br/><li><span>悟光</span> 👍（3） 💬（0）<div>格式化（如 JSON）的大语言模型输出我觉得会很好和现有的系统集成，标准的输出格式类似一个接口，这个接口已经被现有的系统广泛使用，理想情况下大模型可以应用到现有系统的任何一个模块里面</div>2024-12-09</li><br/><li><span>edward</span> 👍（2） 💬（0）<div>请问老师 大模型是如何判断什么时候该调用什么工具的。</div>2024-10-18</li><br/><li><span>Geek_820805</span> 👍（1） 💬（0）<div>改成 prompt = hub.pull(&quot;hwchase17&#47;react&quot;)
+<li><span>小虎子11🐯</span> 👍（1） 💬（0）<p>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</p>2024-11-25</li><br/><li><span>悟光</span> 👍（3） 💬（0）<p>格式化（如 JSON）的大语言模型输出我觉得会很好和现有的系统集成，标准的输出格式类似一个接口，这个接口已经被现有的系统广泛使用，理想情况下大模型可以应用到现有系统的任何一个模块里面</p>2024-12-09</li><br/><li><span>edward</span> 👍（2） 💬（0）<p>请问老师 大模型是如何判断什么时候该调用什么工具的。</p>2024-10-18</li><br/><li><span>Geek_820805</span> 👍（1） 💬（0）<p>改成 prompt = hub.pull(&quot;hwchase17&#47;react&quot;)
 tools=[city_code_tool, weather_tool]
 agent=create_react_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(agent=agent,
             tools=tools, verbose=True,
             agent_kwargs={&quot;handle_parsing_errors&quot;: True}
-)好用了</div>2024-10-23</li><br/><li><span>Geek_820805</span> 👍（1） 💬（0）<div>运行代码，最后出现 ValueError: An output parsing error occurred. In order to pass this error back to the agent and have it try again, pass `handle_parsing_errors=True` to the AgentExecutor. This is the error: Could not parse LLM output: `The weather in Beijing is晴 (sunny) with a temperature of 15°C and humidity of 47%.`
-看起来tool已经返回结果了，但是llm解析结果出问题了，应该如何解决呢？</div>2024-10-23</li><br/>
+)好用了</p>2024-10-23</li><br/><li><span>Geek_820805</span> 👍（1） 💬（0）<p>运行代码，最后出现 ValueError: An output parsing error occurred. In order to pass this error back to the agent and have it try again, pass `handle_parsing_errors=True` to the AgentExecutor. This is the error: Could not parse LLM output: `The weather in Beijing is晴 (sunny) with a temperature of 15°C and humidity of 47%.`
+看起来tool已经返回结果了，但是llm解析结果出问题了，应该如何解决呢？</p>2024-10-23</li><br/>
 </ul>

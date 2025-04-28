@@ -300,7 +300,7 @@ Dubbo SPI 的使用步骤三部曲：
 
 到这里，我们就从源码层面弄明白了Spring与Mybatis是怎么有机结合起来使用的。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Lum</span> 👍（1） 💬（2）<div>dubbo得spi加载还是要依赖java的spi的 在 loadLoadingStrategies策略中调用原生的ServiceLoador加载dubbo的load策略，记录一下，另外dubbo的spi还支持自适应扩展等，老师没有讲解一下</div>2023-03-01</li><br/><li><span>小华</span> 👍（0） 💬（0）<div>老师你好，有两个问题：
+<li><span>Lum</span> 👍（1） 💬（2）<p>dubbo得spi加载还是要依赖java的spi的 在 loadLoadingStrategies策略中调用原生的ServiceLoador加载dubbo的load策略，记录一下，另外dubbo的spi还支持自适应扩展等，老师没有讲解一下</p>2023-03-01</li><br/><li><span>小华</span> 👍（0） 💬（0）<p>老师你好，有两个问题：
 1、JDK SPI的示例代码中，我运行main函数没有得到打印，调试发现while(it.hasNext())没有进去，是因为我用了JDK17吗？
-2、trpc-go的插件化设计也是通过实现框架预定义的标准接口，支持开发者自己实现，利用配置文件注入，和Dubbo SPI有什么区别吗</div>2023-12-28</li><br/>
+2、trpc-go的插件化设计也是通过实现框架预定义的标准接口，支持开发者自己实现，利用配置文件注入，和Dubbo SPI有什么区别吗</p>2023-12-28</li><br/>
 </ul>

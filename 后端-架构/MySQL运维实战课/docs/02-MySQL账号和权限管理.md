@@ -462,9 +462,9 @@ Query OK, 0 rows affected (0.55 sec)
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>Geek_0126</span> 👍（3） 💬（1）<div>1.网络防火墙做好端口放行策略。
+<li><span>Geek_0126</span> 👍（3） 💬（1）<p>1.网络防火墙做好端口放行策略。
 2.使用单独的账号，并给予最小权限
-3.传输加密</div>2024-08-21</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<div>This class not only talk about mysql knowledge ,but it also mention lots of best practices in production daily operation job. It&#39;s fantastic. </div>2024-08-22</li><br/><li><span>123</span> 👍（1） 💬（1）<div>老师，权限赋值哪一块是否和用户登录的逻辑是一致（为什么会出现这样的问题呢？大概是因为 MySQL 只使用了库名为 &#39;db\_1&#39; 的这条授权记录。），具备一定的优先级，若存在指定表就不会去匹配通配符？
+3.传输加密</p>2024-08-21</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<p>This class not only talk about mysql knowledge ,but it also mention lots of best practices in production daily operation job. It&#39;s fantastic. </p>2024-08-22</li><br/><li><span>123</span> 👍（1） 💬（1）<p>老师，权限赋值哪一块是否和用户登录的逻辑是一致（为什么会出现这样的问题呢？大概是因为 MySQL 只使用了库名为 &#39;db\_1&#39; 的这条授权记录。），具备一定的优先级，若存在指定表就不会去匹配通配符？
 +-------------------------------------------------------------------------------------------+
 | Grants for u03@%                                                                          |
 +-------------------------------------------------------------------------------------------+
@@ -484,12 +484,12 @@ Query OK, 0 rows affected (0.55 sec)
 | GRANT CREATE, DROP, INDEX, ALTER ON `db__`.* TO `u03`@`%`                                  |
 +--------------------------------------------------------------------------------------------+
 
-因为对于同一个表，DDL和DML是在同一行，匹配到对应表的数据项后就直接返回了</div>2024-08-21</li><br/><li><span>Amosヾ</span> 👍（1） 💬（1）<div>非专业回答：
+因为对于同一个表，DDL和DML是在同一行，匹配到对应表的数据项后就直接返回了</p>2024-08-21</li><br/><li><span>Amosヾ</span> 👍（1） 💬（1）<p>非专业回答：
 风险一：任意来源访问，数据库被爆破登录
 规避方案：授权尽量不使用 %，越精确越好
 风险二：数据传输过程中被拦截捕获
-规范方案：SSL 加密传输</div>2024-08-21</li><br/><li><span>一本书</span> 👍（0） 💬（1）<div>老师，请问在配置文件中配置bind-address = 0.0.0.0是必须的吧，否则就无法远程登录数据库？关于权限的控制，要在账号层面以及网络防火墙层面？</div>2024-11-07</li><br/><li><span>一本书</span> 👍（0） 💬（2）<div>另外加的这个-e &#39;select current_user()&#39;是由什么特殊意义吗？</div>2024-08-30</li><br/><li><span>一本书</span> 👍（0） 💬（1）<div>[root@172-16-121-236 ~]# mysql -u u03 -pwrongpassword -h172.16.121.234ERROR 1045 (28000): Access denied for user &#39;u03&#39;@&#39;mysql02&#39; (using password: YES)$ mysql -u u03 -pwrongpassword -h172.16.121.234 -e &#39;select current_user()&#39;ERROR 1045 (28000): Access denied for user &#39;u03&#39;@&#39;192.168.113.13&#39; (using password: YES)
-请问老师这两段SQL的对比是什么意思啊,意思是如果在服务器上存在172.16.121.236 mysql02的映射关系，返回报错信息里面的客户端IP会修改为主机名，当客户端IP是192.168.113.13时，由于映射关系不存在，所以报错信息里面返回客户端IP？</div>2024-08-30</li><br/><li><span>TheOne</span> 👍（0） 💬（2）<div>俊达老师你好，我有几个问题想请教一下
+规范方案：SSL 加密传输</p>2024-08-21</li><br/><li><span>一本书</span> 👍（0） 💬（1）<p>老师，请问在配置文件中配置bind-address = 0.0.0.0是必须的吧，否则就无法远程登录数据库？关于权限的控制，要在账号层面以及网络防火墙层面？</p>2024-11-07</li><br/><li><span>一本书</span> 👍（0） 💬（2）<p>另外加的这个-e &#39;select current_user()&#39;是由什么特殊意义吗？</p>2024-08-30</li><br/><li><span>一本书</span> 👍（0） 💬（1）<p>[root@172-16-121-236 ~]# mysql -u u03 -pwrongpassword -h172.16.121.234ERROR 1045 (28000): Access denied for user &#39;u03&#39;@&#39;mysql02&#39; (using password: YES)$ mysql -u u03 -pwrongpassword -h172.16.121.234 -e &#39;select current_user()&#39;ERROR 1045 (28000): Access denied for user &#39;u03&#39;@&#39;192.168.113.13&#39; (using password: YES)
+请问老师这两段SQL的对比是什么意思啊,意思是如果在服务器上存在172.16.121.236 mysql02的映射关系，返回报错信息里面的客户端IP会修改为主机名，当客户端IP是192.168.113.13时，由于映射关系不存在，所以报错信息里面返回客户端IP？</p>2024-08-30</li><br/><li><span>TheOne</span> 👍（0） 💬（2）<p>俊达老师你好，我有几个问题想请教一下
 1. 我自己想搭建一个mysql的实验环境，我是用dokcer的方式来启动好，还是像您这章讲的一样自己去手把手安装一个好？如果未来我想搭建mysql的主从集群，配置读写分离这样的实验环境，用哪个会更方便一点呢？对于学习和实践来说，您更推荐哪种呢。
-2. 还有就是现在云数据库很流行了，自己本地部署的库和云数据库除了硬件上，其他方面的差别大概有哪些呢？我的理解是云数据库会把 redolog binlog 各种 buff 的以及其他配置设置的更合理，让客户专注于自己的业务逻辑，除此之外，还有那些其他优势呢？</div>2024-08-22</li><br/><li><span>美妙的代码</span> 👍（0） 💬（1）<div>在公网容易被攻击。还有其他风险吗？</div>2024-08-21</li><br/>
+2. 还有就是现在云数据库很流行了，自己本地部署的库和云数据库除了硬件上，其他方面的差别大概有哪些呢？我的理解是云数据库会把 redolog binlog 各种 buff 的以及其他配置设置的更合理，让客户专注于自己的业务逻辑，除此之外，还有那些其他优势呢？</p>2024-08-22</li><br/><li><span>美妙的代码</span> 👍（0） 💬（1）<p>在公网容易被攻击。还有其他风险吗？</p>2024-08-21</li><br/>
 </ul>

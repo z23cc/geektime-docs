@@ -887,30 +887,30 @@ Rust自带测试方案，让我们能够非常方便地写测试用例，并且�
 
 希望你可以积极思考这几个问题，然后把你的答案分享到评论区，如果你觉得这节课对你有帮助的话，也欢迎你分享给你的朋友，邀他一起学习，我们共同进步。下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>学会用实力去谈条件</span> 👍（23） 💬（3）<div>推荐几个Rust的VsCode插件
+<li><span>学会用实力去谈条件</span> 👍（23） 💬（3）<p>推荐几个Rust的VsCode插件
 Rust Syntax：语法高亮
 crates：分析项目依赖
 Even Better Toml：项目配置管理
-Rust Test Lens：Rust快速测试</div>2023-10-31</li><br/><li><span>warning</span> 👍（7） 💬（7）<div>看完了Rust语言圣经，再看这个还感觉有些吃力需要时不时的看看之前的笔记。课程并不适合没接触过Rust的小白，需要自己花些时间去找别的资料进行补充</div>2023-10-28</li><br/><li><span>知夫</span> 👍（4） 💬（2）<div>可以推荐一个项目结构的最佳实践吗？ 能囊括lib，bin，示例，单元测试，性能测试等。</div>2023-11-11</li><br/><li><span>草剑</span> 👍（3） 💬（1）<div>windows 中，不想安装 visual studio，想使用 gnu 工具链：
+Rust Test Lens：Rust快速测试</p>2023-10-31</li><br/><li><span>warning</span> 👍（7） 💬（7）<p>看完了Rust语言圣经，再看这个还感觉有些吃力需要时不时的看看之前的笔记。课程并不适合没接触过Rust的小白，需要自己花些时间去找别的资料进行补充</p>2023-10-28</li><br/><li><span>知夫</span> 👍（4） 💬（2）<p>可以推荐一个项目结构的最佳实践吗？ 能囊括lib，bin，示例，单元测试，性能测试等。</p>2023-11-11</li><br/><li><span>草剑</span> 👍（3） 💬（1）<p>windows 中，不想安装 visual studio，想使用 gnu 工具链：
 rustup default stable-gnu
-</div>2023-11-12</li><br/><li><span>eriklee</span> 👍（3） 💬（4）<div>IDE推荐一波RustRover，jetbrains家新出的，现在免费使用阶段</div>2023-10-24</li><br/><li><span>阿五</span> 👍（3） 💬（2）<div>
-虽然 Rust 不像 JavaScript 那样具有动态的通用数字类型，但你可以通过使用 num crate 和 Rust 的强类型系统来实现类似的通用数字操作。</div>2023-10-24</li><br/><li><span>Levix</span> 👍（2） 💬（1）<div>https:&#47;&#47;synctoai.com&#47;rustclosures
-看了老师的第一节课，然后觉得闭包有点难理解，跑去问了下 GPT 后，整理出来一篇文档，希望对大家有用。</div>2023-11-14</li><br/><li><span>Ransang</span> 👍（2） 💬（2）<div>闭包那个测试里，为什么main函数里面可以有其他函数，就是fn里面套了一个fn ，他们之间有什么关系吗</div>2023-11-03</li><br/><li><span>🤔</span> 👍（2） 💬（2）<div>关于char的unicode散列值，gpt4的说明是：
+</p>2023-11-12</li><br/><li><span>eriklee</span> 👍（3） 💬（4）<p>IDE推荐一波RustRover，jetbrains家新出的，现在免费使用阶段</p>2023-10-24</li><br/><li><span>阿五</span> 👍（3） 💬（2）<p>
+虽然 Rust 不像 JavaScript 那样具有动态的通用数字类型，但你可以通过使用 num crate 和 Rust 的强类型系统来实现类似的通用数字操作。</p>2023-10-24</li><br/><li><span>Levix</span> 👍（2） 💬（1）<p>https:&#47;&#47;synctoai.com&#47;rustclosures
+看了老师的第一节课，然后觉得闭包有点难理解，跑去问了下 GPT 后，整理出来一篇文档，希望对大家有用。</p>2023-11-14</li><br/><li><span>Ransang</span> 👍（2） 💬（2）<p>闭包那个测试里，为什么main函数里面可以有其他函数，就是fn里面套了一个fn ，他们之间有什么关系吗</p>2023-11-03</li><br/><li><span>🤔</span> 👍（2） 💬（2）<p>关于char的unicode散列值，gpt4的说明是：
 Unicode 是一种字符集（Character Set），用于对世界上大多数语言的字符进行编码。不同于 ASCII 码仅包括了基本的英文字符和控制字符，Unicode 意在包括世界上所有的字符，包括字母、符号、表情符号（emoji）等。
 
 在 Unicode 标准中，每个字符都有一个唯一的标识符，通常称为代码点（Code Point）。这些代码点是用整数表示的，一般用十六进制的形式来展示。例如，英文字母 &quot;A&quot; 的 Unicode 代码点是 U+0041，而中文字符 &quot;中&quot; 的 Unicode 代码点是 U+4E2D。
 
 散列值一般用于描述数据结构中用于快速查找的数值标识，但在这里（Rust 的 char 类型存的是 Unicode &quot;散列值&quot;），这种说法不太准确。实际上，Rust 的 char 类型存储的是 Unicode 代码点。
 
-老师可以解答一下吗</div>2023-10-24</li><br/><li><span>独钓寒江</span> 👍（1） 💬（2）<div>可以说说GNU 工具链的版本 和 MSVC 工具链的版本 有什么区别吗？ 应该怎么选择呢？</div>2024-02-29</li><br/><li><span>weineel</span> 👍（1） 💬（1）<div>老师好
+老师可以解答一下吗</p>2023-10-24</li><br/><li><span>独钓寒江</span> 👍（1） 💬（2）<p>可以说说GNU 工具链的版本 和 MSVC 工具链的版本 有什么区别吗？ 应该怎么选择呢？</p>2024-02-29</li><br/><li><span>weineel</span> 👍（1） 💬（1）<p>老师好
 版次是什么？
 为什么要 3 年发布一次？
-和版本有什么区别？</div>2023-11-29</li><br/><li><span>J²</span> 👍（1） 💬（1）<div>工作之余，正在艰难抽空学习rust，希望这次能坚持学完并且入门。</div>2023-11-07</li><br/><li><span>uyplayer</span> 👍（1） 💬（2）<div> println!(&quot;Hello World! this is first commit in Rust&quot;)</div>2023-10-23</li><br/><li><span>Geek_5c44aa</span> 👍（0） 💬（1）<div>语音讲解是不是有问题？都在那段IDE介绍里循环播放</div>2024-08-15</li><br/><li><span>独钓寒江</span> 👍（0） 💬（2）<div>    &#47;&#47; 强行在字符串后面加个0，与C语言的字符串一致。 
+和版本有什么区别？</p>2023-11-29</li><br/><li><span>J²</span> 👍（1） 💬（1）<p>工作之余，正在艰难抽空学习rust，希望这次能坚持学完并且入门。</p>2023-11-07</li><br/><li><span>uyplayer</span> 👍（1） 💬（2）<p> println!(&quot;Hello World! this is first commit in Rust&quot;)</p>2023-10-23</li><br/><li><span>Geek_5c44aa</span> 👍（0） 💬（1）<p>语音讲解是不是有问题？都在那段IDE介绍里循环播放</p>2024-08-15</li><br/><li><span>独钓寒江</span> 👍（0） 💬（2）<p>    &#47;&#47; 强行在字符串后面加个0，与C语言的字符串一致。 
     let byte_escape = &quot;I&#39;m saying hello.\0&quot;; 
     println!(&quot;{}&quot;, byte_escape); 
 
 以上的代码，按注释，我理解打印出来的结果是在字符串后显示一个0， 实际打印结果是“I&#39;m saying hello.”
 看了一下紧接着的参考文章 -- Tokens - The Rust Reference (rust-lang.org)， \0代表Null， 那输出结果是正常的
 
-可以多说一下“强行在字符串后面加个0”吗？</div>2024-03-06</li><br/>
+可以多说一下“强行在字符串后面加个0”吗？</p>2024-03-06</li><br/>
 </ul>

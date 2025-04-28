@@ -255,9 +255,9 @@ LIMIT 2 #顺序7
 
 欢迎你把这篇文章分享给你的朋友或者同事，与他们一起来分析一下王者荣耀的数据，互相切磋交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>君莫惜</span> 👍（171） 💬（4）<div>SELECT COUNT(*)  ＞ SELECT COUNT(1) ＞ SELECT COUNT(具体字段)
+<li><span>君莫惜</span> 👍（171） 💬（4）<p>SELECT COUNT(*)  ＞ SELECT COUNT(1) ＞ SELECT COUNT(具体字段)
 
-之前看到的，好像Mysql对count(*)做了单独的优化</div>2019-06-22</li><br/><li><span>C先生丶陈</span> 👍（24） 💬（4）<div>做一个搬运工，下面是从老师GitHub上找到的建表语句：
+之前看到的，好像Mysql对count(*)做了单独的优化</p>2019-06-22</li><br/><li><span>C先生丶陈</span> 👍（24） 💬（4）<p>做一个搬运工，下面是从老师GitHub上找到的建表语句：
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -292,7 +292,7 @@ CREATE TABLE `heros`  (
   `birthdate` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-</div>2019-06-22</li><br/><li><span>Shame</span> 👍（108） 💬（9）<div>先交作业 select name,mp_max from heros order by hp_max desc limit 5;
+</p>2019-06-22</li><br/><li><span>Shame</span> 👍（108） 💬（9）<p>先交作业 select name,mp_max from heros order by hp_max desc limit 5;
  然后就是楼下一个同学问的问题，我也有些疑惑，就是这个
 SELECT DISTINCT player_id, player_name, count(*) as num # 顺序 5
 FROM player JOIN team ON player.team_id = team.team_id # 顺序 1
@@ -303,13 +303,13 @@ ORDER BY num DESC # 顺序 6
 LIMIT 2 # 顺序 7
 
 对于这个语句，我还有一点疑问：既然HAVING的执行是在SELECT之前的，那么按理说在执行HAVING的时候SELECT中的count(*)应该还没有被计算出来才对啊，为什么在HAVING中就直接使用了num&gt;2这个条件呢？
-希望老师百忙之中能抽空帮忙解释一下，谢谢老师</div>2019-06-27</li><br/><li><span>Samson</span> 👍（23） 💬（1）<div>老师，可以说下SELECT语句执行原理那个视例中HAVING关键字的作用嘛？</div>2019-06-24</li><br/><li><span>ack</span> 👍（20） 💬（6）<div>老师好，请问能把建表的sql给出来吗？</div>2019-06-21</li><br/><li><span>lincan</span> 👍（18） 💬（4）<div>老师讲得很棒，但有一处困惑：limit是最后执行的话，执行limit时全表扫描和所有的虚拟表都已生成了，那使用limit为什么还能提高效率呢？</div>2019-09-01</li><br/><li><span>时间是最真的答案</span> 👍（16） 💬（4）<div>MySQL
-SELECT `name`,mp_max FROM heros ORDER BY hp_max DESC LIMIT 5 </div>2019-06-24</li><br/><li><span>William</span> 👍（7） 💬（1）<div>前端开发第一次接触数据库。
+希望老师百忙之中能抽空帮忙解释一下，谢谢老师</p>2019-06-27</li><br/><li><span>Samson</span> 👍（23） 💬（1）<p>老师，可以说下SELECT语句执行原理那个视例中HAVING关键字的作用嘛？</p>2019-06-24</li><br/><li><span>ack</span> 👍（20） 💬（6）<p>老师好，请问能把建表的sql给出来吗？</p>2019-06-21</li><br/><li><span>lincan</span> 👍（18） 💬（4）<p>老师讲得很棒，但有一处困惑：limit是最后执行的话，执行limit时全表扫描和所有的虚拟表都已生成了，那使用limit为什么还能提高效率呢？</p>2019-09-01</li><br/><li><span>时间是最真的答案</span> 👍（16） 💬（4）<p>MySQL
+SELECT `name`,mp_max FROM heros ORDER BY hp_max DESC LIMIT 5 </p>2019-06-24</li><br/><li><span>William</span> 👍（7） 💬（1）<p>前端开发第一次接触数据库。
 1. 请问老师Mac上安装MySQL，安装8.0版本还是5.7版本更好？
 2. 是否需要安装Navicat，PostgreSQL？
-</div>2019-07-11</li><br/><li><span>hlz-123</span> 👍（7） 💬（1）<div>数据库，MySQL8.0
-SELECT name as &#39;姓名&#39;,mp_max as &#39;最大法力&#39; FROM heros ORDER BY hp_max LIMIT 5;</div>2019-06-23</li><br/><li><span>业余草</span> 👍（6） 💬（2）<div>create table 还没学吧，我是小白，教一下 create table 或者 create table like。就单拿 select 说，这章内容也不全啊，group，having 等都漏掉了</div>2019-06-21</li><br/><li><span>石维康</span> 👍（6） 💬（3）<div>作业: SELECT name, mp_max FROM heros ORDER BY hp_max DESC  LIMIT 5;
-MySQL数据库</div>2019-06-21</li><br/><li><span>魔兽rpg足球</span> 👍（4） 💬（3）<div>老师 我有一个疑问  场景是这样的，我有三张表，一张表存储文章posts，一张表存储文章标签tags，
+</p>2019-07-11</li><br/><li><span>hlz-123</span> 👍（7） 💬（1）<p>数据库，MySQL8.0
+SELECT name as &#39;姓名&#39;,mp_max as &#39;最大法力&#39; FROM heros ORDER BY hp_max LIMIT 5;</p>2019-06-23</li><br/><li><span>业余草</span> 👍（6） 💬（2）<p>create table 还没学吧，我是小白，教一下 create table 或者 create table like。就单拿 select 说，这章内容也不全啊，group，having 等都漏掉了</p>2019-06-21</li><br/><li><span>石维康</span> 👍（6） 💬（3）<p>作业: SELECT name, mp_max FROM heros ORDER BY hp_max DESC  LIMIT 5;
+MySQL数据库</p>2019-06-21</li><br/><li><span>魔兽rpg足球</span> 👍（4） 💬（3）<p>老师 我有一个疑问  场景是这样的，我有三张表，一张表存储文章posts，一张表存储文章标签tags，
 
 一篇文章可以有多个标签，一个标签可以被多个文章拥有，文章和标签是多对多的关系，
 
@@ -317,5 +317,5 @@ MySQL数据库</div>2019-06-21</li><br/><li><span>魔兽rpg足球</span> 👍（
 
 我现在有一个需求 查询出所有文章，查询出的文章数据中每篇文章都有一个tags属性，这个属性包含所有这篇文章的标签信息，这个查询应该怎么做呢？ 或者说sql只能做一部分，然后在通过其他脚本语言再处理呢？
 
-我将问题发在了 segmentfaul 链接地址 https:&#47;&#47;segmentfault.com&#47;q&#47;1010000019472412</div>2019-06-26</li><br/><li><span>菜鸡小王子</span> 👍（4） 💬（2）<div>希望老师在讲select的基础语法时  能稍微带一点底层原理啦 比如select的执行顺序  这样理解是不是可以更加透彻一点</div>2019-06-21</li><br/><li><span>mickey</span> 👍（3） 💬（2）<div>建表语句没有给出。</div>2019-06-21</li><br/><li><span>刘桢</span> 👍（3） 💬（1）<div>北邮倒计时186天</div>2019-06-21</li><br/>
+我将问题发在了 segmentfaul 链接地址 https:&#47;&#47;segmentfault.com&#47;q&#47;1010000019472412</p>2019-06-26</li><br/><li><span>菜鸡小王子</span> 👍（4） 💬（2）<p>希望老师在讲select的基础语法时  能稍微带一点底层原理啦 比如select的执行顺序  这样理解是不是可以更加透彻一点</p>2019-06-21</li><br/><li><span>mickey</span> 👍（3） 💬（2）<p>建表语句没有给出。</p>2019-06-21</li><br/><li><span>刘桢</span> 👍（3） 💬（1）<p>北邮倒计时186天</p>2019-06-21</li><br/>
 </ul>

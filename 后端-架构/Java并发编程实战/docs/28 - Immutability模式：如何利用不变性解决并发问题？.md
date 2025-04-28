@@ -214,26 +214,26 @@ public final class Account{
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>木卫六</span> 👍（88） 💬（3）<div>这段代码应该是线程安全的，但它不是不可变模式。StringBuffer只是字段引用不可变，值是可以调用StringBuffer的方法改变的，这个需要改成把字段改成String这样的不可变对象来解决。
-</div>2019-05-05</li><br/><li><span>拯救地球好累</span> 👍（44） 💬（1）<div>---总结---
+<li><span>木卫六</span> 👍（88） 💬（3）<p>这段代码应该是线程安全的，但它不是不可变模式。StringBuffer只是字段引用不可变，值是可以调用StringBuffer的方法改变的，这个需要改成把字段改成String这样的不可变对象来解决。
+</p>2019-05-05</li><br/><li><span>拯救地球好累</span> 👍（44） 💬（1）<p>---总结---
 1. 不可变类的特点：类、属性都是final的，方法是只读的
 2. 为了解决有些不可变类每次创建一个新对象导致内存浪费的问题：享元模式&#47;对象池
 3. 注意事项：区别引用不可变和实际内容不可变
-4. 更简单的不可变对象：无状态对象</div>2019-07-28</li><br/><li><span>炎炎</span> 👍（16） 💬（1）<div>这个专栏一直看到这儿，真的很棒，课后问题也很好，让我对并发编程有了一个整体的了解，之前看书一直看不懂，老师带着梳理一遍，看书也容易多了，非常感谢老师，希望老师再出专栏</div>2019-05-24</li><br/><li><span>yang</span> 👍（15） 💬（1）<div>final StringBuffer user;
+4. 更简单的不可变对象：无状态对象</p>2019-07-28</li><br/><li><span>炎炎</span> 👍（16） 💬（1）<p>这个专栏一直看到这儿，真的很棒，课后问题也很好，让我对并发编程有了一个整体的了解，之前看书一直看不懂，老师带着梳理一遍，看书也容易多了，非常感谢老师，希望老师再出专栏</p>2019-05-24</li><br/><li><span>yang</span> 👍（15） 💬（1）<p>final StringBuffer user;
 
-StingBuffer 是 引用 类型， 当我们说它final StingBuffer user 不可变时，实际上说的是它user指向堆内存的地址不可变， 但堆内存的user对象，通过sub append 方法实际是可变的……</div>2019-05-13</li><br/><li><span>水滴s</span> 👍（10） 💬（2）<div>老师，问下 Bar这个类的foo属性的设值在多线程下为什么会有原子性问题，我理解的只会有可见性问题？</div>2019-12-12</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（5） 💬（1）<div>随着课程的深入，越来越看不懂了。我不嫌丢人，不藏拙，这专栏，我一定会二刷，三刷，直到啃下来这块硬骨头！</div>2020-07-21</li><br/><li><span>发条橙子 。</span> 👍（2） 💬（1）<div>老师五一节日快乐。
+StingBuffer 是 引用 类型， 当我们说它final StingBuffer user 不可变时，实际上说的是它user指向堆内存的地址不可变， 但堆内存的user对象，通过sub append 方法实际是可变的……</p>2019-05-13</li><br/><li><span>水滴s</span> 👍（10） 💬（2）<p>老师，问下 Bar这个类的foo属性的设值在多线程下为什么会有原子性问题，我理解的只会有可见性问题？</p>2019-12-12</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（5） 💬（1）<p>随着课程的深入，越来越看不懂了。我不嫌丢人，不藏拙，这专栏，我一定会二刷，三刷，直到啃下来这块硬骨头！</p>2020-07-21</li><br/><li><span>发条橙子 。</span> 👍（2） 💬（1）<p>老师五一节日快乐。
 
 思考题 ：
 不可变类的三要素 ：类、属性、方法都是不可变的。 思考题这个类虽然是final ，属性也是final并且没有修改的方法 ， 但是 stringbuffer这个属性的内容是可变的 ， 所以应该没有满足三要素中的属性不可变 ， 应该不属于不可变类 。
 
 
-另外老师我有个问题想问下， 我看jdk一些源码里，也用了对象做锁。 例如 我有个变量 final  ConcurrentHashMap cache , 有些方法中会对 cache变量 put新的值 ， 但是还有用这个对象做 synchronized(cache) 对象锁 ， 这种做法对么？ 如果对的话，是因为管程只判断对象的首地址没有改变的原因么 ，希望老师指点一下😁</div>2019-05-02</li><br/><li><span>pg逆袭的小红帽是谁</span> 👍（1） 💬（1）<div>“String 和 Long、Integer、Double 等基础类型的包装类都具备不可变性，这些对象的线程安全性都是靠不可变性来保证的。”
-这里有点不太理解，既然String 和 Long、Integer、Double具备不可变，不可变意味着线程安全，那不就可以说String 和 Long、Integer、Double 是线程安全的了？</div>2022-05-09</li><br/><li><span>嗨喽</span> 👍（0） 💬（2）<div>上面得SafeWM类代码会不会有ABA问题呢，老师</div>2019-06-13</li><br/><li><span>Jialin</span> 👍（117） 💬（5）<div>根据文章内容,一个类具备不可变属性需要满足&quot;类和属性都必须是 final 的,所有方法均是只读的&quot;,类的属性如果是引用型,该属性对应的类也需要满足不可变类的条件,且不能提供修改该属性的方法,
+另外老师我有个问题想问下， 我看jdk一些源码里，也用了对象做锁。 例如 我有个变量 final  ConcurrentHashMap cache , 有些方法中会对 cache变量 put新的值 ， 但是还有用这个对象做 synchronized(cache) 对象锁 ， 这种做法对么？ 如果对的话，是因为管程只判断对象的首地址没有改变的原因么 ，希望老师指点一下😁</p>2019-05-02</li><br/><li><span>pg逆袭的小红帽是谁</span> 👍（1） 💬（1）<p>“String 和 Long、Integer、Double 等基础类型的包装类都具备不可变性，这些对象的线程安全性都是靠不可变性来保证的。”
+这里有点不太理解，既然String 和 Long、Integer、Double具备不可变，不可变意味着线程安全，那不就可以说String 和 Long、Integer、Double 是线程安全的了？</p>2022-05-09</li><br/><li><span>嗨喽</span> 👍（0） 💬（2）<p>上面得SafeWM类代码会不会有ABA问题呢，老师</p>2019-06-13</li><br/><li><span>Jialin</span> 👍（117） 💬（5）<p>根据文章内容,一个类具备不可变属性需要满足&quot;类和属性都必须是 final 的,所有方法均是只读的&quot;,类的属性如果是引用型,该属性对应的类也需要满足不可变类的条件,且不能提供修改该属性的方法,
 Account类的唯一属性user是final的,提供的方法是可读的,user的类型是StringBuffer,StringBuffer也是final的,这样看来,Account类是不可变性的,但是去看StringBuffer的源码,你会发现StringBuffer类的属性value是可变的&lt;String类中的value定义:private final char value[];StringBuffer类中的value定义:char[] value;&gt;,并且提供了append(Object object)和setCharAt(int index, char ch)修改value.
-所以,Account类不具备不可变性</div>2019-05-02</li><br/><li><span>张天屹</span> 👍（25） 💬（0）<div>具不具备不可变性看怎么界定边界了，类本身是具备的，StrnigBuffer的引用不可变。但是因为StringBuffer是一个对象，持有非final的char数组，所以底层数组是可变的。但是StringBuffer是并发安全的，因为方法加锁synchronized</div>2019-05-05</li><br/><li><span>对象正在输入...</span> 👍（8） 💬（1）<div>不可变类的三个要求 : 类和属性都是 final 的，所有方法均是只读的
+所以,Account类不具备不可变性</p>2019-05-02</li><br/><li><span>张天屹</span> 👍（25） 💬（0）<p>具不具备不可变性看怎么界定边界了，类本身是具备的，StrnigBuffer的引用不可变。但是因为StringBuffer是一个对象，持有非final的char数组，所以底层数组是可变的。但是StringBuffer是并发安全的，因为方法加锁synchronized</p>2019-05-05</li><br/><li><span>对象正在输入...</span> 👍（8） 💬（1）<p>不可变类的三个要求 : 类和属性都是 final 的，所有方法均是只读的
 这里的StringBuffer传进来的只是个引用，调用方可以修改，所以这个类不具备不可变性。
 
-</div>2019-05-05</li><br/><li><span>汤小高</span> 👍（6） 💬（3）<div>Immutability模原理弄清楚了，但是对于Immutability模式的应用场景还不是很明白，我的疑惑是既然共享变量是只读的，那就没必要加锁了，各个线程都读就行了，为啥还要用Immutability模式了，因为如果共享变量存在读写情况，就会加锁了，也不会用到Immutability模式，希望老师解惑，谢谢</div>2020-06-18</li><br/><li><span>Hour</span> 👍（6） 💬（3）<div>&#47;&#47;Foo 线程安全
+</p>2019-05-05</li><br/><li><span>汤小高</span> 👍（6） 💬（3）<p>Immutability模原理弄清楚了，但是对于Immutability模式的应用场景还不是很明白，我的疑惑是既然共享变量是只读的，那就没必要加锁了，各个线程都读就行了，为啥还要用Immutability模式了，因为如果共享变量存在读写情况，就会加锁了，也不会用到Immutability模式，希望老师解惑，谢谢</p>2020-06-18</li><br/><li><span>Hour</span> 👍（6） 💬（3）<p>&#47;&#47;Foo 线程安全
 final class Foo{
   final int age=0;
   final int name=&quot;abc&quot;;
@@ -245,5 +245,5 @@ class Bar {
     this.foo=f;
   }
 }
-老师好，对foo的引用和修改在多线程环境中并不能保证原子性和可见性，这句话怎么理解，能用具体的例子说明一下吗？</div>2019-06-01</li><br/><li><span>Rayjun</span> 👍（6） 💬（1）<div>不是不可变的，user 逃逸了</div>2019-05-05</li><br/>
+老师好，对foo的引用和修改在多线程环境中并不能保证原子性和可见性，这句话怎么理解，能用具体的例子说明一下吗？</p>2019-06-01</li><br/><li><span>Rayjun</span> 👍（6） 💬（1）<p>不是不可变的，user 逃逸了</p>2019-05-05</li><br/>
 </ul>

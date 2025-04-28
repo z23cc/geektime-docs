@@ -337,17 +337,17 @@ etcd clientv3为我们封装了选主的实现，它的实现方式也很简单�
 
 欢迎你给我留言交流讨论，我们下节课见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>無所畏</span> 👍（0） 💬（1）<div>这段话是不是有问题？
+<li><span>無所畏</span> 👍（0） 💬（1）<p>这段话是不是有问题？
 &quot;waitDeletes 函数会调用 client.Get 获取到当前争抢的 &#47;resources&#47;election&#47; 路径下具有最大版本号的 Key&quot; 
 看waitDeletes 源码的注释是：
 &quot;waitDeletes efficiently waits until all keys matching the prefix and no greater than the create revision.&quot;
 
-</div>2023-01-30</li><br/><li><span>Realm</span> 👍（0） 💬（3）<div>请问老师：
+</p>2023-01-30</li><br/><li><span>Realm</span> 👍（0） 💬（3）<p>请问老师：
 
 “当前 Master 需要监听这个最大版本号 Key 的删除事件。当这个特定的 Key 被删除，就意味着已经没有比当前 Master 创建的 Key 更早的 Key 了，因此当前的 Master 理所当然就排队成为了 Leader。”
 
 1 是所有master监听的内容都相同吗？
 2 这里如何避免惊群？
 
-</div>2023-01-26</li><br/><li><span>Geek_2c2c44</span> 👍（0） 💬（0）<div>选主那里， for loop里面的time.After建议改一下， 每次调用time.After会返回一个channel, 可能有内存泄漏的风险；改成Ticker或者context.WithTimeout来实现</div>2024-01-30</li><br/><li><span>Geek_7e6c5e</span> 👍（0） 💬（0）<div>太酷了，etcd让普通程序员也有了开发分布式系统的能力</div>2023-01-23</li><br/>
+</p>2023-01-26</li><br/><li><span>Geek_2c2c44</span> 👍（0） 💬（0）<p>选主那里， for loop里面的time.After建议改一下， 每次调用time.After会返回一个channel, 可能有内存泄漏的风险；改成Ticker或者context.WithTimeout来实现</p>2024-01-30</li><br/><li><span>Geek_7e6c5e</span> 👍（0） 💬（0）<p>太酷了，etcd让普通程序员也有了开发分布式系统的能力</p>2023-01-23</li><br/>
 </ul>

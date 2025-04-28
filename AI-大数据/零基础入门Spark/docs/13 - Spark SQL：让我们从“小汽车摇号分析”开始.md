@@ -215,7 +215,7 @@ result.collect
 
 欢迎你在留言区跟我交流互动，也推荐你把这一讲的内容分享给更多的朋友、同事。我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>qinsi</span> 👍（16） 💬（3）<div>spark无关。讨论下摇号。
+<li><span>qinsi</span> 👍（16） 💬（3）<p>spark无关。讨论下摇号。
 
 评论区有匿名读者质疑文中的结论。这里尝试换个角度代入具体的数字分析下。
 
@@ -260,7 +260,7 @@ result.collect
 
 这样就和文中的配图比较接近了。
 
-所以结论就是要验证中签率和倍率的关系，不能按照倍率去累加中签人数，而是要看单次摇号中不同倍率的中签者的分布。</div>2021-10-12</li><br/><li><span>Alvin-L</span> 👍（6） 💬（2）<div>```
+所以结论就是要验证中签率和倍率的关系，不能按照倍率去累加中签人数，而是要看单次摇号中不同倍率的中签者的分布。</p>2021-10-12</li><br/><li><span>Alvin-L</span> 👍（6） 💬（2）<p>```
 import os
 from pyspark import SparkContext, SparkConf
 from pyspark.sql.session import SparkSession
@@ -333,7 +333,7 @@ result.show(40)
 res = result.collect()
 # 画图
 plot(res)
-```</div>2021-10-26</li><br/><li><span>东围居士</span> 👍（2） 💬（2）<div>补一个完整的 spark 代码（windows环境）：
+```</p>2021-10-26</li><br/><li><span>东围居士</span> 👍（2） 💬（2）<p>补一个完整的 spark 代码（windows环境）：
 
 package spark.basic
 
@@ -381,7 +381,7 @@ object Chapter13 {
         result.show()
     }
 }
-</div>2021-11-12</li><br/><li><span>火炎焱燚</span> 👍（2） 💬（2）<div>对应的python代码为：
+</p>2021-11-12</li><br/><li><span>火炎焱燚</span> 👍（2） 💬（2）<p>对应的python代码为：
 
 # 在notebook上运行时，加上下面的配置
 from pyspark import SparkContext, SparkConf
@@ -427,7 +427,7 @@ result2=result.collect()
 import matplotlib.pyplot as plt
 x=[i[&#39;multiplier&#39;] for i in result2]
 y=[i[&#39;cnt&#39;] for i in result2]
-plt.bar(x,y)</div>2021-10-23</li><br/><li><span>Geek_d447af</span> 👍（1） 💬（2）<div>文章里的代码需要在 Hadoop 环境才能跑起来，spark 本身不支持解析 parquet 文件</div>2021-10-09</li><br/><li><span>lightning_女巫</span> 👍（0） 💬（1）<div>我在本地跑这个代码碰到了如下错误，请问如何解决？
+plt.bar(x,y)</p>2021-10-23</li><br/><li><span>Geek_d447af</span> 👍（1） 💬（2）<p>文章里的代码需要在 Hadoop 环境才能跑起来，spark 本身不支持解析 parquet 文件</p>2021-10-09</li><br/><li><span>lightning_女巫</span> 👍（0） 💬（1）<p>我在本地跑这个代码碰到了如下错误，请问如何解决？
 22&#47;01&#47;28 15:13:22 ERROR BypassMergeSortShuffleWriter: Error while deleting file &#47;private&#47;var&#47;folders&#47;hk&#47;7j9sqdtn55j3cq_gv5qvp5pm39d49n&#47;T&#47;blockmgr-88ef94e9-943a-4971-a3a8-33d25949886f&#47;1a&#47;temp_shuffle_e0e163fb-852c-4298-b08e-dc4989277ab3
 22&#47;01&#47;28 15:13:22 ERROR DiskBlockObjectWriter: Uncaught exception while reverting partial writes to file &#47;private&#47;var&#47;folders&#47;hk&#47;7j9sqdtn55j3cq_gv5qvp5pm39d49n&#47;T&#47;blockmgr-88ef94e9-943a-4971-a3a8-33d25949886f&#47;08&#47;temp_shuffle_6c160c23-3395-445f-be03-b29a375e1139
 java.io.FileNotFoundException: &#47;private&#47;var&#47;folders&#47;hk&#47;7j9sqdtn55j3cq_gv5qvp5pm39d49n&#47;T&#47;blockmgr-88ef94e9-943a-4971-a3a8-33d25949886f&#47;08&#47;temp_shuffle_6c160c23-3395-445f-be03-b29a375e1139 (No such file or directory)
@@ -446,9 +446,9 @@ java.io.FileNotFoundException: &#47;private&#47;var&#47;folders&#47;hk&#47;7j9sq
 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)</div>2022-01-28</li><br/><li><span>东围居士</span> 👍（0） 💬（3）<div>老师，数据文件方便存一份到别的地方吗，比如马云家的网盘，或者做个种子下载什么的，百度网盘那速度真的是，我下到下午下班过周末都下不完</div>2021-10-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（2）<div>用scala实现，lit(1)是什么意思呀</div>2021-10-11</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<div>result具体数值：
+	at java.lang.Thread.run(Thread.java:748)</p>2022-01-28</li><br/><li><span>东围居士</span> 👍（0） 💬（3）<p>老师，数据文件方便存一份到别的地方吗，比如马云家的网盘，或者做个种子下载什么的，百度网盘那速度真的是，我下到下午下班过周末都下不完</p>2021-10-22</li><br/><li><span>Geek_995b78</span> 👍（0） 💬（2）<p>用scala实现，lit(1)是什么意思呀</p>2021-10-11</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<p>result具体数值：
 scala&gt; result.collect
-res7: Array[org.apache.spark.sql.Row] = Array([1,8967], [2,19174], [3,26952], [4,29755], [5,32988], [6,34119], [7,29707], [8,26123], [9,19476], [10,9616], [11,3930], [12,1212])</div>2021-10-08</li><br/><li><span>Neo-dqy</span> 👍（0） 💬（1）<div>【.agg(count(lit(1)).alias(&quot;cnt&quot;))】问下老师，这里count中的lit(1)是什么意思啊？
-对于汽车摇号的倍率制度，如果为了优先让倍率高的人摇到号，可以把每一期的资格分多次抽取。就是说，先构建一个所有人都在里面的样本，抽部分人；再将倍率高于某个阈值的人都取出来，构建一个新的样本，再抽取部分人。（具体划分成几个样本可以按倍率的人数分布来划分）当然这样又会对新来的人不公平，所以大家还是挤地铁吧~~</div>2021-10-08</li><br/><li><span>Spoon</span> 👍（2） 💬（0）<div>Java实现
-https:&#47;&#47;github.com&#47;Spoon94&#47;spark-practice&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;spoon&#47;spark&#47;sql&#47;CarNumAnalyseJob.java</div>2022-04-05</li><br/><li><span>未来已来</span> 👍（1） 💬（0）<div>大概看了下评论，发现一次摇号一个号码会出现多次，是为了增加n次参与的人被摇到的概率。相当于在一个封闭的箱子里摇球，一个号码的球多放了几个，摇箱子后个数多的号码被抽到的概率更高（n&#47;N，N为箱子内球的总数）</div>2023-02-10</li><br/><li><span>翡翠小南瓜</span> 👍（1） 💬（2）<div>不懂北京的摇号规则，也没写清楚，所以是一个批次号里面，一个申请号可以有多次？？？？</div>2022-04-12</li><br/><li><span>Each</span> 👍（0） 💬（0）<div>老師您好, 無法下載 dataset, 可以提供海外載點嗎? 謝謝.</div>2024-10-15</li><br/><li><span>风一样</span> 👍（0） 💬（1）<div>上面的结论感觉不太正确，偏离了每个每个倍率下的基数，倍率越高中签概率肯定越大啊，对个人而言，如果我们每次参与抽签的人数大基数不变的情况下(基数1000)，倍率越大，相当于往里面添加了多个样本（8倍率），本来是1&#47;1000的概率变为了8&#47;1000。但是考虑到每次倍率越大没中签的用户重复的次数越多，基数也会跟着变大，相对于新加入的人来说其实是有优势的，但是新增的人其实远小于已经参与过抽签的人，所以才导致了感觉上变化不大</div>2022-12-01</li><br/>
+res7: Array[org.apache.spark.sql.Row] = Array([1,8967], [2,19174], [3,26952], [4,29755], [5,32988], [6,34119], [7,29707], [8,26123], [9,19476], [10,9616], [11,3930], [12,1212])</p>2021-10-08</li><br/><li><span>Neo-dqy</span> 👍（0） 💬（1）<p>【.agg(count(lit(1)).alias(&quot;cnt&quot;))】问下老师，这里count中的lit(1)是什么意思啊？
+对于汽车摇号的倍率制度，如果为了优先让倍率高的人摇到号，可以把每一期的资格分多次抽取。就是说，先构建一个所有人都在里面的样本，抽部分人；再将倍率高于某个阈值的人都取出来，构建一个新的样本，再抽取部分人。（具体划分成几个样本可以按倍率的人数分布来划分）当然这样又会对新来的人不公平，所以大家还是挤地铁吧~~</p>2021-10-08</li><br/><li><span>Spoon</span> 👍（2） 💬（0）<p>Java实现
+https:&#47;&#47;github.com&#47;Spoon94&#47;spark-practice&#47;blob&#47;master&#47;src&#47;main&#47;java&#47;com&#47;spoon&#47;spark&#47;sql&#47;CarNumAnalyseJob.java</p>2022-04-05</li><br/><li><span>未来已来</span> 👍（1） 💬（0）<p>大概看了下评论，发现一次摇号一个号码会出现多次，是为了增加n次参与的人被摇到的概率。相当于在一个封闭的箱子里摇球，一个号码的球多放了几个，摇箱子后个数多的号码被抽到的概率更高（n&#47;N，N为箱子内球的总数）</p>2023-02-10</li><br/><li><span>翡翠小南瓜</span> 👍（1） 💬（2）<p>不懂北京的摇号规则，也没写清楚，所以是一个批次号里面，一个申请号可以有多次？？？？</p>2022-04-12</li><br/><li><span>Each</span> 👍（0） 💬（0）<p>老師您好, 無法下載 dataset, 可以提供海外載點嗎? 謝謝.</p>2024-10-15</li><br/><li><span>风一样</span> 👍（0） 💬（1）<p>上面的结论感觉不太正确，偏离了每个每个倍率下的基数，倍率越高中签概率肯定越大啊，对个人而言，如果我们每次参与抽签的人数大基数不变的情况下(基数1000)，倍率越大，相当于往里面添加了多个样本（8倍率），本来是1&#47;1000的概率变为了8&#47;1000。但是考虑到每次倍率越大没中签的用户重复的次数越多，基数也会跟着变大，相对于新加入的人来说其实是有优势的，但是新增的人其实远小于已经参与过抽签的人，所以才导致了感觉上变化不大</p>2022-12-01</li><br/>
 </ul>

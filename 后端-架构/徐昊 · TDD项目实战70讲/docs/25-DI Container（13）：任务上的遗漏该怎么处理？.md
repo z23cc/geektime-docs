@@ -253,6 +253,6 @@ public class ContextConfig {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>keep_curiosity</span> 👍（0） 💬（0）<div>暂时用三目运算符重构了一下，应该可以用策略模式，但感觉目前还没必要。
-跟练：https:&#47;&#47;github.com&#47;codingthought&#47;TDD-DI&#47;releases&#47;tag&#47;25</div>2022-05-04</li><br/>
+<li><span>keep_curiosity</span> 👍（0） 💬（0）<p>暂时用三目运算符重构了一下，应该可以用策略模式，但感觉目前还没必要。
+跟练：https:&#47;&#47;github.com&#47;codingthought&#47;TDD-DI&#47;releases&#47;tag&#47;25</p>2022-05-04</li><br/>
 </ul>

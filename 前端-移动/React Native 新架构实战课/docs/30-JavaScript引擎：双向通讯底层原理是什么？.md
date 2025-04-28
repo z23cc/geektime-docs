@@ -238,7 +238,7 @@ React Native 借助 JSContext 实现了宿主对象，这些宿主对象能同�
 
 有什么问题欢迎在评论区留言，我们下一讲见。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>稀饭</span> 👍（0） 💬（0）<div>这跟JSI有什么关系吗？</div>2024-10-03</li><br/><li><span>极客CEO</span> 👍（0） 💬（0）<div>通过context实现双向通信，那还需要 bridge 么</div>2024-01-17</li><br/><li><span>Geek_63fd40</span> 👍（0） 💬（3）<div>文中讲的是新架构下的通讯还是旧架构的通讯呢？有点懵。</div>2023-09-04</li><br/><li><span>骑鹤下江南</span> 👍（0） 💬（0）<div>应该是 evaluateScript 不是 evaruateScript 吧</div>2023-08-01</li><br/><li><span>杨永安</span> 👍（0） 💬（1）<div>在原来的v8&#47;jscore引擎中，是不是共享系统本身的引擎？似乎需要将js代码转化为es5等安全的级别。
+<li><span>稀饭</span> 👍（0） 💬（0）<p>这跟JSI有什么关系吗？</p>2024-10-03</li><br/><li><span>极客CEO</span> 👍（0） 💬（0）<p>通过context实现双向通信，那还需要 bridge 么</p>2024-01-17</li><br/><li><span>Geek_63fd40</span> 👍（0） 💬（3）<p>文中讲的是新架构下的通讯还是旧架构的通讯呢？有点懵。</p>2023-09-04</li><br/><li><span>骑鹤下江南</span> 👍（0） 💬（0）<p>应该是 evaluateScript 不是 evaruateScript 吧</p>2023-08-01</li><br/><li><span>杨永安</span> 👍（0） 💬（1）<p>在原来的v8&#47;jscore引擎中，是不是共享系统本身的引擎？似乎需要将js代码转化为es5等安全的级别。
 
-想知道 Hermes 对ES的版本支持是否依赖手机系统本身？还是独立的一个运行环境。</div>2023-03-08</li><br/><li><span>小疯子一头</span> 👍（0） 💬（0）<div>jscontext 不等同于this</div>2023-01-29</li><br/>
+想知道 Hermes 对ES的版本支持是否依赖手机系统本身？还是独立的一个运行环境。</p>2023-03-08</li><br/><li><span>小疯子一头</span> 👍（0） 💬（0）<p>jscontext 不等同于this</p>2023-01-29</li><br/>
 </ul>

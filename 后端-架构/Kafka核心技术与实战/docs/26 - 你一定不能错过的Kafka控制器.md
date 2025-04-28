@@ -112,20 +112,20 @@ Preferred领导者选举主要是Kafka为了避免部分Broker负载过重而提
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>曾轼麟</span> 👍（69） 💬（7）<div>老师控制器选举是不是漏了一个环节，重新选出的controller会增加epoch的值，避免旧的controller复活导致出现两个控制器</div>2019-08-06</li><br/><li><span>icejoywoo</span> 👍（18） 💬（3）<div>基于raft搞一套来替代zookeeper？</div>2019-08-09</li><br/><li><span>野性力量</span> 👍（14） 💬（3）<div>epoch这个词我经常看到，查了是纪元的意思，不过用在这里应该怎么理解呢。（在图里）</div>2019-08-01</li><br/><li><span>Stony.修行僧</span> 👍（12） 💬（3）<div>KIP-500: Replace ZooKeeper with a Self-Managed Metadata Quorum
-了解一下</div>2019-08-02</li><br/><li><span>你好旅行者</span> 👍（12） 💬（1）<div>老师好，关于线程的优化，我能否这样理解:之前是为每一个事件分配一个线程，线程本身的切换以及锁会带来繁重的开销。在后续的版本中，讲请求封装成了一个个的事件，采用异步串行化的方式，放入到队列中，由统一的一个线程来轮询这个队列，从而避免了锁的开销。不知道这样的理解是否准确？
+<li><span>曾轼麟</span> 👍（69） 💬（7）<p>老师控制器选举是不是漏了一个环节，重新选出的controller会增加epoch的值，避免旧的controller复活导致出现两个控制器</p>2019-08-06</li><br/><li><span>icejoywoo</span> 👍（18） 💬（3）<p>基于raft搞一套来替代zookeeper？</p>2019-08-09</li><br/><li><span>野性力量</span> 👍（14） 💬（3）<p>epoch这个词我经常看到，查了是纪元的意思，不过用在这里应该怎么理解呢。（在图里）</p>2019-08-01</li><br/><li><span>Stony.修行僧</span> 👍（12） 💬（3）<p>KIP-500: Replace ZooKeeper with a Self-Managed Metadata Quorum
+了解一下</p>2019-08-02</li><br/><li><span>你好旅行者</span> 👍（12） 💬（1）<p>老师好，关于线程的优化，我能否这样理解:之前是为每一个事件分配一个线程，线程本身的切换以及锁会带来繁重的开销。在后续的版本中，讲请求封装成了一个个的事件，采用异步串行化的方式，放入到队列中，由统一的一个线程来轮询这个队列，从而避免了锁的开销。不知道这样的理解是否准确？
 
 此外，老师说的多个线程之间共享Broker缓内存区域，可否举个例子，在什么情况下他们需要共享内存区域呢？
 
-谢谢老师！</div>2019-08-01</li><br/><li><span>thomas</span> 👍（8） 💬（2）<div>老师，请问：
+谢谢老师！</p>2019-08-01</li><br/><li><span>thomas</span> 👍（8） 💬（2）<p>老师，请问：
 1. 当控制器发生故障时，其他broker是如何感知到的？是ZK watch controller没有节点，然后广播通知其他的broker, 来争抢新建一个控制器节点吗？ 还是其他broker没定时收到控制器发送的元数据同步请求？
-2. ZK不是可以确保节点的唯一性，为什么还会出现控制器大于1的情况？</div>2020-05-02</li><br/><li><span>谢特</span> 👍（7） 💬（1）<div>多个节点之间内存一般怎么共享</div>2019-10-10</li><br/><li><span>电光火石</span> 👍（6） 💬（3）<div>老师好，想问一下：
+2. ZK不是可以确保节点的唯一性，为什么还会出现控制器大于1的情况？</p>2020-05-02</li><br/><li><span>谢特</span> 👍（7） 💬（1）<p>多个节点之间内存一般怎么共享</p>2019-10-10</li><br/><li><span>电光火石</span> 👍（6） 💬（3）<p>老师好，想问一下：
 1.如何看出重分区被hang住了，是长时间没有响应就被hang住，还是有一些jmx的参数可以观察？
 2.当我们删除&#47;controller的时候，是否会有数据丢失的可能，比如重分区的请求，是否会先存储在zk，然后controler从中读取请求进行处理，这个时候发生重failover，是否新的controller会重新读到这个请求？
-谢谢了</div>2019-09-07</li><br/><li><span>林肯</span> 👍（5） 💬（2）<div>各个broker之间怎样保证元数据的一致性？controller挂了后重新选举的机制是怎样的？</div>2019-10-11</li><br/><li><span>thomas</span> 👍（4） 💬（1）<div>老师，若给kafka-server配置文件中的zookeeper.connect参数写了3个zk的节点，他们是如何交换？kafka-server先尝试和第一个zk节点开始建立tcp socket连接，若成功，那么后面两个就不用建立连接, 待异常情况下，做备用吗？</div>2020-05-09</li><br/><li><span>信信</span> 👍（4） 💬（1）<div>修改主题分区的broker_host是随便指定一个吗？最后由zk通知到控制器？
+谢谢了</p>2019-09-07</li><br/><li><span>林肯</span> 👍（5） 💬（2）<p>各个broker之间怎样保证元数据的一致性？controller挂了后重新选举的机制是怎样的？</p>2019-10-11</li><br/><li><span>thomas</span> 👍（4） 💬（1）<p>老师，若给kafka-server配置文件中的zookeeper.connect参数写了3个zk的节点，他们是如何交换？kafka-server先尝试和第一个zk节点开始建立tcp socket连接，若成功，那么后面两个就不用建立连接, 待异常情况下，做备用吗？</p>2020-05-09</li><br/><li><span>信信</span> 👍（4） 💬（1）<p>修改主题分区的broker_host是随便指定一个吗？最后由zk通知到控制器？
 作者: 其实如果指定的是broker host，后面是不走ZooKeeper的
 
 追问：
 前面文章提到增加分区是控制器完成的。  
-那如果随机在一个broker上执行增加分区的命令，再由这个broker通知控制器去做吗？</div>2019-08-08</li><br/><li><span>蛮野</span> 👍（3） 💬（1）<div>社区改造单线程加队列的方式，有没有数据或者图标对比下改造前后性能的差异？</div>2019-10-24</li><br/><li><span>玉剑冰锋</span> 👍（3） 💬（3）<div>如何区分临时znode和永久znode？</div>2019-08-01</li><br/><li><span>Geek_b98e35</span> 👍（2） 💬（1）<div>分区重分配和rebalance的区别是啥呀！都是将分区重新分配给消费者？</div>2021-05-28</li><br/><li><span>Geek_03</span> 👍（2） 💬（1）<div>老师，consumer频繁打印Marking the coorinator dead for group日志是什么原因呢？网上很多答案都是说要配置host，但是我们这边consumer端的服务器上已经配置了host，而且感觉这个信息的打印跟consumer的拉取速度有很大关系</div>2020-07-08</li><br/>
+那如果随机在一个broker上执行增加分区的命令，再由这个broker通知控制器去做吗？</p>2019-08-08</li><br/><li><span>蛮野</span> 👍（3） 💬（1）<p>社区改造单线程加队列的方式，有没有数据或者图标对比下改造前后性能的差异？</p>2019-10-24</li><br/><li><span>玉剑冰锋</span> 👍（3） 💬（3）<p>如何区分临时znode和永久znode？</p>2019-08-01</li><br/><li><span>Geek_b98e35</span> 👍（2） 💬（1）<p>分区重分配和rebalance的区别是啥呀！都是将分区重新分配给消费者？</p>2021-05-28</li><br/><li><span>Geek_03</span> 👍（2） 💬（1）<p>老师，consumer频繁打印Marking the coorinator dead for group日志是什么原因呢？网上很多答案都是说要配置host，但是我们这边consumer端的服务器上已经配置了host，而且感觉这个信息的打印跟consumer的拉取速度有很大关系</p>2020-07-08</li><br/>
 </ul>

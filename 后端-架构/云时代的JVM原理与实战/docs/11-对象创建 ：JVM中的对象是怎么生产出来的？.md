@@ -233,8 +233,8 @@ public char[] EscapeExample() {
 
 ![](https://static001.geekbang.org/resource/image/25/81/257d118c3bf45305a07yyfe798144881.jpg?wh=5691x4047)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>edward</span> 👍（1） 💬（3）<div>请教老师，jvm开启了逃逸分析的情况下，逃逸分析是什么条件下触发的？</div>2023-09-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>edward</span> 👍（1） 💬（3）<p>请教老师，jvm开启了逃逸分析的情况下，逃逸分析是什么条件下触发的？</p>2023-09-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：既然内存是规整的，为什么还需要“碰撞”吗？
 “指针碰撞”具体指什么？
-Q2：两种方法是同时存在吗？还是只选择一种？</div>2023-09-13</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<div>指针碰撞这个词感觉不是很好理解，看图示其实就是指针移动</div>2023-09-27</li><br/>
+Q2：两种方法是同时存在吗？还是只选择一种？</p>2023-09-13</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<p>指针碰撞这个词感觉不是很好理解，看图示其实就是指针移动</p>2023-09-27</li><br/>
 </ul>

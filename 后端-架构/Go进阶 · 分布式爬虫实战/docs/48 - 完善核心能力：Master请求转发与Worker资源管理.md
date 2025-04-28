@@ -509,5 +509,5 @@ func (s *Schedule) Schedule() {
 
 欢迎你在留言区与我交流讨论，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Geek_crazydaddy</span> 👍（0） 💬（2）<div>watchResource里获取和删除任务时为啥都不判断任务是不是分配给当前worker了？</div>2023-02-20</li><br/><li><span>Realm</span> 👍（0） 💬（0）<div>follow节点在收到资源变更请求，当请求到达grpc服务层时，通过注入进来的master grpc client，向master发起请求，参数不变，实现了转发功能，这个设计很赞！👍</div>2023-02-07</li><br/>
+<li><span>Geek_crazydaddy</span> 👍（0） 💬（2）<p>watchResource里获取和删除任务时为啥都不判断任务是不是分配给当前worker了？</p>2023-02-20</li><br/><li><span>Realm</span> 👍（0） 💬（0）<p>follow节点在收到资源变更请求，当请求到达grpc服务层时，通过注入进来的master grpc client，向master发起请求，参数不变，实现了转发功能，这个设计很赞！👍</p>2023-02-07</li><br/>
 </ul>

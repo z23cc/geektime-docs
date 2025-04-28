@@ -221,15 +221,15 @@ from multiprocessing.dummy import Pool
 
 我为你留一道思考题，有一个软件包requests，可以通过requests.get('[http://www.baidu.com](http://www.baidu.com)').text 方式访问一个网站，并能够得到网页的源代码。假设我为你提供了几十个需要访问的网站，你是如何实现这些网站的并行访问的，你又能否通过Python对比出逐个访问网页的时间是并行访问的几倍吗？
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>聂小倩</span> 👍（7） 💬（1）<div>老师，请问为什么说“在多进程的程序中，不能采用标准数据类型来传递数据”呢？</div>2021-04-10</li><br/><li><span>十一哈哈</span> 👍（6） 💬（2）<div>windows下使用multiprocessing，要将进程池相关代码应该放在if __name__ == &#39;__main__&#39;下面，要不然运行会报错....</div>2021-03-08</li><br/><li><span>Geek_a345af</span> 👍（1） 💬（1）<div>把您的代码复制到我电脑上试了下，
+<li><span>聂小倩</span> 👍（7） 💬（1）<p>老师，请问为什么说“在多进程的程序中，不能采用标准数据类型来传递数据”呢？</p>2021-04-10</li><br/><li><span>十一哈哈</span> 👍（6） 💬（2）<p>windows下使用multiprocessing，要将进程池相关代码应该放在if __name__ == &#39;__main__&#39;下面，要不然运行会报错....</p>2021-03-08</li><br/><li><span>Geek_a345af</span> 👍（1） 💬（1）<p>把您的代码复制到我电脑上试了下，
 1、发现100以内的求平方，我这边的结果并没有启用多进程，一个进程就做完了这些。改成求1000的内的平方，才创建了两个进程。(电脑cpu是8)
 2、queue.put(os.getpid())向队列里添加进程的id，在后面向set里存这些id的时候，发现queue是空的，不太明白是为什么。
-</div>2022-01-19</li><br/><li><span>天国之影</span> 👍（1） 💬（1）<div>老师，我运行出来的时间统计结果如下：
+</p>2022-01-19</li><br/><li><span>天国之影</span> 👍（1） 💬（1）<p>老师，我运行出来的时间统计结果如下：
 
 并行计算时间统计: 0.1607363224029541
 串行计算时间统计: 0.0009999275207519531
 
-为什么并行计算比串行计算耗时还长？</div>2021-12-08</li><br/><li><span>Bill</span> 👍（0） 💬（1）<div>打卡</div>2021-10-20</li><br/><li><span>Soul of the Dragon</span> 👍（0） 💬（1）<div>老师，请问如果在代码运行过程中出现“UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 18-19: ordinal not in range(128)” 这样的报错，应该如何解决呢？</div>2021-03-06</li><br/><li><span>天国之影</span> 👍（1） 💬（0）<div>如果在Jupyter Notebook下，可使用以下方法：
+为什么并行计算比串行计算耗时还长？</p>2021-12-08</li><br/><li><span>Bill</span> 👍（0） 💬（1）<p>打卡</p>2021-10-20</li><br/><li><span>Soul of the Dragon</span> 👍（0） 💬（1）<p>老师，请问如果在代码运行过程中出现“UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 18-19: ordinal not in range(128)” 这样的报错，应该如何解决呢？</p>2021-03-06</li><br/><li><span>天国之影</span> 👍（1） 💬（0）<p>如果在Jupyter Notebook下，可使用以下方法：
 通过临时文件方式，读取并使用并行计算
 
 from multiprocessing import Pool
@@ -257,8 +257,8 @@ def def_f(x):
     return x * x
 
 for res in parallal_task(def_f, range(1, 101)):
-    print(f&#39;计算平方的结果是:{res}&#39;)</div>2021-12-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-09</li><br/><li><span>坚果</span> 👍（0） 💬（0）<div>这一章有没有windows并行计算参考资料，我一个程序都没有调试成功，一运行就堵塞</div>2022-03-27</li><br/><li><span>坚果</span> 👍（0） 💬（0）<div>
-通过临时文件方式，读取并使用并行计算，为什么要通过临时文件使用并行计算？</div>2022-03-27</li><br/><li><span>聪少 Jeff</span> 👍（0） 💬（0）<div>为了初步本次课程的小伙伴想我遇到相同的问题（即是：进程池相关代码应放在if__name__ == &#39;main&quot;的报错）解决方法参考，这个问题已经在十一哈哈学员的提醒下发现的，为了直观一些提供以下代码参考一下。
+    print(f&#39;计算平方的结果是:{res}&#39;)</p>2021-12-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-09</li><br/><li><span>坚果</span> 👍（0） 💬（0）<p>这一章有没有windows并行计算参考资料，我一个程序都没有调试成功，一运行就堵塞</p>2022-03-27</li><br/><li><span>坚果</span> 👍（0） 💬（0）<p>
+通过临时文件方式，读取并使用并行计算，为什么要通过临时文件使用并行计算？</p>2022-03-27</li><br/><li><span>聪少 Jeff</span> 👍（0） 💬（0）<p>为了初步本次课程的小伙伴想我遇到相同的问题（即是：进程池相关代码应放在if__name__ == &#39;main&quot;的报错）解决方法参考，这个问题已经在十一哈哈学员的提醒下发现的，为了直观一些提供以下代码参考一下。
 
 [示例代码]
 from multiprocessing import Pool
@@ -278,5 +278,5 @@ def test():
 
 if __name__ == &#39;__main__&#39;:
     test()
-</div>2021-10-16</li><br/><li><span>栾~龟虽寿！</span> 👍（0） 💬（0）<div>打卡学习了</div>2021-05-07</li><br/>
+</p>2021-10-16</li><br/><li><span>栾~龟虽寿！</span> 👍（0） 💬（0）<p>打卡学习了</p>2021-05-07</li><br/>
 </ul>

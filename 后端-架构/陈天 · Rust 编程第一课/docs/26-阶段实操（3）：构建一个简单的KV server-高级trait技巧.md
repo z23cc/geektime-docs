@@ -634,7 +634,7 @@ impl<T, U> Into<U> for T where U: From<T>,
 
 感谢你的收听，你已经完成了Rust学习的第26次打卡，如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见~
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>losuika</span> 👍（4） 💬（3）<div>rocksdb 的实现 https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=1f4b28ff3fcbdb421a0743d47c7b75c3，rocksdb 需要开启 feature multi-threaded-cf ，然后感觉 trait 约束是不是也要改下？需要带上生命周期，rocksdb 库似乎没有办法拿到所有权的迭代器</div>2021-12-19</li><br/><li><span>losuika</span> 👍（2） 💬（1）<div>Option 有个 transpose ，可以直接 Option&lt;Result&gt; 到 Result&lt;Option&gt;</div>2021-12-19</li><br/><li><span>罗杰</span> 👍（1） 💬（1）<div>哈 昨天终于完成 21，22，今天继续</div>2021-10-27</li><br/><li><span>Geek_e2201d</span> 👍（0） 💬（2）<div>陈老师，我尝试把MemTable与SledDb整合到一个Server中，通过config参数来动态选择MemTable还是SledDb。尝试了很久都失败了，编译器提示错误为:
+<li><span>losuika</span> 👍（4） 💬（3）<p>rocksdb 的实现 https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=1f4b28ff3fcbdb421a0743d47c7b75c3，rocksdb 需要开启 feature multi-threaded-cf ，然后感觉 trait 约束是不是也要改下？需要带上生命周期，rocksdb 库似乎没有办法拿到所有权的迭代器</p>2021-12-19</li><br/><li><span>losuika</span> 👍（2） 💬（1）<p>Option 有个 transpose ，可以直接 Option&lt;Result&gt; 到 Result&lt;Option&gt;</p>2021-12-19</li><br/><li><span>罗杰</span> 👍（1） 💬（1）<p>哈 昨天终于完成 21，22，今天继续</p>2021-10-27</li><br/><li><span>Geek_e2201d</span> 👍（0） 💬（2）<p>陈老师，我尝试把MemTable与SledDb整合到一个Server中，通过config参数来动态选择MemTable还是SledDb。尝试了很久都失败了，编译器提示错误为:
 50 | let resp = service_cloned.execute(msg);
  |    ^^^^^^^ method cannot be called on `Service&lt;Box&lt;dyn Storage&gt;&gt;` due to unsatisfied trait bounds
 ...
@@ -699,7 +699,7 @@ async fn main() -&gt; Result&lt;()&gt; {
   ​}
   ​info!(&quot;Client {:?} disconnected&quot;, addr);
  ​});
-​}</div>2022-01-14</li><br/><li><span>无常</span> 👍（0） 💬（1）<div>请问老师，设计和架构应该如何学习，有什么推荐的资料吗？</div>2021-12-29</li><br/><li><span>dva</span> 👍（0） 💬（2）<div>第二题我想到的是，不过这样要改注册函数，看起来怪怪的，不知道老师的方法是什么
+​}</p>2022-01-14</li><br/><li><span>无常</span> 👍（0） 💬（1）<p>请问老师，设计和架构应该如何学习，有什么推荐的资料吗？</p>2021-12-29</li><br/><li><span>dva</span> 👍（0） 💬（2）<p>第二题我想到的是，不过这样要改注册函数，看起来怪怪的，不知道老师的方法是什么
 pub trait Notify1&lt;Arg,E&gt;{
     fn notify(&amp;self,arg:&amp;Arg)-&gt;Option&lt;E&gt;;
 }
@@ -716,6 +716,6 @@ impl &lt;Arg,E&gt;Notify1&lt;Arg,E&gt;for Vec&lt;fn(&amp;Arg)-&gt;Option&lt;E&gt
     }
 }
 
-第三题和老师写的sleddb差不多，直接加了一些TryFrom，中间遇到没有装llvm clang的错误 “error: failed to run custom build command for `librocksdb-sys ...” 还有起名字 rocksdb和包名冲突。写这个扩展有个非常深的体会就是，编译器提示真好。</div>2021-11-26</li><br/><li><span>陈卧虫</span> 👍（0） 💬（0）<div>还有人和我一样在学么</div>2025-01-22</li><br/><li><span>bestgopher</span> 👍（0） 💬（0）<div>我们服务是异步的，但是sled读取文件没看到异步操作，这样是否有问题呢？</div>2022-06-11</li><br/><li><span>Alvin</span> 👍（0） 💬（5）<div>老师 跟着课程的代码实现过程发现最后持久化存储这边会报个错
- the trait `From&lt;&amp;[u8]&gt;` is not implemented for `abi::Value`</div>2022-04-16</li><br/>
+第三题和老师写的sleddb差不多，直接加了一些TryFrom，中间遇到没有装llvm clang的错误 “error: failed to run custom build command for `librocksdb-sys ...” 还有起名字 rocksdb和包名冲突。写这个扩展有个非常深的体会就是，编译器提示真好。</p>2021-11-26</li><br/><li><span>陈卧虫</span> 👍（0） 💬（0）<p>还有人和我一样在学么</p>2025-01-22</li><br/><li><span>bestgopher</span> 👍（0） 💬（0）<p>我们服务是异步的，但是sled读取文件没看到异步操作，这样是否有问题呢？</p>2022-06-11</li><br/><li><span>Alvin</span> 👍（0） 💬（5）<p>老师 跟着课程的代码实现过程发现最后持久化存储这边会报个错
+ the trait `From&lt;&amp;[u8]&gt;` is not implemented for `abi::Value`</p>2022-04-16</li><br/>
 </ul>

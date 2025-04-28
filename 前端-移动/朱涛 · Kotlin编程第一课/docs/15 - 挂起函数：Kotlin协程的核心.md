@@ -356,7 +356,7 @@ suspend fun anotherSuspendFunc() {
 
 欢迎在留言区分享你的思考和答案，也欢迎你把今天的内容分享给更多的朋友，我们一起探讨和进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>$Kotlin</span> 👍（23） 💬（2）<div>public interface Continuation&lt;in T&gt; {
+<li><span>$Kotlin</span> 👍（23） 💬（2）<p>public interface Continuation&lt;in T&gt; {
     &#47;**
      * The context of the coroutine that corresponds to this continuation.
      *&#47;
@@ -368,11 +368,11 @@ suspend fun anotherSuspendFunc() {
      *&#47;
     public fun resumeWith(result: Result&lt;T&gt;)
 }
-suspend函数的入参Continuation，看源码可以知道需要有一个协程上下文CoroutineContext信息，只有在协程作用域里才能传递。</div>2022-02-16</li><br/><li><span>Airsaid</span> 👍（22） 💬（1）<div>老师您好，为什么 Kotlin 选择使用关键字来定义挂起函数而不是使用注解呢？（例如 Compose 就使用的是注解的方式）</div>2022-02-28</li><br/><li><span>墨方</span> 👍（19） 💬（1）<div>被调用的挂起函数需要传入一个Continuation(当然这个传入也是幕后编译做的), 没有被suspend修饰的函数是没有Continuation参数的,所以被调用的挂起函数没有办法从普通函数中获取一个Continuation。</div>2022-02-16</li><br/><li><span>AKEI</span> 👍（5） 💬（1）<div>所以kotlin的挂起函数只是相当于让回调函数更简洁，相当于封装了线程池，并没有任何更高效的性能优化是吗？</div>2022-05-15</li><br/><li><span>colin</span> 👍（5） 💬（2）<div>挂起函数本身并不支持挂起，所以它没法在普通函数中调用，而它之所以能在挂起函数中调用，是因为挂起函数最终都是在协程中被调用，是协程提供了挂起函数运行的环境。</div>2022-02-16</li><br/><li><span>Luckykelan</span> 👍（4） 💬（7）<div>老师您好，有个问题不太清楚
+suspend函数的入参Continuation，看源码可以知道需要有一个协程上下文CoroutineContext信息，只有在协程作用域里才能传递。</p>2022-02-16</li><br/><li><span>Airsaid</span> 👍（22） 💬（1）<p>老师您好，为什么 Kotlin 选择使用关键字来定义挂起函数而不是使用注解呢？（例如 Compose 就使用的是注解的方式）</p>2022-02-28</li><br/><li><span>墨方</span> 👍（19） 💬（1）<p>被调用的挂起函数需要传入一个Continuation(当然这个传入也是幕后编译做的), 没有被suspend修饰的函数是没有Continuation参数的,所以被调用的挂起函数没有办法从普通函数中获取一个Continuation。</p>2022-02-16</li><br/><li><span>AKEI</span> 👍（5） 💬（1）<p>所以kotlin的挂起函数只是相当于让回调函数更简洁，相当于封装了线程池，并没有任何更高效的性能优化是吗？</p>2022-05-15</li><br/><li><span>colin</span> 👍（5） 💬（2）<p>挂起函数本身并不支持挂起，所以它没法在普通函数中调用，而它之所以能在挂起函数中调用，是因为挂起函数最终都是在协程中被调用，是协程提供了挂起函数运行的环境。</p>2022-02-16</li><br/><li><span>Luckykelan</span> 👍（4） 💬（7）<p>老师您好，有个问题不太清楚
 val user = getUserInfo()
 val friendList = getFriendList(user)
 val feedList = getFeedList(friendList)
-这段代码和协程思维模型那张动图一起看，代码执行到getUserInfo()函数时，这个函数就被挂起了，不是应该继续执行val friendList = getFriendList(user)吗？为什么实际上在这里没有继续执行而是等待了getUserInfo()的返回呢？</div>2022-04-23</li><br/><li><span>的的喀喀湖</span> 👍（3） 💬（1）<div>讲的确实不错，之前看了好多文章没看懂挂起的概念，跟着这两篇文章自己走了一遍代码终于能理解了</div>2022-02-27</li><br/><li><span>jim</span> 👍（2） 💬（1）<div>图文说明，写的真好。</div>2022-02-21</li><br/><li><span>InfoQ_0880b52232bf</span> 👍（1） 💬（1）<div>关于思考题，我想可以尝试逆向思考一下，假如普通函数可以调用挂起函数，那么会出现什么情况呢？
+这段代码和协程思维模型那张动图一起看，代码执行到getUserInfo()函数时，这个函数就被挂起了，不是应该继续执行val friendList = getFriendList(user)吗？为什么实际上在这里没有继续执行而是等待了getUserInfo()的返回呢？</p>2022-04-23</li><br/><li><span>的的喀喀湖</span> 👍（3） 💬（1）<p>讲的确实不错，之前看了好多文章没看懂挂起的概念，跟着这两篇文章自己走了一遍代码终于能理解了</p>2022-02-27</li><br/><li><span>jim</span> 👍（2） 💬（1）<p>图文说明，写的真好。</p>2022-02-21</li><br/><li><span>InfoQ_0880b52232bf</span> 👍（1） 💬（1）<p>关于思考题，我想可以尝试逆向思考一下，假如普通函数可以调用挂起函数，那么会出现什么情况呢？
 比如：我们在main方法里可以直接调用这三个挂起函数（实际不能直接调用），我们预期的结果是同步方式实现异步请求（这也是协程的特点之一），但其实按照非阻塞挂起的特点，main方法会直接打印“main end”，无法满足我们的预期：
 fun main() {
     val userInfo = getUserInfo()
@@ -394,9 +394,9 @@ suspend fun getFriendList(user: String): String {
 suspend fun getFeedList(list: String): String {
     withContext(Dispatchers.IO) { delay(1000L) }
     return &quot;{FeedList..}&quot;
-}</div>2022-04-18</li><br/><li><span>Paul Shan</span> 👍（1） 💬（1）<div>suspend -&gt; Continuation -&gt;CoroutineContext + resumeWith
+}</p>2022-04-18</li><br/><li><span>Paul Shan</span> 👍（1） 💬（1）<p>suspend -&gt; Continuation -&gt;CoroutineContext + resumeWith
 协程上下文才是挂起和回调的幕后黑手，😀，也就是说所有的挂起函数调用的时候最终都要依托于某个协程。
-</div>2022-03-22</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<div>我理解 挂起函数（suspend 关键字）就类似于 注解，协程包含是具体解析与实现</div>2022-02-22</li><br/><li><span>WWWarmFly</span> 👍（1） 💬（2）<div>请教老师，文中有一句话     “你可能觉得，既然协程和挂起函数都是支持挂起和恢复的，那它们两个是不是同一个东西呢？”
+</p>2022-03-22</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<p>我理解 挂起函数（suspend 关键字）就类似于 注解，协程包含是具体解析与实现</p>2022-02-22</li><br/><li><span>WWWarmFly</span> 👍（1） 💬（2）<p>请教老师，文中有一句话     “你可能觉得，既然协程和挂起函数都是支持挂起和恢复的，那它们两个是不是同一个东西呢？”
 
 这里说的协程支持挂起和恢复，是不是说多个协程间的？挂起函数的挂起和恢复是不是说一个协程内的？
 
@@ -404,5 +404,5 @@ suspend fun getFeedList(list: String): String {
 
 
 那“你可能觉得，既然协程和挂起函数都是支持挂起和恢复的，那它们两个是不是同一个东西呢？” 是不是可以认为是同一个东西。
-</div>2022-02-20</li><br/><li><span>夜班同志</span> 👍（1） 💬（1）<div>挂起函数才有恢复的&quot;callback&quot;，普通函数没有</div>2022-02-18</li><br/><li><span>20220106</span> 👍（0） 💬（4）<div>小问题：挂起函数，被挂起后（被抓手）的挂起函数去干嘛了，就是暂停运行了嘛，看单词意思是这个意思。</div>2022-04-11</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>suspend 函数经过 CPS 转换，参数会多一个 Continuation 参数，其表示协程体，同时挂起函数内部会创建一个 SafeContinuaton 实例，将协程体的 continuation 保存到内部，SC 的作用是确保 resumeWith 只调用一次。</div>2022-04-06</li><br/>
+</p>2022-02-20</li><br/><li><span>夜班同志</span> 👍（1） 💬（1）<p>挂起函数才有恢复的&quot;callback&quot;，普通函数没有</p>2022-02-18</li><br/><li><span>20220106</span> 👍（0） 💬（4）<p>小问题：挂起函数，被挂起后（被抓手）的挂起函数去干嘛了，就是暂停运行了嘛，看单词意思是这个意思。</p>2022-04-11</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>suspend 函数经过 CPS 转换，参数会多一个 Continuation 参数，其表示协程体，同时挂起函数内部会创建一个 SafeContinuaton 实例，将协程体的 continuation 保存到内部，SC 的作用是确保 resumeWith 只调用一次。</p>2022-04-06</li><br/>
 </ul>

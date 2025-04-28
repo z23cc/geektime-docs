@@ -384,23 +384,23 @@ func SubjectListController(c *gin.Context) {
 
 欢迎在留言区分享你的思考。感谢你的收听，如果你觉得有收获，也欢迎你把今天的内容分享给你身边的朋友，邀他一起学习。我们下节课见。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>友</span> 👍（1） 💬（1）<div>大家不要只看文章不看github的代码 很细节的放在文章中 很占篇幅 一般都是说个思路 然后自己去迁移
+<li><span>友</span> 👍（1） 💬（1）<p>大家不要只看文章不看github的代码 很细节的放在文章中 很占篇幅 一般都是说个思路 然后自己去迁移
 不过 github的代码有些细节没处理好
  IRequest 很多方法其实已经删除了 但是接口定义还在 会让人迷糊  所以会有小伙伴说没有实现所有办法 这个得自己去判断思考的。
-不过希望老师之后可以注意下</div>2021-12-04</li><br/><li><span>友</span> 👍（0） 💬（1）<div>作为 方法名叫做 QueryAll 以及 Form  和 Param 这种方法 改变成 DefaultXXX 方法签名语义上并没有default的属性  老师这里是否可以修改下 还是说也是合理的</div>2021-12-03</li><br/><li><span>宙斯</span> 👍（0） 💬（1）<div>有没有可能将gin封装一个provider，然后在封装的provider里面加container，这样就不用在gin源码上更改了呢？</div>2021-11-23</li><br/><li><span>鸭补一生如梦</span> 👍（13） 💬（7）<div>现在定制的是 gin 的 1.7.3 版本，那么后续 gin 升级了，尤其是频繁升级，我们如何快速及时的进行升级更新？
-或者说隔一段时间再更新？</div>2021-10-06</li><br/><li><span>181</span> 👍（3） 💬（2）<div>--- FAIL: TestContextFormFileFailed (0.00s)
+不过希望老师之后可以注意下</p>2021-12-04</li><br/><li><span>友</span> 👍（0） 💬（1）<p>作为 方法名叫做 QueryAll 以及 Form  和 Param 这种方法 改变成 DefaultXXX 方法签名语义上并没有default的属性  老师这里是否可以修改下 还是说也是合理的</p>2021-12-03</li><br/><li><span>宙斯</span> 👍（0） 💬（1）<p>有没有可能将gin封装一个provider，然后在封装的provider里面加container，这样就不用在gin源码上更改了呢？</p>2021-11-23</li><br/><li><span>鸭补一生如梦</span> 👍（13） 💬（7）<p>现在定制的是 gin 的 1.7.3 版本，那么后续 gin 升级了，尤其是频繁升级，我们如何快速及时的进行升级更新？
+或者说隔一段时间再更新？</p>2021-10-06</li><br/><li><span>181</span> 👍（3） 💬（2）<p>--- FAIL: TestContextFormFileFailed (0.00s)
 panic: runtime error: invalid memory address or nil pointer dereference [recovered]
         panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x6678d2]
 
 
-这是啥原因</div>2022-03-07</li><br/><li><span>芒果少侠</span> 👍（3） 💬（5）<div>迁移完成后，遇到testcase不通过的问题。
+这是啥原因</p>2022-03-07</li><br/><li><span>芒果少侠</span> 👍（3） 💬（5）<p>迁移完成后，遇到testcase不通过的问题。
 https:&#47;&#47;github.com&#47;gin-gonic&#47;gin&#47;blob&#47;21125bbb3f550dbfa4c64151f7e01f58dd64e2b8&#47;context_test.go#L352
-如果是这个testcase，修改正则中包路径那部分即可（与自己项目go module path保持一致即可）。</div>2021-10-09</li><br/><li><span>tiger</span> 👍（2） 💬（0）<div>感觉整合了gin有点没有了自己写一个框架的感觉，我还是选择了分开放，分别同步了两边的一些方法。示例的框架简陋是简陋，不过一路顺下来思路还是很清晰的，引入了gin有种思路被打断了的感觉。</div>2023-08-12</li><br/><li><span>木小柒</span> 👍（2） 💬（1）<div>DefaultQueryXXX 是不是没有实现 形如: foo.com?a=1&amp;b=bar&amp;c[]=bar 中 c 的获取？
+如果是这个testcase，修改正则中包路径那部分即可（与自己项目go module path保持一致即可）。</p>2021-10-09</li><br/><li><span>tiger</span> 👍（2） 💬（0）<p>感觉整合了gin有点没有了自己写一个框架的感觉，我还是选择了分开放，分别同步了两边的一些方法。示例的框架简陋是简陋，不过一路顺下来思路还是很清晰的，引入了gin有种思路被打断了的感觉。</p>2023-08-12</li><br/><li><span>木小柒</span> 👍（2） 💬（1）<p>DefaultQueryXXX 是不是没有实现 形如: foo.com?a=1&amp;b=bar&amp;c[]=bar 中 c 的获取？
 我看 默认就支持 c=1&amp;c=2&amp;c=3 能获取到 c 的 slice [1, 2, 3]
-但是 c[]=1&amp;c[]=2&amp;c[]=3 是获取不到的，除了自己解析不知道有没有更正常一点的方式</div>2021-10-01</li><br/><li><span>i_chase</span> 👍（1） 💬（0）<div>http.request和response其实没有可扩展的，所以gin没有使用接口吧</div>2022-06-14</li><br/><li><span>🌿</span> 👍（1） 💬（0）<div>hade_request.go,hade_response.go,hade_context.go；类型、结构体、方法等命名可采用Object-C的前缀命名规则</div>2022-04-29</li><br/><li><span>一苇以航</span> 👍（0） 💬（1）<div>?       github.com&#47;gohade&#47;hade&#47;framework&#47;gin&#47;internal&#47;json      [no test files]
+但是 c[]=1&amp;c[]=2&amp;c[]=3 是获取不到的，除了自己解析不知道有没有更正常一点的方式</p>2021-10-01</li><br/><li><span>i_chase</span> 👍（1） 💬（0）<p>http.request和response其实没有可扩展的，所以gin没有使用接口吧</p>2022-06-14</li><br/><li><span>🌿</span> 👍（1） 💬（0）<p>hade_request.go,hade_response.go,hade_context.go；类型、结构体、方法等命名可采用Object-C的前缀命名规则</p>2022-04-29</li><br/><li><span>一苇以航</span> 👍（0） 💬（1）<p>?       github.com&#47;gohade&#47;hade&#47;framework&#47;gin&#47;internal&#47;json      [no test files]
         E:&#47;jikeshijian&#47;xuboyu-hade&#47;framework&#47;gin&#47;gin_integration_test.go:220 +0x9a
 created by github.com&#47;gohade&#47;hade&#47;framework&#47;gin.TestFileDescriptor in goroutine 223
         E:&#47;jikeshijian&#47;xuboyu-hade&#47;framework&#47;gin&#47;gin_integration_test.go:218 +0x210   怎么解决？
-</div>2024-07-30</li><br/><li><span>void</span> 👍（0） 💬（0）<div>这节的代码并没有把 IRequest 接口的方法都实现呀</div>2021-11-12</li><br/>
+</p>2024-07-30</li><br/><li><span>void</span> 👍（0） 💬（0）<p>这节的代码并没有把 IRequest 接口的方法都实现呀</p>2021-11-12</li><br/>
 </ul>

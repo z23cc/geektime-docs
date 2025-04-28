@@ -156,7 +156,7 @@ ACTIVE\_EXPIRE\_CYCLE\_LOOKUPS\_PER\_LOOP是Redis的一个参数，默认是20�
 
 欢迎在留言区写下你的思考和答案，我们一起讨论，共同学习进步。如果你觉得有所收获，欢迎你把今天的内容分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>bbbi</span> 👍（29） 💬（3）<div>针对redis-cluster还可以使用scan命令么？</div>2020-10-10</li><br/><li><span>Kaito</span> 👍（386） 💬（28）<div>在 Redis 中，还有哪些其他命令可以代替 KEYS 命令，实现同样的功能呢？这些命令的复杂度会导致 Redis 变慢吗？
+<li><span>bbbi</span> 👍（29） 💬（3）<p>针对redis-cluster还可以使用scan命令么？</p>2020-10-10</li><br/><li><span>Kaito</span> 👍（386） 💬（28）<p>在 Redis 中，还有哪些其他命令可以代替 KEYS 命令，实现同样的功能呢？这些命令的复杂度会导致 Redis 变慢吗？
 
 如果想要获取整个实例的所有key，建议使用SCAN命令代替。客户端通过执行SCAN $cursor COUNT $count可以得到一批key以及下一个游标$cursor，然后把这个$cursor当作SCAN的参数，再次执行，以此往复，直到返回的$cursor为0时，就把整个实例中的所有key遍历出来了。
 
@@ -172,8 +172,8 @@ SCAN是遍历整个实例的所有key，另外Redis针对Hash&#47;Set&#47;Sorted
 
 但是使用HSCAN&#47;SSCAN&#47;ZSCAN命令，返回的元素数量与执行SCAN逻辑可能不同。执行SCAN $cursor COUNT $count时一次最多返回count个数的key，数量不会超过count。
 
-但Hash&#47;Set&#47;Sorted Set元素数量比较少时，底层会采用intset&#47;ziplist方式存储，如果以这种方式存储，在执行HSCAN&#47;SSCAN&#47;ZSCAN命令时，会无视count参数，直接把所有元素一次性返回，也就是说，得到的元素数量是会大于count参数的。当底层转为哈希表或跳表存储时，才会真正使用发count参数，最多返回count个元素。</div>2020-09-18</li><br/><li><span>青青子衿</span> 👍（75） 💬（10）<div>当你发现 Redis 性能变慢时，可以通过 Redis 日志，或者是 latency monitor 工具，查询变慢的请求，根据请求对应的具体命令以及官方文档，确认下是否采用了复杂度高的慢查询命令。
-其实这个排除过程才是我们最想学习的，却被作者一带而过了。。。。</div>2020-09-18</li><br/><li><span>Geek_9b08a5</span> 👍（20） 💬（3）<div>第十八课：
+但Hash&#47;Set&#47;Sorted Set元素数量比较少时，底层会采用intset&#47;ziplist方式存储，如果以这种方式存储，在执行HSCAN&#47;SSCAN&#47;ZSCAN命令时，会无视count参数，直接把所有元素一次性返回，也就是说，得到的元素数量是会大于count参数的。当底层转为哈希表或跳表存储时，才会真正使用发count参数，最多返回count个元素。</p>2020-09-18</li><br/><li><span>青青子衿</span> 👍（75） 💬（10）<p>当你发现 Redis 性能变慢时，可以通过 Redis 日志，或者是 latency monitor 工具，查询变慢的请求，根据请求对应的具体命令以及官方文档，确认下是否采用了复杂度高的慢查询命令。
+其实这个排除过程才是我们最想学习的，却被作者一带而过了。。。。</p>2020-09-18</li><br/><li><span>Geek_9b08a5</span> 👍（20） 💬（3）<p>第十八课：
 1.作者讲了什么？
 	当redis查询变慢了怎么办，如何排查，如何进行处理？
 2.作者是怎么把这件事将明白的？
@@ -202,14 +202,14 @@ SCAN是遍历整个实例的所有key，另外Redis针对Hash&#47;Set&#47;Sorted
 		当scan在Redis在做Rehash时，会不会漏key或返回重复的key？
 			1.不漏keys：Redis在SCAN遍历全局哈希表时，采用*高位进位法*的方式遍历哈希桶（可网上查询图例，一看就明白），当哈希表扩容后，通过这种算法遍历，旧哈希表中的数据映射到新哈希表，依旧会保留原来的先后顺序，这样就可以保证遍历时不会遗漏也不会重复。
 			2.key重复：这个情况主要发生在哈希表缩容。已经遍历过的哈希桶在缩容时，会映射到新哈希表没有遍历到的位置，所以继续遍历就会对同一个key返回多次。处理方法是在客户端直接做重复过滤
-	2.在redis-cluster中，不能使用一次scan在整个集群中获取所有的key，只能通过在每个实例上单独执行scan才可以，再到客户端进行合并	</div>2020-12-30</li><br/><li><span>花儿少年</span> 👍（8） 💬（2）<div>好像说了什么，好像又什么都没说
+	2.在redis-cluster中，不能使用一次scan在整个集群中获取所有的key，只能通过在每个实例上单独执行scan才可以，再到客户端进行合并	</p>2020-12-30</li><br/><li><span>花儿少年</span> 👍（8） 💬（2）<p>好像说了什么，好像又什么都没说
 生产系统中出问题哪有时间整这些，赶紧恢复老板都在后面站着呢
-同时这些命令，keys、集合操作基本都是被禁用的；所以正常情况下，生产系统中Redis变慢一般都是bigkey，同时过期，热点数据等等</div>2021-07-23</li><br/><li><span>test</span> 👍（7） 💬（0）<div>通常线上是不能使用keys的，标准替代方案就是scan。scan不会导致redis变慢，只是如果在scan过程中kv表扩容的话可能会遇到重复key。
-PS：sort的时间复杂度是O(N+M*log(M)) 是因为需要创建一个新的数字，并且用快排去排序。</div>2020-09-18</li><br/><li><span>范闲</span> 👍（5） 💬（0）<div>可以利用scan命令。但是scan可能会返回重复key，使用方做个去重即可。</div>2020-12-03</li><br/><li><span>王益新</span> 👍（4） 💬（5）<div>&quot;默认情况下，Redis 每 100 毫秒会删除一些过期 key，具体的算法如下：采样 ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP 个数的 key，并将其中过期的 key 全部删除，ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP默认是 20，那么，一秒内基本有 200 个过期 key 会被删除。&quot;
+同时这些命令，keys、集合操作基本都是被禁用的；所以正常情况下，生产系统中Redis变慢一般都是bigkey，同时过期，热点数据等等</p>2021-07-23</li><br/><li><span>test</span> 👍（7） 💬（0）<p>通常线上是不能使用keys的，标准替代方案就是scan。scan不会导致redis变慢，只是如果在scan过程中kv表扩容的话可能会遇到重复key。
+PS：sort的时间复杂度是O(N+M*log(M)) 是因为需要创建一个新的数字，并且用快排去排序。</p>2020-09-18</li><br/><li><span>范闲</span> 👍（5） 💬（0）<p>可以利用scan命令。但是scan可能会返回重复key，使用方做个去重即可。</p>2020-12-03</li><br/><li><span>王益新</span> 👍（4） 💬（5）<p>&quot;默认情况下，Redis 每 100 毫秒会删除一些过期 key，具体的算法如下：采样 ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP 个数的 key，并将其中过期的 key 全部删除，ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP默认是 20，那么，一秒内基本有 200 个过期 key 会被删除。&quot;
 
 这里的采样是什么意思？获取ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP个过期的key吗？那为什么说是其中过期的key？
 
-如果采样得到的不全是过期的key，一秒内怎么还会有 200 个过期 key 会被删除？</div>2020-10-21</li><br/><li><span>那时刻</span> 👍（3） 💬（0）<div>前段时间时间刚好看了redis里sort的实现，说说的我的理解。sort是基于Bentley &amp; McIlroy&#39;s Engineering a Sort Function。可以认为是partial qsort，只保证指定返回的数据（函数参数里的lrange和rrange）有序即可。在元素个数小于7的时候，采用插入排序，因为元素个数小的时候，快速排序并不高效。元素个数大大于7的时候，采用快速排序，经过这些优化之后，SORT操作复杂度为 O(N+M*log(M))。</div>2020-09-18</li><br/><li><span>William Ning</span> 👍（2） 💬（0）<div>本机【Mac M1】运行情况如下：
+如果采样得到的不全是过期的key，一秒内怎么还会有 200 个过期 key 会被删除？</p>2020-10-21</li><br/><li><span>那时刻</span> 👍（3） 💬（0）<p>前段时间时间刚好看了redis里sort的实现，说说的我的理解。sort是基于Bentley &amp; McIlroy&#39;s Engineering a Sort Function。可以认为是partial qsort，只保证指定返回的数据（函数参数里的lrange和rrange）有序即可。在元素个数小于7的时候，采用插入排序，因为元素个数小的时候，快速排序并不高效。元素个数大大于7的时候，采用快速排序，经过这些优化之后，SORT操作复杂度为 O(N+M*log(M))。</p>2020-09-18</li><br/><li><span>William Ning</span> 👍（2） 💬（0）<p>本机【Mac M1】运行情况如下：
 ➜  bin .&#47;redis-cli --intrinsic-latency 120
 Max latency so far: 1 microseconds.
 Max latency so far: 3 microseconds.
@@ -234,7 +234,7 @@ Max latency so far: 9128 microseconds.
 
 2686736240 total runs (avg latency: 0.0447 microseconds &#47; 44.66 nanoseconds per run).
 Worst run took 204371x longer than the average latency.
-➜  bin </div>2022-04-01</li><br/><li><span>唐朝首都</span> 👍（2） 💬（8）<div>定时删除是个异步流程吧？为啥会是一个阻塞操作？是要删除的key特别多会导致cpu被大量占用，影响了主线程调用？</div>2020-10-21</li><br/><li><span>勿更改任何信息</span> 👍（1） 💬（0）<div>Redis过期删除是在主线程里吗</div>2022-10-31</li><br/><li><span>escray</span> 👍（1） 💬（0）<div>执行了一下 redis-cli --intrinsic-latency 120 命令，发现结果比较有意思，两次的结果差不多，从一开始 1 ms 的延迟，一直到后来的 8000+ ms。我访问的是 aliyun 上的 Redis。
+➜  bin </p>2022-04-01</li><br/><li><span>唐朝首都</span> 👍（2） 💬（8）<p>定时删除是个异步流程吧？为啥会是一个阻塞操作？是要删除的key特别多会导致cpu被大量占用，影响了主线程调用？</p>2020-10-21</li><br/><li><span>勿更改任何信息</span> 👍（1） 💬（0）<p>Redis过期删除是在主线程里吗</p>2022-10-31</li><br/><li><span>escray</span> 👍（1） 💬（0）<p>执行了一下 redis-cli --intrinsic-latency 120 命令，发现结果比较有意思，两次的结果差不多，从一开始 1 ms 的延迟，一直到后来的 8000+ ms。我访问的是 aliyun 上的 Redis。
 
 ```
 &gt; redis-cli --intrinsic-latency 120
@@ -298,5 +298,5 @@ KEYS 命令一般不用于生产环境。
    2) &quot;comments&quot;
 ```
 
-在 课代表 @kaito 的提示下，看了一下 Redis 在 SCAN 时采用的 高位进位法，确实浅显易懂。</div>2021-03-26</li><br/><li><span>喵喵喵</span> 👍（1） 💬（0）<div>打卡</div>2020-10-12</li><br/><li><span>Jessie</span> 👍（0） 💬（0）<div>有一个小问题，这种采样+检测过期率的删除策略是不是不太合理呀，如果是均匀采样的话，那理论上采样中的过期率和剩余数据的过期率应该是一致且不变的，会不会有一直无法跳出循环的情况？</div>2024-08-25</li><br/>
+在 课代表 @kaito 的提示下，看了一下 Redis 在 SCAN 时采用的 高位进位法，确实浅显易懂。</p>2021-03-26</li><br/><li><span>喵喵喵</span> 👍（1） 💬（0）<p>打卡</p>2020-10-12</li><br/><li><span>Jessie</span> 👍（0） 💬（0）<p>有一个小问题，这种采样+检测过期率的删除策略是不是不太合理呀，如果是均匀采样的话，那理论上采样中的过期率和剩余数据的过期率应该是一致且不变的，会不会有一直无法跳出循环的情况？</p>2024-08-25</li><br/>
 </ul>

@@ -297,22 +297,22 @@ Download 15 sites in 0.21698231499976828 seconds
 
 最后给你留一道思考题。你能否通过查阅相关文档，为今天所讲的这个下载网站内容的例子，加上合理的异常处理，让程序更加稳定健壮呢？欢迎在留言区写下你的思考和答案，也欢迎你把今天的内容分享给你的同事朋友，我们一起交流、一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>KaitoShy</span> 👍（73） 💬（4）<div>思考题：
+<li><span>KaitoShy</span> 👍（73） 💬（4）<p>思考题：
 1. request.get 会触发：ConnectionError, TimeOut, HTTPError等，所有显示抛出的异常都是继承requests.exceptions.RequestException 
 2. executor.map(download_one, urls) 会触发concurrent.futures.TimeoutError
 3. result() 会触发Timeout，CancelledError
-4. as_completed() 会触发TimeOutError</div>2019-06-26</li><br/><li><span>Goal</span> 👍（11） 💬（1）<div>学习到的知识点：
+4. as_completed() 会触发TimeOutError</p>2019-06-26</li><br/><li><span>Goal</span> 👍（11） 💬（1）<p>学习到的知识点：
 1. 并发和并行的区别，大佬通俗易懂的方式让我更深刻的体会到了程序到底是如何跑在多核机器上的
 2. python中 Futures 特性，第一次接触到这个模块，待后续继续加深了解；
 3. Python 中之所以同一时刻只允许一个线程运行，大佬解释了这是因为全局解释器锁的存在，而全局解释器锁又是为了解决 race condition而引入的，这个也从另一方面验证了我之前学习到的，python中多线程是无法利用多核的； 
-但是多线程无法利用多核也并不是一无是处，就像大佬在文中聊到的，多线程主要的适用场景就是 有IO延迟的场景，因为一个线程遇到IO延迟，它占用的全局解释器锁就会释放，而另一个线程即可以拿到锁开始执行； 这种在IO延迟场景中的并发，高效也是显而易见的；</div>2020-01-09</li><br/><li><span>Steve</span> 👍（7） 💬（1）<div>老师，我有一个很类似的场景。之前我用单线程去下载所有页面。然后在每个页面解析出需要的内容放入一个集合里。如果改成并发的实现，多线程写一个集合(写文件也类似)，是不是有线程安全的问题。有没有小例子可以学习一下~</div>2020-05-15</li><br/><li><span>Geek_5bb182</span> 👍（7） 💬（1）<div>老师你好，concurrent.futures 和 asyncio 中的Future 的区别是什么，在携程编程中</div>2019-06-27</li><br/><li><span>干布球</span> 👍（4） 💬（3）<div>请问老师，future任务是调用submit后就开始执行，还是在调用as_completed之后才开始执行呢？</div>2019-06-26</li><br/><li><span>简传宝</span> 👍（3） 💬（1）<div>老师好，请问是否可以理解为计算密集型任务用多进程，io密集型用多线程</div>2019-06-27</li><br/><li><span>helloworld</span> 👍（3） 💬（3）<div>总结下并发和并行的概念：
+但是多线程无法利用多核也并不是一无是处，就像大佬在文中聊到的，多线程主要的适用场景就是 有IO延迟的场景，因为一个线程遇到IO延迟，它占用的全局解释器锁就会释放，而另一个线程即可以拿到锁开始执行； 这种在IO延迟场景中的并发，高效也是显而易见的；</p>2020-01-09</li><br/><li><span>Steve</span> 👍（7） 💬（1）<p>老师，我有一个很类似的场景。之前我用单线程去下载所有页面。然后在每个页面解析出需要的内容放入一个集合里。如果改成并发的实现，多线程写一个集合(写文件也类似)，是不是有线程安全的问题。有没有小例子可以学习一下~</p>2020-05-15</li><br/><li><span>Geek_5bb182</span> 👍（7） 💬（1）<p>老师你好，concurrent.futures 和 asyncio 中的Future 的区别是什么，在携程编程中</p>2019-06-27</li><br/><li><span>干布球</span> 👍（4） 💬（3）<p>请问老师，future任务是调用submit后就开始执行，还是在调用as_completed之后才开始执行呢？</p>2019-06-26</li><br/><li><span>简传宝</span> 👍（3） 💬（1）<p>老师好，请问是否可以理解为计算密集型任务用多进程，io密集型用多线程</p>2019-06-27</li><br/><li><span>helloworld</span> 👍（3） 💬（3）<p>总结下并发和并行的概念：
 
 并发，是指遇到I&#47;O阻塞时（一般是网络I&#47;O或磁盘I&#47;O），通过多个线程之间切换执行多个任务（多线程）或单线程内多个任务之间切换执行的方式来最大化利用CPU时间，但同一时刻，只允许有一个线程或任务执行。适合I&#47;O阻塞频繁的业务场景。
 
-并行，是指多个进程完全同步同时的执行。适合CPU密集型业务场景。</div>2019-06-26</li><br/><li><span>LJK</span> 👍（3） 💬（4）<div>老师好，请问一下在python存在GIL的情况下，多进程是不是还是无法并发运行？谢谢老师</div>2019-06-26</li><br/><li><span>_stuView</span> 👍（2） 💬（1）<div>老师，请问什么是线程安全，什么是race condition呢？</div>2019-06-26</li><br/><li><span>MarDino</span> 👍（1） 💬（1）<div>想问下老师，该怎么向executor.map中的函数，传入多个参数？</div>2020-02-11</li><br/><li><span>BotterZhang</span> 👍（47） 💬（4）<div>关于concurrent写过一篇学习笔记：
+并行，是指多个进程完全同步同时的执行。适合CPU密集型业务场景。</p>2019-06-26</li><br/><li><span>LJK</span> 👍（3） 💬（4）<p>老师好，请问一下在python存在GIL的情况下，多进程是不是还是无法并发运行？谢谢老师</p>2019-06-26</li><br/><li><span>_stuView</span> 👍（2） 💬（1）<p>老师，请问什么是线程安全，什么是race condition呢？</p>2019-06-26</li><br/><li><span>MarDino</span> 👍（1） 💬（1）<p>想问下老师，该怎么向executor.map中的函数，传入多个参数？</p>2020-02-11</li><br/><li><span>BotterZhang</span> 👍（47） 💬（4）<p>关于concurrent写过一篇学习笔记：
 https:&#47;&#47;www.zhangqibot.com&#47;post&#47;python-concurrent-futures&#47;
 Python实现多线程&#47;多进程，大家常常会用到标准库中的threading和multiprocessing模块。
-但从Python3.2开始，标准库为我们提供了concurrent.futures模块，它提供了ThreadPoolExecutor和ProcessPoolExecutor两个类，实现了对threading和multiprocessing的进一步抽象，使得开发者只需编写少量代码即可让程序实现并行计算。</div>2019-06-26</li><br/><li><span>SCAR</span> 👍（30） 💬（0）<div>future之与中文理解起来其实挺微妙，不过这与生活中大家熟知的期物在底层逻辑上是一致的，future英文词义中就有期货的意思，都是封存一个东西，平常你该干嘛就干嘛，可以不用去理会，在未来的某个时候去看结果就行，只是python中那个物是对象而已。而关键词是延迟，异步。
+但从Python3.2开始，标准库为我们提供了concurrent.futures模块，它提供了ThreadPoolExecutor和ProcessPoolExecutor两个类，实现了对threading和multiprocessing的进一步抽象，使得开发者只需编写少量代码即可让程序实现并行计算。</p>2019-06-26</li><br/><li><span>SCAR</span> 👍（30） 💬（0）<p>future之与中文理解起来其实挺微妙，不过这与生活中大家熟知的期物在底层逻辑上是一致的，future英文词义中就有期货的意思，都是封存一个东西，平常你该干嘛就干嘛，可以不用去理会，在未来的某个时候去看结果就行，只是python中那个物是对象而已。而关键词是延迟，异步。
 思考题：添加异常处理
 def download_all(sites):
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
@@ -333,7 +333,7 @@ def download_all(sites):
             if  e_msg:
                 site=to_do[future]
                 Print(‘Error is {} from {}’.format(e_msg,site))
-</div>2019-06-26</li><br/><li><span>大王叫我来巡山</span> 👍（14） 💬（8）<div>老师，我感觉您对并发和并行的理解是有问题的，并发是针对最初的单核CPU的，并行是针对现代的多核CPU，并且所有的调度行为都是基于线程的，一个进程中至少有一个线程，资源的分配是基与进程的，并不是只有多进程模型才可以同时在多个核心上运行的。</div>2019-11-19</li><br/><li><span>Fergus</span> 👍（7） 💬（3）<div>需要加异常的应该就只有一个地方：requests.get()发送网页请求的时候。其它地方不涉及IO。也不涉及数据类型变化，不用做数据类型判断。
+</p>2019-06-26</li><br/><li><span>大王叫我来巡山</span> 👍（14） 💬（8）<p>老师，我感觉您对并发和并行的理解是有问题的，并发是针对最初的单核CPU的，并行是针对现代的多核CPU，并且所有的调度行为都是基于线程的，一个进程中至少有一个线程，资源的分配是基与进程的，并不是只有多进程模型才可以同时在多个核心上运行的。</p>2019-11-19</li><br/><li><span>Fergus</span> 👍（7） 💬（3）<p>需要加异常的应该就只有一个地方：requests.get()发送网页请求的时候。其它地方不涉及IO。也不涉及数据类型变化，不用做数据类型判断。
 由于不能访问wiki，所以网页改了成了国内的。
 -- ps: 和0.2s比起来太慢了。
 
@@ -396,10 +396,10 @@ if __name__ == &#39;__main__&#39;:
 # Read 174553 from http:&#47;&#47;news.sohu.com&#47;
 # Read 19492 from https:&#47;&#47;pypi.org&#47;
 # Download 12 sites in 2.8500169346527673 s
-# [Finished in 3.6s]</div>2019-06-30</li><br/><li><span>somenzz</span> 👍（4） 💬（1）<div>from multiprocessing.dummy import Pool as ThreadPool
+# [Finished in 3.6s]</p>2019-06-30</li><br/><li><span>somenzz</span> 👍（4） 💬（1）<p>from multiprocessing.dummy import Pool as ThreadPool
 with ThreadPool(processes=100) as executor:
     executor.map(func, iterable)
 
 请问老师，Futures 和这种方式哪一种好呢？ 我在实际的网终请求中发现 Futures 请求成功的次数更少。 都是 100 个线程，处理 3000 个相同的请求。 
-</div>2019-07-19</li><br/>
+</p>2019-07-19</li><br/>
 </ul>

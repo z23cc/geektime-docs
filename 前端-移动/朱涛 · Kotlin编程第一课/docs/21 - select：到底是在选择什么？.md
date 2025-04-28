@@ -714,9 +714,9 @@ result2
 
 你能从中悟出select的实现原理吗？ 欢迎在留言区说说你的想法，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>白乾涛</span> 👍（3） 💬（3）<div>作为一个 Android 开发同学，我感觉协程没 Kotlin 基础语法香。
+<li><span>白乾涛</span> 👍（3） 💬（3）<p>作为一个 Android 开发同学，我感觉协程没 Kotlin 基础语法香。
 因为在 Android 中，异步任务没那么多，也没什么嵌套，只要稍加封装，用起来也没那么痛。
-所以协程没想象中的那么实用。</div>2022-03-13</li><br/><li><span>白乾涛</span> 👍（3） 💬（1）<div>所有的 onXX 都是回调
-所有的异步都会用到回调</div>2022-03-09</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（2） 💬（1）<div>不是很理解select的应用场景</div>2022-04-27</li><br/><li><span>jim</span> 👍（1） 💬（1）<div>配合Channel使用感觉变复杂了</div>2022-04-02</li><br/><li><span>L先生</span> 👍（1） 💬（2）<div>是不是类似于callback，包了一层，返回出去。内部可能每个包个async，然后谁先出数据就callback出去</div>2022-03-07</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<div>请问老师，是不是flow因为有了combine等操作符就不需要select了?</div>2022-03-24</li><br/><li><span>better</span> 👍（0） 💬（1）<div>onXXX 表示回调的多，另外也可以表示会自动执行的方法（看个人习惯）。
-感觉源代码难读，大概读了一下，发现有个注册回调的地方，当回调执行时，会判断一下 isSelected，如 select 已选择，则后续的就不走了。不知道对不对</div>2022-03-09</li><br/><li><span>神秘嘉Bin</span> 👍（0） 💬（1）<div>是不是利用了onComplete和onStart进行计时，然后返回最快的一个？</div>2022-03-07</li><br/><li><span>Renext</span> 👍（0） 💬（1）<div>学习了</div>2022-03-07</li><br/><li><span>瞌睡的李先生</span> 👍（2） 💬（0）<div>学过go语言的同学会感觉到这一篇真的特别好理解。学到现在感觉kotlin的协程有种集百家之长的感觉，对于多种语言背景的同学都可以方便地学习上手。</div>2022-09-12</li><br/><li><span>BUG君</span> 👍（1） 💬（0）<div>看到有小伙伴留言说不是很好理解，其实还是基础知识的问题，建议先去补补java得IO模型的基础知识，再回过头来看会更好理解一些</div>2023-07-22</li><br/><li><span>anmi</span> 👍（0） 💬（0）<div>看起来很像回调，问题是回调里怎么可以定义函数</div>2023-11-12</li><br/>
+所以协程没想象中的那么实用。</p>2022-03-13</li><br/><li><span>白乾涛</span> 👍（3） 💬（1）<p>所有的 onXX 都是回调
+所有的异步都会用到回调</p>2022-03-09</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（2） 💬（1）<p>不是很理解select的应用场景</p>2022-04-27</li><br/><li><span>jim</span> 👍（1） 💬（1）<p>配合Channel使用感觉变复杂了</p>2022-04-02</li><br/><li><span>L先生</span> 👍（1） 💬（2）<p>是不是类似于callback，包了一层，返回出去。内部可能每个包个async，然后谁先出数据就callback出去</p>2022-03-07</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<p>请问老师，是不是flow因为有了combine等操作符就不需要select了?</p>2022-03-24</li><br/><li><span>better</span> 👍（0） 💬（1）<p>onXXX 表示回调的多，另外也可以表示会自动执行的方法（看个人习惯）。
+感觉源代码难读，大概读了一下，发现有个注册回调的地方，当回调执行时，会判断一下 isSelected，如 select 已选择，则后续的就不走了。不知道对不对</p>2022-03-09</li><br/><li><span>神秘嘉Bin</span> 👍（0） 💬（1）<p>是不是利用了onComplete和onStart进行计时，然后返回最快的一个？</p>2022-03-07</li><br/><li><span>Renext</span> 👍（0） 💬（1）<p>学习了</p>2022-03-07</li><br/><li><span>瞌睡的李先生</span> 👍（2） 💬（0）<p>学过go语言的同学会感觉到这一篇真的特别好理解。学到现在感觉kotlin的协程有种集百家之长的感觉，对于多种语言背景的同学都可以方便地学习上手。</p>2022-09-12</li><br/><li><span>BUG君</span> 👍（1） 💬（0）<p>看到有小伙伴留言说不是很好理解，其实还是基础知识的问题，建议先去补补java得IO模型的基础知识，再回过头来看会更好理解一些</p>2023-07-22</li><br/><li><span>anmi</span> 👍（0） 💬（0）<p>看起来很像回调，问题是回调里怎么可以定义函数</p>2023-11-12</li><br/>
 </ul>

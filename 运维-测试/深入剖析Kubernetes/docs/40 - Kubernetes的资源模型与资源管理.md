@@ -219,18 +219,18 @@ spec:
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>DJH</span> 👍（82） 💬（5）<div>“为什么宿主机进入 MemoryPressure 或者 Dis...“
+<li><span>DJH</span> 👍（82） 💬（5）<p>“为什么宿主机进入 MemoryPressure 或者 Dis...“
 
-这是因为给宿主机打了污点标记吗？</div>2018-11-23</li><br/><li><span>gogo</span> 👍（41） 💬（5）<div>老师您好，cpu设置limit之后，容器的cpu使用率永远不会超过这个限制对吗？而mem设置limit之后，容器mem使用率有可能超过这个限制而被kill掉，也就是说设置了cpu limit之后，容器永远不会因为cpu超过限制而被kill对吗</div>2018-11-23</li><br/><li><span>刘岚乔月</span> 👍（21） 💬（3）<div>1、3、5都在追文章，一直都有一个疑问，请作者能解惑下。
+这是因为给宿主机打了污点标记吗？</p>2018-11-23</li><br/><li><span>gogo</span> 👍（41） 💬（5）<p>老师您好，cpu设置limit之后，容器的cpu使用率永远不会超过这个限制对吗？而mem设置limit之后，容器mem使用率有可能超过这个限制而被kill掉，也就是说设置了cpu limit之后，容器永远不会因为cpu超过限制而被kill对吗</p>2018-11-23</li><br/><li><span>刘岚乔月</span> 👍（21） 💬（3）<p>1、3、5都在追文章，一直都有一个疑问，请作者能解惑下。
 对于主java是其他语言（非运维）的同学来说，我们是否需要深入了解k8s和docker（还是停留在使用层面） 我想一直跟着学的同学大部门还是冲着能找到更好的工作去的（有情怀的同学请忽略）
 目前更大公司的招聘对于要求掌握k8s和docker的基本上都是运维岗位。
 并没有招聘java要求掌握k8s和docker，面试中也不曾问到。感觉很尴尬 - -！
 毕竟时间成本在哪，请作者能阐述下自己的观点！
-</div>2018-11-25</li><br/><li><span>虎虎❤️</span> 👍（11） 💬（4）<div>在namespace limitRange 里面设置了default request 和 default limit之后，创建出来的pod即使不显式指定limit和request，是不是也是guaranteed？</div>2018-11-27</li><br/><li><span>unique</span> 👍（10） 💬（5）<div>这时候，该 Pod 就会被绑定在 2 个独占的 CPU 核上。
+</p>2018-11-25</li><br/><li><span>虎虎❤️</span> 👍（11） 💬（4）<p>在namespace limitRange 里面设置了default request 和 default limit之后，创建出来的pod即使不显式指定limit和request，是不是也是guaranteed？</p>2018-11-27</li><br/><li><span>unique</span> 👍（10） 💬（5）<p>这时候，该 Pod 就会被绑定在 2 个独占的 CPU 核上。
 
-独占的意思就是其它pod 不能使用这两个CPU了么？</div>2018-11-23</li><br/><li><span>beenchaos</span> 👍（4） 💬（1）<div>请问张老师，cpuset是否只适用于nginx或者redis这类单线程的应用，为这类进程单独绑定一个CPU。而针对多线程的应用程序，设置cpuset反而会限制该应用程序的并发能力？这样理解准确么？</div>2019-05-28</li><br/><li><span>初学者</span> 👍（4） 💬（1）<div>老师，能不能讲一下kubernetes是如何划分和管理宿主机上的cgroups结构的？</div>2018-12-01</li><br/><li><span>汪浩</span> 👍（3） 💬（1）<div>被称作“不可压缩资源（compressible resources）
+独占的意思就是其它pod 不能使用这两个CPU了么？</p>2018-11-23</li><br/><li><span>beenchaos</span> 👍（4） 💬（1）<p>请问张老师，cpuset是否只适用于nginx或者redis这类单线程的应用，为这类进程单独绑定一个CPU。而针对多线程的应用程序，设置cpuset反而会限制该应用程序的并发能力？这样理解准确么？</p>2019-05-28</li><br/><li><span>初学者</span> 👍（4） 💬（1）<p>老师，能不能讲一下kubernetes是如何划分和管理宿主机上的cgroups结构的？</p>2018-12-01</li><br/><li><span>汪浩</span> 👍（3） 💬（1）<p>被称作“不可压缩资源（compressible resources）
 
-应该是 uncompressible</div>2018-11-25</li><br/><li><span>Pixar</span> 👍（1） 💬（2）<div>如果某个Guaranted Pod 的 Mem 设定为了256，在宿主机资源不紧张但该Pod 的的 mem 使用量达到了256以后会出现什么情况？会被oom杀掉吗？</div>2018-11-23</li><br/><li><span>chenhz</span> 👍（43） 💬（2）<div>
+应该是 uncompressible</p>2018-11-25</li><br/><li><span>Pixar</span> 👍（1） 💬（2）<p>如果某个Guaranted Pod 的 Mem 设定为了256，在宿主机资源不紧张但该Pod 的的 mem 使用量达到了256以后会出现什么情况？会被oom杀掉吗？</p>2018-11-23</li><br/><li><span>chenhz</span> 👍（43） 💬（2）<p>
 Pod 是最小的原子调度单位，所有跟调度和资源管理相关的属性，都是 Pod 对象属性的字段。其中最重要的是 Pod 和 CPU 配置。其中，CPU 属于可压缩资源，内存属于不可压缩资源。当可压缩资源不足时，Pod 会饥饿；当不可压缩资源不足时，Pod 就会因为 OOM 被内核杀掉。
 
 Pod ，即容器组，由多个容器组成，其 CPU 和内存配额在 Container 上定义，其 Container 配置的累加值即为 Pod 的配额。
@@ -261,9 +261,9 @@ kubelet --eviction-hard=imagefs.available&lt;10%,memory.available&lt;500Mi,nodef
 **eviction 计算原理**： 将 Cgroups （limits属性）设置的值和 cAdvisor 监控的数据相比较。
 
 
-最佳实践：DaemonSet 的 Pod 都设置为 Guaranteed， 避免进入“回收-&gt;创建-&gt;回收-&gt;创建”的“死循环”。</div>2020-03-19</li><br/><li><span>wilder</span> 👍（30） 💬（1）<div>极客时间里面最爱的课程，没有之一，哈哈哈哈哈哈</div>2018-11-23</li><br/><li><span>Flying</span> 👍（12） 💬（2）<div>请用老师，cpuset为2，这个Pod就独占两个cpu核上，假如宿主机总共只有10个cpu核，那么这台机就只能运行5个cpuset=2的Pod吗</div>2018-11-30</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（3）<div>能否分享一下给namespace 设置quota的经验呢？
+最佳实践：DaemonSet 的 Pod 都设置为 Guaranteed， 避免进入“回收-&gt;创建-&gt;回收-&gt;创建”的“死循环”。</p>2020-03-19</li><br/><li><span>wilder</span> 👍（30） 💬（1）<p>极客时间里面最爱的课程，没有之一，哈哈哈哈哈哈</p>2018-11-23</li><br/><li><span>Flying</span> 👍（12） 💬（2）<p>请用老师，cpuset为2，这个Pod就独占两个cpu核上，假如宿主机总共只有10个cpu核，那么这台机就只能运行5个cpuset=2的Pod吗</p>2018-11-30</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（3）<p>能否分享一下给namespace 设置quota的经验呢？
 
 如果设置的太小，会造成资源的浪费。如果设置太大，又怕起不到限制的作用。一个namespace使用资源太多可能会影响其他namespace用户的使用。
 
-这是否也是namespace只能做soft multi-tenant的佐证呢？Cloudfoundry应该是按照实际的usage来设置space的quota，如果有监控插件，k8s可以也按照实际的usage来设置quota吗？</div>2018-11-23</li><br/><li><span>黑米</span> 👍（7） 💬（8）<div>如果一个java应用JAVA_OPTS配置了-Xms4g -Xmx4g，k8s这边要配置多少的limit比较合适？直接4Gi的话应用内存达到一个阈值会被重启。</div>2019-12-12</li><br/><li><span>Adam</span> 👍（4） 💬（3）<div>宿主机进入了MemoryPressure后被打上污点标记，新的POD不会被调度到此节点，那假如宿主机资源恢复正常后，这个污点标记会自己消失吗？还是说需要人工介入去处理。</div>2019-10-10</li><br/>
+这是否也是namespace只能做soft multi-tenant的佐证呢？Cloudfoundry应该是按照实际的usage来设置space的quota，如果有监控插件，k8s可以也按照实际的usage来设置quota吗？</p>2018-11-23</li><br/><li><span>黑米</span> 👍（7） 💬（8）<p>如果一个java应用JAVA_OPTS配置了-Xms4g -Xmx4g，k8s这边要配置多少的limit比较合适？直接4Gi的话应用内存达到一个阈值会被重启。</p>2019-12-12</li><br/><li><span>Adam</span> 👍（4） 💬（3）<p>宿主机进入了MemoryPressure后被打上污点标记，新的POD不会被调度到此节点，那假如宿主机资源恢复正常后，这个污点标记会自己消失吗？还是说需要人工介入去处理。</p>2019-10-10</li><br/>
 </ul>

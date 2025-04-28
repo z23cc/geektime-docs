@@ -278,9 +278,9 @@ CVE-2021-41773影响的是Apache HTTP Server 2.4.49版本，因此我们可以�
 
 欢迎在评论区留下你的思考，我们下节课再见。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>可以讲讲最近log4j的漏洞吗？为了不打乱课程计划，可以以加餐的形式来讲，</div>2021-12-24</li><br/><li><span>DoHer4S</span> 👍（0） 💬（2）<div>老师您好，在MiTuan中执行您上边的代码，返回 400 Bad Request 错误；
+<li><span>peter</span> 👍（1） 💬（1）<p>可以讲讲最近log4j的漏洞吗？为了不打乱课程计划，可以以加餐的形式来讲，</p>2021-12-24</li><br/><li><span>DoHer4S</span> 👍（0） 💬（2）<p>老师您好，在MiTuan中执行您上边的代码，返回 400 Bad Request 错误；
 尝试在 URL 中访问路径 `&#47;cgi-bin` 返回404；
-请问是哪里出问题呢？</div>2021-12-24</li><br/><li><span>空间探索</span> 👍（0） 💬（2）<div>MiTuan 上对应这个CVE 的靶机 返回的信息是 
+请问是哪里出问题呢？</p>2021-12-24</li><br/><li><span>空间探索</span> 👍（0） 💬（2）<p>MiTuan 上对应这个CVE 的靶机 返回的信息是 
 &lt;html&gt;
 &lt;head&gt;&lt;title&gt;400 Bad Request&lt;&#47;title&gt;&lt;&#47;head&gt;
 &lt;body&gt;
@@ -289,7 +289,7 @@ CVE-2021-41773影响的是Apache HTTP Server 2.4.49版本，因此我们可以�
 &lt;&#47;body&gt;
 &lt;&#47;html&gt;
 
-感觉靶机不对吧</div>2021-12-24</li><br/><li><span>波动星球</span> 👍（0） 💬（1）<div>CVE-2021-42013 Mituan中 搜不到 </div>2021-12-24</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-06</li><br/><li><span>南瓜不胡闹</span> 👍（0） 💬（0）<div>42013验证成功，在mituan上的那个靶场有flag可以获取提交么</div>2022-10-08</li><br/><li><span>南瓜不胡闹</span> 👍（0） 💬（0）<div>测试为什么返回的是408报错呢
+感觉靶机不对吧</p>2021-12-24</li><br/><li><span>波动星球</span> 👍（0） 💬（1）<p>CVE-2021-42013 Mituan中 搜不到 </p>2021-12-24</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-06</li><br/><li><span>南瓜不胡闹</span> 👍（0） 💬（0）<p>42013验证成功，在mituan上的那个靶场有flag可以获取提交么</p>2022-10-08</li><br/><li><span>南瓜不胡闹</span> 👍（0） 💬（0）<p>测试为什么返回的是408报错呢
 
 HTTP&#47;1.1 408 Request Timeout
 Date: Sat, 08 Oct 2022 10:49:48 GMT
@@ -304,5 +304,5 @@ Content-Type: text&#47;html; charset=iso-8859-1
 &lt;&#47;head&gt;&lt;body&gt;
 &lt;h1&gt;Request Timeout&lt;&#47;h1&gt;
 &lt;p&gt;Server timeout waiting for the HTTP request from the client.&lt;&#47;p&gt;
-&lt;&#47;body&gt;&lt;&#47;html&gt;</div>2022-10-08</li><br/>
+&lt;&#47;body&gt;&lt;&#47;html&gt;</p>2022-10-08</li><br/>
 </ul>

@@ -193,5 +193,5 @@ sentiment.save('sentiment2.marshal');  # 保存训练模型
 
 我给你留一道思考题，我在最后一段代码分别统计了正向和负向评价的数量，你能否根据这段代码统计一段文字中包含了多少个动词、多少个名词和多少个形容词呢？欢迎你在课程评论区留言，和我一起讨论。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>陈东</span> 👍（2） 💬（2）<div>老师能分享你词性统计的思路吗？</div>2021-03-19</li><br/><li><span>Soul of the Dragon</span> 👍（1） 💬（1）<div>有个问题请教一下老师，我在思考题中用代码统计各种词性的数量，但每次统计的结果都不对，和实际数量相去甚远，不知道是什么原因。</div>2021-02-24</li><br/><li><span>笨笨</span> 👍（0） 💬（1）<div>jieba.suggest_freq((&quot;中&quot;, &quot;将&quot;), tune = True)老师这句代码应该放在哪里使用呢？是放在words2=jieba.cut(words1)后使用吗?</div>2023-06-27</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-05</li><br/>
+<li><span>陈东</span> 👍（2） 💬（2）<p>老师能分享你词性统计的思路吗？</p>2021-03-19</li><br/><li><span>Soul of the Dragon</span> 👍（1） 💬（1）<p>有个问题请教一下老师，我在思考题中用代码统计各种词性的数量，但每次统计的结果都不对，和实际数量相去甚远，不知道是什么原因。</p>2021-02-24</li><br/><li><span>笨笨</span> 👍（0） 💬（1）<p>jieba.suggest_freq((&quot;中&quot;, &quot;将&quot;), tune = True)老师这句代码应该放在哪里使用呢？是放在words2=jieba.cut(words1)后使用吗?</p>2023-06-27</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-05</li><br/>
 </ul>

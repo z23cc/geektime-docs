@@ -212,10 +212,10 @@ console.log("Server is runing at port: " + PORT + ".");
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>张凯</span> 👍（2） 💬（1）<div>作为一个c++领域的web菜鸟，勉力看之，这个wasm是放到服务器上，客户端需要把这个文件一次性的加载到本地？？</div>2020-11-05</li><br/><li><span>qinsi</span> 👍（2） 💬（4）<div>相比WebGL实现的滤镜有性能优势吗？</div>2020-10-07</li><br/><li><span>军秋</span> 👍（2） 💬（1）<div>emscripten的不同版本对编译后的wasm产物性能上会有差异吗？</div>2020-10-07</li><br/><li><span>Quickeryi</span> 👍（0） 💬（1）<div>“为了能够支持在 Web 浏览器中“使用”诸如 std::fopen 等 C&#47;C++ 语言中，用于访问本机文件资源的标准库函数，Emscripten 会使用诸如 LocalStorage 之类的浏览器特性，来模拟完整的 POSIX 文件操作和相关的数据结构。当然，只不过这一切都是使用 JavaScript 来模拟实现的”
-关于上面的说法有个疑问，难道不是因为浏览器提供了对应的wasm runtime？</div>2022-07-03</li><br/><li><span>看不山是山,看水是不水。</span> 👍（0） 💬（3）<div>在c中就只写了个malloc n个字节的接口和一个free的接口，并导出这两个接口，在html中先malloc一个大内存，比如100M,之后马上调用free接口，在任务管理器看内存参数，free之后怎么没有看到内存减少是什么现象啊</div>2021-07-08</li><br/><li><span>itgou</span> 👍（0） 💬（2）<div>wasm能否实现解码rtsp并在网页上播放呢？目前网页播放rtsp困难重重，几乎都是要在服务器端转码才能播放</div>2021-03-22</li><br/><li><span>Jason Yu 于航</span> 👍（4） 💬（0）<div>源码可以参考这里：https:&#47;&#47;github.com&#47;Becavalier&#47;geektime-wasm-tutorial。</div>2021-04-29</li><br/><li><span>高鹏gaopeng</span> 👍（2） 💬（0）<div>“还记得在今天的 Emscripten 实例中，我们使用到了名为 “EMSCRIPTEN_KEEPALIVE” 的宏，来确保被标记的函数不会被编译器优化掉。那么，你知道它具体是怎样实现的吗？”
+<li><span>张凯</span> 👍（2） 💬（1）<p>作为一个c++领域的web菜鸟，勉力看之，这个wasm是放到服务器上，客户端需要把这个文件一次性的加载到本地？？</p>2020-11-05</li><br/><li><span>qinsi</span> 👍（2） 💬（4）<p>相比WebGL实现的滤镜有性能优势吗？</p>2020-10-07</li><br/><li><span>军秋</span> 👍（2） 💬（1）<p>emscripten的不同版本对编译后的wasm产物性能上会有差异吗？</p>2020-10-07</li><br/><li><span>Quickeryi</span> 👍（0） 💬（1）<p>“为了能够支持在 Web 浏览器中“使用”诸如 std::fopen 等 C&#47;C++ 语言中，用于访问本机文件资源的标准库函数，Emscripten 会使用诸如 LocalStorage 之类的浏览器特性，来模拟完整的 POSIX 文件操作和相关的数据结构。当然，只不过这一切都是使用 JavaScript 来模拟实现的”
+关于上面的说法有个疑问，难道不是因为浏览器提供了对应的wasm runtime？</p>2022-07-03</li><br/><li><span>看不山是山,看水是不水。</span> 👍（0） 💬（3）<p>在c中就只写了个malloc n个字节的接口和一个free的接口，并导出这两个接口，在html中先malloc一个大内存，比如100M,之后马上调用free接口，在任务管理器看内存参数，free之后怎么没有看到内存减少是什么现象啊</p>2021-07-08</li><br/><li><span>itgou</span> 👍（0） 💬（2）<p>wasm能否实现解码rtsp并在网页上播放呢？目前网页播放rtsp困难重重，几乎都是要在服务器端转码才能播放</p>2021-03-22</li><br/><li><span>Jason Yu 于航</span> 👍（4） 💬（0）<p>源码可以参考这里：https:&#47;&#47;github.com&#47;Becavalier&#47;geektime-wasm-tutorial。</p>2021-04-29</li><br/><li><span>高鹏gaopeng</span> 👍（2） 💬（0）<p>“还记得在今天的 Emscripten 实例中，我们使用到了名为 “EMSCRIPTEN_KEEPALIVE” 的宏，来确保被标记的函数不会被编译器优化掉。那么，你知道它具体是怎样实现的吗？”
 
-用 __attribute__((used)) 来标记，防止链接器会优化删除未被使用的数据。</div>2022-05-31</li><br/><li><span>Yarco</span> 👍（1） 💬（3）<div>注: 
+用 __attribute__((used)) 来标记，防止链接器会优化删除未被使用的数据。</p>2022-05-31</li><br/><li><span>Yarco</span> 👍（1） 💬（3）<p>注: 
 1. 第一次编译需要生成各种系统库 感觉会比较慢
-2. 我homebrew安装的 emcc (不知道是不是这个原因) 会出错说  “html-minifier-terser was not found! ” 需要手工安装依赖包</div>2020-10-07</li><br/>
+2. 我homebrew安装的 emcc (不知道是不是这个原因) 会出错说  “html-minifier-terser was not found! ” 需要手工安装依赖包</p>2020-10-07</li><br/>
 </ul>

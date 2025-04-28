@@ -102,5 +102,5 @@ Chubby的服务端是一个集群，一般由5个节点构成，它们之中有�
 
 Chubby论文本身并不难懂，难的是它背后的分布式问题，以及分布式共识。在学完了解读Chubby论文的这三节课之后，我也去阅读了老师推荐的《数据密集型应用系统设计》的第7、8、9章，对我启发也很大，所以如果你也想要深入了解Chubby以及与分布式相关的问题，建议你一定要去读一读。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>槑·先生</span> 👍（0） 💬（0）<div>关于paxos总结得不错👍</div>2022-06-14</li><br/><li><span>Ping</span> 👍（0） 💬（1）<div>chubby脱离Bigtable单独用的时候多吗？</div>2021-12-31</li><br/>
+<li><span>槑·先生</span> 👍（0） 💬（0）<p>关于paxos总结得不错👍</p>2022-06-14</li><br/><li><span>Ping</span> 👍（0） 💬（1）<p>chubby脱离Bigtable单独用的时候多吗？</p>2021-12-31</li><br/>
 </ul>

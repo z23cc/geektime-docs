@@ -392,5 +392,5 @@ apis:
 
 欢迎你在留言区分享你的代码设计思路，我们一起来讨论。如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>🤡</span> 👍（1） 💬（1）<div>使用这个 openai-go 库进行调用大模型api和 使用langchain-go 框架调用大模型api进行编程有什么区别，我可以理解为 langchain 是一个更高层次抽象的封装吗？</div>2025-02-03</li><br/>
+<li><span>🤡</span> 👍（1） 💬（1）<p>使用这个 openai-go 库进行调用大模型api和 使用langchain-go 框架调用大模型api进行编程有什么区别，我可以理解为 langchain 是一个更高层次抽象的封装吗？</p>2025-02-03</li><br/>
 </ul>

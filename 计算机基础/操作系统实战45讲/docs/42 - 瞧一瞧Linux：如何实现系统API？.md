@@ -361,7 +361,7 @@ int main(int argc, char const *argv[])
 
 我是LMOS，我们下节课见。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>neohope</span> 👍（10） 💬（1）<div>三、Demo部分
+<li><span>neohope</span> 👍（10） 💬（1）<p>三、Demo部分
 1、新建一个源码编译目录
 mkdir kernelbuild
 
@@ -422,7 +422,7 @@ gcc  cpus.c -o cpus
 
 .&#47;cpus
 在没有修改的内核上返回是-1
-在修改过的为num_present_cpus数量，我的虚拟机返回的是1</div>2021-08-17</li><br/><li><span>neohope</span> 👍（5） 💬（1）<div>二、linux内核部分【下】
+在修改过的为num_present_cpus数量，我的虚拟机返回的是1</p>2021-08-17</li><br/><li><span>neohope</span> 👍（5） 💬（1）<p>二、linux内核部分【下】
 2、当产生系统调用时
 2.1、应用直接syscall或通过glibc产生了syscall
 
@@ -483,7 +483,7 @@ __X64_SYS_STUB0(get_cpus)
 然后
 long __x64_sys_get_cpus(const struct pt_regs *regs);
 
-这样前后就对上了，glibc和linux内核就通了。</div>2021-08-17</li><br/><li><span>neohope</span> 👍（4） 💬（1）<div>一、glibc部分【上】
+这样前后就对上了，glibc和linux内核就通了。</p>2021-08-17</li><br/><li><span>neohope</span> 👍（4） 💬（1）<p>一、glibc部分【上】
 1、应用程序调用open函数
 &#47;&#47;glibc&#47;intl&#47;loadmsgcat.c
 # define open(name, flags)  __open_nocancel (name, flags)
@@ -548,7 +548,7 @@ __INLINE_SYSCALL4(openat, AT_FDCWD, file, oflag, mode)
   INLINE_SYSCALL (name, 4, a1, a2, a3, a4)
 
 展开得到：
-INLINE_SYSCALL(openat, 4, AT_FDCWD, file, oflag, mode)</div>2021-08-17</li><br/><li><span>neohope</span> 👍（3） 💬（1）<div>二、linux内核部分【上】
+INLINE_SYSCALL(openat, 4, AT_FDCWD, file, oflag, mode)</p>2021-08-17</li><br/><li><span>neohope</span> 👍（3） 💬（1）<p>二、linux内核部分【上】
 1、在make时，会通过syscall_64.tbl生成syscalls_64.h，然后包含到syscall_64.c，进行调用号与函数之间的绑定。
 arch&#47;x86&#47;entry&#47;syscalls&#47;syscall_64.tbl
 arch&#47;x86&#47;include&#47;generated&#47;asm&#47;syscalls_64.h
@@ -585,7 +585,7 @@ asmlinkage const sys_call_ptr_t sys_call_table[__NR_syscall_max+1] = {
 展开其实就是指向了外部函数
 [257]=__x64_sys_openat,
 
-全部展开结果，都会被包含到sys_call_table中，从而完成了调用号与函数之间的绑定。</div>2021-08-17</li><br/><li><span>cugphoenix</span> 👍（2） 💬（1）<div>看了Linux 系统调用表的生成方式，又刷新了对宏定义的认知，灵活性极强，用起来可太花哨了</div>2021-08-14</li><br/><li><span>Zhendicai</span> 👍（2） 💬（1）<div>int指令和syscall指令都会发生特权级切换吧，但是syscall能直接调定位到具体系统调用函数，int则需要经过中断门描述符表和分发器才行。int的步骤要多一些，那就是取指令次数要多一些？还有个问题使用int来执行系统调用是不是也会遇到中断优先级的问题？</div>2021-08-13</li><br/><li><span>凉人。</span> 👍（2） 💬（1）<div>搬了下答案
+全部展开结果，都会被包含到sys_call_table中，从而完成了调用号与函数之间的绑定。</p>2021-08-17</li><br/><li><span>cugphoenix</span> 👍（2） 💬（1）<p>看了Linux 系统调用表的生成方式，又刷新了对宏定义的认知，灵活性极强，用起来可太花哨了</p>2021-08-14</li><br/><li><span>Zhendicai</span> 👍（2） 💬（1）<p>int指令和syscall指令都会发生特权级切换吧，但是syscall能直接调定位到具体系统调用函数，int则需要经过中断门描述符表和分发器才行。int的步骤要多一些，那就是取指令次数要多一些？还有个问题使用int来执行系统调用是不是也会遇到中断优先级的问题？</p>2021-08-13</li><br/><li><span>凉人。</span> 👍（2） 💬（1）<p>搬了下答案
 1.syscall
 syscall是x64的系统调用。其调用号通过rax进行传递。查看具体的调用号，linux环境下在unistd.h中定义。如果是64位，则可以查看&#47;usr&#47;include&#47;asm&#47;unistd_64.h，如果是32位，则查看&#47;usr&#47;include&#47;unistd_32.h。
 
@@ -596,9 +596,9 @@ int 80h 是32位x86的系统调用方式。同样通过ax传递调用号，参�
 
 *** note ***
 intel体系的系统调用限制最多六个参数，没有任何一个参数是通过栈传递的。系统调用的返回结果存放在ax寄存器中，且只有整型和内存型可以传递给内核
-</div>2021-08-13</li><br/><li><span>吴建平</span> 👍（1） 💬（1）<div>有个疑问，最后验证的应用例子，怎么链接到系统调用的呢，没看到链接过程，默认链接glibc么？</div>2022-03-29</li><br/><li><span>罗 乾 林</span> 👍（0） 💬（1）<div>因为这里用到的指令是最新处理器为其设计的系统调用指令 syscall。这个指令和 int 指令一样，都可以让 CPU 跳转到特定的地址上，只不过不经过中断门，系统调用返回时要用 sysexit 指令</div>2021-08-13</li><br/><li><span>pedro</span> 👍（0） 💬（1）<div>实验太顶了，有时间一定搞一下，今天问题属于知识盲区，贴上链接：https:&#47;&#47;blog.csdn.net&#47;sdulibh&#47;article&#47;details&#47;50890250
+</p>2021-08-13</li><br/><li><span>吴建平</span> 👍（1） 💬（1）<p>有个疑问，最后验证的应用例子，怎么链接到系统调用的呢，没看到链接过程，默认链接glibc么？</p>2022-03-29</li><br/><li><span>罗 乾 林</span> 👍（0） 💬（1）<p>因为这里用到的指令是最新处理器为其设计的系统调用指令 syscall。这个指令和 int 指令一样，都可以让 CPU 跳转到特定的地址上，只不过不经过中断门，系统调用返回时要用 sysexit 指令</p>2021-08-13</li><br/><li><span>pedro</span> 👍（0） 💬（1）<p>实验太顶了，有时间一定搞一下，今天问题属于知识盲区，贴上链接：https:&#47;&#47;blog.csdn.net&#47;sdulibh&#47;article&#47;details&#47;50890250
 
-不学习就变废物😂</div>2021-08-13</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<div>syscall应该是系统与应用软件的接口？类似win系统的消息模块？int是操作系统与硬件的接口？如新插入usb鼠标？</div>2021-08-13</li><br/><li><span>neohope</span> 👍（3） 💬（0）<div>一、glibc部分【下】
+不学习就变废物😂</p>2021-08-13</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<p>syscall应该是系统与应用软件的接口？类似win系统的消息模块？int是操作系统与硬件的接口？如新插入usb鼠标？</p>2021-08-13</li><br/><li><span>neohope</span> 👍（3） 💬（0）<p>一、glibc部分【下】
 4.7、展开INLINE_SYSCALL
 &#47;&#47;glibc&#47;sysdeps&#47;unix&#47;sysv&#47;linux&#47;sysdep.h
 #define INLINE_SYSCALL(name, nr, args...)       \
@@ -632,5 +632,5 @@ internal_syscall4(__NR_openat, args【AT_FDCWD, file, oflag, mode】)
 glibc\sysdeps\unix\sysv\linux\x86_64\64\arch-syscall.h
 #define __NR_openat 257
 
-syscall时，先传入调用号257，然后是四个位真正的参数。</div>2021-08-17</li><br/>
+syscall时，先传入调用号257，然后是四个位真正的参数。</p>2021-08-17</li><br/>
 </ul>

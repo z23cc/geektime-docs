@@ -949,11 +949,11 @@ namespace std {
 
 好了，今天的内容就到此结束了。关于SWIG，你有哪些收获，或者还有哪些问题，都欢迎你留言和我分享讨论。也欢迎你把这篇文章分享给你的同事、朋友，我们一起学习和进步。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>gutentag</span> 👍（10） 💬（1）<div>对于单文件而言，用SWIG还是boost.python&#47;py++感觉都好理解和实践，请问对于依赖关系复杂的大型C++项目（比如OpenCV, OpenSceneGraph之类的）的python binding有没有比较完整的最佳实践呢？
+<li><span>gutentag</span> 👍（10） 💬（1）<p>对于单文件而言，用SWIG还是boost.python&#47;py++感觉都好理解和实践，请问对于依赖关系复杂的大型C++项目（比如OpenCV, OpenSceneGraph之类的）的python binding有没有比较完整的最佳实践呢？
 C++编译的动态库python无法直接调用，C++项目的python binding本身等价于把本身编译时用到的所有的头文件中需要暴露的接口都extern成C的呢？对于头文件的相互各种include一般是人工处理还是SWIG本身可以解决呢？除了头文件暴露以外，还有别的工作吗？
 任何C项目直接生成的动态链接库python都能直接import吗？请问有例外吗？
-谢谢</div>2019-08-16</li><br/><li><span>许童童</span> 👍（6） 💬（1）<div>极客时间的C++课程快来了，期待一下，补一补我的C++。</div>2019-08-16</li><br/><li><span>安排</span> 👍（5） 💬（0）<div>类似于jni啊</div>2019-08-16</li><br/><li><span>Ethan</span> 👍（4） 💬（0）<div>c++大法</div>2019-08-16</li><br/><li><span>Felix</span> 👍（2） 💬（0）<div>老师，实际使用中遇到个问题，想请教下您：
+谢谢</p>2019-08-16</li><br/><li><span>许童童</span> 👍（6） 💬（1）<p>极客时间的C++课程快来了，期待一下，补一补我的C++。</p>2019-08-16</li><br/><li><span>安排</span> 👍（5） 💬（0）<p>类似于jni啊</p>2019-08-16</li><br/><li><span>Ethan</span> 👍（4） 💬（0）<p>c++大法</p>2019-08-16</li><br/><li><span>Felix</span> 👍（2） 💬（0）<p>老师，实际使用中遇到个问题，想请教下您：
 假如有这么一个C++函数：ErrCode GetTpError(std::string&amp; errMsg);
-用于获取错误信息，想要在python中调用，利用swig编译OK，但调用后没有得到 errMsg字符串，原因是python的字符串类型是immutable，不知道我这样理解对吗？还有这个函数要怎么转换，才能在python中调用呢？</div>2020-03-17</li><br/><li><span>-.----..</span> 👍（2） 💬（1）<div>
-感觉SWIG更灵活，比ctypes和py4j更方便，但是Python调用.so文件好像很挑gcc版本，不同版本gcc编译的.so文件，Python调用时有时候会报</div>2019-08-20</li><br/><li><span>好好先生</span> 👍（1） 💬（0）<div>加油！</div>2020-03-29</li><br/><li><span>栾~龟虽寿！</span> 👍（1） 💬（0）<div>如何看python源代码，比如list.sort的实现</div>2019-08-18</li><br/><li><span>安迪密恩</span> 👍（0） 💬（0）<div>这份加餐有点突兀，是为什么呢？</div>2024-07-04</li><br/>
+用于获取错误信息，想要在python中调用，利用swig编译OK，但调用后没有得到 errMsg字符串，原因是python的字符串类型是immutable，不知道我这样理解对吗？还有这个函数要怎么转换，才能在python中调用呢？</p>2020-03-17</li><br/><li><span>-.----..</span> 👍（2） 💬（1）<p>
+感觉SWIG更灵活，比ctypes和py4j更方便，但是Python调用.so文件好像很挑gcc版本，不同版本gcc编译的.so文件，Python调用时有时候会报</p>2019-08-20</li><br/><li><span>好好先生</span> 👍（1） 💬（0）<p>加油！</p>2020-03-29</li><br/><li><span>栾~龟虽寿！</span> 👍（1） 💬（0）<p>如何看python源代码，比如list.sort的实现</p>2019-08-18</li><br/><li><span>安迪密恩</span> 👍（0） 💬（0）<p>这份加餐有点突兀，是为什么呢？</p>2024-07-04</li><br/>
 </ul>

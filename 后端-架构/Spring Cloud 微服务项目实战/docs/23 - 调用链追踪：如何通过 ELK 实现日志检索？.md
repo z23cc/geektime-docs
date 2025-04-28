@@ -208,7 +208,7 @@ docker restart elk
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>黄叶</span> 👍（16） 💬（1）<div>window版本搭建
+<li><span>黄叶</span> 👍（16） 💬（1）<p>window版本搭建
 3个软件都可以前往该中心下载，注意es和kibana版本要一样，链接：https:&#47;&#47;elasticsearch.cn&#47;download&#47;
 1.安装es
 下载后，进入bin目录，elasticsearch.bat 
@@ -239,13 +239,13 @@ output {
   }
 }
 启动：进入bin，cmd输入logstash -f logstash.conf
-测试：localhost：9600</div>2022-02-04</li><br/><li><span>威威威小哥</span> 👍（11） 💬（2）<div>老师，请问有了elk还需要集成zipkin吗？ Sleuth打的日志都可以被收集到elk，那zipkin还有意义吗</div>2022-03-19</li><br/><li><span>peter</span> 👍（3） 💬（3）<div>老师请教一个问题啊：
+测试：localhost：9600</p>2022-02-04</li><br/><li><span>威威威小哥</span> 👍（11） 💬（2）<p>老师，请问有了elk还需要集成zipkin吗？ Sleuth打的日志都可以被收集到elk，那zipkin还有意义吗</p>2022-03-19</li><br/><li><span>peter</span> 👍（3） 💬（3）<p>老师请教一个问题啊：
 Q1：docker restart geekbang
-这里“geekbang”是笔误吗？前面ELK的名字是“elk”啊。</div>2022-02-04</li><br/><li><span>zx</span> 👍（2） 💬（1）<div>请问老师，生产环境  一般创建日志索引有什么规范没 像您文章中说的 通过配置文件表达式动态生成索引 可以大概讲一下这块思路吗</div>2022-02-28</li><br/><li><span>张逃逃</span> 👍（2） 💬（1）<div>请问老师，我想log request的参数应该怎么写？</div>2022-02-21</li><br/><li><span>郭行知</span> 👍（0） 💬（1）<div>生产环境为什么要先用filebeat读取文件再发送给logstash？既然logstash本身有读文件的功能，为什么不直接用logstash读取文件写到存储里？前者有何优势？</div>2023-03-25</li><br/><li><span>牛年榴莲</span> 👍（0） 💬（1）<div>打本地日志的时候，推荐使用JSON格式还是像本节console那样的日志格式</div>2022-04-18</li><br/><li><span>罗逸</span> 👍（0） 💬（1）<div>docker 运行elk Elasticsearch启动，容器也进不去
+这里“geekbang”是笔误吗？前面ELK的名字是“elk”啊。</p>2022-02-04</li><br/><li><span>zx</span> 👍（2） 💬（1）<p>请问老师，生产环境  一般创建日志索引有什么规范没 像您文章中说的 通过配置文件表达式动态生成索引 可以大概讲一下这块思路吗</p>2022-02-28</li><br/><li><span>张逃逃</span> 👍（2） 💬（1）<p>请问老师，我想log request的参数应该怎么写？</p>2022-02-21</li><br/><li><span>郭行知</span> 👍（0） 💬（1）<p>生产环境为什么要先用filebeat读取文件再发送给logstash？既然logstash本身有读文件的功能，为什么不直接用logstash读取文件写到存储里？前者有何优势？</p>2023-03-25</li><br/><li><span>牛年榴莲</span> 👍（0） 💬（1）<p>打本地日志的时候，推荐使用JSON格式还是像本节console那样的日志格式</p>2022-04-18</li><br/><li><span>罗逸</span> 👍（0） 💬（1）<p>docker 运行elk Elasticsearch启动，容器也进不去
 
 starting elasticsearch server [fail]，
 Couldn&#39;t start Elasticsearch. Exiting.
 Elasticsearch log follows below.
-cat: &#47;var&#47;log&#47;elasticsearch&#47;elasticsearch.log: No such file or directory</div>2022-03-10</li><br/><li><span>ziky</span> 👍（0） 💬（1）<div>请问一下老师：docker不是部署在虚拟机上吗，那么这个ip地址就会发生改变，为什么ip还是localhost </div>2022-02-18</li><br/><li><span>kimoti</span> 👍（0） 💬（3）<div>用ELK的目的是为了看日志排错,这样配置可以看到错误信息吗？毕竟仅有TraceID和Span ID还是不知道发生了什么错误？</div>2022-02-04</li><br/><li><span>Geek_0b93c0</span> 👍（3） 💬（2）<div>mac m1 启动 不了</div>2022-06-03</li><br/><li><span>牛年榴莲</span> 👍（2） 💬（1）<div>也是给了docker10个G内存才起来，给到8个G都不行</div>2022-04-25</li><br/><li><span>Believe</span> 👍（0） 💬（0）<div>如果slueh + zipkin将日志持久化到es之后 还需要对接elk容器吗</div>2024-08-30</li><br/><li><span>杨涛</span> 👍（0） 💬（0）<div> [elk] unable to install syscall filter: 
-java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed</div>2024-07-26</li><br/><li><span>qwfys200</span> 👍（0） 💬（0）<div>可以配置docker的阿里云镜像环境(mirror)，这样，下载就快了。</div>2022-09-03</li><br/>
+cat: &#47;var&#47;log&#47;elasticsearch&#47;elasticsearch.log: No such file or directory</p>2022-03-10</li><br/><li><span>ziky</span> 👍（0） 💬（1）<p>请问一下老师：docker不是部署在虚拟机上吗，那么这个ip地址就会发生改变，为什么ip还是localhost </p>2022-02-18</li><br/><li><span>kimoti</span> 👍（0） 💬（3）<p>用ELK的目的是为了看日志排错,这样配置可以看到错误信息吗？毕竟仅有TraceID和Span ID还是不知道发生了什么错误？</p>2022-02-04</li><br/><li><span>Geek_0b93c0</span> 👍（3） 💬（2）<p>mac m1 启动 不了</p>2022-06-03</li><br/><li><span>牛年榴莲</span> 👍（2） 💬（1）<p>也是给了docker10个G内存才起来，给到8个G都不行</p>2022-04-25</li><br/><li><span>Believe</span> 👍（0） 💬（0）<p>如果slueh + zipkin将日志持久化到es之后 还需要对接elk容器吗</p>2024-08-30</li><br/><li><span>杨涛</span> 👍（0） 💬（0）<p> [elk] unable to install syscall filter: 
+java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed</p>2024-07-26</li><br/><li><span>qwfys200</span> 👍（0） 💬（0）<p>可以配置docker的阿里云镜像环境(mirror)，这样，下载就快了。</p>2022-09-03</li><br/>
 </ul>

@@ -453,9 +453,9 @@ func (h2o *H2O) oxygen(releaseOxygen func()) {
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>木土</span> 👍（13） 💬（1）<div>谢谢老师的文章！第一次知道有这两种并发原语，不管之后工作能不能用到，这都是对个人眼界的开阔！
-ps:老师的文章几乎都是一篇顶两篇，刚订阅的时候还担心课程内容太少，现在一看担心完全是多余的，这段时间读了老师的文章之后，个人对go并发知识了解更深刻了，谢谢老师！</div>2020-11-19</li><br/><li><span>无名氏</span> 👍（1） 💬（2）<div>CyclicBarrier 那个测试例子没有看懂，2个H，一个O顺序怎么保证是HHO😅</div>2022-03-19</li><br/><li><span>Fan</span> 👍（1） 💬（2）<div>老师，在你github地址 https:&#47;&#47;github.com&#47;smallnest&#47;dive-to-gosync-workshop&#47;tree&#47;master&#47;7.orchestration&#47;water中没有搜到WaitGroup版本的H2O的例子，但是按照你正文中WaitGroup版本实现H2O，有报错panic: sync: WaitGroup is reused before previous Wait has returned
-。请问老师这应该怎么解决呢？很困惑，望老师指点。</div>2020-12-28</li><br/><li><span>Fan</span> 👍（1） 💬（4）<div>老师，感觉你上面用waitGroup实现这个H2O的例子有问题的。我这边运行都panic的。</div>2020-12-25</li><br/><li><span>伟伟</span> 👍（1） 💬（1）<div>package main
+<li><span>木土</span> 👍（13） 💬（1）<p>谢谢老师的文章！第一次知道有这两种并发原语，不管之后工作能不能用到，这都是对个人眼界的开阔！
+ps:老师的文章几乎都是一篇顶两篇，刚订阅的时候还担心课程内容太少，现在一看担心完全是多余的，这段时间读了老师的文章之后，个人对go并发知识了解更深刻了，谢谢老师！</p>2020-11-19</li><br/><li><span>无名氏</span> 👍（1） 💬（2）<p>CyclicBarrier 那个测试例子没有看懂，2个H，一个O顺序怎么保证是HHO😅</p>2022-03-19</li><br/><li><span>Fan</span> 👍（1） 💬（2）<p>老师，在你github地址 https:&#47;&#47;github.com&#47;smallnest&#47;dive-to-gosync-workshop&#47;tree&#47;master&#47;7.orchestration&#47;water中没有搜到WaitGroup版本的H2O的例子，但是按照你正文中WaitGroup版本实现H2O，有报错panic: sync: WaitGroup is reused before previous Wait has returned
+。请问老师这应该怎么解决呢？很困惑，望老师指点。</p>2020-12-28</li><br/><li><span>Fan</span> 👍（1） 💬（4）<p>老师，感觉你上面用waitGroup实现这个H2O的例子有问题的。我这边运行都panic的。</p>2020-12-25</li><br/><li><span>伟伟</span> 👍（1） 💬（1）<p>package main
 
 import (
 	&quot;context&quot;
@@ -490,7 +490,7 @@ func (h2o2 *H2O2) oxygen(releaseOxygen func()) {
 	releaseOxygen()
 	h2o2.b.Await(context.Background())
 	h2o2.semaO.Release(1)
-}</div>2020-11-23</li><br/><li><span>白开d水</span> 👍（0） 💬（2）<div>为什么在 h2o.semaH.Acquire(context.Background(), 1) 1不能换成2呢，直接请求2个资源？</div>2023-03-23</li><br/><li><span>李晓清</span> 👍（0） 💬（1）<div>package main
+}</p>2020-11-23</li><br/><li><span>白开d水</span> 👍（0） 💬（2）<p>为什么在 h2o.semaH.Acquire(context.Background(), 1) 1不能换成2呢，直接请求2个资源？</p>2023-03-23</li><br/><li><span>李晓清</span> 👍（0） 💬（1）<p>package main
 
 import (
 	&quot;context&quot;
@@ -532,9 +532,9 @@ func main() {
 
 	select {}
 }
-</div>2023-03-17</li><br/><li><span>Geek8956</span> 👍（0） 💬（1）<div>老师，请问循环栏栅和cond并发原语有什么区别？他们都可以让多个协程等待某个条件满足，然后并发的开始执行。</div>2021-11-29</li><br/><li><span>老纪</span> 👍（0） 💬（1）<div>在CyclicBarrier中，是需要一组goroutine都执行到Await()方法后，才会都向下执行否则就会阻塞在Await()方法上吗</div>2020-12-08</li><br/><li><span>Linuxer</span> 👍（0） 💬（1）<div>感觉自已Go刚刚入门，我确实也才学习一周左右，看着挺爽，写起来还是不顺手，还得多练习，老师能否给我们这些打算转Go的新手一些建议，谢谢</div>2020-11-20</li><br/><li><span>那时刻</span> 👍（7） 💬（0）<div>SingleFlight 能不能合并并发的写操作呢？
+</p>2023-03-17</li><br/><li><span>Geek8956</span> 👍（0） 💬（1）<p>老师，请问循环栏栅和cond并发原语有什么区别？他们都可以让多个协程等待某个条件满足，然后并发的开始执行。</p>2021-11-29</li><br/><li><span>老纪</span> 👍（0） 💬（1）<p>在CyclicBarrier中，是需要一组goroutine都执行到Await()方法后，才会都向下执行否则就会阻塞在Await()方法上吗</p>2020-12-08</li><br/><li><span>Linuxer</span> 👍（0） 💬（1）<p>感觉自已Go刚刚入门，我确实也才学习一周左右，看着挺爽，写起来还是不顺手，还得多练习，老师能否给我们这些打算转Go的新手一些建议，谢谢</p>2020-11-20</li><br/><li><span>那时刻</span> 👍（7） 💬（0）<p>SingleFlight 能不能合并并发的写操作呢？
 我觉得得分情况讨论，如果多个写请求是对于同一个对象相同的写操作，比如把某条记录的一个字段设置为某一个值，这样的话可以合并。
-如果写操作是对于对象增减操作，涉及幂等行操作不太合适合并。</div>2020-11-18</li><br/><li><span>chapin</span> 👍（4） 💬（2）<div>这一节在实际项目中都直接用到。</div>2020-11-21</li><br/><li><span>gitxuzan</span> 👍（1） 💬（0）<div>package main
+如果写操作是对于对象增减操作，涉及幂等行操作不太合适合并。</p>2020-11-18</li><br/><li><span>chapin</span> 👍（4） 💬（2）<p>这一节在实际项目中都直接用到。</p>2020-11-21</li><br/><li><span>gitxuzan</span> 👍（1） 💬（0）<p>package main
 
 import (
 	&quot;golang.org&#47;x&#47;sync&#47;singleflight&quot;
@@ -562,8 +562,8 @@ func main() {
 		}(i)
 	}
 	time.Sleep(20 * time.Second)
-}</div>2021-10-26</li><br/><li><span>Panda</span> 👍（1） 💬（0）<div>学到了     SingleFight  合并      
-</div>2021-06-11</li><br/><li><span>虫子樱桃</span> 👍（1） 💬（0）<div>写了singleFlight的例子辅助思考。
+}</p>2021-10-26</li><br/><li><span>Panda</span> 👍（1） 💬（0）<p>学到了     SingleFight  合并      
+</p>2021-06-11</li><br/><li><span>虫子樱桃</span> 👍（1） 💬（0）<p>写了singleFlight的例子辅助思考。
 package main
 
 import (
@@ -603,5 +603,5 @@ func main() {
 func Request() (interface{}, error) {
 	atomic.AddInt64(&amp;requestCount, 1)
 	return &lt;-resp, nil
-}</div>2020-11-19</li><br/>
+}</p>2020-11-19</li><br/>
 </ul>

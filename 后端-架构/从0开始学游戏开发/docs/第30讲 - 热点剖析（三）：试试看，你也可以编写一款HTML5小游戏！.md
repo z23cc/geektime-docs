@@ -187,5 +187,5 @@ backLayer.addEventListener(LEvent.ENTER_FRAME,onframe);
 
 欢迎留言说出你的看法。我在下一节的挑战中等你！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>lll</span> 👍（2） 💬（1）<div>作为一名web前端，对游戏开发有兴趣，对这一篇教程很熟悉，做过一些很简单的h5游戏，但感觉缺少了游戏方面知识，所以来跟着老师学习这个课程...</div>2018-06-30</li><br/><li><span>slark</span> 👍（4） 💬（0）<div>如果想学H5引擎，去搜下phaser，里面Demo很丰富</div>2018-07-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>碰撞检测函数游戏引擎都会提供的吧？</div>2024-04-07</li><br/><li><span>赵鹏</span> 👍（0） 💬（0）<div>感觉lufylegend非常偏向很小的游戏，跟flash的效果一样。</div>2019-01-29</li><br/>
+<li><span>lll</span> 👍（2） 💬（1）<p>作为一名web前端，对游戏开发有兴趣，对这一篇教程很熟悉，做过一些很简单的h5游戏，但感觉缺少了游戏方面知识，所以来跟着老师学习这个课程...</p>2018-06-30</li><br/><li><span>slark</span> 👍（4） 💬（0）<p>如果想学H5引擎，去搜下phaser，里面Demo很丰富</p>2018-07-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>碰撞检测函数游戏引擎都会提供的吧？</p>2024-04-07</li><br/><li><span>赵鹏</span> 👍（0） 💬（0）<p>感觉lufylegend非常偏向很小的游戏，跟flash的效果一样。</p>2019-01-29</li><br/>
 </ul>

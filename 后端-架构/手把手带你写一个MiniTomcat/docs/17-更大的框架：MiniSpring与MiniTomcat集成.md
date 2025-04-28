@@ -508,7 +508,7 @@ startup.bat是启动程序，直接双击startup.bat启动MiniTomcat和MiniSprin
 
 欢迎你把你的想法分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：从编码角度怎么遵守servlet规范？
 写出符合servlet规范的servlet，需要怎么做？查看规范文档，照着文档写吗？还是继承某个已经存在的符合规范的接口？
 
@@ -526,5 +526,5 @@ Q4：集成mins以后，原来的静态处理部分由谁处理？
 本课之前，一部分是处理servelt，另外一部分是处理静态文本文件。集成minis以后，处理静态文本文件部分是谁处理？
 
 Q5：集成minis以后，正常的应用怎么办？
-Minit集成了minis,那其他web应用怎么办？原来是把应用放在webapp目录下面，那现在怎么办？</div>2024-01-16</li><br/>
+Minit集成了minis,那其他web应用怎么办？原来是把应用放在webapp目录下面，那现在怎么办？</p>2024-01-16</li><br/>
 </ul>

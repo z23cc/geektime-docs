@@ -385,6 +385,6 @@ public class Action1 implements IAction {
 
 欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>不是早晨，就是黄昏</span> 👍（3） 💬（1）<div>能不能说明以下Advice接口和Advisor接口之间的关系，更进一步的是设计上的关系。</div>2023-04-24</li><br/><li><span>青莲</span> 👍（1） 💬（1）<div>每个匹配模式都可以实现PointcutAdvisor接口，尊循单一职责，如果要同时支持几种能力，可以考虑拐出一个管理类组合几种接口使用</div>2023-05-05</li><br/><li><span>欧阳利</span> 👍（0） 💬（1）<div>为什么Interceptor需要实现Advice接口</div>2023-04-30</li><br/><li><span>Ben Guo</span> 👍（1） 💬（0）<div>1. NameMatchMethodPointcut的getMethodMatcher()应该返回 this，而不是null；
-2. JdkDynamicAopProxy的invoke方法，如果方法名不是mappedName匹配，应该要执行method.invoke()。 示例及源码中均返回null，导致该方法没有被执行。</div>2023-08-17</li><br/>
+<li><span>不是早晨，就是黄昏</span> 👍（3） 💬（1）<p>能不能说明以下Advice接口和Advisor接口之间的关系，更进一步的是设计上的关系。</p>2023-04-24</li><br/><li><span>青莲</span> 👍（1） 💬（1）<p>每个匹配模式都可以实现PointcutAdvisor接口，尊循单一职责，如果要同时支持几种能力，可以考虑拐出一个管理类组合几种接口使用</p>2023-05-05</li><br/><li><span>欧阳利</span> 👍（0） 💬（1）<p>为什么Interceptor需要实现Advice接口</p>2023-04-30</li><br/><li><span>Ben Guo</span> 👍（1） 💬（0）<p>1. NameMatchMethodPointcut的getMethodMatcher()应该返回 this，而不是null；
+2. JdkDynamicAopProxy的invoke方法，如果方法名不是mappedName匹配，应该要执行method.invoke()。 示例及源码中均返回null，导致该方法没有被执行。</p>2023-08-17</li><br/>
 </ul>

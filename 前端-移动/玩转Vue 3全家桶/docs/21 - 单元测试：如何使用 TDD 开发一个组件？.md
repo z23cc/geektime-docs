@@ -419,21 +419,21 @@ npm run test
 
 欢迎你在评论区留下你的答案，也欢迎你把这一讲分享给你的同事和朋友们，我们下一讲再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>陈坚泓</span> 👍（22） 💬（1）<div>工作三年 至今还没有机会用上单元测试</div>2022-05-06</li><br/><li><span>小海</span> 👍（4） 💬（5）<div>赞, 发现两个小瑕疵
+<li><span>陈坚泓</span> 👍（22） 💬（1）<p>工作三年 至今还没有机会用上单元测试</p>2022-05-06</li><br/><li><span>小海</span> 👍（4） 💬（5）<p>赞, 发现两个小瑕疵
 1.在 Button.spec.ts文件中 引入 button.vue组件时.会提示找不到该模块,后来看了github链接的源码才发现是需要在src目录下增加 env.d.ts文件,才能使TS文件顺利引入vue文件的组件,
-2. babel.config.js 在课程资料里是创建  .babel.config.js文件  但是源码里并没有&quot;.&quot; 不晓得哪个才是正确写法</div>2021-12-08</li><br/><li><span>下一个起跑点</span> 👍（2） 💬（1）<div>还是那句话，等你写完单元测试，项目都上线了，测试还是留着空闲时再写吧</div>2021-12-19</li><br/><li><span>小胖</span> 👍（1） 💬（3）<div>接上一篇提问：上篇文章的几个布局组件，定义Props类型的时候。老师有时是使用type、有时用interface，有什么说法么？</div>2021-12-09</li><br/><li><span>小甜酒</span> 👍（0） 💬（1）<div>
+2. babel.config.js 在课程资料里是创建  .babel.config.js文件  但是源码里并没有&quot;.&quot; 不晓得哪个才是正确写法</p>2021-12-08</li><br/><li><span>下一个起跑点</span> 👍（2） 💬（1）<p>还是那句话，等你写完单元测试，项目都上线了，测试还是留着空闲时再写吧</p>2021-12-19</li><br/><li><span>小胖</span> 👍（1） 💬（3）<p>接上一篇提问：上篇文章的几个布局组件，定义Props类型的时候。老师有时是使用type、有时用interface，有什么说法么？</p>2021-12-09</li><br/><li><span>小甜酒</span> 👍（0） 💬（1）<p>
 ➜  ailemente git:(main) ✗ node add.js
 测试数字相加 测试通过
-这个运行报错是需要安装什么嘛</div>2022-01-14</li><br/><li><span>于三妮</span> 👍（0） 💬（1）<div>直到现在还没用过自动化测试呢~~</div>2021-12-09</li><br/><li><span>南山</span> 👍（0） 💬（1）<div>传入的circle属性，生成.btn--circle的classname，实现圆角样式</div>2021-12-08</li><br/><li><span>Geek_623ed8</span> 👍（7） 💬（0）<div>记录一下报错：
+这个运行报错是需要安装什么嘛</p>2022-01-14</li><br/><li><span>于三妮</span> 👍（0） 💬（1）<p>直到现在还没用过自动化测试呢~~</p>2021-12-09</li><br/><li><span>南山</span> 👍（0） 💬（1）<p>传入的circle属性，生成.btn--circle的classname，实现圆角样式</p>2021-12-08</li><br/><li><span>Geek_623ed8</span> 👍（7） 💬（0）<p>记录一下报错：
 ReferenceError: module is not defined in ES module scope
-找到package.json里的&quot;type&quot;: &quot;module&quot; 去掉</div>2022-09-02</li><br/><li><span>海阔天空</span> 👍（2） 💬（0）<div>感觉单元测试这块用得比较少，还是用console检查用得比较多，这可能和项目的迭代周期有关。单元测试确实比较更全面。</div>2021-12-08</li><br/><li><span>刷子iNG</span> 👍（1） 💬（0）<div>这讲，对自己写个ui库提升kpi很有帮助啊</div>2022-02-15</li><br/><li><span>Geek_116864</span> 👍（0） 💬（0）<div>还是没明白函数测试怎么用，项目中函数一般都在.vue文件中，要把.vue中的函数copy到.spec.js这里去执行吗</div>2024-07-15</li><br/><li><span>但江</span> 👍（0） 💬（0）<div> FAIL  src&#47;components&#47;button&#47;Button.spec.ts
+找到package.json里的&quot;type&quot;: &quot;module&quot; 去掉</p>2022-09-02</li><br/><li><span>海阔天空</span> 👍（2） 💬（0）<p>感觉单元测试这块用得比较少，还是用console检查用得比较多，这可能和项目的迭代周期有关。单元测试确实比较更全面。</p>2021-12-08</li><br/><li><span>刷子iNG</span> 👍（1） 💬（0）<p>这讲，对自己写个ui库提升kpi很有帮助啊</p>2022-02-15</li><br/><li><span>Geek_116864</span> 👍（0） 💬（0）<p>还是没明白函数测试怎么用，项目中函数一般都在.vue文件中，要把.vue中的函数copy到.spec.js这里去执行吗</p>2024-07-15</li><br/><li><span>但江</span> 👍（0） 💬（0）<p> FAIL  src&#47;components&#47;button&#47;Button.spec.ts
   ● Test suite failed to run
 
     src&#47;components&#47;button&#47;Button.spec.ts:1:20 - error TS2307: Cannot find module &#39;.&#47;Button.vue&#39; or its corresponding type declarations.
 
     1 import Button from &#39;.&#47;Button.vue&#39;
 
-Button.vue 确实存在</div>2023-10-07</li><br/><li><span>Le Soleil</span> 👍（0） 💬（0）<div>按老师的代码敲了，报这个错，有谁知道怎么解决吗？
+Button.vue 确实存在</p>2023-10-07</li><br/><li><span>Le Soleil</span> 👍（0） 💬（0）<p>按老师的代码敲了，报这个错，有谁知道怎么解决吗？
 
 TypeError: Cannot read properties of null (reading &#39;compilerOptions&#39;)
 
@@ -449,7 +449,7 @@ TypeError: Cannot read properties of null (reading &#39;compilerOptions&#39;)
       at ScriptTransformer.transformSource (node_modules&#47;@jest&#47;transform&#47;build&#47;ScriptTransformer.js:464:35)
       at ScriptTransformer._transformAndBuildScript (node_modules&#47;@jest&#47;transform&#47;build&#47;ScriptTransformer.js:569:40)
       at ScriptTransformer.transform (node_modules&#47;@jest&#47;transform&#47;build&#47;ScriptTransformer.js:607:25)
-      at Object.&lt;anonymous&gt; (test&#47;packages&#47;button.spec.ts:1:1)</div>2022-12-14</li><br/><li><span>金针菇饲养员</span> 👍（0） 💬（0）<div>ReferenceError: module is not defined in ES module scope
-</div>2022-08-10</li><br/><li><span>金针菇饲养员</span> 👍（0） 💬（0）<div>你们都按照老师代码敲了么，有发现这些报错么？
-babel.config.js: Error while loading config - You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously.</div>2022-08-10</li><br/>
+      at Object.&lt;anonymous&gt; (test&#47;packages&#47;button.spec.ts:1:1)</p>2022-12-14</li><br/><li><span>金针菇饲养员</span> 👍（0） 💬（0）<p>ReferenceError: module is not defined in ES module scope
+</p>2022-08-10</li><br/><li><span>金针菇饲养员</span> 👍（0） 💬（0）<p>你们都按照老师代码敲了么，有发现这些报错么？
+babel.config.js: Error while loading config - You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously.</p>2022-08-10</li><br/>
 </ul>

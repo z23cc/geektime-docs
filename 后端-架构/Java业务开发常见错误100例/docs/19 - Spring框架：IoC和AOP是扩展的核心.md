@@ -517,7 +517,7 @@ if (metrics == null) {
 
 在下一讲中，我会继续与你探讨Spring核心的其他问题。我是朱晔，欢迎在评论区与我留言分享你的想法，也欢迎你把今天的内容分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（107） 💬（7）<div>一、注解区别
+<li><span>Darren</span> 👍（107） 💬（7）<p>一、注解区别
 @Autowired
 	1、@Autowired是spring自带的注解，通过‘AutowiredAnnotationBeanPostProcessor’ 类实现的依赖注入；
 	2、@Autowired是根据类型进行自动装配的，如果需要按名称进行装配，则需要配合@Qualifier；
@@ -546,12 +546,12 @@ if (metrics == null) {
 主要解决方式：使用三级缓存
 singletonObjects： 一级缓存， Cache of singleton objects: bean name --&gt; bean instance
 earlySingletonObjects： 二级缓存， Cache of early singleton objects: bean name --&gt; bean instance  提前曝光的BEAN缓存
-singletonFactories： 三级缓存， Cache of singleton factories: bean name --&gt; ObjectFactory</div>2020-04-26</li><br/><li><span>norman</span> 👍（8） 💬（1）<div>@Resource 和 @Autowired @Inject 三者区别：
+singletonFactories： 三级缓存， Cache of singleton factories: bean name --&gt; ObjectFactory</p>2020-04-26</li><br/><li><span>norman</span> 👍（8） 💬（1）<p>@Resource 和 @Autowired @Inject 三者区别：
 1 @Resource默认是按照名称来装配注入的，只有当找不到与名称匹配的bean才会按照类型来装配注入。
 2 @Autowired默认是按照类型装配注入的，如果想按照名称来转配注入，则需要结合@Qualifier。这个注释是Spring特有的。
-3 @Inject是根据类型进行自动装配的，如果需要按名称进行装配，则需要配合@Named</div>2020-04-25</li><br/><li><span>左琪</span> 👍（7） 💬（1）<div>这里的代理类不是单例么，还是说会在增强逻辑里不断创建被代理类？</div>2020-04-26</li><br/><li><span>Demon.Lee</span> 👍（4） 💬（1）<div>连接点: 程序执行过程中能够应用通知的所有点；通知（增强）: 即切面的工作，定义了What以及When；切点定义了Where，通知被应用的具体位置（哪些连接点）
-----Spring实战（第4版）</div>2020-04-25</li><br/><li><span>龙行秀</span> 👍（3） 💬（3）<div>“架构师一开始定义了这么一个 SayService 抽象类，其中维护了一个类型是 ArrayList 的字段 data，用于保存方法处理的中间数据。每次调用 say 方法都会往 data 加入新数据，可以认为 SayService 是有状态，如果 SayService 是单例的话必然会 OOM”
------为什么单例就会OOM，多例就不会呢？没看懂</div>2020-09-01</li><br/><li><span>Joker</span> 👍（3） 💬（1）<div>老师，请教一下，那个sayservice里的data有啥用，那个单例是为了一种重复使用data对吧，那换成每次都生成一个新的bean，那个data还有效果吗。。</div>2020-04-25</li><br/><li><span>小学生</span> 👍（1） 💬（3）<div>老师，您好，您讲 的切面执行顺序好像不对啊，我的执行顺序和你说的不一致！
+3 @Inject是根据类型进行自动装配的，如果需要按名称进行装配，则需要配合@Named</p>2020-04-25</li><br/><li><span>左琪</span> 👍（7） 💬（1）<p>这里的代理类不是单例么，还是说会在增强逻辑里不断创建被代理类？</p>2020-04-26</li><br/><li><span>Demon.Lee</span> 👍（4） 💬（1）<p>连接点: 程序执行过程中能够应用通知的所有点；通知（增强）: 即切面的工作，定义了What以及When；切点定义了Where，通知被应用的具体位置（哪些连接点）
+----Spring实战（第4版）</p>2020-04-25</li><br/><li><span>龙行秀</span> 👍（3） 💬（3）<p>“架构师一开始定义了这么一个 SayService 抽象类，其中维护了一个类型是 ArrayList 的字段 data，用于保存方法处理的中间数据。每次调用 say 方法都会往 data 加入新数据，可以认为 SayService 是有状态，如果 SayService 是单例的话必然会 OOM”
+-----为什么单例就会OOM，多例就不会呢？没看懂</p>2020-09-01</li><br/><li><span>Joker</span> 👍（3） 💬（1）<p>老师，请教一下，那个sayservice里的data有啥用，那个单例是为了一种重复使用data对吧，那换成每次都生成一个新的bean，那个data还有效果吗。。</p>2020-04-25</li><br/><li><span>小学生</span> 👍（1） 💬（3）<p>老师，您好，您讲 的切面执行顺序好像不对啊，我的执行顺序和你说的不一致！
 [10:34:11.367] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder10:31  ] - TestAspectWithOrder10 @Around before
 [10:34:11.377] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder10:21  ] - TestAspectWithOrder10 @Before
 [10:34:11.377] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder20:31  ] - TestAspectWithOrder20 @Around before
@@ -563,13 +563,13 @@ singletonFactories： 三级缓存， Cache of singleton factories: bean name --
 [10:34:11.380] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder20:33  ] - TestAspectWithOrder20 @Around after
 [10:34:11.380] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder10:26  ] - TestAspectWithOrder10 @After
 [10:34:11.380] [http-nio-45678-exec-4] [INFO ] [o.g.t.c.s.a.TestAspectWithOrder10:33  ] - TestAspectWithOrder10 @Around after
-</div>2020-10-16</li><br/><li><span>track6688</span> 👍（1） 💬（1）<div>老师，请教一个问题，我使用这个注解，@Order(Ordered.HIGHEST_PRECEDENCE)，使用@AfterThrowing这个时，报No MethodInvocation found: Check that an AOP invocation is in progress, and that the ExposeInvocationInterceptor is upfront in the interceptor chain. Specifically, note that advices with order HIGHEST_PRECEDENCE will execute before ExposeInvocationInterceptor!，怎么处理呢？</div>2020-06-12</li><br/><li><span>看不到de颜色</span> 👍（1） 💬（1）<div>感觉Spring Intercepter的执行顺序和Servlet Filter的执行过程是一样的，一个递归调用栈。
-有个疑问想请老师解答一下。采用创建内部类的方式获取默认注解配置，这样不会每调用一次就会在元空间中生成一个c的Class信息吗？</div>2020-05-16</li><br/><li><span>David Mo</span> 👍（1） 💬（1）<div>@sevice 的坑踩过，代理类一开始不行白，后来说动态创建就懂了。当时是用一个类似工厂类解决的</div>2020-04-30</li><br/><li><span>Geek_3b1096</span> 👍（1） 💬（1）<div>很有收获谢谢老师</div>2020-04-30</li><br/><li><span>Husiun</span> 👍（17） 💬（0）<div>问题2，循环依赖会抛出异常BeanCurrentlyInCreationException，官网的解决方案是由构造器注入改为setter注入</div>2020-04-25</li><br/><li><span>和海明威下棋</span> 👍（8） 💬（0）<div>&#47;&#47;@annotation指示器实现对标记了Metrics注解的方法进行匹配
+</p>2020-10-16</li><br/><li><span>track6688</span> 👍（1） 💬（1）<p>老师，请教一个问题，我使用这个注解，@Order(Ordered.HIGHEST_PRECEDENCE)，使用@AfterThrowing这个时，报No MethodInvocation found: Check that an AOP invocation is in progress, and that the ExposeInvocationInterceptor is upfront in the interceptor chain. Specifically, note that advices with order HIGHEST_PRECEDENCE will execute before ExposeInvocationInterceptor!，怎么处理呢？</p>2020-06-12</li><br/><li><span>看不到de颜色</span> 👍（1） 💬（1）<p>感觉Spring Intercepter的执行顺序和Servlet Filter的执行过程是一样的，一个递归调用栈。
+有个疑问想请老师解答一下。采用创建内部类的方式获取默认注解配置，这样不会每调用一次就会在元空间中生成一个c的Class信息吗？</p>2020-05-16</li><br/><li><span>David Mo</span> 👍（1） 💬（1）<p>@sevice 的坑踩过，代理类一开始不行白，后来说动态创建就懂了。当时是用一个类似工厂类解决的</p>2020-04-30</li><br/><li><span>Geek_3b1096</span> 👍（1） 💬（1）<p>很有收获谢谢老师</p>2020-04-30</li><br/><li><span>Husiun</span> 👍（17） 💬（0）<p>问题2，循环依赖会抛出异常BeanCurrentlyInCreationException，官网的解决方案是由构造器注入改为setter注入</p>2020-04-25</li><br/><li><span>和海明威下棋</span> 👍（8） 💬（0）<p>&#47;&#47;@annotation指示器实现对标记了Metrics注解的方法进行匹配
    @Pointcut(&quot;within(@org.geekbang.time.commonmistakes.springpart1.aopmetrics.Metrics *)&quot;
 
-这里是不是有笔误？我试了下within无法拦截方法的注解，换成@annotation就可以了</div>2020-11-25</li><br/><li><span>OneDy</span> 👍（7） 💬（0）<div>关于循环依赖的解决，看到了三种处理方式：
+这里是不是有笔误？我试了下within无法拦截方法的注解，换成@annotation就可以了</p>2020-11-25</li><br/><li><span>OneDy</span> 👍（7） 💬（0）<p>关于循环依赖的解决，看到了三种处理方式：
 1.使用@Lazy 对其中一个bean懒加载
 2. 使用setter属性注入，而并不是构造器注入
 3. 使用@PostConstruct在依赖注入后执行初始化
-具体可以参考：https:&#47;&#47;www.baeldung.com&#47;circular-dependencies-in-spring</div>2020-08-14</li><br/><li><span>W</span> 👍（5） 💬（0）<div>MetricsAspect 这个类里面的小技巧学到了</div>2020-04-25</li><br/>
+具体可以参考：https:&#47;&#47;www.baeldung.com&#47;circular-dependencies-in-spring</p>2020-08-14</li><br/><li><span>W</span> 👍（5） 💬（0）<p>MetricsAspect 这个类里面的小技巧学到了</p>2020-04-25</li><br/>
 </ul>

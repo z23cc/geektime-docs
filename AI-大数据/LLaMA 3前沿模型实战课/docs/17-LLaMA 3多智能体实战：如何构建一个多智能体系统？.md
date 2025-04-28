@@ -110,5 +110,5 @@ seed_memory = """
 
 欢迎你把你构建的智能体系统发布在留言区，我们一起交流探讨，如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Fenix</span> 👍（1） 💬（1）<div>sedd memory和system Prompt的区别是啥呀？</div>2024-11-22</li><br/>
+<li><span>Fenix</span> 👍（1） 💬（1）<p>sedd memory和system Prompt的区别是啥呀？</p>2024-11-22</li><br/>
 </ul>

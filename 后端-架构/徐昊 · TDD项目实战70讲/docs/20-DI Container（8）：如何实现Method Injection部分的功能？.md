@@ -201,7 +201,7 @@ public interface Context {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>张铁林</span> 👍（0） 💬（1）<div>编辑，字段注入那里，被删除掉了一项，之前还有4项的。</div>2022-04-27</li><br/><li><span>aoe</span> 👍（2） 💬（0）<div>收获
+<li><span>张铁林</span> 👍（0） 💬（1）<p>编辑，字段注入那里，被删除掉了一项，之前还有4项的。</p>2022-04-27</li><br/><li><span>aoe</span> 👍（2） 💬（0）<p>收获
 
 1. 掌握了从子类递归寻找到父类的方法
 while (current != Object.class) {
@@ -212,7 +212,7 @@ while (current != Object.class) {
 - 遇事不要冲动，直接想到的不一定是最好的
 - 多思考，尽量使用工具方法简化问题
 
-3. 渐渐的比之前更理解代码了</div>2022-04-29</li><br/><li><span>tdd学徒</span> 👍（1） 💬（0）<div>这段父类先调，子类后调的构造真巧妙  
+3. 渐渐的比之前更理解代码了</p>2022-04-29</li><br/><li><span>tdd学徒</span> 👍（1） 💬（0）<p>这段父类先调，子类后调的构造真巧妙  
    static class SuperClassWithInjectMethod {
             int superCalled = 0;
 
@@ -229,16 +229,16 @@ while (current != Object.class) {
             void installAnother() {
                 subCalled = superCalled + 1;
             }
-        }</div>2022-05-02</li><br/><li><span>烧灯续昼</span> 👍（0） 💬（0）<div>新增的两个filter，判断method的方法名和参数类型是否完全相同的地方，未做到TDD。
+        }</p>2022-05-02</li><br/><li><span>烧灯续昼</span> 👍（0） 💬（0）<p>新增的两个filter，判断method的方法名和参数类型是否完全相同的地方，未做到TDD。
 遗漏了一种测试验证：方法名相同，参数列表不同。
 
 由子类方法标记@Inject 会覆盖且不执行父类@Inject方法的测试驱动了代码：.filter(m -&gt; injectMethods.stream().noneMatch(o -&gt; o.getName().equals(m.getName()) &amp;&amp; Arrays.equals(m.getParameterTypes(), o.getParameterTypes()))) 没有什么问题，
-but 这段代码的作用是判断是否是重写方法。这里应该立即补充上判断是否是重写方法的测试</div>2023-02-25</li><br/><li><span>蝴蝶</span> 👍（0） 💬（0）<div>2. 最有感触的几点有：1.需求能变成测试用例，再根据测试用例需要的效果调整代码，减少了关注点。2.关于 Method Constructor Field Stream 和常见 Api 的用法也挺重要的。</div>2022-08-28</li><br/><li><span>奇小易</span> 👍（0） 💬（0）<div>1、下一步行动，核心流程
+but 这段代码的作用是判断是否是重写方法。这里应该立即补充上判断是否是重写方法的测试</p>2023-02-25</li><br/><li><span>蝴蝶</span> 👍（0） 💬（0）<p>2. 最有感触的几点有：1.需求能变成测试用例，再根据测试用例需要的效果调整代码，减少了关注点。2.关于 Method Constructor Field Stream 和常见 Api 的用法也挺重要的。</p>2022-08-28</li><br/><li><span>奇小易</span> 👍（0） 💬（0）<p>1、下一步行动，核心流程
 先快速解决遗留下的sad path。
 重构生产代码之前，先重构测试代码。
 
 2、测试代码的重构思路，
 当前测试代码中有部分的测试是在专门测ConstructionInjectionProvider的功能。
 故可以将相关的测试提取到该测试类中。
-</div>2022-05-28</li><br/>
+</p>2022-05-28</li><br/>
 </ul>

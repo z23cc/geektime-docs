@@ -198,12 +198,12 @@ let g:ale_linters = {
 
 我是吴咏炜，我们下一讲再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>我来也</span> 👍（2） 💬（2）<div>学习了。
+<li><span>我来也</span> 👍（2） 💬（2）<p>学习了。
 
 平常工作中，python用的不多，我就用coc.nvim应付一下算了。
 有基本的语法高亮、补全、跳转就行了。
-</div>2020-08-29</li><br/><li><span>YouCompleteMe</span> 👍（1） 💬（1）<div>测了下--startuptime，IsGitRepo在我的电脑上带来140ms的耗时，换成 let g:pymode_rope = !empty(finddir(&#39;.git&#39;, &#39;.;&#39;)) ,耗时较少。同时看到colorscheme 设置语句，会带来30ms的加载时间，这个有办法优化吗～</div>2020-09-04</li><br/><li><span>谁家内存泄露了</span> 👍（0） 💬（1）<div>吴老师好，我用python都是小工程，不是大工程，因此我有个疑问：
+</p>2020-08-29</li><br/><li><span>YouCompleteMe</span> 👍（1） 💬（1）<p>测了下--startuptime，IsGitRepo在我的电脑上带来140ms的耗时，换成 let g:pymode_rope = !empty(finddir(&#39;.git&#39;, &#39;.;&#39;)) ,耗时较少。同时看到colorscheme 设置语句，会带来30ms的加载时间，这个有办法优化吗～</p>2020-09-04</li><br/><li><span>谁家内存泄露了</span> 👍（0） 💬（1）<p>吴老师好，我用python都是小工程，不是大工程，因此我有个疑问：
 我遇到的python工程中没有使用过cmake组织代码（或者说python这种解释类语言不需要？），
 所以也不会生成ycm中提到的数据库json文件。
-那在这种情况下，vim如何在全工程范围内进行find reference等跳转呢？</div>2022-12-19</li><br/><li><span>helloworld</span> 👍（0） 💬（2）<div>老师, 断点的功能怎么用呢, 我设置了断点后, 使用&lt;leader&gt;r运行python程序后, 状态栏提示:[Pymode] Code running ..., 就这样卡住了, 不知道接下来该怎么操作</div>2020-10-21</li><br/><li><span>铁匠</span> 👍（0） 💬（3）<div>使用pyenv和portry来管理依赖，怎么为不同项目配置不同虚拟目录</div>2020-09-01</li><br/><li><span>YouCompleteMe</span> 👍（0） 💬（2）<div>又到了纠结用ale 还是 pymode 和 YouCompleteMe提供的诊断功能了-_-</div>2020-08-28</li><br/><li><span>瀚海星尘</span> 👍（0） 💬（0）<div>最近正好在用 python 开发，配置好马上就用上了，真香！</div>2020-10-22</li><br/>
+那在这种情况下，vim如何在全工程范围内进行find reference等跳转呢？</p>2022-12-19</li><br/><li><span>helloworld</span> 👍（0） 💬（2）<p>老师, 断点的功能怎么用呢, 我设置了断点后, 使用&lt;leader&gt;r运行python程序后, 状态栏提示:[Pymode] Code running ..., 就这样卡住了, 不知道接下来该怎么操作</p>2020-10-21</li><br/><li><span>铁匠</span> 👍（0） 💬（3）<p>使用pyenv和portry来管理依赖，怎么为不同项目配置不同虚拟目录</p>2020-09-01</li><br/><li><span>YouCompleteMe</span> 👍（0） 💬（2）<p>又到了纠结用ale 还是 pymode 和 YouCompleteMe提供的诊断功能了-_-</p>2020-08-28</li><br/><li><span>瀚海星尘</span> 👍（0） 💬（0）<p>最近正好在用 python 开发，配置好马上就用上了，真香！</p>2020-10-22</li><br/>
 </ul>

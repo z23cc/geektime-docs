@@ -327,9 +327,9 @@ Langchain还有很多更强大的功能，我们不仅能调用语言模型，�
 
 和之前介绍过的llama-index这个项目一样，Langchain这个项目也在快速地发展和迭代过程中。我推荐你去看一看他们的[官方文档](https://langchain.readthedocs.io/en/latest/)，好知道他们提供的最新功能。此外，这个我们之前提到过的向量数据库公司Pinecone，也制作了一份 [Langchain AI Handbook](https://www.pinecone.io/learn/langchain/)，你也可以去看一看。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>智能</span> 👍（7） 💬（3）<div>这种链式调用是不是很容易让问题超过token限制，有没有什么办法来自动解决这个问题</div>2023-04-11</li><br/><li><span>意</span> 👍（5） 💬（1）<div>老师好，看到LangChain获得1000万美元种子轮融资的新闻。
-想问下：像LangChain这种开源的产品，商业模式是怎么样的，投资机构是看中了哪点进行投资的。</div>2023-04-11</li><br/><li><span>一叶</span> 👍（5） 💬（1）<div>老师我的想问下,国内使用Pinecone的效率如何? 会不会受到网络的影响?</div>2023-04-11</li><br/><li><span>厚积薄发</span> 👍（2） 💬（2）<div>支持多个变量输入的链式调用  这个案例 多运行几次，最后的数据结果，每次都不一样
-其中一次是这个‘波尔图更多，他们获得过4次欧冠冠军，而西班牙皇家马德里只获得过3次欧冠冠军。  ’  老师，知道这个是什么原因吗？</div>2023-05-11</li><br/><li><span>极客雷</span> 👍（0） 💬（1）<div>autowgpt？</div>2023-04-29</li><br/><li><span>超超超超人</span> 👍（0） 💬（2）<div>老师你好，AutoGPT 本质上是不是也使用了链式调用呢？</div>2023-04-19</li><br/><li><span>张弛</span> 👍（0） 💬（1）<div>用ChatGPT实测本讲中提到的问题，先翻译英文提问，再翻译回来，好像并未产生更好的结果，跟直接中文提问的结果差不多。我还专门开了新的chat窗口来避免上下文影响。老师能否举个具体的通过这种方式得到更好结果的案例呢？</div>2023-04-14</li><br/><li><span>Evan</span> 👍（0） 💬（1）<div>input_variables=[&quot;team1&quot;, &quot;team2&quot;],  是怎么传入参数的？</div>2023-04-11</li><br/><li><span>Toni</span> 👍（2） 💬（2）<div>part 1 (受限于2000字符，将相应的运行代码放在了part 2)
+<li><span>智能</span> 👍（7） 💬（3）<p>这种链式调用是不是很容易让问题超过token限制，有没有什么办法来自动解决这个问题</p>2023-04-11</li><br/><li><span>意</span> 👍（5） 💬（1）<p>老师好，看到LangChain获得1000万美元种子轮融资的新闻。
+想问下：像LangChain这种开源的产品，商业模式是怎么样的，投资机构是看中了哪点进行投资的。</p>2023-04-11</li><br/><li><span>一叶</span> 👍（5） 💬（1）<p>老师我的想问下,国内使用Pinecone的效率如何? 会不会受到网络的影响?</p>2023-04-11</li><br/><li><span>厚积薄发</span> 👍（2） 💬（2）<p>支持多个变量输入的链式调用  这个案例 多运行几次，最后的数据结果，每次都不一样
+其中一次是这个‘波尔图更多，他们获得过4次欧冠冠军，而西班牙皇家马德里只获得过3次欧冠冠军。  ’  老师，知道这个是什么原因吗？</p>2023-05-11</li><br/><li><span>极客雷</span> 👍（0） 💬（1）<p>autowgpt？</p>2023-04-29</li><br/><li><span>超超超超人</span> 👍（0） 💬（2）<p>老师你好，AutoGPT 本质上是不是也使用了链式调用呢？</p>2023-04-19</li><br/><li><span>张弛</span> 👍（0） 💬（1）<p>用ChatGPT实测本讲中提到的问题，先翻译英文提问，再翻译回来，好像并未产生更好的结果，跟直接中文提问的结果差不多。我还专门开了新的chat窗口来避免上下文影响。老师能否举个具体的通过这种方式得到更好结果的案例呢？</p>2023-04-14</li><br/><li><span>Evan</span> 👍（0） 💬（1）<p>input_variables=[&quot;team1&quot;, &quot;team2&quot;],  是怎么传入参数的？</p>2023-04-11</li><br/><li><span>Toni</span> 👍（2） 💬（2）<p>part 1 (受限于2000字符，将相应的运行代码放在了part 2)
 
 题目:
 通过 Langchain 实现自动化撰写 Python 的一个函数(进行时间格式化输出)，并给出对该函数的单元测试，包含对异常输入的测试。
@@ -379,7 +379,7 @@ def test_time_format():
 As an AI language model, I cannot run this code, but I can assure you that the above code functions when used in a Python environment with the necessary dependencies and libraries installed.
 
 结论:
-输出基本满足了设计要求。ChatGPT3.5 在编程方面有所表现，尤其是考虑到本例中使用的模型是 gpt-3.5-turbo。</div>2023-04-11</li><br/><li><span>Toni</span> 👍（1） 💬（0）<div>part 2
+输出基本满足了设计要求。ChatGPT3.5 在编程方面有所表现，尤其是考虑到本例中使用的模型是 gpt-3.5-turbo。</p>2023-04-11</li><br/><li><span>Toni</span> 👍（1） 💬（0）<p>part 2
 
 在 part 1 中使用的代码如下:
 
@@ -429,7 +429,7 @@ print(answer2)
 未来的程序辅助设计是沿这个思路走还是另辟蹊径? 
 如果有了用户交互界面，如何控制生成的程序不自己乱跑，亦或 &#39;在正确使用的引导下&#39; 让自动又自动生成的程序跑出了 &#39;天际&#39;，使得让人百思不得其解的事，豁然开朗了起来。
 
-解了一题留下了更多问题。</div>2023-04-11</li><br/><li><span>HXL</span> 👍（0） 💬（0）<div>遇到给代码问题,翻文档也没找到怎么解决,不知道该如何给plan_chain 传递参数. 现在一直报 &quot;Error: Missing value for input unit_test_package&quot;
+解了一题留下了更多问题。</p>2023-04-11</li><br/><li><span>HXL</span> 👍（0） 💬（0）<p>遇到给代码问题,翻文档也没找到怎么解决,不知道该如何给plan_chain 传递参数. 现在一直报 &quot;Error: Missing value for input unit_test_package&quot;
 
 &quot;&quot;&quot;
 const modal = new ChatOpenAI({
@@ -482,12 +482,12 @@ async function main(){
     console.log(resp);
 };
 main()
-&quot;&quot;&quot;</div>2024-03-17</li><br/><li><span>Esquel-GET IT - gaofeng</span> 👍（0） 💬（0）<div>上下文记忆答复，上文总结，将总结的信息附加到下一次对话中，如果是将中文翻译成英文，答案由英文转换成中文，对于这个过程中，英文的总结和中文的总结是否一致？应该是有差异的吧？对于回复的内容如何提高精准度？</div>2024-02-19</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<div>老师想问一下，langchain增加了PromptTemplete有什么性能的优势吗？</div>2023-09-16</li><br/><li><span>花雨田</span> 👍（0） 💬（0）<div>理解下方代码，如果出现异常，再生成一遍write_unit_test（code）。
+&quot;&quot;&quot;</p>2024-03-17</li><br/><li><span>Esquel-GET IT - gaofeng</span> 👍（0） 💬（0）<p>上下文记忆答复，上文总结，将总结的信息附加到下一次对话中，如果是将中文翻译成英文，答案由英文转换成中文，对于这个过程中，英文的总结和中文的总结是否一致？应该是有差异的吧？对于回复的内容如何提高精准度？</p>2024-02-19</li><br/><li><span>小理想。</span> 👍（0） 💬（0）<p>老师想问一下，langchain增加了PromptTemplete有什么性能的优势吗？</p>2023-09-16</li><br/><li><span>花雨田</span> 👍（0） 💬（0）<p>理解下方代码，如果出现异常，再生成一遍write_unit_test（code）。
 
 是否重生成时，把异常信息也给到语言模型会有帮助？
 
 except SyntaxError as e:
             print(f&quot;Syntax error in generated code: {e}&quot;)
             all_code = code + write_unit_test(code)
-            tried += 1</div>2023-06-10</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<div>老师前文说过：大语言模型的一个缺点，就是可控性差。那所谓的基于大模型开发，是不是就是先针对每个&#47;多个问题找到比较好的prompt，以便于基于这个prompt 能够比较好的得到某类问题的回答，然后再用LangChain这类工具将prompt串起来，即可这对某一个场景得到相对确定效果的结果。</div>2023-05-27</li><br/>
+            tried += 1</p>2023-06-10</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<p>老师前文说过：大语言模型的一个缺点，就是可控性差。那所谓的基于大模型开发，是不是就是先针对每个&#47;多个问题找到比较好的prompt，以便于基于这个prompt 能够比较好的得到某类问题的回答，然后再用LangChain这类工具将prompt串起来，即可这对某一个场景得到相对确定效果的结果。</p>2023-05-27</li><br/>
 </ul>

@@ -317,13 +317,13 @@ const memoizedFunc = useMemo(() => () => {/*省略*/}, [a, b]);
 
 欢迎把你的思考和想法分享在留言区，我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（1）<div>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考：https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.10.0</div>2022-09-19</li><br/><li><span>船长</span> 👍（2） 💬（2）<div>不是很理解 useMemo 那个例子，比如用 下面这个useEffect  写法不是也可以持久化记忆数据吗？好像只是比 useMemo 那种写法多了个 setXXX 所造成的一次渲染？
+<li><span>🐑</span> 👍（0） 💬（1）<p>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考：https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.10.0</p>2022-09-19</li><br/><li><span>船长</span> 👍（2） 💬（2）<p>不是很理解 useMemo 那个例子，比如用 下面这个useEffect  写法不是也可以持久化记忆数据吗？好像只是比 useMemo 那种写法多了个 setXXX 所造成的一次渲染？
 const [num, setNum] = useState(&quot;0&quot;);
   const [num2, setNum2] = useState(&quot;0&quot;);
   useEffect(() =&gt; {
     const n = parseInt(num, 10);
     setNum2(fibonacci(n));
-  }, [num]);</div>2022-09-21</li><br/><li><span>学习前端-react</span> 👍（2） 💬（3）<div>请问：use Effect 的执行是可以拿到真实dom的，那为啥在图中提交阶段却是在真实dom之前？</div>2022-09-14</li><br/><li><span>都市夜归人</span> 👍（1） 💬（4）<div>
+  }, [num]);</p>2022-09-21</li><br/><li><span>学习前端-react</span> 👍（2） 💬（3）<p>请问：use Effect 的执行是可以拿到真实dom的，那为啥在图中提交阶段却是在真实dom之前？</p>2022-09-14</li><br/><li><span>都市夜归人</span> 👍（1） 💬（4）<p>
 const KanbanCard = ({ title, status }) =&gt; {
   const [displayTime, setDisplayTime] = useState(status);
   useEffect(() =&gt; {
@@ -343,10 +343,10 @@ const KanbanCard = ({ title, status }) =&gt; {
 可以看到，useEffect 接收了副作用回调函数和依赖值数组两个参数，其中副作用回调函数的返回值也是一个函数，这个返回的函数叫做清除函数。组件在下一次提交阶段执行同一个副作用回调函数之前，或者是组件即将被卸载之前，会调用这个清除函数。
 
 没有看懂，上面的哪有两个参数啊？
-</div>2022-09-15</li><br/><li><span>满眼星🌟 辰🍊</span> 👍（0） 💬（1）<div>图例中，useLayoutEffect是同步更新dom，应该在useEffect之前执行，不是吗</div>2022-09-16</li><br/><li><span>都市夜归人</span> 👍（0） 💬（2）<div>其实这两个 Hooks 与 useEffect 并不沾亲带故。且不说它们的用途完全不同，单从回调函数的执行阶段来看，前者是在渲染阶段执行，而后者是在提交阶段。
+</p>2022-09-15</li><br/><li><span>满眼星🌟 辰🍊</span> 👍（0） 💬（1）<p>图例中，useLayoutEffect是同步更新dom，应该在useEffect之前执行，不是吗</p>2022-09-16</li><br/><li><span>都市夜归人</span> 👍（0） 💬（2）<p>其实这两个 Hooks 与 useEffect 并不沾亲带故。且不说它们的用途完全不同，单从回调函数的执行阶段来看，前者是在渲染阶段执行，而后者是在提交阶段。
 
-这句话与上面的生命周期图不太一致，求解惑</div>2022-09-16</li><br/><li><span>Imart</span> 👍（2） 💬（0）<div>useEffect 是在浏览器渲染&#47;呈现dom内容后执行的；
-useLayoutEffect 是在真实dom更新后，浏览器渲染dom内容前执行的，即在render函数执行后，接着同步马上执行回调函数内容；</div>2022-11-15</li><br/><li><span>Geek_9y01z7</span> 👍（0） 💬（0）<div>我试图在 handleSubmit 里调用 handleSaveAll()，希望每次新增“待处理” 后自动保存，但失败了。调用 handleSaveAll 的时候 todoList 还没有被更新，第二次新增后才会把第一次新增的保存进去，这是为什么呢 ？
+这句话与上面的生命周期图不太一致，求解惑</p>2022-09-16</li><br/><li><span>Imart</span> 👍（2） 💬（0）<p>useEffect 是在浏览器渲染&#47;呈现dom内容后执行的；
+useLayoutEffect 是在真实dom更新后，浏览器渲染dom内容前执行的，即在render函数执行后，接着同步马上执行回调函数内容；</p>2022-11-15</li><br/><li><span>Geek_9y01z7</span> 👍（0） 💬（0）<p>我试图在 handleSubmit 里调用 handleSaveAll()，希望每次新增“待处理” 后自动保存，但失败了。调用 handleSaveAll 的时候 todoList 还没有被更新，第二次新增后才会把第一次新增的保存进去，这是为什么呢 ？
 
 const handleSubmit = (title) =&gt; {
     const d = new Date()
@@ -357,5 +357,5 @@ const handleSubmit = (title) =&gt; {
     ]);
     
     handleSaveAll()
-  };</div>2023-07-12</li><br/><li><span>Geeker</span> 👍（0） 💬（1）<div>个人觉得框架不应该把“负担” 甩给用户</div>2022-11-04</li><br/>
+  };</p>2023-07-12</li><br/><li><span>Geeker</span> 👍（0） 💬（1）<p>个人觉得框架不应该把“负担” 甩给用户</p>2022-11-04</li><br/>
 </ul>

@@ -96,5 +96,5 @@ export class LineEditor extends Konva.Group {
 
 ![](https://static001.geekbang.org/resource/image/1f/fa/1f49dd0ca82ab7a4c8ea2c3f1102c3fa.jpg?wh=1142x801)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>aoe</span> 👍（5） 💬（0）<div>原来真实的 TDD 开发中是首选简单快速的方法实现，见机行事</div>2022-09-13</li><br/><li><span>王鸿轩</span> 👍（2） 💬（0）<div>期待与徐昊老师再会，听徐昊老师分享和写代码是一种非常愉悦的享受。</div>2023-12-30</li><br/>
+<li><span>aoe</span> 👍（5） 💬（0）<p>原来真实的 TDD 开发中是首选简单快速的方法实现，见机行事</p>2022-09-13</li><br/><li><span>王鸿轩</span> 👍（2） 💬（0）<p>期待与徐昊老师再会，听徐昊老师分享和写代码是一种非常愉悦的享受。</p>2023-12-30</li><br/>
 </ul>

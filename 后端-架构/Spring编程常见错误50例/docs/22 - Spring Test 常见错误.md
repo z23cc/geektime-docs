@@ -431,5 +431,5 @@ class ServiceTwoTests  extends ServiceTests{
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Ethan New</span> 👍（0） 💬（0）<div>把依赖 Mock 的 Bean 声明在一个统一的地方，这种方式也太不方便了</div>2023-01-03</li><br/>
+<li><span>Ethan New</span> 👍（0） 💬（0）<p>把依赖 Mock 的 Bean 声明在一个统一的地方，这种方式也太不方便了</p>2023-01-03</li><br/>
 </ul>

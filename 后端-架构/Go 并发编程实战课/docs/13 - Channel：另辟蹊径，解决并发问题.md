@@ -549,7 +549,7 @@ chan的值和状态有多种情况，而不同的操作（send、recv、close）
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Noir</span> 👍（13） 💬（5）<div>package main
+<li><span>Noir</span> 👍（13） 💬（5）<p>package main
 
 import &quot;fmt&quot;
 import &quot;time&quot;
@@ -576,8 +576,8 @@ func main() {
 
 	chArr[0] &lt;- struct{}{}
 	select{}
-}</div>2021-12-19</li><br/><li><span>星星之火</span> 👍（4） 💬（3）<div>channel 中包含的 mutex 是什么呢，和课程最开始的 sync.mutex 是同一个东西吗？
-因为 sync.mutex 是依赖 channel 实现的，感觉应该不是同一个 mutex？</div>2020-12-05</li><br/><li><span>Geek_43dc82</span> 👍（2） 💬（3）<div>我实在是太蠢了，只能写出这样的代码了
+}</p>2021-12-19</li><br/><li><span>星星之火</span> 👍（4） 💬（3）<p>channel 中包含的 mutex 是什么呢，和课程最开始的 sync.mutex 是同一个东西吗？
+因为 sync.mutex 是依赖 channel 实现的，感觉应该不是同一个 mutex？</p>2020-12-05</li><br/><li><span>Geek_43dc82</span> 👍（2） 💬（3）<p>我实在是太蠢了，只能写出这样的代码了
 package main
 
 import &quot;fmt&quot;
@@ -612,7 +612,7 @@ func main() {
 	signChan1 &lt;- struct{}{}
 	&lt;-mainSignChan
 }
-</div>2022-04-19</li><br/><li><span>陌</span> 👍（2） 💬（1）<div>Goroutine 泄漏的那个例子，如果把 unbuffered chan 改成容量为 1 的 buffered chan，那么假如函数超时了，子 goroutine 也能够往 channel 中发送数据。那么 GC 会把这个 channel 回收吗?</div>2021-04-27</li><br/><li><span>老猫</span> 👍（1） 💬（1）<div>func chgoroutine(in,out,stop chan struct{},n int) {
+</p>2022-04-19</li><br/><li><span>陌</span> 👍（2） 💬（1）<p>Goroutine 泄漏的那个例子，如果把 unbuffered chan 改成容量为 1 的 buffered chan，那么假如函数超时了，子 goroutine 也能够往 channel 中发送数据。那么 GC 会把这个 channel 回收吗?</p>2021-04-27</li><br/><li><span>老猫</span> 👍（1） 💬（1）<p>func chgoroutine(in,out,stop chan struct{},n int) {
 	for{
 		select{
 			case  &lt;-in:
@@ -642,7 +642,7 @@ func main() {
 	time.Sleep(time.Second * 20)
 
 	stop &lt;-struct{}{}
-}</div>2022-01-23</li><br/><li><span>滴水穿石</span> 👍（0） 💬（1）<div>package main
+}</p>2022-01-23</li><br/><li><span>滴水穿石</span> 👍（0） 💬（1）<p>package main
 
 import (
 	&quot;fmt&quot;
@@ -675,7 +675,7 @@ func main() {
 		ch[chIndex] &lt;- struct{}{}
 	}
 
-}</div>2024-10-24</li><br/><li><span>呦呦鹿鸣</span> 👍（0） 💬（1）<div>老师，向一个nil的chan中send数据，我这边测试的结果是死锁，我看文章后面的表格里写的是block：
+}</p>2024-10-24</li><br/><li><span>呦呦鹿鸣</span> 👍（0） 💬（1）<p>老师，向一个nil的chan中send数据，我这边测试的结果是死锁，我看文章后面的表格里写的是block：
 func main() {
 	var c chan int
 	c &lt;- 1
@@ -685,7 +685,7 @@ fatal error: all goroutines are asleep - deadlock!
 
 goroutine 1 [chan send (nil chan)]:
 main.main()
-</div>2024-09-14</li><br/><li><span>Geek_24c089</span> 👍（0） 💬（1）<div>func LoopPrint() {
+</p>2024-09-14</li><br/><li><span>Geek_24c089</span> 👍（0） 💬（1）<p>func LoopPrint() {
 	n := 4
 	cs := make([]chan struct{}, n)
 
@@ -705,7 +705,7 @@ main.main()
 	}
 	cs[0] &lt;- struct{}{}
 	select {}
-}</div>2024-07-26</li><br/><li><span>huizhou92</span> 👍（0） 💬（1）<div>func main() {
+}</p>2024-07-26</li><br/><li><span>huizhou92</span> 👍（0） 💬（1）<p>func main() {
 	wg := sync.WaitGroup{}
 	ctx, cancelFunc := context.WithCancel(context.Background())
 	f := func(wg *sync.WaitGroup, index int, req, resp chan struct{}) {
@@ -733,7 +733,7 @@ main.main()
 	&lt;-time.After(time.Second * 20)
 	cancelFunc()
 	wg.Wait()
-}</div>2024-03-01</li><br/><li><span>chimission</span> 👍（0） 💬（1）<div>package main
+}</p>2024-03-01</li><br/><li><span>chimission</span> 👍（0） 💬（1）<p>package main
 
 import (
 	&quot;fmt&quot;
@@ -755,7 +755,7 @@ func main() {
 
 	select {}
 
-}</div>2023-01-07</li><br/><li><span>清风</span> 👍（0） 💬（1）<div>func main() {
+}</p>2023-01-07</li><br/><li><span>清风</span> 👍（0） 💬（1）<p>func main() {
 	chArr := []chan struct{}{
 		make(chan struct{}),
 		make(chan struct{}),
@@ -786,7 +786,7 @@ func goon(ch chan struct{}, ch2 chan struct{}, index int) {
 		ch2 &lt;- struct{}{}
 	}
 }
-</div>2022-10-19</li><br/><li><span>张觥</span> 👍（0） 💬（1）<div>func TestChannel1Practice(t *testing.T) {
+</p>2022-10-19</li><br/><li><span>张觥</span> 👍（0） 💬（1）<p>func TestChannel1Practice(t *testing.T) {
 	var ch = make(chan struct{})
 	wg := sync.WaitGroup{}
 	wg.Add(4)
@@ -811,7 +811,7 @@ func goon(ch chan struct{}, ch2 chan struct{}, index int) {
 
 	wg.Wait()
 	t.Log(&quot;finished&quot;)
-}</div>2022-10-18</li><br/><li><span>草色青青</span> 👍（0） 💬（1）<div>func tt(ctx context.Context, c1, c2 *chan int) {
+}</p>2022-10-18</li><br/><li><span>草色青青</span> 👍（0） 💬（1）<p>func tt(ctx context.Context, c1, c2 *chan int) {
 	for {
 		select {
 		case n := &lt;-*c1:
@@ -843,7 +843,7 @@ func PrintInfo() {
 	cancel()
 
 	fmt.Println(&quot;Hello, 世界&quot;)
-}</div>2022-09-18</li><br/><li><span>Penn</span> 👍（0） 💬（1）<div>&#47;&#47; 4个goroutine
+}</p>2022-09-18</li><br/><li><span>Penn</span> 👍（0） 💬（1）<p>&#47;&#47; 4个goroutine
 	ch1 := make(chan struct{})
 	ch2 := make(chan struct{})
 	ch3 := make(chan struct{})
@@ -887,7 +887,7 @@ func PrintInfo() {
 	}()
 
 	ch1 &lt;- struct{}{}
-	select {}</div>2021-12-22</li><br/><li><span>石头娃</span> 👍（0） 💬（2）<div>思考题：
+	select {}</p>2021-12-22</li><br/><li><span>石头娃</span> 👍（0） 💬（2）<p>思考题：
 
 func main() {
 	var a = make(chan int, 1)
@@ -926,5 +926,5 @@ func main() {
 	}()
 	d &lt;- 1
 	&lt;-e
-}</div>2020-11-19</li><br/>
+}</p>2020-11-19</li><br/>
 </ul>

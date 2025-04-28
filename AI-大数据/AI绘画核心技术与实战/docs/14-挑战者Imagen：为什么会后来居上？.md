@@ -219,7 +219,7 @@ image[0].save("./if_stage_III.png")
 
 欢迎你在评论区里记录自己的思考或者疑问，我们可以一起留言讨论，共同进步！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Toni</span> 👍（1） 💬（3）<div>在Colab A100 下跑 DeepFloyd IF 的代码会出现下列报错:
+<li><span>Toni</span> 👍（1） 💬（3）<p>在Colab A100 下跑 DeepFloyd IF 的代码会出现下列报错:
 
 ModuleNotFoundError                       Traceback (most recent call last)
 &lt;ipython-input-8-1bb975dcc2d2&gt; in &lt;cell line: 7&gt;()
@@ -242,6 +242,6 @@ ModuleNotFoundError: Refer to https:&#47;&#47;github.com&#47;facebookresearch&#4
 --------------------
 
 再装 xformers 后报错依旧，什么原因?
-pip install -U xformers</div>2023-08-18</li><br/><li><span>Eric.Sui</span> 👍（0） 💬（1）<div>边缘重绘用什么方案？算是变体吗？</div>2023-08-24</li><br/><li><span>Geek_7401d2</span> 👍（0） 💬（1）<div>老师您好，DeepFloyd IF模型和stable diffusion 1.5、stable diffusion 2.0等是什么关系呢，他们是两类扩散模型吗？生成效果哪个更好呢</div>2023-08-22</li><br/><li><span>cmsgoogle</span> 👍（0） 💬（1）<div>运行上面这段代码，需要至少 20G 以上的显存。如果需要降低显存占用，可以用 xFormer 优化 Transformer 的计算效率，或者释放已经完成推理的模型资源等。
-- TextinImage的示例代码没有给出。</div>2023-08-20</li><br/><li><span>zhihai.tu</span> 👍（0） 💬（1）<div>在哪里可以体验下imagen绘画呢？</div>2023-08-18</li><br/>
+pip install -U xformers</p>2023-08-18</li><br/><li><span>Eric.Sui</span> 👍（0） 💬（1）<p>边缘重绘用什么方案？算是变体吗？</p>2023-08-24</li><br/><li><span>Geek_7401d2</span> 👍（0） 💬（1）<p>老师您好，DeepFloyd IF模型和stable diffusion 1.5、stable diffusion 2.0等是什么关系呢，他们是两类扩散模型吗？生成效果哪个更好呢</p>2023-08-22</li><br/><li><span>cmsgoogle</span> 👍（0） 💬（1）<p>运行上面这段代码，需要至少 20G 以上的显存。如果需要降低显存占用，可以用 xFormer 优化 Transformer 的计算效率，或者释放已经完成推理的模型资源等。
+- TextinImage的示例代码没有给出。</p>2023-08-20</li><br/><li><span>zhihai.tu</span> 👍（0） 💬（1）<p>在哪里可以体验下imagen绘画呢？</p>2023-08-18</li><br/>
 </ul>

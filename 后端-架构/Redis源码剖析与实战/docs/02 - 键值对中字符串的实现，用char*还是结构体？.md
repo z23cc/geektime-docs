@@ -260,7 +260,7 @@ SDS字符串在Redis内部模块实现中也被广泛使用，你能在Redis ser
 
 欢迎在留言区分享你的思考和操作过程，我们一起交流讨论。如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>lzh2nix</span> 👍（19） 💬（2）<div>个人觉得这里使用__attribute__ ((__packed__))除了节省内存空间之外，还有一个很精妙的设计就是在packed之后可以通过以下的方式来获取flags字段
+<li><span>lzh2nix</span> 👍（19） 💬（2）<p>个人觉得这里使用__attribute__ ((__packed__))除了节省内存空间之外，还有一个很精妙的设计就是在packed之后可以通过以下的方式来获取flags字段
 
 	unsigned char flags = s[-1];
     
@@ -277,7 +277,7 @@ SDS字符串在Redis内部模块实现中也被广泛使用，你能在Redis ser
             return SDS_HDR(64,s)-&gt;len;
     }
 
-从而更进一步的得到struct的具体类型，如果是非1字节对齐的话，这里就不能这样操作。而sds中通过原始的char* 定位到sds的Header是设计的的**灵魂**</div>2021-08-02</li><br/><li><span>lzh2nix</span> 👍（2） 💬（1）<div>&quot;这两个元数据占用的内存空间在 sdshdr16、sdshdr32、sdshdr64 类型中，则分别是 2 字节、4 字节和 8 字节&quot;
+从而更进一步的得到struct的具体类型，如果是非1字节对齐的话，这里就不能这样操作。而sds中通过原始的char* 定位到sds的Header是设计的的**灵魂**</p>2021-08-02</li><br/><li><span>lzh2nix</span> 👍（2） 💬（1）<p>&quot;这两个元数据占用的内存空间在 sdshdr16、sdshdr32、sdshdr64 类型中，则分别是 2 字节、4 字节和 8 字节&quot;
 
 这里的描述是是否有问题， sdshdr16中len， alloc这两个元数据占用的空间应该是4字节，其他两个类推。
 struct __attribute__((__packed__))sdshdr16 {
@@ -285,7 +285,7 @@ struct __attribute__((__packed__))sdshdr16 {
         uint16_t alloc; &#47;* 2字节*&#47;
         unsigned char flags; &#47;* 1字节 *&#47;
         char buf[];
-    };</div>2021-08-02</li><br/><li><span>Kaito</span> 👍（106） 💬（15）<div>char* 的不足：
+    };</p>2021-08-02</li><br/><li><span>Kaito</span> 👍（106） 💬（15）<p>char* 的不足：
 - 操作效率低：获取长度需遍历，O(N)复杂度
 - 二进制不安全：无法存储包含 \0 的数据
 
@@ -309,7 +309,7 @@ SDS 的优势：
 2、Redis Server 在读取 Client 发来的请求时，会先读到一个缓冲区中，这个缓冲区也是 SDS（详见 server.h 中 struct client 的 querybuf 字段）
 
 3、写操作追加到 AOF 时，也会先写到 AOF 缓冲区，这个缓冲区也是 SDS （详见 server.h 中 struct client 的 aof_buf 字段）
-</div>2021-07-29</li><br/><li><span>悟空聊架构</span> 👍（13） 💬（3）<div>课后题：使用 SDS 字符串的地方？
+</p>2021-07-29</li><br/><li><span>悟空聊架构</span> 👍（13） 💬（3）<p>课后题：使用 SDS 字符串的地方？
 
 1. server.h 文件中的 `redisObject` 对象，key 和 value 都是对象，key （键对象）都是 SDS 简单动态字符串对象
 2. cluter.c 的 clusterGenNodesDescription 函数中。这个函数代表以 csv 格式记录当前节点已知所有节点的信息。
@@ -384,7 +384,7 @@ sds sndbuf;                 &#47;* Packet send buffer *&#47;
 sds rcvbuf;     
 ```
 
-（4）Redis 会维护每个 Client 的状态，Client 发送的请求，会被缓存到 querybuf 中。</div>2021-07-29</li><br/><li><span>lzh2nix</span> 👍（12） 💬（0）<div>个人觉得sds有一个很优秀的设计是对外和char*保持一致，在sds外面可以像使用char*一样来使用sds，但是使用sds相关函数操作的时候又可以发挥sds的特性(通过偏移量来找到sds的header)。
+（4）Redis 会维护每个 Client 的状态，Client 发送的请求，会被缓存到 querybuf 中。</p>2021-07-29</li><br/><li><span>lzh2nix</span> 👍（12） 💬（0）<p>个人觉得sds有一个很优秀的设计是对外和char*保持一致，在sds外面可以像使用char*一样来使用sds，但是使用sds相关函数操作的时候又可以发挥sds的特性(通过偏移量来找到sds的header)。
 
 我们可以看到在sdsnewlen中返回的是char*
 
@@ -394,14 +394,14 @@ sds sdsnewlen(const void *init, size_t initlen) {
     s = (char*)sh+hdrlen;
     return s;
 }
-这样的实际对外面的使用着来说就很友好很友好的。</div>2021-08-01</li><br/><li><span>frankylee</span> 👍（6） 💬（4）<div>既然这篇是讲解SDS的,那按道理来说   SDS内存空间分配策略,以及空间释放册罗 这块就应该讲清楚,但是通篇读下来好像并没提到这块,读完下面的精选留言部分读者可能仍然云里雾里</div>2021-07-30</li><br/><li><span>Milittle</span> 👍（4） 💬（0）<div>设计着实牛逼：
+这样的实际对外面的使用着来说就很友好很友好的。</p>2021-08-01</li><br/><li><span>frankylee</span> 👍（6） 💬（4）<p>既然这篇是讲解SDS的,那按道理来说   SDS内存空间分配策略,以及空间释放册罗 这块就应该讲清楚,但是通篇读下来好像并没提到这块,读完下面的精选留言部分读者可能仍然云里雾里</p>2021-07-30</li><br/><li><span>Milittle</span> 👍（4） 💬（0）<p>设计着实牛逼：
 1. 使用sds这个字符数组保存所有8 16 32 64的结构体。
 2. 结构体中的len alloc 对应不同类型占不同字节数，flags始终是相同的，后面char buf[]就是真实的字符串。
 3. SDS_HDR 这个宏定义，一键让sds回到指针初始的地方，对变量进行设置。
 4. 一开始纳闷在取flags的时候，直接使用s[-1],不会数据越界么，但是你仔细瞧一瞧，发现这个s指向的位置，刚好是char buf[]这里，-1 的位置刚好是flags。害，还是发现c牛逼。一个指针掌控的死死的。
 
 望赐教
-</div>2021-07-29</li><br/><li><span>曾轼麟</span> 👍（2） 💬（0）<div>Redis设计sds的意图：
+</p>2021-07-29</li><br/><li><span>曾轼麟</span> 👍（2） 💬（0）<p>Redis设计sds的意图：
     1、满足存储传输二进制的条件（避免\0歧义）
     2、高效操作字符串（通过len和alloc,快速获取字符长度大小以及跳转到字符串末尾）
     3、紧凑型内存设计（按照字符串类型，len和alloc使用不同的类型节约内存，并且关闭内存对齐来达到内存高效利用，在redis中除了sds，intset和ziplist也有类似的目底）
@@ -418,10 +418,10 @@ client:
 
 redisServer：
     1、aof_buf（aof缓冲区）
-    等等</div>2021-07-29</li><br/><li><span>J²</span> 👍（1） 💬（0）<div>&#47;&#47;将源字符串中的每个字符逐一赋值到目标字符串中，直到遇到结束字符 
+    等等</p>2021-07-29</li><br/><li><span>J²</span> 👍（1） 💬（0）<p>&#47;&#47;将源字符串中的每个字符逐一赋值到目标字符串中，直到遇到结束字符 
 while((*dest++ = *src++) != &#39;\0&#39; )
-这里少了个分号，应该是while((*dest++ = *src++) != &#39;\0&#39; );</div>2022-06-06</li><br/><li><span>ikel</span> 👍（1） 💬（0）<div>5年前看redis源码，当时把sds结构用到了项目中来处理字符串，也没出过啥幺蛾子，只可惜后来没有再继续看源码了</div>2021-08-31</li><br/><li><span>Geek4452</span> 👍（1） 💬（4）<div>和c++ string一样？std string也能满足上述的需求啊，为啥不直接用</div>2021-08-04</li><br/><li><span>命运女神在微笑</span> 👍（1） 💬（0）<div>sdshdr5结构会被使用，if (type == SDS_TYPE_5 &amp;&amp; initlen == 0)，当长度小于sdshdr8且不为空的时候就会被使用，具体的解释可以看这个issue  https:&#47;&#47;github.com&#47;redis&#47;redis&#47;issues&#47;7581，</div>2021-08-02</li><br/><li><span>BrightLoong</span> 👍（1） 💬（0）<div>mac版本过高，5.0.8编译因为debug.c文件报错的问题，我这边参照最新版本的源文件修改了下，现在可以编译成功了，有需要可以自己下载替换
-链接: https:&#47;&#47;pan.baidu.com&#47;s&#47;1dKC9n2a9CmaQCkxn2OuZPw 提取码: 6d6v</div>2021-07-30</li><br/><li><span>| ~浑蛋~</span> 👍（0） 💬（0）<div>两个宏 SDS_HDR_VAR 和 SDS_HDR 是用于在SDS（Simple Dynamic String）数据结构中从字符串指针获取其对应的SDS头部指针。SDS头部包含了字符串的元数据，如长度和剩余空间。具体来说，这两个宏的功能如下：
+这里少了个分号，应该是while((*dest++ = *src++) != &#39;\0&#39; );</p>2022-06-06</li><br/><li><span>ikel</span> 👍（1） 💬（0）<p>5年前看redis源码，当时把sds结构用到了项目中来处理字符串，也没出过啥幺蛾子，只可惜后来没有再继续看源码了</p>2021-08-31</li><br/><li><span>Geek4452</span> 👍（1） 💬（4）<p>和c++ string一样？std string也能满足上述的需求啊，为啥不直接用</p>2021-08-04</li><br/><li><span>命运女神在微笑</span> 👍（1） 💬（0）<p>sdshdr5结构会被使用，if (type == SDS_TYPE_5 &amp;&amp; initlen == 0)，当长度小于sdshdr8且不为空的时候就会被使用，具体的解释可以看这个issue  https:&#47;&#47;github.com&#47;redis&#47;redis&#47;issues&#47;7581，</p>2021-08-02</li><br/><li><span>BrightLoong</span> 👍（1） 💬（0）<p>mac版本过高，5.0.8编译因为debug.c文件报错的问题，我这边参照最新版本的源文件修改了下，现在可以编译成功了，有需要可以自己下载替换
+链接: https:&#47;&#47;pan.baidu.com&#47;s&#47;1dKC9n2a9CmaQCkxn2OuZPw 提取码: 6d6v</p>2021-07-30</li><br/><li><span>| ~浑蛋~</span> 👍（0） 💬（0）<p>两个宏 SDS_HDR_VAR 和 SDS_HDR 是用于在SDS（Simple Dynamic String）数据结构中从字符串指针获取其对应的SDS头部指针。SDS头部包含了字符串的元数据，如长度和剩余空间。具体来说，这两个宏的功能如下：
 
 SDS_HDR_VAR(T, s):
 这个宏定义了一个变量 sh，它是指向SDS头部的指针。
@@ -437,5 +437,5 @@ SDS_HDR(T, s):
 T 和 s 的含义与 SDS_HDR_VAR 中相同。
 宏的实现方式与 SDS_HDR_VAR 类似，通过将字符串指针 s 减去相应的SDS头部结构的大小来计算头部的起始地址，并将其转换为相应类型的指针。
 #define SDS_HDR(T, s) ((struct sdshdr##T *)((s) - (sizeof(struct sdshdr##T))))
-这个宏的作用是返回一个指向SDS头部的指针，而不声明变量。</div>2024-06-17</li><br/><li><span>掂过碌蔗</span> 👍（0） 💬（0）<div>字节对齐的介绍：https:&#47;&#47;zhuanlan.zhihu.com&#47;p&#47;30007037</div>2023-09-27</li><br/>
+这个宏的作用是返回一个指向SDS头部的指针，而不声明变量。</p>2024-06-17</li><br/><li><span>掂过碌蔗</span> 👍（0） 💬（0）<p>字节对齐的介绍：https:&#47;&#47;zhuanlan.zhihu.com&#47;p&#47;30007037</p>2023-09-27</li><br/>
 </ul>

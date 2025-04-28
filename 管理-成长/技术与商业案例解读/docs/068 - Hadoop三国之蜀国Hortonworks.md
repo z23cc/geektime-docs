@@ -74,5 +74,5 @@ Hortonworks这个正统出身的Hadoop公司，今天混到这步田地，只能
 
 Hortonworks公司既无大公司支持，又没有自己独特的功能。100%的开源，没有自己主导的开源项目，也没有自己开发的闭源的套件，它的未来之路会好走吗？
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>caohuan</span> 👍（6） 💬（0）<div>公司 没大将，没能抱大腿，有没有搞事，没特色，既开源 又不主导，也没有商业化套件，导致 小二黑过年，一年不如一年，请教徐飞老师，这句顺口溜 出自那个地方。</div>2018-11-30</li><br/><li><span>方得始终</span> 👍（5） 💬（0）<div>Cloudera和Hortonworks今天刚宣布合并了。会不会再上演一场&quot;三国归晋&quot;，我们拭目以待</div>2018-10-04</li><br/><li><span>self-discipline</span> 👍（1） 💬（0）<div>hort好似小品演员一般</div>2019-09-30</li><br/><li><span>Panda</span> 👍（1） 💬（0）<div>天下大势，分久必合合久必分。最后会大一统</div>2018-12-28</li><br/><li><span>Will</span> 👍（1） 💬（0）<div>现在市值hortonworks 17.5亿，Cloudera25亿。各自的发展方向又有了不同。飞哥再谈谈现在的看法？</div>2018-10-04</li><br/>
+<li><span>caohuan</span> 👍（6） 💬（0）<p>公司 没大将，没能抱大腿，有没有搞事，没特色，既开源 又不主导，也没有商业化套件，导致 小二黑过年，一年不如一年，请教徐飞老师，这句顺口溜 出自那个地方。</p>2018-11-30</li><br/><li><span>方得始终</span> 👍（5） 💬（0）<p>Cloudera和Hortonworks今天刚宣布合并了。会不会再上演一场&quot;三国归晋&quot;，我们拭目以待</p>2018-10-04</li><br/><li><span>self-discipline</span> 👍（1） 💬（0）<p>hort好似小品演员一般</p>2019-09-30</li><br/><li><span>Panda</span> 👍（1） 💬（0）<p>天下大势，分久必合合久必分。最后会大一统</p>2018-12-28</li><br/><li><span>Will</span> 👍（1） 💬（0）<p>现在市值hortonworks 17.5亿，Cloudera25亿。各自的发展方向又有了不同。飞哥再谈谈现在的看法？</p>2018-10-04</li><br/>
 </ul>

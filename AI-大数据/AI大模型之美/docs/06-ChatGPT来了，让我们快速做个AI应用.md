@@ -384,7 +384,7 @@ demo.launch()
 
 期待能在评论区看到你的思考，也欢迎你把这节课分享给感兴趣的朋友，我们下一讲再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_19eca2</span> 👍（6） 💬（0）<div>最新代码： 
+<li><span>Geek_19eca2</span> 👍（6） 💬（0）<p>最新代码： 
 import os
 
 from openai import OpenAI
@@ -420,9 +420,9 @@ class Conversation:
 
 
 不然跑不过去。。openai改了。。。
-</div>2024-01-23</li><br/><li><span>我自己带盐</span> 👍（30） 💬（2）<div>可以认模型总结一下，全部的对话，再发过去</div>2023-03-29</li><br/><li><span>黄琨</span> 👍（16） 💬（1）<div>问题1: 为了防止超标，可能需要在对话开始前设置一个允许最大的token阈值，比如 MAX_TOKEN_LIMIT = 2000，再设置一个小于某个数量就需要提醒的警告值，比如 MIN_TOKEN_LIMIT = 200，对话前初始化一个最大值，对话过程中减去每轮所消耗的token数量，当结果少于最小值的时候，再调用删减对话数组的代码。
+</p>2024-01-23</li><br/><li><span>我自己带盐</span> 👍（30） 💬（2）<p>可以认模型总结一下，全部的对话，再发过去</p>2023-03-29</li><br/><li><span>黄琨</span> 👍（16） 💬（1）<p>问题1: 为了防止超标，可能需要在对话开始前设置一个允许最大的token阈值，比如 MAX_TOKEN_LIMIT = 2000，再设置一个小于某个数量就需要提醒的警告值，比如 MIN_TOKEN_LIMIT = 200，对话前初始化一个最大值，对话过程中减去每轮所消耗的token数量，当结果少于最小值的时候，再调用删减对话数组的代码。
 
-问题2: 限制文本长度。或许可以把对话中的大段文本缩减为精简摘要，以减少token数量，比如把“鱼香肉丝的做法是......”这种精简后的文本带入到上下文中去。别的暂时想不到 =_=!</div>2023-03-29</li><br/><li><span>LiuHu</span> 👍（9） 💬（2）<div>用向量数据库把历史回话保存到本地，新的问题先转向量，从向量库中搜出相关内容，再把搜出的内容作为上下文+新问题一起带过去</div>2023-03-30</li><br/><li><span>浩仔是程序员</span> 👍（7） 💬（4）<div>目前chatGPT的上下文功能也是这么实现的吗？每次都要发之前的问题和答案，感觉很蠢</div>2023-04-01</li><br/><li><span>胡萝卜</span> 👍（6） 💬（1）<div>输入文本超长时需要不能直接截断，不然可能不听指令直接续写。截断后把最后一个句子去掉，并以句号结尾防止出现奇怪的回复。</div>2023-03-29</li><br/><li><span>Allan</span> 👍（3） 💬（1）<div>老师可以把每节课的项目都放到一个工程里面吗？然后我们可以下载这样是不是方便一些。</div>2023-04-07</li><br/><li><span>new one</span> 👍（1） 💬（1）<div> 出现SSL握手失败的问题，请教一下应该怎么解决，问了chatgpt，使用了：
+问题2: 限制文本长度。或许可以把对话中的大段文本缩减为精简摘要，以减少token数量，比如把“鱼香肉丝的做法是......”这种精简后的文本带入到上下文中去。别的暂时想不到 =_=!</p>2023-03-29</li><br/><li><span>LiuHu</span> 👍（9） 💬（2）<p>用向量数据库把历史回话保存到本地，新的问题先转向量，从向量库中搜出相关内容，再把搜出的内容作为上下文+新问题一起带过去</p>2023-03-30</li><br/><li><span>浩仔是程序员</span> 👍（7） 💬（4）<p>目前chatGPT的上下文功能也是这么实现的吗？每次都要发之前的问题和答案，感觉很蠢</p>2023-04-01</li><br/><li><span>胡萝卜</span> 👍（6） 💬（1）<p>输入文本超长时需要不能直接截断，不然可能不听指令直接续写。截断后把最后一个句子去掉，并以句号结尾防止出现奇怪的回复。</p>2023-03-29</li><br/><li><span>Allan</span> 👍（3） 💬（1）<p>老师可以把每节课的项目都放到一个工程里面吗？然后我们可以下载这样是不是方便一些。</p>2023-04-07</li><br/><li><span>new one</span> 👍（1） 💬（1）<p> 出现SSL握手失败的问题，请教一下应该怎么解决，问了chatgpt，使用了：
 import ssl
 context = ssl.create_default_context()
 context.load_verify_locations(&quot;D:\Anaconda\Library\ssl\cert.pem&quot;)
@@ -430,10 +430,10 @@ context.load_verify_locations(&quot;D:\Anaconda\Library\ssl\cert.pem&quot;)
 
 具体报错如下：
 Error communicating with OpenAI: HTTPSConnectionPool(host=&#39;api.openai.com&#39;, port=443): Max retries exceeded with url: &#47;v1&#47;chat&#47;completions (Caused by SSLError(SSLError(1, &#39;[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1129)&#39;)))
-Assistant : Error communicating with OpenAI: HTTPSConnectionPool(host=&#39;api.openai.com&#39;, port=443): Max retries exceeded with url: &#47;v1&#47;chat&#47;completions (Caused by SSLError(SSLError(1, &#39;[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1129)&#39;)))</div>2023-04-03</li><br/><li><span>川月</span> 👍（1） 💬（6）<div>    del self.messages[1:3] &#47;&#47;Remove the first round conversation left.
+Assistant : Error communicating with OpenAI: HTTPSConnectionPool(host=&#39;api.openai.com&#39;, port=443): Max retries exceeded with url: &#47;v1&#47;chat&#47;completions (Caused by SSLError(SSLError(1, &#39;[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1129)&#39;)))</p>2023-04-03</li><br/><li><span>川月</span> 👍（1） 💬（6）<p>    del self.messages[1:3] &#47;&#47;Remove the first round conversation left.
         ^
-SyntaxError: cannot delete operator 为什么这个报错啊</div>2023-03-31</li><br/><li><span>Bonnenult丶凉煜</span> 👍（1） 💬（1）<div>安装gradio需要使用这个命令conda install -c conda-forge gradio</div>2023-03-30</li><br/><li><span>陈鹏</span> 👍（0） 💬（1）<div>成功运行，开心。
-请教老师一个问题：用hugging face 自己搭建的app，会一直运行吗？平台是否有策略到一定时间后停止我的app？</div>2023-05-15</li><br/><li><span>王石磊</span> 👍（0） 💬（3）<div>我的示例报错现象是这样的，程序代码中设置了 API_KEY 和 网路代理，运行其他前面的代码正常，本节课的代码出现了。下面的问题。不存在API_KEY 费用不足或谷歌不能访问的情况。
+SyntaxError: cannot delete operator 为什么这个报错啊</p>2023-03-31</li><br/><li><span>Bonnenult丶凉煜</span> 👍（1） 💬（1）<p>安装gradio需要使用这个命令conda install -c conda-forge gradio</p>2023-03-30</li><br/><li><span>陈鹏</span> 👍（0） 💬（1）<p>成功运行，开心。
+请教老师一个问题：用hugging face 自己搭建的app，会一直运行吗？平台是否有策略到一定时间后停止我的app？</p>2023-05-15</li><br/><li><span>王石磊</span> 👍（0） 💬（3）<p>我的示例报错现象是这样的，程序代码中设置了 API_KEY 和 网路代理，运行其他前面的代码正常，本节课的代码出现了。下面的问题。不存在API_KEY 费用不足或谷歌不能访问的情况。
 openai.api_key = os.environ[&quot;OPENAI_API_KEY&quot;]
 os.environ[&quot;http_proxy&quot;] = &quot;socks5:&#47;&#47;127.0.0.1:xxx&quot;
 os.environ[&quot;https_proxy&quot;] = &quot;socks5:&#47;&#47;127.0.0.1:xxx&quot;
@@ -453,6 +453,6 @@ Traceback (most recent call last):
     raise RemoteDisconnected(&quot;Remote end closed connection without&quot;
 http.client.RemoteDisconnected: Remote end closed connection without response
 
-During handling of the above exception, another exception occurred:</div>2023-05-14</li><br/><li><span>陈鹏</span> 👍（0） 💬（2）<div>老师，第一段代码示例中的num_of_round=2，是不是要改为3？  感觉 前后内容对应不上，前面num_of_round设为2，虽然第三轮对话能练习上下文，但是问了问题3后，第一个问题和回答已经删除了</div>2023-05-07</li><br/><li><span>勇.Max</span> 👍（0） 💬（1）<div>gradio应用代码，我在jupyter-lab上运行，左下角一直显示Busy，卡着不动。
-我电脑配置并不低（macbook pro m1），网络也没问题。请问老师这种问题如何解决呢？</div>2023-04-23</li><br/><li><span>绘世浮夸 つ</span> 👍（0） 💬（1）<div>对于现在api做了限制每分钟只能提问三次怎么解决老师</div>2023-04-21</li><br/>
+During handling of the above exception, another exception occurred:</p>2023-05-14</li><br/><li><span>陈鹏</span> 👍（0） 💬（2）<p>老师，第一段代码示例中的num_of_round=2，是不是要改为3？  感觉 前后内容对应不上，前面num_of_round设为2，虽然第三轮对话能练习上下文，但是问了问题3后，第一个问题和回答已经删除了</p>2023-05-07</li><br/><li><span>勇.Max</span> 👍（0） 💬（1）<p>gradio应用代码，我在jupyter-lab上运行，左下角一直显示Busy，卡着不动。
+我电脑配置并不低（macbook pro m1），网络也没问题。请问老师这种问题如何解决呢？</p>2023-04-23</li><br/><li><span>绘世浮夸 つ</span> 👍（0） 💬（1）<p>对于现在api做了限制每分钟只能提问三次怎么解决老师</p>2023-04-21</li><br/>
 </ul>

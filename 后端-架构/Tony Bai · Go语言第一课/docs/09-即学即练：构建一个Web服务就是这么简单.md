@@ -536,13 +536,13 @@ $curl -X GET -H "Content-Type:application/json" localhost:8080/book/978-7-111-55
 
 [这节课的图书管理项目的完整源码在这里！](https://github.com/bigwhite/publication/tree/master/column/timegeek/go-first-course/09/bookstore)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>扣剑书生</span> 👍（26） 💬（2）<div>store.go提供了 图书 和 接口的模板
+<li><span>扣剑书生</span> 👍（26） 💬（2）<p>store.go提供了 图书 和 接口的模板
 factory 用于生产 接口实例
 memstore.go 用于具体实现一个接口实例，实现其方法，并把样例发送到工厂
-server.go 用于把路由和接口的方法对接起来</div>2021-11-30</li><br/><li><span>尧九之阳</span> 👍（11） 💬（2）<div>Go现在有流行的web服务器框架么？</div>2021-11-10</li><br/><li><span>猫饼</span> 👍（9） 💬（2）<div>我果然还是太菜了 我开始看不懂了</div>2021-11-02</li><br/><li><span>布凡</span> 👍（8） 💬（4）<div>终于实验成功：
+server.go 用于把路由和接口的方法对接起来</p>2021-11-30</li><br/><li><span>尧九之阳</span> 👍（11） 💬（2）<p>Go现在有流行的web服务器框架么？</p>2021-11-10</li><br/><li><span>猫饼</span> 👍（9） 💬（2）<p>我果然还是太菜了 我开始看不懂了</p>2021-11-02</li><br/><li><span>布凡</span> 👍（8） 💬（4）<p>终于实验成功：
 以下几个点需注意：
 1、项目应放到 gopath货goroot相关的目录下，否则本地包的引用会报错，报错信息如下：&quot;could not import errors (cannot find package &quot;errors&quot; in any of c:\go\src\errors (from $GOROOT)...)&quot;
-2、如果是复制的代码应该注意文件格式，可能报错&quot;package main: read unexpected NUL in input&quot;</div>2021-11-04</li><br/><li><span>顷</span> 👍（7） 💬（2）<div>老师的这个示例，麻雀虽小，五脏俱全。不过main.go里有一点疑问：http.Server.Shutdown(ctx)被调用后，http.Server.ListenAndServe()方法马上会返回error吧，按照实例代码里的写法，接收到中断信号后，马上调用Shutdown方法，此时errChan会返回ErrServerClosed，select逻辑走完，main方法就退出了，而go的http包里示意了我们需要确保shutdown调用后，整个代码不能马上退出，请老师解惑。。</div>2022-02-21</li><br/><li><span>includestdio.h</span> 👍（5） 💬（2）<div>作为基本0基础学go，这一节完全没看懂-，- 把后面的基础篇看完回来再试试吧</div>2022-03-28</li><br/><li><span>lesserror</span> 👍（5） 💬（5）<div>感谢 Tony Bai 老师这样由浅入深，并且尽可能贴近实战的讲解。
+2、如果是复制的代码应该注意文件格式，可能报错&quot;package main: read unexpected NUL in input&quot;</p>2021-11-04</li><br/><li><span>顷</span> 👍（7） 💬（2）<p>老师的这个示例，麻雀虽小，五脏俱全。不过main.go里有一点疑问：http.Server.Shutdown(ctx)被调用后，http.Server.ListenAndServe()方法马上会返回error吧，按照实例代码里的写法，接收到中断信号后，马上调用Shutdown方法，此时errChan会返回ErrServerClosed，select逻辑走完，main方法就退出了，而go的http包里示意了我们需要确保shutdown调用后，整个代码不能马上退出，请老师解惑。。</p>2022-02-21</li><br/><li><span>includestdio.h</span> 👍（5） 💬（2）<p>作为基本0基础学go，这一节完全没看懂-，- 把后面的基础篇看完回来再试试吧</p>2022-03-28</li><br/><li><span>lesserror</span> 👍（5） 💬（5）<p>感谢 Tony Bai 老师这样由浅入深，并且尽可能贴近实战的讲解。
 
 有以下困惑，麻烦解忧。
 
@@ -552,8 +552,8 @@ server.go 用于把路由和接口的方法对接起来</div>2021-11-30</li><br/
 
 3. 这门课中的知识和你在另外的一个平台的《改善Go语言编程质量的50个有效实践》的内容重合度大吗？ 精力有限，如果重合度大，就专心看这个就好了。
 
-4. 这门课会讲讲Go写RPC服务方面的知识吗？ 这个在生产中挺常用的。</div>2021-11-02</li><br/><li><span>小明</span> 👍（4） 💬（3）<div>能在gitee 上也放一份吗？github现在已经没那么友好了
-</div>2022-03-20</li><br/><li><span>左耳朵东</span> 👍（4） 💬（3）<div>server&#47;server.go 文件中 select 那里，第二个 case 的意思是定时 1 秒后就会触发，从而执行后面的 return，为什么服务没有终止一直在运行呢？麻烦老师解答一下</div>2021-12-03</li><br/><li><span>snow</span> 👍（4） 💬（1）<div>我看这里使用了mux包，我只用过gin包，请问这两个老师更喜欢哪个？以及这里选择mux的原因。</div>2021-11-05</li><br/><li><span>邰洋一</span> 👍（4） 💬（2）<div>老师，采用Restful规范，更新一条图书条目  http方法采用PUT，当然post也是可以的，put book&#47;id，是我太限定自己了吗？</div>2021-11-05</li><br/><li><span>jc9090kkk</span> 👍（4） 💬（5）<div>这节课的项目内容理解起来不困难，但是对于实际的生产项目而言，尤其是对第三方的中间件有依赖的前提下，大都会针对的将配置单独存储为配置文件以方便维护，我想问下老师go项目针对配置文件有什么最佳实践方式吗? 我自己本地写了一个小项目，用的是以下方式来配置MySQL连接的，我总觉得不太优雅，大多项目会根据开发环境的不同选取不同的配置文件作为配置项加载，但是如果通过硬编码的方式添加进去会让项目变得很奇怪。。。
+4. 这门课会讲讲Go写RPC服务方面的知识吗？ 这个在生产中挺常用的。</p>2021-11-02</li><br/><li><span>小明</span> 👍（4） 💬（3）<p>能在gitee 上也放一份吗？github现在已经没那么友好了
+</p>2022-03-20</li><br/><li><span>左耳朵东</span> 👍（4） 💬（3）<p>server&#47;server.go 文件中 select 那里，第二个 case 的意思是定时 1 秒后就会触发，从而执行后面的 return，为什么服务没有终止一直在运行呢？麻烦老师解答一下</p>2021-12-03</li><br/><li><span>snow</span> 👍（4） 💬（1）<p>我看这里使用了mux包，我只用过gin包，请问这两个老师更喜欢哪个？以及这里选择mux的原因。</p>2021-11-05</li><br/><li><span>邰洋一</span> 👍（4） 💬（2）<p>老师，采用Restful规范，更新一条图书条目  http方法采用PUT，当然post也是可以的，put book&#47;id，是我太限定自己了吗？</p>2021-11-05</li><br/><li><span>jc9090kkk</span> 👍（4） 💬（5）<p>这节课的项目内容理解起来不困难，但是对于实际的生产项目而言，尤其是对第三方的中间件有依赖的前提下，大都会针对的将配置单独存储为配置文件以方便维护，我想问下老师go项目针对配置文件有什么最佳实践方式吗? 我自己本地写了一个小项目，用的是以下方式来配置MySQL连接的，我总觉得不太优雅，大多项目会根据开发环境的不同选取不同的配置文件作为配置项加载，但是如果通过硬编码的方式添加进去会让项目变得很奇怪。。。
 
 package config
 
@@ -577,15 +577,15 @@ func GetDBConfig() map[string]string {
 	dbConfig[&quot;DB_MAX_LIFETIME_CONNECTS&quot;] = &quot;7200&quot;
 
 	return dbConfig
-}</div>2021-11-01</li><br/><li><span>莫名四下里</span> 👍（3） 💬（3）<div>Tony Bai 老师
+}</p>2021-11-01</li><br/><li><span>莫名四下里</span> 👍（3） 💬（3）<p>Tony Bai 老师
 $ go build bookstore&#47;cmd&#47;bookstore&#47;        
 package bookstore&#47;cmd&#47;bookstore is not in GOROOT (&#47;usr&#47;local&#47;go&#47;src&#47;bookstore&#47;cmd&#47;bookstore)
 无法构建   
 
 配置 GOROOT=&quot;&#47;usr&#47;local&#47;go&quot;
-报错  &#47;usr&#47;local&#47;go&#47;src&#47;bookstore&#47;cmd&#47;bookstore</div>2021-11-25</li><br/><li><span>xsgzh</span> 👍（3） 💬（3）<div>老师请教个文件
+报错  &#47;usr&#47;local&#47;go&#47;src&#47;bookstore&#47;cmd&#47;bookstore</p>2021-11-25</li><br/><li><span>xsgzh</span> 👍（3） 💬（3）<p>老师请教个文件
 store&#47;memstore.go文件中第29 - 30行，直接赋值不可以么，ms.books[book.id] = book?
 	nBook := *book
 	ms.books[book.Id] = &amp;nBook
-</div>2021-11-08</li><br/><li><span>小明</span> 👍（2） 💬（1）<div>看了两遍代码，能跑起来，但是只吃透了百分之三十，好着急啊  memstore.go   没看懂</div>2022-07-28</li><br/>
+</p>2021-11-08</li><br/><li><span>小明</span> 👍（2） 💬（1）<p>看了两遍代码，能跑起来，但是只吃透了百分之三十，好着急啊  memstore.go   没看懂</p>2022-07-28</li><br/>
 </ul>

@@ -163,11 +163,11 @@ Bolt会被拆分和迁移，并且在迁移的过程中，我们需要能够保�
 
 欢迎在留言区分享你的答案和思考，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>在路上</span> 👍（20） 💬（0）<div>读完streaming 101和streaming 102，我得说这两篇比专栏文章长多了，streaming 101啃完英文版，后来发现知乎上有翻译版，幸福的读完了streaming 102的中文版。这两篇文章很重要，它解释了流式数据处理系统能干嘛？能做和批处理系统一样多的事，甚至超过批处理系统的能力。尤其是第二篇，非常值得一读。它探索了四个问题：
+<li><span>在路上</span> 👍（20） 💬（0）<p>读完streaming 101和streaming 102，我得说这两篇比专栏文章长多了，streaming 101啃完英文版，后来发现知乎上有翻译版，幸福的读完了streaming 102的中文版。这两篇文章很重要，它解释了流式数据处理系统能干嘛？能做和批处理系统一样多的事，甚至超过批处理系统的能力。尤其是第二篇，非常值得一读。它探索了四个问题：
 1.【What】流式数据处理系统计算出什么结果？结果由pipeline的转换器决定。转换器好比MapReduce中的Mapper、Reducer函数，Spark中的transform算子。
 2.【where】流式数据的结果在哪里计算？流式数据由事件构成，根据事件时间，流式数据可以切分成一个个窗口，把无界数据变成有界数据，计算在窗口中完成。
 3.【when】计算结果何时输出？水位线或触发器触发输出。水位线表示属于某个窗口时间范围的事件全部到达，如果需要在水位线之前输出结果，或者水位线之后，还有迟到的事件需要计算，需要触发器的帮助。
-4.【How】如果修正计算结果？一个窗口的结果会被计算多次。每次计算结果可以独立地发送到下游，也可以更新之前计算的结果，还可以把之前的结果丢弃，再发送新的结果。</div>2021-12-23</li><br/><li><span>在路上</span> 👍（5） 💬（0）<div>徐老师好，Wikipedia Bloom filter在Probability of false positives一节，给出了漏算日志率的经典估算公式，p=(1 - (1 - 1&#47;m)^kn)^k，其中n为布隆过滤器要处理的日志条数，m为布隆过滤器的bit位数，k为日志映射到布隆过滤器的hash函数个数。
+4.【How】如果修正计算结果？一个窗口的结果会被计算多次。每次计算结果可以独立地发送到下游，也可以更新之前计算的结果，还可以把之前的结果丢弃，再发送新的结果。</p>2021-12-23</li><br/><li><span>在路上</span> 👍（5） 💬（0）<p>徐老师好，Wikipedia Bloom filter在Probability of false positives一节，给出了漏算日志率的经典估算公式，p=(1 - (1 - 1&#47;m)^kn)^k，其中n为布隆过滤器要处理的日志条数，m为布隆过滤器的bit位数，k为日志映射到布隆过滤器的hash函数个数。
 论文《ON THE FALSE-POSITIVE RATE OF BLOOM FILTERS》(2008年)讨论了经典公式在什么情况下有效，m的值要足够大，同时k的值要足够小。论文《A New Analysis of the False-Positive Rate of a Bloom Filter》(2010年)给出了新的估算公式，并讨论了m，以及m&#47;n在不同取值的情况下，经典公式的相对误差。选择合适的n、m、k，才能降低布隆过滤器的假正率。
-</div>2021-12-16</li><br/><li><span>那时刻</span> 👍（2） 💬（0）<div>估算一下 BloomFilter 可能会导致我们漏掉计算多少日志吗。我觉得需要日志总数据 以及 BloomFilter的 false positive的概率。而计算false positive概率需要 BloomFilter 中bit的总数，储存元素的个数，hash函数的个数</div>2021-12-15</li><br/><li><span>shijiezhiai</span> 👍（0） 💬（0）<div>其实挺好奇论文里提到的unique ID是使用什么算法生成的。因为一个computation可能会被调度到其它的节点上运行。在这个前提下，怎么保证同一条数据生成的ID是相同的呢？</div>2023-02-20</li><br/><li><span>小明</span> 👍（0） 💬（0）<div>我仿佛看到了 我在360三年的时光走马灯</div>2021-12-15</li><br/>
+</p>2021-12-16</li><br/><li><span>那时刻</span> 👍（2） 💬（0）<p>估算一下 BloomFilter 可能会导致我们漏掉计算多少日志吗。我觉得需要日志总数据 以及 BloomFilter的 false positive的概率。而计算false positive概率需要 BloomFilter 中bit的总数，储存元素的个数，hash函数的个数</p>2021-12-15</li><br/><li><span>shijiezhiai</span> 👍（0） 💬（0）<p>其实挺好奇论文里提到的unique ID是使用什么算法生成的。因为一个computation可能会被调度到其它的节点上运行。在这个前提下，怎么保证同一条数据生成的ID是相同的呢？</p>2023-02-20</li><br/><li><span>小明</span> 👍（0） 💬（0）<p>我仿佛看到了 我在360三年的时光走马灯</p>2021-12-15</li><br/>
 </ul>

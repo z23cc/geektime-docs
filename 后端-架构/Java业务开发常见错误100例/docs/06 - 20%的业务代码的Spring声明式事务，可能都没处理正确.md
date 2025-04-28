@@ -487,13 +487,13 @@ public void createUserRight(UserEntity entity) {
 
 有关数据库事务，你还遇到过其他坑吗？我是朱晔，欢迎在评论区与我留言分享，也欢迎你把这篇文章分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（59） 💬（8）<div>AspectJ与lombok，都是字节码层面进行增强，在一起使用时会有问题，根据AspectJ维护者Andy Clement的当前答案是由于ECJ（Eclipse Compiler for Java）软件包存在问题在AspectJ编译器基础结构中包含和重命名。
+<li><span>Darren</span> 👍（59） 💬（8）<p>AspectJ与lombok，都是字节码层面进行增强，在一起使用时会有问题，根据AspectJ维护者Andy Clement的当前答案是由于ECJ（Eclipse Compiler for Java）软件包存在问题在AspectJ编译器基础结构中包含和重命名。
 解决问题可以参考下面连接：
 http:&#47;&#47;aspectj.2085585.n4.nabble.com&#47;AspectJ-with-Lombok-td4651540.html
 https:&#47;&#47;stackoverflow.com&#47;questions&#47;41910007&#47;lombok-and-aspectj
 
 分享一个使用lombok的坑：
-之前为了set赋值方便，在VO或者DTO上使用了@Accessors(chain=true)，这样就可以链式赋值，但是在动态通过内省获取set方法进行赋值时，是获取不到对应的set方法，因为默认的set方法返回值是void，但是加了@Accessors(chain=true)之后，set方法的返回值变成了this，这样通过内省就获取到对应的set方法了，通过去掉@Accessors(chain=true)即可实现，通过内省动态给属性赋值。</div>2020-03-23</li><br/><li><span>hanazawakana</span> 👍（47） 💬（4）<div>否则只有定义在 public 方法上的 @Transactional 才能生效。这里一定要用public吗，用protected不行吗，protected在子类中应该也可见啊，是因为包不同吗</div>2020-03-21</li><br/><li><span>Seven.Lin澤耿</span> 👍（46） 💬（1）<div>我还遇到一个坑，就是子方法使用了REQUIRES_NEW，但是业务逻辑需要的数据是来源于父方法的，也就是父方法还没提交，子方法获取不到。当时的解决方法是把事务隔离级别改成RC，现在回想起来，不知道这种解决方法是否正确？</div>2020-03-22</li><br/><li><span>Seven.Lin澤耿</span> 👍（26） 💬（8）<div>老师，可以问一下为啥国内大多数公司使用MyBatis呢？是为了更加接近SQL吗？难倒国外业务不会遇到复杂的场景吗？</div>2020-03-22</li><br/><li><span>看不到de颜色</span> 👍（25） 💬（1）<div>Spring默认事务采用动态代理方式实现。因此只能对public进行增强（考虑到CGLib和JDKProxy兼容，protected也不支持）。在使用动态代理增强时，方法内调用也可以考虑采用AopContext.currentProxy()获取当前代理类。</div>2020-03-29</li><br/><li><span>九时四</span> 👍（19） 💬（8）<div>老师您好，有个数据库事务和spring事务的问题想请教下（我是一个入职半年的菜鸟）。
+之前为了set赋值方便，在VO或者DTO上使用了@Accessors(chain=true)，这样就可以链式赋值，但是在动态通过内省获取set方法进行赋值时，是获取不到对应的set方法，因为默认的set方法返回值是void，但是加了@Accessors(chain=true)之后，set方法的返回值变成了this，这样通过内省就获取到对应的set方法了，通过去掉@Accessors(chain=true)即可实现，通过内省动态给属性赋值。</p>2020-03-23</li><br/><li><span>hanazawakana</span> 👍（47） 💬（4）<p>否则只有定义在 public 方法上的 @Transactional 才能生效。这里一定要用public吗，用protected不行吗，protected在子类中应该也可见啊，是因为包不同吗</p>2020-03-21</li><br/><li><span>Seven.Lin澤耿</span> 👍（46） 💬（1）<p>我还遇到一个坑，就是子方法使用了REQUIRES_NEW，但是业务逻辑需要的数据是来源于父方法的，也就是父方法还没提交，子方法获取不到。当时的解决方法是把事务隔离级别改成RC，现在回想起来，不知道这种解决方法是否正确？</p>2020-03-22</li><br/><li><span>Seven.Lin澤耿</span> 👍（26） 💬（8）<p>老师，可以问一下为啥国内大多数公司使用MyBatis呢？是为了更加接近SQL吗？难倒国外业务不会遇到复杂的场景吗？</p>2020-03-22</li><br/><li><span>看不到de颜色</span> 👍（25） 💬（1）<p>Spring默认事务采用动态代理方式实现。因此只能对public进行增强（考虑到CGLib和JDKProxy兼容，protected也不支持）。在使用动态代理增强时，方法内调用也可以考虑采用AopContext.currentProxy()获取当前代理类。</p>2020-03-29</li><br/><li><span>九时四</span> 👍（19） 💬（8）<p>老师您好，有个数据库事务和spring事务的问题想请教下（我是一个入职半年的菜鸟）。
 业务场景：为了实现同一个时间的多个请求，只有一个请求生效，在数据库字段上加了一个字段（signature_lock）标识锁状态。（没有使用redis锁之类的中间件，只讨论数据库事务和Spring的事务，以下的请求理解为同时请求）
 
 1.在数据库层面，通过sql语句直接操作数据库，数据库事务隔离级别为可重复读：
@@ -542,7 +542,7 @@ public void test(ParamDto paramDto) {
 
 按照这样的方式，在方法上面不加注解的情况下，执行结果与在写sql的结果是一致的，两个请求只有一个可以执行成功；加上@Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)之后，两个请求都可以拿到锁。
 
-疑问是，Spring的事务和数据库的事务有什么关系，加上事务注解后，为什么和数据库的结果不一致。</div>2020-03-21</li><br/><li><span>火很大先生</span> 👍（15） 💬（1）<div>    @Transactional
+疑问是，Spring的事务和数据库的事务有什么关系，加上事务注解后，为什么和数据库的结果不一致。</p>2020-03-21</li><br/><li><span>火很大先生</span> 👍（15） 💬（1）<p>    @Transactional
     public int createUserRight(String name) throws IOException {
         try {
             userRepository.save(new UserEntity(name));
@@ -553,7 +553,7 @@ public void test(ParamDto paramDto) {
         }
         return userRepository.findByName(name).size();
     }
-请教老师，我这种写法，控制台打出了Initiating transaction rollback 但是数据库还是存上了数据，没有回滚，是因为findByName 这个查询语句的默认commit给提交了吗</div>2020-04-10</li><br/><li><span>王刚</span> 👍（6） 💬（2）<div>老师问个问题，您说得@Transactional事物回滚，只有是RuntimeException 或error时，才会回滚；
-但是我在做测试时，发现@Transactional有一个rollbackFor属性，该属性可以指定什么异常回滚，如果@Transactional 不指定rollbackFor，默认得是RuntimeException？</div>2020-03-26</li><br/><li><span>汝林外史</span> 👍（6） 💬（5）<div>老师，创建主子用户那个业务，应该是子用户创建失败不影响主用户，但是主用户失败应该子用户也要回滚吧？如果是这样，那传播机制是不是应该用Propagation.NESTED</div>2020-03-24</li><br/><li><span>Yanni</span> 👍（5） 💬（5）<div>要注意，@Transactional 与 @Async注解不能同时在一个方法上使用, 这样会导致事物不生效。</div>2020-04-10</li><br/><li><span>magic</span> 👍（5） 💬（1）<div>老师能补充下对私有方法事务的代码示例吗？</div>2020-03-28</li><br/><li><span>汝林外史</span> 👍（5） 💬（1）<div>很明显，this 调用因为没有走代理，事务没有在 createUserPublic 方法上生效，只在 Repository 的 save 方法层面生效。
-createUserPublic这个方法不是本来就一个save操作吗，既然save层面生效了，那这个方法的事务难道不也就生效了吗？</div>2020-03-23</li><br/><li><span>COLDLY</span> 👍（4） 💬（2）<div>请问如果仅是select语句，需要加事务吗</div>2020-04-07</li><br/><li><span>张珮磊想静静</span> 👍（4） 💬（2）<div>如果一个事务里面操作了不同的数据库，回滚操作是不是就得自己写补偿的重试了？</div>2020-03-26</li><br/><li><span>nimil</span> 👍（3） 💬（2）<div>前几天还真出现了个事务不生效的问题，于是对着文章仔细review了一下代码，发现也没文中说的那些毛病，最后排查到是事务管理器只配置了一个数据库，而我是在另一个数据库进行的数据操作，所以事务不生效了，最后添加另一个数据库的事务管理器事务就生效了</div>2020-06-11</li><br/>
+请教老师，我这种写法，控制台打出了Initiating transaction rollback 但是数据库还是存上了数据，没有回滚，是因为findByName 这个查询语句的默认commit给提交了吗</p>2020-04-10</li><br/><li><span>王刚</span> 👍（6） 💬（2）<p>老师问个问题，您说得@Transactional事物回滚，只有是RuntimeException 或error时，才会回滚；
+但是我在做测试时，发现@Transactional有一个rollbackFor属性，该属性可以指定什么异常回滚，如果@Transactional 不指定rollbackFor，默认得是RuntimeException？</p>2020-03-26</li><br/><li><span>汝林外史</span> 👍（6） 💬（5）<p>老师，创建主子用户那个业务，应该是子用户创建失败不影响主用户，但是主用户失败应该子用户也要回滚吧？如果是这样，那传播机制是不是应该用Propagation.NESTED</p>2020-03-24</li><br/><li><span>Yanni</span> 👍（5） 💬（5）<p>要注意，@Transactional 与 @Async注解不能同时在一个方法上使用, 这样会导致事物不生效。</p>2020-04-10</li><br/><li><span>magic</span> 👍（5） 💬（1）<p>老师能补充下对私有方法事务的代码示例吗？</p>2020-03-28</li><br/><li><span>汝林外史</span> 👍（5） 💬（1）<p>很明显，this 调用因为没有走代理，事务没有在 createUserPublic 方法上生效，只在 Repository 的 save 方法层面生效。
+createUserPublic这个方法不是本来就一个save操作吗，既然save层面生效了，那这个方法的事务难道不也就生效了吗？</p>2020-03-23</li><br/><li><span>COLDLY</span> 👍（4） 💬（2）<p>请问如果仅是select语句，需要加事务吗</p>2020-04-07</li><br/><li><span>张珮磊想静静</span> 👍（4） 💬（2）<p>如果一个事务里面操作了不同的数据库，回滚操作是不是就得自己写补偿的重试了？</p>2020-03-26</li><br/><li><span>nimil</span> 👍（3） 💬（2）<p>前几天还真出现了个事务不生效的问题，于是对着文章仔细review了一下代码，发现也没文中说的那些毛病，最后排查到是事务管理器只配置了一个数据库，而我是在另一个数据库进行的数据操作，所以事务不生效了，最后添加另一个数据库的事务管理器事务就生效了</p>2020-06-11</li><br/>
 </ul>

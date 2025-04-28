@@ -642,16 +642,16 @@ pub fn run<T: Task>(args: Args) -> anyhow::Result<()> {
 
 欢迎你把你实验的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，邀他一起学习Rust，我们下节课再见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>渡鸦10086</span> 👍（2） 💬（1）<div>网页下载模型到本地后通过--models参数即可使用本地模型，比如
-cargo run --release -- assets&#47;football.jpg --which m --model .&#47;model&#47;yolov8m.safetensors</div>2024-02-01</li><br/><li><span>Jump</span> 👍（1） 💬（1）<div>启用cuda需要在cargo.toml里面开启特性
+<li><span>渡鸦10086</span> 👍（2） 💬（1）<p>网页下载模型到本地后通过--models参数即可使用本地模型，比如
+cargo run --release -- assets&#47;football.jpg --which m --model .&#47;model&#47;yolov8m.safetensors</p>2024-02-01</li><br/><li><span>Jump</span> 👍（1） 💬（1）<p>启用cuda需要在cargo.toml里面开启特性
 [dependencies]
 candle-core = {version= &quot;0.3.1&quot;,features=[&quot;cuda&quot;]}
 candle-nn = {version= &quot;0.3.1&quot;,features=[&quot;cuda&quot;]}
-candle-transformers = {version= &quot;0.3.1&quot;,features=[&quot;cuda&quot;]}</div>2024-03-23</li><br/><li><span>Geek_118351</span> 👍（0） 💬（1）<div>老师你好，会考虑出一个针对视频流的目标识别课程吗。</div>2024-03-11</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（2）<div>老师可以贴一段怎么从本地加载 yolo 模型的代码吗？实在下载不下来😮‍💨</div>2024-01-11</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（5）<div>Error: request error: https:&#47;&#47;huggingface.co&#47;lmz&#47;candle-yolo-v8&#47;resolve&#47;main&#47;yolov8m.safetensors: Connection Failed: Connect error: connection timed out
+candle-transformers = {version= &quot;0.3.1&quot;,features=[&quot;cuda&quot;]}</p>2024-03-23</li><br/><li><span>Geek_118351</span> 👍（0） 💬（1）<p>老师你好，会考虑出一个针对视频流的目标识别课程吗。</p>2024-03-11</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（2）<p>老师可以贴一段怎么从本地加载 yolo 模型的代码吗？实在下载不下来😮‍💨</p>2024-01-11</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（5）<p>Error: request error: https:&#47;&#47;huggingface.co&#47;lmz&#47;candle-yolo-v8&#47;resolve&#47;main&#47;yolov8m.safetensors: Connection Failed: Connect error: connection timed out
 
 Caused by:
     0: https:&#47;&#47;huggingface.co&#47;lmz&#47;candle-yolo-v8&#47;resolve&#47;main&#47;yolov8m.safetensors: Connection Failed: Connect error: connection timed out
-    1: connection timed out 一直下不来这个文件，可以提前下载下来然后放到项目里面吗？浏览器可以正常下载</div>2024-01-05</li><br/><li><span>凤  梨  🍍</span> 👍（0） 💬（2）<div>pytorch怎么转safetensors，没工具下载不了外面的模型</div>2023-12-30</li><br/><li><span>unistart</span> 👍（0） 💬（1）<div>老师，我有一个问题就是猫猫那张图执行姿势探测任务时无法正确识别，这是为什么啊？
+    1: connection timed out 一直下不来这个文件，可以提前下载下来然后放到项目里面吗？浏览器可以正常下载</p>2024-01-05</li><br/><li><span>凤  梨  🍍</span> 👍（0） 💬（2）<p>pytorch怎么转safetensors，没工具下载不了外面的模型</p>2023-12-30</li><br/><li><span>unistart</span> 👍（0） 💬（1）<p>老师，我有一个问题就是猫猫那张图执行姿势探测任务时无法正确识别，这是为什么啊？
 
 cargo run --release -- assets&#47;cats.jpg --model candle-yolo-v8&#47;yolov8x-pose.safetensors --which x --task pose
    Compiling candle_demo_yolov8 v0.1.0 (E:\Project\rust-jikeshijian\24-candle_yolov8)
@@ -661,5 +661,5 @@ Running on CPU, to run on GPU, build this example with `--features cuda`
 model loaded
 processing &quot;assets&#47;cats.jpg&quot;
 generated predictions Tensor[dims 56, 6300; f32]
-writing &quot;assets&#47;cats.pp.jpg&quot;</div>2023-12-25</li><br/><li><span>蕨火</span> 👍（0） 💬（1）<div>同问，不联网怎么做？</div>2023-12-20</li><br/><li><span>My dream</span> 👍（0） 💬（1）<div>用rust怎么训练录像资源啊？</div>2023-12-19</li><br/><li><span>My dream</span> 👍（0） 💬（2）<div>如果我们的电脑不联网的情况下，用yolo训练图片资源啊？</div>2023-12-19</li><br/><li><span>My dream</span> 👍（0） 💬（1）<div>怎么使用yolo训练图片？请老师请一下</div>2023-12-19</li><br/>
+writing &quot;assets&#47;cats.pp.jpg&quot;</p>2023-12-25</li><br/><li><span>蕨火</span> 👍（0） 💬（1）<p>同问，不联网怎么做？</p>2023-12-20</li><br/><li><span>My dream</span> 👍（0） 💬（1）<p>用rust怎么训练录像资源啊？</p>2023-12-19</li><br/><li><span>My dream</span> 👍（0） 💬（2）<p>如果我们的电脑不联网的情况下，用yolo训练图片资源啊？</p>2023-12-19</li><br/><li><span>My dream</span> 👍（0） 💬（1）<p>怎么使用yolo训练图片？请老师请一下</p>2023-12-19</li><br/>
 </ul>

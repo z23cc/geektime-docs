@@ -93,7 +93,7 @@ Graal是一个用Java写就的、并能够将Java字节码转换成二进制码�
 
 > 在刚开始运行的过程中，Graal编译器本身需要被即时编译，会抢占原本可用于编译应用代码的计算资源。因此，目前Graal编译器的启动性能会较差。最后一篇我会介绍解决方案。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>Len</span> 👍（26） 💬（1）<div>我们可不可以把 profile 和编译的机器码保存到磁盘，在代码和运行平台不变的情况下，下次启动（或部署多实例）的时候直接装载这部分数据？这算作是一种系统预热的可行性方案吗？</div>2018-10-12</li><br/><li><span>金龙</span> 👍（10） 💬（2）<div>GraalVM和JVM是什么关系？它在OpenJDK上是怎么运行的？求解惑</div>2018-10-08</li><br/><li><span>xiaobang</span> 👍（7） 💬（1）<div>openjdk里Graal自身的及时编译是调用Graal自身吗？如果这么做会不会出现无穷递归？</div>2018-10-10</li><br/><li><span>ZY</span> 👍（3） 💬（1）<div>GraalVM大概什么时候会发布release版本？</div>2018-10-16</li><br/><li><span>钱</span> 👍（7） 💬（0）<div>阅过留痕
+<li><span>Len</span> 👍（26） 💬（1）<p>我们可不可以把 profile 和编译的机器码保存到磁盘，在代码和运行平台不变的情况下，下次启动（或部署多实例）的时候直接装载这部分数据？这算作是一种系统预热的可行性方案吗？</p>2018-10-12</li><br/><li><span>金龙</span> 👍（10） 💬（2）<p>GraalVM和JVM是什么关系？它在OpenJDK上是怎么运行的？求解惑</p>2018-10-08</li><br/><li><span>xiaobang</span> 👍（7） 💬（1）<p>openjdk里Graal自身的及时编译是调用Graal自身吗？如果这么做会不会出现无穷递归？</p>2018-10-10</li><br/><li><span>ZY</span> 👍（3） 💬（1）<p>GraalVM大概什么时候会发布release版本？</p>2018-10-16</li><br/><li><span>钱</span> 👍（7） 💬（0）<p>阅过留痕
 最后几篇了，这个专栏马上结束了，回头想想自己都学到了那些内容了呢？
 JVM的各个部分从外到内，由浅入深老师都讲到了，大部分内容是都挺明白了，有些还有待消化，不过下面还要继续的学习，专栏的目标是带我们入门！
 
@@ -110,6 +110,6 @@ JVM的各个部分从外到内，由浅入深老师都讲到了，大部分内�
 
 嗯，感觉有些懵懂，专栏快结束了，老师辛苦了，希望老师来点随学随用的分析jvm性能瓶颈和解决方式的例子，当然，这个部分内容网上也比较多，只是希望更系统一点，举几个高频的示例！
 
-</div>2018-10-14</li><br/><li><span>xiangguang</span> 👍（2） 💬（0）<div>求证: 同样的代码，使用jdk1.6编译的和使用jdk1.8编译，在同样的jdk1.8的jvm环境运行，性能是否有差异？
-是不是需要看1.6的javap和1.8的javap 出来的字节码是否有差别？</div>2019-04-17</li><br/><li><span>Geek_2ab487</span> 👍（1） 💬（2）<div>你好，我在使用graalVM native-image进行部署spring项目时有几个问题，1.打包成可执行文件后，jvm一些参数包括gc、堆栈大小这些要怎么设置 2.使用native-image提前编译后，实际运行时还会进行即时编译吗？</div>2020-07-23</li><br/><li><span>colin</span> 👍（1） 💬（2）<div>其实我好奇openJdk是不是可以代替Oracle 的Jdk呢</div>2019-05-31</li><br/><li><span>MasterOogway</span> 👍（0） 💬（0）<div>JMH跑了一段时间，graal比默认的性能提升约5%。应该不是误差</div>2021-04-20</li><br/>
+</p>2018-10-14</li><br/><li><span>xiangguang</span> 👍（2） 💬（0）<p>求证: 同样的代码，使用jdk1.6编译的和使用jdk1.8编译，在同样的jdk1.8的jvm环境运行，性能是否有差异？
+是不是需要看1.6的javap和1.8的javap 出来的字节码是否有差别？</p>2019-04-17</li><br/><li><span>Geek_2ab487</span> 👍（1） 💬（2）<p>你好，我在使用graalVM native-image进行部署spring项目时有几个问题，1.打包成可执行文件后，jvm一些参数包括gc、堆栈大小这些要怎么设置 2.使用native-image提前编译后，实际运行时还会进行即时编译吗？</p>2020-07-23</li><br/><li><span>colin</span> 👍（1） 💬（2）<p>其实我好奇openJdk是不是可以代替Oracle 的Jdk呢</p>2019-05-31</li><br/><li><span>MasterOogway</span> 👍（0） 💬（0）<p>JMH跑了一段时间，graal比默认的性能提升约5%。应该不是误差</p>2021-04-20</li><br/>
 </ul>

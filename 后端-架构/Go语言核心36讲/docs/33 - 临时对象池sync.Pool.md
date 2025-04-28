@@ -165,7 +165,7 @@ P存在的一个很重要的原因是为了分散并发程序的执行压力，�
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Stone</span> 👍（10） 💬（1）<div>看了一下 1.14 的源码，那个锁现在是全局的了，即一个临时对象池中本地池列表中的所有本地池都共享一个锁，而不是每个本地池都有自己的锁。</div>2020-07-09</li><br/><li><span>小罗希冀</span> 👍（7） 💬（2）<div>请问一下老师, 如果syn.Pool广泛的应用场景是缓存, 那为什么不直接使用map缓存呢?这样岂不是更方便, 更快捷?</div>2020-10-26</li><br/><li><span>张sir</span> 👍（7） 💬（1）<div>还有一个问题，如果多goruntine同时申请临时对象池内资源，所有goruntine都可以同时获取到吗，还是只能有一个goruntine获取到，其它的goruntine都阻塞，直到这个goruntine释放完后才能使用</div>2019-05-21</li><br/><li><span>郭星</span> 👍（3） 💬（1）<div>&quot;在每个本地池中，都包含一个私有的临时对象和一个共享的临时对象列表。前者只能被其对应的 P 所关联的那个 goroutine 中的代码访问到，而后者却没有这个约束&quot;
+<li><span>Stone</span> 👍（10） 💬（1）<p>看了一下 1.14 的源码，那个锁现在是全局的了，即一个临时对象池中本地池列表中的所有本地池都共享一个锁，而不是每个本地池都有自己的锁。</p>2020-07-09</li><br/><li><span>小罗希冀</span> 👍（7） 💬（2）<p>请问一下老师, 如果syn.Pool广泛的应用场景是缓存, 那为什么不直接使用map缓存呢?这样岂不是更方便, 更快捷?</p>2020-10-26</li><br/><li><span>张sir</span> 👍（7） 💬（1）<p>还有一个问题，如果多goruntine同时申请临时对象池内资源，所有goruntine都可以同时获取到吗，还是只能有一个goruntine获取到，其它的goruntine都阻塞，直到这个goruntine释放完后才能使用</p>2019-05-21</li><br/><li><span>郭星</span> 👍（3） 💬（1）<p>&quot;在每个本地池中，都包含一个私有的临时对象和一个共享的临时对象列表。前者只能被其对应的 P 所关联的那个 goroutine 中的代码访问到，而后者却没有这个约束&quot;
 对于private只能被当前协程才能访问,其他协程不能访问到private,这个应该怎么测试呢?
 import (
 	&quot;runtime&quot;
@@ -202,14 +202,14 @@ func TestShareAndPrivate(t *testing.T) {
 	}()
 	wg.Wait()
 }
-这段代码没有体现出来私有和共享的区别</div>2020-09-03</li><br/><li><span>越努力丨越幸运</span> 👍（3） 💬（1）<div>老师，当一个goroutine在访问某个临时对象池中一个本地池的shared字段时被锁住，此时另外一个goroutine访问临时对象池时，是会跳过这个本地池，去访问其他的本地池，还是说会被阻塞住？
-</div>2020-04-19</li><br/><li><span>鲲鹏飞九万里</span> 👍（2） 💬（1）<div>郝老师您好，你在article70.go 的示例中使用sync.Pool 的作用是啥呢，看不出来。你看：
+这段代码没有体现出来私有和共享的区别</p>2020-09-03</li><br/><li><span>越努力丨越幸运</span> 👍（3） 💬（1）<p>老师，当一个goroutine在访问某个临时对象池中一个本地池的shared字段时被锁住，此时另外一个goroutine访问临时对象池时，是会跳过这个本地池，去访问其他的本地池，还是说会被阻塞住？
+</p>2020-04-19</li><br/><li><span>鲲鹏飞九万里</span> 👍（2） 💬（1）<p>郝老师您好，你在article70.go 的示例中使用sync.Pool 的作用是啥呢，看不出来。你看：
 func main() {
 	&#47;&#47; buf := GetBuffer()
 	&#47;&#47; defer buf.Free()
 	buf := &amp;myBuffer{delimiter: delimiter}
 
-在main函数中，我用`buf := &amp;myBuffer{delimiter: delimiter}`这行代码代替上面两行代码后，执行的效果是一样的。 article70.go 的示例，为啥要使用 sync.Pool 呢，麻烦老师进一步讲解下</div>2023-02-19</li><br/><li><span>小袁</span> 👍（2） 💬（1）<div>为啥本地池列表长度不是跟M一致，而是跟P一致？</div>2021-02-13</li><br/><li><span>闫飞</span> 👍（2） 💬（1）<div>这里存放的临时对象是否是无状态，无唯一标识符的纯值对象? 对象的类型是否都是一样，还是说必须要用户自己做好具体类型的判定?</div>2019-07-17</li><br/><li><span>苏安</span> 👍（2） 💬（1）<div>老师，不知道还有几讲，最初的课程大纲有相关的拾遗章节，不知道后续的安排还有没？</div>2018-10-26</li><br/><li><span>传说中的成大大</span> 👍（1） 💬（1）<div>之前学习 go routine的时候 初次了解到这个p以为就是用来调度goroutine的  但是今天又讨论到这个p 这个P还关联到了临时对象池，这个临时对象池也涉及到被运行时系统所清理 所以我产生了以为 这个p时候就是运行时系统呢？</div>2020-04-16</li><br/><li><span>疯琴</span> 👍（1） 💬（1）<div>请问老师，demo70 的 37 行 return 后面没跟东西，是相当于 return nil 么？</div>2020-01-02</li><br/><li><span>林嘉裕</span> 👍（0） 💬（1）<div>数组可以通过put(arr[:0])清空，如果是map呢？只能通过遍历？</div>2021-12-21</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<div>由于fmt包中的代码在真正使用这些临时对象之前，总是会先对其进行重置，
+在main函数中，我用`buf := &amp;myBuffer{delimiter: delimiter}`这行代码代替上面两行代码后，执行的效果是一样的。 article70.go 的示例，为啥要使用 sync.Pool 呢，麻烦老师进一步讲解下</p>2023-02-19</li><br/><li><span>小袁</span> 👍（2） 💬（1）<p>为啥本地池列表长度不是跟M一致，而是跟P一致？</p>2021-02-13</li><br/><li><span>闫飞</span> 👍（2） 💬（1）<p>这里存放的临时对象是否是无状态，无唯一标识符的纯值对象? 对象的类型是否都是一样，还是说必须要用户自己做好具体类型的判定?</p>2019-07-17</li><br/><li><span>苏安</span> 👍（2） 💬（1）<p>老师，不知道还有几讲，最初的课程大纲有相关的拾遗章节，不知道后续的安排还有没？</p>2018-10-26</li><br/><li><span>传说中的成大大</span> 👍（1） 💬（1）<p>之前学习 go routine的时候 初次了解到这个p以为就是用来调度goroutine的  但是今天又讨论到这个p 这个P还关联到了临时对象池，这个临时对象池也涉及到被运行时系统所清理 所以我产生了以为 这个p时候就是运行时系统呢？</p>2020-04-16</li><br/><li><span>疯琴</span> 👍（1） 💬（1）<p>请问老师，demo70 的 37 行 return 后面没跟东西，是相当于 return nil 么？</p>2020-01-02</li><br/><li><span>林嘉裕</span> 👍（0） 💬（1）<p>数组可以通过put(arr[:0])清空，如果是map呢？只能通过遍历？</p>2021-12-21</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<p>由于fmt包中的代码在真正使用这些临时对象之前，总是会先对其进行重置，
 func newPrinter() *pp {
 	p := ppFree.Get().(*pp)
 	p.panicking = false
@@ -235,7 +235,7 @@ func (p *pp) free() {
 	p.value = reflect.Value{}
 	p.wrappedErr = nil
 	ppFree.Put(p)
-}</div>2021-10-30</li><br/><li><span>Harlan</span> 👍（0） 💬（1）<div>我理解pool使用场景是 做一个结构体原型池，一般用在结构体创建成本较高的场景，如db 连接 ，http连接等</div>2021-09-16</li><br/><li><span>lesserror</span> 👍（0） 💬（1）<div>以下问题，盼老师看到了，帮忙解答一下：
+}</p>2021-10-30</li><br/><li><span>Harlan</span> 👍（0） 💬（1）<p>我理解pool使用场景是 做一个结构体原型池，一般用在结构体创建成本较高的场景，如db 连接 ，http连接等</p>2021-09-16</li><br/><li><span>lesserror</span> 👍（0） 💬（1）<p>以下问题，盼老师看到了，帮忙解答一下：
 
 1：  文中说：“sync.Pool类型只有两个方法——Put和Get”。 我的golang版本是：go1.16.4，不止这两个方法了，还有：getSlow、pin、pinSlow，不过他们都是包级私有的方法。
 
@@ -243,5 +243,5 @@ func (p *pp) free() {
 
 3：课程到目前 sync.pool 这一讲为止，前面的文章基本都懂了。就是这一讲读了几遍，看的还是一知半解。我以为这一讲牵扯的源码比较多 而且 感觉 难度 有点大。不知道 郝林老师 三年后重新看这个有没有什么新的想法 能否帮我重新梳理一下或者给一些 关于学习 sync.pool的建议？
 
-多谢老师的解答。</div>2021-08-20</li><br/>
+多谢老师的解答。</p>2021-08-20</li><br/>
 </ul>

@@ -105,13 +105,13 @@ Protobuf还可以通过enum枚举类型压缩空间。回到第1幅图，sex: FE
 
 感谢阅读，如果你觉得这节课对你有一些启发，也欢迎把它分享给你的朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Ken</span> 👍（40） 💬（2）<div>gRPC基于Http2可以复用http2带来的新特性，比如双向流，单连接多路复用，头部压缩（hpack）。protobuf解决的是body的序列化空间效率，hpack解决的是header的空间效率，两者不冲突。</div>2020-06-12</li><br/><li><span>冬风向左吹</span> 👍（9） 💬（3）<div>wireshark支持protobuf协议插件：https:&#47;&#47;code.google.com&#47;archive&#47;p&#47;protobuf-wireshark&#47;downloads</div>2020-06-15</li><br/><li><span>安排</span> 👍（9） 💬（1）<div>protobuf需要通信双方提前约定好proto文件，这是一个限制，限制了它的使用场景。而http2没有这个要求，是一种更通用的设计，只要符合规范，就可以通信。</div>2020-06-12</li><br/><li><span>妥协</span> 👍（4） 💬（1）<div>protobuf是按照字段名，字段类型和字段值编码。如果传输的是表格数据，就是第一行是多个字段，后面的多行都是字段值，这种情况下，字段名和字段类型只在第一行时传输，后面的多行字段值记录就不用传输了，这种效率是不是更高些?我们公司的自定义协议应该就是这种</div>2020-06-29</li><br/><li><span>饭团</span> 👍（3） 💬（1）<div>老师，请问红色和蓝色位为保留位，请问蓝色是出于什么目的？</div>2020-06-12</li><br/><li><span>butterfly</span> 👍（1） 💬（1）<div>一直有个疑问:
+<li><span>Ken</span> 👍（40） 💬（2）<p>gRPC基于Http2可以复用http2带来的新特性，比如双向流，单连接多路复用，头部压缩（hpack）。protobuf解决的是body的序列化空间效率，hpack解决的是header的空间效率，两者不冲突。</p>2020-06-12</li><br/><li><span>冬风向左吹</span> 👍（9） 💬（3）<p>wireshark支持protobuf协议插件：https:&#47;&#47;code.google.com&#47;archive&#47;p&#47;protobuf-wireshark&#47;downloads</p>2020-06-15</li><br/><li><span>安排</span> 👍（9） 💬（1）<p>protobuf需要通信双方提前约定好proto文件，这是一个限制，限制了它的使用场景。而http2没有这个要求，是一种更通用的设计，只要符合规范，就可以通信。</p>2020-06-12</li><br/><li><span>妥协</span> 👍（4） 💬（1）<p>protobuf是按照字段名，字段类型和字段值编码。如果传输的是表格数据，就是第一行是多个字段，后面的多行都是字段值，这种情况下，字段名和字段类型只在第一行时传输，后面的多行字段值记录就不用传输了，这种效率是不是更高些?我们公司的自定义协议应该就是这种</p>2020-06-29</li><br/><li><span>饭团</span> 👍（3） 💬（1）<p>老师，请问红色和蓝色位为保留位，请问蓝色是出于什么目的？</p>2020-06-12</li><br/><li><span>butterfly</span> 👍（1） 💬（1）<p>一直有个疑问:
 服务器端和客户端的两端都定义了.proto文件, 两端应该都是可以知道某个字段名字和值类型的。
-如果只传输 字段的 顺序 和 值(字段名字和类型都不传输)，数据传到对端的时候， 再解码出来. 为什么不能这样做呢？</div>2021-03-22</li><br/><li><span>Geek_78d3bb</span> 👍（1） 💬（1）<div>json简化了xml，protobuffer又优化了json 的key部分，双方都在proto中定义了key，所以只传序号查proto就知道是什么key了</div>2020-10-22</li><br/><li><span>寻己</span> 👍（0） 💬（2）<div>听懂了60，70％吧，谢谢</div>2024-03-08</li><br/><li><span>那时刻</span> 👍（5） 💬（0）<div>参考这里https:&#47;&#47;developers.google.com&#47;protocol-buffers&#47;docs&#47;reference&#47;arenas，学习了下protobuf对于arenas的介绍。
+如果只传输 字段的 顺序 和 值(字段名字和类型都不传输)，数据传到对端的时候， 再解码出来. 为什么不能这样做呢？</p>2021-03-22</li><br/><li><span>Geek_78d3bb</span> 👍（1） 💬（1）<p>json简化了xml，protobuffer又优化了json 的key部分，双方都在proto中定义了key，所以只传序号查proto就知道是什么key了</p>2020-10-22</li><br/><li><span>寻己</span> 👍（0） 💬（2）<p>听懂了60，70％吧，谢谢</p>2024-03-08</li><br/><li><span>那时刻</span> 👍（5） 💬（0）<p>参考这里https:&#47;&#47;developers.google.com&#47;protocol-buffers&#47;docs&#47;reference&#47;arenas，学习了下protobuf对于arenas的介绍。
 
 arena相当于内存池的概念，预先分配一块大内存，当protobuf操作消息对象需要分配内存的时候，去arenas来取，使用完之后放回到arena里。
 
-这种做法的优势在于，1，加速内存分配和释放。2，有效利用cache line。 3，减少CPU时间</div>2020-06-12</li><br/><li><span>test</span> 👍（5） 💬（0）<div>protobuf对body进行压缩，http2对header进行压缩。
-http2还可以使用stream方式传输，这些都是protobuf没有的。</div>2020-06-12</li><br/><li><span>诸葛子房</span> 👍（0） 💬（0）<div>protobuf怎么使用缓存的</div>2022-03-08</li><br/><li><span>Only now</span> 👍（0） 💬（0）<div>proto和h2不是一个层级上的技术。h2工作在更底层。 grgp2 可以利用h2实现灵活的双工请求，一定程度上增加交互效率。proto主要用来编码消息体，降低body体积。
-</div>2020-11-20</li><br/>
+这种做法的优势在于，1，加速内存分配和释放。2，有效利用cache line。 3，减少CPU时间</p>2020-06-12</li><br/><li><span>test</span> 👍（5） 💬（0）<p>protobuf对body进行压缩，http2对header进行压缩。
+http2还可以使用stream方式传输，这些都是protobuf没有的。</p>2020-06-12</li><br/><li><span>诸葛子房</span> 👍（0） 💬（0）<p>protobuf怎么使用缓存的</p>2022-03-08</li><br/><li><span>Only now</span> 👍（0） 💬（0）<p>proto和h2不是一个层级上的技术。h2工作在更底层。 grgp2 可以利用h2实现灵活的双工请求，一定程度上增加交互效率。proto主要用来编码消息体，降低body体积。
+</p>2020-11-20</li><br/>
 </ul>

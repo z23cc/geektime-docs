@@ -296,9 +296,9 @@ Grafana提供了和Prometheus看图页面类似的功能，叫做Explore，我�
 
 点击加入[课程交流群](https://jinshuju.net/f/Ql3qlz)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>凡人</span> 👍（2） 💬（2）<div>秦老师，你好，文章中 有两个小细节问题
+<li><span>凡人</span> 👍（2） 💬（2）<p>秦老师，你好，文章中 有两个小细节问题
 1. 文章中没有提到 需要修改 prometheus.yml 中的  # - alertmanager:9093。
-2. 163邮箱的smtp协议 非ssl端口号是25 (https:&#47;&#47;note.youdao.com&#47;ynoteshare&#47;index.html?id=f9fef46114fb922b45460f4f55d96853) </div>2023-01-29</li><br/><li><span>隆哥</span> 👍（1） 💬（1）<div>①部署了prometheus，无法通过IP+9090访问，有可能是防火墙没有关闭，我使用的是CentOS系列
+2. 163邮箱的smtp协议 非ssl端口号是25 (https:&#47;&#47;note.youdao.com&#47;ynoteshare&#47;index.html?id=f9fef46114fb922b45460f4f55d96853) </p>2023-01-29</li><br/><li><span>隆哥</span> 👍（1） 💬（1）<p>①部署了prometheus，无法通过IP+9090访问，有可能是防火墙没有关闭，我使用的是CentOS系列
 systemctl stop firewalld.service
 systemctl disable firewalld.service
 ②添加node_exporter在Status -&gt; Targets无法查看，prometheus修改配置需要每次重新加载读取
@@ -374,7 +374,7 @@ services:
     ports:
       - &quot;3000:3000&quot;
     networks:
-      - monitor</div>2023-01-16</li><br/><li><span>hshopeful</span> 👍（15） 💬（2）<div>关于 pull 和 push 模式，个人的一些理解，有错误或遗漏的，希望老师指正：
+      - monitor</p>2023-01-16</li><br/><li><span>hshopeful</span> 👍（15） 💬（2）<p>关于 pull 和 push 模式，个人的一些理解，有错误或遗漏的，希望老师指正：
 
 pull 模式的优点：
 1、pull 模式很容易判断监控对象的存活性，push 模式很难
@@ -389,15 +389,15 @@ push 模式的优点：
 4、pull 模式依赖服务发现模块，push 模式不依赖
 5、push 模式只用保证网络的正向联通（能够发送数据到服务端），比较简单，而 pull 模式需要保证网络的反向联通（服务端能够抓取多种多样的客户端暴露的接口），相对复杂
 6、pull 模式需要暴露端口，安全性存在隐患，而 push 模式不存在
-7、在聚合场景和告警场景下，push 模式的时效性更好</div>2023-01-16</li><br/><li><span>Amosヾ</span> 👍（3） 💬（1）<div>关于告警有一些建议和疑问：
+7、在聚合场景和告警场景下，push 模式的时效性更好</p>2023-01-16</li><br/><li><span>Amosヾ</span> 👍（3） 💬（1）<p>关于告警有一些建议和疑问：
 1、告警分级(提示、严重、致命)全部邮件推送很难体现优先级，尤其是致命告警应该电话处理
-2、目前社区是否有成熟的告警推送工具，比如企业微信机器人、钉钉机器人，这些需要自行编码实现？电话告警该如何实现呢？</div>2023-01-22</li><br/><li><span>April</span> 👍（2） 💬（2）<div>Prometheus没有提供很多管理上的API,又不想引入Service Discovery, 在targets变化后直接操作prometheus.conf有什么更为简单的方式吗？</div>2023-01-16</li><br/><li><span>那时刻</span> 👍（1） 💬（1）<div>请问老师，在k8s里部署prometheus，有哪些比较好的方式呢。</div>2023-01-17</li><br/><li><span>隆哥</span> 👍（1） 💬（2）<div>为啥不用docker形式来做实践呢，我觉得systemctl这种托管还是对主机入侵比较大。</div>2023-01-16</li><br/><li><span>Geek_df0d4d</span> 👍（0） 💬（1）<div>请问生产上有什么prometheus的高可用方案吗</div>2023-04-06</li><br/><li><span>孙宇翔</span> 👍（0） 💬（3）<div>老师您好，我想监控像摄像机这类设备的在线、离线，还有流量等数据，普罗米修斯是否合适，配置里面该怎么设置，完全没头绪。。。</div>2023-03-02</li><br/><li><span>Matthew</span> 👍（0） 💬（2）<div>老师，文章中提到的几个软件安装包，都需要从 github 上下载，但是下载速度太慢。能否提供下国内镜像源的地址呢？</div>2023-02-06</li><br/><li><span>Matthew</span> 👍（0） 💬（4）<div>github 下载太慢，有啥好办法吗？</div>2023-02-03</li><br/><li><span>leeeo</span> 👍（0） 💬（1）<div>源码编译prometheus可以去掉ui部分吗？</div>2023-02-03</li><br/><li><span>顶级心理学家</span> 👍（0） 💬（1）<div>秦老师，有个问题是关于exporter多实例的问题。
+2、目前社区是否有成熟的告警推送工具，比如企业微信机器人、钉钉机器人，这些需要自行编码实现？电话告警该如何实现呢？</p>2023-01-22</li><br/><li><span>April</span> 👍（2） 💬（2）<p>Prometheus没有提供很多管理上的API,又不想引入Service Discovery, 在targets变化后直接操作prometheus.conf有什么更为简单的方式吗？</p>2023-01-16</li><br/><li><span>那时刻</span> 👍（1） 💬（1）<p>请问老师，在k8s里部署prometheus，有哪些比较好的方式呢。</p>2023-01-17</li><br/><li><span>隆哥</span> 👍（1） 💬（2）<p>为啥不用docker形式来做实践呢，我觉得systemctl这种托管还是对主机入侵比较大。</p>2023-01-16</li><br/><li><span>Geek_df0d4d</span> 👍（0） 💬（1）<p>请问生产上有什么prometheus的高可用方案吗</p>2023-04-06</li><br/><li><span>孙宇翔</span> 👍（0） 💬（3）<p>老师您好，我想监控像摄像机这类设备的在线、离线，还有流量等数据，普罗米修斯是否合适，配置里面该怎么设置，完全没头绪。。。</p>2023-03-02</li><br/><li><span>Matthew</span> 👍（0） 💬（2）<p>老师，文章中提到的几个软件安装包，都需要从 github 上下载，但是下载速度太慢。能否提供下国内镜像源的地址呢？</p>2023-02-06</li><br/><li><span>Matthew</span> 👍（0） 💬（4）<p>github 下载太慢，有啥好办法吗？</p>2023-02-03</li><br/><li><span>leeeo</span> 👍（0） 💬（1）<p>源码编译prometheus可以去掉ui部分吗？</p>2023-02-03</li><br/><li><span>顶级心理学家</span> 👍（0） 💬（1）<p>秦老师，有个问题是关于exporter多实例的问题。
 我们环境是prometheus operator，例如 redis采用redis-exporter采集。这样就造成多个redis实例，实现成了多个exporter 来采集。redis exporter有案例支持一个exporter采集多个实例，但是没能实现。
 目前就是一个exporter 启动多个container，用不同端口采集多个redis实例，这样container会随着redis实例增多而庞大。
-想听听您的建议和想法。</div>2023-01-18</li><br/><li><span>俺木饭 三克油😂😂</span> 👍（0） 💬（1）<div>老师问下如何做prom 和各类exporter之间的认证？比如公司安全需求所有接口需要做鉴权</div>2023-01-17</li><br/><li><span>小飞同学</span> 👍（0） 💬（2）<div>咨询下grafana端口外网通过ip无法访问可能是什么原因呢？3000端口在安全组已经放开了，防火墙也方阿奎了，另外Prometheus9090端口是正常用的。http:&#47;&#47;ip:3000&#47;login   
+想听听您的建议和想法。</p>2023-01-18</li><br/><li><span>俺木饭 三克油😂😂</span> 👍（0） 💬（1）<p>老师问下如何做prom 和各类exporter之间的认证？比如公司安全需求所有接口需要做鉴权</p>2023-01-17</li><br/><li><span>小飞同学</span> 👍（0） 💬（2）<p>咨询下grafana端口外网通过ip无法访问可能是什么原因呢？3000端口在安全组已经放开了，防火墙也方阿奎了，另外Prometheus9090端口是正常用的。http:&#47;&#47;ip:3000&#47;login   
 Request URL: http:&#47;&#47;39.107.88.69:3000&#47;login
 Referrer Policy: strict-origin-when-cross-origin
 Provisional headers are shown
 Learn more
-Upgrade-Insecure-Requests: 1</div>2023-01-17</li><br/>
+Upgrade-Insecure-Requests: 1</p>2023-01-17</li><br/>
 </ul>

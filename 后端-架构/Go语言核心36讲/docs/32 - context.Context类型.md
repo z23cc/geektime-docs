@@ -192,11 +192,11 @@ func coordinateWithContext() {
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>拂尘</span> 👍（8） 💬（4）<div>@郝老师 有几点疑问烦劳回答下，谢谢！
+<li><span>拂尘</span> 👍（8） 💬（4）<p>@郝老师 有几点疑问烦劳回答下，谢谢！
 1、在coordinateWithContext的例子中，总共有12个子goroutine被创建，第12个即最后一个子goroutine在运行结束时，会通过计算defer表达式从而触发cancelFunc的调用，从而通知主goroutine结束在ctx.Done上获取通道的接收等待。我的问题是，在第12个子goroutine计算defer表达式的时候，会不会存在if条件不满足，未执行到cancelFunc的情况？或者说，在此时，第1到第11的子goroutine中，会存在自旋cas未执行完的情况吗？如果这种情况有，是否会导致主goroutine永远阻塞的情况？
 2、在撤销函数被调用的时候，在当前context上，通过contex.Done获取的通道会马上感知到吗？还是会同步等待，使撤销信号在当前context的所有subtree上的所有context传播完成后，再感知到？还是有其他情况？
 3、WithDeadline和WithTimeout的区别是什么？具体说，deadline是针对某个具体时间，而timeout是针对当前时间的延时来定义自动撤销时间吗？
-感谢回复！</div>2020-09-05</li><br/><li><span>Shawn</span> 👍（8） 💬（1）<div>看代码是深度优先，但是我自己写了demo，顺序是乱的，求老师讲解</div>2018-10-25</li><br/><li><span>mclee</span> 👍（4） 💬（4）<div>
+感谢回复！</p>2020-09-05</li><br/><li><span>Shawn</span> 👍（8） 💬（1）<p>看代码是深度优先，但是我自己写了demo，顺序是乱的，求老师讲解</p>2018-10-25</li><br/><li><span>mclee</span> 👍（4） 💬（4）<p>
 实测了下，context.WithValue 得到的新的 ctx 当其 parent context cancle 时也能收到 done 信号啊，并不是文中说的那样会跳过！
 
 package main
@@ -237,7 +237,7 @@ func watch(ctx context.Context, name string) {
 		}
 	}
 }
-</div>2022-02-11</li><br/><li><span>茴香根</span> 👍（4） 💬（1）<div>留言区很多人说Context 是深度优先，但是我在想每个goroutine 被调用的顺序都是不确定的，因此在编写goroutine 代码时，实际的撤销响应不能假定其父或子context 所在的goroutine一定先或者后结束。</div>2019-07-25</li><br/><li><span>Cutler</span> 👍（4） 💬（3）<div>cotext.backround()和cotext.todo()有什么区别</div>2019-04-09</li><br/><li><span>鲲鹏飞九万里</span> 👍（1） 💬（1）<div>老师，您还能看到我的留言吗，现在已经是2023年了。您看我下面的代码，比您的代码少了一句time.Sleep(time.Millisecond * 200)， 之后，打印的结果就是错的，只打印了12个数，您能给解释一下吗。（我运行环境是：go version go1.18.3 darwin&#47;amd64， 2.3 GHz 四核Intel Core i5）
+</p>2022-02-11</li><br/><li><span>茴香根</span> 👍（4） 💬（1）<p>留言区很多人说Context 是深度优先，但是我在想每个goroutine 被调用的顺序都是不确定的，因此在编写goroutine 代码时，实际的撤销响应不能假定其父或子context 所在的goroutine一定先或者后结束。</p>2019-07-25</li><br/><li><span>Cutler</span> 👍（4） 💬（3）<p>cotext.backround()和cotext.todo()有什么区别</p>2019-04-09</li><br/><li><span>鲲鹏飞九万里</span> 👍（1） 💬（1）<p>老师，您还能看到我的留言吗，现在已经是2023年了。您看我下面的代码，比您的代码少了一句time.Sleep(time.Millisecond * 200)， 之后，打印的结果就是错的，只打印了12个数，您能给解释一下吗。（我运行环境是：go version go1.18.3 darwin&#47;amd64， 2.3 GHz 四核Intel Core i5）
 func main() {
 	&#47;&#47; coordinateWithWaitGroup()
 	coordinateWithContext()
@@ -298,11 +298,11 @@ The number: 9 [8-0]
 end.
 
 
-</div>2023-01-09</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<div>“由于Context类型实际上是一个接口类型，而context包中实现该接口的所有私有类型，都是基于某个数据类型的指针类型，所以，如此传播并不会影响该类型值的功能和安全。”
-请问老师，这句话中的「所以」二字怎么理解呢？指针不是会导致数据共享和竞争吗？为什么反而是安全的呢？谢谢！</div>2021-05-05</li><br/><li><span>moooofly</span> 👍（1） 💬（2）<div>“它会向它的所有子值（或者说子节点）传达撤销信号。这些子值会如法炮制，把撤销信号继续传播下去。最后，这个 Context 值会断开它与其父值之间的关联。”--这里有一个问题，我能理解，当在这个上下文树上的某个 node 上触发 cancel 信号时，以该 node 为根的子上下文树会从原来的树上断开；而文中又提到“撤销信号在被传播时，若遇到它们（调用 context.WithValue 函数得到的 Context 值）则会直接跨过” ，那么，这些被“跨过”的 node ，在上面说的子上下文树断开的过程里，是一起断开了？还是仍旧会和更上层的 node 节点有关联？</div>2019-09-30</li><br/><li><span>海盗船长</span> 👍（1） 💬（1）<div>实际使用中 http.ReverseProxy经常会报 proxy error：context canceled 请问老师有哪些原因可能导致这个问题</div>2019-09-02</li><br/><li><span>闫飞</span> 👍（1） 💬（1）<div>繁衍一词的翻译有些生硬，是否能换一个好理解一些的中文词汇</div>2019-07-16</li><br/><li><span>尚恩</span> 👍（0） 💬（1）<div>老师，你的图是用什么工具画的？
-</div>2024-02-19</li><br/><li><span>寻风</span> 👍（0） 💬（1）<div>Context可以看作是某个父goroutine的一个变量,并且这个变量是线程安全的, 当这个变量传入子的goroutine后, 就意味着父goroutine和子goroutine可以通过这个变量来进行信息交互?
+</p>2023-01-09</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<p>“由于Context类型实际上是一个接口类型，而context包中实现该接口的所有私有类型，都是基于某个数据类型的指针类型，所以，如此传播并不会影响该类型值的功能和安全。”
+请问老师，这句话中的「所以」二字怎么理解呢？指针不是会导致数据共享和竞争吗？为什么反而是安全的呢？谢谢！</p>2021-05-05</li><br/><li><span>moooofly</span> 👍（1） 💬（2）<p>“它会向它的所有子值（或者说子节点）传达撤销信号。这些子值会如法炮制，把撤销信号继续传播下去。最后，这个 Context 值会断开它与其父值之间的关联。”--这里有一个问题，我能理解，当在这个上下文树上的某个 node 上触发 cancel 信号时，以该 node 为根的子上下文树会从原来的树上断开；而文中又提到“撤销信号在被传播时，若遇到它们（调用 context.WithValue 函数得到的 Context 值）则会直接跨过” ，那么，这些被“跨过”的 node ，在上面说的子上下文树断开的过程里，是一起断开了？还是仍旧会和更上层的 node 节点有关联？</p>2019-09-30</li><br/><li><span>海盗船长</span> 👍（1） 💬（1）<p>实际使用中 http.ReverseProxy经常会报 proxy error：context canceled 请问老师有哪些原因可能导致这个问题</p>2019-09-02</li><br/><li><span>闫飞</span> 👍（1） 💬（1）<p>繁衍一词的翻译有些生硬，是否能换一个好理解一些的中文词汇</p>2019-07-16</li><br/><li><span>尚恩</span> 👍（0） 💬（1）<p>老师，你的图是用什么工具画的？
+</p>2024-02-19</li><br/><li><span>寻风</span> 👍（0） 💬（1）<p>Context可以看作是某个父goroutine的一个变量,并且这个变量是线程安全的, 当这个变量传入子的goroutine后, 就意味着父goroutine和子goroutine可以通过这个变量来进行信息交互?
 或者Context是一个独立申请的的内存区域, 父goroutine和子goroutine都有一个指针指向它, 这样就可以通过这块共享的内存进行信息交互了?
-</div>2022-05-11</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<div>coordinateWithContext中，如果改成WithTimeout创建ctx的话，主goroutine只要&lt;-ctx.Done()接收到挂壁通道的信号后就会立马解除阻塞，而执行退出，这个时候即使for中的子goroutine还没有执行完成也会被强制退出了，这样情况下某个子goroutine执行到一半的时候，会被‘中断’，感觉上没有得到公平的对待，个人理解的cpu在goroutine中调度，如果足够公平的话，至少要在等到当前执行的goroutine阻塞而让出cpu，才切到其他goroutine执行，还是我理解错了，cpu就是不停的在各个goroutine间切来来去的执行，而不管某个goroutine有没有阻塞</div>2021-11-23</li><br/><li><span>jxs1211</span> 👍（0） 💬（2）<div>waitgroup的改进版中，每批就是一个wg的技术周期，当前循环的计数周期没有完成，下一次不会开始，也就是说每stride这么多个个goroutine执行完成之前，是不会开起下一批goroutine的，这样的话，其实每一批之间是串行的，并不是并发total那么多goroutine，而是只并发了stride个goroutine，对吗？</div>2021-11-20</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<div>func defaultCompareAndSwapInt32(addr *int32, old, new int32) (swapped bool) {
+</p>2022-05-11</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<p>coordinateWithContext中，如果改成WithTimeout创建ctx的话，主goroutine只要&lt;-ctx.Done()接收到挂壁通道的信号后就会立马解除阻塞，而执行退出，这个时候即使for中的子goroutine还没有执行完成也会被强制退出了，这样情况下某个子goroutine执行到一半的时候，会被‘中断’，感觉上没有得到公平的对待，个人理解的cpu在goroutine中调度，如果足够公平的话，至少要在等到当前执行的goroutine阻塞而让出cpu，才切到其他goroutine执行，还是我理解错了，cpu就是不停的在各个goroutine间切来来去的执行，而不管某个goroutine有没有阻塞</p>2021-11-23</li><br/><li><span>jxs1211</span> 👍（0） 💬（2）<p>waitgroup的改进版中，每批就是一个wg的技术周期，当前循环的计数周期没有完成，下一次不会开始，也就是说每stride这么多个个goroutine执行完成之前，是不会开起下一批goroutine的，这样的话，其实每一批之间是串行的，并不是并发total那么多goroutine，而是只并发了stride个goroutine，对吗？</p>2021-11-20</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<p>func defaultCompareAndSwapInt32(addr *int32, old, new int32) (swapped bool) {
 	if old != *addr {
 		return false
 	}
@@ -375,5 +375,5 @@ added from 116 to 117 --116
 added from 117 to 118 --120 
 added from 118 to 119 --119 
 added from 119 to 120 --121 
-</div>2021-10-26</li><br/>
+</p>2021-10-26</li><br/>
 </ul>

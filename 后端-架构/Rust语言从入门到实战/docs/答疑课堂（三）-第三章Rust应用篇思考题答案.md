@@ -170,5 +170,5 @@ C语言的字符串与Rust中的String区别主要在于以下几个方面：
 
 由于这些不同，C语言的字符串类型在Rust中映射为 [CStr](https://doc.rust-lang.org/std/ffi/struct.CStr.html)。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>一带一路</span> 👍（2） 💬（1）<div>结课了嘛？</div>2024-01-03</li><br/><li><span>老实人Honey</span> 👍（0） 💬（0）<div>这篇答疑有点提前了哦</div>2024-04-28</li><br/>
+<li><span>一带一路</span> 👍（2） 💬（1）<p>结课了嘛？</p>2024-01-03</li><br/><li><span>老实人Honey</span> 👍（0） 💬（0）<p>这篇答疑有点提前了哦</p>2024-04-28</li><br/>
 </ul>

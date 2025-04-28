@@ -338,7 +338,7 @@ WebGL完整的绘图过程实在比较复杂，为了帮助你理解，我总结
 \[1] [类型化数组 MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)  
 \[2] [WebGL 的 MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>筑梦师刘渊</span> 👍（51） 💬（2）<div>作业一   
+<li><span>筑梦师刘渊</span> 👍（51） 💬（2）<p>作业一   
 查了下资料，webgl支持的图元类型有七种，分别是 gl.POINTS(点), gl.LINES(线段), gl.LINE_STRIP(线条), gl.LINE_LOOP(回路), gl.TRIANGLES(三角形), gl.TRIANGLE_STRIP(三角带), gl.TRIANGLE_FAN(三角扇)。
 要绘制空心三角形，gl.LINE_STRIP(线条)、gl.LINES(线段)、 gl.LINE_LOOP(回路)都可以实现。 但是gl.LINES(线段)需要写入六个顶点([-1, -1, 0, 1,   0, 1, 1, -1,   1, -1,-1, -1]), gl.LINE_STRIP(线条)也需要写入四个顶点([-1, -1, 0, 1, 1, -1,-1, -1]),而gl.LINE_LOOP(回路)，只需要是三个顶点([-1, -1, 0, 1, 1, -1])，因此gl.LINE_LOOP(回路)是最佳选择
 
@@ -384,11 +384,11 @@ function create2CircleVertex(x, y, r, R, n) {
 以上要绘制空心用gl.LINE_LOOP图元，实心用gl.TRIANGLE_FAN图元   
 1)空心:gl.drawArrays(gl.LINE_LOOP, 0, points.length &#47; 2);
 2)实心:gl.drawArrays(gl.TRIANGLE_FAN, 0, points.length &#47; 2);
-</div>2020-06-30</li><br/><li><span>Cailven</span> 👍（17） 💬（1）<div>补充：vs不仅仅只有postion值，一般通过attribute 进行属性赋值。在图形学管顶点操作叫做VAO(vertex array object)，而vao操作的float数据底层是vbo。不过如果用了threejs后很多图元操作就依赖引擎直接就解决了，但在Threejs中依然可以通过shaderMatiral通过setAttribute给bufferGeometry的顶点赋值。
+</p>2020-06-30</li><br/><li><span>Cailven</span> 👍（17） 💬（1）<p>补充：vs不仅仅只有postion值，一般通过attribute 进行属性赋值。在图形学管顶点操作叫做VAO(vertex array object)，而vao操作的float数据底层是vbo。不过如果用了threejs后很多图元操作就依赖引擎直接就解决了，但在Threejs中依然可以通过shaderMatiral通过setAttribute给bufferGeometry的顶点赋值。
 
 不过个人在这几年的图形学学习中觉得vs相对还是简单的，fs对于像素的操作很像当年给photoshop写滤镜的过程。不过如果真的是玩片元着色炫技可以看看shadertoy里关于用remaching技术构建距离场用体素算法在片元里构建另一个三维引擎的效果。希望月影大大回头可以针对这方面有所加餐。感谢！
 
-不过这课程来的太晚，如果几年前能早点接触到这门课，估计会在图形学方面少走很多弯路，谢谢月影大大。</div>2020-06-29</li><br/><li><span>xiao豪</span> 👍（8） 💬（2）<div>老师，将数据存入缓存再拿出来是有什么意义呢？</div>2020-07-06</li><br/><li><span>宁康</span> 👍（5） 💬（1）<div>正n边型，r是外接圆半径
+不过这课程来的太晚，如果几年前能早点接触到这门课，估计会在图形学方面少走很多弯路，谢谢月影大大。</p>2020-06-29</li><br/><li><span>xiao豪</span> 👍（8） 💬（2）<p>老师，将数据存入缓存再拿出来是有什么意义呢？</p>2020-07-06</li><br/><li><span>宁康</span> 👍（5） 💬（1）<p>正n边型，r是外接圆半径
 
 getPolygonPoints( n, r ){
       const stepAngle = 2*Math.PI &#47; n
@@ -411,7 +411,7 @@ const ponitsArray = getPolygonPoints(10, 1)
 
 const ponits = new Float32Array(ponitsArray)
 
-gl.drawArrays(gl.TRIANGLE_FAN, 0, ponits.length &#47; 2)</div>2020-06-29</li><br/><li><span>宁康</span> 👍（3） 💬（1）<div>1、gl_Position 设置顶点，这个我查了一下，第四个值设置为2.0也可以实现缩小一倍。
+gl.drawArrays(gl.TRIANGLE_FAN, 0, ponits.length &#47; 2)</p>2020-06-29</li><br/><li><span>宁康</span> 👍（3） 💬（1）<p>1、gl_Position 设置顶点，这个我查了一下，第四个值设置为2.0也可以实现缩小一倍。
 gl_Position = vec4(position, 0.0, 2.0);
 
 2、空心三角形：
@@ -428,8 +428,8 @@ const ponits = new Float32Array([
       ])
 b.绘制多边形
 gl.drawArrays(gl.TRIANGLE_FAN, 0, ponits.length &#47; 2)
-</div>2020-06-29</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<div>实现了一个正多边形的样例，动态修改边数。
-https:&#47;&#47;codesandbox.io&#47;s&#47;practice-canvas-vme4k?file=&#47;src&#47;pages&#47;RegularPolygonWebGL.vue</div>2020-07-16</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<div>问题一：
+</p>2020-06-29</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<p>实现了一个正多边形的样例，动态修改边数。
+https:&#47;&#47;codesandbox.io&#47;s&#47;practice-canvas-vme4k?file=&#47;src&#47;pages&#47;RegularPolygonWebGL.vue</p>2020-07-16</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<p>问题一：
 绘制空心三角形使用回路线条：gl.LINE_LOOP
     gl.drawArrays(gl.LINE_LOOP, 0, points.length &#47; 2);
 
@@ -441,12 +441,12 @@ WebGL可绘制的图元有以下7种，来源网络查找：https:&#47;&#47;www.
 回路线条	gl.LINE_LOOP
 三角形	gl.TRIANGLES
 三角带	gl.TRIANGLE_STRIP	
-三角扇	gl.TRIANGLE_FAN </div>2020-07-15</li><br/><li><span>国旗</span> 👍（1） 💬（1）<div>老师问下MDN文档里WebGL常数这儿，表格里十六进制的‘Value’表示的意思是类似于CPU指令寄存器么？
+三角扇	gl.TRIANGLE_FAN </p>2020-07-15</li><br/><li><span>国旗</span> 👍（1） 💬（1）<p>老师问下MDN文档里WebGL常数这儿，表格里十六进制的‘Value’表示的意思是类似于CPU指令寄存器么？
 Getting GL parameter information这节BLEND_EQUATION，BLEND_EQUATION_RGB的value都是0x8009，也有点不理解
-https:&#47;&#47;developer.mozilla.org&#47;en-US&#47;docs&#47;Web&#47;API&#47;WebGL_API&#47;Constants</div>2020-09-23</li><br/><li><span>不见飞刀</span> 👍（1） 💬（3）<div>&quot;图形中有多少个像素点，着色器程序在 GPU 中就会被同时执行多少次。&quot;
+https:&#47;&#47;developer.mozilla.org&#47;en-US&#47;docs&#47;Web&#47;API&#47;WebGL_API&#47;Constants</p>2020-09-23</li><br/><li><span>不见飞刀</span> 👍（1） 💬（3）<p>&quot;图形中有多少个像素点，着色器程序在 GPU 中就会被同时执行多少次。&quot;
 
 顶点着色器是否一样还是有几个顶点就执行多少次呢？
-传给片元的varying变量会线性差值，那么插值这一步发生在哪呢？</div>2020-08-29</li><br/><li><span>Geek_gmfq9e</span> 👍（1） 💬（1）<div>请问编写glsl有什么智能提示插吗，我用的vscode？</div>2020-08-01</li><br/><li><span>我母鸡啊！</span> 👍（1） 💬（1）<div>作业1 ： gl.drawArrays传入gl.LINE_LOOP</div>2020-07-03</li><br/><li><span>我母鸡啊！</span> 👍（1） 💬（1）<div>所以在webgl中最小的图元是三角形？</div>2020-07-03</li><br/><li><span>miaomiao</span> 👍（1） 💬（4）<div>月影老师，你好，有个问题想请教下，如果我想实现12条心电波形折线图，每条波形图的每个脉搏段会依据脉搏类型展示不同的颜色，用户交互：用户可以选择特定的脉搏段，统一修改这个脉搏段类型，这样类型变化，12条心电图的对应脉搏段颜色也变化。这种用canvas好还是webgl好？用canvas的话，需要去获取用户选定的范围，对画布元素进行局部重绘，目前有没有可以只通过更改数据，根据数据变化进行自动重绘的图形库？</div>2020-07-03</li><br/><li><span>王子晨</span> 👍（1） 💬（2）<div>老师请问用webGL绘制复杂的图形，会不会设置多个顶点和片元着色程序？还是说一直在修改一个顶点和片元着色程序？</div>2020-07-01</li><br/><li><span>量子蔷薇</span> 👍（1） 💬（1）<div>我在codepen写了作业，https:&#47;&#47;codepen.io&#47;quantum-rose&#47;pen&#47;QWyqexL
+传给片元的varying变量会线性差值，那么插值这一步发生在哪呢？</p>2020-08-29</li><br/><li><span>Geek_gmfq9e</span> 👍（1） 💬（1）<p>请问编写glsl有什么智能提示插吗，我用的vscode？</p>2020-08-01</li><br/><li><span>我母鸡啊！</span> 👍（1） 💬（1）<p>作业1 ： gl.drawArrays传入gl.LINE_LOOP</p>2020-07-03</li><br/><li><span>我母鸡啊！</span> 👍（1） 💬（1）<p>所以在webgl中最小的图元是三角形？</p>2020-07-03</li><br/><li><span>miaomiao</span> 👍（1） 💬（4）<p>月影老师，你好，有个问题想请教下，如果我想实现12条心电波形折线图，每条波形图的每个脉搏段会依据脉搏类型展示不同的颜色，用户交互：用户可以选择特定的脉搏段，统一修改这个脉搏段类型，这样类型变化，12条心电图的对应脉搏段颜色也变化。这种用canvas好还是webgl好？用canvas的话，需要去获取用户选定的范围，对画布元素进行局部重绘，目前有没有可以只通过更改数据，根据数据变化进行自动重绘的图形库？</p>2020-07-03</li><br/><li><span>王子晨</span> 👍（1） 💬（2）<p>老师请问用webGL绘制复杂的图形，会不会设置多个顶点和片元着色程序？还是说一直在修改一个顶点和片元着色程序？</p>2020-07-01</li><br/><li><span>量子蔷薇</span> 👍（1） 💬（1）<p>我在codepen写了作业，https:&#47;&#47;codepen.io&#47;quantum-rose&#47;pen&#47;QWyqexL
 不确定自己对WebGL绘图的机制理解对了没，关于封装复用代码那部分，感觉我可能复用了一些不需要复用的代码。期待之后的学习！
-我的六角星只有描边，本质是在不清空画布的情况下画了两个三角形，不知道有没有更好的做法，如果是实心六角星，把我的代码中drawStar函数里的LINE_LOOP换成TRIANGLE_FAN就能画出来，但是其他n角星并不能正确画出来。</div>2020-06-30</li><br/>
+我的六角星只有描边，本质是在不清空画布的情况下画了两个三角形，不知道有没有更好的做法，如果是实心六角星，把我的代码中drawStar函数里的LINE_LOOP换成TRIANGLE_FAN就能画出来，但是其他n角星并不能正确画出来。</p>2020-06-30</li><br/>
 </ul>

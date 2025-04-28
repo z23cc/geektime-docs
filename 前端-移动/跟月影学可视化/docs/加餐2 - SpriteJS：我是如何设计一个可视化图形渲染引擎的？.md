@@ -159,7 +159,7 @@ SpriteJS 3.0继承了SpriteJS 2.0的跨平台性，但是不再需要使用分�
 2. [SpriteJS](https://spritejs.org)
 3. [Mesh.js](https://github.com/mesh-js/mesh.js)
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>点滴</span> 👍（3） 💬（1）<div>使用 JavaScript Core 和 JS Bindings技术，除了跨平台，脱离浏览器，在其他方面有什么提升？目前很多跨平台的框架到后期都会面临性能与native开发性能差距。这块如何考量</div>2020-09-22</li><br/><li><span>赤道</span> 👍（2） 💬（1）<div>与threejs对比一下，4.0与之优劣势？</div>2021-01-15</li><br/><li><span>LJT</span> 👍（0） 💬（0）<div>这个4版本不就是flutter么？</div>2022-07-03</li><br/><li><span>ryannz</span> 👍（0） 💬（0）<div>另外能讲讲GPGPu就更好了</div>2022-02-17</li><br/><li><span>ryannz</span> 👍（0） 💬（0）<div>v4的代码在有放出来嘛？很感兴趣。要从native做起，兼容web感觉也挺难的。
+<li><span>点滴</span> 👍（3） 💬（1）<p>使用 JavaScript Core 和 JS Bindings技术，除了跨平台，脱离浏览器，在其他方面有什么提升？目前很多跨平台的框架到后期都会面临性能与native开发性能差距。这块如何考量</p>2020-09-22</li><br/><li><span>赤道</span> 👍（2） 💬（1）<p>与threejs对比一下，4.0与之优劣势？</p>2021-01-15</li><br/><li><span>LJT</span> 👍（0） 💬（0）<p>这个4版本不就是flutter么？</p>2022-07-03</li><br/><li><span>ryannz</span> 👍（0） 💬（0）<p>另外能讲讲GPGPu就更好了</p>2022-02-17</li><br/><li><span>ryannz</span> 👍（0） 💬（0）<p>v4的代码在有放出来嘛？很感兴趣。要从native做起，兼容web感觉也挺难的。
 - native用c++实现？还是rust？？
 - skia的wasm体积问题怎么解决？
 - 文字和布局放弃掉挺可惜的，如果做成插件挺好的
@@ -167,5 +167,5 @@ SpriteJS 3.0继承了SpriteJS 2.0的跨平台性，但是不再需要使用分�
 - native对体积倒是不太敏感
 - 怎么看webgpu呢？
 - skia的性能对可视化足够了吗
-</div>2022-02-17</li><br/><li><span>蓝海</span> 👍（0） 💬（0）<div>想做智慧城市，3D楼群和城市设备的相关展示。目前正在做技术选型，请问使用SpriteJS是否试用。有没有相关推荐，谢谢！</div>2021-04-25</li><br/><li><span>馒头爱学习</span> 👍（0） 💬（0）<div>聆听牛人的思路，非常受用！</div>2021-04-16</li><br/>
+</p>2022-02-17</li><br/><li><span>蓝海</span> 👍（0） 💬（0）<p>想做智慧城市，3D楼群和城市设备的相关展示。目前正在做技术选型，请问使用SpriteJS是否试用。有没有相关推荐，谢谢！</p>2021-04-25</li><br/><li><span>馒头爱学习</span> 👍（0） 💬（0）<p>聆听牛人的思路，非常受用！</p>2021-04-16</li><br/>
 </ul>

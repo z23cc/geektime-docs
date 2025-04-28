@@ -227,5 +227,5 @@ public static void subscribe(String consumerGroup, MessageListener listener)
 
 欢迎你在留言区与我交流讨论，我们下节课再见。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>ᯤ⁵ᴳ</span> 👍（0） 💬（1）<div>快结课了，希望老师也讲讲分库分表的中间件</div>2022-08-14</li><br/><li><span>mikewt</span> 👍（0） 💬（2）<div>老师 watch机制其实可以用客户端主动轮询来解决，那么这两者有啥区别吗，使用场景是什么</div>2022-08-10</li><br/>
+<li><span>ᯤ⁵ᴳ</span> 👍（0） 💬（1）<p>快结课了，希望老师也讲讲分库分表的中间件</p>2022-08-14</li><br/><li><span>mikewt</span> 👍（0） 💬（2）<p>老师 watch机制其实可以用客户端主动轮询来解决，那么这两者有啥区别吗，使用场景是什么</p>2022-08-10</li><br/>
 </ul>

@@ -324,12 +324,12 @@ Faiss这个库能够加载的数据量，受限于我们的内存大小。如果
 
 期待能在评论区看到你的分享，也欢迎你把这节课分享给感兴趣的朋友，我们下一讲再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>廉烨</span> 👍（14） 💬（1）<div>老师，请问是否有开源的embedding组件，能够达到或接近openai embedding能力的？能够用于中文问答搜索</div>2023-04-11</li><br/><li><span>金</span> 👍（6） 💬（1）<div>这门课程主要讲nlp吗？</div>2023-04-03</li><br/><li><span>黄智荣</span> 👍（4） 💬（1）<div>这个挺有意思的。不过这种性能应该会降低很多，就算有这种通过faiss计算。原来通过倒排索引，用很低的资源就可以实现，用这faiss 数据量一大，估计都要用显卡才可以，量大对显存要求也很高</div>2023-05-07</li><br/><li><span>Yezhiwei</span> 👍（4） 💬（3）<div>请问老师可以把关系型数据库的结构化数据embedding 到向量数据库吗？比如财务报表的数据，然后通过自然语言的方式查询数据，谢谢</div>2023-04-12</li><br/><li><span>eagle</span> 👍（4） 💬（1）<div>过几天openAI的模型版本升级了，这些保存的embedding会失效吗？</div>2023-04-05</li><br/><li><span>Jelly</span> 👍（3） 💬（1）<div>当使用Llama Index导入一篇产品介绍的时候，问：本产品的特征是什么，向量匹配不准确。使用XXX的特征就没问题。当导入年报的时候问：2022年营收是多少？向量匹配也不准确，直接问：营收是多少就可以。请问怎么让用户问的问题更智能？</div>2023-04-23</li><br/><li><span>Joe Black</span> 👍（1） 💬（1）<div>embedding的实现是否也需要基础模型的知识沉淀呢？比如文字上虽然不相同，但是含义相近的句子生成的向量是相似的，这个是依靠模型之前学习的知识是吗？那这样自然就是越大的模型embedding的效果越好？可以这样理解吗？</div>2023-05-11</li><br/><li><span>渔樵耕读</span> 👍（1） 💬（2）<div>请问有遇到安装faiss时提示：PackagesNotFoundError的没？改为pip install faiss 报错：
+<li><span>廉烨</span> 👍（14） 💬（1）<p>老师，请问是否有开源的embedding组件，能够达到或接近openai embedding能力的？能够用于中文问答搜索</p>2023-04-11</li><br/><li><span>金</span> 👍（6） 💬（1）<p>这门课程主要讲nlp吗？</p>2023-04-03</li><br/><li><span>黄智荣</span> 👍（4） 💬（1）<p>这个挺有意思的。不过这种性能应该会降低很多，就算有这种通过faiss计算。原来通过倒排索引，用很低的资源就可以实现，用这faiss 数据量一大，估计都要用显卡才可以，量大对显存要求也很高</p>2023-05-07</li><br/><li><span>Yezhiwei</span> 👍（4） 💬（3）<p>请问老师可以把关系型数据库的结构化数据embedding 到向量数据库吗？比如财务报表的数据，然后通过自然语言的方式查询数据，谢谢</p>2023-04-12</li><br/><li><span>eagle</span> 👍（4） 💬（1）<p>过几天openAI的模型版本升级了，这些保存的embedding会失效吗？</p>2023-04-05</li><br/><li><span>Jelly</span> 👍（3） 💬（1）<p>当使用Llama Index导入一篇产品介绍的时候，问：本产品的特征是什么，向量匹配不准确。使用XXX的特征就没问题。当导入年报的时候问：2022年营收是多少？向量匹配也不准确，直接问：营收是多少就可以。请问怎么让用户问的问题更智能？</p>2023-04-23</li><br/><li><span>Joe Black</span> 👍（1） 💬（1）<p>embedding的实现是否也需要基础模型的知识沉淀呢？比如文字上虽然不相同，但是含义相近的句子生成的向量是相似的，这个是依靠模型之前学习的知识是吗？那这样自然就是越大的模型embedding的效果越好？可以这样理解吗？</p>2023-05-11</li><br/><li><span>渔樵耕读</span> 👍（1） 💬（2）<p>请问有遇到安装faiss时提示：PackagesNotFoundError的没？改为pip install faiss 报错：
 ERROR: Could not find a version that satisfies the requirement faiss (from versions: none)
-ERROR: No matching distribution found for faiss</div>2023-04-11</li><br/><li><span>xbc</span> 👍（1） 💬（1）<div>cosine_similarity 也可以传入多个embeddings. 
+ERROR: No matching distribution found for faiss</p>2023-04-11</li><br/><li><span>xbc</span> 👍（1） 💬（1）<p>cosine_similarity 也可以传入多个embeddings. 
 
 scores = cosine_similarity(list[list[float]], list[float])
-indices = np.argsort(scores)[::-1]</div>2023-04-04</li><br/><li><span>Oli张帆</span> 👍（1） 💬（3）<div>考虑到我的服务器硬件资源有限（300MB的软限制，500MB的硬限制，现在已经占到了450MB），而且我已经在进行其他任务时使用了很多资源，当我在OpenAI之上构建AI机器人时，我考虑使用这个策略。请老师看看是否能行得通。
+indices = np.argsort(scores)[::-1]</p>2023-04-04</li><br/><li><span>Oli张帆</span> 👍（1） 💬（3）<p>考虑到我的服务器硬件资源有限（300MB的软限制，500MB的硬限制，现在已经占到了450MB），而且我已经在进行其他任务时使用了很多资源，当我在OpenAI之上构建AI机器人时，我考虑使用这个策略。请老师看看是否能行得通。
 
 每当用户发送请求时，我首先检测他的意图。我可以使用小的embeddings来帮助意图检测。甚至可以有其他方式，如缓存和预先一些意图让用户来点击，来加速意图检测。
 
@@ -337,10 +337,10 @@ indices = np.argsort(scores)[::-1]</div>2023-04-04</li><br/><li><span>Oli张帆<
 
 尽管这种方法可能不像搜索单个大型嵌入数据库那样准确，但如果我为用户提供足够的指导，您认为它能产生足够好的用户体验吗？例如，在我的界面中，我可以向用户显示他们当前正在讨论“最新的AI发展”或“客户服务”。然后，也可以允许用户快速地改变当前的话题。
 
-请老师看看，这个办法能不能跑通。还没有什么我没有想到的地方？</div>2023-04-03</li><br/><li><span>Devon</span> 👍（0） 💬（1）<div>老师，对于几十万个精准的中文公司名称或者单位地址进行向量化之后，预存进DataFrame作为之后的搜索源，使用时根据较为“脏”的公司名称或者单位地址进行匹配，在这样的操作中对于中文公司名称或者单位地址的向量化预处理，有什么推荐的方式或者模型吗？用OpenAI embedding的话，费用和时间会不会不太经济？</div>2023-05-04</li><br/><li><span>一叶</span> 👍（0） 💬（2）<div>老师 在最后一个例子中
+请老师看看，这个办法能不能跑通。还没有什么我没有想到的地方？</p>2023-04-03</li><br/><li><span>Devon</span> 👍（0） 💬（1）<p>老师，对于几十万个精准的中文公司名称或者单位地址进行向量化之后，预存进DataFrame作为之后的搜索源，使用时根据较为“脏”的公司名称或者单位地址进行匹配，在这样的操作中对于中文公司名称或者单位地址的向量化预处理，有什么推荐的方式或者模型吗？用OpenAI embedding的话，费用和时间会不会不太经济？</p>2023-05-04</li><br/><li><span>一叶</span> 👍（0） 💬（2）<p>老师 在最后一个例子中
 
 def search_index(index, df, query, k=5):
 
 这里面的 query 不用先进行向量化吗? 那么这个时候不是要调用到Openai?
-</div>2023-04-09</li><br/><li><span>一叶</span> 👍（0） 💬（3）<div>老师,这样的搜索效果的效率如何? 如果我是一个话术类搜索的,1万多个标题直接用内容来进行搜索的话可以?</div>2023-04-09</li><br/><li><span>幼儿编程教学</span> 👍（0） 💬（2）<div>请教老师， get_embedding函数会请求openai。那么cosine_similarity函数是否会请求openai接口？</div>2023-04-07</li><br/><li><span>aoe</span> 👍（1） 💬（0）<div>原来商品搜索、推荐系统都已经使用上了 AI，确实强大</div>2023-04-18</li><br/>
+</p>2023-04-09</li><br/><li><span>一叶</span> 👍（0） 💬（3）<p>老师,这样的搜索效果的效率如何? 如果我是一个话术类搜索的,1万多个标题直接用内容来进行搜索的话可以?</p>2023-04-09</li><br/><li><span>幼儿编程教学</span> 👍（0） 💬（2）<p>请教老师， get_embedding函数会请求openai。那么cosine_similarity函数是否会请求openai接口？</p>2023-04-07</li><br/><li><span>aoe</span> 👍（1） 💬（0）<p>原来商品搜索、推荐系统都已经使用上了 AI，确实强大</p>2023-04-18</li><br/>
 </ul>

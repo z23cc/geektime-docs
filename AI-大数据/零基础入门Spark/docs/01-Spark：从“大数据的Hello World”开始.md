@@ -240,7 +240,7 @@ wordCounts.map{case (k, v) => (v, k)}.sortByKey(false).take(5)
 
 如果这一讲对你有帮助，也欢迎你分享给自己的朋友，我们下一讲再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Alvin-L</span> 👍（21） 💬（6）<div>在Python中运行:
+<li><span>Alvin-L</span> 👍（21） 💬（6）<p>在Python中运行:
 ``` 
 from pyspark import SparkContext
 
@@ -256,7 +256,7 @@ wordCount = (
 print(wordCount)
 #显示: [(&#39;the&#39;, 67), (&#39;Spark&#39;, 63), (&#39;a&#39;, 54), (&#39;and&#39;, 51), (&#39;of&#39;, 50)]
 ``` 
-</div>2021-09-20</li><br/><li><span>liugddx</span> 👍（44） 💬（4）<div>我是一个大数据小白，我想咨询下spark和hadoop在大数据体系下的关系？</div>2021-09-07</li><br/><li><span>Neo-dqy</span> 👍（26） 💬（5）<div>老师好！wordCounts.map{case (k, v) =&gt; (v, k)}.sortByKey(false).take(5)这行代码我还存在疑问，为什么这里的map函数使用了花括号{ }而不是上面一些算子的( )，同时这个case又是什么意思？这一行代码非常像我曾经在Python中使用字典数据结构，然后根据字典值的升序排序。最后，貌似Scala语言本身就可以实现wordcount案例，那么它本身的实现和spark实现相比，spark有什么优势呢？</div>2021-09-18</li><br/><li><span>Vic</span> 👍（8） 💬（9）<div>遇到这个问题
+</p>2021-09-20</li><br/><li><span>liugddx</span> 👍（44） 💬（4）<p>我是一个大数据小白，我想咨询下spark和hadoop在大数据体系下的关系？</p>2021-09-07</li><br/><li><span>Neo-dqy</span> 👍（26） 💬（5）<p>老师好！wordCounts.map{case (k, v) =&gt; (v, k)}.sortByKey(false).take(5)这行代码我还存在疑问，为什么这里的map函数使用了花括号{ }而不是上面一些算子的( )，同时这个case又是什么意思？这一行代码非常像我曾经在Python中使用字典数据结构，然后根据字典值的升序排序。最后，貌似Scala语言本身就可以实现wordcount案例，那么它本身的实现和spark实现相比，spark有什么优势呢？</p>2021-09-18</li><br/><li><span>Vic</span> 👍（8） 💬（9）<p>遇到这个问题
 scala&gt; val rootPath: String = _
 &lt;console&gt;:24: error: unbound placeholder parameter
        val rootPath: String = _
@@ -264,7 +264,7 @@ scala&gt; val rootPath: String = _
 要把val 改成var , 但会遇到&quot;_&quot;这default值是null。
 org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:&#47;Users&#47;vic&#47;src&#47;data&#47;null&#47;wikiOfSpark.txt
 这一段就先跳过root_path，直接给file一个路径，是可以成功运行&quot;word count&quot;,得到和老师一样的结果:
-[Stage 0:&gt;                                                          (0 + 2) &#47;                                                                               res0: Array[(Int, String)] = Array((67,the), (63,Spark), (54,a), (51,and), (50,of))</div>2021-09-07</li><br/><li><span>Neo-dqy</span> 👍（6） 💬（1）<div>老师我可以再问一下，如果我是用IDEA创建Spark项目，是不是只要配置好Scala的SDK，然后在pom文件中加入对应版本号的spark依赖，就会自动下载spark包了？这个时候不需要再去官网下载spark了吗，同时也不再需要使用spark-shell了吗？</div>2021-09-18</li><br/><li><span>Abigail</span> 👍（6） 💬（1）<div>前排占座！三年前接触过 Spark 今天从头再学！</div>2021-09-07</li><br/><li><span>浮生若梦</span> 👍（4） 💬（4）<div>Java实现：
+[Stage 0:&gt;                                                          (0 + 2) &#47;                                                                               res0: Array[(Int, String)] = Array((67,the), (63,Spark), (54,a), (51,and), (50,of))</p>2021-09-07</li><br/><li><span>Neo-dqy</span> 👍（6） 💬（1）<p>老师我可以再问一下，如果我是用IDEA创建Spark项目，是不是只要配置好Scala的SDK，然后在pom文件中加入对应版本号的spark依赖，就会自动下载spark包了？这个时候不需要再去官网下载spark了吗，同时也不再需要使用spark-shell了吗？</p>2021-09-18</li><br/><li><span>Abigail</span> 👍（6） 💬（1）<p>前排占座！三年前接触过 Spark 今天从头再学！</p>2021-09-07</li><br/><li><span>浮生若梦</span> 👍（4） 💬（4）<p>Java实现：
 
 SparkConf sparkConf = new SparkConf().setAppName(&quot;Test&quot;).setMaster(&quot;local[*]&quot;);
         JavaSparkContext JSC = new JavaSparkContext(sparkConf);
@@ -308,7 +308,7 @@ SparkConf sparkConf = new SparkConf().setAppName(&quot;Test&quot;).setMaster(&qu
         });
 
         &#47;&#47;关闭context
-        JSC.close();</div>2021-12-24</li><br/><li><span>火炎焱燚</span> 👍（3） 💬（2）<div>Python版代码为：
+        JSC.close();</p>2021-12-24</li><br/><li><span>火炎焱燚</span> 👍（3） 💬（2）<p>Python版代码为：
 
 file=&#39;~~~&#47;wikiOfSpark.txt&#39;
 lineRDD=sc.textFile(file)
@@ -317,7 +317,7 @@ wordRDD=lineRDD.flatMap(lambda line: line.split(&quot; &quot;))
 cleanWordRDD=wordRDD.filter(lambda word: word!=&#39;&#39;)
 kvRDD=cleanWordRDD.map(lambda word:(word,1))
 wordCounts=kvRDD.reduceByKey(lambda x,y:x+y)
-wordCounts.map(lambda (k,v):(v,k)).sortByKey(False).take(5)</div>2021-09-17</li><br/><li><span>Unknown element</span> 👍（3） 💬（1）<div>问下执行 val lineRDD: RDD[String] = spark.sparkContext.textFile(file) 报错error: not found: value spark是怎么回事？</div>2021-09-17</li><br/><li><span>国度</span> 👍（2） 💬（1）<div>2022年2月5号学习打卡记录
+wordCounts.map(lambda (k,v):(v,k)).sortByKey(False).take(5)</p>2021-09-17</li><br/><li><span>Unknown element</span> 👍（3） 💬（1）<p>问下执行 val lineRDD: RDD[String] = spark.sparkContext.textFile(file) 报错error: not found: value spark是怎么回事？</p>2021-09-17</li><br/><li><span>国度</span> 👍（2） 💬（1）<p>2022年2月5号学习打卡记录
 机器环境：ROG14
 操作系统：win11 + wsl Ubuntu20.04
 环境变量：
@@ -343,11 +343,11 @@ hadoop3.2.1 逐步使用Dataset，报错类型转换异常；
 
 原理性的还没有搞懂，目前在第一阶段，读懂，简单改写为主；
 
-感谢吴磊老师的课</div>2022-02-05</li><br/><li><span>猫太太</span> 👍（2） 💬（1）<div>请问在本地部署spark环境不需要先安装hadoop么</div>2021-11-18</li><br/><li><span>巴普洛夫的</span> 👍（1） 💬（2）<div>wordCounts.map{case (k, v) =&gt; (v, k)}.sortByKey(false) 
-这一步是做了什么呢，没有见过的语法</div>2021-09-12</li><br/><li><span>Z</span> 👍（1） 💬（1）<div>为啥我的结果是单个字母呢？</div>2021-09-08</li><br/><li><span>钱鹏 Allen</span> 👍（1） 💬（1）<div>注意空格“ ”，和空字符串“”，前者有空格，后者没有
+感谢吴磊老师的课</p>2022-02-05</li><br/><li><span>猫太太</span> 👍（2） 💬（1）<p>请问在本地部署spark环境不需要先安装hadoop么</p>2021-11-18</li><br/><li><span>巴普洛夫的</span> 👍（1） 💬（2）<p>wordCounts.map{case (k, v) =&gt; (v, k)}.sortByKey(false) 
+这一步是做了什么呢，没有见过的语法</p>2021-09-12</li><br/><li><span>Z</span> 👍（1） 💬（1）<p>为啥我的结果是单个字母呢？</p>2021-09-08</li><br/><li><span>钱鹏 Allen</span> 👍（1） 💬（1）<p>注意空格“ ”，和空字符串“”，前者有空格，后者没有
 
 书写的时候，根据自己的文件所在目录来，比如我的是 &#47;input&#47;wikiOfSpark.txt
 不要遗漏后缀名。
 
-学习的过程，需要给自己一些耐心和鼓励，一起加油把！</div>2021-09-07</li><br/><li><span>GAC·DU</span> 👍（1） 💬（1）<div>Spark RDD算子分为Transformation算子和Action算子，Transformation算子基本上都是延迟计算，需要通过调用Action算子进行触发。</div>2021-09-07</li><br/>
+学习的过程，需要给自己一些耐心和鼓励，一起加油把！</p>2021-09-07</li><br/><li><span>GAC·DU</span> 👍（1） 💬（1）<p>Spark RDD算子分为Transformation算子和Action算子，Transformation算子基本上都是延迟计算，需要通过调用Action算子进行触发。</p>2021-09-07</li><br/>
 </ul>

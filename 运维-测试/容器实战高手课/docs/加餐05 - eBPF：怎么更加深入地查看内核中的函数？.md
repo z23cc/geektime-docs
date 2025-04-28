@@ -316,7 +316,7 @@ eBPF Program Types可以定义函数在eBPF内核态的类型。eBPF Maps定义�
 
 欢迎你在留言区记录你的思考或疑问。如果这一讲让你有所收获，也欢迎转发给你的朋友，同事，跟他一起学习进步。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>小李同学</span> 👍（4） 💬（1）<div>老师，有没有能跑在arm64板子上的bpf用例，我用最简单的hello word测试用例，5.4的内核，报各种错误，都快怀疑是不是不能跑在atm64上</div>2021-03-04</li><br/><li><span>好说</span> 👍（1） 💬（2）<div>老师，ebpf-kill-example编译后执行会有下面的报错，是内核少开启了什么吗？
+<li><span>小李同学</span> 👍（4） 💬（1）<p>老师，有没有能跑在arm64板子上的bpf用例，我用最简单的hello word测试用例，5.4的内核，报各种错误，都快怀疑是不是不能跑在atm64上</p>2021-03-04</li><br/><li><span>好说</span> 👍（1） 💬（2）<p>老师，ebpf-kill-example编译后执行会有下面的报错，是内核少开启了什么吗？
 libbpf: sec &#39;tracepoint&#47;syscalls&#47;sys_enter_kill&#39;: failed to find program symbol at offset 0
-The kernel didn&#39;t load the BPF program</div>2021-02-13</li><br/><li><span>Samaritan.</span> 👍（0） 💬（0）<div>加餐的内容很值，非常用心，谢谢老师！</div>2023-10-09</li><br/><li><span>janey</span> 👍（0） 💬（0）<div>请问下，Clang&#47;LLVM编译成 foo_kern.o文件再加载到内核中由BPF Verifier进行指令检查然后再由JIT编译成宿主机上的本地指令。这个过程中每次程序执行一次，这三个步骤都要走一遍吗？还是说会只需要做一次，当下次执行的时候直接用上次处理好的本地指令就行？</div>2022-11-18</li><br/><li><span>JianXu</span> 👍（0） 💬（0）<div>老师，ebpf 和 iptables 里面的hook 最本质的区别是什么呢？</div>2022-08-27</li><br/>
+The kernel didn&#39;t load the BPF program</p>2021-02-13</li><br/><li><span>Samaritan.</span> 👍（0） 💬（0）<p>加餐的内容很值，非常用心，谢谢老师！</p>2023-10-09</li><br/><li><span>janey</span> 👍（0） 💬（0）<p>请问下，Clang&#47;LLVM编译成 foo_kern.o文件再加载到内核中由BPF Verifier进行指令检查然后再由JIT编译成宿主机上的本地指令。这个过程中每次程序执行一次，这三个步骤都要走一遍吗？还是说会只需要做一次，当下次执行的时候直接用上次处理好的本地指令就行？</p>2022-11-18</li><br/><li><span>JianXu</span> 👍（0） 💬（0）<p>老师，ebpf 和 iptables 里面的hook 最本质的区别是什么呢？</p>2022-08-27</li><br/>
 </ul>

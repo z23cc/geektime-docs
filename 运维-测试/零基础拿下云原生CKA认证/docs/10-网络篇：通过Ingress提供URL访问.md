@@ -293,9 +293,9 @@ K8s 官方并没有实现自己的 Ingress Controller，所以我带你一步步
 
 我希望你能实际动手实验一下，相信经过动手实践，会让你对知识的理解更加深刻。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Michael闫· ᴥ ·</span> 👍（0） 💬（2）<div>老师，安装ingress的时候有一个报错，如下：
+<li><span>Michael闫· ᴥ ·</span> 👍（0） 💬（2）<p>老师，安装ingress的时候有一个报错，如下：
 error: failed to create ingress: Internal error occurred: failed calling webhook &quot;validate.nginx.ingress.kubernetes.io&quot;: failed to call webhook: Post &quot;https:&#47;&#47;ingress-nginx-controller-admission.ingress-nginx.svc:443&#47;networking&#47;v1&#47;ingresses?timeout=10s&quot;: context deadline exceeded
-</div>2024-07-28</li><br/><li><span>Michael闫· ᴥ ·</span> 👍（0） 💬（2）<div>求教一下老师：
+</p>2024-07-28</li><br/><li><span>Michael闫· ᴥ ·</span> 👍（0） 💬（2）<p>求教一下老师：
 我用service的NodePort方式，公网+ip 可以正常登录nginx，但是在ingress这部分用域名+端口就不成功，想咨询下您这里的域名+端口里面的端口指的是哪个端口啊，我下面给您复制下我的代码：
 [root@k8s-master ~]# kubectl get deployment,svc -n ingress-nginx
 NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
@@ -311,6 +311,6 @@ kubernetes   ClusterIP   10.96.0.1     &lt;none&gt;        443&#47;TCP        67
 my-service   NodePort    10.108.8.79   &lt;none&gt;        80:30001&#47;TCP   35m
 
 运行service：http:&#47;&#47;120.27.143.120:30001&#47;   成功
-运行ingress：http:&#47;&#47;myapp.address.com:32431&#47;   失败</div>2024-07-27</li><br/><li><span>Y</span> 👍（0） 💬（1）<div>用命令可以正常访问Nginx，用my-ingress.yaml文件不行(访问308，404)。my-ingress.yaml里面不知道哪个地方有问题。</div>2024-07-23</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（0） 💬（1）<div>ingress controller 的service 需要暴露 443，用来处理https请求
-deployment 的pod 层面并不需要暴露 443，加解密其实在ingress 层处理，pod只需要叫监听内部配置的端口，然后将service 的流量转发到这个端口</div>2024-07-19</li><br/>
+运行ingress：http:&#47;&#47;myapp.address.com:32431&#47;   失败</p>2024-07-27</li><br/><li><span>Y</span> 👍（0） 💬（1）<p>用命令可以正常访问Nginx，用my-ingress.yaml文件不行(访问308，404)。my-ingress.yaml里面不知道哪个地方有问题。</p>2024-07-23</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（0） 💬（1）<p>ingress controller 的service 需要暴露 443，用来处理https请求
+deployment 的pod 层面并不需要暴露 443，加解密其实在ingress 层处理，pod只需要叫监听内部配置的端口，然后将service 的流量转发到这个端口</p>2024-07-19</li><br/>
 </ul>

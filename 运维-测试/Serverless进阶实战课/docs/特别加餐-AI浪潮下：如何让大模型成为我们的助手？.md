@@ -130,5 +130,5 @@ Prompt的输入质量和多样性对于模型的生成效果有很大的影响�
 
 今天的加餐到这里也就结束了，还是回到我们开篇说的，希望这篇加餐能够引起你的一些思考，也希望你能够在评论区分享你对于大模型的想法，我们一起探讨。留言区见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>呵呵哒</span> 👍（1） 💬（1）<div>老师，您能不能再谈谈百度的文心一言的架构和使用经验哇</div>2023-05-17</li><br/><li><span>Jade@pluto-lang</span> 👍（0） 💬（1）<div>AI与Serverless能碰撞出什么火花？想听听老师的想法。AI-specific serverless？AI-assisted serverless?</div>2023-08-04</li><br/><li><span>初夏</span> 👍（0） 💬（1）<div>有些公司也在招聘Prompt 相关的岗位了，抓紧学习一下😀</div>2023-07-05</li><br/><li><span>Geek_f3aca4</span> 👍（0） 💬（1）<div>打卡，希望后续可以出一些大模型和云原生相关的课程呀</div>2023-05-17</li><br/><li><span>foxhua</span> 👍（0） 💬（0）<div>搞混了 Prompt 和 Promote </div>2023-07-01</li><br/>
+<li><span>呵呵哒</span> 👍（1） 💬（1）<p>老师，您能不能再谈谈百度的文心一言的架构和使用经验哇</p>2023-05-17</li><br/><li><span>Jade@pluto-lang</span> 👍（0） 💬（1）<p>AI与Serverless能碰撞出什么火花？想听听老师的想法。AI-specific serverless？AI-assisted serverless?</p>2023-08-04</li><br/><li><span>初夏</span> 👍（0） 💬（1）<p>有些公司也在招聘Prompt 相关的岗位了，抓紧学习一下😀</p>2023-07-05</li><br/><li><span>Geek_f3aca4</span> 👍（0） 💬（1）<p>打卡，希望后续可以出一些大模型和云原生相关的课程呀</p>2023-05-17</li><br/><li><span>foxhua</span> 👍（0） 💬（0）<p>搞混了 Prompt 和 Promote </p>2023-07-01</li><br/>
 </ul>

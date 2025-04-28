@@ -168,11 +168,11 @@ try (AdminClient client = AdminClient.create(props)) {
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>itzzy</span> 👍（15） 💬（5）<div>可视化kafka管理工具，老师能推荐下吗？能支持2.0+版本 感谢！</div>2019-08-17</li><br/><li><span>QQ怪</span> 👍（10） 💬（1）<div>想问下老师，在kafka某个topic下不小心创建了多个不用的消费组，怎么删除掉不用的消费组呢？</div>2019-08-15</li><br/><li><span>蒙开强</span> 👍（5） 💬（2）<div>老师，你好，这个只是提供了API是吧，那要是想可视化工具，还得基于它写代码是么</div>2019-08-15</li><br/><li><span>胡小禾</span> 👍（2） 💬（1）<div>是不是存在有 高版本的 AdminClient  不能兼容低版本的 broker的问题？
+<li><span>itzzy</span> 👍（15） 💬（5）<p>可视化kafka管理工具，老师能推荐下吗？能支持2.0+版本 感谢！</p>2019-08-17</li><br/><li><span>QQ怪</span> 👍（10） 💬（1）<p>想问下老师，在kafka某个topic下不小心创建了多个不用的消费组，怎么删除掉不用的消费组呢？</p>2019-08-15</li><br/><li><span>蒙开强</span> 👍（5） 💬（2）<p>老师，你好，这个只是提供了API是吧，那要是想可视化工具，还得基于它写代码是么</p>2019-08-15</li><br/><li><span>胡小禾</span> 👍（2） 💬（1）<p>是不是存在有 高版本的 AdminClient  不能兼容低版本的 broker的问题？
 
-我记得调用 2.x 的 AdminClient API去触发低版本（0.8.x.x）broker的reassign，会报错提示 “这个操作不被支持”</div>2020-05-26</li><br/><li><span>Unity</span> 👍（2） 💬（2）<div>老师 请问 org.apache.kafka 的kafka-clients 和 kafka_{scala版本号}这两个jar包的区别是啥 ? </div>2019-08-26</li><br/><li><span>张三丰</span> 👍（1） 💬（1）<div>这句话没懂，就算引入了其它两个队列，也无法避免锁阻塞啊，放进新请求队列的时候是一定会存在锁争用的。我完全可以开启一个后台IO线程直接消费新请求的队列，因为新请求队列一定是有序且线程安全的。
+我记得调用 2.x 的 AdminClient API去触发低版本（0.8.x.x）broker的reassign，会报错提示 “这个操作不被支持”</p>2020-05-26</li><br/><li><span>Unity</span> 👍（2） 💬（2）<p>老师 请问 org.apache.kafka 的kafka-clients 和 kafka_{scala版本号}这两个jar包的区别是啥 ? </p>2019-08-26</li><br/><li><span>张三丰</span> 👍（1） 💬（1）<p>这句话没懂，就算引入了其它两个队列，也无法避免锁阻塞啊，放进新请求队列的时候是一定会存在锁争用的。我完全可以开启一个后台IO线程直接消费新请求的队列，因为新请求队列一定是有序且线程安全的。
 
-为了确保前端主线程不会因为 monitor 锁被阻塞，后端 I&#47;O 线程会定期地将新请求队列中的所有 Call 实例全部搬移到待发送请求队列中进行处理。</div>2020-11-04</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<div>老师，请问怎么采集consumer group的性能指标呢？比如消息堆积数，需要了解到消费应用程序的JMX端口才能采集吗？</div>2019-11-27</li><br/><li><span>诗泽</span> 👍（1） 💬（3）<div>老师可以简单对比一下pulsar 与kafka吗？感觉pulsar 的好多设计都是借鉴kafka的，最大的一个区别是将broker 与数据存储分离，使得broker 可以更加容易扩展。另外，consumer 数量的扩展也不受partition 数量的限制。pulsar 大有取代kafka之势，老师怎么看？</div>2019-08-15</li><br/><li><span>Allan</span> 👍（0） 💬（2）<div>2.7 看了源码的 增加分区。但是没有看明白逻辑，对于kafka设计的原理不理解导致嘛？就是说为啥里面是这么分配。里面的集合的asList(1, 2),asList(2, 3), asList(3, 1) 表示的是什么意思？第一位是broker嘛？第二位是分区数量？看了半天没整明白？
+为了确保前端主线程不会因为 monitor 锁被阻塞，后端 I&#47;O 线程会定期地将新请求队列中的所有 Call 实例全部搬移到待发送请求队列中进行处理。</p>2020-11-04</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<p>老师，请问怎么采集consumer group的性能指标呢？比如消息堆积数，需要了解到消费应用程序的JMX端口才能采集吗？</p>2019-11-27</li><br/><li><span>诗泽</span> 👍（1） 💬（3）<p>老师可以简单对比一下pulsar 与kafka吗？感觉pulsar 的好多设计都是借鉴kafka的，最大的一个区别是将broker 与数据存储分离，使得broker 可以更加容易扩展。另外，consumer 数量的扩展也不受partition 数量的限制。pulsar 大有取代kafka之势，老师怎么看？</p>2019-08-15</li><br/><li><span>Allan</span> 👍（0） 💬（2）<p>2.7 看了源码的 增加分区。但是没有看明白逻辑，对于kafka设计的原理不理解导致嘛？就是说为啥里面是这么分配。里面的集合的asList(1, 2),asList(2, 3), asList(3, 1) 表示的是什么意思？第一位是broker嘛？第二位是分区数量？看了半天没整明白？
 Increase the partition count for a topic to the given totalCount assigning the new partitions according to the given newAssignments. The length of the given newAssignments should equal totalCount - oldCount, since the assignment of existing partitions are not changed. Each inner list of newAssignments should have a length equal to the topic&#39;s replication factor. The first broker id in each inner list is the &quot;preferred replica&quot;.
 For example, suppose a topic currently has a replication factor of 2, and has 3 partitions. The number of partitions can be increased to 6 using a NewPartition constructed like this:
        NewPartitions.increaseTo(6, asList(asList(1, 2),
@@ -186,13 +186,13 @@ newAssignments – The replica assignments for the new partitions.
 
 public static NewPartitions increaseTo(int totalCount, List&lt;List&lt;Integer&gt;&gt; newAssignments) {
         return new NewPartitions(totalCount, newAssignments);
-    }</div>2021-04-21</li><br/><li><span>建华</span> 👍（0） 💬（1）<div>老师好，用adminclient中的creatacl实现授权好像没有效果，用kafka-acl.sh查不到记录，老师在java代码中怎么动态授权呀</div>2021-01-05</li><br/><li><span>王晓辉</span> 👍（0） 💬（1）<div>增加分区数
+    }</p>2021-04-21</li><br/><li><span>建华</span> 👍（0） 💬（1）<p>老师好，用adminclient中的creatacl实现授权好像没有效果，用kafka-acl.sh查不到记录，老师在java代码中怎么动态授权呀</p>2021-01-05</li><br/><li><span>王晓辉</span> 👍（0） 💬（1）<p>增加分区数
 Map&lt;String, NewPartitions&gt; newPartitionsMap = new HashMap&lt;&gt;();
         newPartitionsMap.put(&quot;test-topic&quot;, NewPartitions.increaseTo(13));   &#47;&#47; 增加到x分区，x要比原有分区数大
         CreatePartitionsResult result = adminClient.createPartitions(newPartitionsMap);
-        result.all().get();</div>2020-09-17</li><br/><li><span>James</span> 👍（0） 💬（1）<div>之前代码统计分区数好像不太对(代码未测试),修改为以上代码
+        result.all().get();</p>2020-09-17</li><br/><li><span>James</span> 👍（0） 💬（1）<p>之前代码统计分区数好像不太对(代码未测试),修改为以上代码
 for (KafkaFuture&lt;TopicDescription&gt; kafkaFuture : kafkaFutures) {
                 List&lt;TopicPartitionInfo&gt; topicPartitionInfos = kafkaFuture.get().partitions();
                 count += topicPartitionInfos.size();
-}</div>2020-07-04</li><br/><li><span>毛怪</span> 👍（0） 💬（1）<div>老师10版本的kafka怎么可以通过JMX获取指定的监控对象值吗，所有api可以调用吗</div>2020-03-24</li><br/><li><span>大叮当</span> 👍（0） 💬（1）<div>请问下，想写个java程序，该程序的功能是传入一个topic，能列出该topic下当前各个parition最小的offset各是多少，请问用哪个类啊，谢谢您。</div>2020-03-06</li><br/><li><span>maslke</span> 👍（0） 💬（1）<div>手里的开发环境是这样：一台widnows 10的机器，在linux子系统中安装了kafka，在windows中进行AdminClient调用，刚开始连接不上kakfa。后来通过在windows下，调用bat脚本才发现是PCNAME.localdomain这个hostname识别不了。后来通过在hosts进行了一下配置才ok。</div>2019-09-07</li><br/>
+}</p>2020-07-04</li><br/><li><span>毛怪</span> 👍（0） 💬（1）<p>老师10版本的kafka怎么可以通过JMX获取指定的监控对象值吗，所有api可以调用吗</p>2020-03-24</li><br/><li><span>大叮当</span> 👍（0） 💬（1）<p>请问下，想写个java程序，该程序的功能是传入一个topic，能列出该topic下当前各个parition最小的offset各是多少，请问用哪个类啊，谢谢您。</p>2020-03-06</li><br/><li><span>maslke</span> 👍（0） 💬（1）<p>手里的开发环境是这样：一台widnows 10的机器，在linux子系统中安装了kafka，在windows中进行AdminClient调用，刚开始连接不上kakfa。后来通过在windows下，调用bat脚本才发现是PCNAME.localdomain这个hostname识别不了。后来通过在hosts进行了一下配置才ok。</p>2019-09-07</li><br/>
 </ul>

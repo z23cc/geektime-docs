@@ -169,12 +169,12 @@ public class AopConfig {
 
 虽然说 Spring 容器上手简单，可以仅仅通过学习一些有限的注解，即可达到快速使用的目的。但在工程实践中，我们依然会从中发现一些常见的错误。尤其当你对 Spring 的生命周期还没有深入了解时，类初始化及销毁过程中潜在的约定就不会很清楚。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>undefined</span> 👍（21） 💬（0）<div>掌握了核心思想，下一步就是挑战魔鬼细节了。
+<li><span>undefined</span> 👍（21） 💬（0）<p>掌握了核心思想，下一步就是挑战魔鬼细节了。
 
 The devil is in the details
 
-[2021-04-19 21:55:05]</div>2021-04-19</li><br/><li><span>Monday</span> 👍（10） 💬（0）<div>用了这么多年的spring，也看过相关书籍。但就是没底，所以我来了</div>2021-05-08</li><br/><li><span>YANG</span> 👍（7） 💬（0）<div>Spring核心思想：Bean的创建、自动注入、AOP</div>2021-04-20</li><br/><li><span>jjn0703</span> 👍（6） 💬（0）<div>清晰明了！</div>2021-04-27</li><br/><li><span>LGY001</span> 👍（6） 💬（0）<div>老师讲的很清晰明白，之前都是一直知道怎么用，但是不知道为什么是这样，希望我能坚持学下去！！！</div>2021-04-23</li><br/><li><span>民鹏</span> 👍（3） 💬（0）<div>怀着空杯心态，学起来！</div>2021-04-25</li><br/><li><span>心宇</span> 👍（2） 💬（0）<div>老师讲的很好，通俗易懂，期待下一章节</div>2021-04-23</li><br/><li><span>William</span> 👍（1） 💬（0）<div>我纯粹是为了抢沙发来的</div>2022-01-07</li><br/><li><span>伟伟</span> 👍（1） 💬（0）<div>老师总结的很好</div>2021-06-13</li><br/><li><span>zhongmin</span> 👍（1） 💬（5）<div>不是常说，放射影响性能，那岂不是Sprint创建的Bean的性能消耗，远大于直接new的对象</div>2021-04-27</li><br/><li><span>Krystal</span> 👍（1） 💬（0）<div>期待</div>2021-04-20</li><br/><li><span>Geek_582a5d</span> 👍（0） 💬（0）<div>讲解的很棒，很通俗</div>2025-02-20</li><br/><li><span>花花Binki</span> 👍（0） 💬（0）<div>如果不是为了快速上手工作，其实在 spring 之前应该学一下最开始的 Java EE，从原始 new，到 struts，spring 等框架，再到 spring boot 自动配置。过高的封装简易了开发，也藏住了细节。
-老师这门课的开头抓住了技术演进的本质，让我可以省略学习成本，极好的</div>2024-09-10</li><br/><li><span>cake</span> 👍（0） 💬（0）<div>老师，有源码地址吗</div>2023-04-16</li><br/><li><span>棒棒糖</span> 👍（0） 💬（0）<div>1.为什么要使用spring?（spring解决了什么问题）
+[2021-04-19 21:55:05]</p>2021-04-19</li><br/><li><span>Monday</span> 👍（10） 💬（0）<p>用了这么多年的spring，也看过相关书籍。但就是没底，所以我来了</p>2021-05-08</li><br/><li><span>YANG</span> 👍（7） 💬（0）<p>Spring核心思想：Bean的创建、自动注入、AOP</p>2021-04-20</li><br/><li><span>jjn0703</span> 👍（6） 💬（0）<p>清晰明了！</p>2021-04-27</li><br/><li><span>LGY001</span> 👍（6） 💬（0）<p>老师讲的很清晰明白，之前都是一直知道怎么用，但是不知道为什么是这样，希望我能坚持学下去！！！</p>2021-04-23</li><br/><li><span>民鹏</span> 👍（3） 💬（0）<p>怀着空杯心态，学起来！</p>2021-04-25</li><br/><li><span>心宇</span> 👍（2） 💬（0）<p>老师讲的很好，通俗易懂，期待下一章节</p>2021-04-23</li><br/><li><span>William</span> 👍（1） 💬（0）<p>我纯粹是为了抢沙发来的</p>2022-01-07</li><br/><li><span>伟伟</span> 👍（1） 💬（0）<p>老师总结的很好</p>2021-06-13</li><br/><li><span>zhongmin</span> 👍（1） 💬（5）<p>不是常说，放射影响性能，那岂不是Sprint创建的Bean的性能消耗，远大于直接new的对象</p>2021-04-27</li><br/><li><span>Krystal</span> 👍（1） 💬（0）<p>期待</p>2021-04-20</li><br/><li><span>Geek_582a5d</span> 👍（0） 💬（0）<p>讲解的很棒，很通俗</p>2025-02-20</li><br/><li><span>花花Binki</span> 👍（0） 💬（0）<p>如果不是为了快速上手工作，其实在 spring 之前应该学一下最开始的 Java EE，从原始 new，到 struts，spring 等框架，再到 spring boot 自动配置。过高的封装简易了开发，也藏住了细节。
+老师这门课的开头抓住了技术演进的本质，让我可以省略学习成本，极好的</p>2024-09-10</li><br/><li><span>cake</span> 👍（0） 💬（0）<p>老师，有源码地址吗</p>2023-04-16</li><br/><li><span>棒棒糖</span> 👍（0） 💬（0）<p>1.为什么要使用spring?（spring解决了什么问题）
 2.spring的生命周期原理
-3.使用aop做一个优化:给某一个类中所有方法 装配:性能记录➕日志记录（石头老师➕周瑜老师）</div>2023-02-04</li><br/>
+3.使用aop做一个优化:给某一个类中所有方法 装配:性能记录➕日志记录（石头老师➕周瑜老师）</p>2023-02-04</li><br/>
 </ul>

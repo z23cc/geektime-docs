@@ -145,14 +145,14 @@ instances.write.partitionBy("endDate", "startDate").parquet(rootPath)
 
 期待在留言区看到你分享，也欢迎把你对开发案例的思考写下来，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Will</span> 👍（19） 💬（5）<div>第二个例子，可以利用map join，让小数据分发到每个worker上，这样不用shuffle数据</div>2021-03-15</li><br/><li><span>Fendora范东_</span> 👍（18） 💬（4）<div>请问磊哥，spark里面nested loop join和cartesian product jion有什么区别？</div>2021-03-31</li><br/><li><span>西南偏北</span> 👍（13） 💬（3）<div>1. 其实有很多，比如用foreach算子将数据写入到外部数据库，导致每条数据的写入都会建立连接，另外单条写入也比批量写入的性能差很多。建议使用foreachPartition()，每个分区建立一个连接，同时可以批量写入，性能会好很多。
+<li><span>Will</span> 👍（19） 💬（5）<p>第二个例子，可以利用map join，让小数据分发到每个worker上，这样不用shuffle数据</p>2021-03-15</li><br/><li><span>Fendora范东_</span> 👍（18） 💬（4）<p>请问磊哥，spark里面nested loop join和cartesian product jion有什么区别？</p>2021-03-31</li><br/><li><span>西南偏北</span> 👍（13） 💬（3）<p>1. 其实有很多，比如用foreach算子将数据写入到外部数据库，导致每条数据的写入都会建立连接，另外单条写入也比批量写入的性能差很多。建议使用foreachPartition()，每个分区建立一个连接，同时可以批量写入，性能会好很多。
 2. 一般来讲，小表与大表的关联操作，首先要考虑Broadcast Join
 
 
 另外，关于Nested Loop Join的原理：https:&#47;&#47;www.geeksforgeeks.org&#47;join-algorithms-in-database&#47;amp&#47;
-</div>2021-05-01</li><br/><li><span>TaoInsight</span> 👍（12） 💬（6）<div>如果pai rDF的startDate和endDate范围有限，可以把日期范围展开，将非等值join转成等值join</div>2021-03-17</li><br/><li><span>慢慢卢</span> 👍（7） 💬（3）<div>老师，我把第二个例子自己试了一遍，有个问题不理解：两个df都只有一条数据，sparkui上第二个stage有200个task，为什么shuffle之后的stage的task有200个，虽然说shuffle之后reduce默认并行度是200，但我只有一条数据，实际上只需要一个task啊，其他的task是怎么产生的？</div>2021-06-17</li><br/><li><span>Elon</span> 👍（5） 💬（1）<div>函数式的副作用指的是不修改入参吧？在函数内部是可以定义变量、修改变量的。因此fields变量在函数内部，应该不算副作用吧？</div>2021-03-22</li><br/><li><span>葛聂</span> 👍（4） 💬（4）<div>Case 1为什么性能差一倍呢</div>2021-03-16</li><br/><li><span>fsc2016</span> 👍（3） 💬（6）<div>请问老师，这个课程需要哪些基础，我平时使用过pysaprk 做过一些机器学习相关数据处理练习，对于我这种使用spark不多的，可以消化吸收嘛</div>2021-03-18</li><br/><li><span>浩然</span> 👍（2） 💬（1）<div>简单啊。那个时间区间的，罗列出来，广播一下就完事了。从nest loop到hash join的跨越。
-我之前做Oracle优化的，所以第一反应是哈希join，第二反应是不等值到等值。</div>2021-10-11</li><br/><li><span>对方正在输入。。。</span> 👍（2） 💬（2）<div>可以先将pairdf collect到driver，再将数组按照startdate排序，然后再将其广播。然后在factdf.map里面实现一个方法来从广播的数组里面二分查找到eventdate所属的时间对子。最后就可以根据这个时间对子以及其他的维度属性进行分组聚合了</div>2021-03-15</li><br/><li><span>Geek_92df49</span> 👍（2） 💬（10）<div>四个维度分组为什么要加上开始时间和结束时间？
-.groupBy(&quot;dim1&quot;, &quot;dim2&quot;, &quot;dim3&quot;, &quot;event_date&quot;, &quot;startDate&quot;, &quot;endDate&quot;)</div>2021-03-15</li><br/><li><span>刘吉超</span> 👍（1） 💬（2）<div>我们每天有9T数据，用如下代码做ETL  json平铺，花很长时间
+</p>2021-05-01</li><br/><li><span>TaoInsight</span> 👍（12） 💬（6）<p>如果pai rDF的startDate和endDate范围有限，可以把日期范围展开，将非等值join转成等值join</p>2021-03-17</li><br/><li><span>慢慢卢</span> 👍（7） 💬（3）<p>老师，我把第二个例子自己试了一遍，有个问题不理解：两个df都只有一条数据，sparkui上第二个stage有200个task，为什么shuffle之后的stage的task有200个，虽然说shuffle之后reduce默认并行度是200，但我只有一条数据，实际上只需要一个task啊，其他的task是怎么产生的？</p>2021-06-17</li><br/><li><span>Elon</span> 👍（5） 💬（1）<p>函数式的副作用指的是不修改入参吧？在函数内部是可以定义变量、修改变量的。因此fields变量在函数内部，应该不算副作用吧？</p>2021-03-22</li><br/><li><span>葛聂</span> 👍（4） 💬（4）<p>Case 1为什么性能差一倍呢</p>2021-03-16</li><br/><li><span>fsc2016</span> 👍（3） 💬（6）<p>请问老师，这个课程需要哪些基础，我平时使用过pysaprk 做过一些机器学习相关数据处理练习，对于我这种使用spark不多的，可以消化吸收嘛</p>2021-03-18</li><br/><li><span>浩然</span> 👍（2） 💬（1）<p>简单啊。那个时间区间的，罗列出来，广播一下就完事了。从nest loop到hash join的跨越。
+我之前做Oracle优化的，所以第一反应是哈希join，第二反应是不等值到等值。</p>2021-10-11</li><br/><li><span>对方正在输入。。。</span> 👍（2） 💬（2）<p>可以先将pairdf collect到driver，再将数组按照startdate排序，然后再将其广播。然后在factdf.map里面实现一个方法来从广播的数组里面二分查找到eventdate所属的时间对子。最后就可以根据这个时间对子以及其他的维度属性进行分组聚合了</p>2021-03-15</li><br/><li><span>Geek_92df49</span> 👍（2） 💬（10）<p>四个维度分组为什么要加上开始时间和结束时间？
+.groupBy(&quot;dim1&quot;, &quot;dim2&quot;, &quot;dim3&quot;, &quot;event_date&quot;, &quot;startDate&quot;, &quot;endDate&quot;)</p>2021-03-15</li><br/><li><span>刘吉超</span> 👍（1） 💬（2）<p>我们每天有9T数据，用如下代码做ETL  json平铺，花很长时间
 val adArr = ArrayBuffer[Map[String, String]]()
 if (ads != null) {
   val adnum = ads.length
@@ -167,9 +167,9 @@ if (ads != null) {
 import org.apache.flink.streaming.api.scala._
 import scala.collection.JavaConversions._
  val adArr = (0 until ads.size()).map(i =&gt; ads.getJSONObject(i).toMap.map(entry =&gt; entry._1 -&gt; (if(entry._2==null) &quot;&quot; else entry._2.toString)))
-尝试后没啥效果，希望老师指导一下</div>2021-03-24</li><br/><li><span>LJK</span> 👍（1） 💬（1）<div>同一个application如果action多的话一定会影响效率吗？</div>2021-03-17</li><br/><li><span>Unknown element</span> 👍（0） 💬（4）<div>老师我把所有课程看了一遍还是不太理解为什么例2 正例的性能更高（捂脸）；如果spark不能根据日期范围对fairDF做过滤提前去掉一部分的话 不管是fairDF left join factDF还是factDF left join fairDF还是反例的代码，感觉时间复杂度都是 size(fairDF)*size(factDF) 啊。。。虽然数据是分布在不同节点中但是NLJ的算法不是对于factDF中每条记录都遍历一遍fairDF吗？希望老师能解答一下嘤嘤嘤</div>2021-11-29</li><br/><li><span>tiankonghewo</span> 👍（0） 💬（2）<div>&quot;尽管 Nested Loop Join 是所有 Join 实现方式（Merge Join，Hash Join，Broadcast Join 等）中性能最差的一种，而且这种 Join 方式没有任何优化空间，但 factDF 与 pairDF 的数据关联只需要扫描一次全量数据&quot;, 
+尝试后没啥效果，希望老师指导一下</p>2021-03-24</li><br/><li><span>LJK</span> 👍（1） 💬（1）<p>同一个application如果action多的话一定会影响效率吗？</p>2021-03-17</li><br/><li><span>Unknown element</span> 👍（0） 💬（4）<p>老师我把所有课程看了一遍还是不太理解为什么例2 正例的性能更高（捂脸）；如果spark不能根据日期范围对fairDF做过滤提前去掉一部分的话 不管是fairDF left join factDF还是factDF left join fairDF还是反例的代码，感觉时间复杂度都是 size(fairDF)*size(factDF) 啊。。。虽然数据是分布在不同节点中但是NLJ的算法不是对于factDF中每条记录都遍历一遍fairDF吗？希望老师能解答一下嘤嘤嘤</p>2021-11-29</li><br/><li><span>tiankonghewo</span> 👍（0） 💬（2）<p>&quot;尽管 Nested Loop Join 是所有 Join 实现方式（Merge Join，Hash Join，Broadcast Join 等）中性能最差的一种，而且这种 Join 方式没有任何优化空间，但 factDF 与 pairDF 的数据关联只需要扫描一次全量数据&quot;, 
 对于这一段话,感觉解释的不好, Nested Loop Join 是两个for循环, 时间复杂度应该也是M*N, 如果factDF只需要扫码一遍全量数据,那么pairDF需要扫描的次数也不会少,
 两个for循环,时间复杂度怎么都是M*N, 那么节约下来的时间,相比第一种foreach方式,应该是从磁盘中拉取的时间
 
-</div>2021-11-21</li><br/>
+</p>2021-11-21</li><br/>
 </ul>

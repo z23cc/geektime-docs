@@ -258,13 +258,13 @@ Beam的设计模式是对计算引擎动态选择，它为什么要这么设计�
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>suncar</span> 👍（11） 💬（1）<div>请问一下老师，可不可提供几个获取大量测试数据的网止。谢谢</div>2019-07-01</li><br/><li><span>明翼</span> 👍（5） 💬（6）<div>想问下读者中多少人用beam在生产环境…</div>2019-07-02</li><br/><li><span>hugo</span> 👍（1） 💬（0）<div>runner是如何在多平台，多语言间实现兼容的？像flink，go runner会在本地调用java runner吗</div>2020-10-23</li><br/><li><span>David</span> 👍（1） 💬（0）<div>请教一下，GCP上同时有Composer&#47;Airflow和Dataflow&#47;Beam两种可以用来完成ETL工作的产品。
+<li><span>suncar</span> 👍（11） 💬（1）<p>请问一下老师，可不可提供几个获取大量测试数据的网止。谢谢</p>2019-07-01</li><br/><li><span>明翼</span> 👍（5） 💬（6）<p>想问下读者中多少人用beam在生产环境…</p>2019-07-02</li><br/><li><span>hugo</span> 👍（1） 💬（0）<p>runner是如何在多平台，多语言间实现兼容的？像flink，go runner会在本地调用java runner吗</p>2020-10-23</li><br/><li><span>David</span> 👍（1） 💬（0）<p>请教一下，GCP上同时有Composer&#47;Airflow和Dataflow&#47;Beam两种可以用来完成ETL工作的产品。
 是否可以讲一下两者的比较，和在技术上如何进行选型？
-谢谢！</div>2020-03-04</li><br/><li><span>ditiki</span> 👍（0） 💬（0）<div>请教两个production遇到的问题.
+谢谢！</p>2020-03-04</li><br/><li><span>ditiki</span> 👍（0） 💬（0）<p>请教两个production遇到的问题.
 
 In a beam pipeline (dataflow), one step is to send http request to schema registry to validate event schema. A groupby event type before this step and static cache are used to reduce calls to schema registry. How does beam (or the underline runner) optimise IO ? Is it a good practice to use a thread pool for asynchronous http calls ? 
 
 The event object has a Json (json4s library) payload, each time we try to update the Dataflow pipeline, we get the error says that the Kryo coder generated for the JSON has changed, such that the current pipeline can’t be updated in place. We did a work a round by serialise the Json payload to string in a custom coder, which should be very inefficient. Have you ever seen this before ? Does Kryo generate a different coder at each compile time ? 
 
-多谢啦！</div>2019-07-03</li><br/>
+多谢啦！</p>2019-07-03</li><br/>
 </ul>

@@ -211,7 +211,7 @@ RES:    2450431    5279697   Rescheduling interrupts
 
 ![](https://static001.geekbang.org/resource/image/56/52/565d66d658ad23b2f4997551db153852.jpg?wh=1110%2A549)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>行者</span> 👍（226） 💬（1）<div>结合前两节，首先通过uptime查看系统负载，然后使用mpstat结合pidstat来初步判断到底是cpu计算量大还是进程争抢过大或者是io过多，接着使用vmstat分析切换次数，以及切换类型，来进一步判断到底是io过多导致问题还是进程争抢激烈导致问题。</div>2018-11-28</li><br/><li><span>发条橙子 。</span> 👍（95） 💬（4）<div>案例分析 ：
+<li><span>行者</span> 👍（226） 💬（1）<p>结合前两节，首先通过uptime查看系统负载，然后使用mpstat结合pidstat来初步判断到底是cpu计算量大还是进程争抢过大或者是io过多，接着使用vmstat分析切换次数，以及切换类型，来进一步判断到底是io过多导致问题还是进程争抢激烈导致问题。</p>2018-11-28</li><br/><li><span>发条橙子 。</span> 👍（95） 💬（4）<p>案例分析 ：
 
 登录到服务器，现在系统负载怎么样 。 高的话有三种情况，首先是cpu使用率 ，其次是io使用率 ，之后就是两者都高 。 
 
@@ -228,16 +228,16 @@ io使用情况 ： iostat
 
 模拟场景工具 ：
 stress ： 模拟进程 、 io
-sysbench ： 模拟线程数</div>2018-12-02</li><br/><li><span>酱油侠</span> 👍（68） 💬（10）<div>我用的centos，yum装的sysbench。执行后很快完事了的可以设置下max-requests，默认max-requests是1w所以很快就结束了。
+sysbench ： 模拟线程数</p>2018-12-02</li><br/><li><span>酱油侠</span> 👍（68） 💬（10）<p>我用的centos，yum装的sysbench。执行后很快完事了的可以设置下max-requests，默认max-requests是1w所以很快就结束了。
 sysbench --num-threads=10 --max-time=300 --max-requests=10000000 --test=threads run
-有的朋友&#47;proc&#47;interrupts时看不见RES是因为窗口开太小了RES在最下面。</div>2018-11-29</li><br/><li><span>discoverer-tab</span> 👍（35） 💬（1）<div>过多上下文切换会缩短进程运行时间vmstat 1 1：分析内存使用情况、cpu上下文切换和中断的次数。cs每秒上下文切换的次数，in每秒中断的次数，r运行或等待cpu的进程数，b中断睡眠状态的进程数。pidstat -w 5：查看每个进程详细情况。cswch（每秒自愿）上下文切换次数，如系统资源不足导致，nvcswch每秒非自愿上下文切换次数，如cpu时间片用完或高优先级线程案例分析：sysbench：多线程的基准测试工具，模拟context switch终端1：sysbench --threads=10 --max-time=300 threads run终端2：vmstat 1：sys列占用84%说明主要被内核占用，ur占用16%；r就绪队列8；in中断处理1w，cs切换139w==&gt;等待进程过多，频繁上下文切换，内核cpu占用率升高终端3：pidstat -w -u 1：sysbench的cpu占用100%（-wt发现子线程切换过多），其他进程导致上下文切换watch -d cat &#47;proc&#47;interupts ：查看另一个指标中断次数，在&#47;proc&#47;interupts中读取，发现重调度中断res变化速度最快总结：cswch过多说明资源IO问题，nvcswch过多说明调度争抢cpu过多，中断次数变多说明cpu被中断程序调用</div>2018-11-28</li><br/><li><span>cuikt</span> 👍（14） 💬（4）<div>可以通过以下指令进行排序，观察RES。
-watch -d &#39;cat &#47;proc&#47;interrupts | sort -nr -k 2 &#39;</div>2019-04-30</li><br/><li><span>miracle</span> 👍（12） 💬（10）<div>发现一个不太严谨的地方，即使没有开sysbench，用watch -d &#47;proc&#47;interrupts的时候 RES的变化也是最大的，这个时候in跟cs都不高</div>2018-11-28</li><br/><li><span>Haku</span> 👍（11） 💬（1）<div>Ubuntu16.04LTS下:
+有的朋友&#47;proc&#47;interrupts时看不见RES是因为窗口开太小了RES在最下面。</p>2018-11-29</li><br/><li><span>discoverer-tab</span> 👍（35） 💬（1）<p>过多上下文切换会缩短进程运行时间vmstat 1 1：分析内存使用情况、cpu上下文切换和中断的次数。cs每秒上下文切换的次数，in每秒中断的次数，r运行或等待cpu的进程数，b中断睡眠状态的进程数。pidstat -w 5：查看每个进程详细情况。cswch（每秒自愿）上下文切换次数，如系统资源不足导致，nvcswch每秒非自愿上下文切换次数，如cpu时间片用完或高优先级线程案例分析：sysbench：多线程的基准测试工具，模拟context switch终端1：sysbench --threads=10 --max-time=300 threads run终端2：vmstat 1：sys列占用84%说明主要被内核占用，ur占用16%；r就绪队列8；in中断处理1w，cs切换139w==&gt;等待进程过多，频繁上下文切换，内核cpu占用率升高终端3：pidstat -w -u 1：sysbench的cpu占用100%（-wt发现子线程切换过多），其他进程导致上下文切换watch -d cat &#47;proc&#47;interupts ：查看另一个指标中断次数，在&#47;proc&#47;interupts中读取，发现重调度中断res变化速度最快总结：cswch过多说明资源IO问题，nvcswch过多说明调度争抢cpu过多，中断次数变多说明cpu被中断程序调用</p>2018-11-28</li><br/><li><span>cuikt</span> 👍（14） 💬（4）<p>可以通过以下指令进行排序，观察RES。
+watch -d &#39;cat &#47;proc&#47;interrupts | sort -nr -k 2 &#39;</p>2019-04-30</li><br/><li><span>miracle</span> 👍（12） 💬（10）<p>发现一个不太严谨的地方，即使没有开sysbench，用watch -d &#47;proc&#47;interrupts的时候 RES的变化也是最大的，这个时候in跟cs都不高</p>2018-11-28</li><br/><li><span>Haku</span> 👍（11） 💬（1）<p>Ubuntu16.04LTS下:
 # 以 10 个线程运行 5 分钟的基准测试，模拟多线程切换的问题
-$ sysbench --num-threads=10 --max-time=300 --test=threads run</div>2018-11-28</li><br/><li><span>echo</span> 👍（9） 💬（1）<div>老师你好，有个难题希望能指导一下排查
+$ sysbench --num-threads=10 --max-time=300 --test=threads run</p>2018-11-28</li><br/><li><span>echo</span> 👍（9） 💬（1）<p>老师你好，有个难题希望能指导一下排查
 我有个系统，跑的是32核48G的云主机，load经常超过CPU核数，峰值时load5可达到CPU核数的3倍， 但是CPU利用率不超过50%左右。
 其他关键数据：I&#47;O wait 不超过0.1， 网络流量没超出网卡QOS，R状态的进程数也就一两个，没有D状态的进程。系统只要跑一个CPU密集型的Java进程，线程数2-3k。另外load、CPU、网卡流量的曲线是一致的。
 
-通读了你的第二篇文章，按文章指导能排查的都排查了，接下来应该从哪方面着手定位load高的根因呢？</div>2018-11-28</li><br/><li><span>茴香根</span> 👍（8） 💬（1）<div>打卡本节课程，在使用Linux一些监控命令行时候常常碰到列宽和下面的的数据错位的情况，比如数据过大，占了两列，导致数据错位，不方便观察，不知老师可有好的工具或方法解决。</div>2018-11-28</li><br/><li><span>Linuxer</span> 👍（8） 💬（1）<div>我们之前是如果系统CPU不高根本不会去关注上下文切换，但是这种情况下以前也观测到cs有几十万的情况，所以我想请教一个问题，什么情况下需要关注上下文切换呢？</div>2018-11-28</li><br/><li><span>wanlinwang</span> 👍（7） 💬（2）<div>进程状态说明
+通读了你的第二篇文章，按文章指导能排查的都排查了，接下来应该从哪方面着手定位load高的根因呢？</p>2018-11-28</li><br/><li><span>茴香根</span> 👍（8） 💬（1）<p>打卡本节课程，在使用Linux一些监控命令行时候常常碰到列宽和下面的的数据错位的情况，比如数据过大，占了两列，导致数据错位，不方便观察，不知老师可有好的工具或方法解决。</p>2018-11-28</li><br/><li><span>Linuxer</span> 👍（8） 💬（1）<p>我们之前是如果系统CPU不高根本不会去关注上下文切换，但是这种情况下以前也观测到cs有几十万的情况，所以我想请教一个问题，什么情况下需要关注上下文切换呢？</p>2018-11-28</li><br/><li><span>wanlinwang</span> 👍（7） 💬（2）<p>进程状态说明
 
 R (task_running) : 可执行状态
 
@@ -251,10 +251,10 @@ Z (task_dead - exit_zombie)：退出状态，进程成为僵尸进程
 
 X (task_dead - exit_dead)：退出状态，进程即将被销毁
 
-文章中写的是b状态是不可中断的睡眠状态，哪个是正确的？</div>2019-07-16</li><br/><li><span>姜小鱼</span> 👍（6） 💬（2）<div>老师 为什么我执行sysbench之后很快就结束了？sysbench --num-threads=10 --max-time=600 --test=threads run 我用的是ubuntu16</div>2018-11-28</li><br/><li><span>X</span> 👍（5） 💬（1）<div>『D5打卡』
+文章中写的是b状态是不可中断的睡眠状态，哪个是正确的？</p>2019-07-16</li><br/><li><span>姜小鱼</span> 👍（6） 💬（2）<p>老师 为什么我执行sysbench之后很快就结束了？sysbench --num-threads=10 --max-time=600 --test=threads run 我用的是ubuntu16</p>2018-11-28</li><br/><li><span>X</span> 👍（5） 💬（1）<p>『D5打卡』
 
 不用root权限的Linux用户，不是好的用户😂
 这几天访问&#47;proc 只读文件的次数，比以前几个月都多，老实说，学会pidstat、vmstat这些工具的靠谱使用方法，就值了。不过还是要记住，工具不是全部
-乌班图真的稳，跟着老师操作，基本没啥问题</div>2018-11-28</li><br/><li><span>小苏</span> 👍（4） 💬（2）<div>老师我有个关于cpu 时间片的问题:
-        进程是拥有资源的基本单位,很多书上说cpu分配时间片给进程,但是又说线程是cpu调度的基本单位更甚者有的说进程是抢占cpu的基本单位,现在我对这个概念比较乱,那么cpu分配时间片的到底是给进程还是直接给到线程如果是给到进程那么进程中的线程是不是共享进程的时间片,那么进程中的线程是由进程本身去调度的吗?(进程选中一个优先级交搞的线程吧时间片交给这个线程执行) 例如jvm,还是由操作系统去调度?个人理解是线程共享进程的时间片多线程情况下进程选择优先级高(或按照一定的规则)选择一个线程让改线程消耗进程的时间片,但是看了好多资料越看越懵,请老师和同学们帮忙释义下.到底是怎样调度的.</div>2019-08-13</li><br/><li><span>正能量</span> 👍（3） 💬（1）<div>由于虚拟机和真实Linux环境搭建比较麻烦。 可以考虑使用 docker镜像 这也符合当下 云服务的实际情况。 win10装上 docker后，拉取Ubuntu镜像，即可。而且docker配置的灵活性更高。 只是建议</div>2022-01-20</li><br/>
+乌班图真的稳，跟着老师操作，基本没啥问题</p>2018-11-28</li><br/><li><span>小苏</span> 👍（4） 💬（2）<p>老师我有个关于cpu 时间片的问题:
+        进程是拥有资源的基本单位,很多书上说cpu分配时间片给进程,但是又说线程是cpu调度的基本单位更甚者有的说进程是抢占cpu的基本单位,现在我对这个概念比较乱,那么cpu分配时间片的到底是给进程还是直接给到线程如果是给到进程那么进程中的线程是不是共享进程的时间片,那么进程中的线程是由进程本身去调度的吗?(进程选中一个优先级交搞的线程吧时间片交给这个线程执行) 例如jvm,还是由操作系统去调度?个人理解是线程共享进程的时间片多线程情况下进程选择优先级高(或按照一定的规则)选择一个线程让改线程消耗进程的时间片,但是看了好多资料越看越懵,请老师和同学们帮忙释义下.到底是怎样调度的.</p>2019-08-13</li><br/><li><span>正能量</span> 👍（3） 💬（1）<p>由于虚拟机和真实Linux环境搭建比较麻烦。 可以考虑使用 docker镜像 这也符合当下 云服务的实际情况。 win10装上 docker后，拉取Ubuntu镜像，即可。而且docker配置的灵活性更高。 只是建议</p>2022-01-20</li><br/>
 </ul>

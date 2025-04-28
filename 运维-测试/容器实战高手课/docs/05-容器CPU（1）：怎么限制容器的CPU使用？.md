@@ -253,12 +253,12 @@ echo 3072 > /sys/fs/cgroup/cpu/group2/group3/cpu.shares # shares 比例 group4: 
 
 欢迎留言和我分享你的思考和疑问。如果你有所收获，也欢迎分享给朋友，一起学习和交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Action</span> 👍（15） 💬（1）<div>为什么说“云平台里呢，大部分程序都不是实时调度的进程，而是普通调度（SCHED_NORMAL）类型进程”？这块不是很明白</div>2020-12-25</li><br/><li><span>海盗船长</span> 👍（6） 💬（2）<div>老师，不太明白  “Request CPU就是无论其他容器申请多少 CPU 资源，即使运行时整个节点的 CPU 都被占满的情况下，我的这个容器还是可以保证获得需要的 CPU 数目”，这句话改怎么理解呢？当节点cpu都被占满的情况下，我的这个容器会去抢占吗？ 另外cpu.shares是个权重，如何去保证Request CPU的数量？</div>2020-11-25</li><br/><li><span>言希</span> 👍（4） 💬（1）<div>请问老师，我在环境上遇到 cpu.cfs_quota_us 取值为 -1 的，这种是不是代表的不限制CPU的使用 ？</div>2021-04-29</li><br/><li><span>Action</span> 👍（3） 💬（1）<div>老师，假如我有10个节点，每个节点的cpu核心数是40，只是调度pod，那么limit.cpu 可以设置为400吧？</div>2020-12-25</li><br/><li><span>Geek_cd6rkj</span> 👍（3） 💬（1）<div>老师，您好，如果一个容器里面有多个进程，这个限制是针对所有进程，还是只是pid是1的进程？</div>2020-12-07</li><br/><li><span>兜兜</span> 👍（3） 💬（1）<div>请问下关于wa和hi&#47;si的问题：
+<li><span>Action</span> 👍（15） 💬（1）<p>为什么说“云平台里呢，大部分程序都不是实时调度的进程，而是普通调度（SCHED_NORMAL）类型进程”？这块不是很明白</p>2020-12-25</li><br/><li><span>海盗船长</span> 👍（6） 💬（2）<p>老师，不太明白  “Request CPU就是无论其他容器申请多少 CPU 资源，即使运行时整个节点的 CPU 都被占满的情况下，我的这个容器还是可以保证获得需要的 CPU 数目”，这句话改怎么理解呢？当节点cpu都被占满的情况下，我的这个容器会去抢占吗？ 另外cpu.shares是个权重，如何去保证Request CPU的数量？</p>2020-11-25</li><br/><li><span>言希</span> 👍（4） 💬（1）<p>请问老师，我在环境上遇到 cpu.cfs_quota_us 取值为 -1 的，这种是不是代表的不限制CPU的使用 ？</p>2021-04-29</li><br/><li><span>Action</span> 👍（3） 💬（1）<p>老师，假如我有10个节点，每个节点的cpu核心数是40，只是调度pod，那么limit.cpu 可以设置为400吧？</p>2020-12-25</li><br/><li><span>Geek_cd6rkj</span> 👍（3） 💬（1）<p>老师，您好，如果一个容器里面有多个进程，这个限制是针对所有进程，还是只是pid是1的进程？</p>2020-12-07</li><br/><li><span>兜兜</span> 👍（3） 💬（1）<p>请问下关于wa和hi&#47;si的问题：
 1. 例子中，wa是等待磁盘IO的状态，那等待网络IO时，是不是wa呢？
-2. 例子中，hi&#47;si是收到网卡中断，那收到磁盘中断时，是不是也是hi&#47;si？</div>2020-11-29</li><br/><li><span>不二</span> 👍（1） 💬（1）<div>请问老师，cpu.rt_runtime_us一般是不是用不上，Linux系统中哪些程序会被配置为实时调度程序呢？如果没有实时调度程序这个参数也就没有了存在的必要吧</div>2021-01-14</li><br/><li><span>*</span> 👍（0） 💬（2）<div>老师， threads-cpu这个脚本能提供吗</div>2022-02-27</li><br/><li><span>Geek_ce0af4</span> 👍（0） 💬（1）<div>评论区太精彩</div>2021-08-30</li><br/><li><span>马成</span> 👍（0） 💬（2）<div>软中断我理解就是内部中断，系统调用是其中的一种。那么sy内核时间指的是系统调用时间么？si软中断时间包含系统调用时间么？我被搞糊涂了……</div>2021-07-22</li><br/><li><span>bearlu</span> 👍（0） 💬（2）<div>老师，我有个困惑，在read的时候，当进程在wa状态，是不是占用着CPU？</div>2021-07-18</li><br/><li><span>强子</span> 👍（0） 💬（1）<div>老师 关于request cpu还是不太理解 request是必须满足的 但是通过cpu.share无法保证 那k8s是如何保证的？是scheduler在调度的时候自己计算的吗 包括允许超售的情况，能否解释一下 感谢🙏</div>2021-06-14</li><br/><li><span>争光 Alan</span> 👍（0） 💬（1）<div>好，下面我们再来运行第二个例子来理解 cpu.shares。我们先把第一个例子里的程序启动，同时按前面的内容，一步步设置好 group3 里 cpu.cfs_quota_us 和 cpu.shares。
+2. 例子中，hi&#47;si是收到网卡中断，那收到磁盘中断时，是不是也是hi&#47;si？</p>2020-11-29</li><br/><li><span>不二</span> 👍（1） 💬（1）<p>请问老师，cpu.rt_runtime_us一般是不是用不上，Linux系统中哪些程序会被配置为实时调度程序呢？如果没有实时调度程序这个参数也就没有了存在的必要吧</p>2021-01-14</li><br/><li><span>*</span> 👍（0） 💬（2）<p>老师， threads-cpu这个脚本能提供吗</p>2022-02-27</li><br/><li><span>Geek_ce0af4</span> 👍（0） 💬（1）<p>评论区太精彩</p>2021-08-30</li><br/><li><span>马成</span> 👍（0） 💬（2）<p>软中断我理解就是内部中断，系统调用是其中的一种。那么sy内核时间指的是系统调用时间么？si软中断时间包含系统调用时间么？我被搞糊涂了……</p>2021-07-22</li><br/><li><span>bearlu</span> 👍（0） 💬（2）<p>老师，我有个困惑，在read的时候，当进程在wa状态，是不是占用着CPU？</p>2021-07-18</li><br/><li><span>强子</span> 👍（0） 💬（1）<p>老师 关于request cpu还是不太理解 request是必须满足的 但是通过cpu.share无法保证 那k8s是如何保证的？是scheduler在调度的时候自己计算的吗 包括允许超售的情况，能否解释一下 感谢🙏</p>2021-06-14</li><br/><li><span>争光 Alan</span> 👍（0） 💬（1）<p>好，下面我们再来运行第二个例子来理解 cpu.shares。我们先把第一个例子里的程序启动，同时按前面的内容，一步步设置好 group3 里 cpu.cfs_quota_us 和 cpu.shares。
 
 是不是写错了，
-第一个例子的程序停止？</div>2020-11-29</li><br/><li><span>max</span> 👍（0） 💬（1）<div>老师，容器中的应用如何获取有效网卡</div>2020-11-25</li><br/><li><span>Geek2014</span> 👍（0） 💬（4）<div>有一点不理解，想请教下老师：
+第一个例子的程序停止？</p>2020-11-29</li><br/><li><span>max</span> 👍（0） 💬（1）<p>老师，容器中的应用如何获取有效网卡</p>2020-11-25</li><br/><li><span>Geek2014</span> 👍（0） 💬（4）<p>有一点不理解，想请教下老师：
 而&quot;Request CPU&quot;就是无论其他容器申请多少 CPU 资源，即使运行时整个节点的 CPU 都被占满的情况下，我的这个容器还是可以保证获得需要的 CPU 数目，
 
 
@@ -266,5 +266,5 @@ echo 3072 > /sys/fs/cgroup/cpu/group2/group3/cpu.shares # shares 比例 group4: 
 group1 ：request 2 cpu，limit 3 cpu
 group2 ：request 2 cpu，limit 3 cpu
 
-由于申请总量大于总量，那么按照K8S的调度原则，是没法启动全部容器的。上面的假设情况，按道理是不存在的，对吧。</div>2020-11-25</li><br/>
+由于申请总量大于总量，那么按照K8S的调度原则，是没法启动全部容器的。上面的假设情况，按道理是不存在的，对吧。</p>2020-11-25</li><br/>
 </ul>

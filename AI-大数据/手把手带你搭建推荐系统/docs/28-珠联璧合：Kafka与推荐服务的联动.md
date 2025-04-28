@@ -294,9 +294,9 @@ def likes():
 
 期待你的分享，如果今天的内容让你有所收获，也欢迎你推荐给有需要的朋友！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：有一个ZMQ，老师知道吗？kafka是独立运行，是个单独的进程。但ZMQ好像不是这样，是一个库，好像只是对socket的一个封装。
 Q2：producer和consumer能感受到partition吗？感觉只能用topic这个层次。
 Q3：kafka这个软件，需要提供一个库给producer和consumer 
-Q4：kafka集群有中心节点吗？如果没有中心节点，是否有数据同步问题？</div>2023-06-22</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<div>RocketMQ比Kafka更优，且数据丢失率更低，使用起来也更安全，为什么不用RocketMQ呢？像这种涉及到选型方面的内容，能否给我们列举表格进行对比，然后再根据一些平衡最终选定Kafk呢？</div>2023-12-19</li><br/>
+Q4：kafka集群有中心节点吗？如果没有中心节点，是否有数据同步问题？</p>2023-06-22</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<p>RocketMQ比Kafka更优，且数据丢失率更低，使用起来也更安全，为什么不用RocketMQ呢？像这种涉及到选型方面的内容，能否给我们列举表格进行对比，然后再根据一些平衡最终选定Kafk呢？</p>2023-12-19</li><br/>
 </ul>

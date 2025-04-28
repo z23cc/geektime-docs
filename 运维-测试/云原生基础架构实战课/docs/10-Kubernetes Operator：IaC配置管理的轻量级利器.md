@@ -262,5 +262,5 @@ kubectl patch database my-database -p '{"spec":{"password":"new-password"}}'
 
 欢迎在评论区与我讨论。如果这一讲对你有启发，也欢迎分享给身边更多朋友。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>夜空中最亮的星</span> 👍（0） 💬（4）<div>使用 Crossplane 管理数据库，是通过在k8s上部署Operator ，直接在 k8s 所在的云厂商之上 创建的，就是说是 通过 k8s api 来管理了云资源，是这样吗？</div>2024-04-15</li><br/>
+<li><span>夜空中最亮的星</span> 👍（0） 💬（4）<p>使用 Crossplane 管理数据库，是通过在k8s上部署Operator ，直接在 k8s 所在的云厂商之上 创建的，就是说是 通过 k8s api 来管理了云资源，是这样吗？</p>2024-04-15</li><br/>
 </ul>

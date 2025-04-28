@@ -136,18 +136,18 @@ Raft的顺序投票是一种设计上的权衡，虽然性能有些影响，但�
 
 你是不是也经常听到身边的朋友讨论数据复制的相关问题呢，而且得出的结论有可能是错的？如果有的话，希望你能把今天这一讲分享给他/她，我们一起来正确地理解分布式数据库的数据复制是怎么一回事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>真名不叫黄金</span> 👍（26） 💬（1）<div>我认为分布式数据库的瓶颈可能在于两个方面:
+<li><span>真名不叫黄金</span> 👍（26） 💬（1）<p>我认为分布式数据库的瓶颈可能在于两个方面:
 1. 元数据，元数据过多的情况下，可能需要多层查找，才能找到数据的节点，由此降低了性能。
-2. 心跳包，如果网络中太多节点，那么心跳包也会占用相当多的带宽，影响IO性能</div>2020-08-26</li><br/><li><span>tt</span> 👍（12） 💬（3）<div>我觉得容量上限主要受制于业务场景，为了提高性能需要增加分片，但是分片多了以后，为了达到一致性的要求，节点太多影响通讯和数据复制的成本，这两个方面权衡一下就决定了容量的上限</div>2020-08-24</li><br/><li><span>扩散性百万咸面包</span> 👍（5） 💬（2）<div>老师看看我对Multi Raft的理解对不对。
-一个Raft Group存储一个Region的多副本。例如TiDB默认副本数是３，那么一个Raft Group就是３个副本。同时一个节点可能有上千个Region（一般这些Region都不互为副本），每一个Region都属于一个Raft Group，那么也就是说这个节点可能参与上千个Raft Group。每个Raft Group又会选举出一个节点作为Raft Leader，负责写入数据。</div>2020-08-24</li><br/><li><span>Geek_81c7c9</span> 👍（4） 💬（3）<div>引用一下王老师对PGXC和NEWSQL的观点：
+2. 心跳包，如果网络中太多节点，那么心跳包也会占用相当多的带宽，影响IO性能</p>2020-08-26</li><br/><li><span>tt</span> 👍（12） 💬（3）<p>我觉得容量上限主要受制于业务场景，为了提高性能需要增加分片，但是分片多了以后，为了达到一致性的要求，节点太多影响通讯和数据复制的成本，这两个方面权衡一下就决定了容量的上限</p>2020-08-24</li><br/><li><span>扩散性百万咸面包</span> 👍（5） 💬（2）<p>老师看看我对Multi Raft的理解对不对。
+一个Raft Group存储一个Region的多副本。例如TiDB默认副本数是３，那么一个Raft Group就是３个副本。同时一个节点可能有上千个Region（一般这些Region都不互为副本），每一个Region都属于一个Raft Group，那么也就是说这个节点可能参与上千个Raft Group。每个Raft Group又会选举出一个节点作为Raft Leader，负责写入数据。</p>2020-08-24</li><br/><li><span>Geek_81c7c9</span> 👍（4） 💬（3）<p>引用一下王老师对PGXC和NEWSQL的观点：
 PGXC（raft）有稳定的工程实现；
 NEWSQL（paxos）有更先进的设计思想；
 从更容易落地的角度出发，raft确实更适合；
-从更长远、更能有效规避潜在风险的角度出发，还是得上paxos，毕竟两大国民APP（支付宝ob、微信PhxPaxos）背后都是它对吧~</div>2020-10-17</li><br/><li><span>扩散性百万咸面包</span> 👍（4） 💬（2）<div>老师，看到你的文章中对比了Gossip和Raft&#47;Paxos这种算法，能说明一下如果Gossip共识时间更短，为什么TiDB等数据库不选择呢？为什么它更适合多节点？是因为它把网络I&#47;O分散到多个节点上吗？可是这也带来了一定的串行性呀！
-BTW, Gossip达成共识要比Raft和Paxos要快么？</div>2020-09-09</li><br/><li><span>Geek_osqiyw</span> 👍（4） 💬（1）<div>佩服这些协议的理论提出者，更佩服协议的工程实现者</div>2020-08-24</li><br/><li><span>淡漠落寞</span> 👍（1） 💬（1）<div>老师，想请教一下关于cockroachdb里的gossip相关的问题：
+从更长远、更能有效规避潜在风险的角度出发，还是得上paxos，毕竟两大国民APP（支付宝ob、微信PhxPaxos）背后都是它对吧~</p>2020-10-17</li><br/><li><span>扩散性百万咸面包</span> 👍（4） 💬（2）<p>老师，看到你的文章中对比了Gossip和Raft&#47;Paxos这种算法，能说明一下如果Gossip共识时间更短，为什么TiDB等数据库不选择呢？为什么它更适合多节点？是因为它把网络I&#47;O分散到多个节点上吗？可是这也带来了一定的串行性呀！
+BTW, Gossip达成共识要比Raft和Paxos要快么？</p>2020-09-09</li><br/><li><span>Geek_osqiyw</span> 👍（4） 💬（1）<p>佩服这些协议的理论提出者，更佩服协议的工程实现者</p>2020-08-24</li><br/><li><span>淡漠落寞</span> 👍（1） 💬（1）<p>老师，想请教一下关于cockroachdb里的gossip相关的问题：
 1 客户端是如何知道要往哪个节点发送请求的呢？
-2 range的分裂场景下，节点的分片元数据信息的变更和节点的实际数据的迁移的先后顺序是怎么样的呢？</div>2021-06-27</li><br/><li><span>UTC+00:00</span> 👍（1） 💬（1）<div>老师，咨询下，CockroachDB是如何判断R1分片的元数据过期的呢？全局时间戳吗？</div>2020-08-24</li><br/><li><span>武功不高</span> 👍（1） 💬（1）<div>额，全是新知识，有点懵懵，需要好好消化消化……
-</div>2020-08-24</li><br/><li><span>piboye</span> 👍（0） 💬（1）<div>hbase 的 root 表位置放到zk上，root 表找到meta表， 再找到region表，这种方式好像和老师说的不同哦。 hbase不是分布式数据库，所以可以不一样的实现？</div>2020-08-24</li><br/><li><span>wy</span> 👍（2） 💬（1）<div>使用gossip协议的话，必须保证至少存在一个节点有正确的元数据</div>2020-09-29</li><br/><li><span>xyx</span> 👍（1） 💬（1）<div>&quot;Leader 等待 Follower 的结果，如果大多数节点提交了这个 Log，那么这个 Log Entry 就是 Committed Entry，Leader 就可以将它应用（Apply）到本地的状态机。&quot;
+2 range的分裂场景下，节点的分片元数据信息的变更和节点的实际数据的迁移的先后顺序是怎么样的呢？</p>2021-06-27</li><br/><li><span>UTC+00:00</span> 👍（1） 💬（1）<p>老师，咨询下，CockroachDB是如何判断R1分片的元数据过期的呢？全局时间戳吗？</p>2020-08-24</li><br/><li><span>武功不高</span> 👍（1） 💬（1）<p>额，全是新知识，有点懵懵，需要好好消化消化……
+</p>2020-08-24</li><br/><li><span>piboye</span> 👍（0） 💬（1）<p>hbase 的 root 表位置放到zk上，root 表找到meta表， 再找到region表，这种方式好像和老师说的不同哦。 hbase不是分布式数据库，所以可以不一样的实现？</p>2020-08-24</li><br/><li><span>wy</span> 👍（2） 💬（1）<p>使用gossip协议的话，必须保证至少存在一个节点有正确的元数据</p>2020-09-29</li><br/><li><span>xyx</span> 👍（1） 💬（1）<p>&quot;Leader 等待 Follower 的结果，如果大多数节点提交了这个 Log，那么这个 Log Entry 就是 Committed Entry，Leader 就可以将它应用（Apply）到本地的状态机。&quot;
 
-这里表述有点小问题: 应该是leader等大多数节点append了这个log, leader才能commit(commit日志可以任何时候再apply). leader先commit, 下一个心跳中follower才会commit.</div>2021-02-27</li><br/><li><span>kylexy_0817</span> 👍（1） 💬（3）<div>Paxos不是有一个工业级实现，ZAB么？</div>2020-08-26</li><br/><li><span>南国</span> 👍（1） 💬（1）<div>如果分片信息由单节点管理的话这个分布式数据库是会有瓶颈的，但不是存储瓶颈（像bigtable那样，就像个多级页表一样，最大存储2^61字节数据），是访问瓶颈（当然是不是还需要测试），但也就是因为访问瓶颈就可能导致数据存储是有上限的，但是如果像spanner一样，把每个分布式数据库看做一个spannerserver，再建立一层，就像zone去管理spannerserver，然后再有一层去管理zone，这样貌似就可以无限扩展了，当然说着简单，做起来就太难了。还有对于无主架构中gossip传播集群分片信息，就像redis cluster一样，我觉得瓶颈在于每台机器要存储全部的分片信息，当机器多了以后单机光存储这个就是一个巨大的开销，这也是一个限制的因素吧。</div>2020-08-26</li><br/><li><span>piboye</span> 👍（1） 💬（1）<div>分片信息不需要强一致性，更强调ap吧？所以paxos不一定是最好的选择，就像服务发现也是ap型。</div>2020-08-24</li><br/>
+这里表述有点小问题: 应该是leader等大多数节点append了这个log, leader才能commit(commit日志可以任何时候再apply). leader先commit, 下一个心跳中follower才会commit.</p>2021-02-27</li><br/><li><span>kylexy_0817</span> 👍（1） 💬（3）<p>Paxos不是有一个工业级实现，ZAB么？</p>2020-08-26</li><br/><li><span>南国</span> 👍（1） 💬（1）<p>如果分片信息由单节点管理的话这个分布式数据库是会有瓶颈的，但不是存储瓶颈（像bigtable那样，就像个多级页表一样，最大存储2^61字节数据），是访问瓶颈（当然是不是还需要测试），但也就是因为访问瓶颈就可能导致数据存储是有上限的，但是如果像spanner一样，把每个分布式数据库看做一个spannerserver，再建立一层，就像zone去管理spannerserver，然后再有一层去管理zone，这样貌似就可以无限扩展了，当然说着简单，做起来就太难了。还有对于无主架构中gossip传播集群分片信息，就像redis cluster一样，我觉得瓶颈在于每台机器要存储全部的分片信息，当机器多了以后单机光存储这个就是一个巨大的开销，这也是一个限制的因素吧。</p>2020-08-26</li><br/><li><span>piboye</span> 👍（1） 💬（1）<p>分片信息不需要强一致性，更强调ap吧？所以paxos不一定是最好的选择，就像服务发现也是ap型。</p>2020-08-24</li><br/>
 </ul>

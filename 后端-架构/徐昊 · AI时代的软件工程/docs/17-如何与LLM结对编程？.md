@@ -477,22 +477,22 @@ public class ArgumentParser {
 
 欢迎你在留言区分享自己的思考或疑惑，我们会把精彩内容置顶供大家学习讨论。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Gojustforfun</span> 👍（2） 💬（2）<div>我一直有一个疑问，到底是任务列表？还是测试列表？
+<li><span>Gojustforfun</span> 👍（2） 💬（2）<p>我一直有一个疑问，到底是任务列表？还是测试列表？
 
 还是先根据软件架构和测试策略将需求切到足够小，形成任务列表，在针对任务列表中的每个任务写出测试，从而形成测试列表。
 
 之前提到过用户故事及验收条件，用户故事需要根据软件架构和测试策略再切分吗？验收条件，是不是就是测试列表或者测试列表的一部分？
 
-后面会有复杂点的例子，介绍需求如何从用户故事，到被不同软件架构，测试策略组合影响，从而导出不同的任务列表，进而导出测试列列表的过程吗？</div>2024-04-15</li><br/><li><span>起个名称吧</span> 👍（0） 💬（1）<div>我认为应该是庞杂+清晰
+后面会有复杂点的例子，介绍需求如何从用户故事，到被不同软件架构，测试策略组合影响，从而导出不同的任务列表，进而导出测试列列表的过程吗？</p>2024-04-15</li><br/><li><span>起个名称吧</span> 👍（0） 💬（1）<p>我认为应该是庞杂+清晰
 庞杂的认知行为模式，从gpt给与的需求拆分的任务列表，我们和llm进行认知对齐，帮其弥补llm认知需求的差异，在该模式下我们根据对齐的任务列表生成测试代码和生产代码
 清晰的认知行为模式，根据测试代码执行进行测试来发现生产代码上的遗漏，发现错误,与llm进行交互调整生产代码，最终完成测试的通过。
 这里有两个疑问
 1. 假设根据测试代码执行发现未知的错误(此时无法与gpt进行交互)，我们也不理解改错误的信息，我们此时就需要debug一步步调试，此时我们本身又处于复杂模式下(探索-感知-响应)，而可以和llm交互后我们又处于清晰模式下(感知-分类-响应)。我们因为一个llm帮助我们的认知行为发生了两个重大的变更吗？
-2. TDD测试驱动,红-绿-重构，这节课里没看到重构循环,感觉缺少了点啥</div>2024-04-15</li><br/><li><span>FARO_Z</span> 👍（2） 💬（0）<div>感觉 LLM 只能比较好的生成单点功能的代码，一般也就是工具类
+2. TDD测试驱动,红-绿-重构，这节课里没看到重构循环,感觉缺少了点啥</p>2024-04-15</li><br/><li><span>FARO_Z</span> 👍（2） 💬（0）<p>感觉 LLM 只能比较好的生成单点功能的代码，一般也就是工具类
 
 如果涉及到业务上下文，不是歇菜，就是要喂大量 promot 进行调校。有这功夫代码早写完了
 
-感觉目前 LLM 对于程序员最大的帮助在于阅读源码上面，对于已有内容 LLM 能作为一个很好的索引器，帮助快速理清代码上下文。至于很多业务驱动的工程，还是先不要动 LLM 提升工作效率的念头了吧</div>2024-08-13</li><br/><li><span>范飞扬</span> 👍（2） 💬（0）<div>感谢老师，已经用到工作中了。
+感觉目前 LLM 对于程序员最大的帮助在于阅读源码上面，对于已有内容 LLM 能作为一个很好的索引器，帮助快速理清代码上下文。至于很多业务驱动的工程，还是先不要动 LLM 提升工作效率的念头了吧</p>2024-08-13</li><br/><li><span>范飞扬</span> 👍（2） 💬（0）<p>感谢老师，已经用到工作中了。
 目前我们只让GPT进行了需求分解。
 盲猜一波，接下来应该让gpt，不仅根据需求分解，还要根据架构，分解成功能上下文的任务项。
 
@@ -500,7 +500,7 @@ public class ArgumentParser {
 然后生成测试用例。
 最后生成代码。
 
-（这其中，我觉得还可以提供现有测试类的代码作为few shot，而且测试类也蕴含了SUT的API如何使用的信息）</div>2024-04-16</li><br/><li><span>aoe</span> 👍（1） 💬（0）<div>学习后收获了 2 个模版
+（这其中，我觉得还可以提供现有测试类的代码作为few shot，而且测试类也蕴含了SUT的API如何使用的信息）</p>2024-04-16</li><br/><li><span>aoe</span> 👍（1） 💬（0）<p>学习后收获了 2 个模版
 练习后获得经验：需要认真检查 AI 列出的测试场景，不然会出现奇怪的代码！
 
 实用的 AI 模版
@@ -524,9 +524,9 @@ public class ArgumentParser {
 使用 Kotlin 编写
 使用 TDD 中的 should style 编写测试
 
-详见 https:&#47;&#47;wyyl1.com&#47;post&#47;28&#47;17</div>2024-04-15</li><br/><li><span>6点无痛早起学习的和尚</span> 👍（0） 💬（0）<div>有个问题，那如何把 TDD 与 LLM 结合写业务代码呢？
+详见 https:&#47;&#47;wyyl1.com&#47;post&#47;28&#47;17</p>2024-04-15</li><br/><li><span>6点无痛早起学习的和尚</span> 👍（0） 💬（0）<p>有个问题，那如何把 TDD 与 LLM 结合写业务代码呢？
 如果按照 16 节的内容，逻辑就是拆分一个业务功能的架构，比如 http 层、业务逻辑层、数据层
-然后对业务逻辑层写清楚诉求，然后跟 LLM 结队编程吗？运用本篇内容</div>2024-05-04</li><br/><li><span>术子米德</span> 👍（0） 💬（0）<div>&#47;&#47; Question by EnigmaWU: generate could missing ut code for me
+然后对业务逻辑层写清楚诉求，然后跟 LLM 结队编程吗？运用本篇内容</p>2024-05-04</li><br/><li><span>术子米德</span> 👍（0） 💬（0）<p>&#47;&#47; Question by EnigmaWU: generate could missing ut code for me
 &#47;&#47; Answer from ChatCopilot:
 TEST(CC_parseCmdLineArgs, LogSavingDir) {
   CC_CmdLineArgs_T CmdLineArgs;
@@ -575,7 +575,7 @@ TEST(CC_parseCmdLineArgs, ArgsInDifferentOrder) {
   EXPECT_TRUE(CmdLineArgs.IsLoggingEnabled);
   EXPECT_EQ(1234, CmdLineArgs.RecvPort);
   EXPECT_STREQ(&quot;&#47;path&#47;to&#47;log&quot;, CmdLineArgs.pLogSavingDir);
-}</div>2024-04-15</li><br/><li><span>术子米德</span> 👍（0） 💬（0）<div>&#47;&#47; Chat with Copilot, Question by EnigmaWU:
+}</p>2024-04-15</li><br/><li><span>术子米德</span> 👍（0） 💬（0）<p>&#47;&#47; Chat with Copilot, Question by EnigmaWU:
 &#47;&#47; #file:CC_parseCmdLineArgs.c #file:CC_parseCmdLineArgsTest_byCopilot.cxx
 &#47;&#47;      what UT already written and what UT is missed?
 
@@ -600,5 +600,5 @@ MissingValueForDir: Tests the function with the -d argument but without a value 
 NonNumericPort: Tests the function with a non-numeric value for the -p argument.
 MultipleSameArgs: Tests the function with multiple instances of the same argument.
 ArgsInDifferentOrder: Tests the function with all possible arguments in a different order.
- **&#47;</div>2024-04-15</li><br/>
+ **&#47;</p>2024-04-15</li><br/>
 </ul>

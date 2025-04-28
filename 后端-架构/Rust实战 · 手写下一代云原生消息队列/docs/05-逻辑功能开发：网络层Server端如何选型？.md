@@ -567,5 +567,5 @@ pub async fn awaiting_stop(stop_send: broadcast::Sender<bool>) {
 
 这里是本节课推荐的相关 issue 的任务列表，请点击查看[《Good First Issue》](http://www.robustmq.com/docs/robustmq-tutorial-cn/%e8%b4%a1%e7%8c%ae%e6%8c%87%e5%8d%97/good-first-issue/)，任务列表会不间断地更新。欢迎给我的项目 [https://github.com/robustmq/robustmq](https://github.com/robustmq/robustmq) 点个 Star 啊！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Joe Black</span> 👍（0） 💬（0）<div>我觉得这里介绍编译protobuf文件时，最好顺带的说一点build.rs的作用。这个对于其它语言转过来的开发者而言还是挺新奇的。</div>2024-10-10</li><br/><li><span>吃饱喝足开始干活</span> 👍（0） 💬（0）<div>简单例子，最易吸收❤️</div>2024-09-21</li><br/>
+<li><span>Joe Black</span> 👍（0） 💬（0）<p>我觉得这里介绍编译protobuf文件时，最好顺带的说一点build.rs的作用。这个对于其它语言转过来的开发者而言还是挺新奇的。</p>2024-10-10</li><br/><li><span>吃饱喝足开始干活</span> 👍（0） 💬（0）<p>简单例子，最易吸收❤️</p>2024-09-21</li><br/>
 </ul>

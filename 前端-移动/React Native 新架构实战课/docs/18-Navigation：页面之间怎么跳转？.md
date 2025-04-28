@@ -495,14 +495,14 @@ function Home() {return <Text>我是首页</Text>}
 
 2. React Navigation 目前已经更新到 v6 版本了，你在使用老版本的 React Navigation 时遇到过哪些问题呢？欢迎留言，我们大家一起讨论。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>潇潇暮雨</span> 👍（3） 💬（1）<div>老师，可以讲一下原生页面与RN页面相互跳转吗</div>2022-05-09</li><br/><li><span>007</span> 👍（1） 💬（1）<div>老师，能讲一下Modal页面。还有自定义导航动画么？</div>2022-05-09</li><br/><li><span>维筱</span> 👍（0） 💬（1）<div>老师，求画图软件</div>2023-01-23</li><br/><li><span>追风</span> 👍（0） 💬（1）<div>方便讲解一下react-native中路由鉴权的方案吗？</div>2023-01-19</li><br/><li><span>郭浩</span> 👍（0） 💬（0）<div>如何解决两个Tab之间的滑动冲突问题？</div>2023-01-12</li><br/><li><span>章鱼哥</span> 👍（0） 💬（0）<div>老师您好，我想请教一下TS项目 { navigation }和{ route }的类型该如何写？</div>2022-10-19</li><br/><li><span>Geek_27a13a</span> 👍（0） 💬（0）<div>老师，您好
-react-native 新搭建的0.69.0项目怎么兼容  react-native-screens（3.13.1）这个问题应该怎么解决呢？</div>2022-06-26</li><br/><li><span>Geek_27a13a</span> 👍（0） 💬（0）<div>老师，您好
-React Native 项目0.69.0版本下,安装react-native-screens（3.13.1）报错。提示react-native-screens版本不支持，这个怎么解决呢？？</div>2022-06-26</li><br/><li><span>dao</span> 👍（0） 💬（0）<div>老师，请问如果很多页面使用 react navigation 关联起来，是否会有性能问题 ？</div>2022-06-10</li><br/><li><span>dao</span> 👍（0） 💬（0）<div>老师的一节课，我学习花了一周💧
+<li><span>潇潇暮雨</span> 👍（3） 💬（1）<p>老师，可以讲一下原生页面与RN页面相互跳转吗</p>2022-05-09</li><br/><li><span>007</span> 👍（1） 💬（1）<p>老师，能讲一下Modal页面。还有自定义导航动画么？</p>2022-05-09</li><br/><li><span>维筱</span> 👍（0） 💬（1）<p>老师，求画图软件</p>2023-01-23</li><br/><li><span>追风</span> 👍（0） 💬（1）<p>方便讲解一下react-native中路由鉴权的方案吗？</p>2023-01-19</li><br/><li><span>郭浩</span> 👍（0） 💬（0）<p>如何解决两个Tab之间的滑动冲突问题？</p>2023-01-12</li><br/><li><span>章鱼哥</span> 👍（0） 💬（0）<p>老师您好，我想请教一下TS项目 { navigation }和{ route }的类型该如何写？</p>2022-10-19</li><br/><li><span>Geek_27a13a</span> 👍（0） 💬（0）<p>老师，您好
+react-native 新搭建的0.69.0项目怎么兼容  react-native-screens（3.13.1）这个问题应该怎么解决呢？</p>2022-06-26</li><br/><li><span>Geek_27a13a</span> 👍（0） 💬（0）<p>老师，您好
+React Native 项目0.69.0版本下,安装react-native-screens（3.13.1）报错。提示react-native-screens版本不支持，这个怎么解决呢？？</p>2022-06-26</li><br/><li><span>dao</span> 👍（0） 💬（0）<p>老师，请问如果很多页面使用 react navigation 关联起来，是否会有性能问题 ？</p>2022-06-10</li><br/><li><span>dao</span> 👍（0） 💬（0）<p>老师的一节课，我学习花了一周💧
 试着动手做了示例和作业，用 react navigation drawer 把整节示例串起来了。代码 https:&#47;&#47;bit.ly&#47;3O9xk3U
 
-</div>2022-06-10</li><br/><li><span>dao</span> 👍（0） 💬（0）<div>老师，关于导航前套里的这点
+</p>2022-06-10</li><br/><li><span>dao</span> 👍（0） 💬（0）<p>老师，关于导航前套里的这点
 ---
 第二个问题更严重，如果想从 Home 的 Page1 页面跳转到 Message 的 Page3 下面，用户必须点开过 Message 标签页，不然就会出现报错。
 ---
-使用 navigation.navigate(&#39;Message&#39;, {screen: &#39;Page3&#39;}); 代替 navigation.navigate(&#39;Page3&#39;); 是不会报错的。</div>2022-06-10</li><br/><li><span>abc🙂</span> 👍（0） 💬（0）<div>一直纠结tab的最佳实践路由，官方文档也不给一个建议~今天学习到了</div>2022-05-10</li><br/><li><span>风之化身</span> 👍（0） 💬（0）<div>感觉v6版的 react-navigation 的TS类型系统做的也很好，可以讲讲最佳实践。我们团队用的 v3 版本：1、类型系统不太满意；2、navigation.setParams 对引用类型修改会影响到上一个页面传递过来的</div>2022-05-09</li><br/>
+使用 navigation.navigate(&#39;Message&#39;, {screen: &#39;Page3&#39;}); 代替 navigation.navigate(&#39;Page3&#39;); 是不会报错的。</p>2022-06-10</li><br/><li><span>abc🙂</span> 👍（0） 💬（0）<p>一直纠结tab的最佳实践路由，官方文档也不给一个建议~今天学习到了</p>2022-05-10</li><br/><li><span>风之化身</span> 👍（0） 💬（0）<p>感觉v6版的 react-navigation 的TS类型系统做的也很好，可以讲讲最佳实践。我们团队用的 v3 版本：1、类型系统不太满意；2、navigation.setParams 对引用类型修改会影响到上一个页面传递过来的</p>2022-05-09</li><br/>
 </ul>

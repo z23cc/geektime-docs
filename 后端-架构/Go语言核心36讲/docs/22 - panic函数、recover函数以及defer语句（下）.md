@@ -167,7 +167,7 @@ func main() {
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>wesleydeng</span> 👍（95） 💬（9）<div>从语言设计上，不使用try-catch而是用defer-recover有什么优势？c++和java作为先驱都使用try-catch，也比较清晰，为什么go作为新语言却要发明一个这样的新语法？有何设计上的考量？</div>2019-04-09</li><br/><li><span>凌惜沫</span> 👍（23） 💬（3）<div>如果defer中引发panic，那么在该段defer函数之前，需要另外一个defer来捕获该panic，并且代码中最后一个panic会被抛弃，由defer中的panic来成为最后的异常返回。</div>2019-04-22</li><br/><li><span>小龙虾</span> 👍（17） 💬（2）<div>我感觉还是go的这种设计好用，它会强迫开发者区别对待错误和异常，并做出不同的处理。相比try{}catch，我在开发中经常看到开发者把大段大段的代码或者整个处理写到try{}中，这本身就是对try{}catch的乱用</div>2019-04-23</li><br/><li><span>名:海东</span> 👍（4） 💬（3）<div>&#47;&#47;测试场景1
+<li><span>wesleydeng</span> 👍（95） 💬（9）<p>从语言设计上，不使用try-catch而是用defer-recover有什么优势？c++和java作为先驱都使用try-catch，也比较清晰，为什么go作为新语言却要发明一个这样的新语法？有何设计上的考量？</p>2019-04-09</li><br/><li><span>凌惜沫</span> 👍（23） 💬（3）<p>如果defer中引发panic，那么在该段defer函数之前，需要另外一个defer来捕获该panic，并且代码中最后一个panic会被抛弃，由defer中的panic来成为最后的异常返回。</p>2019-04-22</li><br/><li><span>小龙虾</span> 👍（17） 💬（2）<p>我感觉还是go的这种设计好用，它会强迫开发者区别对待错误和异常，并做出不同的处理。相比try{}catch，我在开发中经常看到开发者把大段大段的代码或者整个处理写到try{}中，这本身就是对try{}catch的乱用</p>2019-04-23</li><br/><li><span>名:海东</span> 👍（4） 💬（3）<p>&#47;&#47;测试场景1
 func Test()  {
 	defer func() {
 		if errRecover := recover(); errRecover != nil {
@@ -242,7 +242,7 @@ no recover2...
 		}
 		fmt.Println(&quot;no recover2...&quot;)
 	}()中被recover。
-场景2使用defer test01 的写法后就可以被recover。</div>2020-07-08</li><br/><li><span>疯琴</span> 👍（4） 💬（1）<div>试验了一下在 goroutine 里面 panic，其他的 goroutine（比如main）是 recover()不到的：
+场景2使用defer test01 的写法后就可以被recover。</p>2020-07-08</li><br/><li><span>疯琴</span> 👍（4） 💬（1）<p>试验了一下在 goroutine 里面 panic，其他的 goroutine（比如main）是 recover()不到的：
 
 func main() {
 	fmt.Println(&quot;start&quot;)
@@ -261,7 +261,7 @@ func main() {
 
 	}()
 	wg.Wait()
-}</div>2019-12-07</li><br/><li><span>Zz~</span> 👍（3） 💬（2）<div>老师，您好，我想问一下，如果在main函数里调用一个我自定义的panic方法，recover可以恢复；但是如果我将自定义的panic方法改为go mypanic这样，recover就不能恢复。这是什么原因呢？下面是我实验的代码
+}</p>2019-12-07</li><br/><li><span>Zz~</span> 👍（3） 💬（2）<p>老师，您好，我想问一下，如果在main函数里调用一个我自定义的panic方法，recover可以恢复；但是如果我将自定义的panic方法改为go mypanic这样，recover就不能恢复。这是什么原因呢？下面是我实验的代码
 
 
 ==============可以恢复的==============
@@ -312,14 +312,14 @@ func main() {
 	go myPanic()
 	time.Sleep(time.Second * 5)
 }
-</div>2021-01-02</li><br/><li><span>翼江亭赋</span> 👍（3） 💬（3）<div>iava世界里曾经try catch满天飞，现在还能看到不少这种代码，但逐渐大家认同了在去掉这种代码。
+</p>2021-01-02</li><br/><li><span>翼江亭赋</span> 👍（3） 💬（3）<p>iava世界里曾经try catch满天飞，现在还能看到不少这种代码，但逐渐大家认同了在去掉这种代码。
 
 因为大部分catch住异常以后只是打个log再重新throw，这个交给框架代码在最外层catch住以后统一处理即可。非框架代码极少需要处理异常。
 
 go世界里，err guard满天飞，但大部分的处理也是层层上传。但做不到不用，因为不像try那样去掉catch后会自动往上传递，不检查err的话就丢失了，所以这种代码去不掉。只能继续满天飞。
 
-底层实现其实都是setjmp，主要的区别之一我认为是go设计者认为java异常的性能代价大。</div>2019-10-31</li><br/><li><span>来碗绿豆汤</span> 👍（3） 💬（1）<div>可以 defer 有点类似java中的final语句，里面还可以抛出异常。这样的好处是，我们捕获panic之后，可以对起内容进行查看，如果不是我们关注的panic那么可以继续抛出去</div>2018-10-01</li><br/><li><span>honnkyou</span> 👍（2） 💬（2）<div>「延迟到什么时候呢？这要延迟到该语句所在的函数即将执行结束的那一刻，无论结束执行的原因是什么。」
-以该节课中代码为例的话是要吃到main函数快结束时执行是吗？执行defer函数。</div>2019-05-14</li><br/><li><span>有匪君子</span> 👍（2） 💬（1）<div>这个问题就引发了另一个问题。defer可以在同一个函数中嵌套使用吗？感觉这两个问题答案应该一致</div>2018-10-01</li><br/><li><span>张sir</span> 👍（1） 💬（1）<div>您好，请问defer函数压𣏾的时候，为什么把当时的入参也放入𣏾中呢
+底层实现其实都是setjmp，主要的区别之一我认为是go设计者认为java异常的性能代价大。</p>2019-10-31</li><br/><li><span>来碗绿豆汤</span> 👍（3） 💬（1）<p>可以 defer 有点类似java中的final语句，里面还可以抛出异常。这样的好处是，我们捕获panic之后，可以对起内容进行查看，如果不是我们关注的panic那么可以继续抛出去</p>2018-10-01</li><br/><li><span>honnkyou</span> 👍（2） 💬（2）<p>「延迟到什么时候呢？这要延迟到该语句所在的函数即将执行结束的那一刻，无论结束执行的原因是什么。」
+以该节课中代码为例的话是要吃到main函数快结束时执行是吗？执行defer函数。</p>2019-05-14</li><br/><li><span>有匪君子</span> 👍（2） 💬（1）<p>这个问题就引发了另一个问题。defer可以在同一个函数中嵌套使用吗？感觉这两个问题答案应该一致</p>2018-10-01</li><br/><li><span>张sir</span> 👍（1） 💬（1）<p>您好，请问defer函数压𣏾的时候，为什么把当时的入参也放入𣏾中呢
 ```
 func test() {
 	var a, b = 1, 1
@@ -334,8 +334,8 @@ func test() {
 
 ```
 
-这个输出的２不是４的理论论据是什么呢</div>2020-03-12</li><br/><li><span>Pana</span> 👍（1） 💬（1）<div>在defer 中 recover 了panic ，是否还能让函数返回错误呢</div>2020-03-05</li><br/><li><span>大雄</span> 👍（0） 💬（1）<div>是否可以理解，我们一般自己返回的error都是可以预见的业务异常（例如：手机号码格式不正确等），可以灵活判断。
-panic则是意料外的，但不需要终止进程，所以需要要recover恢复</div>2022-10-14</li><br/><li><span>jxs1211</span> 👍（0） 💬（2）<div>如果	s5 := s1[5]引发panic，可以在函数退出前通过defer语句中recover捕获并处理，哪是否有办法让函数继续执行完引发panic时后面哪些代码，像其他语言用try catch一样，能继续向下执行完整个函数的代码，还是说go的设计并不是如此，一定要在引发异常处立即返回
+这个输出的２不是４的理论论据是什么呢</p>2020-03-12</li><br/><li><span>Pana</span> 👍（1） 💬（1）<p>在defer 中 recover 了panic ，是否还能让函数返回错误呢</p>2020-03-05</li><br/><li><span>大雄</span> 👍（0） 💬（1）<p>是否可以理解，我们一般自己返回的error都是可以预见的业务异常（例如：手机号码格式不正确等），可以灵活判断。
+panic则是意料外的，但不需要终止进程，所以需要要recover恢复</p>2022-10-14</li><br/><li><span>jxs1211</span> 👍（0） 💬（2）<p>如果	s5 := s1[5]引发panic，可以在函数退出前通过defer语句中recover捕获并处理，哪是否有办法让函数继续执行完引发panic时后面哪些代码，像其他语言用try catch一样，能继续向下执行完整个函数的代码，还是说go的设计并不是如此，一定要在引发异常处立即返回
 func caller2() (err error) {
 	defer func() {
 		p := recover()
@@ -349,5 +349,5 @@ func caller2() (err error) {
 	_ = s5
 	fmt.Println(&quot;Exit function caller2.&quot;)
 	return err
-}</div>2021-12-15</li><br/><li><span>爱学习的好孩子</span> 👍（0） 💬（1）<div>看不懂，defer函数和defer语句是什么关系？</div>2021-11-06</li><br/>
+}</p>2021-12-15</li><br/><li><span>爱学习的好孩子</span> 👍（0） 💬（1）<p>看不懂，defer函数和defer语句是什么关系？</p>2021-11-06</li><br/>
 </ul>

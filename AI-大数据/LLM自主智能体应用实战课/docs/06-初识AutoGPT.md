@@ -296,7 +296,7 @@ AutoGPT 新版本的 B/S 架构设计有何优缺点？
 
 期待你的分享。如果今天的内容对你有所帮助，也期待你转发给你的同事或者朋友，大家一起学习，共同进步。我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>糍粑不是饭</span> 👍（1） 💬（1）<div>老师，您好。我对您的脚本顺序进行了调整。可以跑通了：
+<li><span>糍粑不是饭</span> 👍（1） 💬（1）<p>老师，您好。我对您的脚本顺序进行了调整。可以跑通了：
 
 
 brew install supabase&#47;tap&#47;supabase
@@ -315,7 +315,7 @@ poetry run prisma migrate dev --schema schema.prisma
 
 # 最后执行这行 脚本
 cp ..&#47;supabase&#47;supabase&#47;seed.sql supabase&#47;
-sudo supabase start</div>2025-02-19</li><br/><li><span>糍粑不是饭</span> 👍（1） 💬（1）<div>我跑通了，但感觉还是用docker方便些。 跑一下简单demo的话，这个过程有点漫长。 </div>2025-02-07</li><br/><li><span>晓波</span> 👍（0） 💬（1）<div>### apt 采用默认源安装 docker 和 docker-compose【不推荐】
+sudo supabase start</p>2025-02-19</li><br/><li><span>糍粑不是饭</span> 👍（1） 💬（1）<p>我跑通了，但感觉还是用docker方便些。 跑一下简单demo的话，这个过程有点漫长。 </p>2025-02-07</li><br/><li><span>晓波</span> 👍（0） 💬（1）<p>### apt 采用默认源安装 docker 和 docker-compose【不推荐】
 
 # 更新安装源
 sudo apt update
@@ -366,9 +366,9 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 # 将当前用户加入到docker，使得当前环境可以使用docker服务
-sudo usermod -aG docker $USER</div>2025-02-20</li><br/><li><span>糍粑不是饭</span> 👍（0） 💬（2）<div>failed to send batch: ERROR: relation &quot;meetups&quot; does not exist (SQLSTATE 42P01)
+sudo usermod -aG docker $USER</p>2025-02-20</li><br/><li><span>糍粑不是饭</span> 👍（0） 💬（2）<p>failed to send batch: ERROR: relation &quot;meetups&quot; does not exist (SQLSTATE 42P01)
 ------------------------------------
-请问老师, meetups 表是在哪一步生成的呢? 我看看可以不可以自己创建一下</div>2025-02-19</li><br/><li><span>糍粑不是饭</span> 👍（0） 💬（1）<div>老师您好，有个小错误， 安装brew的脚本中右括号是中文字符，直接复制不行。我复制后一直报错：
+请问老师, meetups 表是在哪一步生成的呢? 我看看可以不可以自己创建一下</p>2025-02-19</li><br/><li><span>糍粑不是饭</span> 👍（0） 💬（1）<p>老师您好，有个小错误， 安装brew的脚本中右括号是中文字符，直接复制不行。我复制后一直报错：
 ```shell
 -bash: &#47;home&#47;an&#47;.profile: line 28: unexpected EOF while looking for matching `&quot;&#39;
 ```
@@ -381,12 +381,12 @@ echo &#39;eval &quot;$(&#47;home&#47;linuxbrew&#47;.linuxbrew&#47;bin&#47;brew s
 ```
 echo &#39;eval &quot;$(&#47;home&#47;linuxbrew&#47;.linuxbrew&#47;bin&#47;brew shellenv)&quot;&#39; &gt;&gt; ~&#47;.profile 
 ```
-后好了。</div>2025-02-18</li><br/><li><span>天敌</span> 👍（0） 💬（2）<div>老师，注册(signup)的时候显示
+后好了。</p>2025-02-18</li><br/><li><span>天敌</span> 👍（0） 💬（2）<p>老师，注册(signup)的时候显示
 The provided email may not be allowed to sign up.
 - AutoGPT Platform is currently in closed beta. You can jointhe waitlist here.
 - Make sure you use the same email address you used to sign up for the waitlist.
 - You can self host the platform, visit ourGitHub repository.
-</div>2025-02-06</li><br/><li><span>小叶</span> 👍（0） 💬（6）<div>执行sudo supabase start --debug 启动失败，抛异常，不存在meetup表。我看seed.sql 脚步里确实只有insert into meetups 语句，没有建表语句。这个需要怎么处理呢，大家有遇到吗？错误日志如下：
+</p>2025-02-06</li><br/><li><span>小叶</span> 👍（0） 💬（6）<p>执行sudo supabase start --debug 启动失败，抛异常，不存在meetup表。我看seed.sql 脚步里确实只有insert into meetups 语句，没有建表语句。这个需要怎么处理呢，大家有遇到吗？错误日志如下：
 2025&#47;01&#47;23 17:54:05 PG Send: {&quot;Type&quot;:&quot;Parse&quot;,&quot;Name&quot;:&quot;lrupsc_1_3&quot;,&quot;Query&quot;:&quot;insert into meetups\n  (title, country, launch_week, start_at, is_published)\nvalues\n  (&#39;New York&#39;, &#39;USA&#39;, &#39;lw12&#39;, now(), true),\n  (&#39;London&#39;, &#39;UK&#39;, &#39;lw12&#39;, now(), true),\n  (&#39;Singapore&#39;, &#39;Singapore&#39;, &#39;lw12&#39;, now(), true)&quot;,&quot;ParameterOIDs&quot;:null}
 2025&#47;01&#47;23 17:54:05 PG Send: {&quot;Type&quot;:&quot;Describe&quot;,&quot;ObjectType&quot;:&quot;S&quot;,&quot;Name&quot;:&quot;lrupsc_1_3&quot;}
 2025&#47;01&#47;23 17:54:05 PG Send: {&quot;Type&quot;:&quot;Sync&quot;}
@@ -399,7 +399,7 @@ Pruned volumes: [supabase_db_backend supabase_config_backend]
 Pruned network: [supabase_network_backend]
 failed to send batch: ERROR: relation &quot;meetups&quot; does not exist (SQLSTATE 42P01)
 
-</div>2025-01-23</li><br/><li><span>AI助手</span> 👍（0） 💬（1）<div>老师，部署到最后一步不成功，要怎么解决呢
+</p>2025-01-23</li><br/><li><span>AI助手</span> 👍（0） 💬（1）<p>老师，部署到最后一步不成功，要怎么解决呢
 poetry run app
 2025-01-16 18:56:52,926 INFO  Scheduler started
 2025-01-16 18:56:52,929 INFO  [PID-3457667|THREAD-3458081|ExecutionManager|Pyro-2c9fdd09-0f3f-45c4-9c64-281bc88f730d] Starting Pyro Service started...
@@ -420,5 +420,5 @@ ERROR:    Traceback (most recent call last):
     async with original_context(app) as maybe_original_state:
   File &quot;&#47;root&#47;miniconda3&#47;lib&#47;python3.10&#47;contextlib.py&quot;, line 199, in __aenter__
     return await anext(self.gen)
-</div>2025-01-16</li><br/><li><span>术子米德</span> 👍（0） 💬（1）<div>做成可分享的docker镜像</div>2025-01-16</li><br/>
+</p>2025-01-16</li><br/><li><span>术子米德</span> 👍（0） 💬（1）<p>做成可分享的docker镜像</p>2025-01-16</li><br/>
 </ul>

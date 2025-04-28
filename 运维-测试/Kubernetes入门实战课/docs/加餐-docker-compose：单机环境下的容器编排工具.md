@@ -293,11 +293,11 @@ docker-compose -f wp-compose.yml exec -it nginx sh
 
 ![图片](https://static001.geekbang.org/resource/image/24/47/2477f804c387b66d1f6188a2d7530947.jpg?wh=1920x2225)
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Bachue Zhou</span> 👍（4） 💬（1）<div>相比于 kubernetes，docker-compose 不就是大道至简吗？</div>2022-11-18</li><br/><li><span>onemao</span> 👍（4） 💬（1）<div>docker compose对开发来说最大的作用就是本地快速拥有数据库，消息中间件等等，无需单独安装，随时用随时删除。而且只要写好文件放到repo,idea中点一下可以一键运行和初始化，也极大方便本地开发与本地集成测试。</div>2022-08-26</li><br/><li><span>青储</span> 👍（4） 💬（1）<div>这个可以用在小型公司生产线上吗？</div>2022-08-15</li><br/><li><span>奕</span> 👍（2） 💬（1）<div>docker-compose 的默认配置文件名称为： docker-compose.yml
+<li><span>Bachue Zhou</span> 👍（4） 💬（1）<p>相比于 kubernetes，docker-compose 不就是大道至简吗？</p>2022-11-18</li><br/><li><span>onemao</span> 👍（4） 💬（1）<p>docker compose对开发来说最大的作用就是本地快速拥有数据库，消息中间件等等，无需单独安装，随时用随时删除。而且只要写好文件放到repo,idea中点一下可以一键运行和初始化，也极大方便本地开发与本地集成测试。</p>2022-08-26</li><br/><li><span>青储</span> 👍（4） 💬（1）<p>这个可以用在小型公司生产线上吗？</p>2022-08-15</li><br/><li><span>奕</span> 👍（2） 💬（1）<p>docker-compose 的默认配置文件名称为： docker-compose.yml
  -f, --file FILE             Specify an alternate compose file
                               (default: docker-compose.yml)
 
-2. </div>2022-08-18</li><br/><li><span>peter</span> 👍（2） 💬（1）<div>请教老师几个问题：
+2. </p>2022-08-18</li><br/><li><span>peter</span> 👍（2） 💬（1）<p>请教老师几个问题：
 Q1：docker-compose只能用在单机环境，不能用在集群吗？
 Q2：文中创建的第一个docker是干什么用的？
 文中用了这个命令“docker run -d -p 5000:5000 registry”，请问创建这个有什么用？
@@ -307,12 +307,12 @@ Q3：需要先搭建一个本地registry吗？
 执行“docker push 127.0.0.1:5000&#47;nginx:v1”后报错：
 The push refers to repository [127.0.0.1:5000&#47;nginx]
 Get &quot;http:&#47;&#47;127.0.0.1:5000&#47;v2&#47;&quot;: dial tcp 127.0.0.1:5000: connect: connection refused
-突然感觉Q2中创建的应用就是本地registry，对吗？</div>2022-08-16</li><br/><li><span>Max</span> 👍（1） 💬（2）<div>docker-compose转写成k8s yaml有什么建议吗？
-尝试使用了kompose convert工具，发现还是有很多配置无法覆盖到，比如env的引入方式就不一样。</div>2023-03-08</li><br/><li><span>Demon.Lee</span> 👍（1） 💬（1）<div>原来 docker-compose 从 v1.27 版本开始将 version 字段给“干掉”了，再也不用理会 version: &quot;3&quot;，version: &quot;3.9&quot;，version: &quot;2&quot; 了 😂 。
+突然感觉Q2中创建的应用就是本地registry，对吗？</p>2022-08-16</li><br/><li><span>Max</span> 👍（1） 💬（2）<p>docker-compose转写成k8s yaml有什么建议吗？
+尝试使用了kompose convert工具，发现还是有很多配置无法覆盖到，比如env的引入方式就不一样。</p>2023-03-08</li><br/><li><span>Demon.Lee</span> 👍（1） 💬（1）<p>原来 docker-compose 从 v1.27 版本开始将 version 字段给“干掉”了，再也不用理会 version: &quot;3&quot;，version: &quot;3.9&quot;，version: &quot;2&quot; 了 😂 。
 
-为啥我之前没觉得这玩意有点反人类呢？嗯，缺少批判性思维。</div>2022-12-01</li><br/><li><span>YueShi</span> 👍（1） 💬（1）<div>apt install docker-compose 
+为啥我之前没觉得这玩意有点反人类呢？嗯，缺少批判性思维。</p>2022-12-01</li><br/><li><span>YueShi</span> 👍（1） 💬（1）<p>apt install docker-compose 
 为docker-compose version 1.29.2, build unknown
-不是最新版的</div>2022-08-15</li><br/><li><span>Sports</span> 👍（1） 💬（2）<div>如果安装成docker compose plugin的形式，即没有中间的横线，harbor安装会有问题，因为检测不到docke-compose😂</div>2022-08-15</li><br/><li><span>党</span> 👍（0） 💬（1）<div>我说怎么安装docker-compose教程差异那么大 有的要下载python 有的直接下来个可执行文件 </div>2024-03-10</li><br/><li><span>William</span> 👍（0） 💬（1）<div>mac笔记本... 好久前安装的, Docker Desktop 直接内部带了docker compose , 适用命令,  没有中划线-
+不是最新版的</p>2022-08-15</li><br/><li><span>Sports</span> 👍（1） 💬（2）<p>如果安装成docker compose plugin的形式，即没有中间的横线，harbor安装会有问题，因为检测不到docke-compose😂</p>2022-08-15</li><br/><li><span>党</span> 👍（0） 💬（1）<p>我说怎么安装docker-compose教程差异那么大 有的要下载python 有的直接下来个可执行文件 </p>2024-03-10</li><br/><li><span>William</span> 👍（0） 💬（1）<p>mac笔记本... 好久前安装的, Docker Desktop 直接内部带了docker compose , 适用命令,  没有中划线-
 
 --停止
 docker compose -f docker-compose-wp.yml down
@@ -320,7 +320,7 @@ docker compose -f docker-compose-wp.yml down
 docker compose -f docker-compose-wp.yml up -d 
 
 -- 进入到容器内
-docker compose -f docker-compose-wp.yml exec nginx sh</div>2024-01-09</li><br/><li><span>黄涵宇看起来很好吃</span> 👍（0） 💬（1）<div>docker-compose -f docker-compose.yml exec -it 无法生效
+docker compose -f docker-compose-wp.yml exec nginx sh</p>2024-01-09</li><br/><li><span>黄涵宇看起来很好吃</span> 👍（0） 💬（1）<p>docker-compose -f docker-compose.yml exec -it 无法生效
 docker exec -it 可以生效
-原因可能是什么</div>2023-03-28</li><br/>
+原因可能是什么</p>2023-03-28</li><br/>
 </ul>

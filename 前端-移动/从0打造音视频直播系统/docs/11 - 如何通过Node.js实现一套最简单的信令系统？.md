@@ -343,9 +343,9 @@ node server.js
 
 [所做Demo的GitHub链接（有需要可以点这里）](https://github.com/avdance/webrtc_web/tree/master/11_signal)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>花果山の酸梅汤</span> 👍（7） 💬（1）<div>client代码运行于浏览器渲染引擎中的V8引擎，server代码运行于Node.js的JS运行时的V8引擎部分。一个面向渲染一个面向提供后台服务。</div>2019-09-10</li><br/><li><span>天天</span> 👍（2） 💬（1）<div>老师，您在介绍node. js的Reactor模式时和我以往理解的有点出入。您说道有个线程池的概念，我的理解应该是没有的喔(虽然我们可以使用worker来创建）还请提点一下我呦，推我篇文章也行😁谢谢啦</div>2019-12-11</li><br/><li><span>jike</span> 👍（2） 💬（2）<div>不懂 node 的小白
+<li><span>花果山の酸梅汤</span> 👍（7） 💬（1）<p>client代码运行于浏览器渲染引擎中的V8引擎，server代码运行于Node.js的JS运行时的V8引擎部分。一个面向渲染一个面向提供后台服务。</p>2019-09-10</li><br/><li><span>天天</span> 👍（2） 💬（1）<p>老师，您在介绍node. js的Reactor模式时和我以往理解的有点出入。您说道有个线程池的概念，我的理解应该是没有的喔(虽然我们可以使用worker来创建）还请提点一下我呦，推我篇文章也行😁谢谢啦</p>2019-12-11</li><br/><li><span>jike</span> 👍（2） 💬（2）<p>不懂 node 的小白
 客户端运行报错 404  http:&#47;&#47;127.0.0.1:8000&#47;socket.io&#47;?EIO=3&amp;transport=polling&amp;t=MvPeDk4；
-服务端运行没有任何输出 浏览器也访问不了</div>2019-11-11</li><br/><li><span>Ethan</span> 👍（2） 💬（1）<div>客户端一定要引入socket. io吗？可以直接用 websocket api吗</div>2019-08-09</li><br/><li><span>人生在事</span> 👍（1） 💬（3）<div>李老师，文章实例里客户端都没有指明连哪个端口，服务端怎么监听的啊？</div>2020-11-04</li><br/><li><span>宇宙之王</span> 👍（1） 💬（1）<div>老师好，有个问题不明白，socket = io.connect(); 没指定端口也能连接通吗？第一次接触node，废了半天劲，这章源码和课程不太一致，运行不了，安装各种node模块又把server.js 做了如下修改 暂时去掉了https和log4j，已部署到服务器测试，大家有调不通的先试试这个，有问题互相多沟通
+服务端运行没有任何输出 浏览器也访问不了</p>2019-11-11</li><br/><li><span>Ethan</span> 👍（2） 💬（1）<p>客户端一定要引入socket. io吗？可以直接用 websocket api吗</p>2019-08-09</li><br/><li><span>人生在事</span> 👍（1） 💬（3）<p>李老师，文章实例里客户端都没有指明连哪个端口，服务端怎么监听的啊？</p>2020-11-04</li><br/><li><span>宇宙之王</span> 👍（1） 💬（1）<p>老师好，有个问题不明白，socket = io.connect(); 没指定端口也能连接通吗？第一次接触node，废了半天劲，这章源码和课程不太一致，运行不了，安装各种node模块又把server.js 做了如下修改 暂时去掉了https和log4j，已部署到服务器测试，大家有调不通的先试试这个，有问题互相多沟通
 &#39;use strict&#39;
 
 var http = require(&#39;http&#39;);
@@ -409,14 +409,14 @@ http_server.listen(8080, &#39;0.0.0.0&#39;);
 
 
 
-</div>2020-09-14</li><br/><li><span>like_wind</span> 👍（1） 💬（1）<div>没太理解老师说的这个房间的概念，文中提到的“房间概念”是指客户端和服务端的一个连接就是一个房间吗？还是说这个房间指的是业务上的某一个房间，比如说某直播平台的一个直播间?</div>2020-03-23</li><br/><li><span>dahaowenge</span> 👍（1） 💬（3）<div>node serves.js     Error: ENOENT: no such file or directory, open &#39;.&#47;cert&#47;1557605_www.learningrtc.cn.key&#39;</div>2019-10-10</li><br/><li><span>Jason</span> 👍（1） 💬（1）<div>老师好，问一下， 这套简单的信令系统，已经实现了交换各端sdp信息的功能了吗？</div>2019-08-27</li><br/><li><span>许童童</span> 👍（1） 💬（1）<div>两个不同的 V8 引擎上，你知道它们的对应关系吗
-一个是nodejs服务端的V8，一个是浏览器中客户端的V8。</div>2019-08-08</li><br/><li><span>人生在事</span> 👍（0） 💬（1）<div>&lt;script src=&#39;&#47;socket.io&#47;socket.io.js&#39;&gt;&lt;&#47;script&gt;这段代码没看到，李老师。第一次接触nodejs和socket.io.js，不太明白，希望指导一下
-</div>2020-11-04</li><br/><li><span>SherwinFeng</span> 👍（0） 💬（2）<div>老师，我运行了github上的demo，遇到了一个问题：
+</p>2020-09-14</li><br/><li><span>like_wind</span> 👍（1） 💬（1）<p>没太理解老师说的这个房间的概念，文中提到的“房间概念”是指客户端和服务端的一个连接就是一个房间吗？还是说这个房间指的是业务上的某一个房间，比如说某直播平台的一个直播间?</p>2020-03-23</li><br/><li><span>dahaowenge</span> 👍（1） 💬（3）<p>node serves.js     Error: ENOENT: no such file or directory, open &#39;.&#47;cert&#47;1557605_www.learningrtc.cn.key&#39;</p>2019-10-10</li><br/><li><span>Jason</span> 👍（1） 💬（1）<p>老师好，问一下， 这套简单的信令系统，已经实现了交换各端sdp信息的功能了吗？</p>2019-08-27</li><br/><li><span>许童童</span> 👍（1） 💬（1）<p>两个不同的 V8 引擎上，你知道它们的对应关系吗
+一个是nodejs服务端的V8，一个是浏览器中客户端的V8。</p>2019-08-08</li><br/><li><span>人生在事</span> 👍（0） 💬（1）<p>&lt;script src=&#39;&#47;socket.io&#47;socket.io.js&#39;&gt;&lt;&#47;script&gt;这段代码没看到，李老师。第一次接触nodejs和socket.io.js，不太明白，希望指导一下
+</p>2020-11-04</li><br/><li><span>SherwinFeng</span> 👍（0） 💬（2）<p>老师，我运行了github上的demo，遇到了一个问题：
 client端不能显示发送出去的消息
 已尝试的排查：
 ①查看了日志发现client发送的消息服务器端已经接收到了，并且显示了消息内容（这里自己修改了demo中的debug信息，以便记录消息内容，原demo只能显示data.type）
 ②F12调试时发现client.js中的监听“message”事件没有执行
-这是什么原因造成呢？</div>2020-01-16</li><br/><li><span>Geek_r2sfwe</span> 👍（0） 💬（2）<div>老师你好，我下载了您的代码，更改了cert，但是报了一个错误，我不知道怎么解决
+这是什么原因造成呢？</p>2020-01-16</li><br/><li><span>Geek_r2sfwe</span> 👍（0） 💬（2）<p>老师你好，我下载了您的代码，更改了cert，但是报了一个错误，我不知道怎么解决
  node server.js 
 &#47;root&#47;node_modules&#47;streamroller&#47;lib&#47;RollingFileWriteStream.js:133
   async _shouldRoll() {
@@ -434,5 +434,5 @@ SyntaxError: Unexpected identifier
     at require (internal&#47;module.js:20:19)
     at Object.&lt;anonymous&gt; (&#47;root&#47;node_modules&#47;streamroller&#47;lib&#47;index.js:2:27)
 
-是我的环境有问题么</div>2019-11-21</li><br/><li><span>而立斋</span> 👍（0） 💬（2）<div>跑起来报啦个错误，页面显示Cannot GET </div>2019-11-04</li><br/><li><span>dahaowenge</span> 👍（0） 💬（1）<div>老师，用的是官方demo，但是运行node server.js时，报错  Error: Cannot find module &#39;log4js&#39;</div>2019-10-10</li><br/>
+是我的环境有问题么</p>2019-11-21</li><br/><li><span>而立斋</span> 👍（0） 💬（2）<p>跑起来报啦个错误，页面显示Cannot GET </p>2019-11-04</li><br/><li><span>dahaowenge</span> 👍（0） 💬（1）<p>老师，用的是官方demo，但是运行node server.js时，报错  Error: Cannot find module &#39;log4js&#39;</p>2019-10-10</li><br/>
 </ul>

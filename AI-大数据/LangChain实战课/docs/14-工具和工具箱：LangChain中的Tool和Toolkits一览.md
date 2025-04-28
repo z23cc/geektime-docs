@@ -384,8 +384,8 @@ print(result) 
 3. 文档：Google Cloud [API](https://cloud.google.com/compute/docs/apis?hl=zh-cn)
 4. 文档：Github REST [API](https://support.github.com/features/rest-api)
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>Geek_995b81</span> 👍（3） 💬（1）<div>老师好，那我们可以自定义工具吗？比如某个实际场景，我需要调用到某个内部系统的API，通过API返回的信息我再做提取，然后将提取到的信息重新给LLM推理</div>2023-10-31</li><br/><li><span>抽象派</span> 👍（2） 💬（1）<div>老师，文中“甚至尝试让大模型自动回答 Issues 中的问题——反正大模型解决代码问题的能力本来就更强。”是怎样实现让大模型理解项目系统代码的？例如：一个web项目，我给出一个接口，大模型能从给定的接口出发自顶向下，分析出每一层的调用关系和依赖关系。</div>2023-10-10</li><br/><li><span>阿斯蒂芬</span> 👍（2） 💬（1）<div>怎么理解Tool和Toolkits 的异同呢？</div>2023-10-09</li><br/><li><span>liyinda0000</span> 👍（0） 💬（2）<div>老师，你有遇到过这个问题吗？
-不使用openai封装agent，使用的是私有模型比如qwen-1.8b时封装的agent不能调用tools，不知道什么原因？</div>2024-05-11</li><br/><li><span>enbool</span> 👍（0） 💬（1）<div>老师，怎么进群啊？</div>2023-10-10</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>不使用openai封装agent，使用的是私有模型比如qwen-1.8b时封装的agent是可以很好调用tools。
+<li><span>Geek_995b81</span> 👍（3） 💬（1）<p>老师好，那我们可以自定义工具吗？比如某个实际场景，我需要调用到某个内部系统的API，通过API返回的信息我再做提取，然后将提取到的信息重新给LLM推理</p>2023-10-31</li><br/><li><span>抽象派</span> 👍（2） 💬（1）<p>老师，文中“甚至尝试让大模型自动回答 Issues 中的问题——反正大模型解决代码问题的能力本来就更强。”是怎样实现让大模型理解项目系统代码的？例如：一个web项目，我给出一个接口，大模型能从给定的接口出发自顶向下，分析出每一层的调用关系和依赖关系。</p>2023-10-10</li><br/><li><span>阿斯蒂芬</span> 👍（2） 💬（1）<p>怎么理解Tool和Toolkits 的异同呢？</p>2023-10-09</li><br/><li><span>liyinda0000</span> 👍（0） 💬（2）<p>老师，你有遇到过这个问题吗？
+不使用openai封装agent，使用的是私有模型比如qwen-1.8b时封装的agent不能调用tools，不知道什么原因？</p>2024-05-11</li><br/><li><span>enbool</span> 👍（0） 💬（1）<p>老师，怎么进群啊？</p>2023-10-10</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>不使用openai封装agent，使用的是私有模型比如qwen-1.8b时封装的agent是可以很好调用tools。
 将“使用 arXiv 工具开发科研助理”到代码修改、输出如下：
 
 旧代码：
@@ -411,8 +411,8 @@ Title: Language Models are Few-Shot Learners
 Authors: （略）
 Thought: 我现在可以作答了。
 Final Answer: 2005年发表的一项研究《语言模型是少样本学习者》对语言模型进行了创新性的研究。研究发现，通过预训练在大量文本数据上进行，以及针对特定任务进行微调的方 法，这些方法通常具有跨任务通用性，但在架构上仍然需要特定的任务强化学习数据集。相比之下，人类可以从少量或简单的指示中完成新的语言任务，而目前的自然语言处理系统在 这方面仍做得不好。研究人员展示了，在少样本情况下，可以极大地提高任务通用性和少样本性能，并有时甚至可以达到与先前的细粒度微调方法相当的竞争力。具体来说，他们训练 了GPT-3，这是一款拥有175亿参数、比以前任何非稀疏语言模型都要多的自注意力语言模型，然后测试其在少数样本设置下的表现。在所有任务上，GPT-3都无需梯度更新或微调即可应用，而是在文本交互的情况下对模型进行指定的任务和少数样本演示。GPT-3在许多NLP任务（包括翻译、问答、缺失填入等）中表现出色，还包括一些需要实时推理或领域适应的任务 ，如解开单词、将一个新词放入句子中或执行三进制算术。同时，研究人员还识别了一些大型Web语料库上的任务，其中GPT-3的少数样本学习仍然存在挑战，以及一些任务中的方法问 题，这些问题与在大型Web语料库上训练算法有关。最后，研究人员发现GPT-3可以在人工评估者难以区分的人类文章中生成样本来。他们讨论了这项发现及其广泛的社会影响，以及GPT-3的一般性影响。
-&gt; Finished chain. </div>2024-08-10</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第14讲打卡~
-通过合理地编排多种Tools，一个多功能的智能助手就出来了~</div>2024-07-17</li><br/><li><span>rs勿忘初心</span> 👍（0） 💬（0）<div>比较好奇自然语言-&gt;参数抽取是哪个环节做的？如果的业务自己开发的API，涉及的参数较多（比如4-5个），能很好的处理么？</div>2024-07-02</li><br/><li><span>左可</span> 👍（0） 💬（0）<div>(this Thought&#47;Action&#47;Action Input&#47;Observation can repeat N times)\n——老师，这个可以让模型自主决定回溯多少次，如果稍微复杂的问题，是否有可能模型找不到最终答案？这种情况是如何跳出的？使用者是如何控制这个异常场景处理的？</div>2024-03-21</li><br/><li><span>Longerian</span> 👍（0） 💬（2）<div>I should search for the paper with the identifier &quot;2005.14165&quot; on arxiv to find out its innovative points.
+&gt; Finished chain. </p>2024-08-10</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第14讲打卡~
+通过合理地编排多种Tools，一个多功能的智能助手就出来了~</p>2024-07-17</li><br/><li><span>rs勿忘初心</span> 👍（0） 💬（0）<p>比较好奇自然语言-&gt;参数抽取是哪个环节做的？如果的业务自己开发的API，涉及的参数较多（比如4-5个），能很好的处理么？</p>2024-07-02</li><br/><li><span>左可</span> 👍（0） 💬（0）<p>(this Thought&#47;Action&#47;Action Input&#47;Observation can repeat N times)\n——老师，这个可以让模型自主决定回溯多少次，如果稍微复杂的问题，是否有可能模型找不到最终答案？这种情况是如何跳出的？使用者是如何控制这个异常场景处理的？</p>2024-03-21</li><br/><li><span>Longerian</span> 👍（0） 💬（2）<p>I should search for the paper with the identifier &quot;2005.14165&quot; on arxiv to find out its innovative points.
 Action: arxiv
 Action Input: 2005.14165
 Observation: Published: 2020-07-22
@@ -423,5 +423,5 @@ benchmarks by pre-training on a large corpus of text followed by fine-tuning on
 a specific task. While typically task-agnostic in architecture, this method
 still requires task-specific fine-tuning datasets of thousands or tens 
 
-为何我执行了搜到的论文和文中的不一样，开始胡说八道了。</div>2024-03-14</li><br/>
+为何我执行了搜到的论文和文中的不一样，开始胡说八道了。</p>2024-03-14</li><br/>
 </ul>

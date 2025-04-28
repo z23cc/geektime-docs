@@ -269,5 +269,5 @@ SELECT phone FROM address_book WHERE name = "Tom"
 
 欢迎把你的想法和思考写在留言区，我们一起交流讨论。如果这节课在数据保存上帮你提高了办公效率，那也欢迎你把课程分享给你的朋友或同事，我们一起做职场上的效率人。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Soul of the Dragon</span> 👍（2） 💬（1）<div>思考题：使用fetchone()函数将返回第一条查询结果，使用fetchmany()函数返回多条查询结果，使用fetchall()函数返回所有查询结果。</div>2021-04-02</li><br/><li><span>FILWY</span> 👍（0） 💬（1）<div>老师，excel的分类汇总功能有办法通过python实现吗，找了好久都没找到，网上找到的都是分类汇总到一张新的表，跟原生excel操作分类汇总产生的结果不一样</div>2021-03-30</li><br/><li><span>David</span> 👍（1） 💬（0）<div>干货满满！连SQL语句也讲到了，也让我明白了想提升IT技能是必须要打牢基础，再学东西才会融会贯通。期待老师的python训练营。</div>2021-12-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-18</li><br/>
+<li><span>Soul of the Dragon</span> 👍（2） 💬（1）<p>思考题：使用fetchone()函数将返回第一条查询结果，使用fetchmany()函数返回多条查询结果，使用fetchall()函数返回所有查询结果。</p>2021-04-02</li><br/><li><span>FILWY</span> 👍（0） 💬（1）<p>老师，excel的分类汇总功能有办法通过python实现吗，找了好久都没找到，网上找到的都是分类汇总到一张新的表，跟原生excel操作分类汇总产生的结果不一样</p>2021-03-30</li><br/><li><span>David</span> 👍（1） 💬（0）<p>干货满满！连SQL语句也讲到了，也让我明白了想提升IT技能是必须要打牢基础，再学东西才会融会贯通。期待老师的python训练营。</p>2021-12-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-18</li><br/>
 </ul>

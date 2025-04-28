@@ -251,7 +251,7 @@ def identify(self, request):
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐你把这节课分享给更多朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>胡歌衡阳分歌</span> 👍（1） 💬（3）<div>这个教程是相当的不完整啊，看的心烦</div>2023-09-29</li><br/><li><span>石佛慈悲</span> 👍（0） 💬（1）<div>token存在redis里的意义是啥呢，为啥还要校验redis的token，不是解码比对都已经校验了吗？为了控制token失效？</div>2023-12-05</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>胡歌衡阳分歌</span> 👍（1） 💬（3）<p>这个教程是相当的不完整啊，看的心烦</p>2023-09-29</li><br/><li><span>石佛慈悲</span> 👍（0） 💬（1）<p>token存在redis里的意义是啥呢，为啥还要校验redis的token，不是解码比对都已经校验了吗？为了控制token失效？</p>2023-12-05</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：Config.SECRET_KEY是系统自带的吗？
-Q2：token放在http的header中的Authorization字段，Authorization字段是http固有的字段吗？记不清楚了，好像应该是自定义字段？</div>2023-06-27</li><br/>
+Q2：token放在http的header中的Authorization字段，Authorization字段是http固有的字段吗？记不清楚了，好像应该是自定义字段？</p>2023-06-27</li><br/>
 </ul>

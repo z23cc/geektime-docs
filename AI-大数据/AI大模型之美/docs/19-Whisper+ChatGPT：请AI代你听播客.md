@@ -308,7 +308,7 @@ OpenAI的Whisper模型，使用起来非常简单方便。无论是通过API还�
 
 李沐老师在他的论文精读系列视频里面，有专门讲解过 [OpenAI Whisper 的相关论文](https://www.bilibili.com/video/BV1VG4y1t74x/)。他还专门基于Whisper的开源代码做了一个用来剪辑视频的小工具 [AutoCut](https://www.bilibili.com/video/BV1Pe4y1t7de/?spm_id_from=333.788.recommend_more_video.2&vd_source=dd7dfb298255b22a34220853aab4f816)。你有兴趣的话，可以去看一看。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Toni</span> 👍（32） 💬（1）<div>将长音频分片转录时，如果完全按照精确的时间去切割音频文件，很有可能在结尾处裁出一个不完整的句子，而下一段的开头也可能会是半句话。如何解决，思考题很实用。
+<li><span>Toni</span> 👍（32） 💬（1）<p>将长音频分片转录时，如果完全按照精确的时间去切割音频文件，很有可能在结尾处裁出一个不完整的句子，而下一段的开头也可能会是半句话。如何解决，思考题很实用。
 
 下面是一种思路:
 
@@ -338,7 +338,7 @@ part_2 = file[StartTime:]
 part_1 结束句 &#39;证实发布后会有怎样的惊喜,我们都拭目以待。&#39;
 part_2 开始句 &#39;AI无疑是未来几年最令人兴奋的变量之一。&#39;
 
-还会有其它的解决方法。</div>2023-04-20</li><br/><li><span>Toni</span> 👍（12） 💬（3）<div>尝试着将李沐老师视频 &#39;AutoCut--如何用 Whisper 来剪辑视频&#39; 的内容进行了概要信息提取。分三步，1 视频读取和语音识别，2 将大块文件裁成小块，使得输入的 Token 数能满足 OpenAI 的要求，3 分块总结。
+还会有其它的解决方法。</p>2023-04-20</li><br/><li><span>Toni</span> 👍（12） 💬（3）<p>尝试着将李沐老师视频 &#39;AutoCut--如何用 Whisper 来剪辑视频&#39; 的内容进行了概要信息提取。分三步，1 视频读取和语音识别，2 将大块文件裁成小块，使得输入的 Token 数能满足 OpenAI 的要求，3 分块总结。
 
 1. 从 B 站读取视频 (Bilibili Video)，实现代码如下:
 
@@ -385,7 +385,7 @@ summarize_bi = overall_bi( {&quot;input_documents&quot;: texts_bi},return_only_o
 这次讨论的主要内容是Whisper这个模型的使用，它在中文语谅上的表现不是很好，但是在带有英文词汇的视频中，它的识别能力还是很强的， ...
 
 ---
-上面提供了一种提取视频核心思想的方法，还会有更好的。</div>2023-04-23</li><br/><li><span>詹杰</span> 👍（1） 💬（1）<div>老师，whisper开源模型本地部署支持批量推理不？怎么批量推理呢？目前就是需要完成很多很多的语言识别任务，效率跟不上，想请教老师怎么解决呢</div>2023-04-25</li><br/><li><span>Geek_00eb03</span> 👍（1） 💬（2）<div>老师，运行代码报错， 能帮忙看看什么原因吗？
+上面提供了一种提取视频核心思想的方法，还会有更好的。</p>2023-04-23</li><br/><li><span>詹杰</span> 👍（1） 💬（1）<p>老师，whisper开源模型本地部署支持批量推理不？怎么批量推理呢？目前就是需要完成很多很多的语言识别任务，效率跟不上，想请教老师怎么解决呢</p>2023-04-25</li><br/><li><span>Geek_00eb03</span> 👍（1） 💬（2）<p>老师，运行代码报错， 能帮忙看看什么原因吗？
 --&gt; 157     raise ValueError(
     158         &quot;A single term is larger than the allowed chunk size.\n&quot;
     159         f&quot;Term size: {num_cur_tokens}\n&quot;
@@ -402,7 +402,7 @@ summarize_bi = overall_bi( {&quot;input_documents&quot;: texts_bi},return_only_o
 
 ValueError: A single term is larger than the allowed chunk size.
 Term size: 414
-Chunk size: 357Effective chunk size: 357</div>2023-04-20</li><br/><li><span>胡萝卜</span> 👍（1） 💬（1）<div>能做成流式的音转文吗？</div>2023-04-19</li><br/><li><span>子辰</span> 👍（0） 💬（2）<div>默认就是跑GPU的吗？我用 mac 看活动监视器好像是跑在 CPU 上的。。。</div>2023-04-27</li><br/><li><span>詹杰</span> 👍（0） 💬（1）<div>徐老师，我想问一个提高开源whisper模型计算效率的问题，我用多线程去调度解析会报错，请问如何提高效率呢，我只能再买显卡，多部署几台服务嘛？</div>2023-04-25</li><br/><li><span>Geek_00eb03</span> 👍（0） 💬（1）<div>普通服务器的CPU 能不能跑起来whisper 开源模型？</div>2023-04-20</li><br/><li><span>安菲尔德</span> 👍（0） 💬（1）<div>老师，请教一个非技术问题，peo.com这个网站是收费的么，如果不收费的话，他们里面chatgpt功能调用的是openai的接口实现的么，如果是的话，那岂不是很费钱，他们怎么赚钱呢？</div>2023-04-20</li><br/><li><span>张弛</span> 👍（0） 💬（2）<div>自己尝试转录了一个播客，成功用Colab进行了语音转文字，一共生成了4个12kb的文本文件，建索引也没问题，但是到最后调模型总结就会出错。用GPT和google查了半天，也尝试自己对比转录的文本和您之前的案例中使用的朝花夕拾的文本，确实没看出差别，最终也没能解决，只好来求助老师了，谢谢！
+Chunk size: 357Effective chunk size: 357</p>2023-04-20</li><br/><li><span>胡萝卜</span> 👍（1） 💬（1）<p>能做成流式的音转文吗？</p>2023-04-19</li><br/><li><span>子辰</span> 👍（0） 💬（2）<p>默认就是跑GPU的吗？我用 mac 看活动监视器好像是跑在 CPU 上的。。。</p>2023-04-27</li><br/><li><span>詹杰</span> 👍（0） 💬（1）<p>徐老师，我想问一个提高开源whisper模型计算效率的问题，我用多线程去调度解析会报错，请问如何提高效率呢，我只能再买显卡，多部署几台服务嘛？</p>2023-04-25</li><br/><li><span>Geek_00eb03</span> 👍（0） 💬（1）<p>普通服务器的CPU 能不能跑起来whisper 开源模型？</p>2023-04-20</li><br/><li><span>安菲尔德</span> 👍（0） 💬（1）<p>老师，请教一个非技术问题，peo.com这个网站是收费的么，如果不收费的话，他们里面chatgpt功能调用的是openai的接口实现的么，如果是的话，那岂不是很费钱，他们怎么赚钱呢？</p>2023-04-20</li><br/><li><span>张弛</span> 👍（0） 💬（2）<p>自己尝试转录了一个播客，成功用Colab进行了语音转文字，一共生成了4个12kb的文本文件，建索引也没问题，但是到最后调模型总结就会出错。用GPT和google查了半天，也尝试自己对比转录的文本和您之前的案例中使用的朝花夕拾的文本，确实没看出差别，最终也没能解决，只好来求助老师了，谢谢！
 
 &#47;usr&#47;local&#47;lib&#47;python3.9&#47;dist-packages&#47;llama_index&#47;langchain_helpers&#47;text_splitter.py in split_text_with_overlaps(self, text, extra_info_str)
     155             num_cur_tokens = max(len(self.tokenizer(cur_token)), 1)
@@ -413,5 +413,5 @@ Chunk size: 357Effective chunk size: 357</div>2023-04-20</li><br/><li><span>胡�
 
 ValueError: A single term is larger than the allowed chunk size.
 Term size: 683
-Chunk size: 358Effective chunk size: 358</div>2023-04-20</li><br/><li><span>极客用户</span> 👍（0） 💬（0）<div>vad模型可以做分割</div>2024-11-24</li><br/><li><span>方梁</span> 👍（0） 💬（0）<div>很好</div>2024-02-19</li><br/><li><span>小雨青青</span> 👍（0） 💬（1）<div>老师，我的请求被拒绝了，这种怎么办呢？ openai.RateLimitError: Error code: 429 - {&#39;error&#39;: {&#39;message&#39;: &#39;Your access was terminated due to violation of our policies, please check your email for more information. If you believe this is in error and would like to appeal, please contact us through our help center at help.openai.com.&#39;, &#39;type&#39;: &#39;access_terminated&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;access_terminated&#39;}}</div>2023-12-09</li><br/><li><span>Mr.wu</span> 👍（0） 💬（0）<div>请教一下whisper能读取流式文本输出语音么，接gpt要等待输出完毕后再转文本延迟太久了，实时交互体验不好</div>2023-07-04</li><br/><li><span>神毓逍遥</span> 👍（0） 💬（1）<div>语音转文本，然后本地转录的开源模型有推荐吗</div>2023-06-26</li><br/>
+Chunk size: 358Effective chunk size: 358</p>2023-04-20</li><br/><li><span>极客用户</span> 👍（0） 💬（0）<p>vad模型可以做分割</p>2024-11-24</li><br/><li><span>方梁</span> 👍（0） 💬（0）<p>很好</p>2024-02-19</li><br/><li><span>小雨青青</span> 👍（0） 💬（1）<p>老师，我的请求被拒绝了，这种怎么办呢？ openai.RateLimitError: Error code: 429 - {&#39;error&#39;: {&#39;message&#39;: &#39;Your access was terminated due to violation of our policies, please check your email for more information. If you believe this is in error and would like to appeal, please contact us through our help center at help.openai.com.&#39;, &#39;type&#39;: &#39;access_terminated&#39;, &#39;param&#39;: None, &#39;code&#39;: &#39;access_terminated&#39;}}</p>2023-12-09</li><br/><li><span>Mr.wu</span> 👍（0） 💬（0）<p>请教一下whisper能读取流式文本输出语音么，接gpt要等待输出完毕后再转文本延迟太久了，实时交互体验不好</p>2023-07-04</li><br/><li><span>神毓逍遥</span> 👍（0） 💬（1）<p>语音转文本，然后本地转录的开源模型有推荐吗</p>2023-06-26</li><br/>
 </ul>

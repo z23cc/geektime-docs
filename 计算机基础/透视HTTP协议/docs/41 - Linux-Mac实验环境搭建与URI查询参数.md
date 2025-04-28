@@ -166,7 +166,7 @@ tcpdump、tshark和Linux里的许多工具一样，参数繁多、功能强大�
 
 ![unpreview](https://static001.geekbang.org/resource/image/c1/f9/c17f3027ba3cfb45e391107a8cf04cf9.png?wh=1769%2A2606)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>浪里淘沙的小法师</span> 👍（25） 💬（1）<div>讲一下用M1芯片 mac 搭建搭建环境的遇到的问题和解决方法。
+<li><span>浪里淘沙的小法师</span> 👍（25） 💬（1）<p>讲一下用M1芯片 mac 搭建搭建环境的遇到的问题和解决方法。
 
 1. 运行 .&#47;run.sh start 报错 &#47;usr&#47;local&#47;bin&#47;openresty: command not found
 这是因为 M1 芯片mac 的 homebrew 安装软件的位置与以往不同，先通过 which openresty 查询 openresty 的位置 &#47;opt&#47;homebrew&#47;bin&#47;openresty，然后打开 run.sh 脚本替换一下老师写的位置
@@ -192,7 +192,7 @@ http {
 
     include     http&#47;servers&#47;*.conf;
 
-}</div>2021-11-10</li><br/><li><span>GitHubGanKai</span> 👍（7） 💬（2）<div>真好，又见到你了，而且我最近换个了mac，😊正愁这个。</div>2019-10-09</li><br/><li><span>Luka!3055</span> 👍（3） 💬（1）<div>记录下问题：
+}</p>2021-11-10</li><br/><li><span>GitHubGanKai</span> 👍（7） 💬（2）<p>真好，又见到你了，而且我最近换个了mac，😊正愁这个。</p>2019-10-09</li><br/><li><span>Luka!3055</span> 👍（3） 💬（1）<p>记录下问题：
 
 brew install openresty&#47;brew&#47;openresty 后，报错：
 curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused
@@ -200,7 +200,7 @@ Error: An exception occurred within a child process:
 DownloadError: Failed to download resource &quot;openresty-openssl--patch&quot;
 Download failed: https:&#47;&#47;raw.githubusercontent.com&#47;openresty&#47;openresty&#47;master&#47;patches&#47;openssl-1.1.0d-sess_set_get_cb_yield.patch
 
-此时把 DNS 设置为 114.114.114.114 或者 8.8.8.8 就好了，最好再挂个梯子</div>2020-05-07</li><br/><li><span>dongge</span> 👍（2） 💬（2）<div>老师好，
+此时把 DNS 设置为 114.114.114.114 或者 8.8.8.8 就好了，最好再挂个梯子</p>2020-05-07</li><br/><li><span>dongge</span> 👍（2） 💬（2）<p>老师好，
 按文章指导搭建了MAC的环境：
 openresty -v
 nginx version: openresty&#47;1.11.2.2
@@ -211,8 +211,8 @@ Password:
 nginx: [emerg] &quot;&#47;Users&#47;xiaodong&#47;git&#47;http_study&#47;www&#47;conf&#47;ssl&#47;ticket.key&quot; must be 48 bytes in &#47;Users&#47;xiaodong&#47;git&#47;http_study&#47;www&#47;conf&#47;nginx.conf:34
 报了这个错误，在网上google没找到解决方法。
 尝试在nginx.conf中注销相关代码，也会报其他错误。
-老师能指点一下吗？</div>2019-10-18</li><br/><li><span>dongge</span> 👍（2） 💬（1）<div>这个专栏这么好玩，留言的人这么少，真可惜。
-</div>2019-10-16</li><br/><li><span>ifelse</span> 👍（1） 💬（1）<div>谢谢分享</div>2023-02-09</li><br/><li><span>Change</span> 👍（1） 💬（7）<div>老师请教个问题：Mac 环境下安装以后，按照命令.&#47;run.sh start 启动后访问 localhost 显示403 Forbidden：终端返回的错误信息是下面的错误信息，这是所有端口都被占用了？我查了一下好像也没有被占用啊，不知道这是啥原因
+老师能指点一下吗？</p>2019-10-18</li><br/><li><span>dongge</span> 👍（2） 💬（1）<p>这个专栏这么好玩，留言的人这么少，真可惜。
+</p>2019-10-16</li><br/><li><span>ifelse</span> 👍（1） 💬（1）<p>谢谢分享</p>2023-02-09</li><br/><li><span>Change</span> 👍（1） 💬（7）<p>老师请教个问题：Mac 环境下安装以后，按照命令.&#47;run.sh start 启动后访问 localhost 显示403 Forbidden：终端返回的错误信息是下面的错误信息，这是所有端口都被占用了？我查了一下好像也没有被占用啊，不知道这是啥原因
 nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
 nginx: [emerg] bind() to 0.0.0.0:8080 failed (48: Address already in use)
 nginx: [emerg] bind() to 0.0.0.0:443 failed (48: Address already in use)
@@ -220,9 +220,9 @@ nginx: [emerg] bind() to 0.0.0.0:8443 failed (48: Address already in use)
 nginx: [emerg] bind() to 0.0.0.0:440 failed (48: Address already in use)
 nginx: [emerg] bind() to 0.0.0.0:441 failed (48: Address already in use)
 nginx: [emerg] bind() to 0.0.0.0:442 failed (48: Address already in use)
-</div>2020-03-28</li><br/><li><span>SmNiuhe</span> 👍（1） 💬（6）<div>这个大家有遇到嘛，是不是资源的问题
+</p>2020-03-28</li><br/><li><span>SmNiuhe</span> 👍（1） 💬（6）<p>这个大家有遇到嘛，是不是资源的问题
 brew install openresty&#47;brew&#47;openresty ：DownloadError: Failed to download resource &quot;openresty-openssl--patch&quot;
-Download failed: https:&#47;&#47;raw.githubusercontent.com&#47;openresty&#47;openresty&#47;master&#47;patches&#47;openssl-1.1.0d-sess_set_get_cb_yield.patch</div>2019-11-07</li><br/><li><span>超轶主</span> 👍（0） 💬（2）<div>mac环境运行 run run.sh 返回 nginx version: openresty&#47;1.19.9.1
-format : run.sh [start|stop|reload|list]是什么情况呢</div>2021-12-13</li><br/><li><span>silence</span> 👍（0） 💬（3）<div>请问安装好环境后在www目录执行.&#47;run.sh start 老是command not found怎么解决</div>2021-08-23</li><br/><li><span>Miroticwillbeforever</span> 👍（0） 💬（2）<div>老师我有个问题。实验环境搭建好了。前两讲的实验也做成功了。
-但是当我用浏览器 访问 www.chrono.com 时，它跳转到的 地址为 https:&#47;&#47;dp.diandongzhi.com&#47;?acct=660&amp;site=chrono.com 然后wireshark抓包并没有任何反应。我想问一下是我操作不当的原因还是怎么回事。课程大部分听完了。但是后面实验没做成挺难受的，没有去验证。等老师给个答复准备二刷！</div>2021-06-22</li><br/><li><span>武安君</span> 👍（0） 💬（1）<div>老师你好、我安装好了openrestry后、启动服务说 nginx：invalid option：http，请问是怎么回事呀</div>2021-03-20</li><br/><li><span>小童</span> 👍（0） 💬（2）<div>不行啊，老师，我的那个openresty界面出来了，就是抓不到包！用的wireshark .搞了好久。那个telnet也安装了。是不是那步出错了 ，我就直接运行openresty，然后用抓包工具过滤信息，然后浏览器输入localhost，浏览器洁界面也出来了。</div>2021-03-02</li><br/><li><span>旗木卡卡</span> 👍（0） 💬（3）<div>Mac电脑，耗费本人2个晚上的环境，终于搭好了，碰到了2个坑，第一个是dns查找不到，brew install openresty时，需要在本机的hosts文件，加上解析不到的url的ip地址，第二个是启动一直bind不上，nginx就自动启动了，但是很明显不是openresty，然后用root权限启动成功，也可以正常访问，发现是nginx.conf的user权限问题，修改成本机的用户user kaka(你的用户名) staff;即可。 </div>2020-08-19</li><br/><li><span>Jinlee</span> 👍（0） 💬（1）<div>Welcome to HTTP Study Page! 还好我看得迟，成功在ubuntu下搭建起环境😊😊😊</div>2020-04-21</li><br/>
+Download failed: https:&#47;&#47;raw.githubusercontent.com&#47;openresty&#47;openresty&#47;master&#47;patches&#47;openssl-1.1.0d-sess_set_get_cb_yield.patch</p>2019-11-07</li><br/><li><span>超轶主</span> 👍（0） 💬（2）<p>mac环境运行 run run.sh 返回 nginx version: openresty&#47;1.19.9.1
+format : run.sh [start|stop|reload|list]是什么情况呢</p>2021-12-13</li><br/><li><span>silence</span> 👍（0） 💬（3）<p>请问安装好环境后在www目录执行.&#47;run.sh start 老是command not found怎么解决</p>2021-08-23</li><br/><li><span>Miroticwillbeforever</span> 👍（0） 💬（2）<p>老师我有个问题。实验环境搭建好了。前两讲的实验也做成功了。
+但是当我用浏览器 访问 www.chrono.com 时，它跳转到的 地址为 https:&#47;&#47;dp.diandongzhi.com&#47;?acct=660&amp;site=chrono.com 然后wireshark抓包并没有任何反应。我想问一下是我操作不当的原因还是怎么回事。课程大部分听完了。但是后面实验没做成挺难受的，没有去验证。等老师给个答复准备二刷！</p>2021-06-22</li><br/><li><span>武安君</span> 👍（0） 💬（1）<p>老师你好、我安装好了openrestry后、启动服务说 nginx：invalid option：http，请问是怎么回事呀</p>2021-03-20</li><br/><li><span>小童</span> 👍（0） 💬（2）<p>不行啊，老师，我的那个openresty界面出来了，就是抓不到包！用的wireshark .搞了好久。那个telnet也安装了。是不是那步出错了 ，我就直接运行openresty，然后用抓包工具过滤信息，然后浏览器输入localhost，浏览器洁界面也出来了。</p>2021-03-02</li><br/><li><span>旗木卡卡</span> 👍（0） 💬（3）<p>Mac电脑，耗费本人2个晚上的环境，终于搭好了，碰到了2个坑，第一个是dns查找不到，brew install openresty时，需要在本机的hosts文件，加上解析不到的url的ip地址，第二个是启动一直bind不上，nginx就自动启动了，但是很明显不是openresty，然后用root权限启动成功，也可以正常访问，发现是nginx.conf的user权限问题，修改成本机的用户user kaka(你的用户名) staff;即可。 </p>2020-08-19</li><br/><li><span>Jinlee</span> 👍（0） 💬（1）<p>Welcome to HTTP Study Page! 还好我看得迟，成功在ubuntu下搭建起环境😊😊😊</p>2020-04-21</li><br/>
 </ul>

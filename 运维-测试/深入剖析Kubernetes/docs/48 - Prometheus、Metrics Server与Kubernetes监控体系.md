@@ -114,8 +114,8 @@ $ kubectl create -f deploy/1.8+/
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Acter</span> 👍（25） 💬（1）<div>1.老师能讲下prometheus的部署方式吗？比如helm部署，operator部署，过程中具体发生了什么？
-2.能否解析下prometheus server配置文件中，jobs的写法，alert rule的写法？还有alertmanager的配置。感谢</div>2018-12-12</li><br/><li><span>--</span> 👍（5） 💬（1）<div>核心监控数据是Prometheus通过Metric Server拉取的还是直接从kubelet拉取？</div>2020-02-24</li><br/><li><span>leisland</span> 👍（1） 💬（1）<div>老师您好，我想请教你一个k8s问题。我们使用liveness probe探针检查容器健康状态，这个探针执行的是容器里一个脚本。当容器内存和CPU过载时这个脚本会一直执行卡死然后超时。现在看k8s好像不认为执行超时是失败，在不停的去执行脚本。从而检查不到容器异常了，容器一直不重拉起。我们设置失败上限是3次，应该没起作用。请问有没有办法可以解决呢？业界都是怎么使用探针的呢？</div>2020-03-08</li><br/><li><span>孙健波</span> 👍（59） 💬（4）<div>Pull和Push两种模式的区别非常有意思，Prometheus非常大胆的采用了pull的模式，但是仔细思考后就会觉得非常适合监控的场景。
+<li><span>Acter</span> 👍（25） 💬（1）<p>1.老师能讲下prometheus的部署方式吗？比如helm部署，operator部署，过程中具体发生了什么？
+2.能否解析下prometheus server配置文件中，jobs的写法，alert rule的写法？还有alertmanager的配置。感谢</p>2018-12-12</li><br/><li><span>--</span> 👍（5） 💬（1）<p>核心监控数据是Prometheus通过Metric Server拉取的还是直接从kubelet拉取？</p>2020-02-24</li><br/><li><span>leisland</span> 👍（1） 💬（1）<p>老师您好，我想请教你一个k8s问题。我们使用liveness probe探针检查容器健康状态，这个探针执行的是容器里一个脚本。当容器内存和CPU过载时这个脚本会一直执行卡死然后超时。现在看k8s好像不认为执行超时是失败，在不停的去执行脚本。从而检查不到容器异常了，容器一直不重拉起。我们设置失败上限是3次，应该没起作用。请问有没有办法可以解决呢？业界都是怎么使用探针的呢？</p>2020-03-08</li><br/><li><span>孙健波</span> 👍（59） 💬（4）<p>Pull和Push两种模式的区别非常有意思，Prometheus非常大胆的采用了pull的模式，但是仔细思考后就会觉得非常适合监控的场景。
 
 Pull模式的特点
 1. 被监控方提供一个server，并负责维护
@@ -128,17 +128,17 @@ Pull模式的特点
 缺点也很明显，用户不知道你什么时候来pull一下，数据维护多久更新也不好控制，容易造成一些信息的丢失和不准确。
 
 当把这些优缺点权衡过后就会发现，纯监控的场景确实是适合pull的
-</div>2018-12-22</li><br/><li><span>Goswing</span> 👍（15） 💬（0）<div>Push模式的优点是在正常情况下数据的延迟可以做到更低，也就是能更快的获取metrics并发现问题，而pull模式一般不会设定很短的轮询时间，所以延迟更高一些。
+</p>2018-12-22</li><br/><li><span>Goswing</span> 👍（15） 💬（0）<p>Push模式的优点是在正常情况下数据的延迟可以做到更低，也就是能更快的获取metrics并发现问题，而pull模式一般不会设定很短的轮询时间，所以延迟更高一些。
 
 Push模式的缺点我能想到以下几个: 
 1 增加了服务的实现复杂度(比如推送错误处理等); 
 2 不利于平行扩展; 
-3 不支持自定义metrics采集策略，比如高峰期减少采集频率。</div>2018-12-13</li><br/><li><span>拉欧</span> 👍（13） 💬（0）<div>pull是拉动作，监听者主动调用被监听者的接口
+3 不支持自定义metrics采集策略，比如高峰期减少采集频率。</p>2018-12-13</li><br/><li><span>拉欧</span> 👍（13） 💬（0）<p>pull是拉动作，监听者主动调用被监听者的接口
 push是推动作，被监听者主动上报，监听者被动采集
 拉动作有助于监听者自己控制频率和采样量，缺点是需要掌握所有被监听者的地址和端口，也就是要有注册中心；
-推动作有利于被监听者自己控制上报数量和频率，但有可能对监听者构成额外的压力，同时有信息丢失的风险</div>2019-11-30</li><br/><li><span>CalvinXiao</span> 👍（9） 💬（0）<div>push 方式针对没有 http 接口应用，例如 worker，可以设定每 5 秒上报处理了多少个 job，平均每个 job 耗时多少，有多少个错误等数据，需要配合 push gateway 使用。
+推动作有利于被监听者自己控制上报数量和频率，但有可能对监听者构成额外的压力，同时有信息丢失的风险</p>2019-11-30</li><br/><li><span>CalvinXiao</span> 👍（9） 💬（0）<p>push 方式针对没有 http 接口应用，例如 worker，可以设定每 5 秒上报处理了多少个 job，平均每个 job 耗时多少，有多少个错误等数据，需要配合 push gateway 使用。
 
-当然，也可以自己写一个 exporter 通过查询日志来得到这些数据，然后用 pull 方式来获取。push 方式可以联想到 APM。</div>2018-12-13</li><br/><li><span>我要收购腾讯</span> 👍（6） 💬（0）<div>prometheus 的pull模式搭配自己的kubernetes SD, 加上prometheus-operator的service monitor的抽象，可以很大程度的简化配置的复杂程度</div>2018-12-12</li><br/><li><span>狮锅艺</span> 👍（5） 💬（0）<div>文中缺少的链接：https:&#47;&#47;github.com&#47;kubernetes&#47;kubernetes&#47;blob&#47;master&#47;cluster&#47;kube-up.sh</div>2019-04-17</li><br/><li><span>陈斯佳</span> 👍（4） 💬（0）<div>第四十六课:Prometheus、Metrics
+当然，也可以自己写一个 exporter 通过查询日志来得到这些数据，然后用 pull 方式来获取。push 方式可以联想到 APM。</p>2018-12-13</li><br/><li><span>我要收购腾讯</span> 👍（6） 💬（0）<p>prometheus 的pull模式搭配自己的kubernetes SD, 加上prometheus-operator的service monitor的抽象，可以很大程度的简化配置的复杂程度</p>2018-12-12</li><br/><li><span>狮锅艺</span> 👍（5） 💬（0）<p>文中缺少的链接：https:&#47;&#47;github.com&#47;kubernetes&#47;kubernetes&#47;blob&#47;master&#47;cluster&#47;kube-up.sh</p>2019-04-17</li><br/><li><span>陈斯佳</span> 👍（4） 💬（0）<p>第四十六课:Prometheus、Metrics
 
 Prometheus 项目工作的核心，是使用 Pull （抓取）的方式去搜集被监控对象的 Metrics 数据（监控指标数据），然后，再把这些数据保存在一个 TSDB （时间序列数据库，比如 OpenTSDB、InfluxDB 等）当中，以便后续可以按照时间进行检索。
 
@@ -159,6 +159,6 @@ RED 原则指的是，按照如下三个维度来规划服务监控指标：
 2. 每秒错误数量（Errors）；
 3. 服务响应时间（Duration）。
 
-USE 原则主要关注的是“资源”，比如节点和容器的资源使用情况，而 RED 原则主要关注的是“服务”，比如 kube-apiserver 或者某个应用的工作情况。这两种指标，在我今天为你讲解的 Kubernetes + Prometheus 组成的监控体系中，都是可以完全覆盖到的。</div>2021-11-07</li><br/><li><span>我在睡觉</span> 👍（3） 💬（1）<div>我认为拉取的最大好处是解耦，metric server对外提供标准接口，第三方实现自己的监控逻辑。还有部署的时候更方便，如果使用push的方式，那么部署一个监控组件之后需要用某种方式配置metric server，让他知道一个监控服务的存在以便通知上报数据，这样对于监控数据描述的配置文件都要配置到metric server（metric server也需要实现逻辑来处理这些配置），这显然增加了使用的复杂度，也不不够灵活。</div>2021-03-20</li><br/><li><span>李伟达</span> 👍（3） 💬（1）<div>有一个问题，就是metric server是怎么注册给metrics.k8s.io&#47;v1beta1这个api的，或者说当client访问metrics.k8s.io&#47;v1beta1这个api时，aggregator如何知道转发给哪个后端？</div>2019-04-24</li><br/><li><span>kindule</span> 👍（3） 💬（1）<div>你好，为什么node_exporter要单独分为一类而不是算作core metrics</div>2019-03-12</li><br/><li><span>Goteswille</span> 👍（2） 💬（0）<div>坚持、打卡</div>2018-12-17</li><br/><li><span>志远</span> 👍（1） 💬（0）<div>pull模式由prometheus中心化管理数据收集，方便管理和后续维护，但是prometheus server的压力较大；
-push模式由pushgateway接受target推送上来的数据，prometheus server的压力较小，但是每个target均需要配置推送pushgateway的配置，如果target数量较多，后续的配置管理将比较麻烦；</div>2024-03-22</li><br/>
+USE 原则主要关注的是“资源”，比如节点和容器的资源使用情况，而 RED 原则主要关注的是“服务”，比如 kube-apiserver 或者某个应用的工作情况。这两种指标，在我今天为你讲解的 Kubernetes + Prometheus 组成的监控体系中，都是可以完全覆盖到的。</p>2021-11-07</li><br/><li><span>我在睡觉</span> 👍（3） 💬（1）<p>我认为拉取的最大好处是解耦，metric server对外提供标准接口，第三方实现自己的监控逻辑。还有部署的时候更方便，如果使用push的方式，那么部署一个监控组件之后需要用某种方式配置metric server，让他知道一个监控服务的存在以便通知上报数据，这样对于监控数据描述的配置文件都要配置到metric server（metric server也需要实现逻辑来处理这些配置），这显然增加了使用的复杂度，也不不够灵活。</p>2021-03-20</li><br/><li><span>李伟达</span> 👍（3） 💬（1）<p>有一个问题，就是metric server是怎么注册给metrics.k8s.io&#47;v1beta1这个api的，或者说当client访问metrics.k8s.io&#47;v1beta1这个api时，aggregator如何知道转发给哪个后端？</p>2019-04-24</li><br/><li><span>kindule</span> 👍（3） 💬（1）<p>你好，为什么node_exporter要单独分为一类而不是算作core metrics</p>2019-03-12</li><br/><li><span>Goteswille</span> 👍（2） 💬（0）<p>坚持、打卡</p>2018-12-17</li><br/><li><span>志远</span> 👍（1） 💬（0）<p>pull模式由prometheus中心化管理数据收集，方便管理和后续维护，但是prometheus server的压力较大；
+push模式由pushgateway接受target推送上来的数据，prometheus server的压力较小，但是每个target均需要配置推送pushgateway的配置，如果target数量较多，后续的配置管理将比较麻烦；</p>2024-03-22</li><br/>
 </ul>

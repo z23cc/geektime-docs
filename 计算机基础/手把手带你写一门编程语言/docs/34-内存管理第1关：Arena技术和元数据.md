@@ -208,11 +208,11 @@ println(id7());
 
 [这节课的示例代码在这里！](https://gitee.com/richard-gong/craft-a-language/tree/master/34-35)
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>有学识的兔子</span> 👍（2） 💬（0）<div>.asciz 代表以&quot;\0&quot;作为结束符的字符串； .p2align代表数据边界需要满足对齐的字节倍数；.quad:代表大数，8字节的整数； 
+<li><span>有学识的兔子</span> 👍（2） 💬（0）<p>.asciz 代表以&quot;\0&quot;作为结束符的字符串； .p2align代表数据边界需要满足对齐的字节倍数；.quad:代表大数，8字节的整数； 
 要数据区写4个字节整数，是不是类似如下，声明数据段然后填入数据？
  .section __DATA,__const
  .globl _foo.meta    ## can be accessed globally
  .p2align 2     ## 4 byte alignment
 _foo.meta:
- .word _val  ##4字节整数</div>2021-11-07</li><br/><li><span>奋斗的蜗牛</span> 👍（1） 💬（0）<div>.asciz用来声明字符串，.p2align用来声明下一条指令所在位置的对齐要求，.quad声明8字节的数</div>2021-11-02</li><br/><li><span>...</span> 👍（1） 💬（0）<div>是否选择使用C语言编写才需要考虑内存管理 使用JS编译的话内存管理会由JS完成</div>2021-11-02</li><br/><li><span>奋斗的蜗牛</span> 👍（1） 💬（0）<div>这节课知识量很大，看来汇编语言还是很重要</div>2021-11-01</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2022-09-29</li><br/>
+ .word _val  ##4字节整数</p>2021-11-07</li><br/><li><span>奋斗的蜗牛</span> 👍（1） 💬（0）<p>.asciz用来声明字符串，.p2align用来声明下一条指令所在位置的对齐要求，.quad声明8字节的数</p>2021-11-02</li><br/><li><span>...</span> 👍（1） 💬（0）<p>是否选择使用C语言编写才需要考虑内存管理 使用JS编译的话内存管理会由JS完成</p>2021-11-02</li><br/><li><span>奋斗的蜗牛</span> 👍（1） 💬（0）<p>这节课知识量很大，看来汇编语言还是很重要</p>2021-11-01</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2022-09-29</li><br/>
 </ul>

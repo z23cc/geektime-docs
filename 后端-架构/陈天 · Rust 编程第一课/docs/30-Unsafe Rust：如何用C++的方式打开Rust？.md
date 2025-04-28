@@ -586,10 +586,10 @@ fn split_mut(s: &mut str, sep: char) -> (&mut str, &mut str)
 
 感谢你的收听，今天你完成了Rust学习的第30次打卡。如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见～
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>TheLudlows</span> 👍（1） 💬（1）<div>    pub fn as_mut_ptr(&amp;mut self) -&gt; *mut u8 {
+<li><span>TheLudlows</span> 👍（1） 💬（1）<p>    pub fn as_mut_ptr(&amp;mut self) -&gt; *mut u8 {
         self as *mut str as *mut u8
     }
-请问老师这个转换为什么要多一层 *mut str ，as *mut str 和 as *mut u8的区别是什么，还有说这个as 转换的过程做了什么</div>2021-11-16</li><br/><li><span>罗杰</span> 👍（1） 💬（1）<div>先把safe rust 弄清楚，再考虑 unsafe 的事</div>2021-11-05</li><br/><li><span>D. D</span> 👍（0） 💬（1）<div>不能直接使用 get_unchecked_mut() 去实现，因为即使在 unsafe 代码里面也不能对一个变量同时进行多个可变借用，需要先转换成裸指针。
+请问老师这个转换为什么要多一层 *mut str ，as *mut str 和 as *mut u8的区别是什么，还有说这个as 转换的过程做了什么</p>2021-11-16</li><br/><li><span>罗杰</span> 👍（1） 💬（1）<p>先把safe rust 弄清楚，再考虑 unsafe 的事</p>2021-11-05</li><br/><li><span>D. D</span> 👍（0） 💬（1）<p>不能直接使用 get_unchecked_mut() 去实现，因为即使在 unsafe 代码里面也不能对一个变量同时进行多个可变借用，需要先转换成裸指针。
 
 不知道这样实现可以吗？
 fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
@@ -610,7 +610,7 @@ fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut
     })
 }
 
-https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=98493d711d7a002c318aace31ecb2af0</div>2021-11-06</li><br/><li><span>终生恻隐</span> 👍（0） 💬（1）<div>fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
+https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=98493d711d7a002c318aace31ecb2af0</p>2021-11-06</li><br/><li><span>终生恻隐</span> 👍（0） 💬（1）<p>fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
     let pos = s.find(sep);
 
     pos.map(|pos| unsafe {
@@ -631,12 +631,12 @@ https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;editio
         (from_utf8_unchecked_mut(scl), from_utf8_unchecked_mut(scr))
 
     })
-}</div>2021-11-05</li><br/><li><span>pedro</span> 👍（0） 💬（5）<div>因为 Send &#47; Sync 是 auto trait，所以大部分情况下，你自己的数据结构不需要实现 Send &#47; Sync，然而，当你在数据结构里使用裸指针时，因为裸指针是没有实现 Send&#47;Sync 的，连带着你的数据结构也就没有实现 Send&#47;Sync。但很可能你的结构是线程安全的，你也需要它线程安全。
+}</p>2021-11-05</li><br/><li><span>pedro</span> 👍（0） 💬（5）<p>因为 Send &#47; Sync 是 auto trait，所以大部分情况下，你自己的数据结构不需要实现 Send &#47; Sync，然而，当你在数据结构里使用裸指针时，因为裸指针是没有实现 Send&#47;Sync 的，连带着你的数据结构也就没有实现 Send&#47;Sync。但很可能你的结构是线程安全的，你也需要它线程安全。
 
 但很可能你的结构是线程安全的，你也需要它线程安全？
 
-这句话我咋理解不了啊，是线程安全的，咋还需要它线程安全？</div>2021-11-05</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<div> let arr: [usize; 6] = unsafe { std::mem::transmute(map) };
- 新版的rust1.72stable报错了，因为hashmap的源码更新了</div>2023-09-02</li><br/><li><span>Geek_zbvt62</span> 👍（0） 💬（0）<div>fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
+这句话我咋理解不了啊，是线程安全的，咋还需要它线程安全？</p>2021-11-05</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<p> let arr: [usize; 6] = unsafe { std::mem::transmute(map) };
+ 新版的rust1.72stable报错了，因为hashmap的源码更新了</p>2023-09-02</li><br/><li><span>Geek_zbvt62</span> 👍（0） 💬（0）<p>fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
     let pos = s.find(sep);
 
     pos.map(|pos| {
@@ -651,7 +651,7 @@ https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;editio
             (from_utf8_unchecked_mut(s1), from_utf8_unchecked_mut(s2))
         }
     })
-}</div>2022-10-04</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>关于思考题，我的实现：
+}</p>2022-10-04</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>关于思考题，我的实现：
 ```rust
 fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut str)&gt; {
     let pos = s.find(sep);
@@ -668,5 +668,5 @@ fn split_mut(s: &amp;mut str, sep: char) -&gt; Option&lt;(&amp;mut str, &amp;mut
     })
 }
 ```
-playground 连接： https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=7be8e52e1278665816a03eb30fbfaf60</div>2022-09-17</li><br/>
+playground 连接： https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=7be8e52e1278665816a03eb30fbfaf60</p>2022-09-17</li><br/>
 </ul>

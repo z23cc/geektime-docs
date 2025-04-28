@@ -267,5 +267,5 @@ Hugging Face 这个目前最知名的 AI 开源社区，它相当于程序员的
 
 既然各位已经知道了 Hugging Face，为了不错过好东西，我建议你去看看它上面都有什么样的模型，欢迎在留言区分享你的所得。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>张申傲</span> 👍（0） 💬（0）<div>第18讲打卡~ 加深了对 Hugging Face 的理解</div>2025-02-13</li><br/>
+<li><span>张申傲</span> 👍（0） 💬（0）<p>第18讲打卡~ 加深了对 Hugging Face 的理解</p>2025-02-13</li><br/>
 </ul>

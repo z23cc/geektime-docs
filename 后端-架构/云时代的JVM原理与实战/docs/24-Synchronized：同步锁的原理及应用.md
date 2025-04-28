@@ -212,7 +212,7 @@ Java 同步锁机制是 Java 并发编程的基础，它可以保证在多线程
 
 ![](https://static001.geekbang.org/resource/image/3f/39/3f17934487fbaa099a74109908b0bc39.jpg?wh=5601x4105)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（2） 💬（0）<div>请教老师几个问题：
+<li><span>peter</span> 👍（2） 💬（0）<p>请教老师几个问题：
 Q1：锁的状态是怎么定义的？或者说怎么知道锁的状态？
 Q2：偏向锁的对象是指谁？
 “偏向锁会尝试获取该对象的锁” ，此处的“对象”是指谁？
@@ -226,8 +226,8 @@ Q6：老师能否多画几个图？
 画图来演示，更清楚。
 Q7：ReentrantLock的例子不明白
 A 代码和文字没有说明该锁的特点。 B “我们还看到 ReentrantLock 支持公平锁和非公平锁两种模式”，哪里看到了？
-Q8：ReentrantReadWriteLock的例子，只有一个线程来读，能体现什么？</div>2023-10-24</li><br/><li><span>静心</span> 👍（1） 💬（0）<div>从Java 6开始，JVM对Synchronized进行了大量优化，使得两者的性能差距大大缩小。在某些情况下，Synchronized的性能甚至优于ReentrantLock。</div>2024-02-04</li><br/><li><span>王云峰</span> 👍（1） 💬（0）<div>这个说的跟郑雨迪不一样，轻量级和重量级</div>2023-11-15</li><br/><li><span>八宝</span> 👍（0） 💬（0）<div>既然有了Synchronized，为何还会有ReentrantLock?   两者有啥区别？
+Q8：ReentrantReadWriteLock的例子，只有一个线程来读，能体现什么？</p>2023-10-24</li><br/><li><span>静心</span> 👍（1） 💬（0）<p>从Java 6开始，JVM对Synchronized进行了大量优化，使得两者的性能差距大大缩小。在某些情况下，Synchronized的性能甚至优于ReentrantLock。</p>2024-02-04</li><br/><li><span>王云峰</span> 👍（1） 💬（0）<p>这个说的跟郑雨迪不一样，轻量级和重量级</p>2023-11-15</li><br/><li><span>八宝</span> 👍（0） 💬（0）<p>既然有了Synchronized，为何还会有ReentrantLock?   两者有啥区别？
 
 在JDK21中， 虚拟线程等待Synchronized锁时会pinned平台线程，不能实现轻量级yield，所以不提倡使用Synchronized，21中标准库很多地方都用ReentrantLock替换了。
-这个意义上讲，两者是等价可替换的。</div>2023-12-23</li><br/>
+这个意义上讲，两者是等价可替换的。</p>2023-12-23</li><br/>
 </ul>

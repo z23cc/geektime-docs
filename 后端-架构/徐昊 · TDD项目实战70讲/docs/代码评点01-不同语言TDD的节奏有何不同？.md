@@ -20,7 +20,7 @@
 
 我们的测试是行为验证还是状态验证？欢迎把你的思考和想法分享在留言区，我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（1）<div>TDD专栏的朋友们，我是编辑辰洋～在项目一中我们共收到十余份代码作业，链接如下，供大家学习与参考。另外，因为这些同学对活动的支持，才有了我们这两篇代码评点的加餐，特别感谢。
+<li><span>🐑</span> 👍（0） 💬（1）<p>TDD专栏的朋友们，我是编辑辰洋～在项目一中我们共收到十余份代码作业，链接如下，供大家学习与参考。另外，因为这些同学对活动的支持，才有了我们这两篇代码评点的加餐，特别感谢。
 
 最后！！！如果之后还有同学想把自己的代码展示出来，可以在这篇文章的评论区留言，格式为“语言+代码链接”。我看到后，会精选评论并置顶。
 
@@ -36,5 +36,5 @@
 8. 烧灯续昼👉https:&#47;&#47;github.com&#47;VWWL&#47;tdd-yes.git
 9. webmin👉https:&#47;&#47;github.com&#47;webmin7761&#47;tdd
 10. keep_curiosity👉https:&#47;&#47;github.com&#47;codingthought&#47;TDD-Args&#47;tree&#47;master
-11. Alexdown👉https:&#47;&#47;github.com&#47;longyue0521&#47;TDD-In-Go&#47;commits&#47;args</div>2022-04-11</li><br/><li><span>keep_curiosity</span> 👍（2） 💬（0）<div>状态验证，并且是伦敦学派的状态验证。</div>2022-04-05</li><br/><li><span>邱柏森</span> 👍（0） 💬（0）<div>Java  https:&#47;&#47;github.com&#47;qbosen&#47;geektime-tdd</div>2022-10-12</li><br/><li><span>davix</span> 👍（0） 💬（0）<div>#TDD打卡# go https:&#47;&#47;github.com&#47;davix&#47;geektime-tdd&#47;tree&#47;main&#47;args</div>2022-05-03</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>状态验证</div>2022-04-09</li><br/>
+11. Alexdown👉https:&#47;&#47;github.com&#47;longyue0521&#47;TDD-In-Go&#47;commits&#47;args</p>2022-04-11</li><br/><li><span>keep_curiosity</span> 👍（2） 💬（0）<p>状态验证，并且是伦敦学派的状态验证。</p>2022-04-05</li><br/><li><span>邱柏森</span> 👍（0） 💬（0）<p>Java  https:&#47;&#47;github.com&#47;qbosen&#47;geektime-tdd</p>2022-10-12</li><br/><li><span>davix</span> 👍（0） 💬（0）<p>#TDD打卡# go https:&#47;&#47;github.com&#47;davix&#47;geektime-tdd&#47;tree&#47;main&#47;args</p>2022-05-03</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>状态验证</p>2022-04-09</li><br/>
 </ul>

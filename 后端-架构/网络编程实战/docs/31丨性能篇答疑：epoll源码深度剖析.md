@@ -791,8 +791,8 @@ epoll维护了一棵红黑树来跟踪所有待检测的文件描述字，黑红
 
 通过对比poll/select的实现，我们发现epoll确实克服了poll/select的种种弊端，不愧是Linux下高性能网络编程的皇冠。我们应该感谢Linux社区的大神们设计了这么强大的事件分发机制，让我们在Linux下可以享受高性能网络服务器带来的种种技术红利。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>herongwei</span> 👍（24） 💬（2）<div>这篇文章写得非常棒！之前学 epoll，只会流于表面，也很少去深度剖析底层的数据结构，多读几遍!
-另外分享一个大佬同学 epoll 内核源码详解发的帖子：https:&#47;&#47;www.nowcoder.com&#47;discuss&#47;26226</div>2019-10-26</li><br/><li><span>鱼向北游</span> 👍（20） 💬（1）<div>select这种是把等待队列和就绪队列混在一起，epoll根据这两种队列的特性用两种数据结构把这两个队列分开，果然在程序世界没有解决不了的事情，如果有，就加一个中间层</div>2019-10-18</li><br/><li><span>HerofH</span> 👍（9） 💬（1）<div>首先感谢老师的精彩分析。
+<li><span>herongwei</span> 👍（24） 💬（2）<p>这篇文章写得非常棒！之前学 epoll，只会流于表面，也很少去深度剖析底层的数据结构，多读几遍!
+另外分享一个大佬同学 epoll 内核源码详解发的帖子：https:&#47;&#47;www.nowcoder.com&#47;discuss&#47;26226</p>2019-10-26</li><br/><li><span>鱼向北游</span> 👍（20） 💬（1）<p>select这种是把等待队列和就绪队列混在一起，epoll根据这两种队列的特性用两种数据结构把这两个队列分开，果然在程序世界没有解决不了的事情，如果有，就加一个中间层</p>2019-10-18</li><br/><li><span>HerofH</span> 👍（9） 💬（1）<p>首先感谢老师的精彩分析。
 
 然后说下我的个人理解：epoll之所以效率比select高，原因在于select要做的事情太多，每次调用select不仅需要将描述符集添加到监听队列中，还要负责监听事件发生后的处理，以及select最后的清理工作等等...
 而epoll则把这么多事情分到了epoll_ctl和epoll_wait去处理，调用epoll_ctl可以开启事件的监听工作，epoll_wait则可以完成对已激活的事件的处理工作，最后close(epfd)完成epoll的清理工作。
@@ -800,10 +800,10 @@ epoll维护了一棵红黑树来跟踪所有待检测的文件描述字，黑红
 除此之外，个人感觉epoll还有一个妙处就是就绪链表，当监听的事件发生后，相应的epitem会自动在监听回调中将其添加到就绪链表中，而对于select来说，则需要不停对所有监听的描述符进行遍历，来检查它们的状态。
 
 不知道理解是否正确，敬请指正。
-</div>2020-01-15</li><br/><li><span>凉人。</span> 👍（8） 💬（1）<div>感觉这一章是最难以理解，如果多一些结构图，流程图，会好很多。</div>2020-02-11</li><br/><li><span>fackgc17</span> 👍（4） 💬（1）<div>可以提供一下分析用的 kernel 版本吗</div>2019-10-26</li><br/><li><span>heyman</span> 👍（3） 💬（4）<div>请问一下，为什么要用红黑树？是因为要排序吗？排序的意义又在哪里？确保查找、插入和删除的高效还不够吗？</div>2020-04-18</li><br/><li><span>瓜牛</span> 👍（2） 💬（1）<div>还是没明白为啥epoll有红黑树之后就不用在用户空间和内核空间之间拷贝了，或者说poll&#47;select为啥要在用户空间和内核空间之间拷贝？</div>2021-11-05</li><br/><li><span>钱</span> 👍（2） 💬（1）<div>功力不够，读起来有些费劲，好似拿到了九阴真经，不过需要黄姑娘翻译一下！
-如果能来个图，就好了😁</div>2019-12-01</li><br/><li><span>xupeng1644</span> 👍（1） 💬（1）<div>老师 在Level-triggered VS Edge-triggered小节中给出了Level-triggered的实现机制，可以再给下Edge-triggered的吗</div>2020-02-28</li><br/><li><span>J.M.Liu</span> 👍（1） 💬（1）<div>老师，我请教两个问题：
+</p>2020-01-15</li><br/><li><span>凉人。</span> 👍（8） 💬（1）<p>感觉这一章是最难以理解，如果多一些结构图，流程图，会好很多。</p>2020-02-11</li><br/><li><span>fackgc17</span> 👍（4） 💬（1）<p>可以提供一下分析用的 kernel 版本吗</p>2019-10-26</li><br/><li><span>heyman</span> 👍（3） 💬（4）<p>请问一下，为什么要用红黑树？是因为要排序吗？排序的意义又在哪里？确保查找、插入和删除的高效还不够吗？</p>2020-04-18</li><br/><li><span>瓜牛</span> 👍（2） 💬（1）<p>还是没明白为啥epoll有红黑树之后就不用在用户空间和内核空间之间拷贝了，或者说poll&#47;select为啥要在用户空间和内核空间之间拷贝？</p>2021-11-05</li><br/><li><span>钱</span> 👍（2） 💬（1）<p>功力不够，读起来有些费劲，好似拿到了九阴真经，不过需要黄姑娘翻译一下！
+如果能来个图，就好了😁</p>2019-12-01</li><br/><li><span>xupeng1644</span> 👍（1） 💬（1）<p>老师 在Level-triggered VS Edge-triggered小节中给出了Level-triggered的实现机制，可以再给下Edge-triggered的吗</p>2020-02-28</li><br/><li><span>J.M.Liu</span> 👍（1） 💬（1）<p>老师，我请教两个问题：
 1.ep_send_events_proc这个函数在把events列表拷贝到用户空间前会调用ep_item_poll函数，已确定对应的fd上的事件依旧有效。那ep_item_poll是根据什么来确定事件的有效性呢？
-2.在ep_send_events_proc处理level-triggered的时候，有这么一段话“At this point, no one can insert into ep-&gt;rdllist besides us. The epoll_ctl()  callers are locked out by ep_scan_ready_list() holding &quot;mtx&quot; and the  poll callback will queue them in ep-&gt;ovflist.”意思是说epoll_ctl（）的调用者也被锁在外面了。这个锁是说在ep_send_events_proc还没处理完的时候，epoll_ctl()无法操纵rdllist，但是之后是可以的，以实现再次注册感兴趣的时间。是这样吗？</div>2019-10-29</li><br/><li><span>沉淀的梦想</span> 👍（1） 💬（1）<div>缺乏C语言和linux内核基础的人读起这些源码来相当吃力，虽然老师讲得很好</div>2019-10-19</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<div>当内核监测到有就绪事件后，将对应的fd 加入就绪 队列，这里其实还会涉及到将有事件的fd拷贝到用户空间，可不可以让用户空间和内核空间采用共享内存的方式，避免拷贝呢</div>2022-01-27</li><br/><li><span>Geek_68d3d2</span> 👍（0） 💬（3）<div> epi&gt;nwait &gt;= 0请问这行代码什么意思</div>2020-01-08</li><br/><li><span>haozhang</span> 👍（0） 💬（1）<div>老师   进程阻塞的形式是什么呢   是for死循环吗     还是加入到等待队列呢，我看for循环前面不是加入到等待队列了吗？</div>2019-11-06</li><br/><li><span>初见</span> 👍（0） 💬（5）<div>老师，我之前面试被问到过说，epoll 更适合连接很多，但活跃的连接较少的情况
+2.在ep_send_events_proc处理level-triggered的时候，有这么一段话“At this point, no one can insert into ep-&gt;rdllist besides us. The epoll_ctl()  callers are locked out by ep_scan_ready_list() holding &quot;mtx&quot; and the  poll callback will queue them in ep-&gt;ovflist.”意思是说epoll_ctl（）的调用者也被锁在外面了。这个锁是说在ep_send_events_proc还没处理完的时候，epoll_ctl()无法操纵rdllist，但是之后是可以的，以实现再次注册感兴趣的时间。是这样吗？</p>2019-10-29</li><br/><li><span>沉淀的梦想</span> 👍（1） 💬（1）<p>缺乏C语言和linux内核基础的人读起这些源码来相当吃力，虽然老师讲得很好</p>2019-10-19</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<p>当内核监测到有就绪事件后，将对应的fd 加入就绪 队列，这里其实还会涉及到将有事件的fd拷贝到用户空间，可不可以让用户空间和内核空间采用共享内存的方式，避免拷贝呢</p>2022-01-27</li><br/><li><span>Geek_68d3d2</span> 👍（0） 💬（3）<p> epi&gt;nwait &gt;= 0请问这行代码什么意思</p>2020-01-08</li><br/><li><span>haozhang</span> 👍（0） 💬（1）<p>老师   进程阻塞的形式是什么呢   是for死循环吗     还是加入到等待队列呢，我看for循环前面不是加入到等待队列了吗？</p>2019-11-06</li><br/><li><span>初见</span> 👍（0） 💬（5）<p>老师，我之前面试被问到过说，epoll 更适合连接很多，但活跃的连接较少的情况
 
-那么，连接很多，活跃连接也很多的情况下，用什么方案呢？  堆机器嘛</div>2019-10-25</li><br/>
+那么，连接很多，活跃连接也很多的情况下，用什么方案呢？  堆机器嘛</p>2019-10-25</li><br/>
 </ul>

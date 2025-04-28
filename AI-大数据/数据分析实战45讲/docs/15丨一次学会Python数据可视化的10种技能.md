@@ -369,7 +369,7 @@ plt.show()
 
 欢迎你在评论区与我分享你的答案，也欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事，一起来动手练习一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>建强</span> 👍（14） 💬（4）<div>思考题1：对车祸数据成对关系的的探索，程序代码如下：
+<li><span>建强</span> 👍（14） 💬（4）<p>思考题1：对车祸数据成对关系的的探索，程序代码如下：
 
 #车祸数据分析
 import matplotlib.pyplot as plt
@@ -461,9 +461,9 @@ def main():
         else:
             AnalyData(HDSet, command)
 
-main()</div>2019-08-18</li><br/><li><span>sxpujs</span> 👍（9） 💬（1）<div>在 Mac 下设置中文字体，可以使用以下路径：
+main()</p>2019-08-18</li><br/><li><span>sxpujs</span> 👍（9） 💬（1）<p>在 Mac 下设置中文字体，可以使用以下路径：
 # 设置中文字体
-font = FontProperties(fname=&quot;&#47;System&#47;Library&#47;Fonts&#47;STHeiti Medium.ttc&quot;, size=14)</div>2019-04-21</li><br/><li><span>跳跳</span> 👍（4） 💬（1）<div>第一题：seaborn car_crashes成对关系探索
+font = FontProperties(fname=&quot;&#47;System&#47;Library&#47;Fonts&#47;STHeiti Medium.ttc&quot;, size=14)</p>2019-04-21</li><br/><li><span>跳跳</span> 👍（4） 💬（1）<p>第一题：seaborn car_crashes成对关系探索
 iris=sns.load_dataset(&quot;car_crashes&quot;)
 sns.pairplot(iris)
 plt.show()
@@ -473,7 +473,7 @@ print(iris.head(10))
 sns.jointplot(x=&#39;alcohol&#39;,y=&#39;speeding&#39;,data=iris,kind=&#39;scatter&#39;)
 sns.jointplot(x=&#39;alcohol&#39;,y=&#39;speeding&#39;,data=iris,kind=&#39;kde&#39;)
 sns.jointplot(x=&#39;alcohol&#39;,y=&#39;speeding&#39;,data=iris,kind=&#39;hex&#39;)
-碎碎念一下：为啥留言不支持图片？难受</div>2019-01-16</li><br/><li><span>jion</span> 👍（3） 💬（1）<div>你好，练习成对关系图时，除下如下错误，是何原因？
+碎碎念一下：为啥留言不支持图片？难受</p>2019-01-16</li><br/><li><span>jion</span> 👍（3） 💬（1）<p>你好，练习成对关系图时，除下如下错误，是何原因？
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import datasets
@@ -483,8 +483,8 @@ iris = pd.DataFrame(iris_datas.data, columns=[&#39;SpealLength&#39;, &#39;Spealw
 print(iris.shape,&quot;\n&quot;,iris)
 # 用Seaborn画成对关系
 sns.pairplot(iris)
-出现如下错误：ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().</div>2021-03-06</li><br/><li><span>求知鸟</span> 👍（3） 💬（3）<div>python在慢慢追赶R，我的R语言分析水平停止了，python水平在往上涨，现在的状态是，有老师的课就学课，没有就看《精益数据分析》。
-</div>2019-01-16</li><br/><li><span>小强</span> 👍（2） 💬（2）<div>各种场景的视图，试用什么场景，怎么分析，例子太少了，理解不够深。</div>2020-07-10</li><br/><li><span>夕子</span> 👍（1） 💬（1）<div>car_crashes = sns.load_dataset(&#39;car_crashes&#39;)
+出现如下错误：ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().</p>2021-03-06</li><br/><li><span>求知鸟</span> 👍（3） 💬（3）<p>python在慢慢追赶R，我的R语言分析水平停止了，python水平在往上涨，现在的状态是，有老师的课就学课，没有就看《精益数据分析》。
+</p>2019-01-16</li><br/><li><span>小强</span> 👍（2） 💬（2）<p>各种场景的视图，试用什么场景，怎么分析，例子太少了，理解不够深。</p>2020-07-10</li><br/><li><span>夕子</span> 👍（1） 💬（1）<p>car_crashes = sns.load_dataset(&#39;car_crashes&#39;)
 car_crashes.head(10)
 
 # 成对关系探索
@@ -501,7 +501,7 @@ plt.show()
 
 # 画hexbin图
 sns.jointplot(x = &#39;speeding&#39;, y = &#39;total&#39;, data = car_crashes, kind = &#39;hex&#39;)
-plt.show()</div>2021-03-18</li><br/><li><span>丁思森</span> 👍（1） 💬（2）<div>请问一下，有人在运行sns.load_dataset(&#39;tips&#39;),遇到报错urllib.error.URLError: &lt;urlopen error [Errno 11004] getaddrinfo failed&gt;么？这里直接加载数据集会报错，你们是怎么解决的？</div>2020-06-11</li><br/><li><span>毛毛🐛虫🌻</span> 👍（1） 💬（2）<div>热力图那个是颜色越浅，值越大么？</div>2019-01-18</li><br/><li><span>拉我吃</span> 👍（1） 💬（1）<div># coding:utf-8
+plt.show()</p>2021-03-18</li><br/><li><span>丁思森</span> 👍（1） 💬（2）<p>请问一下，有人在运行sns.load_dataset(&#39;tips&#39;),遇到报错urllib.error.URLError: &lt;urlopen error [Errno 11004] getaddrinfo failed&gt;么？这里直接加载数据集会报错，你们是怎么解决的？</p>2020-06-11</li><br/><li><span>毛毛🐛虫🌻</span> 👍（1） 💬（2）<p>热力图那个是颜色越浅，值越大么？</p>2019-01-18</li><br/><li><span>拉我吃</span> 👍（1） 💬（1）<p># coding:utf-8
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -516,11 +516,11 @@ sns.jointplot(x=&#39;alcohol&#39;, y=&#39;speeding&#39;, data=car_crashes, kind=
 sns.jointplot(x=&#39;alcohol&#39;, y=&#39;speeding&#39;, data=car_crashes, kind=&#39;hex&#39;)
 plt.show()
 
-二元关系选了喝酒和超速的对比，基本上在大部分区间下是线性关系，就是喝得多速度快:)</div>2019-01-17</li><br/><li><span>陶铖</span> 👍（0） 💬（1）<div>持续学习中，受益匪浅！</div>2020-05-29</li><br/><li><span>Dorothy</span> 👍（0） 💬（1）<div>运行sns.load_dataset()的时候遇到这个问题：
-URLError: &lt;urlopen error [Errno 61] Connection refused&gt; 请问大家有解决办法吗？</div>2020-05-21</li><br/><li><span>如果</span> 👍（0） 💬（1）<div>麻烦问下，seaborn数据集导入报错，在网上查了资料以后加入ssl认证，还是报错，怎么解决的</div>2020-04-18</li><br/><li><span>十六。</span> 👍（0） 💬（1）<div>import matplotlib.pyplot as plt
+二元关系选了喝酒和超速的对比，基本上在大部分区间下是线性关系，就是喝得多速度快:)</p>2019-01-17</li><br/><li><span>陶铖</span> 👍（0） 💬（1）<p>持续学习中，受益匪浅！</p>2020-05-29</li><br/><li><span>Dorothy</span> 👍（0） 💬（1）<p>运行sns.load_dataset()的时候遇到这个问题：
+URLError: &lt;urlopen error [Errno 61] Connection refused&gt; 请问大家有解决办法吗？</p>2020-05-21</li><br/><li><span>如果</span> 👍（0） 💬（1）<p>麻烦问下，seaborn数据集导入报错，在网上查了资料以后加入ssl认证，还是报错，怎么解决的</p>2020-04-18</li><br/><li><span>十六。</span> 👍（0） 💬（1）<p>import matplotlib.pyplot as plt
 import seaborn as sns
 # 数据准备
 crashes = sns.load_dataset(&quot;car_crashes&quot;)
 sns.pairplot(crashes)
-plt.show()</div>2020-03-28</li><br/><li><span>王辉</span> 👍（0） 💬（2）<div>老师我一点基础都没有 感觉听这个像天书</div>2020-03-01</li><br/>
+plt.show()</p>2020-03-28</li><br/><li><span>王辉</span> 👍（0） 💬（2）<p>老师我一点基础都没有 感觉听这个像天书</p>2020-03-01</li><br/>
 </ul>

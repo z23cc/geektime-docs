@@ -319,14 +319,14 @@ class Person(val name: String, var age: Int) {
 
 请运用今天学到的知识来分析这个问题背后的原因。欢迎你在留言区分享你的答案和思路，我们下节课再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Renext</span> 👍（66） 💬（4）<div>思考题：
+<li><span>Renext</span> 👍（66） 💬（4）<p>思考题：
 转换成 java代码就一清二楚，两种方式的isAdult本质不是同一个东西：
 1-通过自定义 getter 来实现的方式，isAdult其实是一个方法。外部每一次调用，都是拿最新的age进行计算，所以age的值有变动，isAdult()的结果是最新的。
 2- val isAdult = age &gt;= 18 这种方式，isAdault是一个final变量，只会在对象新建时，在构造方法中，根据age的值赋值一次。所以，之后age的值如果有变动，isAdault值是永远不变的。
 
-</div>2021-12-31</li><br/><li><span>PoPlus</span> 👍（12） 💬（1）<div>思考题：
+</p>2021-12-31</li><br/><li><span>PoPlus</span> 👍（12） 💬（1）<p>思考题：
 如果采用 val isAdult = age &gt;= 18 这种写法，那么错误会表现在给某个 Person 对象的 age 属性二次赋值时，isAdult 属性仍会是一个旧的 Boolean 值。原因：从反编译出的 Java 代码可以看出，isAdult 属性会被转换成一个 final 修饰的 Java 属性且在构造方法里赋好值了，那么意味着即使 age 属性后期修改一万遍，isAdult 属性也只会是它原来的那个初始值。
-而如果用 getter 的方式则不会有这个问题，因为 getter 方式会把 isAdult 属性转换成 getter 方法而不是 final 修饰的属性，每一次调用，isAdult 属性就会动态的根据 age 属性来判断返回值。</div>2021-12-31</li><br/><li><span>阶前听雨</span> 👍（11） 💬（1）<div>太赞了，看了很多书和博客，基本都在讲kotlin多好用。从根本上讲kotlin的还是这门课，很多以前懵懵懂懂的概念都豁然开朗，太赞了。</div>2021-12-31</li><br/><li><span>逢庆</span> 👍（8） 💬（1）<div>1.
+而如果用 getter 的方式则不会有这个问题，因为 getter 方式会把 isAdult 属性转换成 getter 方法而不是 final 修饰的属性，每一次调用，isAdult 属性就会动态的根据 age 属性来判断返回值。</p>2021-12-31</li><br/><li><span>阶前听雨</span> 👍（11） 💬（1）<p>太赞了，看了很多书和博客，基本都在讲kotlin多好用。从根本上讲kotlin的还是这门课，很多以前懵懵懂懂的概念都豁然开朗，太赞了。</p>2021-12-31</li><br/><li><span>逢庆</span> 👍（8） 💬（1）<p>1.
 val isAdult
      get() = age &gt;= 18
 反编译后可以看到，会生成方法:
@@ -343,17 +343,17 @@ private final boolean isAdult;
 this.isAdult = this.age &gt;= 18;
 
 
-</div>2021-12-31</li><br/><li><span>文茂权</span> 👍（6） 💬（1）<div>JVM 由于存在多种实现，依赖的是一套标准规范。尽管学习 Kotlin 不需要直接接触 JVM ，但参考 JVM 的设计规范对于我们学习 JVM 编程语言的设计是很有作用的。
-这里附上 JVM 不同版本的设计规范文档：https:&#47;&#47;docs.oracle.com&#47;javase&#47;specs&#47;index.html</div>2022-01-16</li><br/><li><span>3.141516</span> 👍（5） 💬（1）<div>kotlin 的一些语法特性在编译为字节码后会增多 class 数量，所以会增加字节码的大小。
+</p>2021-12-31</li><br/><li><span>文茂权</span> 👍（6） 💬（1）<p>JVM 由于存在多种实现，依赖的是一套标准规范。尽管学习 Kotlin 不需要直接接触 JVM ，但参考 JVM 的设计规范对于我们学习 JVM 编程语言的设计是很有作用的。
+这里附上 JVM 不同版本的设计规范文档：https:&#47;&#47;docs.oracle.com&#47;javase&#47;specs&#47;index.html</p>2022-01-16</li><br/><li><span>3.141516</span> 👍（5） 💬（1）<p>kotlin 的一些语法特性在编译为字节码后会增多 class 数量，所以会增加字节码的大小。
 
-想请教下老师，在 Android 中，Kotlin 还有哪些方面会增加包大小呢？谢谢</div>2022-02-09</li><br/><li><span>droidYu</span> 👍（4） 💬（1）<div>Kotlin语言的简洁得益于Kotlin编译器的强大，之所以Java和Kotlin能完全兼容，是因为Java和Kotlin编译后的成果都是Java字节码。</div>2022-03-20</li><br/><li><span>郑峰</span> 👍（3） 💬（1）<div>You can define custom accessors for a property. 
+想请教下老师，在 Android 中，Kotlin 还有哪些方面会增加包大小呢？谢谢</p>2022-02-09</li><br/><li><span>droidYu</span> 👍（4） 💬（1）<p>Kotlin语言的简洁得益于Kotlin编译器的强大，之所以Java和Kotlin能完全兼容，是因为Java和Kotlin编译后的成果都是Java字节码。</p>2022-03-20</li><br/><li><span>郑峰</span> 👍（3） 💬（1）<p>You can define custom accessors for a property. 
 If you define a custom getter, it will be called every time you access the property (this way you can implement a computed property). 
-If you define a custom setter, it will be called every time you assign a value to the property, except its initialization.</div>2022-01-15</li><br/><li><span>qinsi</span> 👍（2） 💬（2）<div>直觉上反编译都是有损的，不知道有没有遇到过反编译结果不对的例子？</div>2022-01-01</li><br/><li><span>PoPlus</span> 👍（2） 💬（2）<div>关于 Kotlin 包装类型优化原始类型，我的实验结果和老师的结论有一点出入，不知道是不是编译器版本的原因。🌚
+If you define a custom setter, it will be called every time you assign a value to the property, except its initialization.</p>2022-01-15</li><br/><li><span>qinsi</span> 👍（2） 💬（2）<p>直觉上反编译都是有损的，不知道有没有遇到过反编译结果不对的例子？</p>2022-01-01</li><br/><li><span>PoPlus</span> 👍（2） 💬（2）<p>关于 Kotlin 包装类型优化原始类型，我的实验结果和老师的结论有一点出入，不知道是不是编译器版本的原因。🌚
 var a: Long = 1 &#47;&#47; private static long a = 1L;
 val b: Long = 2 &#47;&#47; private static final long b = 2L;
 var c: Long? = 3 &#47;&#47; private static Long c = 3L; 未优化成原始类型
-val d: Long? = 4 &#47;&#47; private static final Long d = 4L; 未优化成原始类型</div>2021-12-31</li><br/><li><span>阿康</span> 👍（2） 💬（1）<div>对象属性：具有get的是可读属性，具有set的是可写属性，同时具有get、set的是可读写属性。没有get、set的那是字段，不是属性。</div>2021-12-31</li><br/><li><span>neo</span> 👍（1） 💬（1）<div>转换成java的话val isAdult = age &gt;= 18相当于在初始化函数中对isAdult进行赋值，并且本身为final属性，不再具有可变性。
-val isAdult get() = age &gt;= 18 才是一个正常对应一个方法，后面的语句就是方法体</div>2022-03-21</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<div>&#47;&#47; kotlin 代码
+val d: Long? = 4 &#47;&#47; private static final Long d = 4L; 未优化成原始类型</p>2021-12-31</li><br/><li><span>阿康</span> 👍（2） 💬（1）<p>对象属性：具有get的是可读属性，具有set的是可写属性，同时具有get、set的是可读写属性。没有get、set的那是字段，不是属性。</p>2021-12-31</li><br/><li><span>neo</span> 👍（1） 💬（1）<p>转换成java的话val isAdult = age &gt;= 18相当于在初始化函数中对isAdult进行赋值，并且本身为final属性，不再具有可变性。
+val isAdult get() = age &gt;= 18 才是一个正常对应一个方法，后面的语句就是方法体</p>2022-03-21</li><br/><li><span>Geek_Adr</span> 👍（1） 💬（1）<p>&#47;&#47; kotlin 代码
 
 &#47;&#47; 用 val 定义可为空、不可为空的Long，并且赋值
 val a: Long = 1L
@@ -366,7 +366,7 @@ long a = 1L;
 Long b = 2L;
 Long.valueOf(a).equals(b);
 
-&#47;&#47; 是不是可以认为val一定被转成成基本类型 可空类型遇到和对象相关操作的都会被转成包装类型</div>2022-02-04</li><br/><li><span>陈彬</span> 👍（1） 💬（1）<div>class Person(val name: String, var age: Int) {
+&#47;&#47; 是不是可以认为val一定被转成成基本类型 可空类型遇到和对象相关操作的都会被转成包装类型</p>2022-02-04</li><br/><li><span>陈彬</span> 👍（1） 💬（1）<p>class Person(val name: String, var age: Int) {
     val isAdult = age &gt;= 18
 }
 经过老师教的方法把Kotlin 对应的字节码反编译之后代码如下:
@@ -402,6 +402,6 @@ public final class Person {
    }
 }
 可以看到这种写法在初始化构造函数的时候就对isAdult属性进行赋值，导致以后不管如何修改age的值，isAdult()返回值永远不会改变。
-我理解之所以这样的原因是在kotlin中，val定义的属性默认会生成getter方法，而第一种方式没问题是因为其重写了属性的getter方法。</div>2021-12-31</li><br/><li><span>Xeon</span> 👍（1） 💬（1）<div>个人理解：上面那个自定义getter的方式最终会被编译成一个isAdult()方法，return this.age &gt;= 18; 并没有实际的isAdult属性产生（之前的文章中有提到过），此时isAdult的值是会根据age值的变化而变化的。
-而下面那种方式是真的会存在一个被final修饰的isAdult属性，而final修饰的属性值一旦确定后是不能修改的，也就是说首次给age赋值的时候，isAdult的值就已经确定了，哪怕后面再更改age的值，isAdult的值也不会随着age的值变化而变化。所以，日常开发中这样用一不小心就会出错。</div>2021-12-31</li><br/>
+我理解之所以这样的原因是在kotlin中，val定义的属性默认会生成getter方法，而第一种方式没问题是因为其重写了属性的getter方法。</p>2021-12-31</li><br/><li><span>Xeon</span> 👍（1） 💬（1）<p>个人理解：上面那个自定义getter的方式最终会被编译成一个isAdult()方法，return this.age &gt;= 18; 并没有实际的isAdult属性产生（之前的文章中有提到过），此时isAdult的值是会根据age值的变化而变化的。
+而下面那种方式是真的会存在一个被final修饰的isAdult属性，而final修饰的属性值一旦确定后是不能修改的，也就是说首次给age赋值的时候，isAdult的值就已经确定了，哪怕后面再更改age的值，isAdult的值也不会随着age的值变化而变化。所以，日常开发中这样用一不小心就会出错。</p>2021-12-31</li><br/>
 </ul>

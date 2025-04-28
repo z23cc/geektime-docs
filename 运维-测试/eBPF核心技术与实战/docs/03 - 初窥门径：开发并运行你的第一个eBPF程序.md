@@ -276,33 +276,33 @@ TIME(s)            COMM             PID    FILE
 
 欢迎在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>莫名</span> 👍（9） 💬（3）<div>给倪老师的 Github 仓库里面的这个小程序挑个🐛：
+<li><span>莫名</span> 👍（9） 💬（3）<p>给倪老师的 Github 仓库里面的这个小程序挑个🐛：
 1、b = BPF(src_file=&quot;trace-open.c&quot;)，trace-open.c -&gt; trace_open.c
-2、依赖了 openat2.h 头文件，openat2 系统调用自 5.6 版本才出现，低于这个版本无法运行 trace_open.py，建议用 openat 系统调用，有比较好的版本兼容性。</div>2022-01-21</li><br/><li><span>莫名</span> 👍（68） 💬（3）<div>追踪文件打开事件，采用场景大致有：
+2、依赖了 openat2.h 头文件，openat2 系统调用自 5.6 版本才出现，低于这个版本无法运行 trace_open.py，建议用 openat 系统调用，有比较好的版本兼容性。</p>2022-01-21</li><br/><li><span>莫名</span> 👍（68） 💬（3）<p>追踪文件打开事件，采用场景大致有：
 1、查看某个程序启动时加载了哪些配置文件，便于确认是否加载了正确的配置文件。对于允许自定义配置文件路径的程序尤其有用，例如 MySQL、PostgreSQL。
 2、查看是否存在频繁或周期性打开某些文件的情况，考虑是否存在优化可能。比如周期性打开某个极少变化的文件，可以一次性读取，且监听文件变动事件，避免多次打开读取。
 3、分析依赖 &#47;proc、&#47;sys 等虚拟文件系统的 Linux 工具大致工作原理。比如执行 vmstat，，可以通过追踪文件打开事件看到至少打开了 &#47;proc&#47;meminfo、&#47;proc&#47;stat、&#47;proc&#47;vmstat 这几个文件，帮助你更好的理解工具的数据源与实现原理。
 4、分析 K8s、Docker 等 cgroup 相关操作。比如 docker run xxx 时，可以看到 &#47;sys&#47;fs&#47;cgroup&#47;cpuset&#47;docker&#47;xxx&#47;cpuset.cpus、&#47;sys&#47;fs&#47;cgroup&#47;cpuset&#47;docker&#47;xxx&#47;cpuset.mems 等 cgroup 文件被打开，也可以查看 kube-proxy 在周期性刷新 cgroup 相关文件。
-5、....</div>2022-01-21</li><br/><li><span>JUNLONG</span> 👍（10） 💬（2）<div>习惯用docker的同学可以试下 这个镜像，github地址：github.com&#47;Jun10ng&#47;ebpf-for-desktop 
-用docker可以用vscode编辑会高效点。如果喜欢的话就来个start吧 谢谢</div>2022-01-23</li><br/><li><span>jssfy</span> 👍（7） 💬（1）<div>请问这种对open系统调用的截获会影响用户文件打开的性能不? 影响到什么程度呢?</div>2022-02-08</li><br/><li><span>ThinkerWalker</span> 👍（6） 💬（3）<div>有个Python语法的疑问：trace_open.py中，print_event被调用的时候【28行，b[&quot;events&quot;].open_perf_buffer(print_event)】是如何传入三个参数（cpu, data, size）呢？</div>2022-01-21</li><br/><li><span>不了峰</span> 👍（5） 💬（1）<div>原来这个 trace_open.py  就是一个「简化」版的 opensnoop-bpfcc  工具呀。
+5、....</p>2022-01-21</li><br/><li><span>JUNLONG</span> 👍（10） 💬（2）<p>习惯用docker的同学可以试下 这个镜像，github地址：github.com&#47;Jun10ng&#47;ebpf-for-desktop 
+用docker可以用vscode编辑会高效点。如果喜欢的话就来个start吧 谢谢</p>2022-01-23</li><br/><li><span>jssfy</span> 👍（7） 💬（1）<p>请问这种对open系统调用的截获会影响用户文件打开的性能不? 影响到什么程度呢?</p>2022-02-08</li><br/><li><span>ThinkerWalker</span> 👍（6） 💬（3）<p>有个Python语法的疑问：trace_open.py中，print_event被调用的时候【28行，b[&quot;events&quot;].open_perf_buffer(print_event)】是如何传入三个参数（cpu, data, size）呢？</p>2022-01-21</li><br/><li><span>不了峰</span> 👍（5） 💬（1）<p>原来这个 trace_open.py  就是一个「简化」版的 opensnoop-bpfcc  工具呀。
 
 我为了更清晰更简单的打印出 trace_open.py 的输出把一些服务都关了 ：）
 systemctl stop multipathd
 systemctl stop snapd
-systemctl stop irqbalance </div>2022-01-25</li><br/><li><span>Geek_5aa343</span> 👍（5） 💬（3）<div>老师，您好，有几个问题请教下：
+systemctl stop irqbalance </p>2022-01-25</li><br/><li><span>Geek_5aa343</span> 👍（5） 💬（3）<p>老师，您好，有几个问题请教下：
 1. &quot;do_sys_openat2() 是系统调用 openat() 在内核中的实现&quot; 怎么去找到一个系统调用在内核中的实现呢？
 2. 使用BPF map获取openat的打开文件名这里，&#47;&#47; 定义数据结构struct data_t { u32 pid; u64 ts; char comm[TASK_COMM_LEN]; char fname[NAME_MAX];}; 这个的格式为啥是这样呢，就是有具体每个探针的map说明文档嘛
-多谢老师</div>2022-01-21</li><br/><li><span>Geek_b85295</span> 👍（4） 💬（5）<div>老师，我的环境是ubuntu20.04，内核5.4.0-92-generic，把环境依赖都正常安装好后，执行python3 hello.py 出现错误 Failed to attach BPF program b&#39;hello_world&#39; to kprobe b&#39;do_sys_openat2&#39;，网上没找到解决方法，可以帮忙看看嘛</div>2022-02-08</li><br/><li><span>写点啥呢</span> 👍（3） 💬（2）<div>有几个问题想请教老师：
+多谢老师</p>2022-01-21</li><br/><li><span>Geek_b85295</span> 👍（4） 💬（5）<p>老师，我的环境是ubuntu20.04，内核5.4.0-92-generic，把环境依赖都正常安装好后，执行python3 hello.py 出现错误 Failed to attach BPF program b&#39;hello_world&#39; to kprobe b&#39;do_sys_openat2&#39;，网上没找到解决方法，可以帮忙看看嘛</p>2022-02-08</li><br/><li><span>写点啥呢</span> 👍（3） 💬（2）<p>有几个问题想请教老师：
 1. perf_buffer_poll方法是非阻塞的么
 2. bpf_probe_read(&amp;data.fname, sizeof(data.fname), (void *)filename); 这里filename指针的内存大小是否也是NAME_MAX，不然读取应该会导致非法访问
 3. hello_world方法的几个形参是什么含义，感觉ctx是bpf固定的，后面dfd, filename和open_how是openat2的参数，请问是否编写bpf函数都是可以在ctx后面加入对应系统调用接口的入参，然后bpf会在执行时候自动进行参数绑定？
 4. perf_submit函数传入的c struct在bcc脚本中看上去可以通过event方法自动转化为python对象？
 
 谢谢老师
-</div>2022-01-28</li><br/><li><span>waterjiao</span> 👍（2） 💬（1）<div>还有几个问题咨询下老师
+</p>2022-01-28</li><br/><li><span>waterjiao</span> 👍（2） 💬（1）<p>还有几个问题咨询下老师
 1. perf缓存区大小如何查看
 2.如果缓存区满了，后续数据会覆盖之前的数据吗？open_perf_buffer是阻塞的么
-3. libbpf是怎么做到co-re的</div>2022-02-17</li><br/><li><span>HenryHui</span> 👍（2） 💬（3）<div>老师您好：
+3. libbpf是怎么做到co-re的</p>2022-02-17</li><br/><li><span>HenryHui</span> 👍（2） 💬（3）<p>老师您好：
 我在运行例子的时候出现了错误如下错误：
 
 root@ubuntu-linux-20-04-desktop:~&#47;project&#47;ebpf&#47;study# sudo python3 hello.py
@@ -318,7 +318,7 @@ Exception: Failed to attach BPF program b&#39;hello_world&#39; to kprobe b&#39;d
 Linux ubuntu-linux-20-04-desktop 5.4.0-80-generic #90-Ubuntu SMP Fri Jul 9 17:43:26 UTC 2021 aarch64 aarch64 aarch64 GNU&#47;Linux
 
 重点是这句报错：cannot attach kprobe, probe entry may not exist  是说我的kprobe不存在么
-</div>2022-02-11</li><br/><li><span>Y</span> 👍（2） 💬（3）<div>E: 无法定位软件包 libbpf-dev
-提示这个报错怎么办？更新了源好像也不行</div>2022-02-08</li><br/><li><span>一位不愿透露姓名的王先生</span> 👍（2） 💬（1）<div>BPF_PERF_OUTPUT(events);
-这个 events 是在哪定义的？ </div>2022-01-24</li><br/><li><span>草根</span> 👍（2） 💬（1）<div>请问老师，hello_world的入参是要和系统调用的入参设置一致吗？</div>2022-01-21</li><br/><li><span>加油加油</span> 👍（1） 💬（2）<div>老师问下，为什么我的ubuntu:20 里面只有设置 __x64_sys_openat  才有用  按照文章里的就不行呢 ？</div>2022-02-24</li><br/>
+</p>2022-02-11</li><br/><li><span>Y</span> 👍（2） 💬（3）<p>E: 无法定位软件包 libbpf-dev
+提示这个报错怎么办？更新了源好像也不行</p>2022-02-08</li><br/><li><span>一位不愿透露姓名的王先生</span> 👍（2） 💬（1）<p>BPF_PERF_OUTPUT(events);
+这个 events 是在哪定义的？ </p>2022-01-24</li><br/><li><span>草根</span> 👍（2） 💬（1）<p>请问老师，hello_world的入参是要和系统调用的入参设置一致吗？</p>2022-01-21</li><br/><li><span>加油加油</span> 👍（1） 💬（2）<p>老师问下，为什么我的ubuntu:20 里面只有设置 __x64_sys_openat  才有用  按照文章里的就不行呢 ？</p>2022-02-24</li><br/>
 </ul>

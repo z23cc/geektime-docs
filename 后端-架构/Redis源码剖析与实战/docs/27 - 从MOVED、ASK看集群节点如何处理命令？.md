@@ -301,7 +301,7 @@ if (n == NULL || n != server.cluster->myself) {
 	}
 ```
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Kaito</span> 👍（10） 💬（0）<div>1、cluster 模式的 Redis，在执行命令阶段，需要判断 key 是否属于本实例，不属于会给客户端返回请求重定向的信息
+<li><span>Kaito</span> 👍（10） 💬（0）<p>1、cluster 模式的 Redis，在执行命令阶段，需要判断 key 是否属于本实例，不属于会给客户端返回请求重定向的信息
 
 2、判断 key 是否属于本实例，会先计算 key 所属的 slot，再根据 slot 定位属于哪个实例
 
@@ -315,7 +315,7 @@ if (n == NULL || n != server.cluster->myself) {
 
 如果当前命令不是 EXEC，而是一个普通命令，则调用 flagTransaction。这个函数会给当前 client 打上一个标记 CLIENT_DIRTY_EXEC，如果后面执行了 EXEC，就会判断这个标记，随即也会放弃执行事务，给客户端返回错误。
 
-也就是说，当集群不可用、key 找不到对应的 slot、key 不在本实例中、操作的 keys 不在同一个 slot、key 正在迁移中，发生这几种情况时，都会放弃整个事务的执行。</div>2021-10-13</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<div>回答老师的问题：
+也就是说，当集群不可用、key 找不到对应的 slot、key 不在本实例中、操作的 keys 不在同一个 slot、key 正在迁移中，发生这几种情况时，都会放弃整个事务的执行。</p>2021-10-13</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<p>回答老师的问题：
 按照我个人理解，不知道是否准确。 我们先了解一下Redis事务的实现方式，命令在multiState中是以队列的形式保存着的，只有当执行EXEC的时候，才会按照队列顺序依次执行里面的命令，否则会调用queueMultiCommand将命令保存到这个队列中，而事务在Redis中是以client的维度开启的，如果一个client开启了事务，那么它结构体中的flags会被设置为CLIENT_MULTI（在事务中），那么问题中的两个函数的作用是什么？
 
         1、【discardTransaction】：直接丢弃当前的事务，清空multiState队列里面的命令，并且会对事务中的key unWatch。
@@ -324,5 +324,5 @@ if (n == NULL || n != server.cluster->myself) {
 两个方法刚好对应了client在事务中，执行EXEC命令和普通命令的两种情况。Redis是发现当getNodeByQuery返回的clusterNode节点不是自己的时候才会执行这两个方法，并且当Redis以集群模式运行的时候，跨节点是不支持事务，如果发现当前client有事务开启的情况，可能是之前开启的，那么当getNodeByQuery发现不是自己的时候需要把之前的事务废弃。如果命令直接就是EXEC了那么直接调用discardTransaction丢弃事务，如果是事务中的某个命令出现这种情况(例如：开启事务后发生迁移)，则调用flagTransaction，等到EXEC的时候一样丢弃。
 
 补充：
-    集群中涉及MULTI&#47;EXEC的操作需要让key都在同一节点上面，如果不在会返回 MOVED 信息或者直接返回error信息。</div>2021-10-12</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<div>只要能够进入n == NULL || n != server.cluster-&gt;myself，都表示需要重定向客户端了。如果当前是execCommand，discardTransaction就释放整个multi阶段缓存下来的命令。否则就打一个脏标识CLIENT_DIRTY_EXEC</div>2021-10-12</li><br/>
+    集群中涉及MULTI&#47;EXEC的操作需要让key都在同一节点上面，如果不在会返回 MOVED 信息或者直接返回error信息。</p>2021-10-12</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<p>只要能够进入n == NULL || n != server.cluster-&gt;myself，都表示需要重定向客户端了。如果当前是execCommand，discardTransaction就释放整个multi阶段缓存下来的命令。否则就打一个脏标识CLIENT_DIRTY_EXEC</p>2021-10-12</li><br/>
 </ul>

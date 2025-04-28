@@ -290,7 +290,7 @@ function showName() {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>mfist</span> 👍（204） 💬（11）<div>输出1
+<li><span>mfist</span> 👍（204） 💬（11）<p>输出1
 
 编译阶段:
 var showName
@@ -299,7 +299,7 @@ function showName(){console.log(1)}
 执行阶段:
 showName()&#47;&#47;输出1
 showName=function(){console.log(2)}
-&#47;&#47;如果后面再有showName执行的话，就输出2因为这时候函数引用已经变了</div>2019-08-20</li><br/><li><span>lane</span> 👍（147） 💬（10）<div>老师，head头部引入的js文件，也是先编译的吗？</div>2019-08-20</li><br/><li><span>爱吃锅巴的沐泡</span> 👍（106） 💬（6）<div>答案：1
+&#47;&#47;如果后面再有showName执行的话，就输出2因为这时候函数引用已经变了</p>2019-08-20</li><br/><li><span>lane</span> 👍（147） 💬（10）<p>老师，head头部引入的js文件，也是先编译的吗？</p>2019-08-20</li><br/><li><span>爱吃锅巴的沐泡</span> 👍（106） 💬（6）<p>答案：1
 
 编译阶段:
 var showName = undefined
@@ -313,7 +313,7 @@ showName = function() {console.log(2)}
 
 疑问：如果同名的变量和函数名，变量环境中是分别保存还是如何处理的？
 
-</div>2019-08-20</li><br/><li><span>he</span> 👍（81） 💬（10）<div>函数提升要比变量提升的优先级要高一些，且不会被变量声明覆盖，但是会被变量赋值之后覆盖。</div>2019-08-21</li><br/><li><span>shezhenbiao</span> 👍（62） 💬（6）<div>老师好，请教您一个问题。
+</p>2019-08-20</li><br/><li><span>he</span> 👍（81） 💬（10）<p>函数提升要比变量提升的优先级要高一些，且不会被变量声明覆盖，但是会被变量赋值之后覆盖。</p>2019-08-21</li><br/><li><span>shezhenbiao</span> 👍（62） 💬（6）<p>老师好，请教您一个问题。
 debugger;
 (function(){
     console.log(g)
@@ -322,7 +322,7 @@ debugger;
         function g(){ return true; }
     }
 })();
-这个函数步进调试时，发现打印g时值是undefined而不是提示not defined，说明if中g函数确实是提升了，但是为何不是g()而是undefined？然后走完function g(){ return true; }这一步后 console.log(g)中的g才变为g()。这里条件声明函数的变量提升有点搞不明白。</div>2019-08-25</li><br/><li><span>William</span> 👍（40） 💬（11）<div>老师，如果把两个函数调换个儿。那么先声明function，然后把 showName 赋值 undefined，undefined不会覆盖函数声明。这是为什么？
+这个函数步进调试时，发现打印g时值是undefined而不是提示not defined，说明if中g函数确实是提升了，但是为何不是g()而是undefined？然后走完function g(){ return true; }这一步后 console.log(g)中的g才变为g()。这里条件声明函数的变量提升有点搞不明白。</p>2019-08-25</li><br/><li><span>William</span> 👍（40） 💬（11）<p>老师，如果把两个函数调换个儿。那么先声明function，然后把 showName 赋值 undefined，undefined不会覆盖函数声明。这是为什么？
 
 console.log(showName.toString())
 function showName() {
@@ -332,7 +332,7 @@ var showName = function() {
   console.log(2)
 }
 
-打印的是函数体，而非undefined，证明 undefined 不会覆盖函数声明！！</div>2019-08-21</li><br/><li><span>林展翔</span> 👍（29） 💬（1）<div>老师，可以请教下吗，在编译完成之后是单单生成了字节码，再到执行过程中变成对应平台的机器码？ 还是编译过程已经生成了对应平台的机器码， 执行阶段就直接去执行相应的机器码？</div>2019-08-20</li><br/><li><span>Geek_East</span> 👍（25） 💬（3）<div>lexical scope发生在编译阶段，会产生变量提升的效果；
+打印的是函数体，而非undefined，证明 undefined 不会覆盖函数声明！！</p>2019-08-21</li><br/><li><span>林展翔</span> 👍（29） 💬（1）<p>老师，可以请教下吗，在编译完成之后是单单生成了字节码，再到执行过程中变成对应平台的机器码？ 还是编译过程已经生成了对应平台的机器码， 执行阶段就直接去执行相应的机器码？</p>2019-08-20</li><br/><li><span>Geek_East</span> 👍（25） 💬（3）<p>lexical scope发生在编译阶段，会产生变量提升的效果；
 JavaScript的Dynamic Scope发生在执行阶段，会产生this binding, prototype chaining search的过程；
 变量提升只提升声明(left hand）不提升赋值(right hand)
 function的声明主要有: function declaration, function expression
@@ -341,7 +341,7 @@ function的声明主要有: function declaration, function expression
 另外要注意block内部的var变量能够穿透block提升到global scope.
 
 更多JS请了解：
-https:&#47;&#47;geekeast.github.io&#47;jsscope.html</div>2019-11-28</li><br/><li><span>林高鸿</span> 👍（25） 💬（1）<div>老师，ES6 后不用 var，所以可否理解 Hoisting 为“权宜之计&#47;设计失误”呢？</div>2019-08-20</li><br/><li><span>YBB</span> 👍（23） 💬（4）<div>老师我想问下，一段javascript代码进入编译阶段是会对函数体内的代码也进行编译，还是只是将函数体的代码存储在堆，在执行中遇到该函数再去编译？</div>2019-08-26</li><br/><li><span>趁你还年轻233</span> 👍（13） 💬（3）<div>var showName;
+https:&#47;&#47;geekeast.github.io&#47;jsscope.html</p>2019-11-28</li><br/><li><span>林高鸿</span> 👍（25） 💬（1）<p>老师，ES6 后不用 var，所以可否理解 Hoisting 为“权宜之计&#47;设计失误”呢？</p>2019-08-20</li><br/><li><span>YBB</span> 👍（23） 💬（4）<p>老师我想问下，一段javascript代码进入编译阶段是会对函数体内的代码也进行编译，还是只是将函数体的代码存储在堆，在执行中遇到该函数再去编译？</p>2019-08-26</li><br/><li><span>趁你还年轻233</span> 👍（13） 💬（3）<p>var showName;
 function showName() {
     console.log(1)
 }
@@ -361,7 +361,7 @@ function showName() {
 showName();
 showName = function() {
     console.log(2)
-};</div>2019-11-11</li><br/><li><span>林展翔</span> 👍（7） 💬（4）<div>x = 10 + 20;
+};</p>2019-11-11</li><br/><li><span>林展翔</span> 👍（7） 💬（4）<p>x = 10 + 20;
 console.log(x);
 若对 x 未进行定义, 直接赋值, 可以输出
 若按照课程理解并假设
@@ -372,7 +372,7 @@ console.log(x);
 x = 10 + 20;
 console.log(x);
 会出现报错  x is not defined
-在这个地方 我的理解有什么问题吗 还是说 原来就没有 x = undefine 操作, 只是在 x = 10 + 20; 给 x 赋值了一下.</div>2019-08-20</li><br/><li><span>杨陆伟</span> 👍（3） 💬（3）<div>showName()
+在这个地方 我的理解有什么问题吗 还是说 原来就没有 x = undefine 操作, 只是在 x = 10 + 20; 给 x 赋值了一下.</p>2019-08-20</li><br/><li><span>杨陆伟</span> 👍（3） 💬（3）<p>showName()
 function showName(){
     console.log(1)
 }
@@ -381,5 +381,5 @@ var showName=function(){
 }
 showName()
 
-第二个showName打印为2，为什么这个showName找的是变量而不是函数，或者此时变量环境中已经没有了showName函数，只有showName变量？谢谢</div>2019-08-20</li><br/><li><span>Lester</span> 👍（2） 💬（1）<div>如果变量和函数同名，那么在编译阶段，变量的声明会被忽略，执行的时候还是后面的是什么就是什么，而不会因为同名，就一定是函数。</div>2019-11-13</li><br/><li><span>子非鱼</span> 👍（2） 💬（1）<div>老师我有个问题，正常情况domcontentloaded事件是在浏览器下载并解析完html才触发，如果有内嵌外部js文件，也要等到js加载并执行完才触发。但如果页面是被二次访问并且html和引入的外部js都命中了缓存，则是否也要等到js被完全执行才触发呢？</div>2019-08-22</li><br/>
+第二个showName打印为2，为什么这个showName找的是变量而不是函数，或者此时变量环境中已经没有了showName函数，只有showName变量？谢谢</p>2019-08-20</li><br/><li><span>Lester</span> 👍（2） 💬（1）<p>如果变量和函数同名，那么在编译阶段，变量的声明会被忽略，执行的时候还是后面的是什么就是什么，而不会因为同名，就一定是函数。</p>2019-11-13</li><br/><li><span>子非鱼</span> 👍（2） 💬（1）<p>老师我有个问题，正常情况domcontentloaded事件是在浏览器下载并解析完html才触发，如果有内嵌外部js文件，也要等到js加载并执行完才触发。但如果页面是被二次访问并且html和引入的外部js都命中了缓存，则是否也要等到js被完全执行才触发呢？</p>2019-08-22</li><br/>
 </ul>

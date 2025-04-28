@@ -216,10 +216,10 @@ final class LeaderBoard {
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>suncar</span> 👍（13） 💬（0）<div>老师您好，请问一下可不可以将这种案例放一份到github上。我们可以拉到本地进行调试。在这个过程中避免不了出现各种异常，以方便更好的解决和深入了解。谢谢</div>2019-07-16</li><br/><li><span>之渊</span> 👍（1） 💬（0）<div>源码https:&#47;&#47;gitee.com&#47;oumin12345&#47;daimademojihe&#47;tree&#47;master&#47;cloudx&#47;bigdata&#47;src&#47;main&#47;java&#47;test&#47;beam&#47;facebook
-新手先自己试着写出来。再参考。这样才是实战啊，毕竟工作是没有抄的</div>2020-08-24</li><br/><li><span>Fiery</span> 👍（0） 💬（0）<div>第一个问题是，为什么pipeline里面没有针对每个关卡的aggregation？难道默认只处理一个关卡吗？那candy crush有好几百的关卡，总不能每一个关卡单独copy一份这样的代码吧？！
-第二个问题是，在第5步的Composite Transform中，用Top Transform算出每个用户的Top score，输出难道不应该是PCollection&lt;KV&lt;string, long&gt;&gt;吗（Key是user id，Value是score）？而且既然已经用Top得到了每个用户的最高分，直接针对这个PCollection&lt;KV&lt;string, long&gt;&gt;进行第二次Top Transform不就能得到前100名用户的ID的分数了？为什么还要多一个中间转换产生PCollection&lt;KV&lt;string, UserScoreInfo&gt;&gt;呢？</div>2020-03-15</li><br/><li><span>wang</span> 👍（0） 💬（0）<div>思考题：窗口值也就是事件处理阶段=》startBoundary 和 endBoundary 的值 
+<li><span>suncar</span> 👍（13） 💬（0）<p>老师您好，请问一下可不可以将这种案例放一份到github上。我们可以拉到本地进行调试。在这个过程中避免不了出现各种异常，以方便更好的解决和深入了解。谢谢</p>2019-07-16</li><br/><li><span>之渊</span> 👍（1） 💬（0）<p>源码https:&#47;&#47;gitee.com&#47;oumin12345&#47;daimademojihe&#47;tree&#47;master&#47;cloudx&#47;bigdata&#47;src&#47;main&#47;java&#47;test&#47;beam&#47;facebook
+新手先自己试着写出来。再参考。这样才是实战啊，毕竟工作是没有抄的</p>2020-08-24</li><br/><li><span>Fiery</span> 👍（0） 💬（0）<p>第一个问题是，为什么pipeline里面没有针对每个关卡的aggregation？难道默认只处理一个关卡吗？那candy crush有好几百的关卡，总不能每一个关卡单独copy一份这样的代码吧？！
+第二个问题是，在第5步的Composite Transform中，用Top Transform算出每个用户的Top score，输出难道不应该是PCollection&lt;KV&lt;string, long&gt;&gt;吗（Key是user id，Value是score）？而且既然已经用Top得到了每个用户的最高分，直接针对这个PCollection&lt;KV&lt;string, long&gt;&gt;进行第二次Top Transform不就能得到前100名用户的ID的分数了？为什么还要多一个中间转换产生PCollection&lt;KV&lt;string, UserScoreInfo&gt;&gt;呢？</p>2020-03-15</li><br/><li><span>wang</span> 👍（0） 💬（0）<p>思考题：窗口值也就是事件处理阶段=》startBoundary 和 endBoundary 的值 
  触发器也就是计算触发的时间=》30min 一个点
-累加模式=》丢弃</div>2020-01-08</li><br/><li><span>bingo</span> 👍（0） 💬（0）<div>老师你好，我有个疑问。这里的用户数据可不可以全部放在Hbase里。
-由于好友之间的排名查询涉及的数据量少，所以直接查询Hbase。而全局的总排名要涉及到所有的玩家，数据量大，这个使用流水线处理</div>2019-09-21</li><br/>
+累加模式=》丢弃</p>2020-01-08</li><br/><li><span>bingo</span> 👍（0） 💬（0）<p>老师你好，我有个疑问。这里的用户数据可不可以全部放在Hbase里。
+由于好友之间的排名查询涉及的数据量少，所以直接查询Hbase。而全局的总排名要涉及到所有的玩家，数据量大，这个使用流水线处理</p>2019-09-21</li><br/>
 </ul>

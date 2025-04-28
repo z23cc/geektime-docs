@@ -176,17 +176,17 @@ Vue的Devtools操作比较简单，进阶的知识并不算多。在讲Console�
 
 欢迎在留言区分享你的答案，我们可以一起探讨高效调试Vue的新方法。也欢迎你把这一讲的内容分享给你周围的朋友、同事，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>元宝</span> 👍（58） 💬（2）<div>Object.entries([...document.querySelectorAll(&quot;*&quot;)].map(n=&gt;n.tagName).reduce((pre, cur)=&gt;{
+<li><span>元宝</span> 👍（58） 💬（2）<p>Object.entries([...document.querySelectorAll(&quot;*&quot;)].map(n=&gt;n.tagName).reduce((pre, cur)=&gt;{
   pre[cur] = (pre[cur] || 0) + 1;
   return pre;
-}, {})).sort((a, b)=&gt;b[1]-a[1]).slice(0, 3)</div>2021-11-12</li><br/><li><span>若川</span> 👍（42） 💬（5）<div>debugger 也是高级程序员必备的断点调试法，你一定要掌握。
+}, {})).sort((a, b)=&gt;b[1]-a[1]).slice(0, 3)</p>2021-11-12</li><br/><li><span>若川</span> 👍（42） 💬（5）<p>debugger 也是高级程序员必备的断点调试法，你一定要掌握。
 
 很赞同大圣老师的这句话。我觉得是基本必备技能。但我发现真的有很多人不太会，甚至没调试过代码，没安装过vue-devtools。
 
 其实vue官方文档有写怎么调试。《在 VS Code 中调试》https:&#47;&#47;cn.vuejs.org&#47;v2&#47;cookbook&#47;debugging-in-vscode.html
 
 更是少数人知道 vue-devtools 可以直接打开页面对应的组件源文件，不需要问同事，定位半天。
-我之前也写过文章分析这个功能原理。《据说 99% 的人不知道 vue-devtools 还能直接打开对应组件文件？本文原理揭秘》https:&#47;&#47;juejin.cn&#47;post&#47;6959348263547830280</div>2021-11-12</li><br/><li><span>Kobe的篮球</span> 👍（12） 💬（1）<div>vue3项目通过vite打包后，如何支持dev-tools啊</div>2021-12-13</li><br/><li><span>Beauty~fish🐬</span> 👍（1） 💬（1）<div>贺老面试题。。。还有其他的题吗，在哪里可以学习呢</div>2021-11-30</li><br/><li><span>轻飘飘过</span> 👍（1） 💬（1）<div>看大家的写法都挺优秀的，大圣老师说的不用sort 和并列打印数据的问题，个人思考用桶排序求解🤔，代码如下，互相学习。
+我之前也写过文章分析这个功能原理。《据说 99% 的人不知道 vue-devtools 还能直接打开对应组件文件？本文原理揭秘》https:&#47;&#47;juejin.cn&#47;post&#47;6959348263547830280</p>2021-11-12</li><br/><li><span>Kobe的篮球</span> 👍（12） 💬（1）<p>vue3项目通过vite打包后，如何支持dev-tools啊</p>2021-12-13</li><br/><li><span>Beauty~fish🐬</span> 👍（1） 💬（1）<p>贺老面试题。。。还有其他的题吗，在哪里可以学习呢</p>2021-11-30</li><br/><li><span>轻飘飘过</span> 👍（1） 💬（1）<p>看大家的写法都挺优秀的，大圣老师说的不用sort 和并列打印数据的问题，个人思考用桶排序求解🤔，代码如下，互相学习。
 function main() {
   let tags = Array.from(document.querySelectorAll(&#39;*&#39;));
   let tMap = {}, max = min = 1;
@@ -213,7 +213,7 @@ function main() {
     i--;
   }
   return res;
-};</div>2021-11-17</li><br/><li><span>飞翔国度</span> 👍（1） 💬（2）<div>发现公司的vue项目都屏蔽了vuetools...在生产上开着是不是有点不安全？</div>2021-11-16</li><br/><li><span>乐叶</span> 👍（0） 💬（1）<div>let tag = [...document.querySelectorAll(&#39;*&#39;)].map(node =&gt; node.nodeName)
+};</p>2021-11-17</li><br/><li><span>飞翔国度</span> 👍（1） 💬（2）<p>发现公司的vue项目都屏蔽了vuetools...在生产上开着是不是有点不安全？</p>2021-11-16</li><br/><li><span>乐叶</span> 👍（0） 💬（1）<p>let tag = [...document.querySelectorAll(&#39;*&#39;)].map(node =&gt; node.nodeName)
 let many3 = {}
 for (let i=0;i&lt;tag.length;i++) {
   if (!many3[tag[i]]) {
@@ -221,17 +221,17 @@ for (let i=0;i&lt;tag.length;i++) {
   }
   many3[tag[i]]++
 }
-return Object.keys(many3).map(itemKey =&gt; ({label: itemKey, value: many3[itemKey]})).sort((item1, item2) =&gt; item2.value-item1.value)</div>2021-11-12</li><br/><li><span>ch3cknull</span> 👍（15） 💬（0）<div>vue-devtools有两个，其中一个是不支持vue3的
+return Object.keys(many3).map(itemKey =&gt; ({label: itemKey, value: many3[itemKey]})).sort((item1, item2) =&gt; item2.value-item1.value)</p>2021-11-12</li><br/><li><span>ch3cknull</span> 👍（15） 💬（0）<p>vue-devtools有两个，其中一个是不支持vue3的
 
 下面是Google应用商店的扩展的链接，这个链接指向的插件是支持vue3的
 
-http:&#47;&#47;chrome.google.com&#47;webstore&#47;detail&#47;ljjemllljcmogpfapbkkighbhhppjdbg</div>2021-11-12</li><br/><li><span>花果山大圣</span> 👍（11） 💬（0）<div>参考答案之一， 其实这一题还可以扩展很多，比如不让你用sort，比如如果三四五名词的次数一样，怎么把这些并列的也打出来等等
+http:&#47;&#47;chrome.google.com&#47;webstore&#47;detail&#47;ljjemllljcmogpfapbkkighbhhppjdbg</p>2021-11-12</li><br/><li><span>花果山大圣</span> 👍（11） 💬（0）<p>参考答案之一， 其实这一题还可以扩展很多，比如不让你用sort，比如如果三四五名词的次数一样，怎么把这些并列的也打出来等等
 let ret = Object.entries([...document.querySelectorAll(&#39;*&#39;)].map(node =&gt; node.nodeName).reduce((ret,n)=&gt;{
     ret[n] = ret[n]?ret[n]+1:1
     return ret 
 },{})).sort((a,b)=&gt;b[1]-a[1]).slice(0,3)
 console.table(ret)
-</div>2021-11-12</li><br/><li><span>ll</span> 👍（5） 💬（0）<div>devTool 是很牛的“谁用谁知道”，通过这节，如果没用过的小伙伴赶紧尝试下；
+</p>2021-11-12</li><br/><li><span>ll</span> 👍（5） 💬（0）<p>devTool 是很牛的“谁用谁知道”，通过这节，如果没用过的小伙伴赶紧尝试下；
 这节课后有如下感想：
 1. 调试是工程的重要一环。
 2. 想要提高调试环节的效率，要有好的方法，更要有趁手的工具
@@ -240,5 +240,5 @@ console.table(ret)
 5. 掌握方法论，并且熟练使用工具；是提高开发效率的明智选择。
 6. 如果对 devtool 这么“神奇”抱有好奇，想知道这个是怎么实现的，其实结合思考题，就
    能略知一二，其实原理是相通的
-</div>2021-11-13</li><br/><li><span>郭纯</span> 👍（1） 💬（0）<div>Object.entries(Array.from(document.querySelectorAll(&#39;*&#39;)).reduce((res, { tagName }) =&gt; ((tagName in res) ? (res[tagName] ++ ) : (res[tagName] = 1), res), {})).sort(([tagNameA, countA],[tagNameB, countB]) =&gt; countB - countA).map( ([tagName] ) =&gt; tagName ).slice(0,3)</div>2021-11-12</li><br/><li><span>海阔天空</span> 👍（1） 💬（0）<div>长知识了，以前调试动画的时候，都是慢慢调的。原来动画还可以这样调。Vue Devtools没有过，可以试一下</div>2021-11-12</li><br/><li><span>路漫漫</span> 👍（1） 💬（0）<div>先学为敬</div>2021-11-12</li><br/><li><span>树</span> 👍（0） 💬（0）<div>安装了好几次vue devtools，其中有一次在极客时间网站是亮着的，vue3项目是灰的；其他安装的插件都是灰的。这个东西真的能用吗，怎么就是搞不定这个插件呢</div>2024-06-05</li><br/><li><span>树</span> 👍（0） 💬（0）<div>安装了vue devtools后，在控制台没有显示vue面板怎么办呢。网上找了很多方法，怀疑vue devtools真的有人用过吗</div>2024-06-04</li><br/>
+</p>2021-11-13</li><br/><li><span>郭纯</span> 👍（1） 💬（0）<p>Object.entries(Array.from(document.querySelectorAll(&#39;*&#39;)).reduce((res, { tagName }) =&gt; ((tagName in res) ? (res[tagName] ++ ) : (res[tagName] = 1), res), {})).sort(([tagNameA, countA],[tagNameB, countB]) =&gt; countB - countA).map( ([tagName] ) =&gt; tagName ).slice(0,3)</p>2021-11-12</li><br/><li><span>海阔天空</span> 👍（1） 💬（0）<p>长知识了，以前调试动画的时候，都是慢慢调的。原来动画还可以这样调。Vue Devtools没有过，可以试一下</p>2021-11-12</li><br/><li><span>路漫漫</span> 👍（1） 💬（0）<p>先学为敬</p>2021-11-12</li><br/><li><span>树</span> 👍（0） 💬（0）<p>安装了好几次vue devtools，其中有一次在极客时间网站是亮着的，vue3项目是灰的；其他安装的插件都是灰的。这个东西真的能用吗，怎么就是搞不定这个插件呢</p>2024-06-05</li><br/><li><span>树</span> 👍（0） 💬（0）<p>安装了vue devtools后，在控制台没有显示vue面板怎么办呢。网上找了很多方法，怀疑vue devtools真的有人用过吗</p>2024-06-04</li><br/>
 </ul>

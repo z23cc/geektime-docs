@@ -56,5 +56,5 @@
 
 好了，今天的分享就到这里，如果你有其它好书推荐，也欢迎在评论区留言，我们下节课再见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>任重而道元</span> 👍（0） 💬（0）<div>第一本书有中文版吗</div>2023-10-15</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>谢谢老师推荐</div>2023-03-24</li><br/><li><span>大荒少年</span> 👍（0） 💬（0）<div>《Ethical Hacking and Penetration Testing Guide》好像还没在国内出版，购买不到</div>2022-02-03</li><br/><li><span>leslie</span> 👍（0） 💬（0）<div>道哥的书有，讲的还是不错，思路挺不一样的</div>2022-02-02</li><br/>
+<li><span>任重而道元</span> 👍（0） 💬（0）<p>第一本书有中文版吗</p>2023-10-15</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>谢谢老师推荐</p>2023-03-24</li><br/><li><span>大荒少年</span> 👍（0） 💬（0）<p>《Ethical Hacking and Penetration Testing Guide》好像还没在国内出版，购买不到</p>2022-02-03</li><br/><li><span>leslie</span> 👍（0） 💬（0）<p>道哥的书有，讲的还是不错，思路挺不一样的</p>2022-02-02</li><br/>
 </ul>

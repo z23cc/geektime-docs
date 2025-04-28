@@ -128,5 +128,5 @@ Logstash支持丰富的插件，除了可以支持像kafka、本地文件等多�
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。感谢你的阅读，也欢迎你把这节课分享给更多的朋友一起交流学习。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>daydaygo</span> 👍（0） 💬（1）<div>目前已经从 trace1.0（opentracing jaeger）升降到 trace2.0（otel），提升非常明显：采样率100%</div>2022-11-18</li><br/><li><span>静心</span> 👍（0） 💬（1）<div>可以使用Filebeat吗？Fluent-Bit 与 Filebeat哪个更好？</div>2022-11-02</li><br/>
+<li><span>daydaygo</span> 👍（0） 💬（1）<p>目前已经从 trace1.0（opentracing jaeger）升降到 trace2.0（otel），提升非常明显：采样率100%</p>2022-11-18</li><br/><li><span>静心</span> 👍（0） 💬（1）<p>可以使用Filebeat吗？Fluent-Bit 与 Filebeat哪个更好？</p>2022-11-02</li><br/>
 </ul>

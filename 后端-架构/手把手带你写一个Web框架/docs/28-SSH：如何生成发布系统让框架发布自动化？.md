@@ -681,6 +681,6 @@ backend: # 后端部署配置
 
 欢迎在留言区分享你的思考。感谢你的收听，如果你觉得今天的内容对你有所帮助，也欢迎分享给你身边的朋友，邀请他一起学习。我们下节课见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Vincent</span> 👍（0） 💬（2）<div>之前用到的makefile较多，想问老师如何选择呢，是集成到hade中还是在makefile中呢</div>2021-11-21</li><br/><li><span>taoist</span> 👍（0） 💬（0）<div>如果在Windows下运行部署到Linux平台，uploadFolderToSFTP函数里远端路径的filepath.Join需要用filepath.ToSlash包一下转换成Unix路径格式。</div>2024-01-30</li><br/><li><span>陈亦凡</span> 👍（0） 💬（1）<div>Mac cc
-https:&#47;&#47;github.com&#47;messense&#47;homebrew-macos-cross-toolchains</div>2022-09-05</li><br/><li><span>陈亦凡</span> 👍（0） 💬（0）<div>这里交叉编时，gspt库使用了c，需要交叉编译，网上看了一下，如果使用musl的话，运行环境也要安装，请教下除了docker、musl还有别的方案吗？</div>2022-09-05</li><br/>
+<li><span>Vincent</span> 👍（0） 💬（2）<p>之前用到的makefile较多，想问老师如何选择呢，是集成到hade中还是在makefile中呢</p>2021-11-21</li><br/><li><span>taoist</span> 👍（0） 💬（0）<p>如果在Windows下运行部署到Linux平台，uploadFolderToSFTP函数里远端路径的filepath.Join需要用filepath.ToSlash包一下转换成Unix路径格式。</p>2024-01-30</li><br/><li><span>陈亦凡</span> 👍（0） 💬（1）<p>Mac cc
+https:&#47;&#47;github.com&#47;messense&#47;homebrew-macos-cross-toolchains</p>2022-09-05</li><br/><li><span>陈亦凡</span> 👍（0） 💬（0）<p>这里交叉编时，gspt库使用了c，需要交叉编译，网上看了一下，如果使用musl的话，运行环境也要安装，请教下除了docker、musl还有别的方案吗？</p>2022-09-05</li><br/>
 </ul>

@@ -272,14 +272,14 @@ RMSE: 45798.86
 
 欢迎你在留言区跟我交流互动，也推荐你把这一讲分享给更多同事、朋友，一起动手试试从数据加载到模型训练的整个过程。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Andy</span> 👍（5） 💬（1）<div>House Prices - Advanced Regression Techniques 数据需要代理插件才能显示注册码。否则无法注册账号下载数据，数据可在这下载。
+<li><span>Andy</span> 👍（5） 💬（1）<p>House Prices - Advanced Regression Techniques 数据需要代理插件才能显示注册码。否则无法注册账号下载数据，数据可在这下载。
 链接：https:&#47;&#47;pan.baidu.com&#47;s&#47;1J4LklHyYz5S6d32uZPp6nA 
-提取码：xr96</div>2022-02-08</li><br/><li><span>markliang</span> 👍（2） 💬（1）<div>看文章学习技术的同时，顺带可以学习文章里的写作方法和学习方法:联想方法，现实生活模型，费曼学习法，等等。学到的远不止是技术。👐格局打开</div>2021-11-03</li><br/><li><span>Geek_995b78</span> 👍（1） 💬（1）<div>老师 可以把相关数据上传到git一份吗，不好下载</div>2021-11-03</li><br/><li><span>东围居士</span> 👍（0） 💬（1）<div>老师，数据集上传到哪了呢，在你的 github 里面没找到</div>2021-12-05</li><br/><li><span>pythonbug</span> 👍（0） 💬（1）<div>老师好，“预测” 体现在哪里呢，是指我给特征向量，然后根据模型算出房价吗</div>2021-11-19</li><br/><li><span>pythonbug</span> 👍（0） 💬（1）<div>真的蛮好玩的，我迭代10次是40000多，我想试试迭代100次试试，结果43000多</div>2021-11-19</li><br/><li><span>千里马</span> 👍（0） 💬（1）<div>老师，数据不好下载，能提供一份么？</div>2021-11-16</li><br/><li><span>强</span> 👍（0） 💬（2）<div>从性能调优过来的,打算看完之后。找工作了（被公司裁了）</div>2021-11-03</li><br/><li><span>阿海</span> 👍（1） 💬（1）<div>在训练集的数据分布中，房价的值域在（34900，755000）之间，因此，45798.86 的预测误差还是相当大的。
+提取码：xr96</p>2022-02-08</li><br/><li><span>markliang</span> 👍（2） 💬（1）<p>看文章学习技术的同时，顺带可以学习文章里的写作方法和学习方法:联想方法，现实生活模型，费曼学习法，等等。学到的远不止是技术。👐格局打开</p>2021-11-03</li><br/><li><span>Geek_995b78</span> 👍（1） 💬（1）<p>老师 可以把相关数据上传到git一份吗，不好下载</p>2021-11-03</li><br/><li><span>东围居士</span> 👍（0） 💬（1）<p>老师，数据集上传到哪了呢，在你的 github 里面没找到</p>2021-12-05</li><br/><li><span>pythonbug</span> 👍（0） 💬（1）<p>老师好，“预测” 体现在哪里呢，是指我给特征向量，然后根据模型算出房价吗</p>2021-11-19</li><br/><li><span>pythonbug</span> 👍（0） 💬（1）<p>真的蛮好玩的，我迭代10次是40000多，我想试试迭代100次试试，结果43000多</p>2021-11-19</li><br/><li><span>千里马</span> 👍（0） 💬（1）<p>老师，数据不好下载，能提供一份么？</p>2021-11-16</li><br/><li><span>强</span> 👍（0） 💬（2）<p>从性能调优过来的,打算看完之后。找工作了（被公司裁了）</p>2021-11-03</li><br/><li><span>阿海</span> 👍（1） 💬（1）<p>在训练集的数据分布中，房价的值域在（34900，755000）之间，因此，45798.86 的预测误差还是相当大的。
 
-45798不是落在上面的区间内吗</div>2022-05-24</li><br/><li><span>刘英杰</span> 👍（0） 💬（0）<div>准备训练样本的代码改成了这样，样例代码跑下来字段并没有drop掉
+45798不是落在上面的区间内吗</p>2022-05-24</li><br/><li><span>刘英杰</span> 👍（0） 💬（0）<p>准备训练样本的代码改成了这样，样例代码跑下来字段并没有drop掉
 &#47;&#47;调用 transform() 生成新 DataFrame
 val transformedDF: DataFrame = assembler.transform(typedFields)
 
 &#47;&#47; 显式删除 featureCols 指定的列
-val featuresAdded = transformedDF.drop(featureCols: _*)</div>2025-02-16</li><br/><li><span>Geek_104e8e</span> 👍（0） 💬（0）<div>老师可以用Python重写一版吗？</div>2025-02-11</li><br/><li><span>实数</span> 👍（0） 💬（0）<div>sparkml的模型是不是不如原生的python的anaconda算法包</div>2024-12-23</li><br/><li><span>星星📷</span> 👍（0） 💬（0）<div>老师，结果必然是45798.86吗？</div>2023-03-20</li><br/><li><span>林Curry</span> 👍（0） 💬（0）<div>代码里好像没有体现验证集的用法呀老师</div>2022-07-23</li><br/><li><span>空de</span> 👍（0） 💬（0）<div>spark3 的MLlib库有没有提供时序模型，可以处理时序数据的异常检测的需求？在生产中spark MLlib 处理时序异常检测是怎么做的，有没有案例推荐？</div>2022-03-17</li><br/>
+val featuresAdded = transformedDF.drop(featureCols: _*)</p>2025-02-16</li><br/><li><span>Geek_104e8e</span> 👍（0） 💬（0）<p>老师可以用Python重写一版吗？</p>2025-02-11</li><br/><li><span>实数</span> 👍（0） 💬（0）<p>sparkml的模型是不是不如原生的python的anaconda算法包</p>2024-12-23</li><br/><li><span>星星📷</span> 👍（0） 💬（0）<p>老师，结果必然是45798.86吗？</p>2023-03-20</li><br/><li><span>林Curry</span> 👍（0） 💬（0）<p>代码里好像没有体现验证集的用法呀老师</p>2022-07-23</li><br/><li><span>空de</span> 👍（0） 💬（0）<p>spark3 的MLlib库有没有提供时序模型，可以处理时序数据的异常检测的需求？在生产中spark MLlib 处理时序异常检测是怎么做的，有没有案例推荐？</p>2022-03-17</li><br/>
 </ul>

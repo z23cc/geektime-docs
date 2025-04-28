@@ -342,7 +342,7 @@ C++20的推出改变了这一局面，我们可以利用Formatting库和formatte
 
 欢迎给出你的代码方案。我们一同交流。下一讲见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>李云龙</span> 👍（0） 💬（4）<div>请教老师一个问题，下面的代码编译不过，报错信息是无法推导 std::formatter的模版参数，这是什么原因呢？
+<li><span>李云龙</span> 👍（0） 💬（4）<p>请教老师一个问题，下面的代码编译不过，报错信息是无法推导 std::formatter的模版参数，这是什么原因呢？
 #include &lt;format&gt;
 #include &lt;iostream&gt;
 
@@ -374,5 +374,5 @@ int main()
 	std::cout &lt;&lt; std::format(&quot;box1 = {}&quot;, box1);
 
 	return 0;
-}</div>2024-01-15</li><br/><li><span>常振华</span> 👍（0） 💬（1）<div>说实话，越改约难用，C++越走越偏了。。。</div>2023-10-23</li><br/>
+}</p>2024-01-15</li><br/><li><span>常振华</span> 👍（0） 💬（1）<p>说实话，越改约难用，C++越走越偏了。。。</p>2023-10-23</li><br/>
 </ul>

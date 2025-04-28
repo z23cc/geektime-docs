@@ -308,5 +308,5 @@ if语句的控制流部分和条件部分，我们可以根据这节课一开头
 
 [今天的示例代码目录在这里！](https://gitee.com/richard-gong/craft-a-language/tree/master/37)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2022-10-01</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（0）<div>HIR 贴近源码，会基于SSA进行格式化； LIR 接近汇编的一种表达；MIR介于两者之间，与硬件尽量无关； 因此问题对应的顺序是HIR，MIR，LIR。</div>2021-11-14</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（1）<div>老师，节点之海和DAG是指同一种IR吗</div>2021-11-09</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<div>场景1是HIR，场景2是MIR，场景3是LIR</div>2021-11-08</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<div>厉害，老师的水平真高，编译原理到老师的手里，信手拈来</div>2021-11-08</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<div>太赞了，感觉一下子茅塞顿开</div>2021-11-08</li><br/>
+<li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2022-10-01</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（0）<p>HIR 贴近源码，会基于SSA进行格式化； LIR 接近汇编的一种表达；MIR介于两者之间，与硬件尽量无关； 因此问题对应的顺序是HIR，MIR，LIR。</p>2021-11-14</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（1）<p>老师，节点之海和DAG是指同一种IR吗</p>2021-11-09</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<p>场景1是HIR，场景2是MIR，场景3是LIR</p>2021-11-08</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<p>厉害，老师的水平真高，编译原理到老师的手里，信手拈来</p>2021-11-08</li><br/><li><span>奋斗的蜗牛</span> 👍（0） 💬（0）<p>太赞了，感觉一下子茅塞顿开</p>2021-11-08</li><br/>
 </ul>

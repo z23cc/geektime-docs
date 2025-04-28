@@ -11,6 +11,11 @@ def compress(source: str, target: str, power: int = 0):
     :param str source: source PDF file
     :param str target: target location to save the compressed PDF
     :param int power: power of the compression. Default value is 0. This can be 0: default, 1: prepress, 2: printer, 3: ebook, 4: screen
+    screen 低画质
+    ebook 中等画质
+    printer 打印机画质
+    prepress  最大画质
+    defaul 默认画质
     """
 
     quality = {

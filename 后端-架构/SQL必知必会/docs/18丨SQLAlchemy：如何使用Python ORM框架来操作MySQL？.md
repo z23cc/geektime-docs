@@ -202,7 +202,7 @@ session.close()
 
 欢迎你在评论区写下你的答案，也欢迎把这篇文章分享给你的朋友或者同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>墨禾</span> 👍（34） 💬（1）<div>以下从ORM的作用，是什么，优缺点以及一些比较流行的ORM的对比的个人总结：
+<li><span>墨禾</span> 👍（34） 💬（1）<p>以下从ORM的作用，是什么，优缺点以及一些比较流行的ORM的对比的个人总结：
 
 1.ORM的作用
 对象关系映射，能够直接将数据库对象进行持久化。
@@ -234,8 +234,8 @@ ORM真的那么好？
 
 那么还有哪些比较流行的ORM呢？
 hibernate:强调对单条数据的处理
-mybits:基于自定义配置的sql操作</div>2019-07-23</li><br/><li><span>JustDoDT</span> 👍（21） 💬（3）<div>缺少一些代码，可以参考廖雪峰的这个。
-https:&#47;&#47;www.liaoxuefeng.com&#47;wiki&#47;1016959663602400&#47;1017803857459008</div>2019-07-22</li><br/><li><span>一叶知秋</span> 👍（12） 💬（1）<div>日常交作业~~~
+mybits:基于自定义配置的sql操作</p>2019-07-23</li><br/><li><span>JustDoDT</span> 👍（21） 💬（3）<p>缺少一些代码，可以参考廖雪峰的这个。
+https:&#47;&#47;www.liaoxuefeng.com&#47;wiki&#47;1016959663602400&#47;1017803857459008</p>2019-07-22</li><br/><li><span>一叶知秋</span> 👍（12） 💬（1）<p>日常交作业~~~
 
 # -*- coding:utf-8 -*-
 from sqlalchemy import and_
@@ -294,7 +294,7 @@ if __name__ == &#39;__main__&#39;:
     update_result = db_obj.update(Player, query_filter, target_obj)
 
 后续更新数量、更新结果等等判断就略过了...
-（小声bb：什么时候极客时间评论也能支持markdown啊。。）</div>2019-07-22</li><br/><li><span>ABC</span> 👍（9） 💬（1）<div>翻了一下SQLAlchemy的官方文档,看到一个简单的办法,作业如下:
+（小声bb：什么时候极客时间评论也能支持markdown啊。。）</p>2019-07-22</li><br/><li><span>ABC</span> 👍（9） 💬（1）<p>翻了一下SQLAlchemy的官方文档,看到一个简单的办法,作业如下:
 
 &#39;&#39;&#39;
 
@@ -350,17 +350,17 @@ if __name__ == &#39;__main__&#39;:
 [{&#39;player_id&#39;: 10010, &#39;team_id&#39;: 1001, &#39;player_name&#39;: &#39;乔恩-洛伊尔&#39;, &#39;height&#39;: Decimal(&#39;2.0800000000&#39;)}......
 更新后:
 [{&#39;player_id&#39;: 10010, &#39;team_id&#39;: 1001, &#39;player_name&#39;: &#39;乔恩-洛伊尔&#39;, &#39;height&#39;: Decimal(&#39;2.0900000000&#39;)}......
-[Finished in 0.9s]</div>2019-07-22</li><br/><li><span>夜路破晓</span> 👍（8） 💬（1）<div>框架对实体的映射不难理解,数据库本身就是对现实世界的映射,借由映射将事实转换为数据.
+[Finished in 0.9s]</p>2019-07-22</li><br/><li><span>夜路破晓</span> 👍（8） 💬（1）<p>框架对实体的映射不难理解,数据库本身就是对现实世界的映射,借由映射将事实转换为数据.
 代码部分有些基础的也不难理解;基础较弱硬钢的亲们,耐心一条条来缕也可以捋顺,都是基础的东西,无非花费时间长短问题.有几个坑这里记录下,供后来人借鉴:
 1.关于初始化连接数据库问题.creat_engine的参数这块容易卡壳,可以参考以下文字说明:
 create_engine(&quot;数据库类型+数据库驱动:&#47;&#47;数据库用户名:数据库密码@IP地址:端口&#47;数据库&quot;，其他参数)
 2.数据库驱动这块,老师的参考代码是用mysqlconnector,沿承得是上篇中导入mysql-connector包;网上一些资料以及参考其他同学的答案有使用pymysql,要用这个需安装pip install pymysql.这两货对于本篇的学习内容在本质上是一样的,任选一个即可.
-3.在代码复写过程中,删除操作一直报错.网上查了资料说是跟返回值有关.经过测试,发现问题所在,filter返回结果为None.也就是说没有查询到&quot;约翰-科林斯&quot;.往回倒腾,发现开始新增数据那里,增加的&quot; 约翰-科林斯 &quot;,前后对比后者两侧多了个空格.统一前后,删除操作顺利完成.</div>2019-07-22</li><br/><li><span>JustDoDT</span> 👍（5） 💬（1）<div>错误解决：
+3.在代码复写过程中,删除操作一直报错.网上查了资料说是跟返回值有关.经过测试,发现问题所在,filter返回结果为None.也就是说没有查询到&quot;约翰-科林斯&quot;.往回倒腾,发现开始新增数据那里,增加的&quot; 约翰-科林斯 &quot;,前后对比后者两侧多了个空格.统一前后,删除操作顺利完成.</p>2019-07-22</li><br/><li><span>JustDoDT</span> 👍（5） 💬（1）<p>错误解决：
 如果报如下错误：Authentication plugin &#39;caching_sha2_password&#39; is not supported
 sqlalchemy.exc.NotSupportedError: (mysql.connector.errors.NotSupportedError) Authentication plugin &#39;caching_sha2_password&#39; is not supported (Background on this error at: http:&#47;&#47;sqlalche.me&#47;e&#47;tw8g)
 可以参考下面的链接处理：
-https:&#47;&#47;stackoverflow.com&#47;questions&#47;51783313&#47;how-do-i-get-sqlalchemy-create-engine-with-mysqlconnector-to-connect-using-mysql</div>2019-07-22</li><br/><li><span>jxs1211</span> 👍（3） 💬（1）<div>老师，我的表中有个时间字段，我想在插入数据时，自动生成时间应怎么设置该字段，是这样吗：
-`create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &#39;创建时间&#39;,</div>2019-07-25</li><br/><li><span>taoist</span> 👍（2） 💬（1）<div>from sqlalchemy import create_engine, Column, Integer, String, Float
+https:&#47;&#47;stackoverflow.com&#47;questions&#47;51783313&#47;how-do-i-get-sqlalchemy-create-engine-with-mysqlconnector-to-connect-using-mysql</p>2019-07-22</li><br/><li><span>jxs1211</span> 👍（3） 💬（1）<p>老师，我的表中有个时间字段，我想在插入数据时，自动生成时间应怎么设置该字段，是这样吗：
+`create_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &#39;创建时间&#39;,</p>2019-07-25</li><br/><li><span>taoist</span> 👍（2） 💬（1）<p>from sqlalchemy import create_engine, Column, Integer, String, Float
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -403,12 +403,12 @@ print([row.to_dict() for row in rows])
 session.close()
 
 
-</div>2019-12-23</li><br/><li><span>阿锋</span> 👍（2） 💬（1）<div>上面那个分组查询，按照分组后数据行数递增的顺序进行排序，怎么结果是[(1001, 20), (1002, 17)]，那不是递减？是不是写错了？</div>2019-07-22</li><br/><li><span>Geek_5d805b</span> 👍（1） 💬（2）<div>to_dict方法这块看不太懂，base类指的是player类吗，谁给讲讲</div>2019-07-25</li><br/><li><span>NIXUS</span> 👍（1） 💬（1）<div>ORM的使用，更多的不都是通过查文档的吗？</div>2019-07-24</li><br/><li><span>LJK</span> 👍（1） 💬（1）<div>老师好，对于修改数据的事例有一点困惑还请您解答。对于下面这段代码中
+</p>2019-12-23</li><br/><li><span>阿锋</span> 👍（2） 💬（1）<p>上面那个分组查询，按照分组后数据行数递增的顺序进行排序，怎么结果是[(1001, 20), (1002, 17)]，那不是递减？是不是写错了？</p>2019-07-22</li><br/><li><span>Geek_5d805b</span> 👍（1） 💬（2）<p>to_dict方法这块看不太懂，base类指的是player类吗，谁给讲讲</p>2019-07-25</li><br/><li><span>NIXUS</span> 👍（1） 💬（1）<p>ORM的使用，更多的不都是通过查文档的吗？</p>2019-07-24</li><br/><li><span>LJK</span> 👍（1） 💬（1）<p>老师好，对于修改数据的事例有一点困惑还请您解答。对于下面这段代码中
 
 row = session.query(Player).filter(Player.player_name==&#39;索恩 - 马克&#39;).first()
 row.height = 2.17
 session.commit()
 session.close()
 
-我理解row是存在于内存中的对象，但是我们在修改后并没有传递到数据库中，如果直接commit可以进行修改的话，这个row是在哪里存放的对象呢？</div>2019-07-22</li><br/><li><span>我在你的视线里</span> 👍（0） 💬（1）<div>session对象是django自带的。还是在项目里创建的。</div>2019-08-11</li><br/><li><span>咕咕咕</span> 👍（7） 💬（0）<div>代码能不能给完整啊？还说全部跑一遍？不给全给个提示或者文档链接也行吧？还是得看评论的同学补充才知道代码没有给全。</div>2020-01-02</li><br/><li><span>Venom</span> 👍（5） 💬（0）<div>老师，建议最后能把完整代码给出来。对于我们没用过的人来讲，缺少一条import语句也很苦恼啊</div>2019-09-03</li><br/>
+我理解row是存在于内存中的对象，但是我们在修改后并没有传递到数据库中，如果直接commit可以进行修改的话，这个row是在哪里存放的对象呢？</p>2019-07-22</li><br/><li><span>我在你的视线里</span> 👍（0） 💬（1）<p>session对象是django自带的。还是在项目里创建的。</p>2019-08-11</li><br/><li><span>咕咕咕</span> 👍（7） 💬（0）<p>代码能不能给完整啊？还说全部跑一遍？不给全给个提示或者文档链接也行吧？还是得看评论的同学补充才知道代码没有给全。</p>2020-01-02</li><br/><li><span>Venom</span> 👍（5） 💬（0）<p>老师，建议最后能把完整代码给出来。对于我们没用过的人来讲，缺少一条import语句也很苦恼啊</p>2019-09-03</li><br/>
 </ul>

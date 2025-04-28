@@ -328,14 +328,14 @@ RESTful API是一种基于REST架构的API设计规范，设计目的就是提�
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，别忘了分享给身边的朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>长林啊</span> 👍（2） 💬（1）<div>思考题：
+<li><span>长林啊</span> 👍（2） 💬（1）<p>思考题：
 get：用于获取资源；是幂等的，也就是对同一个URL多次调用返回的结果应该是相同的
 post：用于处理提交的数据；post请求一般会产生新的资源，post请求不是幂等的
 put：向指定的资源上传新的内容；PUT请求是幂等的
 delete：请求服务器删除指定的资源
 head：类似于GET请求，但只返回头部信息，不返回实际内容，常用于检查资源是否存在、获取资源的元数据等
-options：返回服务器支持的HTTP请求方法，用于查询服务器支持哪些方法</div>2023-06-29</li><br/><li><span>Rongfan Leo</span> 👍（0） 💬（1）<div>项目代码里是from flask_restful import，文章里是flask_RESTful算什么意思
-</div>2024-08-10</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>Q1：做一个视频网站，用户一千万，这种规模的网站，后端开发老师会选什么？Java还是Python?
+options：返回服务器支持的HTTP请求方法，用于查询服务器支持哪些方法</p>2023-06-29</li><br/><li><span>Rongfan Leo</span> 👍（0） 💬（1）<p>项目代码里是from flask_restful import，文章里是flask_RESTful算什么意思
+</p>2024-08-10</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>Q1：做一个视频网站，用户一千万，这种规模的网站，后端开发老师会选什么？Java还是Python?
 Q2：网站开发，后端和前端的技术栈是相互独立的，对吗？
-后端选Java还是Python，都不会影响前端选vue或者React，反过来也一样。这样理解对吗？</div>2023-06-22</li><br/>
+后端选Java还是Python，都不会影响前端选vue或者React，反过来也一样。这样理解对吗？</p>2023-06-22</li><br/>
 </ul>

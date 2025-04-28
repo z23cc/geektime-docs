@@ -334,10 +334,10 @@ touchHandler 的作用是，事先绑定原生手势事件，当用户点击屏�
 
 欢迎在评论区留下你的想法，我们下节课见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>ZouLe</span> 👍（0） 💬（1）<div>捉一个typo: &quot;现在的新架构就包括了 JSI、Fabric、TurboModule、CodeGen、Herems、Metro、Yago 等模块。&quot;</div>2022-09-09</li><br/><li><span>ZouLe</span> 👍（6） 💬（0）<div>捉一个type: &quot;现在的新架构就包括了 JSI、Fabric、TurboModule、CodeGen、Herems、Metro、Yago 等模块。&quot; 这里 Yago 应该是 Yoga， Herems 应该是 Hermes。</div>2022-09-09</li><br/><li><span>Geek4471</span> 👍（3） 💬（1）<div>React Native最初选择使用Bridge消息队列的形式实现JavaScript和Native的双向通信，而不是直接使用JSI（JavaScript Interface）的主要原因是为了提供跨平台的兼容性和可扩展性。以下是一些原因：
+<li><span>ZouLe</span> 👍（0） 💬（1）<p>捉一个typo: &quot;现在的新架构就包括了 JSI、Fabric、TurboModule、CodeGen、Herems、Metro、Yago 等模块。&quot;</p>2022-09-09</li><br/><li><span>ZouLe</span> 👍（6） 💬（0）<p>捉一个type: &quot;现在的新架构就包括了 JSI、Fabric、TurboModule、CodeGen、Herems、Metro、Yago 等模块。&quot; 这里 Yago 应该是 Yoga， Herems 应该是 Hermes。</p>2022-09-09</li><br/><li><span>Geek4471</span> 👍（3） 💬（1）<p>React Native最初选择使用Bridge消息队列的形式实现JavaScript和Native的双向通信，而不是直接使用JSI（JavaScript Interface）的主要原因是为了提供跨平台的兼容性和可扩展性。以下是一些原因：
 1. 跨平台兼容性：React Native的目标是实现跨平台开发，使开发人员能够在多个平台上共享代码。通过使用Bridge消息队列，React Native可以在不同的平台上实现JavaScript和Native之间的通信，而不需要依赖特定平台的底层接口。
 2. 可扩展性：Bridge消息队列提供了一种灵活的机制，可以轻松地添加新的Native模块或功能。开发人员可以通过编写Native模块并注册到Bridge中，然后在JavaScript中调用这些模块来扩展应用程序的功能。
 3. 性能优化：使用Bridge消息队列可以实现异步通信，避免阻塞JavaScript线程。这对于处理复杂的UI操作或大量数据传输非常重要，可以提高应用程序的性能和响应速度。
 4. 社区支持：在React Native刚开始发展时，JSI还没有成熟和广泛采用。使用Bridge消息队列作为通信机制更符合当时React Native社区的技术栈和开发习惯。
-尽管Bridge消息队列在一些方面存在一定的性能开销和限制，但它为React Native提供了一种可靠且跨平台的通信机制。随着React Native的发展和JSI的成熟，开发人员现在可以选择使用JSI来直接与Native进行交互，以获得更高的性能和更多的灵活性。</div>2023-07-28</li><br/>
+尽管Bridge消息队列在一些方面存在一定的性能开销和限制，但它为React Native提供了一种可靠且跨平台的通信机制。随着React Native的发展和JSI的成熟，开发人员现在可以选择使用JSI来直接与Native进行交互，以获得更高的性能和更多的灵活性。</p>2023-07-28</li><br/>
 </ul>

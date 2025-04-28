@@ -395,7 +395,7 @@ print(response['message']['content'])  # 输出生成的回答
 
 具备长文本处理能力后，是否意味着我们可以将所有内容一并交给大模型处理呢？欢迎你把思考后的结果分享到留言区，和我一起讨论，如果你觉得这节课的内容对你有帮助的话，欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（1） 💬（0）<div>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</div>2024-11-25</li><br/><li><span>午夜修铃</span> 👍（0） 💬（0）<div>Windows本地模型，使用ollama时如何调用本地显卡？</div>2024-12-17</li><br/><li><span>午夜修铃</span> 👍（0） 💬（0）<div>生成的结果： 根据给出的数据，合同中的主要义务包括：
+<li><span>小虎子11🐯</span> 👍（1） 💬（0）<p>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</p>2024-11-25</li><br/><li><span>午夜修铃</span> 👍（0） 💬（0）<p>Windows本地模型，使用ollama时如何调用本地显卡？</p>2024-12-17</li><br/><li><span>午夜修铃</span> 👍（0） 💬（0）<p>生成的结果： 根据给出的数据，合同中的主要义务包括：
 
 1. 付款义务
 2. 商品交付义务
@@ -407,7 +407,7 @@ Traceback (most recent call last):
 TypeError: &#39;NoneType&#39; object is not callable
 
 这里报错了。
-flagembedding             1.3.3                   </div>2024-12-17</li><br/><li><span>江慧明</span> 👍（0） 💬（0）<div>具备长文本处理能力，也意味着需要更多资源，显存资源，CPU资源，也意味着回答用户问题需要更长时间，所以具备长文本处理能力模型，在具体实践中也不能毫无节制使用，而是充分有理由使用，为取得速度、资源、上下文的平衡，我们需要充分设计，利用langchain工具，可以把问题拆分多个聚焦点，然后用LLM快速获得答案，然后再讲问题组合</div>2024-11-30</li><br/><li><span>旅梦开发团</span> 👍（0） 💬（0）<div>在合同RAG的案例中 我安装FlagEmbedding报错了，可能是python版本的问题。 我使用nomic-embed-text:latest 嵌入模型代替， 大家也可以试试。 我的完整代码如下
+flagembedding             1.3.3                   </p>2024-12-17</li><br/><li><span>江慧明</span> 👍（0） 💬（0）<p>具备长文本处理能力，也意味着需要更多资源，显存资源，CPU资源，也意味着回答用户问题需要更长时间，所以具备长文本处理能力模型，在具体实践中也不能毫无节制使用，而是充分有理由使用，为取得速度、资源、上下文的平衡，我们需要充分设计，利用langchain工具，可以把问题拆分多个聚焦点，然后用LLM快速获得答案，然后再讲问题组合</p>2024-11-30</li><br/><li><span>旅梦开发团</span> 👍（0） 💬（0）<p>在合同RAG的案例中 我安装FlagEmbedding报错了，可能是python版本的问题。 我使用nomic-embed-text:latest 嵌入模型代替， 大家也可以试试。 我的完整代码如下
 ```python
 # 向量数据库
 import chromadb
@@ -458,5 +458,5 @@ output = ollama.chat(model=&#39;qwen2.5:latest&#39;, messages=[
 ])
 
 print(&quot;生成的结果：&quot;, output[&#39;message&#39;][&#39;content&#39;])
-```</div>2024-10-29</li><br/><li><span>willmyc</span> 👍（0） 💬（0）<div>超长文本是否应该考虑跟llama3多轮对话的情况，llama3如何处理，可否介绍一下，谢谢！</div>2024-10-22</li><br/>
+```</p>2024-10-29</li><br/><li><span>willmyc</span> 👍（0） 💬（0）<p>超长文本是否应该考虑跟llama3多轮对话的情况，llama3如何处理，可否介绍一下，谢谢！</p>2024-10-22</li><br/>
 </ul>

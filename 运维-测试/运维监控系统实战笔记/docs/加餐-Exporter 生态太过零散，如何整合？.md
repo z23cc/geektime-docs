@@ -418,5 +418,5 @@ Prometheus 生态使用各式各样的 Exporter 采集监控数据，但是 Expo
 
 ![图片](https://static001.geekbang.org/resource/image/2a/a7/2a066e1df98c09833ebe43bd718f01a7.png?wh=1714x976)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>小青</span> 👍（0） 💬（0）<div>Cprobe 和 categraf 什么区别呢？</div>2025-02-18</li><br/>
+<li><span>小青</span> 👍（0） 💬（0）<p>Cprobe 和 categraf 什么区别呢？</p>2025-02-18</li><br/>
 </ul>

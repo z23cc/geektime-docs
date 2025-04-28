@@ -428,7 +428,7 @@ POJO中字段的null定位，从服务端的角度往往很难分清楚，到底
 
 关于程序和数据库中的null、空指针问题，你还遇到过什么坑吗？我是朱晔，欢迎在评论区与我留言分享，也欢迎你把这篇文章分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（75） 💬（11）<div>补充下：在MySQL的使用中，对于索引列，建议都设置为not null，因为如果有null的话，MySQL需要单独专门处理null值，会额外耗费性能。
+<li><span>Darren</span> 👍（75） 💬（11）<p>补充下：在MySQL的使用中，对于索引列，建议都设置为not null，因为如果有null的话，MySQL需要单独专门处理null值，会额外耗费性能。
 回答下问题：
 第一个问题：
 从ConcurrentHashMap他自己的作者（Doug Lea）：
@@ -450,20 +450,20 @@ hashtable也是线程安全的，所以也是key和value也是不可以null的
 treeMap 线程不安全，但是因为需要排序，进行key的compareTo方法，所以key是不能null中，value是可以的
 
 第二个问题：
-MyBatis @Column注解的updateIfNull属性，可以控制，当对应的列value为null时，updateIfNull的true和false可以控制</div>2020-04-02</li><br/><li><span>Asha</span> 👍（17） 💬（2）<div>老师，麻烦问下
+MyBatis @Column注解的updateIfNull属性，可以控制，当对应的列value为null时，updateIfNull的true和false可以控制</p>2020-04-02</li><br/><li><span>Asha</span> 👍（17） 💬（2）<p>老师，麻烦问下
 UserDto 中只保留 id、name 和 age 三个属性，且 name 和 age 使用 Optional 来包装，以区分客户端不传数据还是故意传 null， 这个我不太明白是怎么区分出来的呢？
 还有下面的这句话，他能走到orElse上吗？
-if (user.getName() != null) { userEntity.setName(user.getName().orElse(&quot;&quot;)); }</div>2020-04-16</li><br/><li><span>失火的夏天</span> 👍（12） 💬（2）<div>ConcurrentHashMap 的 Key 和 Value 都不能为 null，而 HashMap 却可以。
+if (user.getName() != null) { userEntity.setName(user.getName().orElse(&quot;&quot;)); }</p>2020-04-16</li><br/><li><span>失火的夏天</span> 👍（12） 💬（2）<p>ConcurrentHashMap 的 Key 和 Value 都不能为 null，而 HashMap 却可以。
 
 ConcurrentHashMap这个老爷子只说了value如果是空，会有二义性。就是在线程安全情况下，他到底是设置了一个null还是根本就没这玩意，key他老人家没说。。。老师可以说下理解吗？
 
-TreeMap的Key不能为空，因为TreeMap是基于compare的，空值不能compare。value可以为空，TreeMap并不线程安全。Hashtable 的 Key 和 Value也不能空，我想原理应该和ConcurrentHashMap一样。</div>2020-04-02</li><br/><li><span>Jerry Wu</span> 👍（8） 💬（16）<div>这是我个人的一些工作经历。
+TreeMap的Key不能为空，因为TreeMap是基于compare的，空值不能compare。value可以为空，TreeMap并不线程安全。Hashtable 的 Key 和 Value也不能空，我想原理应该和ConcurrentHashMap一样。</p>2020-04-02</li><br/><li><span>Jerry Wu</span> 👍（8） 💬（16）<p>这是我个人的一些工作经历。
 
 以前尝试过Optional，但其他人反馈看不懂，最后还是换回了if-else。
 
 得出结论，技术要考虑团队的接受程度。
 
-新技术、新特性虽好，但团队每个人的能力不同，而决定技术走向的，是团队最弱的那个人。</div>2020-04-02</li><br/><li><span>美美</span> 👍（7） 💬（5）<div>有个规范我记得是说，不要在字段，方法参数，集合中使用Optional</div>2020-04-02</li><br/><li><span>书林</span> 👍（3） 💬（1）<div>关于SQL 判断空有一点想提出来讨论，=NULL 不是赋值确实是判断，只是NULL和任何值的直接比较都为NULL，比如NULL&lt;&gt;NULL, NULL=NULL, NULL=1结果都为NULL。对 NULL 进行判断只能使用 IS NULL 或者 IS NOT NULL，或者ISNULL()。</div>2020-04-27</li><br/><li><span>大大大熊myeh</span> 👍（3） 💬（1）<div>原文：“归根结底，这是如下 5 个方面的问题：明确 DTO 种 null 的含义”或许是“明确 DTO各种 null 的含义”吧.
+新技术、新特性虽好，但团队每个人的能力不同，而决定技术走向的，是团队最弱的那个人。</p>2020-04-02</li><br/><li><span>美美</span> 👍（7） 💬（5）<p>有个规范我记得是说，不要在字段，方法参数，集合中使用Optional</p>2020-04-02</li><br/><li><span>书林</span> 👍（3） 💬（1）<p>关于SQL 判断空有一点想提出来讨论，=NULL 不是赋值确实是判断，只是NULL和任何值的直接比较都为NULL，比如NULL&lt;&gt;NULL, NULL=NULL, NULL=1结果都为NULL。对 NULL 进行判断只能使用 IS NULL 或者 IS NOT NULL，或者ISNULL()。</p>2020-04-27</li><br/><li><span>大大大熊myeh</span> 👍（3） 💬（1）<p>原文：“归根结底，这是如下 5 个方面的问题：明确 DTO 种 null 的含义”或许是“明确 DTO各种 null 的含义”吧.
 
 MySQL中
 count(1)选取每一行并赋值为1，进行统计
@@ -477,12 +477,12 @@ count(字段)选取每一行中的该字段，选择不为null的行进行统计
 思考题2，xml配置文件中的if标签&lt;if test=&quot;id!=null and id !=&#39;&#39;&quot;&gt;&lt;&#47;if&gt;需要注意if标签中的字段id如果是Date类型的话，不要写id!=&#39;&#39;，这是由于Data类型与字符串类型进行比较的报错，此时只需写null的判断即可。
 
 以前不知道@Column注解的updateIfNull属性，学到了。
-</div>2020-04-10</li><br/><li><span>终结者999号</span> 👍（3） 💬（1）<div>在平常的开发中，对于DTO的值验证性校验也可以使用Hibernate Validator，也可以杜绝用户不按接口文档中所定义的格式输入，感觉也可以使用</div>2020-04-02</li><br/><li><span>Geek_fe5e8a</span> 👍（1） 💬（1）<div>老师讲的真的好  满分</div>2020-08-25</li><br/><li><span>汝林外史</span> 👍（1） 💬（1）<div>问题大家都答的很好，我就直接问问题吧。
-老师，Hashtable的put会对value做null判断，key是在调用hashcode方法时报空指针，而ConcurrentHashMap是直接对key和value做null判断，是不是Hashtable的设计有问题？</div>2020-04-03</li><br/><li><span>Monday</span> 👍（29） 💬（0）<div>今天最大的惊喜就是arthas，以前听说过，但是从来没使用过，真心神器，感谢，感谢！！！</div>2020-04-03</li><br/><li><span>pedro</span> 👍（11） 💬（0）<div>第二个问题，mybatis 可以使用 if 标签来判断属性是否为 null 从而动态生成不含该属性的 sql。</div>2020-04-02</li><br/><li><span>Demon.Lee</span> 👍（8） 💬（4）<div>谢谢老师。小伙伴们，我们这边UserDto都要求写成UserDTO，你们是哪种呢</div>2020-04-07</li><br/><li><span>jacy</span> 👍（5） 💬（0）<div>1、以前遇到过好几次null异常，都是通过打日志搞定的，十分低效，arthas是个好工具，收藏了。
+</p>2020-04-10</li><br/><li><span>终结者999号</span> 👍（3） 💬（1）<p>在平常的开发中，对于DTO的值验证性校验也可以使用Hibernate Validator，也可以杜绝用户不按接口文档中所定义的格式输入，感觉也可以使用</p>2020-04-02</li><br/><li><span>Geek_fe5e8a</span> 👍（1） 💬（1）<p>老师讲的真的好  满分</p>2020-08-25</li><br/><li><span>汝林外史</span> 👍（1） 💬（1）<p>问题大家都答的很好，我就直接问问题吧。
+老师，Hashtable的put会对value做null判断，key是在调用hashcode方法时报空指针，而ConcurrentHashMap是直接对key和value做null判断，是不是Hashtable的设计有问题？</p>2020-04-03</li><br/><li><span>Monday</span> 👍（29） 💬（0）<p>今天最大的惊喜就是arthas，以前听说过，但是从来没使用过，真心神器，感谢，感谢！！！</p>2020-04-03</li><br/><li><span>pedro</span> 👍（11） 💬（0）<p>第二个问题，mybatis 可以使用 if 标签来判断属性是否为 null 从而动态生成不含该属性的 sql。</p>2020-04-02</li><br/><li><span>Demon.Lee</span> 👍（8） 💬（4）<p>谢谢老师。小伙伴们，我们这边UserDto都要求写成UserDTO，你们是哪种呢</p>2020-04-07</li><br/><li><span>jacy</span> 👍（5） 💬（0）<p>1、以前遇到过好几次null异常，都是通过打日志搞定的，十分低效，arthas是个好工具，收藏了。
 2、Optional很少用，确实是个好东东。
 3、map我觉得都不应该支持Null，非线程安全map get返回Null时，到底是没有key，还是value为Null有二义性（但可以通过探测破解二义，这可能是支持了Null的原因），线程安全map 探测结果本身就不可靠（可能被并发修改），所以作者选则不支持，列如：
 B put key null   B往线程安全map中插入值为null的数据
 A contain key   A探测key存在
 B remove key   B移除key
-A get key         A获取key得到null，A认为key的值为null，实际返回的null并非key的值</div>2020-09-11</li><br/><li><span>yihang</span> 👍（3） 💬（0）<div>解决方案里，我觉得既然先查了一次实体，就没必要使用 @DynamicUpdate 部分更新字段了呀？这时全字段更新也没有问题的</div>2020-04-17</li><br/>
+A get key         A获取key得到null，A认为key的值为null，实际返回的null并非key的值</p>2020-09-11</li><br/><li><span>yihang</span> 👍（3） 💬（0）<p>解决方案里，我觉得既然先查了一次实体，就没必要使用 @DynamicUpdate 部分更新字段了呀？这时全字段更新也没有问题的</p>2020-04-17</li><br/>
 </ul>

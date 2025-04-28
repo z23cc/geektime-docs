@@ -115,11 +115,11 @@ Kafka提供了超多的JMX指标供用户实时监测，我来介绍几个比较
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>我已经设置了昵称</span> 👍（16） 💬（1）<div>要怎么看到JMX指标呢，能否讲下</div>2019-09-04</li><br/><li><span>r</span> 👍（9） 💬（1）<div>老师总结的真好。我有个疑问，没找到相关资料做支撑。就是一套kafka集群，最多能容纳多少个topic-partition，这个是集群规模有关吗，</div>2019-08-24</li><br/><li><span>ykkk88</span> 👍（6） 💬（2）<div>有什么好的开源的监控工具么 </div>2019-08-25</li><br/><li><span>快跑</span> 👍（3） 💬（1）<div>请教老师一下
-从监控上能看到读取kafka数据是从页缓存还是磁盘么，对应的指标有哪些？</div>2020-03-14</li><br/><li><span>frenco</span> 👍（3） 💬（2）<div>老师好， 请教个问题：    按您之前有个推荐的配置kafka内存的说法，一般堆内存配置6G就好了。 那新生代和老年代默认2：1  分配。      如果只需要6G的内存，  我们生产的机器一般都是64G以上内存， 那机器是不是有很大浪费呢。</div>2019-11-08</li><br/><li><span>Geek_cd6rkj</span> 👍（3） 💬（2）<div>请教下老师，我们最近遇到一个监控问题，监控各个topic的消息堆积，发现如果业务方由于服务下线，不使用某个consume group了，结果这个group的消息堆积会一直增加，运维就会收到监控告警，但是运维并不好判断哪个group已经不使用了，这个能有什么自动化的手段吗</div>2019-08-29</li><br/><li><span>wxr</span> 👍（3） 💬（6）<div>怎样比较好的监控消费延时呢</div>2019-08-24</li><br/><li><span>风中花</span> 👍（2） 💬（1）<div>老师你的公众号怎么找到呢</div>2019-11-30</li><br/><li><span>Geek_72a3d3</span> 👍（2） 💬（4）<div>“同时，Load 值一直在增加，也说明这台主机上的负载越来越大。”
-老师，您好，Load值好像是越来越小。？？</div>2019-09-17</li><br/><li><span>外星人</span> 👍（2） 💬（1）<div>你好，单个topic可以支撑的最多partition个数多少啊？我们生产上有个topic超级大，占了整个集群的一半以上的流量，这种情况是需要拆分吗？</div>2019-08-24</li><br/><li><span>张亮</span> 👍（1） 💬（1）<div>Kafka监控是一个非常专业和体系化的事情，Elasticearch基本将系统指标、JVM指标作为Metric上报出来自闭环非常方便实用，在开源Logi-KafkaManager的时候，我一直计划将这些指标通过JMX直接暴露出来，你怎么看？</div>2021-02-15</li><br/><li><span>你为啥那么牛</span> 👍（1） 💬（1）<div>这应该是最有水平的一篇文章了，经验值超高</div>2021-02-07</li><br/><li><span>夏日</span> 👍（1） 💬（1）<div>ttl一般多少以内比较正常，比如在考虑在双活中心搭建一套kafka集群的时候，怎么判断不会由于节点之间的传输延时导致kafka性能不高？</div>2020-11-23</li><br/><li><span>胡小禾</span> 👍（1） 💬（1）<div>“如果group不使用了，它的状态就是nonactive了”
+<li><span>我已经设置了昵称</span> 👍（16） 💬（1）<p>要怎么看到JMX指标呢，能否讲下</p>2019-09-04</li><br/><li><span>r</span> 👍（9） 💬（1）<p>老师总结的真好。我有个疑问，没找到相关资料做支撑。就是一套kafka集群，最多能容纳多少个topic-partition，这个是集群规模有关吗，</p>2019-08-24</li><br/><li><span>ykkk88</span> 👍（6） 💬（2）<p>有什么好的开源的监控工具么 </p>2019-08-25</li><br/><li><span>快跑</span> 👍（3） 💬（1）<p>请教老师一下
+从监控上能看到读取kafka数据是从页缓存还是磁盘么，对应的指标有哪些？</p>2020-03-14</li><br/><li><span>frenco</span> 👍（3） 💬（2）<p>老师好， 请教个问题：    按您之前有个推荐的配置kafka内存的说法，一般堆内存配置6G就好了。 那新生代和老年代默认2：1  分配。      如果只需要6G的内存，  我们生产的机器一般都是64G以上内存， 那机器是不是有很大浪费呢。</p>2019-11-08</li><br/><li><span>Geek_cd6rkj</span> 👍（3） 💬（2）<p>请教下老师，我们最近遇到一个监控问题，监控各个topic的消息堆积，发现如果业务方由于服务下线，不使用某个consume group了，结果这个group的消息堆积会一直增加，运维就会收到监控告警，但是运维并不好判断哪个group已经不使用了，这个能有什么自动化的手段吗</p>2019-08-29</li><br/><li><span>wxr</span> 👍（3） 💬（6）<p>怎样比较好的监控消费延时呢</p>2019-08-24</li><br/><li><span>风中花</span> 👍（2） 💬（1）<p>老师你的公众号怎么找到呢</p>2019-11-30</li><br/><li><span>Geek_72a3d3</span> 👍（2） 💬（4）<p>“同时，Load 值一直在增加，也说明这台主机上的负载越来越大。”
+老师，您好，Load值好像是越来越小。？？</p>2019-09-17</li><br/><li><span>外星人</span> 👍（2） 💬（1）<p>你好，单个topic可以支撑的最多partition个数多少啊？我们生产上有个topic超级大，占了整个集群的一半以上的流量，这种情况是需要拆分吗？</p>2019-08-24</li><br/><li><span>张亮</span> 👍（1） 💬（1）<p>Kafka监控是一个非常专业和体系化的事情，Elasticearch基本将系统指标、JVM指标作为Metric上报出来自闭环非常方便实用，在开源Logi-KafkaManager的时候，我一直计划将这些指标通过JMX直接暴露出来，你怎么看？</p>2021-02-15</li><br/><li><span>你为啥那么牛</span> 👍（1） 💬（1）<p>这应该是最有水平的一篇文章了，经验值超高</p>2021-02-07</li><br/><li><span>夏日</span> 👍（1） 💬（1）<p>ttl一般多少以内比较正常，比如在考虑在双活中心搭建一套kafka集群的时候，怎么判断不会由于节点之间的传输延时导致kafka性能不高？</p>2020-11-23</li><br/><li><span>胡小禾</span> 👍（1） 💬（1）<p>“如果group不使用了，它的状态就是nonactive了”
 
-这个nonactive 在ZK上是不是有节点？</div>2020-05-28</li><br/><li><span>追光者</span> 👍（1） 💬（3）<div>老师，您好，想请教一个关于  Metricbeat 采集 kafka 数据的问题：
+这个nonactive 在ZK上是不是有节点？</p>2020-05-28</li><br/><li><span>追光者</span> 👍（1） 💬（3）<p>老师，您好，想请教一个关于  Metricbeat 采集 kafka 数据的问题：
 配置好 modules.d&#47;kafka.yml 启动 metricbeat 采集不到数据，提示信息：
 2019-08-29T16:13:33.827+0800    INFO    kafka&#47;log.go:53 kafka message: Successful SASL handshake
 2019-08-29T16:13:33.828+0800    INFO    kafka&#47;log.go:53 SASL authentication successful with broker 10.162.7.2:9092:4 - [0 0 0 0]
@@ -138,5 +138,5 @@ retries: 3
 backoff: 250ms
 topics: []
 username: &quot;admin&quot;
-password: &quot;admin&quot;</div>2019-08-30</li><br/>
+password: &quot;admin&quot;</p>2019-08-30</li><br/>
 </ul>

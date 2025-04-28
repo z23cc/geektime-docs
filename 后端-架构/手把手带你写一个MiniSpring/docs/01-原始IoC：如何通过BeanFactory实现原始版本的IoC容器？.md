@@ -345,17 +345,17 @@ public class ClassPathXmlApplicationContext implements BeanFactory{
 
 学完这节课，我也给你留一道思考题。IoC的字面含义是“控制反转”，那么它究竟“反转”了什么？又是怎么体现在代码中的？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>6点无痛早起学习的和尚</span> 👍（37） 💬（2）<div>内容讲的很清晰，点赞。
+<li><span>6点无痛早起学习的和尚</span> 👍（37） 💬（2）<p>内容讲的很清晰，点赞。
 这里有几个建议：
 1. 每次代码设计之前，能否通过一个 UML 类图来表示，通过类图感觉更容易懂整个类与类之前的关系
 2. 发现课程的内容还是有点偏向 Spring 那种感觉，就是有点类似：啊，Spring 是这样拆分几个类功能，那我们就这样拆分，这个方式感觉还是有点死板
 感觉应该是：从一个设计者角度来讲，这样拆分更灵活，扩展性更强，叭叭叭等等，这样才能把读者带入进入课程，产生共鸣。
 
-个人想法，欢迎交流，不知道是不是就我自己有这样感受，还是其他....</div>2023-03-13</li><br/><li><span>姐姐</span> 👍（20） 💬（4）<div>从最初的简单ApplicationContext拆解成后面的复杂ApplicationContext，我理解起来还是有困难的，努力理解如下，大神勿喷：1 readxml方法从资源文件读取内容并存入beanDefinitions，这件事情有两个地方不确定，资源的来源不同、资源的格式不同，抽象的Resource的接口，它的不同子类从不同的来源读取，但是最终都是以Resource接口的形式提供给外部访问的，这样解决了第一个不确定来源的问题；但是resource接口中被迭代的object又是根据不同格式不同而不同的，element只是xml格式的，所以又定义了BeanDefinitionReader接口，它的不同子类可以读取不同格式的资源来形成beanDefinition 。 2 . instanceBeans方法取消了 。  3. getBean方法功能增强了，不仅是获得bean，对于未创建的bean还要创建bean  4 新的applicationContext负责组装，可以根据它的名字来体现它的组装功能，例如ClassPathXmlApplicationContext  它组装的Resource的实现类是ClassPathXmlResource  ，然后因为是xml的，所以需要BeanDefinitionReader的实现类XmlBeanDefinitionReader来读取并注册进beanFactory，同时ApplicationContext也提供了getBean底层调用beanfactory的实现，提供了registerBeanDefinition  来向底层的beanFactory注册bean。5 beanFactory 提供了registerBeanDefinition和getBean接口，这样无论是applicationContext还是beanDefinitionReader都可以向它注册beanDefinition，只要向它注册了，就可以调用它的getBean方法，我一直很纠结为什么不是beanfactory调用不同的beanDefinitionReader，写完这些，好像有点理解了，这样beanfactory就很专注自己的getBean方法，别的组件要怎么注入，它都不管了。</div>2023-03-22</li><br/><li><span>adelyn</span> 👍（17） 💬（4）<div>请问会不会穿插讲一下用到的设计模式，单独学设计模式总是学不扎实，如果能讲到就太好了</div>2023-03-13</li><br/><li><span>风轻扬</span> 👍（14） 💬（1）<div>说一下自己对思考题的理解。
+个人想法，欢迎交流，不知道是不是就我自己有这样感受，还是其他....</p>2023-03-13</li><br/><li><span>姐姐</span> 👍（20） 💬（4）<p>从最初的简单ApplicationContext拆解成后面的复杂ApplicationContext，我理解起来还是有困难的，努力理解如下，大神勿喷：1 readxml方法从资源文件读取内容并存入beanDefinitions，这件事情有两个地方不确定，资源的来源不同、资源的格式不同，抽象的Resource的接口，它的不同子类从不同的来源读取，但是最终都是以Resource接口的形式提供给外部访问的，这样解决了第一个不确定来源的问题；但是resource接口中被迭代的object又是根据不同格式不同而不同的，element只是xml格式的，所以又定义了BeanDefinitionReader接口，它的不同子类可以读取不同格式的资源来形成beanDefinition 。 2 . instanceBeans方法取消了 。  3. getBean方法功能增强了，不仅是获得bean，对于未创建的bean还要创建bean  4 新的applicationContext负责组装，可以根据它的名字来体现它的组装功能，例如ClassPathXmlApplicationContext  它组装的Resource的实现类是ClassPathXmlResource  ，然后因为是xml的，所以需要BeanDefinitionReader的实现类XmlBeanDefinitionReader来读取并注册进beanFactory，同时ApplicationContext也提供了getBean底层调用beanfactory的实现，提供了registerBeanDefinition  来向底层的beanFactory注册bean。5 beanFactory 提供了registerBeanDefinition和getBean接口，这样无论是applicationContext还是beanDefinitionReader都可以向它注册beanDefinition，只要向它注册了，就可以调用它的getBean方法，我一直很纠结为什么不是beanfactory调用不同的beanDefinitionReader，写完这些，好像有点理解了，这样beanfactory就很专注自己的getBean方法，别的组件要怎么注入，它都不管了。</p>2023-03-22</li><br/><li><span>adelyn</span> 👍（17） 💬（4）<p>请问会不会穿插讲一下用到的设计模式，单独学设计模式总是学不扎实，如果能讲到就太好了</p>2023-03-13</li><br/><li><span>风轻扬</span> 👍（14） 💬（1）<p>说一下自己对思考题的理解。
 控制反转。
 控制：java对象创建的控制权。
 反转：将java对象创建的控制权从程序员手中反转到IOC容器手中。
-另外，说一下学完这一讲的感受。直白点说，很激动。我看过Spring这部分的源码，当时感觉挺简单的，并没有往深处想，其实忽略了“Spring为什么要这样写“的问题，现在感觉这才是源码的核心所在，突然有一点融会贯通的感觉，感觉很好。一直知道Spring的扩展性好，今天实实在在看到了。感谢老师传道解惑</div>2023-03-15</li><br/><li><span>未聞花名</span> 👍（9） 💬（1）<div>给老师个建议，可以点一下为什么类中要放这些属性和方法，突然抽到几个新类感觉过渡有点快，这样对之后自己去设计类也能举一反三，感觉自己平时设计不太好，如果自己实现起来的话比Spring的优雅可读性要差很多。
+另外，说一下学完这一讲的感受。直白点说，很激动。我看过Spring这部分的源码，当时感觉挺简单的，并没有往深处想，其实忽略了“Spring为什么要这样写“的问题，现在感觉这才是源码的核心所在，突然有一点融会贯通的感觉，感觉很好。一直知道Spring的扩展性好，今天实实在在看到了。感谢老师传道解惑</p>2023-03-15</li><br/><li><span>未聞花名</span> 👍（9） 💬（1）<p>给老师个建议，可以点一下为什么类中要放这些属性和方法，突然抽到几个新类感觉过渡有点快，这样对之后自己去设计类也能举一反三，感觉自己平时设计不太好，如果自己实现起来的话比Spring的优雅可读性要差很多。
 最后附上dom4j的maven依赖，希望帮助到其他人
 ```java
 &lt;!-- https:&#47;&#47;mvnrepository.com&#47;artifact&#47;dom4j&#47;dom4j --&gt;
@@ -364,17 +364,17 @@ public class ClassPathXmlApplicationContext implements BeanFactory{
             &lt;artifactId&gt;dom4j&lt;&#47;artifactId&gt;
             &lt;version&gt;1.6.1&lt;&#47;version&gt;
         &lt;&#47;dependency&gt;
-```</div>2023-03-18</li><br/><li><span>杨松</span> 👍（8） 💬（3）<div>老师这句话没理解呢：“我们用一个部件来对应 Bean 内存的映像”，文中5边型图片对应的其他4个都能理解</div>2023-03-14</li><br/><li><span>Unknown</span> 👍（7） 💬（3）<div>getClass().getClassLoader().getResource(filepath)
-类加载器获取资源时 此处的filepath 需要放在resource目录里面(手动创建并标识类型为Resource root) </div>2023-03-15</li><br/><li><span>周润发</span> 👍（5） 💬（2）<div>首先很感谢老师的课程，内容值得细品。
-想请教一个问题，为什么在代码中更多使用全局变量而不在方法中使用成员变量呢？有些全局变量只在某个方法会用到，有什么特别的考虑吗？</div>2023-03-15</li><br/><li><span>C.</span> 👍（4） 💬（2）<div>ioc容器5天的版本手敲的，对应章节的代码：https:&#47;&#47;github.com&#47;caozhenyuan&#47;mini-spring.git 点击分支查看对应章节的代码。帮大家跟敲不迷路。</div>2023-03-24</li><br/><li><span>马儿</span> 👍（4） 💬（1）<div>以前的spring的源码都是散的，希望能通过这个课把这些只是串联起来。希望老师讲的时候可以讲一些设计模式，把创建类所在的包也希望能够说明一下，这样的话更方便大家学习了解类的用途和作用。</div>2023-03-13</li><br/><li><span>浅行</span> 👍（3） 💬（4）<div>有两个问题想请教一下：
+```</p>2023-03-18</li><br/><li><span>杨松</span> 👍（8） 💬（3）<p>老师这句话没理解呢：“我们用一个部件来对应 Bean 内存的映像”，文中5边型图片对应的其他4个都能理解</p>2023-03-14</li><br/><li><span>Unknown</span> 👍（7） 💬（3）<p>getClass().getClassLoader().getResource(filepath)
+类加载器获取资源时 此处的filepath 需要放在resource目录里面(手动创建并标识类型为Resource root) </p>2023-03-15</li><br/><li><span>周润发</span> 👍（5） 💬（2）<p>首先很感谢老师的课程，内容值得细品。
+想请教一个问题，为什么在代码中更多使用全局变量而不在方法中使用成员变量呢？有些全局变量只在某个方法会用到，有什么特别的考虑吗？</p>2023-03-15</li><br/><li><span>C.</span> 👍（4） 💬（2）<p>ioc容器5天的版本手敲的，对应章节的代码：https:&#47;&#47;github.com&#47;caozhenyuan&#47;mini-spring.git 点击分支查看对应章节的代码。帮大家跟敲不迷路。</p>2023-03-24</li><br/><li><span>马儿</span> 👍（4） 💬（1）<p>以前的spring的源码都是散的，希望能通过这个课把这些只是串联起来。希望老师讲的时候可以讲一些设计模式，把创建类所在的包也希望能够说明一下，这样的话更方便大家学习了解类的用途和作用。</p>2023-03-13</li><br/><li><span>浅行</span> 👍（3） 💬（4）<p>有两个问题想请教一下：
 1. 请问SimpleBeanFactory 为什么是在getBean时才注册实例，而不是registerBeanDefinition就先注册呢？
-2. 请问ClassPathXmlApplicationContext 为什么也要实现BeanFactory呢？</div>2023-03-14</li><br/><li><span>兔2🐰🍃</span> 👍（1） 💬（1）<div>感谢郭屹老师，
+2. 请问ClassPathXmlApplicationContext 为什么也要实现BeanFactory呢？</p>2023-03-14</li><br/><li><span>兔2🐰🍃</span> 👍（1） 💬（1）<p>感谢郭屹老师，
 本节完整代码如下，需要的同学可以照着敲。
-https:&#47;&#47;gitee.com&#47;rabbit2&#47;mini-spring&#47;commit&#47;1bf7247dd8568b5ce33134078efa2e4824816cf8</div>2023-04-12</li><br/><li><span>Geek_b7449f</span> 👍（1） 💬（1）<div>真的很详细！从零手敲，然后反反复复看几遍终于把我之前自学所学的散的知识串联起来，真的学有收获，比较期待能把设计模式也能给一起串进来呢。
+https:&#47;&#47;gitee.com&#47;rabbit2&#47;mini-spring&#47;commit&#47;1bf7247dd8568b5ce33134078efa2e4824816cf8</p>2023-04-12</li><br/><li><span>Geek_b7449f</span> 👍（1） 💬（1）<p>真的很详细！从零手敲，然后反反复复看几遍终于把我之前自学所学的散的知识串联起来，真的学有收获，比较期待能把设计模式也能给一起串进来呢。
 本人是一名在校的学生，这里我将每一步步骤拆分为提交的方式，希望这样可以更适合所学在校的应届生
-不洗勿喷哦~：https:&#47;&#47;github.com&#47;HHXiaoFu&#47;mini-spring</div>2023-03-27</li><br/><li><span>小马哥</span> 👍（1） 💬（1）<div>回答课后题:
+不洗勿喷哦~：https:&#47;&#47;github.com&#47;HHXiaoFu&#47;mini-spring</p>2023-03-27</li><br/><li><span>小马哥</span> 👍（1） 💬（1）<p>回答课后题:
 1, 反转: 反转的是对Bean的控制权, 使用&quot;new&quot;的方式是由程序员在代码中主动控制; 使用IOC的方式是由容器来主动控制Bean的创建以及后面的DI属性注入;
-2, 反转在代码中的体现: 因为容器框架并不知道未来业务中需要注入哪个Bean, 于是通过配置文件等方式告诉容器, 容器使用反射技术管理Bean的创建, 属性注入, 生命周期等.</div>2023-03-19</li><br/><li><span>陈小远</span> 👍（1） 💬（3）<div>Spring在Java编程中是事实的标准，这个无需多言，所以对老师的这个专栏也有比较大的兴趣。看了第一节课，也跟着动手撸了些代码，对有些疑惑的点做一简单阐述：
+2, 反转在代码中的体现: 因为容器框架并不知道未来业务中需要注入哪个Bean, 于是通过配置文件等方式告诉容器, 容器使用反射技术管理Bean的创建, 属性注入, 生命周期等.</p>2023-03-19</li><br/><li><span>陈小远</span> 👍（1） 💬（3）<p>Spring在Java编程中是事实的标准，这个无需多言，所以对老师的这个专栏也有比较大的兴趣。看了第一节课，也跟着动手撸了些代码，对有些疑惑的点做一简单阐述：
 1、老师给的源码地址感觉应该是最终的成品的地址了，不是按照课程一节一节的区分开来，从学习跟随者的角度看，可能不太友好，无法从源码中找到项目从0到1的那种获得感；
-2、针对本节中源码的讲述个人感觉还是有点跳跃了，不过本身Spring体系太过庞杂，无法面面俱到，也无法真的能从0去反推出Spring中相关类设计的原因，所以也表示理解。但有些设计意图还是希望老师能尽量多言一些，而不是因为Spring包或类那样设计的就强行往Spring身上靠，感觉有些突然。比如本节中抽象出了BeanFactory后，为什么又突然来一个SimpleBeanFactory，而ClassPathXmlApplicationContext同样也是实现自该接口，那通过SimpleBeanFactory在组合到ClassPathXmlApplicationContext中实现功能是出于什么考虑呢？ 虽然在评论区实际有看到小伙伴的讨论，大概能明白这样设计的意思。</div>2023-03-18</li><br/>
+2、针对本节中源码的讲述个人感觉还是有点跳跃了，不过本身Spring体系太过庞杂，无法面面俱到，也无法真的能从0去反推出Spring中相关类设计的原因，所以也表示理解。但有些设计意图还是希望老师能尽量多言一些，而不是因为Spring包或类那样设计的就强行往Spring身上靠，感觉有些突然。比如本节中抽象出了BeanFactory后，为什么又突然来一个SimpleBeanFactory，而ClassPathXmlApplicationContext同样也是实现自该接口，那通过SimpleBeanFactory在组合到ClassPathXmlApplicationContext中实现功能是出于什么考虑呢？ 虽然在评论区实际有看到小伙伴的讨论，大概能明白这样设计的意思。</p>2023-03-18</li><br/>
 </ul>

@@ -8,5 +8,5 @@
 
 [![](https://static001.geekbang.org/resource/image/28/a4/28d1be62669b4f3cc01c36466bf811a4.png?wh=1142%2A201)](http://time.geekbang.org/quiz/intro?act_id=181&exam_id=424)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>baggio</span> 👍（3） 💬（0）<div>12分半考了50分，有些选项涉及到的知识点没有构成“清晰”的认识，所以还是需要再学一遍巩固一下。⛽️</div>2020-07-17</li><br/><li><span>Geek_67f268</span> 👍（1） 💬（0）<div>希望老师再开一门混合开发实战的课程！</div>2020-10-28</li><br/><li><span>大圣归来圣骑士</span> 👍（0） 💬（0）<div>希望老师再开一门企业级混合开发实战的课程！</div>2021-11-19</li><br/><li><span>TMiRobot</span> 👍（0） 💬（0）<div>题目不刁钻，80分。</div>2021-06-09</li><br/><li><span>ABC</span> 👍（0） 💬（0）<div>10分钟，65分，还是需要多努力学习😀😀</div>2020-12-16</li><br/><li><span>frendguo</span> 👍（0） 💬（0）<div>8分考了50分，再去巩固下</div>2020-10-14</li><br/>
+<li><span>baggio</span> 👍（3） 💬（0）<p>12分半考了50分，有些选项涉及到的知识点没有构成“清晰”的认识，所以还是需要再学一遍巩固一下。⛽️</p>2020-07-17</li><br/><li><span>Geek_67f268</span> 👍（1） 💬（0）<p>希望老师再开一门混合开发实战的课程！</p>2020-10-28</li><br/><li><span>大圣归来圣骑士</span> 👍（0） 💬（0）<p>希望老师再开一门企业级混合开发实战的课程！</p>2021-11-19</li><br/><li><span>TMiRobot</span> 👍（0） 💬（0）<p>题目不刁钻，80分。</p>2021-06-09</li><br/><li><span>ABC</span> 👍（0） 💬（0）<p>10分钟，65分，还是需要多努力学习😀😀</p>2020-12-16</li><br/><li><span>frendguo</span> 👍（0） 💬（0）<p>8分考了50分，再去巩固下</p>2020-10-14</li><br/>
 </ul>

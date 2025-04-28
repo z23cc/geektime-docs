@@ -308,13 +308,13 @@ Request ID: 32191f7ea07cb6bb44a1f43b8299415c
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>wang jl</span> 👍（19） 💬（3）<div>文章里面这个nginx ingress只是api网关啊，负载均衡体现在哪里？其实还是service做的？</div>2020-03-03</li><br/><li><span>黄巍</span> 👍（12） 💬（3）<div>「但是，相信你也应该能感受到，由于每个 Service 都要有一个负载均衡服务，所以这个做法实际上既浪费成本又高。」没错，下周的 KubeCon 我会做一个关于共享 4 层 LoadBalancer 的session :)</div>2018-12-05</li><br/><li><span>Adam</span> 👍（8） 💬（1）<div>感觉再加上一层ingress，又多了一层转发，性能上会不会损失比较大。</div>2018-12-10</li><br/><li><span>wang jl</span> 👍（7） 💬（1）<div>lvs-&gt;nginx-&gt;lvs-&gt;service 这操作骚得可以。
-关键是lvs还是nat模式的。</div>2020-03-03</li><br/><li><span>勤劳的小胖子-libo</span> 👍（7） 💬（2）<div>老师，为什么在创建 Ingress 所需的 SSL 证书（tls.crt）和密钥（tls.key）之后，使用curl命令还需要加上--insecure.
+<li><span>wang jl</span> 👍（19） 💬（3）<p>文章里面这个nginx ingress只是api网关啊，负载均衡体现在哪里？其实还是service做的？</p>2020-03-03</li><br/><li><span>黄巍</span> 👍（12） 💬（3）<p>「但是，相信你也应该能感受到，由于每个 Service 都要有一个负载均衡服务，所以这个做法实际上既浪费成本又高。」没错，下周的 KubeCon 我会做一个关于共享 4 层 LoadBalancer 的session :)</p>2018-12-05</li><br/><li><span>Adam</span> 👍（8） 💬（1）<p>感觉再加上一层ingress，又多了一层转发，性能上会不会损失比较大。</p>2018-12-10</li><br/><li><span>wang jl</span> 👍（7） 💬（1）<p>lvs-&gt;nginx-&gt;lvs-&gt;service 这操作骚得可以。
+关键是lvs还是nat模式的。</p>2020-03-03</li><br/><li><span>勤劳的小胖子-libo</span> 👍（7） 💬（2）<p>老师，为什么在创建 Ingress 所需的 SSL 证书（tls.crt）和密钥（tls.key）之后，使用curl命令还需要加上--insecure.
 &quot;curl --resolve cafe.example.com:$IC_HTTPS_PORT:$IC_IP https:&#47;&#47;cafe.example.com:$IC_HTTPS_PORT&#47;tea --insecure&quot;
 
-我的理解是：创建的SSL证书和密钥没有通过CA验证，所以要加上--secure. 对吗？</div>2018-11-27</li><br/><li><span>zylv</span> 👍（4） 💬（2）<div>ingress-controller 里面如果不配置域名，配置ip,可以吗</div>2018-11-21</li><br/><li><span>左氧佛沙星人</span> 👍（2） 💬（1）<div>请问各位大神和老师
+我的理解是：创建的SSL证书和密钥没有通过CA验证，所以要加上--secure. 对吗？</p>2018-11-27</li><br/><li><span>zylv</span> 👍（4） 💬（2）<p>ingress-controller 里面如果不配置域名，配置ip,可以吗</p>2018-11-21</li><br/><li><span>左氧佛沙星人</span> 👍（2） 💬（1）<p>请问各位大神和老师
 可以看到，这个 Service 的唯一工作，就是将所有携带 ingress-nginx 标签的 Pod 的 80 和 433 端口bao lu出去。
-为啥需要创建一个svc呢？为啥需要bao lu80和443呢？</div>2020-03-11</li><br/><li><span>Holy</span> 👍（2） 💬（3）<div>K8s目前这几类负载均衡都属于服务端负载均衡，优点很明显，对客户端友好透明，无需额外的感知工作，缺点是在大流量高并发对性能有要求的场景，负载均衡器可能会变为单点瓶颈，不知道自己理解的对不对</div>2018-11-28</li><br/><li><span>陈小虎</span> 👍（2） 💬（1）<div>这种非系统类控制器本来就主要部署在work-node上吧：）</div>2018-11-21</li><br/><li><span>虎虎❤️</span> 👍（140） 💬（0）<div>思考题：
+为啥需要创建一个svc呢？为啥需要bao lu80和443呢？</p>2020-03-11</li><br/><li><span>Holy</span> 👍（2） 💬（3）<p>K8s目前这几类负载均衡都属于服务端负载均衡，优点很明显，对客户端友好透明，无需额外的感知工作，缺点是在大流量高并发对性能有要求的场景，负载均衡器可能会变为单点瓶颈，不知道自己理解的对不对</p>2018-11-28</li><br/><li><span>陈小虎</span> 👍（2） 💬（1）<p>这种非系统类控制器本来就主要部署在work-node上吧：）</p>2018-11-21</li><br/><li><span>虎虎❤️</span> 👍（140） 💬（0）<p>思考题：
 spec:
   rules:
   - host: www.mysite.com
@@ -328,7 +328,7 @@ spec:
       paths:
       - backend:
           serviceName: forums-svc
-          servicePort: 80</div>2018-11-21</li><br/><li><span>mazhen</span> 👍（58） 💬（5）<div>总结一下，从集群外访问到服务，要经过3次代理：
+          servicePort: 80</p>2018-11-21</li><br/><li><span>mazhen</span> 👍（58） 💬（5）<p>总结一下，从集群外访问到服务，要经过3次代理：
 
 访问请求到达任一宿主机，会根据NodePort生成的iptables规则，跳转到nginx反向代理，
 请求再按照nginx的配置跳转到后台service，nginx的配置是根据Ingress对象生成的，
@@ -344,7 +344,7 @@ $ kubectl exec nginx-ingress-controller-85d94747dd-lsggm -it --namespace=&quot;i
 
 $ cat &#47;etc&#47;nginx&#47;nginx.conf
 ...
-$ exit</div>2018-11-21</li><br/><li><span>ch_ort</span> 👍（40） 💬（0）<div>Kubernets中通过Service来实现Pod实例之间的负载均衡和固定VIP的场景。
+$ exit</p>2018-11-21</li><br/><li><span>ch_ort</span> 👍（40） 💬（0）<p>Kubernets中通过Service来实现Pod实例之间的负载均衡和固定VIP的场景。
 
 Service的工作原理是通过kube-proxy来设置宿主机上的iptables规则来实现的。kube-proxy来观察service的创建，然后通过修改本机的iptables规则，将访问Service VIP的请求转发到真正的Pod上。
 
@@ -367,7 +367,7 @@ ExternalName：通过ExternalName或ExternalIp给Service挂在一个公有IP的�
 Ingress是用来给不同Service做负载均衡服务的，也就是Service的Service。
 
 
-</div>2020-12-05</li><br/><li><span>Dem</span> 👍（33） 💬（1）<div>Nginx Ingress Controller的mandatory.yaml地址改掉了。现在的命令：
-kubectl apply -f https:&#47;&#47;raw.githubusercontent.com&#47;kubernetes&#47;ingress-nginx&#47;master&#47;deploy&#47;static&#47;mandatory.yaml</div>2019-06-12</li><br/><li><span>海盗船长</span> 👍（13） 💬（1）<div>Nginx Ingress Controller的mandatory.yaml地址改掉了。现在的命令：
-kubectl apply -f https:&#47;&#47;raw.githubusercontent.com&#47;kubernetes&#47;ingress-nginx&#47;controller-v0.34.1&#47;deploy&#47;static&#47;provider&#47;baremetal&#47;deploy.yaml</div>2020-08-06</li><br/><li><span>峰哥</span> 👍（11） 💬（3）<div>Ingress只支持7层的话，tcp协议的service怎么处理？</div>2019-01-16</li><br/>
+</p>2020-12-05</li><br/><li><span>Dem</span> 👍（33） 💬（1）<p>Nginx Ingress Controller的mandatory.yaml地址改掉了。现在的命令：
+kubectl apply -f https:&#47;&#47;raw.githubusercontent.com&#47;kubernetes&#47;ingress-nginx&#47;master&#47;deploy&#47;static&#47;mandatory.yaml</p>2019-06-12</li><br/><li><span>海盗船长</span> 👍（13） 💬（1）<p>Nginx Ingress Controller的mandatory.yaml地址改掉了。现在的命令：
+kubectl apply -f https:&#47;&#47;raw.githubusercontent.com&#47;kubernetes&#47;ingress-nginx&#47;controller-v0.34.1&#47;deploy&#47;static&#47;provider&#47;baremetal&#47;deploy.yaml</p>2020-08-06</li><br/><li><span>峰哥</span> 👍（11） 💬（3）<p>Ingress只支持7层的话，tcp协议的service怎么处理？</p>2019-01-16</li><br/>
 </ul>

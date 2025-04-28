@@ -627,7 +627,7 @@ const dialog2 = createDialog({
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/04)
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>深山大泽平原</span> 👍（7） 💬（3）<div>用模板语法的数组实现组件的reverse：
+<li><span>深山大泽平原</span> 👍（7） 💬（3）<p>用模板语法的数组实现组件的reverse：
 
 &lt;template&gt;
     &lt;div class=&quot;template-reverse-box&quot;&gt;
@@ -664,7 +664,7 @@ let comArr = reactive&lt;Item[]&gt;([
 const changeModule = () =&gt; {
     comArr.reverse()
 }
-&lt;&#47;script&gt;</div>2022-12-08</li><br/><li><span>直须</span> 👍（2） 💬（4）<div>怎么在.vue文件中引入jsx组件呢</div>2023-02-09</li><br/><li><span>ZR-rd</span> 👍（2） 💬（4）<div>JSX 不能配置 scoped 避免 CSS 样式干扰，那么 JSX 应该如何做才能避免样式干扰呢</div>2022-12-02</li><br/><li><span>飞雪👻</span> 👍（0） 💬（2）<div>想请教一下, 我不太明白在用JSX写转换顺序, render函数中-------转换顺序: {`${isReverse}`}------ 为什么不直接写作{ isReverse } , 而是用模板字符串包裹呢 ?</div>2022-12-02</li><br/><li><span>都市夜归人</span> 👍（2） 💬（1）<div>用模板方法一样能通过调整数组的顺序去实现，而不是用v-if。这是为了使用JSX而这样做的吧，个人觉得例子举的不是很恰当。</div>2022-11-30</li><br/><li><span>请叫我潜水员</span> 👍（1） 💬（3）<div>dialog那个例子用模板是一样的效果，Dialog组件从dialog.vue中引入，然后创建一个相同的createDialog，使用效果一模一样。因为我就是这么用的</div>2022-11-29</li><br/><li><span>hao-kuai</span> 👍（0） 💬（0）<div>jsx的自由度+vue3度性能那不是要起飞了</div>2025-01-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>组件内递归调用，没有结束条件的话会卡死吧?</div>2024-08-31</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-08-31</li><br/><li><span>xhsndl</span> 👍（0） 💬（0）<div>1. 模板语法实现组件递归（借鉴了前辈的想法）
+&lt;&#47;script&gt;</p>2022-12-08</li><br/><li><span>直须</span> 👍（2） 💬（4）<p>怎么在.vue文件中引入jsx组件呢</p>2023-02-09</li><br/><li><span>ZR-rd</span> 👍（2） 💬（4）<p>JSX 不能配置 scoped 避免 CSS 样式干扰，那么 JSX 应该如何做才能避免样式干扰呢</p>2022-12-02</li><br/><li><span>飞雪👻</span> 👍（0） 💬（2）<p>想请教一下, 我不太明白在用JSX写转换顺序, render函数中-------转换顺序: {`${isReverse}`}------ 为什么不直接写作{ isReverse } , 而是用模板字符串包裹呢 ?</p>2022-12-02</li><br/><li><span>都市夜归人</span> 👍（2） 💬（1）<p>用模板方法一样能通过调整数组的顺序去实现，而不是用v-if。这是为了使用JSX而这样做的吧，个人觉得例子举的不是很恰当。</p>2022-11-30</li><br/><li><span>请叫我潜水员</span> 👍（1） 💬（3）<p>dialog那个例子用模板是一样的效果，Dialog组件从dialog.vue中引入，然后创建一个相同的createDialog，使用效果一模一样。因为我就是这么用的</p>2022-11-29</li><br/><li><span>hao-kuai</span> 👍（0） 💬（0）<p>jsx的自由度+vue3度性能那不是要起飞了</p>2025-01-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>组件内递归调用，没有结束条件的话会卡死吧?</p>2024-08-31</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-08-31</li><br/><li><span>xhsndl</span> 👍（0） 💬（0）<p>1. 模板语法实现组件递归（借鉴了前辈的想法）
 &lt;template v-for=&quot;item in array&quot; :key=&quot;item&quot;&gt;
     &lt;component :is=&quot;item&quot;&#47;&gt;
 &lt;&#47;template&gt;
@@ -709,5 +709,5 @@ array.forEach(item =&gt;
         onOk:() =&gt; temp.onClose()
     )
 )
-&lt;&#47;script&gt;</div>2024-01-19</li><br/><li><span>Spike Jim.Fun</span> 👍（0） 💬（0）<div>jsx的css模块化可以使用postcss-modules实现</div>2023-12-09</li><br/><li><span>中欧校友</span> 👍（0） 💬（0）<div>模板语法递归在组件内用name名再次引用，JSX在组件函数内直接使用函数名调用实现梯柜</div>2023-07-30</li><br/>
+&lt;&#47;script&gt;</p>2024-01-19</li><br/><li><span>Spike Jim.Fun</span> 👍（0） 💬（0）<p>jsx的css模块化可以使用postcss-modules实现</p>2023-12-09</li><br/><li><span>中欧校友</span> 👍（0） 💬（0）<p>模板语法递归在组件内用name名再次引用，JSX在组件函数内直接使用函数名调用实现梯柜</p>2023-07-30</li><br/>
 </ul>

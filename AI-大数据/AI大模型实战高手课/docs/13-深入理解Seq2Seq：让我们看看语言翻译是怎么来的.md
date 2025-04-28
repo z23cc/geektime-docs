@@ -482,12 +482,12 @@ print(f"Translation: {translation}")
 
 我刚刚讲过，推理的时候模型会使用训练过程中记住的参数来进行概率预测，你可以思考一下，模型的参数到底是什么？欢迎在评论区留言，我们一起讨论学习，如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给需要的朋友，邀TA一起学习，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>方梁</span> 👍（1） 💬（1）<div>train_1w.zh
+<li><span>方梁</span> 👍（1） 💬（1）<p>train_1w.zh
 train_1w.en
-请提供一下哈，谢谢</div>2024-06-26</li><br/><li><span>小毛驴</span> 👍（0） 💬（1）<div>老师补充一下：OSError: [E053] Could not read config file from external\en_core_web_sm-2.3.0\config.cfg
+请提供一下哈，谢谢</p>2024-06-26</li><br/><li><span>小毛驴</span> 👍（0） 💬（1）<p>老师补充一下：OSError: [E053] Could not read config file from external\en_core_web_sm-2.3.0\config.cfg
 从网盘下载的模型加载会报错，在huggingface上引用的模型每次执行pred_token_index = output.argmax(dim=1).item()返回都是0，这是为啥？
-</div>2024-09-12</li><br/><li><span>小毛驴</span> 👍（0） 💬（1）<div>老师，请教一下为什么 pred_token_index = output.argmax(dim=1).item()这段代码永远返回都是0，是我引用的模型不对嘛？
-</div>2024-09-12</li><br/><li><span>石云升</span> 👍（0） 💬（1）<div>第三章开始的技术原理部分越来越难了。</div>2024-09-03</li><br/><li><span>王旧业</span> 👍（0） 💬（1）<div>老师请教下文中这种动图咋做的</div>2024-08-24</li><br/><li><span>方梁</span> 👍（0） 💬（1）<div>en_core_web_sm
+</p>2024-09-12</li><br/><li><span>小毛驴</span> 👍（0） 💬（1）<p>老师，请教一下为什么 pred_token_index = output.argmax(dim=1).item()这段代码永远返回都是0，是我引用的模型不对嘛？
+</p>2024-09-12</li><br/><li><span>石云升</span> 👍（0） 💬（1）<p>第三章开始的技术原理部分越来越难了。</p>2024-09-03</li><br/><li><span>王旧业</span> 👍（0） 💬（1）<p>老师请教下文中这种动图咋做的</p>2024-08-24</li><br/><li><span>方梁</span> 👍（0） 💬（1）<p>en_core_web_sm
 等文件在哪里下载？
-</div>2024-06-26</li><br/><li><span>Geek_7df415</span> 👍（0） 💬（1）<div>模型训练部分， AIchallenger2017 的链接，AccessDenied</div>2024-06-26</li><br/><li><span>kiikii</span> 👍（0） 💬（0）<div>反向算法传播过程中，会被更新的参数，是权重和偏置，weights和bais；权重即上下文向量中的每个词和已生成序列，影响到当前要被生成的词的权重、影响力有多大；baises是指一个基础阈值</div>2025-01-19</li><br/>
+</p>2024-06-26</li><br/><li><span>Geek_7df415</span> 👍（0） 💬（1）<p>模型训练部分， AIchallenger2017 的链接，AccessDenied</p>2024-06-26</li><br/><li><span>kiikii</span> 👍（0） 💬（0）<p>反向算法传播过程中，会被更新的参数，是权重和偏置，weights和bais；权重即上下文向量中的每个词和已生成序列，影响到当前要被生成的词的权重、影响力有多大；baises是指一个基础阈值</p>2025-01-19</li><br/>
 </ul>

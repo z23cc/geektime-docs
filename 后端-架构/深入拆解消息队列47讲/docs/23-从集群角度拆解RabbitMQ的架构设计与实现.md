@@ -196,5 +196,5 @@ RabbitMQ 原生不支持消息轨迹的功能，但是我们可以基于 Firehos
 
 4\. 如果需要进一步压缩成本，可以把轨迹存在本地硬盘，利用本来空闲的空间，使用grep实现查询检索的功能。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>小手冰凉*^O^*</span> 👍（0） 💬（0）<div>RabbitMQ 没有 Topic，只有 Queue 的概念?这个怎么理解呢。RabbitMQ不是有六种工作模式，其中一种不就是Topic模式吗？</div>2024-05-20</li><br/>
+<li><span>小手冰凉*^O^*</span> 👍（0） 💬（0）<p>RabbitMQ 没有 Topic，只有 Queue 的概念?这个怎么理解呢。RabbitMQ不是有六种工作模式，其中一种不就是Topic模式吗？</p>2024-05-20</li><br/>
 </ul>

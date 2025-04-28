@@ -129,12 +129,12 @@ function counterReducer(state = initialState, action) {
 
 好了，这次的答疑课就是这些内容。欢迎同学们更积极的留言互动，确保每一个知识点都能准确掌握。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>TMiRobot</span> 👍（1） 💬（1）<div>老师，React 文档提到“React 保证了 setState 函数标识是稳定的，并且不会在重渲染时改变，因此在 useEffect 和 useCallback 的依赖列表中忽略它是安全的。” 
+<li><span>TMiRobot</span> 👍（1） 💬（1）<p>老师，React 文档提到“React 保证了 setState 函数标识是稳定的，并且不会在重渲染时改变，因此在 useEffect 和 useCallback 的依赖列表中忽略它是安全的。” 
 useCallback(() =&gt; setCount(count - n), [count])
-那像这种优化是不是没有必要，根本不需要再去包裹一层 useCallback</div>2021-06-18</li><br/><li><span>Geeker</span> 👍（9） 💬（0）<div>我是假期学习第一人</div>2021-06-12</li><br/><li><span>盖世英雄</span> 👍（4） 💬（1）<div>hooks也用的两年了，一直都停留在使用，完成功能上！
-没有深入了解过，感谢老师！</div>2021-06-25</li><br/><li><span>小鸟淫太</span> 👍（2） 💬（2）<div>老师您好，我在网上看到说过度使用 useCallback 会对性能有影响。
+那像这种优化是不是没有必要，根本不需要再去包裹一层 useCallback</p>2021-06-18</li><br/><li><span>Geeker</span> 👍（9） 💬（0）<p>我是假期学习第一人</p>2021-06-12</li><br/><li><span>盖世英雄</span> 👍（4） 💬（1）<p>hooks也用的两年了，一直都停留在使用，完成功能上！
+没有深入了解过，感谢老师！</p>2021-06-25</li><br/><li><span>小鸟淫太</span> 👍（2） 💬（2）<p>老师您好，我在网上看到说过度使用 useCallback 会对性能有影响。
 
-https:&#47;&#47;blog.csdn.net&#47;weixin_47143210&#47;article&#47;details&#47;106193323</div>2021-06-14</li><br/><li><span>吴颜</span> 👍（0） 💬（0）<div>文中奖“但是始终使用 useCallback 是个比较好的习惯。”，这个感觉很难认同，而使用react过程中也确实极少使用useCallback，useCallback在函数组件中的作用我感觉与函数组件本身是有点格格不入的，我体验useCallback更多是为了保证react功能的完备性而推出的，是为了“解决问题”而非用来日常开发使用</div>2023-09-07</li><br/><li><span>Jackchoumine</span> 👍（0） 💬（1）<div>副作用一定是和当前 render 的结果没关系的，而只是 render 完之后做的一些额外的事情？很不理解这里。为何说副作用和当前render 结果无关呢？ 比如接口发返回了，要重新设置 state 就是会触发重新渲染，就是和渲染结果相关的。 我时哪儿没有理解到位吗？</div>2023-06-06</li><br/><li><span>Jia添！</span> 👍（0） 💬（0）<div>补充 ：
+https:&#47;&#47;blog.csdn.net&#47;weixin_47143210&#47;article&#47;details&#47;106193323</p>2021-06-14</li><br/><li><span>吴颜</span> 👍（0） 💬（0）<p>文中奖“但是始终使用 useCallback 是个比较好的习惯。”，这个感觉很难认同，而使用react过程中也确实极少使用useCallback，useCallback在函数组件中的作用我感觉与函数组件本身是有点格格不入的，我体验useCallback更多是为了保证react功能的完备性而推出的，是为了“解决问题”而非用来日常开发使用</p>2023-09-07</li><br/><li><span>Jackchoumine</span> 👍（0） 💬（1）<p>副作用一定是和当前 render 的结果没关系的，而只是 render 完之后做的一些额外的事情？很不理解这里。为何说副作用和当前render 结果无关呢？ 比如接口发返回了，要重新设置 state 就是会触发重新渲染，就是和渲染结果相关的。 我时哪儿没有理解到位吗？</p>2023-06-06</li><br/><li><span>Jia添！</span> 👍（0） 💬（0）<p>补充 ：
 useAction实际上不仅用起来麻烦且无法通过eslint-hooks检测，而且根据官方文档Dan的说法，不仅不符合hooks思想，也没有必要（因为函数式编程，hooks api是直接使用调用结果，甚至没有原先oop式独立的component中间层）。
-所以useAction在最新的alpha版本中已经凉了。</div>2022-01-04</li><br/><li><span>micstone</span> 👍（0） 💬（0）<div>hooks</div>2021-06-14</li><br/><li><span>与你.</span> 👍（0） 💬（2）<div>逃不过万年老二</div>2021-06-14</li><br/>
+所以useAction在最新的alpha版本中已经凉了。</p>2022-01-04</li><br/><li><span>micstone</span> 👍（0） 💬（0）<p>hooks</p>2021-06-14</li><br/><li><span>与你.</span> 👍（0） 💬（2）<p>逃不过万年老二</p>2021-06-14</li><br/>
 </ul>

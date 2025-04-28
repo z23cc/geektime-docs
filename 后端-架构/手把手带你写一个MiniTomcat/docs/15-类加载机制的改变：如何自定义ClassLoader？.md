@@ -830,7 +830,7 @@ public StandardContext getContext(String name){
 
 欢迎你把你想到的答案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Geek_50a5cc</span> 👍（2） 💬（1）<div>双亲委托 是 将类的加载放到上一层处理，如果加载到，就不需要重复加载；所以遇到一个User类，不管是版本1，2，都会加载，不会再去处理其他的User类</div>2024-01-22</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>Geek_50a5cc</span> 👍（2） 💬（1）<p>双亲委托 是 将类的加载放到上一层处理，如果加载到，就不需要重复加载；所以遇到一个User类，不管是版本1，2，都会加载，不会再去处理其他的User类</p>2024-01-22</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：CommonLoader与CommonClassLoader是什么关系？
 CommonClassLoader并没有继承CommonLoader。
 Q2：Tomcat只有Common加载器吗？
@@ -840,7 +840,7 @@ Q3：System是扩展类加载器吗？
 Q4：类的版本怎么体现？
 一个类有多个版本，怎么体现？通过类名字来体现？
 Q5：类被加载以后是放在方法区吗？
-比如，类Person，被加载以后会创建一个针对Person的对象，假设名字是A。那么，加载以后得类Person和A是被放在内存中的方法区吗？</div>2024-01-11</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（1）<div>JVM 里一个类的唯一标识是 ClassLoader + 类名,  按照双亲委派模式都是由相同的 ClassLoader 去加载， 无疑会冲突。 老师， 还有一个问题， CommonClassLoader 是不是要指定一下 delegate，默认为 false</div>2024-01-14</li><br/><li><span>InfoQ_1f089af08bc8</span> 👍（0） 💬（1）<div>老师能否讲解一下类加载器的findClass(String name)和loadClass(String name)之间有什么关联吗？</div>2024-01-10</li><br/><li><span>InfoQ_1f089af08bc8</span> 👍（0） 💬（1）<div>请问老师，URLStreamHandler 这个类的作用是干什么的？</div>2024-01-10</li><br/><li><span>onefine</span> 👍（0） 💬（0）<div>我认为使用双亲委派模式能实现这个需求啊，上一小节的app1和app2中的servlet 不就是这种情况吗？使用了不同的WebappClassLoader 完成了应用下的 servlet 的加载，这个 WebappClassLoader 也是遵从双亲委派模式的啊...
+比如，类Person，被加载以后会创建一个针对Person的对象，假设名字是A。那么，加载以后得类Person和A是被放在内存中的方法区吗？</p>2024-01-11</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（1）<p>JVM 里一个类的唯一标识是 ClassLoader + 类名,  按照双亲委派模式都是由相同的 ClassLoader 去加载， 无疑会冲突。 老师， 还有一个问题， CommonClassLoader 是不是要指定一下 delegate，默认为 false</p>2024-01-14</li><br/><li><span>InfoQ_1f089af08bc8</span> 👍（0） 💬（1）<p>老师能否讲解一下类加载器的findClass(String name)和loadClass(String name)之间有什么关联吗？</p>2024-01-10</li><br/><li><span>InfoQ_1f089af08bc8</span> 👍（0） 💬（1）<p>请问老师，URLStreamHandler 这个类的作用是干什么的？</p>2024-01-10</li><br/><li><span>onefine</span> 👍（0） 💬（0）<p>我认为使用双亲委派模式能实现这个需求啊，上一小节的app1和app2中的servlet 不就是这种情况吗？使用了不同的WebappClassLoader 完成了应用下的 servlet 的加载，这个 WebappClassLoader 也是遵从双亲委派模式的啊...
 
-是我的理解不对吗？期望老师指正！</div>2025-01-24</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（0）<div>请问老师，在Docker、SpringBoot集成Tomat 的背景下，一个JVM进程只会有一个应用服务，所以是不是用双亲加载模式 也不存在隔离的问题了。</div>2025-01-21</li><br/><li><span>天敌</span> 👍（0） 💬（0）<div>CommonClassLoader 是否需要将 lib 目录下的所有jar文件读取到，转换成URL传入构造函数才能成功读取？</div>2024-05-24</li><br/>
+是我的理解不对吗？期望老师指正！</p>2025-01-24</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（0）<p>请问老师，在Docker、SpringBoot集成Tomat 的背景下，一个JVM进程只会有一个应用服务，所以是不是用双亲加载模式 也不存在隔离的问题了。</p>2025-01-21</li><br/><li><span>天敌</span> 👍（0） 💬（0）<p>CommonClassLoader 是否需要将 lib 目录下的所有jar文件读取到，转换成URL传入构造函数才能成功读取？</p>2024-05-24</li><br/>
 </ul>

@@ -366,42 +366,42 @@ $ docker rm -f app redis
 
 欢迎在留言区和我讨论，也欢迎把这篇文章分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李博</span> 👍（56） 💬（5）<div>老师，有个问题咨询下，为什么top显示 iowait比较高，但是使用iostat却发现io的使用率并不高那？</div>2019-01-25</li><br/><li><span>Geek_33409b</span> 👍（29） 💬（5）<div>打卡day30 
+<li><span>李博</span> 👍（56） 💬（5）<p>老师，有个问题咨询下，为什么top显示 iowait比较高，但是使用iostat却发现io的使用率并不高那？</p>2019-01-25</li><br/><li><span>Geek_33409b</span> 👍（29） 💬（5）<p>打卡day30 
 IO性能问题首先可以通过top 查看机器的整体负载情况，一般会出现CPU 的iowait 较高的现象
 然后使用 pidstat -d 1 找到读写磁盘较高的进程
 然后通过 strace -f -TT 进行跟踪，查看系统读写调用的频率和时间
 通过lsof 找到 strace 中的文件描述符对应的文件 opensnoop可以找到对应的问题位置
 推测 对应的问题，mysql 案例中的大量读，可能是因为没有建立索引导致的全表查询，从而形成了慢查询的现象。redis 中则是因为 备份文件设置的不合理导致的每次查询都会写磁盘。当然不同的问题还需要结合对应的情况进行分析
-</div>2019-02-06</li><br/><li><span>武文文武</span> 👍（13） 💬（3）<div>老师您好，一直在听您的视频，发现您用了很多的小工具来检查系统性能指标，而我们公司使用nmon工具，就能一次性将几乎所有常用的指标全部获取到了，而且还能拿到历史数据，请问我们用nmon是否就能在大部分情况下取到了您说的top pidstat等工具呢，如果不可以那您能说说原因吗？非常感谢</div>2019-02-28</li><br/><li><span>____的我</span> 👍（12） 💬（2）<div>前段时间刚找到一个由于内存数据被交换到swap文件中导致内存数据遍历效率变低的问题 问题定位过程是使用pidstat命令发现进程cpu使用率变低 mpstat命令观察到系统iowait升高 由此怀疑跟io有什么关系 perf命令观察发现内存数据遍历过程中swap相关调用时间占比有点异常 然后使用pidstat命令+r参数 也观察到进程在那段时间主缺页中断升高 由此确定问题
+</p>2019-02-06</li><br/><li><span>武文文武</span> 👍（13） 💬（3）<p>老师您好，一直在听您的视频，发现您用了很多的小工具来检查系统性能指标，而我们公司使用nmon工具，就能一次性将几乎所有常用的指标全部获取到了，而且还能拿到历史数据，请问我们用nmon是否就能在大部分情况下取到了您说的top pidstat等工具呢，如果不可以那您能说说原因吗？非常感谢</p>2019-02-28</li><br/><li><span>____的我</span> 👍（12） 💬（2）<p>前段时间刚找到一个由于内存数据被交换到swap文件中导致内存数据遍历效率变低的问题 问题定位过程是使用pidstat命令发现进程cpu使用率变低 mpstat命令观察到系统iowait升高 由此怀疑跟io有什么关系 perf命令观察发现内存数据遍历过程中swap相关调用时间占比有点异常 然后使用pidstat命令+r参数 也观察到进程在那段时间主缺页中断升高 由此确定问题
 
-老师的课程非常有用 多多向您学习 希望老师能多分享一些定位网络延迟问题的方法 不仅仅局限在ping探测</div>2019-02-11</li><br/><li><span>yungoo</span> 👍（11） 💬（1）<div>nsenter报了loadlocale.c assertion设置
+老师的课程非常有用 多多向您学习 希望老师能多分享一些定位网络延迟问题的方法 不仅仅局限在ping探测</p>2019-02-11</li><br/><li><span>yungoo</span> 👍（11） 💬（1）<p>nsenter报了loadlocale.c assertion设置
 
 export LC_ALL=C
 
-即可</div>2019-03-17</li><br/><li><span>从远方过来</span> 👍（7） 💬（1）<div>老师，你这几篇文章大量使用了strace，它的负载不是很高么？在生产上可以使用么？</div>2020-07-08</li><br/><li><span>利俊杰</span> 👍（5） 💬（1）<div>nsenter --target $PID -- lsof -i
+即可</p>2019-03-17</li><br/><li><span>从远方过来</span> 👍（7） 💬（1）<p>老师，你这几篇文章大量使用了strace，它的负载不是很高么？在生产上可以使用么？</p>2020-07-08</li><br/><li><span>利俊杰</span> 👍（5） 💬（1）<p>nsenter --target $PID -- lsof -i
 执行失败，提示：loadlocale.c:130: _nl_intern_locale_data: Assertion `cnt &lt; (sizeof (_nl_value_type_LC_COLLATE) &#47; sizeof (_nl_value_type_LC_COLLATE[0]))&#39; failed
 可以参考下https:&#47;&#47;stackoverflow.com&#47;questions&#47;37121895&#47;yocto-build-loadlocale-c-130
 配置
 LANG=&#47;usr&#47;lib&#47;locale&#47;en_US
-</div>2019-01-26</li><br/><li><span>开始懂了</span> 👍（3） 💬（1）<div> curl http:&#47;&#47;10.39.25.7:10000&#47;init&#47;get_cache
+</p>2019-01-26</li><br/><li><span>开始懂了</span> 👍（3） 💬（1）<p> curl http:&#47;&#47;10.39.25.7:10000&#47;init&#47;get_cache
 &lt;!DOCTYPE HTML PUBLIC &quot;-&#47;&#47;W3C&#47;&#47;DTD HTML 3.2 Final&#47;&#47;EN&quot;&gt;
 &lt;title&gt;500 Internal Server Error&lt;&#47;title&gt;
 &lt;h1&gt;Internal Server Error&lt;&#47;h1&gt;
-&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;&#47;p&gt;</div>2019-01-25</li><br/><li><span>往事随风，顺其自然</span> 👍（2） 💬（1）<div>git clone https:&#47;&#47;github.com&#47;feiskyer&#47;linux-perf-examples&#47;tree&#47;master&#47;redis-slow
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;&#47;p&gt;</p>2019-01-25</li><br/><li><span>往事随风，顺其自然</span> 👍（2） 💬（1）<p>git clone https:&#47;&#47;github.com&#47;feiskyer&#47;linux-perf-examples&#47;tree&#47;master&#47;redis-slow
 Initialized empty Git repository in &#47;root&#47;redis-slow&#47;.git&#47;
 error: The requested URL returned error: 403 Forbidden while accessing https:&#47;&#47;github.com&#47;feiskyer&#47;linux-perf-examples&#47;tree&#47;master&#47;redis-slow&#47;info&#47;refs
 
-代码怎么克隆不下来</div>2019-01-25</li><br/><li><span>Chn.K</span> 👍（1） 💬（2）<div>请教个问题：我用iotop观测IO使用情况，发现某进程的DISK READ 和DISK WRITE都是0，但是IO已经到99.99%了，通过top&#47;iostat对cpu&#47;磁盘的使用情况进行观测，均未发现什么异常，这个是什么原因呢？
+代码怎么克隆不下来</p>2019-01-25</li><br/><li><span>Chn.K</span> 👍（1） 💬（2）<p>请教个问题：我用iotop观测IO使用情况，发现某进程的DISK READ 和DISK WRITE都是0，但是IO已经到99.99%了，通过top&#47;iostat对cpu&#47;磁盘的使用情况进行观测，均未发现什么异常，这个是什么原因呢？
 Total DISK READ :      18.14 M&#47;s | Total DISK WRITE :      31.59 M&#47;s
 Actual DISK READ:      18.02 M&#47;s | Actual DISK WRITE:      15.60 M&#47;s
   PID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
   148 be&#47;4 root        0.00 B&#47;s    0.00 B&#47;s  0.00 % 99.99 % [ksoftirqd&#47;17]
 23655 be&#47;4 root        0.00 B&#47;s  988.19 K&#47;s  0.00 %  0.00 % .&#47;xxxx ..&#47;etc&#47;base.conf
 17535 be&#47;4 root       18.14 M&#47;s   30.63 M&#47;s  0.00 %  0.00 % xxxx
-</div>2019-02-20</li><br/><li><span>李逍遥</span> 👍（1） 💬（1）<div>Device:         rrqm&#47;s   wrqm&#47;s     r&#47;s     w&#47;s    rkB&#47;s    wkB&#47;s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+</p>2019-02-20</li><br/><li><span>李逍遥</span> 👍（1） 💬（1）<p>Device:         rrqm&#47;s   wrqm&#47;s     r&#47;s     w&#47;s    rkB&#47;s    wkB&#47;s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
 vda               0.00   392.00    0.00 1103.00     0.00  5984.00    10.85     1.00    0.58    0.00    0.58   0.91 100.00
 我这边 %util到了100%，说明磁盘有瓶颈了吗？（请求参数一致）
-</div>2019-01-29</li><br/><li><span>我来也</span> 👍（1） 💬（1）<div>[D29打卡]
+</p>2019-01-29</li><br/><li><span>我来也</span> 👍（1） 💬（1）<p>[D29打卡]
 感觉每次分析的套路都差不多.
 1.用top查看指标,发现 [系统] 有i&#47;o瓶颈 或者 cpu瓶颈.
 2.使用iostat辅助看下磁盘i&#47;o读写速度和大小等指标.
@@ -409,6 +409,6 @@ vda               0.00   392.00    0.00 1103.00     0.00  5984.00    10.85     1
 4.用strace追踪进程及各线程的 [系统调用].(以前经常到这里就知道了是操作的什么文件)
 5.继续用lsof查看该进程打开的 [文件] .linux下一切皆文件,则可以查看的东西就很多很多了.连进程保持的socket等信息也一目了然.
 6.本例因为用到了容器,所以用到了nsenter进入容器的网络命名空间,查看对应的socket信息.
-7.根据第4.5步获取的信息,找源码或看系统配置.确定问题,做出调整.然后收工.</div>2019-01-26</li><br/><li><span>夹心面包</span> 👍（0） 💬（1）<div>想请问下老师,通过top观察下的iowait到达百分之多少才算磁盘瓶颈,有没有业界的统一标准,磁盘的util值肯定是100%,还是得考虑IOPS,只通过iowait判断行不行</div>2019-01-25</li><br/><li><span>ninuxer</span> 👍（63） 💬（0）<div>打卡day30
-io问题一般都是先top发展iowait比较高，然后iostat看是哪个进程比较高，然后再通过strace，lsof找出进程在读写的具体文件，然后对应的分析</div>2019-01-25</li><br/><li><span>Christmas</span> 👍（18） 💬（0）<div>进程iowait高，磁盘iowait不高，说明是单个进程使用了一些blocking的磁盘打开方式，比如每次都fsync</div>2019-01-25</li><br/>
+7.根据第4.5步获取的信息,找源码或看系统配置.确定问题,做出调整.然后收工.</p>2019-01-26</li><br/><li><span>夹心面包</span> 👍（0） 💬（1）<p>想请问下老师,通过top观察下的iowait到达百分之多少才算磁盘瓶颈,有没有业界的统一标准,磁盘的util值肯定是100%,还是得考虑IOPS,只通过iowait判断行不行</p>2019-01-25</li><br/><li><span>ninuxer</span> 👍（63） 💬（0）<p>打卡day30
+io问题一般都是先top发展iowait比较高，然后iostat看是哪个进程比较高，然后再通过strace，lsof找出进程在读写的具体文件，然后对应的分析</p>2019-01-25</li><br/><li><span>Christmas</span> 👍（18） 💬（0）<p>进程iowait高，磁盘iowait不高，说明是单个进程使用了一些blocking的磁盘打开方式，比如每次都fsync</p>2019-01-25</li><br/>
 </ul>

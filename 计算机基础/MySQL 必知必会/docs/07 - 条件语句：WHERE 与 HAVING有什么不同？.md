@@ -483,26 +483,26 @@ mysql> SELECT
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你分享你的朋友或同事，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>朱晓峰</span> 👍（6） 💬（1）<div>你好，我是朱晓峰，下面我就来公布一下上节课思考题的答案：
+<li><span>朱晓峰</span> 👍（6） 💬（1）<p>你好，我是朱晓峰，下面我就来公布一下上节课思考题的答案：
 
 上节课，我们学习了如何进行多表查询。下面是思考题的答案：
 
-如果不能使用外键约束，你可以在应用层增加确保数据完整性的功能模块，比如删除主表记录时，增加检查从表中是否应用了这条记录的功能，如果应用了，就不允许删除。</div>2021-04-21</li><br/><li><span>青雘</span> 👍（6） 💬（1）<div>有数据库的数据包吗 ？ 这咋动手 没有数据</div>2021-07-13</li><br/><li><span>洛奇</span> 👍（6） 💬（3）<div>筛选条件放在ON或者WHERE子句中，都是一样的吧？</div>2021-03-30</li><br/><li><span>SharpBB</span> 👍（2） 💬（1）<div>WHERE
+如果不能使用外键约束，你可以在应用层增加确保数据完整性的功能模块，比如删除主表记录时，增加检查从表中是否应用了这条记录的功能，如果应用了，就不允许删除。</p>2021-04-21</li><br/><li><span>青雘</span> 👍（6） 💬（1）<p>有数据库的数据包吗 ？ 这咋动手 没有数据</p>2021-07-13</li><br/><li><span>洛奇</span> 👍（6） 💬（3）<p>筛选条件放在ON或者WHERE子句中，都是一样的吧？</p>2021-03-30</li><br/><li><span>SharpBB</span> 👍（2） 💬（1）<p>WHERE
 	直接用表字段对数据集进行筛选 得到较少的数据集 再进行连接 资源占用少 执行效率高
 HAVING
 	需要将数据准备好 并进行分组形成集合 再对该集合进行having条件的筛选
 两者区别
 	1.where先筛选后连接 having先连接后筛选 where的效率更高
 	2.where可以直接用 而having必须和group by一起用才可以
-	3.可以在having中用函数 但where不行 所以having可以做一些更nb的查询</div>2022-02-09</li><br/><li><span>hello</span> 👍（1） 💬（1）<div>sql语句的执行顺序，不是先执行join 再执行where吗？老师在提到where优点的时候说where的优点是先筛选在关联。这里似乎跟sql执行的顺序有了矛盾呢</div>2021-07-12</li><br/><li><span>Cheese</span> 👍（0） 💬（1）<div>group by不是很理解，和having配合在一起使用有点懵了。</div>2022-02-15</li><br/><li><span>Bird</span> 👍（0） 💬（3）<div>老师您好，用 HAVING 查询单笔超过 50 元商品的 SQL 中，用到了 HAVING max(a.salesvalue)&gt;50
+	3.可以在having中用函数 但where不行 所以having可以做一些更nb的查询</p>2022-02-09</li><br/><li><span>hello</span> 👍（1） 💬（1）<p>sql语句的执行顺序，不是先执行join 再执行where吗？老师在提到where优点的时候说where的优点是先筛选在关联。这里似乎跟sql执行的顺序有了矛盾呢</p>2021-07-12</li><br/><li><span>Cheese</span> 👍（0） 💬（1）<p>group by不是很理解，和having配合在一起使用有点懵了。</p>2022-02-15</li><br/><li><span>Bird</span> 👍（0） 💬（3）<p>老师您好，用 HAVING 查询单笔超过 50 元商品的 SQL 中，用到了 HAVING max(a.salesvalue)&gt;50
 
 这个 max() 我不太理解，是指在分组后对每个组中的 salesvalue 取最大值再和 50 比较吗？
 
 这块不明白导致后面原文说的“第三步，对分组后的数据集进行筛选，把组中字段“salesvalue”的最大值 &gt;50 的组筛选出来。”就更不明白了。
 
-我的疑问是，需求是找到比 50 大的就好，不理解这里为什么用到求最大值。求的是哪些数据范围的最大值呢？</div>2021-10-22</li><br/><li><span>彭彬</span> 👍（0） 💬（1）<div>HAVING 后面的条件，必须是包含分组中的计算函数的条件，或者select后面的字段</div>2021-09-12</li><br/><li><span>born</span> 👍（0） 💬（1）<div>在“查询单笔销售金额超过 50 元的商品”例子中的第三步，GROUP BY只用goodsname字段结果只返回了组中的第一条数据，想要返回图示中的两条数据还要添加另外的字段吧</div>2021-06-30</li><br/><li><span>沈康</span> 👍（0） 💬（1）<div>有这样一种说法：HAVING 后面的条件，必须是包含分组中的计算函数的条件，你觉得对吗？为什么？
+我的疑问是，需求是找到比 50 大的就好，不理解这里为什么用到求最大值。求的是哪些数据范围的最大值呢？</p>2021-10-22</li><br/><li><span>彭彬</span> 👍（0） 💬（1）<p>HAVING 后面的条件，必须是包含分组中的计算函数的条件，或者select后面的字段</p>2021-09-12</li><br/><li><span>born</span> 👍（0） 💬（1）<p>在“查询单笔销售金额超过 50 元的商品”例子中的第三步，GROUP BY只用goodsname字段结果只返回了组中的第一条数据，想要返回图示中的两条数据还要添加另外的字段吧</p>2021-06-30</li><br/><li><span>沈康</span> 👍（0） 💬（1）<p>有这样一种说法：HAVING 后面的条件，必须是包含分组中的计算函数的条件，你觉得对吗？为什么？
 
-我认为是对的，既然 having是在group之后的筛选，那么只能选择group的计算函数</div>2021-05-20</li><br/><li><span>洛奇</span> 👍（0） 💬（1）<div>本文中最后一条SQL的两处SUM(b.salesvalue)是不是会重复计算？它们可以合并吗？</div>2021-03-30</li><br/><li><span>lesserror</span> 👍（11） 💬（6）<div>之前刚学习数据库的时候，也会混淆WHERE和HAVING。今天学习了这一节，又有了更加清晰地认知。
+我认为是对的，既然 having是在group之后的筛选，那么只能选择group的计算函数</p>2021-05-20</li><br/><li><span>洛奇</span> 👍（0） 💬（1）<p>本文中最后一条SQL的两处SUM(b.salesvalue)是不是会重复计算？它们可以合并吗？</p>2021-03-30</li><br/><li><span>lesserror</span> 👍（11） 💬（6）<p>之前刚学习数据库的时候，也会混淆WHERE和HAVING。今天学习了这一节，又有了更加清晰地认知。
 
 WHERE是针对数据库文件的发挥作用，而HAVING是针对结果集发挥作用。WHERE所能作用的字段条件要是数据表文件中真实存在的字段，而having只是根据前面查询出来的结果集再次进行查询。
 
@@ -511,7 +511,7 @@ WHERE是针对数据库文件的发挥作用，而HAVING是针对结果集发挥
 select goods_price, goods_name from goods where goods_price &lt; 100
 
 select goods_price, goods_name from goods having goods_price &lt; 100
-</div>2021-03-23</li><br/><li><span>不管</span> 👍（2） 💬（0）<div>对于0基础的来说这个还是太难了</div>2022-08-10</li><br/><li><span>星空下</span> 👍（2） 💬（0）<div>having可以替代where  只是要与group by联合使用。后跟条件不一定是分组函数</div>2021-03-23</li><br/><li><span>me</span> 👍（1） 💬（0）<div>SQL逻辑查询语句执行顺序 
+</p>2021-03-23</li><br/><li><span>不管</span> 👍（2） 💬（0）<p>对于0基础的来说这个还是太难了</p>2022-08-10</li><br/><li><span>星空下</span> 👍（2） 💬（0）<p>having可以替代where  只是要与group by联合使用。后跟条件不一定是分组函数</p>2021-03-23</li><br/><li><span>me</span> 👍（1） 💬（0）<p>SQL逻辑查询语句执行顺序 
 不应该是连表后再where嘛？ （下方是执行顺序）
 SELECT DISTINCT &lt;select_list&gt;
 FROM &lt;left_table&gt;
@@ -521,5 +521,5 @@ WHERE &lt;where_condition&gt;
 GROUP BY &lt;group_by_list&gt;
 HAVING &lt;having_condition&gt;
 ORDER BY &lt;order_by_condition&gt;
-LIMIT &lt;limit_number&gt;</div>2022-04-22</li><br/>
+LIMIT &lt;limit_number&gt;</p>2022-04-22</li><br/>
 </ul>

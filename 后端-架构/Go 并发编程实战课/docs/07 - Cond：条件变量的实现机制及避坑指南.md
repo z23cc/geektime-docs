@@ -322,13 +322,13 @@ Cond是为等待/通知场景下的并发问题提供支持的。它提供了条
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>那时刻</span> 👍（13） 💬（1）<div>老师，上节课你提到noCopy，是一个辅助的、用来帮助 vet 检查用的类型，而Cond还有个copyChecker 是一个辅助结构，可以在运行时检查 Cond 是否被复制使用。
+<li><span>那时刻</span> 👍（13） 💬（1）<p>老师，上节课你提到noCopy，是一个辅助的、用来帮助 vet 检查用的类型，而Cond还有个copyChecker 是一个辅助结构，可以在运行时检查 Cond 是否被复制使用。
 
 nocpoy是静态检查，copyChecker是运行时检查，不是理解是否正确？
 
-另外不是是否有其他区别呢？</div>2020-10-26</li><br/><li><span>myrfy</span> 👍（4） 💬（1）<div>还是没有想明白k8s为什么不能用channel通知
-close可以实现broadcast的功效，在pop的时候，也是只有一个goroutine可以拿到数据，感觉除了关闭队列之外，不存在需要broadcast的情况。也就是感觉不需要多次broadcast，这样channel应该是满足要求的……请老师明示</div>2020-10-28</li><br/><li><span>chongsheng</span> 👍（2） 💬（1）<div>关于Cond还有一种会不小心误用的场景，因为一些原因导致Wait执行的时候，Signal&#47;Broadcast就已经执行完了，导致Wait一直等待无法唤醒。比如这里的例子
-https:&#47;&#47;stackoverflow.com&#47;questions&#47;36857167&#47;how-to-correctly-use-sync-cond</div>2022-01-06</li><br/><li><span>moooofly</span> 👍（1） 💬（2）<div>请教一个问题，nocpoy 是用于 vet 静态检查，copyChecker 是为了运行时检查，都是为了检查 copy 问题，为啥 Cond 要在两处检查，而 Mutex 只需要一处？</div>2020-10-27</li><br/><li><span>hhhccp</span> 👍（0） 💬（1）<div>不知道现在发还会不会被看到😂，浇给作业
+另外不是是否有其他区别呢？</p>2020-10-26</li><br/><li><span>myrfy</span> 👍（4） 💬（1）<p>还是没有想明白k8s为什么不能用channel通知
+close可以实现broadcast的功效，在pop的时候，也是只有一个goroutine可以拿到数据，感觉除了关闭队列之外，不存在需要broadcast的情况。也就是感觉不需要多次broadcast，这样channel应该是满足要求的……请老师明示</p>2020-10-28</li><br/><li><span>chongsheng</span> 👍（2） 💬（1）<p>关于Cond还有一种会不小心误用的场景，因为一些原因导致Wait执行的时候，Signal&#47;Broadcast就已经执行完了，导致Wait一直等待无法唤醒。比如这里的例子
+https:&#47;&#47;stackoverflow.com&#47;questions&#47;36857167&#47;how-to-correctly-use-sync-cond</p>2022-01-06</li><br/><li><span>moooofly</span> 👍（1） 💬（2）<p>请教一个问题，nocpoy 是用于 vet 静态检查，copyChecker 是为了运行时检查，都是为了检查 copy 问题，为啥 Cond 要在两处检查，而 Mutex 只需要一处？</p>2020-10-27</li><br/><li><span>hhhccp</span> 👍（0） 💬（1）<p>不知道现在发还会不会被看到😂，浇给作业
 package main
 
 import (
@@ -391,7 +391,7 @@ func (tq *TaskQueue) PopTask() interface{} {
 	atomic.AddInt32(&amp;tq.size, -1)
 	tq.pushCon.Signal()
 	return v
-}</div>2024-12-01</li><br/><li><span>叶君度</span> 👍（0） 💬（1）<div>对比waitGroup。cond 实质是将waitGroup 的 计数能力 暴露给开发者，让开发自定义”计数”，waitGroup的计数state是atomic的原子操作，cond 通过 mutex来保证原子操作。所以在 更新 和 判断时，需要加锁检查。</div>2024-04-16</li><br/><li><span>Krean</span> 👍（0） 💬（1）<div>不知道现在发还会不会被看到😂，浇给作业
+}</p>2024-12-01</li><br/><li><span>叶君度</span> 👍（0） 💬（1）<p>对比waitGroup。cond 实质是将waitGroup 的 计数能力 暴露给开发者，让开发自定义”计数”，waitGroup的计数state是atomic的原子操作，cond 通过 mutex来保证原子操作。所以在 更新 和 判断时，需要加锁检查。</p>2024-04-16</li><br/><li><span>Krean</span> 👍（0） 💬（1）<p>不知道现在发还会不会被看到😂，浇给作业
 type queue struct {
 	vals []int
 	cap int
@@ -418,7 +418,7 @@ func (q *queue) deQueue() int {
 	q.vals = q.vals[1:]
 	q.cond.Signal()
 	return ret
-}</div>2024-03-22</li><br/><li><span>kyo</span> 👍（0） 💬（2）<div>
+}</p>2024-03-22</li><br/><li><span>kyo</span> 👍（0） 💬（2）<p>
 func main() {
     c := sync.NewCond(&amp;sync.Mutex{})
     var ready int
@@ -449,6 +449,6 @@ func main() {
     log.Println(&quot;所有运动员都准备就绪。比赛开始，3，2，1, ......&quot;)
 }
 
-这个例子有问题吧.  这里的 ready 变量共享了变量 c 的锁.  会导致在 c.Wait() 语句执行前 for 中的   goroutine 全部堵塞. 在 c.Wait() 前加句 time.Sleep(time.Second * 10) 试试就知道了. 是不是应该给 ready 变量单独定义一个 Mutex?</div>2022-12-04</li><br/><li><span>Geek_b45293</span> 👍（0） 💬（1）<div>有个问题，为什么 Mutex 不使用 copyChecker 来检测是否被复制呢？</div>2022-09-26</li><br/><li><span>授人以🐟，不如授人以渔</span> 👍（0） 💬（1）<div>文章中在描述 Cond 的复杂性时，说明了 3 点，第三点：「条件变量的更改」 是否可需改为：「等待条件的更改」？</div>2021-11-03</li><br/><li><span>bearlu</span> 👍（0） 💬（1）<div>老师请教一个问题，如果Wait前加锁，然后执行完Wait又Unlock有什么作用，我把Wait后面的Unlock去掉，好似程序也能正常运行。是我漏了什么？</div>2021-07-24</li><br/><li><span>网管</span> 👍（0） 💬（1）<div>老师，Kubernetes  PriorityQueue的那个Pop方法里没有使用p.cond.L.Lock()方法，他们是怎么防止不出现释放未加锁的panic啊。</div>2020-11-01</li><br/><li><span>S.S Mr Lin</span> 👍（0） 💬（2）<div>每次调用wait前都要加锁，为啥加锁语句放在了fo的外面？第二次wait是不是就没有加锁了？</div>2020-10-28</li><br/><li><span>syuan</span> 👍（0） 💬（1）<div>Wait 方法，会把调用者 Caller 放入 Cond 的等待队列中并阻塞，直到被 Signal 或者 Broadcast 的方法从等待队列中移除并唤醒。
-百米跑代码第22行:    c.Wait(),把调用者加入队列阻塞，不理解? for循环一直检查，是把c一直加入阻塞队列吗？还是waiter方法自已生成t对象加入阻塞队列？如果是，同一个c对应t( t := runtime_notifyListAdd(&amp;c.notify)对象唯一吗？</div>2020-10-26</li><br/><li><span>儿戏</span> 👍（0） 💬（1）<div>老师，请教个课程外的问题，使用httputil.ReverseProxy 做方向代理，压测的时候大量报出 http: proxy error: context canceled 这个错误。linux 打开文件数调整了，time_waite也都优化过了，一直没有找到问题，您的博客也看了还是不能定位，求赐教</div>2020-10-26</li><br/>
+这个例子有问题吧.  这里的 ready 变量共享了变量 c 的锁.  会导致在 c.Wait() 语句执行前 for 中的   goroutine 全部堵塞. 在 c.Wait() 前加句 time.Sleep(time.Second * 10) 试试就知道了. 是不是应该给 ready 变量单独定义一个 Mutex?</p>2022-12-04</li><br/><li><span>Geek_b45293</span> 👍（0） 💬（1）<p>有个问题，为什么 Mutex 不使用 copyChecker 来检测是否被复制呢？</p>2022-09-26</li><br/><li><span>授人以🐟，不如授人以渔</span> 👍（0） 💬（1）<p>文章中在描述 Cond 的复杂性时，说明了 3 点，第三点：「条件变量的更改」 是否可需改为：「等待条件的更改」？</p>2021-11-03</li><br/><li><span>bearlu</span> 👍（0） 💬（1）<p>老师请教一个问题，如果Wait前加锁，然后执行完Wait又Unlock有什么作用，我把Wait后面的Unlock去掉，好似程序也能正常运行。是我漏了什么？</p>2021-07-24</li><br/><li><span>网管</span> 👍（0） 💬（1）<p>老师，Kubernetes  PriorityQueue的那个Pop方法里没有使用p.cond.L.Lock()方法，他们是怎么防止不出现释放未加锁的panic啊。</p>2020-11-01</li><br/><li><span>S.S Mr Lin</span> 👍（0） 💬（2）<p>每次调用wait前都要加锁，为啥加锁语句放在了fo的外面？第二次wait是不是就没有加锁了？</p>2020-10-28</li><br/><li><span>syuan</span> 👍（0） 💬（1）<p>Wait 方法，会把调用者 Caller 放入 Cond 的等待队列中并阻塞，直到被 Signal 或者 Broadcast 的方法从等待队列中移除并唤醒。
+百米跑代码第22行:    c.Wait(),把调用者加入队列阻塞，不理解? for循环一直检查，是把c一直加入阻塞队列吗？还是waiter方法自已生成t对象加入阻塞队列？如果是，同一个c对应t( t := runtime_notifyListAdd(&amp;c.notify)对象唯一吗？</p>2020-10-26</li><br/><li><span>儿戏</span> 👍（0） 💬（1）<p>老师，请教个课程外的问题，使用httputil.ReverseProxy 做方向代理，压测的时候大量报出 http: proxy error: context canceled 这个错误。linux 打开文件数调整了，time_waite也都优化过了，一直没有找到问题，您的博客也看了还是不能定位，求赐教</p>2020-10-26</li><br/>
 </ul>

@@ -363,5 +363,5 @@ make clean # 清理编译文件
 
 这里是本节课推荐的相关 issue 的任务列表，请点击查看[《Good First Issue》](http://www.robustmq.com/docs/robustmq-tutorial-cn/%e8%b4%a1%e7%8c%ae%e6%8c%87%e5%8d%97/good-first-issue/)。 欢迎给我的项目 [https://github.com/robustmq/robustmq](https://github.com/robustmq/robustmq) 点个 Star 啊！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>余泽锋</span> 👍（0） 💬（0）<div>老师，您好，《Good First Issue》点击进去发现是 404 not found 的错误。</div>2025-02-05</li><br/><li><span>Joe Black</span> 👍（0） 💬（0）<div>针对推荐的目录结构，编译结果不是还存在工作空间下的target目录下吗？那个bin目录怎么放项目启动命令？自己拷贝进去吗？</div>2024-10-09</li><br/><li><span>Shopman</span> 👍（0） 💬（0）<div>windows下编译就卡住了，主要卡在了rocksdb这，是不是这个项目不支持windows</div>2024-09-27</li><br/>
+<li><span>余泽锋</span> 👍（0） 💬（0）<p>老师，您好，《Good First Issue》点击进去发现是 404 not found 的错误。</p>2025-02-05</li><br/><li><span>Joe Black</span> 👍（0） 💬（0）<p>针对推荐的目录结构，编译结果不是还存在工作空间下的target目录下吗？那个bin目录怎么放项目启动命令？自己拷贝进去吗？</p>2024-10-09</li><br/><li><span>Shopman</span> 👍（0） 💬（0）<p>windows下编译就卡住了，主要卡在了rocksdb这，是不是这个项目不支持windows</p>2024-09-27</li><br/>
 </ul>

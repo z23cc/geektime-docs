@@ -445,7 +445,7 @@ Info:
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>叶明</span> 👍（1） 💬（1）<div>会话 1842782 的 state 字段的完整信息是不是 Waiting for table flush？
+<li><span>叶明</span> 👍（1） 💬（1）<p>会话 1842782 的 state 字段的完整信息是不是 Waiting for table flush？
 
 从 id 和 time 字段来分析这个过程执行的顺序：
 首先，会话 1657130 中的语句被执行，Time 达到 184551 秒，查询语句是聚合语句，说明这是一个大查询，在查询执行期间，语句中涉及到的表会被打开，且持有 MDL 读锁。
@@ -453,5 +453,5 @@ Info:
 最后，会话 1842782 对该表中记录进行变更，从 state 来看，该会话处于等待状态，看来是被执行 flush tables 的会话 1044 所阻塞
 
 
-会话 1044 中的 flush table 操作与大查询冲突，导致后续涉及到该表的读写操作的会话都陷入阻塞。</div>2024-09-17</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<div>思考题里面1044这个thread值得怀疑 系统用户 没有显示具体是哪个db 在connect阶段 做flush tables操作。先杀这个试试。不知道为啥一个connect命令会触发flush table</div>2024-09-17</li><br/><li><span>王欢</span> 👍（0） 💬（1）<div>mysql 大事务，多条update 和 多条delete 语句， 事务执行时间长有什么好的优化办法吗</div>2024-09-24</li><br/>
+会话 1044 中的 flush table 操作与大查询冲突，导致后续涉及到该表的读写操作的会话都陷入阻塞。</p>2024-09-17</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<p>思考题里面1044这个thread值得怀疑 系统用户 没有显示具体是哪个db 在connect阶段 做flush tables操作。先杀这个试试。不知道为啥一个connect命令会触发flush table</p>2024-09-17</li><br/><li><span>王欢</span> 👍（0） 💬（1）<p>mysql 大事务，多条update 和 多条delete 语句， 事务执行时间长有什么好的优化办法吗</p>2024-09-24</li><br/>
 </ul>

@@ -975,9 +975,9 @@ from modname import *
 
 欢迎你在评论区留下你的看法，我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>安静点</span> 👍（3） 💬（1）<div>split是可以根据指定字符来将字符串拆分成一个列表，
-而replace则是替换指定字符串为想要的字符</div>2023-04-27</li><br/><li><span>cronusqiu</span> 👍（3） 💬（1）<div>我用 Python 也有个5+年了，深刻感觉Python其实关键的还是在于项目的管理，例如 isort &#47; flake8 &#47; black ，mypy, pylint， unittest, coverage 这些工具的使用， tox工具, setuptools的使用， 遇到很多使用python好几年的，这些工具有些都没听说过， 既然是做项目，这方面感觉可以出一篇详解。看网上一堆教程，都是先教你基础知识，然后中间件，之后各种框架。基本没有人系统的介绍过这些管理工具。。。</div>2023-04-26</li><br/><li><span>贾维斯Echo</span> 👍（3） 💬（1）<div>课程一般一周几更?啥时候更,快更新,我要看后面的</div>2023-04-24</li><br/><li><span>张申傲</span> 👍（1） 💬（1）<div>第一讲打卡~
-Python对于初学者来说还是很友好的，基础语法上手很快~</div>2024-07-17</li><br/><li><span>Geek_7cc417</span> 👍（1） 💬（1）<div>请问作者，我阅读前篇以后，很想购买这个课程，我现在大三，说实话基础没有很好很牢固，想问下学习这门课程要做出这个在线直播平台，需要提前有什么基础吗？有推荐的学习基础的链接吗？我真的很想学完这个课程可以做出这个直播平台，很感兴趣！但是怕基础不够，听不懂</div>2023-06-22</li><br/><li><span>名</span> 👍（0） 💬（1）<div>split 是拆分，replace  是替换，还有个 join 是添加</div>2024-03-10</li><br/><li><span>Geek_ffc</span> 👍（0） 💬（1）<div>list没有len方法吧。获取list长度用的是内置函数len()</div>2023-11-16</li><br/><li><span>BigData～兰兴星</span> 👍（0） 💬（1）<div>文中运算符 is 和 is not的代码示例有两处不足之处，python 3的解释器对  ~~print &quot;data1和data2不包含相同的元素&quot;  ~~ 不支持，应添加（），即print (&quot;data1和data2不包含相同的元素&quot;) ，另外代码的运行结果是不是弄错了，应该是data1和data2不包含相同的元素</div>2023-07-12</li><br/><li><span>zgy</span> 👍（0） 💬（2）<div>list 使用 len 方法提示错误 AttributeError: &#39;list&#39; object has no attribute &#39;len&#39;，我用的是 python 3.11.4 window电脑</div>2023-06-18</li><br/><li><span>ZENG</span> 👍（0） 💬（1）<div>s = &quot;Python,Web,Web,Course&quot;
+<li><span>安静点</span> 👍（3） 💬（1）<p>split是可以根据指定字符来将字符串拆分成一个列表，
+而replace则是替换指定字符串为想要的字符</p>2023-04-27</li><br/><li><span>cronusqiu</span> 👍（3） 💬（1）<p>我用 Python 也有个5+年了，深刻感觉Python其实关键的还是在于项目的管理，例如 isort &#47; flake8 &#47; black ，mypy, pylint， unittest, coverage 这些工具的使用， tox工具, setuptools的使用， 遇到很多使用python好几年的，这些工具有些都没听说过， 既然是做项目，这方面感觉可以出一篇详解。看网上一堆教程，都是先教你基础知识，然后中间件，之后各种框架。基本没有人系统的介绍过这些管理工具。。。</p>2023-04-26</li><br/><li><span>贾维斯Echo</span> 👍（3） 💬（1）<p>课程一般一周几更?啥时候更,快更新,我要看后面的</p>2023-04-24</li><br/><li><span>张申傲</span> 👍（1） 💬（1）<p>第一讲打卡~
+Python对于初学者来说还是很友好的，基础语法上手很快~</p>2024-07-17</li><br/><li><span>Geek_7cc417</span> 👍（1） 💬（1）<p>请问作者，我阅读前篇以后，很想购买这个课程，我现在大三，说实话基础没有很好很牢固，想问下学习这门课程要做出这个在线直播平台，需要提前有什么基础吗？有推荐的学习基础的链接吗？我真的很想学完这个课程可以做出这个直播平台，很感兴趣！但是怕基础不够，听不懂</p>2023-06-22</li><br/><li><span>名</span> 👍（0） 💬（1）<p>split 是拆分，replace  是替换，还有个 join 是添加</p>2024-03-10</li><br/><li><span>Geek_ffc</span> 👍（0） 💬（1）<p>list没有len方法吧。获取list长度用的是内置函数len()</p>2023-11-16</li><br/><li><span>BigData～兰兴星</span> 👍（0） 💬（1）<p>文中运算符 is 和 is not的代码示例有两处不足之处，python 3的解释器对  ~~print &quot;data1和data2不包含相同的元素&quot;  ~~ 不支持，应添加（），即print (&quot;data1和data2不包含相同的元素&quot;) ，另外代码的运行结果是不是弄错了，应该是data1和data2不包含相同的元素</p>2023-07-12</li><br/><li><span>zgy</span> 👍（0） 💬（2）<p>list 使用 len 方法提示错误 AttributeError: &#39;list&#39; object has no attribute &#39;len&#39;，我用的是 python 3.11.4 window电脑</p>2023-06-18</li><br/><li><span>ZENG</span> 👍（0） 💬（1）<p>s = &quot;Python,Web,Web,Course&quot;
 print(s.split(&quot;,&quot;, 1))                       # 输出：[&#39;Python&#39;, &#39;Web,Web,Course&#39;]
 print(s.replace(&quot;Web&quot;, &quot;dev&quot;, 1))   # 输出：Python,dev,Web,Course
 
@@ -986,21 +986,21 @@ split 指定某个字符进行分割，返回一个列表，还可以指定分�
 replace 是返回一个新的字符串，用指定的字符替换，也可以指定替换几次
 
 
-splite</div>2023-05-23</li><br/><li><span>墨色</span> 👍（0） 💬（1）<div>数学相关的函数divmod不是divmode</div>2023-05-04</li><br/><li><span>nuan</span> 👍（0） 💬（1）<div>MYLONG = 40
+splite</p>2023-05-23</li><br/><li><span>墨色</span> 👍（0） 💬（1）<p>数学相关的函数divmod不是divmode</p>2023-05-04</li><br/><li><span>nuan</span> 👍（0） 💬（1）<p>MYLONG = 40
 MyLat = 105
-这两个变量命名没有错误吧，只能说是“不是好的命名方式”</div>2023-04-26</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>我没有用过python，工作和直播也没有关系。老师是上市公司研发总监，大牛啊，就是冲着这个才学这门课的。
+这两个变量命名没有错误吧，只能说是“不是好的命名方式”</p>2023-04-26</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>我没有用过python，工作和直播也没有关系。老师是上市公司研发总监，大牛啊，就是冲着这个才学这门课的。
 
 问题： 我笔记本是win10，装了Anaconda，可以在Anaconda下面练习本课的pythno语法吗？装完Anaconda以后，在哪里输入命令，不太会用啊。
-</div>2023-04-25</li><br/><li><span>Geek_22e5a7</span> 👍（0） 💬（4）<div>def func(i):    # 判断奇数
+</p>2023-04-25</li><br/><li><span>Geek_22e5a7</span> 👍（0） 💬（4）<p>def func(i):    # 判断奇数
     return i % 2 == 1
 lst = [1,2,3,4,5,6,7,8,9]
 l1 = filter(func, lst)  #l1是迭代器
 print(l1)  #&lt;filter object at 0x000001CE3CA98AC8&gt;
-print(list(l1))  #[1, 3, 5, 7, 9] #为啥这里报错TypeError: &#39;list&#39; object is not callable</div>2023-04-25</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<div>In [2]: url = &quot;time.geekbang.org&quot;
+print(list(l1))  #[1, 3, 5, 7, 9] #为啥这里报错TypeError: &#39;list&#39; object is not callable</p>2023-04-25</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<p>In [2]: url = &quot;time.geekbang.org&quot;
 
 In [3]: url.split(&quot;.&quot;)
 Out[3]: [&#39;time&#39;, &#39;geekbang&#39;, &#39;org&#39;]
 
 In [4]: url.replace(&quot;.&quot;, &quot;-&quot;)
-Out[4]: &#39;time-geekbang-org&#39;</div>2023-04-25</li><br/>
+Out[4]: &#39;time-geekbang-org&#39;</p>2023-04-25</li><br/>
 </ul>

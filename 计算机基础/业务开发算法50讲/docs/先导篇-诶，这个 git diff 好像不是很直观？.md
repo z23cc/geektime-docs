@@ -307,7 +307,7 @@ For D ← 0 to MAX Do
 
 感兴趣的话，你也可以自己尝试实现一下Myers算法。如果发现git-diff算出来的结果和你的结果略有不同，也不用担心，这很可能是因为git-diff优化了Myers算法的空间复杂度所导致的，这一点[原论文](http://www.xmailserver.org/diff2.pdf)里也有提到。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Aliliin</span> 👍（12） 💬（4）<div>逐渐听不懂系列...😂</div>2021-12-13</li><br/><li><span>Daneil</span> 👍（7） 💬（1）<div>状态方程应该是dp[d][k] = max(dp[d-1][k-1]+1， dp[d-1][k+1])</div>2021-12-12</li><br/><li><span>天上星多月不亮</span> 👍（4） 💬（4）<div>请问下 m+n-2*LC 是如何推的呢</div>2021-12-08</li><br/><li><span>萧戏</span> 👍（2） 💬（1）<div>第一课没有听明白，还是适合吗？</div>2022-06-17</li><br/><li><span>时间小偷</span> 👍（2） 💬（1）<div>最长公共子序列我只会O(mn)时间复杂度的动态规划解法，O(n*logn)时间复杂度是怎么解的？</div>2021-12-29</li><br/><li><span>随风</span> 👍（2） 💬（1）<div>没有明白，对应的k-lines的行号指的是什么意思</div>2021-12-21</li><br/><li><span>kenan</span> 👍（2） 💬（2）<div>老师，看目录没有维特比算法，可否加餐一下呢？</div>2021-12-09</li><br/><li><span>Geek_a8ce05</span> 👍（1） 💬（1）<div>第二节直接劝退</div>2022-04-11</li><br/><li><span>大飞</span> 👍（1） 💬（1）<div>略难，学完之后能搞懂不</div>2022-03-25</li><br/><li><span>ppd0705</span> 👍（1） 💬（1）<div>伪代码翻译成Python的版本如下，请大家斧正 ：
+<li><span>Aliliin</span> 👍（12） 💬（4）<p>逐渐听不懂系列...😂</p>2021-12-13</li><br/><li><span>Daneil</span> 👍（7） 💬（1）<p>状态方程应该是dp[d][k] = max(dp[d-1][k-1]+1， dp[d-1][k+1])</p>2021-12-12</li><br/><li><span>天上星多月不亮</span> 👍（4） 💬（4）<p>请问下 m+n-2*LC 是如何推的呢</p>2021-12-08</li><br/><li><span>萧戏</span> 👍（2） 💬（1）<p>第一课没有听明白，还是适合吗？</p>2022-06-17</li><br/><li><span>时间小偷</span> 👍（2） 💬（1）<p>最长公共子序列我只会O(mn)时间复杂度的动态规划解法，O(n*logn)时间复杂度是怎么解的？</p>2021-12-29</li><br/><li><span>随风</span> 👍（2） 💬（1）<p>没有明白，对应的k-lines的行号指的是什么意思</p>2021-12-21</li><br/><li><span>kenan</span> 👍（2） 💬（2）<p>老师，看目录没有维特比算法，可否加餐一下呢？</p>2021-12-09</li><br/><li><span>Geek_a8ce05</span> 👍（1） 💬（1）<p>第二节直接劝退</p>2022-04-11</li><br/><li><span>大飞</span> 👍（1） 💬（1）<p>略难，学完之后能搞懂不</p>2022-03-25</li><br/><li><span>ppd0705</span> 👍（1） 💬（1）<p>伪代码翻译成Python的版本如下，请大家斧正 ：
 ```python
 def git_diff(a: str, b: str) -&gt; int:
     a = &quot; &quot; + a
@@ -340,7 +340,7 @@ def git_diff(a: str, b: str) -&gt; int:
             break
     return d
 ```
-</div>2022-03-20</li><br/><li><span>尔东橙</span> 👍（1） 💬（1）<div>仿佛回到读研时文章算法推导的时候。。</div>2022-03-15</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（1）<div>这篇导读真的很有深度，老师太棒了！</div>2022-01-04</li><br/><li><span>Geek_62b378</span> 👍（1） 💬（1）<div>把之前的递推例子过程画到二维表格中大概如下图所示，横轴的数字代表着 D-Path 的 D 也就是操作数，纵轴的数字代表 k-Lines 的行号
+</p>2022-03-20</li><br/><li><span>尔东橙</span> 👍（1） 💬（1）<p>仿佛回到读研时文章算法推导的时候。。</p>2022-03-15</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（1）<p>这篇导读真的很有深度，老师太棒了！</p>2022-01-04</li><br/><li><span>Geek_62b378</span> 👍（1） 💬（1）<p>把之前的递推例子过程画到二维表格中大概如下图所示，横轴的数字代表着 D-Path 的 D 也就是操作数，纵轴的数字代表 k-Lines 的行号
 这里的纵轴的数字代表k-Lines的行号
-这里的行号是不是说的是k-Lines中的k</div>2021-12-23</li><br/><li><span>kimoti</span> 👍（1） 💬（1）<div>看起来还是很困难</div>2021-12-12</li><br/><li><span>疯帽子</span> 👍（0） 💬（1）<div>老师,这一篇看不懂,可以跳过不看吗😳</div>2022-09-08</li><br/>
+这里的行号是不是说的是k-Lines中的k</p>2021-12-23</li><br/><li><span>kimoti</span> 👍（1） 💬（1）<p>看起来还是很困难</p>2021-12-12</li><br/><li><span>疯帽子</span> 👍（0） 💬（1）<p>老师,这一篇看不懂,可以跳过不看吗😳</p>2022-09-08</li><br/>
 </ul>

@@ -363,9 +363,9 @@ cat /etc/hosts
 
 ![图片](https://static001.geekbang.org/resource/image/60/b2/607a15a372b6dd4fd59d2060d1e811b2.jpg?wh=1920x1377)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>YueShi</span> 👍（8） 💬（1）<div>使用http:&#47;&#47;wp.test&#47;访问,需要在host改wp-kic-dep部署的那个节点的ip才可以</div>2022-08-12</li><br/><li><span>大毛</span> 👍（7） 💬（2）<div>以下是我在进行操作时遇到的坑，给大家填一下：
+<li><span>YueShi</span> 👍（8） 💬（1）<p>使用http:&#47;&#47;wp.test&#47;访问,需要在host改wp-kic-dep部署的那个节点的ip才可以</p>2022-08-12</li><br/><li><span>大毛</span> 👍（7） 💬（2）<p>以下是我在进行操作时遇到的坑，给大家填一下：
 1. 在运行 nginx controller 的时候，pod 的状态一直不是 running，查看日志最后显示的是 bind() to 0.0.0.0:80 failed (13: Permission denied)。经过查资料发现，这是因为在运行 pod 的时候会桥接宿主机的 80 端口，而 80 端口是受保护的。解决办法是在 securityContext 中添加 allowPrivilegeEscalation: true，即可以进行特权升级。（https:&#47;&#47;github.com&#47;nginxinc&#47;kubernetes-ingress&#47;issues&#47;3932）
-2. 不管你用什么设备访问 wp.test，请关掉科学上网软件，否则可能 502</div>2023-06-16</li><br/><li><span>dao</span> 👍（7） 💬（3）<div>因为前面几节都是按照文稿来演练，坑都踩完了，本节很轻松完成。
+2. 不管你用什么设备访问 wp.test，请关掉科学上网软件，否则可能 502</p>2023-06-16</li><br/><li><span>dao</span> 👍（7） 💬（3）<p>因为前面几节都是按照文稿来演练，坑都踩完了，本节很轻松完成。
 作业：
 1. 直接可以由 deployment 改编一下：修改 Kind，移除 replicas ； 根据需要添加 tolerations 设置。
 2. 为 Ingress Controller 创建 Service 对象，用YAML样板来实现吧
@@ -387,21 +387,21 @@ kubectl expose deploy wp-kic-dep --port=80,443 --type=NodePort --name=wp-kic-svc
 ```
 记得移除 ingress controller deployment 里的 `hostNetwork: true`。
 现在就可以愉快地访问 https:&#47;&#47;wp.test:30443&#47; 。
-</div>2022-08-17</li><br/><li><span>Lorry</span> 👍（5） 💬（2）<div>关于hostNetwork方式，分享一点，就是hostNetwork这种形式虽然可以让外界访问到，但是你一定要让外界机器通过域名，这里是“wp.test”能够路由到这台机器，当然这个很简单，只要在&#47;etc&#47;hosts里面添加一条记录就可以，但是wp.test要映射到哪一台机器？开始我在这个地方卡了好久，以为配置的是master机器，但是其实不是，应该是ingress controller的pod部署的那台机器，通过命令（kubectl get pod -n nginx-ingress -o wide）可以查看到pod是部署的机器，然后决定映射的ip；
+</p>2022-08-17</li><br/><li><span>Lorry</span> 👍（5） 💬（2）<p>关于hostNetwork方式，分享一点，就是hostNetwork这种形式虽然可以让外界访问到，但是你一定要让外界机器通过域名，这里是“wp.test”能够路由到这台机器，当然这个很简单，只要在&#47;etc&#47;hosts里面添加一条记录就可以，但是wp.test要映射到哪一台机器？开始我在这个地方卡了好久，以为配置的是master机器，但是其实不是，应该是ingress controller的pod部署的那台机器，通过命令（kubectl get pod -n nginx-ingress -o wide）可以查看到pod是部署的机器，然后决定映射的ip；
 
-这一点文章中有提到，但是容易忽略。</div>2023-01-26</li><br/><li><span>YueShi</span> 👍（4） 💬（1）<div>改成DaemonSet只需要把kind的Deployment变成DeamonSet、把replicas注释掉就可以</div>2022-08-14</li><br/><li><span>peter</span> 👍（4） 💬（2）<div>老师，22讲最后一步，就是创建nginx controller失败，POD状态是“CrashLoopBackOff”。用logs命令查看，错误信息是：
+这一点文章中有提到，但是容易忽略。</p>2023-01-26</li><br/><li><span>YueShi</span> 👍（4） 💬（1）<p>改成DaemonSet只需要把kind的Deployment变成DeamonSet、把replicas注释掉就可以</p>2022-08-14</li><br/><li><span>peter</span> 👍（4） 💬（2）<p>老师，22讲最后一步，就是创建nginx controller失败，POD状态是“CrashLoopBackOff”。用logs命令查看，错误信息是：
 Error when getting IngressClass wp-ink: ingressclasses.networking.k8s.io &quot;wp-ink&quot; is forbidden: User &quot;system:serviceaccount:nginx-ingress:nginx-ingress&quot; cannot get resource &quot;ingressclasses&quot; in API group &quot;networking.k8s.io&quot; at the cluster scope
 
-不知道是什么意思？不知道怎么修改？ （能看懂英文，但不知道说的是什么） （注：kic文件是拷贝老师的，https:&#47;&#47;github.com&#47;chronolaw&#47;k8s_study&#47;blob&#47;master&#47;ch3&#47;wp-kic.yml   完全拷贝，成功创建）</div>2022-08-11</li><br/><li><span>jason</span> 👍（3） 💬（2）<div>老师，wp.test这个域名需要指定ingress controller那个pod所在的节点ip，而ingress controller是通过deployment来管理的，pod重建时可能会被部署到别的节点，这样不是又要改host配置了吗？想问一下生产环境是怎样解决这个问题的。</div>2023-03-01</li><br/><li><span>笨晓孩</span> 👍（3） 💬（1）<div>老师，我部署完wp-svc之后，通过nodeIP:30088的方式没办法访问Wordpress页面，采用的是nodeport的方式</div>2022-10-27</li><br/><li><span>Geek_2ce074</span> 👍（3） 💬（1）<div>老师你好，Ingress Controller 对象，在哪个 Nginx 项目的示例 YAML 里有呀，根本找不到呀</div>2022-08-10</li><br/><li><span>romance</span> 👍（3） 💬（6）<div>老师，数据库配置没问题，svc也正常，但访问网站时提示 Error establishing a database connection，不知道什么原因</div>2022-08-10</li><br/><li><span>菲茨杰拉德</span> 👍（2） 💬（2）<div>配置hosts后，解析出来的还是ingress的ip，在七层负载不还是相当于用的ip来访问的吗？这个解析过程不是k8s做的吧。
-我原来理解的是七层负载走http，通过域名来访问。输入域名后，k8s解析然后找到四层的ip和端口然后请求。</div>2022-11-23</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<div>如果你使用的是 minikube 来搭建本节的实验环境，可以参考这里来在macOS本地通过域名访问服务：https:&#47;&#47;github.com&#47;kubernetes&#47;minikube&#47;pull&#47;12089</div>2023-09-04</li><br/><li><span>chengyi</span> 👍（1） 💬（1）<div>不过 Ingress Controller 本身也是一个 Pod，想要把服务暴露到集群外部还是要依靠 Service。Service 支持 NodePort、LoadBalancer 等方式，但 NodePort 的端口范围有限，LoadBalancer 又依赖于云服务厂商，都不是很灵活。
+不知道是什么意思？不知道怎么修改？ （能看懂英文，但不知道说的是什么） （注：kic文件是拷贝老师的，https:&#47;&#47;github.com&#47;chronolaw&#47;k8s_study&#47;blob&#47;master&#47;ch3&#47;wp-kic.yml   完全拷贝，成功创建）</p>2022-08-11</li><br/><li><span>jason</span> 👍（3） 💬（2）<p>老师，wp.test这个域名需要指定ingress controller那个pod所在的节点ip，而ingress controller是通过deployment来管理的，pod重建时可能会被部署到别的节点，这样不是又要改host配置了吗？想问一下生产环境是怎样解决这个问题的。</p>2023-03-01</li><br/><li><span>笨晓孩</span> 👍（3） 💬（1）<p>老师，我部署完wp-svc之后，通过nodeIP:30088的方式没办法访问Wordpress页面，采用的是nodeport的方式</p>2022-10-27</li><br/><li><span>Geek_2ce074</span> 👍（3） 💬（1）<p>老师你好，Ingress Controller 对象，在哪个 Nginx 项目的示例 YAML 里有呀，根本找不到呀</p>2022-08-10</li><br/><li><span>romance</span> 👍（3） 💬（6）<p>老师，数据库配置没问题，svc也正常，但访问网站时提示 Error establishing a database connection，不知道什么原因</p>2022-08-10</li><br/><li><span>菲茨杰拉德</span> 👍（2） 💬（2）<p>配置hosts后，解析出来的还是ingress的ip，在七层负载不还是相当于用的ip来访问的吗？这个解析过程不是k8s做的吧。
+我原来理解的是七层负载走http，通过域名来访问。输入域名后，k8s解析然后找到四层的ip和端口然后请求。</p>2022-11-23</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<p>如果你使用的是 minikube 来搭建本节的实验环境，可以参考这里来在macOS本地通过域名访问服务：https:&#47;&#47;github.com&#47;kubernetes&#47;minikube&#47;pull&#47;12089</p>2023-09-04</li><br/><li><span>chengyi</span> 👍（1） 💬（1）<p>不过 Ingress Controller 本身也是一个 Pod，想要把服务暴露到集群外部还是要依靠 Service。Service 支持 NodePort、LoadBalancer 等方式，但 NodePort 的端口范围有限，LoadBalancer 又依赖于云服务厂商，都不是很灵活。
 折中的办法是用少量 NodePort 暴露 Ingress Controller，用 Ingress 路由到内部服务，外部再用反向代理或者 LoadBalancer 把流量引进来。
-请问这两段话的区别是什么，不太理解。</div>2023-07-28</li><br/><li><span>kobe</span> 👍（1） 💬（5）<div>我加上ingress controller后启动，报了这个错，能帮看下是什么原因么：
+请问这两段话的区别是什么，不太理解。</p>2023-07-28</li><br/><li><span>kobe</span> 👍（1） 💬（5）<p>我加上ingress controller后启动，报了这个错，能帮看下是什么原因么：
 NGINX Ingress Controller Version=3.1.0 Commit=057c6d7e4f2361f5d2ddd897e9995bcb48ed7e32 Date=2023-03-27T10:15:43Z DirtyState=false Arch=linux&#47;amd64 Go=go1.20.2
 I0404 10:41:32.746481       1 flags.go:294] Starting with flags: [&quot;-nginx-configmaps=nginx-ingress&#47;nginx-config&quot; &quot;-ingress-class=wp-ink&quot;]
 I0404 10:41:32.761875       1 main.go:234] Kubernetes version: 1.23.3
 I0404 10:41:32.771440       1 main.go:380] Using nginx version: nginx&#47;1.23.3
 E0404 10:41:32.773053       1 main.go:753] Error getting pod: pods &quot;wp-kic-dep-7d46fd4f8d-mnxpk&quot; is forbidden: User &quot;system:serviceaccount:nginx-ingress:nginx-ingress&quot; cannot get resource &quot;pods&quot; in API group &quot;&quot; in the namespace &quot;nginx-ingress&quot;
-2023&#47;04&#47;04 10:41:32 [emerg] 12#12: bind() to 0.0.0.0:80 failed (13: Permission denied)</div>2023-04-04</li><br/><li><span>kobe</span> 👍（1） 💬（2）<div>我这个ingress controller启动后没成功，一直在不断的创建pod，如下：
+2023&#47;04&#47;04 10:41:32 [emerg] 12#12: bind() to 0.0.0.0:80 failed (13: Permission denied)</p>2023-04-04</li><br/><li><span>kobe</span> 👍（1） 💬（2）<p>我这个ingress controller启动后没成功，一直在不断的创建pod，如下：
 wp-kic-dep-545dffd6d7-2n9cq    0&#47;1     SysctlForbidden   0          48s
 wp-kic-dep-545dffd6d7-2zkh2    0&#47;1     SysctlForbidden   0          65s
 wp-kic-dep-545dffd6d7-4f42q    0&#47;1     SysctlForbidden   0          20s
@@ -423,5 +423,5 @@ wp-kic-dep-545dffd6d7-cx8bx    0&#47;1     SysctlForbidden   0          20s
 wp-kic-dep-545dffd6d7-dc7w2    0&#47;1     SysctlForbidden   0          11s
 wp-kic-dep-545dffd6d7-dzvvx    0&#47;1     SysctlForbidden   0          73s
 wp-kic-dep-545dffd6d7-f72lj    0&#47;1     SysctlForbidden   0          66s
-wp-kic-dep-545dffd6d7-gjdkz    0&#47;1     SysctlForbidden   0          27s</div>2023-04-04</li><br/>
+wp-kic-dep-545dffd6d7-gjdkz    0&#47;1     SysctlForbidden   0          27s</p>2023-04-04</li><br/>
 </ul>

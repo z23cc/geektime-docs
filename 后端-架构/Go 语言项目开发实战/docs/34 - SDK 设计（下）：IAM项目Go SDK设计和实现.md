@@ -646,13 +646,13 @@ curl -XPOST http://example.com/v1/user -d '{"username":"colin","address":"shenzh
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>yandongxiao</span> 👍（2） 💬（1）<div>总结：
+<li><span>yandongxiao</span> 👍（2） 💬（1）<p>总结：
 client-go 风格的SDK从项目、应用、服务 都有客户端，且上一层客户端封装了下层的客户端。
 1. NewForConfig 操作，会将下层的客户端都创建出来。
 2. clientset.Iam().AuthzV1() 就是指定客户端的过程。
 3. 在要创建具体的资源时，客户端作为参数，动态创建一个资源的“客户端”。这是在服务客户端做的
 4. 资源客户端拿到了“RESTClient”对象，开始操作资源。
 
-在服务级别的接口，不但提供了 RESTClient() rest.Interface 来操作资源，也可以调用 AuthzGetter 封装的接口，更加友好。</div>2021-12-04</li><br/><li><span>筱泉</span> 👍（0） 💬（1）<div>老师￼，这个example代码怎么跑起来
-</div>2022-03-18</li><br/><li><span>冷峰</span> 👍（0） 💬（1）<div>authz 默认使用的 jwt 认证， 这个例子中的认证方式使用的是 basic , 会导致认证失败</div>2021-08-29</li><br/><li><span>Sch0ng</span> 👍（7） 💬（0）<div>K8s client-go风格的sdk实现方式比公有云普遍采用的sdk更灵活，调用和扩展都更方便，还可以多版本共存。</div>2021-08-17</li><br/><li><span>ppd0705</span> 👍（5） 💬（1）<div>这种分层设计好妙，可以按需创建某层客户端</div>2021-11-02</li><br/><li><span>随风而过</span> 👍（1） 💬（0）<div>K8s client-go风格确实比公有云的sdk风格有很多优势，目前项目基本都是采用公有云的方式，get到老师的点，学习了</div>2021-09-08</li><br/><li><span>Geek_12356a</span> 👍（0） 💬（0）<div>这个稍微有些复杂了，各种v1、v2，可维护性不好</div>2025-02-08</li><br/><li><span>Calvin</span> 👍（0） 💬（0）<div>请问下 http 客户端使用第三方库的好吗？比如 go-resty</div>2023-02-03</li><br/>
+在服务级别的接口，不但提供了 RESTClient() rest.Interface 来操作资源，也可以调用 AuthzGetter 封装的接口，更加友好。</p>2021-12-04</li><br/><li><span>筱泉</span> 👍（0） 💬（1）<p>老师￼，这个example代码怎么跑起来
+</p>2022-03-18</li><br/><li><span>冷峰</span> 👍（0） 💬（1）<p>authz 默认使用的 jwt 认证， 这个例子中的认证方式使用的是 basic , 会导致认证失败</p>2021-08-29</li><br/><li><span>Sch0ng</span> 👍（7） 💬（0）<p>K8s client-go风格的sdk实现方式比公有云普遍采用的sdk更灵活，调用和扩展都更方便，还可以多版本共存。</p>2021-08-17</li><br/><li><span>ppd0705</span> 👍（5） 💬（1）<p>这种分层设计好妙，可以按需创建某层客户端</p>2021-11-02</li><br/><li><span>随风而过</span> 👍（1） 💬（0）<p>K8s client-go风格确实比公有云的sdk风格有很多优势，目前项目基本都是采用公有云的方式，get到老师的点，学习了</p>2021-09-08</li><br/><li><span>Geek_12356a</span> 👍（0） 💬（0）<p>这个稍微有些复杂了，各种v1、v2，可维护性不好</p>2025-02-08</li><br/><li><span>Calvin</span> 👍（0） 💬（0）<p>请问下 http 客户端使用第三方库的好吗？比如 go-resty</p>2023-02-03</li><br/>
 </ul>

@@ -324,15 +324,15 @@ IP层也有跟TCP分段类似的机制，它就是IP分片。很多人搞不清I
 
 抓包示例文件：[https://gitee.com/steelvictor/network-analysis/tree/master/08](https://gitee.com/steelvictor/network-analysis/tree/master/08)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>江山如画</span> 👍（21） 💬（4）<div>问题1:
+<li><span>江山如画</span> 👍（21） 💬（4）<p>问题1:
 从可用性角度分析，通过 iptables 修改 mss 只对 tcp 报文生效，对 udp 报文不生效。由于udp 报文传输时没有协商 mss 的过程，如果发现 udp 负载长度比 mtu 大，会交给网络层分片处理，分片传输途中只要有一个分片丢了，由于 udp 没有反馈给发送端具体是哪个分片丢了的能力，只能重新传整个包，传输效率会变低。
 
 从运维角度分析，由于修改中间环节某个服务器的 iptables ，对于其它侧是透明的，可能会对定位问题带来困扰。
 
 问题2:
-遇到过 mtu 引发的问题。之前手动创建了虚拟网卡，和物理网卡之间做了流量的桥接，发现有些报文在二者之间转发时会被丢掉，分析发现虚拟网卡的 mtu 设置过大，并且报文 DF 位设置为了 1，通过 ifconfig 命令把虚拟网卡的 mtu 改小，报文就可以正常转发了。</div>2022-02-07</li><br/><li><span>Geek_955506</span> 👍（11） 💬（1）<div>Flow Graph 展示页的左下角有一个复选框 &quot;limt to display filter&quot;，勾上之后就只展示过滤的内容了，不需要再单独保存展示</div>2022-06-05</li><br/><li><span>斯蒂芬.赵</span> 👍（5） 💬（1）<div>不明白，如果传入的tcp载荷超过了mtu值，不应该根据mss值自动的分段么</div>2023-01-11</li><br/><li><span>张靳</span> 👍（5） 💬（1）<div>开始对[为什么有重复确认（DupAck）]这个小节标志位Dup ACK的两个报文是载荷为688和57的两个报文的确认报文不是很理解，在杨老师指导下豁然开朗，做一下我的理解记录：
+遇到过 mtu 引发的问题。之前手动创建了虚拟网卡，和物理网卡之间做了流量的桥接，发现有些报文在二者之间转发时会被丢掉，分析发现虚拟网卡的 mtu 设置过大，并且报文 DF 位设置为了 1，通过 ifconfig 命令把虚拟网卡的 mtu 改小，报文就可以正常转发了。</p>2022-02-07</li><br/><li><span>Geek_955506</span> 👍（11） 💬（1）<p>Flow Graph 展示页的左下角有一个复选框 &quot;limt to display filter&quot;，勾上之后就只展示过滤的内容了，不需要再单独保存展示</p>2022-06-05</li><br/><li><span>斯蒂芬.赵</span> 👍（5） 💬（1）<p>不明白，如果传入的tcp载荷超过了mtu值，不应该根据mss值自动的分段么</p>2023-01-11</li><br/><li><span>张靳</span> 👍（5） 💬（1）<p>开始对[为什么有重复确认（DupAck）]这个小节标志位Dup ACK的两个报文是载荷为688和57的两个报文的确认报文不是很理解，在杨老师指导下豁然开朗，做一下我的理解记录：
 最开始我对wirshark的符号有误解，我选中Dup ACK报文发现是7号报文（三次握手的ack报文）的重复确认（有两个对勾），我就以为是7号报文的确认报文，这个理解本身有问题，因为ack本身没有ack了，不然就没完没了了。查阅了Dup ACK的定义，当发现丢包或者乱序的时候接收方会收到一些Seq序列号比期望值大的包，每收到这种包就会ack一次期望的Seq值。
-所以我们知道可能有丢包才会有重复确认，且确认得是对端发过来得报文。那么结合整个tcp流来看，发生重传得报文是没收到的，然后确认了688和57载荷得报文。</div>2022-02-12</li><br/><li><span>piboye</span> 👍（3） 💬（1）<div>包的收发路径不一致的时候,  MSS 协商是不是就失效了?  运营商网络, 如果出现链路调整, 之前协商的MSS 是不是也会可能失效了?  特别是长链接场景, 这种情况, 是不是要预先设置一个比较保守的值?</div>2022-08-03</li><br/><li><span>Geek3340</span> 👍（3） 💬（5）<div>老师，有一点不是很理解：
+所以我们知道可能有丢包才会有重复确认，且确认得是对端发过来得报文。那么结合整个tcp流来看，发生重传得报文是没收到的，然后确认了688和57载荷得报文。</p>2022-02-12</li><br/><li><span>piboye</span> 👍（3） 💬（1）<p>包的收发路径不一致的时候,  MSS 协商是不是就失效了?  运营商网络, 如果出现链路调整, 之前协商的MSS 是不是也会可能失效了?  特别是长链接场景, 这种情况, 是不是要预先设置一个比较保守的值?</p>2022-08-03</li><br/><li><span>Geek3340</span> 👍（3） 💬（5）<p>老师，有一点不是很理解：
 由于 Tunnel 1 比 Tunnel 2 的封装更大一些，所以服务端选择了不同的传输尺寸，一个是 1388，一个是 1348。
 为啥会有这种选择呢，按照理解，MSS会自动从MTU-40来计算，不太理解为啥中间的IPIP隧道会影响到MSS的分段
 
@@ -344,11 +344,11 @@ IP层也有跟TCP分段类似的机制，它就是IP分片。很多人搞不清I
 iptables -A FORWARD -p tcp --tcp-flags SYN SYN -j TCPMSS --set-mss 1400
 
 
-</div>2022-02-08</li><br/><li><span>志强</span> 👍（2） 💬（3）<div>老师有几个疑问请教：
+</p>2022-02-08</li><br/><li><span>志强</span> 👍（2） 💬（3）<p>老师有几个疑问请教：
 问题1.&quot;我们选中 575 号报文&quot;下边的图中Dup ACK报文是31号，&quot;为什么是两个重复确认报文呢？我们把视线从 2 个 DupAck 报文往上挪&quot;下边的图中dup ack 就变成了3号，是人为修改的还是怎么回事？
 问题2.有两次31号报文的dup ack，是因为收到了额外两次17号报文吧，有人肯能会问那为啥看不到17号报文的重传呢，这个我也不太清楚，可能是处理重传的位置在捕获抓包之后吧，要是在客户端抓包就能看到17号报文的重传，请老师指正
 问题3.无论是握手的ack 还是数据的ack，这个ack是谁给回的，知道是内核给回复，具体哪一层的什么函数处理过后给回复的ack；kcp老师了解吗，是应用层在再给回复还是也是内核给的恢复
-谢谢老师，期待您的详细解答</div>2022-02-08</li><br/><li><span>潘政宇</span> 👍（2） 💬（2）<div>杨老师，中间设备不是只是转发作用吗，协商mss也参与吗</div>2022-02-07</li><br/><li><span>janey</span> 👍（1） 💬（1）<div>MTU我看有的文章说是二层的，不知道到底算那层的？</div>2023-02-07</li><br/><li><span>夜、</span> 👍（1） 💬（1）<div>好像没有直接说明第一个包为啥没发送成功？  就算超过MTU了不是还会IP分片么</div>2022-02-27</li><br/><li><span>Dexter</span> 👍（1） 💬（1）<div>TCP分段的计算公司，那个IP header length和TCP header length是如何的得知的？难道都是按照默认的IP HDR =20, TCP HDR =20吗？这不是很可靠吧。 还有TCP segmentation probe功能开启是不是能够解决案例中的问题？
+谢谢老师，期待您的详细解答</p>2022-02-08</li><br/><li><span>潘政宇</span> 👍（2） 💬（2）<p>杨老师，中间设备不是只是转发作用吗，协商mss也参与吗</p>2022-02-07</li><br/><li><span>janey</span> 👍（1） 💬（1）<p>MTU我看有的文章说是二层的，不知道到底算那层的？</p>2023-02-07</li><br/><li><span>夜、</span> 👍（1） 💬（1）<p>好像没有直接说明第一个包为啥没发送成功？  就算超过MTU了不是还会IP分片么</p>2022-02-27</li><br/><li><span>Dexter</span> 👍（1） 💬（1）<p>TCP分段的计算公司，那个IP header length和TCP header length是如何的得知的？难道都是按照默认的IP HDR =20, TCP HDR =20吗？这不是很可靠吧。 还有TCP segmentation probe功能开启是不是能够解决案例中的问题？
 [root@master03 ipv4]# cat tcp_mtu_probing
 0
 [root@master03 ipv4]#
@@ -356,7 +356,7 @@ iptables -A FORWARD -p tcp --tcp-flags SYN SYN -j TCPMSS --set-mss 1400
 
 问题2：如果启用了TSO或者GRO，为什么经常在抓包中看到TCP segment还是1460?
 
-问题3： LRO是什么？老师能帮忙解答下吗？</div>2022-02-26</li><br/><li><span>Dexter</span> 👍（1） 💬（1）<div>iptables -A FORWARD -p tcp --tcp-flags SYN SYN -j TCPMSS --set-mss 1400   --- 文中说是在nat表，不过这个command没有指定nat表，而且nat表中应该没有forward chain</div>2022-02-26</li><br/><li><span>Pantheon</span> 👍（1） 💬（1）<div>每一个字都值得分析,老师的课写的很棒,实战派</div>2022-02-22</li><br/><li><span>kakashi</span> 👍（0） 💬（2）<div>关于怎么看包是在服务器抓的还是在客户端抓的，还有一个方法，就是看端口号，服务器端都是固定的公认端口，客户端都是随机的高端口。
+问题3： LRO是什么？老师能帮忙解答下吗？</p>2022-02-26</li><br/><li><span>Dexter</span> 👍（1） 💬（1）<p>iptables -A FORWARD -p tcp --tcp-flags SYN SYN -j TCPMSS --set-mss 1400   --- 文中说是在nat表，不过这个command没有指定nat表，而且nat表中应该没有forward chain</p>2022-02-26</li><br/><li><span>Pantheon</span> 👍（1） 💬（1）<p>每一个字都值得分析,老师的课写的很棒,实战派</p>2022-02-22</li><br/><li><span>kakashi</span> 👍（0） 💬（2）<p>关于怎么看包是在服务器抓的还是在客户端抓的，还有一个方法，就是看端口号，服务器端都是固定的公认端口，客户端都是随机的高端口。
 
-另外，请教下老师，TCP MSS有没有类似PMTUD的路径发现机制？</div>2022-05-29</li><br/><li><span>杨震</span> 👍（0） 💬（1）<div>每节课都要看几遍消化消化，老师写的非常好，图文清晰。期待后续老师更多栏目</div>2022-03-03</li><br/>
+另外，请教下老师，TCP MSS有没有类似PMTUD的路径发现机制？</p>2022-05-29</li><br/><li><span>杨震</span> 👍（0） 💬（1）<p>每节课都要看几遍消化消化，老师写的非常好，图文清晰。期待后续老师更多栏目</p>2022-03-03</li><br/>
 </ul>

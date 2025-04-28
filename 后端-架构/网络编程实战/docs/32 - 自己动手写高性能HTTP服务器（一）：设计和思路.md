@@ -311,10 +311,10 @@ int event_loop_handle_pending_add(struct event_loop *eventLoop, int fd, struct c
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>吴小智</span> 👍（7） 💬（2）<div>map_make_space() 函数里 realloc() 和 memset() 两个函数用的很巧妙啊，realloc() 用来扩容，且把旧的内容搬过去，memset() 用来给新申请的内存赋 0 值。赞，C 语言太强大了。</div>2019-10-22</li><br/><li><span>LDxy</span> 👍（7） 💬（1）<div>event_loop_handle_pending_add函数中，
+<li><span>吴小智</span> 👍（7） 💬（2）<p>map_make_space() 函数里 realloc() 和 memset() 两个函数用的很巧妙啊，realloc() 用来扩容，且把旧的内容搬过去，memset() 用来给新申请的内存赋 0 值。赞，C 语言太强大了。</p>2019-10-22</li><br/><li><span>LDxy</span> 👍（7） 💬（1）<p>event_loop_handle_pending_add函数中，
 map-&gt;entries[fd] = calloc(1, sizeof(struct channel *));
 map-&gt;entries[fd] = channel;
-这两行都给map-&gt;entries[fd] 赋值，后一行不是覆盖上一行的赋值了么？有何用意？</div>2019-10-21</li><br/><li><span>酸葡萄</span> 👍（3） 💬（2）<div>老师你好，问个基础的问题：
+这两行都给map-&gt;entries[fd] 赋值，后一行不是覆盖上一行的赋值了么？有何用意？</p>2019-10-21</li><br/><li><span>酸葡萄</span> 👍（3） 💬（2）<p>老师你好，问个基础的问题：
 epoll_dispatcher和poll_dispatcher都有，在添加，删除，更新事件时都有如下的逻辑，其中if条件中的判断怎么理解啊？
 if (channel1-&gt;events &amp; EVENT_READ) {
         events = events | POLLRDNORM;
@@ -322,7 +322,7 @@ if (channel1-&gt;events &amp; EVENT_READ) {
 
     if (channel1-&gt;events &amp; EVENT_WRITE) {
         events = events | POLLWRNORM;
-    }</div>2019-12-01</li><br/><li><span>沉淀的梦想</span> 👍（2） 💬（3）<div>看到map_make_space里面的realloc函数，突然有个疑问，既然操作系统底层支持直接在原数组上扩充内存，为什么Java不支持直接在原数组上扩容呢，ArrayList每次扩容都要重新拷贝一份原来的数据。</div>2019-10-22</li><br/><li><span>凌空飞起的剪刀腿</span> 👍（1） 💬（1）<div>int map_make_space(struct channel_map *map, int slot, int msize) {
+    }</p>2019-12-01</li><br/><li><span>沉淀的梦想</span> 👍（2） 💬（3）<p>看到map_make_space里面的realloc函数，突然有个疑问，既然操作系统底层支持直接在原数组上扩充内存，为什么Java不支持直接在原数组上扩容呢，ArrayList每次扩容都要重新拷贝一份原来的数据。</p>2019-10-22</li><br/><li><span>凌空飞起的剪刀腿</span> 👍（1） 💬（1）<p>int map_make_space(struct channel_map *map, int slot, int msize) {
     if (map-&gt;nentries &lt;= slot) {
         int nentries = map-&gt;nentries ? map-&gt;nentries : 32;
         void **tmp;
@@ -343,7 +343,7 @@ if (channel1-&gt;events &amp; EVENT_READ) {
 
     return (0);
 }
-老师，fd不一定是连续的吧，这样会浪费内存存储空间吧？</div>2021-06-07</li><br/><li><span>谁家内存泄露了</span> 👍（1） 💬（1）<div>老师好，请问您的代码中关于锁的使用，我想知道您关于每个loop都设计了一个锁，可是这几个mutex都是局部变量吧？他们的作用范围是什么样的呢？这里想不清楚，请指点一下！</div>2021-04-12</li><br/><li><span>Steiner</span> 👍（1） 💬（1）<div>如果Channel是一个管道，他连接着哪两个对象？</div>2021-02-18</li><br/><li><span>漠博嵩</span> 👍（0） 💬（1）<div>感觉就是仿照netty框架做的</div>2022-05-24</li><br/><li><span>菜鸡</span> 👍（0） 💬（1）<div>第二个问题有点疑问。channel_map中元素的空间大小是与fd的值正相关的，而不是跟当前在线的连接数量正相关，这样做是不是有点浪费内存？比如经历了很多次连接、断开之后，fd返回的值比较大，而此时只有几个未断开的连接，那么channel_map有必要申请那么大的内存空间嘛？</div>2022-05-08</li><br/><li><span>群书</span> 👍（0） 💬（1）<div>用sock对通知 唤醒会不会增加逻辑线程或主线程的系统调用次数 限制了吞吐量呢</div>2021-11-12</li><br/><li><span>Steiner</span> 👍（0） 💬（1）<div>我看了下定义，channel_element就像是个链表节点，为什么不用C++来做这块呢？</div>2021-02-18</li><br/><li><span>YUAN</span> 👍（0） 💬（1）<div>老师请问这个channel就相当于libevent中的event结构体吧？</div>2020-11-05</li><br/><li><span>spark</span> 👍（0） 💬（2）<div>盛老师好: 为什么要在下面这个函数中lock和unlock? 不是每个线程都对应一个自己的event_loop吗?
+老师，fd不一定是连续的吧，这样会浪费内存存储空间吧？</p>2021-06-07</li><br/><li><span>谁家内存泄露了</span> 👍（1） 💬（1）<p>老师好，请问您的代码中关于锁的使用，我想知道您关于每个loop都设计了一个锁，可是这几个mutex都是局部变量吧？他们的作用范围是什么样的呢？这里想不清楚，请指点一下！</p>2021-04-12</li><br/><li><span>Steiner</span> 👍（1） 💬（1）<p>如果Channel是一个管道，他连接着哪两个对象？</p>2021-02-18</li><br/><li><span>漠博嵩</span> 👍（0） 💬（1）<p>感觉就是仿照netty框架做的</p>2022-05-24</li><br/><li><span>菜鸡</span> 👍（0） 💬（1）<p>第二个问题有点疑问。channel_map中元素的空间大小是与fd的值正相关的，而不是跟当前在线的连接数量正相关，这样做是不是有点浪费内存？比如经历了很多次连接、断开之后，fd返回的值比较大，而此时只有几个未断开的连接，那么channel_map有必要申请那么大的内存空间嘛？</p>2022-05-08</li><br/><li><span>群书</span> 👍（0） 💬（1）<p>用sock对通知 唤醒会不会增加逻辑线程或主线程的系统调用次数 限制了吞吐量呢</p>2021-11-12</li><br/><li><span>Steiner</span> 👍（0） 💬（1）<p>我看了下定义，channel_element就像是个链表节点，为什么不用C++来做这块呢？</p>2021-02-18</li><br/><li><span>YUAN</span> 👍（0） 💬（1）<p>老师请问这个channel就相当于libevent中的event结构体吧？</p>2020-11-05</li><br/><li><span>spark</span> 👍（0） 💬（2）<p>盛老师好: 为什么要在下面这个函数中lock和unlock? 不是每个线程都对应一个自己的event_loop吗?
 这样的话event_loop就不是shared resource。
 int event_loop_handle_pending_channel(struct event_loop *eventLoop) {
     &#47;&#47;get the lock
@@ -372,5 +372,5 @@ int event_loop_handle_pending_channel(struct event_loop *eventLoop) {
     pthread_mutex_unlock(&amp;eventLoop-&gt;mutex);
 
     return 0;
-}</div>2020-09-25</li><br/><li><span>衬衫的价格是19美元</span> 👍（0） 💬（2）<div>channel_map这里map-&gt;entries是一个数组，数组的下标是fd,数组的元素是channel的地址，如果新增的fd跳变很大的话比如从3变成了100，会不会浪费了很多的空间</div>2020-07-23</li><br/><li><span>胤</span> 👍（0） 💬（1）<div>问个c语言的问题，比如event_loop_handle_pending_channel这个函数，返回值是int类型，但是除了函数最后是个return 0，其他地方没有错误处理，为什么要返回0？还是就是一种习惯？</div>2020-05-04</li><br/>
+}</p>2020-09-25</li><br/><li><span>衬衫的价格是19美元</span> 👍（0） 💬（2）<p>channel_map这里map-&gt;entries是一个数组，数组的下标是fd,数组的元素是channel的地址，如果新增的fd跳变很大的话比如从3变成了100，会不会浪费了很多的空间</p>2020-07-23</li><br/><li><span>胤</span> 👍（0） 💬（1）<p>问个c语言的问题，比如event_loop_handle_pending_channel这个函数，返回值是int类型，但是除了函数最后是个return 0，其他地方没有错误处理，为什么要返回0？还是就是一种习惯？</p>2020-05-04</li><br/>
 </ul>

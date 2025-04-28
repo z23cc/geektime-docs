@@ -231,14 +231,14 @@ ffprobe -show_packets -select_streams v -of xml -show_entries packet=pts_time,dt
 
 如果你拿到一个电影视频，想做分片转码，根据学过的内容，你该怎么分片呢？欢迎在评论区留下你的思考，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>peter</span> 👍（6） 💬（1）<div>请教老师姐问题：
+<li><span>peter</span> 👍（6） 💬（1）<p>请教老师姐问题：
 Q1：像素不是一个点吗？怎么会是矩形？
 文中有这样一句话：“肯定有一个因素，就是像素点不是矩形的，不是 1 比 1 的单个像素点。这就产生了 Pixel Aspect Ratio（PAR）像素宽高比”。我以前一直认为像素就是一个点，难道实际上像素是按矩形处理的吗？
 Q2：文中最后一个图，关于H.264的，视频文件中是同时存在Video Packet和Video Frame吗？或者说，Video Packet和Video Frame只存在一种，图中两个都列出来只是为了说明？
 Q3：YUV格式能用来实际显示吗？ 我的理解是：YUV不能用来显示，需要转换为RGB才能显示。
 Q4：01讲中，YUV420的图中，Y4个字节，U和V各一个字节。总共6个字节。这六个字节表示几个像素？我认为是表示4个像素，不是6个像素。
-Q5：YUV420格式，V是0，为什么还会有一个字节？按道理是0个字节啊。</div>2022-08-06</li><br/><li><span>Geek_c9cd4c</span> 👍（1） 💬（1）<div>PPS 、SPS、VPS、SEI能介绍一下吗</div>2023-02-27</li><br/><li><span>askxionghu</span> 👍（1） 💬（1）<div>ffprobe 的 -show_formats改为-show_format</div>2022-08-05</li><br/><li><span>Geek_c9cd4c</span> 👍（0） 💬（1）<div>I帧不是keyframe吗</div>2023-02-27</li><br/><li><span>Geek_e2e4e9</span> 👍（0） 💬（1）<div>“因为分辨率是 1920x800 的，所以我们可以简单地称之为 1080p”这句话有问题，1080p应该是1920x1080的分辨率</div>2022-08-20</li><br/><li><span>jcy</span> 👍（0） 💬（1）<div>这个得分通常用来确定使用哪个容器模块来解析这个 probe 文件 
-这里 这个 probe 文件 是不是应该是 这个 mov 文件？</div>2022-08-12</li><br/><li><span>西格玛</span> 👍（0） 💬（1）<div>老师你好，经过做实验我发现和您的描述有点出入：
+Q5：YUV420格式，V是0，为什么还会有一个字节？按道理是0个字节啊。</p>2022-08-06</li><br/><li><span>Geek_c9cd4c</span> 👍（1） 💬（1）<p>PPS 、SPS、VPS、SEI能介绍一下吗</p>2023-02-27</li><br/><li><span>askxionghu</span> 👍（1） 💬（1）<p>ffprobe 的 -show_formats改为-show_format</p>2022-08-05</li><br/><li><span>Geek_c9cd4c</span> 👍（0） 💬（1）<p>I帧不是keyframe吗</p>2023-02-27</li><br/><li><span>Geek_e2e4e9</span> 👍（0） 💬（1）<p>“因为分辨率是 1920x800 的，所以我们可以简单地称之为 1080p”这句话有问题，1080p应该是1920x1080的分辨率</p>2022-08-20</li><br/><li><span>jcy</span> 👍（0） 💬（1）<p>这个得分通常用来确定使用哪个容器模块来解析这个 probe 文件 
+这里 这个 probe 文件 是不是应该是 这个 mov 文件？</p>2022-08-12</li><br/><li><span>西格玛</span> 👍（0） 💬（1）<p>老师你好，经过做实验我发现和您的描述有点出入：
 ffprobe -show_frames -of xml xxx.mp4这个结果里面的pkt_pts和pkt_pts_time是不按照顺序的，但是
-ffprobe -show_packets -of xml  xxx.mp4的pts是按照顺序的</div>2022-08-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-24</li><br/><li><span>Geek_wad2tx</span> 👍（0） 💬（0）<div>分片转码主要是根据video流特性进行分片转码，分片以gop作为划分点</div>2022-09-20</li><br/>
+ffprobe -show_packets -of xml  xxx.mp4的pts是按照顺序的</p>2022-08-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-24</li><br/><li><span>Geek_wad2tx</span> 👍（0） 💬（0）<p>分片转码主要是根据video流特性进行分片转码，分片以gop作为划分点</p>2022-09-20</li><br/>
 </ul>

@@ -310,24 +310,24 @@ BeansFactory类中的createBean()函数是一个递归函数。当构造函数�
 
 你可以可以在留言区说一说，和同学一起交流和分享。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>郑大钱</span> 👍（25） 💬（1）<div>“初级工程师在维护代码，高级工程师在设计代码，资深工程师在重构代码”
+<li><span>郑大钱</span> 👍（25） 💬（1）<p>“初级工程师在维护代码，高级工程师在设计代码，资深工程师在重构代码”
 依赖注入框架好牛逼呀！当手把手教我设计一个框架之后，才破除了我对框架的权威和迷信。
 自己最开始做业务也是在原有框架上面修修补补，回过头来看，发现自己非常能忍，即使原有的框架很难用，自己也能坚持用下去。
 转念一想，那不是能忍，那是懒。懒得去理解框架的原理，懒得让它更易用。
-像豌豆公主一样保持自己的敏感，是持续改进的动力。</div>2020-11-17</li><br/><li><span>少年锦时</span> 👍（0） 💬（1）<div>beanDefinition.isLazyInit() == false  为什么不直接写成!beanDefinition.isLazyInit() 呢</div>2020-07-04</li><br/><li><span>沈康</span> 👍（165） 💬（7）<div>默默的掏出了《spring源码深度解析》回顾一番
+像豌豆公主一样保持自己的敏感，是持续改进的动力。</p>2020-11-17</li><br/><li><span>少年锦时</span> 👍（0） 💬（1）<p>beanDefinition.isLazyInit() == false  为什么不直接写成!beanDefinition.isLazyInit() 呢</p>2020-07-04</li><br/><li><span>沈康</span> 👍（165） 💬（7）<p>默默的掏出了《spring源码深度解析》回顾一番
  1、构造器循环依赖
 构造器注入的循环依赖是无法解决的，只能抛出bean创建异常使容器无法启动
 如何判断是循环依赖？
 把正在创建的bean放入到一个(正在创建的map)中，如果依赖创建bean在此map中存在，则抛出异常。
 2、setter方法循环依赖
 ①单例情况可以解决循环依赖，方法是提前暴露一个返回该单例的工厂方法，让依赖对象可以引用到
-②多例不能解决循环依赖，因为多例不需要缓存</div>2020-02-18</li><br/><li><span>undefined</span> 👍（66） 💬（2）<div>把本文的示例补全成了可执行代码：
+②多例不能解决循环依赖，因为多例不需要缓存</p>2020-02-18</li><br/><li><span>undefined</span> 👍（66） 💬（2）<p>把本文的示例补全成了可执行代码：
 https:&#47;&#47;github.com&#47;plusmancn&#47;learn-java&#47;tree&#47;master&#47;src&#47;main&#47;java&#47;Exercise&#47;di
 顺便纠正一个笔误：
-BeansFactory 下 createBean 方法中：singletonObjects.contains 应为 singletonObjects. containsKey</div>2020-02-23</li><br/><li><span>javaadu</span> 👍（39） 💬（2）<div>20200218再次复习：
+BeansFactory 下 createBean 方法中：singletonObjects.contains 应为 singletonObjects. containsKey</p>2020-02-23</li><br/><li><span>javaadu</span> 👍（39） 💬（2）<p>20200218再次复习：
 1. 研究了Spring容器中处理循环依赖的知识点：（1）只能处理单例的、setter注入的循环依赖，其他的注入模式无法处理；（2）依赖缓存处理循环依赖，关键思想是，将正在创建中的对象提前暴露一个单例工厂，让其他实例可以引用到
-2. 网上一篇比较好的文章：https:&#47;&#47;juejin.im&#47;post&#47;5d0d8f64f265da1b7b3193ac</div>2020-02-19</li><br/><li><span>简单猫</span> 👍（37） 💬（3）<div>不要被这些所谓的专业化名词吓到了 什么三级缓存。a依赖b，b依赖c，c依赖a,d依赖a，b，c什么的，你要解决的核心是不要重复创建。那么你就要把已经创建的对象存起来(map，hashmaps什么的) ，然后再次创建的时候先去缓存map中读取，没有才创建。 创建对象流程：1先反射创建类对象  2然后配置类里面的属性 方法(依赖就在这)。
-至于你要怎么利用设计模式解耦 分3级缓存 分别存储完全实例化的对象  未设置属性方法类对象  还是对象工厂  那就看如何好用咯</div>2020-05-14</li><br/><li><span>此鱼不得水</span> 👍（23） 💬（0）<div>Spring解决循环依赖的办法是多级缓存。</div>2020-02-14</li><br/><li><span>zhengyu.nie</span> 👍（16） 💬（0）<div>基本就是Spring源码大体原型了，委托的BeanFactory在Spring源码里是DefaultListableBeanFactory。循环依赖解决是三级缓存，提前暴露还没有初始化结束的bean。检测是Map存一下过程，aba这样顺序判断，有重复（a出现两次）就是环了。
+2. 网上一篇比较好的文章：https:&#47;&#47;juejin.im&#47;post&#47;5d0d8f64f265da1b7b3193ac</p>2020-02-19</li><br/><li><span>简单猫</span> 👍（37） 💬（3）<p>不要被这些所谓的专业化名词吓到了 什么三级缓存。a依赖b，b依赖c，c依赖a,d依赖a，b，c什么的，你要解决的核心是不要重复创建。那么你就要把已经创建的对象存起来(map，hashmaps什么的) ，然后再次创建的时候先去缓存map中读取，没有才创建。 创建对象流程：1先反射创建类对象  2然后配置类里面的属性 方法(依赖就在这)。
+至于你要怎么利用设计模式解耦 分3级缓存 分别存储完全实例化的对象  未设置属性方法类对象  还是对象工厂  那就看如何好用咯</p>2020-05-14</li><br/><li><span>此鱼不得水</span> 👍（23） 💬（0）<p>Spring解决循环依赖的办法是多级缓存。</p>2020-02-14</li><br/><li><span>zhengyu.nie</span> 👍（16） 💬（0）<p>基本就是Spring源码大体原型了，委托的BeanFactory在Spring源码里是DefaultListableBeanFactory。循环依赖解决是三级缓存，提前暴露还没有初始化结束的bean。检测是Map存一下过程，aba这样顺序判断，有重复（a出现两次）就是环了。
 
 三级缓存源码对应
 org.springframework.beans.factory.support.DefaultSingletonBeanRegistry#getSingleton
@@ -368,11 +368,11 @@ org.springframework.beans.factory.support.DefaultSingletonBeanRegistry#getSingle
 
 	&#47;** Cache of early singleton objects: bean name to bean instance. *&#47;
 	private final Map&lt;String, Object&gt; earlySingletonObjects = new HashMap&lt;&gt;(16);
-</div>2020-04-24</li><br/><li><span>王先森</span> 👍（11） 💬（0）<div>php开发者默默的去瞅laravel的DI容器</div>2020-06-16</li><br/><li><span>好吃不贵</span> 👍（9） 💬（1）<div>createBean先用Topology sort看是否有环，然后再按序创建？</div>2020-02-14</li><br/><li><span>J.Smile</span> 👍（9） 💬（0）<div>思考题:
+</p>2020-04-24</li><br/><li><span>王先森</span> 👍（11） 💬（0）<p>php开发者默默的去瞅laravel的DI容器</p>2020-06-16</li><br/><li><span>好吃不贵</span> 👍（9） 💬（1）<p>createBean先用Topology sort看是否有环，然后再按序创建？</p>2020-02-14</li><br/><li><span>J.Smile</span> 👍（9） 💬（0）<p>思考题:
 ①构造器初始化方式，无法解决循环依赖
 ②set注入方式初始化，有两种:
 第一种，创建的是单例对象，可以解决。
-第二种，创建的是原型对象，由于di容器不缓存对象导致无法提前暴露一个创建中的对象，依赖对象就会getbean时创建一个新对象，接着又进去循环依赖创建新对象…依然解决不了。</div>2020-02-14</li><br/><li><span>Geek_3b1096</span> 👍（8） 💬（1）<div>终于解答了我对于DI的疑惑</div>2020-02-14</li><br/><li><span>DullBird</span> 👍（7） 💬（3）<div>1. 我理解spring 解决A和B对象的循环引用是这样的流程是这样的，假设先加载A，丢一个A的引用到一个引用map&lt;id, ref&gt;，发现A有一个filed 引用B，就初始化B，丢一个B的引用到Map，初始化发现需要一个A，就从map里面找，找到了一个A，就把A的引用丢给B的属性，然后B加载结束了，A继续加载，拿到map里面的B，加载完成。</div>2020-02-24</li><br/><li><span>勤劳的明酱</span> 👍（7） 💬（3）<div>思考题：
+第二种，创建的是原型对象，由于di容器不缓存对象导致无法提前暴露一个创建中的对象，依赖对象就会getbean时创建一个新对象，接着又进去循环依赖创建新对象…依然解决不了。</p>2020-02-14</li><br/><li><span>Geek_3b1096</span> 👍（8） 💬（1）<p>终于解答了我对于DI的疑惑</p>2020-02-14</li><br/><li><span>DullBird</span> 👍（7） 💬（3）<p>1. 我理解spring 解决A和B对象的循环引用是这样的流程是这样的，假设先加载A，丢一个A的引用到一个引用map&lt;id, ref&gt;，发现A有一个filed 引用B，就初始化B，丢一个B的引用到Map，初始化发现需要一个A，就从map里面找，找到了一个A，就把A的引用丢给B的属性，然后B加载结束了，A继续加载，拿到map里面的B，加载完成。</p>2020-02-24</li><br/><li><span>勤劳的明酱</span> 👍（7） 💬（3）<p>思考题：
  构造器注入不好解决
- setter注入：根据BenDefinition创建的bean可以是未完成的bean，就是说bean里面的属性可以是没有填充过的，这个时候bean依然能创建成功，之后属性，postConstruct、InitializingBean、init-method完成之后才能算是一个完整的bean，所以即使出现循环依赖也能解决。</div>2020-02-14</li><br/><li><span>KK</span> 👍（6） 💬（1）<div>这里例子，过于限制语言了。对 java 用户友好，对其他用户似乎意义不大。</div>2022-05-05</li><br/>
+ setter注入：根据BenDefinition创建的bean可以是未完成的bean，就是说bean里面的属性可以是没有填充过的，这个时候bean依然能创建成功，之后属性，postConstruct、InitializingBean、init-method完成之后才能算是一个完整的bean，所以即使出现循环依赖也能解决。</p>2020-02-14</li><br/><li><span>KK</span> 👍（6） 💬（1）<p>这里例子，过于限制语言了。对 java 用户友好，对其他用户似乎意义不大。</p>2022-05-05</li><br/>
 </ul>

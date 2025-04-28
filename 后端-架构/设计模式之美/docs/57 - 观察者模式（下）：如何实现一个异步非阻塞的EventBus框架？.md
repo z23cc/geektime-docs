@@ -374,14 +374,14 @@ public class AsyncEventBus extends EventBus {
 
 欢迎留言和我分享你的想法。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Lambor</span> 👍（2） 💬（1）<div>使用异步非阻塞观察者模式，事务怎么控制呢？毕竟最后都是扔到线程池里执行。</div>2020-04-27</li><br/><li><span>蚂蚁内推+v</span> 👍（0） 💬（1）<div>老师，例子跑不通，应该把long 类型参数改为封装类型Long ,不然找不到对应的订阅者</div>2020-04-15</li><br/><li><span>小文同学</span> 👍（220） 💬（1）<div>Guava EventBus 对我来说简直是一份大礼。里面解耦功能使本来的旧项目又不可维护逐渐转化为可维护。
+<li><span>Lambor</span> 👍（2） 💬（1）<p>使用异步非阻塞观察者模式，事务怎么控制呢？毕竟最后都是扔到线程池里执行。</p>2020-04-27</li><br/><li><span>蚂蚁内推+v</span> 👍（0） 💬（1）<p>老师，例子跑不通，应该把long 类型参数改为封装类型Long ,不然找不到对应的订阅者</p>2020-04-15</li><br/><li><span>小文同学</span> 👍（220） 💬（1）<p>Guava EventBus 对我来说简直是一份大礼。里面解耦功能使本来的旧项目又不可维护逐渐转化为可维护。
 
 EventBus作为一个总线，还考虑了递归传送事件的问题，可以选择广度优先传播和深度优先传播，遇到事件死循环的时候还会报错。Guava的项目对这个模块的封装非常值得我们去阅读，复杂的都在里头，外面极为易用，我拷贝了一份EventBus的代码进行修改以适配自己的项目，发觉里面的构造都极为精密巧妙，像一个机械钟表一样，自己都下不了手，觉得不小心就是弄坏了。
 
-跟随真正优秀的工程师，并阅读其写出来的代码让人受益匪浅。</div>2020-03-13</li><br/><li><span>下雨天</span> 👍（84） 💬（4）<div>课后题：
+跟随真正优秀的工程师，并阅读其写出来的代码让人受益匪浅。</p>2020-03-13</li><br/><li><span>下雨天</span> 👍（84） 💬（4）<p>课后题：
 代理模式，使用一个代理类专门来处理EventBus相关逻辑。作用：
 1.将业务与非业务逻辑分离
-2.后续替换EventBus实现方式直接改写代理类，满足拓展需求</div>2020-03-13</li><br/><li><span>zhengyu.nie</span> 👍（72） 💬（2）<div>一开始在携程工作的时候因为早期Spring Event驱动强制要求事件继承抽象事件，而转到Guava EventBus，在Event实体上更加灵活。后面来阿里后发现一些项目里，Spring新版本也可以支持非继承的事件类型了，也有很多MetaQ消息直接分发到内存Event的写法。
+2.后续替换EventBus实现方式直接改写代理类，满足拓展需求</p>2020-03-13</li><br/><li><span>zhengyu.nie</span> 👍（72） 💬（2）<p>一开始在携程工作的时候因为早期Spring Event驱动强制要求事件继承抽象事件，而转到Guava EventBus，在Event实体上更加灵活。后面来阿里后发现一些项目里，Spring新版本也可以支持非继承的事件类型了，也有很多MetaQ消息直接分发到内存Event的写法。
 
 关于EventBus源码也看了几遍了，总体来说提供了几种dispatcher，有广度和深度优先原则，像PerThread中两层while也有对嵌套事件的处理，像Google工程师致敬。
 
@@ -392,7 +392,7 @@ EventBus现在来对我个人说主要有以下几点可能存在的问题：
 
 3.现在的Event在没打的@AllowConcurrentEvents时候，也就是需要线程安全的时候，是invoke method过程是加了synchronized关键字控制的，那么最好方法粒度不要太大，性能上考虑的话。
 
-其实现在也蛮纠结的，到底用EventBus还是Spring Event，按道理讲，现在项目基本都是SpringBoot体系，那么其实Spring事件隔绝依赖更多，也更容易和Spring Async等集成，所以我现在基本是用Spring事件驱动替代EventBus。</div>2020-04-14</li><br/><li><span>鱼Shiyao</span> 👍（48） 💬（9）<div>把老师的EventBus的代码实现了一下，发现有两个地方有问题。
+其实现在也蛮纠结的，到底用EventBus还是Spring Event，按道理讲，现在项目基本都是SpringBoot体系，那么其实Spring事件隔绝依赖更多，也更容易和Spring Async等集成，所以我现在基本是用Spring事件驱动替代EventBus。</p>2020-04-14</li><br/><li><span>鱼Shiyao</span> 👍（48） 💬（9）<p>把老师的EventBus的代码实现了一下，发现有两个地方有问题。
 1：
 XMsg xMsg = new XMsg();
 YMsg yMsg = new YMsg();
@@ -403,14 +403,14 @@ post(yMsg); =&gt; AObserver,BObserver接收到消息
 在getMatchedObserverAction函数中
 if (postedEventType.isAssignableFrom(eventType)) 
 应该改成
-if (eventType.isAssignableFrom(postedEventType)) </div>2020-03-18</li><br/><li><span>辣么大</span> 👍（12） 💬（4）<div>重构使用代理模式，将非业务代码放到代理类中。
+if (eventType.isAssignableFrom(postedEventType)) </p>2020-03-18</li><br/><li><span>辣么大</span> 👍（12） 💬（4）<p>重构使用代理模式，将非业务代码放到代理类中。
 另外试了争哥讲的EventBut类，在定义观察者的入参要修改成*Long*类型，如果使用long，这个方法是无法注册的，代码执行收不到通知。应该是ObserverRegistry类需要完善一下。
   @Subscribe
   public void handleRegSuccess(Long userId) {
     System.out.println(&quot;handleRegSuccess...&quot;);
     promotionService.issueNewUserExperienceCash(userId);
   }
-代码见：https:&#47;&#47;github.com&#47;gdhucoder&#47;Algorithms4&#47;tree&#47;master&#47;designpattern&#47;u57</div>2020-03-13</li><br/><li><span>小晏子</span> 👍（9） 💬（1）<div>我的想法比较直接，将UserController中的业务代码提出来放在接口的实现类中，这个UserController可以改名为EventController，然后这个接口实现类注入到这个EventController中，这样业务逻辑和控制逻辑就分离了，示例如下：
+代码见：https:&#47;&#47;github.com&#47;gdhucoder&#47;Algorithms4&#47;tree&#47;master&#47;designpattern&#47;u57</p>2020-03-13</li><br/><li><span>小晏子</span> 👍（9） 💬（1）<p>我的想法比较直接，将UserController中的业务代码提出来放在接口的实现类中，这个UserController可以改名为EventController，然后这个接口实现类注入到这个EventController中，这样业务逻辑和控制逻辑就分离了，示例如下：
 interface iController {
     object register()
 }
@@ -446,8 +446,8 @@ public class EventController {
         eventBus.post(msg)
     }
 
-}</div>2020-03-13</li><br/><li><span>blacknhole</span> 👍（7） 💬（2）<div>提个问题：
+}</p>2020-03-13</li><br/><li><span>blacknhole</span> 👍（7） 💬（2）<p>提个问题：
 
-文中“所谓可匹配指的是，能接收的消息类型是发送消息（post 函数定义中的 event）类型的子类”这话似乎有问题，应该是父类吧？</div>2020-03-15</li><br/><li><span>Heaven</span> 👍（7） 💬（1）<div>对于这个问题,在UserCntroller中,我们应该只保留post函数() 发送的相关逻辑,而将注册Observer,初始化EventBus相关逻辑剔除,如果非要使用EventBus来实现的话,我们需要有人帮我们去进行注册和初始化,这时候就可以立马想到之前讲的工厂模式的DI框架,我们可以让所有观察者都被DI框架所管理,并且对EventBus创建一个装饰器类,在这个装饰器类中,由开发者选择注入线程池实现异步发送还是直接使用同步发送的,并且在init函数中 从DI框架管理的对象池中拿出所有标有@Subscribe注解的类,保存到ObserverRegistry中,对于所有需要使用EventBus的类,注入这个装饰器类即可,设计的好,甚至可以做到其他依赖代码都不用改一点</div>2020-03-13</li><br/><li><span>依然亦晨</span> 👍（5） 💬（0）<div>debug的时候发现一个小问题，ObserverRegistry类的getMatchedObserverActions()方法中调用了isAssignableFrom()方法，由于postedEventType是java.lang.Long，而eventType是long，导致postedEventType.isAssignableFrom(eventType)始终为false，因而无法获取到匹配的观察者。从网上查阅相关资料的得知，Java反射获取方法不支持自动装箱或拆箱；</div>2020-04-29</li><br/><li><span>右耳听海</span> 👍（5） 💬（0）<div>给老师点赞，虽然很早就接触了eventbus，但一直没明白这个的设计思想，现在有种醍醐灌顶的感觉</div>2020-03-17</li><br/><li><span>Mogeko</span> 👍（4） 💬（1）<div>ObserverRegistry类的getMatchedObserverActions方法，postedEventType.isAssignableFrom(eventType)是不是反了？
-不是应该eventType.isAssignableFrom(postedEventType)吗？</div>2020-03-18</li><br/><li><span>cricket1981</span> 👍（4） 💬（0）<div>public void handleRegSuccess(long userId) 方法签名中的long类型应该改成Long类型，不然SubscriberRegistry.getSubscribers(Object event)会匹配不上类型</div>2020-03-14</li><br/><li><span>gogo</span> 👍（4） 💬（0）<div>看了下google EventBus源码，是标注了@Beta的，能用于生产环境吗？</div>2020-03-13</li><br/>
+文中“所谓可匹配指的是，能接收的消息类型是发送消息（post 函数定义中的 event）类型的子类”这话似乎有问题，应该是父类吧？</p>2020-03-15</li><br/><li><span>Heaven</span> 👍（7） 💬（1）<p>对于这个问题,在UserCntroller中,我们应该只保留post函数() 发送的相关逻辑,而将注册Observer,初始化EventBus相关逻辑剔除,如果非要使用EventBus来实现的话,我们需要有人帮我们去进行注册和初始化,这时候就可以立马想到之前讲的工厂模式的DI框架,我们可以让所有观察者都被DI框架所管理,并且对EventBus创建一个装饰器类,在这个装饰器类中,由开发者选择注入线程池实现异步发送还是直接使用同步发送的,并且在init函数中 从DI框架管理的对象池中拿出所有标有@Subscribe注解的类,保存到ObserverRegistry中,对于所有需要使用EventBus的类,注入这个装饰器类即可,设计的好,甚至可以做到其他依赖代码都不用改一点</p>2020-03-13</li><br/><li><span>依然亦晨</span> 👍（5） 💬（0）<p>debug的时候发现一个小问题，ObserverRegistry类的getMatchedObserverActions()方法中调用了isAssignableFrom()方法，由于postedEventType是java.lang.Long，而eventType是long，导致postedEventType.isAssignableFrom(eventType)始终为false，因而无法获取到匹配的观察者。从网上查阅相关资料的得知，Java反射获取方法不支持自动装箱或拆箱；</p>2020-04-29</li><br/><li><span>右耳听海</span> 👍（5） 💬（0）<p>给老师点赞，虽然很早就接触了eventbus，但一直没明白这个的设计思想，现在有种醍醐灌顶的感觉</p>2020-03-17</li><br/><li><span>Mogeko</span> 👍（4） 💬（1）<p>ObserverRegistry类的getMatchedObserverActions方法，postedEventType.isAssignableFrom(eventType)是不是反了？
+不是应该eventType.isAssignableFrom(postedEventType)吗？</p>2020-03-18</li><br/><li><span>cricket1981</span> 👍（4） 💬（0）<p>public void handleRegSuccess(long userId) 方法签名中的long类型应该改成Long类型，不然SubscriberRegistry.getSubscribers(Object event)会匹配不上类型</p>2020-03-14</li><br/><li><span>gogo</span> 👍（4） 💬（0）<p>看了下google EventBus源码，是标注了@Beta的，能用于生产环境吗？</p>2020-03-13</li><br/>
 </ul>

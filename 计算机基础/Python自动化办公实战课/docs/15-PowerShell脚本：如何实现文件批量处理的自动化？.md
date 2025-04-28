@@ -220,7 +220,7 @@ dir | Where-Object{ ($_.extension -eq ".zip" ) -or ($_.extension -eq ".rar" ) }
 
 按照惯例，我来为你留一道思考题，你能否通过官方文档查找到删除项的命令，并实现“.txt”扩展名文件的批量删除？请你大胆尝试一下。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>小小明</span> 👍（1） 💬（1）<div>查到文档地址是：https:&#47;&#47;docs.microsoft.com&#47;zh-cn&#47;previous-versions&#47;powershell&#47;module&#47;microsoft.powershell.management&#47;remove-item?view=powershell-6
+<li><span>小小明</span> 👍（1） 💬（1）<p>查到文档地址是：https:&#47;&#47;docs.microsoft.com&#47;zh-cn&#47;previous-versions&#47;powershell&#47;module&#47;microsoft.powershell.management&#47;remove-item?view=powershell-6
 
-直接Remove-Item  *.txt就可以删除当前目录下的文本文件</div>2021-06-22</li><br/><li><span>Soul of the Dragon</span> 👍（1） 💬（1）<div>思考题：Remove-Item * -Include *.txt -Recurse，亲测有效。</div>2021-03-16</li><br/><li><span>范</span> 👍（1） 💬（0）<div>powershell以前主要执行服务器端命令。内置很多命令，也可以调用各种命令。</div>2021-04-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-12</li><br/>
+直接Remove-Item  *.txt就可以删除当前目录下的文本文件</p>2021-06-22</li><br/><li><span>Soul of the Dragon</span> 👍（1） 💬（1）<p>思考题：Remove-Item * -Include *.txt -Recurse，亲测有效。</p>2021-03-16</li><br/><li><span>范</span> 👍（1） 💬（0）<p>powershell以前主要执行服务器端命令。内置很多命令，也可以调用各种命令。</p>2021-04-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-12</li><br/>
 </ul>

@@ -87,9 +87,9 @@ RTMP 与 FLV 就像是同一个人，只不过穿的“衣服”不同而已，�
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>redbg</span> 👍（7） 💬（1）<div>bilibili 的 flv.js，可以用 h5 播放 flv</div>2019-09-29</li><br/><li><span>刘丹</span> 👍（3） 💬（2）<div>FLV Body里为什么把TagSize放在Tag后面呢？如果TagSize在Tag前面，解析时就知道需要读入多少字节了。</div>2019-09-28</li><br/><li><span>刘丹</span> 👍（2） 💬（1）<div>请问合并2个FLV文件的时候，是否要把第2个FLV文件的FLV头这几个字节删除掉？</div>2019-09-28</li><br/><li><span>一颗大白菜</span> 👍（0） 💬（2）<div>有两个疑问：
+<li><span>redbg</span> 👍（7） 💬（1）<p>bilibili 的 flv.js，可以用 h5 播放 flv</p>2019-09-29</li><br/><li><span>刘丹</span> 👍（3） 💬（2）<p>FLV Body里为什么把TagSize放在Tag后面呢？如果TagSize在Tag前面，解析时就知道需要读入多少字节了。</p>2019-09-28</li><br/><li><span>刘丹</span> 👍（2） 💬（1）<p>请问合并2个FLV文件的时候，是否要把第2个FLV文件的FLV头这几个字节删除掉？</p>2019-09-28</li><br/><li><span>一颗大白菜</span> 👍（0） 💬（2）<p>有两个疑问：
 （1）在尾部追加Tag时是否需要更新Metadata中filesize和duration吗？
-（2）在尾部追加Tag时是否会引起Metadata大小变化呢？如果大小变化，那么是不是需要将重新生成文件？</div>2020-08-06</li><br/><li><span>神经旷野舞者</span> 👍（0） 💬（1）<div>既然flv和rtmp等于没有区别，为什么后来者还要自立门户呢？</div>2019-12-17</li><br/><li><span>李新</span> 👍（0） 💬（1）<div>对于CDN厂商来说，观看端都是使用HTTP-FLV吧？</div>2019-11-13</li><br/><li><span>Jason</span> 👍（0） 💬（1）<div>potplayer</div>2019-09-29</li><br/><li><span>Jason</span> 👍（0） 💬（1）<div>讲的很清楚，赞</div>2019-09-29</li><br/><li><span>潇湘落木</span> 👍（6） 💬（0）<div>FLV封装格式详解，作为补充！
+（2）在尾部追加Tag时是否会引起Metadata大小变化呢？如果大小变化，那么是不是需要将重新生成文件？</p>2020-08-06</li><br/><li><span>神经旷野舞者</span> 👍（0） 💬（1）<p>既然flv和rtmp等于没有区别，为什么后来者还要自立门户呢？</p>2019-12-17</li><br/><li><span>李新</span> 👍（0） 💬（1）<p>对于CDN厂商来说，观看端都是使用HTTP-FLV吧？</p>2019-11-13</li><br/><li><span>Jason</span> 👍（0） 💬（1）<p>potplayer</p>2019-09-29</li><br/><li><span>Jason</span> 👍（0） 💬（1）<p>讲的很清楚，赞</p>2019-09-29</li><br/><li><span>潇湘落木</span> 👍（6） 💬（0）<p>FLV封装格式详解，作为补充！
 https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;cMM2wbh1-DGWEMUB02mK8g
-https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;teQ7FoNj5FIE-3PICBIvlA</div>2019-11-05</li><br/><li><span>EdwdChen</span> 👍（1） 💬（0）<div>请问一下像 flv 没有一个结构化的头，seek 的时候应该怎么样快速找到对应的位置呢？</div>2022-06-28</li><br/>
+https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;teQ7FoNj5FIE-3PICBIvlA</p>2019-11-05</li><br/><li><span>EdwdChen</span> 👍（1） 💬（0）<p>请问一下像 flv 没有一个结构化的头，seek 的时候应该怎么样快速找到对应的位置呢？</p>2022-06-28</li><br/>
 </ul>

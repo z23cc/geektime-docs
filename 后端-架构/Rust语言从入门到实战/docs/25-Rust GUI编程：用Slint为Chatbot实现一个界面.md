@@ -426,7 +426,7 @@ Slint的设计风格延续了Qt（QML）的风格，可以说是业界的最佳�
 
 这节课的示例非常原型化，代码还有很多可以改进的地方，请你思考一下并指出一两处。欢迎你把你的想法分享到评论区，也欢迎你把这节课的内容分享给需要的朋友，邀他一起学习Rust，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>尤达</span> 👍（1） 💬（2）<div>slint依赖qt吗？cargo run报错：
+<li><span>尤达</span> 👍（1） 💬（2）<p>slint依赖qt吗？cargo run报错：
 = note: LINK : fatal error LNK1181: 无法打开输入文件“Qt5Cored.lib”
-</div>2023-12-21</li><br/><li><span>beshall</span> 👍（0） 💬（1）<div>老师，问个小问题，slint我编出来的程序打开有控制台窗口，这个怎么去除？</div>2024-04-02</li><br/><li><span>哄哄</span> 👍（0） 💬（1）<div>老师，代码用x86_64-pc-windows-gnu编译无法在Windows上运行，用msvc可以</div>2023-12-30</li><br/><li><span>My dream</span> 👍（0） 💬（1）<div>老师，你可以以最新版1.3.2来讲吗？</div>2023-12-22</li><br/><li><span>十八哥</span> 👍（0） 💬（1）<div>Slint好像实现多窗口还是比较麻烦啊</div>2023-12-20</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<div>请问老是，Rust 的 GUI 框架除了 Slint，还有其它推荐吗？</div>2023-12-20</li><br/><li><span>不忘初心</span> 👍（0） 💬（1）<div>商用slint需要官方授权吗? 有无法律风险?</div>2023-12-20</li><br/><li><span>tianyu0901</span> 👍（0） 💬（1）<div>想了解下Slint许可证问题，什么情况下商用要付费？谢谢老师！</div>2023-12-20</li><br/>
+</p>2023-12-21</li><br/><li><span>beshall</span> 👍（0） 💬（1）<p>老师，问个小问题，slint我编出来的程序打开有控制台窗口，这个怎么去除？</p>2024-04-02</li><br/><li><span>哄哄</span> 👍（0） 💬（1）<p>老师，代码用x86_64-pc-windows-gnu编译无法在Windows上运行，用msvc可以</p>2023-12-30</li><br/><li><span>My dream</span> 👍（0） 💬（1）<p>老师，你可以以最新版1.3.2来讲吗？</p>2023-12-22</li><br/><li><span>十八哥</span> 👍（0） 💬（1）<p>Slint好像实现多窗口还是比较麻烦啊</p>2023-12-20</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<p>请问老是，Rust 的 GUI 框架除了 Slint，还有其它推荐吗？</p>2023-12-20</li><br/><li><span>不忘初心</span> 👍（0） 💬（1）<p>商用slint需要官方授权吗? 有无法律风险?</p>2023-12-20</li><br/><li><span>tianyu0901</span> 👍（0） 💬（1）<p>想了解下Slint许可证问题，什么情况下商用要付费？谢谢老师！</p>2023-12-20</li><br/>
 </ul>

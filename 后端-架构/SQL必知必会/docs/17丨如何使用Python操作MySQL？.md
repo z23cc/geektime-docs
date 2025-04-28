@@ -203,7 +203,7 @@ finally:
 
 欢迎在评论区写下你的答案，我会与你一起交流。也欢迎把这篇文章分享给你的朋友或者同事，与它们一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>JustDoDT</span> 👍（42） 💬（3）<div>import json
+<li><span>JustDoDT</span> 👍（42） 💬（3）<p>import json
 import traceback
 import mysql.connector
 
@@ -235,7 +235,7 @@ except Exception as e:
 finally:
     cursor.close()
     db.close()
-# 建议吧数据库链接信息写到配置文件里，防止密码泄露。</div>2019-07-19</li><br/><li><span>一叶知秋</span> 👍（9） 💬（1）<div>sqlalchemy用习惯了。。。献丑来一段Python代码吧
+# 建议吧数据库链接信息写到配置文件里，防止密码泄露。</p>2019-07-19</li><br/><li><span>一叶知秋</span> 👍（9） 💬（1）<p>sqlalchemy用习惯了。。。献丑来一段Python代码吧
 ```Python
 # -*- coding:utf-8 -*-
 from sqlalchemy import and_
@@ -293,7 +293,7 @@ id:10056, name:达摩, hp_max:7140.0, mp_max:1694.0
 id:10057, name:孙悟空, hp_max:6585.0, mp_max:1760.0
 id:10058, name:刘备, hp_max:6900.0, mp_max:1742.0
 .....执行结果有点多字数限制了
-Process finished with exit code 0</div>2019-07-19</li><br/><li><span>mickey</span> 👍（6） 💬（1）<div># -*- coding: UTF-8 -*-
+Process finished with exit code 0</p>2019-07-19</li><br/><li><span>mickey</span> 👍（6） 💬（1）<p># -*- coding: UTF-8 -*-
 import mysql.connector
 import traceback
 
@@ -372,15 +372,15 @@ finally:
 (&#39;不知火舞&#39;, 6014.0)
 (&#39;孙尚香&#39;, 6014.0)
 
-Process finished with exit code 0</div>2019-07-19</li><br/><li><span>夜路破晓</span> 👍（5） 💬（2）<div>auth_plugin=&#39;mysql_native_password&#39;
-哪位亲给解释下这个参数</div>2019-07-19</li><br/><li><span>大斌</span> 👍（4） 💬（3）<div>核心代码：
+Process finished with exit code 0</p>2019-07-19</li><br/><li><span>夜路破晓</span> 👍（5） 💬（2）<p>auth_plugin=&#39;mysql_native_password&#39;
+哪位亲给解释下这个参数</p>2019-07-19</li><br/><li><span>大斌</span> 👍（4） 💬（3）<p>核心代码：
 cursor = db.cursor()
 
 sql = &quot;select name,hp_max from heros where hp_max &gt; %s&quot;
 val = (6000,)
 cursor.execute(sql,val)
 data = cursor.fetchall()
-注意：val里面的元素后面必须要加英文逗号，不加或者中文逗号都会报错</div>2019-07-23</li><br/><li><span>victor666</span> 👍（2） 💬（1）<div>Python直接写SQL比Java方便多了</div>2020-03-22</li><br/><li><span>丁丁历险记</span> 👍（2） 💬（3）<div>当一些听着很虚的理论用于实战时，其威力是巨大的，例如信息的正交性。</div>2019-11-15</li><br/><li><span>taoist</span> 👍（1） 💬（1）<div>import pymysql
+注意：val里面的元素后面必须要加英文逗号，不加或者中文逗号都会报错</p>2019-07-23</li><br/><li><span>victor666</span> 👍（2） 💬（1）<p>Python直接写SQL比Java方便多了</p>2020-03-22</li><br/><li><span>丁丁历险记</span> 👍（2） 💬（3）<p>当一些听着很虚的理论用于实战时，其威力是巨大的，例如信息的正交性。</p>2019-11-15</li><br/><li><span>taoist</span> 👍（1） 💬（1）<p>import pymysql
 import pymysql.cursors
 
 
@@ -406,7 +406,7 @@ try:
 finally:
     db_con.close()
 
-</div>2019-12-19</li><br/><li><span>胡</span> 👍（0） 💬（1）<div>__author__ = &#39;Administrator&#39;
+</p>2019-12-19</li><br/><li><span>胡</span> 👍（0） 💬（1）<p>__author__ = &#39;Administrator&#39;
 
 # -*- coding: UTF-8 -*-
 import traceback
@@ -440,8 +440,8 @@ db.commit()
 print(cursor.rowcount, &quot; 记录插入成功。&quot;)
 
 cursor.close()
-db.close()</div>2019-08-21</li><br/><li><span>胡</span> 👍（0） 💬（1）<div>老师在插入数据的时候，漏掉了 player_id ?</div>2019-08-21</li><br/><li><span>发条</span> 👍（0） 💬（1）<div>使用8.0以上版本mysql的同学，在连接数据库的时候可能会受到quth_plugin不支持mysql_native_password的报错，
-可以用ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;;语句把auth_plugin改掉</div>2019-07-26</li><br/><li><span>cricket1981</span> 👍（0） 💬（1）<div># -*- coding: UTF-8 -*-
+db.close()</p>2019-08-21</li><br/><li><span>胡</span> 👍（0） 💬（1）<p>老师在插入数据的时候，漏掉了 player_id ?</p>2019-08-21</li><br/><li><span>发条</span> 👍（0） 💬（1）<p>使用8.0以上版本mysql的同学，在连接数据库的时候可能会受到quth_plugin不支持mysql_native_password的报错，
+可以用ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;;语句把auth_plugin改掉</p>2019-07-26</li><br/><li><span>cricket1981</span> 👍（0） 💬（1）<p># -*- coding: UTF-8 -*-
 
 import mysql.connector
 # 打开数据库连接
@@ -460,9 +460,9 @@ data = cursor.fetchall()
 for each_hero in data:
   print(each_hero)
 cursor.close()
-db.close()</div>2019-07-22</li><br/><li><span>cricket1981</span> 👍（0） 💬（1）<div>python print语句出来的中文是乱码要怎么处理？python程序第一行加过 # -*- coding: UTF-8 -*-
-(10003, u&#39;\u5b89\u5fb7\u70c8-\u5fb7\u62c9\u8499\u5fb7&#39;, 2.11)</div>2019-07-22</li><br/><li><span>华夏</span> 👍（0） 💬（1）<div>pip install mysql-connector之后连接数据库会报错，更新到最新版还是一样报错，pip install mysql-connector-python之后可以正常运行。大家如果有遇到这个问题的可以参考@林彦-广州-数据分析师 这个办法。</div>2019-07-20</li><br/><li><span>lmingzhi</span> 👍（0） 💬（1）<div>老师，你好，我一般使用SQLAlchemy连接数据库:
+db.close()</p>2019-07-22</li><br/><li><span>cricket1981</span> 👍（0） 💬（1）<p>python print语句出来的中文是乱码要怎么处理？python程序第一行加过 # -*- coding: UTF-8 -*-
+(10003, u&#39;\u5b89\u5fb7\u70c8-\u5fb7\u62c9\u8499\u5fb7&#39;, 2.11)</p>2019-07-22</li><br/><li><span>华夏</span> 👍（0） 💬（1）<p>pip install mysql-connector之后连接数据库会报错，更新到最新版还是一样报错，pip install mysql-connector-python之后可以正常运行。大家如果有遇到这个问题的可以参考@林彦-广州-数据分析师 这个办法。</p>2019-07-20</li><br/><li><span>lmingzhi</span> 👍（0） 💬（1）<p>老师，你好，我一般使用SQLAlchemy连接数据库:
 from sqlalchemy import create_engine
 db = create_engine(&#39;mysql:&#47;&#47;root@localhost&#47;test_database&#39;)
-一般如你在文中提到的话如果使用结束后，不想再浪费资源，需要执行什么操作？</div>2019-07-20</li><br/>
+一般如你在文中提到的话如果使用结束后，不想再浪费资源，需要执行什么操作？</p>2019-07-20</li><br/>
 </ul>

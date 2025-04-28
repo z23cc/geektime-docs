@@ -335,5 +335,5 @@ ip-10-96-224-116.cn-north-1.compute.internal   NotReady   <none>   3s   
 
 欢迎在评论区与我讨论。如果这一讲对你有启发，也欢迎分享给身边更多朋友。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Geek_45a572</span> 👍（0） 💬（1）<div>请教一个老师一个问题: aws的iam和k8s的rbac是不是有重合？ 用rbac能替代iam的权限检验吗</div>2024-04-29</li><br/>
+<li><span>Geek_45a572</span> 👍（0） 💬（1）<p>请教一个老师一个问题: aws的iam和k8s的rbac是不是有重合？ 用rbac能替代iam的权限检验吗</p>2024-04-29</li><br/>
 </ul>

@@ -388,7 +388,7 @@ tp\_call会调用类型对象的tp\_init。对于Point这样的自定义类型�
 
 Python的[内置类型](https://docs.python.org/3.8/library/stdtypes.html)。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>xiaobang</span> 👍（4） 💬（1）<div>请问pypy内部也有类似的pytype结构吗</div>2020-09-18</li><br/><li><span>维李设论</span> 👍（1） 💬（1）<div>python也是万物皆对象？堆那里跟js有点儿像啊，比js的能力更多了，是不是解释性脚本语言都是这个特点？</div>2020-08-22</li><br/><li><span>coconut</span> 👍（0） 💬（1）<div>你可以注意到，我在图 1 中标出了每个字段所占内存的大小，总共是 28 个字节
+<li><span>xiaobang</span> 👍（4） 💬（1）<p>请问pypy内部也有类似的pytype结构吗</p>2020-09-18</li><br/><li><span>维李设论</span> 👍（1） 💬（1）<p>python也是万物皆对象？堆那里跟js有点儿像啊，比js的能力更多了，是不是解释性脚本语言都是这个特点？</p>2020-08-22</li><br/><li><span>coconut</span> 👍（0） 💬（1）<p>你可以注意到，我在图 1 中标出了每个字段所占内存的大小，总共是 28 个字节
 
-这里没看懂，图上标的不是32个字节么？</div>2021-01-14</li><br/><li><span>飞翔</span> 👍（0） 💬（1）<div> python编译过程中会调到python的代码，pgen用来生成c语言的代码，那这个原始的Python编译器是用什么实现的？也就是第一个的Python编译器是怎么出来的？</div>2020-07-17</li><br/>
+这里没看懂，图上标的不是32个字节么？</p>2021-01-14</li><br/><li><span>飞翔</span> 👍（0） 💬（1）<p> python编译过程中会调到python的代码，pgen用来生成c语言的代码，那这个原始的Python编译器是用什么实现的？也就是第一个的Python编译器是怎么出来的？</p>2020-07-17</li><br/>
 </ul>

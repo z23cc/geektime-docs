@@ -221,7 +221,7 @@ CSSOM是CSS的对象模型，在W3C标准中，它包含两个部分：描述样
 
 [![unpreview](https://static001.geekbang.org/resource/image/1a/08/1a49758821bdbdf6f0a8a1dc5bf39f08.jpg?wh=1032%2A330)](https://time.geekbang.org/course/intro/163?utm_term=zeusMTA7L&utm_source=app&utm_medium=chongxueqianduan&utm_campaign=163-presell)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_ianp87</span> 👍（1） 💬（1）<div>display:inline;的元素会不会产生盒？</div>2019-10-09</li><br/><li><span>Russell</span> 👍（0） 💬（1）<div>这个咋换行啊。。。 不好意思，老师好，我想咨询浏览器API的种类。 我可以认为是，DOM，BOM，CSSOM这几类么？</div>2019-04-03</li><br/><li><span>阿成</span> 👍（61） 💬（2）<div>Look via gist: https:&#47;&#47;gist.github.com&#47;aimergenge&#47;2bcf41ac4c4d2586e48ccd5cec5c9768
+<li><span>Geek_ianp87</span> 👍（1） 💬（1）<p>display:inline;的元素会不会产生盒？</p>2019-10-09</li><br/><li><span>Russell</span> 👍（0） 💬（1）<p>这个咋换行啊。。。 不好意思，老师好，我想咨询浏览器API的种类。 我可以认为是，DOM，BOM，CSSOM这几类么？</p>2019-04-03</li><br/><li><span>阿成</span> 👍（61） 💬（2）<p>Look via gist: https:&#47;&#47;gist.github.com&#47;aimergenge&#47;2bcf41ac4c4d2586e48ccd5cec5c9768
 
 void function () {
   const canvas = document.createElement(&#39;canvas&#39;)
@@ -277,11 +277,11 @@ void function () {
     return rects
   }
 }()
-</div>2019-03-16</li><br/><li><span>welkin</span> 👍（14） 💬（6）<div>希望作者能讲一下虚拟dom
+</p>2019-03-16</li><br/><li><span>welkin</span> 👍（14） 💬（6）<p>希望作者能讲一下虚拟dom
 还有浏览器的重绘和重排
 以及性能优化，跨域的常用操作(希望细致一点)
 包括一些漏洞和攻击，比如xss，sql注入
-还有一些技术栈，和一些对于前端需要了解的方案，比如离线方案等</div>2019-03-25</li><br/><li><span>热心网友好宅💫</span> 👍（3） 💬（0）<div>一直忍着没问，哪来这么多猫片🤣</div>2019-04-25</li><br/><li><span>周飞</span> 👍（3） 💬（0）<div>&lt;body&gt;
+还有一些技术栈，和一些对于前端需要了解的方案，比如离线方案等</p>2019-03-25</li><br/><li><span>热心网友好宅💫</span> 👍（3） 💬（0）<p>一直忍着没问，哪来这么多猫片🤣</p>2019-04-25</li><br/><li><span>周飞</span> 👍（3） 💬（0）<p>&lt;body&gt;
  &lt;canvas id=&quot;rect&quot;&gt;&lt;&#47;canvas&gt; 
 &lt;script type=&quot;text&#47;javascript&quot;&gt;    
              const canvas = document.getElementById(&#39;rect&#39;);
@@ -310,8 +310,8 @@ void function () {
              }
              travaldom(document);
         &lt;&#47;script&gt;	
-&lt;&#47;body&gt;</div>2019-04-07</li><br/><li><span>痕近痕远</span> 👍（3） 💬（0）<div>请问老师，如何解决UI自动化测试，定位标签显示元素不可见的问题</div>2019-03-17</li><br/><li><span>宋宋</span> 👍（3） 💬（0）<div>前面讲浏览器渲染时有讲到，CSS经过词法分析和语法分析被解析成一颗抽象语法树。
-这个抽象语法树和CSSOM有什么关联么？因为很多文章都讲CSS经过词法分析和语法分析被解析成CSSOM，感觉很疑惑。</div>2019-03-16</li><br/><li><span>pcxpccccx_</span> 👍（1） 💬（0）<div>冲冲冲</div>2020-03-22</li><br/><li><span>Russell</span> 👍（1） 💬（0）<div>emm~~ 我又读了一遍文档，发现了对我来说很关键词，“狭义的”。 那我现在的理解是酱紫的。  广义的理解，就是BOM+DOM，CSSOM是DOM扩展的一部分；如果狭义的认为DOM就是树形结构的话，就可以分出来DOM、CSSOM两部分内容了。 我这样想对么？</div>2019-04-03</li><br/><li><span>非洲小白狼</span> 👍（0） 💬（0）<div>function elementTreeDFS(el, callback) {
+&lt;&#47;body&gt;</p>2019-04-07</li><br/><li><span>痕近痕远</span> 👍（3） 💬（0）<p>请问老师，如何解决UI自动化测试，定位标签显示元素不可见的问题</p>2019-03-17</li><br/><li><span>宋宋</span> 👍（3） 💬（0）<p>前面讲浏览器渲染时有讲到，CSS经过词法分析和语法分析被解析成一颗抽象语法树。
+这个抽象语法树和CSSOM有什么关联么？因为很多文章都讲CSS经过词法分析和语法分析被解析成CSSOM，感觉很疑惑。</p>2019-03-16</li><br/><li><span>pcxpccccx_</span> 👍（1） 💬（0）<p>冲冲冲</p>2020-03-22</li><br/><li><span>Russell</span> 👍（1） 💬（0）<p>emm~~ 我又读了一遍文档，发现了对我来说很关键词，“狭义的”。 那我现在的理解是酱紫的。  广义的理解，就是BOM+DOM，CSSOM是DOM扩展的一部分；如果狭义的认为DOM就是树形结构的话，就可以分出来DOM、CSSOM两部分内容了。 我这样想对么？</p>2019-04-03</li><br/><li><span>非洲小白狼</span> 👍（0） 💬（0）<p>function elementTreeDFS(el, callback) {
     if (el instanceof HTMLElement) {
         callback(el);
         const children = Array.from(el.children);
@@ -334,7 +334,7 @@ function renderCanvas() {
     }, &#39;image&#47;jpg&#39;, 1);
 }
 renderCanvas();
-</div>2024-08-27</li><br/><li><span>Fiona B Y Fan</span> 👍（0） 💬（0）<div>通过document.getStyleSheets修改style以及window.getComputedStyle window.getBoundingClientRect window.getClientRects方法会导致重排和重绘，影响性能，不是应该少用吗</div>2022-04-17</li><br/><li><span>pasico</span> 👍（0） 💬（0）<div>
+</p>2024-08-27</li><br/><li><span>Fiona B Y Fan</span> 👍（0） 💬（0）<p>通过document.getStyleSheets修改style以及window.getComputedStyle window.getBoundingClientRect window.getClientRects方法会导致重排和重绘，影响性能，不是应该少用吗</p>2022-04-17</li><br/><li><span>pasico</span> 👍（0） 💬（0）<p>
 
 function dfs(top, callback){
     let node = top
@@ -380,7 +380,7 @@ function traverse(){
     body.appendChild(can)
 }
 
-traverse()</div>2022-02-17</li><br/><li><span>胡永</span> 👍（0） 💬（0）<div>
+traverse()</p>2022-02-17</li><br/><li><span>胡永</span> 👍（0） 💬（0）<p>
     const newWindow = window.open(&quot;about:blank&quot;, &quot;_blank&quot;, &quot;width=100,height=100,left=100,right=100&quot;)
     const canvas = newWindow.document.body.appendChild(newWindow.document.createElement(&#39;canvas&#39;));
     canvas.width = document.documentElement.offsetWidth
@@ -427,7 +427,7 @@ traverse()</div>2022-02-17</li><br/><li><span>胡永</span> 👍（0） 💬（0
 
             tagsArr.add(item.nodeName.slice(0).toLowerCase())
         })
-    }</div>2021-06-16</li><br/><li><span>Peter</span> 👍（0） 💬（0）<div>
+    }</p>2021-06-16</li><br/><li><span>Peter</span> 👍（0） 💬（0）<p>
 &#47;&#47; 创建覆盖在网页上方的canvas
 const cvs = document.createElement(&#39;canvas&#39;)
 cvs.width = document.documentElement.scrollWidth;
@@ -450,5 +450,5 @@ const BlockLevel = [&#39;block&#39;, &#39;inline-block&#39;, &#39;inline-table&#
 })
 
 document.body.append(cvs);
-</div>2020-06-30</li><br/>
+</p>2020-06-30</li><br/>
 </ul>

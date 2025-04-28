@@ -206,7 +206,7 @@ else {…} //无法识别的操作码
 
 redis\_check\_aof\_main函数是检测AOF文件的入口函数，但是它还会调用检测RDB文件的入口函数redis\_check\_rdb\_main，那么你能找到这部分代码，并通过阅读说说它的作用吗？
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Kaito</span> 👍（8） 💬（0）<div>1、RDB 和 AOF 文件在写盘故障时，可能发生损坏不完整的情况，那使用其恢复数据就会出现问题，所以 Redis 提供了 2 个命令来检测文件是否有错误
+<li><span>Kaito</span> 👍（8） 💬（0）<p>1、RDB 和 AOF 文件在写盘故障时，可能发生损坏不完整的情况，那使用其恢复数据就会出现问题，所以 Redis 提供了 2 个命令来检测文件是否有错误
 
 2、要想检测出文件错误，那说明 RDB 和 AOF 必定是按照某种固定格式写入的，检测是否完整只需要按照其格式规则，发现不符即认为文件不完整
 
@@ -216,5 +216,5 @@ redis\_check\_aof\_main函数是检测AOF文件的入口函数，但是它还会
 
 课后题：redis_check_aof_main 函数是检测 AOF 文件的入口函数，但是它还会调用检测 RDB 文件的入口函数 redis_check_rdb_main，它的作用是什么？
 
-Redis 在 4.0 版本支持了「混合持久化」，即在 AOF rewrite 期间，先以 RDB 格式写入到 AOF 文件中，再把后续命令追加到 AOF 中，这样 AOF rewrite 后的文件既包括了 RDB 格式，又包含 AOF 格式（目的是为了让 AOF 体积更小），所以 redis_check_rdb_main 在检测 AOF 文件时，RDB 和 AOF 文件格式都需要检测。</div>2021-10-09</li><br/><li><span>Ethan New</span> 👍（0） 💬（0）<div>redis 4.0后提供了aof rewrite的功能，重写后的aof文件既有RDB格式的数据也有AOF格式的命令，redis_check_aof_main调用redis_check_rdb_main就是为了检测文件中RDB格式的数据。</div>2021-10-05</li><br/>
+Redis 在 4.0 版本支持了「混合持久化」，即在 AOF rewrite 期间，先以 RDB 格式写入到 AOF 文件中，再把后续命令追加到 AOF 中，这样 AOF rewrite 后的文件既包括了 RDB 格式，又包含 AOF 格式（目的是为了让 AOF 体积更小），所以 redis_check_rdb_main 在检测 AOF 文件时，RDB 和 AOF 文件格式都需要检测。</p>2021-10-09</li><br/><li><span>Ethan New</span> 👍（0） 💬（0）<p>redis 4.0后提供了aof rewrite的功能，重写后的aof文件既有RDB格式的数据也有AOF格式的命令，redis_check_aof_main调用redis_check_rdb_main就是为了检测文件中RDB格式的数据。</p>2021-10-05</li><br/>
 </ul>

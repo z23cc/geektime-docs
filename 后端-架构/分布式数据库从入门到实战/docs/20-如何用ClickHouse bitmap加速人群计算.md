@@ -256,5 +256,5 @@ bitmap是一种常用的数据库索引结构，同样也可以用来做整数�
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。欢迎你加入我们的[读者交流群](http://jinshuju.net/f/QX5mGO)，我们下节课见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Geek_5e1c70</span> 👍（0） 💬（1）<div>cdp_user_local 表的建表sql，分区键是不是应该使用toYYYYMM(register_date)，不然分区粒度太细，ck会报错</div>2024-09-19</li><br/>
+<li><span>Geek_5e1c70</span> 👍（0） 💬（1）<p>cdp_user_local 表的建表sql，分区键是不是应该使用toYYYYMM(register_date)，不然分区粒度太细，ck会报错</p>2024-09-19</li><br/>
 </ul>

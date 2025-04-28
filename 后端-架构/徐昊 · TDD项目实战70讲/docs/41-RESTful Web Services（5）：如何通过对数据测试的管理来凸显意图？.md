@@ -81,7 +81,7 @@ public class ResourceServlet extends HttpServlet {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>aoe</span> 👍（1） 💬（0）<div>学习感言
+<li><span>aoe</span> 👍（1） 💬（0）<p>学习感言
 1、终于见到了 Builder 模式是怎么写出来的，之前都是自动生成的，不会写！
 2、OutboundResponseBuilder 让构造测试数据变的超级简单，太神奇了！
 
@@ -89,6 +89,6 @@ public class ResourceServlet extends HttpServlet {
 重构：在已有功能测试的保障下，按自己的喜好修改代码，但需要保证功能不变，老代码也会随之改变
 重写：根据现有功能，按自己的喜好模仿出另一套功能一样的代码，不用理会老代码，也不会影响老代码
 
-代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;5</div>2022-06-17</li><br/><li><span>张铁林</span> 👍（0） 💬（0）<div>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-restful
-步骤加代码</div>2022-06-20</li><br/>
+代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;5</p>2022-06-17</li><br/><li><span>张铁林</span> 👍（0） 💬（0）<p>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-restful
+步骤加代码</p>2022-06-20</li><br/>
 </ul>

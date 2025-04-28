@@ -321,7 +321,7 @@ ScopedHandler的doStart方法，最后一步是将线程私有变量`__outerScop
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>neohope</span> 👍（9） 💬（1）<div>最后的问题，应该是这样的：
+<li><span>neohope</span> 👍（9） 💬（1）<p>最后的问题，应该是这样的：
 
 protected void doStart() throws Exception
 {
@@ -366,6 +366,6 @@ public final void nextHandle(String target...)...
 感觉类成员的命名不太合适，
 比如__outerScope和_outerScope
 比如_handler其实一直指向的是下一个handler，是不是该为_nextHandler更好一些？
-</div>2019-07-23</li><br/><li><span>despacito</span> 👍（6） 💬（0）<div>ScopedHandler 会有不同的实现类，而__outerScope 是ScopedHandler里static的变量，如果不设置为null，那么不同的子类实例执行doStrat()方法的时候，会有问题</div>2019-07-16</li><br/><li><span>帽子丨影</span> 👍（5） 💬（1）<div>感觉jetty的源码写的好混乱，经常没有注释，一个类也通常扩展3&#47;4个接口功能，还各种循环嵌套。好难懂。。。</div>2019-09-26</li><br/><li><span>往事随风，顺其自然</span> 👍（3） 💬（0）<div>可以重新处理下一次请求</div>2019-07-16</li><br/><li><span>nightmare</span> 👍（3） 💬（0）<div>每一次请求的请求链互不影响</div>2019-07-16</li><br/><li><span>绍棠</span> 👍（1） 💬（0）<div> threadlocal为什么在每次请求结束需要设置为null：为了下次请求复用。因为线程是用池化技术，下次请求优先共用线程，而不是新建线程</div>2020-04-16</li><br/><li><span>Fredo</span> 👍（0） 💬（0）<div>1. 防止影响下个请求数据
-2. 用完即清理，防内存泄露</div>2024-02-06</li><br/>
+</p>2019-07-23</li><br/><li><span>despacito</span> 👍（6） 💬（0）<p>ScopedHandler 会有不同的实现类，而__outerScope 是ScopedHandler里static的变量，如果不设置为null，那么不同的子类实例执行doStrat()方法的时候，会有问题</p>2019-07-16</li><br/><li><span>帽子丨影</span> 👍（5） 💬（1）<p>感觉jetty的源码写的好混乱，经常没有注释，一个类也通常扩展3&#47;4个接口功能，还各种循环嵌套。好难懂。。。</p>2019-09-26</li><br/><li><span>往事随风，顺其自然</span> 👍（3） 💬（0）<p>可以重新处理下一次请求</p>2019-07-16</li><br/><li><span>nightmare</span> 👍（3） 💬（0）<p>每一次请求的请求链互不影响</p>2019-07-16</li><br/><li><span>绍棠</span> 👍（1） 💬（0）<p> threadlocal为什么在每次请求结束需要设置为null：为了下次请求复用。因为线程是用池化技术，下次请求优先共用线程，而不是新建线程</p>2020-04-16</li><br/><li><span>Fredo</span> 👍（0） 💬（0）<p>1. 防止影响下个请求数据
+2. 用完即清理，防内存泄露</p>2024-02-06</li><br/>
 </ul>

@@ -300,6 +300,6 @@ int main(void)
 
 期待你在留言区聊聊你的学习收获或者提出疑问，如果觉得这节课还不错，别忘了分享给身边更多的朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>极客酱酱</span> 👍（0） 💬（2）<div>读写一个设备文件，运行不起来，一直阻塞在这行：ret = read(fd, &amp;in, sizeof(struct input_event));</div>2022-10-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请问：对于一个驱动程序，Linux是在&#47;dev目录下面创建一个文件来与之对应吗？</div>2022-10-16</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<div>dev下面有net文件夹和network_latency和network_throughput字符设备
-预估网络文件信息存储在内存上，上述文件构成设备登记函数！</div>2022-10-15</li><br/>
+<li><span>极客酱酱</span> 👍（0） 💬（2）<p>读写一个设备文件，运行不起来，一直阻塞在这行：ret = read(fd, &amp;in, sizeof(struct input_event));</p>2022-10-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请问：对于一个驱动程序，Linux是在&#47;dev目录下面创建一个文件来与之对应吗？</p>2022-10-16</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<p>dev下面有net文件夹和network_latency和network_throughput字符设备
+预估网络文件信息存储在内存上，上述文件构成设备登记函数！</p>2022-10-15</li><br/>
 </ul>

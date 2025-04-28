@@ -334,14 +334,14 @@ Wireshark既可以分析抓包文件，也可以直接用来抓包，起到跟tc
 
 欢迎你把答案写到留言区，我们一起交流讨论。也欢迎你把今天的内容分享给更多的朋友，一同成长和进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>江山如画</span> 👍（33） 💬（4）<div>问题1:
+<li><span>江山如画</span> 👍（33） 💬（4）<p>问题1:
 通过偏移量方法抓取 SYN 包：tcpdump -i any &#39;tcp[13]&amp;2 !=0&#39;
 通过标志位方法抓取 SYN 包：tcpdump -i any &#39;tcp[tcpflags]&amp;tcp-syn !=0&#39;
 
 问题2:
 tcpdump -i eth0 -s 34
 
-老师对于问题2有个疑问，我最开始用的命令是&quot;tcpdump -i any -s 34&quot;，发现 -s 写成 34 抓不到网络层的目的地址字段，用 wireshark 分析发现帧头(不知道还叫不叫这个，wireshark 显示为 Linux cooked capture v1)占了 16 个字节，写成 36 就能把信息抓全了，但是写成&quot;tcpdump -i eth0 -s 34&quot; 就可以抓全</div>2022-01-17</li><br/><li><span>Realm</span> 👍（13） 💬（1）<div>补充一点基础知识，tcp的标志位在第13字节（具体可以看tcp header报文）
+老师对于问题2有个疑问，我最开始用的命令是&quot;tcpdump -i any -s 34&quot;，发现 -s 写成 34 抓不到网络层的目的地址字段，用 wireshark 分析发现帧头(不知道还叫不叫这个，wireshark 显示为 Linux cooked capture v1)占了 16 个字节，写成 36 就能把信息抓全了，但是写成&quot;tcpdump -i eth0 -s 34&quot; 就可以抓全</p>2022-01-17</li><br/><li><span>Realm</span> 👍（13） 💬（1）<p>补充一点基础知识，tcp的标志位在第13字节（具体可以看tcp header报文）
 
 当我们只想过滤仅有SYN标志的包时，第14个字节的二进制是00000010,十进制是2
 # tcpdump -i eth1 &#39;tcp[13] = 2&#39; 
@@ -350,18 +350,18 @@ tcpdump -i eth0 -s 34
 # tcpdump -i eth1 &#39;tcp[13] = 18&#39;
 
 匹配SYN或是SYN+ACK的数据时
-# tcpdump -i eth1 &#39;tcp[13] &amp; 2 = 2&#39;</div>2022-01-27</li><br/><li><span>yayiyaya</span> 👍（10） 💬（1）<div>1. 抓取 TCP SYN 包：  tcpdump  &#39;tcp[13] = 2&#39;  -w file.pcap
+# tcpdump -i eth1 &#39;tcp[13] &amp; 2 = 2&#39;</p>2022-01-27</li><br/><li><span>yayiyaya</span> 👍（10） 💬（1）<p>1. 抓取 TCP SYN 包：  tcpdump  &#39;tcp[13] = 2&#39;  -w file.pcap
 2. tcpdump -s 34  -w file.pcap
-</div>2022-01-14</li><br/><li><span>Dexter</span> 👍（5） 💬（1）<div> tcpdump -i any -n &#39;tcp[tcpflags]&amp;(tcp-rst) !=0&#39; 。 请问一下tcp[tcpflags]&amp;(tcp-rst)  这中间的&amp;表示的是按位与吗？</div>2022-02-05</li><br/><li><span>远方的风</span> 👍（3） 💬（6）<div>请教个问题，我们用java写了一个展示图片的http接口，通过nginx转发，但是偶现图片展示不了nginx发送0字节的情况，请问这种如何排查？</div>2022-01-14</li><br/><li><span>谦逊的禾苗</span> 👍（2） 💬（1）<div>太难了 我以为我有基础，发觉我这是0</div>2022-06-27</li><br/><li><span>Geek_4996c9</span> 👍（2） 💬（1）<div>tcp[tcpflags] 这个tcpflags是指啥 固定语法格式吗？
-</div>2022-04-10</li><br/><li><span>D⃰a⃰b⃰i⃰n⃰g⃰</span> 👍（2） 💬（5）<div>tcpdump这个软件百度下载吗，不会操作</div>2022-01-17</li><br/><li><span>includestdio.h</span> 👍（2） 💬（2）<div>问题已经有人回答了，那我就问个小问题吧哈哈，想问下老师文章里的libcap和bpf 关系图老师是用什么做的</div>2022-01-16</li><br/><li><span>Geek_601e15</span> 👍（1） 💬（1）<div>老师哪里有说明报文中哪个字段是0x.....  就代表syn，或者tls吗？</div>2023-08-05</li><br/><li><span>LEON</span> 👍（1） 💬（1）<div> 老师，请教下，wireshark 页面最下方，最左侧0x000这列是什么意思？
+</p>2022-01-14</li><br/><li><span>Dexter</span> 👍（5） 💬（1）<p> tcpdump -i any -n &#39;tcp[tcpflags]&amp;(tcp-rst) !=0&#39; 。 请问一下tcp[tcpflags]&amp;(tcp-rst)  这中间的&amp;表示的是按位与吗？</p>2022-02-05</li><br/><li><span>远方的风</span> 👍（3） 💬（6）<p>请教个问题，我们用java写了一个展示图片的http接口，通过nginx转发，但是偶现图片展示不了nginx发送0字节的情况，请问这种如何排查？</p>2022-01-14</li><br/><li><span>谦逊的禾苗</span> 👍（2） 💬（1）<p>太难了 我以为我有基础，发觉我这是0</p>2022-06-27</li><br/><li><span>Geek_4996c9</span> 👍（2） 💬（1）<p>tcp[tcpflags] 这个tcpflags是指啥 固定语法格式吗？
+</p>2022-04-10</li><br/><li><span>D⃰a⃰b⃰i⃰n⃰g⃰</span> 👍（2） 💬（5）<p>tcpdump这个软件百度下载吗，不会操作</p>2022-01-17</li><br/><li><span>includestdio.h</span> 👍（2） 💬（2）<p>问题已经有人回答了，那我就问个小问题吧哈哈，想问下老师文章里的libcap和bpf 关系图老师是用什么做的</p>2022-01-16</li><br/><li><span>Geek_601e15</span> 👍（1） 💬（1）<p>老师哪里有说明报文中哪个字段是0x.....  就代表syn，或者tls吗？</p>2023-08-05</li><br/><li><span>LEON</span> 👍（1） 💬（1）<p> 老师，请教下，wireshark 页面最下方，最左侧0x000这列是什么意思？
 还有最右面这列，为啥有的能显示HTTP报文内容，有的是乱码和点？
 谢谢
 0x0000:  4500 0038 282d 0000 4006 3a83 0a00 0202  E..8(-..@.:.....
   0x0010:  0a00 020f cc5d 0050 0502 3a02 3ed1 3771  .....].P..:.&gt;.7q
   0x0020:  5018 ffff 4421 0000 4745 5420 2f20 4854  P...D!..GET.&#47;.HT
-  0x0030:  5450 2f31 2e31 0d0a                      TP&#47;1.1..</div>2023-01-09</li><br/><li><span>张太</span> 👍（1） 💬（1）<div>1、抓取client hello数据包：
+  0x0030:  5450 2f31 2e31 0d0a                      TP&#47;1.1..</p>2023-01-09</li><br/><li><span>张太</span> 👍（1） 💬（1）<p>1、抓取client hello数据包：
 wireshark的过滤条件可以为：tls.handshake.type == 1 
 但是实际上tcpdump抓包时，需要使用tcp偏移量，
 有点类似wireshark的过滤命令和嗅探命令
-</div>2022-05-30</li><br/><li><span>pathfinder</span> 👍（0） 💬（1）<div>问题：tcpdump -w file.pcap &#39;tcp[13]&amp;4 != 0&#39;  这个4是十进制还是十六进制呢？</div>2024-07-30</li><br/><li><span>原则</span> 👍（0） 💬（1）<div>这门课被名字给耽误了，价值太大了，很多人以为自己抓过包，就会了，其实不然啊，很多细节都值得推敲！</div>2023-05-25</li><br/><li><span>原则</span> 👍（0） 💬（1）<div>老师该如何统计乱序包的占比？</div>2023-05-25</li><br/>
+</p>2022-05-30</li><br/><li><span>pathfinder</span> 👍（0） 💬（1）<p>问题：tcpdump -w file.pcap &#39;tcp[13]&amp;4 != 0&#39;  这个4是十进制还是十六进制呢？</p>2024-07-30</li><br/><li><span>原则</span> 👍（0） 💬（1）<p>这门课被名字给耽误了，价值太大了，很多人以为自己抓过包，就会了，其实不然啊，很多细节都值得推敲！</p>2023-05-25</li><br/><li><span>原则</span> 👍（0） 💬（1）<p>老师该如何统计乱序包的占比？</p>2023-05-25</li><br/>
 </ul>

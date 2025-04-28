@@ -426,7 +426,7 @@ Koa.js和Express.js的中间件模型有什么区别吗？
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/17)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>WGH丶</span> 👍（0） 💬（1）<div>没能get到洋葱模型的好处，老师能解释下，或者推荐下好的资料吗？</div>2023-01-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-18</li><br/><li><span>escray</span> 👍（0） 💬（0）<div>小白来问，如何用 vite-node 启动 TypeScript 的服务代码，惭愧
+<li><span>WGH丶</span> 👍（0） 💬（1）<p>没能get到洋葱模型的好处，老师能解释下，或者推荐下好的资料吗？</p>2023-01-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-18</li><br/><li><span>escray</span> 👍（0） 💬（0）<p>小白来问，如何用 vite-node 启动 TypeScript 的服务代码，惭愧
 
 我试着执行了 &gt; vite-node packages&#47;work-server&#47;src&#47;index.ts
 
@@ -434,5 +434,5 @@ Koa.js和Express.js的中间件模型有什么区别吗？
 
 Error: Failed to load url koa-static. Does the file exist?
 
-我在 public 目录下有 index.css 文件</div>2024-01-11</li><br/>
+我在 public 目录下有 index.css 文件</p>2024-01-11</li><br/>
 </ul>

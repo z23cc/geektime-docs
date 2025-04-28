@@ -192,8 +192,8 @@ import matplotlib.pyplot as plt
 
 欢迎在评论区与我分享你的答案，也欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Ricardo</span> 👍（31） 💬（1）<div>accuracy_score的参数顺序都错了，由于是计算真实标签和预测标签重合个数与总个数的比值，总能得到正确的答案，但是官方文档中写明的正确顺序应该是(y_true,y_pred)</div>2019-04-10</li><br/><li><span>不做键盘侠</span> 👍（28） 💬（6）<div>为什么test只需要使用transform就可以了？test_ss_x = ss.transform(test_x）
-</div>2019-02-08</li><br/><li><span>牛奶布丁</span> 👍（13） 💬（1）<div>老师，为什么做多项式朴素贝叶斯分类的时候，传入的数据不能有负数呢，之前老师讲文本分类的时候好像没有提到这一点？</div>2019-02-13</li><br/><li><span>Geek_12bqpn</span> 👍（12） 💬（2）<div>在做项目的时候，应该什么时候用Min-Max,什么时候用Z-Score呢？当我不做规范化的时候，反而准确率更高，这是为什么呢？在数据规范化该什么时候做不太理解，希望得到回复！</div>2019-09-30</li><br/><li><span>滢</span> 👍（7） 💬（1）<div>用代码计算来以下准确率：
+<li><span>Ricardo</span> 👍（31） 💬（1）<p>accuracy_score的参数顺序都错了，由于是计算真实标签和预测标签重合个数与总个数的比值，总能得到正确的答案，但是官方文档中写明的正确顺序应该是(y_true,y_pred)</p>2019-04-10</li><br/><li><span>不做键盘侠</span> 👍（28） 💬（6）<p>为什么test只需要使用transform就可以了？test_ss_x = ss.transform(test_x）
+</p>2019-02-08</li><br/><li><span>牛奶布丁</span> 👍（13） 💬（1）<p>老师，为什么做多项式朴素贝叶斯分类的时候，传入的数据不能有负数呢，之前老师讲文本分类的时候好像没有提到这一点？</p>2019-02-13</li><br/><li><span>Geek_12bqpn</span> 👍（12） 💬（2）<p>在做项目的时候，应该什么时候用Min-Max,什么时候用Z-Score呢？当我不做规范化的时候，反而准确率更高，这是为什么呢？在数据规范化该什么时候做不太理解，希望得到回复！</p>2019-09-30</li><br/><li><span>滢</span> 👍（7） 💬（1）<p>用代码计算来以下准确率：
 knn默认k值为5 准确率:0.9756
 knn的k值为200的准确率:0.8489
 SVM分类准确率:0.9867
@@ -203,8 +203,8 @@ CART决策树准确率:0.8400
 
 K值的选取如果过大，正确率降低。 
 算法效率排行 SVM &gt; KNN(k值在合适范围内) &gt;多项式朴素贝叶斯 &gt; CART &gt; 高斯朴素贝叶斯
-</div>2019-04-18</li><br/><li><span>Lee</span> 👍（3） 💬（1）<div>KNN 中的 K 值设置为 200，KNN 准确率: 0.8489，k值过大，导致部分未知物体没有分类出来，所以准确率下降了</div>2019-02-14</li><br/><li><span>FORWARD―MOUNT</span> 👍（2） 💬（2）<div>train_x与train_y都是训练集？
-</div>2019-02-16</li><br/><li><span>JingZ</span> 👍（2） 💬（1）<div>#knn 将K值调为200，准确率变为0.8489了，相比较默认K=5的准确率 0.9756，下降13%
+</p>2019-04-18</li><br/><li><span>Lee</span> 👍（3） 💬（1）<p>KNN 中的 K 值设置为 200，KNN 准确率: 0.8489，k值过大，导致部分未知物体没有分类出来，所以准确率下降了</p>2019-02-14</li><br/><li><span>FORWARD―MOUNT</span> 👍（2） 💬（2）<p>train_x与train_y都是训练集？
+</p>2019-02-16</li><br/><li><span>JingZ</span> 👍（2） 💬（1）<p>#knn 将K值调为200，准确率变为0.8489了，相比较默认K=5的准确率 0.9756，下降13%
 
 from sklearn.datasets import load_digits
 import matplotlib.pyplot as plt
@@ -247,14 +247,14 @@ knn.fit(train_ss_x, train_y)
 predict_y = knn.predict(test_ss_x)
 
 #模型评估
-print(&#39;KNN 准确率：%.4lf&#39; % accuracy_score(predict_y, test_y))</div>2019-02-15</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<div>老师能解释下数据分割时random_state的取值有什么规范吗？
+print(&#39;KNN 准确率：%.4lf&#39; % accuracy_score(predict_y, test_y))</p>2019-02-15</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<p>老师能解释下数据分割时random_state的取值有什么规范吗？
 我自己测试的random_state=666与老师=33得出的准确度还是有一些差距的：
 KNN准确率：0.9778
 SVM准确率：0.9733
 多项式朴素贝叶斯准确率：0.9067
-CART决策树准确率：0.8489</div>2019-11-14</li><br/><li><span>从未在此</span> 👍（1） 💬（1）<div>那个标准化函数已经在训练集上拟合并产生了平均值和标准差。所以测试集用同样的标准直接拿来用就行了</div>2019-02-12</li><br/><li><span>斯盖丸</span> 👍（0） 💬（1）<div>老师，这个z-score规范化，把数据变成标准正态分布，在这个例子里的作用是什么？也就是说数据变化前是什么样的，变化后又是什么样的……如果不这么变化会带来什么结果？</div>2020-11-01</li><br/><li><span>§mc²ompleXWr</span> 👍（0） 💬（1）<div>为什么每次计算KNN和SVM分类器的准确率都是一样的？而朴素贝叶斯和决策树分类器每次计算的准确率都不一样呢？</div>2020-06-27</li><br/><li><span>LiLi</span> 👍（0） 💬（1）<div>“因为 KNN 算法和距离定义相关，我们需要对数据进行规范化处理，采用 Z-Score 规范化” 
---这里不是很明白，为何跟距离相关就选择Z-Score规范化？距离符合高斯分布？希望老师和同学们指点一下，谢谢！</div>2020-05-06</li><br/><li><span>Ricky</span> 👍（0） 💬（1）<div>问个问题：digits数据集中描述图像的格式什么？如果有一张外部的图片需要用这个模型来判断，应该怎么转化？
-谢谢！</div>2020-04-15</li><br/><li><span>鱼非子</span> 👍（0） 💬（1）<div>import numpy as np
+CART决策树准确率：0.8489</p>2019-11-14</li><br/><li><span>从未在此</span> 👍（1） 💬（1）<p>那个标准化函数已经在训练集上拟合并产生了平均值和标准差。所以测试集用同样的标准直接拿来用就行了</p>2019-02-12</li><br/><li><span>斯盖丸</span> 👍（0） 💬（1）<p>老师，这个z-score规范化，把数据变成标准正态分布，在这个例子里的作用是什么？也就是说数据变化前是什么样的，变化后又是什么样的……如果不这么变化会带来什么结果？</p>2020-11-01</li><br/><li><span>§mc²ompleXWr</span> 👍（0） 💬（1）<p>为什么每次计算KNN和SVM分类器的准确率都是一样的？而朴素贝叶斯和决策树分类器每次计算的准确率都不一样呢？</p>2020-06-27</li><br/><li><span>LiLi</span> 👍（0） 💬（1）<p>“因为 KNN 算法和距离定义相关，我们需要对数据进行规范化处理，采用 Z-Score 规范化” 
+--这里不是很明白，为何跟距离相关就选择Z-Score规范化？距离符合高斯分布？希望老师和同学们指点一下，谢谢！</p>2020-05-06</li><br/><li><span>Ricky</span> 👍（0） 💬（1）<p>问个问题：digits数据集中描述图像的格式什么？如果有一张外部的图片需要用这个模型来判断，应该怎么转化？
+谢谢！</p>2020-04-15</li><br/><li><span>鱼非子</span> 👍（0） 💬（1）<p>import numpy as np
 import pandas as pd
 from sklearn.datasets import load_digits
 from sklearn import svm
@@ -287,5 +287,5 @@ model.fit(train_x,train_y)
 predict = model.predict(test_x)
 print(&quot;knn准确率：&quot;,metrics.accuracy_score(predict,test_y))
 
-knn准确率： 0.9844444444444445</div>2020-03-04</li><br/>
+knn准确率： 0.9844444444444445</p>2020-03-04</li><br/>
 </ul>

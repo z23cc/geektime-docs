@@ -475,5 +475,5 @@ public int vote(Authentication authentication, FilterInvocation fi,
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>一记妙蛙直拳</span> 👍（10） 💬（0）<div>当浏览器请求应用受保护的资源时，进入SecurityFilterChain过滤器链中的FilterSecurityInterceptor。由于这个请求是未鉴权的，就会抛出AccessDeniedException。后面的ExceptionTranslationFilter捕获异常后，根据配置的AuthenticationEntryPoint（大多数情况下是LoginUrlAuthenticationEntryPoint的对象）重定向到登录页面。</div>2021-05-27</li><br/><li><span>小飞同学</span> 👍（1） 💬（0）<div>思考题：DefaultLoginPageGeneratingFilter  通过过滤器生成</div>2021-05-26</li><br/><li><span>夏目🐳</span> 👍（0） 💬（0）<div>对于公开的接口，怎么在Springboot3.0中设定，不需要鉴权就能访问</div>2023-04-05</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（0）<div>现在还是更推崇 iam oauth2 saml吧</div>2022-06-21</li><br/>
+<li><span>一记妙蛙直拳</span> 👍（10） 💬（0）<p>当浏览器请求应用受保护的资源时，进入SecurityFilterChain过滤器链中的FilterSecurityInterceptor。由于这个请求是未鉴权的，就会抛出AccessDeniedException。后面的ExceptionTranslationFilter捕获异常后，根据配置的AuthenticationEntryPoint（大多数情况下是LoginUrlAuthenticationEntryPoint的对象）重定向到登录页面。</p>2021-05-27</li><br/><li><span>小飞同学</span> 👍（1） 💬（0）<p>思考题：DefaultLoginPageGeneratingFilter  通过过滤器生成</p>2021-05-26</li><br/><li><span>夏目🐳</span> 👍（0） 💬（0）<p>对于公开的接口，怎么在Springboot3.0中设定，不需要鉴权就能访问</p>2023-04-05</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（0）<p>现在还是更推崇 iam oauth2 saml吧</p>2022-06-21</li><br/>
 </ul>

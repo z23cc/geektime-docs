@@ -72,14 +72,14 @@ AOP是Spring框架中实践面向切面编程的探索。面向对象和面向�
 
 《诗经》有云：“有匪君子，如切如磋，如琢如磨”。虽然中途会遇到困难，但我希望你可以坚持学习，站到山顶，跟我一起领略Spring的风采！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>每天晒白牙</span> 👍（26） 💬（1）<div>求老师的开源项目链接，配合专栏学习下</div>2023-03-13</li><br/><li><span>风轻扬</span> 👍（12） 💬（8）<div>希望学完这门课，能对Spring框架有一个更高层次的认识。老师，miniTomcat、miniRedis有计划开课吗？也很感兴趣。尤其是miniTomcat</div>2023-03-14</li><br/><li><span>escray</span> 👍（9） 💬（1）<div>看到极客时间又开了一个“手把手”专栏，希望这个专栏能够帮助我真正了解 Spring 框架，更主要的是希望自己能够跟的上专栏更新的节奏。
+<li><span>每天晒白牙</span> 👍（26） 💬（1）<p>求老师的开源项目链接，配合专栏学习下</p>2023-03-13</li><br/><li><span>风轻扬</span> 👍（12） 💬（8）<p>希望学完这门课，能对Spring框架有一个更高层次的认识。老师，miniTomcat、miniRedis有计划开课吗？也很感兴趣。尤其是miniTomcat</p>2023-03-14</li><br/><li><span>escray</span> 👍（9） 💬（1）<p>看到极客时间又开了一个“手把手”专栏，希望这个专栏能够帮助我真正了解 Spring 框架，更主要的是希望自己能够跟的上专栏更新的节奏。
 
 Spring 框架的四大支柱：IoC 容器，MVC，JDBC Template，AOP，如果按照开篇词中的说法，学完这个专栏，应该会对 Spring 有更深入的了解。
 
-专栏的内容如果能和之前的徐昊老师 TDD 课程结合，就更厉害了。惭愧的是，那个专栏我没能跟下来。</div>2023-03-14</li><br/><li><span>timeout</span> 👍（1） 💬（1）<div>啥时候再开一门mini redis</div>2023-12-14</li><br/><li><span>limyel</span> 👍（1） 💬（1）<div>没想到是《Java 编程十五讲》的作者？？？我之前在 csdn 买过那门课，受益匪浅，可惜了那么好的资源给了一个不靠谱的平台，异步发在csdn上的内容还缺了一两章，还是我去找异步反馈补上的</div>2023-04-02</li><br/><li><span>阿亮</span> 👍（0） 💬（2）<div>老师，您好。您的github没有mini redis项目，不知哪里可以看到？</div>2023-05-08</li><br/><li><span>Geek_bd552d</span> 👍（0） 💬（1）<div>二刷</div>2023-04-24</li><br/><li><span>Geek_e298ce</span> 👍（0） 💬（1）<div>老师的那张导图，受益匪浅</div>2023-03-30</li><br/><li><span>XXG</span> 👍（0） 💬（1）<div>春天就适合学习Spring。</div>2023-03-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+专栏的内容如果能和之前的徐昊老师 TDD 课程结合，就更厉害了。惭愧的是，那个专栏我没能跟下来。</p>2023-03-14</li><br/><li><span>timeout</span> 👍（1） 💬（1）<p>啥时候再开一门mini redis</p>2023-12-14</li><br/><li><span>limyel</span> 👍（1） 💬（1）<p>没想到是《Java 编程十五讲》的作者？？？我之前在 csdn 买过那门课，受益匪浅，可惜了那么好的资源给了一个不靠谱的平台，异步发在csdn上的内容还缺了一两章，还是我去找异步反馈补上的</p>2023-04-02</li><br/><li><span>阿亮</span> 👍（0） 💬（2）<p>老师，您好。您的github没有mini redis项目，不知哪里可以看到？</p>2023-05-08</li><br/><li><span>Geek_bd552d</span> 👍（0） 💬（1）<p>二刷</p>2023-04-24</li><br/><li><span>Geek_e298ce</span> 👍（0） 💬（1）<p>老师的那张导图，受益匪浅</p>2023-03-30</li><br/><li><span>XXG</span> 👍（0） 💬（1）<p>春天就适合学习Spring。</p>2023-03-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：《Java 编程十五讲》京东上找不到。
 这本书是哪一年出版的？为什么京东上搜不到。
 Q2：开源项目链接？
 文中提到的“MiniSpring，MiniTomcat，MiniRedis，MiniLanguage 等几款开源软件”，有链接吗？
-Q3：SpringBoot是对Spring的封装吗？</div>2023-03-13</li><br/><li><span>码小呆</span> 👍（0） 💬（1）<div>第一楼</div>2023-03-13</li><br/><li><span>王路飞</span> 👍（2） 💬（0）<div>冲</div>2023-03-14</li><br/><li><span>阿亮</span> 👍（1） 💬（0）<div>老师，您好。看了您的github主页，没有看到mini redis项目，请问老师在哪可以看到？</div>2023-05-08</li><br/><li><span>libo591</span> 👍（1） 💬（0）<div>gogogo,手撸一遍，理解更深刻</div>2023-03-14</li><br/><li><span>意无尽</span> 👍（1） 💬（0）<div>冲就完事了</div>2023-03-14</li><br/>
+Q3：SpringBoot是对Spring的封装吗？</p>2023-03-13</li><br/><li><span>码小呆</span> 👍（0） 💬（1）<p>第一楼</p>2023-03-13</li><br/><li><span>王路飞</span> 👍（2） 💬（0）<p>冲</p>2023-03-14</li><br/><li><span>阿亮</span> 👍（1） 💬（0）<p>老师，您好。看了您的github主页，没有看到mini redis项目，请问老师在哪可以看到？</p>2023-05-08</li><br/><li><span>libo591</span> 👍（1） 💬（0）<p>gogogo,手撸一遍，理解更深刻</p>2023-03-14</li><br/><li><span>意无尽</span> 👍（1） 💬（0）<p>冲就完事了</p>2023-03-14</li><br/>
 </ul>

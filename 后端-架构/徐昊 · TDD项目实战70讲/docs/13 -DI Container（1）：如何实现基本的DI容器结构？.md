@@ -110,7 +110,7 @@ java {
 
 欢迎把你的思考和想法分享在留言区，也欢迎你扫描详情页的二维码加入读者交流群。我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（0）<div>TDD专栏福利大合集：
+<li><span>🐑</span> 👍（0） 💬（0）<p>TDD专栏福利大合集：
 
 1、打卡赢好礼（4月23日-5月10日）：正在进行中，学习专栏第1-10讲并在留言区打卡，结束后奖励；
 
@@ -118,9 +118,9 @@ java {
 
 3、线上带你练：根据专栏更新节奏和老师时间安排确定，徐昊老师会线上带四个同学手把手地改代码，敬请期待！
 
-具体活动介绍见 👉 http:&#47;&#47;gk.link&#47;a&#47;11jPi</div>2022-04-28</li><br/><li><span>keep_curiosity</span> 👍（0） 💬（1）<div>Java8不是就提供了Supplier函数式接口么？为什么又搞一个Provider呢？有什么区别吗？</div>2022-04-26</li><br/><li><span>努力努力再努力</span> 👍（4） 💬（0）<div>问题： 在重构的时候，我采用的是增加一个平行实现（Parallel Implementation）。用平行实现替换原有功能，然后再删除原有实现的做法。你有没有不一样的做法？
+具体活动介绍见 👉 http:&#47;&#47;gk.link&#47;a&#47;11jPi</p>2022-04-28</li><br/><li><span>keep_curiosity</span> 👍（0） 💬（1）<p>Java8不是就提供了Supplier函数式接口么？为什么又搞一个Provider呢？有什么区别吗？</p>2022-04-26</li><br/><li><span>努力努力再努力</span> 👍（4） 💬（0）<p>问题： 在重构的时候，我采用的是增加一个平行实现（Parallel Implementation）。用平行实现替换原有功能，然后再删除原有实现的做法。你有没有不一样的做法？
 
 1. 可以先新增一个新的方法 private static &lt;ComponentType&gt; void bind(Class&lt;ComponentType&gt; clazz, Provider&lt;ComponentType&gt; provider)
 2. 调整原有的旧 bind 方法，改成调用 bind 方法 -----&gt;  此时需要重新执行测试，验证重构是否影响测试结果
-3. 通过 inline method，消除上方的private方法</div>2022-09-22</li><br/><li><span>lj</span> 👍（0） 💬（0）<div>老师，请问为啥在no args这个任务，测的是componentImplement会构造出component这个接口类型？我原本理解这个任务是对某个类能支持以默认构造函数构建就可以了，不理解的点是为啥要搞个interface，感觉应该是另外的一个任务。</div>2022-04-26</li><br/><li><span>Geek_7c0961</span> 👍（0） 💬（0）<div>这节课确实和java语言关系不算太大了.还是希望老师能够再讲解的过程中淡化语言本身的特性.</div>2022-04-15</li><br/>
+3. 通过 inline method，消除上方的private方法</p>2022-09-22</li><br/><li><span>lj</span> 👍（0） 💬（0）<p>老师，请问为啥在no args这个任务，测的是componentImplement会构造出component这个接口类型？我原本理解这个任务是对某个类能支持以默认构造函数构建就可以了，不理解的点是为啥要搞个interface，感觉应该是另外的一个任务。</p>2022-04-26</li><br/><li><span>Geek_7c0961</span> 👍（0） 💬（0）<p>这节课确实和java语言关系不算太大了.还是希望老师能够再讲解的过程中淡化语言本身的特性.</p>2022-04-15</li><br/>
 </ul>

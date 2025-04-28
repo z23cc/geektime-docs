@@ -165,9 +165,9 @@ guard let newSymbol = dlsym(dl, info.dli_sname) else {
 
 ![](https://static001.geekbang.org/resource/image/6c/89/6c844d233e74aec08417be65e4ef1d89.jpg?wh=1110%2A549)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>bubble</span> 👍（2） 💬（2）<div>想问下老师 为什么只有模拟器可以 而真机不可以呢？</div>2019-03-25</li><br/><li><span>mqhong</span> 👍（2） 💬（1）<div>讲的有点深了 有没有推介的gnustep源码必读的类实现 和阅读的方法😂</div>2019-03-23</li><br/><li><span>Damon</span> 👍（1） 💬（1）<div>报错了，建议看看留言或者直接看github仓库中的issue看是否有你遇到的问题；看了留言我的问题完美解决</div>2019-04-30</li><br/><li><span>刘儒勇</span> 👍（0） 💬（1）<div>历尽千辛万苦，终于可以用了✌️</div>2019-05-31</li><br/><li><span>Ant</span> 👍（0） 💬（1）<div>这样审核能通过吗？ 是不是调试的时候用，提交App Store时候移除呢</div>2019-04-10</li><br/><li><span>郑昊鸣</span> 👍（0） 💬（1）<div>感谢老师，对于已经模块化的项目，在pod的example project中开发，InjectionIII就不好用了。InjectionIII要求项目都在一个目录下，当项目加载本地pod进行开发的时候，本地pod和项目project不在同一目录下，InjectionIII该如何使用呢，谢谢~</div>2019-03-28</li><br/><li><span>痞子胡</span> 👍（0） 💬（1）<div>接入到项目中，启动后直接crash，报bad access。找了一天还没找到原因，求解。</div>2019-03-27</li><br/><li><span>徐秀滨</span> 👍（0） 💬（1）<div>接我上个问题，已经解决了。
+<li><span>bubble</span> 👍（2） 💬（2）<p>想问下老师 为什么只有模拟器可以 而真机不可以呢？</p>2019-03-25</li><br/><li><span>mqhong</span> 👍（2） 💬（1）<p>讲的有点深了 有没有推介的gnustep源码必读的类实现 和阅读的方法😂</p>2019-03-23</li><br/><li><span>Damon</span> 👍（1） 💬（1）<p>报错了，建议看看留言或者直接看github仓库中的issue看是否有你遇到的问题；看了留言我的问题完美解决</p>2019-04-30</li><br/><li><span>刘儒勇</span> 👍（0） 💬（1）<p>历尽千辛万苦，终于可以用了✌️</p>2019-05-31</li><br/><li><span>Ant</span> 👍（0） 💬（1）<p>这样审核能通过吗？ 是不是调试的时候用，提交App Store时候移除呢</p>2019-04-10</li><br/><li><span>郑昊鸣</span> 👍（0） 💬（1）<p>感谢老师，对于已经模块化的项目，在pod的example project中开发，InjectionIII就不好用了。InjectionIII要求项目都在一个目录下，当项目加载本地pod进行开发的时候，本地pod和项目project不在同一目录下，InjectionIII该如何使用呢，谢谢~</p>2019-03-28</li><br/><li><span>痞子胡</span> 👍（0） 💬（1）<p>接入到项目中，启动后直接crash，报bad access。找了一天还没找到原因，求解。</p>2019-03-27</li><br/><li><span>徐秀滨</span> 👍（0） 💬（1）<p>接我上个问题，已经解决了。
 使用通知接收就可以。
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(test) name:@&quot;INJECTION_BUNDLE_NOTIFICATION&quot; object:nil];</div>2019-03-26</li><br/><li><span>drunkenMouse</span> 👍（31） 💬（1）<div>Clone一下代码弄得有点懵，不知道怎么克隆。然后我用了另一种方式使用了injection
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(test) name:@&quot;INJECTION_BUNDLE_NOTIFICATION&quot; object:nil];</p>2019-03-26</li><br/><li><span>drunkenMouse</span> 👍（31） 💬（1）<p>Clone一下代码弄得有点懵，不知道怎么克隆。然后我用了另一种方式使用了injection
 
 1.在App Store下载InjectionIII, 打开。
 2.选择项目的根目录
@@ -183,13 +183,13 @@ XCode10 是这个
     [[NSBundle bundleWithPath:@&quot;&#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection10.bundle&quot;] load];
 #endif
 
-而后启动，修改，保存，就会卡到断点位置了。</div>2019-03-23</li><br/><li><span>Daniel</span> 👍（21） 💬（0）<div>ios10之后由于沙盒的限制 应用无法加载自身bundle之外的动态库 这个工具只能在模拟器上使用</div>2019-04-10</li><br/><li><span>景天儿</span> 👍（17） 💬（2）<div>蛮好用的，但是有几个需要注意的地方：
+而后启动，修改，保存，就会卡到断点位置了。</p>2019-03-23</li><br/><li><span>Daniel</span> 👍（21） 💬（0）<p>ios10之后由于沙盒的限制 应用无法加载自身bundle之外的动态库 这个工具只能在模拟器上使用</p>2019-04-10</li><br/><li><span>景天儿</span> 👍（17） 💬（2）<p>蛮好用的，但是有几个需要注意的地方：
 1. 进行swizzling的类不要动态修改，否则二次交换，会引起死循环。
 2. 不支持方法的删除：删除后，方法调用仍然有效，不抛异常。
 3. 不支持新增类：新增类引入后使用无效。但类的重命名是有效的。
 4. 属性新增、删除、修改：反射上体现不出来。
 其中后三个的原因，不知道戴铭老师有没有什么见解。
-在我的角度来看，应该不是InjectionIII的问题，可能与苹果动态库调用有关。</div>2019-05-28</li><br/><li><span>mαnajay</span> 👍（13） 💬（0）<div>InjectionIII 上面有个 issue 是解决 pod 组件引入修改源码无法进行注入的问题  https:&#47;&#47;github.com&#47;johnno1962&#47;InjectionIII&#47;issues&#47;34,  https:&#47;&#47;github.com&#47;johnno1962&#47;InjectionIII&#47;issues&#47;53 , 使用组件后接入还是有点麻烦</div>2019-03-23</li><br/><li><span>Geek_48dbbf</span> 👍（7） 💬（0）<div>真机上如何实现注入动态库实时调试？</div>2019-04-18</li><br/><li><span>Love mi</span> 👍（7） 💬（1）<div>1.在App Store下载InjectionIII, 打开。
+在我的角度来看，应该不是InjectionIII的问题，可能与苹果动态库调用有关。</p>2019-05-28</li><br/><li><span>mαnajay</span> 👍（13） 💬（0）<p>InjectionIII 上面有个 issue 是解决 pod 组件引入修改源码无法进行注入的问题  https:&#47;&#47;github.com&#47;johnno1962&#47;InjectionIII&#47;issues&#47;34,  https:&#47;&#47;github.com&#47;johnno1962&#47;InjectionIII&#47;issues&#47;53 , 使用组件后接入还是有点麻烦</p>2019-03-23</li><br/><li><span>Geek_48dbbf</span> 👍（7） 💬（0）<p>真机上如何实现注入动态库实时调试？</p>2019-04-18</li><br/><li><span>Love mi</span> 👍（7） 💬（1）<p>1.在App Store下载InjectionIII, 打开。
 2.选择项目的根目录
 3.项目的Appdelegate加入：
     [[NSBundle bundleWithPath:@&quot;&#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&quot;] load];
@@ -197,5 +197,5 @@ XCode10 是这个
 Error loading &#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&#47;iOSInjection:  dlopen(&#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&#47;iOSInjection, 265): Symbol not found: _$s19ArrayLiteralElements013ExpressibleByaB0PTl
   Referenced from: &#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&#47;iOSInjection
   Expected in: &#47;Applications&#47;Xcode.app&#47;Contents&#47;Developer&#47;Toolchains&#47;XcodeDefault.xctoolchain&#47;usr&#47;lib&#47;swift&#47;iphonesimulator&#47;libswiftCore.dylib
- in &#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&#47;iOSInjection</div>2019-03-28</li><br/><li><span>亡命之徒</span> 👍（6） 💬（0）<div>项目使用了cocopods、这个插件用不了呀，保存的时候报错😭，新建的demo使用就没问题,麻烦老师解答下</div>2019-03-29</li><br/>
+ in &#47;Applications&#47;InjectionIII.app&#47;Contents&#47;Resources&#47;iOSInjection.bundle&#47;iOSInjection</p>2019-03-28</li><br/><li><span>亡命之徒</span> 👍（6） 💬（0）<p>项目使用了cocopods、这个插件用不了呀，保存的时候报错😭，新建的demo使用就没问题,麻烦老师解答下</p>2019-03-29</li><br/>
 </ul>

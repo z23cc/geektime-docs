@@ -346,8 +346,8 @@ execsnoop 所用的 ftrace 是一种常用的动态追踪技术，一般用于�
 
 ![](https://static001.geekbang.org/resource/image/56/52/565d66d658ad23b2f4997551db153852.jpg?wh=1110%2A549)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>sotey</span> 👍（174） 💬（3）<div>对老师膜拜！今天一早生产tomcat夯住了，16颗cpu全部98%以上，使用老师的方法加上java的工具成功定位到了问题线程和问题函数。</div>2018-12-03</li><br/><li><span>好好学习</span> 👍（78） 💬（1）<div>perf record -ag -- sleep 2;perf report
-一部到位</div>2018-12-10</li><br/><li><span>bruceding</span> 👍（43） 💬（2）<div>http:&#47;&#47;blog.bruceding.com&#47;420.html  这个是之前的优化经历，通过 perf + 火焰图，定位热点代码，结合业务和网络分析，最终确定问题原因</div>2019-02-11</li><br/><li><span>风</span> 👍（18） 💬（8）<div>老师好，我在实验的过程中，在最后使用 perf record -ag 的时候，发现记录下来的值，其中 stress 并不是消耗 CPU 最猛的进程，而是swapper，不知道什么原因？碰到这种情况时，该如何继续排查下去？以下是我的 perf report
+<li><span>sotey</span> 👍（174） 💬（3）<p>对老师膜拜！今天一早生产tomcat夯住了，16颗cpu全部98%以上，使用老师的方法加上java的工具成功定位到了问题线程和问题函数。</p>2018-12-03</li><br/><li><span>好好学习</span> 👍（78） 💬（1）<p>perf record -ag -- sleep 2;perf report
+一部到位</p>2018-12-10</li><br/><li><span>bruceding</span> 👍（43） 💬（2）<p>http:&#47;&#47;blog.bruceding.com&#47;420.html  这个是之前的优化经历，通过 perf + 火焰图，定位热点代码，结合业务和网络分析，最终确定问题原因</p>2019-02-11</li><br/><li><span>风</span> 👍（18） 💬（8）<p>老师好，我在实验的过程中，在最后使用 perf record -ag 的时候，发现记录下来的值，其中 stress 并不是消耗 CPU 最猛的进程，而是swapper，不知道什么原因？碰到这种情况时，该如何继续排查下去？以下是我的 perf report
 Samples: 223K of event &#39;cpu-clock&#39;, Event count (approx.): 55956000000
   Children      Self  Command          Shared Object            Symbol
 +   11.54%     0.00%  swapper          [kernel.kallsyms]        [k] cpu_startup_entry
@@ -362,8 +362,8 @@ Samples: 223K of event &#39;cpu-clock&#39;, Event count (approx.): 55956000000
 +    3.43%     3.43%  stress           stress                   [.] 0x0000000000002eff
 +    3.20%     0.00%  stress           [kernel.kallsyms]        [k] page_fault
 +    3.20%     0.00%  stress           [kernel.kallsyms]        [k] do_page_fault
-+    3.15%     0.76%  stress           [kernel.kallsyms]        [k] __do_page_fault</div>2018-12-16</li><br/><li><span>bruceding</span> 👍（8） 💬（1）<div>对于内核函数的调试，4.0 的内核可以使用 eBPF 工具，2.6 或者 4.0 以下的工具，使用 systemtap。perf 是基于采样的原理。本文的例子 execsnoop 可以替换成 https:&#47;&#47;sourceware.org&#47;systemtap&#47;SystemTap_Beginners_Guide&#47;threadtimessect.html。systemtap 中文资料比较少，本人也翻译了相关文档，参考：http:&#47;&#47;systemtap.bruceding.com&#47;。</div>2019-02-12</li><br/><li><span>每一段路都是一种领悟</span> 👍（6） 💬（2）<div>今天一个程序负载飙到140，最高点240，我们的服务器没有挂掉，真的是牛逼，另外使用这几天的方法，基本确认了程序的问题，质问开发后，他不好意思的告诉我，io高是因为自己程序偷了懒，好在这次找到证据了，作为以后的分析案例</div>2018-12-24</li><br/><li><span>Griffin</span> 👍（6） 💬（1）<div>实际生产环境中的进程更多，stress藏在ps中根本不容易发现，pstree的结果也非常大。老师有空讲讲如何找到这些异常进程的方法和灵感。</div>2018-12-09</li><br/><li><span>walker</span> 👍（5） 💬（3）<div>execsnoop这个工具在centos里找不到，有类似的代替品吗</div>2018-12-03</li><br/><li><span>小贝_No_7</span> 👍（4） 💬（1）<div>最后的perf -g有疑问。这里并没有展示出明显的stress占比较高的情况。相反是swapper较多, stress的占比其实在10%一下。请问这个怎么解释? 我看到底下也有其他朋友有类似的疑问但是没得到很好的解析。谢谢啦。  </div>2019-05-03</li><br/><li><span>夜空中最亮的星</span> 👍（3） 💬（1）<div>execsnoop
-这个工具没找到</div>2018-12-03</li><br/><li><span>kingkang</span> 👍（2） 💬（3）<div>倪老师你好，我自己用go写了一套微服务框架（基本网络架构是 一台http server+一台grpc server +三台mongodb 副本集群）；如果grpc server不调用mongodb 查询的话，qps能稳定在36000左右，而且压测的时候，grpc server 的cpu使用率大概在60%左右，平均负载最高不会超过2.5（服务器都是四核8G的 ）。如果一旦调用了mongodb查询的话，cpu使用率基本都能达到95%，平均负载最高能到4.6，而qps也下降到了6k左右。两种情况的内存差别并不大，系统内存一直维持在800M上下。我用老师教的方法，mongol db  find方法cpu占用过高。这个方法并没办法做到进一步优化，请问老师我这个框架cpu使用率过高的情况是不是就没办法进一步优化了？另外就是，如果我在加一台grpc server,也就是http server 调用两个grpc server  对系统qps 增加并不大，这是为什么我一直想不明白？</div>2019-07-24</li><br/><li><span>rm -rf 😊ི</span> 👍（2） 💬（1）<div>想请教一下老师，running进程突然变多，突然变少的，是什么情况，主要是短时进程的问题吗？</div>2019-03-25</li><br/><li><span>梦回汉唐</span> 👍（2） 💬（1）<div>查看瞬时进程，还可以用这个方法：
++    3.15%     0.76%  stress           [kernel.kallsyms]        [k] __do_page_fault</p>2018-12-16</li><br/><li><span>bruceding</span> 👍（8） 💬（1）<p>对于内核函数的调试，4.0 的内核可以使用 eBPF 工具，2.6 或者 4.0 以下的工具，使用 systemtap。perf 是基于采样的原理。本文的例子 execsnoop 可以替换成 https:&#47;&#47;sourceware.org&#47;systemtap&#47;SystemTap_Beginners_Guide&#47;threadtimessect.html。systemtap 中文资料比较少，本人也翻译了相关文档，参考：http:&#47;&#47;systemtap.bruceding.com&#47;。</p>2019-02-12</li><br/><li><span>每一段路都是一种领悟</span> 👍（6） 💬（2）<p>今天一个程序负载飙到140，最高点240，我们的服务器没有挂掉，真的是牛逼，另外使用这几天的方法，基本确认了程序的问题，质问开发后，他不好意思的告诉我，io高是因为自己程序偷了懒，好在这次找到证据了，作为以后的分析案例</p>2018-12-24</li><br/><li><span>Griffin</span> 👍（6） 💬（1）<p>实际生产环境中的进程更多，stress藏在ps中根本不容易发现，pstree的结果也非常大。老师有空讲讲如何找到这些异常进程的方法和灵感。</p>2018-12-09</li><br/><li><span>walker</span> 👍（5） 💬（3）<p>execsnoop这个工具在centos里找不到，有类似的代替品吗</p>2018-12-03</li><br/><li><span>小贝_No_7</span> 👍（4） 💬（1）<p>最后的perf -g有疑问。这里并没有展示出明显的stress占比较高的情况。相反是swapper较多, stress的占比其实在10%一下。请问这个怎么解释? 我看到底下也有其他朋友有类似的疑问但是没得到很好的解析。谢谢啦。  </p>2019-05-03</li><br/><li><span>夜空中最亮的星</span> 👍（3） 💬（1）<p>execsnoop
+这个工具没找到</p>2018-12-03</li><br/><li><span>kingkang</span> 👍（2） 💬（3）<p>倪老师你好，我自己用go写了一套微服务框架（基本网络架构是 一台http server+一台grpc server +三台mongodb 副本集群）；如果grpc server不调用mongodb 查询的话，qps能稳定在36000左右，而且压测的时候，grpc server 的cpu使用率大概在60%左右，平均负载最高不会超过2.5（服务器都是四核8G的 ）。如果一旦调用了mongodb查询的话，cpu使用率基本都能达到95%，平均负载最高能到4.6，而qps也下降到了6k左右。两种情况的内存差别并不大，系统内存一直维持在800M上下。我用老师教的方法，mongol db  find方法cpu占用过高。这个方法并没办法做到进一步优化，请问老师我这个框架cpu使用率过高的情况是不是就没办法进一步优化了？另外就是，如果我在加一台grpc server,也就是http server 调用两个grpc server  对系统qps 增加并不大，这是为什么我一直想不明白？</p>2019-07-24</li><br/><li><span>rm -rf 😊ི</span> 👍（2） 💬（1）<p>想请教一下老师，running进程突然变多，突然变少的，是什么情况，主要是短时进程的问题吗？</p>2019-03-25</li><br/><li><span>梦回汉唐</span> 👍（2） 💬（1）<p>查看瞬时进程，还可以用这个方法：
 
 watch -n 1 -d &quot;ps -A -ostat,pid,ppid,cmd | grep -i &#39;^r&#39; | grep -v ps&quot;
 
@@ -375,14 +375,14 @@ R+   13308 13307 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1
 R+   13313 13312 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1
 R+   13314 13311 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1
 R+   13319 13317 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1
-R+   13320 13318 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1</div>2019-03-20</li><br/><li><span>刘韦菠</span> 👍（2） 💬（1）<div>我的perf record 里面 random 函数调用占比不是最高的, 最高的是一个叫做hoghdd 的函数, 这个函数里面包含了一些内存段错误和换页的函数. 这个是为什么呢? 
+R+   13320 13318 &#47;usr&#47;local&#47;bin&#47;stress -t 1 -d 1</p>2019-03-20</li><br/><li><span>刘韦菠</span> 👍（2） 💬（1）<p>我的perf record 里面 random 函数调用占比不是最高的, 最高的是一个叫做hoghdd 的函数, 这个函数里面包含了一些内存段错误和换页的函数. 这个是为什么呢? 
 我的机器是mac, 然后这个批次的mac ssd 性能有问题, 官方曾经给我发过返厂维修的通知邮件, 但是因为是公司的电脑, 所以我并没有弄去维修. hog hdd 是不是 占用hdd硬盘的意思呢?
 
 -   57.30%     0.03%  stress           stress                    [.] main                                                                                                                                  ▒
    - main                                                                                                                                                                                                  ▒
       + 21.77% hoghdd                                                                                                                                                                                      ▒
       + 16.12% random_r                                                                                                                                                                                    ▒
-      + 12.09% random                                                                                                                                                                                      ▒</div>2019-03-05</li><br/><li><span>Wind～</span> 👍（2） 💬（1）<div>之前给老师留言的问题已经自己搞定了，在后续的实验中我发现我的实验有些不太一样，还是希望老师看到后可以再指点一二，老师的ps和pidstat都没有输出，而我的则是有输出，但是分析的结果导向是一致的——线索都指向了stress
+      + 12.09% random                                                                                                                                                                                      ▒</p>2019-03-05</li><br/><li><span>Wind～</span> 👍（2） 💬（1）<p>之前给老师留言的问题已经自己搞定了，在后续的实验中我发现我的实验有些不太一样，还是希望老师看到后可以再指点一二，老师的ps和pidstat都没有输出，而我的则是有输出，但是分析的结果导向是一致的——线索都指向了stress
 
 ----通过pidstat
 [wind@aaa ~]$ pidstat -p 39945
@@ -411,5 +411,5 @@ wind      54077  0.0  0.0 112704   664 pts&#47;3    R+   06:38   0:00 grep --col
       - 5.49% 0x2f25                                                                                                                ▒
          - 3.75% 0xffffffffba116768                                                                                                 ▒
             - 3.74% 0xffffffffba11a925                                                                                              ▒
-               - 2.94% 0xffffffffba11a597</div>2019-01-13</li><br/>
+               - 2.94% 0xffffffffba11a597</p>2019-01-13</li><br/>
 </ul>

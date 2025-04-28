@@ -274,7 +274,7 @@ plt.show()
 
 欢迎你在留言区和我交流互动，也推荐你把这节课分享给更多的朋友。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>derek</span> 👍（1） 💬（1）<div>为什么不用fastapi呢？</div>2023-05-25</li><br/><li><span>ZENG</span> 👍（1） 💬（1）<div># 使用 matplotlib 画一个饼图
+<li><span>derek</span> 👍（1） 💬（1）<p>为什么不用fastapi呢？</p>2023-05-25</li><br/><li><span>ZENG</span> 👍（1） 💬（1）<p># 使用 matplotlib 画一个饼图
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -289,8 +289,8 @@ ax.pie(
 	)
 ax.set_title(&quot;Pie&quot;)
 plt.legend(loc=&quot;upper left&quot;)  # 图例位置放置左上方
-plt.show()</div>2023-05-24</li><br/><li><span>Geek_团子</span> 👍（1） 💬（1）<div>啥是mvt？</div>2023-05-14</li><br/><li><span>张申傲</span> 👍（0） 💬（1）<div>第2讲打卡~
-通过这节课，领略了Python在数据分析领域的强大能力~</div>2024-07-17</li><br/><li><span>好困啊</span> 👍（0） 💬（1）<div># 饼状图
+plt.show()</p>2023-05-24</li><br/><li><span>Geek_团子</span> 👍（1） 💬（1）<p>啥是mvt？</p>2023-05-14</li><br/><li><span>张申傲</span> 👍（0） 💬（1）<p>第2讲打卡~
+通过这节课，领略了Python在数据分析领域的强大能力~</p>2024-07-17</li><br/><li><span>好困啊</span> 👍（0） 💬（1）<p># 饼状图
 # 数据
 sizes = [15, 30, 45, 10]
 labels = [&#39;Frogs&#39;, &#39;Hogs&#39;, &#39;Dogs&#39;, &#39;Logs&#39;]
@@ -305,7 +305,7 @@ plt.title(&#39;Pie&#39;)
 plt.axis(&#39;equal&#39;)
 
 # 显示图形
-plt.show()</div>2023-08-19</li><br/><li><span>Geek_e5f033</span> 👍（0） 💬（2）<div>老师有一个问题,经常在网上看到一些python代码,拿来用时,就会发现有好多问题,不是这个库没有装,就是那个库版本不对,作为一个开发者,我们怎样才能根据代码,安装正确的库呢?</div>2023-05-06</li><br/><li><span>Geek_gong1zu</span> 👍（0） 💬（1）<div>import matplotlib.pyplot as plt
+plt.show()</p>2023-08-19</li><br/><li><span>Geek_e5f033</span> 👍（0） 💬（2）<p>老师有一个问题,经常在网上看到一些python代码,拿来用时,就会发现有好多问题,不是这个库没有装,就是那个库版本不对,作为一个开发者,我们怎样才能根据代码,安装正确的库呢?</p>2023-05-06</li><br/><li><span>Geek_gong1zu</span> 👍（0） 💬（1）<p>import matplotlib.pyplot as plt
 # 设置画布
 plt.rcParams[&#39;font.sans-serif&#39;] =&#39;SimHei&#39;
 plt.figure(figsize=(6, 6))
@@ -317,9 +317,9 @@ plt.pie(values, explode=explode, labels=label, autopct=&#39;%1.1f&#39;)
 plt.title(&quot;经济结构&quot;)
 plt.savefig(&#39;.&#47;经济结构饼图&#39;)
 plt.show()
-图片无法上传</div>2023-05-04</li><br/><li><span>nuan</span> 👍（0） 💬（6）<div>请问老师，我复制了柱状图和散点图的代码，执行后不显示数轴上的刻度，也不显示lable以及title。
+图片无法上传</p>2023-05-04</li><br/><li><span>nuan</span> 👍（0） 💬（6）<p>请问老师，我复制了柱状图和散点图的代码，执行后不显示数轴上的刻度，也不显示lable以及title。
 会是什么原因呢？
-我的运行环境是：ubuntu 22.04，Python 3.10.6，matplotlib 3.7.1</div>2023-04-27</li><br/><li><span>peter</span> 👍（0） 💬（3）<div>请教老师几个问题：
+我的运行环境是：ubuntu 22.04，Python 3.10.6，matplotlib 3.7.1</p>2023-04-27</li><br/><li><span>peter</span> 👍（0） 💬（3）<p>请教老师几个问题：
 Q1: 本专栏后端开发的python是什么？win10下用PyCharm吗？（被开源软件的开发环境折磨过几次，有点小害怕；学习时间不多，碰上几个环境问题就感觉要崩溃）
 
 Q2: 本专栏的源码放哪里？
@@ -329,7 +329,7 @@ Win10，开始菜单中运行”Anaconda Powershell prompt”，弹出一个命�
 1 输入: 5+4，显示9. 
 2 输入:print(“hello”), 提示“无法初始化设备 PRN”；
 3 输入：a+=10，回车后提示：a+=10 : 无法将“a+=10”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。
-为什么？</div>2023-04-27</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<div>快更！</div>2023-04-27</li><br/><li><span>安静点</span> 👍（0） 💬（1）<div>期待更新！</div>2023-04-27</li><br/><li><span>一米</span> 👍（0） 💬（1）<div>1.numpy数组与python列表性能对比处 应该有两处勘误
+为什么？</p>2023-04-27</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（1）<p>快更！</p>2023-04-27</li><br/><li><span>安静点</span> 👍（0） 💬（1）<p>期待更新！</p>2023-04-27</li><br/><li><span>一米</span> 👍（0） 💬（1）<p>1.numpy数组与python列表性能对比处 应该有两处勘误
 # 1.1应该引入time 
 # 1.2原代码第9行使用的变量应该是d
 import numpy as np
@@ -363,5 +363,5 @@ langs = [&#39;football&#39;, &#39;tennis&#39;, &#39;basketball&#39;, &#39;ping-p
 students = [23,17,35,29,12]
 #绘制饼状图
 ax.pie(students, labels = langs,autopct=&#39;%.2f%%&#39;)
-plt.show()</div>2023-04-26</li><br/><li><span>佩慎斯予氪蕾沐</span> 👍（0） 💬（1）<div>大二的时候因为期末考试会用Python画各种图，现在过了一年全部还给老师了😂😂</div>2023-04-26</li><br/>
+plt.show()</p>2023-04-26</li><br/><li><span>佩慎斯予氪蕾沐</span> 👍（0） 💬（1）<p>大二的时候因为期末考试会用Python画各种图，现在过了一年全部还给老师了😂😂</p>2023-04-26</li><br/>
 </ul>

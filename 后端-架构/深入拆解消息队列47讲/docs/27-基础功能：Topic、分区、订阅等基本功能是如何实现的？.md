@@ -296,5 +296,5 @@ Topic是消息队列最基本的概念，从理论上来说没它不行。它的
 
 在我看来和开发成本有关，因为去掉第三方元数据存储依赖是一件工作量非常非常大的事情，需要对架构做一个非常大的改动，会消耗社区大量的人力，不适合Pulsar当前快速发展的阶段。使用可插拔框架的思路，改动量较小，可以引入 etcd 这样的性能较高的引擎来缓解当前遇到的问题，引入单机的RocksDB来降低集群的部署复杂度，引入内存存储来降低单机版本的部署成本等等，总之会带来蛮多好处。有兴趣的话，你可以看一下这篇文章[《Apache Pulsar 轻装上阵：迈向轻 ZooKeeper 时代》](https://streamnative.cn/blog/release/2022-01-25-moving-toward-a-zookeeperless-apache-pulsar-zh/)，对照着 [Kafka 500](https://cwiki.apache.org/confluence/display/KAFKA/KIP-500%3A+Replace+ZooKeeper+with+a+Self-Managed+Metadata+Quorum) 的KIP来看，你还可以对这两个方案做进一步的思考，感悟会更深。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Alpha</span> 👍（2） 💬（0）<div>《Apache Pulsar 轻装上阵：迈向轻 ZooKeeper 时代》 这个链接不可用了；可以参考英文博客： https:&#47;&#47;streamnative.io&#47;blog&#47;moving-toward-zookeeper-less-apache-pulsar </div>2024-09-23</li><br/>
+<li><span>Alpha</span> 👍（2） 💬（0）<p>《Apache Pulsar 轻装上阵：迈向轻 ZooKeeper 时代》 这个链接不可用了；可以参考英文博客： https:&#47;&#47;streamnative.io&#47;blog&#47;moving-toward-zookeeper-less-apache-pulsar </p>2024-09-23</li><br/>
 </ul>

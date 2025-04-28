@@ -948,11 +948,11 @@ KV server 并不是一个很难的项目，但想要把它写好，并不简单�
 
 恭喜你完成了学习的第22次打卡。如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下一讲期中测试见～
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>newzai</span> 👍（15） 💬（3）<div>dev-dependencies 与 dependencies的第三方crate是如何划分的?tokio 为啥不放到 dependencies? 放到 dependencies 与 dev-dependencies 有啥区别？某些如何决策一个 crate放到哪个 dependencies？</div>2021-10-11</li><br/><li><span>Geek_b52974</span> 👍（7） 💬（1）<div>为何不是这样设计
+<li><span>newzai</span> 👍（15） 💬（3）<p>dev-dependencies 与 dependencies的第三方crate是如何划分的?tokio 为啥不放到 dependencies? 放到 dependencies 与 dev-dependencies 有啥区别？某些如何决策一个 crate放到哪个 dependencies？</p>2021-10-11</li><br/><li><span>Geek_b52974</span> 👍（7） 💬（1）<p>为何不是这样设计
 
   fn set(&amp;self, table: &amp;str, key: String, value: impl Into&lt;Value&gt;) 
 
-这样以来就可以让使用者知道他有一个新的type 需要存时应该 implement 这个 trait 也不会让使用时需要一直 写into</div>2021-11-06</li><br/><li><span>施泰博</span> 👍（6） 💬（1）<div>用powershell的。RUST _LOG=info。改成$env:RUST_LOG=&quot;info&quot;;然后再cargo run</div>2021-12-21</li><br/><li><span>Roy Liang</span> 👍（4） 💬（1）<div>老师，get_all接口为什么不好？</div>2021-10-20</li><br/><li><span>losuika</span> 👍（3） 💬（1）<div>感觉 get_iter 加上生命周期的约束好一些，因为现在 GAT 还没稳定，可以这样实现下，
+这样以来就可以让使用者知道他有一个新的type 需要存时应该 implement 这个 trait 也不会让使用时需要一直 写into</p>2021-11-06</li><br/><li><span>施泰博</span> 👍（6） 💬（1）<p>用powershell的。RUST _LOG=info。改成$env:RUST_LOG=&quot;info&quot;;然后再cargo run</p>2021-12-21</li><br/><li><span>Roy Liang</span> 👍（4） 💬（1）<p>老师，get_all接口为什么不好？</p>2021-10-20</li><br/><li><span>losuika</span> 👍（3） 💬（1）<p>感觉 get_iter 加上生命周期的约束好一些，因为现在 GAT 还没稳定，可以这样实现下，
 fn get_iter&lt;&#39;a&gt;(
     &amp;&#39;a self,
     table: &amp;str,
@@ -990,7 +990,7 @@ impl&lt;&#39;a&gt; Drop for Iter&lt;&#39;a&gt; {
     fn drop(&amp;mut self) {
         unsafe { drop_in_place(self._table as *mut Ref&lt;&#39;a, String, DashMap&lt;String, Value&gt;&gt;) };
     }
-}</div>2021-11-29</li><br/><li><span>罗杰</span> 👍（2） 💬（1）<div>必须仔细看老师的教程，不仔细就掉坑里了。说实话老师的文章讲的是真心详细，基本上把所有的坑都讲了。如果实在编译不过，去下载老师的源码，千万记得要坚持下去。</div>2021-10-24</li><br/><li><span>xl000</span> 👍（2） 💬（1）<div>```Rust
+}</p>2021-11-29</li><br/><li><span>罗杰</span> 👍（2） 💬（1）<p>必须仔细看老师的教程，不仔细就掉坑里了。说实话老师的文章讲的是真心详细，基本上把所有的坑都讲了。如果实在编译不过，去下载老师的源码，千万记得要坚持下去。</p>2021-10-24</li><br/><li><span>xl000</span> 👍（2） 💬（1）<p>```Rust
 impl Kvpair {
     &#47;&#47;&#47; 创建一个新的 kv pair
     fn new(key: impl Into&lt;String&gt;, value: impl Into&lt;Value&gt;) -&gt; Self {
@@ -1001,7 +1001,7 @@ impl Kvpair {
     }
 }
 ```
-老师Value类型的参数为什么不用impl Into&lt;Value&gt;来定义呢，会有什么问题吗</div>2021-10-15</li><br/><li><span>pedro</span> 👍（2） 💬（2）<div>得益于老师良好的抽象，我抽出了中午的时间，完成了 hdel 和 hexist 两个命令，如下：
+老师Value类型的参数为什么不用impl Into&lt;Value&gt;来定义呢，会有什么问题吗</p>2021-10-15</li><br/><li><span>pedro</span> 👍（2） 💬（2）<p>得益于老师良好的抽象，我抽出了中午的时间，完成了 hdel 和 hexist 两个命令，如下：
 ```
 running 6 tests
 test service::command_service::tests::hget_with_non_exist_key_should_return_404 ... ok
@@ -1012,14 +1012,14 @@ test service::command_service::tests::hset_should_work ... ok
 test service::command_service::tests::hgetall_should_work ... ok
 ```
 
-有时间再来慢慢补充，rust 确实是爽的不行。</div>2021-10-11</li><br/><li><span>周</span> 👍（1） 💬（3）<div>我把prost的版本改成0.9（0.8版本的可以正常运行) ，然后再测试examples的时候 client.send的时候有个报错:
+有时间再来慢慢补充，rust 确实是爽的不行。</p>2021-10-11</li><br/><li><span>周</span> 👍（1） 💬（3）<p>我把prost的版本改成0.9（0.8版本的可以正常运行) ，然后再测试examples的时候 client.send的时候有个报错:
 the method `send` exists for struct `AsyncProstStream&lt;tokio::net::TcpStream, CommandResponse, CommandRequest, AsyncDestination&gt;`, but its trait bounds were not satisfied
 the following trait bounds were not satisfied:
 `AsyncProstStream&lt;tokio::net::TcpStream, CommandResponse, CommandRequest, AsyncDestination&gt;: futures::Sink&lt;_&gt;`
 which is required by `AsyncProstStream&lt;tokio::net::TcpStream, CommandResponse, CommandRequest, AsyncDestination&gt;: SinkExt&lt;_&gt;`rustcE0599
 stream.rs(24, 1): doesn&#39;t satisfy `_: SinkExt&lt;_&gt;`
 stream.rs(24, 1): doesn&#39;t satisfy `_: futures::Sink&lt;_&gt;`.
-我试着用“如何阅读源码”里边的方法，但是还是不太懂这个错误的原因。希望老师能指点下查错的方法</div>2021-11-09</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<div>tcp的半包粘包等，是被prost处理掉了吗？</div>2021-10-26</li><br/><li><span>pedro</span> 👍（1） 💬（1）<div>文中代码有一处错误：
+我试着用“如何阅读源码”里边的方法，但是还是不太懂这个错误的原因。希望老师能指点下查错的方法</p>2021-11-09</li><br/><li><span>qinsi</span> 👍（1） 💬（1）<p>tcp的半包粘包等，是被prost处理掉了吗？</p>2021-10-26</li><br/><li><span>pedro</span> 👍（1） 💬（1）<p>文中代码有一处错误：
 let cloned = service.clone();
 &#47;&#47; 创建一个线程，在 table t1 中写入 k1, v1
 let handle = thread::spawn(move || {
@@ -1028,7 +1028,7 @@ let handle = thread::spawn(move || {
 });
 
 下面的 execute 应该是有 cloned 来执行的，不能由 service 执行，所有权问题。
-</div>2021-10-12</li><br/><li><span>Jagger</span> 👍（0） 💬（2）<div>陈老师，Value::default() 这个函数我没有找到哎？</div>2021-11-27</li><br/><li><span>东子</span> 👍（0） 💬（1）<div>#[derive(Clone, Debug, Default)]
+</p>2021-10-12</li><br/><li><span>Jagger</span> 👍（0） 💬（2）<p>陈老师，Value::default() 这个函数我没有找到哎？</p>2021-11-27</li><br/><li><span>东子</span> 👍（0） 💬（1）<p>#[derive(Clone, Debug, Default)]
 pub struct MemTable {
     tables: DashMap&lt;String, BTreeMap&lt;String, String&gt;&gt;,
 }
@@ -1063,7 +1063,7 @@ error[E0596]: cannot borrow data in a dereference of `dashmap::mapref::one::Ref&
    |
 71 |         table.insert(key, value);
    |         ^^^^^ cannot borrow as mutable
-陈老师 </div>2021-11-23</li><br/><li><span>啦啦啦啦啦啦啦</span> 👍（0） 💬（1）<div>实现 Hmget：
+陈老师 </p>2021-11-23</li><br/><li><span>啦啦啦啦啦啦啦</span> 👍（0） 💬（1）<p>实现 Hmget：
  &#47;&#47;&#47; 从一个 HashTable 里获取 批量 keys 对应的 values
     fn get_values(&amp;self, table: &amp;str, keys: &amp;Vec&lt;String&gt;) -&gt; Result&lt;Vec&lt;Option&lt;Value&gt;&gt;, KvError&gt;;
 &#47;&#47;&#47; 创建 HMGET 命令
@@ -1109,5 +1109,5 @@ fn get_values(&amp;self, table: &amp;str, keys: &amp;Vec&lt;String&gt;) -&gt; Re
         let cmd = CommandRequest::new_hmget(&quot;score&quot;, vec![&quot;u1&quot;, &quot;12&quot;]);
         let res = dispatch(cmd, &amp;store);
         assert_res_ok(res, &amp;[10.into(), 11.into()], &amp;[]);
-    }</div>2021-10-23</li><br/><li><span>Roy Liang</span> 👍（0） 💬（1）<div>hmget&#47;hmset等命令调用storage接口时，如何进行错误处理比较好？我现在是忽略错误，返回默认值，感觉不太好</div>2021-10-20</li><br/>
+    }</p>2021-10-23</li><br/><li><span>Roy Liang</span> 👍（0） 💬（1）<p>hmget&#47;hmset等命令调用storage接口时，如何进行错误处理比较好？我现在是忽略错误，返回默认值，感觉不太好</p>2021-10-20</li><br/>
 </ul>

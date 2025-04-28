@@ -255,10 +255,10 @@ Clang-Format 使用[规则配置文件](https://clang.llvm.org/docs/ClangFormatS
 
 我是吴咏炜，我们下一讲再见！
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>谁家内存泄露了</span> 👍（2） 💬（3）<div>吴老师，你好，我有两个问题：
+<li><span>谁家内存泄露了</span> 👍（2） 💬（3）<p>吴老师，你好，我有两个问题：
 1 cscope有时候找不到一些c++文件的函数（我执行的命令为：cscope -Rbq）？
 2 我有一部分的工作场景是需要用yocto去构建整个Linux的镜像，而且大部分的语言会用的是c++，基于问题1，可能cscope不是万能的，再考虑ycm又需要导出cmake的compile_commands.json文件，这个不清楚怎么在yocto下导出来。。。
-基于以上描述，吴老师有什么建议吗？</div>2022-09-18</li><br/><li><span>我来也</span> 👍（2） 💬（1）<div>如果能早几年看到这系列文章,我正式切换到vim开发的时间也许会提前几年了.
+基于以上描述，吴老师有什么建议吗？</p>2022-09-18</li><br/><li><span>我来也</span> 👍（2） 💬（1）<p>如果能早几年看到这系列文章,我正式切换到vim开发的时间也许会提前几年了.
 
 我的vim定制始于这篇文章
 [手把手教你把Vim改装成一个IDE编程环境(图文)](https:&#47;&#47;blog.csdn.net&#47;wooin&#47;article&#47;details&#47;1858917)
@@ -274,6 +274,6 @@ Clang-Format 使用[规则配置文件](https://clang.llvm.org/docs/ClangFormatS
 
 我就用vim做c代码的查看器,用它去跳转,搜索,对比,
 偶尔用它完成小的bug修复.
-</div>2020-08-24</li><br/><li><span>大敏</span> 👍（0） 💬（1）<div>请教一下大神，如果工程代码是，C&#47;C++ 混合代码，ctags参数该如何选择呢？</div>2023-08-15</li><br/><li><span>Alex</span> 👍（0） 💬（1）<div>学到目前阶段，感觉吴老师真是实打实的布道者，我也是守旧之人，只喜欢Linux、vim、c,其余的真心不想碰</div>2021-09-25</li><br/><li><span>Yabo</span> 👍（0） 💬（1）<div>插件 ludovicchabant&#47;vim-gutentags，跳转链接不对，应该是 https:&#47;&#47;github.com&#47;ludovicchabant&#47;vim-gutentags</div>2020-11-18</li><br/><li><span>chris</span> 👍（0） 💬（1）<div>cscope不支持c++的话, 请问如何用vim打造一个c++开发环境呢?</div>2020-11-02</li><br/><li><span>chris</span> 👍（0） 💬（1）<div>老师能否讲解一下ctags的-D和-I参数阿?
-另外Cscope好像也能支持c++的是吗?</div>2020-11-01</li><br/><li><span>AirY</span> 👍（0） 💬（3）<div>感觉对rust需要不友好，没有提示，python的话也得.出来而且还有很小的延迟才出来，</div>2020-08-26</li><br/><li><span>Albert</span> 👍（0） 💬（1）<div>老师，您好。想买一本关于vim的书。看了一下有精通vim、vim8文本处理实战、vim实用技巧 2版。能推荐一下选哪本吗？或者有其他推荐吗？</div>2020-08-24</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<div>查了下Vim8的话应该可以通过LSP实现跳转自动完成和格式化等功能 https:&#47;&#47;microsoft.github.io&#47;language-server-protocol&#47;implementors&#47;tools&#47;</div>2020-08-24</li><br/>
+</p>2020-08-24</li><br/><li><span>大敏</span> 👍（0） 💬（1）<p>请教一下大神，如果工程代码是，C&#47;C++ 混合代码，ctags参数该如何选择呢？</p>2023-08-15</li><br/><li><span>Alex</span> 👍（0） 💬（1）<p>学到目前阶段，感觉吴老师真是实打实的布道者，我也是守旧之人，只喜欢Linux、vim、c,其余的真心不想碰</p>2021-09-25</li><br/><li><span>Yabo</span> 👍（0） 💬（1）<p>插件 ludovicchabant&#47;vim-gutentags，跳转链接不对，应该是 https:&#47;&#47;github.com&#47;ludovicchabant&#47;vim-gutentags</p>2020-11-18</li><br/><li><span>chris</span> 👍（0） 💬（1）<p>cscope不支持c++的话, 请问如何用vim打造一个c++开发环境呢?</p>2020-11-02</li><br/><li><span>chris</span> 👍（0） 💬（1）<p>老师能否讲解一下ctags的-D和-I参数阿?
+另外Cscope好像也能支持c++的是吗?</p>2020-11-01</li><br/><li><span>AirY</span> 👍（0） 💬（3）<p>感觉对rust需要不友好，没有提示，python的话也得.出来而且还有很小的延迟才出来，</p>2020-08-26</li><br/><li><span>Albert</span> 👍（0） 💬（1）<p>老师，您好。想买一本关于vim的书。看了一下有精通vim、vim8文本处理实战、vim实用技巧 2版。能推荐一下选哪本吗？或者有其他推荐吗？</p>2020-08-24</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<p>查了下Vim8的话应该可以通过LSP实现跳转自动完成和格式化等功能 https:&#47;&#47;microsoft.github.io&#47;language-server-protocol&#47;implementors&#47;tools&#47;</p>2020-08-24</li><br/>
 </ul>

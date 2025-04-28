@@ -128,5 +128,5 @@
 
 希望你也能够时刻保持对新事物的热情，我们一起学习，不断更新我们的生活，持续为生活赋能。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Florence</span> 👍（1） 💬（2）<div>HoloLens2对戴眼镜的人很不友好</div>2021-06-02</li><br/>
+<li><span>Florence</span> 👍（1） 💬（2）<p>HoloLens2对戴眼镜的人很不友好</p>2021-06-02</li><br/>
 </ul>

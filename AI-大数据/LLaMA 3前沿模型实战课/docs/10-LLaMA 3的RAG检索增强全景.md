@@ -204,11 +204,11 @@ response = query_engine.query(query)
 print(response.response)
 ```
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（0） 💬（0）<div>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</div>2024-11-25</li><br/><li><span>旅梦开发团</span> 👍（1） 💬（0）<div>上面的代码缺少了依赖安装，补下：
+<li><span>小虎子11🐯</span> 👍（0） 💬（0）<p>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</p>2024-11-25</li><br/><li><span>旅梦开发团</span> 👍（1） 💬（0）<p>上面的代码缺少了依赖安装，补下：
 pip install llama_index 
 pip install llama-index-embeddings-huggingface
 pip install ollama
 pip install llama-index-llms-ollama
 pip install chromadb
-pip install llama-index-vector-stores-chroma</div>2024-11-17</li><br/><li><span>🌞</span> 👍（1） 💬（0）<div>后续有graphrag的专门介绍和实践吗？</div>2024-11-06</li><br/><li><span>無鄉</span> 👍（0） 💬（0）<div>引入 LLaMA 3 后，RAG 系统在多个方面有了显著提升？ 如何理解文中这句话？</div>2024-11-16</li><br/>
+pip install llama-index-vector-stores-chroma</p>2024-11-17</li><br/><li><span>🌞</span> 👍（1） 💬（0）<p>后续有graphrag的专门介绍和实践吗？</p>2024-11-06</li><br/><li><span>無鄉</span> 👍（0） 💬（0）<p>引入 LLaMA 3 后，RAG 系统在多个方面有了显著提升？ 如何理解文中这句话？</p>2024-11-16</li><br/>
 </ul>

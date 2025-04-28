@@ -192,7 +192,7 @@ async function foo2(){
 
 最后，留给你一个小练习：我们现在要实现一个红绿灯，把一个圆形div按照绿色3秒，黄色1秒，红色2秒循环改变背景色，你会怎样编写这个代码呢？欢迎你留言讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>杨学茂</span> 👍（557） 💬（16）<div>function sleep(duration){
+<li><span>杨学茂</span> 👍（557） 💬（16）<p>function sleep(duration){
     return new Promise(function(resolve){
         setTimeout(resolve, duration);
     })
@@ -209,7 +209,7 @@ async function main(){
         await changeColor(2000, &quot;red&quot;);
     }
 }
-main()</div>2019-02-23</li><br/><li><span>费马</span> 👍（35） 💬（5）<div>const lightEle = document.getElementById(&#39;traffic-light&#39;);
+main()</p>2019-02-23</li><br/><li><span>费马</span> 👍（35） 💬（5）<p>const lightEle = document.getElementById(&#39;traffic-light&#39;);
 function changeTrafficLight(color, duration) {
   return new Promise(function(resolve, reject) {
     lightEle.style.background = color;
@@ -224,7 +224,7 @@ async function trafficScheduler() {
   trafficScheduler();
 }
 
-trafficScheduler();</div>2019-02-23</li><br/><li><span>deiphi</span> 👍（33） 💬（8）<div>&#47;&#47; 比较原始的写法
+trafficScheduler();</p>2019-02-23</li><br/><li><span>deiphi</span> 👍（33） 💬（8）<p>&#47;&#47; 比较原始的写法
 function color () { 
 	console.log(&#39;green&#39;);
 	
@@ -238,9 +238,9 @@ function color () {
 			}, 1000)
 	}, 3000);
 }
-color();</div>2019-02-26</li><br/><li><span>许吉中</span> 👍（13） 💬（2）<div>async&#47;await函数属于宏观还是微观？</div>2019-02-24</li><br/><li><span>奥斯特洛夫斯基</span> 👍（12） 💬（1）<div>同步的代码和setTimeout都是宏任务？</div>2019-02-26</li><br/><li><span>小孔</span> 👍（8） 💬（2）<div>1. async&#47;await ，遇到await时就会退出执行，我想问下，退出之后是处于等待await执行完再开始之后吗？
+color();</p>2019-02-26</li><br/><li><span>许吉中</span> 👍（13） 💬（2）<p>async&#47;await函数属于宏观还是微观？</p>2019-02-24</li><br/><li><span>奥斯特洛夫斯基</span> 👍（12） 💬（1）<p>同步的代码和setTimeout都是宏任务？</p>2019-02-26</li><br/><li><span>小孔</span> 👍（8） 💬（2）<p>1. async&#47;await ，遇到await时就会退出执行，我想问下，退出之后是处于等待await执行完再开始之后吗？
 2. 如果promise中产生setTimeout函数，那么在这里的setTimeout是处于微观任务对吗？因为这是js引擎直接发起的？
-</div>2019-04-09</li><br/><li><span>周序猿</span> 👍（4） 💬（1）<div>&#47;&#47; 另类的写法
+</p>2019-04-09</li><br/><li><span>周序猿</span> 👍（4） 💬（1）<p>&#47;&#47; 另类的写法
  var lightDiv = document.getElementById(&#39;light&#39;)
     function wait(seconds){
       return new Promise((resolve)=&gt;{
@@ -267,10 +267,10 @@ color();</div>2019-02-26</li><br/><li><span>许吉中</span> 👍（13） 💬�
     yellowLight.nextLight = redLight
     greenLight.nextLight = yellowLight
 
-    redLight.run()</div>2019-02-26</li><br/><li><span>不曾潇洒</span> 👍（4） 💬（2）<div>老师你好，看了这篇文章后受益匪浅，有个小问题:
+    redLight.run()</p>2019-02-26</li><br/><li><span>不曾潇洒</span> 👍（4） 💬（2）<p>老师你好，看了这篇文章后受益匪浅，有个小问题:
 在Promise段的最后一个例子中，最后一句代码:
 sleep(5000).then(()=&gt;{console.log(&#39;c&#39;)})，
-这里面的打印c是属于第一个宏任务还是属于setTime产生的第二个宏任务呢?</div>2019-02-23</li><br/><li><span>许童童</span> 👍（4） 💬（6）<div>async function controlLoop () {
+这里面的打印c是属于第一个宏任务还是属于setTime产生的第二个宏任务呢?</p>2019-02-23</li><br/><li><span>许童童</span> 👍（4） 💬（6）<p>async function controlLoop () {
   await changeColor(&#39;green&#39;, 3000)
   await changeColor(&#39;yellow&#39;, 1000)
   await changeColor(&#39;red&#39;, 2000)
@@ -287,7 +287,7 @@ async function changeColor (color, time) {
   })
 }
 
-controlLoop()</div>2019-02-23</li><br/><li><span>🇨🇳🇨🇳🇨🇳</span> 👍（3） 💬（2）<div>async&#47;awiat 只是generator&#47;iterator的语法糖而已</div>2019-07-08</li><br/><li><span>大力</span> 👍（3） 💬（1）<div>用了async, await后貌似宏观与微观任务分得没那么清晰了。</div>2019-06-18</li><br/><li><span>Geek_e21f0d</span> 👍（3） 💬（1）<div>let lightStates = [{
+controlLoop()</p>2019-02-23</li><br/><li><span>🇨🇳🇨🇳🇨🇳</span> 👍（3） 💬（2）<p>async&#47;awiat 只是generator&#47;iterator的语法糖而已</p>2019-07-08</li><br/><li><span>大力</span> 👍（3） 💬（1）<p>用了async, await后貌似宏观与微观任务分得没那么清晰了。</p>2019-06-18</li><br/><li><span>Geek_e21f0d</span> 👍（3） 💬（1）<p>let lightStates = [{
         color: &#39;green&#39;,
         duration: 3000
     },
@@ -316,8 +316,8 @@ controlLoop()</div>2019-02-23</li><br/><li><span>🇨🇳🇨🇳🇨🇳</span>
         }
         
     };
-    startShowLight();</div>2019-02-26</li><br/><li><span>NeverEver</span> 👍（3） 💬（1）<div>我想到的方法是用Recursion。写一个函数setColor，需要一个参数color，函数里首先把div的backgroundColor设置color，然后用setTimeout来设置下一个颜色，根据传入的color相应更改时间和颜色即可</div>2019-02-23</li><br/><li><span>Geek_55d7cf</span> 👍（2） 💬（1）<div>除了setTimeout还有哪些宏观任务呢？
-</div>2019-04-05</li><br/><li><span>阿成</span> 👍（2） 💬（1）<div>略简陋...
+    startShowLight();</p>2019-02-26</li><br/><li><span>NeverEver</span> 👍（3） 💬（1）<p>我想到的方法是用Recursion。写一个函数setColor，需要一个参数color，函数里首先把div的backgroundColor设置color，然后用setTimeout来设置下一个颜色，根据传入的color相应更改时间和颜色即可</p>2019-02-23</li><br/><li><span>Geek_55d7cf</span> 👍（2） 💬（1）<p>除了setTimeout还有哪些宏观任务呢？
+</p>2019-04-05</li><br/><li><span>阿成</span> 👍（2） 💬（1）<p>略简陋...
 &#47;&#47; sleep,green,red,yellow already defined
 async function main () {
   while (true) {
@@ -329,5 +329,5 @@ async function main () {
     await sleep(2)
   }
 }
-main()</div>2019-02-23</li><br/>
+main()</p>2019-02-23</li><br/>
 </ul>

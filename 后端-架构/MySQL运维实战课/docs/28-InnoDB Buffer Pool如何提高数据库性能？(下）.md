@@ -176,9 +176,9 @@ MySQL 8.4中，默认关闭了Change Buffer和自适应Hash索引，具体可以
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>笙 鸢</span> 👍（0） 💬（1）<div>老师，change buffer和double write buffer的内存地址是都在buffer pool的内存里面，还是自己单独的内存空间啊</div>2024-12-14</li><br/><li><span>叶明</span> 👍（0） 💬（1）<div>相比于以前机械硬盘的几百 IOPS，现在的固态硬盘硬盘动不动上万的 IOPS，IO 能力提升了好几个数量级。
+<li><span>笙 鸢</span> 👍（0） 💬（1）<p>老师，change buffer和double write buffer的内存地址是都在buffer pool的内存里面，还是自己单独的内存空间啊</p>2024-12-14</li><br/><li><span>叶明</span> 👍（0） 💬（1）<p>相比于以前机械硬盘的几百 IOPS，现在的固态硬盘硬盘动不动上万的 IOPS，IO 能力提升了好几个数量级。
 关闭的原因有几个
 首先，如果你是固态硬盘，那么开启 change buffer 和 ahi 带来的性能提升很小，但维护 change buffer 代码的代价却不小，现在很多新的功能已经不兼容 change buffer 了，比如倒序索引，https:&#47;&#47;github.com&#47;mysql&#47;mysql-server&#47;blob&#47;trunk&#47;storage&#47;innobase&#47;rem&#47;rem0cmp.cc#L676-L682
 
-其次，关闭掉 change buffer 和 ahi，buffer pool 能缓存的数据页更多，加上固态磁盘随机 IO 能力的增强，即使多几次 IO 影响也不大。</div>2024-10-25</li><br/>
+其次，关闭掉 change buffer 和 ahi，buffer pool 能缓存的数据页更多，加上固态磁盘随机 IO 能力的增强，即使多几次 IO 影响也不大。</p>2024-10-25</li><br/>
 </ul>

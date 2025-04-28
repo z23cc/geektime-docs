@@ -122,7 +122,7 @@ CacheCloud不仅会收集INFO命令提供的实例实时运行状态信息，进
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你分享给你的朋友或同事。我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Kaito</span> 👍（122） 💬（10）<div>老师这节课讲的工具很实用。
+<li><span>Kaito</span> 👍（122） 💬（10）<p>老师这节课讲的工具很实用。
 
 平时我们遇到的 Redis 变慢问题，有时觉得很难定位原因，其实是因为我们没有做好完善的监控。
 
@@ -148,7 +148,7 @@ Redis INFO 信息看似简单，但是这些信息记录着 Redis 运行时的�
 
 能够查询这些指标的当前状态是最基本的，更好的方案是，能够计算出这些指标的波动情况，然后生成动态的图表展示出来，这样当某一刻指标突增时，监控能帮我们快速捕捉到，降低问题定位的难度。
 
-目前业界比较主流的监控系统，都会使用 Prometheus 来做，插件也很丰富，监控报警也方便集成，推荐用起来。</div>2020-11-09</li><br/><li><span>马听</span> 👍（14） 💬（0）<div>Redis 工具其他用过热 key 查找工具：redis-faina，还不错；Github地址：https:&#47;&#47;github.com&#47;facebookarchive&#47;redis-faina</div>2021-01-30</li><br/><li><span>悟空聊架构</span> 👍（5） 💬（0）<div>Prometheus监控工具确实不错，界面美观，功能强大！</div>2021-05-14</li><br/><li><span>dao</span> 👍（4） 💬（0）<div>我们生产应用中使用 elastic metrcibeat 做 redis 统计监控，同时结合 zabbix 做机器监控，opserver 集合多种数据库的监控。也给开发人员准备了redis gui 工具 redisinsight。</div>2021-04-19</li><br/><li><span>escray</span> 👍（3） 💬（0）<div>作为没有实战经验的小白，只能把本节内容暗自记下，以后需要的时候再回来查询。
+目前业界比较主流的监控系统，都会使用 Prometheus 来做，插件也很丰富，监控报警也方便集成，推荐用起来。</p>2020-11-09</li><br/><li><span>马听</span> 👍（14） 💬（0）<p>Redis 工具其他用过热 key 查找工具：redis-faina，还不错；Github地址：https:&#47;&#47;github.com&#47;facebookarchive&#47;redis-faina</p>2021-01-30</li><br/><li><span>悟空聊架构</span> 👍（5） 💬（0）<p>Prometheus监控工具确实不错，界面美观，功能强大！</p>2021-05-14</li><br/><li><span>dao</span> 👍（4） 💬（0）<p>我们生产应用中使用 elastic metrcibeat 做 redis 统计监控，同时结合 zabbix 做机器监控，opserver 集合多种数据库的监控。也给开发人员准备了redis gui 工具 redisinsight。</p>2021-04-19</li><br/><li><span>escray</span> 👍（3） 💬（0）<p>作为没有实战经验的小白，只能把本节内容暗自记下，以后需要的时候再回来查询。
 
 运维的时候仅有 info 的信息是明显不够的，否则即使单项指标有问题，也只能依赖于经验值，如果有运维工具的话，就可以看到一段时间内的平均值、正常值、波动情况等等。
 
@@ -156,8 +156,8 @@ Prometheus 之前听说过，现在看来应该是开源系统监控报警框架
 
 如果只运维 Redis 的话，CacheCloud 似乎也是一个不错的选择，不知道除了搜狐之外，有没有其他大厂采用。另外，CacheCloud 团队还写了一本《Redis开发与运维》。
 
-有一点好奇，为什么中国团队似乎比较喜欢 Redis ？之前介绍的图书也大部分的都是国内原创的，这次介绍的运维工具也大多是国内的。</div>2021-03-22</li><br/><li><span>Jaising</span> 👍（1） 💬（0）<div>2023 年，可以推荐 Redis 官方出品的 RedisInsight，可视化与运维监控有颠覆 Prometheus 的趋势</div>2023-09-15</li><br/><li><span>追风筝的人</span> 👍（1） 💬（0）<div>老师 加餐讲讲 Redis benchmark 性能测试的关注点？</div>2022-04-22</li><br/><li><span>孙宏彬2</span> 👍（1） 💬（0）<div>老师，我直接做个从实例，然后程序更换ip这样的迁移方式，这样怎么样</div>2020-12-21</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<div>redis-shake可以满足从阿里云迁到AWS吗</div>2022-08-24</li><br/><li><span>Tangzen</span> 👍（0） 💬（0）<div>info states </div>2022-06-14</li><br/><li><span>罗杰</span> 👍（0） 💬（0）<div>Redis cli 🙈</div>2022-05-25</li><br/><li><span>不负青春不负己🤘</span> 👍（0） 💬（0）<div>Mark</div>2022-02-17</li><br/><li><span>树心</span> 👍（0） 💬（0）<div>最基本的监控命令：INFO 命令
+有一点好奇，为什么中国团队似乎比较喜欢 Redis ？之前介绍的图书也大部分的都是国内原创的，这次介绍的运维工具也大多是国内的。</p>2021-03-22</li><br/><li><span>Jaising</span> 👍（1） 💬（0）<p>2023 年，可以推荐 Redis 官方出品的 RedisInsight，可视化与运维监控有颠覆 Prometheus 的趋势</p>2023-09-15</li><br/><li><span>追风筝的人</span> 👍（1） 💬（0）<p>老师 加餐讲讲 Redis benchmark 性能测试的关注点？</p>2022-04-22</li><br/><li><span>孙宏彬2</span> 👍（1） 💬（0）<p>老师，我直接做个从实例，然后程序更换ip这样的迁移方式，这样怎么样</p>2020-12-21</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<p>redis-shake可以满足从阿里云迁到AWS吗</p>2022-08-24</li><br/><li><span>Tangzen</span> 👍（0） 💬（0）<p>info states </p>2022-06-14</li><br/><li><span>罗杰</span> 👍（0） 💬（0）<p>Redis cli 🙈</p>2022-05-25</li><br/><li><span>不负青春不负己🤘</span> 👍（0） 💬（0）<p>Mark</p>2022-02-17</li><br/><li><span>树心</span> 👍（0） 💬（0）<p>最基本的监控命令：INFO 命令
 面向 Prometheus 的 Redis-exporter 监控
 数据迁移工具 Redis-shake（数据一致性比对的工具Redis-full-check）
-集群管理工具 CacheCloud</div>2022-01-10</li><br/><li><span>Michael</span> 👍（0） 💬（0）<div>老师，你好，我有这么一个需求，两个k8s集群，分别是深圳和武汉，k8s集群中都部署了redis主从+哨兵集群，想要把深圳的redis数据迁移到武汉的redis集群环境中，因为redis实例都在pod中，redis-shake可以做到这个嘛?</div>2021-04-20</li><br/><li><span>喵喵喵</span> 👍（0） 💬（0）<div>打卡</div>2020-12-30</li><br/>
+集群管理工具 CacheCloud</p>2022-01-10</li><br/><li><span>Michael</span> 👍（0） 💬（0）<p>老师，你好，我有这么一个需求，两个k8s集群，分别是深圳和武汉，k8s集群中都部署了redis主从+哨兵集群，想要把深圳的redis数据迁移到武汉的redis集群环境中，因为redis实例都在pod中，redis-shake可以做到这个嘛?</p>2021-04-20</li><br/><li><span>喵喵喵</span> 👍（0） 💬（0）<p>打卡</p>2020-12-30</li><br/>
 </ul>

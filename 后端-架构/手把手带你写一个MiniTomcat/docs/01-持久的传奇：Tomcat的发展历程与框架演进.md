@@ -142,13 +142,13 @@ Tomcat获得了持久的成功，对业界影响深远。这里的关键就在�
 
 你可以说一说Tomcat的内部构造是怎样的吗，共包含哪几部分？欢迎你把答案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，邀他一起学习。我们下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>peter</span> 👍（3） 💬（2）<div>请教老师几个问题：
+<li><span>peter</span> 👍（3） 💬（2）<p>请教老师几个问题：
 Q1：Tomcat为什么还支持JSP？
 第01课中提到了Tomcat的发展历史，每个版本都支持JSP，包括最新的版本10。但JSP基本已经被废弃，没有人用JSP了。为什么还要支持JSP？
 Q2：Tomcat中Engine只有一个实例吗？
 Q3：一个context对应一个web应用，context下面有多个servlet。那么，context下面的servlet数量是怎么决定的？
 Q4：端口和service对应吗？即一个端口对应一个service?
-Q5：NIO实现中，为什么抛弃多个Acceptor和Poller的方案而采用单例的方案？</div>2023-12-13</li><br/><li><span>HH🐷🐠</span> 👍（2） 💬（2）<div>🌝🌝看了本文更加期待老师的第五和第六部分， 不知道老师是否有计划，那部分也是重头戏。</div>2023-12-14</li><br/><li><span>Geek_50a5cc</span> 👍（1） 💬（1）<div>根据8.0的Server.xml 来看和老师讲解 的，基本上就是分为 Server,Service,Connector,Egine,Host,(Listener，Realm,Value一些小组件),Context,Servlet(Wrapper);</div>2023-12-14</li><br/><li><span>Martito</span> 👍（1） 💬（1）<div>Container： 用于管理 Servlet 和 JSP 的生命周期。
+Q5：NIO实现中，为什么抛弃多个Acceptor和Poller的方案而采用单例的方案？</p>2023-12-13</li><br/><li><span>HH🐷🐠</span> 👍（2） 💬（2）<p>🌝🌝看了本文更加期待老师的第五和第六部分， 不知道老师是否有计划，那部分也是重头戏。</p>2023-12-14</li><br/><li><span>Geek_50a5cc</span> 👍（1） 💬（1）<p>根据8.0的Server.xml 来看和老师讲解 的，基本上就是分为 Server,Service,Connector,Egine,Host,(Listener，Realm,Value一些小组件),Context,Servlet(Wrapper);</p>2023-12-14</li><br/><li><span>Martito</span> 👍（1） 💬（1）<p>Container： 用于管理 Servlet 和 JSP 的生命周期。
 
 Engine： Engine 是最高级别的容器，代表整个 Tomcat 服务器。一个 Tomcat 实例可以包含多个 Engine，每个 Engine 通常对应一个虚拟主机host。
 
@@ -156,5 +156,5 @@ Host： Host 定义了一个虚拟主机，可以包含多个 Context。
 
 Context： Context 表示一个 Web 应用程序，每个 Context 定义了特定 Web 应用的配置信息。
 
-Servlet：处理业务逻辑和数据存储的组件，通过 HttpServletRequest 和 HttpServletResponse 与客户端进行交互。</div>2023-12-13</li><br/><li><span>飞翔</span> 👍（0） 💬（3）<div>老师 希望把手写系列延续出去 之后还会手写什么中间件嘛</div>2023-12-28</li><br/><li><span>张翀</span> 👍（0） 💬（1）<div>请问本系列课程会讲解Tomcat的nio实现和Apr等实现吗</div>2023-12-15</li><br/>
+Servlet：处理业务逻辑和数据存储的组件，通过 HttpServletRequest 和 HttpServletResponse 与客户端进行交互。</p>2023-12-13</li><br/><li><span>飞翔</span> 👍（0） 💬（3）<p>老师 希望把手写系列延续出去 之后还会手写什么中间件嘛</p>2023-12-28</li><br/><li><span>张翀</span> 👍（0） 💬（1）<p>请问本系列课程会讲解Tomcat的nio实现和Apr等实现吗</p>2023-12-15</li><br/>
 </ul>

@@ -128,5 +128,5 @@ Here is the SQL query I have generated to answer the question `{query}`:
 
 好，这节课就到这里，如果今天的内容对你有所帮助，也欢迎你转发给有需要的朋友，一起学习。我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>赞迪</span> 👍（0） 💬（0）<div>牛哇！良心！</div>2025-01-23</li><br/>
+<li><span>赞迪</span> 👍（0） 💬（0）<p>牛哇！良心！</p>2025-01-23</li><br/>
 </ul>

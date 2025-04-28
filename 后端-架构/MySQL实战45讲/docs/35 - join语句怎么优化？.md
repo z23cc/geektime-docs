@@ -282,7 +282,7 @@ select * from t1 join t2 on(t1.a=t2.a) join t3 on (t2.b=t3.b) where t1.c>=X and 
 
 给这些同学点赞，非常好的思考和讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>老杨同志</span> 👍（64） 💬（5）<div>我准备给
+<li><span>老杨同志</span> 👍（64） 💬（5）<p>我准备给
 t1增加索引c
 t2增加组合索引b,c
 t3增加组合索引b,c
@@ -291,7 +291,7 @@ select * from t1 straight_join t2 on(t1.a=t2.a)  straight_join  t3 on (t2.b=t3.b
 另外我还有个问题，开篇提到的这句sql select * from t1 where a&gt;=1 and a&lt;=100;
 a是索引列，如果这句索引有order by a，不使用MRR 优化，查询出来就是按a排序的，使用了mrr优化，是不是要额外排序
 
-</div>2019-02-01</li><br/><li><span>Mr.Strive.Z.H.L</span> 👍（53） 💬（1）<div>老师您好，新年快乐~~
+</p>2019-02-01</li><br/><li><span>Mr.Strive.Z.H.L</span> 👍（53） 💬（1）<p>老师您好，新年快乐~~
 
 关于三表join有一个疑惑点需要确认：
 
@@ -306,12 +306,12 @@ a是索引列，如果这句索引有order by a，不使用MRR 优化，查询�
 （如果采用BKA进行优化，可以理解为不是一行行数据的提取，而是一个范围内数据的提取）。
 
 按照我上面的描述，确实没有前两表先join得结果集，然后再join第三张表的过程。
-不知道我上面的描述的流程对不对？（我个人觉得，将innodb的处理和server端的处理分隔清晰，对于sql语句的理解，会透彻很多）</div>2019-02-02</li><br/><li><span>天王</span> 👍（34） 💬（4）<div>join语句的优化，NLJ算法的优化，MRR优化器会在join_buffer进行主键的排序，然后去主键索引树上一个个的查找，因为按照主键顺序去主键索引树上查找，性能会比较高，MRR优化接近顺序读，性能会比较高。BKA算法是对NLJ算法的优化，一次取出一批数据的字段到join_buffer中，然后批量join，性能会比较好。BKA算法依赖于MRR，因为批量join找到被驱动表的非聚集索引字段通过MRR去查找行数据</div>2019-02-13</li><br/><li><span>郭健</span> 👍（33） 💬（3）<div>老师，有几个问题还需要请教一下:
+不知道我上面的描述的流程对不对？（我个人觉得，将innodb的处理和server端的处理分隔清晰，对于sql语句的理解，会透彻很多）</p>2019-02-02</li><br/><li><span>天王</span> 👍（34） 💬（4）<p>join语句的优化，NLJ算法的优化，MRR优化器会在join_buffer进行主键的排序，然后去主键索引树上一个个的查找，因为按照主键顺序去主键索引树上查找，性能会比较高，MRR优化接近顺序读，性能会比较高。BKA算法是对NLJ算法的优化，一次取出一批数据的字段到join_buffer中，然后批量join，性能会比较好。BKA算法依赖于MRR，因为批量join找到被驱动表的非聚集索引字段通过MRR去查找行数据</p>2019-02-13</li><br/><li><span>郭健</span> 👍（33） 💬（3）<p>老师，有几个问题还需要请教一下:
 1.上一章t1表100条数据，t21000条数据，mysql会每次都会准确的找出哪张表是合理的驱动表吗？还是需要人为的添加straight_join。
 2.像left join这种，左边一定是驱动表吧？以左边为标准查看右边有符合的条件，拼成一条数据，看到你给其他同学的评论说可能不是，这有些疑惑。
-3.在做join的时候，有些条件是可以放在on中也可以放在where中，比如(t1.yn=1 和t2.yn=1)这种简单判断是否删除的。最主要的是，需要根据两个条件才能join的(productCode和custCode),需要两个都在on里，还是一个在on中，一个在where中更好呢？</div>2019-02-07</li><br/><li><span>cfanbo</span> 👍（26） 💬（9）<div>最近遇到这个需求，in里面的值个数有5万左右，出现的情况很少但存在，这种情况怎么处理。？手动创建临时表再join？
+3.在做join的时候，有些条件是可以放在on中也可以放在where中，比如(t1.yn=1 和t2.yn=1)这种简单判断是否删除的。最主要的是，需要根据两个条件才能join的(productCode和custCode),需要两个都在on里，还是一个在on中，一个在where中更好呢？</p>2019-02-07</li><br/><li><span>cfanbo</span> 👍（26） 💬（9）<p>最近遇到这个需求，in里面的值个数有5万左右，出现的情况很少但存在，这种情况怎么处理。？手动创建临时表再join？
 
-另外in内的值用不用手动排序？</div>2019-02-01</li><br/><li><span>HuaMax</span> 👍（20） 💬（2）<div>前提假设：t1.c&gt;=X可以让t1成为小表。同时打开BKA和MRR。
+另外in内的值用不用手动排序？</p>2019-02-01</li><br/><li><span>HuaMax</span> 👍（20） 💬（2）<p>前提假设：t1.c&gt;=X可以让t1成为小表。同时打开BKA和MRR。
 1、t1表加（c,a)索引。理由：A、t1.c&gt;=X可以使用索引；B、加上a的联合索引，join buffer里放入的是索引（c,a）而不是去主键表取整行，用于与表t2的t1.a = t2.a的join查询，不过返回SELECT * 最终还是需要回表。
 2、t2表加(a,b,c)索引。理由：A、加上a避免与t1表join查询的BNL；B、理由同【1-B】；C、加上c不用回表判断t2.c&gt;=Y的筛选条件
 3、t3表加（b,c）索引。理由：A、避免与t2表join查询的BNL;C、理由同【2-C】
@@ -324,15 +324,15 @@ a是索引列，如果这句索引有order by a，不使用MRR 优化，查询�
 考虑因素包括：
 1、驱动表使用过滤条件筛选后的数据量，使其成为小表，上面的改写也是基于t2是小表
 2、因为t2是跟t1,t3都有关联查询的，这样的话我猜测对t1,t3的查询是不是可以并行执行，而如果使用t1,t3作为主表的话，是否会先跟t2生成中间表，是个串行的过程？
-3、需要给t1加（a,c)索引，给t2加（c,a,b）索引。</div>2019-02-02</li><br/><li><span>WL</span> 👍（18） 💬（2）<div>请教老师两个问题:
+3、需要给t1加（a,c)索引，给t2加（c,a,b）索引。</p>2019-02-02</li><br/><li><span>WL</span> 👍（18） 💬（2）<p>请教老师两个问题:
 1. 通过主键索引找到的数据会会不会先在内存中查询, 如果没有再去磁盘查询?
-2. 为什么在通过主键索引查询数据时, 符合条件的数据以单条数据的方式读到内存中而不是以一整个数据页的方式读到内存中? </div>2019-02-11</li><br/><li><span>涛哥哥</span> 👍（15） 💬（1）<div>老师，对于现在的固态硬盘，这样类似顺序读写的数据库优化，不就不起作用了啊？</div>2019-03-20</li><br/><li><span>TKbook</span> 👍（12） 💬（1）<div>BNL 算法效率低，建议你都尽量转成 BKA 算法。优化的方向就是给驱动表的关联字段加上索引；
-老师最后总结的时候，这句话后面那句，应该是给被驱动表的关联字段加上索引吧。</div>2019-02-01</li><br/><li><span>憶海拾貝</span> 👍（11） 💬（8）<div>节后开工宜补课.
+2. 为什么在通过主键索引查询数据时, 符合条件的数据以单条数据的方式读到内存中而不是以一整个数据页的方式读到内存中? </p>2019-02-11</li><br/><li><span>涛哥哥</span> 👍（15） 💬（1）<p>老师，对于现在的固态硬盘，这样类似顺序读写的数据库优化，不就不起作用了啊？</p>2019-03-20</li><br/><li><span>TKbook</span> 👍（12） 💬（1）<p>BNL 算法效率低，建议你都尽量转成 BKA 算法。优化的方向就是给驱动表的关联字段加上索引；
+老师最后总结的时候，这句话后面那句，应该是给被驱动表的关联字段加上索引吧。</p>2019-02-01</li><br/><li><span>憶海拾貝</span> 👍（11） 💬（8）<p>节后开工宜补课.
 
-按照文中说明的MRR设计思路, 是否可以反推出: 被驱动表使用非递增主键(比如UUID作为主键),就没有必要开启MRR?</div>2019-02-13</li><br/><li><span>dzkk</span> 👍（11） 💬（1）<div>老师，记得我之前看mysql的join是和版本有关系的，另外NLJ是一个统称，被分为了SNLJ(Simple Nested-Loop Join，5.5版本之前采用的，当被驱动表上没有索引的时候使用，该方法比较粗暴，所以后来通过BNLJ进行了优化)、INLJ(Index Nested-Loop Join，被驱动表上有索引)、BNLJ(Block Nested-Loop Join，被驱动表上没有索引)，另外了解到mariadb是支持了hash join的Block Nested Loop Hash (BNLH) join，没有使用过，不知道效果怎么样。不知道我了解的信息对不对。</div>2019-02-01</li><br/><li><span>poppy</span> 👍（9） 💬（2）<div>select * from t1 join t2 on(t1.a=t2.a) join t3 on (t2.b=t3.b) where t1.c&gt;=X and t2.c&gt;=Y and t3.c&gt;=Z;
-老师，我的理解是真正做join的三张表的大小实际上是t1.c&gt;=X、t2.c&gt;=Y、t3.c&gt;=Z对应满足条件的行数，为了方便快速定位到满足条件的数据，t1、t2和t3的c字段最好都建索引。对于join操作，按道理mysql应该会优先选择join之后数量比较少的两张表先来进行join操作，例如满足t1.a=t2.a的行数小于满足t2.b=t3.b的行数，那么就会优先将t1和t2进行join，选择t1.c&gt;=X、t2.c&gt;=Y中行数少的表作为驱动表，另外一张作为被驱动表，在被驱动表的a的字段上建立索引，这样就完成了t1和t2的join操作并把结果放入join_buffer准备与t3进行join操作，则在作为被驱动表的t3的b字段上建立索引。不知道举的这个例子分析得是否正确，主要是这里不知道t1、t2、t3三张表的数据量，以及满足t1.c&gt;=X ，t2.c&gt;=Y ，t3.c&gt;=Z的数据量，还有各个字段的区分度如何，是否适合建立索引等。</div>2019-02-01</li><br/><li><span>读书看报</span> 👍（8） 💬（2）<div>order by cjsj desc limit 0,20 explain  Extra只是显示 Using where ，执行时间 7秒钟
+按照文中说明的MRR设计思路, 是否可以反推出: 被驱动表使用非递增主键(比如UUID作为主键),就没有必要开启MRR?</p>2019-02-13</li><br/><li><span>dzkk</span> 👍（11） 💬（1）<p>老师，记得我之前看mysql的join是和版本有关系的，另外NLJ是一个统称，被分为了SNLJ(Simple Nested-Loop Join，5.5版本之前采用的，当被驱动表上没有索引的时候使用，该方法比较粗暴，所以后来通过BNLJ进行了优化)、INLJ(Index Nested-Loop Join，被驱动表上有索引)、BNLJ(Block Nested-Loop Join，被驱动表上没有索引)，另外了解到mariadb是支持了hash join的Block Nested Loop Hash (BNLH) join，没有使用过，不知道效果怎么样。不知道我了解的信息对不对。</p>2019-02-01</li><br/><li><span>poppy</span> 👍（9） 💬（2）<p>select * from t1 join t2 on(t1.a=t2.a) join t3 on (t2.b=t3.b) where t1.c&gt;=X and t2.c&gt;=Y and t3.c&gt;=Z;
+老师，我的理解是真正做join的三张表的大小实际上是t1.c&gt;=X、t2.c&gt;=Y、t3.c&gt;=Z对应满足条件的行数，为了方便快速定位到满足条件的数据，t1、t2和t3的c字段最好都建索引。对于join操作，按道理mysql应该会优先选择join之后数量比较少的两张表先来进行join操作，例如满足t1.a=t2.a的行数小于满足t2.b=t3.b的行数，那么就会优先将t1和t2进行join，选择t1.c&gt;=X、t2.c&gt;=Y中行数少的表作为驱动表，另外一张作为被驱动表，在被驱动表的a的字段上建立索引，这样就完成了t1和t2的join操作并把结果放入join_buffer准备与t3进行join操作，则在作为被驱动表的t3的b字段上建立索引。不知道举的这个例子分析得是否正确，主要是这里不知道t1、t2、t3三张表的数据量，以及满足t1.c&gt;=X ，t2.c&gt;=Y ，t3.c&gt;=Z的数据量，还有各个字段的区分度如何，是否适合建立索引等。</p>2019-02-01</li><br/><li><span>读书看报</span> 👍（8） 💬（2）<p>order by cjsj desc limit 0,20 explain  Extra只是显示 Using where ，执行时间 7秒钟
 order by cjsj desc limit 5000,20 explain  Extra只是显示 Using index condition; Using where; Using filesort,  执行时间 0.1 秒
-有些许的凌乱了@^^@</div>2019-02-01</li><br/><li><span>bluefantasy3</span> 👍（7） 💬（4）<div>请教老师一个问题：innodb的Buffer Pool的内存是innodb自己管理还是使用OS的page cache? 我理解应该是innodb自己管理。我在另一个课程里看到如果频繁地把OS的&#47;proc&#47;sys&#47;vm&#47;drop_caches 改成 1会影响MySQL的性能，如果buffer pool是MySQL自己管理，应该不受这个参数影响呀？请解答。</div>2019-02-02</li><br/><li><span>库淘淘</span> 👍（6） 💬（1）<div>set optimizer_switch=&#39;mrr=on,mrr_cost_based=off,batched_key_access=on&#39;;
+有些许的凌乱了@^^@</p>2019-02-01</li><br/><li><span>bluefantasy3</span> 👍（7） 💬（4）<p>请教老师一个问题：innodb的Buffer Pool的内存是innodb自己管理还是使用OS的page cache? 我理解应该是innodb自己管理。我在另一个课程里看到如果频繁地把OS的&#47;proc&#47;sys&#47;vm&#47;drop_caches 改成 1会影响MySQL的性能，如果buffer pool是MySQL自己管理，应该不受这个参数影响呀？请解答。</p>2019-02-02</li><br/><li><span>库淘淘</span> 👍（6） 💬（1）<p>set optimizer_switch=&#39;mrr=on,mrr_cost_based=off,batched_key_access=on&#39;;
 create index idx_c on t2(c);
 create index idx_a_c on t1(a,c);
 create index idx_b_c on t3(b,c);
@@ -350,5 +350,5 @@ mysql&gt; explain select * from t2
 以自己理解如下，有问题请老师能够指出
 1.根据查询因是select * 肯定回表的，其中在表t2创建索引idx_c,为了能够使用ICP,MRR，如果c字段重复率高或取值行数多，可以考虑不建索引
 2.已t2 作为驱动表，一方面考虑其他两表都有关联,t2表放入join buffer后关联t1后，再关联t2 得出结果 再各回t2,t3表取出 得到结果集（之前理解都是t1和t2join得结果集再与t3join，本次理解太确定）
-3.t2、t3表建立联合查询目的能够使用ICP</div>2019-02-01</li><br/>
+3.t2、t3表建立联合查询目的能够使用ICP</p>2019-02-01</li><br/>
 </ul>

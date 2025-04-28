@@ -460,5 +460,5 @@ Invoker<?> getInvoker(Channel channel, Invocation inv) throws RemotingException 
 
 这也就和当初在“[发布流程](https://time.geekbang.org/column/article/620988)”中了解到的衔接起来了，提供方在导出服务时，导出的对象会存储在 exporterMap 中，当初的服务导出把对象存储在 exporterMap 中，等到有请求过来的时候，就直接从 exporterMap 取出对应的 invoker 进行处理业务逻辑，设计非常巧妙。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Nights</span> 👍（2） 💬（1）<div>课程从头学到尾，这些题目答的也不全，很多东西没有踩坑印象不深刻</div>2023-02-21</li><br/>
+<li><span>Nights</span> 👍（2） 💬（1）<p>课程从头学到尾，这些题目答的也不全，很多东西没有踩坑印象不深刻</p>2023-02-21</li><br/>
 </ul>

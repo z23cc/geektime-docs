@@ -234,9 +234,9 @@ JDK中的函数式接口包括Function、Predicate和Consumer，它们分别具�
 
 希望你认真思考，然后把思考后的结果分享到评论区，我们一起讨论，如果有收获的话，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>李二木</span> 👍（1） 💬（0）<div>能不能加餐讲下java新版本的虚拟线程呢。</div>2023-11-06</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师问题：
+<li><span>李二木</span> 👍（1） 💬（0）<p>能不能加餐讲下java新版本的虚拟线程呢。</p>2023-11-06</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师问题：
 Q1：案例1中，Function类型的square怎么没有apply？
 Function接口只有一个方法apply，怎么定义的square没有apply?
 Q2：案例2中，Predict类型的hasEvenLength怎么没有test?
-Predict接口只有一个方法test，怎么定义的hasEvenLength没有test?</div>2023-11-06</li><br/><li><span>二九幂加八</span> 👍（0） 💬（0）<div>老师，Stream API处理数据会不会造成OOM？如果会出现OOM的情况，应该如何处理这种情况？</div>2023-11-06</li><br/>
+Predict接口只有一个方法test，怎么定义的hasEvenLength没有test?</p>2023-11-06</li><br/><li><span>二九幂加八</span> 👍（0） 💬（0）<p>老师，Stream API处理数据会不会造成OOM？如果会出现OOM的情况，应该如何处理这种情况？</p>2023-11-06</li><br/>
 </ul>

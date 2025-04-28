@@ -367,10 +367,10 @@ print(tools)
 
 相信细心的同学已经发现了，我们这个专栏的更新节奏还是很快的，前面的内容基本接近工作日日更。从内容的重要程度来说，基础篇其实相当重要，值此中秋&amp;国庆双节长假来临之际，希望大家能好好休息，也能空出一段时间好好复习前面所学，所以我们的专栏计划停更一周，10月9日恢复正常更新，也期待你能把前面的思考题都做一做，我会在留言区等你的分享，与你交流探讨。最后祝大家小长假愉快，中秋阖家团圆！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_617b3f</span> 👍（4） 💬（2）<div>老师请问下，ReAct框架的原理是：”大语言模型可以通过生成推理痕迹和任务特定行动来实现更大的协同作用。引导模型生成一个任务解决轨迹：观察环境 - 进行思考 - 采取行动，也就是观察 - 思考 - 行动。那么，再进一步进行简化，就变成了推理 - 行动，也就是 Reasoning-Acting 框架。“ 
+<li><span>Geek_617b3f</span> 👍（4） 💬（2）<p>老师请问下，ReAct框架的原理是：”大语言模型可以通过生成推理痕迹和任务特定行动来实现更大的协同作用。引导模型生成一个任务解决轨迹：观察环境 - 进行思考 - 采取行动，也就是观察 - 思考 - 行动。那么，再进一步进行简化，就变成了推理 - 行动，也就是 Reasoning-Acting 框架。“ 
 那么Plan and execute的方式对做Plan的那个大模型的要求不是更高么？因为做计划的那个大模型，直接就根据问题做计划了，过程中没有接收任何反馈，不像ReAct方式那样，中间是接收一些信息的。
 另外这个做计划的过程，不是思维链的过程么，还是有什么区别呢？
-所以…… 不是很理解为何Plan and execute是一个更灵活、更新的一种方式。还请老师答疑解惑，谢谢！</div>2023-11-16</li><br/><li><span>陈东</span> 👍（4） 💬（1）<div>老师节日快乐。</div>2023-09-30</li><br/><li><span>抽象派</span> 👍（2） 💬（4）<div>使用结构化工具对话代理的实例代码报错，请问怎么改？。具体输出如下：
+所以…… 不是很理解为何Plan and execute是一个更灵活、更新的一种方式。还请老师答疑解惑，谢谢！</p>2023-11-16</li><br/><li><span>陈东</span> 👍（4） 💬（1）<p>老师节日快乐。</p>2023-09-30</li><br/><li><span>抽象派</span> 👍（2） 💬（4）<p>使用结构化工具对话代理的实例代码报错，请问怎么改？。具体输出如下：
 Traceback (most recent call last):
   File &quot;&#47;Users&#47;abc&#47;project&#47;python&#47;learnlangchain&#47;struct_tool.py&quot;, line 17, in &lt;module&gt;
     agent_chain = initialize_agent(
@@ -396,7 +396,7 @@ Traceback (most recent call last):
   File &quot;pydantic&#47;main.py&quot;, line 1076, in pydantic.main.validate_model
   File &quot;pydantic&#47;fields.py&quot;, line 860, in pydantic.fields.ModelField.validate
 pydantic.errors.ConfigError: field &quot;retry_chain&quot; not yet prepared so type is still a ForwardRef, you might need to call OutputFixingParser.update_forward_refs().
-</div>2023-09-28</li><br/><li><span>SH</span> 👍（1） 💬（1）<div>老师， 把离散的文档及其他信息做嵌入，存储到向量数据库中，然后再提取的过程。 这类利用大模型的时候（比如：openai 的 api） 这类的数据是否会被大模型 获取到？  导致信息泄露～</div>2023-11-05</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<div>老师，在使用plan and execute代理时，推理的上下文比较大的时候，结果就不太如意了。例如：一个go项目，我要求给指定的方法增加一个日志输出的代码逻辑，然后代理读取了整个源代码文件，最后代码是加了，但是只有那个方法还保留着是完整的，其他的代码就没了。请问这种情况有什么手段可以优化吗？</div>2023-10-11</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<div>老师，agent可以结合chain来用吗？有示例吗？</div>2023-10-10</li><br/><li><span>陈东</span> 👍（1） 💬（1）<div>老师好。您平时的工作业务和业务流是什么？</div>2023-09-30</li><br/><li><span>Final</span> 👍（1） 💬（1）<div>中秋快乐 ~</div>2023-09-29</li><br/><li><span>iLeGeND</span> 👍（1） 💬（1）<div>老师提下代码</div>2023-09-28</li><br/><li><span>Geek2808</span> 👍（0） 💬（1）<div>对于StructedToolChat部分，异步总是有问题，可能是VPN网络的问题，改成同步方式跑起来就可以了：
+</p>2023-09-28</li><br/><li><span>SH</span> 👍（1） 💬（1）<p>老师， 把离散的文档及其他信息做嵌入，存储到向量数据库中，然后再提取的过程。 这类利用大模型的时候（比如：openai 的 api） 这类的数据是否会被大模型 获取到？  导致信息泄露～</p>2023-11-05</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<p>老师，在使用plan and execute代理时，推理的上下文比较大的时候，结果就不太如意了。例如：一个go项目，我要求给指定的方法增加一个日志输出的代码逻辑，然后代理读取了整个源代码文件，最后代码是加了，但是只有那个方法还保留着是完整的，其他的代码就没了。请问这种情况有什么手段可以优化吗？</p>2023-10-11</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<p>老师，agent可以结合chain来用吗？有示例吗？</p>2023-10-10</li><br/><li><span>陈东</span> 👍（1） 💬（1）<p>老师好。您平时的工作业务和业务流是什么？</p>2023-09-30</li><br/><li><span>Final</span> 👍（1） 💬（1）<p>中秋快乐 ~</p>2023-09-29</li><br/><li><span>iLeGeND</span> 👍（1） 💬（1）<p>老师提下代码</p>2023-09-28</li><br/><li><span>Geek2808</span> 👍（0） 💬（1）<p>对于StructedToolChat部分，异步总是有问题，可能是VPN网络的问题，改成同步方式跑起来就可以了：
 import os
 os.environ[&quot;OPENAI_API_KEY&quot;] = &#39;xxxx&#39;
 
@@ -427,7 +427,7 @@ def main():
     print(response)
 
 main()
-</div>2024-01-09</li><br/><li><span>shatu</span> 👍（0） 💬（1）<div>Plan and execute受限于大模型的不稳定性，还是可能出错，而且一步错步步错，这对于复杂多步骤流程还是很有挑战性【Thought:To calculate the number of bouquets that can be purchased, you need to divide 100 by the average price of a bouquet of roses in New York.
+</p>2024-01-09</li><br/><li><span>shatu</span> 👍（0） 💬（1）<p>Plan and execute受限于大模型的不稳定性，还是可能出错，而且一步错步步错，这对于复杂多步骤流程还是很有挑战性【Thought:To calculate the number of bouquets that can be purchased, you need to divide 100 by the average price of a bouquet of roses in New York.
 
 Action:
 ```
@@ -444,11 +444,11 @@ Action:
 ```
 ...numexpr.evaluate(&quot;100 &#47; (63.98 + 56.99 + 18.70)&quot;)...
 
-Answer: 0.7159733657907926】</div>2023-11-17</li><br/><li><span>Geek_995b81</span> 👍（0） 💬（1）<div>老师，结构化工具那一个demo，比如模型决定使用 PlayWrightBrowserToolkit 中的 get_elements 工具。这里我们没有给他提示，他是怎么知道用get_elements工具的呢？另外，结构化工具还有其他工具吗？</div>2023-10-31</li><br/><li><span>Monin</span> 👍（0） 💬（3）<div>老师 请教下  Plan and execute和之前说的ReAct感觉很相似  都可以概括为推理+行动？  那两者的区别是啥？  我个人理解是
+Answer: 0.7159733657907926】</p>2023-11-17</li><br/><li><span>Geek_995b81</span> 👍（0） 💬（1）<p>老师，结构化工具那一个demo，比如模型决定使用 PlayWrightBrowserToolkit 中的 get_elements 工具。这里我们没有给他提示，他是怎么知道用get_elements工具的呢？另外，结构化工具还有其他工具吗？</p>2023-10-31</li><br/><li><span>Monin</span> 👍（0） 💬（3）<p>老师 请教下  Plan and execute和之前说的ReAct感觉很相似  都可以概括为推理+行动？  那两者的区别是啥？  我个人理解是
 ①Plan and execute可以由两个LLM代理完成   ReAct一般由一个LLM完成整个推理+行动    
-②Plan and execute由多个LLM  可以让推理+行动并行操作   实现fork-join操作  缩短执行时间</div>2023-10-25</li><br/><li><span>旅梦开发团</span> 👍（0） 💬（2）<div>我这里执行 playwright install  报了以下错误：
+②Plan and execute由多个LLM  可以让推理+行动并行操作   实现fork-join操作  缩短执行时间</p>2023-10-25</li><br/><li><span>旅梦开发团</span> 👍（0） 💬（2）<p>我这里执行 playwright install  报了以下错误：
 Downloading Chromium 117.0.5938.62 (playwright build v1080) from https:&#47;&#47;playwright.azureedge.net&#47;builds&#47;chromium&#47;1080&#47;chromium-win64.zip
-Error: read ECONNRESET  大家怎么解决的</div>2023-10-03</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>***** 修订课程中“使用结构化工具对话代理”部分的代码，改为通义千问，将旧版 langchain的改为新版本
+Error: read ECONNRESET  大家怎么解决的</p>2023-10-03</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>***** 修订课程中“使用结构化工具对话代理”部分的代码，改为通义千问，将旧版 langchain的改为新版本
 ## 旧代码1：
 from langchain.agents.agent_toolkits import PlayWrightBrowserToolkit
 from langchain.tools.playwright.utils import create_async_playwright_browser
@@ -500,5 +500,5 @@ func=search.run,
 self_ask_with_search.run( &quot;使用玫瑰作为国花的国家的首都是哪里?&quot;  )
 ## 新代码6 ，将run方法改为invote
 func=search.invoke,  
-self_ask_with_search_agent.invoke(&quot;使用玫瑰作为国花的国家的首都是哪里?&quot;) </div>2024-08-10</li><br/>
+self_ask_with_search_agent.invoke(&quot;使用玫瑰作为国花的国家的首都是哪里?&quot;) </p>2024-08-10</li><br/>
 </ul>

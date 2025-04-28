@@ -120,17 +120,17 @@ JdbcTemplate、MyBatis、Hibernate都是对JDBC的二次封装，为的是进一
 
 欢迎留言和我分享你的想法。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>，</span> 👍（71） 💬（2）<div>工作中做过一些c++的东西,做起来相当复杂,每引入一个第三方类库,都要自己去github上找,找到再clone下来,打包,才能引入,模板编程面向对象面向过程基于对象函数式,眼花缭乱,指针引用const傻傻分不清楚,cmake打包异常,只有求助大佬才能维持生活
-做java就像回家一样,做开发有spring全家桶,打包部署有maven,在csdn比家里感觉好多了,里面各个是人才,说话又好听,只需要CTRL C V就能完成工作,我超喜欢里面的!</div>2020-05-22</li><br/><li><span>Demon.Lee</span> 👍（33） 💬（0）<div>易用性：Hibernate &gt; MyBatis &gt; JdbcTemplate
+<li><span>，</span> 👍（71） 💬（2）<p>工作中做过一些c++的东西,做起来相当复杂,每引入一个第三方类库,都要自己去github上找,找到再clone下来,打包,才能引入,模板编程面向对象面向过程基于对象函数式,眼花缭乱,指针引用const傻傻分不清楚,cmake打包异常,只有求助大佬才能维持生活
+做java就像回家一样,做开发有spring全家桶,打包部署有maven,在csdn比家里感觉好多了,里面各个是人才,说话又好听,只需要CTRL C V就能完成工作,我超喜欢里面的!</p>2020-05-22</li><br/><li><span>Demon.Lee</span> 👍（33） 💬（0）<p>易用性：Hibernate &gt; MyBatis &gt; JdbcTemplate
 性能：JdbcTemplate &gt; MyBatis &gt; Hibernate
-灵活性：MyBatis &gt; JdbcTemplate &gt; Hibernate</div>2020-05-22</li><br/><li><span>寒溪</span> 👍（27） 💬（2）<div>netty是个反例，兼顾易用性和性能。</div>2020-05-22</li><br/><li><span>Monday</span> 👍（23） 💬（1）<div>mybatis系列
+灵活性：MyBatis &gt; JdbcTemplate &gt; Hibernate</p>2020-05-22</li><br/><li><span>寒溪</span> 👍（27） 💬（2）<p>netty是个反例，兼顾易用性和性能。</p>2020-05-22</li><br/><li><span>Monday</span> 👍（23） 💬（1）<p>mybatis系列
 1、mybatis plus 作用如其名，mybatis增强功能封装好了一些crud的方法
 2、mybatis-generator自动生成器，自动生成实体、mapper、Mapper.xml等
-3、mybatis分页插件PageHelper，无需关心分页的问题</div>2020-05-22</li><br/><li><span>L🚲🐱</span> 👍（15） 💬（1）<div>Mybatis Plus 可以说是 大大的提高了 Mybatis 的使用效率</div>2020-06-01</li><br/><li><span>Amon Tin</span> 👍（8） 💬（0）<div>jooq，试用了一年多了，非常好用，把SQL语法换成了select().from().where().and()这类的Java语法，同时也支持直接写SQL，orm的定义和映射关系也可以根据表结构自动生成，性能可匹敌mybatis，易用性不比hibernate差，可读性比上面两个都强，实乃新一代orm框架之王</div>2021-07-01</li><br/><li><span>君哥聊技术</span> 👍（8） 💬（0）<div>比如做限流的时候可以直接使用guava中的限流器</div>2020-05-22</li><br/><li><span>子豪sirius</span> 👍（7） 💬（8）<div>mybatis可以让开发人员自己写SQL，相比hibernate给了更多控制权。不过在实际开发中有个问题，有些开发人员会写很复杂的SQL，美其名曰是性能更好，但实际性能提升多少，不清楚；反而因为SQL写得巨长巨复杂，带来了阅读困难、调试和查错不便等等问题。明明这部分代码用Java写，业务逻辑是更清晰的～</div>2020-05-22</li><br/><li><span>我是曾经那个少年</span> 👍（5） 💬（0）<div>1:  Spring Boot技术栈，集成外部框架方便。
+3、mybatis分页插件PageHelper，无需关心分页的问题</p>2020-05-22</li><br/><li><span>L🚲🐱</span> 👍（15） 💬（1）<p>Mybatis Plus 可以说是 大大的提高了 Mybatis 的使用效率</p>2020-06-01</li><br/><li><span>Amon Tin</span> 👍（8） 💬（0）<p>jooq，试用了一年多了，非常好用，把SQL语法换成了select().from().where().and()这类的Java语法，同时也支持直接写SQL，orm的定义和映射关系也可以根据表结构自动生成，性能可匹敌mybatis，易用性不比hibernate差，可读性比上面两个都强，实乃新一代orm框架之王</p>2021-07-01</li><br/><li><span>君哥聊技术</span> 👍（8） 💬（0）<p>比如做限流的时候可以直接使用guava中的限流器</p>2020-05-22</li><br/><li><span>子豪sirius</span> 👍（7） 💬（8）<p>mybatis可以让开发人员自己写SQL，相比hibernate给了更多控制权。不过在实际开发中有个问题，有些开发人员会写很复杂的SQL，美其名曰是性能更好，但实际性能提升多少，不清楚；反而因为SQL写得巨长巨复杂，带来了阅读困难、调试和查错不便等等问题。明明这部分代码用Java写，业务逻辑是更清晰的～</p>2020-05-22</li><br/><li><span>我是曾经那个少年</span> 👍（5） 💬（0）<p>1:  Spring Boot技术栈，集成外部框架方便。
 2：Spring Cloud Alibaba 微服务的技术组件基本够用。
 3：hutool工具类方便好用。该有的都有。
 4：Mybatis-Plus 避免了最简单的增删改查的实现，以及数据库主键自增，数据字段填充，多数据源的支持。
-</div>2021-12-12</li><br/><li><span>test</span> 👍（5） 💬（2）<div>SpringCloud全家桶</div>2020-05-22</li><br/><li><span>iamjohnnyzhuang</span> 👍（4） 💬（0）<div>golang 用的gorm框架。感觉做的算是比较好，又有ORM的特性可以直接做对象转换，又开放了SQL编写，比较灵活。但是有一点，就是sql都编写在代码里和jdbctemplate一致，不是特别好维护。</div>2020-08-06</li><br/><li><span>杨逸林</span> 👍（3） 💬（4）<div>学习 JPA 和 Hibernate 的成本很高，一般人根本不知道什么 HQL，还有 hbm 文件，以及 OneToMany，ManyToMany，ManyToOne，用起来其实很麻烦。而 Mybatis 只要你会写 SQL 就行了，根本不要你了解那些，虽然设计数据库表的时候会用。</div>2020-09-27</li><br/><li><span>夕林语</span> 👍（3） 💬（0）<div>在项目开发当中用到lombok可以减少重复的geter seter方法，虽然有点违背面向对象的特性；还有一些工具类库的使用，比如google guava，一些集合类和字符串的操作大大简化</div>2020-06-02</li><br/><li><span>javaadu</span> 👍（3） 💬（0）<div>目前用过的最好用的框架还是Spring Boot</div>2020-05-24</li><br/><li><span>辣么大</span> 👍（2） 💬（3）<div>使用MyBatis，之前项目组写sql规范中要求不让写 select * 这种sql，说是影响性能。
+</p>2021-12-12</li><br/><li><span>test</span> 👍（5） 💬（2）<p>SpringCloud全家桶</p>2020-05-22</li><br/><li><span>iamjohnnyzhuang</span> 👍（4） 💬（0）<p>golang 用的gorm框架。感觉做的算是比较好，又有ORM的特性可以直接做对象转换，又开放了SQL编写，比较灵活。但是有一点，就是sql都编写在代码里和jdbctemplate一致，不是特别好维护。</p>2020-08-06</li><br/><li><span>杨逸林</span> 👍（3） 💬（4）<p>学习 JPA 和 Hibernate 的成本很高，一般人根本不知道什么 HQL，还有 hbm 文件，以及 OneToMany，ManyToMany，ManyToOne，用起来其实很麻烦。而 Mybatis 只要你会写 SQL 就行了，根本不要你了解那些，虽然设计数据库表的时候会用。</p>2020-09-27</li><br/><li><span>夕林语</span> 👍（3） 💬（0）<p>在项目开发当中用到lombok可以减少重复的geter seter方法，虽然有点违背面向对象的特性；还有一些工具类库的使用，比如google guava，一些集合类和字符串的操作大大简化</p>2020-06-02</li><br/><li><span>javaadu</span> 👍（3） 💬（0）<p>目前用过的最好用的框架还是Spring Boot</p>2020-05-24</li><br/><li><span>辣么大</span> 👍（2） 💬（3）<p>使用MyBatis，之前项目组写sql规范中要求不让写 select * 这种sql，说是影响性能。
 
-每个DO都有很多字段，每次写sql写的要吐，没办法自己写了个程序自动生成简单的DO查询sql。</div>2020-05-29</li><br/>
+每个DO都有很多字段，每次写sql写的要吐，没办法自己写了个程序自动生成简单的DO查询sql。</p>2020-05-29</li><br/>
 </ul>

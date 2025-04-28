@@ -191,14 +191,14 @@ Stages页面，更多地是一种预览，要想查看每一个Stage的详情，
 
 欢迎你在留言区跟我交流探讨，也欢迎推荐你把这一讲分享给有需要的朋友、同事。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>Hiway</span> 👍（17） 💬（2）<div>第一问：我的理解是RDD Blocks表示的是读入数据集时的分区数，而Complete Tasks则表示整个job完成时该Executor完成的Task数。我觉得原因有二：
+<li><span>Hiway</span> 👍（17） 💬（2）<p>第一问：我的理解是RDD Blocks表示的是读入数据集时的分区数，而Complete Tasks则表示整个job完成时该Executor完成的Task数。我觉得原因有二：
 一是spark在划分DAG时，遇到shuffle便会断开产生新的Stage，一个task只是对应一个stage里的一个partition。
 二是如果未修改spark.sql.shuffle.partitions配置，在join的时候就会自动修改为200的并行度，对应的下一个Stage也就产生了200个task
 
 第二问：从Executors界面看，应该是两个Executor在跑。因为是分布式所以在最后write的时候，两个Executor都进行了save操作。至于为什么是两台Executor跑，应该这样计算出来的：executor 数量 = spark.cores.max&#47;spark.executor.cores
 
-老师，是这样吗？可以发一下你的spark-submit命令嘛?</div>2021-10-26</li><br/><li><span>onepieceJT2018</span> 👍（6） 💬（1）<div>不知道为什么 hive on spark的话 ui里面storage 这个面板是空白</div>2021-10-24</li><br/><li><span>Reiser</span> 👍（5） 💬（1）<div>周末回看之前的文章，看到这篇加餐有点感动。太走心了，磊哥！</div>2021-10-31</li><br/><li><span>LR.яг ®</span> 👍（2） 💬（2）<div>有一个别的组同事，每次启动spark都会把资源申请完，他的部分启动命令如下： --executor-memory 6G --num-executors 2000 --executor-cores 4。导致我每次都要去kill掉他的application。
-请问老师，有没有什么方法可以限制启动时不允许申请这么多资源？</div>2022-01-21</li><br/><li><span>Unknown element</span> 👍（1） 💬（4）<div>老师我的executors页面为什么rdd blocks都是0？</div>2021-11-23</li><br/><li><span>保护</span> 👍（1） 💬（1）<div>Job Id 为 7存在的原因 是因为保存了文件嘛</div>2021-11-22</li><br/><li><span>Geek_18fe90</span> 👍（1） 💬（1）<div>解决了我的一块心病</div>2021-11-15</li><br/><li><span>jerry guo</span> 👍（1） 💬（1）<div>spark sql job的Storage页面怎么是空白的呢？是只有运行的时候才有数据吗</div>2021-10-31</li><br/><li><span>Geek_01fccd</span> 👍（1） 💬（2）<div>多个job公用一个executer，是按照executer纬度，计算的完成的task数吗？</div>2021-10-20</li><br/><li><span>Sean</span> 👍（0） 💬（1）<div>抢个沙发先🤯🤯🤯</div>2021-10-19</li><br/><li><span>苏文进</span> 👍（1） 💬（0）<div>老师好，我用代码算了一下storageMemory和SparkUI上的对不上，我的spark版本是3.0.0：
+老师，是这样吗？可以发一下你的spark-submit命令嘛?</p>2021-10-26</li><br/><li><span>onepieceJT2018</span> 👍（6） 💬（1）<p>不知道为什么 hive on spark的话 ui里面storage 这个面板是空白</p>2021-10-24</li><br/><li><span>Reiser</span> 👍（5） 💬（1）<p>周末回看之前的文章，看到这篇加餐有点感动。太走心了，磊哥！</p>2021-10-31</li><br/><li><span>LR.яг ®</span> 👍（2） 💬（2）<p>有一个别的组同事，每次启动spark都会把资源申请完，他的部分启动命令如下： --executor-memory 6G --num-executors 2000 --executor-cores 4。导致我每次都要去kill掉他的application。
+请问老师，有没有什么方法可以限制启动时不允许申请这么多资源？</p>2022-01-21</li><br/><li><span>Unknown element</span> 👍（1） 💬（4）<p>老师我的executors页面为什么rdd blocks都是0？</p>2021-11-23</li><br/><li><span>保护</span> 👍（1） 💬（1）<p>Job Id 为 7存在的原因 是因为保存了文件嘛</p>2021-11-22</li><br/><li><span>Geek_18fe90</span> 👍（1） 💬（1）<p>解决了我的一块心病</p>2021-11-15</li><br/><li><span>jerry guo</span> 👍（1） 💬（1）<p>spark sql job的Storage页面怎么是空白的呢？是只有运行的时候才有数据吗</p>2021-10-31</li><br/><li><span>Geek_01fccd</span> 👍（1） 💬（2）<p>多个job公用一个executer，是按照executer纬度，计算的完成的task数吗？</p>2021-10-20</li><br/><li><span>Sean</span> 👍（0） 💬（1）<p>抢个沙发先🤯🤯🤯</p>2021-10-19</li><br/><li><span>苏文进</span> 👍（1） 💬（0）<p>老师好，我用代码算了一下storageMemory和SparkUI上的对不上，我的spark版本是3.0.0：
 ```
 def calculateStorageMemory(
       executorMemory: Long = Runtime.getRuntime.maxMemory
@@ -224,5 +224,5 @@ actual storageMemory is 217 MB
 有的对不上是因为开了堆外内存，但是默认情况堆外内存是关闭的，这个原因排除。
 有的对不上是SparkUI上字节到GB的换算是用的1000而不是1024，这个bug已经被修复了（https:&#47;&#47;issues.apache.org&#47;jira&#47;browse&#47;SPARK-25696），所以也被排除。
 还有的对不上是JVM实际可用内存比spark.executor.memory的值小，而我情况是默认1g，JVM可用的内存是3个多g.
-</div>2022-03-25</li><br/><li><span>ddww</span> 👍（0） 💬（1）<div>想请教一个问题，Executors页面下，Storage Memory 4.3G是怎么算出来的，这个是集群FrameWork Memory的总和吗？如果是的话，我只算出来3.1G。</div>2022-09-18</li><br/><li><span>Van</span> 👍（0） 💬（0）<div>好东西</div>2022-07-26</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<div>请问下，spark 有没有类似prometheus metric 监控呢</div>2022-05-04</li><br/>
+</p>2022-03-25</li><br/><li><span>ddww</span> 👍（0） 💬（1）<p>想请教一个问题，Executors页面下，Storage Memory 4.3G是怎么算出来的，这个是集群FrameWork Memory的总和吗？如果是的话，我只算出来3.1G。</p>2022-09-18</li><br/><li><span>Van</span> 👍（0） 💬（0）<p>好东西</p>2022-07-26</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（0）<p>请问下，spark 有没有类似prometheus metric 监控呢</p>2022-05-04</li><br/>
 </ul>

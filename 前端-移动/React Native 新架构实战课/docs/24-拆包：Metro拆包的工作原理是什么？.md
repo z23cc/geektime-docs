@@ -319,9 +319,9 @@ https://static001.geekbang.org/resource/rn/03ad61906ed0e1ec92c2.bundle
 
 如果遇到了什么问题，欢迎在评论区留言，咱们下一讲见。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>黑马有点白986</span> 👍（4） 💬（0）<div>先讲讲metro如何配置分包吧，不要一上来就讲原理呀，先run起来。</div>2023-02-14</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（4） 💬（0）<div>关于拆包，分享一下我写过的文章 https:&#47;&#47;juejin.cn&#47;post&#47;7056402608298131469?share_token=127d466c-9e55-45f8-9eec-4946389a3ec7
+<li><span>黑马有点白986</span> 👍（4） 💬（0）<p>先讲讲metro如何配置分包吧，不要一上来就讲原理呀，先run起来。</p>2023-02-14</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（4） 💬（0）<p>关于拆包，分享一下我写过的文章 https:&#47;&#47;juejin.cn&#47;post&#47;7056402608298131469?share_token=127d466c-9e55-45f8-9eec-4946389a3ec7
 
-https:&#47;&#47;juejin.cn&#47;post&#47;7067895964794617892?share_token=1a0d8603-a165-4e3e-8445-58d584664897</div>2022-06-20</li><br/><li><span>Geek_e8d04f</span> 👍（0） 💬（0）<div>把demo下下来，build出来的公共包是0k，出现如下警告，是什么问题？
+https:&#47;&#47;juejin.cn&#47;post&#47;7067895964794617892?share_token=1a0d8603-a165-4e3e-8445-58d584664897</p>2022-06-20</li><br/><li><span>Geek_e8d04f</span> 👍（0） 💬（0）<p>把demo下下来，build出来的公共包是0k，出现如下警告，是什么问题？
 
 D:\software\metro-code-split-master\Example&gt;yarn build:dll
 yarn run v1.22.21
@@ -344,5 +344,5 @@ warning: failed to load the dllRefPath correctly! are you setting the &quot;dll.
 info Writing bundle output to:, public\dll\_dll.android.bundle
 info Done writing bundle output
 warn Assets destination folder is not set, skipping...
-Done in 22.03s.</div>2024-01-24</li><br/><li><span>davidzhou</span> 👍（0） 💬（0）<div>拆包能理解为 webpack4 的 dllplugin 技术吗</div>2023-04-25</li><br/><li><span>郭智强</span> 👍（0） 💬（1）<div>老师您好，我用 metro 拆包后，也导出了 sourcemap 文件，想做 RN 里的 js 异常反解，异常的调用堆里是一些数字，具体应该解析呢？我是 iOS开发</div>2022-05-30</li><br/>
+Done in 22.03s.</p>2024-01-24</li><br/><li><span>davidzhou</span> 👍（0） 💬（0）<p>拆包能理解为 webpack4 的 dllplugin 技术吗</p>2023-04-25</li><br/><li><span>郭智强</span> 👍（0） 💬（1）<p>老师您好，我用 metro 拆包后，也导出了 sourcemap 文件，想做 RN 里的 js 异常反解，异常的调用堆里是一些数字，具体应该解析呢？我是 iOS开发</p>2022-05-30</li><br/>
 </ul>

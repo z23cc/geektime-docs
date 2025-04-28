@@ -426,7 +426,7 @@ Kubernetes [issue 59574](https://github.com/kubernetes/kubernetes/pull/59574) �
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Dragon Frog</span> 👍（20） 💬（10）<div>老师好！接 linxs 同学的提问，我觉得他是一开始没表述清楚问题，我之前也有类似的疑问，后来仔细想了想我是这么理解这个问题的，也想请教老师看理解的
+<li><span>Dragon Frog</span> 👍（20） 💬（10）<p>老师好！接 linxs 同学的提问，我觉得他是一开始没表述清楚问题，我之前也有类似的疑问，后来仔细想了想我是这么理解这个问题的，也想请教老师看理解的
 --------------------------------------------------
 为什么32bit系统的处理上，state1的元素排列和64bit的不同呢
 64bit ： waiter,counter,sem
@@ -440,16 +440,16 @@ Kubernetes [issue 59574](https://github.com/kubernetes/kubernetes/pull/59574) �
 对于 32 位机器就会有一种**特殊情况**，那就是 wg 的内存地址起始被分配到了 0xc420016244，此时这个地址不是 64 bit 对齐的，因此这个时候排列变成了 `sem,waiter,counter`，这样的话，`waiter` 的起始地址变成了 0xc420016248，可以使用 64 bit 值的原子操作。
 
 
-</div>2020-11-01</li><br/><li><span>橙子888</span> 👍（6） 💬（2）<div>issue 12813 按照 defer 后进先出的原则，Done 一定会在 Add 之前执行吧，为啥是“可能”呢？</div>2020-10-23</li><br/><li><span>寻风</span> 👍（4） 💬（2）<div>老师你好，我想问一下，为啥64位的int要保证原子操作就一定要64位对齐呢，那么为啥要这样规定呢？之前看到atomic文档后面说了一句就是就是说有部分32位处理器需要使用者自行对齐来保证atomic包中方法的正确性，是不是就是因为waitgroup用了atomic包的东西，为了保证atomic使用的正确才有这样的规定。
+</p>2020-11-01</li><br/><li><span>橙子888</span> 👍（6） 💬（2）<p>issue 12813 按照 defer 后进先出的原则，Done 一定会在 Add 之前执行吧，为啥是“可能”呢？</p>2020-10-23</li><br/><li><span>寻风</span> 👍（4） 💬（2）<p>老师你好，我想问一下，为啥64位的int要保证原子操作就一定要64位对齐呢，那么为啥要这样规定呢？之前看到atomic文档后面说了一句就是就是说有部分32位处理器需要使用者自行对齐来保证atomic包中方法的正确性，是不是就是因为waitgroup用了atomic包的东西，为了保证atomic使用的正确才有这样的规定。
 
-atomic文档的内容是：On ARM, x86-32, and 32-bit MIPS, it is the caller’s responsibility to arrange for 64-bit alignment of 64-bit words accessed atomically. The first word in a variable or in an allocated struct, array, or slice can be relied upon to be 64-bit aligned.</div>2021-04-02</li><br/><li><span>moooofly</span> 👍（4） 💬（1）<div>没理解错的话，waiter 数量对应的应该是调用 Wait() 的 goroutine 的数量吧，文中的示例代码都只是在 main goroutine 中调用一次，所以 waiter 数量都只是 1 ，没错吧</div>2020-10-26</li><br/><li><span>test</span> 👍（3） 💬（2）<div>32位&#47;64位对齐的思考：
-如果内存地址不是64位对齐，则让seman填充第一个32位，这样子就可以使得后面的state以64位对齐（因为state存储的两个值要同步修改）。</div>2021-05-28</li><br/><li><span>一笑淡然</span> 👍（2） 💬（4）<div>老师好，Add() 中，先将delta&lt;&lt;32位，加入counter，是不是counter应该在waiter位前，即
+atomic文档的内容是：On ARM, x86-32, and 32-bit MIPS, it is the caller’s responsibility to arrange for 64-bit alignment of 64-bit words accessed atomically. The first word in a variable or in an allocated struct, array, or slice can be relied upon to be 64-bit aligned.</p>2021-04-02</li><br/><li><span>moooofly</span> 👍（4） 💬（1）<p>没理解错的话，waiter 数量对应的应该是调用 Wait() 的 goroutine 的数量吧，文中的示例代码都只是在 main goroutine 中调用一次，所以 waiter 数量都只是 1 ，没错吧</p>2020-10-26</li><br/><li><span>test</span> 👍（3） 💬（2）<p>32位&#47;64位对齐的思考：
+如果内存地址不是64位对齐，则让seman填充第一个32位，这样子就可以使得后面的state以64位对齐（因为state存储的两个值要同步修改）。</p>2021-05-28</li><br/><li><span>一笑淡然</span> 👍（2） 💬（4）<p>老师好，Add() 中，先将delta&lt;&lt;32位，加入counter，是不是counter应该在waiter位前，即
 64bit ： counter,waiter,,sem
-32bit ： sem,counter,waiter</div>2021-06-04</li><br/><li><span>蒋巧纯</span> 👍（2） 💬（2）<div>老师好，我想问一下，为什么不在waitgroup中使用32位的原子操作？state1代表的三个值，其实都各占32bit，分离他们并且使用32位的原子操作，不是应该更好理解吗？</div>2020-12-29</li><br/><li><span>新味道</span> 👍（2） 💬（1）<div>  &#47;&#47; 阻塞休眠等待            
+32bit ： sem,counter,waiter</p>2021-06-04</li><br/><li><span>蒋巧纯</span> 👍（2） 💬（2）<p>老师好，我想问一下，为什么不在waitgroup中使用32位的原子操作？state1代表的三个值，其实都各占32bit，分离他们并且使用32位的原子操作，不是应该更好理解吗？</p>2020-12-29</li><br/><li><span>新味道</span> 👍（2） 💬（1）<p>  &#47;&#47; 阻塞休眠等待            
 runtime_Semacquire(semap)
 --------------
 
-没理解『阻塞休眠等待』的意思，能否再详细讲一下。 </div>2020-10-23</li><br/><li><span>叶君度</span> 👍（1） 💬（2）<div>答案
+没理解『阻塞休眠等待』的意思，能否再详细讲一下。 </p>2020-10-23</li><br/><li><span>叶君度</span> 👍（1） 💬（2）<p>答案
 type WaitGroup struct {
 	sync.WaitGroup
 }
@@ -494,10 +494,10 @@ func Do() {
 	wg.Wait()
 	fmt.Printf(&quot;counter: %d, waiter: %d\n&quot;, wg.GetCounter(), wg.GetWaiter())
 
-}</div>2024-04-16</li><br/><li><span>王麒</span> 👍（1） 💬（1）<div>如果你想要自己定义的数据结构不被复制使用，或者说，不能通过 vet 工具检查出复制使用的报警，就可以通过嵌入 noCopy 这个数据类型来实现。
-这里不应该是能通过vet工具检查出复制吗。。看起来怪怪的。</div>2021-03-31</li><br/><li><span>linxs</span> 👍（1） 💬（3）<div>为什么32bit系统的处理上，state1的元素排列和64bit的不同呢
+}</p>2024-04-16</li><br/><li><span>王麒</span> 👍（1） 💬（1）<p>如果你想要自己定义的数据结构不被复制使用，或者说，不能通过 vet 工具检查出复制使用的报警，就可以通过嵌入 noCopy 这个数据类型来实现。
+这里不应该是能通过vet工具检查出复制吗。。看起来怪怪的。</p>2021-03-31</li><br/><li><span>linxs</span> 👍（1） 💬（3）<p>为什么32bit系统的处理上，state1的元素排列和64bit的不同呢
 64bit ： waiter,counter,sem
-32bit ： sem,waiter,counter</div>2020-10-26</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<div>原文中“不能通过 vet 工具检查出复制使用的报警，就可以通过嵌入 noCopy 这个数据类型来实现。”我认为可以优化一下描述：“不能通过 vet 工具检查出复制使用的报警，就可以通过添加 noCopy 这个数据类型的非导出字段来实现。”，因为最新的（当前 go1.22）源码中 noCopy 结构体上中有明确的一个注意项描述：“Note that it must not be embedded, due to the Lock and Unlock methods.”！</div>2024-06-11</li><br/><li><span>hhhhhh</span> 👍（0） 💬（1）<div>老师您好，我看到对于64位环境来说，WaitGroup中的state1[0]表示witer数，state1[1]表示计数值，那么Add方法中，delta左移32位，修改的不是waiter数吗？
+32bit ： sem,waiter,counter</p>2020-10-26</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<p>原文中“不能通过 vet 工具检查出复制使用的报警，就可以通过嵌入 noCopy 这个数据类型来实现。”我认为可以优化一下描述：“不能通过 vet 工具检查出复制使用的报警，就可以通过添加 noCopy 这个数据类型的非导出字段来实现。”，因为最新的（当前 go1.22）源码中 noCopy 结构体上中有明确的一个注意项描述：“Note that it must not be embedded, due to the Lock and Unlock methods.”！</p>2024-06-11</li><br/><li><span>hhhhhh</span> 👍（0） 💬（1）<p>老师您好，我看到对于64位环境来说，WaitGroup中的state1[0]表示witer数，state1[1]表示计数值，那么Add方法中，delta左移32位，修改的不是waiter数吗？
 
 下面是我对Add方法的理解
 func (wg *WaitGroup) Add(delta int) {
@@ -516,7 +516,7 @@ func (wg *WaitGroup) Add(delta int) {
 	for ; w != 0; w-- {
 		runtime_Semrelease(semap, false, 0)
 	}
-}</div>2024-01-26</li><br/><li><span>The brain is a good thing</span> 👍（0） 💬（1）<div>有个疑问：
+}</p>2024-01-26</li><br/><li><span>The brain is a good thing</span> 👍（0） 💬（1）<p>有个疑问：
 查阅到的资料：
 为了充分利用CPU指令来达到最佳程序性能，为一个特定类型的值开辟的内存块的起始地址必须为某个整数N的倍数。 N被称为此类型的值地址对齐保证。  
 
@@ -532,7 +532,7 @@ type waitGroup struct {
 为什么原文中64位架构下，起始地址一定是64位（8字节，8N）对齐
 uintptr(unsafe.Pointer(&amp;wg.state1))%8 == 0
 
-求解答，是不是哪里理解错误了</div>2022-08-16</li><br/><li><span>GEEKBANG_5295513</span> 👍（0） 💬（1）<div>老师好，请教一个问题
+求解答，是不是哪里理解错误了</p>2022-08-16</li><br/><li><span>GEEKBANG_5295513</span> 👍（0） 💬（1）<p>老师好，请教一个问题
 
 func (wg *WaitGroup) Add(delta int) {
     statep, semap := wg.state()
@@ -553,5 +553,5 @@ func (wg *WaitGroup) Add(delta int) {
     }
 }
 
-在这段代码中，*statep = 0 这里没有用原子操作，不会有问题么？</div>2022-03-12</li><br/>
+在这段代码中，*statep = 0 这里没有用原子操作，不会有问题么？</p>2022-03-12</li><br/>
 </ul>

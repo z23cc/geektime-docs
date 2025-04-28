@@ -346,7 +346,7 @@ class InjectionProvider<T> implements ContextConfig.ComponentProvider<T> {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>tdd学徒</span> 👍（1） 💬（2）<div>因为声明的顺序和徐老师不一样
+<li><span>tdd学徒</span> 👍（1） 💬（2）<p>因为声明的顺序和徐老师不一样
 private Component dependencyComponent;
 private Component componentComponent;
 导致自动生成构造函数的参数顺序也不一样，查了半天，哈哈
@@ -355,5 +355,5 @@ public DependencyNotFoundException(Component dependencyComponent, Component comp
         this.componentComponent= componentComponent;
     }
 这个是错误的版本
-</div>2022-05-22</li><br/>
+</p>2022-05-22</li><br/>
 </ul>

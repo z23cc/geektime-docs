@@ -171,10 +171,10 @@ PWA利用前端技术实现模拟原生应用的效果，但在国内市场并�
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。我们下节课见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>苏果果</span> 👍（0） 💬（0）<div>完整源码入口：
-https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</div>2024-07-18</li><br/><li><span>JuneRain</span> 👍（0） 💬（0）<div>http访问的方式打开页面需要下载然后解析页面再显示。
+<li><span>苏果果</span> 👍（0） 💬（0）<p>完整源码入口：
+https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</p>2024-07-18</li><br/><li><span>JuneRain</span> 👍（0） 💬（0）<p>http访问的方式打开页面需要下载然后解析页面再显示。
 文中APP访问方式是先下载到本地再访问。
 我有疑问：
 1.这两种方式，首次访问是不是APP的方式会慢一点，毕竟多了个下载到本地的过程？
-2.http方式访问，请求html是Get请求，如果做了缓存的情况下，是不是跟APP访问差不多的效果？毕竟都有缓存，一个是接口缓存，一个是本地缓存</div>2024-06-18</li><br/>
+2.http方式访问，请求html是Get请求，如果做了缓存的情况下，是不是跟APP访问差不多的效果？毕竟都有缓存，一个是接口缓存，一个是本地缓存</p>2024-06-18</li><br/>
 </ul>

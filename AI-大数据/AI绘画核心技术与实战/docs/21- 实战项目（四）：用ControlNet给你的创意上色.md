@@ -460,7 +460,7 @@ images = pipe(
 
 期待你在留言区和我交流讨论，也推荐你把今天的内容分享给身边更多朋友，和他一起探索ControlNet的多种玩法。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Toni</span> 👍（4） 💬（1）<div>包括ControlNet 在内的AI绘画工具越来越多，但AI绘画结果需要人工抽取结果的痛点依在。
+<li><span>Toni</span> 👍（4） 💬（1）<p>包括ControlNet 在内的AI绘画工具越来越多，但AI绘画结果需要人工抽取结果的痛点依在。
 
 现在AI 绘画的流程如下:
 1. 先有个想画的想法，
@@ -478,11 +478,11 @@ images = pipe(
 3. 要修正的图像+新的更改要求可以自动返回低维隐藏层，并启动重绘过程，
 4. 能自动求解最佳重绘参数，最佳去噪步骤等参量。
 
-达到上面要求中的一个或几个，对质量控制层 QualityControlNet 的一些想法，大家补充。</div>2023-09-05</li><br/><li><span>Geek_cbcfc8</span> 👍（1） 💬（1）<div>腾讯发布了一个adapter https:&#47;&#47;github.com&#47;tencent-ailab&#47;IP-Adapter
-可以实现根据一张图抽取人脸，风格，服装等特征，用于image to image </div>2023-09-04</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+达到上面要求中的一个或几个，对质量控制层 QualityControlNet 的一些想法，大家补充。</p>2023-09-05</li><br/><li><span>Geek_cbcfc8</span> 👍（1） 💬（1）<p>腾讯发布了一个adapter https:&#47;&#47;github.com&#47;tencent-ailab&#47;IP-Adapter
+可以实现根据一张图抽取人脸，风格，服装等特征，用于image to image </p>2023-09-04</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：彩票上面的数字，只有一个数字，其他的看不到了，不知道是被雨淋了还是被撕掉了。用WebUI可以恢复吗？或者其他某个模型？
-Q2：controlNet或其他模型可以创作名片吗？ </div>2023-09-05</li><br/><li><span>Geek_cbcfc8</span> 👍（0） 💬（1）<div>老师你好，controlnet xl版本已经出来了，能加餐一个的换装任务吗，把一些知识点串一下
+Q2：controlNet或其他模型可以创作名片吗？ </p>2023-09-05</li><br/><li><span>Geek_cbcfc8</span> 👍（0） 💬（1）<p>老师你好，controlnet xl版本已经出来了，能加餐一个的换装任务吗，把一些知识点串一下
 1、训练衣服或人物的lora模型
 2、基于controlnet进行衣服或模特的更换
-可应用到电商一键换装，或者帮组情侣实现AI婚纱摄影</div>2023-09-04</li><br/><li><span>刘蕾</span> 👍（0） 💬（0）<div>老师您好，这节课里面的蒙娜丽莎的那个例子，免费的CoLab资源是不是跑不了？ 价值SDXL（stable-diffusion-xl-base-1.0）的那句，跑了1个多小时还没跑完。</div>2024-01-07</li><br/>
+可应用到电商一键换装，或者帮组情侣实现AI婚纱摄影</p>2023-09-04</li><br/><li><span>刘蕾</span> 👍（0） 💬（0）<p>老师您好，这节课里面的蒙娜丽莎的那个例子，免费的CoLab资源是不是跑不了？ 价值SDXL（stable-diffusion-xl-base-1.0）的那句，跑了1个多小时还没跑完。</p>2024-01-07</li><br/>
 </ul>

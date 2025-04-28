@@ -161,5 +161,5 @@ DSSM模型又叫双塔模型（全称Deep Structured Semantic Model），双塔�
 
 期待你的分享，如果今天的内容让你有所收获，也欢迎你推荐给有需要的朋友！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>19984598515</span> 👍（2） 💬（2）<div>老师你好，请问完整源码什么时候放出呢</div>2023-05-31</li><br/><li><span>Geek_40f5b6</span> 👍（0） 💬（1）<div>老师你好，“User 塔在线计算 User Embedding”是在推荐服务上进行计算吗，还是说会有一个单独的计算服务，为推荐服务提供计算结果</div>2023-06-01</li><br/><li><span>爱极客</span> 👍（0） 💬（1）<div>用户Enbeding和商品Enbeding可以直接求相似度吗？</div>2023-05-31</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<div>最近这几个章节没有代码实验吗？</div>2023-12-14</li><br/>
+<li><span>19984598515</span> 👍（2） 💬（2）<p>老师你好，请问完整源码什么时候放出呢</p>2023-05-31</li><br/><li><span>Geek_40f5b6</span> 👍（0） 💬（1）<p>老师你好，“User 塔在线计算 User Embedding”是在推荐服务上进行计算吗，还是说会有一个单独的计算服务，为推荐服务提供计算结果</p>2023-06-01</li><br/><li><span>爱极客</span> 👍（0） 💬（1）<p>用户Enbeding和商品Enbeding可以直接求相似度吗？</p>2023-05-31</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<p>最近这几个章节没有代码实验吗？</p>2023-12-14</li><br/>
 </ul>

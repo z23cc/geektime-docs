@@ -223,13 +223,13 @@ const KanbanCard = ({ title, status }) => {
 
 欢迎把你的想法分享在评论区，相信经过思考和输出，你的学习效果会更好。我们下节课再见！
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>🐑</span> 👍（1） 💬（0）<div>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.8.0</div>2022-09-14</li><br/><li><span>学习前端-react</span> 👍（5） 💬（1）<div>你好，&quot;进入提交阶段，React 会先执行 Effect 的清理函数，然后再次执行 Effect。&quot;
-没理解这里为啥要effect 的清理函数，然后执行Effect，很反直觉。是为了执行后产生符合预期的值吗？</div>2022-09-11</li><br/><li><span>学习前端-react</span> 👍（4） 💬（3）<div>附和！之前常见在vue2中经常会去理解父子组件的生命周期函数执行顺序。如created（父） - created（子）- mounted（子）- created（父）。对于react  created 代表render前，mounted 代表render后。所以react 生命周期的执行顺序为。
+<li><span>🐑</span> 👍（1） 💬（0）<p>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.8.0</p>2022-09-14</li><br/><li><span>学习前端-react</span> 👍（5） 💬（1）<p>你好，&quot;进入提交阶段，React 会先执行 Effect 的清理函数，然后再次执行 Effect。&quot;
+没理解这里为啥要effect 的清理函数，然后执行Effect，很反直觉。是为了执行后产生符合预期的值吗？</p>2022-09-11</li><br/><li><span>学习前端-react</span> 👍（4） 💬（3）<p>附和！之前常见在vue2中经常会去理解父子组件的生命周期函数执行顺序。如created（父） - created（子）- mounted（子）- created（父）。对于react  created 代表render前，mounted 代表render后。所以react 生命周期的执行顺序为。
 
 class 组件：
 constructor（父） - render (父) - constructor（子） - render(子) - componentdidmounted（子）- ComponentDidMounted（父）。
-hooks 组件：生命周期不显。</div>2022-09-11</li><br/><li><span>林十二XII</span> 👍（2） 💬（1）<div>https:&#47;&#47;react.dev&#47;learn&#47;render-and-commit
-结合react新版文档, 可以更容易理解函数组件的生命周期</div>2023-03-20</li><br/><li><span>CondorHero</span> 👍（2） 💬（1）<div>antd 写法说明，来自官网
+hooks 组件：生命周期不显。</p>2022-09-11</li><br/><li><span>林十二XII</span> 👍（2） 💬（1）<p>https:&#47;&#47;react.dev&#47;learn&#47;render-and-commit
+结合react新版文档, 可以更容易理解函数组件的生命周期</p>2023-03-20</li><br/><li><span>CondorHero</span> 👍（2） 💬（1）<p>antd 写法说明，来自官网
 
 How to spell Ant Design correctly?#
 ✅ Ant Design: Capitalized with space, for the design language.
@@ -252,7 +252,7 @@ Here are some typical wrong examples:
 
 ❌ antdesign
 
-❌ Antdesign</div>2022-11-06</li><br/><li><span>01</span> 👍（0） 💬（1）<div>父组件和子组件的生命周期是交叉进行的， useLayoutEffect 和 useEffect 其实不太一样， useEffect其实是异步的</div>2022-09-19</li><br/><li><span>船长</span> 👍（0） 💬（2）<div>思考题：有点朦胧的感觉，感觉是像递归那样，父组件遇到子组件，先执行子组件，等子组件执行完了再去执行父组件</div>2022-09-08</li><br/><li><span>momo</span> 👍（0） 💬（1）<div>老师能讲下什么是副作用（Side-effect）吗？包含哪些？</div>2023-12-05</li><br/><li><span>林十二XII</span> 👍（0） 💬（0）<div>https:&#47;&#47;react.dev&#47;learn&#47;render-and-commit</div>2023-03-20</li><br/><li><span>潮汐</span> 👍（0） 💬（0）<div>组件函数的返回值通常会使用 JSX 语法，React 在渲染阶段根据返回值创建 FiberNode 树。在提交阶段，React 更新真实 DOM 之前会依次执行前面定义的 Effect。
+❌ Antdesign</p>2022-11-06</li><br/><li><span>01</span> 👍（0） 💬（1）<p>父组件和子组件的生命周期是交叉进行的， useLayoutEffect 和 useEffect 其实不太一样， useEffect其实是异步的</p>2022-09-19</li><br/><li><span>船长</span> 👍（0） 💬（2）<p>思考题：有点朦胧的感觉，感觉是像递归那样，父组件遇到子组件，先执行子组件，等子组件执行完了再去执行父组件</p>2022-09-08</li><br/><li><span>momo</span> 👍（0） 💬（1）<p>老师能讲下什么是副作用（Side-effect）吗？包含哪些？</p>2023-12-05</li><br/><li><span>林十二XII</span> 👍（0） 💬（0）<p>https:&#47;&#47;react.dev&#47;learn&#47;render-and-commit</p>2023-03-20</li><br/><li><span>潮汐</span> 👍（0） 💬（0）<p>组件函数的返回值通常会使用 JSX 语法，React 在渲染阶段根据返回值创建 FiberNode 树。在提交阶段，React 更新真实 DOM 之前会依次执行前面定义的 Effect。
 
-请问老师，这句话最后说在React更新真是DOM之前依次执行前面定义的Effect，不是应该在更新DOM之后吗（按照图中所示）</div>2023-02-17</li><br/><li><span>斩尽满院桃花</span> 👍（0） 💬（0）<div>老师，有点不太理解文稿中“其中useLayoutEffect 的 Effect 是在更新真实 DOM 之后同步执行的，与类组件的 componentDidMount、componentDidUpdate 更相似一些；而 useEffect 的 Effect 是异步执行的，一般晚于 useLayoutEffect 。”这句话里提到的useLayoutEffect是在真实dom之后同步执行，useEffect是异步的是什么意思</div>2023-01-28</li><br/><li><span>CondorHero</span> 👍（0） 💬（0）<div>antd 应该全部小写，参考其官网。</div>2022-11-06</li><br/>
+请问老师，这句话最后说在React更新真是DOM之前依次执行前面定义的Effect，不是应该在更新DOM之后吗（按照图中所示）</p>2023-02-17</li><br/><li><span>斩尽满院桃花</span> 👍（0） 💬（0）<p>老师，有点不太理解文稿中“其中useLayoutEffect 的 Effect 是在更新真实 DOM 之后同步执行的，与类组件的 componentDidMount、componentDidUpdate 更相似一些；而 useEffect 的 Effect 是异步执行的，一般晚于 useLayoutEffect 。”这句话里提到的useLayoutEffect是在真实dom之后同步执行，useEffect是异步的是什么意思</p>2023-01-28</li><br/><li><span>CondorHero</span> 👍（0） 💬（0）<p>antd 应该全部小写，参考其官网。</p>2022-11-06</li><br/>
 </ul>

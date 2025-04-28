@@ -299,7 +299,7 @@ MySQL 相关的监控实践，包括性能监控和业务监控，核心就是�
 
 [MySQL的监控大盘](https://github.com/flashcatcloud/categraf/blob/main/inputs/mysql/dashboard-by-ident.json)，我们已经给出了，一些关键指标也点出来了，那告警规则应该怎么配置呢？常见的告警 PromQL 有哪些？欢迎你留言分享，也欢迎你把今天的内容分享给你身边的朋友，邀他一起学习。我们下一讲再见！
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>peter</span> 👍（3） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（3） 💬（1）<p>请教老师几个问题：
 Q1：怎么用 increase 函数计算慢查询的数量
 Q2：MySQL最大连接数在生产环境中一般设置为多大？
 Q3：Innodb_buffer_pool_reads 是从缓存读吗？
@@ -307,12 +307,12 @@ Q3：Innodb_buffer_pool_reads 是从缓存读吗？
 Q4：中心化探测，categraf是只探测本身机器上的MySQL吗？ 还是说既探测本机上的MySQL也探测其他机器上的MySQL？
 Q5：生产环境中MySQL不用docker或k8s吗？
 这一句“因为生产环境里 MySQL 一般很少放到容器里跑”，从这句看，似乎生产环境中MySQL是手动部署，不用docker 或k8s，是吗？
-Q6：本专栏有学习微信群吗？</div>2023-02-06</li><br/><li><span>Camera</span> 👍（2） 💬（1）<div>秦老您好！想请教您两个问题：
+Q6：本专栏有学习微信群吗？</p>2023-02-06</li><br/><li><span>Camera</span> 👍（2） 💬（1）<p>秦老您好！想请教您两个问题：
 1、项目要求需要做一套运维监控，想基于Prometheus来二开，请问作为产品（对运维没有相关经验），需要从哪方面下手来做产品设计呢？
 2、运维系统的指标很多是需要通过配置文件配置，是否可将它可视化呢？
-感谢老师指导一二！</div>2023-02-06</li><br/><li><span>乔纳森</span> 👍（1） 💬（2）<div>老师您好，怎么根据黄金指标计算组件的SLI呢？以MySQL为例</div>2023-02-06</li><br/><li><span>Geek_81d2ba</span> 👍（0） 💬（1）<div>现在很多都开始使用云数据库，不再自己本机部署mysql了，这种情况下是不是业务方主要还是要主动探测数据库状态，另外我理解云上的数据库很多应该也是用容器化方式去部署的吧，一般这种云上的数据库监控采集难道是采用sidecar的方式吗</div>2023-12-05</li><br/><li><span>y</span> 👍（0） 💬（1）<div>和mysqld_exporter对比，Categraf有啥优势的地方呢？</div>2023-10-21</li><br/><li><span>Roy Liang</span> 👍（0） 💬（1）<div>现在云时代了，最大连接数、innodb buffer pool大小等该调优的参数云产品都替我们做了，这种情况下我们需要重点关注哪些指标呢？</div>2023-02-15</li><br/><li><span>123</span> 👍（0） 💬（1）<div>请教老师一个问题，如果一个数据库服务里面有多个实例，在自定义业务指标时如何去制定对应的实例，并书写sql</div>2023-02-14</li><br/><li><span>大叮当</span> 👍（0） 💬（1）<div>老师您好，请教两个问题：
+感谢老师指导一二！</p>2023-02-06</li><br/><li><span>乔纳森</span> 👍（1） 💬（2）<p>老师您好，怎么根据黄金指标计算组件的SLI呢？以MySQL为例</p>2023-02-06</li><br/><li><span>Geek_81d2ba</span> 👍（0） 💬（1）<p>现在很多都开始使用云数据库，不再自己本机部署mysql了，这种情况下是不是业务方主要还是要主动探测数据库状态，另外我理解云上的数据库很多应该也是用容器化方式去部署的吧，一般这种云上的数据库监控采集难道是采用sidecar的方式吗</p>2023-12-05</li><br/><li><span>y</span> 👍（0） 💬（1）<p>和mysqld_exporter对比，Categraf有啥优势的地方呢？</p>2023-10-21</li><br/><li><span>Roy Liang</span> 👍（0） 💬（1）<p>现在云时代了，最大连接数、innodb buffer pool大小等该调优的参数云产品都替我们做了，这种情况下我们需要重点关注哪些指标呢？</p>2023-02-15</li><br/><li><span>123</span> 👍（0） 💬（1）<p>请教老师一个问题，如果一个数据库服务里面有多个实例，在自定义业务指标时如何去制定对应的实例，并书写sql</p>2023-02-14</li><br/><li><span>大叮当</span> 👍（0） 💬（1）<p>老师您好，请教两个问题：
 Q1：怎么用 increase 函数计算慢查询的数量？
-Q2：MySQL最大连接数在生产环境中一般设置为多大？</div>2023-02-06</li><br/><li><span>橙汁</span> 👍（0） 💬（2）<div>这段话 “表里的时间度量指标都是以皮秒为单位。”是毫秒吧，另外学到不少知识 相当于拿四个指标以mysql为案例讲了下监控思路，最后还给出实际解决方案夜莺监控 可直接用，思路清晰 牛逼。
+Q2：MySQL最大连接数在生产环境中一般设置为多大？</p>2023-02-06</li><br/><li><span>橙汁</span> 👍（0） 💬（2）<p>这段话 “表里的时间度量指标都是以皮秒为单位。”是毫秒吧，另外学到不少知识 相当于拿四个指标以mysql为案例讲了下监控思路，最后还给出实际解决方案夜莺监控 可直接用，思路清晰 牛逼。
 以前：监控就那些玩意 基础层有云 都是云 不用做什么
-现在：思考的更多 业务层也大有可为</div>2023-02-06</li><br/><li><span>Geek_be4f4d</span> 👍（0） 💬（0）<div>老师您好，脑图中的performance_schema 中的schema单词是否拼写错误了？</div>2023-06-07</li><br/><li><span>时过境迁᭄ꦿ</span> 👍（0） 💬（0）<div>大佬们，这个监控mysql只在Categraf 针对 MySQL 的采集插件配置，在 conf&#47;input.mysql&#47;mysql.toml这个文件加上就好了吗，不能用Grafana</div>2023-04-07</li><br/><li><span>Goal</span> 👍（0） 💬（0）<div>这个都是夜莺为例吗</div>2023-02-16</li><br/>
+现在：思考的更多 业务层也大有可为</p>2023-02-06</li><br/><li><span>Geek_be4f4d</span> 👍（0） 💬（0）<p>老师您好，脑图中的performance_schema 中的schema单词是否拼写错误了？</p>2023-06-07</li><br/><li><span>时过境迁᭄ꦿ</span> 👍（0） 💬（0）<p>大佬们，这个监控mysql只在Categraf 针对 MySQL 的采集插件配置，在 conf&#47;input.mysql&#47;mysql.toml这个文件加上就好了吗，不能用Grafana</p>2023-04-07</li><br/><li><span>Goal</span> 👍（0） 💬（0）<p>这个都是夜莺为例吗</p>2023-02-16</li><br/>
 </ul>

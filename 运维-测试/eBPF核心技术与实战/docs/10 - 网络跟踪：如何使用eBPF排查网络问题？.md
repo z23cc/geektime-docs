@@ -416,7 +416,7 @@ eBPF 不仅诞生于网络过滤，它在网络方面的应用也是最为广泛
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>莫名</span> 👍（22） 💬（2）<div>1、比较赞同【最主要是因为不清楚内核中都有哪些函数和跟踪点可以拿来跟踪】这一观点。如果对内核不熟悉，借助 tracepoint 通配符可以很好的协助理解网络协议栈的关键路径。举两个简单例子。
+<li><span>莫名</span> 👍（22） 💬（2）<p>1、比较赞同【最主要是因为不清楚内核中都有哪些函数和跟踪点可以拿来跟踪】这一观点。如果对内核不熟悉，借助 tracepoint 通配符可以很好的协助理解网络协议栈的关键路径。举两个简单例子。
 
 &gt; 例 1：追踪 net 相关追踪点以及调用堆栈：
 
@@ -485,9 +485,9 @@ sshd(219966): tracepoint:net:net_dev_xmit
 #include &lt;linux&#47;skbuff.h&gt;
 #include &lt;net&#47;ip.h&gt;
 
-思考题直接用 bpftrace 内置变量 comm、pid 即可。</div>2022-02-07</li><br/><li><span>janey</span> 👍（1） 💬（1）<div>第二图里怎么没有tracepoint?应该是跟kprobe在同一个层面吧</div>2022-11-25</li><br/><li><span>Geek_9e1ece</span> 👍（0） 💬（1）<div>老师 ntop这个函数返回的是字符串么？为什么我用$sip或$dip去做if判断时候提示我两端的数据类不正确呢。
+思考题直接用 bpftrace 内置变量 comm、pid 即可。</p>2022-02-07</li><br/><li><span>janey</span> 👍（1） 💬（1）<p>第二图里怎么没有tracepoint?应该是跟kprobe在同一个层面吧</p>2022-11-25</li><br/><li><span>Geek_9e1ece</span> 👍（0） 💬（1）<p>老师 ntop这个函数返回的是字符串么？为什么我用$sip或$dip去做if判断时候提示我两端的数据类不正确呢。
 
-另外我翻了一下内核的源码，好像没有直接找到ntop（）这个名字的函数，请问还有pton（）这样的函数可以将字符串转成inet数据类型么，以便我在if判断中作为过滤条件。</div>2023-02-03</li><br/><li><span>k8svip</span> 👍（0） 💬（1）<div>老师 如何跟踪下PHP-fpm线程，去处理MySQL 域名解析的过程呢？偶现连不通的情况，回出现udp receive error 包数量增加，tcpdump又捕获不到</div>2022-03-16</li><br/><li><span>从远方过来</span> 👍（0） 💬（1）<div>老师，看了你举的查找SKB的例子，我很好奇要怎么才能快速地从内核相关文档中找到相关的函数呢？  例如：找出关于内存分配的函数，  这个有什么好窍门么？</div>2022-02-24</li><br/><li><span>阿斌斯基</span> 👍（0） 💬（1）<div>ubuntu 18.04 ,snap安装的bpftrace,kernel symbol解析失败
+另外我翻了一下内核的源码，好像没有直接找到ntop（）这个名字的函数，请问还有pton（）这样的函数可以将字符串转成inet数据类型么，以便我在if判断中作为过滤条件。</p>2023-02-03</li><br/><li><span>k8svip</span> 👍（0） 💬（1）<p>老师 如何跟踪下PHP-fpm线程，去处理MySQL 域名解析的过程呢？偶现连不通的情况，回出现udp receive error 包数量增加，tcpdump又捕获不到</p>2022-03-16</li><br/><li><span>从远方过来</span> 👍（0） 💬（1）<p>老师，看了你举的查找SKB的例子，我很好奇要怎么才能快速地从内核相关文档中找到相关的函数呢？  例如：找出关于内存分配的函数，  这个有什么好窍门么？</p>2022-02-24</li><br/><li><span>阿斌斯基</span> 👍（0） 💬（1）<p>ubuntu 18.04 ,snap安装的bpftrace,kernel symbol解析失败
 ➜  ~ bpftrace -V
 bpftrace v0.13.0
 ➜  ~ echo $BPFTRACE_VMLINUX
@@ -544,10 +544,10 @@ kstack:
         0xffffffff90004207
         0xffffffff90c0008c
 
-</div>2022-02-07</li><br/><li><span>为了维护世界和平</span> 👍（3） 💬（0）<div>github上的程序 执行 段错误
+</p>2022-02-07</li><br/><li><span>为了维护世界和平</span> 👍（3） 💬（0）<p>github上的程序 执行 段错误
 #bpftrace dropwatch.bt
 Segmentation fault (core dumped)
-</div>2022-07-19</li><br/><li><span>InfoQ_1e92d5385cc8</span> 👍（0） 💬（0）<div>建议可以根据GPT 4.0来自动解析日志，如网络不通回复如下：
+</p>2022-07-19</li><br/><li><span>InfoQ_1e92d5385cc8</span> 👍（0） 💬（0）<p>建议可以根据GPT 4.0来自动解析日志，如网络不通回复如下：
 这是一个bpftrace日志，它使用了dropwatch.bt脚本来追踪丢失的网络数据包。从日志中，我们可以看到一个数据包从10.206.0.13发送到39.106.233.176时被丢弃了。以下是内核栈（kstack）的调用顺序：
 
     kfree_skb+1：释放数据包的内存。
@@ -565,7 +565,7 @@ Segmentation fault (core dumped)
     do_syscall_64+91：执行64位系统调用。
     entry_SYSCALL_64_after_hwframe+101：进入64位系统调用。
 
-从这个调用栈中，我们可以看到数据包在网络层（Netfilter钩子）被丢弃。可能的原因包括防火墙规则、路由问题或其他网络配置问题。要解决这个问题，你需要检查你的网络设置，特别是防火墙规则和路由配置</div>2023-10-10</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（2）<div>$ sudo bpftrace -l &#39;kprobe:kfree_skb*&#39;
+从这个调用栈中，我们可以看到数据包在网络层（Netfilter钩子）被丢弃。可能的原因包括防火墙规则、路由问题或其他网络配置问题。要解决这个问题，你需要检查你的网络设置，特别是防火墙规则和路由配置</p>2023-10-10</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（2）<p>$ sudo bpftrace -l &#39;kprobe:kfree_skb*&#39;
 kprobe:kfree_skb_list_reason
 kprobe:kfree_skb_partial
 kprobe:kfree_skb_reason
@@ -574,7 +574,7 @@ kprobe:kfree_skbmem
 $ uname -r
 5.19.0-38-generic
 
-尴尬 我这边 5.19 就没有 kfree_skb 这个函数了</div>2023-04-06</li><br/><li><span>linker</span> 👍（0） 💬（0）<div>$ apt list --installed |grep &#39;\&lt;linux-&#39;
+尴尬 我这边 5.19 就没有 kfree_skb 这个函数了</p>2023-04-06</li><br/><li><span>linker</span> 👍（0） 💬（0）<p>$ apt list --installed |grep &#39;\&lt;linux-&#39;
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -591,7 +591,7 @@ linux-modules-5.19.0-35-generic&#47;jammy-updates,jammy-security,now 5.19.0-35.3
 linux-sound-base&#47;jammy,now 1.0.25+dfsg-0ubuntu7 all [installed,automatic]
 linux-source-5.19.0&#47;jammy-updates,jammy-security,now 5.19.0-35.36~22.04.1 all [installed]
 linux-tools-5.19.0-35-generic&#47;jammy-updates,jammy-security,now 5.19.0-35.36~22.04.1 amd64 [installed]
-linux-tools-common&#47;jammy-updates,jammy-security,now 5.15.0-67.74 all [installed,automatic]</div>2023-03-13</li><br/><li><span>linker</span> 👍（0） 💬（0）<div>$ cat &#47;etc&#47;os-release               
+linux-tools-common&#47;jammy-updates,jammy-security,now 5.15.0-67.74 all [installed,automatic]</p>2023-03-13</li><br/><li><span>linker</span> 👍（0） 💬（0）<p>$ cat &#47;etc&#47;os-release               
 PRETTY_NAME=&quot;Ubuntu 22.04.1 LTS&quot;
 NAME=&quot;Ubuntu&quot;
 VERSION_ID=&quot;22.04&quot;
@@ -611,5 +611,5 @@ definitions.h:2:10: fatal error: &#39;linux&#47;skbuff.h&#39; file not found
 内核头文件已经安装了，内核开发包也安装了，请问老师这可能是什么问题？
 
 下面是安装的包
-</div>2023-03-13</li><br/><li><span>A7kou</span> 👍（0） 💬（0）<div>老师想请问下，我看 cilium 的 ebpf 相关源码中，有个节叫 “from-container”，就在源码的 “cilium&#47;bpf&#47;bpf_lxc.c” 文件下，写作 “__section(&quot;from-container&quot;)”，但是关于这个 from-container 它长得很像一个 ebpf 的类型，但是我在 kernel 中又搜不到这个，用 &quot;bpftool feature probe&quot; 也没有和它相关的，所以想问下老师知不知道这个 from-container 是怎么变成 ebpf 程序被编译的？</div>2022-09-06</li><br/><li><span>牛金霖</span> 👍（0） 💬（0）<div>老师，请问如何获取5.16的debuginfo</div>2022-07-24</li><br/>
+</p>2023-03-13</li><br/><li><span>A7kou</span> 👍（0） 💬（0）<p>老师想请问下，我看 cilium 的 ebpf 相关源码中，有个节叫 “from-container”，就在源码的 “cilium&#47;bpf&#47;bpf_lxc.c” 文件下，写作 “__section(&quot;from-container&quot;)”，但是关于这个 from-container 它长得很像一个 ebpf 的类型，但是我在 kernel 中又搜不到这个，用 &quot;bpftool feature probe&quot; 也没有和它相关的，所以想问下老师知不知道这个 from-container 是怎么变成 ebpf 程序被编译的？</p>2022-09-06</li><br/><li><span>牛金霖</span> 👍（0） 💬（0）<p>老师，请问如何获取5.16的debuginfo</p>2022-07-24</li><br/>
 </ul>

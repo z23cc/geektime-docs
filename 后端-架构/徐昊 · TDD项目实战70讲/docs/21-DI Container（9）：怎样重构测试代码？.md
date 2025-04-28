@@ -532,7 +532,7 @@ class DependencyDependedOnAnotherDependency implements Dependency {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Flynn</span> 👍（0） 💬（1）<div>DI这个项目会在下个项目用上不</div>2022-04-28</li><br/><li><span>aoe</span> 👍（3） 💬（0）<div>- 通过 TDD 获得的测试，可以驱动我们的开发，但不代表获得的是一个良好的 Test Case 组合
+<li><span>Flynn</span> 👍（0） 💬（1）<p>DI这个项目会在下个项目用上不</p>2022-04-28</li><br/><li><span>aoe</span> 👍（3） 💬（0）<p>- 通过 TDD 获得的测试，可以驱动我们的开发，但不代表获得的是一个良好的 Test Case 组合
 - TDD 主要是为我们开发生产代码提供驱动力
 - 天然得出的结果并不能认为是很好的 Test Case
 - 所以需要对 Test Case 进行重构
@@ -540,8 +540,8 @@ class DependencyDependedOnAnotherDependency implements Dependency {
   - 使 Test Case 能真实反应代码的意图
   - 按测试意图将零散的测试方法收集到一起（放入同一个 Nested 中或者单独的测试类中）
   - 同一个上下文中，测试粒度尽量保持一致
-  - 清理没有用的测试</div>2022-05-03</li><br/><li><span>威</span> 👍（0） 💬（0）<div>老师您好，请问为什么把测试类往外面移的时候，要先把它声明为static？</div>2023-03-14</li><br/><li><span>davix</span> 👍（0） 💬（0）<div>才知道TDD寫過的cases要重新組織，之前看到的TDD介紹太淺，都未提過。
-請教老師，developer寫的test cases的好標準是啥？有延展閱讀嗎？</div>2022-05-25</li><br/><li><span>枫中的刀剑</span> 👍（0） 💬（0）<div>本篇总结：
+  - 清理没有用的测试</p>2022-05-03</li><br/><li><span>威</span> 👍（0） 💬（0）<p>老师您好，请问为什么把测试类往外面移的时候，要先把它声明为static？</p>2023-03-14</li><br/><li><span>davix</span> 👍（0） 💬（0）<p>才知道TDD寫過的cases要重新組織，之前看到的TDD介紹太淺，都未提過。
+請教老師，developer寫的test cases的好標準是啥？有延展閱讀嗎？</p>2022-05-25</li><br/><li><span>枫中的刀剑</span> 👍（0） 💬（0）<p>本篇总结：
 测试重构的目的：让TDD的 Test Case 更好的反映出我们代码的意图，而不仅仅是单纯展示实现功能的过程。
 测试代码的坏味道：
 主要体现在「不一致」。
@@ -549,5 +549,5 @@ class DependencyDependedOnAnotherDependency implements Dependency {
 2. 同类型功能不同架构选择导致的不一致。（同一类功能测试中包含不同上下文）
 3. 不同功能，相似结构的测试中表现的不一致。其中某些特有功能可能不在属于当前上下文。（这种情况稍微难发现一些）。
 
-体会：测试的重构也很重要，结构优良的Test Case 更加清晰地呈现实现代码的真实意图。</div>2022-05-02</li><br/>
+体会：测试的重构也很重要，结构优良的Test Case 更加清晰地呈现实现代码的真实意图。</p>2022-05-02</li><br/>
 </ul>

@@ -262,5 +262,5 @@ PING 172.17.0.3 (172.17.0.3): 56 data bytes
 
 欢迎你在留言区与我交流讨论，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_b11a14</span> 👍（1） 💬（1）<div>docker部署的go项目后，容器内生成的日志文件如何同步宿主机。目前添加docker run -v参数后启动容器异常</div>2023-02-08</li><br/><li><span>花酒锄作田</span> 👍（1） 💬（0）<div>思考题：docker可作为k8s的容器运行时。不过新版本的k8s不再直接支持docker，新版本k8s一般采用实现了cri的容器运行时</div>2024-09-04</li><br/><li><span>Realm</span> 👍（1） 💬（1）<div>思考题：docker是k8s的调度对象.</div>2023-02-07</li><br/>
+<li><span>Geek_b11a14</span> 👍（1） 💬（1）<p>docker部署的go项目后，容器内生成的日志文件如何同步宿主机。目前添加docker run -v参数后启动容器异常</p>2023-02-08</li><br/><li><span>花酒锄作田</span> 👍（1） 💬（0）<p>思考题：docker可作为k8s的容器运行时。不过新版本的k8s不再直接支持docker，新版本k8s一般采用实现了cri的容器运行时</p>2024-09-04</li><br/><li><span>Realm</span> 👍（1） 💬（1）<p>思考题：docker是k8s的调度对象.</p>2023-02-07</li><br/>
 </ul>

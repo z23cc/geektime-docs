@@ -346,7 +346,7 @@ function WelcomeDialog() {
 
 欢迎在留言区分享你的答案、交流学习心得或者提出问题，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。我们下节课见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>laoergege</span> 👍（3） 💬（1）<div>组合优于继承，是不是更加适用于平时业务开发？做为基础设施给用户使用的场景，继承更加简洁方便？比如 react 框架下，提供的 Component 类。</div>2022-10-16</li><br/><li><span>Change</span> 👍（1） 💬（0）<div> &#47;********* JS 中的类和继承中的 super **************** *&#47;
+<li><span>laoergege</span> 👍（3） 💬（1）<p>组合优于继承，是不是更加适用于平时业务开发？做为基础设施给用户使用的场景，继承更加简洁方便？比如 react 框架下，提供的 Component 类。</p>2022-10-16</li><br/><li><span>Change</span> 👍（1） 💬（0）<p> &#47;********* JS 中的类和继承中的 super **************** *&#47;
   function Widget() {
     this.appName = &quot;核心微件&quot;;
   }
@@ -384,7 +384,7 @@ function WelcomeDialog() {
     return obj;
   }
 
-  let o = ObjectCreate(new Person());</div>2022-10-13</li><br/><li><span>褚琛</span> 👍（1） 💬（0）<div>&#47;&#47;js中的类和继承
+  let o = ObjectCreate(new Person());</p>2022-10-13</li><br/><li><span>褚琛</span> 👍（1） 💬（0）<p>&#47;&#47;js中的类和继承
 function Widget (appName) {
   this.appName = appName
 }
@@ -411,5 +411,5 @@ function create(o) {
   let obj = new Cls();
   obj.prototype = o;
   return obj;
-}</div>2022-10-10</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（0）<div>ES6 当中的 assign 来做到组合混入，我看下和 java 的组合有很大的区别，java 是通过持有其他对象的引用来实现组合，js 是直接拷贝属性，差异很大</div>2023-03-13</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>作为一个 Android 工程师，我怎么感觉授权就是继承呢？？就是基于原型链的继承？？</div>2023-03-13</li><br/>
+}</p>2022-10-10</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（0）<p>ES6 当中的 assign 来做到组合混入，我看下和 java 的组合有很大的区别，java 是通过持有其他对象的引用来实现组合，js 是直接拷贝属性，差异很大</p>2023-03-13</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>作为一个 Android 工程师，我怎么感觉授权就是继承呢？？就是基于原型链的继承？？</p>2023-03-13</li><br/>
 </ul>

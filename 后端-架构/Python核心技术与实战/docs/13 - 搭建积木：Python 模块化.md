@@ -337,8 +337,8 @@ import 在导入文件的时候，会自动把所有暴露在外面的代码全�
 
 最后，我想为你留一道思考题。`from module_name import *`和`import module_name`有什么区别呢？欢迎留言和我分享，也欢迎你把这篇文章分享给你的同事、朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（254） 💬（3）<div>思考题答案：
-很多回复说的很对，from module_name import * 会把 module 中所有的函数和类全拿过来，如果和其他函数名类名有冲突就会出问题；import model_name 也会导入所有函数和类，但是调用的时候必须使用 model_name.func 的方法来调用，等于增加了一层 layer，有效避免冲突。</div>2019-06-09</li><br/><li><span>上梁山</span> 👍（16） 💬（4）<div>文章中有这么一句话：“import 同一个模块只会被执行一次，这样就可以防止重复导入模块出现问题。”
+<li><span>Jingxiao</span> 👍（254） 💬（3）<p>思考题答案：
+很多回复说的很对，from module_name import * 会把 module 中所有的函数和类全拿过来，如果和其他函数名类名有冲突就会出问题；import model_name 也会导入所有函数和类，但是调用的时候必须使用 model_name.func 的方法来调用，等于增加了一层 layer，有效避免冲突。</p>2019-06-09</li><br/><li><span>上梁山</span> 👍（16） 💬（4）<p>文章中有这么一句话：“import 同一个模块只会被执行一次，这样就可以防止重复导入模块出现问题。”
 “import 同一个模块只会被执行一次”，这句话让我这个新手有点困惑。
 这里的只会被执行一次，指的是导入模块的语句只执行一次，还是指被导入的模块中的语句只执行一次。
 我相信很多向我这样的新手，都会认为是前者。
@@ -358,15 +358,15 @@ foo.bar()
 执行python main.py后的结果是：
 hello
 bar
-bar</div>2019-12-30</li><br/><li><span>萧潇风</span> 👍（10） 💬（2）<div>export PYTHONPATH=&quot;&#47;home&#47;ubuntu&#47;workspace&#47;your_projects&quot;
+bar</p>2019-12-30</li><br/><li><span>萧潇风</span> 👍（10） 💬（2）<p>export PYTHONPATH=&quot;&#47;home&#47;ubuntu&#47;workspace&#47;your_projects&quot;
 
-在windows系统 中 亲测无效 T_T</div>2019-06-07</li><br/><li><span>Paul Shan</span> 👍（7） 💬（1）<div>思考题
-两者的前缀不同。第一种，把目录下的文件都倒入了，每个文件有各自前缀。第二种，只是倒入了一个前缀，所有文件都通过这个相同前缀。第一种类似于拷贝一个目录下所有文件。第二种类似于拷贝整个目录。</div>2019-11-15</li><br/><li><span>enjoylearning</span> 👍（7） 💬（1）<div>作者写的都是原来疑惑的地方，如有时候要新建一个模块总是纠结于是添加文件夹还是包，怀疑加文件夹是不是不如加包规范，有时面对每个文件夹一个空的__init__.py，觉得真是不够优雅，现在好了，原来是2和3的区别，以后可以大胆的用文件夹来组织模块了。另外就是觉得python 命名模块名不能像java和.net那样以公司名.application.web.api格式，觉得还是有点别扭。</div>2019-06-08</li><br/><li><span>小侠龙旋风</span> 👍（3） 💬（1）<div>在pycharm里，我会使用“Mark Directory as -&gt; Sources Root”来设置当前文件夹为根目录。
+在windows系统 中 亲测无效 T_T</p>2019-06-07</li><br/><li><span>Paul Shan</span> 👍（7） 💬（1）<p>思考题
+两者的前缀不同。第一种，把目录下的文件都倒入了，每个文件有各自前缀。第二种，只是倒入了一个前缀，所有文件都通过这个相同前缀。第一种类似于拷贝一个目录下所有文件。第二种类似于拷贝整个目录。</p>2019-11-15</li><br/><li><span>enjoylearning</span> 👍（7） 💬（1）<p>作者写的都是原来疑惑的地方，如有时候要新建一个模块总是纠结于是添加文件夹还是包，怀疑加文件夹是不是不如加包规范，有时面对每个文件夹一个空的__init__.py，觉得真是不够优雅，现在好了，原来是2和3的区别，以后可以大胆的用文件夹来组织模块了。另外就是觉得python 命名模块名不能像java和.net那样以公司名.application.web.api格式，觉得还是有点别扭。</p>2019-06-08</li><br/><li><span>小侠龙旋风</span> 👍（3） 💬（1）<p>在pycharm里，我会使用“Mark Directory as -&gt; Sources Root”来设置当前文件夹为根目录。
 思考题：
 1.from module_name import * 能够导入模块下所有的类&#47;函数等内容，使用时不需要包含模块名。容易出现重名现象，发生错误；
 2.import module_name 只是将模块名导入，调用时必须模块名.xxx。
-3.from  module_name  import  class_name 需要用模块中的哪个类就导入哪个类，比较推荐。</div>2019-06-08</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<div>“import 在导入文件的时候，会自动把所有暴露在外面的代码全都执行一遍。因此，如果你要把一个东西封装成模块，又想让它可以执行的话，你必须将要执行的代码放在 if __name__ == &#39;__main__&#39;下面。”
-导入的模块if __name__ == &#39;__main__&#39;下面的语句没有被执行。</div>2020-06-22</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<div>树状结构是大多数项目的组织方式，树状结构本身不复杂，从根节点到每个节点有唯一路径，这条路径可以用一致的方式来引用文件。树状结构可以表达的文件上限是层数的指数，对于大型项目也没问题。如果目录是线性结构，文件一多，查找就费力。文件直接的调用如果用相对路径，这就相当于在树状的结构中引入了中间节点的边，几乎让树成图，复杂度大大增加。</div>2019-11-15</li><br/><li><span>大象</span> 👍（2） 💬（1）<div>请教老师一个问题：如果我们所有的项目（项目A，项目B，项目C）都在一个文件夹底下，每个项目都有自己的虚拟运行环境。如果我项目A是公共库，项目B要引用项目A，那么我需要怎么做？谢谢</div>2019-10-25</li><br/><li><span>Geek_59f23e</span> 👍（2） 💬（1）<div>class_utils.py那儿应该是reversed吧，而不是reverse。</div>2019-06-08</li><br/><li><span>Hy</span> 👍（1） 💬（1）<div>老师您好，请问这个函数后面的参数是什么意思，没见过这种写法，中间加一个冒号
+3.from  module_name  import  class_name 需要用模块中的哪个类就导入哪个类，比较推荐。</p>2019-06-08</li><br/><li><span>Kevin</span> 👍（2） 💬（1）<p>“import 在导入文件的时候，会自动把所有暴露在外面的代码全都执行一遍。因此，如果你要把一个东西封装成模块，又想让它可以执行的话，你必须将要执行的代码放在 if __name__ == &#39;__main__&#39;下面。”
+导入的模块if __name__ == &#39;__main__&#39;下面的语句没有被执行。</p>2020-06-22</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<p>树状结构是大多数项目的组织方式，树状结构本身不复杂，从根节点到每个节点有唯一路径，这条路径可以用一致的方式来引用文件。树状结构可以表达的文件上限是层数的指数，对于大型项目也没问题。如果目录是线性结构，文件一多，查找就费力。文件直接的调用如果用相对路径，这就相当于在树状的结构中引入了中间节点的边，几乎让树成图，复杂度大大增加。</p>2019-11-15</li><br/><li><span>大象</span> 👍（2） 💬（1）<p>请教老师一个问题：如果我们所有的项目（项目A，项目B，项目C）都在一个文件夹底下，每个项目都有自己的虚拟运行环境。如果我项目A是公共库，项目B要引用项目A，那么我需要怎么做？谢谢</p>2019-10-25</li><br/><li><span>Geek_59f23e</span> 👍（2） 💬（1）<p>class_utils.py那儿应该是reversed吧，而不是reverse。</p>2019-06-08</li><br/><li><span>Hy</span> 👍（1） 💬（1）<p>老师您好，请问这个函数后面的参数是什么意思，没见过这种写法，中间加一个冒号
 
-def mat_mul(matrix_1: Matrix, matrix_2: Matrix)</div>2020-06-11</li><br/><li><span>吴小智</span> 👍（1） 💬（1）<div>老师的基础模块，帮助自己扫清了一下知识盲区，期待老师接下来的进阶篇，up,up,up。老师端午节快乐。</div>2019-06-07</li><br/><li><span>ShmilyVidian</span> 👍（0） 💬（1）<div>from module_name import * 是导入module_name 中的所有内容，可以直接调用内部方法容易引入冲突；import module_name，则是导入module_name，在代码中调用必须写成module_name.function的，减少引起冲突，通过module_name做了一层桥接隔离。</div>2020-05-23</li><br/><li><span>徐旭</span> 👍（0） 💬（1）<div>赞赞，老师讲得不错</div>2020-03-29</li><br/><li><span>大象</span> 👍（0） 💬（1）<div>“事实上，在 Facebook 和 Google，整个公司都只有一个代码仓库，全公司的代码都放在这个库里。”不太理解这里的意思是啥？是类似于在git的同一个组底下么？还是说所有的项目在同一个文件夹底下？</div>2019-10-25</li><br/>
+def mat_mul(matrix_1: Matrix, matrix_2: Matrix)</p>2020-06-11</li><br/><li><span>吴小智</span> 👍（1） 💬（1）<p>老师的基础模块，帮助自己扫清了一下知识盲区，期待老师接下来的进阶篇，up,up,up。老师端午节快乐。</p>2019-06-07</li><br/><li><span>ShmilyVidian</span> 👍（0） 💬（1）<p>from module_name import * 是导入module_name 中的所有内容，可以直接调用内部方法容易引入冲突；import module_name，则是导入module_name，在代码中调用必须写成module_name.function的，减少引起冲突，通过module_name做了一层桥接隔离。</p>2020-05-23</li><br/><li><span>徐旭</span> 👍（0） 💬（1）<p>赞赞，老师讲得不错</p>2020-03-29</li><br/><li><span>大象</span> 👍（0） 💬（1）<p>“事实上，在 Facebook 和 Google，整个公司都只有一个代码仓库，全公司的代码都放在这个库里。”不太理解这里的意思是啥？是类似于在git的同一个组底下么？还是说所有的项目在同一个文件夹底下？</p>2019-10-25</li><br/>
 </ul>

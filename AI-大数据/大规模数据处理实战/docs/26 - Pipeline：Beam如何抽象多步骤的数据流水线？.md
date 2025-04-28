@@ -131,18 +131,18 @@ Beam数据流水线分配了两个Worker来处理这两个Bundles。我们看到
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>espzest</span> 👍（17） 💬（1）<div>bundle怎么聚合成pcollection？  一个bundle处理失败，为什么需要重做前面的bundle？</div>2019-06-21</li><br/><li><span>cricket1981</span> 👍（9） 💬（2）<div>bundle随机分配会不会产生数据倾斜？完美并行背后的机制是？beam应该也有类似spark的persist方法缓存转换中间结果，防止出错恢复链太长吧？</div>2019-06-21</li><br/><li><span>YZJ</span> 👍（8） 💬（1）<div>老师请教个问题：PCollectionA transform PCollectionB, 假如PCollectionB 要比PCollectionA大很多倍，比如transform  是把PCollectionA 中每个字符串重复1000次，那PCollectionB 就要大1000倍，worker会不会有内存溢出问题? spark中可以配置executor 的core和memery来控制每个task内存用量，beam有类似机制吗?不然怎样让资源利用最优化呢?</div>2019-06-21</li><br/><li><span>西南偏北</span> 👍（6） 💬（1）<div>Beam的错误处理和RDD的真的很像，因为transformation都是lazy的，只有action才会触发计算，中间的转换过程都是被记录在DAG中的，这就导致中间某个transformation失败之后，需要往上追溯之前的转换，可以理解为是寻找父transformation，然后父transformation还要往上寻找父父transformation，直到没有父transformation为止，就像是类加载机制一样。但是如果能把中间结果保存在内存中，在失败重新计算时，就能提高计算的效率。</div>2019-06-26</li><br/><li><span>沈洪彬</span> 👍（4） 💬（1）<div>在 Beam 的数据流水线中，当处理的元素发生错误时流水线的的错误处理机制分两种情况
+<li><span>espzest</span> 👍（17） 💬（1）<p>bundle怎么聚合成pcollection？  一个bundle处理失败，为什么需要重做前面的bundle？</p>2019-06-21</li><br/><li><span>cricket1981</span> 👍（9） 💬（2）<p>bundle随机分配会不会产生数据倾斜？完美并行背后的机制是？beam应该也有类似spark的persist方法缓存转换中间结果，防止出错恢复链太长吧？</p>2019-06-21</li><br/><li><span>YZJ</span> 👍（8） 💬（1）<p>老师请教个问题：PCollectionA transform PCollectionB, 假如PCollectionB 要比PCollectionA大很多倍，比如transform  是把PCollectionA 中每个字符串重复1000次，那PCollectionB 就要大1000倍，worker会不会有内存溢出问题? spark中可以配置executor 的core和memery来控制每个task内存用量，beam有类似机制吗?不然怎样让资源利用最优化呢?</p>2019-06-21</li><br/><li><span>西南偏北</span> 👍（6） 💬（1）<p>Beam的错误处理和RDD的真的很像，因为transformation都是lazy的，只有action才会触发计算，中间的转换过程都是被记录在DAG中的，这就导致中间某个transformation失败之后，需要往上追溯之前的转换，可以理解为是寻找父transformation，然后父transformation还要往上寻找父父transformation，直到没有父transformation为止，就像是类加载机制一样。但是如果能把中间结果保存在内存中，在失败重新计算时，就能提高计算的效率。</p>2019-06-26</li><br/><li><span>沈洪彬</span> 👍（4） 💬（1）<p>在 Beam 的数据流水线中，当处理的元素发生错误时流水线的的错误处理机制分两种情况
 
 1.单个Transform上的错误处理
 如果某个Bundle里元素处理失败，则整个Bundle里元素都必须重新处理
 
 2.多步骤Transform上的错误处理
-如果某个Bundle里元素处理失败，则整个Bundle里元素及与之关联的所有Bundle都必须重新处理</div>2019-06-23</li><br/><li><span>onepieceJT2018</span> 👍（4） 💬（1）<div>老师 想到一个问题啊 如果有个计算是 需要worker1 和 worker2 都算完的结果再计算 发生worker1 一直错误没通过 这时候worker2会一直傻傻等待嘛</div>2019-06-21</li><br/><li><span>常超</span> 👍（3） 💬（1）<div>&lt;在多步骤的 Transform 上，如果处理的一个 Bundle 元素发生错误了，则这个元素所在的整个 Bundle 以及与这个 Bundle 有关联的所有 Bundle 都必须重新处理。
+如果某个Bundle里元素处理失败，则整个Bundle里元素及与之关联的所有Bundle都必须重新处理</p>2019-06-23</li><br/><li><span>onepieceJT2018</span> 👍（4） 💬（1）<p>老师 想到一个问题啊 如果有个计算是 需要worker1 和 worker2 都算完的结果再计算 发生worker1 一直错误没通过 这时候worker2会一直傻傻等待嘛</p>2019-06-21</li><br/><li><span>常超</span> 👍（3） 💬（1）<p>&lt;在多步骤的 Transform 上，如果处理的一个 Bundle 元素发生错误了，则这个元素所在的整个 Bundle 以及与这个 Bundle 有关联的所有 Bundle 都必须重新处理。
 如果upstream transform里状态有更新操作，重新处理已经成功的bundle会出现数据重复，可能导致状态更新不正确吧？
-</div>2019-06-21</li><br/><li><span>Alpha</span> 👍（1） 💬（1）<div>上一期讲到，PCollection 是有向图中的边，而 Transform 是有向图里的节点。这一期的图咋又变了呢</div>2019-06-21</li><br/><li><span>dancer</span> 👍（1） 💬（1）<div>想问老师，一个bundle的数据必须要全部处理完之后才能进行第二个transform吗？如果部分数据经过transform1后就可以继续执行transform2，这样数据并行度会更高吧，为什么没有采用这种机制呢？</div>2019-06-21</li><br/><li><span>chief</span> 👍（0） 💬（1）<div>老师您好，bundle经过Transform会产生新的bundle，那么是同时保留前后bundle数据还是在新生成的bundle中保留血缘关系？
+</p>2019-06-21</li><br/><li><span>Alpha</span> 👍（1） 💬（1）<p>上一期讲到，PCollection 是有向图中的边，而 Transform 是有向图里的节点。这一期的图咋又变了呢</p>2019-06-21</li><br/><li><span>dancer</span> 👍（1） 💬（1）<p>想问老师，一个bundle的数据必须要全部处理完之后才能进行第二个transform吗？如果部分数据经过transform1后就可以继续执行transform2，这样数据并行度会更高吧，为什么没有采用这种机制呢？</p>2019-06-21</li><br/><li><span>chief</span> 👍（0） 💬（1）<p>老师您好，bundle经过Transform会产生新的bundle，那么是同时保留前后bundle数据还是在新生成的bundle中保留血缘关系？
 
-</div>2019-07-04</li><br/><li><span>fy</span> 👍（0） 💬（1）<div>老师，有编程语言基础。我也去Beam看了看教程，请问这个可以直接学吧。还需要其他基础么，比如操作系统，计算机组成原理等</div>2019-06-23</li><br/><li><span>TJ</span> 👍（0） 💬（1）<div>能否说一下Beam和底层执行系统的边界在哪里？那些功能由Beam提供,那些由底层如Spark提供?
-如果底层是spark，是否PCollection就是RDD?</div>2019-06-21</li><br/><li><span>JohnT3e</span> 👍（0） 💬（1）<div>由于beam优化器，是不是实际产生的bundle要少于逻辑上的个数？</div>2019-06-21</li><br/><li><span>Mr.Tree</span> 👍（1） 💬（0）<div>错误处理机制有点像MySQL的事务，要么全部成功，要么回滚</div>2022-12-30</li><br/><li><span>jimyth</span> 👍（1） 💬（0）<div>老师你好，既然PCollection 是无序的，请问一下怎么处理数据流中的先后依赖的问题，本节例子的 bound中的数据都是有序的分配的，实际计算过程中是不是会出现 1,3,5出现在一个 bound ;2,4,6 出现在一个 bound
+</p>2019-07-04</li><br/><li><span>fy</span> 👍（0） 💬（1）<p>老师，有编程语言基础。我也去Beam看了看教程，请问这个可以直接学吧。还需要其他基础么，比如操作系统，计算机组成原理等</p>2019-06-23</li><br/><li><span>TJ</span> 👍（0） 💬（1）<p>能否说一下Beam和底层执行系统的边界在哪里？那些功能由Beam提供,那些由底层如Spark提供?
+如果底层是spark，是否PCollection就是RDD?</p>2019-06-21</li><br/><li><span>JohnT3e</span> 👍（0） 💬（1）<p>由于beam优化器，是不是实际产生的bundle要少于逻辑上的个数？</p>2019-06-21</li><br/><li><span>Mr.Tree</span> 👍（1） 💬（0）<p>错误处理机制有点像MySQL的事务，要么全部成功，要么回滚</p>2022-12-30</li><br/><li><span>jimyth</span> 👍（1） 💬（0）<p>老师你好，既然PCollection 是无序的，请问一下怎么处理数据流中的先后依赖的问题，本节例子的 bound中的数据都是有序的分配的，实际计算过程中是不是会出现 1,3,5出现在一个 bound ;2,4,6 出现在一个 bound
 您在 23 讲的例子中，ParDo 是针对单个元素的处理，怎么实现计算2 个元素的累加的呢？
 例如下面是一组速度数据
 时间                     速度
@@ -151,5 +151,5 @@ Beam数据流水线分配了两个Worker来处理这两个Bundles。我们看到
 2019-07-26 00:00:02   20
 2019-07-26 00:00:03   40
 2019-07-26 00:00:04   70
-我需要大概怎么计算加速度，</div>2019-07-26</li><br/>
+我需要大概怎么计算加速度，</p>2019-07-26</li><br/>
 </ul>

@@ -627,25 +627,25 @@ fn main() {
 
 欢迎你把你的成果展示在评论区，也欢迎你把这节课的内容分享给需要的朋友，邀他一起学习，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>天高地迥</span> 👍（17） 💬（1）<div>Vec&lt;String&gt; []索引不能move的原因思考：
-Vec实现了Index trait的index方法，该方法返回一个引用。然后使用［］语法糖的时候，编译器会自动解引用：v［0］变成*v.index(&amp;0)。其实错误的本质是borrowed value不能move out。</div>2023-11-06</li><br/><li><span>Ransang</span> 👍（7） 💬（1）<div>HashMap实现了into_iter()，因此可以用for语句获取其所有权，另外我在老师发的hashmap的文档中发现HashMap的iter()和iter_mut()是分类在Implementations中，而into_iter()是在Trait Implementations中，请问这里面有什么特殊之处吗</div>2023-11-15</li><br/><li><span>小可爱(`へ´*)ノ</span> 👍（4） 💬（1）<div>老师讲的很好，多了解rust底层规则，才能写出更好的代码。</div>2023-12-13</li><br/><li><span>鸠摩智</span> 👍（2） 💬（1）<div>    let arr = vec![1,3,3,4];
+<li><span>天高地迥</span> 👍（17） 💬（1）<p>Vec&lt;String&gt; []索引不能move的原因思考：
+Vec实现了Index trait的index方法，该方法返回一个引用。然后使用［］语法糖的时候，编译器会自动解引用：v［0］变成*v.index(&amp;0)。其实错误的本质是borrowed value不能move out。</p>2023-11-06</li><br/><li><span>Ransang</span> 👍（7） 💬（1）<p>HashMap实现了into_iter()，因此可以用for语句获取其所有权，另外我在老师发的hashmap的文档中发现HashMap的iter()和iter_mut()是分类在Implementations中，而into_iter()是在Trait Implementations中，请问这里面有什么特殊之处吗</p>2023-11-15</li><br/><li><span>小可爱(`へ´*)ノ</span> 👍（4） 💬（1）<p>老师讲的很好，多了解rust底层规则，才能写出更好的代码。</p>2023-12-13</li><br/><li><span>鸠摩智</span> 👍（2） 💬（1）<p>    let arr = vec![1,3,3,4];
     let a = arr[0];
     println!(&quot;{}&quot;, a);
     println!(&quot;{:?}&quot;, arr);
-对于Vec&lt;u32&gt;是可以用v[0]的，因为u32是可以Copy的</div>2023-11-09</li><br/><li><span>Marco</span> 👍（2） 💬（1）<div>老师你好。
+对于Vec&lt;u32&gt;是可以用v[0]的，因为u32是可以Copy的</p>2023-11-09</li><br/><li><span>Marco</span> 👍（2） 💬（1）<p>老师你好。
 &quot;next() 方法&quot;这一节的例子也可以改为如下结构吧
     loop {
         match an_iter.next() {
             Some(i) =&gt; println!(&quot;{i}&quot;),
             None =&gt; break,
         }
-    }</div>2023-11-07</li><br/><li><span>PEtFiSh</span> 👍（1） 💬（1）<div>for (k, v) in myhash { &#47;&#47;`myhash` moved due to this implicit call to `.into_iter()`
+    }</p>2023-11-07</li><br/><li><span>PEtFiSh</span> 👍（1） 💬（1）<p>for (k, v) in myhash { &#47;&#47;`myhash` moved due to this implicit call to `.into_iter()`
     &#47;&#47; todo:
     &#47;&#47; 这里会获得v的所有权，并且消耗掉myhash
 }
 
-println!(&quot;{:?}&quot;, myhash); &#47;&#47;value borrowed here after move</div>2023-11-06</li><br/><li><span>-</span> 👍（1） 💬（1）<div> 定义了类型以后，let a: Vec&lt;u32&gt; = [1, 2, 3, 4, 5];语法错误
-修改为let a= [1, 2, 3, 4, 5];</div>2023-11-06</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<div>请教下老师，文章中“不解包的情况下如何操作？”小节部分说到 Result&lt;T, E&gt; 的常用方法 map() 时，里面示例代码的模式匹配的 Err(..) 分支是什么意思？我试了 Err(_) 也是可以执行通过的，_ 忽略元组枚举变体 Err 的负载，（和 .. 相比）它们两个有什么区别？分别什么时候使用哪个呢？</div>2024-03-28</li><br/><li><span>wcf</span> 👍（0） 💬（2）<div>为什么会有这个差异呢？你可以从我们第 2 讲所有权相关知识中找到答案。
+println!(&quot;{:?}&quot;, myhash); &#47;&#47;value borrowed here after move</p>2023-11-06</li><br/><li><span>-</span> 👍（1） 💬（1）<p> 定义了类型以后，let a: Vec&lt;u32&gt; = [1, 2, 3, 4, 5];语法错误
+修改为let a= [1, 2, 3, 4, 5];</p>2023-11-06</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<p>请教下老师，文章中“不解包的情况下如何操作？”小节部分说到 Result&lt;T, E&gt; 的常用方法 map() 时，里面示例代码的模式匹配的 Err(..) 分支是什么意思？我试了 Err(_) 也是可以执行通过的，_ 忽略元组枚举变体 Err 的负载，（和 .. 相比）它们两个有什么区别？分别什么时候使用哪个呢？</p>2024-03-28</li><br/><li><span>wcf</span> 👍（0） 💬（2）<p>为什么会有这个差异呢？你可以从我们第 2 讲所有权相关知识中找到答案。
 ============
-没看出来为什么?</div>2024-01-24</li><br/><li><span>当初莫相识</span> 👍（0） 💬（0）<div>C++ 现在有Option，但是没有Result，可以如何设计自行设计一个Result呢</div>2024-11-26</li><br/><li><span>落星野</span> 👍（0） 💬（0）<div>上面对Go语言返回值的说法有一点小问题，Go语言不限制返回值的数量与类型，最后一个返回的 err 只是一种编码习惯，一般用于返回实现了 Error 接口的实例，亦即只要实现了 error.Error() 方法的实例返回都皆可。如果用户为了简便起见，在最后返回string类型（字符串），则返回的 err 就是一个字符串。</div>2024-10-21</li><br/><li><span>Geek_93cb91</span> 👍（0） 💬（0）<div>买过好几本书了&#xff0c;反复入门再入门&#xff0c;感觉唐老师的内容比书全面多了&#xff0c;再入门一遍&#xff0c;最后一遍&#xff01;</div>2024-08-11</li><br/><li><span>wbytts</span> 👍（0） 💬（0）<div>unwrap_or_default 的配图，Result那一列写错文字了</div>2024-05-19</li><br/><li><span>Massdama</span> 👍（0） 💬（0）<div>持有使用权的数据需要所有时要考虑借 也就是引用</div>2024-05-15</li><br/><li><span>独钓寒江</span> 👍（0） 💬（0）<div>第三次刷基础篇，之前不知道Some(T)是什么，具体来说是不知道Some是什么类型，因为枚举内可以包含多种类型，那么Some是什么类型？看得好懵，心里慌得一批。这次搜索了一下，大多只是说Some是Option类型，只看到Rust By Example里说了一句Some(value)是元组结构体，噢， 终于没那么懵了</div>2024-04-30</li><br/>
+没看出来为什么?</p>2024-01-24</li><br/><li><span>当初莫相识</span> 👍（0） 💬（0）<p>C++ 现在有Option，但是没有Result，可以如何设计自行设计一个Result呢</p>2024-11-26</li><br/><li><span>落星野</span> 👍（0） 💬（0）<p>上面对Go语言返回值的说法有一点小问题，Go语言不限制返回值的数量与类型，最后一个返回的 err 只是一种编码习惯，一般用于返回实现了 Error 接口的实例，亦即只要实现了 error.Error() 方法的实例返回都皆可。如果用户为了简便起见，在最后返回string类型（字符串），则返回的 err 就是一个字符串。</p>2024-10-21</li><br/><li><span>Geek_93cb91</span> 👍（0） 💬（0）<p>买过好几本书了&#xff0c;反复入门再入门&#xff0c;感觉唐老师的内容比书全面多了&#xff0c;再入门一遍&#xff0c;最后一遍&#xff01;</p>2024-08-11</li><br/><li><span>wbytts</span> 👍（0） 💬（0）<p>unwrap_or_default 的配图，Result那一列写错文字了</p>2024-05-19</li><br/><li><span>Massdama</span> 👍（0） 💬（0）<p>持有使用权的数据需要所有时要考虑借 也就是引用</p>2024-05-15</li><br/><li><span>独钓寒江</span> 👍（0） 💬（0）<p>第三次刷基础篇，之前不知道Some(T)是什么，具体来说是不知道Some是什么类型，因为枚举内可以包含多种类型，那么Some是什么类型？看得好懵，心里慌得一批。这次搜索了一下，大多只是说Some是Option类型，只看到Rust By Example里说了一句Some(value)是元组结构体，噢， 终于没那么懵了</p>2024-04-30</li><br/>
 </ul>

@@ -323,7 +323,7 @@ if (background) daemonize();
 
 欢迎在留言区分享你的答案和见解，我们一起交流讨论。如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Kaito</span> 👍（36） 💬（6）<div>Redis 启动流程，主要的工作有：
+<li><span>Kaito</span> 👍（36） 💬（6）<p>Redis 启动流程，主要的工作有：
 
 1、初始化前置操作（设置时区、随机种子）
 
@@ -370,7 +370,7 @@ int main(int argc, char **argv) {
 	...
 }
 
-Redis 可以配置以守护进程的方式启动（配置文件 daemonize = yes），也可以把 Redis 托管给 upstart 或 systemd 来启动 &#47; 停止（supervised = upstart|systemd|auto）。</div>2021-08-12</li><br/><li><span>曾轼麟</span> 👍（11） 💬（2）<div>感谢老师的文章，先回答老师提出的问题：文章中代码片段的作用是？根据关键词我找到代码位于，main函数中loadServerConfig之后执行的，那么这块代码主要任务和顺序如下所示：
+Redis 可以配置以守护进程的方式启动（配置文件 daemonize = yes），也可以把 Redis 托管给 upstart 或 systemd 来启动 &#47; 停止（supervised = upstart|systemd|auto）。</p>2021-08-12</li><br/><li><span>曾轼麟</span> 👍（11） 💬（2）<p>感谢老师的文章，先回答老师提出的问题：文章中代码片段的作用是？根据关键词我找到代码位于，main函数中loadServerConfig之后执行的，那么这块代码主要任务和顺序如下所示：
     1、此时redis的config是已经初始化完成的
     2、执行redisIsSupervised其目底主要是判断当redis进程是否运行中
     3、判断daemonize是否开启（如果启动设置了daemonize参数那么这里参数已经被填充）
@@ -383,9 +383,9 @@ Redis 可以配置以守护进程的方式启动（配置文件 daemonize = yes�
     2、整个运行中的redis，其实就是一个永不停歇的while循环，位于aeMain中（运行中的事件驱动框架）
     3、在事件驱动框架中有两个钩子函数 beforeSleep 和 aftersleep，在每次while循环中都会触发这两个函数，后面用来实现事件触发的效果
 
-此外我发现了一个细节点：我在近期版本的redis6的分支上，发现在启动事件驱动框架之前（执行aeMain之前）会执行一个redisSetCpuAffinity函数，其效果有点类似于绑核的效果，那么是否可以认为从redis6开始其实不需要运维帮忙绑核redis自身就能做到绑核的效果呢？</div>2021-08-13</li><br/><li><span>木几丶</span> 👍（3） 💬（1）<div>简易版启动流程：
-初始化默认配置-&gt;解析启动参数和配置文件覆盖默认配置-&gt;初始化server-&gt;启动事件驱动框架</div>2021-08-29</li><br/><li><span>零点999</span> 👍（1） 💬（0）<div>mac环境下使用clion软件debug redis源码的配置过程：
-https:&#47;&#47;www.toutiao.com&#47;article&#47;7214017532637004346&#47;?log_from=bc6912dd0e87f_1679699758013</div>2023-03-25</li><br/><li><span>lzh2nix</span> 👍（1） 💬（0）<div>在这一讲中大部分逻辑都是在initSerer中完成，所以对initSerer函数的理解也是重中之重。
+此外我发现了一个细节点：我在近期版本的redis6的分支上，发现在启动事件驱动框架之前（执行aeMain之前）会执行一个redisSetCpuAffinity函数，其效果有点类似于绑核的效果，那么是否可以认为从redis6开始其实不需要运维帮忙绑核redis自身就能做到绑核的效果呢？</p>2021-08-13</li><br/><li><span>木几丶</span> 👍（3） 💬（1）<p>简易版启动流程：
+初始化默认配置-&gt;解析启动参数和配置文件覆盖默认配置-&gt;初始化server-&gt;启动事件驱动框架</p>2021-08-29</li><br/><li><span>零点999</span> 👍（1） 💬（0）<p>mac环境下使用clion软件debug redis源码的配置过程：
+https:&#47;&#47;www.toutiao.com&#47;article&#47;7214017532637004346&#47;?log_from=bc6912dd0e87f_1679699758013</p>2023-03-25</li><br/><li><span>lzh2nix</span> 👍（1） 💬（0）<p>在这一讲中大部分逻辑都是在initSerer中完成，所以对initSerer函数的理解也是重中之重。
 initSerer(void initServer(void))
  \
   1.  server 结构体的初始化
@@ -400,13 +400,13 @@ initSerer(void initServer(void))
   10. 接受到unix socket连接的事件添加到eventLoop中(aeCreateFileEvent(acceptUnixHandler))	
   11. server中cluster 相关配置的初始化
   12. replicationScriptCacheInit()&#47;scriptingInit()&#47;scriptingInit()&#47;latencyMonitorInit()
-</div>2021-08-23</li><br/><li><span>零点999</span> 👍（0） 💬（0）<div>server.supervised = redisIsSupervised(server.supervised_mode);int background = server.daemonize &amp;&amp; !server.supervised;if (background) daemonize();...}
-Redis 可以配置以守护进程的方式启动（配置文件 daemonize = yes）</div>2023-03-25</li><br/><li><span>瞭望站在风口的猪</span> 👍（0） 💬（1）<div>老师好，我发现有一处逻辑错了，是先检查RBD再检查AOF吧
+</p>2021-08-23</li><br/><li><span>零点999</span> 👍（0） 💬（0）<p>server.supervised = redisIsSupervised(server.supervised_mode);int background = server.daemonize &amp;&amp; !server.supervised;if (background) daemonize();...}
+Redis 可以配置以守护进程的方式启动（配置文件 daemonize = yes）</p>2023-03-25</li><br/><li><span>瞭望站在风口的猪</span> 👍（0） 💬（1）<p>老师好，我发现有一处逻辑错了，是先检查RBD再检查AOF吧
 
 if (strstr(argv[0],&quot;redis-check-rdb&quot;) != NULL)
         redis_check_rdb_main(argc,argv,NULL);
     else if (strstr(argv[0],&quot;redis-check-aof&quot;) != NULL)
-        redis_check_aof_main(argc,argv);</div>2022-09-27</li><br/><li><span>lzh2nix</span> 👍（0） 💬（0）<div>在这一讲中大部分逻辑都是在initSerer中完成，所以对initSerer函数的理解也是重中之重。
+        redis_check_aof_main(argc,argv);</p>2022-09-27</li><br/><li><span>lzh2nix</span> 👍（0） 💬（0）<p>在这一讲中大部分逻辑都是在initSerer中完成，所以对initSerer函数的理解也是重中之重。
 initSerer(void initServer(void))
  \
   1.  server 结构体的初始化
@@ -420,5 +420,5 @@ initSerer(void initServer(void))
   9.  接受tcp连接事件添加到eventLoop中(aeCreateFileEvent(...acceptTcpEVent))
   10. 接受到unix socket连接的事件添加到eventLoop中(aeCreateFileEvent(acceptUnixHandler))	
   11. server中cluster 相关配置的初始化
-  12. replicationScriptCacheInit()&#47;scriptingInit()&#47;scriptingInit()&#47;latencyMonitorInit()</div>2021-08-23</li><br/><li><span>haha</span> 👍（0） 💬（1）<div>老师的这些图是用什么软件画的啊</div>2021-08-21</li><br/><li><span>末日，成欢</span> 👍（0） 💬（3）<div>起始处设置随机种子是为了做什么？</div>2021-08-12</li><br/><li><span>那时刻</span> 👍（0） 💬（6）<div>请问老师，Redis server 会先读取 AOF；而如果没有 AOF，则再读取 RDB。为什么不先读rdb，再读aof呢？</div>2021-08-12</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<div>先判断是否upstart或者systemd托管。再判断是否需要守护进程，内部还是fork+setsid</div>2021-08-12</li><br/>
+  12. replicationScriptCacheInit()&#47;scriptingInit()&#47;scriptingInit()&#47;latencyMonitorInit()</p>2021-08-23</li><br/><li><span>haha</span> 👍（0） 💬（1）<p>老师的这些图是用什么软件画的啊</p>2021-08-21</li><br/><li><span>末日，成欢</span> 👍（0） 💬（3）<p>起始处设置随机种子是为了做什么？</p>2021-08-12</li><br/><li><span>那时刻</span> 👍（0） 💬（6）<p>请问老师，Redis server 会先读取 AOF；而如果没有 AOF，则再读取 RDB。为什么不先读rdb，再读aof呢？</p>2021-08-12</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<p>先判断是否upstart或者systemd托管。再判断是否需要守护进程，内部还是fork+setsid</p>2021-08-12</li><br/>
 </ul>

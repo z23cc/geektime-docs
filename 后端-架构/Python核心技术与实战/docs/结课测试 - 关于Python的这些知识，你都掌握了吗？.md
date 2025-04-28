@@ -8,5 +8,5 @@
 
 [![](https://static001.geekbang.org/resource/image/28/a4/28d1be62669b4f3cc01c36466bf811a4.png?wh=1142%2A201)](http://time.geekbang.org/quiz/intro?act_id=157&exam_id=348)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>705089</span> 👍（1） 💬（1）<div>在哪找课程考评的答案？</div>2022-08-06</li><br/>
+<li><span>705089</span> 👍（1） 💬（1）<p>在哪找课程考评的答案？</p>2022-08-06</li><br/>
 </ul>

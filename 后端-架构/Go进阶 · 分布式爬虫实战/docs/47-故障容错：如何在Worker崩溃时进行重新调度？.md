@@ -358,5 +358,5 @@ func RunGRPCServer(MasterService *master.Master, logger *zap.Logger, reg registr
 
 欢迎你在留言区与我交流讨论，我们下节课见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Geek_2c2c44</span> 👍（0） 💬（1）<div>master调用DeleteResource之后， 只不过worker在下一次在loadresource的时候不会加载被删除的任务而已， 那woker已经运行的爬虫任务岂不是还在运行？</div>2024-01-31</li><br/>
+<li><span>Geek_2c2c44</span> 👍（0） 💬（1）<p>master调用DeleteResource之后， 只不过worker在下一次在loadresource的时候不会加载被删除的任务而已， 那woker已经运行的爬虫任务岂不是还在运行？</p>2024-01-31</li><br/>
 </ul>

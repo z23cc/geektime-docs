@@ -278,5 +278,5 @@ sqlmap的页面相似度算法有什么值得改进的地方吗？
 
 欢迎在评论区留下你的思考，我们下节课再见。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>clay</span> 👍（1） 💬（0）<div>对WAF的检测可以搜集一些国内外WAF的常见特征吧，比如长亭雷池、安全狗、FortiWeb等，这些响应包里都会有强特征</div>2022-01-26</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-15</li><br/>
+<li><span>clay</span> 👍（1） 💬（0）<p>对WAF的检测可以搜集一些国内外WAF的常见特征吧，比如长亭雷池、安全狗、FortiWeb等，这些响应包里都会有强特征</p>2022-01-26</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-15</li><br/>
 </ul>

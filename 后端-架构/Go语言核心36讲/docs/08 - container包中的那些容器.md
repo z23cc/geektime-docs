@@ -141,13 +141,13 @@ func (l *List) PushBack(v interface{}) *Element
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>louis</span> 👍（45） 💬（5）<div>郝老师，这里不太理解什么叫“自己生成的Element类型值”？把自己生成的Element类型值传给链表——这个能不能再通俗点描述？</div>2019-04-23</li><br/><li><span>fliter</span> 👍（10） 💬（2）<div>为什么不把list像slice，map一样作为一种不需要import其他包就能使用的数据类型？是因为使用场景较后两者比较少吗</div>2018-08-29</li><br/><li><span>Geek_a8be59</span> 👍（7） 💬（2）<div>您好 能否出一个list 链表生成的一个图解，现在我看源码用图去模拟生成 一直搞混掉，特别是在初始化的时候prev和next都指向自身的root 这个很迷糊
+<li><span>louis</span> 👍（45） 💬（5）<p>郝老师，这里不太理解什么叫“自己生成的Element类型值”？把自己生成的Element类型值传给链表——这个能不能再通俗点描述？</p>2019-04-23</li><br/><li><span>fliter</span> 👍（10） 💬（2）<p>为什么不把list像slice，map一样作为一种不需要import其他包就能使用的数据类型？是因为使用场景较后两者比较少吗</p>2018-08-29</li><br/><li><span>Geek_a8be59</span> 👍（7） 💬（2）<p>您好 能否出一个list 链表生成的一个图解，现在我看源码用图去模拟生成 一直搞混掉，特别是在初始化的时候prev和next都指向自身的root 这个很迷糊
 比如:
 	c.PushBack(&quot;123&quot;)
 	c.PushFront(&quot;456&quot;)
 	c.PushFront(&quot;789&quot;)
-根据个人图解应该是789-》456-》nil，为什么能遍历出来很不清楚。能否有一个从初始化到最后生成的样例看一下 万分感谢</div>2019-06-26</li><br/><li><span>Zer0</span> 👍（6） 💬（1）<div>不能把自己生成的Element传给List主要是因为Element的list成员是不开放的，我们不能操作，而在List上操作Element的时候是会判断Element的list成员是否是自己。是这样吗？</div>2019-08-06</li><br/><li><span>李斌</span> 👍（5） 💬（3）<div>用 vscode 就蛮好的，我之前是八年 vim 党，写 golang 时硬生生地被掰成 vscode</div>2018-10-30</li><br/><li><span>杨震</span> 👍（4） 💬（1）<div>以后再有课的话  希望老师多加点图   虽然费点事  但应该更多为学员着想吧。文字阐述一点也不直观。</div>2020-08-25</li><br/><li><span>雷朝建</span> 👍（3） 💬（1）<div>老师， 我看了一下list.go的源码，发现一个疑问是：延迟初始化的含义就是调用lazyInit，它的一个判断条件是：l.root.next==nil； 但是我们在使用list时候，不是先调用New函数吗？那么不应该会出现l.root.next为nil的情况的。
-什么时候回出现l.root.next==nil, 从而导致源码中每次的PushFront等操作调用lazyInit呢？</div>2021-04-02</li><br/><li><span>jackstraw</span> 👍（3） 💬（1）<div>我尝试打印了 “var l = list.New()” 与 “var l list.List”两种方式的l类型，发现是不一样的，但是下面的操作却都是可以的
+根据个人图解应该是789-》456-》nil，为什么能遍历出来很不清楚。能否有一个从初始化到最后生成的样例看一下 万分感谢</p>2019-06-26</li><br/><li><span>Zer0</span> 👍（6） 💬（1）<p>不能把自己生成的Element传给List主要是因为Element的list成员是不开放的，我们不能操作，而在List上操作Element的时候是会判断Element的list成员是否是自己。是这样吗？</p>2019-08-06</li><br/><li><span>李斌</span> 👍（5） 💬（3）<p>用 vscode 就蛮好的，我之前是八年 vim 党，写 golang 时硬生生地被掰成 vscode</p>2018-10-30</li><br/><li><span>杨震</span> 👍（4） 💬（1）<p>以后再有课的话  希望老师多加点图   虽然费点事  但应该更多为学员着想吧。文字阐述一点也不直观。</p>2020-08-25</li><br/><li><span>雷朝建</span> 👍（3） 💬（1）<p>老师， 我看了一下list.go的源码，发现一个疑问是：延迟初始化的含义就是调用lazyInit，它的一个判断条件是：l.root.next==nil； 但是我们在使用list时候，不是先调用New函数吗？那么不应该会出现l.root.next为nil的情况的。
+什么时候回出现l.root.next==nil, 从而导致源码中每次的PushFront等操作调用lazyInit呢？</p>2021-04-02</li><br/><li><span>jackstraw</span> 👍（3） 💬（1）<p>我尝试打印了 “var l = list.New()” 与 “var l list.List”两种方式的l类型，发现是不一样的，但是下面的操作却都是可以的
 func main() {
     &#47;&#47;l := list.New()
     var l list.List
@@ -157,20 +157,20 @@ func main() {
     l.InsertAfter(2, e1)
     &#47;&#47;travel(l)
     travel(&amp;l)
-}</div>2019-07-09</li><br/><li><span>Sky</span> 👍（2） 💬（1）<div>这一讲没有实例代码</div>2019-06-12</li><br/><li><span>白有才</span> 👍（0） 💬（1）<div>这课程就像小说里的武功秘籍, 看了你不一定会练, 所以练成绝世武功的人就少之又少</div>2021-08-12</li><br/><li><span>escray</span> 👍（0） 💬（1）<div>这一课没有示例代码，确实不太习惯，去看了一下 list.go 的源码，才平复了一下心情。
+}</p>2019-07-09</li><br/><li><span>Sky</span> 👍（2） 💬（1）<p>这一讲没有实例代码</p>2019-06-12</li><br/><li><span>白有才</span> 👍（0） 💬（1）<p>这课程就像小说里的武功秘籍, 看了你不一定会练, 所以练成绝世武功的人就少之又少</p>2021-08-12</li><br/><li><span>escray</span> 👍（0） 💬（1）<p>这一课没有示例代码，确实不太习惯，去看了一下 list.go 的源码，才平复了一下心情。
 
 List 实现了一个双向链表，Ring 实现一个循环链表。
 
 对于思考题，container&#47;ring 包中的循环链表可能的适用场景可能有类似于滑动窗口协议的缓存实现，可以实现 FIFO 的队列；
 
-container&#47;heap 没有用过，看了一下 heap.go 的源码，以及附带的 example_intheap_test.go 和 example_pq_test.go，感觉设计还是很巧妙的，可以用于堆排序和优先队列。</div>2021-05-06</li><br/><li><span>青鸟飞鱼</span> 👍（0） 💬（1）<div>老师你好，go内置的数据结构是不是挺少的？</div>2020-11-05</li><br/><li><span>疯琴</span> 👍（0） 💬（1）<div>请问老师，为什么切片扩容以后”旧的底层数组无法被回收“？是指扩容太频繁GC没来得及清理么？</div>2020-10-07</li><br/><li><span>漫步跑小鸡</span> 👍（0） 💬（1）<div>container&#47;list 的元素Element为啥还要设置自己所属的列表，这样设计解决的是什么问题？
+container&#47;heap 没有用过，看了一下 heap.go 的源码，以及附带的 example_intheap_test.go 和 example_pq_test.go，感觉设计还是很巧妙的，可以用于堆排序和优先队列。</p>2021-05-06</li><br/><li><span>青鸟飞鱼</span> 👍（0） 💬（1）<p>老师你好，go内置的数据结构是不是挺少的？</p>2020-11-05</li><br/><li><span>疯琴</span> 👍（0） 💬（1）<p>请问老师，为什么切片扩容以后”旧的底层数组无法被回收“？是指扩容太频繁GC没来得及清理么？</p>2020-10-07</li><br/><li><span>漫步跑小鸡</span> 👍（0） 💬（1）<p>container&#47;list 的元素Element为啥还要设置自己所属的列表，这样设计解决的是什么问题？
 &#47;&#47; The list to which this element belongs.
-	list *List</div>2020-05-27</li><br/><li><span>Jason</span> 👍（0） 💬（1）<div>老师，读了list.go源码后有点理解您说的自定义的elem不被List接受的含义了，因为自定义的elem里的list成员为nil,在List的成员函数中和自身的指针不同。但是我还有两个疑问，希望老师能解答：
+	list *List</p>2020-05-27</li><br/><li><span>Jason</span> 👍（0） 💬（1）<p>老师，读了list.go源码后有点理解您说的自定义的elem不被List接受的含义了，因为自定义的elem里的list成员为nil,在List的成员函数中和自身的指针不同。但是我还有两个疑问，希望老师能解答：
 1）使用显示的elem构造，可以被list接受，是否和您说的自定义elem含义不同呢？
 fmt.Println(&quot;***********custom pushback*************&quot;)
 	em := list.Element{}
 	li.PushBack(&amp;em)
 	fmt.Println(li.Len())
 
-2）如果elem不是list的元素，像Remove或moveToFront都是不影响源list,那开发者该如何知道成功还是失败呢？</div>2020-03-25</li><br/>
+2）如果elem不是list的元素，像Remove或moveToFront都是不影响源list,那开发者该如何知道成功还是失败呢？</p>2020-03-25</li><br/>
 </ul>

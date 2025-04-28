@@ -226,8 +226,8 @@ GraalVM为云原生应用的时代带来了一种高性能的多语言平台，�
 
 学而不思则罔，学完这节课之后，你也来说一说GraalVM的核心组件有哪些？此外你可以自己动手搭建一个GraalVM的云原生应用，然后把自己的代码分享到评论区，如果有收获的话，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>18667027789</span> 👍（0） 💬（0）<div>请教老师一个问题， demo中 image: graalvm&#47;graalvm-ce:latest   这个拉取不到，需要做什么特殊配置么？ </div>2023-11-16</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>请教老师几个问题：
+<li><span>18667027789</span> 👍（0） 💬（0）<p>请教老师一个问题， demo中 image: graalvm&#47;graalvm-ce:latest   这个拉取不到，需要做什么特殊配置么？ </p>2023-11-16</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>请教老师几个问题：
 Q1：k8s的windows安装部分，ste7的命令好像是Linux下的命令，不像是windows下的命令。
 Q2：本地搭建的环境，怎么就是“云原生”？“云原生”的特征是什么？
-Q3：truffle被称作“框架”，其功能是什么？不是很明白。</div>2023-11-13</li><br/>
+Q3：truffle被称作“框架”，其功能是什么？不是很明白。</p>2023-11-13</li><br/>
 </ul>

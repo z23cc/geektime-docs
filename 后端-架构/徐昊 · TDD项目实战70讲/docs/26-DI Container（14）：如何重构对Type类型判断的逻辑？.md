@@ -289,6 +289,6 @@ public class ContextConfig {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>大碗</span> 👍（0） 💬（0）<div>在多个类出现重复的代码，是散单式修改的坏味道</div>2022-08-22</li><br/><li><span>davix</span> 👍（0） 💬（0）<div>去掉if&#47;else就是引入interface，用兩個class實現分離行為</div>2022-08-19</li><br/><li><span>夏天</span> 👍（0） 💬（0）<div>containerTypeContext
-classTypeContext</div>2022-05-21</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>原来针对不同类型的不同处理可以通过封装进行解决</div>2022-05-18</li><br/>
+<li><span>大碗</span> 👍（0） 💬（0）<p>在多个类出现重复的代码，是散单式修改的坏味道</p>2022-08-22</li><br/><li><span>davix</span> 👍（0） 💬（0）<p>去掉if&#47;else就是引入interface，用兩個class實現分離行為</p>2022-08-19</li><br/><li><span>夏天</span> 👍（0） 💬（0）<p>containerTypeContext
+classTypeContext</p>2022-05-21</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>原来针对不同类型的不同处理可以通过封装进行解决</p>2022-05-18</li><br/>
 </ul>

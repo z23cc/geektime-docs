@@ -12,5 +12,5 @@
 
 点击[这里](https://pan.baidu.com/s/1565zP07nd69UQHOxupPktQ)获取课件，提取码：hn66。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Asun</span> 👍（0） 💬（0）<div>为什么obj.a的值会被存入rax寄存器？rax不是作为函数返回值使用的吗？</div>2023-08-09</li><br/><li><span>Geek_a851a9</span> 👍（0） 💬（0）<div>谢谢老师的前导课</div>2023-05-18</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（0） 💬（0）<div>老师太厉害了吧！</div>2023-01-04</li><br/><li><span>长脖子树</span> 👍（0） 💬（0）<div>非常棒的导学视频, 期待后续的学习</div>2022-04-10</li><br/><li><span>tianbingJ</span> 👍（0） 💬（0）<div>为什么virtual table是要fixed size的呢？</div>2022-01-24</li><br/><li><span>海生</span> 👍（0） 💬（0）<div>Risc编码长度也不是固定的，只是长度没有那么多</div>2021-12-26</li><br/>
+<li><span>Asun</span> 👍（0） 💬（0）<p>为什么obj.a的值会被存入rax寄存器？rax不是作为函数返回值使用的吗？</p>2023-08-09</li><br/><li><span>Geek_a851a9</span> 👍（0） 💬（0）<p>谢谢老师的前导课</p>2023-05-18</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（0） 💬（0）<p>老师太厉害了吧！</p>2023-01-04</li><br/><li><span>长脖子树</span> 👍（0） 💬（0）<p>非常棒的导学视频, 期待后续的学习</p>2022-04-10</li><br/><li><span>tianbingJ</span> 👍（0） 💬（0）<p>为什么virtual table是要fixed size的呢？</p>2022-01-24</li><br/><li><span>海生</span> 👍（0） 💬（0）<p>Risc编码长度也不是固定的，只是长度没有那么多</p>2021-12-26</li><br/>
 </ul>

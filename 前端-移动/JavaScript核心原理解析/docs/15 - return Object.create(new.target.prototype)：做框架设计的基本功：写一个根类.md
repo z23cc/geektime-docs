@@ -213,7 +213,7 @@ console.log('foo' in x); // fals
 
 希望你喜欢我的分享，也欢迎你把文章分享给你的朋友。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>青史成灰</span> 👍（3） 💬（2）<div>老师，最后的这个例子：
+<li><span>青史成灰</span> 👍（3） 💬（2）<p>老师，最后的这个例子：
 ```
 
 class MyClass {
@@ -230,8 +230,8 @@ class MyClassEx extends MyClass {
 var x = new MyClassEx;
 console.log(&#39;foo&#39; in x); &#47;&#47; false
 ```
-因为`foo`并不在`x`实例上，那假如我要访问`foo`，那得通过什么方式？或者说，那我这个类中定义的`foo`定义到哪里去了？</div>2020-01-15</li><br/><li><span>Astrogladiator-埃蒂纳度斯</span> 👍（3） 💬（1）<div>new.target为什么称为元属性，它与a.b（例如 super.xxx，或者’a’.toString）有什么不同？
-个人理解是new.target是用来描述构造器本身的属性，指代是当前这个构造器函数this， 它不属于实例对象的一部分，它可以由super函数传递至根类，并最终由根类创建带有子类实例的对象。</div>2019-12-19</li><br/><li><span>行问</span> 👍（3） 💬（2）<div>这里的代码在 Chrome 或 Node 是报错的
+因为`foo`并不在`x`实例上，那假如我要访问`foo`，那得通过什么方式？或者说，那我这个类中定义的`foo`定义到哪里去了？</p>2020-01-15</li><br/><li><span>Astrogladiator-埃蒂纳度斯</span> 👍（3） 💬（1）<p>new.target为什么称为元属性，它与a.b（例如 super.xxx，或者’a’.toString）有什么不同？
+个人理解是new.target是用来描述构造器本身的属性，指代是当前这个构造器函数this， 它不属于实例对象的一部分，它可以由super函数传递至根类，并最终由根类创建带有子类实例的对象。</p>2019-12-19</li><br/><li><span>行问</span> 👍（3） 💬（2）<p>这里的代码在 Chrome 或 Node 是报错的
 
 
 class MyClass extends Object {
@@ -246,7 +246,7 @@ function MyConstructor() {
 
 
 console.log(new MyClass)
-console.log(new MyConstructor)</div>2019-12-18</li><br/><li><span>小童</span> 👍（2） 💬（2）<div>老师，我在看规范的时候，有那么一句话不理解，状态和方法都会被对象承载，结构，行为和状态都能被继承。
+console.log(new MyConstructor)</p>2019-12-18</li><br/><li><span>小童</span> 👍（2） 💬（2）<p>老师，我在看规范的时候，有那么一句话不理解，状态和方法都会被对象承载，结构，行为和状态都能被继承。
 这句怎么理解呢？
 比如:
 function Car(){
@@ -264,7 +264,7 @@ function Dog(){
 
 }
 Dog.prototype=Car.prototype;
-&#47;&#47;继承 Dog 继承了Car对象的结构 行为指继承了run方法吗？ 状态是name属性吗？</div>2020-04-24</li><br/><li><span>James</span> 👍（2） 💬（1）<div>老师，在看react源码的context时候，遇到一个问题，简化如下，如果var a = {}, a.a =a,最终a.a.a...好像会无限下去，这样，会不会执行这个代码的时候，就内存泄漏了啊，如果造成内存泄漏的化，怎么会在react源码里面呢？
+&#47;&#47;继承 Dog 继承了Car对象的结构 行为指继承了run方法吗？ 状态是name属性吗？</p>2020-04-24</li><br/><li><span>James</span> 👍（2） 💬（1）<p>老师，在看react源码的context时候，遇到一个问题，简化如下，如果var a = {}, a.a =a,最终a.a.a...好像会无限下去，这样，会不会执行这个代码的时候，就内存泄漏了啊，如果造成内存泄漏的化，怎么会在react源码里面呢？
 
 export function createContext&lt;T&gt;(
   defaultValue: T,
@@ -291,12 +291,12 @@ context.Consumer = context;
 
   return context;
 }
-</div>2020-03-23</li><br/><li><span>Elmer</span> 👍（1） 💬（1）<div>定制的构造方法中，如果返回通过return传出的对象（也就是一个用户定制的创建过程），这个时候返回的对象原型并不是子类的原型，那不是不需要再设置this的原型了吗。。
+</p>2020-03-23</li><br/><li><span>Elmer</span> 👍（1） 💬（1）<p>定制的构造方法中，如果返回通过return传出的对象（也就是一个用户定制的创建过程），这个时候返回的对象原型并不是子类的原型，那不是不需要再设置this的原型了吗。。
 function test (){
   return {a: 1};
 }
 const b = new test();
-b instanceof test  &#47;&#47; false;此时如果test有父类也不需要设置this的原型？</div>2020-01-07</li><br/><li><span>小炭</span> 👍（0） 💬（1）<div>“迄今为止，new.target是 JavaScript 中唯一的一个元属性。” 对这句话有疑惑，就是下面这些不是元属性吗？
+b instanceof test  &#47;&#47; false;此时如果test有父类也不需要设置this的原型？</p>2020-01-07</li><br/><li><span>小炭</span> 👍（0） 💬（1）<p>“迄今为止，new.target是 JavaScript 中唯一的一个元属性。” 对这句话有疑惑，就是下面这些不是元属性吗？
 {
   value: 123,
   writable: false,
@@ -304,7 +304,7 @@ b instanceof test  &#47;&#47; false;此时如果test有父类也不需要设置t
   configurable: false,
   get: undefined,
   set: undefined
-}</div>2020-11-10</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>
+}</p>2020-11-10</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>
 &#47;&#47; 在JavaScript内置类Date()中可能的处理逻辑
 function _Date() {
   this = Object.Create(Date.prototype, { _internal_slots });
@@ -316,5 +316,5 @@ function _Date() {
 function _Date() {
   this = Object.create(new.target.prototype);
   ...
-}</div>2020-05-25</li><br/><li><span>qqq</span> 👍（0） 💬（0）<div>因为可以改变默认的原型继承行为</div>2019-12-18</li><br/>
+}</p>2020-05-25</li><br/><li><span>qqq</span> 👍（0） 💬（0）<p>因为可以改变默认的原型继承行为</p>2019-12-18</li><br/>
 </ul>

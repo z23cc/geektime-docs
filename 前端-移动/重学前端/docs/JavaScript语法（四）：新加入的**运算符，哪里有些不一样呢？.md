@@ -294,7 +294,7 @@ condition ? branch1 : branch2
 
 ![](https://static001.geekbang.org/resource/image/4c/ca/4cb75eb863d5dffe7e9b6b0fb1161aca.jpg?wh=606%2A207)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>windliang</span> 👍（21） 💬（3）<div>-1 &gt;&gt; 1，-1 的补码是 1111 1111 ... 1111 1111 ，32 个 1，有符号右移，高位补 1，所以还是 1111 1111 ... 1111 1111 ，32 个 1，所以答案依旧是 -1。
+<li><span>windliang</span> 👍（21） 💬（3）<p>-1 &gt;&gt; 1，-1 的补码是 1111 1111 ... 1111 1111 ，32 个 1，有符号右移，高位补 1，所以还是 1111 1111 ... 1111 1111 ，32 个 1，所以答案依旧是 -1。
 
 -1 &gt;&gt;&gt; 1，-1 的补码是 1111 1111 ... 1111 1111 ，32 个 1，无符号右移，高位补 0，所以是 0111 1111... 1111 1111 ,31 个 1，代表 2 ** 31 - 1= 2147483648 - 1 = 2147483647 。
 
@@ -304,7 +304,7 @@ condition ? branch1 : branch2
 
 https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;uvcQHJi6AXhPDJL-6JWUkw
 
-</div>2019-06-28</li><br/><li><span>冬Don</span> 👍（4） 💬（1）<div>为什么 [undefined] == 0 是 true, [false] == 0是false呢</div>2019-11-14</li><br/><li><span>渴望做梦</span> 👍（1） 💬（2）<div>老师，这篇文章里面每个表达式介绍的时候都说是由上一个表达式构成的，对此我不是很理解，比如一元运算表达式是有更新表达式和一元运算符构成的，但是 typeof a 我怎么看也没看出来哪有更新表达式</div>2019-07-31</li><br/><li><span>Geeker</span> 👍（1） 💬（1）<div>比如本章和前一章对应标准中的 “12 ECMAScript Language: Expression”这一章，但有些内容不是很好懂，可能和标准的行文结构和规范有关，希望老师有时间可以稍做调拨，谢谢！</div>2019-04-09</li><br/><li><span>AbyssKR</span> 👍（72） 💬（6）<div>“逻辑与表达式和逻辑或表达式”一节中，第二个例子 false &amp;&amp; undefined; 的结果为 false</div>2019-04-09</li><br/><li><span>阿成</span> 👍（31） 💬（1）<div>优先级由高到低：
+</p>2019-06-28</li><br/><li><span>冬Don</span> 👍（4） 💬（1）<p>为什么 [undefined] == 0 是 true, [false] == 0是false呢</p>2019-11-14</li><br/><li><span>渴望做梦</span> 👍（1） 💬（2）<p>老师，这篇文章里面每个表达式介绍的时候都说是由上一个表达式构成的，对此我不是很理解，比如一元运算表达式是有更新表达式和一元运算符构成的，但是 typeof a 我怎么看也没看出来哪有更新表达式</p>2019-07-31</li><br/><li><span>Geeker</span> 👍（1） 💬（1）<p>比如本章和前一章对应标准中的 “12 ECMAScript Language: Expression”这一章，但有些内容不是很好懂，可能和标准的行文结构和规范有关，希望老师有时间可以稍做调拨，谢谢！</p>2019-04-09</li><br/><li><span>AbyssKR</span> 👍（72） 💬（6）<p>“逻辑与表达式和逻辑或表达式”一节中，第二个例子 false &amp;&amp; undefined; 的结果为 false</p>2019-04-09</li><br/><li><span>阿成</span> 👍（31） 💬（1）<p>优先级由高到低：
 1 ()
 2 .&#47;[] 左
 2 new MemberExpression Arguments
@@ -333,10 +333,10 @@ https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;uvcQHJi6AXhPDJL-6JWUkw
 1. 函数调用与New Expression的优先级顺序（上一课文中有一句不是很理解：而 Call Expression 就失去了比 New Expression优先级高的特性，这是一个主要的区分）
 2. ++&#47;-- 前置和后置的优先级顺序（MDN上前置后置优先级是不同的）
 3. 缺少了 yield&#47;yield*&#47;...这三个运算符
-</div>2019-04-08</li><br/><li><span>Geeker</span> 👍（7） 💬（0）<div>标准里有些东西还是看不太懂，如果可以的话，希望老师在答疑的时候稍微讲解一下如何看懂标准</div>2019-04-09</li><br/><li><span>Geeker</span> 👍（4） 💬（0）<div>评论不能发图片，我把不太明白的地方截图发到了语雀：
+</p>2019-04-08</li><br/><li><span>Geeker</span> 👍（7） 💬（0）<p>标准里有些东西还是看不太懂，如果可以的话，希望老师在答疑的时候稍微讲解一下如何看懂标准</p>2019-04-09</li><br/><li><span>Geeker</span> 👍（4） 💬（0）<p>评论不能发图片，我把不太明白的地方截图发到了语雀：
 https:&#47;&#47;cdn.nlark.com&#47;yuque&#47;0&#47;2019&#47;jpeg&#47;119718&#47;1554814331032-assets&#47;web-upload&#47;a51218b6-cd8a-4ac8-b71f-f8f6dbfeab36.jpeg
-麻烦老师移步看一下，谢谢。</div>2019-04-09</li><br/><li><span>依韵</span> 👍（3） 💬（2）<div>false &amp;&amp; undefined 值为false</div>2019-07-19</li><br/><li><span>白嗣</span> 👍（3） 💬（0）<div>false &amp;&amp; undefined; &#47;&#47; false</div>2019-05-20</li><br/><li><span>Geeker</span> 👍（3） 💬（0）<div>老师是在带我们过 ECMAScript标准，讲解很详细，基本能读懂标准了🌝</div>2019-04-06</li><br/><li><span>梧桐</span> 👍（2） 💬（0）<div>“逻辑与表达式和逻辑或表达式”一节中，第二个例子 false &amp;&amp; undefined; 的结果为 false</div>2019-09-25</li><br/><li><span>晴天</span> 👍（2） 💬（0）<div>左移 n 位相当于乘以 2 的 n 次方，右移 n 位相当于除以 2 取整 n 次。
-异或运算有个特征，那就是两次异或运算相当于取消。所以有一个异或运算的小技巧，就是用异或运算来交换两个整数的值。</div>2019-05-06</li><br/><li><span>乃乎</span> 👍（2） 💬（0）<div>“字符串和 bool 都转为数字再比较”
+麻烦老师移步看一下，谢谢。</p>2019-04-09</li><br/><li><span>依韵</span> 👍（3） 💬（2）<p>false &amp;&amp; undefined 值为false</p>2019-07-19</li><br/><li><span>白嗣</span> 👍（3） 💬（0）<p>false &amp;&amp; undefined; &#47;&#47; false</p>2019-05-20</li><br/><li><span>Geeker</span> 👍（3） 💬（0）<p>老师是在带我们过 ECMAScript标准，讲解很详细，基本能读懂标准了🌝</p>2019-04-06</li><br/><li><span>梧桐</span> 👍（2） 💬（0）<p>“逻辑与表达式和逻辑或表达式”一节中，第二个例子 false &amp;&amp; undefined; 的结果为 false</p>2019-09-25</li><br/><li><span>晴天</span> 👍（2） 💬（0）<p>左移 n 位相当于乘以 2 的 n 次方，右移 n 位相当于除以 2 取整 n 次。
+异或运算有个特征，那就是两次异或运算相当于取消。所以有一个异或运算的小技巧，就是用异或运算来交换两个整数的值。</p>2019-05-06</li><br/><li><span>乃乎</span> 👍（2） 💬（0）<p>“字符串和 bool 都转为数字再比较”
 这点很重要，也很对
-</div>2019-04-29</li><br/><li><span>K4SHIFZ</span> 👍（2） 💬（1）<div>老师，在ES5之前版本规范中，会提及JS的可执行代码分为全局、函数、Eval。但是在ES6之后版本规范中，再也不提及可执行代码的概念了，这是为什么呢？</div>2019-04-14</li><br/>
+</p>2019-04-29</li><br/><li><span>K4SHIFZ</span> 👍（2） 💬（1）<p>老师，在ES5之前版本规范中，会提及JS的可执行代码分为全局、函数、Eval。但是在ES6之后版本规范中，再也不提及可执行代码的概念了，这是为什么呢？</p>2019-04-14</li><br/>
 </ul>

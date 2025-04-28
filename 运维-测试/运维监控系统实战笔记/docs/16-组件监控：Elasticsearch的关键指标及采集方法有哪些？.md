@@ -305,10 +305,10 @@ Elasticsearch 暴露指标的方式非常简单，就是几个 HTTP 接口，返
 
 学完这一讲的内容，相信你对 Elasticsearch 的关键指标已经有了一些了解，让我们一起来攒一下 Elasticsearch 的告警规则吧，欢迎留言分享你认为应该作为告警规则的 PromQL，也欢迎你把今天的内容分享给你身边的朋友，邀他一起学习。我们下一讲再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：文中的例子是生产环境的集群还是自己本机上的虚拟机？
 Q2：number_of_nodes&quot; 和&quot;number_of_data_nodes&quot; 有什么区别？
 Q3：categraf和ES都能采集OS指标，这两种采集方式会有冲突吗？也就是对同一个OS指标两种方式是不同的值。
-Q4：&quot;indices&quot;列出的指标怎么看起来和索引没有什么关系啊。</div>2023-02-14</li><br/><li><span>林龍</span> 👍（0） 💬（1）<div>categraf实战中修改配置后是要重启categraf吗？能不能不通过重启的方式指定配置文件进行部分配置的变更</div>2023-02-21</li><br/><li><span>顶级心理学家</span> 👍（0） 💬（1）<div>jolokia是否能采集hbase的jmx数据，像kafka一样监控。</div>2023-02-15</li><br/><li><span>晴空万里</span> 👍（1） 💬（0）<div>咋一个PromQL都没有?
-</div>2023-04-10</li><br/>
+Q4：&quot;indices&quot;列出的指标怎么看起来和索引没有什么关系啊。</p>2023-02-14</li><br/><li><span>林龍</span> 👍（0） 💬（1）<p>categraf实战中修改配置后是要重启categraf吗？能不能不通过重启的方式指定配置文件进行部分配置的变更</p>2023-02-21</li><br/><li><span>顶级心理学家</span> 👍（0） 💬（1）<p>jolokia是否能采集hbase的jmx数据，像kafka一样监控。</p>2023-02-15</li><br/><li><span>晴空万里</span> 👍（1） 💬（0）<p>咋一个PromQL都没有?
+</p>2023-04-10</li><br/>
 </ul>

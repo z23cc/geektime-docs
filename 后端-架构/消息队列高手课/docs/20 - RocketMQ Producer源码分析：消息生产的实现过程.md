@@ -287,12 +287,12 @@ RocketMQ提供了很多MessageQueueSelector的实现，例如随机选择策略�
 
 感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>. 。o O</span> 👍（36） 💬（3）<div>请教老师一个问题,如果异步发送的话,就是把发送逻辑封装成任务放到线程池里去处理,那么是不是就没法保证消息的顺序性了呢?哪怕是通过key哈希到一个同一个队列,但是发送消息的任务执行先后顺序没法保证吧?</div>2019-10-28</li><br/><li><span>微微一笑</span> 👍（24） 💬（3）<div>老师好，先祝您节日快乐！！！您辛苦了~
+<li><span>. 。o O</span> 👍（36） 💬（3）<p>请教老师一个问题,如果异步发送的话,就是把发送逻辑封装成任务放到线程池里去处理,那么是不是就没法保证消息的顺序性了呢?哪怕是通过key哈希到一个同一个队列,但是发送消息的任务执行先后顺序没法保证吧?</p>2019-10-28</li><br/><li><span>微微一笑</span> 👍（24） 💬（3）<p>老师好，先祝您节日快乐！！！您辛苦了~
 有几个疑问需要老师解答一下：
 ①今天在看rocketMq源码过程中，发现DefaultMQProducer有个属性defaultTopicQueueNums，它是用来设置topic的ConsumeQueue的数量的吗？我之前的理解是，consumeQueue的数量是创建topic的时候指定的，跟producer没有关系，那这个参数又有什么作用呢？
 ②在RocketMq的控制台上可以创建topic，需要指定writeQueueNums，readQueueNums，perm，这三个参数是有什么用呢？这里为什么要区分写队列跟读队列呢？不应该只有一个consumeQueue吗？
 ③用户请求--&gt;异步处理---&gt;用户收到响应结果。异步处理的作用是：用更少的线程来接收更多的用户请求，然后异步处理业务逻辑。老师，异步处理完后，如何将结果通知给原先的用户呢？即使有回调接口，我理解也是给用户发个短信之类的处理，那结果怎么返回到定位到用户，并返回之前请求的页面上呢？需要让之前的请求线程阻塞吗？那也无法达到【用更少的线程来接收更多的用户请求】的目的丫。
-望老师能指点迷津~~~</div>2019-09-11</li><br/><li><span>Standly</span> 👍（14） 💬（1）<div>老师，异步发送为什么是弃用，还是没有看懂，感觉超时时间的计算没有错啊…</div>2019-11-18</li><br/><li><span>Peter</span> 👍（8） 💬（7）<div>课后作业，请老师指正：
+望老师能指点迷津~~~</p>2019-09-11</li><br/><li><span>Standly</span> 👍（14） 💬（1）<p>老师，异步发送为什么是弃用，还是没有看懂，感觉超时时间的计算没有错啊…</p>2019-11-18</li><br/><li><span>Peter</span> 👍（8） 💬（7）<p>课后作业，请老师指正：
 从方法的注释看，说是因为异常处理和超时时间的语义不对。
 异常处理这块我觉得应该是采用统一的异常处理，而不应该是有的异常抛出，而有的异常通过回调方法返回客户端。
 再说超时时间的错误语义，严格来说应该是不准确的超时时间，因为在run方法里进行时间判断（if (timeout &gt; costTime)）实际上已经是开始执行当前线程的时间，而之前的排队时间没有算，因此我改进的方法应该是这样：
@@ -308,13 +308,13 @@ CompletableFuture.runAsync(() -&gt; {
                 sendCallback.onException(
                         new RemotingTooMuchRequestException(&quot;DEFAULT ASYNC send call timeout&quot;));
             }
-        }, executor);</div>2019-11-04</li><br/><li><span>leslie</span> 👍（6） 💬（1）<div>       编程语言的话Python或Go可以么？极客时间里都有购买，就是忙着其它课程的学习，一直没顾的上编程语言的学习。
+        }, executor);</p>2019-11-04</li><br/><li><span>leslie</span> 👍（6） 💬（1）<p>       编程语言的话Python或Go可以么？极客时间里都有购买，就是忙着其它课程的学习，一直没顾的上编程语言的学习。
        从开始一路跟到现在：算是少数一直在完全没有缺的课；前期一直遍边学习边针对开篇时的学习目标针对当下工作环境的Nosql DB和MQ使用率的低下的问题找解决思路和方案，课后笔记主要同样集中在思路以及针对思路的困惑查疑上，代码这块完全没顾上。虽然代码的思路看的懂，发现动手能力确实非常欠缺。一路学到现在梳理到现在整体方案大致定下来：以及早期的部分课程的结束；课程的主要方案自己估计在掌握思路的基础上去补强Coding能力。虽然DBA的Coding能力都比较烂，不过还是得边学边啃下来；逼自己一下总能勉强写出来，估计就是效率问题、、、MQ这块PY或GO哪种更合适，或者说都可以？
-        感谢老师一路的辛勤授业：授课之余尽力去帮助学生们解惑，让我们能一路走来一路成长；愿老师教师节快乐，谢谢老师的分享。</div>2019-09-10</li><br/><li><span>墙角儿的花</span> 👍（5） 💬（3）<div>老师 对于im服务器集群，客户端的socket均布在各个服务器，目标socket不在同一个服务器上时，服务器间需要转发消息，这个场景需要低延迟无需持久化，服务器间用redis的发布订阅，因其走内存较快，即使断电还可以走库。im服务器和入库服务间用其他mq解耦，因为这个环节需要持久化，所以选rocketmq或kafka，但kafka会延迟批量发布消息 所以选rocketmq，这两个环节的mq选型可行吗。</div>2019-09-11</li><br/><li><span>Peter</span> 👍（1） 💬（1）<div>老师继续请教问题：
+        感谢老师一路的辛勤授业：授课之余尽力去帮助学生们解惑，让我们能一路走来一路成长；愿老师教师节快乐，谢谢老师的分享。</p>2019-09-10</li><br/><li><span>墙角儿的花</span> 👍（5） 💬（3）<p>老师 对于im服务器集群，客户端的socket均布在各个服务器，目标socket不在同一个服务器上时，服务器间需要转发消息，这个场景需要低延迟无需持久化，服务器间用redis的发布订阅，因其走内存较快，即使断电还可以走库。im服务器和入库服务间用其他mq解耦，因为这个环节需要持久化，所以选rocketmq或kafka，但kafka会延迟批量发布消息 所以选rocketmq，这两个环节的mq选型可行吗。</p>2019-09-11</li><br/><li><span>Peter</span> 👍（1） 💬（1）<p>老师继续请教问题：
 1.DefaultMQPullConsumer和DefaultMQPushConsumer有什么区别
 2.为什么pullConsumer的启动和producer的启动在同一个start方法里（最终都在MQClientInstance#start里）
-3.rebalanceService服务是干嘛的</div>2019-11-04</li><br/><li><span>leslie</span> 👍（1） 💬（1）<div>     前期一直忙着强化和梳理一些基本功：操作系统、网络这块，学到现在发现老师的课程中的代码能看懂，大致思路也能明白；就是写不出。Python或者Go可以么？ Java实在、、、Python和Go极客时间都有购买课程。
+3.rebalanceService服务是干嘛的</p>2019-11-04</li><br/><li><span>leslie</span> 👍（1） 💬（1）<p>     前期一直忙着强化和梳理一些基本功：操作系统、网络这块，学到现在发现老师的课程中的代码能看懂，大致思路也能明白；就是写不出。Python或者Go可以么？ Java实在、、、Python和Go极客时间都有购买课程。
            可能目前线上的存储中间件现状比较差【许老师的课程对数据存储的定义，觉得有道理就直接现用了】，尤其是Nosql DB和MQ基本处于闲置，故而一直焦虑在这块；可是当现在初期迷惑已经解除且基本清晰时发现学习这门课和使用MQ的瓶颈就在代码能力上，毕竟DBA的Coding能力都比较差尤其是开发相关的能力；准备开始把之前报的开发语言的课程学习一遍。
-         今天教师节：愿老师节日快乐，感激老师在授课之余一直如此辛勤的回帖解答我们的困惑；谢谢老师。</div>2019-09-10</li><br/><li><span>fomy</span> 👍（0） 💬（1）<div>1、为什么ServiceState变量不设置成volatile呢？
-2、消费者MessageQueue(readQueueNums)怎么和生产者MessageQueue(writeQueueNums)关联起来的呢？比如readQueueNums=19个，writeQueueNums=23个，它们是怎么关联的呢？</div>2020-02-16</li><br/><li><span>Standly</span> 👍（0） 💬（1）<div>DefaultMQProducerImpl的start和shutdown方法没有加同步，serviceState也只是一个普通成员变量没加volatile，不会有线程安全问题吗？</div>2019-11-14</li><br/><li><span>Standly</span> 👍（0） 💬（1）<div>看了Rocketmq producer源码，关于producer这块有个疑问不知道能否请教下？就是producer启动过程中为什么MQClientInstance mQClientFactory.start()这个方法需要被执行2次？2次的作用分别是什么？</div>2019-09-21</li><br/><li><span>QQ怪</span> 👍（0） 💬（1）<div>老师，节日快乐🎉</div>2019-09-10</li><br/><li><span>付永强</span> 👍（0） 💬（1）<div>教师节快乐！</div>2019-09-10</li><br/><li><span>业余草</span> 👍（0） 💬（1）<div>教师节，老师们都辛苦了！</div>2019-09-10</li><br/><li><span>Hurt</span> 👍（0） 💬（1）<div>一定要学java吗 老师</div>2019-09-10</li><br/>
+         今天教师节：愿老师节日快乐，感激老师在授课之余一直如此辛勤的回帖解答我们的困惑；谢谢老师。</p>2019-09-10</li><br/><li><span>fomy</span> 👍（0） 💬（1）<p>1、为什么ServiceState变量不设置成volatile呢？
+2、消费者MessageQueue(readQueueNums)怎么和生产者MessageQueue(writeQueueNums)关联起来的呢？比如readQueueNums=19个，writeQueueNums=23个，它们是怎么关联的呢？</p>2020-02-16</li><br/><li><span>Standly</span> 👍（0） 💬（1）<p>DefaultMQProducerImpl的start和shutdown方法没有加同步，serviceState也只是一个普通成员变量没加volatile，不会有线程安全问题吗？</p>2019-11-14</li><br/><li><span>Standly</span> 👍（0） 💬（1）<p>看了Rocketmq producer源码，关于producer这块有个疑问不知道能否请教下？就是producer启动过程中为什么MQClientInstance mQClientFactory.start()这个方法需要被执行2次？2次的作用分别是什么？</p>2019-09-21</li><br/><li><span>QQ怪</span> 👍（0） 💬（1）<p>老师，节日快乐🎉</p>2019-09-10</li><br/><li><span>付永强</span> 👍（0） 💬（1）<p>教师节快乐！</p>2019-09-10</li><br/><li><span>业余草</span> 👍（0） 💬（1）<p>教师节，老师们都辛苦了！</p>2019-09-10</li><br/><li><span>Hurt</span> 👍（0） 💬（1）<p>一定要学java吗 老师</p>2019-09-10</li><br/>
 </ul>

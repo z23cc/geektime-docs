@@ -111,8 +111,8 @@ RAFT协议在分布式系统中广泛应用，如etcd和Consul等开源框架都
 
 ![](https://static001.geekbang.org/resource/image/0a/f0/0aba0dbfe40e5cefba1c496e5dc3dbf0.jpg?wh=5867x4088)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>^_^</span> 👍（0） 💬（0）<div>RAFT每一次读请求都由 Leader 节点处理，这样的话Leader节点是很容易成为性能瓶颈的，这块有什么好的解决方案呢？</div>2023-12-06</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>请教老师几个问题：
+<li><span>^_^</span> 👍（0） 💬（0）<p>RAFT每一次读请求都由 Leader 节点处理，这样的话Leader节点是很容易成为性能瓶颈的，这块有什么好的解决方案呢？</p>2023-12-06</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>请教老师几个问题：
 Q1：进程内存假如是100M，3个线程，每个线程20M，那么，主内存是指剩下的40M内存吗？而且，这个“主内存”是和CPU缓存无关，对吗？
 Q2：volatile全局版本号，是谁维护的，JVM维护吗？
-Q3：etcd，不同的节点保存的数据是不同的吧，如果是不同的，为什么需要同步和一致？</div>2023-10-20</li><br/>
+Q3：etcd，不同的节点保存的数据是不同的吧，如果是不同的，为什么需要同步和一致？</p>2023-10-20</li><br/>
 </ul>

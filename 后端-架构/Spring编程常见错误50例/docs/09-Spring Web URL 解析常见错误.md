@@ -597,10 +597,10 @@ public String hi2(@RequestParam("name") String name){
 
 我们留言区见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>GTian</span> 👍（11） 💬（2）<div>我运行思考题结果是：xiaoming,hanmeimei
+<li><span>GTian</span> 👍（11） 💬（2）<p>我运行思考题结果是：xiaoming,hanmeimei
 看源码是两个同名请求参数name被放到Stiring[]中，Spring转换器转换String[]-&gt;String时，用“，”分隔符拼接后返回。
 看别人运行结果不一样，很疑惑。
-期待正确答案。</div>2021-05-13</li><br/><li><span>Monday</span> 👍（6） 💬（1）<div>思考题：结果是  xiaoming,hanmeimei 
+期待正确答案。</p>2021-05-13</li><br/><li><span>Monday</span> 👍（6） 💬（1）<p>思考题：结果是  xiaoming,hanmeimei 
 原因：分析源码， 目标类-String，源类型-String[]。
 代码在GenericConversionService#convert，再深入最后选择的是CollectionToStringConverter#convert. 然而此方法的实现是取出数组中所有元素并用”,“进行连缀。
 源码如下：
@@ -625,8 +625,8 @@ public Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor t
 			i++;
 		}
 		return sb.toString();
-	}</div>2021-07-03</li><br/><li><span>Geek_21673e</span> 👍（4） 💬（0）<div>@DateTimeFormat 只会在GET请求中生效,对于请求体中的转换无能为力,这个时候需要@JsonFormat</div>2022-07-04</li><br/><li><span>萧</span> 👍（3） 💬（1）<div>虽然熟悉，但看下来收获很大</div>2021-05-12</li><br/><li><span>蝴蝶</span> 👍（1） 💬（0）<div>我 debug 了下代码.发现这个是tomcat 处理得到的String[],然后 Spring 再处理成&quot;,&quot;分割的 String,见org.apache.catalina.connector.Request#getParameterValues方法</div>2022-02-10</li><br/><li><span>子夜枯灯</span> 👍（1） 💬（0）<div>运行程序后，结果是xiaoming,hanmeimei
-两个同名请求参数name被放到Stiring[]中，Spring转换器转换String[]-&gt;String时，用“，”分隔符拼接后返回。</div>2022-01-27</li><br/><li><span>Monday</span> 👍（1） 💬（0）<div>
+	}</p>2021-07-03</li><br/><li><span>Geek_21673e</span> 👍（4） 💬（0）<p>@DateTimeFormat 只会在GET请求中生效,对于请求体中的转换无能为力,这个时候需要@JsonFormat</p>2022-07-04</li><br/><li><span>萧</span> 👍（3） 💬（1）<p>虽然熟悉，但看下来收获很大</p>2021-05-12</li><br/><li><span>蝴蝶</span> 👍（1） 💬（0）<p>我 debug 了下代码.发现这个是tomcat 处理得到的String[],然后 Spring 再处理成&quot;,&quot;分割的 String,见org.apache.catalina.connector.Request#getParameterValues方法</p>2022-02-10</li><br/><li><span>子夜枯灯</span> 👍（1） 💬（0）<p>运行程序后，结果是xiaoming,hanmeimei
+两个同名请求参数name被放到Stiring[]中，Spring转换器转换String[]-&gt;String时，用“，”分隔符拼接后返回。</p>2022-01-27</li><br/><li><span>Monday</span> 👍（1） 💬（0）<p>
 @RequestMapping(path = &quot;&#47;hi6&quot;, method = RequestMethod.GET)
 public String hi6(@RequestParam(&quot;Date&quot;) Date date){
     return &quot;date is &quot; + date ;
@@ -635,14 +635,14 @@ public String hi6(@RequestParam(&quot;Date&quot;) Date date){
 http:&#47;&#47;localhost:8080&#47;hi6?date=2021-5-1 20:26:53
 
 代码是参数是”Date“，URL中是&quot;date&quot;大小对不上。。。
-</div>2021-07-03</li><br/><li><span>望舒</span> 👍（1） 💬（2）<div>结果居然跟我想象中的不一样，程序没有识别后面的参数。</div>2021-05-12</li><br/><li><span>小飞同学</span> 👍（1） 💬（0）<div>思考题：应该是xiaoming
+</p>2021-07-03</li><br/><li><span>望舒</span> 👍（1） 💬（2）<p>结果居然跟我想象中的不一样，程序没有识别后面的参数。</p>2021-05-12</li><br/><li><span>小飞同学</span> 👍（1） 💬（0）<p>思考题：应该是xiaoming
 RequestParamMapMethodArgumentResolver#resolveArgument  134行，相同参数只会取第一个参数
 
-有个问题，@RequestBody和@RequestParam区别是不是可以加餐一下？刚学习的时候走了点弯路</div>2021-05-12</li><br/><li><span>otakuhuang</span> 👍（0） 💬（0）<div>Spring Boot 2.5.15:
+有个问题，@RequestBody和@RequestParam区别是不是可以加餐一下？刚学习的时候走了点弯路</p>2021-05-12</li><br/><li><span>otakuhuang</span> 👍（0） 💬（0）<p>Spring Boot 2.5.15:
 
 在 AbstractNamedValueMethodArgumentResolver#resolveArgument 中，通过 resolveName 方法，在Tomcat 的 Parameters#getParameterValues，通过 name 取 paramHashValues 中对应的 value 值，取到的是一个 ArrayList&lt;String&gt; 集合，该方法返回时，将 ArrayList 集合转为了 String[] 数组。
 
-回到 AbstractNamedValueMethodArgumentResolver#resolveArgument，在 125 行寻找类型转换器，最后走到了 CollectionToStringConverter#convert 将 String[] 数组 join 了。</div>2024-05-06</li><br/><li><span>Geek_d5ed3d</span> 👍（0） 💬（0）<div>课程中的SpringBoot是哪个版本呢，用新的sprigboot，源码不一样</div>2022-11-15</li><br/><li><span>🇳 江⃮⃯⃗</span> 👍（0） 💬（0）<div>xiaoming,hanmeimei:
+回到 AbstractNamedValueMethodArgumentResolver#resolveArgument，在 125 行寻找类型转换器，最后走到了 CollectionToStringConverter#convert 将 String[] 数组 join 了。</p>2024-05-06</li><br/><li><span>Geek_d5ed3d</span> 👍（0） 💬（0）<p>课程中的SpringBoot是哪个版本呢，用新的sprigboot，源码不一样</p>2022-11-15</li><br/><li><span>🇳 江⃮⃯⃗</span> 👍（0） 💬（0）<p>xiaoming,hanmeimei:
 StringJoiner sj = new StringJoiner(&quot;,&quot;);
                 Iterator var6 = sourceCollection.iterator();
 
@@ -652,5 +652,5 @@ StringJoiner sj = new StringJoiner(&quot;,&quot;);
                     sj.add(String.valueOf(targetElement));
                 }
 
-                return sj.toString();</div>2022-05-30</li><br/><li><span>程序员人生</span> 👍（0） 💬（0）<div>看到request.getParameterValues(name)，我仿佛回到了十几年前，刚毕业那会</div>2021-05-18</li><br/><li><span>Yuuuuu</span> 👍（0） 💬（1）<div>对于RequestParam和RequestBody的使用也有一些疑惑，哪些参数可以被RequestParam获取，哪些可以被RequestBody获取?</div>2021-05-12</li><br/>
+                return sj.toString();</p>2022-05-30</li><br/><li><span>程序员人生</span> 👍（0） 💬（0）<p>看到request.getParameterValues(name)，我仿佛回到了十几年前，刚毕业那会</p>2021-05-18</li><br/><li><span>Yuuuuu</span> 👍（0） 💬（1）<p>对于RequestParam和RequestBody的使用也有一些疑惑，哪些参数可以被RequestParam获取，哪些可以被RequestBody获取?</p>2021-05-12</li><br/>
 </ul>

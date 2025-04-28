@@ -240,13 +240,13 @@ for (let i in x)
 
 希望你喜欢我的分享，也欢迎你把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Y</span> 👍（43） 💬（14）<div>老师，在es6中，其实for只要写大括号就代表着块级作用域。所以只要写大括号，不管用let 还是 var，一定是会创建相应循环数量的块级作用域的。
+<li><span>Y</span> 👍（43） 💬（14）<p>老师，在es6中，其实for只要写大括号就代表着块级作用域。所以只要写大括号，不管用let 还是 var，一定是会创建相应循环数量的块级作用域的。
 如果不用大括号，在for中使用了let，也会创建相应循环数量的块级作用域。
-也就是说，可以提高性能的唯一情况只有（符合业务逻辑的情况下），循环体是单行语句就不使用大括号且for中使用var。</div>2019-11-20</li><br/><li><span>westfall</span> 👍（22） 💬（2）<div>因为单语句没有块级作用域，而词法声明是不可覆盖的，单语句后面的词法声明会存在潜在的冲突。</div>2019-11-20</li><br/><li><span>小毛</span> 👍（14） 💬（1）<div>老师，最后的思考题感觉有点懵，按你文章里说的，for(let&#47;const...)这中语法，不管怎样在执行阶段，都会为每次循环创建一个iterationEnv块级作用域，那又为什么在单语句语法中不能有let词法声明呢，像if不能有是可以理解的，但是对于for(let&#47;const...)就不能理解了。
-另外如果要提高for的性能，是不是不for(let&#47;const...)这样写，把let x放在for语句体外，在其之前声明，是不是就可以在执行阶段只有一个loopEnv，而不创建iterationEnv，从而提高性能。</div>2020-03-05</li><br/><li><span>Elmer</span> 👍（12） 💬（1）<div>从语言设计的原则上来看，越少作用域的执行环境调度效率也就越高，执行时的性能也就越好。
+也就是说，可以提高性能的唯一情况只有（符合业务逻辑的情况下），循环体是单行语句就不使用大括号且for中使用var。</p>2019-11-20</li><br/><li><span>westfall</span> 👍（22） 💬（2）<p>因为单语句没有块级作用域，而词法声明是不可覆盖的，单语句后面的词法声明会存在潜在的冲突。</p>2019-11-20</li><br/><li><span>小毛</span> 👍（14） 💬（1）<p>老师，最后的思考题感觉有点懵，按你文章里说的，for(let&#47;const...)这中语法，不管怎样在执行阶段，都会为每次循环创建一个iterationEnv块级作用域，那又为什么在单语句语法中不能有let词法声明呢，像if不能有是可以理解的，但是对于for(let&#47;const...)就不能理解了。
+另外如果要提高for的性能，是不是不for(let&#47;const...)这样写，把let x放在for语句体外，在其之前声明，是不是就可以在执行阶段只有一个loopEnv，而不创建iterationEnv，从而提高性能。</p>2020-03-05</li><br/><li><span>Elmer</span> 👍（12） 💬（1）<p>从语言设计的原则上来看，越少作用域的执行环境调度效率也就越高，执行时的性能也就越好。
 单语句如果支持变量声明，相当于需要支持为iteration env新增子作用域，降低了效率？ 
 如果需要完全可以自己写{} 来强制生成一个子作用域
-不知道这样说对不对</div>2019-12-08</li><br/><li><span>wDaLian</span> 👍（11） 💬（1）<div>const array = Array.from({length:100000},(item,i)=&gt;i)
+不知道这样说对不对</p>2019-12-08</li><br/><li><span>wDaLian</span> 👍（11） 💬（1）<p>const array = Array.from({length:100000},(item,i)=&gt;i)
 
     &#47;&#47; 案例一
     console.time(&#39;a&#39;)
@@ -276,19 +276,19 @@ for (let i in x)
 
 1.老师你上次的评论我没看懂，第一我案例一和案例三是为了做区分所以案例一有大括号的
 2.编译引擎的debug版本然后track内核，或者你可以尝试一个prepack-core这个项目，这两个东西是啥 我百度也没查到
-3.老师你讲的都是概念的，我就想看到一个肉眼的案例然后根据概念消化，要不现在根本就是这个for循环到底应该咋写我都懵了</div>2020-01-12</li><br/><li><span>Geek_8d73e3</span> 👍（9） 💬（5）<div>老师我发现运行以下代码会报错
+3.老师你讲的都是概念的，我就想看到一个肉眼的案例然后根据概念消化，要不现在根本就是这个for循环到底应该咋写我都懵了</p>2020-01-12</li><br/><li><span>Geek_8d73e3</span> 👍（9） 💬（5）<p>老师我发现运行以下代码会报错
 for(let x = 0;x&lt;1;x++){
       var x = 100;
     }
     &#47;&#47;Uncaught SyntaxError: Identifier &#39;x&#39; has already been declared
-在我理解中，let声明的x是在forEnv中，而我使用var声明的x因为javaScript早期设计，会在全局中声明一个x。这两个作用域是不会冲突的呀，为什么报错了？</div>2020-06-08</li><br/><li><span>Geek_8d73e3</span> 👍（7） 💬（1）<div>老师，我发现，我运行这段代码的时候，并没有报错。
+在我理解中，let声明的x是在forEnv中，而我使用var声明的x因为javaScript早期设计，会在全局中声明一个x。这两个作用域是不会冲突的呀，为什么报错了？</p>2020-06-08</li><br/><li><span>Geek_8d73e3</span> 👍（7） 💬（1）<p>老师，我发现，我运行这段代码的时候，并没有报错。
 for(let i = 0;i&lt;10;i++){
 
         let i = 1000;
 
         console.log(i);
-      }</div>2020-05-26</li><br/><li><span>Wiggle Wiggle</span> 👍（7） 💬（2）<div>词法、词法作用域、语法元素……等等，这些概念特别模糊，老师有什么推荐的书吗？</div>2019-11-22</li><br/><li><span>zcdll</span> 👍（7） 💬（5）<div>看不懂。。。第一个 switch 那个例子都看不懂。。</div>2019-11-20</li><br/><li><span>Y</span> 👍（6） 💬（1）<div>既然是单语句就说明只有一句话，如果就一句话，还是词法声明，那就会创建一个块级作用域，但是因为是单语句，那一定就没有地方会用到这个声明了。那这个声明就是没有意义的。所以js为了避免这种没有意义的声明，就会直接报错。是这样嘛</div>2019-11-20</li><br/><li><span>Marvin</span> 👍（5） 💬（3）<div>如果使用let &#47;const 声明for循环语句，会迭代创建作用域副本。那么不是和文中的：
-对于支持“let&#47;const”的 for 语句来说）“通常情况下”只支持一个块级作用域这句话相矛盾么？</div>2019-11-26</li><br/><li><span>海绵薇薇</span> 👍（4） 💬（1）<div>hello，老师好，一如既往有许多问题等待解答：）
+      }</p>2020-05-26</li><br/><li><span>Wiggle Wiggle</span> 👍（7） 💬（2）<p>词法、词法作用域、语法元素……等等，这些概念特别模糊，老师有什么推荐的书吗？</p>2019-11-22</li><br/><li><span>zcdll</span> 👍（7） 💬（5）<p>看不懂。。。第一个 switch 那个例子都看不懂。。</p>2019-11-20</li><br/><li><span>Y</span> 👍（6） 💬（1）<p>既然是单语句就说明只有一句话，如果就一句话，还是词法声明，那就会创建一个块级作用域，但是因为是单语句，那一定就没有地方会用到这个声明了。那这个声明就是没有意义的。所以js为了避免这种没有意义的声明，就会直接报错。是这样嘛</p>2019-11-20</li><br/><li><span>Marvin</span> 👍（5） 💬（3）<p>如果使用let &#47;const 声明for循环语句，会迭代创建作用域副本。那么不是和文中的：
+对于支持“let&#47;const”的 for 语句来说）“通常情况下”只支持一个块级作用域这句话相矛盾么？</p>2019-11-26</li><br/><li><span>海绵薇薇</span> 👍（4） 💬（1）<p>hello，老师好，一如既往有许多问题等待解答：）
 
 for(let&#47;const ...) ... 这个语句有两个词法作用域，分别是 forEnv 和 loopEnv。还有一个概念是iterationEnv，这个是迭代时生成的loopEnv的副本。
 
@@ -314,7 +314,7 @@ for(let i = 0; i &lt; 10; i++)
 	eval(&#39;let a = 1&#39;); console.log(a) &#47;&#47; 报错
 	eval是不是自己也有一个作用域？
 
-期待：）</div>2019-11-23</li><br/><li><span>晓小东</span> 👍（4） 💬（1）<div>
+期待：）</p>2019-11-23</li><br/><li><span>晓小东</span> 👍（4） 💬（1）<p>
 老师您看下这段代码， 我在Chrome 打印有点不符合直觉， Second 最终打印的应该是2， 为什么还是1，2， 3；
 
 for (let i = 0; i &lt; 3; i ++, setTimeout(() =&gt; console.log(&quot;Second&quot; + i), 20))
@@ -322,7 +322,7 @@ for (let i = 0; i &lt; 3; i ++, setTimeout(() =&gt; console.log(&quot;Second&quo
 
 0, 1, 2 
 Second: 0, 1,  2
-Last: 0, 1, 2</div>2019-11-21</li><br/><li><span>桔右</span> 👍（4） 💬（2）<div>假设允许的话，没有块语句创建的iterationEnv的子作用域，let声明就直接在iterationEnv作用域中，会每次循环重复声明。</div>2019-11-21</li><br/><li><span>二二</span> 👍（2） 💬（1）<div>你好老师，按照文章的解释，因为for循环中let会导致块级作用域，开销会变大，此处的开销可以粗略理解成时间。
+Last: 0, 1, 2</p>2019-11-21</li><br/><li><span>桔右</span> 👍（4） 💬（2）<p>假设允许的话，没有块语句创建的iterationEnv的子作用域，let声明就直接在iterationEnv作用域中，会每次循环重复声明。</p>2019-11-21</li><br/><li><span>二二</span> 👍（2） 💬（1）<p>你好老师，按照文章的解释，因为for循环中let会导致块级作用域，开销会变大，此处的开销可以粗略理解成时间。
 var a = new Array(10000).fill(0)
 console.time(&#39;var&#39;)
 for(var i=0, len=a.length; i&lt;len; i++){}
@@ -330,5 +330,5 @@ console.timeEnd(&#39;var&#39;)
 console.time(&#39;let&#39;)
 for(let i=0, len=a.length; i&lt;len; i++){}
 console.timeEnd(&#39;let&#39;)
-在chrome devtool执行的结果，var会比let要慢许多，请问中间还发生了什么，导致var会比let慢呢？</div>2020-10-12</li><br/>
+在chrome devtool执行的结果，var会比let要慢许多，请问中间还发生了什么，导致var会比let慢呢？</p>2020-10-12</li><br/>
 </ul>

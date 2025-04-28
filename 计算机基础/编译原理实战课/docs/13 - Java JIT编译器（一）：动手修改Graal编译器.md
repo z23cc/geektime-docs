@@ -321,13 +321,13 @@ Graal执行过程的主要结构如下图所示。
 2. Graal的[Github地址](https://github.com/oracle/graal)。
 3. Graal项目的[出版物](https://github.com/oracle/graal/blob/master/docs/Publications.md)。有很多围绕这个项目来做研究的论文，值得一读。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>wusiration</span> 👍（3） 💬（2）<div>这是目前在win 7环境下的编译报错，
+<li><span>wusiration</span> 👍（3） 💬（2）<p>这是目前在win 7环境下的编译报错，
 Extracting LIBFFI_SOURCES...
 Applying patches...
 error: invalid path &#39;truffle\mxbuild\windows-amd64\src\libffi\libffi-3.2.1&#47;src&#47;x86&#47;ffi.c
 可以分析出是编译代码在拼接路径的时候，用的是linux系统的分隔符...没找到能在哪里进行调整；
 
-此外，最开始碰到的报错是windows自带的cmd是gbk编码，导致在python调用decode函数默认用utf8，无法正确解析路径。</div>2020-07-04</li><br/><li><span>Jxin</span> 👍（2） 💬（1）<div>本来我觉得jdk8的升级应该会很缓慢。但jdk9的aop编译如果不以补丁包加到jdk8，怕是能有效加快这个过程。毕竟原本不是很重要的启动时间，在servless下，变得至关重要。</div>2020-07-01</li><br/><li><span>Boomkeeper</span> 👍（1） 💬（1）<div>想问老师一个问题，就是启用graalvm去解析js代码是否执行第一次就进行了即时编译了，因为第二次去看执行时间从几百毫秒变为十几毫秒</div>2020-12-11</li><br/><li><span>wusiration</span> 👍（1） 💬（2）<div>老师，windows是不是很难编译graal，用mx工具build的时候，不停报错...</div>2020-07-01</li><br/><li><span>coconut</span> 👍（0） 💬（1）<div>github下载速度慢的话，可以在gitee上搜索相关的仓库
+此外，最开始碰到的报错是windows自带的cmd是gbk编码，导致在python调用decode函数默认用utf8，无法正确解析路径。</p>2020-07-04</li><br/><li><span>Jxin</span> 👍（2） 💬（1）<p>本来我觉得jdk8的升级应该会很缓慢。但jdk9的aop编译如果不以补丁包加到jdk8，怕是能有效加快这个过程。毕竟原本不是很重要的启动时间，在servless下，变得至关重要。</p>2020-07-01</li><br/><li><span>Boomkeeper</span> 👍（1） 💬（1）<p>想问老师一个问题，就是启用graalvm去解析js代码是否执行第一次就进行了即时编译了，因为第二次去看执行时间从几百毫秒变为十几毫秒</p>2020-12-11</li><br/><li><span>wusiration</span> 👍（1） 💬（2）<p>老师，windows是不是很难编译graal，用mx工具build的时候，不停报错...</p>2020-07-01</li><br/><li><span>coconut</span> 👍（0） 💬（1）<p>github下载速度慢的话，可以在gitee上搜索相关的仓库
 
-比如 https:&#47;&#47;gitee.com&#47;liyun_1981&#47;graal?_from=gitee_search</div>2021-01-13</li><br/><li><span>gkkrjj</span> 👍（0） 💬（1）<div>想知道老师的结构图一类的是什么工具画的</div>2020-07-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>牛逼plus</div>2022-01-12</li><br/>
+比如 https:&#47;&#47;gitee.com&#47;liyun_1981&#47;graal?_from=gitee_search</p>2021-01-13</li><br/><li><span>gkkrjj</span> 👍（0） 💬（1）<p>想知道老师的结构图一类的是什么工具画的</p>2020-07-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>牛逼plus</p>2022-01-12</li><br/>
 </ul>

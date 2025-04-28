@@ -335,7 +335,7 @@ grpc_server_handling_seconds_bucket{grpc_method="Put"，grpc_service="etcdserver
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，谢谢。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>jeffery</span> 👍（9） 💬（1）<div>能规避
-expensive request，大包请求导致的延迟吗</div>2021-02-23</li><br/><li><span>kingstone</span> 👍（2） 💬（1）<div>老师您好，请问关于etcd grafana监控，grafana.com上有没有比较好用的dashboards？</div>2021-03-19</li><br/><li><span>八台上</span> 👍（0） 💬（3）<div>想问一下出现这个错  etcdserver: request timed out ， 客户端进行重拾处理吗？  谢谢</div>2021-08-26</li><br/><li><span>石小</span> 👍（0） 💬（1）<div>感谢唐老师，干货，实用。老师后期会讲etcd典型的应用场景（比如服务发现）和注意事项吗？</div>2021-03-08</li><br/><li><span>宝仔</span> 👍（3） 💬（0）<div>老师问下，为什么磁盘IO波动会引起leader切换</div>2022-04-13</li><br/><li><span>哈登</span> 👍（0） 💬（0）<div>请问下怎么将trace 日志打印的阈值改成 1 纳秒
-</div>2024-10-31</li><br/><li><span>柒城</span> 👍（0） 💬（1）<div>老师你好，我在使用集群时出现一直打印etcdserver: request timed out。然后看了一个节点坏了，但是磁盘并没有坏，除了io延时套可能造成的原因还有哪些？</div>2021-06-22</li><br/>
+<li><span>jeffery</span> 👍（9） 💬（1）<p>能规避
+expensive request，大包请求导致的延迟吗</p>2021-02-23</li><br/><li><span>kingstone</span> 👍（2） 💬（1）<p>老师您好，请问关于etcd grafana监控，grafana.com上有没有比较好用的dashboards？</p>2021-03-19</li><br/><li><span>八台上</span> 👍（0） 💬（3）<p>想问一下出现这个错  etcdserver: request timed out ， 客户端进行重拾处理吗？  谢谢</p>2021-08-26</li><br/><li><span>石小</span> 👍（0） 💬（1）<p>感谢唐老师，干货，实用。老师后期会讲etcd典型的应用场景（比如服务发现）和注意事项吗？</p>2021-03-08</li><br/><li><span>宝仔</span> 👍（3） 💬（0）<p>老师问下，为什么磁盘IO波动会引起leader切换</p>2022-04-13</li><br/><li><span>哈登</span> 👍（0） 💬（0）<p>请问下怎么将trace 日志打印的阈值改成 1 纳秒
+</p>2024-10-31</li><br/><li><span>柒城</span> 👍（0） 💬（1）<p>老师你好，我在使用集群时出现一直打印etcdserver: request timed out。然后看了一个节点坏了，但是磁盘并没有坏，除了io延时套可能造成的原因还有哪些？</p>2021-06-22</li><br/>
 </ul>

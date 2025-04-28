@@ -230,7 +230,7 @@ redhat   29433 29410  0 05:14 pts/0    00:00:00 sleep 3600
 
 欢迎你在留言区提出你的思考和疑问。如果这一讲对你有帮助，也欢迎转发给你的同事、朋友，一起交流学习。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>我来也</span> 👍（14） 💬（8）<div>最近在使用Helm部署gitlab服务的过程中,就发现了 postgresql 和 redis 组件默认是不以root用户执行的,而是一个 User ID 为1001的用户在执行.
+<li><span>我来也</span> 👍（14） 💬（8）<p>最近在使用Helm部署gitlab服务的过程中,就发现了 postgresql 和 redis 组件默认是不以root用户执行的,而是一个 User ID 为1001的用户在执行.
 这样做,就需要有个k8s的 initContainer 容器先以root用户权限去修改存储目录的权限. 否则后面服务的1001号用户可能就没有权限去写文件了.
 ------------------
 
@@ -256,7 +256,7 @@ redhat   29433 29410  0 05:14 pts/0    00:00:00 sleep 3600
 之前也在其他专栏中看老师提到过 lxcfs.
 我在想,老师在迁移上k8s的过程中,肯定也遇到过类似的问题,不知道老师是如何解决的呢?
 
-</div>2020-12-31</li><br/><li><span>Sun</span> 👍（2） 💬（2）<div>
+</p>2020-12-31</li><br/><li><span>Sun</span> 👍（2） 💬（2）<p>
 user limit 是session的？每个容器及时使用相同的user id ，也不会当做累计？
 
 User resource limits dictate the amount of resources that can be used for a particular session. The resources that can be controled are:
@@ -272,7 +272,7 @@ maximum amount of cpu time used
 maximum number of processes allowed
 maximum size of virtual memory available
 It is important to note that these settings are per-session. This means that they are only effective for the time that the user is logged in (and for any processes that they run during that period). They are not global settings. In other words, they are only active for the duration of the session and the settings are not cumulative. For example, if you set the maximum number of processes to 11, the user may only have 11 processes running per session. They are not limited to 11 total processes on the machine as they may initiate another session. Each of the settings are per process settings during the session, with the exception of the maximum number of processes.
-</div>2021-01-07</li><br/><li><span>Action</span> 👍（1） 💬（3）<div>老师 docker -u 参数 是不是就是 通过user namespace 进行隔离</div>2021-03-04</li><br/><li><span>Action</span> 👍（0） 💬（1）<div>&quot;由于用户 uid 是整个节点中共享的，那么在容器中定义的 uid，也就是宿主机上的 uid，这样就很容易引起 uid 的冲突。&quot;老师这句话怎么理解，容器内uid与宿主机uid是怎么样的关系呢</div>2021-03-04</li><br/><li><span>争光 Alan</span> 👍（0） 💬（1）<div>老师，感谢您的分享，学到了很多知识，也感谢解答了很多疑问，有个小小的请求：能公布个微信群之类的吗？把学员加一起相互讨论问题，交流心得</div>2021-02-21</li><br/><li><span>janey</span> 👍（4） 💬（0）<div>Kubernetes v1.25 添加了对容器 user namespaces 的支持</div>2022-11-15</li><br/><li><span>朱新威</span> 👍（4） 💬（1）<div>老师，我发现一个很有趣的现象，有点困惑；
+</p>2021-01-07</li><br/><li><span>Action</span> 👍（1） 💬（3）<p>老师 docker -u 参数 是不是就是 通过user namespace 进行隔离</p>2021-03-04</li><br/><li><span>Action</span> 👍（0） 💬（1）<p>&quot;由于用户 uid 是整个节点中共享的，那么在容器中定义的 uid，也就是宿主机上的 uid，这样就很容易引起 uid 的冲突。&quot;老师这句话怎么理解，容器内uid与宿主机uid是怎么样的关系呢</p>2021-03-04</li><br/><li><span>争光 Alan</span> 👍（0） 💬（1）<p>老师，感谢您的分享，学到了很多知识，也感谢解答了很多疑问，有个小小的请求：能公布个微信群之类的吗？把学员加一起相互讨论问题，交流心得</p>2021-02-21</li><br/><li><span>janey</span> 👍（4） 💬（0）<p>Kubernetes v1.25 添加了对容器 user namespaces 的支持</p>2022-11-15</li><br/><li><span>朱新威</span> 👍（4） 💬（1）<p>老师，我发现一个很有趣的现象，有点困惑；
 
 在宿主机上：
 以root用户运行capsh --print
@@ -288,8 +288,8 @@ root用户运行capsh --print
 非root用户运行capsh --print
 发现Current字段仍然包含14个capabilities，对宿主机的&#47;etc&#47;shadow没有读写权限
 
-这就让我感觉有点困惑了，原本预期容器内非root用户运行capsh  --print的capabilities应该为空呀，或者知道少于root用户的capabilities吧？</div>2021-01-09</li><br/><li><span>JianXu</span> 👍（0） 💬（0）<div>install slirp4netns and Podman on your machine by entering the following command:
+这就让我感觉有点困惑了，原本预期容器内非root用户运行capsh  --print的capabilities应该为空呀，或者知道少于root用户的capabilities吧？</p>2021-01-09</li><br/><li><span>JianXu</span> 👍（0） 💬（0）<p>install slirp4netns and Podman on your machine by entering the following command:
 
 $ yum install slirp4netns podman -y
-We will use slirp4netns to connect a network namespace to the internet in a completely rootless (or unprivileged) way.</div>2022-09-08</li><br/><li><span>自然</span> 👍（0） 💬（0）<div>有个场景：用jenkins  在 openjdk镜像里 maven 编译java项目, 一个 maven目录（在主机上，而且还有其他很多工具），一个项目源码目录  需要映射到  openjdk镜像里（普通用户启动docker），jenkins 里的pipline 是大家都可以写的。 如何防止 加载主机上目录 在docker镜像里 root用户 随意修改呢（ 比如 我不想他删除 主机上的maven）？</div>2022-07-22</li><br/><li><span>sunnoy</span> 👍（0） 💬（0）<div>如果容器内的用户uid在宿主机上不存在呢，这个时候描述符的分配是怎么样的呢</div>2022-04-24</li><br/>
+We will use slirp4netns to connect a network namespace to the internet in a completely rootless (or unprivileged) way.</p>2022-09-08</li><br/><li><span>自然</span> 👍（0） 💬（0）<p>有个场景：用jenkins  在 openjdk镜像里 maven 编译java项目, 一个 maven目录（在主机上，而且还有其他很多工具），一个项目源码目录  需要映射到  openjdk镜像里（普通用户启动docker），jenkins 里的pipline 是大家都可以写的。 如何防止 加载主机上目录 在docker镜像里 root用户 随意修改呢（ 比如 我不想他删除 主机上的maven）？</p>2022-07-22</li><br/><li><span>sunnoy</span> 👍（0） 💬（0）<p>如果容器内的用户uid在宿主机上不存在呢，这个时候描述符的分配是怎么样的呢</p>2022-04-24</li><br/>
 </ul>

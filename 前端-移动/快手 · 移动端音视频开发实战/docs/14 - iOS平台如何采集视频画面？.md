@@ -403,15 +403,15 @@ ELImage这个核心框架很重要，我们需要好好“消化”这部分内�
 
 ELImage框架还可以扩展出许多其他的节点，组成复杂的场景，比如视频编辑器场景，如果让你书写一个ELImageMovie节点，然后与ELImageFilter以及ELImageView组合成视频编辑器，你将如何完成ELImageMovie的设计呢？在评论区中给出你的思考，也欢迎你把这节课分享给更多对音视频感兴趣的朋友，我们一起交流、共同进步。下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>keepgoing</span> 👍（0） 💬（2）<div>老师有三个问题想请教一下：
+<li><span>keepgoing</span> 👍（0） 💬（2）<p>老师有三个问题想请教一下：
 1. 通过这个采集渲染框架，能否理解为摄像头采集-&gt;编辑-&gt;渲染的过程就是从摄像头中拿到原始图像，然后经过每一个节点不断渲染到显存中的一个纹理ID上，最终在显示节点上把每一层渲染好的纹理显示到目标view上？
 2. 如果需要编码这个最终的图像，是需要编码节点每一帧都从显存中获取吗？
 3. 老师在文中提到了每次将内存图片上传显存是一个很低效的做法，可以使用CVOpenGLESTextureCacheCreateTextureFromImage API，请问这个API的原理是什么呢，是怎么做到高效内存-&gt;显存的操作呢
 
-感谢老师的解答，辛苦了</div>2022-12-19</li><br/><li><span>一个正直的小龙猫</span> 👍（0） 💬（2）<div>请教老师一个问题：
+感谢老师的解答，辛苦了</p>2022-12-19</li><br/><li><span>一个正直的小龙猫</span> 👍（0） 💬（2）<p>请教老师一个问题：
 这个是摄像头采集视频画面，如果是webrtc直播视频流呢？
 想录制视频，采集直播流的视频和音频，用什么技术方案实现是最佳的？replaykit2还是ffmepg，他俩对比优缺点是什么？ 
-</div>2022-08-24</li><br/><li><span>Neil43</span> 👍（0） 💬（1）<div>老师你好，我在使用AVFoundation框架的AVAssetWriterinput ，追加SampleBuffer报错，关键代码：
+</p>2022-08-24</li><br/><li><span>Neil43</span> 👍（0） 💬（1）<p>老师你好，我在使用AVFoundation框架的AVAssetWriterinput ，追加SampleBuffer报错，关键代码：
 AVAsset WriterInput *videoInput = [AVAsset WriterInput
 asset WriterInput WithMediaType:AVMediaTypeVideo
 outputSettings:videoSettings];
@@ -430,6 +430,6 @@ NSUnderlyingError = Error Domain=NSOSStatusErrorDomain Code=-12780
 请问老师知道大概是什么原因吗？如果appendSampleBuffer方法报错，再调用finishWritingWithCompletionHandler方法，能正常生成视频吗？谢谢。
 
 
-</div>2022-08-24</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师一个问题：
-Q1：AI唱歌，有能够使用的软件吗？（开源、付费的都可以）。 AI唱歌，是指用一个人的声音把一首歌完整的唱出来。比如有特朗普的一段音频（比如30s声音片段），然后软件根据这个声音片段，就可以把《好汉歌》唱出来。效果就是听众认为是特朗普唱的《好汉歌》。</div>2022-08-24</li><br/><li><span>月半木子🎊</span> 👍（0） 💬（0）<div>请问老师，这个实现如何自测是否满足需求呢，自测需要关注哪些测试点呢</div>2023-06-13</li><br/>
+</p>2022-08-24</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师一个问题：
+Q1：AI唱歌，有能够使用的软件吗？（开源、付费的都可以）。 AI唱歌，是指用一个人的声音把一首歌完整的唱出来。比如有特朗普的一段音频（比如30s声音片段），然后软件根据这个声音片段，就可以把《好汉歌》唱出来。效果就是听众认为是特朗普唱的《好汉歌》。</p>2022-08-24</li><br/><li><span>月半木子🎊</span> 👍（0） 💬（0）<p>请问老师，这个实现如何自测是否满足需求呢，自测需要关注哪些测试点呢</p>2023-06-13</li><br/>
 </ul>

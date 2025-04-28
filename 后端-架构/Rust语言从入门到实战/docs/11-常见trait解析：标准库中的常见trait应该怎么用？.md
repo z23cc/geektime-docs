@@ -855,8 +855,8 @@ fn example(slice: &str, borrow: &String, owned: String) {
 
 请举例说明 `Deref` 与 `AsRef<T>` 的区别。欢迎你把你思考后的答案分享到评论区，我们一起讨论，也欢迎你把这节课的内容分享给其他朋友，邀他一起学习Rust，我们下节课再见！
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>飞了的鸭子被煮了</span> 👍（4） 💬（1）<div>asref: A 到 B，
-deref：B回到A</div>2024-01-27</li><br/><li><span>Luke</span> 👍（3） 💬（1）<div>Deref 和 AsRef&lt;T&gt; 是 Rust 中用于类型转换的 trait。
+<li><span>飞了的鸭子被煮了</span> 👍（4） 💬（1）<p>asref: A 到 B，
+deref：B回到A</p>2024-01-27</li><br/><li><span>Luke</span> 👍（3） 💬（1）<p>Deref 和 AsRef&lt;T&gt; 是 Rust 中用于类型转换的 trait。
 
 Deref trait 允许你重载解引用操作符 *，使得一个类型可以被像指针一样解引用。这样可以方便地访问类型内部的数据。当你对一个实现了 Deref trait 的类型使用解引用操作符时，编译器会自动调用 Deref trait 中的 deref 方法来获取对应的值。
 
@@ -866,20 +866,20 @@ AsRef&lt;T&gt; trait 则是用于将一个类型转换为另一个类型的引�
 
 Deref trait 用于重载解引用操作符 *，使得一个类型可以被像指针一样解引用。
 AsRef&lt;T&gt; trait 用于将一个类型转换为另一个类型的引用。
-在使用上，如果你需要对一个类型进行解引用操作，你可以实现 Deref trait。如果你需要将一个类型转换为另一个类型的引用，你可以实现 AsRef&lt;T&gt; trait。</div>2023-12-22</li><br/><li><span>Zoom 6</span> 👍（2） 💬（1）<div>Deref 是重载了运算符，AsRef是做的类型转换</div>2024-01-04</li><br/><li><span>兰天白云</span> 👍（0） 💬（1）<div>老师，您在讲到from和into的时候，说“因为 into() 是方法，而 from() 是关联函数。”，而在trait声明里都是有返回值的呀？该怎样理解呢？</div>2024-02-22</li><br/><li><span>My dream</span> 👍（0） 💬（0）<div>能讲一下在trait中如何使用async fn吗？我还不会使用</div>2023-12-30</li><br/><li><span>superggn</span> 👍（0） 💬（1）<div>as_ref 没印象了， 找gpt4看了看， 总结了下核心就这俩：
+在使用上，如果你需要对一个类型进行解引用操作，你可以实现 Deref trait。如果你需要将一个类型转换为另一个类型的引用，你可以实现 AsRef&lt;T&gt; trait。</p>2023-12-22</li><br/><li><span>Zoom 6</span> 👍（2） 💬（1）<p>Deref 是重载了运算符，AsRef是做的类型转换</p>2024-01-04</li><br/><li><span>兰天白云</span> 👍（0） 💬（1）<p>老师，您在讲到from和into的时候，说“因为 into() 是方法，而 from() 是关联函数。”，而在trait声明里都是有返回值的呀？该怎样理解呢？</p>2024-02-22</li><br/><li><span>My dream</span> 👍（0） 💬（0）<p>能讲一下在trait中如何使用async fn吗？我还不会使用</p>2023-12-30</li><br/><li><span>superggn</span> 👍（0） 💬（1）<p>as_ref 没印象了， 找gpt4看了看， 总结了下核心就这俩：
 
 - implicit vs explicit
     - Deref trait 自动运行， `*T` 直接触发 deref()， 看起来像是隐式触发
     - AsRef trait 需要显式调用 as_ref()
 - 功能不同（我看到这条的时候都愣了， 这谁不知道， 为撒还算是 key diff）
     - Deref 是解引用的
-    - AsRef 是创建引用的</div>2023-12-15</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<div>请问下面这一句，能否只写Ord和Eq？Ord是PartialOrd的超集, Eq是PartialEq的超集。 编译器应该可以判断出，已经实现了Ord和Eq，当然也肯定实现了PartialOrd和PartialEq。
-#[derive(Ord, PartialOrd, PartialEq, Eq)] &#47;&#47; 注意这一句，4个都写上</div>2023-11-13</li><br/><li><span>杨赛军</span> 👍（0） 💬（1）<div>Deref 不能传递所有权变量，Asref可以传递所有权变量</div>2023-11-13</li><br/><li><span>superggn</span> 👍（2） 💬（0）<div>笔记
+    - AsRef 是创建引用的</p>2023-12-15</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<p>请问下面这一句，能否只写Ord和Eq？Ord是PartialOrd的超集, Eq是PartialEq的超集。 编译器应该可以判断出，已经实现了Ord和Eq，当然也肯定实现了PartialOrd和PartialEq。
+#[derive(Ord, PartialOrd, PartialEq, Eq)] &#47;&#47; 注意这一句，4个都写上</p>2023-11-13</li><br/><li><span>杨赛军</span> 👍（0） 💬（1）<p>Deref 不能传递所有权变量，Asref可以传递所有权变量</p>2023-11-13</li><br/><li><span>superggn</span> 👍（2） 💬（0）<p>笔记
 
 1. Deref trait =&gt; 给 typeA 实现了 Deref trait 之后就可以 *typeAinstance 了
 
 2. deref coercion =&gt; 我们要对 obj_0 做一些事情的时候， 如果发现 obj_0 不适配， 就试一下 *obj_0, 看看它的 deref 是否适配， 如果适配， 就对 deref result 搞事， 如果不适配， 就继续找 deref, 直到当前 obj 没有 deref 为止
-</div>2023-12-15</li><br/><li><span>Logical_Monster</span> 👍（0） 💬（0）<div>运算符重载那里的代码应该改为，直接那样写main函数会有所有权问题：
+</p>2023-12-15</li><br/><li><span>Logical_Monster</span> 👍（0） 💬（0）<p>运算符重载那里的代码应该改为，直接那样写main函数会有所有权问题：
 use std::ops::Add;
 
 #[derive(Debug, PartialEq)]
@@ -906,7 +906,7 @@ fn main() {
     
     println!(&quot;{:?}&quot;, p3); &#47;&#47; Output: Point { x: 4, y: 6 }
     assert_eq!(p3, Point { x: 4, y: 6 });
-}</div>2024-07-26</li><br/><li><span>周鹏</span> 👍（0） 💬（0）<div>struct Point {
+}</p>2024-07-26</li><br/><li><span>周鹏</span> 👍（0） 💬（0）<p>struct Point {
     x: i32,
     y: i32,
 }
@@ -931,7 +931,7 @@ fn main() {
 &#47;&#47;这里不能再用会报错
     assert_eq!(p3.y, p1.y + p2.y); &#47;&#47; ✅
 &#47;&#47;这里不能用
-}</div>2024-03-31</li><br/><li><span>周鹏</span> 👍（0） 💬（0）<div>struct Point {
+}</p>2024-03-31</li><br/><li><span>周鹏</span> 👍（0） 💬（0）<p>struct Point {
     x: i32,
     y: i32,
 }
@@ -954,5 +954,5 @@ fn main() {
     let p3 = p1 + p2; &#47;&#47; 这里直接用+号作用在两个Point实例上
     assert_eq!(p3.x, p1.x + p2.x); &#47;&#47; ✅
     assert_eq!(p3.y, p1.y + p2.y); &#47;&#47; ✅
-}</div>2024-03-31</li><br/>
+}</p>2024-03-31</li><br/>
 </ul>

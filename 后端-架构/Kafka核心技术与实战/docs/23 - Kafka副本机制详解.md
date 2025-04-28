@@ -104,10 +104,10 @@
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>张三丰</span> 👍（70） 💬（6）<div>replica.lag.time.max.ms，感觉老师对这个参数的解释有歧义。
+<li><span>张三丰</span> 👍（70） 💬（6）<p>replica.lag.time.max.ms，感觉老师对这个参数的解释有歧义。
 
 应该是如果leader发现flower超过这个参数所设置的时间没有向它发起fech请求（也就是复制请求），那么leader考虑将这个flower从ISR移除。
-而不是连续落后这么长时间</div>2021-01-16</li><br/><li><span>Mick</span> 👍（35） 💬（8）<div>老师，LEO和HW这两个概念不理解，能不能详细说下，谢谢</div>2019-08-02</li><br/><li><span>凯</span> 👍（35） 💬（4）<div>请问一下，producer生产消息ack=all的时候，消息是怎么保证到follower的，因为看到follower是异步拉取数据的，难道是看leader和follower上面的offset吗？</div>2019-08-01</li><br/><li><span>ideal sail</span> 👍（30） 💬（3）<div>老师，假设一个分区有5个副本，Broker的min.insync.replicas设置为2，生产者设置acks=all，这时是有2个副本同步了就可以，还是必须是5个副本都同步，他们是什么关系。</div>2019-12-16</li><br/><li><span>咸淡一首诗</span> 👍（21） 💬（3）<div>老师，“这个标准就是 Broker 端参数 replica.lag.time.max.ms 参数值。这个参数的含义是 Follower 副本能够落后 Leader 副本的最长时间间隔，当前默认值是 10 秒” 这句话中的最长时间间隔是怎么计算的，以什么时间为基准？</div>2020-04-07</li><br/><li><span>曹伟雄</span> 👍（18） 💬（2）<div>老师你好，有个问题请教一下，麻烦抽空看看，谢谢。
+而不是连续落后这么长时间</p>2021-01-16</li><br/><li><span>Mick</span> 👍（35） 💬（8）<p>老师，LEO和HW这两个概念不理解，能不能详细说下，谢谢</p>2019-08-02</li><br/><li><span>凯</span> 👍（35） 💬（4）<p>请问一下，producer生产消息ack=all的时候，消息是怎么保证到follower的，因为看到follower是异步拉取数据的，难道是看leader和follower上面的offset吗？</p>2019-08-01</li><br/><li><span>ideal sail</span> 👍（30） 💬（3）<p>老师，假设一个分区有5个副本，Broker的min.insync.replicas设置为2，生产者设置acks=all，这时是有2个副本同步了就可以，还是必须是5个副本都同步，他们是什么关系。</p>2019-12-16</li><br/><li><span>咸淡一首诗</span> 👍（21） 💬（3）<p>老师，“这个标准就是 Broker 端参数 replica.lag.time.max.ms 参数值。这个参数的含义是 Follower 副本能够落后 Leader 副本的最长时间间隔，当前默认值是 10 秒” 这句话中的最长时间间隔是怎么计算的，以什么时间为基准？</p>2020-04-07</li><br/><li><span>曹伟雄</span> 👍（18） 💬（2）<p>老师你好，有个问题请教一下，麻烦抽空看看，谢谢。
 生产环境，因磁盘满了，所有broker宕机了，重启集群后，主题中的部分分区中，有1个副本被踢出ISR集合，只剩下leader副本了。
 
 试了以下几种方法都没有自动加入进来：
@@ -116,10 +116,10 @@
 3、用kafka-reassign-partitions.sh命令重新分配分区；
 
 针对此情况，请问一下有什么办法让它自动加入进来？  或者手工处理加入进来也可以。
-有什么命令可以查看follower落后多少吗？  麻烦老师给点建议或解决思路，谢谢。</div>2019-12-16</li><br/><li><span>蛮野</span> 👍（13） 💬（1）<div>ack=all时候，生产者向leader发送完数据，而副本是异步拉取的，那生产者写入线程要一直阻塞等待吗</div>2019-10-11</li><br/><li><span>李先生</span> 👍（10） 💬（3）<div>胡哥：分区选举leader，是通过抢占模式来选举的。如果不开启unclean.leader.election.enable，是只能isr集合中的broker才能竞争吗？这个竞争的过程能具体说下是如何实现的吗？</div>2020-04-13</li><br/><li><span>Cv</span> 👍（9） 💬（2）<div>生产者acks=all使用异步提交, 如果ISR副本迟迟不能完成从leader的同步, 那么10s过后, 生产者会收到提交失败的回调吗? 还是一直不会有回调</div>2020-03-13</li><br/><li><span>LJK</span> 👍（9） 💬（6）<div>老师好，请问ISR中的副本一定可以保证和leader副本的一致性吗？如果有一种情况是某个ISR中副本与leader副本的lag在ISR判断的边界值，这时如果leader副本挂了的话，还是会有数据丢失是吗？谢谢老师</div>2019-09-25</li><br/><li><span>球球</span> 👍（8） 💬（4）<div>胡夕老师好，replica.lag.time.max.ms配置follower是否处于isr中，那么是否存在，在这个时间段内数据写完leader，follower还没有完全同步leader数据，leader宕机，isr中follower提升为新leader，那这一部分数据是否就丢失呢？该如何避免呢？谢谢</div>2019-07-25</li><br/><li><span>不能扮演天使</span> 👍（6） 💬（1）<div>老师，ack=all,是保证ISR中的follower同步还是所有的follower同步，还有消费者是只能消费到ISR中的HW处的offset么？</div>2019-09-10</li><br/><li><span>外星人</span> 👍（6） 💬（2）<div>请问，关闭unclean后，有哪些方法可以保证available啊？谢谢</div>2019-07-28</li><br/><li><span>陈国林</span> 👍（5） 💬（1）<div>老师好，我觉得是否可以这样分场景。对于读新的数据可以从 leader replica 读取，对于老一些的数据从follower replica 读取，这样不懂是否可行</div>2020-01-18</li><br/><li><span>易程</span> 👍（5） 💬（4）<div>老师好，想请教您两个问题，如下：
+有什么命令可以查看follower落后多少吗？  麻烦老师给点建议或解决思路，谢谢。</p>2019-12-16</li><br/><li><span>蛮野</span> 👍（13） 💬（1）<p>ack=all时候，生产者向leader发送完数据，而副本是异步拉取的，那生产者写入线程要一直阻塞等待吗</p>2019-10-11</li><br/><li><span>李先生</span> 👍（10） 💬（3）<p>胡哥：分区选举leader，是通过抢占模式来选举的。如果不开启unclean.leader.election.enable，是只能isr集合中的broker才能竞争吗？这个竞争的过程能具体说下是如何实现的吗？</p>2020-04-13</li><br/><li><span>Cv</span> 👍（9） 💬（2）<p>生产者acks=all使用异步提交, 如果ISR副本迟迟不能完成从leader的同步, 那么10s过后, 生产者会收到提交失败的回调吗? 还是一直不会有回调</p>2020-03-13</li><br/><li><span>LJK</span> 👍（9） 💬（6）<p>老师好，请问ISR中的副本一定可以保证和leader副本的一致性吗？如果有一种情况是某个ISR中副本与leader副本的lag在ISR判断的边界值，这时如果leader副本挂了的话，还是会有数据丢失是吗？谢谢老师</p>2019-09-25</li><br/><li><span>球球</span> 👍（8） 💬（4）<p>胡夕老师好，replica.lag.time.max.ms配置follower是否处于isr中，那么是否存在，在这个时间段内数据写完leader，follower还没有完全同步leader数据，leader宕机，isr中follower提升为新leader，那这一部分数据是否就丢失呢？该如何避免呢？谢谢</p>2019-07-25</li><br/><li><span>不能扮演天使</span> 👍（6） 💬（1）<p>老师，ack=all,是保证ISR中的follower同步还是所有的follower同步，还有消费者是只能消费到ISR中的HW处的offset么？</p>2019-09-10</li><br/><li><span>外星人</span> 👍（6） 💬（2）<p>请问，关闭unclean后，有哪些方法可以保证available啊？谢谢</p>2019-07-28</li><br/><li><span>陈国林</span> 👍（5） 💬（1）<p>老师好，我觉得是否可以这样分场景。对于读新的数据可以从 leader replica 读取，对于老一些的数据从follower replica 读取，这样不懂是否可行</p>2020-01-18</li><br/><li><span>易程</span> 👍（5） 💬（4）<p>老师好，想请教您两个问题，如下：
 如果某个follower副本同步持续慢于leader副本写入速度，repkica.lag.time.max.ms 是对于二者的同步时间做的判断，我理解就是如果一直检查10s follower都赶不上leader副本的进度！
 但是，这个同步进度是用哪一块进行判别的呢？是通过index值吗？
 另外，如果某个follower不在ISR中了，kafka如果维持副本数均衡呢？比如设置了副本数为3，其中一个副本不在ISR集合中了，那么就一直少了一个副本吗？前提是这个副本一直没有跟上leader的同步进度！
 谢谢！
-</div>2019-07-25</li><br/>
+</p>2019-07-25</li><br/>
 </ul>

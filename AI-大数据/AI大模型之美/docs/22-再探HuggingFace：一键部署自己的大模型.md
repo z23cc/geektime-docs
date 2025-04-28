@@ -321,15 +321,15 @@ HuggingFace将部署一个开源模型到线上的成本基本降低到了0。�
 
 HuggingFace的[官方文档](https://huggingface.co/docs/transformers/main_classes/pipelines)里，给出了通过Pipeline完成各种任务的详细示例。你可以对照着自己的需求看一下这个文档，相信能解决你90%以上的问题。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>Toni</span> 👍（0） 💬（1）<div>从下面这段代码看在 Endpoint 上部署自己需用的模型后，得到一个&quot;个人&quot;的 API_URL 接口，每次任务还是从用户端发起请求，结果再从云端返回。单次请求任务也就完成了，但如果涉及大量的运算，一来一往会消耗大量时间在&quot;路&quot;上。可以将数据打包放在离&quot;计算中心&quot;近处，完成计算后再一次性将结果打包返回吗? 还是有其它的解决方法? 请老师指点迷津。
+<li><span>Toni</span> 👍（0） 💬（1）<p>从下面这段代码看在 Endpoint 上部署自己需用的模型后，得到一个&quot;个人&quot;的 API_URL 接口，每次任务还是从用户端发起请求，结果再从云端返回。单次请求任务也就完成了，但如果涉及大量的运算，一来一往会消耗大量时间在&quot;路&quot;上。可以将数据打包放在离&quot;计算中心&quot;近处，完成计算后再一次性将结果打包返回吗? 还是有其它的解决方法? 请老师指点迷津。
 
 API_URL = &quot;https:&#47;&#47;abmlvcliaa98k9ct.us-east-1.aws.endpoints.huggingface.cloud&quot;
 
 text = &quot;My name is Lewis and I like to&quot;
 data = query({&quot;inputs&quot; : text}, api_url=API_URL)
 
-print(data)</div>2023-05-06</li><br/><li><span>芋头</span> 👍（0） 💬（1）<div>想复现graph-gpt https:&#47;&#47;graphgpt.vercel.app&#47;, 即用纯文本，通过模型生成知识图谱。想问问大大能教一下吗
-</div>2023-05-04</li><br/><li><span>Meadery</span> 👍（0） 💬（1）<div>DLL load failed while importing _imaging: 找不到指定的模块。是什么问题啊
-</div>2023-05-02</li><br/><li><span>Oli张帆</span> 👍（5） 💬（0）<div>HuggingFace是个好东西！</div>2023-04-26</li><br/><li><span>77</span> 👍（0） 💬（0）<div>看晚了 这课程着实有用</div>2024-03-24</li><br/><li><span>实数</span> 👍（0） 💬（1）<div>咨询下老师，公司想用大模型，但是又不想贡献出来数据给外部模型怎么破？
-私有化部署向量化数据库和模型吗</div>2023-08-24</li><br/><li><span>Geek_8a8c75</span> 👍（0） 💬（0）<div>老师您好，我想请教一下，如果我想更改 huggingface 上下载下来的模型结构，比如我想在模型中间添加一层全连接层。如果这样的话，我该怎么做呢，因为 huggingface 把api包装的太好了，如果是平时自己写的模型的话都是继承了 nn.Module 模块的，可是 huggingface 下载下来的模型我不知道这些代码在哪里，这个代码也都是存在于 transformers 包里的吗？如果我想这么做的话，老师可不可以给我一个方向，让我去查阅什么资料或者从哪里入手呀。</div>2023-07-22</li><br/><li><span>sanpang228</span> 👍（0） 💬（0）<div>Endpoint 页面要绑定一个信用卡，请问是需要绑卡才能用吗？是外国信用卡吗？</div>2023-07-18</li><br/><li><span>小神david</span> 👍（0） 💬（0）<div>希望huggingface越办越好</div>2023-05-01</li><br/>
+print(data)</p>2023-05-06</li><br/><li><span>芋头</span> 👍（0） 💬（1）<p>想复现graph-gpt https:&#47;&#47;graphgpt.vercel.app&#47;, 即用纯文本，通过模型生成知识图谱。想问问大大能教一下吗
+</p>2023-05-04</li><br/><li><span>Meadery</span> 👍（0） 💬（1）<p>DLL load failed while importing _imaging: 找不到指定的模块。是什么问题啊
+</p>2023-05-02</li><br/><li><span>Oli张帆</span> 👍（5） 💬（0）<p>HuggingFace是个好东西！</p>2023-04-26</li><br/><li><span>77</span> 👍（0） 💬（0）<p>看晚了 这课程着实有用</p>2024-03-24</li><br/><li><span>实数</span> 👍（0） 💬（1）<p>咨询下老师，公司想用大模型，但是又不想贡献出来数据给外部模型怎么破？
+私有化部署向量化数据库和模型吗</p>2023-08-24</li><br/><li><span>Geek_8a8c75</span> 👍（0） 💬（0）<p>老师您好，我想请教一下，如果我想更改 huggingface 上下载下来的模型结构，比如我想在模型中间添加一层全连接层。如果这样的话，我该怎么做呢，因为 huggingface 把api包装的太好了，如果是平时自己写的模型的话都是继承了 nn.Module 模块的，可是 huggingface 下载下来的模型我不知道这些代码在哪里，这个代码也都是存在于 transformers 包里的吗？如果我想这么做的话，老师可不可以给我一个方向，让我去查阅什么资料或者从哪里入手呀。</p>2023-07-22</li><br/><li><span>sanpang228</span> 👍（0） 💬（0）<p>Endpoint 页面要绑定一个信用卡，请问是需要绑卡才能用吗？是外国信用卡吗？</p>2023-07-18</li><br/><li><span>小神david</span> 👍（0） 💬（0）<p>希望huggingface越办越好</p>2023-05-01</li><br/>
 </ul>

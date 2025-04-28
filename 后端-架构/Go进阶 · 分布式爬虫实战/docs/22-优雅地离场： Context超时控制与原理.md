@@ -421,5 +421,5 @@ Go HTTP标准库中其实有多种类型的超时，你知道有哪些吗？
 
 欢迎你在留言区与我交流讨论，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Geek_7ba156</span> 👍（12） 💬（0）<div>老师课程后面会有websocket相关的爬虫设计吗？毕竟网站数据也不只是restfulapi，现在很多数据都是wss了。对于wss的控制，keepalive，我觉得也很需要了解，gorilla自带的keepalive不是特别好用，如果有比较好的项目也可推荐下</div>2022-11-29</li><br/>
+<li><span>Geek_7ba156</span> 👍（12） 💬（0）<p>老师课程后面会有websocket相关的爬虫设计吗？毕竟网站数据也不只是restfulapi，现在很多数据都是wss了。对于wss的控制，keepalive，我觉得也很需要了解，gorilla自带的keepalive不是特别好用，如果有比较好的项目也可推荐下</p>2022-11-29</li><br/>
 </ul>

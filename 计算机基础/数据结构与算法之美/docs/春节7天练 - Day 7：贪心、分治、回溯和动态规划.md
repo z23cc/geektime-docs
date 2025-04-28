@@ -67,13 +67,13 @@
 
 最后，祝你工作顺利！学业进步！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>kai</span> 👍（13） 💬（2）<div>听了老师的课程，第一遍的时候，只是在读，现在开始回顾：
+<li><span>kai</span> 👍（13） 💬（2）<p>听了老师的课程，第一遍的时候，只是在读，现在开始回顾：
 课程相关的知识点，做了笔记：https:&#47;&#47;github.com&#47;guokaide&#47;algorithm&#47;blob&#47;master&#47;summary&#47;algorithm.md
 课程涉及的题目，也在逐步总结当中：
 https:&#47;&#47;github.com&#47;guokaide&#47;algorithm&#47;blob&#47;master&#47;questions&#47;questions.md
 
 希望和大家一起进步，欢迎小伙伴们一起来讨论~
-</div>2019-02-11</li><br/><li><span>Richard</span> 👍（2） 💬（1）<div>老师留的题都很不错，正在刷之前没做过的LeetCode题。
+</p>2019-02-11</li><br/><li><span>Richard</span> 👍（2） 💬（1）<p>老师留的题都很不错，正在刷之前没做过的LeetCode题。
 参与下答对三题送课程的活动:
 Day 1：
 1.求众数(Python)
@@ -118,7 +118,7 @@ class Solution:
             if res &lt; i - min_price:
                 res = i - min_price
         return res
-</div>2019-02-11</li><br/><li><span>明翼</span> 👍（0） 💬（1）<div>请教下老师，遇到一个问题，给多个银行账号，假如每个账号每天都有交易，这样在坐标中可以画出时间和交易金额的曲线，求哪个曲线的更平滑或波动更大，银行账号的交易额度可能相差很大，银行账号交易梳理可能多个。</div>2019-09-03</li><br/><li><span>好运连连</span> 👍（0） 💬（1）<div>老师，请教下。关于物流中转路线，应该采用哪种算法合适？</div>2019-07-10</li><br/><li><span>黄丹</span> 👍（4） 💬（0）<div>课程的最后一天，也是新年上班的第一天，感谢王老师的教育和陪伴，祝您生活开心，工作顺利。
+</p>2019-02-11</li><br/><li><span>明翼</span> 👍（0） 💬（1）<p>请教下老师，遇到一个问题，给多个银行账号，假如每个账号每天都有交易，这样在坐标中可以画出时间和交易金额的曲线，求哪个曲线的更平滑或波动更大，银行账号的交易额度可能相差很大，银行账号交易梳理可能多个。</p>2019-09-03</li><br/><li><span>好运连连</span> 👍（0） 💬（1）<p>老师，请教下。关于物流中转路线，应该采用哪种算法合适？</p>2019-07-10</li><br/><li><span>黄丹</span> 👍（4） 💬（0）<p>课程的最后一天，也是新年上班的第一天，感谢王老师的教育和陪伴，祝您生活开心，工作顺利。
 今天的题目比前几天的都难一点，只做了三题，太累了TaT。对于动态规划和贪心总觉得很巧妙，如果想不到动态转移方程式，就很难做，但要是想到了，真的是豁然开朗。对于这一类题，还是要多锻炼，找动态转移方程式要从最后一个结果出发，去想这个结果可以由什么得到，知道之前所有结点的信息，如何推导出当前结点的信息，其实和高中学的归纳法有一点点像。 
 下面给出我今天做的三题的解题思路和代码
 1.	Problem 121. Best Time to Buy and Sell Stock
@@ -131,7 +131,7 @@ class Solution:
 解题思路：这道题是给定具有n个不同金额的硬币（硬币个数无限）coins[0...n-1]，给一个整数amount，是否给的硬币能正好达到整数，给出能组成整数最少需要的硬币个数. 解法是设置一个数组A[0...amount],进行初始化A[0]=0;A[1...amount] = -1;保存的是当给定金额为i时，所需要的最少的硬币。 * dp转移方程式为 A[k] = 1+min(A[k-coins[0]],A[k-coins[1]],....A[k-coins[n-1]]). * 这里要注意的是判断A[k]是否有解
 代码：https:&#47;&#47;github.com&#47;yyxd&#47;leetcode&#47;blob&#47;master&#47;src&#47;leetcode&#47;dp&#47;Problem322_CoinChange.java
 课程完结撒花，真的学到好多，自己以后还会反复回顾的，再次感谢王争老师，还有每天负责朗读的声音好好听的修阳小哥哥。
-</div>2019-02-11</li><br/><li><span>李皮皮皮皮皮</span> 👍（3） 💬（0）<div>每天一道算法题，风雨无阻（过年偷懒不算😛）</div>2019-02-11</li><br/><li><span>kai</span> 👍（3） 💬（0）<div>动态规划，感觉是面试必考内容，今天跟着这些题目再来复习一遍~</div>2019-02-11</li><br/><li><span>纯洁的憎恶</span> 👍（3） 💬（0）<div>这冲刺压力有点大了😓</div>2019-02-10</li><br/><li><span>kai</span> 👍（2） 💬（0）<div>8皇后问题
+</p>2019-02-11</li><br/><li><span>李皮皮皮皮皮</span> 👍（3） 💬（0）<p>每天一道算法题，风雨无阻（过年偷懒不算😛）</p>2019-02-11</li><br/><li><span>kai</span> 👍（3） 💬（0）<p>动态规划，感觉是面试必考内容，今天跟着这些题目再来复习一遍~</p>2019-02-11</li><br/><li><span>纯洁的憎恶</span> 👍（3） 💬（0）<p>这冲刺压力有点大了😓</p>2019-02-10</li><br/><li><span>kai</span> 👍（2） 💬（0）<p>8皇后问题
 
 public class EightQueen {
 
@@ -166,7 +166,7 @@ public class EightQueen {
          return true;
     }
 
-}</div>2019-02-11</li><br/><li><span>mgxian</span> 👍（1） 💬（0）<div>买卖股票的最佳时机 go 语言实现
+}</p>2019-02-11</li><br/><li><span>mgxian</span> 👍（1） 💬（0）<p>买卖股票的最佳时机 go 语言实现
 package main
 
 import &quot;fmt&quot;
@@ -196,7 +196,7 @@ func main() {
 	fmt.Println(maxProfit(testData1))
 	fmt.Println(maxProfit(testData2))
 }
-</div>2019-02-11</li><br/><li><span>虎虎❤️</span> 👍（1） 💬（0）<div>正则表达式
+</p>2019-02-11</li><br/><li><span>虎虎❤️</span> 👍（1） 💬（0）<p>正则表达式
 public boolean isMatch(String s, String p) {
 
     if (s == null || p == null) {
@@ -229,5 +229,5 @@ public boolean isMatch(String s, String p) {
     return dp[s.length()][p.length()];
 }
 
-leetcode的排名第一的答案，搬过来了</div>2019-02-10</li><br/><li><span>云之崖</span> 👍（0） 💬（0）<div>1年左右断断续续，终于学完了所有章节，这些练习题大部分不看提示都能搞得定了。</div>2021-01-22</li><br/><li><span>xxxxL</span> 👍（0） 💬（0）<div>请问这个在哪里呢（详细可看 @Smallfly 整理的 Minimum Path Sum）</div>2020-01-18</li><br/><li><span>大风歌</span> 👍（0） 💬（0）<div>第一遍</div>2020-01-09</li><br/><li><span>好运连连</span> 👍（0） 💬（0）<div>老师，具体的是这样，比如物流公司，用户下单，需要根据最短路线或者最少花费来找出合适的中转路线。 比如需要送货到B城市，A城市发货，但是，很多路线，需要选最合适的路线，比如A到D中转再到E中转最后送货到B。</div>2019-07-10</li><br/>
+leetcode的排名第一的答案，搬过来了</p>2019-02-10</li><br/><li><span>云之崖</span> 👍（0） 💬（0）<p>1年左右断断续续，终于学完了所有章节，这些练习题大部分不看提示都能搞得定了。</p>2021-01-22</li><br/><li><span>xxxxL</span> 👍（0） 💬（0）<p>请问这个在哪里呢（详细可看 @Smallfly 整理的 Minimum Path Sum）</p>2020-01-18</li><br/><li><span>大风歌</span> 👍（0） 💬（0）<p>第一遍</p>2020-01-09</li><br/><li><span>好运连连</span> 👍（0） 💬（0）<p>老师，具体的是这样，比如物流公司，用户下单，需要根据最短路线或者最少花费来找出合适的中转路线。 比如需要送货到B城市，A城市发货，但是，很多路线，需要选最合适的路线，比如A到D中转再到E中转最后送货到B。</p>2019-07-10</li><br/>
 </ul>

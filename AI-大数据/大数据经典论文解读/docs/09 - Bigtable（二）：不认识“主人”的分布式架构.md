@@ -188,7 +188,7 @@ Bigtable是通过把分区信息直接做成了**三层树状结构的Bigtable�
 
 Bigtable论文里的第7部分“性能评估”里，你可以看到Bigtable在随机读数据上的性能表现并不好，无法真正做到随着节点数的增加线性增长。这是为什么呢？这个和我们今天讲的Bigtable的设计中的哪一个设计点相关？
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>在路上</span> 👍（10） 💬（4）<div>徐老师好，在Bigtable论文的第 7 部分“性能评估”里写道：
+<li><span>在路上</span> 👍（10） 💬（4）<p>徐老师好，在Bigtable论文的第 7 部分“性能评估”里写道：
 Each random read involves the transfer of a 64 KB SSTable block over the network from GFS to a tablet server, out of which only a single 1000-byte value is used……
 Random and sequential writes perform better than random reads since each tablet server appends all incoming writes to a single commit log and uses group commit to stream these writes efficiently to GFS.
 
@@ -198,15 +198,15 @@ Random and sequential writes perform better than random reads since each tablet 
 我在学习今天的课程和阅读Bigtable论文的时候，有三个疑问：
 1.课程中提到通过外部服务去监控Master的存活，可能会导致系统中出现两个Master，那么GFS没有这个问题吗？如果有的话不会造成严重的后果吗？
 2.当我向bigtable写入数据时，metadata的三层结构会如何变更？变更的过程如何避免加锁？如果需要全局锁的话，我想读写性能肯定上不去。
-3.随机读比写入操作慢一个数量级我还是很惊讶，因为写入操作的commit log需要写入GFS，同样有GFS操作，怎么能差出一个数量级？</div>2021-10-09</li><br/><li><span>thomas</span> 👍（3） 💬（4）<div>METADATA 的一条记录，大约是 1KB，而 METADATA 的 Tablet 如果限制在 128MB，三层记录可以存下大约 (128*1000)2=234 个 Tablet 的位置，也就是大约 160 亿个 Tablet
+3.随机读比写入操作慢一个数量级我还是很惊讶，因为写入操作的commit log需要写入GFS，同样有GFS操作，怎么能差出一个数量级？</p>2021-10-09</li><br/><li><span>thomas</span> 👍（3） 💬（4）<p>METADATA 的一条记录，大约是 1KB，而 METADATA 的 Tablet 如果限制在 128MB，三层记录可以存下大约 (128*1000)2=234 个 Tablet 的位置，也就是大约 160 亿个 Tablet
 =============================================》
-这个是如何算出来的？</div>2021-10-23</li><br/><li><span>陈迪</span> 👍（2） 💬（2）<div>问老师：
+这个是如何算出来的？</p>2021-10-23</li><br/><li><span>陈迪</span> 👍（2） 💬（2）<p>问老师：
 10多年前的Bigable架构是否是一种符合当下潮流的“存储和计算分离”的架构？存储GFS做得够了，就用GFS单独存，前面哪个tablet压力大可以调度出来多一点。
-当下则是objcet storage又便宜又可靠，不要share nothing本机再做一遍存储了，都交给object storage</div>2021-10-08</li><br/><li><span>那时刻</span> 👍（2） 💬（0）<div>Bigtable数据随机读写慢，我想到的原因是：其一是个三层 Tablet 信息存储的架构，读写有多次网络请求。其二是tablet的分裂和合并，使数据产生迁移。</div>2021-10-08</li><br/><li><span>爱码士</span> 👍（1） 💬（0）<div>感觉这一片的三层结构的插图有点抽象，希望老师能够再解释一下</div>2023-02-01</li><br/><li><span>麋鹿在泛舟</span> 👍（1） 💬（0）<div>3层b+tree结构的metadata存储tablet个数的计算: 
+当下则是objcet storage又便宜又可靠，不要share nothing本机再做一遍存储了，都交给object storage</p>2021-10-08</li><br/><li><span>那时刻</span> 👍（2） 💬（0）<p>Bigtable数据随机读写慢，我想到的原因是：其一是个三层 Tablet 信息存储的架构，读写有多次网络请求。其二是tablet的分裂和合并，使数据产生迁移。</p>2021-10-08</li><br/><li><span>爱码士</span> 👍（1） 💬（0）<p>感觉这一片的三层结构的插图有点抽象，希望老师能够再解释一下</p>2023-02-01</li><br/><li><span>麋鹿在泛舟</span> 👍（1） 💬（0）<p>3层b+tree结构的metadata存储tablet个数的计算: 
 1. 第1层为根节点，第2层每个元素指向的是一个tablet，因此总存储tablet个数实际上是2层b+tree存储元素的总个数。
 2. 一个tablet元素个数 = (128 * 1024KB) &#47; 1KB = 2 ^ 17，即根节点可以存储这么多元素
-3. 根节点的每个元素又指向了一个tablet，因此2层b+tree存储个数= 2^17 * 2^17 = 2 ^ 34</div>2022-11-07</li><br/><li><span>陈迪</span> 👍（1） 💬（0）<div>随机读，最差情况下，要网络走查元数据+从gfs读出来，gfs一读一block就是64mb，一个key value大小往往远小于这个数字。写的话就没这个问题，读内存也会快，顺序读的话key排序+ gfs支持得本来也好。相比之下，随机读显得很糟糕了</div>2021-10-08</li><br/><li><span>峰</span> 👍（1） 💬（0）<div>随机读最后只落在一台sever上，不能并行，再加上一次读取转换成了串行的三次读，自然相较而言是慢的。</div>2021-10-08</li><br/><li><span>lilyanchi</span> 👍（0） 💬（0）<div>似懂非懂 需要再读几遍</div>2024-05-22</li><br/><li><span>xxx</span> 👍（0） 💬（0）<div>描述方式太过抑扬顿挫了，结构感不够。</div>2023-11-18</li><br/><li><span>piboye</span> 👍（0） 💬（0）<div>tablet迁移是怎么搞的？ 迁移会带来短时间不可以用吧？</div>2022-01-15</li><br/><li><span>Geek_80bb15</span> 👍（0） 💬（0）<div>徐老师好，HBase把Root表干掉了，是怎么解决Meta表的热点访问问题的呢？多谢</div>2022-01-06</li><br/><li><span>zixuan</span> 👍（0） 💬（0）<div>请问老师，5.1 Tablet Location 这里的 Location指的是tablet的gfs文件路径，还是其所述的tablet server的地址？</div>2022-01-03</li><br/><li><span>Helios</span> 👍（0） 💬（0）<div>因为sstable这种格式是用lsm tree实现的更加适合顺序读，b tree更适合随机读</div>2021-12-29</li><br/><li><span>核桃</span> 👍（0） 💬（1）<div>这里有几个问题不太理解。
+3. 根节点的每个元素又指向了一个tablet，因此2层b+tree存储个数= 2^17 * 2^17 = 2 ^ 34</p>2022-11-07</li><br/><li><span>陈迪</span> 👍（1） 💬（0）<p>随机读，最差情况下，要网络走查元数据+从gfs读出来，gfs一读一block就是64mb，一个key value大小往往远小于这个数字。写的话就没这个问题，读内存也会快，顺序读的话key排序+ gfs支持得本来也好。相比之下，随机读显得很糟糕了</p>2021-10-08</li><br/><li><span>峰</span> 👍（1） 💬（0）<p>随机读最后只落在一台sever上，不能并行，再加上一次读取转换成了串行的三次读，自然相较而言是慢的。</p>2021-10-08</li><br/><li><span>lilyanchi</span> 👍（0） 💬（0）<p>似懂非懂 需要再读几遍</p>2024-05-22</li><br/><li><span>xxx</span> 👍（0） 💬（0）<p>描述方式太过抑扬顿挫了，结构感不够。</p>2023-11-18</li><br/><li><span>piboye</span> 👍（0） 💬（0）<p>tablet迁移是怎么搞的？ 迁移会带来短时间不可以用吧？</p>2022-01-15</li><br/><li><span>Geek_80bb15</span> 👍（0） 💬（0）<p>徐老师好，HBase把Root表干掉了，是怎么解决Meta表的热点访问问题的呢？多谢</p>2022-01-06</li><br/><li><span>zixuan</span> 👍（0） 💬（0）<p>请问老师，5.1 Tablet Location 这里的 Location指的是tablet的gfs文件路径，还是其所述的tablet server的地址？</p>2022-01-03</li><br/><li><span>Helios</span> 👍（0） 💬（0）<p>因为sstable这种格式是用lsm tree实现的更加适合顺序读，b tree更适合随机读</p>2021-12-29</li><br/><li><span>核桃</span> 👍（0） 💬（1）<p>这里有几个问题不太理解。
 
 1.首先读可以不经过master能理解，写也不经过就有点困惑了，既然master就是负责平衡tablet server的，那么写入的时候，到底指定哪个server写入?这个该由谁来负责呢？如果不是master，那么必然就可能会有数据倾斜问题吧。
-2.文件查询过程那里，三次请求获取到具体数据所在的tablet server的tablets上面，这里有个疑惑。三级架构下和文件系统的文件目录树类似嘛，但是访问root tablet的时候，怎么会知道你所在的表在哪个节点呢？这里又不像域名访问那样，一个root tablet不可能具体知道你这个表可以从哪里读取的呀，应该是只有下面一层数据所对应的上级才真正知道的。</div>2021-11-23</li><br/>
+2.文件查询过程那里，三次请求获取到具体数据所在的tablet server的tablets上面，这里有个疑惑。三级架构下和文件系统的文件目录树类似嘛，但是访问root tablet的时候，怎么会知道你所在的表在哪个节点呢？这里又不像域名访问那样，一个root tablet不可能具体知道你这个表可以从哪里读取的呀，应该是只有下面一层数据所对应的上级才真正知道的。</p>2021-11-23</li><br/>
 </ul>

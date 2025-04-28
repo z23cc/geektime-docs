@@ -539,12 +539,12 @@ cbff08075458b6342eef83c36343ec04500fe899281e0f74260aa4ed64bbe374
 
 ![图片](https://static001.geekbang.org/resource/image/3f/ce/3f345bdbb8c5d0eddef102c700ccd6ce.png?wh=1400x730)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>兵戈</span> 👍（4） 💬（3）<div>Typler老师的课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;llama。不过当前工程目录下缺少requirements.txt，可能会让许多跑代码的同学遇到包依赖不一致的问题，我提了一个issue：
+<li><span>兵戈</span> 👍（4） 💬（3）<p>Typler老师的课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;llama。不过当前工程目录下缺少requirements.txt，可能会让许多跑代码的同学遇到包依赖不一致的问题，我提了一个issue：
 https:&#47;&#47;github.com&#47;tylerelyt&#47;llama&#47;issues&#47;1
-希望Typer老师有空补充下 :）</div>2024-10-18</li><br/><li><span>兵戈</span> 👍（3） 💬（2）<div>Tyler老师提供示例很不错，其中第一个示例，最好加上max_length参数，否则可能会一直运行停不下来，如下：
+希望Typer老师有空补充下 :）</p>2024-10-18</li><br/><li><span>兵戈</span> 👍（3） 💬（2）<p>Tyler老师提供示例很不错，其中第一个示例，最好加上max_length参数，否则可能会一直运行停不下来，如下：
 with torch.no_grad():
-    outputs = model.generate(**inputs, max_length=100)</div>2024-10-17</li><br/><li><span>edward</span> 👍（3） 💬（3）<div>请问老师 实验环境需要什么样的机器配置？</div>2024-10-16</li><br/><li><span>keep move</span> 👍（1） 💬（1）<div>示例代码如何能运行起来，能否写个简要的步骤呢</div>2024-10-30</li><br/><li><span>J Sun</span> 👍（0） 💬（1）<div>模型怎么下载
-</div>2024-10-18</li><br/><li><span>S！</span> 👍（0） 💬（0）<div>m2系列的mac pro运行demo一直没有输出结果，console输出如下：
+    outputs = model.generate(**inputs, max_length=100)</p>2024-10-17</li><br/><li><span>edward</span> 👍（3） 💬（3）<p>请问老师 实验环境需要什么样的机器配置？</p>2024-10-16</li><br/><li><span>keep move</span> 👍（1） 💬（1）<p>示例代码如何能运行起来，能否写个简要的步骤呢</p>2024-10-30</li><br/><li><span>J Sun</span> 👍（0） 💬（1）<p>模型怎么下载
+</p>2024-10-18</li><br/><li><span>S！</span> 👍（0） 💬（0）<p>m2系列的mac pro运行demo一直没有输出结果，console输出如下：
 import sys; print(&#39;Python %s on %s&#39; % (sys.version, sys.platform))
 &#47;usr&#47;local&#47;bin&#47;python3.10 -X pycache_prefix=&#47;Users&#47;salesonlee&#47;Library&#47;Caches&#47;JetBrains&#47;PyCharm2024.1&#47;cpython-cache &#47;Applications&#47;PyCharm.app&#47;Contents&#47;plugins&#47;python&#47;helpers&#47;pydev&#47;pydevd.py --multiprocess --qt-support=auto --client 127.0.0.1 --port 57101 --file &#47;Users&#47;salesonlee&#47;IT&#47;dev_codes&#47;PythonProjects&#47;tylerelyt-llama&#47;chapter1&#47;lesson1&#47;example1.py 
 Connected to pydev debugger (build 241.17890.14)
@@ -553,18 +553,18 @@ Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
 Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
 
 
-请问是因为没有使用gpu么，是硬件配置的原因？还是其它原因？ </div>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<div>import sys; print(&#39;Python %s on %s&#39; % (sys.version, sys.platform))
+请问是因为没有使用gpu么，是硬件配置的原因？还是其它原因？ </p>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<p>import sys; print(&#39;Python %s on %s&#39; % (sys.version, sys.platform))
 &#47;usr&#47;local&#47;bin&#47;python3.10 -X pycache_prefix=&#47;Users&#47;salesonlee&#47;Library&#47;Caches&#47;JetBrains&#47;PyCharm2024.1&#47;cpython-cache &#47;Applications&#47;PyCharm.app&#47;Contents&#47;plugins&#47;python&#47;helpers&#47;pydev&#47;pydevd.py --multiprocess --qt-support=auto --client 127.0.0.1 --port 57101 --file &#47;Users&#47;salesonlee&#47;IT&#47;dev_codes&#47;PythonProjects&#47;tylerelyt-llama&#47;chapter1&#47;lesson1&#47;example1.py 
 Connected to pydev debugger (build 241.17890.14)
 Loading checkpoint shards: 100%|██████████| 4&#47;4 [01:00&lt;00:00, 15.10s&#47;it]
 Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
 Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
-</div>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<div>m2系列mac pro 运行demo一直没有输出结果，console输出如下：</div>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<div>运行课程demo需要什么样的碍硬件资源？</div>2024-11-10</li><br/><li><span>S！</span> 👍（0） 💬（2）<div>Mac pro可以运行llama3么</div>2024-11-10</li><br/><li><span>keep move</span> 👍（0） 💬（0）<div>python学习那个方向 pytorch吗</div>2024-10-23</li><br/><li><span>Orson</span> 👍（0） 💬（0）<div># agent_a.py
+</p>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<p>m2系列mac pro 运行demo一直没有输出结果，console输出如下：</p>2024-11-11</li><br/><li><span>S！</span> 👍（0） 💬（0）<p>运行课程demo需要什么样的碍硬件资源？</p>2024-11-10</li><br/><li><span>S！</span> 👍（0） 💬（2）<p>Mac pro可以运行llama3么</p>2024-11-10</li><br/><li><span>keep move</span> 👍（0） 💬（0）<p>python学习那个方向 pytorch吗</p>2024-10-23</li><br/><li><span>Orson</span> 👍（0） 💬（0）<p># agent_a.py
 from common import create_app
 
 app = create_app(&quot;system: 你是一个熟悉人工智能技术的计算机科学家。&quot;)
 
 if __name__ == &#39;__main__&#39;:
     app.run(port=5000)
-请问，在用AutoDL这样的云服务的时候，app.run(port=5000）需要怎么修改。或者，agent_a、b、c和common文件需要做哪些修改？</div>2024-10-21</li><br/><li><span>Allen</span> 👍（0） 💬（0）<div>你好，请问在调用模型时with torch.no_grad():为啥后面几段里没有加？会影响性能吗？谢谢。</div>2024-10-20</li><br/><li><span>Dowen Liu</span> 👍（0） 💬（0）<div>不用python 能不能做同样的调用呢？比如直接调用接口、spring ai </div>2024-10-19</li><br/><li><span>J Sun</span> 👍（0） 💬（1）<div>模型在哪里下载</div>2024-10-18</li><br/>
+请问，在用AutoDL这样的云服务的时候，app.run(port=5000）需要怎么修改。或者，agent_a、b、c和common文件需要做哪些修改？</p>2024-10-21</li><br/><li><span>Allen</span> 👍（0） 💬（0）<p>你好，请问在调用模型时with torch.no_grad():为啥后面几段里没有加？会影响性能吗？谢谢。</p>2024-10-20</li><br/><li><span>Dowen Liu</span> 👍（0） 💬（0）<p>不用python 能不能做同样的调用呢？比如直接调用接口、spring ai </p>2024-10-19</li><br/><li><span>J Sun</span> 👍（0） 💬（1）<p>模型在哪里下载</p>2024-10-18</li><br/>
 </ul>

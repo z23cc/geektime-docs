@@ -405,7 +405,7 @@ if __name__ == "__main__":
 
 其实，有的题目并没有标准答案，我们可以在留言区一起探讨，那么，我期待看到你的留言。如果今天的内容让你有所收获，也欢迎你把这节课转发给有需要的朋友！我们下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>qinsi</span> 👍（2） 💬（1）<div>主要还是怕幻觉吧。生成代码五分钟，检查代码五小时，总体上可能还没人写得快。code interpreter是确保代码至少能跑得起来。</div>2024-05-24</li><br/><li><span>陈东</span> 👍（1） 💬（1）<div>以上这些案例分析来自于实际工作吗？老师能否适当增加实际工作要用到的例子？，谢谢。</div>2024-05-24</li><br/><li><span>Geek_6e7726</span> 👍（0） 💬（1）<div>老师提出的这些问题，后面有专门一章统一回复么？</div>2024-06-07</li><br/><li><span>排骨</span> 👍（0） 💬（1）<div>自然语言处理（NLP）和生成式预训练模型（如GPT-4）的发展确实使得与计算机的交互变得更加直观和自然。然而，这并不意味着编程技能将变得不再重要。相反，编程技能和自然语言交互能力可以互补，共同提升数据分析人员的职业竞争力。</div>2024-06-03</li><br/><li><span>Simon WZ</span> 👍（0） 💬（0）<div>这样子看，其实这Function calling和Code Interpreter的功能在GPT中都也有，那使用Assistants跟直接调用GPT最明显区别是什么？</div>2024-06-25</li><br/><li><span>Alex</span> 👍（0） 💬（0）<div>def create_assistant(instructions, file_path):
+<li><span>qinsi</span> 👍（2） 💬（1）<p>主要还是怕幻觉吧。生成代码五分钟，检查代码五小时，总体上可能还没人写得快。code interpreter是确保代码至少能跑得起来。</p>2024-05-24</li><br/><li><span>陈东</span> 👍（1） 💬（1）<p>以上这些案例分析来自于实际工作吗？老师能否适当增加实际工作要用到的例子？，谢谢。</p>2024-05-24</li><br/><li><span>Geek_6e7726</span> 👍（0） 💬（1）<p>老师提出的这些问题，后面有专门一章统一回复么？</p>2024-06-07</li><br/><li><span>排骨</span> 👍（0） 💬（1）<p>自然语言处理（NLP）和生成式预训练模型（如GPT-4）的发展确实使得与计算机的交互变得更加直观和自然。然而，这并不意味着编程技能将变得不再重要。相反，编程技能和自然语言交互能力可以互补，共同提升数据分析人员的职业竞争力。</p>2024-06-03</li><br/><li><span>Simon WZ</span> 👍（0） 💬（0）<p>这样子看，其实这Function calling和Code Interpreter的功能在GPT中都也有，那使用Assistants跟直接调用GPT最明显区别是什么？</p>2024-06-25</li><br/><li><span>Alex</span> 👍（0） 💬（0）<p>def create_assistant(instructions, file_path):
     with open(file_path, &quot;rb&quot;) as file:
         file_obj = client.files.create(file=file, purpose=&#39;assistants&#39;)
         file_id = file_obj.id
@@ -419,5 +419,5 @@ if __name__ == "__main__":
     return assistant
 老师这里的file_ids好像应该去掉吧？ 查看文档 https:&#47;&#47;platform.openai.com&#47;docs&#47;api-reference&#47;assistants&#47;createAssistant  这里如果是tool 为 file_search的场景的话 用tool_resources读取文件向量 
 请老师指教下 是不是我理解错了？
-</div>2024-06-10</li><br/>
+</p>2024-06-10</li><br/>
 </ul>

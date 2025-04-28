@@ -162,8 +162,8 @@ public class Singleton {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jialin</span> 👍（624） 💬（33）<div>对于双重锁的问题，我觉得任大鹏分析的蛮有道理，线程A进入第二个判空条件，进行初始化时，发生了时间片切换，即使没有释放锁，线程B刚要进入第一个判空条件时，发现条件不成立，直接返回instance引用，不用去获取锁。如果对instance进行volatile语义声明，就可以禁止指令重排序，避免该情况发生。
-对于有些同学对CPU缓存和内存的疑问，CPU缓存不存在于内存中的，它是一块比内存更小、读写速度更快的芯片，至于什么时候把数据从缓存写到内存，没有固定的时间，同样地，对于有volatile语义声明的变量，线程A执行完后会强制将值刷新到内存中，线程B进行相关操作时会强制重新把内存中的内容写入到自己的缓存，这就涉及到了volatile的写入屏障问题，当然也就是所谓happen-before问题。</div>2019-02-28</li><br/><li><span>coder</span> 👍（378） 💬（10）<div>long类型64位，所以在32位的机器上，对long类型的数据操作通常需要多条指令组合出来，无法保证原子性，所以并发的时候会出问题🌝🌝🌝</div>2019-02-28</li><br/><li><span>别皱眉</span> 👍（182） 💬（18）<div>周末了
+<li><span>Jialin</span> 👍（624） 💬（33）<p>对于双重锁的问题，我觉得任大鹏分析的蛮有道理，线程A进入第二个判空条件，进行初始化时，发生了时间片切换，即使没有释放锁，线程B刚要进入第一个判空条件时，发现条件不成立，直接返回instance引用，不用去获取锁。如果对instance进行volatile语义声明，就可以禁止指令重排序，避免该情况发生。
+对于有些同学对CPU缓存和内存的疑问，CPU缓存不存在于内存中的，它是一块比内存更小、读写速度更快的芯片，至于什么时候把数据从缓存写到内存，没有固定的时间，同样地，对于有volatile语义声明的变量，线程A执行完后会强制将值刷新到内存中，线程B进行相关操作时会强制重新把内存中的内容写入到自己的缓存，这就涉及到了volatile的写入屏障问题，当然也就是所谓happen-before问题。</p>2019-02-28</li><br/><li><span>coder</span> 👍（378） 💬（10）<p>long类型64位，所以在32位的机器上，对long类型的数据操作通常需要多条指令组合出来，无法保证原子性，所以并发的时候会出问题🌝🌝🌝</p>2019-02-28</li><br/><li><span>别皱眉</span> 👍（182） 💬（18）<p>周末了
 对留言问题总结一下
  
 ------可见性问题------
@@ -199,7 +199,7 @@ io操作不占用cpu，读文件，是设备驱动干的事，cpu只管发命令
 ------寄存器切换------ 
 寄存器是共用的，A线程切换到B线程的时候，寄存器会把操作A的相关内容会保存到内存里，切换回来的时候，会从内存把内容加载到寄存器。可以理解为每个线程有自己的寄存器
  
-请老师帮忙看看，有没问题。希望我的总结能帮到更多人😄😄</div>2019-03-16</li><br/><li><span>任大鹏</span> 👍（163） 💬（7）<div>对于阿根一世同学的那个疑问，我个人认为CPU时间片切换后，线程B刚好执行到第一次判断instance==null，此时不为空，不用进入synchronized里，就将还未初始化的instance返回了</div>2019-02-28</li><br/><li><span>Geek_dcwrgy</span> 👍（111） 💬（50）<div>针对阿根一世的问题，问题其实出现在new Singleton()这里。
+请老师帮忙看看，有没问题。希望我的总结能帮到更多人😄😄</p>2019-03-16</li><br/><li><span>任大鹏</span> 👍（163） 💬（7）<p>对于阿根一世同学的那个疑问，我个人认为CPU时间片切换后，线程B刚好执行到第一次判断instance==null，此时不为空，不用进入synchronized里，就将还未初始化的instance返回了</p>2019-02-28</li><br/><li><span>Geek_dcwrgy</span> 👍（111） 💬（50）<p>针对阿根一世的问题，问题其实出现在new Singleton()这里。
 这一行分对于CPU来讲，有3个指令：
 1.分配内存空间
 2.初始化对象
@@ -227,7 +227,7 @@ public class MySingleton {
 	public static MySingleton getInstance() { 
 		return MySingletonHandler.instance;
 	}
-}</div>2019-02-28</li><br/><li><span>阿根一世</span> 👍（108） 💬（10）<div>对于双重锁检查那个例子，我有一个疑问，A如果没有完成实例的初始化，锁应该不会释放的，B是拿不到锁的，怎么还会出问题呢？</div>2019-02-28</li><br/><li><span>MARK</span> 👍（85） 💬（5）<div>刚看过《java并发实战》，又是看了个开始就看不下去了😂😂，希望订阅专栏可以跟老师和其他童鞋一起坚持学习并发编程😄😄
+}</p>2019-02-28</li><br/><li><span>阿根一世</span> 👍（108） 💬（10）<p>对于双重锁检查那个例子，我有一个疑问，A如果没有完成实例的初始化，锁应该不会释放的，B是拿不到锁的，怎么还会出问题呢？</p>2019-02-28</li><br/><li><span>MARK</span> 👍（85） 💬（5）<p>刚看过《java并发实战》，又是看了个开始就看不下去了😂😂，希望订阅专栏可以跟老师和其他童鞋一起坚持学习并发编程😄😄
 
 思考题：在32位的机器上对long型变量进行加减操作存在并发隐患的说法是正确的。
 原因就是文章里的bug源头之二：线程切换带来的原子性问题。
@@ -246,12 +246,12 @@ Writes to and reads of references are always atomic, regardless of whether they 
 
 Some implementations may find it convenient to divide a single write action on a 64-bit long or double value into two write actions on adjacent 32-bit values. For efficiency&#39;s sake, this behavior is implementation-specific; an implementation of the Java Virtual Machine is free to perform writes to long and double values atomically or in two parts.
 
-Implementations of the Java Virtual Machine are encouraged to avoid splitting 64-bit values where possible. Programmers are encouraged to declare shared 64-bit values as volatile or synchronize their programs correctly to avoid possible complications.</div>2019-02-28</li><br/><li><span>xx鼠</span> 👍（47） 💬（6）<div>Singleton instance改为volatile或者final就完美了，这里面其实涉及Java的happen-before原则。</div>2019-02-28</li><br/><li><span>何方妖孽</span> 👍（33） 💬（9）<div>synchronized修饰的代码块里，会出现线程切换么？我理解的synchronized作用就是同步执行，不会线程切换，请作者给我解答下。</div>2019-03-01</li><br/><li><span>牧童纪年</span> 👍（33） 💬（7）<div>王老师，你文章中讲的 优化指令的执行次序 使得缓存能够更加合理的利用是什么意思？</div>2019-02-28</li><br/><li><span>Geek_1dn4jq</span> 👍（25） 💬（7）<div>老师,运行文中的测试代码,有时会出现9000多的结果,不知道是什么原因?</div>2019-02-28</li><br/><li><span>Gavin</span> 👍（24） 💬（3）<div>NIO和并发有什么关系呢？</div>2019-02-28</li><br/><li><span>null</span> 👍（19） 💬（4）<div>看完文章来刷评论，看到阿根一世的童鞋问题，确实是这样，锁🔒都还没有释放，线程B根本获取不到对象，所以线程A创建的对象是完整的，线程B后续获取的对象也是初始化完成的对象。
+Implementations of the Java Virtual Machine are encouraged to avoid splitting 64-bit values where possible. Programmers are encouraged to declare shared 64-bit values as volatile or synchronize their programs correctly to avoid possible complications.</p>2019-02-28</li><br/><li><span>xx鼠</span> 👍（47） 💬（6）<p>Singleton instance改为volatile或者final就完美了，这里面其实涉及Java的happen-before原则。</p>2019-02-28</li><br/><li><span>何方妖孽</span> 👍（33） 💬（9）<p>synchronized修饰的代码块里，会出现线程切换么？我理解的synchronized作用就是同步执行，不会线程切换，请作者给我解答下。</p>2019-03-01</li><br/><li><span>牧童纪年</span> 👍（33） 💬（7）<p>王老师，你文章中讲的 优化指令的执行次序 使得缓存能够更加合理的利用是什么意思？</p>2019-02-28</li><br/><li><span>Geek_1dn4jq</span> 👍（25） 💬（7）<p>老师,运行文中的测试代码,有时会出现9000多的结果,不知道是什么原因?</p>2019-02-28</li><br/><li><span>Gavin</span> 👍（24） 💬（3）<p>NIO和并发有什么关系呢？</p>2019-02-28</li><br/><li><span>null</span> 👍（19） 💬（4）<p>看完文章来刷评论，看到阿根一世的童鞋问题，确实是这样，锁🔒都还没有释放，线程B根本获取不到对象，所以线程A创建的对象是完整的，线程B后续获取的对象也是初始化完成的对象。
 然后回去再看了一遍那一小段，当我看到线程B竞争锁资源失败后被阻塞，我就更肯定，应该是文章描述有误。
 当再往下看文章，发现后面有说：“一切都很完美，无懈可击”。soga，这是描述我们自己觉得正常的场景。
 接着文章下面分析异常的原因，但是没提到线程B在哪停下来，因此我们的思维还是停留在前面那一段，线程A和线程B都过了第一个判空语句，来了竞争锁 syncronized 这，所以有阿根一世同样的疑问。建议老师调整一下，在分析异常原因时，说明一下在哪个语句时发生了线程切换，这样童鞋们也更好理解。
 
-😂这理解有偏差，属于可见性问题，是我们大脑缓存了之前的描述，导致了异常的理解😂</div>2019-03-31</li><br/><li><span>发条橙子 。</span> 👍（18） 💬（2）<div>老师 ，我有几个问题希望老师指点 ，也是涉及到操作系统的：
+😂这理解有偏差，属于可见性问题，是我们大脑缓存了之前的描述，导致了异常的理解😂</p>2019-03-31</li><br/><li><span>发条橙子 。</span> 👍（18） 💬（2）<p>老师 ，我有几个问题希望老师指点 ，也是涉及到操作系统的：
 
 1.  操作系统是以进程为单位共享资源 ，以线程单位进行调用 。 多个线程共享一个进程的资源 。 一个java应用占一个进程（jvm的内存模型的资源也在这个进程中） ，一个进程占一个cpu ， 所以老师所说的多核cpu缓存，每个cpu有自己的缓存 ，AB两个线程在不同的cpu上操作不太理解 ， 一个应用的AB两个线程是不是应该处在同个cpu上面 ？？？
 
@@ -260,5 +260,5 @@ Implementations of the Java Virtual Machine are encouraged to avoid splitting 64
 3. 我感觉老师第二点原子性中也有包含可见性问题，由于时间片到了， 当把资源读到自己的工作线程中时，由于不可见性，以为自己是最新的导致值不准确，这个也对应了第一个问题 ， 两个线程是否在同个进程内共享资源
 
 问题有点多 ， 可能自己的理解有偏差 ，希望老师指正
-</div>2019-02-28</li><br/><li><span>我会得到</span> 👍（17） 💬（1）<div>零点一过刚好看到更新，果断一口气读完，带劲！可见性，原子性，有序性，操作系统作为基础，内存模型，机器指令，编译原理，一个都不能少，开始有点意思了👍</div>2019-02-28</li><br/>
+</p>2019-02-28</li><br/><li><span>我会得到</span> 👍（17） 💬（1）<p>零点一过刚好看到更新，果断一口气读完，带劲！可见性，原子性，有序性，操作系统作为基础，内存模型，机器指令，编译原理，一个都不能少，开始有点意思了👍</p>2019-02-28</li><br/>
 </ul>

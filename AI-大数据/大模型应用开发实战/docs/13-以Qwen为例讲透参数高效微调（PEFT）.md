@@ -473,7 +473,7 @@ for example in test_examples:
 
 期待你的分享，欢迎与我交流。如果今天的内容让你有所收获，也欢迎你把这节课转发给有需要的朋友！我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>coderlee</span> 👍（0） 💬（0）<div>这节课，比较尴尬，window运行，一直提示
+<li><span>coderlee</span> 👍（0） 💬（0）<p>这节课，比较尴尬，window运行，一直提示
 Traceback (most recent call last):
   File &quot;D:\Workspace\AI\pwerfull_llm\13_FinetuneQwenPEFT\02_finetune_qwen_1b_lora_ok.py&quot;, line 123, in &lt;module&gt;
     trainer.train()
@@ -489,7 +489,7 @@ Traceback (most recent call last):
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 PermissionError: [Errno 13] Permission denied: &#39;D:\\Workspace\\AI\\pwerfull_llm\\13_FinetuneQwenPEFT\\results\\checkpoint-1&#39;
  10%|█         | 1&#47;10 [00:17&lt;02:39, 17.71s&#47;it]
-所以，我打算等后续找个linux环境，再实际操作下。</div>2024-11-18</li><br/><li><span>在路上</span> 👍（0） 💬（0）<div>佳哥好，什么时候应该使用微调，什么时候应该用RAG或sql agent啊？</div>2024-06-26</li><br/><li><span>ArtistLu</span> 👍（0） 💬（0）<div>老师，我用 Qwen2-0.5B 训练出来的效果不行。结果如下：
+所以，我打算等后续找个linux环境，再实际操作下。</p>2024-11-18</li><br/><li><span>在路上</span> 👍（0） 💬（0）<p>佳哥好，什么时候应该使用微调，什么时候应该用RAG或sql agent啊？</p>2024-06-26</li><br/><li><span>ArtistLu</span> 👍（0） 💬（0）<p>老师，我用 Qwen2-0.5B 训练出来的效果不行。结果如下：
 ---------------------------------------------------------
 Input: 肛门疼痛，痔疮，肛裂。
 Output: Instruction: 使用中医知识正确回答适合这个病例的中成药。
@@ -499,5 +499,5 @@ Answer: 、、。、黄、，、制、片、品、状、剂、性、炒、；、
 能帮忙解答几个问题吗？
 1.出现这种情况是不是预训练模型太小导致？
 2.训练的结果文件总大小只有十几M，为啥训练后这么小勒？
-3.如果只需要大模型回答很小领域问题，选择预训练模型大小有啥优劣？（比如我只想用大模型给 k8s 节点打分，用于调度）🙏</div>2024-06-25</li><br/>
+3.如果只需要大模型回答很小领域问题，选择预训练模型大小有啥优劣？（比如我只想用大模型给 k8s 节点打分，用于调度）🙏</p>2024-06-25</li><br/>
 </ul>

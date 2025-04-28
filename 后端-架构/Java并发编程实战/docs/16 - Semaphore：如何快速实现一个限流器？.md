@@ -140,11 +140,11 @@ pool.exec(t -> {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>CCC</span> 👍（273） 💬（8）<div>我理解的和管程相比，信号量可以实现的独特功能就是同时允许多个线程进入临界区，但是信号量不能做的就是同时唤醒多个线程去争抢锁，只能唤醒一个阻塞中的线程，而且信号量模型是没有Condition的概念的，即阻塞线程被醒了直接就运行了而不会去检查此时临界条件是否已经不满足了，基于此考虑信号量模型才会设计出只能让一个线程被唤醒，否则就会出现因为缺少Condition检查而带来的线程安全问题。正因为缺失了Condition，所以用信号量来实现阻塞队列就很麻烦，因为要自己实现类似Condition的逻辑。</div>2019-04-04</li><br/><li><span>老杨同志</span> 👍（171） 💬（7）<div>需要用线程安全的vector，因为信号量支持多个线程进入临界区，执行list的add和remove方法时可能是多线程并发执行</div>2019-04-04</li><br/><li><span>任大鹏</span> 👍（54） 💬（3）<div>有同学认为up()中的判断条件应该&gt;=0，我觉得有可能理解为生产者-消费者模式中的生产者了。可以这么想，&gt;0就意味着没有阻塞的线程了，所以只有&lt;=0的情况才需要唤醒一个等待的线程。其实down()和up()是成对出现的，并且是先调用down()获得锁，处理完成再调用up()释放锁，如果信号量初始值为1，应该是不会出现&gt;0的情况的，除非故意调先用up()，这也失去了信号量本身的意义了。不知道我理解的对不对。</div>2019-04-04</li><br/><li><span>Alvan</span> 👍（30） 💬（5）<div>很多人对up()方法的计数器count&lt;=0不理解，可以看下这里：
+<li><span>CCC</span> 👍（273） 💬（8）<p>我理解的和管程相比，信号量可以实现的独特功能就是同时允许多个线程进入临界区，但是信号量不能做的就是同时唤醒多个线程去争抢锁，只能唤醒一个阻塞中的线程，而且信号量模型是没有Condition的概念的，即阻塞线程被醒了直接就运行了而不会去检查此时临界条件是否已经不满足了，基于此考虑信号量模型才会设计出只能让一个线程被唤醒，否则就会出现因为缺少Condition检查而带来的线程安全问题。正因为缺失了Condition，所以用信号量来实现阻塞队列就很麻烦，因为要自己实现类似Condition的逻辑。</p>2019-04-04</li><br/><li><span>老杨同志</span> 👍（171） 💬（7）<p>需要用线程安全的vector，因为信号量支持多个线程进入临界区，执行list的add和remove方法时可能是多线程并发执行</p>2019-04-04</li><br/><li><span>任大鹏</span> 👍（54） 💬（3）<p>有同学认为up()中的判断条件应该&gt;=0，我觉得有可能理解为生产者-消费者模式中的生产者了。可以这么想，&gt;0就意味着没有阻塞的线程了，所以只有&lt;=0的情况才需要唤醒一个等待的线程。其实down()和up()是成对出现的，并且是先调用down()获得锁，处理完成再调用up()释放锁，如果信号量初始值为1，应该是不会出现&gt;0的情况的，除非故意调先用up()，这也失去了信号量本身的意义了。不知道我理解的对不对。</p>2019-04-04</li><br/><li><span>Alvan</span> 👍（30） 💬（5）<p>很多人对up()方法的计数器count&lt;=0不理解，可以看下这里：
 1、反证法验证一下，假如一个线程先执行down()操作，那么此时count的值是0，接着这个线程执行up()操作，此时count的值是1，如果count应该是大于等于0，那么应该唤醒其他线程，可是此时并没有线程在睡眠呀，count的值不应该是大于等于0。
-2、假如一个线程t1执行down()操作，此时count = 0，然后t1被中断，另外的线程t2执行down()操作，此时count=-1，t2阻塞睡眠，另外的线程t3执行down()操作，count=-2，t3也睡眠。count=-2 说明有两个线程在睡眠，接着t1执行up() 操作，此时count=-1，小于等于0，唤醒t2或者t3其中一个线程，假如计数器count是大于等于0才唤醒其他线程，这明显是不对的。</div>2019-09-09</li><br/><li><span>木卫六</span> 👍（21） 💬（4）<div>换ArrayList是不行的，临界区内可能存在多个线程来执行remove操作，出现不可预知的后果。
+2、假如一个线程t1执行down()操作，此时count = 0，然后t1被中断，另外的线程t2执行down()操作，此时count=-1，t2阻塞睡眠，另外的线程t3执行down()操作，count=-2，t3也睡眠。count=-2 说明有两个线程在睡眠，接着t1执行up() 操作，此时count=-1，小于等于0，唤醒t2或者t3其中一个线程，假如计数器count是大于等于0才唤醒其他线程，这明显是不对的。</p>2019-09-09</li><br/><li><span>木卫六</span> 👍（21） 💬（4）<p>换ArrayList是不行的，临界区内可能存在多个线程来执行remove操作，出现不可预知的后果。
 
-对于chaos同学说return之前释放的问题，我觉得可以这么理解：return的是执行后的结果，而不是“执行”。所以顺序应该是这样的：1acquire；2apply；3finally release；4return2的结果</div>2019-04-04</li><br/><li><span>缪文</span> 👍（16） 💬（1）<div>这个限流器实际上限的是并发量，也就是同时允许多少个请求通过，如果限制每秒请求数，不是这个实现的吧</div>2019-04-06</li><br/><li><span>刘彦辉</span> 👍（10） 💬（3）<div>假如有3个线程，线程A、B、C，信号量计数器为1，线程A执行down的时候变为0，不阻塞；线程B执行down，变为-1，阻塞；线程C执行down变为-2，阻塞。当线程A执行完，调用up后，变为-1，此时唤醒一个线程，那么请问唤醒之后的操作呢？唤醒之后直接就执行了业务代码了？还是唤醒之后还需要去先执行down？按分析的话应该不能执行down了，如果执行down的话，计数器变为-2，还会阻塞，所以是不是这块儿的阻塞和唤醒也是用的wait和notify呢？唤醒之后，从阻塞的代码开始继续执行，这样就可以成功执行下去了。麻烦老师解答一下哈，谢谢。</div>2019-09-20</li><br/><li><span>crazypokerk</span> 👍（9） 💬（4）<div>老师，那个计数器中得s.acquire()是需要捕获异常的。
+对于chaos同学说return之前释放的问题，我觉得可以这么理解：return的是执行后的结果，而不是“执行”。所以顺序应该是这样的：1acquire；2apply；3finally release；4return2的结果</p>2019-04-04</li><br/><li><span>缪文</span> 👍（16） 💬（1）<p>这个限流器实际上限的是并发量，也就是同时允许多少个请求通过，如果限制每秒请求数，不是这个实现的吧</p>2019-04-06</li><br/><li><span>刘彦辉</span> 👍（10） 💬（3）<p>假如有3个线程，线程A、B、C，信号量计数器为1，线程A执行down的时候变为0，不阻塞；线程B执行down，变为-1，阻塞；线程C执行down变为-2，阻塞。当线程A执行完，调用up后，变为-1，此时唤醒一个线程，那么请问唤醒之后的操作呢？唤醒之后直接就执行了业务代码了？还是唤醒之后还需要去先执行down？按分析的话应该不能执行down了，如果执行down的话，计数器变为-2，还会阻塞，所以是不是这块儿的阻塞和唤醒也是用的wait和notify呢？唤醒之后，从阻塞的代码开始继续执行，这样就可以成功执行下去了。麻烦老师解答一下哈，谢谢。</p>2019-09-20</li><br/><li><span>crazypokerk</span> 👍（9） 💬（4）<p>老师，那个计数器中得s.acquire()是需要捕获异常的。
 static int count;
     static final Semaphore s = new Semaphore(1);
 
@@ -155,7 +155,7 @@ static int count;
         }finally {
             s.release();
         }
-    }</div>2019-04-04</li><br/><li><span>ken</span> 👍（7） 💬（2）<div>
+    }</p>2019-04-04</li><br/><li><span>ken</span> 👍（7） 💬（2）<p>
 public class Food {
 
     public String name;
@@ -228,7 +228,7 @@ public class MicrowaveOvenPool {
     }
 
 }
-</div>2019-04-08</li><br/><li><span>长眉_张永</span> 👍（6） 💬（2）<div>对于进入的多个线程资源之间，如果有公用的信息的话，是否还需要加锁操作呢？</div>2019-04-09</li><br/><li><span>倚梦流</span> 👍（5） 💬（5）<div>限流器，基于老师的代码，自己手动完善了一下。
+</p>2019-04-08</li><br/><li><span>长眉_张永</span> 👍（6） 💬（2）<p>对于进入的多个线程资源之间，如果有公用的信息的话，是否还需要加锁操作呢？</p>2019-04-09</li><br/><li><span>倚梦流</span> 👍（5） 💬（5）<p>限流器，基于老师的代码，自己手动完善了一下。
 package com.thread.demo;
 
 import java.util.List;
@@ -293,8 +293,8 @@ public class ObjPool&lt;T,R&gt; {
 
 
 }
-</div>2019-07-07</li><br/><li><span>小和尚笨南北</span> 👍（5） 💬（6）<div>semaphore底层通过AQS实现，AQS内部通过一个volatile变量间接实现同步。
-根据happen-before原则的volatile规则和传递性规则。使用arraylist也不会发生线程安全问题。</div>2019-04-04</li><br/><li><span>木偶人King</span> 👍（4） 💬（1）<div>ObjPool(int size, T t){
+</p>2019-07-07</li><br/><li><span>小和尚笨南北</span> 👍（5） 💬（6）<p>semaphore底层通过AQS实现，AQS内部通过一个volatile变量间接实现同步。
+根据happen-before原则的volatile规则和传递性规则。使用arraylist也不会发生线程安全问题。</p>2019-04-04</li><br/><li><span>木偶人King</span> 👍（4） 💬（1）<p>ObjPool(int size, T t){
     pool = new Vector&lt;T&gt;(){};
     for(int i=0; i&lt;size; i++){
       pool.add(t);
@@ -303,7 +303,7 @@ public class ObjPool&lt;T,R&gt; {
   }
  &#47;&#47;--------------------------------
 
-老师这里pool.add(t)  一直循环添加的是同一个引用对象。没太明白。 为什么不是添加不同的t </div>2019-04-09</li><br/><li><span>QQ怪</span> 👍（3） 💬（2）<div>用初始化为1的Semaphore和管程来单单控制线程安全，哪个更有优势？为啥java不直接用信号量来实现互斥?</div>2019-04-05</li><br/><li><span>Presley</span> 👍（3） 💬（1）<div>进入临界区的N个线程不安全。add&#47;remove都是不安全的。拿remove举例, ArrayList remove()源码：
+老师这里pool.add(t)  一直循环添加的是同一个引用对象。没太明白。 为什么不是添加不同的t </p>2019-04-09</li><br/><li><span>QQ怪</span> 👍（3） 💬（2）<p>用初始化为1的Semaphore和管程来单单控制线程安全，哪个更有优势？为啥java不直接用信号量来实现互斥?</p>2019-04-05</li><br/><li><span>Presley</span> 👍（3） 💬（1）<p>进入临界区的N个线程不安全。add&#47;remove都是不安全的。拿remove举例, ArrayList remove()源码：
 public E remove(int index) {
         rangeCheck(index);
 
@@ -321,5 +321,5 @@ public E remove(int index) {
 
         return oldValue;
     }
-</div>2019-04-04</li><br/>
+</p>2019-04-04</li><br/>
 </ul>

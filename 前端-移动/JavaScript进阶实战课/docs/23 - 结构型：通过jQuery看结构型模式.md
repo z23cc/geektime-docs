@@ -318,6 +318,6 @@ set: function( elem, value ) {
 
 欢迎在留言区分享你的答案、交流学习心得或者提出问题，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。我们下期再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>郭慧娟</span> 👍（0） 💬（1）<div>Facebook ... 减少一层抽象，或避说呢，免创建新的 jQuery 对象。这里文案有问题</div>2022-11-10</li><br/><li><span>FSS</span> 👍（0） 💬（0）<div>&#47;&#47; 如果车型已知，就返回vin；未知就创建var createCar = (model, maker, isbn) =&gt; {
-形参isbn是否应该为vin</div>2023-12-12</li><br/>
+<li><span>郭慧娟</span> 👍（0） 💬（1）<p>Facebook ... 减少一层抽象，或避说呢，免创建新的 jQuery 对象。这里文案有问题</p>2022-11-10</li><br/><li><span>FSS</span> 👍（0） 💬（0）<p>&#47;&#47; 如果车型已知，就返回vin；未知就创建var createCar = (model, maker, isbn) =&gt; {
+形参isbn是否应该为vin</p>2023-12-12</li><br/>
 </ul>

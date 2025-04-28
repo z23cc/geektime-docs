@@ -245,9 +245,9 @@ spec:
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>纳爱斯</span> 👍（41） 💬（3）<div>老师，是每个 node 上都会有 iptables 的全部规则吗</div>2019-04-11</li><br/><li><span>甘陵笑笑生</span> 👍（7） 💬（2）<div>请教一下 service的VIP设置后会变吗 如果变 什么时候会变</div>2019-05-14</li><br/><li><span>AmyHuang</span> 👍（2） 💬（2）<div>老师 现在有个问题请教：service 三副本 把一个副本所在节点驱逐，pod迁移到新的节点有一段时间可以telnet podip +port，但是直接curl service +port 会有数据中断，这个可能是我们设置什么导致呢？</div>2020-03-10</li><br/><li><span>追寻云的痕迹</span> 👍（88） 💬（2）<div>iptables是万恶之源，在复杂系统中，网络处理越简单越好。现在k8s这套玩法，给实际工作中的运维排错带来极大的麻烦。</div>2018-11-16</li><br/><li><span>qingbo</span> 👍（37） 💬（2）<div>看到也有同学问pod DNS，希望能讲得更详细些。我查阅官方文档及自己实践后的了解是这两种pod有DNS记录：
+<li><span>纳爱斯</span> 👍（41） 💬（3）<p>老师，是每个 node 上都会有 iptables 的全部规则吗</p>2019-04-11</li><br/><li><span>甘陵笑笑生</span> 👍（7） 💬（2）<p>请教一下 service的VIP设置后会变吗 如果变 什么时候会变</p>2019-05-14</li><br/><li><span>AmyHuang</span> 👍（2） 💬（2）<p>老师 现在有个问题请教：service 三副本 把一个副本所在节点驱逐，pod迁移到新的节点有一段时间可以telnet podip +port，但是直接curl service +port 会有数据中断，这个可能是我们设置什么导致呢？</p>2020-03-10</li><br/><li><span>追寻云的痕迹</span> 👍（88） 💬（2）<p>iptables是万恶之源，在复杂系统中，网络处理越简单越好。现在k8s这套玩法，给实际工作中的运维排错带来极大的麻烦。</p>2018-11-16</li><br/><li><span>qingbo</span> 👍（37） 💬（2）<p>看到也有同学问pod DNS，希望能讲得更详细些。我查阅官方文档及自己实践后的了解是这两种pod有DNS记录：
 1. statefulset的pod。有人问之前讲DNS的是在哪，就是“20 | 深入理解StatefulSet（三）：有状态应用实践”这一篇。
-2. pod显式指定了hostname和subdomain，并且有个headless service的名字和subdomain一样。在“27 | 聪明的微创新：Operator工作原理解读”一篇中讲到的etcd operator就是这样让pod拥有了DNS记录。Deployment的pod template也可以指定hostname和subdomain，但是却没办法给每个pod分配不同的hostname。指定hostname和subdomain之后，hostname.subdomain.default.svc.cluster.local这样的域名确实可以解析，但是因为多个pod都是这个FQDN，所以解析出来的效果和headless service一样，多个A记录，也就失去意义了。github上有个issue想让deployment管理的pod也有独立的DNS，好像没得到支持。</div>2019-04-30</li><br/><li><span>DJH</span> 👍（30） 💬（1）<div>老师，..svc.cluster.local这些点前面的东西能写全吗？录音听了N次也没记下来。文字不行的话能不能弄个图片？</div>2018-11-16</li><br/><li><span>勤劳的小胖子-libo</span> 👍（29） 💬（0）<div>示例终于都可以工作了，深化理解。
+2. pod显式指定了hostname和subdomain，并且有个headless service的名字和subdomain一样。在“27 | 聪明的微创新：Operator工作原理解读”一篇中讲到的etcd operator就是这样让pod拥有了DNS记录。Deployment的pod template也可以指定hostname和subdomain，但是却没办法给每个pod分配不同的hostname。指定hostname和subdomain之后，hostname.subdomain.default.svc.cluster.local这样的域名确实可以解析，但是因为多个pod都是这个FQDN，所以解析出来的效果和headless service一样，多个A记录，也就失去意义了。github上有个issue想让deployment管理的pod也有独立的DNS，好像没得到支持。</p>2019-04-30</li><br/><li><span>DJH</span> 👍（30） 💬（1）<p>老师，..svc.cluster.local这些点前面的东西能写全吗？录音听了N次也没记下来。文字不行的话能不能弄个图片？</p>2018-11-16</li><br/><li><span>勤劳的小胖子-libo</span> 👍（29） 💬（0）<p>示例终于都可以工作了，深化理解。
 一种是通过&lt;serviceName&gt;.&lt;namespace&gt;.svc.cluster.local访问。对应于clusterIP
 另一种是通过&lt;podName&gt;.&lt;serviceName&gt;.&lt;namesapce&gt;.svc.cluster.local访问,对应于headless service.
 &#47; # nslookup *.default.svc.cluster.local
@@ -258,24 +258,24 @@ Name:      *.default.svc.cluster.local
 Address 1: 10.244.1.7 busybox-3.default-subdomain.default.svc.cluster.local
 Address 2: 10.96.0.1 kubernetes.default.svc.cluster.local
 Address 3: 10.97.103.223 hostnames.default.svc.cluster.local
-</div>2019-01-04</li><br/><li><span>djfhchdh</span> 👍（17） 💬（0）<div>ipvs负载均衡：round robin
+</p>2019-01-04</li><br/><li><span>djfhchdh</span> 👍（17） 💬（0）<p>ipvs负载均衡：round robin
     least connection
     destination hashing
     source hashing
     shortest expected delay
     never queue
-    overflow-connection</div>2019-11-25</li><br/><li><span>双叶</span> 👍（13） 💬（1）<div>不太赞同 ipvs 比 iptables 快是因为把更多的操作放到了内核里面，不管 ipvs 还是 iptables，他的所有逻辑都是在内核里面跑的，只是 iptables 需要遍历规则，而规则数量会跟随 pod 数量增长，导致时间复杂度是 O(n)，而 ipvs 是专门做负载均衡的，时间复杂度是 O(1)。
+    overflow-connection</p>2019-11-25</li><br/><li><span>双叶</span> 👍（13） 💬（1）<p>不太赞同 ipvs 比 iptables 快是因为把更多的操作放到了内核里面，不管 ipvs 还是 iptables，他的所有逻辑都是在内核里面跑的，只是 iptables 需要遍历规则，而规则数量会跟随 pod 数量增长，导致时间复杂度是 O(n)，而 ipvs 是专门做负载均衡的，时间复杂度是 O(1)。
 
 这篇文章里面有比较细致的说明：https:&#47;&#47;www.tigera.io&#47;blog&#47;comparing-kube-proxy-modes-iptables-or-ipvs&#47;
-基本来说，就是 iptables 不能放太多规则</div>2022-07-11</li><br/><li><span>runner</span> 👍（11） 💬（2）<div>请问老师，每个节点会有全部的iptables规则么，还是只有自己所属服务的规则？
-如果服务是nodePort类型，它会在所有节点上占用端口？还是容器所在的几个节点占用端口？</div>2018-11-16</li><br/><li><span>李康</span> 👍（9） 💬（1）<div>
+基本来说，就是 iptables 不能放太多规则</p>2022-07-11</li><br/><li><span>runner</span> 👍（11） 💬（2）<p>请问老师，每个节点会有全部的iptables规则么，还是只有自己所属服务的规则？
+如果服务是nodePort类型，它会在所有节点上占用端口？还是容器所在的几个节点占用端口？</p>2018-11-16</li><br/><li><span>李康</span> 👍（9） 💬（1）<p>
 -A KUBE-SEP-57KPRZ3JQVENLNBR -s 10.244.3.6&#47;32 -m comment --comment &quot;default&#47;hostnames:&quot; -j MARK --set-xmark 0x00004000&#47;0x00004000
 
 -A KUBE-SEP-WNBA2IHDGP2BOBGZ -s 10.244.1.7&#47;32 -m comment --comment &quot;default&#47;hostnames:&quot; -j MARK --set-xmark 0x00004000&#47;0x00004000
 
 -A KUBE-SEP-X3P2623AGDH6CDF3 -s 10.244.2.3&#47;32 -m comment --comment &quot;default&#47;hostnames:&quot; -j MARK --set-xmark 0x00004000&#47;0x00004000
 
-问下为啥源地址是这个啊？现在数据包源地址不应该是客户端的地址吗？</div>2020-02-23</li><br/><li><span>mcc</span> 👍（8） 💬（9）<div>描述一个实际使用中遇到kube-proxy的一个问题。我使用service的nodeport模式对外发布服务，前端使用openresty做代理的，upstream就配置node ip+nodeport。在使用过程中发现openresty经常不定期报104:connection reset by peer when read response head这个错误，从错误看出openstry从nodeport读取数据的时候tcp连接被重置了，使用同一openresty的后端是普通虚拟机的节点的服务却没有这个问题，问题还有个特点就是某个服务长时间没有被访问，第一次点击的时候就会出现，然后后面就好了。nodeport是被kube-proxy监听的，问题就出在openresty与kube-proxy的tcp连接上，能否帮忙分析kube-proxy为何会重置连接？</div>2018-11-16</li><br/><li><span>grep</span> 👍（4） 💬（2）<div>示例里这里打出来的 endpoints ip：
+问下为啥源地址是这个啊？现在数据包源地址不应该是客户端的地址吗？</p>2020-02-23</li><br/><li><span>mcc</span> 👍（8） 💬（9）<p>描述一个实际使用中遇到kube-proxy的一个问题。我使用service的nodeport模式对外发布服务，前端使用openresty做代理的，upstream就配置node ip+nodeport。在使用过程中发现openresty经常不定期报104:connection reset by peer when read response head这个错误，从错误看出openstry从nodeport读取数据的时候tcp连接被重置了，使用同一openresty的后端是普通虚拟机的节点的服务却没有这个问题，问题还有个特点就是某个服务长时间没有被访问，第一次点击的时候就会出现，然后后面就好了。nodeport是被kube-proxy监听的，问题就出在openresty与kube-proxy的tcp连接上，能否帮忙分析kube-proxy为何会重置连接？</p>2018-11-16</li><br/><li><span>grep</span> 👍（4） 💬（2）<p>示例里这里打出来的 endpoints ip：
 kubectl get endpoints hostnames
 NAME        ENDPOINTS
 hostnames   10.244.0.5:9376,10.244.0.6:9376,10.244.0.7:9376
@@ -290,7 +290,7 @@ hostnames   10.244.0.5:9376,10.244.0.6:9376,10.244.0.7:9376
 -A KUBE-SEP-X3P2623AGDH6CDF3 -s 10.244.2.3&#47;32 -m comment --comment &quot;default&#47;hostnames:&quot; -j MARK --set-xmark 0x00004000&#47;0x00004000
 -A KUBE-SEP-X3P2623AGDH6CDF3 -p tcp -m comment --comment &quot;default&#47;hostnames:&quot; -m tcp -j DNAT --to-destination 10.244.2.3:9376
 
-是不是中间重新部署过？</div>2019-09-27</li><br/><li><span>艾斯Z艾穆</span> 👍（4） 💬（1）<div>您好，我使用coreDNS插件版本是1.2.6 
+是不是中间重新部署过？</p>2019-09-27</li><br/><li><span>艾斯Z艾穆</span> 👍（4） 💬（1）<p>您好，我使用coreDNS插件版本是1.2.6 
 配置文件的内容：
 Corefile: |
     .:53 {
@@ -308,5 +308,5 @@ Corefile: |
         reload
         loadbalance
     }
-在解析公网的域名的时候会有小概率随机出现unknown host，请问会是什么问题</div>2018-12-03</li><br/><li><span>独孤九剑</span> 👍（3） 💬（0）<div>“服务”本质是一种“反向代理”机制</div>2021-07-01</li><br/>
+在解析公网的域名的时候会有小概率随机出现unknown host，请问会是什么问题</p>2018-12-03</li><br/><li><span>独孤九剑</span> 👍（3） 💬（0）<p>“服务”本质是一种“反向代理”机制</p>2021-07-01</li><br/>
 </ul>

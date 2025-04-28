@@ -416,14 +416,14 @@ def parse(self, response):
 
 欢迎你在留言区与我交流讨论，你也可以把代码链接附在评论区，我会选取有代表性的代码进行点评，我们下节课见！
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>Geek_ccc0fd</span> 👍（3） 💬（1）<div>新安装selemium的API变了，而且xpath获取的路径有点问题，我这里获取不到一页的全部内容，我修改了一下：
+<li><span>Geek_ccc0fd</span> 👍（3） 💬（1）<p>新安装selemium的API变了，而且xpath获取的路径有点问题，我这里获取不到一页的全部内容，我修改了一下：
 title = driver.find_elements(By.XPATH, &quot;&#47;&#47;div[@class=&#39;feed-card-item&#39;]&#47;h2&#47;a[@target=&#39;_blank&#39;]&quot;)
 time = driver.find_elements(By.XPATH,&quot;&#47;&#47;div[@class=&#39;feed-card-item&#39;]&#47;h2&#47;..&#47;div[@class=&#39;feed-card-a feed-card-clearfix&#39;]&#47;div[@class=&#39;feed-card-time&#39;]&quot;)
 然后就是翻页点击那里我这边跑下来也有问题，根据xpath会获取两个a标签,所以需要增加索引：
-driver.find_elements(By.XPATH,&quot;&#47;&#47;div[@class=&#39;feed-card-page&#39;]&#47;span[@class=&#39;pagebox_next&#39;]&#47;a&quot;)[0].click()</div>2023-05-06</li><br/><li><span>未来已来</span> 👍（1） 💬（2）<div>截止到 5月3日，新安装的 selemium 只有 find_elements 方法，老师的代码需改为：
+driver.find_elements(By.XPATH,&quot;&#47;&#47;div[@class=&#39;feed-card-page&#39;]&#47;span[@class=&#39;pagebox_next&#39;]&#47;a&quot;)[0].click()</p>2023-05-06</li><br/><li><span>未来已来</span> 👍（1） 💬（2）<p>截止到 5月3日，新安装的 selemium 只有 find_elements 方法，老师的代码需改为：
 `title = driver.find_elements(By.XPATH, &quot;&#47;&#47;h2[@class=&#39;undefined&#39;]&#47;a[@target=&#39;_blank&#39;]&quot;)`
 `time = driver.find_elements(By.XPATH, &quot;&#47;&#47;h2[@class=&#39;undefined&#39;]&#47;..&#47;div[@class=&#39;feed-card-a feed-card-clearfix&#39;]&#47;div[@class=&#39;feed-card-time&#39;]&quot;)`
-以此类推</div>2023-05-03</li><br/><li><span>Abigail</span> 👍（0） 💬（1）<div>应该设计一个简单点的例子, python 起码也要用 3.9 啊</div>2023-10-24</li><br/><li><span>alexliu</span> 👍（0） 💬（1）<div>在运行下一页click()的时候，有可能出现ElementNotInteractableException错误，解决方案：
+以此类推</p>2023-05-03</li><br/><li><span>Abigail</span> 👍（0） 💬（1）<p>应该设计一个简单点的例子, python 起码也要用 3.9 啊</p>2023-10-24</li><br/><li><span>alexliu</span> 👍（0） 💬（1）<p>在运行下一页click()的时候，有可能出现ElementNotInteractableException错误，解决方案：
 1、在driver.get(response.url)和click()后添加延时time.sleep(2)
 2、保持chrome的窗口大小一致 self.option.add_argument(&quot;--window-size=1960,1080&quot;)
 try... except...部分代码如下：
@@ -440,14 +440,14 @@ try... except...部分代码如下：
                 print(&quot; not found page.&quot;, e)
                 break
             except Exception as e:
-                print(&quot;unkwon error: &quot;, e)</div>2023-06-01</li><br/><li><span>Geek_ccc0fd</span> 👍（0） 💬（1）<div>我们在parse里面可以直接使用response.xpath获取元素，和使用 driver.find_elements是同样的效果，为什么还要用selenium来做浏览器的操作呢？</div>2023-05-06</li><br/><li><span>安菲尔德</span> 👍（0） 💬（1）<div>请问哪有main.py文件呢，没有看到</div>2023-05-02</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>Q3：源码放在什么地方啊？能否把源码集中放到一个公共地方? 比如github等。</div>2023-04-26</li><br/><li><span>peter</span> 👍（0） 💬（3）<div>Q1：第七课，创建环境的最后几步，不停出错，最后一个错误是：执行“scrapy genspider sina_spider sina.com.cn”，报告：lib\string.py&quot;, line 132, in substitute
+                print(&quot;unkwon error: &quot;, e)</p>2023-06-01</li><br/><li><span>Geek_ccc0fd</span> 👍（0） 💬（1）<p>我们在parse里面可以直接使用response.xpath获取元素，和使用 driver.find_elements是同样的效果，为什么还要用selenium来做浏览器的操作呢？</p>2023-05-06</li><br/><li><span>安菲尔德</span> 👍（0） 💬（1）<p>请问哪有main.py文件呢，没有看到</p>2023-05-02</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>Q3：源码放在什么地方啊？能否把源码集中放到一个公共地方? 比如github等。</p>2023-04-26</li><br/><li><span>peter</span> 👍（0） 💬（3）<p>Q1：第七课，创建环境的最后几步，不停出错，最后一个错误是：执行“scrapy genspider sina_spider sina.com.cn”，报告：lib\string.py&quot;, line 132, in substitute
     return self.pattern.sub(convert, self.template)
 TypeError: cannot use a string pattern on a bytes-like object
 网上搜了，大意说是python2和python3不匹配导致的。 我是完全按照老师的步骤来安装的，安装的是pythno3，怎么会有python2呢？当然，这个文件还没有解决，进行不下去了，郁闷啊。 
-Q2：能否建一个微信群？遇到问题可以协商。 另外，老师能否更及时地回复留言？</div>2023-04-26</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<div>老师，关于代码有些疑惑，第一：为什么parse_namedetail方法不再使用driver发起http请求和获取html标签内容？
+Q2：能否建一个微信群？遇到问题可以协商。 另外，老师能否更及时地回复留言？</p>2023-04-26</li><br/><li><span>GAC·DU</span> 👍（0） 💬（1）<p>老师，关于代码有些疑惑，第一：为什么parse_namedetail方法不再使用driver发起http请求和获取html标签内容？
 第二：desc = response.xpath(&quot;&#47;&#47;div[@class=&#39;article&#39;]&#47;p&#47;text()&quot;).extract()
         desc = selector.xpath(&quot;&#47;&#47;div[@class=&#39;article&#39;]&#47;p&#47;text()&quot;).extract() 
-我测试了两个代码都可以使用，那为什么不直接使用response，反而要生成一个selector？</div>2023-04-26</li><br/><li><span>Weitzenböck</span> 👍（1） 💬（1）<div>如果出现这个错误：__init__() got an unexpected keyword argument &#39;chrome_options&#39; 代码里改为 driver = webdriver.Chrome(options=self.option)具体源码是：
+我测试了两个代码都可以使用，那为什么不直接使用response，反而要生成一个selector？</p>2023-04-26</li><br/><li><span>Weitzenböck</span> 👍（1） 💬（1）<p>如果出现这个错误：__init__() got an unexpected keyword argument &#39;chrome_options&#39; 代码里改为 driver = webdriver.Chrome(options=self.option)具体源码是：
 class WebDriver(ChromiumDriver):
     &quot;&quot;&quot;Controls the ChromeDriver and allows you to drive the browser.&quot;&quot;&quot;
 
@@ -477,9 +477,9 @@ class WebDriver(ChromiumDriver):
             self.options,
             self.service,
             self.keep_alive,
-        )</div>2023-06-15</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<div>mac系统，爬取过程中，可能会报错：无法打开chromedriver，因为无法验证开发者。
+        )</p>2023-06-15</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<p>mac系统，爬取过程中，可能会报错：无法打开chromedriver，因为无法验证开发者。
 如果是brew安装的chromedriver，可以执行：xattr -d com.apple.quarantine &#47;opt&#47;homebrew&#47;bin&#47;chromedriver进行可信授权。
-如果不是brew安装的，需要自己找到chromedriver的安装路径，然后执行xattr -d com.apple.quarantine 你的chromedriver的路径</div>2024-08-22</li><br/><li><span>悟尘</span> 👍（0） 💬（1）<div> # 尝试点击下一页
+如果不是brew安装的，需要自己找到chromedriver的安装路径，然后执行xattr -d com.apple.quarantine 你的chromedriver的路径</p>2024-08-22</li><br/><li><span>悟尘</span> 👍（0） 💬（1）<p> # 尝试点击下一页
             try:
                 # next_page_link = WebDriverWait(driver, 30).until(
                 #     EC.element_to_be_clickable(
@@ -493,6 +493,6 @@ class WebDriver(ChromiumDriver):
 
 打出的异常是：Error clicking next page link: Message: stale element reference: stale element not found
 
-这是因为什么？</div>2023-12-12</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<div>为什么我的翻页不起作用呢？
-</div>2023-12-12</li><br/>
+这是因为什么？</p>2023-12-12</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<p>为什么我的翻页不起作用呢？
+</p>2023-12-12</li><br/>
 </ul>

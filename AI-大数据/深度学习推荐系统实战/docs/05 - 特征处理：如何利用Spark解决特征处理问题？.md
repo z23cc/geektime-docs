@@ -170,7 +170,7 @@ _（参考 com.wzhe.sparrowrecsys.offline.spark.featureeng.FeatureEngineering中
 
 这就是我们这节课的全部内容了，你掌握得怎么样？欢迎你把这节课转发出去。下节课我们将讲解一种更高阶的特征处理方法，它同时也是深度学习知识体系中一个非常重要的部分，我们到时候见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>JustDoDT</span> 👍（78） 💬（5）<div>Normalizer、StandardScaler、RobustScaler、MinMaxScaler 都是用让数据无量纲化
+<li><span>JustDoDT</span> 👍（78） 💬（5）<p>Normalizer、StandardScaler、RobustScaler、MinMaxScaler 都是用让数据无量纲化
 Normalizer:  正则化；（和Python的sklearn一样是按行处理，而不是按列[每一列是一个特征]处理，原因是：Normalization主要思想是对每个样本计算其p-范数，然后对该样本中每个元素除以该范数，这样处理的结果是使得每个处理后样本的p-范数(l1-norm,l2-norm)等于1。）针对每行样本向量：l1: 每个元素&#47;样本中每个元素绝对值的和，l2: 每个元素&#47;样本中每个元素的平方和开根号，lp: 每个元素&#47;每个元素的p次方和的p次根，默认用l2范数。
 
 StandardScaler：数据标准化；(xi - u) &#47; σ 【u:均值，σ：方差】当数据(x)按均值(μ)中心化后，再按标准差(σ)缩放，数据就会服从为均值为0，方差为1的正态分布（即标准正态分布）。
@@ -178,7 +178,7 @@ StandardScaler：数据标准化；(xi - u) &#47; σ 【u:均值，σ：方差�
 RobustScaler: (xi - median) &#47; IQR 【median是样本的中位数，IQR是样本的 四分位距：根据第1个四分位数和第3个四分位数之间的范围来缩放数据】
 
 MinMaxScaler：数据归一化，(xi - min(x)) &#47; (max(x) - min(x)) ;当数据(x)按照最小值中心化后，再按极差（最大值 - 最小值）缩放，数据移动了最小值个单位，并且会被收敛到 [0,1]之间
-</div>2020-10-12</li><br/><li><span>李@君</span> 👍（27） 💬（5）<div>对训练数据进行平方或者开方，是为了改变训练数据的分布。训练数据的分布被改变后，训练出来的模型岂不是不能正确拟合训练数据了。</div>2020-10-16</li><br/><li><span>JustDoDT</span> 👍（18） 💬（3）<div>Multiple编码
+</p>2020-10-12</li><br/><li><span>李@君</span> 👍（27） 💬（5）<p>对训练数据进行平方或者开方，是为了改变训练数据的分布。训练数据的分布被改变后，训练出来的模型岂不是不能正确拟合训练数据了。</p>2020-10-16</li><br/><li><span>JustDoDT</span> 👍（18） 💬（3）<p>Multiple编码
 顾名思义，Multiple编码特征将多个属性同时编码到一个特征中。在推荐场景中，单个用户对哪些物品感兴趣的特征就是一种Multiple编码特征，如，表示某用户对产品1、产品2、产品3、产品4是否感兴趣，则这个特征可能有多个取值，如用户A对产品1和产品2感兴趣，用户B对产品1和产品4感兴趣，用户C对产品1、产品3和产品4感兴趣，则用户兴趣特征为
 用户	UserInterests
 A	[1, 2]
@@ -193,9 +193,9 @@ C	[1, 0, 1, 1]
 
 如何使用Multiple编码呢？
 我们将多个属性同时编码到同一个特征中，目的就是同时利用多个属性的特征。经过Multiple编码后的特征大小为[batch_size, num_items]，记作U，构建物品items的Embedding矩阵，该矩阵维度为[num_items, embedding_size]，记作V，将矩阵U和矩阵V相乘，我们就得到了大小为[batch_size， embedding_size]的多属性表示。
-参考资料：https:&#47;&#47;www.codeleading.com&#47;article&#47;97252516619&#47;#_OneHot_19</div>2020-10-12</li><br/><li><span>twzd</span> 👍（13） 💬（3）<div>老师请教一下，movieIdVector列输出结果中(1001,[1],[1.0])，每一列表示什么含义啊</div>2020-11-10</li><br/><li><span>Geek_ddf8b1</span> 👍（10） 💬（1）<div>老师 我看您FeatureEngForRecModel.scala代码中将特征写入redis是以哈希表的格式写入的，而且有些特征直接是类别型的文本数据。 
+参考资料：https:&#47;&#47;www.codeleading.com&#47;article&#47;97252516619&#47;#_OneHot_19</p>2020-10-12</li><br/><li><span>twzd</span> 👍（13） 💬（3）<p>老师请教一下，movieIdVector列输出结果中(1001,[1],[1.0])，每一列表示什么含义啊</p>2020-11-10</li><br/><li><span>Geek_ddf8b1</span> 👍（10） 💬（1）<p>老师 我看您FeatureEngForRecModel.scala代码中将特征写入redis是以哈希表的格式写入的，而且有些特征直接是类别型的文本数据。 
        这种方式线上读取特征再后续处理输入排序模型预估的时候会不会效率很低，预估打分时间较长？比如取出文本特征做onehot 或者multihot变换等等，是否可以将文本特征onehot 或者multihot处理后再写入redis？ 
-     还有特征除了以hash表形式还可以以其它数据结构存到redis，比如以probuf对象、libsvm数据格式的特征索引：特征值的字符串存到redis 您对这几种存储方式怎么看？哪种更好？</div>2020-12-06</li><br/><li><span>Capricornus</span> 👍（6） 💬（1）<div>我使用的spark3.0的环境，脱离老师的项目，单独建立的用来学习。
+     还有特征除了以hash表形式还可以以其它数据结构存到redis，比如以probuf对象、libsvm数据格式的特征索引：特征值的字符串存到redis 您对这几种存储方式怎么看？哪种更好？</p>2020-12-06</li><br/><li><span>Capricornus</span> 👍（6） 💬（1）<p>我使用的spark3.0的环境，脱离老师的项目，单独建立的用来学习。
 1. 下载Scala支持，[下载链接](https:&#47;&#47;www.scala-lang.org&#47;download&#47;2.12.12.html)
 2. 解压后放在指定的目录
     ```bash
@@ -241,8 +241,8 @@ C	[1, 0, 1, 1]
       .agg(count(lit(1)).as(&quot;ratingCount&quot;),
         avg(col(&quot;rating&quot;)).as(&quot;avgRating&quot;),
         functions.variance(col(&quot;rating&quot;)).as(&quot;ratingVar&quot;))
-      .withColumn(&quot;avgRatingVec&quot;, double2vec(col(&quot;avgRating&quot;)))</div>2021-01-05</li><br/><li><span>张弛 Conor</span> 👍（6） 💬（2）<div>请教老师，像在电影评分这样的离散数值(且比较稀疏)例子中，如果需要取得分桶数较多，而导致分位数附近均是同一数值的情况下，如何使用分桶的方法呢？
-比如按照分桶法首先排序得到评分为5,5,4,4,4,4,4,4,3,3,3,3,2,2,1(共15个)。取桶数为3时，第一个桶内有前两个5，而后面的6个4中应该选择哪3个来分到第一个桶呢？</div>2020-10-14</li><br/><li><span>神经蛙</span> 👍（4） 💬（2）<div>--- 看了几位同学的留言，受益匪浅啊。希望大家多多交流~
+      .withColumn(&quot;avgRatingVec&quot;, double2vec(col(&quot;avgRating&quot;)))</p>2021-01-05</li><br/><li><span>张弛 Conor</span> 👍（6） 💬（2）<p>请教老师，像在电影评分这样的离散数值(且比较稀疏)例子中，如果需要取得分桶数较多，而导致分位数附近均是同一数值的情况下，如何使用分桶的方法呢？
+比如按照分桶法首先排序得到评分为5,5,4,4,4,4,4,4,3,3,3,3,2,2,1(共15个)。取桶数为3时，第一个桶内有前两个5，而后面的6个4中应该选择哪3个来分到第一个桶呢？</p>2020-10-14</li><br/><li><span>神经蛙</span> 👍（4） 💬（2）<p>--- 看了几位同学的留言，受益匪浅啊。希望大家多多交流~
 
 1.请你查阅一下 Spark MLlib 的编程手册，找出 Normalizer、StandardScaler、RobustScaler、MinMaxScaler 这个几个特征处理方法有什么不同。
 
@@ -271,11 +271,11 @@ vector
 数据结构：
 SparseVector
 
-其中的数据分别是：（类别数量，索引数组，值数组）。索引数组长度必须等于值数组长度。 </div>2020-12-03</li><br/><li><span>fsc2016</span> 👍（4） 💬（2）<div>第二个问题：
+其中的数据分别是：（类别数量，索引数组，值数组）。索引数组长度必须等于值数组长度。 </p>2020-12-03</li><br/><li><span>fsc2016</span> 👍（4） 💬（2）<p>第二个问题：
 One-hot特征是调用OneHotEncoderEstimator对movieId转换，生成了特征movieIdVector
 Multi-hot 特征是调用Vectors.sparse方法，对处理后的genreIndexes转换，生成vector。
 这俩个特征都是稀疏向量表示，不是稠密向量
-</div>2020-10-16</li><br/><li><span>liput</span> 👍（3） 💬（2）<div>请问老师，看到课程里面特征构造都是在offline批量计算得到特征，而在online再另外计算特征，这里经常会出现不一致的情况。想问下，在工业实践中，有什么好的方法去保证这两个地方的一致性呢？</div>2021-05-07</li><br/><li><span>Yvonne</span> 👍（3） 💬（1）<div>谢谢老师！在读youtube论文的时候，当时没有特别理解为什么要将原值，开方，平方都放进去，解释是：In addition to the raw normalized feature ˜x, we also input powers ˜x2 and √x˜, giving the network more expressive power by allowing it to easily form super- and sub-linear functions of the feature. Feeding powers of continuous features was found to improve offline accuracy.…… 当时没能理解为什么。您提到可以用于改变分布特征，突然就理解了XD</div>2021-04-25</li><br/><li><span>Capricornus</span> 👍（3） 💬（1）<div>+-------+-----------+-----------------+
+</p>2020-10-16</li><br/><li><span>liput</span> 👍（3） 💬（2）<p>请问老师，看到课程里面特征构造都是在offline批量计算得到特征，而在online再另外计算特征，这里经常会出现不一致的情况。想问下，在工业实践中，有什么好的方法去保证这两个地方的一致性呢？</p>2021-05-07</li><br/><li><span>Yvonne</span> 👍（3） 💬（1）<p>谢谢老师！在读youtube论文的时候，当时没有特别理解为什么要将原值，开方，平方都放进去，解释是：In addition to the raw normalized feature ˜x, we also input powers ˜x2 and √x˜, giving the network more expressive power by allowing it to easily form super- and sub-linear functions of the feature. Feeding powers of continuous features was found to improve offline accuracy.…… 当时没能理解为什么。您提到可以用于改变分布特征，突然就理解了XD</p>2021-04-25</li><br/><li><span>Capricornus</span> 👍（3） 💬（1）<p>+-------+-----------+-----------------+
 |movieId|ratingCount|ratingCountBucket|
 +-------+-----------+-----------------+
 |    296|      14616|             13.0|
@@ -299,7 +299,7 @@ Multi-hot 特征是调用Vectors.sparse方法，对处理后的genreIndexes转�
 |    380|       9364|             12.0|
 |     47|       9335|             12.0|
 +-------+-----------+-----------------+
-老师我设置的分桶数是20，为什么最大的桶标号不是19啊？</div>2021-01-24</li><br/><li><span>杨佳亦</span> 👍（3） 💬（2）<div>MinMaxScaler: 
+老师我设置的分桶数是20，为什么最大的桶标号不是19啊？</p>2021-01-24</li><br/><li><span>杨佳亦</span> 👍（3） 💬（2）<p>MinMaxScaler: 
 记录数据整体的最大&#47;最小值为max&#47;min, 对于Feature E，若Emax!=Emin, 则rescale后值=(Ei - Emin) &#47; (Emax - Emin) * (max - min) + min. 若Emax == Emin, 则rescale后值=0.5*(min + max). 
 
 Normalizer: 
@@ -309,8 +309,8 @@ StandardScaler:
 常用的数据标准化方法，即计算样本在所有特征下的均值和标准差，用数据减均值以中心化，再除以标准差以缩放至单位1. 就是一个把分布未知（通常情况下）的数据拉回到正态分布的函数。
 
 RobustScaler：
-新学到的一个方法，之前没用过。和minmaxScaler类似，即使用大、小值进行数据的缩放。具体为(x - median) &#47; (localUpper - localLower). 其中的localLower, median, localUpper分别为数据的第一、二、三分位点。名字中带有robust，是强调用四分位点而非最大最小值等极端值可以加强模型对噪音的抗干扰力。</div>2020-10-16</li><br/><li><span>海滨</span> 👍（2） 💬（1）<div>Normalizer，是范式归一化操作，保证归一化之后范式为1
+新学到的一个方法，之前没用过。和minmaxScaler类似，即使用大、小值进行数据的缩放。具体为(x - median) &#47; (localUpper - localLower). 其中的localLower, median, localUpper分别为数据的第一、二、三分位点。名字中带有robust，是强调用四分位点而非最大最小值等极端值可以加强模型对噪音的抗干扰力。</p>2020-10-16</li><br/><li><span>海滨</span> 👍（2） 💬（1）<p>Normalizer，是范式归一化操作，保证归一化之后范式为1
 StandardScaler，是标准差归一化操作，保证归一化之后均值为0标准差为1
 RobustScaler，是使用分位数进行鲁棒归一化操作，可以有效减少异常值的干扰
-MinMaxScaler，是使用最大值和最小值进行归一化操作</div>2021-03-21</li><br/><li><span>清晨</span> 👍（2） 💬（1）<div>standscalar 不是改变了数据的分布吗 处理后的特征为均值为0，方差为1 为什么说没有呢？</div>2020-11-03</li><br/>
+MinMaxScaler，是使用最大值和最小值进行归一化操作</p>2021-03-21</li><br/><li><span>清晨</span> 👍（2） 💬（1）<p>standscalar 不是改变了数据的分布吗 处理后的特征为均值为0，方差为1 为什么说没有呢？</p>2020-11-03</li><br/>
 </ul>

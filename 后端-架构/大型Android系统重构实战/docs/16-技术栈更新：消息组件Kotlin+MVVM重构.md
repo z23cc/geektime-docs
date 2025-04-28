@@ -518,7 +518,7 @@ class DynamicViewModelTest {
 
 感谢你学完了今天的课程，欢迎你把它分享给你的同事或朋友，让我们一起来高效高质量交付软件！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：第二种方法是怎么转换为kotlin的？
 文中开头的例子说到“第二种方法使用 Kotlin 替换 Java 的好处就是，可以减少一些跨语言调用编写问题，但是缺点是需要将原有的代码改动成 Kotlin”。 例子代码中，一个是kotlin，一个是Java，并没有Java转换为kotlin的信息啊。
 Q2：假如现在开发APP，用kotlin还是Java？哪个好？如果现在会Java但不会kotlin，需要放弃Java而学习kotlin吗？
@@ -526,5 +526,5 @@ Q3：kotlin有协程，安卓用Java开发的话，有协程吗？（印象中�
 Q4：kotlin可以用MVVM，用Java可以采用吗？
 Q5：Java和kotlin混合开发，除了调用不太方便，还有什么问题？比如，会有性能问题吗？
 Q5：MVVM和MVP都是“业务逻辑和视图分离”，似乎是一样的。那这两种模式有什么区别？
-Q6：老师赞成Java和kotlin混合开发吗？</div>2023-03-17</li><br/><li><span>永远年轻</span> 👍（0） 💬（1）<div>第五点中，应该是使用了 DataBinding 的单项绑定，数据变动会驱动 UI 变化，而 UI 变化不会驱动数据变化。双向绑定应该是 「@={vm.xxx}」</div>2023-03-17</li><br/><li><span>3.141516</span> 👍（0） 💬（1）<div>项目中是 Kotlin、Java 混编，有个问题想请教一下老师：Kotlin、Java 混编和纯 Kotlin 的编译时间哪个更短呢？</div>2023-03-17</li><br/><li><span>louc</span> 👍（0） 💬（1）<div>不太严谨啊，怎么重构后，getMessageList就在主线程取数据了，之前不是在异步线程么</div>2023-05-05</li><br/>
+Q6：老师赞成Java和kotlin混合开发吗？</p>2023-03-17</li><br/><li><span>永远年轻</span> 👍（0） 💬（1）<p>第五点中，应该是使用了 DataBinding 的单项绑定，数据变动会驱动 UI 变化，而 UI 变化不会驱动数据变化。双向绑定应该是 「@={vm.xxx}」</p>2023-03-17</li><br/><li><span>3.141516</span> 👍（0） 💬（1）<p>项目中是 Kotlin、Java 混编，有个问题想请教一下老师：Kotlin、Java 混编和纯 Kotlin 的编译时间哪个更短呢？</p>2023-03-17</li><br/><li><span>louc</span> 👍（0） 💬（1）<p>不太严谨啊，怎么重构后，getMessageList就在主线程取数据了，之前不是在异步线程么</p>2023-05-05</li><br/>
 </ul>

@@ -156,5 +156,5 @@ Storm里，我们需要在Topology提交的时候，就设定好各个Bolt/Spout
 
 欢迎在留言区分享你的答案和思考，也欢迎你把今天的内容分享给更多的朋友。感谢收听，咱们下节课再见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>在路上</span> 👍（8） 💬（2）<div>徐老师好，我认为可以通过修改Topology来提高Bolt的并行度，新流入的数据根据新版的Topology分发数据。Bolt节点分成两种，一种是无状态的，一种是有状态的。比如ParseTweetBolt是无状态的，很容易扩展，WordCountBolt是有状态的，需要把状态迁移到新节点上，可以采用一致性hash扩容、翻倍扩容等方式，减少需要迁移的数据。</div>2021-12-03</li><br/><li><span>核桃</span> 👍（2） 💬（0）<div>这样看来,了解storm了，那么flink也必须要看看</div>2022-03-01</li><br/><li><span>Defu Li</span> 👍（1） 💬（1）<div>老师，位运算这里应该是有问题的，如果第三步发送出去的是三个tuple，且这三个tuple异或完正好是0（01 xor 10  xor 11 = 00），那么AckerBolt最后结果也会是0了</div>2022-05-19</li><br/><li><span>CRT</span> 👍（1） 💬（0）<div>流量徒增的情况下，通过hash算法将多出来的数据均匀分布到新的计算节点就好了。</div>2022-01-05</li><br/>
+<li><span>在路上</span> 👍（8） 💬（2）<p>徐老师好，我认为可以通过修改Topology来提高Bolt的并行度，新流入的数据根据新版的Topology分发数据。Bolt节点分成两种，一种是无状态的，一种是有状态的。比如ParseTweetBolt是无状态的，很容易扩展，WordCountBolt是有状态的，需要把状态迁移到新节点上，可以采用一致性hash扩容、翻倍扩容等方式，减少需要迁移的数据。</p>2021-12-03</li><br/><li><span>核桃</span> 👍（2） 💬（0）<p>这样看来,了解storm了，那么flink也必须要看看</p>2022-03-01</li><br/><li><span>Defu Li</span> 👍（1） 💬（1）<p>老师，位运算这里应该是有问题的，如果第三步发送出去的是三个tuple，且这三个tuple异或完正好是0（01 xor 10  xor 11 = 00），那么AckerBolt最后结果也会是0了</p>2022-05-19</li><br/><li><span>CRT</span> 👍（1） 💬（0）<p>流量徒增的情况下，通过hash算法将多出来的数据均匀分布到新的计算节点就好了。</p>2022-01-05</li><br/>
 </ul>

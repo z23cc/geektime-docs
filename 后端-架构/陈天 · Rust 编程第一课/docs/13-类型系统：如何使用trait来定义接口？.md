@@ -834,7 +834,7 @@ fn main() {
 
 （如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论～）
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>GengTeng</span> 👍（12） 💬（5）<div>1. 不可以。关联类型无法就只能impl一次了，我们需要为Complex实现多个Add&lt;Rhs&gt;。
+<li><span>GengTeng</span> 👍（12） 💬（5）<p>1. 不可以。关联类型无法就只能impl一次了，我们需要为Complex实现多个Add&lt;Rhs&gt;。
 2. 不能。返回类型中的 Self 需要是Sized，而 dyn Write 不是Sized。
 3. #[derive(Debug, Copy, Clone)]
 4. impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
@@ -858,7 +858,7 @@ fn main() {
         }
     }
 
-这个SentenceIter的功能定义不明确，分割出来的每个sentence如果都需要包括delimiter的话，那剩余部分没有delimiter的情况该返回None吗？或者返回一个不带delimiter的剩余部分？都很别扭。</div>2021-09-22</li><br/><li><span>lisiur</span> 👍（6） 💬（1）<div>1. 不应该这么做。如果这么做的话，同一个类型对同一个 trait 只能有一个实现，
+这个SentenceIter的功能定义不明确，分割出来的每个sentence如果都需要包括delimiter的话，那剩余部分没有delimiter的情况该返回None吗？或者返回一个不带delimiter的剩余部分？都很别扭。</p>2021-09-22</li><br/><li><span>lisiur</span> 👍（6） 💬（1）<p>1. 不应该这么做。如果这么做的话，同一个类型对同一个 trait 只能有一个实现，
 Rhs 也之能有一种可能，这样就不能既实现 String + String 又实现 String + &amp;str，没有扩展性。
 
 2. 不能编译通过，因为 by_ref 返回值含有 Self，不能作为 trait object 的方法使用。
@@ -890,7 +890,7 @@ impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
 ```
 
 有个小小的疑问想请教下老师，在 **Trait Object 的实现机理** 这一小节开始给的配图中，
-formatter 这个 trait object 的 ptr 为啥会指向参数 text 呢？不是指向 HtmlFormatter 这个实例数据吗？</div>2021-09-22</li><br/><li><span>Marvichov</span> 👍（3） 💬（3）<div>```
+formatter 这个 trait object 的 ptr 为啥会指向参数 text 呢？不是指向 HtmlFormatter 这个实例数据吗？</p>2021-09-22</li><br/><li><span>Marvichov</span> 👍（3） 💬（3）<p>```
     &#47;&#47; 指向同一种类型的同一个 trait 的 vtable 地址相同
     &#47;&#47; 这里都是 String + Display
     assert_eq!(vtable1, vtable3);
@@ -904,8 +904,8 @@ formatter 这个 trait object 的 ptr 为啥会指向参数 text 呢？不是指
 
 2. 那么call `fn fmt(&amp;self, f: &amp;mut Formatter&lt;&#39;_&gt;) -&gt; Result;`的时候, 编译器是知道这个call在各个不同的实现中vtable的offset? 而且, 这些offset都要一样? 因为我记得, 编译的时候, 因为类型被erase了, 只能通过addr + offset (ptr, *args) 来call metho
 
-例如, vtable1 + offset 和 vtable3 + offset 的地址都是call table中 fmt method 对应地址?</div>2021-09-29</li><br/><li><span>QY</span> 👍（2） 💬（3）<div>请问第四题为什么要用&amp;mut &amp;s 呢？ 是性能更好吗？
-感觉&amp;s使用起来自由度更高。宣言s时不需要mut s。</div>2021-09-26</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（1）<div>今天内容很多，也很细，看来需要常来温故才行</div>2021-09-22</li><br/><li><span>王鹏飞</span> 👍（1） 💬（1）<div>内容言简意赅， 只讲核心， 含金量十足； 但是需要自己补充相对基础的东西，才能理解</div>2022-12-02</li><br/><li><span>核桃</span> 👍（1） 💬（2）<div>老师，这里关于静态分发和动态分发，有个例子没搞懂
+例如, vtable1 + offset 和 vtable3 + offset 的地址都是call table中 fmt method 对应地址?</p>2021-09-29</li><br/><li><span>QY</span> 👍（2） 💬（3）<p>请问第四题为什么要用&amp;mut &amp;s 呢？ 是性能更好吗？
+感觉&amp;s使用起来自由度更高。宣言s时不需要mut s。</p>2021-09-26</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（1）<p>今天内容很多，也很细，看来需要常来温故才行</p>2021-09-22</li><br/><li><span>王鹏飞</span> 👍（1） 💬（1）<p>内容言简意赅， 只讲核心， 含金量十足； 但是需要自己补充相对基础的东西，才能理解</p>2022-12-02</li><br/><li><span>核桃</span> 👍（1） 💬（2）<p>老师，这里关于静态分发和动态分发，有个例子没搞懂
 
 #[drive(Debug)]
 struct Foo;
@@ -928,7 +928,7 @@ fn dynamic_dispatch(t: &amp;Bar){
   t.baz();
 }
 
-这里不能理解的是动态分发，参数t也是要求为&amp;Bar的呀，那么这里到底和静态分发的核心区分是什么？凭什么就无法确定类型大小而需要用虚表呢？这个实在不太理解，多谢了。</div>2021-10-28</li><br/><li><span>Marvichov</span> 👍（1） 💬（1）<div>&gt; C++ &#47; Java 指向 vtable 的指针，在编译时放在类结构里，
+这里不能理解的是动态分发，参数t也是要求为&amp;Bar的呀，那么这里到底和静态分发的核心区分是什么？凭什么就无法确定类型大小而需要用虚表呢？这个实在不太理解，多谢了。</p>2021-10-28</li><br/><li><span>Marvichov</span> 👍（1） 💬（1）<p>&gt; C++ &#47; Java 指向 vtable 的指针，在编译时放在类结构里，
 
 现在C++的vtable也是分开放的 (可能看编译器, clang是分开的); 
 
@@ -946,7 +946,7 @@ vtable for Foo:
         .quad   Foo::~Foo() [deleting destructor]
 ```
 
-https:&#47;&#47;guihao-liang.github.io&#47;2020&#47;05&#47;30&#47;what-is-vtable-in-cpp</div>2021-10-07</li><br/><li><span>hughieyu</span> 👍（1） 💬（1）<div>1. 不可以。 Complex不能实现Add多次，只能实现对一种类型的计算。
+https:&#47;&#47;guihao-liang.github.io&#47;2020&#47;05&#47;30&#47;what-is-vtable-in-cpp</p>2021-10-07</li><br/><li><span>hughieyu</span> 👍（1） 💬（1）<p>1. 不可以。 Complex不能实现Add多次，只能实现对一种类型的计算。
 2. 不能。 对于trait object来说， Self信息已经被擦除了。
 3. #[derive(Debug, Copy, Clone)] 或者 用自定义类型包装Rc实现Add 如RcComplex(Rc&lt;Complex&gt;)
 4. impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
@@ -968,7 +968,7 @@ https:&#47;&#47;guihao-liang.github.io&#47;2020&#47;05&#47;30&#47;what-is-vtable
     }
 }
 
-问题： trait泛型和关联类型的使用场景还是有些模糊</div>2021-09-22</li><br/><li><span>overheat</span> 👍（0） 💬（1）<div>陈天老师的这部分是目前看到的最生动的教程，the book对有些内部机制bi而不谈，其他书面教程感觉我自己的语文没学好。我现在是看了第20章再回头看的，终于明白了trait object这个之前差不多直接跳过的概念。</div>2021-12-13</li><br/><li><span>彭亚伦</span> 👍（0） 💬（2）<div>第四题, 用标准库里的`split_at`实现一个:
+问题： trait泛型和关联类型的使用场景还是有些模糊</p>2021-09-22</li><br/><li><span>overheat</span> 👍（0） 💬（1）<p>陈天老师的这部分是目前看到的最生动的教程，the book对有些内部机制bi而不谈，其他书面教程感觉我自己的语文没学好。我现在是看了第20章再回头看的，终于明白了trait object这个之前差不多直接跳过的概念。</p>2021-12-13</li><br/><li><span>彭亚伦</span> 👍（0） 💬（2）<p>第四题, 用标准库里的`split_at`实现一个:
 
 ```rust
 struct SentenceIter&lt;&#39;a&gt; {
@@ -1009,7 +1009,7 @@ impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
     }
 }
 
-```</div>2021-11-16</li><br/><li><span>TheLudlows</span> 👍（0） 💬（3）<div>老师，为什么加了关联类型之后，需要用Sized对Self进行限定呢？</div>2021-11-09</li><br/><li><span>野山门</span> 👍（0） 💬（1）<div>看大家的答案后，小小的改进了一下第四题：
+```</p>2021-11-16</li><br/><li><span>TheLudlows</span> 👍（0） 💬（3）<p>老师，为什么加了关联类型之后，需要用Sized对Self进行限定呢？</p>2021-11-09</li><br/><li><span>野山门</span> 👍（0） 💬（1）<p>看大家的答案后，小小的改进了一下第四题：
 ```
 impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
   type Item = &amp;&#39;a str; &#47;&#47; 想想 Item 应该是什么类型？
@@ -1033,7 +1033,7 @@ impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
     }
   }
 }
-```</div>2021-10-21</li><br/><li><span>wzx</span> 👍（0） 💬（2）<div>第四题：
+```</p>2021-10-21</li><br/><li><span>wzx</span> 👍（0） 💬（2）<p>第四题：
 
 struct SentenceIter&lt;&#39;a&gt; {
     s: &amp;&#39;a mut &amp;&#39;a str,
@@ -1065,5 +1065,5 @@ impl&lt;&#39;a&gt; Iterator for SentenceIter&lt;&#39;a&gt; {
         }
         None
     }
-}</div>2021-09-24</li><br/><li><span>记事本</span> 👍（0） 💬（1）<div>rust泛型真的太抽象了</div>2021-09-23</li><br/>
+}</p>2021-09-24</li><br/><li><span>记事本</span> 👍（0） 💬（1）<p>rust泛型真的太抽象了</p>2021-09-23</li><br/>
 </ul>

@@ -195,10 +195,10 @@ PDF扫描版需要经过文本识别和表格识别PDF扫描图像，才能提�
 
 在你的RAG系统所涉及的具体业务场景中，文档元素的类别识别是否有助于后续的文本分块和提升RAG系统的效果？如果有，请举例说明具体情况。欢迎你留言参与讨论，如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>Joney Hsiao</span> 👍（1） 💬（2）<div>尝试过解析有图片的pdf文件，但是不理想，大模型输出“由于没有提供具体的图片内容，无法对图片进行分析。如果报告中有相关的图表或图像，请提供详细描述或上传图片，以便进一步分析。”
+<li><span>Joney Hsiao</span> 👍（1） 💬（2）<p>尝试过解析有图片的pdf文件，但是不理想，大模型输出“由于没有提供具体的图片内容，无法对图片进行分析。如果报告中有相关的图表或图像，请提供详细描述或上传图片，以便进一步分析。”
 
 请问应该如何从哪点开始优化？
-</div>2024-12-30</li><br/><li><span>张申傲</span> 👍（1） 💬（1）<div>第3讲打卡~</div>2024-10-22</li><br/><li><span>Jaycee-张少同</span> 👍（1） 💬（1）<div>实际工作场景中我认为pdf doc docx文件元素是构建字符切块的主要类型，另也可加入ppt演示文件内的文本字符。严格说我认为excel表格文件应当是份属db gpt的事情。不过事事无绝对，欢迎探讨</div>2024-09-03</li><br/><li><span>JMGAO</span> 👍（0） 💬（2）<div>linux下解析文件类型pdf&#47;txt&#47;csv 能够成功，解析md&#47;docx&#47;ppt&#47;xml&#47;html等提示 zipfile.BadZipFile: File is not a zip file
+</p>2024-12-30</li><br/><li><span>张申傲</span> 👍（1） 💬（1）<p>第3讲打卡~</p>2024-10-22</li><br/><li><span>Jaycee-张少同</span> 👍（1） 💬（1）<p>实际工作场景中我认为pdf doc docx文件元素是构建字符切块的主要类型，另也可加入ppt演示文件内的文本字符。严格说我认为excel表格文件应当是份属db gpt的事情。不过事事无绝对，欢迎探讨</p>2024-09-03</li><br/><li><span>JMGAO</span> 👍（0） 💬（2）<p>linux下解析文件类型pdf&#47;txt&#47;csv 能够成功，解析md&#47;docx&#47;ppt&#47;xml&#47;html等提示 zipfile.BadZipFile: File is not a zip file
 ```
 File &quot;&#47;root&#47;workspace&#47;mingjian&#47;env_rag&#47;lib&#47;python3.10&#47;site-packages&#47;unstructured&#47;partition&#47;text_type.py&quot;, line 270, in exceeds_cap_ratio
     if sentence_count(text, 3) &gt; 1:
@@ -222,13 +222,13 @@ File &quot;&#47;root&#47;workspace&#47;mingjian&#47;env_rag&#47;lib&#47;python3.
     self._RealGetContents()
   File &quot;&#47;usr&#47;lib&#47;python3.10&#47;zipfile.py&quot;, line 1339, in _RealGetContents
     raise BadZipFile(&quot;File is not a zip file&quot;)
-```</div>2025-01-06</li><br/><li><span>大胡</span> 👍（0） 💬（1）<div>另外，csv文件也存在一个gbk编码错误</div>2024-12-28</li><br/><li><span>大胡</span> 👍（0） 💬（1）<div>此处问题较多。下面是一个下载问题，有什么好办法吗？
+```</p>2025-01-06</li><br/><li><span>大胡</span> 👍（0） 💬（1）<p>另外，csv文件也存在一个gbk编码错误</p>2024-12-28</li><br/><li><span>大胡</span> 👍（0） 💬（1）<p>此处问题较多。下面是一个下载问题，有什么好办法吗？
 Resource punkt_tab not found.
   Please use the NLTK Downloader to obtain the resource:
   &gt;&gt;&gt; import nltk
   &gt;&gt;&gt; nltk.download(&#39;punkt_tab&#39;)
     For more information see: https:&#47;&#47;www.nltk.org&#47;data.html
-  Attempted to load tokenizers&#47;punkt_tab&#47;english&#47;</div>2024-12-28</li><br/><li><span>Grain Buds</span> 👍（0） 💬（1）<div>课程代码顺利跑通，但是生成结果准确性不足呢？生成回答中，有关金融业的部分并没有提取到，仅做了简略描述</div>2024-11-17</li><br/><li><span>Seachal</span> 👍（0） 💬（1）<div>第3讲打卡~</div>2024-11-15</li><br/><li><span>kevin</span> 👍（0） 💬（1）<div>在windows下运行，csv可以解析，但doc一解析系统就挂了，也不知道怎么回事，装了LibreOffice 24.8</div>2024-10-25</li><br/><li><span>影明</span> 👍（0） 💬（1）<div>在windows下运行，csv可以解析，但docx报错：
+  Attempted to load tokenizers&#47;punkt_tab&#47;english&#47;</p>2024-12-28</li><br/><li><span>Grain Buds</span> 👍（0） 💬（1）<p>课程代码顺利跑通，但是生成结果准确性不足呢？生成回答中，有关金融业的部分并没有提取到，仅做了简略描述</p>2024-11-17</li><br/><li><span>Seachal</span> 👍（0） 💬（1）<p>第3讲打卡~</p>2024-11-15</li><br/><li><span>kevin</span> 👍（0） 💬（1）<p>在windows下运行，csv可以解析，但doc一解析系统就挂了，也不知道怎么回事，装了LibreOffice 24.8</p>2024-10-25</li><br/><li><span>影明</span> 👍（0） 💬（1）<p>在windows下运行，csv可以解析，但docx报错：
 文档 .&#47;data_lesson3\test.csv 的部分内容为: 案例名称: 制造业的数字化转型
 公司背景: 制造业案例介绍了一家成立于20世纪初的德国老牌汽车制造公司，拥有悠久的历史和丰富的制造经验。面对日益激烈的市场竞争和消费者需求的变化，公司意识到传统制造模式...
 文档 test.csv 的总字符数: 1262
@@ -252,9 +252,9 @@ Traceback (most recent call last):
     return cls(**kwargs)._validate()
   File &quot;C:\Users\yingm\.conda\envs\rag_env_39\lib\site-packages\unstructured\partition\docx.py&quot;, line 376, in _validate
     raise FileNotFoundError(f&quot;no such file or directory: {repr(self._file_path)}&quot;)
-FileNotFoundError: no such file or directory: &#39;C:\\Users\\yingm\\AppData\\Local\\Temp\\tmpij10aiti\\test.docx&#39;</div>2024-09-21</li><br/><li><span>grok</span> 👍（3） 💬（2）<div>组里有个项目需要处理合同pdf（扫描件&#47;英文），主要难点是夹杂的特殊字符和希腊字母。效果不达标。
+FileNotFoundError: no such file or directory: &#39;C:\\Users\\yingm\\AppData\\Local\\Temp\\tmpij10aiti\\test.docx&#39;</p>2024-09-21</li><br/><li><span>grok</span> 👍（3） 💬（2）<p>组里有个项目需要处理合同pdf（扫描件&#47;英文），主要难点是夹杂的特殊字符和希腊字母。效果不达标。
 已尝试：
 Adobe, Nitro, Azure Doc intelligence, GPT4o, ensemble of doc intelligence + gpt4o&#47;V
 下一步打算尝试：
-AWS Textract, Google Vision API, Nougat, Texify, Tesseract&#47;pytesseract</div>2024-09-01</li><br/>
+AWS Textract, Google Vision API, Nougat, Texify, Tesseract&#47;pytesseract</p>2024-09-01</li><br/>
 </ul>

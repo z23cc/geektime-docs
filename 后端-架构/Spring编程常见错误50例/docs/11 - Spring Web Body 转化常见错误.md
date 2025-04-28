@@ -553,8 +553,8 @@ protected <T> Object readWithMessageConverters(HttpInputMessage inputMessage, Me
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Geek_tod-f2e</span> 👍（17） 💬（1）<div>springboot的starter自动引入了jackson依赖包</div>2021-06-09</li><br/><li><span>一记妙蛙直拳</span> 👍（4） 💬（2）<div>源码果然还是不那么容易啃,看着看着就走神了;铁子们有啥好办法吗
-</div>2021-05-18</li><br/><li><span>黑白颠倒</span> 👍（3） 💬（0）<div>源码很不容易看，所以可以先做笔记，记下结论，有空再深入源码分析。</div>2021-08-16</li><br/><li><span>小飞同学</span> 👍（1） 💬（1）<div>思考题：springboot自动装配了WebMvcAutoConfiguration
-</div>2021-05-17</li><br/><li><span>温度</span> 👍（0） 💬（0）<div>老师好，案例3定义PrintRequestBodyAdviceAdapter的方式，似乎有问题。在源码里，如果message.hasBody()为true，才会走到afterBodyRead；但由于自定义过滤器已经读取了一遍，所以hasBody其实是false，所以并不会走到自定义的aferBodyRead。这也是在IDEA里debug源码所得现象。
-PS：我是阅读后感觉案例3有问题所以实践了一下，并没有实践案例1和2。请帮忙解惑，谢谢</div>2024-09-01</li><br/><li><span>X</span> 👍（0） 💬（0）<div>HttpMessageConvertersAutoConfiguration</div>2023-07-18</li><br/>
+<li><span>Geek_tod-f2e</span> 👍（17） 💬（1）<p>springboot的starter自动引入了jackson依赖包</p>2021-06-09</li><br/><li><span>一记妙蛙直拳</span> 👍（4） 💬（2）<p>源码果然还是不那么容易啃,看着看着就走神了;铁子们有啥好办法吗
+</p>2021-05-18</li><br/><li><span>黑白颠倒</span> 👍（3） 💬（0）<p>源码很不容易看，所以可以先做笔记，记下结论，有空再深入源码分析。</p>2021-08-16</li><br/><li><span>小飞同学</span> 👍（1） 💬（1）<p>思考题：springboot自动装配了WebMvcAutoConfiguration
+</p>2021-05-17</li><br/><li><span>温度</span> 👍（0） 💬（0）<p>老师好，案例3定义PrintRequestBodyAdviceAdapter的方式，似乎有问题。在源码里，如果message.hasBody()为true，才会走到afterBodyRead；但由于自定义过滤器已经读取了一遍，所以hasBody其实是false，所以并不会走到自定义的aferBodyRead。这也是在IDEA里debug源码所得现象。
+PS：我是阅读后感觉案例3有问题所以实践了一下，并没有实践案例1和2。请帮忙解惑，谢谢</p>2024-09-01</li><br/><li><span>X</span> 👍（0） 💬（0）<p>HttpMessageConvertersAutoConfiguration</p>2023-07-18</li><br/>
 </ul>

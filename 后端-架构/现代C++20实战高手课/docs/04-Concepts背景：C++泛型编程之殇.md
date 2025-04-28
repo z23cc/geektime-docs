@@ -340,7 +340,7 @@ int main() {
 ![](https://static001.geekbang.org/resource/image/f7/fe/f739101a232d51732ef68d9a82d349fe.jpg?wh=3500x1969)  
 ![](https://static001.geekbang.org/resource/image/9e/60/9e7d8b3f58ff314a24ab3f81a61f4c60.jpg?wh=2727x1462)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师两个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师两个问题：
 Q1：函数名称后面的尖括号是什么意思？
 函数定义如下：
 template &lt;size_t Size, class T, typename U&gt;
@@ -356,5 +356,5 @@ Q2：不定模板参数的递归怎么终止？
 不定模板参数定义如下：
 double sum(T value, Targs... Fargs) {    
 return static_cast&lt;double&gt;(value) + sum(Fargs...);}
-这个定义，似乎是递归，但怎么终止递归？看起来是无穷递归。</div>2023-01-23</li><br/><li><span>Geek_a343c9</span> 👍（0） 💬（1）<div>老师，Python应该是强类型语言吧？</div>2023-05-03</li><br/><li><span>Geek_QiDian</span> 👍（0） 💬（1）<div>请问老师，Concepts 能将以上四个问题都解决了吗？</div>2023-01-24</li><br/>
+这个定义，似乎是递归，但怎么终止递归？看起来是无穷递归。</p>2023-01-23</li><br/><li><span>Geek_a343c9</span> 👍（0） 💬（1）<p>老师，Python应该是强类型语言吧？</p>2023-05-03</li><br/><li><span>Geek_QiDian</span> 👍（0） 💬（1）<p>请问老师，Concepts 能将以上四个问题都解决了吗？</p>2023-01-24</li><br/>
 </ul>

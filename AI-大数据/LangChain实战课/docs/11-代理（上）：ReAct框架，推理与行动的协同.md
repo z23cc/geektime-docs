@@ -193,13 +193,13 @@ ReAct框架的这些优点，使得它在未来的发展中具有巨大的潜力
 1. 论文，[ReAct：在语言模型中协同推理和行动](https://arxiv.org/abs/2210.03629)，Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., &amp; Cao, Y. (2023). ReAct: Synergizing Reasoning and Acting in Language Models. arXiv preprint arXiv:2210.03629
 2. 论文，[ART：大型语言模型的自动多步推理和工具使用](https://arxiv.org/abs/2303.09014)， Paranjape, B., Lundberg, S., Singh, S., Hajishirzi, H., Zettlemoyer, L., &amp; Ribeiro, M. T. (2023). ART: Automatic multi-step reasoning and tool-use for large language models. arXiv preprint arXiv:2303.09014.
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>熊@熊</span> 👍（7） 💬（1）<div>&lt;推理&gt;分析整理信息
+<li><span>熊@熊</span> 👍（7） 💬（1）<p>&lt;推理&gt;分析整理信息
 &lt;行动&gt;产生新的信息
 
 &lt;链&gt;是有序执行，&lt;代理&gt;是AI智能判断“无序”执行
-</div>2023-10-27</li><br/><li><span>zjl</span> 👍（5） 💬（1）<div>没有看懂这个reAct的本质是怎么实现的，貌似就是被langchain进行了封装，直接调用即可，最底层的实现是什么样子的呢</div>2023-10-25</li><br/><li><span>YH</span> 👍（3） 💬（1）<div>FYI &quot;大语言模型可以通过生成推理痕迹和任务特定行动来实现更大的协同作用。&quot; 这句话的原文是：&quot;In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two&quot;。
+</p>2023-10-27</li><br/><li><span>zjl</span> 👍（5） 💬（1）<p>没有看懂这个reAct的本质是怎么实现的，貌似就是被langchain进行了封装，直接调用即可，最底层的实现是什么样子的呢</p>2023-10-25</li><br/><li><span>YH</span> 👍（3） 💬（1）<p>FYI &quot;大语言模型可以通过生成推理痕迹和任务特定行动来实现更大的协同作用。&quot; 这句话的原文是：&quot;In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two&quot;。
 
-后面还有半句：&quot;reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with and gather additional information from external sources such as knowledge bases or environments.&quot;</div>2023-09-26</li><br/><li><span>Dylan</span> 👍（1） 💬（1）<div>老师，针对Agent的练习出现了不一样的效果，其实问题非常明显，“Parsing LLM output produced both a final answer and a parse-able action”。这里我想请教的问题是，在agent 联系中使用的模型是否是有一定要求的？这里我改造成的是QianFan的ERNIE-Bot-4。是否在使用的模型中他已经具备了Agent的能力所以才会直接给出了final answer?
+后面还有半句：&quot;reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with and gather additional information from external sources such as knowledge bases or environments.&quot;</p>2023-09-26</li><br/><li><span>Dylan</span> 👍（1） 💬（1）<p>老师，针对Agent的练习出现了不一样的效果，其实问题非常明显，“Parsing LLM output produced both a final answer and a parse-able action”。这里我想请教的问题是，在agent 联系中使用的模型是否是有一定要求的？这里我改造成的是QianFan的ERNIE-Bot-4。是否在使用的模型中他已经具备了Agent的能力所以才会直接给出了final answer?
 
 具体错误：
 OutputParserException: Parsing LLM output produced both a final answer and a parse-able action:: 首先，我需要了解市场上玫瑰花的平均价格。然后，我需要在这个价格上加价15%来得出我的售价。
@@ -214,8 +214,8 @@ Thought: 我已经计算出了加价15%后的售价。
 Final Answer: 如果我在市场上玫瑰花的平均价格上加价15%卖出，那么我的定价应该是11.5元&#47;支。
 
 During handling of the above exception, another exception occurred:
-</div>2023-11-26</li><br/><li><span>shatu</span> 👍（1） 💬（1）<div>坑点：遇到AttributeError: module &#39;openai&#39; has no attribute &#39;error&#39;
-排坑：改为langchain==0.0.316,openai==0.28.1错误消除</div>2023-11-10</li><br/><li><span>SH</span> 👍（1） 💬（1）<div>老师， 如果想在电商公司 内部利用大模型来解决内部业务（交易下单）客户相关反馈的问题，快速找到问题的原因进行解决，来提升强依赖特定的技术排查解决效率；  应该是可以借助今天讲的知识通过 【代理及链】的方式 通过大模型进行 分析-观察-执行，快速得到满意的答案，对吧？？  另： 像这类的应用，训练知识的话， 使用什么样外部 大模型会比较好（Llama2、百川？？）</div>2023-11-05</li><br/><li><span>蝈蝈</span> 👍（1） 💬（1）<div>老师您好，我想结合前面02节中学到的本地向量库中RetrievalQA chain，与Agent结合。构建一个先去向量库中提问，如果没有找到答案，再去搜索引擎中搜索。但是如何把RetrievalQA的结果做为Agent是否执行搜索的条件呢，是否需要将RetrievalQA做一个tool加入的agent的中</div>2023-10-17</li><br/><li><span>Geek_6247ac</span> 👍（1） 💬（2）<div>老师，请问一下，我有一个排查问题的过程：&quot;人工排查是这样子的，需要调用某个内部服务的API，根据API返回的json信息，我判断json里面某个字段是否是我预期的值，如果是则问题的答案是aaaaa，如果不上问题答案是bbbbb。&quot;，如果我想要让大模型来帮我处理，那么关于调用某个内部服务的API这一步可以利用Agent能力来实现吗？</div>2023-10-16</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<div>老师，请问在推理阶段是不是也会把之前推理和行动的结果一并发给LLM的？这样token消耗是不是就增加了？</div>2023-10-10</li><br/><li><span>秋晨</span> 👍（0） 💬（1）<div>from langchain.agents import initialize_agent, AgentType
+</p>2023-11-26</li><br/><li><span>shatu</span> 👍（1） 💬（1）<p>坑点：遇到AttributeError: module &#39;openai&#39; has no attribute &#39;error&#39;
+排坑：改为langchain==0.0.316,openai==0.28.1错误消除</p>2023-11-10</li><br/><li><span>SH</span> 👍（1） 💬（1）<p>老师， 如果想在电商公司 内部利用大模型来解决内部业务（交易下单）客户相关反馈的问题，快速找到问题的原因进行解决，来提升强依赖特定的技术排查解决效率；  应该是可以借助今天讲的知识通过 【代理及链】的方式 通过大模型进行 分析-观察-执行，快速得到满意的答案，对吧？？  另： 像这类的应用，训练知识的话， 使用什么样外部 大模型会比较好（Llama2、百川？？）</p>2023-11-05</li><br/><li><span>蝈蝈</span> 👍（1） 💬（1）<p>老师您好，我想结合前面02节中学到的本地向量库中RetrievalQA chain，与Agent结合。构建一个先去向量库中提问，如果没有找到答案，再去搜索引擎中搜索。但是如何把RetrievalQA的结果做为Agent是否执行搜索的条件呢，是否需要将RetrievalQA做一个tool加入的agent的中</p>2023-10-17</li><br/><li><span>Geek_6247ac</span> 👍（1） 💬（2）<p>老师，请问一下，我有一个排查问题的过程：&quot;人工排查是这样子的，需要调用某个内部服务的API，根据API返回的json信息，我判断json里面某个字段是否是我预期的值，如果是则问题的答案是aaaaa，如果不上问题答案是bbbbb。&quot;，如果我想要让大模型来帮我处理，那么关于调用某个内部服务的API这一步可以利用Agent能力来实现吗？</p>2023-10-16</li><br/><li><span>抽象派</span> 👍（1） 💬（1）<p>老师，请问在推理阶段是不是也会把之前推理和行动的结果一并发给LLM的？这样token消耗是不是就增加了？</p>2023-10-10</li><br/><li><span>秋晨</span> 👍（0） 💬（1）<p>from langchain.agents import initialize_agent, AgentType
 from langchain_community.agent_toolkits.load_tools import load_tools
 from langchain_openai import OpenAI
 from dotenv import load_dotenv
@@ -226,7 +226,7 @@ tools = load_tools([&quot;serpapi&quot;, &quot;llm-math&quot;], llm=llm)
 agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)  # 代理
 agent.run(&quot;目前市场上玫瑰花的平均价格是多少？如果我在此基础上加价15%卖出，应该如何定价？&quot;)  # 运行代理
 
-</div>2024-06-06</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<div>
+</p>2024-06-06</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<p>
     from langchain.tools.base import BaseTool
   File &quot;&#47;Library&#47;Frameworks&#47;Python.framework&#47;Versions&#47;3.10&#47;lib&#47;python3.10&#47;site-packages&#47;langchain&#47;tools&#47;base.py&quot;, line 9, in &lt;module&gt;
     from langchain.callbacks import get_callback_manager
@@ -246,7 +246,7 @@ agent.run(&quot;目前市场上玫瑰花的平均价格是多少？如果我在�
     raise PydanticUserError(
 pydantic.errors.PydanticUserError: If you use `@root_validator` with pre=False (the default) you MUST specify `skip_on_failure=True`. Note that `@root_validator` is deprecated and should be replaced with `@model_validator`.   pydantic这个库有错误
 
-For further information visit https:&#47;&#47;errors.pydantic.dev&#47;2.4&#47;u&#47;root-validator-pre-skip</div>2023-11-09</li><br/><li><span>棟</span> 👍（0） 💬（1）<div>老师，您好，请教一个疑问，麻烦帮忙看看，感谢！
+For further information visit https:&#47;&#47;errors.pydantic.dev&#47;2.4&#47;u&#47;root-validator-pre-skip</p>2023-11-09</li><br/><li><span>棟</span> 👍（0） 💬（1）<p>老师，您好，请教一个疑问，麻烦帮忙看看，感谢！
 问题如下，https:&#47;&#47;stackoverflow.com&#47;questions&#47;77253870&#47;langchain-search-tools-valueerror-searx-api-returned-an-error-too-many-r
 My code is as below:
 # Step3.select your tools
@@ -272,7 +272,7 @@ Action Input: &quot;weather in Pomfret&quot;Traceback (most recent call last):
   File &quot;E:\program_interpreter\python_virtual_environment\learn_ai\LangChain\lib\site-packages\langchain\utilities\searx_search.py&quot;, line 277, in _searx_api_query    
     raise ValueError(&quot;Searx API returned an error: &quot;, raw_result.text)
 ValueError: (&#39;Searx API returned an error: &#39;, &#39;Too Many Requests&#39;)
-</div>2023-10-08</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div>使用使用 优秀的Perplexity 搜索聊天模型，解决ReAct 框架下进行推理。只要购买Perplexity 就有API key 。不需要用OpenAI ，不需要注册serpapi.com 。
+</p>2023-10-08</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p>使用使用 优秀的Perplexity 搜索聊天模型，解决ReAct 框架下进行推理。只要购买Perplexity 就有API key 。不需要用OpenAI ，不需要注册serpapi.com 。
 并将思考的过程一步一步输出啦。
 
 ### 代码：
@@ -318,6 +318,6 @@ We will use the `llm-math` tool to perform the calculation.
 **Observation:** 92.184
 
 ### Final Answer
-The final answer is that the new price after adding a 15% markup is 92.184 dollars.</div>2024-08-06</li><br/><li><span>Geek1133</span> 👍（0） 💬（0）<div>正在开发一个AI代码转换工具，比如从SAS 程序转换为Python程序。 因为token限制，对于几千行这样长的SAS程序常常要拆分去转，转后又要合并，比较麻烦。 此外对于转换后的A&#47;B testing跟validation也比较麻烦， 请问老师针对这种项目AI有什么解决方案吗</div>2024-12-31</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第11讲打卡~
-ReAct的生成推理轨迹这个功能真的很好用，既便于过程追踪和结果观测，也使得推理结果更加可理解和可信</div>2024-07-16</li><br/>
+The final answer is that the new price after adding a 15% markup is 92.184 dollars.</p>2024-08-06</li><br/><li><span>Geek1133</span> 👍（0） 💬（0）<p>正在开发一个AI代码转换工具，比如从SAS 程序转换为Python程序。 因为token限制，对于几千行这样长的SAS程序常常要拆分去转，转后又要合并，比较麻烦。 此外对于转换后的A&#47;B testing跟validation也比较麻烦， 请问老师针对这种项目AI有什么解决方案吗</p>2024-12-31</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第11讲打卡~
+ReAct的生成推理轨迹这个功能真的很好用，既便于过程追踪和结果观测，也使得推理结果更加可理解和可信</p>2024-07-16</li><br/>
 </ul>

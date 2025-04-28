@@ -201,10 +201,10 @@ width, height = img.size
 
 欢迎在评论区与我分享你的答案，也欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>淡魂</span> 👍（14） 💬（1）<div>请问老师。自己写Min-Max规范化公式的时候为什么不直接除以255，这样得到的数据也是在[0,1]之间，是因为那个值不可以为0吗？什么原因呢？</div>2019-02-13</li><br/><li><span>深白浅黑</span> 👍（7） 💬（2）<div>老师下面函数中，最后的参数代表什么意思？手册上显示的是n_feature，但没说具体的意义，不是很明白。
+<li><span>淡魂</span> 👍（14） 💬（1）<p>请问老师。自己写Min-Max规范化公式的时候为什么不直接除以255，这样得到的数据也是在[0,1]之间，是因为那个值不可以为0吗？什么原因呢？</p>2019-02-13</li><br/><li><span>深白浅黑</span> 👍（7） 💬（2）<p>老师下面函数中，最后的参数代表什么意思？手册上显示的是n_feature，但没说具体的意义，不是很明白。
         c1 = kmeans.cluster_centers_[label[x, y], 2]
         c2 = kmeans.cluster_centers_[label[x, y], 1]
-        c3 = kmeans.cluster_centers_[label[x, y], 0]</div>2019-02-19</li><br/><li><span>cua</span> 👍（4） 💬（4）<div>为什么会出现这个错误呢ValueError: too many values to unpack (expected 3)</div>2019-02-28</li><br/><li><span>mickey</span> 👍（2） 💬（1）<div># -*- coding: utf-8 -*-
+        c3 = kmeans.cluster_centers_[label[x, y], 0]</p>2019-02-19</li><br/><li><span>cua</span> 👍（4） 💬（4）<p>为什么会出现这个错误呢ValueError: too many values to unpack (expected 3)</p>2019-02-28</li><br/><li><span>mickey</span> 👍（2） 💬（1）<p># -*- coding: utf-8 -*-
 # 使用K-means对图像进行聚类，显示分割标识的可视化
 import numpy as np
 import PIL.Image as image
@@ -245,7 +245,7 @@ label = label.reshape([width, height])
 label_color = (color.label2rgb(label)*255).astype(np.uint8)
 label_color = label_color.transpose(1,0,2)
 images = image.fromarray(label_color)
-images.save(&#39;baby_16.jpg&#39;)</div>2019-02-28</li><br/><li><span>third</span> 👍（2） 💬（1）<div>问题：已经使用mm进行数据拟合转换了，为何还要使用np.mat()转换呢？作用在哪里？方便后面使用np.uint8吗？
+images.save(&#39;baby_16.jpg&#39;)</p>2019-02-28</li><br/><li><span>third</span> 👍（2） 💬（1）<p>问题：已经使用mm进行数据拟合转换了，为何还要使用np.mat()转换呢？作用在哪里？方便后面使用np.uint8吗？
 
 注意：实战的时候，保存图片为jpg格式
 如果是png格式的话，会出现4个值，导致赋值错误，(R, G, B, A)
@@ -313,7 +313,7 @@ for x in  range(width):
         c2 = kmeans.cluster_centers_[label[x, y], 1]
         c3 = kmeans.cluster_centers_[label[x, y], 2]
         imges1.putpixel((x,y),(int(c1*256)-1,int(c2*256)-1,int(c3*256)-1))
-imges1.save(&#39;.&#47;27&#47;baby_yasuo.jpg&#39;)</div>2019-02-19</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<div>import numpy as np
+imges1.save(&#39;.&#47;27&#47;baby_yasuo.jpg&#39;)</p>2019-02-19</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<p>import numpy as np
 import PIL.Image as Image
 from sklearn import preprocessing
 from sklearn.cluster import KMeans
@@ -370,11 +370,11 @@ for x in range(width):
         g1=kmeans.cluster_centers_[label[x, y], 1]
         b1=kmeans.cluster_centers_[label[x, y], 2]
         img.putpixel((x,y),(int(r1*256)-1,int(g1*256)-1,int(b1*256)-1))
-img.save(&#39;.&#47;kmeans-master&#47;baby_new.jpg&#39;)</div>2019-11-18</li><br/><li><span>§mc²ompleXWr</span> 👍（0） 💬（2）<div>为什么要用np.mat(data)??
-我用array()跑出来的结果完全是一样的啊。。</div>2020-07-12</li><br/><li><span>宋晓明</span> 👍（0） 💬（1）<div>极客时间 pc界面终于改了。。之前的界面找某篇文章费死个劲</div>2019-03-12</li><br/><li><span>Rickie</span> 👍（0） 💬（1）<div>老师好，想请问下您聚类后得到的那张灰度图像有其他的设置吗？我使用跟您一样的代码，最后生成的图尺寸非常小，且一些细节并没有分类正确...不知道是什么原因？</div>2019-02-14</li><br/><li><span>mickey</span> 👍（18） 💬（1）<div>import PIL.Image as image
+img.save(&#39;.&#47;kmeans-master&#47;baby_new.jpg&#39;)</p>2019-11-18</li><br/><li><span>§mc²ompleXWr</span> 👍（0） 💬（2）<p>为什么要用np.mat(data)??
+我用array()跑出来的结果完全是一样的啊。。</p>2020-07-12</li><br/><li><span>宋晓明</span> 👍（0） 💬（1）<p>极客时间 pc界面终于改了。。之前的界面找某篇文章费死个劲</p>2019-03-12</li><br/><li><span>Rickie</span> 👍（0） 💬（1）<p>老师好，想请问下您聚类后得到的那张灰度图像有其他的设置吗？我使用跟您一样的代码，最后生成的图尺寸非常小，且一些细节并没有分类正确...不知道是什么原因？</p>2019-02-14</li><br/><li><span>mickey</span> 👍（18） 💬（1）<p>import PIL.Image as image
 导入的是pillow包，而非pil包。
-pil包不支持64位，但是有pillow包代替用。</div>2019-02-28</li><br/><li><span>vortual</span> 👍（9） 💬（0）<div>衷心希望老师能开一讲讲下数据规范化的问题。从之前的几讲总是遇到有些是minmax规范化，有些是需要正态分布，希望老师能讲下具体什么时候用哪种，而且规范化的好处，目前知道的是加快收敛和降低维度，但为啥还不是很清楚</div>2019-03-12</li><br/><li><span>Geek_hve78z</span> 👍（3） 💬（2）<div>新概念总结
+pil包不支持64位，但是有pillow包代替用。</p>2019-02-28</li><br/><li><span>vortual</span> 👍（9） 💬（0）<p>衷心希望老师能开一讲讲下数据规范化的问题。从之前的几讲总是遇到有些是minmax规范化，有些是需要正态分布，希望老师能讲下具体什么时候用哪种，而且规范化的好处，目前知道的是加快收敛和降低维度，但为啥还不是很清楚</p>2019-03-12</li><br/><li><span>Geek_hve78z</span> 👍（3） 💬（2）<p>新概念总结
 1、图像分割就是把图像分成若干个特定的、具有独特性质的区域并提出感兴趣目标的技术和过程。它是由图像处理到图像分析的关键步骤
 
-有一个问题，最后一个案例中，图像分割，输出原图有什么意义</div>2019-02-23</li><br/><li><span>手指饼干</span> 👍（1） 💬（0）<div>np.mat 已经废弃，需要用 np.array 替代</div>2024-06-17</li><br/><li><span>Neo</span> 👍（1） 💬（1）<div>这里好像没有设置评估聚类表现的环节？请问如何比较不同k值的表现呢</div>2020-02-17</li><br/><li><span>滨滨</span> 👍（1） 💬（0）<div>图像分割的主要工作在于数据的预处理，同时分割为几类需要人工指定这个很不方便</div>2019-04-05</li><br/>
+有一个问题，最后一个案例中，图像分割，输出原图有什么意义</p>2019-02-23</li><br/><li><span>手指饼干</span> 👍（1） 💬（0）<p>np.mat 已经废弃，需要用 np.array 替代</p>2024-06-17</li><br/><li><span>Neo</span> 👍（1） 💬（1）<p>这里好像没有设置评估聚类表现的环节？请问如何比较不同k值的表现呢</p>2020-02-17</li><br/><li><span>滨滨</span> 👍（1） 💬（0）<p>图像分割的主要工作在于数据的预处理，同时分割为几类需要人工指定这个很不方便</p>2019-04-05</li><br/>
 </ul>

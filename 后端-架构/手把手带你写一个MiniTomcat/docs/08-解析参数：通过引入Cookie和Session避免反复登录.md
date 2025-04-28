@@ -1064,7 +1064,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)throw
 
 欢迎你把你写的请求串分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>ctt</span> 👍（1） 💬（1）<div>GET &#47;path&#47;to&#47;resource HTTP&#47;1.1
+<li><span>ctt</span> 👍（1） 💬（1）<p>GET &#47;path&#47;to&#47;resource HTTP&#47;1.1
 Host: www.example.com
 User-Agent: Mozilla&#47;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#47;537.36
              (KHTML, like Gecko) Chrome&#47;58.0.3029.110 Safari&#47;537.36
@@ -1073,7 +1073,7 @@ Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate, br
 Cookie: sessionid=abc123; username=ctt
 Connection: keep-alive
-</div>2023-12-27</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+</p>2023-12-27</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：Cookie和Session是成对出现的吗？
 有Cookie就一定有Session，对吗？反过来，有Session也一定有Cookie，对吗？
 Q2：Session的Set-Cookie字段可以出现多次吗？
@@ -1096,7 +1096,7 @@ HttpRequest.java文件中有如下导包语句：
 import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.InternetHeaders;
 编译报错：
 Error:(3, 67) java: 程序包com.sun.xml.internal.messaging.saaj.packaging.mime.internet不存在
-前面几课的代码，Idea中修改java版本后都能正常运行，第8课的代码却有这个编译错误，为什么？</div>2023-12-25</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>1、手工写一个请求串
+前面几课的代码，Idea中修改java版本后都能正常运行，第8课的代码却有这个编译错误，为什么？</p>2023-12-25</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>1、手工写一个请求串
 POST &#47;servlet&#47;test.TestServlet HTTP&#47;1.1
 Host: localhost:8080
 Content-Type: application&#47;x-www-form-urlencoded
@@ -1105,7 +1105,7 @@ Content-Length: 9
 
 name=haha
 
-2、回传 jsessionid 到客户端其实文中也有提到了， 通过 cookie  或 URL 重写进行进行回传。</div>2023-12-25</li><br/><li><span>夙夜SEngineer</span> 👍（0） 💬（0）<div>我来完善一段代码逻辑，getParameter(String name)方法中，应只调用一次parseParameters，添加if (parameters.isEmpty())判断：
+2、回传 jsessionid 到客户端其实文中也有提到了， 通过 cookie  或 URL 重写进行进行回传。</p>2023-12-25</li><br/><li><span>夙夜SEngineer</span> 👍（0） 💬（0）<p>我来完善一段代码逻辑，getParameter(String name)方法中，应只调用一次parseParameters，添加if (parameters.isEmpty())判断：
     @Override
     public String getParameter(String name) {
         if (parameters.isEmpty()) {
@@ -1125,7 +1125,7 @@ name=haha
         if (nRead &gt; 0) {
             count = nRead;
         }
-    }</div>2025-02-12</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（1）<div>代码示例中，对于SocketInputStream类，
+    }</p>2025-02-12</li><br/><li><span>偶来人间，风度翩翩</span> 👍（0） 💬（1）<p>代码示例中，对于SocketInputStream类，
 第53行代码【requestLine.uriEnd =  readCount - 1; 】是不正确的，
-应该是【requestLine.methodEnd = readCount - 1;】。   </div>2024-05-25</li><br/>
+应该是【requestLine.methodEnd = readCount - 1;】。   </p>2024-05-25</li><br/>
 </ul>

@@ -415,5 +415,5 @@ public void afterPropertiesSet() {
 
 期待你的思考，我们留言区见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>一记妙蛙直拳</span> 👍（8） 💬（0）<div>springboot通过RedisAutoConfiguration 自动装配进来的</div>2021-06-02</li><br/>
+<li><span>一记妙蛙直拳</span> 👍（8） 💬（0）<p>springboot通过RedisAutoConfiguration 自动装配进来的</p>2021-06-02</li><br/>
 </ul>

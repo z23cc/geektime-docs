@@ -394,21 +394,21 @@ func Insert[E Entity](e *E) {
 
 欢迎在留言区分享你的看法，我们一起讨论。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>yandongxiao</span> 👍（4） 💬（1）<div>不知道是从哪里看到的。
+<li><span>yandongxiao</span> 👍（4） 💬（1）<p>不知道是从哪里看到的。
 
 什么时候要使用泛型？
 1. write code do not design types. 先写函数，别着急一上来就写泛型，函数泛型化是比较简单的。
 2. Functions that work on slices, maps, and channels of any element type. 那些不在乎容器内的元素类型的函数。
 3. general purpose data struct，算法，例如，链表、二叉树等。
 4. when a method looks the same for all types。当你发现你不得不实现一段重复的逻辑时，就可以考虑泛型。
-</div>2022-04-12</li><br/><li><span>洛书</span> 👍（0） 💬（1）<div>最不可接受的是使用[]作为泛型类型声明,
+</p>2022-04-12</li><br/><li><span>洛书</span> 👍（0） 💬（1）<p>最不可接受的是使用[]作为泛型类型声明,
 [] 本身已经作为slice,array,map的索引操作符,而且大多数人都有别的语言开发的经验,下意识会把[]当作下表解释. 这才是心智负担. 而使用&lt;&gt;就没有这个问题.
-标新立异?</div>2022-02-22</li><br/><li><span>pike</span> 👍（0） 💬（0）<div>当你要为不同的类型写相同逻辑的代码，泛</div>2022-10-16</li><br/><li><span>洛书</span> 👍（0） 💬（0）<div>
+标新立异?</p>2022-02-22</li><br/><li><span>pike</span> 👍（0） 💬（0）<p>当你要为不同的类型写相同逻辑的代码，泛</p>2022-10-16</li><br/><li><span>洛书</span> 👍（0） 💬（0）<p>
 type Vector[T any] []T
 type Vector&lt;T any&gt; []T
 
 type Vector[T any] [][]T
 type Vector&lt;T any] [][]T
 
-孰优孰劣,不难看出,不明白为什么头铁的采用[]包裹泛型声明, 标新立异?</div>2022-02-22</li><br/><li><span>罗杰</span> 👍（0） 💬（0）<div>看起来限制还是非常多，不过对我而言，泛型几乎都没有使用场景。</div>2022-02-11</li><br/>
+孰优孰劣,不难看出,不明白为什么头铁的采用[]包裹泛型声明, 标新立异?</p>2022-02-22</li><br/><li><span>罗杰</span> 👍（0） 💬（0）<p>看起来限制还是非常多，不过对我而言，泛型几乎都没有使用场景。</p>2022-02-11</li><br/>
 </ul>

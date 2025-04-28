@@ -125,6 +125,6 @@ public class ResourceServlet extends HttpServlet {
 
 也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>aoe</span> 👍（2） 💬（1）<div>@TestFactory + 标签 + 反射刷新了我对自动化测试认知！</div>2022-07-02</li><br/><li><span>Luke</span> 👍（0） 💬（1）<div>踩了个坑。如果测试时遇到 StackOverflowError 的，看看 stub 的 OutboundResponse 是否都是默认值。</div>2022-08-26</li><br/><li><span>枫中的刀剑</span> 👍（0） 💬（0）<div>看老师重构代码是真的舒服，信手拈来，一气呵成。
-动态测试配合函数式还能这么用，学到了。</div>2022-06-29</li><br/>
+<li><span>aoe</span> 👍（2） 💬（1）<p>@TestFactory + 标签 + 反射刷新了我对自动化测试认知！</p>2022-07-02</li><br/><li><span>Luke</span> 👍（0） 💬（1）<p>踩了个坑。如果测试时遇到 StackOverflowError 的，看看 stub 的 OutboundResponse 是否都是默认值。</p>2022-08-26</li><br/><li><span>枫中的刀剑</span> 👍（0） 💬（0）<p>看老师重构代码是真的舒服，信手拈来，一气呵成。
+动态测试配合函数式还能这么用，学到了。</p>2022-06-29</li><br/>
 </ul>

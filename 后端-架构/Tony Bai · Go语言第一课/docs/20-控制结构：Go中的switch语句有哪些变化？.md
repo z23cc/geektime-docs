@@ -485,7 +485,7 @@ Go语言的switch语句继承自C语言，但“青出于蓝而胜于蓝”，Go
 
 欢迎你把这节课分享给更多对Go语言中的switch语句感兴趣的朋友。我是Tony Bai，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>qinsi</span> 👍（41） 💬（1）<div>type switch里的
+<li><span>qinsi</span> 👍（41） 💬（1）<p>type switch里的
 
 switch v := x.(type) {
 
@@ -493,20 +493,20 @@ switch v := x.(type) {
 
 switch a:= f(); v := x.(type) {
 
-另外type switch里是不能fallthrough的</div>2021-12-04</li><br/><li><span>一打七</span> 👍（17） 💬（2）<div>文中说x.(type)这种表达式形式是 switch 语句专有的，但是类型断言也可以这么写，所以不应该是专有的吧？</div>2022-02-12</li><br/><li><span>lyy</span> 👍（9） 💬（5）<div>个人感觉fallthrough，执行完 case1 后，继续case2里面的代码，而不用判断case2的条件是否成立，这一点设计的并不好，估计很多人会理解为继续判断case2条件</div>2022-02-06</li><br/><li><span>文经</span> 👍（3） 💬（1）<div>白老师，我这样理解对不对：
+另外type switch里是不能fallthrough的</p>2021-12-04</li><br/><li><span>一打七</span> 👍（17） 💬（2）<p>文中说x.(type)这种表达式形式是 switch 语句专有的，但是类型断言也可以这么写，所以不应该是专有的吧？</p>2022-02-12</li><br/><li><span>lyy</span> 👍（9） 💬（5）<p>个人感觉fallthrough，执行完 case1 后，继续case2里面的代码，而不用判断case2的条件是否成立，这一点设计的并不好，估计很多人会理解为继续判断case2条件</p>2022-02-06</li><br/><li><span>文经</span> 👍（3） 💬（1）<p>白老师，我这样理解对不对：
 x.(type) 如果没有 := 符号的话，这个表达式是获取x的具体类型
 v := x.(type), 这个则是把x从具体的接口类型中获取它实际类型的值。
 x.(SomeType)， 则是判段x是否遵守SomeType接口，并转化为具体类型的值。
-所有的这些行为都是编译器把它转化为相应的代码。</div>2021-12-24</li><br/><li><span>lesserror</span> 👍（3） 💬（3）<div>Tony Bai 老师的文章讲解的非常细致，鼓掌。
+所有的这些行为都是编译器把它转化为相应的代码。</p>2021-12-24</li><br/><li><span>lesserror</span> 👍（3） 💬（3）<p>Tony Bai 老师的文章讲解的非常细致，鼓掌。
 
 想问一下老师，文中的内容基本都能理解，但是过一段时间就遗忘比较多了，尤其是后面的内容涉及到前面的知识时。希望老师在这门课中搞个小型的实战项目，能把前面的知识串在一起就好了。
 
-这样，不会觉得纸上得来终觉浅......</div>2021-11-26</li><br/><li><span>十年一劫</span> 👍（2） 💬（1）<div>老师，现在go支持泛型了，type switch语句中传入的类型可以用泛型么</div>2023-11-29</li><br/><li><span>plh</span> 👍（1） 💬（1）<div> switch 太灵活,即使有经验的go开发者也容易犯错. 看过好几篇文章,这个地方是讲的最全面,最清晰的. </div>2023-05-28</li><br/><li><span>qiutian</span> 👍（1） 💬（2）<div>哪来的case2呢</div>2022-06-01</li><br/><li><span>peison</span> 👍（1） 💬（1）<div>我想请教一下，文中type switch中的  v:=x.(type)后面，为什么switch中的case分支，不是和x.(type)的返回值v做比较？那实际上case分支是和什么值做比较</div>2022-04-09</li><br/><li><span>人言有力</span> 👍（0） 💬（1）<div>本节讲述了switch语句的使用
+这样，不会觉得纸上得来终觉浅......</p>2021-11-26</li><br/><li><span>十年一劫</span> 👍（2） 💬（1）<p>老师，现在go支持泛型了，type switch语句中传入的类型可以用泛型么</p>2023-11-29</li><br/><li><span>plh</span> 👍（1） 💬（1）<p> switch 太灵活,即使有经验的go开发者也容易犯错. 看过好几篇文章,这个地方是讲的最全面,最清晰的. </p>2023-05-28</li><br/><li><span>qiutian</span> 👍（1） 💬（2）<p>哪来的case2呢</p>2022-06-01</li><br/><li><span>peison</span> 👍（1） 💬（1）<p>我想请教一下，文中type switch中的  v:=x.(type)后面，为什么switch中的case分支，不是和x.(type)的返回值v做比较？那实际上case分支是和什么值做比较</p>2022-04-09</li><br/><li><span>人言有力</span> 👍（0） 💬（1）<p>本节讲述了switch语句的使用
 1. switch是一个选择语句，对于多分支场景比if更加直观
 2.go的switch相比c语言，改进了break机制，默认break，除非fallthrough
 3.创新了一个type switch，可以用switch x.(type) 的方式，限定x需要是接口类型；并且如果x指定了类型，那么case语句需要是该接口类型的实现。
-4. 思考题：if和switch其实if还是更常用，case用在分支特别多的场景多一些</div>2024-05-14</li><br/><li><span>ps Sensking</span> 👍（0） 💬（1）<div>我们要注意的是只有接口类型变量才能使用 type switch，并且所有 case 语句中的类型必须实现 switch 关键字后面变量的接口类型。 
-您好这个例子用interface 里面只要实现一个 int  或者 string 就可以正常启动吗？ 如果是type 自定义的类型 T 就需要制定一个int 或者 string吗？</div>2022-01-22</li><br/><li><span>文经</span> 👍（0） 💬（1）<div>白老师，switch v := x.(type)，有点不太好理解。
+4. 思考题：if和switch其实if还是更常用，case用在分支特别多的场景多一些</p>2024-05-14</li><br/><li><span>ps Sensking</span> 👍（0） 💬（1）<p>我们要注意的是只有接口类型变量才能使用 type switch，并且所有 case 语句中的类型必须实现 switch 关键字后面变量的接口类型。 
+您好这个例子用interface 里面只要实现一个 int  或者 string 就可以正常启动吗？ 如果是type 自定义的类型 T 就需要制定一个int 或者 string吗？</p>2022-01-22</li><br/><li><span>文经</span> 👍（0） 💬（1）<p>白老师，switch v := x.(type)，有点不太好理解。
 这个语句编译器是不是转化为类型这样的代码：
 v := x.(type)
 switch x.(type)
@@ -515,7 +515,7 @@ switch x.(type)
 v := x.(type)
 switch v
 
-这算不算编译器提供的一种语法糖？</div>2021-12-24</li><br/><li><span>aoe</span> 👍（15） 💬（6）<div>今天《极客时间》两个专栏同时更新，主题都是 switch
+这算不算编译器提供的一种语法糖？</p>2021-12-24</li><br/><li><span>aoe</span> 👍（15） 💬（6）<p>今天《极客时间》两个专栏同时更新，主题都是 switch
 
 - 《深入剖析 Java 新特性》06 | Switch表达式：怎么简化多情景操作？
 - 《Tony Bai · Go 语言第一课》20｜控制结构：Go中的switch语句有哪些变化？
@@ -551,5 +551,5 @@ func checkWorkday(day int) string {
 		return &quot;are you live on earth&quot;
 	}
 }
-```</div>2021-11-26</li><br/><li><span>进化菌</span> 👍（5） 💬（0）<div>所以，switch 不需要 break 是出于大多数情况 switch 只需要走一条分支的缘故吗？</div>2021-11-26</li><br/><li><span>木木</span> 👍（1） 💬（1）<div>C语言的switch是为了模拟跳转表，所以如果目的是根据值执行一小段的话，需要每个条件的执行语句最后都加break，go的switch已经不再是为了模拟跳转表了，就是按着人们常用的方法设计的，所以不用加break，但是break的作用依旧留着</div>2021-12-14</li><br/>
+```</p>2021-11-26</li><br/><li><span>进化菌</span> 👍（5） 💬（0）<p>所以，switch 不需要 break 是出于大多数情况 switch 只需要走一条分支的缘故吗？</p>2021-11-26</li><br/><li><span>木木</span> 👍（1） 💬（1）<p>C语言的switch是为了模拟跳转表，所以如果目的是根据值执行一小段的话，需要每个条件的执行语句最后都加break，go的switch已经不再是为了模拟跳转表了，就是按着人们常用的方法设计的，所以不用加break，但是break的作用依旧留着</p>2021-12-14</li><br/>
 </ul>

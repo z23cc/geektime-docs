@@ -151,7 +151,7 @@ kubectl get svc -n knative-serving
 
 期待你的实践总结，欢迎留言与我交流。如果今天的内容让你有所收获，也欢迎你把文章分享给更多的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>我来也</span> 👍（5） 💬（1）<div>补交一下作业.
+<li><span>我来也</span> 👍（5） 💬（1）<p>补交一下作业.
 今天通过ASK的Knative部署了老师的这套服务.
 给有需要的同学一个参考:
 
@@ -173,10 +173,10 @@ kubectl get svc -n knative-serving
 5. 配置域名解析
    需要解析到Knative的负载均衡SLB的公网IP上
 6. 验证部署效果
-</div>2020-05-12</li><br/><li><span>我来也</span> 👍（1） 💬（1）<div>感觉Knative还是太新了,目前还未出1.0版本.
+</p>2020-05-12</li><br/><li><span>我来也</span> 👍（1） 💬（1）<p>感觉Knative还是太新了,目前还未出1.0版本.
 不过有了它,确实是可以方便的基于k8s环境,搭建属于自己的serverless平台做定制化.
 
 今天无意中看到一个IBM的免费视频讲堂,推荐给感兴趣的小伙伴.
 [Kubernetes 原生无服务器开源项目 Knative](https:&#47;&#47;developer.ibm.com&#47;cn&#47;os-academy-knative&#47;)
-</div>2020-05-10</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<div>现在云厂商都会基于kata或者rust-vmm来实现“serverless”式的容器服务，请问您怎么看？另外厂商一般使用virtual-kubelet来管理serverless容器产品，例如腾讯EKS，为什么不用原生的kubelet结合containerd来进行管理呢？</div>2020-08-25</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>资源的物理机虚拟化 是什么意思的？ 是一份资源虚拟出多份资源使用吗？</div>2020-05-12</li><br/><li><span>奕</span> 👍（2） 💬（0）<div>阿里云 客服响应速度是一大亮点 ，这点我认同。哈哈，每次有问题提工单都能快速的响应</div>2020-05-12</li><br/>
+</p>2020-05-10</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<p>现在云厂商都会基于kata或者rust-vmm来实现“serverless”式的容器服务，请问您怎么看？另外厂商一般使用virtual-kubelet来管理serverless容器产品，例如腾讯EKS，为什么不用原生的kubelet结合containerd来进行管理呢？</p>2020-08-25</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>资源的物理机虚拟化 是什么意思的？ 是一份资源虚拟出多份资源使用吗？</p>2020-05-12</li><br/><li><span>奕</span> 👍（2） 💬（0）<p>阿里云 客服响应速度是一大亮点 ，这点我认同。哈哈，每次有问题提工单都能快速的响应</p>2020-05-12</li><br/>
 </ul>

@@ -66,5 +66,5 @@ PageRank被提出后不久，就有学者开始针对PageRank模型和算法的�
 - [The anatomy of a large-scale hypertextual Web search engine](http://infolab.stanford.edu/~backrub/google.html)
 - [Deeper Inside PageRank](http://meyer.math.ncsu.edu/Meyer/PS_Files/DeeperInsidePR.pdf)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>DasonCheng</span> 👍（14） 💬（0）<div>浏览到这里，总体感受是不够系统，多为知识点的搬运堆砌，给人一种“混”的感觉</div>2018-12-11</li><br/><li><span>韩 * *</span> 👍（0） 💬（0）<div>我觉得脉络挺清楚的，很多关键点梳理出来了，需要的时候可以按图索骥，自己拓展学习。我是等更新完按模块来看的，挺舒服。</div>2019-08-03</li><br/>
+<li><span>DasonCheng</span> 👍（14） 💬（0）<p>浏览到这里，总体感受是不够系统，多为知识点的搬运堆砌，给人一种“混”的感觉</p>2018-12-11</li><br/><li><span>韩 * *</span> 👍（0） 💬（0）<p>我觉得脉络挺清楚的，很多关键点梳理出来了，需要的时候可以按图索骥，自己拓展学习。我是等更新完按模块来看的，挺舒服。</p>2019-08-03</li><br/>
 </ul>

@@ -216,7 +216,7 @@ df.writeStream
 
 欢迎你在留言区跟我交流互动，也推荐你把今天的内容分享给更多同事、朋友，一起动手搭建这个Word Count流计算应用。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>东围居士</span> 👍（7） 💬（1）<div>老师，我一直都有个疑惑，Spark Streaming 和 Spark Structured Streaming 有什么区别呢，现在企业里面用哪个更多，如果我们现在要学习的话，是不是只学 Spark Structured Streaming 就可以了？</div>2021-11-23</li><br/><li><span>大叮当</span> 👍（6） 💬（2）<div>老师您好，一直有个问题想请请您解惑下。
+<li><span>东围居士</span> 👍（7） 💬（1）<p>老师，我一直都有个疑惑，Spark Streaming 和 Spark Structured Streaming 有什么区别呢，现在企业里面用哪个更多，如果我们现在要学习的话，是不是只学 Spark Structured Streaming 就可以了？</p>2021-11-23</li><br/><li><span>大叮当</span> 👍（6） 💬（2）<p>老师您好，一直有个问题想请请您解惑下。
 就是kafka每个主题都有个分区的概念，理论上说，一个消费者组中消费者数目和分区数一致，是效率最高的。
 引申到Spark Streaming&#47;Spark Structured Streaming,我的理解：
 1、executor数目，和要消费的topic中的分区数目一致，效能最高，不知道这个点我理解对不对。
@@ -225,5 +225,5 @@ df.writeStream
 
 基于这样的场景，我是不是每个executor只分配1个CPU核就可以了，比如我一个topic有3个partition，那么我指定3个executor（先不考虑driver），每个executor1个cpu核就够了，如果每个executor多个核反而浪费了，用不到？？
 
-恳请老师解惑，谢谢</div>2021-11-19</li><br/><li><span>blank</span> 👍（1） 💬（0）<div>想问一下老师，_spark_metadata在本地时丢失 不会影响streaming job正常运行，但在azure上，会发生unable to find batch &#47;_spark_metadata&#47;0的情况 这个问题要怎么处理呢。什么情况下metadata文件会丢失呢</div>2022-09-06</li><br/>
+恳请老师解惑，谢谢</p>2021-11-19</li><br/><li><span>blank</span> 👍（1） 💬（0）<p>想问一下老师，_spark_metadata在本地时丢失 不会影响streaming job正常运行，但在azure上，会发生unable to find batch &#47;_spark_metadata&#47;0的情况 这个问题要怎么处理呢。什么情况下metadata文件会丢失呢</p>2022-09-06</li><br/>
 </ul>

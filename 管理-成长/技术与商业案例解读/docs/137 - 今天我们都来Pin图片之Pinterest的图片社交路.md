@@ -54,5 +54,5 @@ Pinterest的创始人在很长一段时间里都只是专注于用户的增长�
 
 所以，一个企业创立可能需要一个好的创意，但是一个初创企业的发展壮大，很多时候更是体现在企业的经营上。按部就班地发展壮大，看似平淡，其实很难能可贵。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Kai</span> 👍（0） 💬（1）<div>相对于Facebook 和 Instagram, Twitter。 Pinterest有什么优势和劣势吗？</div>2019-03-21</li><br/><li><span>阿舍利手斧</span> 👍（1） 💬（1）<div>这样一款App能引起一股浪潮，有点不可思议</div>2018-10-25</li><br/>
+<li><span>Kai</span> 👍（0） 💬（1）<p>相对于Facebook 和 Instagram, Twitter。 Pinterest有什么优势和劣势吗？</p>2019-03-21</li><br/><li><span>阿舍利手斧</span> 👍（1） 💬（1）<p>这样一款App能引起一股浪潮，有点不可思议</p>2018-10-25</li><br/>
 </ul>

@@ -628,5 +628,5 @@ public class RouteNoConsumerFilter implements Filter, Filter.Listener {
 
 第三，当前系统一定得想办法把前端发来的 routeNo 存储起来，以便在发起调用时，选择具体的invoker 对象，并且把 routeNo 传给提供方，让将来提供方调用别的系统时能派上用场。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_b2ac95</span> 👍（0） 💬（1）<div>您好，可以正常留言吗</div>2024-12-31</li><br/><li><span>准时不早退的嘉然</span> 👍（0） 💬（1）<div>老师您好，如果想做线程池隔离要怎么实现呢？现在有个需求，要为不同服务接口分配不同的线程数量</div>2023-03-11</li><br/><li><span>Geek_b2ac95</span> 👍（0） 💬（0）<div>您好，我执行工程中的案例，使用自定义线程池，发现provider可以正常启动，并且自定义线程池生效了，zk上的服务注册信息也有自定义线程池信息，但是consumer无法正常消费，debug进去发现找不到可用的invoker，应该是过滤掉了，这个怎么解决？</div>2024-12-31</li><br/>
+<li><span>Geek_b2ac95</span> 👍（0） 💬（1）<p>您好，可以正常留言吗</p>2024-12-31</li><br/><li><span>准时不早退的嘉然</span> 👍（0） 💬（1）<p>老师您好，如果想做线程池隔离要怎么实现呢？现在有个需求，要为不同服务接口分配不同的线程数量</p>2023-03-11</li><br/><li><span>Geek_b2ac95</span> 👍（0） 💬（0）<p>您好，我执行工程中的案例，使用自定义线程池，发现provider可以正常启动，并且自定义线程池生效了，zk上的服务注册信息也有自定义线程池信息，但是consumer无法正常消费，debug进去发现找不到可用的invoker，应该是过滤掉了，这个怎么解决？</p>2024-12-31</li><br/>
 </ul>

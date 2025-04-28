@@ -103,5 +103,5 @@ Cilium 的 eBPF 程序按照其挂载位置和程序类型的不同，可以分�
 
 欢迎在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>hudy_coco</span> 👍（1） 💬（1）<div>想知道的是，cilium有没有用ebpf实现进程流量限速、链接跟踪、防火墙与进程关联呢</div>2023-05-11</li><br/><li><span>mxmkeep</span> 👍（0） 💬（0）<div>希望下期老师能讲讲katran~</div>2023-05-05</li><br/>
+<li><span>hudy_coco</span> 👍（1） 💬（1）<p>想知道的是，cilium有没有用ebpf实现进程流量限速、链接跟踪、防火墙与进程关联呢</p>2023-05-11</li><br/><li><span>mxmkeep</span> 👍（0） 💬（0）<p>希望下期老师能讲讲katran~</p>2023-05-05</li><br/>
 </ul>

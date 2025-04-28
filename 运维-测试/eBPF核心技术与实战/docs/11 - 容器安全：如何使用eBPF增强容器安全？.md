@@ -228,7 +228,7 @@ eBPF 所支持的 kprobe、uprobe、tracepoint 等各类探针已经非常全面
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>莫名</span> 👍（14） 💬（1）<div>另外分享一个经验，结构体 nsproxy 的 net 字段（代表进程所在的网络命名空间）在追踪网络包在宿主机 -&gt; 容器传递过程时尤其有用，可以比较清楚的看到网络包从宿主机的网络命名空间传递到容器独立的网络命名空间之中，协助更好的理解容器网络模型。（把网络设备名字也打印出来会更好。）
+<li><span>莫名</span> 👍（14） 💬（1）<p>另外分享一个经验，结构体 nsproxy 的 net 字段（代表进程所在的网络命名空间）在追踪网络包在宿主机 -&gt; 容器传递过程时尤其有用，可以比较清楚的看到网络包从宿主机的网络命名空间传递到容器独立的网络命名空间之中，协助更好的理解容器网络模型。（把网络设备名字也打印出来会更好。）
 
 倪老师文中的示例程序 execsnoop-container.bt 使用了结构体 nsproxy 的 pid_ns_for_children 获取 PID 命名空间，稍微改动了一下，换成 NET 命名空间，把具体的 id 打出来。
 
@@ -269,14 +269,14 @@ tracepoint:syscalls:sys_enter_execveat
   $cname = $task-&gt;nsproxy-&gt;uts_ns-&gt;name.nodename;
   printf(&quot;%-12ld %-18s %-6d %-6d %-16s&quot;, (uint64)$netns, $cname, curtask-&gt;parent-&gt;pid, pid, comm);
   join(args-&gt;argv);
-}</div>2022-02-10</li><br/><li><span>写点啥呢</span> 👍（5） 💬（1）<div>本节课是关于eBPF在安全方面的使用，微博上看到有人发的这个rookit：https:&#47;&#47;weibo.com&#47;tv&#47;show&#47;1034:4718242451882158?from=old_pc_videoshow，因此我对eBPF如何保证自身安全性很好奇，想请教下老师对于系统来说eBPF是一个两面利器，它自身设计与实现，还有在使用中该如何注意避免引入安全问题呢？
+}</p>2022-02-10</li><br/><li><span>写点啥呢</span> 👍（5） 💬（1）<p>本节课是关于eBPF在安全方面的使用，微博上看到有人发的这个rookit：https:&#47;&#47;weibo.com&#47;tv&#47;show&#47;1034:4718242451882158?from=old_pc_videoshow，因此我对eBPF如何保证自身安全性很好奇，想请教下老师对于系统来说eBPF是一个两面利器，它自身设计与实现，还有在使用中该如何注意避免引入安全问题呢？
 
 另外像bpf_send_signal辅助函数能够通过信号杀死进程，这是不是一种类似变成语言的unsafe方法，应该在实际中谨慎使用呢？
 
-谢谢老师。</div>2022-02-09</li><br/><li><span>莫名</span> 👍（3） 💬（1）<div>1、曾使用过 sysdig，老版本通过插入内核模块的方式进行安全审计。后来 sysdig 支持了 eBPF driver，主要通过追踪系统调用分析可能的安全隐患。sysdig eBPF driver 实现比较简单，一共十几个 program，统一放在 probe.c 源文件，里面的思路借鉴下还是不错的。
-2、觉得需要在 bash 自身上做手脚，比如把 bash 软链接到一个脚本文件，记录下 bash 执行记录，然后 直接 exit。或者修改 bash 配置文件 .bashrc，文件末尾直接 exit。两种方法都有局限性，如果被识破可以很容易绕过去。</div>2022-02-10</li><br/><li><span>Geek_89541f</span> 👍（0） 💬（2）<div>请问我在阿里云的虚拟机（centos系统，内核版本4.18)中使用ip link加载xdp程序，若指定xdpdrv模式会报错，xdpgeneric可以。这是为啥？虚拟网卡只能使用generic模式吗？这样性能不能满足生产需求。</div>2022-02-09</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<div>如果运行 bpftrace 找不到 BEGIN symbol，例如出现：
+谢谢老师。</p>2022-02-09</li><br/><li><span>莫名</span> 👍（3） 💬（1）<p>1、曾使用过 sysdig，老版本通过插入内核模块的方式进行安全审计。后来 sysdig 支持了 eBPF driver，主要通过追踪系统调用分析可能的安全隐患。sysdig eBPF driver 实现比较简单，一共十几个 program，统一放在 probe.c 源文件，里面的思路借鉴下还是不错的。
+2、觉得需要在 bash 自身上做手脚，比如把 bash 软链接到一个脚本文件，记录下 bash 执行记录，然后 直接 exit。或者修改 bash 配置文件 .bashrc，文件末尾直接 exit。两种方法都有局限性，如果被识破可以很容易绕过去。</p>2022-02-10</li><br/><li><span>Geek_89541f</span> 👍（0） 💬（2）<p>请问我在阿里云的虚拟机（centos系统，内核版本4.18)中使用ip link加载xdp程序，若指定xdpdrv模式会报错，xdpgeneric可以。这是为啥？虚拟网卡只能使用generic模式吗？这样性能不能满足生产需求。</p>2022-02-09</li><br/><li><span>Bachue Zhou</span> 👍（0） 💬（0）<p>如果运行 bpftrace 找不到 BEGIN symbol，例如出现：
 ERROR: Could not resolve symbol: &#47;proc&#47;self&#47;exe:BEGIN_trigger
 就运行 
 sudo apt install bpftrace-dbgsym
-就行了哈</div>2023-04-09</li><br/><li><span>郑海成</span> 👍（0） 💬（0）<div>https:&#47;&#47;elixir.bootlin.com&#47;linux&#47;v5.13&#47;source&#47;include&#47;linux&#47;sched.h#L657 老师，bootlin这个网站是有什么要求吗？为什么我所有的代码link都显示 &quot;This file does not exist.&quot;呢？</div>2022-04-13</li><br/>
+就行了哈</p>2023-04-09</li><br/><li><span>郑海成</span> 👍（0） 💬（0）<p>https:&#47;&#47;elixir.bootlin.com&#47;linux&#47;v5.13&#47;source&#47;include&#47;linux&#47;sched.h#L657 老师，bootlin这个网站是有什么要求吗？为什么我所有的代码link都显示 &quot;This file does not exist.&quot;呢？</p>2022-04-13</li><br/>
 </ul>

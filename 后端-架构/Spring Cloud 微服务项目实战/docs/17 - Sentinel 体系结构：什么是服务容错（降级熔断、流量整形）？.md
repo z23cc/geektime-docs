@@ -106,13 +106,13 @@ Sentinel是Spring Cloud Alibaba的一款服务容错组件，我们也经常把�
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Lee</span> 👍（7） 💬（1）<div>限流单机guava的ratelimit 或者分布式下用redis的rratelimit</div>2022-05-14</li><br/><li><span>peter</span> 👍（4） 💬（3）<div>A “降级”和“熔断”都会执行降级逻辑。但对于“降级”，下一次A服务还会调用B服务，只不过失败后再执行降级逻辑，对吗？
+<li><span>Lee</span> 👍（7） 💬（1）<p>限流单机guava的ratelimit 或者分布式下用redis的rratelimit</p>2022-05-14</li><br/><li><span>peter</span> 👍（4） 💬（3）<p>A “降级”和“熔断”都会执行降级逻辑。但对于“降级”，下一次A服务还会调用B服务，只不过失败后再执行降级逻辑，对吗？
 B 我对“降级”的理解是“下线某些不重要的服务”，和本篇所讲的“降级”不一样。是不同层次的“降级”吗？
 Q2：预热模型两个问题？
 A 预热模型是在线上使用的吗？还是上线之前测试用的？
 B 对于窗口内的某一个阈值，请求失败后怎么处理？
 
 Q3：Sentinel创建的entry对象是对请求的封装吗？ 还是对要访问的资源的封装？
-Q4：为什么叫Slot吗？slot本意是“时隙”，感觉用这个名字不合适？</div>2022-01-19</li><br/><li><span>子夜</span> 👍（0） 💬（2）<div>有个疑问 限流和熔断降级都是入口处拦截的，假如有两台服务器a，b。a调用b 在b处做限流或熔断降级，无论b的资源是否被占用，a的计算资源都被占用了不是嘛</div>2022-06-30</li><br/><li><span>排骨</span> 👍（3） 💬（0）<div>Sentinel里面有个DefaultSlotChainBuilderTest单元测试类，可以大概看清楚全流程</div>2023-02-27</li><br/><li><span>罗逸</span> 👍（0） 💬（0）<div>改了git配置，拉下来了，sorry</div>2022-02-18</li><br/><li><span>罗逸</span> 👍（0） 💬（0）<div>服务容错拉不下来 warning: Clone succeeded, but checkout failed. 
-sentinel-annotation-quarkus-adapter-deployment 说这个名称过长</div>2022-02-18</li><br/><li><span>海布里王力宏</span> 👍（0） 💬（0）<div>能简单介绍一下slot的底层原理实现吗？如何做到即保护了资源又不影响可用性。</div>2022-01-30</li><br/>
+Q4：为什么叫Slot吗？slot本意是“时隙”，感觉用这个名字不合适？</p>2022-01-19</li><br/><li><span>子夜</span> 👍（0） 💬（2）<p>有个疑问 限流和熔断降级都是入口处拦截的，假如有两台服务器a，b。a调用b 在b处做限流或熔断降级，无论b的资源是否被占用，a的计算资源都被占用了不是嘛</p>2022-06-30</li><br/><li><span>排骨</span> 👍（3） 💬（0）<p>Sentinel里面有个DefaultSlotChainBuilderTest单元测试类，可以大概看清楚全流程</p>2023-02-27</li><br/><li><span>罗逸</span> 👍（0） 💬（0）<p>改了git配置，拉下来了，sorry</p>2022-02-18</li><br/><li><span>罗逸</span> 👍（0） 💬（0）<p>服务容错拉不下来 warning: Clone succeeded, but checkout failed. 
+sentinel-annotation-quarkus-adapter-deployment 说这个名称过长</p>2022-02-18</li><br/><li><span>海布里王力宏</span> 👍（0） 💬（0）<p>能简单介绍一下slot的底层原理实现吗？如何做到即保护了资源又不影响可用性。</p>2022-01-30</li><br/>
 </ul>

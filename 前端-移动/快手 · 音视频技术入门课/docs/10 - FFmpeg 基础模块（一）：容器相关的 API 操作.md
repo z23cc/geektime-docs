@@ -88,11 +88,11 @@ FFmpeg中有很多重要的模块，比如AVFormat模块、AVcodec模块、AVfil
 
 欢迎在评论区留下你的答案，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（3） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（3） 💬（1）<p>请教老师几个问题：
 Q1：FFmpeg框架有渲染音频的能力吗？比如要实现“混音”功能，即在一个音频上叠加另外一个音频，混音后能同时听到两个声音。Ffmpeg是否支持开发“混音”功能？（安卓系统上搜到了几个音频编辑的APP，APP的其中一个功能是“音频合并”。我这里说的“混音”差不多就是“音频合并”）。
 Q2：切片是什么意思？是若干帧的组合吗？或者是从视频或音频文件中截取一小段？
 Q3：partition、切片、宏块有什么区别？
-Q4：”side data”是什么意思？</div>2022-08-16</li><br/><li><span>Geek_a54b66</span> 👍（1） 💬（1）<div>windows 的 ffmpeg 要通过源代码编译，还是官网直接下编译好的，如果要编译怎么编译，而且开发环境怎么搭建</div>2023-05-12</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-28</li><br/><li><span>Sky丶蓝调</span> 👍（0） 💬（0）<div>在FFmpeg的API中，可以使用av_opt_set()函数来设置movflags参数，从而实现将MP4的moov移动到文件头部的功能。具体步骤如下：
+Q4：”side data”是什么意思？</p>2022-08-16</li><br/><li><span>Geek_a54b66</span> 👍（1） 💬（1）<p>windows 的 ffmpeg 要通过源代码编译，还是官网直接下编译好的，如果要编译怎么编译，而且开发环境怎么搭建</p>2023-05-12</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-28</li><br/><li><span>Sky丶蓝调</span> 👍（0） 💬（0）<p>在FFmpeg的API中，可以使用av_opt_set()函数来设置movflags参数，从而实现将MP4的moov移动到文件头部的功能。具体步骤如下：
 
 首先需要获取AVFormatContext，可以使用avformat_alloc_output_context2()函数创建一个输出上下文。
 设置输出格式和输出文件路径，可以使用avformat_new_stream()函数新建一个流。
@@ -127,5 +127,5 @@ while (&#47;* 读取AVPacket *&#47;) {
 }
 
 av_write_trailer(out_ctx);
-</div>2023-04-01</li><br/>
+</p>2023-04-01</li><br/>
 </ul>

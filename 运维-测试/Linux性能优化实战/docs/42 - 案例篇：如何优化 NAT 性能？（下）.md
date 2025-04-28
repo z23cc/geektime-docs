@@ -457,18 +457,18 @@ net.netfilter.nf_conntrack_tcp_timeout_time_wait = 120
 
 欢迎在留言区和我讨论，也欢迎你把这篇文章分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>分清云淡</span> 👍（48） 💬（1）<div>https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;VYBs8iqf0HsNg9WAxktzYQ：（多个容器snat时因为搜索本地可用端口（都从1025开始，到找到可用端口并插入到conntrack表是一个非事务并且有时延--第二个插入会失败，进而导致第一个syn包被扔掉的错误，扔掉后重传找到新的可用端口，表现就是时延偶尔为1秒或者3秒）
+<li><span>分清云淡</span> 👍（48） 💬（1）<p>https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;VYBs8iqf0HsNg9WAxktzYQ：（多个容器snat时因为搜索本地可用端口（都从1025开始，到找到可用端口并插入到conntrack表是一个非事务并且有时延--第二个插入会失败，进而导致第一个syn包被扔掉的错误，扔掉后重传找到新的可用端口，表现就是时延偶尔为1秒或者3秒）
 
-这篇文章是我见过诊断NAT问题最专业的，大家要多学习一下里面的思路和手段</div>2019-03-01</li><br/><li><span>腾达</span> 👍（11） 💬（1）<div>这个案例，能不能讲讲怎么找到是NAT问题？这个很关键，但文章里直接点明说是NAT问题，这个就不好了，一般看cpu,看其他指标很难想到是nat问题，真实场景里，怎么会想到是nat问题呢？</div>2019-03-01</li><br/><li><span>vvccoe</span> 👍（10） 💬（3）<div>‘# 连接跟踪对象大小为 376，链表项大小为 16
+这篇文章是我见过诊断NAT问题最专业的，大家要多学习一下里面的思路和手段</p>2019-03-01</li><br/><li><span>腾达</span> 👍（11） 💬（1）<p>这个案例，能不能讲讲怎么找到是NAT问题？这个很关键，但文章里直接点明说是NAT问题，这个就不好了，一般看cpu,看其他指标很难想到是nat问题，真实场景里，怎么会想到是nat问题呢？</p>2019-03-01</li><br/><li><span>vvccoe</span> 👍（10） 💬（3）<p>‘# 连接跟踪对象大小为 376，链表项大小为 16
 nf_conntrack_max* 连接跟踪对象大小 +nf_conntrack_buckets* 链表项大小 
 = 1000*376+65536*16 B
 = 1.4 MB’   
 老师 上面的376和16 是固定值吗？
-</div>2019-02-27</li><br/><li><span>Geek_007</span> 👍（7） 💬（2）<div>老师你好，有两个问题想请教一下。
+</p>2019-02-27</li><br/><li><span>Geek_007</span> 👍（7） 💬（2）<p>老师你好，有两个问题想请教一下。
 第一点，了解到ip_conntrack模块既然会限制链接，且调大会导致占用内存，而且调大了也不一定能解决大流量服务器的网络性能问题，我理解是不是应该关掉ip_conntrack模块，因为业务服务器按理说是不需要状态追踪的。
-第二点，如果我关掉ip_conntrack，会不会因为我执行iptables命令导致该模块被加载，或者执行conntrack命令导致模块被加载。。</div>2019-04-10</li><br/><li><span>无名老卒</span> 👍（6） 💬（2）<div>很惊讶，之前在线上环境中就出现了kernel: nf_conntrack: table full, dropping packet.的报错，当时就认为是conntrack_max导致的，后面调整了这个值之后就恢复了，但其实那次故障也不应该会加载nf_conntrack模块，因为iptables规则只是设置了几个IP允许登陆服务器，当时也不清楚为什么会去加载这个模块了。
+第二点，如果我关掉ip_conntrack，会不会因为我执行iptables命令导致该模块被加载，或者执行conntrack命令导致模块被加载。。</p>2019-04-10</li><br/><li><span>无名老卒</span> 👍（6） 💬（2）<p>很惊讶，之前在线上环境中就出现了kernel: nf_conntrack: table full, dropping packet.的报错，当时就认为是conntrack_max导致的，后面调整了这个值之后就恢复了，但其实那次故障也不应该会加载nf_conntrack模块，因为iptables规则只是设置了几个IP允许登陆服务器，当时也不清楚为什么会去加载这个模块了。
 
-同时，conntrack_max和conntrack_buckets有没有什么联系呢？从描述中，感觉conntrack_buckets应该要大于conntrack_max才对，但实际 上不是这样，请老师解惑下。</div>2019-05-01</li><br/><li><span>我来也</span> 👍（4） 💬（1）<div>[D42打卡]
+同时，conntrack_max和conntrack_buckets有没有什么联系呢？从描述中，感觉conntrack_buckets应该要大于conntrack_max才对，但实际 上不是这样，请老师解惑下。</p>2019-05-01</li><br/><li><span>我来也</span> 👍（4） 💬（1）<p>[D42打卡]
 今天的内容只能围观了.
 居然还用了内核动态追踪工具,统计丢包位置.
 对于我这种完全不了解内核的人来说, 只当是开了眼界.
@@ -478,8 +478,8 @@ nf_conntrack_max* 连接跟踪对象大小 +nf_conntrack_buckets* 链表项大�
 
 `# 连接跟踪对象大小为 376，链表项大小为 16`
 这应该是c结构体的大小吧.
-</div>2019-02-27</li><br/><li><span>aliuql</span> 👍（1） 💬（1）<div>老师你好，docker，是不是必然会用到dnat的端口映射？linux服务器内 nat本身应该也有流量限制吧！</div>2019-07-31</li><br/><li><span>Goal</span> 👍（1） 💬（1）<div>nf_conntrack_buckets 和 nf_conntrack_max  从文中的描述没有搞清楚，
-我们只是调整了 nf_conntrack_max（最大连接跟踪数），那么，这个连接是记录在 nf_conntrack_buckets（连接跟踪表）中的吗？，那是否意味着，调整max的同时，也得调整buckets表的大小？</div>2019-06-09</li><br/><li><span>Maxwell</span> 👍（1） 💬（3）<div>请问这个错误是什么原因导致的呢？
+</p>2019-02-27</li><br/><li><span>aliuql</span> 👍（1） 💬（1）<p>老师你好，docker，是不是必然会用到dnat的端口映射？linux服务器内 nat本身应该也有流量限制吧！</p>2019-07-31</li><br/><li><span>Goal</span> 👍（1） 💬（1）<p>nf_conntrack_buckets 和 nf_conntrack_max  从文中的描述没有搞清楚，
+我们只是调整了 nf_conntrack_max（最大连接跟踪数），那么，这个连接是记录在 nf_conntrack_buckets（连接跟踪表）中的吗？，那是否意味着，调整max的同时，也得调整buckets表的大小？</p>2019-06-09</li><br/><li><span>Maxwell</span> 👍（1） 💬（3）<p>请问这个错误是什么原因导致的呢？
 root@maxwell-virtual-machine:&#47;usr&#47;bin&#47;env# stap --all-modules dropwatch.stp
 semantic error: while resolving probe point: identifier &#39;kernel&#39; at dropwatch.stp:18:7
         source: probe kernel.trace(&quot;kfree_skb&quot;) { locations[$location] &lt;&lt;&lt; 1 }
@@ -489,7 +489,7 @@ semantic error: no match
 
 Pass 2: analysis failed.  [man error::pass2]
 Tip: &#47;usr&#47;share&#47;doc&#47;systemtap&#47;README.Debian should help you get started.
-</div>2019-03-24</li><br/><li><span>夜空中最亮的星</span> 👍（1） 💬（1）<div>以前只是知道net性能不好，今天通过老师的讲解彻底明白了来龙去脉。
+</p>2019-03-24</li><br/><li><span>夜空中最亮的星</span> 👍（1） 💬（1）<p>以前只是知道net性能不好，今天通过老师的讲解彻底明白了来龙去脉。
 公司内部上网用的就是net 人一多就特别慢。
-业务基本上没用过net。</div>2019-02-27</li><br/><li><span>Cranliu</span> 👍（1） 💬（4）<div>今天是跟不上了，没有网络基础，进入到网络模块就开始觉得吃力了😂</div>2019-02-27</li><br/><li><span>bigzuo</span> 👍（0） 💬（1）<div>不太熟悉linux 网络底层超过，这节课看的很费力</div>2019-07-03</li><br/><li><span>manatee</span> 👍（0） 💬（1）<div>另外安装centos 安装systemtap那边有个小小的笔误，最后那个stab-prep 应该是stap-prep</div>2019-05-27</li><br/><li><span>manatee</span> 👍（0） 💬（1）<div>讲个不是很重要的点，ab命令在centos中没有-s参数</div>2019-05-27</li><br/><li><span>xfan</span> 👍（0） 💬（1）<div>讲的不错，让我懂了追踪过程，和我最想知道的东西</div>2019-02-28</li><br/>
+业务基本上没用过net。</p>2019-02-27</li><br/><li><span>Cranliu</span> 👍（1） 💬（4）<p>今天是跟不上了，没有网络基础，进入到网络模块就开始觉得吃力了😂</p>2019-02-27</li><br/><li><span>bigzuo</span> 👍（0） 💬（1）<p>不太熟悉linux 网络底层超过，这节课看的很费力</p>2019-07-03</li><br/><li><span>manatee</span> 👍（0） 💬（1）<p>另外安装centos 安装systemtap那边有个小小的笔误，最后那个stab-prep 应该是stap-prep</p>2019-05-27</li><br/><li><span>manatee</span> 👍（0） 💬（1）<p>讲个不是很重要的点，ab命令在centos中没有-s参数</p>2019-05-27</li><br/><li><span>xfan</span> 👍（0） 💬（1）<p>讲的不错，让我懂了追踪过程，和我最想知道的东西</p>2019-02-28</li><br/>
 </ul>

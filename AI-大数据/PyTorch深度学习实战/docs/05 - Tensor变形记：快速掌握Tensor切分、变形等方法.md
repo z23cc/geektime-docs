@@ -442,10 +442,10 @@ tensor([[4, 5, 7],
 
 欢迎你在留言区跟我交流互动，也推荐你把这节课分享给更多同事、朋友！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>lwg0452</span> 👍（28） 💬（2）<div>更正😀
+<li><span>lwg0452</span> 👍（28） 💬（2）<p>更正😀
 mask = torch.tensor([[1, 0, 0], [1, 1, 0], [0, 0, 1]])
-B = torch.masked_select(A, mask&gt;0)</div>2021-10-20</li><br/><li><span>optimus</span> 👍（4） 💬（2）<div>eye  = torch.eye(3)
-torch.masked_select(A,eye&gt;0)</div>2022-03-24</li><br/><li><span>Geek_fc975d</span> 👍（2） 💬（1）<div>抄作业
+B = torch.masked_select(A, mask&gt;0)</p>2021-10-20</li><br/><li><span>optimus</span> 👍（4） 💬（2）<p>eye  = torch.eye(3)
+torch.masked_select(A,eye&gt;0)</p>2022-03-24</li><br/><li><span>Geek_fc975d</span> 👍（2） 💬（1）<p>抄作业
 
 # 手动构建了一个True&#47;False
 A = torch.tensor([[4,5,7],[4,9,8],[2,3,4]])
@@ -455,16 +455,16 @@ torch.masked_select(A, masked_index)
 #  这篇课程，个人觉得重要的几个知识点
 1. index_select返回的结果和输入是一个维度，而masked_select返回一维输出
 2. split获取的是原输入的视图，也就是对split的结果的操作会影响原来的数据
-3. stack和cat的一个不同点在于，stack会升维，而cat不会。</div>2022-04-07</li><br/><li><span>ifelse</span> 👍（1） 💬（1）<div>学习打卡</div>2023-11-23</li><br/><li><span>sugar</span> 👍（0） 💬（1）<div>a = torch.tensor([[4, 5, 7], [3, 9, 8], [2, 3, 4]])
+3. stack和cat的一个不同点在于，stack会升维，而cat不会。</p>2022-04-07</li><br/><li><span>ifelse</span> 👍（1） 💬（1）<p>学习打卡</p>2023-11-23</li><br/><li><span>sugar</span> 👍（0） 💬（1）<p>a = torch.tensor([[4, 5, 7], [3, 9, 8], [2, 3, 4]])
 mask = torch.tensor([[True, False, False], [True, True, False], [False, False, True]])
 torch.masked_select(a, mask)
-加油，冲哇</div>2024-05-18</li><br/><li><span>A🐴@伯乐</span> 👍（0） 💬（1）<div>import torch
+加油，冲哇</p>2024-05-18</li><br/><li><span>A🐴@伯乐</span> 👍（0） 💬（1）<p>import torch
 A=torch.tensor([[4,5,7], [3,9,8],[2,3,4]])
 B=torch.tensor([[1,0,0],[1,1,0],[1,0,0]])
 C=torch.masked_select(A, A*B!=0)
-print(C)</div>2022-09-07</li><br/><li><span>亚林</span> 👍（0） 💬（1）<div>这是个mask是不是就是传说中的数据打标</div>2022-05-09</li><br/><li><span>Geek_a95f0e</span> 👍（0） 💬（1）<div>a=tc.tensor([[4,5,7],[3,9,8],[2,3,4]])
+print(C)</p>2022-09-07</li><br/><li><span>亚林</span> 👍（0） 💬（1）<p>这是个mask是不是就是传说中的数据打标</p>2022-05-09</li><br/><li><span>Geek_a95f0e</span> 👍（0） 💬（1）<p>a=tc.tensor([[4,5,7],[3,9,8],[2,3,4]])
 b=tc.tensor([1,0,0,1,1,0,0,0,1],dtype=tc.bool).reshape(3,3)
-c=tc.masked_select(a,b)</div>2021-10-29</li><br/><li><span>王骥</span> 👍（0） 💬（2）<div>input 表示待处理的 Tensor。mask 代表掩码张量，也就是满足条件的特征掩码。这里你需要注意的是，mask 须跟 input 张量有相同数量的元素数目，但形状或维度不需要相同。
+c=tc.masked_select(a,b)</p>2021-10-29</li><br/><li><span>王骥</span> 👍（0） 💬（2）<p>input 表示待处理的 Tensor。mask 代表掩码张量，也就是满足条件的特征掩码。这里你需要注意的是，mask 须跟 input 张量有相同数量的元素数目，但形状或维度不需要相同。
 
 老师，mask 须跟 input 张量有相同数量的元素数目，但形状或维度不需要相同 这句话该怎么理解？
 
@@ -472,11 +472,11 @@ c=tc.masked_select(a,b)</div>2021-10-29</li><br/><li><span>王骥</span> 👍（
   B = torch.masked_select(A, torch.tensor([[1, 0, 0], [1, 1, 0], [0, 0, 1]]) &gt; 0)
   # B = torch.masked_select(A, torch.tensor([1, 0, 0, 1, 1, 0, 0, 0, 1]) &gt; 0)
 
-我尝试下面一种就会报错。</div>2021-10-24</li><br/><li><span>李雄</span> 👍（0） 💬（2）<div>喜欢这节的内容。</div>2021-10-23</li><br/><li><span>vcjmhg</span> 👍（0） 💬（1）<div>A = torch.tensor([[4, 5, 7], [3, 9, 8], [2, 3, 4]])
+我尝试下面一种就会报错。</p>2021-10-24</li><br/><li><span>李雄</span> 👍（0） 💬（2）<p>喜欢这节的内容。</p>2021-10-23</li><br/><li><span>vcjmhg</span> 👍（0） 💬（1）<p>A = torch.tensor([[4, 5, 7], [3, 9, 8], [2, 3, 4]])
 mask_matrix = torch.tensor([[1, 0, 0], [1, 1, 0], [0, 0, 1]])
-B = torch.masked_select(A, mask == 1)</div>2021-10-21</li><br/><li><span>栗白</span> 👍（0） 💬（1）<div>A=torch.tensor([[4,5,7], [3,9,8],[2,3,4]])
+B = torch.masked_select(A, mask == 1)</p>2021-10-21</li><br/><li><span>栗白</span> 👍（0） 💬（1）<p>A=torch.tensor([[4,5,7], [3,9,8],[2,3,4]])
 B=torch.tensor([[1,0,0],[1,1,0],[0,0,1]])
-C=torch.masked_select(A,B&gt;0)</div>2021-10-20</li><br/><li><span>narsil的梦</span> 👍（0） 💬（2）<div>练习：
+C=torch.masked_select(A,B&gt;0)</p>2021-10-20</li><br/><li><span>narsil的梦</span> 👍（0） 💬（2）<p>练习：
     A = torch.tensor([[4, 5, 7], [3, 9, 8], [2, 3, 4]])
 
     # 提取出其中第一行的第一个，第二行的第一、第二个，第三行的最后一个
@@ -486,7 +486,7 @@ C=torch.masked_select(A,B&gt;0)</div>2021-10-20</li><br/><li><span>narsil的梦<
     A1011 = torch.index_select(B[1], 1, torch.tensor([0, 1]))
     A22 = torch.index_select(B[2], 1, torch.tensor([2]))
 
-PS：题目应该说明输出是什么格式的，要不同学们不知道做到哪一步算完事</div>2021-10-20</li><br/><li><span>徐洲更</span> 👍（7） 💬（0）<div># 手动构建了一个True&#47;False
+PS：题目应该说明输出是什么格式的，要不同学们不知道做到哪一步算完事</p>2021-10-20</li><br/><li><span>徐洲更</span> 👍（7） 💬（0）<p># 手动构建了一个True&#47;False
 A = torch.tensor([[4,5,7],[4,9,8],[2,3,4]])
 masked_index = torch.tensor( [[True,False,False], [True,True,False], [False,False,True] ])
 torch.masked_select(A, masked_index) 
@@ -495,5 +495,5 @@ torch.masked_select(A, masked_index)
 1. index_select返回的结果和输入是一个维度，而masked_select返回一维输出
 2. split获取的是原输入的视图，也就是对split的结果的操作会影响原来的数据
 3. stack和cat的一个不同点在于，stack会升维，而cat不会。
-</div>2021-12-08</li><br/><li><span>GEEKBANG_9421399</span> 👍（4） 💬（0）<div>其实如果tensor和mask的维度相同的话，直接tensor[mask]就是torch.masked_select(tensor, mask)的效果了。</div>2022-01-05</li><br/>
+</p>2021-12-08</li><br/><li><span>GEEKBANG_9421399</span> 👍（4） 💬（0）<p>其实如果tensor和mask的维度相同的话，直接tensor[mask]就是torch.masked_select(tensor, mask)的效果了。</p>2022-01-05</li><br/>
 </ul>

@@ -417,8 +417,8 @@ simpleApplicationEventMulticaster.setTaskExecutor(newCachedThreadPool );
 
 以上就是这次答疑的全部内容，我们下一章节再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>子夜枯灯</span> 👍（2） 💬（0）<div>打卡完成第一周学习与手敲代码：
-GitHub地址：https:&#47;&#47;github.com&#47;ziyekudeng&#47;geekbang_springDemo</div>2022-01-27</li><br/><li><span>淡漠尘花划忧伤</span> 👍（1） 💬（0）<div>完成第一章的学习，打卡时间2024.04.13</div>2024-04-13</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（0）<div>出现这些问题的原因 要么不理解spring加载流程 要么不规范导致的</div>2022-06-20</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（1）<div>完成第一章的学习，打卡时间2022.01.27</div>2022-01-27</li><br/><li><span>小飞同学</span> 👍（0） 💬（1）<div>第七节的思考题
+<li><span>子夜枯灯</span> 👍（2） 💬（0）<p>打卡完成第一周学习与手敲代码：
+GitHub地址：https:&#47;&#47;github.com&#47;ziyekudeng&#47;geekbang_springDemo</p>2022-01-27</li><br/><li><span>淡漠尘花划忧伤</span> 👍（1） 💬（0）<p>完成第一章的学习，打卡时间2024.04.13</p>2024-04-13</li><br/><li><span>雨落～紫竹</span> 👍（0） 💬（0）<p>出现这些问题的原因 要么不理解spring加载流程 要么不规范导致的</p>2022-06-20</li><br/><li><span>子夜枯灯</span> 👍（0） 💬（1）<p>完成第一章的学习，打卡时间2022.01.27</p>2022-01-27</li><br/><li><span>小飞同学</span> 👍（0） 💬（1）<p>第七节的思考题
 直接修改SimpleApplicationEventMulticaster这个bean中的属性不是太合适吧（会不会影响其他的逻辑,官方文档有相关的描述么）？创建一个子类，然后注入到spring容器里面是不是会好一点？
-</div>2021-05-07</li><br/>
+</p>2021-05-07</li><br/>
 </ul>

@@ -31,7 +31,7 @@ Redis的事件驱动框架是基于操作系统IO多路复用机制进行了封�
 
 好了，这节课就到这里。希望你能抓住期中周的机会，查漏补缺，快速提升Redis源码的阅读和学习能力。我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>曾轼麟</span> 👍（6） 💬（0）<div>问题一：
+<li><span>曾轼麟</span> 👍（6） 💬（0）<p>问题一：
 	应该是只搬运了前5个bucket数据，在函数中会初始化empty_visits为10倍的n，在每次调用改函数的时候最多会遍历10*n个空元素，并且每次只是递减empty_visits，最终当empty_visits为0的时候，方法会直接返回1，结束本次rehash并等待下一次继续，代码如下(返回1代表下次还需要rehash,返回0代表已经完成rehash)：
 
 	int empty_visits = n*10; &#47;* Max number of empty buckets to visit. *&#47;
@@ -63,9 +63,9 @@ Redis的事件驱动框架是基于操作系统IO多路复用机制进行了封�
 		对应的函数有aeApiPoll，调用epoll_wait后会返回当前已经触发事件(产生了读，写的socket)，并将对应的socket文件描述符指针和读写类型掩码mask，记录在fired数组上等待后续IO线程的处理。
 
 	整体来说Redis就是通过封装实现了多个aeApixxx方法，从而抽象了各种IO多路复用的方法，并且能按照操作系统类型选择对应的IO多路复用的方式（在宏定义中修改头文件的方式）。
-</div>2021-09-14</li><br/><li><span>Milittle</span> 👍（2） 💬（0）<div>1. 第一个问题：empty_visits=n*10，空的都跳过，然后打满n个bucket以后，就停止本次rehash，不管empty_visits满不满无所谓。
+</p>2021-09-14</li><br/><li><span>Milittle</span> 👍（2） 💬（0）<p>1. 第一个问题：empty_visits=n*10，空的都跳过，然后打满n个bucket以后，就停止本次rehash，不管empty_visits满不满无所谓。
 2. 从上层到底层：
 ae.c:aeCreateEventLoop-&gt;ae_epoll.c:aeApiCreate-&gt;epoll_create
 ae.c:aeCreateFileEvent-&gt;ae_epoll.c:aeApiAddEvent-&gt;epoll_ctl
-ae.c:aeMain-&gt;aeProcessEvents-&gt;ae_epoll.c:aeApiPoll-&gt;epoll_wait</div>2021-09-14</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<div>1.empty_visits来控制最大空桶访问数，且是10倍n，所以实际访问桶的数量在[5, 55]。2.在初始化Eventloop的时候会调用aeApiCreate，初始化aeApiState，然后调用epoll_create打开epoll文件描述符。aeApiAddEvent新增事件和aeApiDelEvent删除事件调用epoll_ctl来设置epoll_event。aeProcessEvents获取事件通过aeApiPoll来调用epoll_wait</div>2021-09-14</li><br/>
+ae.c:aeMain-&gt;aeProcessEvents-&gt;ae_epoll.c:aeApiPoll-&gt;epoll_wait</p>2021-09-14</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<p>1.empty_visits来控制最大空桶访问数，且是10倍n，所以实际访问桶的数量在[5, 55]。2.在初始化Eventloop的时候会调用aeApiCreate，初始化aeApiState，然后调用epoll_create打开epoll文件描述符。aeApiAddEvent新增事件和aeApiDelEvent删除事件调用epoll_ctl来设置epoll_event。aeProcessEvents获取事件通过aeApiPoll来调用epoll_wait</p>2021-09-14</li><br/>
 </ul>

@@ -619,14 +619,14 @@ YAML格式具有丰富的数据表达能力、清晰的结构和层次，因此�
 
 欢迎你在留言区和我交流讨论，我们下一讲见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>随风而过</span> 👍（3） 💬（2）<div>覆盖掉挂载的整个目录，使用volumeMount.subPath来声明我们只是挂载单个文件，而不是整个目录，只需要在subPath后面加上我们挂载的单个文件名即可</div>2021-09-14</li><br/><li><span>yandongxiao</span> 👍（0） 💬（1）<div>总结：
+<li><span>随风而过</span> 👍（3） 💬（2）<p>覆盖掉挂载的整个目录，使用volumeMount.subPath来声明我们只是挂载单个文件，而不是整个目录，只需要在subPath后面加上我们挂载的单个文件名即可</p>2021-09-14</li><br/><li><span>yandongxiao</span> 👍（0） 💬（1）<p>总结：
 YAML规范：属性和值都是大小写敏感的；使用两个空格代表一层缩进；
 k8syaml: 以交互式的方式，动态生成 Deployment、DaemonSet、StatefulSet 对象；
 校验 Kubernetes YAML 的工具：kubeeval 验证k8syaml文件的正确性；kubescore 验证 k8syaml 文件的安全性；如果希望自定义验证策略，可以考虑使用 copper。
 kube-neat 工具 可以将 kubectl xxx -oyaml 导出来的 yaml的 status 部分和部分meta 部分过滤掉；
-kubectx 和 kubens 快速切换 k8s 环境</div>2021-12-05</li><br/><li><span>helloworld</span> 👍（0） 💬（0）<div>推荐的工具很实用👍</div>2021-12-08</li><br/><li><span>我来也</span> 👍（0） 💬（0）<div>json2yaml 和 yaml2json 过于常用，我是集成到vim的快捷方式中了。
+kubectx 和 kubens 快速切换 k8s 环境</p>2021-12-05</li><br/><li><span>helloworld</span> 👍（0） 💬（0）<p>推荐的工具很实用👍</p>2021-12-08</li><br/><li><span>我来也</span> 👍（0） 💬（0）<p>json2yaml 和 yaml2json 过于常用，我是集成到vim的快捷方式中了。
 
 老师的这个中文注释太详细了，适合新手。😄
 
-后面这几个工具学习了。</div>2021-10-10</li><br/>
+后面这几个工具学习了。</p>2021-10-10</li><br/>
 </ul>

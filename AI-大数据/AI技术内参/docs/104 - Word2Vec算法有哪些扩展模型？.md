@@ -52,5 +52,5 @@
 
 3\. Mihajlo Grbovic, Nemanja Djuric, Vladan Radosavljevic, Fabrizio Silvestri, and Narayan Bhamidipati. [Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search](https://astro.temple.edu/~tua95067/grbovic2015sigirconf.pdf). Proceedings of the 38th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '15). ACM, New York, NY, USA, 383-392, 2015.
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>韩 * *</span> 👍（0） 💬（0）<div>能想到的一个就是将数据离散化，并同时用出不同的离散粒度来捕捉不同层级的内在联系，最终将结果拼接起来。反过来想，如果是用户id等有规律增长离散数据，类似将前n位分别做嵌入再合并是否也会有些收益？</div>2019-08-05</li><br/>
+<li><span>韩 * *</span> 👍（0） 💬（0）<p>能想到的一个就是将数据离散化，并同时用出不同的离散粒度来捕捉不同层级的内在联系，最终将结果拼接起来。反过来想，如果是用户id等有规律增长离散数据，类似将前n位分别做嵌入再合并是否也会有些收益？</p>2019-08-05</li><br/>
 </ul>

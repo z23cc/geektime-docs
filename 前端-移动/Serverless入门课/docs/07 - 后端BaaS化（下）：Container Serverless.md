@@ -191,7 +191,7 @@ BaaS化的内容，到今天，我们用了三节课讲完了，现在我们一�
 
 \[3] [https://hub.docker.com/](https://hub.docker.com/)
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>我来也</span> 👍（6） 💬（1）<div>在完成课后作业时,将docker镜像部署到了本地,阿里云ECI,阿里云k8s,一切都很美好.
+<li><span>我来也</span> 👍（6） 💬（1）<p>在完成课后作业时,将docker镜像部署到了本地,阿里云ECI,阿里云k8s,一切都很美好.
 但是部署到阿里云serverless k8s的时候,遇到了一个坑,给大家分享一下.
 
 现象: 无法打开todolist页面.
@@ -227,17 +227,17 @@ BaaS化的内容，到今天，我们用了三节课讲完了，现在我们一�
 
 对[suke]同学留言中的一句话很赞同:
 &quot;如果想完全hold住serverless 真是的类似全栈这样的工程师来做&quot;
-</div>2020-05-02</li><br/><li><span>Geek_a5c054</span> 👍（1） 💬（6）<div>用docker后台运行的时候显示了容器id之后直接就退出了，没在后台运行，
-然后，使用docker run -it或者在文件根目录使用npm start的时候显示cannot find module uuid是为什么呀</div>2020-07-04</li><br/><li><span>suke</span> 👍（1） 💬（3）<div>老师我觉得，专栏看到这里，如果想完全hold住serverless 真是的类似全栈这样的工程师来做，如果只是让偏前端的工程师开发页面以及简单的业业务逻辑，在真正开发 以及调试的阶段，很难去完全cover ，但是如果把前端页面以外的工作交给后端工程师，实现起来一个是拆分的太细，想想本来一个很简单的列表查询 我不仅要写业务逻辑的查询 我还要把基础的数据查询接口封装到有状态的服务，开发、维护起来很麻烦，后期维护起来排查问题难度都很大，调用链条还变长，怎么看我都觉得serverless有点舍近求远，不知道老师觉得我这个想法有什么问题</div>2020-05-02</li><br/><li><span>神仙朱</span> 👍（0） 💬（1）<div>学到这里的确有些吃力了，学完baas我觉得还是不太明白怎么回事。
+</p>2020-05-02</li><br/><li><span>Geek_a5c054</span> 👍（1） 💬（6）<p>用docker后台运行的时候显示了容器id之后直接就退出了，没在后台运行，
+然后，使用docker run -it或者在文件根目录使用npm start的时候显示cannot find module uuid是为什么呀</p>2020-07-04</li><br/><li><span>suke</span> 👍（1） 💬（3）<p>老师我觉得，专栏看到这里，如果想完全hold住serverless 真是的类似全栈这样的工程师来做，如果只是让偏前端的工程师开发页面以及简单的业业务逻辑，在真正开发 以及调试的阶段，很难去完全cover ，但是如果把前端页面以外的工作交给后端工程师，实现起来一个是拆分的太细，想想本来一个很简单的列表查询 我不仅要写业务逻辑的查询 我还要把基础的数据查询接口封装到有状态的服务，开发、维护起来很麻烦，后期维护起来排查问题难度都很大，调用链条还变长，怎么看我都觉得serverless有点舍近求远，不知道老师觉得我这个想法有什么问题</p>2020-05-02</li><br/><li><span>神仙朱</span> 👍（0） 💬（1）<p>学到这里的确有些吃力了，学完baas我觉得还是不太明白怎么回事。
 现在baas是在faas来做，那么肯定最好是无状态的。
 正常来说baas应该在哪里做呢。
-就是，如果我现在要写一个应用，后端的接口要连数据库，我要怎么做给前端提供接口，难道还是一样直接部署到服务器？</div>2020-07-07</li><br/><li><span>托尼斯威特</span> 👍（0） 💬（3）<div>没有aliyunConfig 文件, 代码没法运行. 
+就是，如果我现在要写一个应用，后端的接口要连数据库，我要怎么做给前端提供接口，难道还是一样直接部署到服务器？</p>2020-07-07</li><br/><li><span>托尼斯威特</span> 👍（0） 💬（3）<p>没有aliyunConfig 文件, 代码没法运行. 
 看用到aliyunConfig的地方, 读了endpoint, AK&#47;KS, instanceName, tableName, primaryKey.
 
 是不是意味着要想跑这个代码, 我们得自己去见一个tablestore的表格? instanceName填什么? 
 
 
-</div>2020-07-06</li><br/><li><span>suke</span> 👍（0） 💬（1）<div>老师，这篇文章我看了好几遍，类似java这样的后端服务baas化，冷启动即使是docker容器化启动也是省略不了正常的启动过程的，也就是说无论你从裸机上启动还是docker化启动，时长都差不多呀，这样还是改变不了启动时间很长的问题；另外一种把db服务包装成restful接口，其实这种方式还是需要有状态服务一直存在的，同时，这种方式对于事务问题的解决又带来了新的问题，所以我个人感觉serverless目前局限性很大</div>2020-06-28</li><br/><li><span>博弈</span> 👍（0） 💬（1）<div>老师，registry.cn-shanghai.aliyuncs.com&#47;jike-serverless&#47;nodejs，这个基础镜像不能拉取，获取不到latest的版本，肿么破</div>2020-06-27</li><br/><li><span>电光火石</span> 👍（0） 💬（1）<div>老师，请问一下，Fass和Bass是不是都可以使用Docker来启动？但是因为Bass会连接数据库，启动时间较长，所以偏向于用Docker启动，而Fass层做服务编排，而且都会提供一项“函数初始化入口”的选项，启动时间会很短，所以是否Docker启动没有那么明显？谢谢了！</div>2020-05-06</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<div>即便是用了docker，遇到需要编译的npm包，直接复制node_modules目录也可能会因为宿主系统和镜像系统的差异而导致问题吧</div>2020-05-03</li><br/><li><span>我来也</span> 👍（0） 💬（3）<div>课后作业:
+</p>2020-07-06</li><br/><li><span>suke</span> 👍（0） 💬（1）<p>老师，这篇文章我看了好几遍，类似java这样的后端服务baas化，冷启动即使是docker容器化启动也是省略不了正常的启动过程的，也就是说无论你从裸机上启动还是docker化启动，时长都差不多呀，这样还是改变不了启动时间很长的问题；另外一种把db服务包装成restful接口，其实这种方式还是需要有状态服务一直存在的，同时，这种方式对于事务问题的解决又带来了新的问题，所以我个人感觉serverless目前局限性很大</p>2020-06-28</li><br/><li><span>博弈</span> 👍（0） 💬（1）<p>老师，registry.cn-shanghai.aliyuncs.com&#47;jike-serverless&#47;nodejs，这个基础镜像不能拉取，获取不到latest的版本，肿么破</p>2020-06-27</li><br/><li><span>电光火石</span> 👍（0） 💬（1）<p>老师，请问一下，Fass和Bass是不是都可以使用Docker来启动？但是因为Bass会连接数据库，启动时间较长，所以偏向于用Docker启动，而Fass层做服务编排，而且都会提供一项“函数初始化入口”的选项，启动时间会很短，所以是否Docker启动没有那么明显？谢谢了！</p>2020-05-06</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<p>即便是用了docker，遇到需要编译的npm包，直接复制node_modules目录也可能会因为宿主系统和镜像系统的差异而导致问题吧</p>2020-05-03</li><br/><li><span>我来也</span> 👍（0） 💬（3）<p>课后作业:
 
 1. 由于镜像中有aliyunConfig,所以不建议将镜像公开.(即不要推送到默认的 https:&#47;&#47;hub.docker.com&#47;)
 
@@ -268,6 +268,6 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
    ```
    由于不太懂node.js,所以也不知道如何解决.
    之前部署到阿里云FC时是没有遇到过该问题的.
-</div>2020-05-01</li><br/><li><span>北冥神功</span> 👍（0） 💬（1）<div>我感觉谷歌的Cloud Run冷启动要比faas这种快，在腾讯部署的go服务冷启动要2s，cloud run只需要几百毫秒。cloud run是基于knative，不知道是不是因为是容器所以快？</div>2020-05-01</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>利用实时监控，去控制扩缩容,
-向文中说的，云上有什么服务可以实时监控 一些指标进行扩缩容呢？ 现在基本上都是根据并发数来进行扩缩容的</div>2020-05-01</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>这个把服务 docker  化，不就没有办法使用 FaaS 服务了？ FaaS 有么有哪个地方可以结合 容器化服务一起使用的？</div>2020-05-01</li><br/>
+</p>2020-05-01</li><br/><li><span>北冥神功</span> 👍（0） 💬（1）<p>我感觉谷歌的Cloud Run冷启动要比faas这种快，在腾讯部署的go服务冷启动要2s，cloud run只需要几百毫秒。cloud run是基于knative，不知道是不是因为是容器所以快？</p>2020-05-01</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>利用实时监控，去控制扩缩容,
+向文中说的，云上有什么服务可以实时监控 一些指标进行扩缩容呢？ 现在基本上都是根据并发数来进行扩缩容的</p>2020-05-01</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>这个把服务 docker  化，不就没有办法使用 FaaS 服务了？ FaaS 有么有哪个地方可以结合 容器化服务一起使用的？</p>2020-05-01</li><br/>
 </ul>

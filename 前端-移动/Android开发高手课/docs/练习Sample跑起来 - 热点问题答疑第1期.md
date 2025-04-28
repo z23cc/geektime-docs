@@ -178,9 +178,9 @@ void *hookRecordAllocation26 = ndk_dlsym(handle,
 
 欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>CathyChen</span> 👍（3） 💬（0）<div>非常感谢你们的分享，帮助其他人快速成长，虽然有些地方看不懂，还是会坚持下去，(*^__^*) 嘻嘻……</div>2018-12-18</li><br/><li><span>peedeep</span> 👍（2） 💬（1）<div>请问下老师，这篇文中提到：5. 如果我们没有原始的 obj，那么需要通过libcrash-lib.so 的导出符号来进行解析。我有以下疑问：这里原始的obj指的是Chapter01&#47;sample&#47;build&#47;intermediates&#47;cmake&#47;debug&#47;obj目录下面的so库吗？什么情况下会变成非原始的呢？
-</div>2019-01-07</li><br/><li><span>曹昆</span> 👍（0） 💬（1）<div>请问下老师:Chapter01&#47;sample&#47;build&#47;intermediates&#47;cmake&#47;debug&#47;obj目录下面的so库，
-ample&#47;build&#47;intermediates&#47;transforms&#47;mergeJniLibs&#47;debug&#47;0&#47;lib和apk包里的so，这三个so有什么区别呢？还有正式包的so去掉debug info，那aarch64-linux-android-addr2line工具执行之后就没效果了，那正式包怎么看native的crash呢？</div>2019-03-15</li><br/><li><span>Lakers</span> 👍（0） 💬（1）<div>dump_syms  在mac上面怎么生成？这个要在linux下编译才行吗？</div>2018-12-29</li><br/><li><span>我的心情在荡漾</span> 👍（4） 💬（0）<div>鹏飞大佬也好厉害</div>2018-12-17</li><br/><li><span>大白菜</span> 👍（0） 💬（0）<div>Breakpad 抓取闪退信息后执行DumpCallback后就马上闪退了，怎么和java log  当时堆栈关联起来？</div>2019-05-10</li><br/><li><span>wiikzhao</span> 👍（0） 💬（0）<div>gradle文件下，找不到cppFlags和arguments，请问什么原因？</div>2018-12-29</li><br/><li><span>su</span> 👍（0） 💬（0）<div>dump_syms
+<li><span>CathyChen</span> 👍（3） 💬（0）<p>非常感谢你们的分享，帮助其他人快速成长，虽然有些地方看不懂，还是会坚持下去，(*^__^*) 嘻嘻……</p>2018-12-18</li><br/><li><span>peedeep</span> 👍（2） 💬（1）<p>请问下老师，这篇文中提到：5. 如果我们没有原始的 obj，那么需要通过libcrash-lib.so 的导出符号来进行解析。我有以下疑问：这里原始的obj指的是Chapter01&#47;sample&#47;build&#47;intermediates&#47;cmake&#47;debug&#47;obj目录下面的so库吗？什么情况下会变成非原始的呢？
+</p>2019-01-07</li><br/><li><span>曹昆</span> 👍（0） 💬（1）<p>请问下老师:Chapter01&#47;sample&#47;build&#47;intermediates&#47;cmake&#47;debug&#47;obj目录下面的so库，
+ample&#47;build&#47;intermediates&#47;transforms&#47;mergeJniLibs&#47;debug&#47;0&#47;lib和apk包里的so，这三个so有什么区别呢？还有正式包的so去掉debug info，那aarch64-linux-android-addr2line工具执行之后就没效果了，那正式包怎么看native的crash呢？</p>2019-03-15</li><br/><li><span>Lakers</span> 👍（0） 💬（1）<p>dump_syms  在mac上面怎么生成？这个要在linux下编译才行吗？</p>2018-12-29</li><br/><li><span>我的心情在荡漾</span> 👍（4） 💬（0）<p>鹏飞大佬也好厉害</p>2018-12-17</li><br/><li><span>大白菜</span> 👍（0） 💬（0）<p>Breakpad 抓取闪退信息后执行DumpCallback后就马上闪退了，怎么和java log  当时堆栈关联起来？</p>2019-05-10</li><br/><li><span>wiikzhao</span> 👍（0） 💬（0）<p>gradle文件下，找不到cppFlags和arguments，请问什么原因？</p>2018-12-29</li><br/><li><span>su</span> 👍（0） 💬（0）<p>dump_syms
 
-这个工具在哪里呢？</div>2018-12-24</li><br/>
+这个工具在哪里呢？</p>2018-12-24</li><br/>
 </ul>

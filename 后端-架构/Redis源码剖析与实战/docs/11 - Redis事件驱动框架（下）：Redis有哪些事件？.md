@@ -522,7 +522,7 @@ while(te) {
 
 已知，Redis事件驱动框架的aeApiCreate、aeApiAddEvent等等这些函数，是对操作系统提供的IO多路复用函数进行了封装，具体的IO多路复用函数分别是在[ae\_epoll.c](https://github.com/redis/redis/tree/5.0/src/ae_epoll.c)，[ae\_evport.c](https://github.com/redis/redis/tree/5.0/src/ae_evport.c)，[ae\_kqueue.c](https://github.com/redis/redis/tree/5.0/src/ae_kqueue.c)，[ae\_select.c](https://github.com/redis/redis/tree/5.0/src/ae_select.c)四个代码文件中定义的。那么你知道，Redis在调用aeApiCreate，aeApiAddEvent这些函数时，是根据什么条件来决定，具体调用哪个文件中的IO多路复用函数的吗？
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Kaito</span> 👍（35） 💬（0）<div>1、Redis 事件循环主要处理两类事件：文件事件、时间事件
+<li><span>Kaito</span> 👍（35） 💬（0）<p>1、Redis 事件循环主要处理两类事件：文件事件、时间事件
 
 - 文件事件包括：client 发起新连接、client 向 server 写数据、server 向 client 响应数据
 - 时间事件：Redis 的各种定时任务（主线程中执行）
@@ -560,7 +560,7 @@ while(te) {
         #endif
     #endif
 #endif
-</div>2021-08-19</li><br/><li><span>Milittle</span> 👍（11） 💬（0）<div>总结一下ae处理框架：
+</p>2021-08-19</li><br/><li><span>Milittle</span> 👍（11） 💬（0）<p>总结一下ae处理框架：
 处理IO事件的一些感悟：
 1. 创建eventloop（这个地方还没有建立socket服务器监听）(initServer-&gt;aeCreateEventLoop)
 2. 然后接着使用listenToPort将所有需要监听的端口进行socket建立以及bind，然后listen。（initServer-&gt;listenToPort-&gt;anetTcpServer-&gt;_anetTcpServer-&gt;anetListen）将普通的监听fd放在server.ipfd，将tls的监听fd放在server.tlsfd
@@ -571,7 +571,7 @@ while(te) {
 6. 那么我们假设现在已经有了一个连接的事件，客户端发来一条消息，那么就会触发这个cfd，进而回调在这个函数上，进去探探，搞了半天，里面就调了一个conn的读事件，和写事件（还有那个屏障，写法也是牛逼，这个函数可以理解为proxy，触发的是上层注册进来的读事件或者写事件，就是第五步，注册在conn里面的read_handler or write_handler），还得看函数readQueryFromClient，将数据读取，然后放在client里面，然后processInputBuffer处理实际的命令请求，processCommandAndResetClient-&gt;processCommand(各种reject不符合条件的命令)-&gt;call(核心了)。
 7. 重点来了，c-&gt;cmd-&gt;proc(c); call的一行调用，看struct redisCommand的定义，注册在server.c的redisCommandTable（查找命令：c-&gt;cmd = c-&gt;lastcmd = lookupCommand(c-&gt;argv[0]-&gt;ptr); 在processCommand这个函数的某一行）。
 8. 我们把它串起来了。
-备注：本人走读的代码都是最新版本，望知。细节慢慢在补充吧。</div>2021-08-19</li><br/><li><span>曾轼麟</span> 👍（6） 💬（0）<div>感谢老师的文章，一样首先回答老师的问题：Redis事件驱动框架是如何区分文件的？
+备注：本人走读的代码都是最新版本，望知。细节慢慢在补充吧。</p>2021-08-19</li><br/><li><span>曾轼麟</span> 👍（6） 💬（0）<p>感谢老师的文章，一样首先回答老师的问题：Redis事件驱动框架是如何区分文件的？
 答：
     首先，观察可以发现这几份文件都是命名了相同的代码名字和结构体，例如都有aeApiState结构体，都有aeApiCreate，aeApiResize，aeApiAddEvent，aeApiPoll等方法，那么这里就可以发现其实无论我们使用那一份文件，都不会对调用方造成影响，其次我们观察发现在ae.c文件头部中有这样一段代码：
 
@@ -608,7 +608,7 @@ while(te) {
     1、readQueryFromClient主要是和querybuf打交道（对应读事件），里面涉及到RESP编解码可以深度阅读一下（个人发现Redis处理粘包拆包的方式很独特）。
     2、beforeSleep和afterSleep是搭配的（在aeMain的大循环中每次都被调用），通过这两个钩子函数Redis实现了很多主干路的功能，和一些分治思想的功能。
     3、handleClientsWithPendingWrites可以关注一下其调用方handleClientsWithPendingWritesUsingThreads函数，在这两个方法中都要调用writeToClient方法（对应写事件），而在他们中通过一种巧妙的方式实现了Redis6 IO多线程的方案（可以先预习），handleClientsWithPendingWrites是在只有一个线程或者禁用IO线程的时候使用的。
-</div>2021-08-20</li><br/><li><span>Darren</span> 👍（3） 💬（0）<div>通过不同的操作系统，include不同的头文件。
+</p>2021-08-20</li><br/><li><span>Darren</span> 👍（3） 💬（0）<p>通过不同的操作系统，include不同的头文件。
 在ae.c中
 &#47;* Include the best multiplexing layer supported by this system.
  * The following should be ordered by performances, descending. *&#47;
@@ -642,11 +642,11 @@ while(te) {
 #ifdef _DTRACE_VERSION
 #define HAVE_EVPORT 1
 #endif
-#endif</div>2021-08-19</li><br/><li><span>桃僧</span> 👍（2） 💬（1）<div>感觉redis的定时器存储用个链表十分偷懒 当然也和目前只有1个serverCron有关, 按理来说应该弄1个最小堆或者红黑树之类的</div>2021-12-26</li><br/><li><span>王飞</span> 👍（0） 💬（0）<div>评论区都是大佬呀</div>2022-08-29</li><br/><li><span>Leon廖</span> 👍（0） 💬（0）<div>按照作者答复，AE_BARRIER好像并没有起作用。
+#endif</p>2021-08-19</li><br/><li><span>桃僧</span> 👍（2） 💬（1）<p>感觉redis的定时器存储用个链表十分偷懒 当然也和目前只有1个serverCron有关, 按理来说应该弄1个最小堆或者红黑树之类的</p>2021-12-26</li><br/><li><span>王飞</span> 👍（0） 💬（0）<p>评论区都是大佬呀</p>2022-08-29</li><br/><li><span>Leon廖</span> 👍（0） 💬（0）<p>按照作者答复，AE_BARRIER好像并没有起作用。
 https:&#47;&#47;github.com&#47;redis&#47;redis&#47;issues&#47;7098#issuecomment-614435928
-</div>2022-04-20</li><br/><li><span>Mr.差不多</span> 👍（0） 💬（2）<div>您好，老师如果这时候在epoll_wait 发现可读事件发生（比如对于redis 有一个特别耗时的操作）那么这时候不是会阻塞住while循环吗？</div>2021-08-24</li><br/><li><span>徐志超-Klaus</span> 👍（0） 💬（0）<div>请问这个课程能开个微信讨论群吗？这样不仅能大大提高学习氛围和学习效率，还能提高宣传力度。不过还是先问问老师意见？</div>2021-08-20</li><br/><li><span>奕</span> 👍（0） 💬（1）<div>事件循环结构体中的  aeEventLoop 的 io 事件 aeFileEvent *events 中的 文件描述符 是怎么和外面传入的对应上的？ 
+</p>2022-04-20</li><br/><li><span>Mr.差不多</span> 👍（0） 💬（2）<p>您好，老师如果这时候在epoll_wait 发现可读事件发生（比如对于redis 有一个特别耗时的操作）那么这时候不是会阻塞住while循环吗？</p>2021-08-24</li><br/><li><span>徐志超-Klaus</span> 👍（0） 💬（0）<p>请问这个课程能开个微信讨论群吗？这样不仅能大大提高学习氛围和学习效率，还能提高宣传力度。不过还是先问问老师意见？</p>2021-08-20</li><br/><li><span>奕</span> 👍（0） 💬（1）<p>事件循环结构体中的  aeEventLoop 的 io 事件 aeFileEvent *events 中的 文件描述符 是怎么和外面传入的对应上的？ 
 
-我看 创建监听连接事件的时候 ，直接就把文件描述符传入进入了 server.ipfd[j] 这样怎么保证一定能找到对应的上？</div>2021-08-20</li><br/><li><span>徐志超-Klaus</span> 👍（0） 💬（3）<div>刚买课程我就来这里评论了，希望被作者翻牌。我在C语言这块迷路了，我自学看完了《C语言程序设计现代方法第2版》，然后我发现看别人的代码还是有很多不懂的，比如有些关键字书本里没提到，比如我还有些疑问C语言的并发编程怎么写，也不知道接下来该上哪里查资料，因为又要学其他东西，导致我又放弃了一个月的C语言。我现在该怎么办</div>2021-08-19</li><br/><li><span>Milittle</span> 👍（0） 💬（0）<div>由宏定义去确定的 ecport-&gt;epoll-&gt;kqueue-&gt;select 
+我看 创建监听连接事件的时候 ，直接就把文件描述符传入进入了 server.ipfd[j] 这样怎么保证一定能找到对应的上？</p>2021-08-20</li><br/><li><span>徐志超-Klaus</span> 👍（0） 💬（3）<p>刚买课程我就来这里评论了，希望被作者翻牌。我在C语言这块迷路了，我自学看完了《C语言程序设计现代方法第2版》，然后我发现看别人的代码还是有很多不懂的，比如有些关键字书本里没提到，比如我还有些疑问C语言的并发编程怎么写，也不知道接下来该上哪里查资料，因为又要学其他东西，导致我又放弃了一个月的C语言。我现在该怎么办</p>2021-08-19</li><br/><li><span>Milittle</span> 👍（0） 💬（0）<p>由宏定义去确定的 ecport-&gt;epoll-&gt;kqueue-&gt;select 
 
-性能逐级递减。这个包含在ae.c头部包含c文件的</div>2021-08-19</li><br/>
+性能逐级递减。这个包含在ae.c头部包含c文件的</p>2021-08-19</li><br/>
 </ul>

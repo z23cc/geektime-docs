@@ -438,7 +438,7 @@ packages/yew-agent/src/worker/mod.rs
 
 感谢你的阅读，如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。今天你已经完成Rust学习的第25次打卡啦，我们下节课见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>郑晔</span> 👍（7） 💬（3）<div>老师对单一职责的理解是错的，这一点是我特意在《软件设计之美》中纠正的，因为单一功能是一个永远为真的说法，单一职责是要把变化纳入考量。具体的可以参考《软件设计之美》和《架构整洁之道》中关于单一职责的讲解。</div>2021-10-30</li><br/><li><span>Marvichov</span> 👍（1） 💬（2）<div>doc: https:&#47;&#47;github.com&#47;yewstack&#47;yew&#47;blob&#47;master&#47;packages&#47;yew&#47;src&#47;html&#47;component&#47;mod.rs#L42
+<li><span>郑晔</span> 👍（7） 💬（3）<p>老师对单一职责的理解是错的，这一点是我特意在《软件设计之美》中纠正的，因为单一功能是一个永远为真的说法，单一职责是要把变化纳入考量。具体的可以参考《软件设计之美》和《架构整洁之道》中关于单一职责的讲解。</p>2021-10-30</li><br/><li><span>Marvichov</span> 👍（1） 💬（2）<p>doc: https:&#47;&#47;github.com&#47;yewstack&#47;yew&#47;blob&#47;master&#47;packages&#47;yew&#47;src&#47;html&#47;component&#47;mod.rs#L42
 
 1. 不能, 返回类型有Self; 运行时type被erase掉了, 不知道Self具体是什么类型.
 2. Message感觉有点像actor里面的message: op to change component state. 应该是用于定义交互的时候, dynamic change component的. Properties应该是DOM的property, 用于render view的…
@@ -457,7 +457,7 @@ impl Component for List {
 ```
 3. https:&#47;&#47;docs.rs&#47;yew&#47;0.18.0&#47;yew&#47;#example; 重点是`Sized` `+ &#39;Static` bound`. 实现的类型必须是Sized. 同时如果有reference element, 其lifetime必须是static的.
 
-感觉virtual dom有必要了解了解...</div>2021-10-23</li><br/><li><span>核桃</span> 👍（0） 💬（2）<div>今天写了一段全局单例的代码，如下所示.
+感觉virtual dom有必要了解了解...</p>2021-10-23</li><br/><li><span>核桃</span> 👍（0） 💬（2）<p>今天写了一段全局单例的代码，如下所示.
 
 ```
 pub struct Monitor {
@@ -490,7 +490,7 @@ lazy_static! {
 }
 ```
 
-这里使用lazy_static进行全局实现静态变量，但是因为初始化的时候并没有办法指向一个其他的变量，因此这里考虑使用了Arc处理，但是这段代码其实还是有点问题的，因为并没有考虑到竞争并发的情况，但是这里似乎更加适合使用once cell。rust在这部分的实现，感觉还是有点欠缺的。</div>2021-11-25</li><br/><li><span>0@1</span> 👍（0） 💬（1）<div>老师，想问下关于trait的一些问题, 下面是个代码例子，
+这里使用lazy_static进行全局实现静态变量，但是因为初始化的时候并没有办法指向一个其他的变量，因此这里考虑使用了Arc处理，但是这段代码其实还是有点问题的，因为并没有考虑到竞争并发的情况，但是这里似乎更加适合使用once cell。rust在这部分的实现，感觉还是有点欠缺的。</p>2021-11-25</li><br/><li><span>0@1</span> 👍（0） 💬（1）<p>老师，想问下关于trait的一些问题, 下面是个代码例子，
 struct MyStruct;
 trait MyTrait{
     fn test(&amp;self);
@@ -527,7 +527,7 @@ fn main() {
 
 
 
-</div>2021-10-23</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<div>接口的设计要注重用户体验，这太重要了。</div>2021-10-22</li><br/><li><span>David.Du</span> 👍（0） 💬（0）<div>Trait 对T的一些约束，同时也提醒了T的实现者，要按照这个去做，Fn的函数功能，同时也约束了自身，我感觉一套系统定义完一些列的Trait+数据结构后，剩下的就是实现了。</div>2023-11-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>思考题：
+</p>2021-10-23</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<p>接口的设计要注重用户体验，这太重要了。</p>2021-10-22</li><br/><li><span>David.Du</span> 👍（0） 💬（0）<p>Trait 对T的一些约束，同时也提醒了T的实现者，要按照这个去做，Fn的函数功能，同时也约束了自身，我感觉一套系统定义完一些列的Trait+数据结构后，剩下的就是实现了。</p>2023-11-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>思考题：
 
 Component trait 可以做 trait object 么？
 做不了 trait object，因为其中的方法并不符合对象安全原则，要么返回  Self 对象，要么带有泛型参数
@@ -536,10 +536,10 @@ Component trait 可以做 trait object 么？
 Message 的作用是用来和 Component 进行交互，使其获得动态能力的。 properties 则表达了 Component 的属性，当 Component 的父组件被重新渲染时，子组件要么重新生成，要么从传递给 changed 方法中的上下文接受新的 properties
 
 做为使用者，该如何用 Component trait？它的 lifecycle 是什么样子的？
-为自定义类型实现 Component trait 需要指定关联类型 Message 和 Properties，并提供 create 和 view 两个方法的自定义实现即可。它的 lifecycle 是静态生命周期，贯穿程序的始终</div>2022-09-16</li><br/><li><span>渡鸦10086</span> 👍（0） 💬（0）<div>思考题：
+为自定义类型实现 Component trait 需要指定关联类型 Message 和 Properties，并提供 create 和 view 两个方法的自定义实现即可。它的 lifecycle 是静态生命周期，贯穿程序的始终</p>2022-09-16</li><br/><li><span>渡鸦10086</span> 👍（0） 💬（0）<p>思考题：
 1. Component trait 的 create 方法会返回 Self，所以不能做 trait Object
 2. 关联类型 Message 用于让 Components 类型动态化及可交互化，Component 可以使用 enum 或 () 来声明。 Properties 就是 Component 的属性，当 Component 的父组件被重新渲染时时，它将被重新创建，或者在传递给被改变的 life cycle 方法的上下文中接收新的属性。
 3. YEW的官方实例：https:&#47;&#47;docs.rs&#47;yew&#47;0.18.0&#47;yew&#47;#example。life cycle ： `&#39;static` 代表静态生命周期
 4. 没有前端经验。。
-</div>2022-01-17</li><br/>
+</p>2022-01-17</li><br/>
 </ul>

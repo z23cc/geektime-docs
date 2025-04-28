@@ -265,8 +265,8 @@ fib_seq(30)
 
 欢迎在下方留言与我讨论，也欢迎你把这篇文章分享出去。我们一起交流，一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>AllenGFLiu</span> 👍（15） 💬（5）<div>哥，不怀好意的问一下，你们在谷歌会用微软的vscode 吗？[奸笑脸]
-每次看你都是提到pycharm ,我是从pycharm 转到vscode 上的，感觉整个世界都安静了。</div>2019-07-19</li><br/><li><span>小侠龙旋风</span> 👍（4） 💬（3）<div>我要把这个装饰器保存下来</div>2019-07-21</li><br/><li><span>321</span> 👍（2） 💬（2）<div>web 应用怎么调试？譬如flask或django框架开发的应用，该如何调试。</div>2019-07-19</li><br/><li><span>xavier</span> 👍（1） 💬（1）<div>对应到C、C++就是gdb。现在被IDE给宠坏了，感觉还是Command Line纯粹。</div>2019-08-15</li><br/><li><span>return</span> 👍（81） 💬（6）<div>全文这个装饰器最牛逼。</div>2019-07-19</li><br/><li><span>(￣_￣ )</span> 👍（10） 💬（0）<div>和gdb的命令差不多</div>2019-07-19</li><br/><li><span>frozen</span> 👍（9） 💬（0）<div>您好，pdb调试多线程的时候目前还不支持吧</div>2019-07-25</li><br/><li><span>一只眼看世界</span> 👍（8） 💬（2）<div>dict1 = {}
+<li><span>AllenGFLiu</span> 👍（15） 💬（5）<p>哥，不怀好意的问一下，你们在谷歌会用微软的vscode 吗？[奸笑脸]
+每次看你都是提到pycharm ,我是从pycharm 转到vscode 上的，感觉整个世界都安静了。</p>2019-07-19</li><br/><li><span>小侠龙旋风</span> 👍（4） 💬（3）<p>我要把这个装饰器保存下来</p>2019-07-21</li><br/><li><span>321</span> 👍（2） 💬（2）<p>web 应用怎么调试？譬如flask或django框架开发的应用，该如何调试。</p>2019-07-19</li><br/><li><span>xavier</span> 👍（1） 💬（1）<p>对应到C、C++就是gdb。现在被IDE给宠坏了，感觉还是Command Line纯粹。</p>2019-08-15</li><br/><li><span>return</span> 👍（81） 💬（6）<p>全文这个装饰器最牛逼。</p>2019-07-19</li><br/><li><span>(￣_￣ )</span> 👍（10） 💬（0）<p>和gdb的命令差不多</p>2019-07-19</li><br/><li><span>frozen</span> 👍（9） 💬（0）<p>您好，pdb调试多线程的时候目前还不支持吧</p>2019-07-25</li><br/><li><span>一只眼看世界</span> 👍（8） 💬（2）<p>dict1 = {}
 def fibl(n):
     if n == 0:
         return 0
@@ -284,13 +284,13 @@ def all_fib(n):
     print(res)
 all_fib(100000)
 
-老师用的装饰器很高大上(看了好几遍才搞明白), 但是当数字大于995后会有超过递归深度报错, 所以过来皮一下&#47;狗头</div>2019-08-14</li><br/><li><span>JackLee</span> 👍（7） 💬（0）<div>还有一个ipdb是pdb的加强版，用法比较相近，不过需要pip安装一下</div>2019-07-19</li><br/><li><span>new</span> 👍（6） 💬（0）<div>老师应该在这里回顾一下装饰器的用法</div>2019-07-22</li><br/><li><span>泥土  </span> 👍（5） 💬（3）<div>看到memoize装饰器，想起装饰器那节中的LRU_CACHE，发现比memoize性能更高
+老师用的装饰器很高大上(看了好几遍才搞明白), 但是当数字大于995后会有超过递归深度报错, 所以过来皮一下&#47;狗头</p>2019-08-14</li><br/><li><span>JackLee</span> 👍（7） 💬（0）<p>还有一个ipdb是pdb的加强版，用法比较相近，不过需要pip安装一下</p>2019-07-19</li><br/><li><span>new</span> 👍（6） 💬（0）<p>老师应该在这里回顾一下装饰器的用法</p>2019-07-22</li><br/><li><span>泥土  </span> 👍（5） 💬（3）<p>看到memoize装饰器，想起装饰器那节中的LRU_CACHE，发现比memoize性能更高
 import functools
 
 @memoize
 # @functools.lru_cache(None)
 def fib(n):
-    ...</div>2020-03-24</li><br/><li><span>lipan</span> 👍（5） 💬（1）<div>最近在用js撸小程序，一个console.log()搞定所有调试。</div>2019-07-19</li><br/><li><span>未来已来</span> 👍（4） 💬（1）<div>被最后那个装饰器惊艳到了，以前只知道用循环，没想到 Python 还可以这么玩</div>2019-07-19</li><br/><li><span>向南</span> 👍（3） 💬（0）<div>有时候会用装饰器试一下
+    ...</p>2020-03-24</li><br/><li><span>lipan</span> 👍（5） 💬（1）<p>最近在用js撸小程序，一个console.log()搞定所有调试。</p>2019-07-19</li><br/><li><span>未来已来</span> 👍（4） 💬（1）<p>被最后那个装饰器惊艳到了，以前只知道用循环，没想到 Python 还可以这么玩</p>2019-07-19</li><br/><li><span>向南</span> 👍（3） 💬（0）<p>有时候会用装饰器试一下
 def timeit_wrapper(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -303,5 +303,5 @@ def timeit_wrapper(func):
 
 @timeit_wrapper
 def some_func():
-    ....</div>2020-03-11</li><br/><li><span>一一</span> 👍（3） 💬（0）<div>cProfile真的太好用了</div>2020-01-31</li><br/>
+    ....</p>2020-03-11</li><br/><li><span>一一</span> 👍（3） 💬（0）<p>cProfile真的太好用了</p>2020-01-31</li><br/>
 </ul>

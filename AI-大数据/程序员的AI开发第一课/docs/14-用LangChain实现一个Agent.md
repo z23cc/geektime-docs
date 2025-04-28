@@ -273,7 +273,7 @@ LangChain 社区提供了大量的工具，你可以找一个自己感兴趣的�
 
 欢迎你在留言区和我交流互动，如果这一讲对你有帮助，别忘了分享给身边更多朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>风</span> 👍（0） 💬（1）<div>AI是自动识别需要调用哪个tool以及需要传入什么作为参数？</div>2025-02-18</li><br/><li><span>grok</span> 👍（6） 💬（1）<div>我用的grok2，本节代码跑不通。需要清理输入。改动如下：
+<li><span>风</span> 👍（0） 💬（1）<p>AI是自动识别需要调用哪个tool以及需要传入什么作为参数？</p>2025-02-18</li><br/><li><span>grok</span> 👍（6） 💬（1）<p>我用的grok2，本节代码跑不通。需要清理输入。改动如下：
 ```
 def clean_tool_input(func):
     &quot;&quot;&quot;装饰器：清理传递给工具函数的输入&quot;&quot;&quot;
@@ -302,6 +302,6 @@ def ask_fruit_unit_price(fruit: str) -&gt; str:
         return &quot;{} unit price is 20&#47;kg&quot;.format(fruit)
 ```
 
-完整代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec14.ipynb</div>2024-12-02</li><br/><li><span>张申傲</span> 👍（4） 💬（0）<div>第14讲打卡~
-LangChain 内置了大量开箱即用的工具，可以参考：https:&#47;&#47;python.langchain.com&#47;docs&#47;integrations&#47;tools&#47;</div>2025-01-24</li><br/>
+完整代码在此：https:&#47;&#47;github.com&#47;groklab&#47;misc&#47;blob&#47;main&#47;geektime-llm-zhengye-column&#47;lec14.ipynb</p>2024-12-02</li><br/><li><span>张申傲</span> 👍（4） 💬（0）<p>第14讲打卡~
+LangChain 内置了大量开箱即用的工具，可以参考：https:&#47;&#47;python.langchain.com&#47;docs&#47;integrations&#47;tools&#47;</p>2025-01-24</li><br/>
 </ul>

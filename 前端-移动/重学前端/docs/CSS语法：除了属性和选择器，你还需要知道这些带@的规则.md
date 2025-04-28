@@ -284,8 +284,8 @@ attr()函数允许CSS接受属性值的控制。
 
 最后，给你留一个思考问题，CSS的函数有很多，本文也提到了不少，请你也一起查阅资料，试着总结一下，你能找到多少种CSS函数？
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>吴前端</span> 👍（3） 💬（1）<div>toggle()函数试了下在google 火狐打开都没用呢显示无效属性值</div>2019-02-19</li><br/><li><span>小夜</span> 👍（0） 💬（1）<div>@namespace svg url(http:&#47;&#47;www.w3.org&#47;2000&#47;svg)
-请问这个 声明这个 namespace 的必要性在哪里，在什么情况下会需要使用这个规则</div>2019-10-25</li><br/><li><span>比利利</span> 👍（0） 💬（1）<div>查阅了一些资料发现，目前CSS中toggle()这个函数在任何主流浏览器中都不支持，所以无论是Chrome还是Firefox里用这个函数都是无效的。</div>2019-02-25</li><br/><li><span>CC</span> 👍（386） 💬（2）<div>在网站上搜索了一下，发现 css 函数有不少，尤其是近三年，增加的函数几乎超过过去的总和。
+<li><span>吴前端</span> 👍（3） 💬（1）<p>toggle()函数试了下在google 火狐打开都没用呢显示无效属性值</p>2019-02-19</li><br/><li><span>小夜</span> 👍（0） 💬（1）<p>@namespace svg url(http:&#47;&#47;www.w3.org&#47;2000&#47;svg)
+请问这个 声明这个 namespace 的必要性在哪里，在什么情况下会需要使用这个规则</p>2019-10-25</li><br/><li><span>比利利</span> 👍（0） 💬（1）<p>查阅了一些资料发现，目前CSS中toggle()这个函数在任何主流浏览器中都不支持，所以无论是Chrome还是Firefox里用这个函数都是无效的。</p>2019-02-25</li><br/><li><span>CC</span> 👍（386） 💬（2）<p>在网站上搜索了一下，发现 css 函数有不少，尤其是近三年，增加的函数几乎超过过去的总和。
 
 按照 winter 老师提到「知识完备性」的思路，尝试整理了一下 CSS 函数。
 
@@ -354,9 +354,9 @@ attr()函数允许CSS接受属性值的控制。
 * var()
 * env()
 * attr()
-</div>2019-02-07</li><br/><li><span>Sevens 些粉</span> 👍（80） 💬（1）<div>推荐一下《css世界》这本书，有理论基础也有实战应用和常遇坑，看了两章感觉不错。</div>2019-02-08</li><br/><li><span>米斯特菠萝</span> 👍（34） 💬（1）<div>我看到winter老师讲解这些冷门的知识，忽然意识到什么叫做精通？要精通就要抠这种细节，这样才能做到精通
+</p>2019-02-07</li><br/><li><span>Sevens 些粉</span> 👍（80） 💬（1）<p>推荐一下《css世界》这本书，有理论基础也有实战应用和常遇坑，看了两章感觉不错。</p>2019-02-08</li><br/><li><span>米斯特菠萝</span> 👍（34） 💬（1）<p>我看到winter老师讲解这些冷门的知识，忽然意识到什么叫做精通？要精通就要抠这种细节，这样才能做到精通
 
-做就要做精通，前端是一种手艺人</div>2019-02-09</li><br/><li><span>文全</span> 👍（15） 💬（0）<div>@import 用于引入一个 CSS 文件，除了 @charset 规则不会被引入，@import 可以引入另一个 JavaScript 文件的全部内容。这段写错了 应该是css 文件全部内容</div>2019-02-07</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（12） 💬（0）<div>“只有伪类可以出现在伪元素之后”是不是写反了</div>2019-02-07</li><br/><li><span>mimof9</span> 👍（8） 💬（4）<div>试了一下 toggle这个函数 并没有效果。clac实测下来是有效果的。</div>2019-02-08</li><br/><li><span>前端男孩</span> 👍（7） 💬（0）<div>本来想发张思维导图的，但是貌似不支持发图，想想算了，也就整理了67个css函数，也不知道够不够。</div>2019-06-04</li><br/><li><span>无痕</span> 👍（7） 💬（1）<div>“||”这个选择器我怎么没搜到，是什么意思</div>2019-03-04</li><br/><li><span>xuanyuan</span> 👍（4） 💬（1）<div>每篇文章希望增加一些预备知识，后端程序员表示看不懂</div>2019-02-08</li><br/><li><span>瓶盖</span> 👍（3） 💬（0）<div>css函数：https:&#47;&#47;www.w3cplus.com&#47;css&#47;css-functions.html</div>2019-02-28</li><br/><li><span>Rushan-Chen</span> 👍（3） 💬（0）<div>@mimof9 
+做就要做精通，前端是一种手艺人</p>2019-02-09</li><br/><li><span>文全</span> 👍（15） 💬（0）<p>@import 用于引入一个 CSS 文件，除了 @charset 规则不会被引入，@import 可以引入另一个 JavaScript 文件的全部内容。这段写错了 应该是css 文件全部内容</p>2019-02-07</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（12） 💬（0）<p>“只有伪类可以出现在伪元素之后”是不是写反了</p>2019-02-07</li><br/><li><span>mimof9</span> 👍（8） 💬（4）<p>试了一下 toggle这个函数 并没有效果。clac实测下来是有效果的。</p>2019-02-08</li><br/><li><span>前端男孩</span> 👍（7） 💬（0）<p>本来想发张思维导图的，但是貌似不支持发图，想想算了，也就整理了67个css函数，也不知道够不够。</p>2019-06-04</li><br/><li><span>无痕</span> 👍（7） 💬（1）<p>“||”这个选择器我怎么没搜到，是什么意思</p>2019-03-04</li><br/><li><span>xuanyuan</span> 👍（4） 💬（1）<p>每篇文章希望增加一些预备知识，后端程序员表示看不懂</p>2019-02-08</li><br/><li><span>瓶盖</span> 👍（3） 💬（0）<p>css函数：https:&#47;&#47;www.w3cplus.com&#47;css&#47;css-functions.html</p>2019-02-28</li><br/><li><span>Rushan-Chen</span> 👍（3） 💬（0）<p>@mimof9 
 文章的链接是CSS4 working draft状态的文档，是很新的文档。
 
 看了下CSS3 Candidate Recommendation状态的文档，没有toggle()、min()、max()、clamp()，这几个函数应该是css4新加的，基本上浏览器都还不支持。
@@ -364,5 +364,5 @@ attr()函数允许CSS接受属性值的控制。
 attr()虽然css3文档有，查了下，浏览器也都不支持。😂
 
 等浏览器支持估计还要一段时间吧，现在先知道有这个东西就好，我是这样想的。
-</div>2019-02-13</li><br/><li><span>起而行</span> 👍（2） 💬（0）<div>发现对于css体系还不太了解，比如动画，伪选择器等等。打算在这几天准备一下绘图，布局，伪选择器的知识，为面试做准备</div>2020-03-19</li><br/>
+</p>2019-02-13</li><br/><li><span>起而行</span> 👍（2） 💬（0）<p>发现对于css体系还不太了解，比如动画，伪选择器等等。打算在这几天准备一下绘图，布局，伪选择器的知识，为面试做准备</p>2020-03-19</li><br/>
 </ul>

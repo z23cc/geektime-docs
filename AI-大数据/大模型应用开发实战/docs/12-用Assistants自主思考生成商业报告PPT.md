@@ -565,5 +565,5 @@ AI，你真棒！
 
 欢迎你也尝试一下！我相信通过大语言模型所带来的智能化浪潮，我们每个人都有机会成为更加高效和有创意的商业数据分析专家。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Geek_9948a5</span> 👍（0） 💬（0）<div>这里的Assiatants生成了我们制作PPT的素材 1.图片 2.观点摘要。最后我们使用了python工具组装了这些材料。如果第三部能自动完成就好了</div>2024-07-09</li><br/><li><span>在路上</span> 👍（0） 💬（0）<div>在数据可视化环节，感觉Assistants已经完全代替了langchain agent，不知道Assistant会不会成为各家大模型的标配。</div>2024-06-26</li><br/>
+<li><span>Geek_9948a5</span> 👍（0） 💬（0）<p>这里的Assiatants生成了我们制作PPT的素材 1.图片 2.观点摘要。最后我们使用了python工具组装了这些材料。如果第三部能自动完成就好了</p>2024-07-09</li><br/><li><span>在路上</span> 👍（0） 💬（0）<p>在数据可视化环节，感觉Assistants已经完全代替了langchain agent，不知道Assistant会不会成为各家大模型的标配。</p>2024-06-26</li><br/>
 </ul>

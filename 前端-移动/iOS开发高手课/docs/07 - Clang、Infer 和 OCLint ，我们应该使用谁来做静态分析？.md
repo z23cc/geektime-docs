@@ -385,9 +385,9 @@ Infer 的效率高，支持增量分析，可小范围分析。可定制性不�
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎把它分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>iLearn</span> 👍（20） 💬（4）<div>老师，Swift的要怎么搞？</div>2019-03-26</li><br/><li><span>scorpiozj</span> 👍（2） 💬（1）<div>请问Xcode中的静态检查就是clang 静态检查吗？</div>2019-03-29</li><br/><li><span>jimmy</span> 👍（2） 💬（1）<div>oclint的一些研究 https:&#47;&#47;xiaozhuanlan.com&#47;topic&#47;9647358012</div>2019-03-27</li><br/><li><span>頑 張</span> 👍（1） 💬（2）<div>infer跑不起来的 希望这篇能帮到https:&#47;&#47;blog.csdn.net&#47;elisa1988&#47;article&#47;details&#47;46531745?utm_source=blogxgwz7</div>2019-04-01</li><br/><li><span>择一城终老</span> 👍（0） 💬（1）<div>从来没有用过，感觉听天书一样，哈哈！不过大致了解了其功能，但是原理还真不好懂</div>2019-03-27</li><br/><li><span>Geek_wad2tx</span> 👍（0） 💬（1）<div>clang是一个c c++ oc 编译器，静态分析利用clang做代码编译层面的事情，内存泄露，强弱引用，方法调用深度等分析工作交给分析器本身。 
+<li><span>iLearn</span> 👍（20） 💬（4）<p>老师，Swift的要怎么搞？</p>2019-03-26</li><br/><li><span>scorpiozj</span> 👍（2） 💬（1）<p>请问Xcode中的静态检查就是clang 静态检查吗？</p>2019-03-29</li><br/><li><span>jimmy</span> 👍（2） 💬（1）<p>oclint的一些研究 https:&#47;&#47;xiaozhuanlan.com&#47;topic&#47;9647358012</p>2019-03-27</li><br/><li><span>頑 張</span> 👍（1） 💬（2）<p>infer跑不起来的 希望这篇能帮到https:&#47;&#47;blog.csdn.net&#47;elisa1988&#47;article&#47;details&#47;46531745?utm_source=blogxgwz7</p>2019-04-01</li><br/><li><span>择一城终老</span> 👍（0） 💬（1）<p>从来没有用过，感觉听天书一样，哈哈！不过大致了解了其功能，但是原理还真不好懂</p>2019-03-27</li><br/><li><span>Geek_wad2tx</span> 👍（0） 💬（1）<p>clang是一个c c++ oc 编译器，静态分析利用clang做代码编译层面的事情，内存泄露，强弱引用，方法调用深度等分析工作交给分析器本身。 
 
-Clang是不是类似于oc中的runtime？</div>2019-03-26</li><br/><li><span>Roger</span> 👍（32） 💬（1）<div>给宝宝喂夜奶，顺便来看看新的一课讲什么</div>2019-03-26</li><br/><li><span>drunkenMouse</span> 👍（20） 💬（0）<div>1. OClint 想执行自己指定的项目，还是不会。。最后查了别的资料，说是要写脚本安装xcpretty，而且说是不维护了。
+Clang是不是类似于oc中的runtime？</p>2019-03-26</li><br/><li><span>Roger</span> 👍（32） 💬（1）<p>给宝宝喂夜奶，顺便来看看新的一课讲什么</p>2019-03-26</li><br/><li><span>drunkenMouse</span> 👍（20） 💬（0）<p>1. OClint 想执行自己指定的项目，还是不会。。最后查了别的资料，说是要写脚本安装xcpretty，而且说是不维护了。
 
 2. CLang 静态分析器的clang —analyze -Xclang -analyzer-checker-help 我执行之后，并没有成功显示常用的Checker。。
 
@@ -400,8 +400,8 @@ Clang是不是类似于oc中的runtime？</div>2019-03-26</li><br/><li><span>Rog
 Clang静态分析器，规则少只能检策较大问题，对内存泄漏一类问题若无错误也不提示外，回调次数也多。每执行一句，都要回调所有的Checker的回调函数。所以PASS
 
 Infer 定制性不是最高，但是不差。可以小范围分析，所以效率高。还支持增量分析（使用已缓存数据，非增量会清楚缓存）。所以，建议Infer
-</div>2019-03-27</li><br/><li><span>yb坏蛋biubiu</span> 👍（9） 💬（0）<div>clang作为llvm编译器前端，进行预编译、词法分析生成token片、语法分析生成AST后，提供一个切面，开发者可以在这里利用clang生成的AST语法树进行自定义规则遍历分析，clang也提供了相应的checker和抛出诊断异常的diagnosis。</div>2019-03-26</li><br/><li><span>简生</span> 👍（6） 💬（2）<div>个人觉得虽然OCLint检测规则多，易用性没有Infer好。但是Sonar+OCLint可以对检测结果进行一个可视化的管理，还是会偏向于选择OCLint。😊</div>2019-03-30</li><br/><li><span>Yest</span> 👍（5） 💬（0）<div>fatal error: &#39;Foundation&#47;Foundation.h&#39; file not found 这么解决👇
-infer -- clang -c -isysroot &#47;Applications&#47;Xcode.app&#47;Contents&#47;Developer&#47;Platforms&#47;iPhoneSimulator.platform&#47;Developer&#47;SDKs&#47;iPhoneSimulator.sdk Hello.m</div>2019-04-09</li><br/><li><span>寻心</span> 👍（5） 💬（2）<div>这个问题有谁遇到吗？
+</p>2019-03-27</li><br/><li><span>yb坏蛋biubiu</span> 👍（9） 💬（0）<p>clang作为llvm编译器前端，进行预编译、词法分析生成token片、语法分析生成AST后，提供一个切面，开发者可以在这里利用clang生成的AST语法树进行自定义规则遍历分析，clang也提供了相应的checker和抛出诊断异常的diagnosis。</p>2019-03-26</li><br/><li><span>简生</span> 👍（6） 💬（2）<p>个人觉得虽然OCLint检测规则多，易用性没有Infer好。但是Sonar+OCLint可以对检测结果进行一个可视化的管理，还是会偏向于选择OCLint。😊</p>2019-03-30</li><br/><li><span>Yest</span> 👍（5） 💬（0）<p>fatal error: &#39;Foundation&#47;Foundation.h&#39; file not found 这么解决👇
+infer -- clang -c -isysroot &#47;Applications&#47;Xcode.app&#47;Contents&#47;Developer&#47;Platforms&#47;iPhoneSimulator.platform&#47;Developer&#47;SDKs&#47;iPhoneSimulator.sdk Hello.m</p>2019-04-09</li><br/><li><span>寻心</span> 👍（5） 💬（2）<p>这个问题有谁遇到吗？
 怎么解决？
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
 
@@ -418,7 +418,7 @@ Called from file &quot;integration&#47;Driver.ml&quot;, line 280, characters 6-4
 Called from file &quot;infer.ml&quot;, line 20, characters 2-36
 Called from file &quot;infer.ml&quot;, line 130, characters 8-54
 
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>2019-04-04</li><br/><li><span>吴小安</span> 👍（4） 💬（0）<div>infer 扫描怎么过滤不想扫描的文件呢，例如pod</div>2019-03-29</li><br/><li><span>快到碗里来</span> 👍（3） 💬（0）<div>infer扫描单个文件 报错
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>2019-04-04</li><br/><li><span>吴小安</span> 👍（4） 💬（0）<p>infer 扫描怎么过滤不想扫描的文件呢，例如pod</p>2019-03-29</li><br/><li><span>快到碗里来</span> 👍（3） 💬（0）<p>infer扫描单个文件 报错
 7 errors generated.
 Error: the following clang command did not run successfully:
     &#47;usr&#47;local&#47;Cellar&#47;infer&#47;0.15.0&#47;lib&#47;infer&#47;facebook-clang-plugins&#47;clang&#47;install&#47;bin&#47;clang
@@ -448,5 +448,5 @@ Error: the following clang command did not run successfully:
     &quot;-fmax-type-align=16&quot; &quot;-fdiagnostics-show-option&quot; &quot;-o&quot; &quot;RootVC.o&quot; &quot;-x&quot;
     &quot;objective-c&quot; &quot;RootVC.m&quot; &quot;-O0&quot; &quot;-include&quot;
     &quot;&#47;usr&#47;local&#47;Cellar&#47;infer&#47;0.15.0&#47;lib&#47;infer&#47;infer&#47;bin&#47;..&#47;lib&#47;clang_wrappers&#47;global_defines.h&quot;
-    &quot;-Wno-everything&quot;</div>2019-04-19</li><br/><li><span>mosn</span> 👍（2） 💬（0）<div>infer --skip-analysis-in-path Pods </div>2019-04-08</li><br/>
+    &quot;-Wno-everything&quot;</p>2019-04-19</li><br/><li><span>mosn</span> 👍（2） 💬（0）<p>infer --skip-analysis-in-path Pods </p>2019-04-08</li><br/>
 </ul>

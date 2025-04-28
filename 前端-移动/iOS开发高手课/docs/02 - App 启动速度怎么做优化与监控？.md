@@ -446,17 +446,17 @@ static inline CallRecord * popCallRecord(ThreadCallStack *cs) {
 
 这门课正在上新优惠，欢迎点击[这里](https://time.geekbang.org/course/intro/169?utm_term=zeusKHUZ0&utm_source=app&utm_medium=geektime&utm_campaign=169-presell&utm_content=daiming)试看。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Glenn•D</span> 👍（3） 💬（1）<div>模拟器上试了一下耗时检查没有效果</div>2019-03-15</li><br/><li><span>好多余先生丶</span> 👍（117） 💬（3）<div>完了，上来就懵逼</div>2019-03-14</li><br/><li><span>Neo</span> 👍（27） 💬（1）<div>不错  提纲挈领  希望汇编那块能稍微细讲一下  没有太多写汇编的经验</div>2019-03-14</li><br/><li><span>西京富贵兔</span> 👍（33） 💬（2）<div>看完这篇我膨胀了，我都敢去点 objc_msgSend 源码文件了，嗯，不出意料，一句没看懂。。。</div>2019-03-14</li><br/><li><span>星空</span> 👍（30） 💬（1）<div>友情提示：想要尝试SMCallTrace的朋友，需要在SMCallTrace.m中打开第54行的注释。</div>2019-03-14</li><br/><li><span>嗨</span> 👍（21） 💬（2）<div>只有C和OC基础，学起来很吃力</div>2019-03-14</li><br/><li><span>冰风落叶</span> 👍（19） 💬（3）<div>大佬们 这是我的写的总结和课后作业 不知道写的对不对 恳请各位大佬指正
+<li><span>Glenn•D</span> 👍（3） 💬（1）<p>模拟器上试了一下耗时检查没有效果</p>2019-03-15</li><br/><li><span>好多余先生丶</span> 👍（117） 💬（3）<p>完了，上来就懵逼</p>2019-03-14</li><br/><li><span>Neo</span> 👍（27） 💬（1）<p>不错  提纲挈领  希望汇编那块能稍微细讲一下  没有太多写汇编的经验</p>2019-03-14</li><br/><li><span>西京富贵兔</span> 👍（33） 💬（2）<p>看完这篇我膨胀了，我都敢去点 objc_msgSend 源码文件了，嗯，不出意料，一句没看懂。。。</p>2019-03-14</li><br/><li><span>星空</span> 👍（30） 💬（1）<p>友情提示：想要尝试SMCallTrace的朋友，需要在SMCallTrace.m中打开第54行的注释。</p>2019-03-14</li><br/><li><span>嗨</span> 👍（21） 💬（2）<p>只有C和OC基础，学起来很吃力</p>2019-03-14</li><br/><li><span>冰风落叶</span> 👍（19） 💬（3）<p>大佬们 这是我的写的总结和课后作业 不知道写的对不对 恳请各位大佬指正
 总结：https:&#47;&#47;www.jianshu.com&#47;p&#47;f26c4f16692a
-课后作业：https:&#47;&#47;github.com&#47;308823810&#47;BSMonitorTimeTool</div>2019-04-04</li><br/><li><span>哈</span> 👍（19） 💬（1）<div>说swift没有main函数那位，其实swift是有main函数的，只不过苹果把它精简成了一个@NSApplicationMain了而已，不信去你的AppDelegate.swift最上面看！</div>2019-03-14</li><br/><li><span>Justin</span> 👍（17） 💬（5）<div>戴老师：多个动态库进行合并，具体怎么合并了，没弄过动态库合并该功能</div>2019-03-15</li><br/><li><span>Kam</span> 👍（15） 💬（2）<div>这个方法耗时计算的工具很赞，白天要花点时间实践一下才行。
+课后作业：https:&#47;&#47;github.com&#47;308823810&#47;BSMonitorTimeTool</p>2019-04-04</li><br/><li><span>哈</span> 👍（19） 💬（1）<p>说swift没有main函数那位，其实swift是有main函数的，只不过苹果把它精简成了一个@NSApplicationMain了而已，不信去你的AppDelegate.swift最上面看！</p>2019-03-14</li><br/><li><span>Justin</span> 👍（17） 💬（5）<p>戴老师：多个动态库进行合并，具体怎么合并了，没弄过动态库合并该功能</p>2019-03-15</li><br/><li><span>Kam</span> 👍（15） 💬（2）<p>这个方法耗时计算的工具很赞，白天要花点时间实践一下才行。
 
 有个让我疑惑的地方是关于“热启动”的概念，我再去看了下 WWDC 上的说法，里面提到热启动应该也包括“启动后退出 App 再启动”这种情况，不知道我下面这段话的理解是否正确：
 
 “And a warm launch is an app where the application is already in memory, either because it&#39;s been launched and quit previously, and it&#39;s still sitting in the discache in the kernel, or because you just copied it over.”
 - https:&#47;&#47;developer.apple.com&#47;videos&#47;play&#47;wwdc2016-406&#47;?time=1484
 
-</div>2019-03-14</li><br/><li><span>唯她命</span> 👍（10） 💬（1）<div>hook 了 objc_msgSend 方法，就可以 hook  oc全部方法，这句话我不赞成，看objc源码，你会发现有的oc方法直接通过函数指针调用的,这时候hook 了 objc_msgSend 方法，是没有用的</div>2019-03-14</li><br/><li><span>登品</span> 👍（8） 💬（3）<div>公司项目启动70+的pod库 ，光pre-main时间都要3.x s了
-所以光优化下main后面的 没啥卵用。 大佬main前的优化 有什么资料嘛 谢谢</div>2019-03-27</li><br/><li><span>流逝……</span> 👍（8） 💬（1）<div>有点懵……不知道从哪下手。这个得有啥技术储备才能看的明白点……</div>2019-03-16</li><br/><li><span>Geek_d744d2</span> 👍（8） 💬（1）<div>戴铭老师，fishhook部分代码我看不大懂，我是需要补哪方面的知识呢？</div>2019-03-14</li><br/><li><span>Ke哀</span> 👍（7） 💬（3）<div>今天看到大佬的课程，发现说的hook objc_msgSend的汇编部分，但是发现在教程中的部分和之前大神17年博客部分是一样的，都是InspectiveC&#47;InspectiveCarm64.mm的汇编代码。然后跑去大神的github找到开源项目已阅，拿出里边hook objc_msgSend的汇编实现，然后有些部分不太理解。希望大神可以解答一下（这些是已阅里边拿出来的汇编）
+</p>2019-03-14</li><br/><li><span>唯她命</span> 👍（10） 💬（1）<p>hook 了 objc_msgSend 方法，就可以 hook  oc全部方法，这句话我不赞成，看objc源码，你会发现有的oc方法直接通过函数指针调用的,这时候hook 了 objc_msgSend 方法，是没有用的</p>2019-03-14</li><br/><li><span>登品</span> 👍（8） 💬（3）<p>公司项目启动70+的pod库 ，光pre-main时间都要3.x s了
+所以光优化下main后面的 没啥卵用。 大佬main前的优化 有什么资料嘛 谢谢</p>2019-03-27</li><br/><li><span>流逝……</span> 👍（8） 💬（1）<p>有点懵……不知道从哪下手。这个得有啥技术储备才能看的明白点……</p>2019-03-16</li><br/><li><span>Geek_d744d2</span> 👍（8） 💬（1）<p>戴铭老师，fishhook部分代码我看不大懂，我是需要补哪方面的知识呢？</p>2019-03-14</li><br/><li><span>Ke哀</span> 👍（7） 💬（3）<p>今天看到大佬的课程，发现说的hook objc_msgSend的汇编部分，但是发现在教程中的部分和之前大神17年博客部分是一样的，都是InspectiveC&#47;InspectiveCarm64.mm的汇编代码。然后跑去大神的github找到开源项目已阅，拿出里边hook objc_msgSend的汇编实现，然后有些部分不太理解。希望大神可以解答一下（这些是已阅里边拿出来的汇编）
 1.为什么这里要把lr移到x2，x4移到x3呢？
 __asm volatile (&quot;mov x2, lr\n&quot;);
 __asm volatile (&quot;mov x3, x4\n&quot;);
@@ -465,5 +465,5 @@ __asm volatile (&quot;stp x8, x9, [sp, #-16]!\n&quot;);
 __asm volatile (&quot;mov x12, %0\n&quot; :: &quot;r&quot;(&amp;before_objc_msgSend));
 __asm volatile (&quot;ldp x8, x9, [sp], #16\n&quot;);
 3.为什么在三个方法执行完之后呢，最后x0会存储最后的函数返回地址呢？我打断点看到每次都是这样的，不太理解，然后把x0，移到lr确实是为了执行之前objc_msgSend执行后下一条执行的代码段段地址。
-__asm volatile (&quot;mov lr, x0\n&quot;);</div>2019-03-14</li><br/>
+__asm volatile (&quot;mov lr, x0\n&quot;);</p>2019-03-14</li><br/>
 </ul>

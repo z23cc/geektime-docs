@@ -175,5 +175,5 @@ Power Query不但在获取数据的时候可以实现自动化查询功能，而
 
 欢迎把你的思考和想法写在评论区，我们一起交流讨论。此外，你还可以点击课程详情页的“戳我进群”，扫描二维码，加入我们的课程读者群，我也会在群里为你解疑答惑。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Soul of the Dragon</span> 👍（1） 💬（1）<div>关于思考题，由于我还没有研究透Power Query的用法，所以我用的是比较笨的方法，就是Power Query与Python相结合。先用Power Query将订单日期拆分成年、月、日，然后再用python中的groupby函数分别计算每个月的销售额和每个品种半年的销售额。</div>2021-03-11</li><br/><li><span>宁静志远</span> 👍（0） 💬（1）<div>尹老师，您好，点击“合并文件到 Excel.rar”，提示网盘链接不存在。</div>2023-07-31</li><br/><li><span>Geek_818431</span> 👍（0） 💬（0）<div>老师您好 网盘链接不存在  github上也没有这个压缩包</div>2024-06-27</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-10</li><br/><li><span>范</span> 👍（0） 💬（0）<div>power query适合于一次性的查询操作；python适合于多次的，自动化操作。excel真心功能强大</div>2021-04-14</li><br/>
+<li><span>Soul of the Dragon</span> 👍（1） 💬（1）<p>关于思考题，由于我还没有研究透Power Query的用法，所以我用的是比较笨的方法，就是Power Query与Python相结合。先用Power Query将订单日期拆分成年、月、日，然后再用python中的groupby函数分别计算每个月的销售额和每个品种半年的销售额。</p>2021-03-11</li><br/><li><span>宁静志远</span> 👍（0） 💬（1）<p>尹老师，您好，点击“合并文件到 Excel.rar”，提示网盘链接不存在。</p>2023-07-31</li><br/><li><span>Geek_818431</span> 👍（0） 💬（0）<p>老师您好 网盘链接不存在  github上也没有这个压缩包</p>2024-06-27</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-10</li><br/><li><span>范</span> 👍（0） 💬（0）<p>power query适合于一次性的查询操作；python适合于多次的，自动化操作。excel真心功能强大</p>2021-04-14</li><br/>
 </ul>

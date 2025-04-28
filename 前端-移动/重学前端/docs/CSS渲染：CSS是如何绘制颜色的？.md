@@ -172,7 +172,7 @@ CSS中的很多属性还会产生形状，比如我们常见的属性：
 
 折衷鹦鹉是一种可爱的鸟类，但是雄性折衷鹦鹉居然是跟雌性颜色不一样！你能用JavaScript和canvas，把这只雄性折衷鹦鹉变成跟雌性一样可爱的红色吗？
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>阿成</span> 👍（35） 💬（7）<div>怎么说呢，要想完美的转换... 好难... 仅靠单像素颜色来识别出鹦鹉的轮廓还是不太可行... 
+<li><span>阿成</span> 👍（35） 💬（7）<p>怎么说呢，要想完美的转换... 好难... 仅靠单像素颜色来识别出鹦鹉的轮廓还是不太可行... 
 也许把周围像素的颜色考虑进去是个办法... 不过这图挺大的...
 
 &lt;!DOCTYPE html&gt;
@@ -259,8 +259,8 @@ CSS中的很多属性还会产生形状，比如我们常见的属性：
   &lt;&#47;script&gt;
 &lt;&#47;body&gt;
 &lt;&#47;html&gt;
-</div>2019-04-28</li><br/><li><span>Peter</span> 👍（24） 💬（2）<div>一步到位：filter: hue-rotate(240deg);
-根据HSL色环，绿色在120deg的位置，要变成红色，把色相顺时针旋转240deg或者逆时针120deg即可。</div>2020-06-30</li><br/><li><span>GGFGG</span> 👍（8） 💬（0）<div>CMYK，为什么有K，一方面是成本，另一方面是因为自然界的CMY不能合成纯黑的颜色，所以需要纯黑</div>2019-07-21</li><br/><li><span>sugar</span> 👍（7） 💬（2）<div>我来给个答案吧，乍一看 感觉需要用到很多cv领域的技术，模式识别判定轮廓，然后根据色值不同进行greenToRed转译。后来想了一下，这明明是前端的课程嘛，按cv的解决方案，难道还要把opencv编译到wasm里？转念一想，其实css滤镜就能做这事儿，试了试 几行css代码能做的事 在opencv要引一大堆库 改一大堆参数了</div>2019-11-11</li><br/><li><span>Geek_8rfqh9</span> 👍（2） 💬（0）<div>&lt;!DOCTYPE html&gt;
+</p>2019-04-28</li><br/><li><span>Peter</span> 👍（24） 💬（2）<p>一步到位：filter: hue-rotate(240deg);
+根据HSL色环，绿色在120deg的位置，要变成红色，把色相顺时针旋转240deg或者逆时针120deg即可。</p>2020-06-30</li><br/><li><span>GGFGG</span> 👍（8） 💬（0）<p>CMYK，为什么有K，一方面是成本，另一方面是因为自然界的CMY不能合成纯黑的颜色，所以需要纯黑</p>2019-07-21</li><br/><li><span>sugar</span> 👍（7） 💬（2）<p>我来给个答案吧，乍一看 感觉需要用到很多cv领域的技术，模式识别判定轮廓，然后根据色值不同进行greenToRed转译。后来想了一下，这明明是前端的课程嘛，按cv的解决方案，难道还要把opencv编译到wasm里？转念一想，其实css滤镜就能做这事儿，试了试 几行css代码能做的事 在opencv要引一大堆库 改一大堆参数了</p>2019-11-11</li><br/><li><span>Geek_8rfqh9</span> 👍（2） 💬（0）<p>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;鹦鹉变成红色&lt;&#47;title&gt;
@@ -307,7 +307,7 @@ CSS中的很多属性还会产生形状，比如我们常见的属性：
   &lt;body&gt;
     &lt;canvas id=&quot;canvas&quot;&gt;&lt;&#47;canvas&gt;
   &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2020-03-01</li><br/><li><span>一路向北</span> 👍（2） 💬（4）<div>老师在末尾提到了border、box-shadow、border-radius可以产生一些CSS黑魔法，而不是只定义边框、阴影和圆角，这里我很想知道，除了基本用途，他们可以产生什么样的黑魔法呢？有没有一些推荐的资料呢？</div>2020-01-03</li><br/><li><span>猫总</span> 👍（1） 💬（0）<div>原本实现控制RGB范围来手动抠图，不过在使用的时候发现并不直观，调整起来很随缘，回看了一遍课程才发现重点是HSL调色，改进之后还是能比较精准（主要是直观）的把鹦鹉给单独替换颜色了</div>2019-07-12</li><br/><li><span>Geek_0bb537</span> 👍（1） 💬（0）<div>winter老师给我讲一下那个presentational attributes 看不懂</div>2019-04-28</li><br/><li><span>Izayoizuki</span> 👍（1） 💬（0）<div>HSL感觉还是绘画游戏原画之类用得多，编程领域反而挺少，无论h5游戏还是客户端游戏理解一般都是rgb&#47;rgba</div>2019-04-28</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（0）<div>canvas可以得到每个像素的rgb分量，是不是把蓝色和红色的值换一下就可以了？</div>2019-04-28</li><br/><li><span>你好，阳光</span> 👍（0） 💬（0）<div>老师，datauri+svg产生形状能举个例子吗？</div>2021-05-07</li><br/><li><span>Corazon</span> 👍（0） 💬（0）<div>&lt;!DOCTYPE html&gt;
+&lt;&#47;html&gt;</p>2020-03-01</li><br/><li><span>一路向北</span> 👍（2） 💬（4）<p>老师在末尾提到了border、box-shadow、border-radius可以产生一些CSS黑魔法，而不是只定义边框、阴影和圆角，这里我很想知道，除了基本用途，他们可以产生什么样的黑魔法呢？有没有一些推荐的资料呢？</p>2020-01-03</li><br/><li><span>猫总</span> 👍（1） 💬（0）<p>原本实现控制RGB范围来手动抠图，不过在使用的时候发现并不直观，调整起来很随缘，回看了一遍课程才发现重点是HSL调色，改进之后还是能比较精准（主要是直观）的把鹦鹉给单独替换颜色了</p>2019-07-12</li><br/><li><span>Geek_0bb537</span> 👍（1） 💬（0）<p>winter老师给我讲一下那个presentational attributes 看不懂</p>2019-04-28</li><br/><li><span>Izayoizuki</span> 👍（1） 💬（0）<p>HSL感觉还是绘画游戏原画之类用得多，编程领域反而挺少，无论h5游戏还是客户端游戏理解一般都是rgb&#47;rgba</p>2019-04-28</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（0）<p>canvas可以得到每个像素的rgb分量，是不是把蓝色和红色的值换一下就可以了？</p>2019-04-28</li><br/><li><span>你好，阳光</span> 👍（0） 💬（0）<p>老师，datauri+svg产生形状能举个例子吗？</p>2021-05-07</li><br/><li><span>Corazon</span> 👍（0） 💬（0）<p>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
@@ -352,7 +352,7 @@ CSS中的很多属性还会产生形状，比如我们常见的属性：
     &lt;&#47;script&gt;
 &lt;&#47;body&gt;
 
-&lt;&#47;html&gt;</div>2020-12-18</li><br/><li><span>无双</span> 👍（0） 💬（0）<div>请问老师，我后台用的是Tomcat服务器，前端用ajax请求静态资源时会间隔会报412，也就是一次成功进入后台，一次报412，这该怎么解决呢？</div>2019-04-29</li><br/><li><span>Mupernb</span> 👍（0） 💬（0）<div>for(var i=0;i&lt;imgData.data.length;i++){
+&lt;&#47;html&gt;</p>2020-12-18</li><br/><li><span>无双</span> 👍（0） 💬（0）<p>请问老师，我后台用的是Tomcat服务器，前端用ajax请求静态资源时会间隔会报412，也就是一次成功进入后台，一次报412，这该怎么解决呢？</p>2019-04-29</li><br/><li><span>Mupernb</span> 👍（0） 💬（0）<p>for(var i=0;i&lt;imgData.data.length;i++){
                 [imgData.data[4*i+0],imgData.data[4*i+1]]=[imgData.data[4*i+1],imgData.data[4*i+0]]
-            }</div>2019-04-28</li><br/>
+            }</p>2019-04-28</li><br/>
 </ul>

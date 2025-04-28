@@ -503,8 +503,8 @@ TLS 很好地解决了安全性的问题，可以保证整个传输过程中数�
 
 恭喜你完成了第37次打卡，我们的Rust学习之旅已经过一大半啦，曙光就在前方，坚持下去，我们下节课见～
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>罗同学</span> 👍（12） 💬（1）<div>ca 证书和 tls什么关系呢？
-另外为何以前做网站的时候证书都要向运营商购买申请？那个是什么证书</div>2021-11-24</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<div>生成证书这块是我比较欠缺的知识，可以好好补充一下了。</div>2021-11-24</li><br/><li><span>-Hedon🍭</span> 👍（0） 💬（0）<div>服务器这里不应该直接 ? 退出：let stream = tls.accept(stream).await?;
+<li><span>罗同学</span> 👍（12） 💬（1）<p>ca 证书和 tls什么关系呢？
+另外为何以前做网站的时候证书都要向运营商购买申请？那个是什么证书</p>2021-11-24</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<p>生成证书这块是我比较欠缺的知识，可以好好补充一下了。</p>2021-11-24</li><br/><li><span>-Hedon🍭</span> 👍（0） 💬（0）<p>服务器这里不应该直接 ? 退出：let stream = tls.accept(stream).await?;
 暂时可改成：
 let stream = match tls.accept(socket).await {
     Ok(stream) =&gt; stream,
@@ -512,7 +512,7 @@ let stream = match tls.accept(socket).await {
         error!(&quot;failed to accept connection: {}&quot;, e);
         continue;
     }
-};</div>2024-12-30</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<div>不太懂，但是代码能跑！</div>2024-12-02</li><br/><li><span>David.Du</span> 👍（0） 💬（0）<div>感谢大神！</div>2023-11-30</li><br/><li><span>新新人类</span> 👍（0） 💬（0）<div>思考题1: 将 ServerConfig 的 ClientCertVerifier 改成 AllowAnyAuthenticatedClient
+};</p>2024-12-30</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<p>不太懂，但是代码能跑！</p>2024-12-02</li><br/><li><span>David.Du</span> 👍（0） 💬（0）<p>感谢大神！</p>2023-11-30</li><br/><li><span>新新人类</span> 👍（0） 💬（0）<p>思考题1: 将 ServerConfig 的 ClientCertVerifier 改成 AllowAnyAuthenticatedClient
 
 pub fn new(cert: &amp;str, key: &amp;str, client_ca: Option&lt;&amp;str&gt;) -&gt; Result&lt;Self, KvError&gt; {
     let certs = load_certs(cert)?;
@@ -542,5 +542,5 @@ pub fn new(cert: &amp;str, key: &amp;str, client_ca: Option&lt;&amp;str&gt;) -&g
     Ok(Self {
       inner: Arc::new(config),
     })
-  }</div>2022-05-14</li><br/>
+  }</p>2022-05-14</li><br/>
 </ul>

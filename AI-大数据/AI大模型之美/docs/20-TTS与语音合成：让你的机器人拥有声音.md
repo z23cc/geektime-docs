@@ -290,7 +290,7 @@ play_wav_audio(output_file)
 
 PaddleSpeech的[中文文档](https://github.com/PaddlePaddle/PaddleSpeech/blob/develop/README_cn.md)里面，包含了大量使用PaddleSpeech这个开源库的场景和方法，你有兴趣可以去看一看。百度的PaddlePaddle的社区里面，也有专门的[语音相关的课程](https://aistudio.baidu.com/aistudio/education/group/info/25130)，如果你想深入了解的话，也可以去看一看。
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>胡萝卜</span> 👍（8） 💬（2）<div>这个英文转语音效果不错 https:&#47;&#47;github.com&#47;suno-ai&#47;bark</div>2023-04-24</li><br/><li><span>Toni</span> 👍（6） 💬（3）<div>尝试用百度的 PaddlePaddle，将语音文件(.wav) 转换成文字(语音识别)。
+<li><span>胡萝卜</span> 👍（8） 💬（2）<p>这个英文转语音效果不错 https:&#47;&#47;github.com&#47;suno-ai&#47;bark</p>2023-04-24</li><br/><li><span>Toni</span> 👍（6） 💬（3）<p>尝试用百度的 PaddlePaddle，将语音文件(.wav) 转换成文字(语音识别)。
 
 1. 语音中只含中文，实现代码如下:
 
@@ -339,11 +339,11 @@ https:&#47;&#47;github.com&#47;PaddlePaddle&#47;PaddleSpeech&#47;issues&#47;2225
 
 PaddlePaddle&#47;PaddleSpeech
 https:&#47;&#47;github.com&#47;PaddlePaddle&#47;PaddleSpeech&#47;blob&#47;develop&#47;demos&#47;audio_tagging&#47;README_cn.md
-</div>2023-04-23</li><br/><li><span>zhihai.tu</span> 👍（2） 💬（3）<div>openai本身没有tts的api吗？期待下一讲。</div>2023-04-21</li><br/><li><span>劉仲仲</span> 👍（0） 💬（1）<div>老师，为甚么我用Azure语音服务，在jupyter notebook上已经跑通而且可以播放声音，但是一部署到hugging face上面就发不出声音呢</div>2023-05-08</li><br/><li><span>Steven</span> 👍（0） 💬（1）<div>补充 Windows 下安装 portaudio 库：
+</p>2023-04-23</li><br/><li><span>zhihai.tu</span> 👍（2） 💬（3）<p>openai本身没有tts的api吗？期待下一讲。</p>2023-04-21</li><br/><li><span>劉仲仲</span> 👍（0） 💬（1）<p>老师，为甚么我用Azure语音服务，在jupyter notebook上已经跑通而且可以播放声音，但是一部署到hugging face上面就发不出声音呢</p>2023-05-08</li><br/><li><span>Steven</span> 👍（0） 💬（1）<p>补充 Windows 下安装 portaudio 库：
 1，下载安装 MSYS2：
      https:&#47;&#47;www.msys2.org&#47;
 2，MSYS2 安装完成后在其命令行窗口中执行：
      pacman -S mingw-w64-x86_64-portaudio
-</div>2023-04-25</li><br/><li><span>jeff</span> 👍（1） 💬（1）<div>除去 PaddleSpeech 还有其他成熟方案吗？适合生产用的</div>2023-08-28</li><br/><li><span>jeff</span> 👍（0） 💬（0）<div>M1 芯片可以跑起来 paddleSpeech 吗？
-</div>2023-08-28</li><br/><li><span>jeff</span> 👍（0） 💬（0）<div>paddlepaddle 在 colab 安装失败....</div>2023-08-28</li><br/><li><span>蓝胖子</span> 👍（0） 💬（0）<div>老师，有没有克隆声音的比较好的开源库推荐，类似 MockingBird 的？</div>2023-06-26</li><br/><li><span>厚积薄发</span> 👍（0） 💬（1）<div>老师，PaddleSpeech  转换语音很慢，有没有什么好办法</div>2023-06-06</li><br/><li><span>厚积薄发</span> 👍（0） 💬（0）<div>老师，colab 安装pyaudio 报错ERROR: Could not build wheels for pyaudio, which is required to install pyproject.toml-based projects。是不是colab 不能安装pyaudio，老师您没有写colab或者类centos下安装portaudio的命令</div>2023-06-05</li><br/>
+</p>2023-04-25</li><br/><li><span>jeff</span> 👍（1） 💬（1）<p>除去 PaddleSpeech 还有其他成熟方案吗？适合生产用的</p>2023-08-28</li><br/><li><span>jeff</span> 👍（0） 💬（0）<p>M1 芯片可以跑起来 paddleSpeech 吗？
+</p>2023-08-28</li><br/><li><span>jeff</span> 👍（0） 💬（0）<p>paddlepaddle 在 colab 安装失败....</p>2023-08-28</li><br/><li><span>蓝胖子</span> 👍（0） 💬（0）<p>老师，有没有克隆声音的比较好的开源库推荐，类似 MockingBird 的？</p>2023-06-26</li><br/><li><span>厚积薄发</span> 👍（0） 💬（1）<p>老师，PaddleSpeech  转换语音很慢，有没有什么好办法</p>2023-06-06</li><br/><li><span>厚积薄发</span> 👍（0） 💬（0）<p>老师，colab 安装pyaudio 报错ERROR: Could not build wheels for pyaudio, which is required to install pyproject.toml-based projects。是不是colab 不能安装pyaudio，老师您没有写colab或者类centos下安装portaudio的命令</p>2023-06-05</li><br/>
 </ul>

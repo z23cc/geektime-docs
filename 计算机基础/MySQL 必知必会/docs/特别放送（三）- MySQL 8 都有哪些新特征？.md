@@ -337,7 +337,7 @@ mysql> WITH RECURSIVE
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你把它分享给你的朋友或同事，我们下节课见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>流云追风</span> 👍（1） 💬（1）<div>这和oracle的分析函数,with as一样</div>2021-09-17</li><br/><li><span>freshswq</span> 👍（1） 💬（1）<div>1.建表语句：
+<li><span>流云追风</span> 👍（1） 💬（1）<p>这和oracle的分析函数,with as一样</p>2021-09-17</li><br/><li><span>freshswq</span> 👍（1） 💬（1）<p>1.建表语句：
 DROP TABLE
 IF
 	EXISTS memtrans;
@@ -364,5 +364,5 @@ SELECT
 	sum( actualvalue ) over ( PARTITION BY goodname ) AS 总计金额,
 	actualvalue &#47; sum( actualvalue ) over ( PARTITION BY goodname ) AS 销售占比 
 FROM
-	memtrans;</div>2021-05-13</li><br/><li><span>彭彬</span> 👍（0） 💬（0）<div>SQL  SERVER有这两个概念</div>2021-10-07</li><br/>
+	memtrans;</p>2021-05-13</li><br/><li><span>彭彬</span> 👍（0） 💬（0）<p>SQL  SERVER有这两个概念</p>2021-10-07</li><br/>
 </ul>

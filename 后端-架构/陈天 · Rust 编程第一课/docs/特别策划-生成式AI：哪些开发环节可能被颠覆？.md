@@ -160,10 +160,10 @@ GPT对我们程序员的具体影响，首先是开发团队的变化。
 
 [探索 ChatGPT：让 ChatGPT 和目前已有工具深度整合，做一个Postgres AI 助手？](https://mp.weixin.qq.com/s/FWph8YdO-Nk5LKKVsHIZsQ)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Y024</span> 👍（6） 💬（0）<div>勘误：
+<li><span>Y024</span> 👍（6） 💬（0）<p>勘误：
 chatGPT →ChatGPT 
 
 instruction，给一些高质量的例子帮助 GPT 进一步理解。
 &#47;&#47;应为：example，给一些高质量的例子帮助 GPT 进一步理解。
-另外这几点的单词建议首字母大写。</div>2023-04-26</li><br/><li><span>大汉十三将</span> 👍（0） 💬（0）<div>更新了！</div>2023-06-26</li><br/>
+另外这几点的单词建议首字母大写。</p>2023-04-26</li><br/><li><span>大汉十三将</span> 👍（0） 💬（0）<p>更新了！</p>2023-06-26</li><br/>
 </ul>

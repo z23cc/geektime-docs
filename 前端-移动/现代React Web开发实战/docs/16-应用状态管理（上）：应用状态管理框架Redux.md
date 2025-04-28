@@ -262,13 +262,13 @@ XState还有一个强项，就是它可视化的**状态图**：
 
 好的，这节课就到这里，我们下节课再见。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>学习前端-react</span> 👍（0） 💬（1）<div>请问：“React.memo 创建具有更佳性能的纯组件”。对于目前创建的组件来说是不是都可以包上memo。收益是大于成本。</div>2022-10-25</li><br/><li><span>demo123567</span> 👍（3） 💬（0）<div>redux的作用有点像redis ，发布订阅模式，缓存各类状态。难道开发者是后端转的前端吗</div>2022-10-26</li><br/><li><span>Gn</span> 👍（1） 💬（0）<div>1.useReducer+Context可以复制Redux流程，更加轻量；Redux对频繁state更新做了优化；
+<li><span>学习前端-react</span> 👍（0） 💬（1）<p>请问：“React.memo 创建具有更佳性能的纯组件”。对于目前创建的组件来说是不是都可以包上memo。收益是大于成本。</p>2022-10-25</li><br/><li><span>demo123567</span> 👍（3） 💬（0）<p>redux的作用有点像redis ，发布订阅模式，缓存各类状态。难道开发者是后端转的前端吗</p>2022-10-26</li><br/><li><span>Gn</span> 👍（1） 💬（0）<p>1.useReducer+Context可以复制Redux流程，更加轻量；Redux对频繁state更新做了优化；
 2.redux devTools，state改变很清晰，使用很方便；
 让望补充
-</div>2022-10-28</li><br/><li><span>杨永安</span> 👍（0） 💬（0）<div>新手学习，遇到跨组件状态管理问题。context 似乎只能传递一个对象，多个数据，需要在根节点上添加多层 Provider，不太方便。
+</p>2022-10-28</li><br/><li><span>杨永安</span> 👍（0） 💬（0）<p>新手学习，遇到跨组件状态管理问题。context 似乎只能传递一个对象，多个数据，需要在根节点上添加多层 Provider，不太方便。
 
 看到了 redux，恍然大悟。但是写到后来模板代码太多了，还好有 redux-toolkit。
 
 另外，Recoil 感觉更加简洁。老师怎么看这个库？
-https:&#47;&#47;recoiljs.org&#47;zh-hans&#47;docs&#47;introduction&#47;getting-started&#47;</div>2023-03-16</li><br/><li><span>Gn</span> 👍（0） 💬（0）<div>1.useReducer + Context 可以复制Redux状态流程，更轻量；Redux在多次状态更新有优化</div>2022-10-28</li><br/>
+https:&#47;&#47;recoiljs.org&#47;zh-hans&#47;docs&#47;introduction&#47;getting-started&#47;</p>2023-03-16</li><br/><li><span>Gn</span> 👍（0） 💬（0）<p>1.useReducer + Context 可以复制Redux状态流程，更轻量；Redux在多次状态更新有优化</p>2022-10-28</li><br/>
 </ul>

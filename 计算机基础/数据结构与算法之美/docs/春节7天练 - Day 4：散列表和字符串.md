@@ -48,12 +48,12 @@
 
 祝你取得好成绩！明天见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>纯洁的憎恶</span> 👍（0） 💬（1）<div>1.从两端向中间两两对调，时间复杂度O（n）。
+<li><span>纯洁的憎恶</span> 👍（0） 💬（1）<p>1.从两端向中间两两对调，时间复杂度O（n）。
 
 2.先去空格，O（n^2）。从两端向中间查找单词，找到一对单词s、t（s在前t在后），保存这两个单词，如果s长t短，把它们之间的字符串整体左移长度差个字符，反之整体右移长度差个字符，再把s和t按调整后位置向原数组赋值，O（n^2）。
 
-3.如果字符串全为空、全为空格、首个非空格字符非法，则返回0。若首个合法字符位“-”则记录。int num=0；逐个读取数字部分字符a，若a合法，则num*=10，然后num+=a-‘0’，直到读取结束或者读到非法字符，此时如果记录的首个合法字符为“-”返回num*（-1），否则返回num。不知int型运算过程中结果值溢出，是否自动将值设置为边界值。如果不能就要在每次乘10的时候结合“-”考察一下是否越界。</div>2019-02-09</li><br/><li><span>molybdenum</span> 👍（0） 💬（1）<div>老师新年好，这是我第四天的作业
-https:&#47;&#47;blog.csdn.net&#47;github_38313296&#47;article&#47;details&#47;86818634</div>2019-02-09</li><br/><li><span>老杨同志</span> 👍（0） 💬（1）<div>&#47;&#47;字符串转换整数
+3.如果字符串全为空、全为空格、首个非空格字符非法，则返回0。若首个合法字符位“-”则记录。int num=0；逐个读取数字部分字符a，若a合法，则num*=10，然后num+=a-‘0’，直到读取结束或者读到非法字符，此时如果记录的首个合法字符为“-”返回num*（-1），否则返回num。不知int型运算过程中结果值溢出，是否自动将值设置为边界值。如果不能就要在每次乘10的时候结合“-”考察一下是否越界。</p>2019-02-09</li><br/><li><span>molybdenum</span> 👍（0） 💬（1）<p>老师新年好，这是我第四天的作业
+https:&#47;&#47;blog.csdn.net&#47;github_38313296&#47;article&#47;details&#47;86818634</p>2019-02-09</li><br/><li><span>老杨同志</span> 👍（0） 💬（1）<p>&#47;&#47;字符串转换整数
 package com.jxyang.test.geek.day4.Solution;
 
 class Solution2 {
@@ -109,7 +109,7 @@ class Solution2 {
         System.out.println(solution2.myAtoi(&quot;-91283472332&quot;));&#47;&#47;期望-2147483648
         System.out.println(solution2.myAtoi(&quot;+1&quot;));&#47;&#47;期望-2147483648
     }
-}</div>2019-02-08</li><br/><li><span>kai</span> 👍（7） 💬（1）<div>实现一个 LRU 缓存淘汰算法:
+}</p>2019-02-08</li><br/><li><span>kai</span> 👍（7） 💬（1）<p>实现一个 LRU 缓存淘汰算法:
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -188,8 +188,8 @@ public class LRU&lt;K,V&gt; {
         node.next = null;
     }
     
-}</div>2019-02-11</li><br/><li><span>李皮皮皮皮皮</span> 👍（6） 💬（0）<div>散列表的核心是散列函数和冲突解决算法，以及装载因子过大时如何扩容。散列函数的设计较为复杂，一般使用现有的函数，如murmur散列。冲突解决一般有开放寻址法和链表法。查看开源项目的源码实现很有意思，例如lua的table实现，是结合了两个方法的非常优雅的实现。根据装载因子扩容一般保持在2，在占用空间较大时慢慢缩减为1.5，1.25……如golang的实现。为了避免rehash时的延迟，可以使用先分配，后逐步散列的方法，redis就是使用这个方法的。
-字符串是编程中一定会出现的问题，变种非常多，反转，反转单词，字串，最长字串，最长子序列等等，有时解决问题需要多种数据结构与算法的结合。</div>2019-02-08</li><br/><li><span>hopeful</span> 👍（4） 💬（0）<div>#朴素字符串匹配算法
+}</p>2019-02-11</li><br/><li><span>李皮皮皮皮皮</span> 👍（6） 💬（0）<p>散列表的核心是散列函数和冲突解决算法，以及装载因子过大时如何扩容。散列函数的设计较为复杂，一般使用现有的函数，如murmur散列。冲突解决一般有开放寻址法和链表法。查看开源项目的源码实现很有意思，例如lua的table实现，是结合了两个方法的非常优雅的实现。根据装载因子扩容一般保持在2，在占用空间较大时慢慢缩减为1.5，1.25……如golang的实现。为了避免rehash时的延迟，可以使用先分配，后逐步散列的方法，redis就是使用这个方法的。
+字符串是编程中一定会出现的问题，变种非常多，反转，反转单词，字串，最长字串，最长子序列等等，有时解决问题需要多种数据结构与算法的结合。</p>2019-02-08</li><br/><li><span>hopeful</span> 👍（4） 💬（0）<p>#朴素字符串匹配算法
 def nmatching(t, p):
 #    t代表主串，p代表模式串
     i = 0
@@ -205,7 +205,7 @@ def nmatching(t, p):
             j = 0        #i-j+1是关键，遇字符不等时将模式串t右移一个字符
     if j == m:                     
         return i-j       #找到一个匹配，返回索引值
-    return -1            #未找到，返回-1</div>2019-03-11</li><br/><li><span>黄丹</span> 👍（4） 💬（0）<div>王争老师，新年的第四天快乐，已经很晚了，祝您好梦！
+    return -1            #未找到，返回-1</p>2019-03-11</li><br/><li><span>黄丹</span> 👍（4） 💬（0）<p>王争老师，新年的第四天快乐，已经很晚了，祝您好梦！
 关于基于链表法解决冲突的散列表，就是使用一个数组，将值散列到数组下标上，但数组的每个值又是一个链表的头结点，当遇到冲突时就遍历该头结点后链表。其实java中hashmap底层的实现原理就是一个基于链表解决冲突的动态扩容的数组。大家有兴趣可以自己实现一下hashmap的底层数据结构，还是很有收获的。
 今天leetcode上的三题都是关于字符串的，下面是我的解题思路和代码
 1. Reverse String （反转字符串）
@@ -217,7 +217,7 @@ def nmatching(t, p):
 3. String to Integer (atoi) 字符串转换整数 (atoi)）
 解题思路：将字符串转化为整数,首先是对数字前面的+&#47;-进行处理，遍历字符串，如果不是数字字符就break，自己不懂得地方在于如何将大于INT.MAX 的值转化为 INT.MAX,将INT.MIN的值化为 INT.MIN，我自己想到的解法是用更高精度的long去保存，然后转化成int类型的值
 代码： https:&#47;&#47;github.com&#47;yyxd&#47;leetcode&#47;blob&#47;master&#47;src&#47;leetcode&#47;strings&#47;Problem8_atoi.java
-</div>2019-02-08</li><br/><li><span>星夜</span> 👍（2） 💬（0）<div>&#47;&#47; 实现朴素的字符串匹配算法
+</p>2019-02-08</li><br/><li><span>星夜</span> 👍（2） 💬（0）<p>&#47;&#47; 实现朴素的字符串匹配算法
 public int simpleMatch(String main, String pattern) {
     if (null == main || null == pattern || main.length() &lt; pattern.length()) {
         return -1;
@@ -239,7 +239,7 @@ public int simpleMatch(String main, String pattern) {
         right++;
     }
     return -1;
-}</div>2020-11-26</li><br/><li><span>kai</span> 👍（2） 💬（0）<div>哇塞，老师太牛了，过年都在更新，一直在跟着老师的课程在总结归纳，同时找来题目在练习，这个专栏很牛~</div>2019-02-08</li><br/><li><span>失火的夏天</span> 👍（1） 💬（0）<div>LRU缓存淘汰算法
+}</p>2020-11-26</li><br/><li><span>kai</span> 👍（2） 💬（0）<p>哇塞，老师太牛了，过年都在更新，一直在跟着老师的课程在总结归纳，同时找来题目在练习，这个专栏很牛~</p>2019-02-08</li><br/><li><span>失火的夏天</span> 👍（1） 💬（0）<p>LRU缓存淘汰算法
     private class Node{
         private Node prev;
         private Node next;
@@ -322,7 +322,7 @@ public int simpleMatch(String main, String pattern) {
             addNodeToTail(node);
         }
     }
-}</div>2019-02-08</li><br/><li><span>C_love</span> 👍（1） 💬（0）<div>Reverse Words in a String
+}</p>2019-02-08</li><br/><li><span>C_love</span> 👍（1） 💬（0）<p>Reverse Words in a String
 
 public class Solution {
     public String reverseWords(String s) {
@@ -360,7 +360,7 @@ public class Solution {
         }
         return new String(tmp);
     }
-}</div>2019-02-08</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>反转字符串
+}</p>2019-02-08</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>反转字符串
 String[] arr = new String[]{&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;};
         int start = 0;
         int end = arr.length - 1;
@@ -372,7 +372,7 @@ String[] arr = new String[]{&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&qu
             start++;
             end--;
         }
-        System.out.println(arr);</div>2023-06-29</li><br/><li><span>hopeful</span> 👍（0） 💬（0）<div>#字符串转整数
+        System.out.println(arr);</p>2023-06-29</li><br/><li><span>hopeful</span> 👍（0） 💬（0）<p>#字符串转整数
 class Solution:
     def myAtoi(self, str: str) :
         pattern = r&quot;[\s]*[+-]?[\d]+&quot;
@@ -386,7 +386,7 @@ class Solution:
         else:
             res = 0
         return res
-</div>2019-03-11</li><br/><li><span>hopeful</span> 👍（0） 💬（0）<div>#反转字符串
+</p>2019-03-11</li><br/><li><span>hopeful</span> 👍（0） 💬（0）<p>#反转字符串
 class Solution:
     def reverseString(self, s):
         low = 0
@@ -395,7 +395,7 @@ class Solution:
             s[low] , s[high] = s[high] , s[low]
             low+=1
             high-=1
-        return s</div>2019-02-19</li><br/><li><span>你看起来很好吃</span> 👍（0） 💬（0）<div>字符串转换整数python实现：
+        return s</p>2019-02-19</li><br/><li><span>你看起来很好吃</span> 👍（0） 💬（0）<p>字符串转换整数python实现：
 import math
 
 class Solution:
@@ -426,5 +426,5 @@ class Solution:
         elif former &gt; 0 :
             return int(math.pow(2,31) - 1)
         else:
-            return int(math.pow(2,31) * -1)</div>2019-02-10</li><br/>
+            return int(math.pow(2,31) * -1)</p>2019-02-10</li><br/>
 </ul>

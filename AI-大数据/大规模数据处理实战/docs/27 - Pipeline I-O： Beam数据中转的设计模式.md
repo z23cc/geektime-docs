@@ -161,5 +161,5 @@ NoSQL这种外部源通常允许按照键值范围（Key Range）来并行读取
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>cricket1981</span> 👍（3） 💬（0）<div>自定义输入输出能个代码示例吗？按时间分区以parquet格式写入hdfs，代码要怎么写？</div>2019-07-17</li><br/><li><span>Mr.Tree</span> 👍（0） 💬（0）<div>之前讲PCollection不会写磁盘，读取操作时，会将读取的结果全部存入到一个PCollection里面，如果返回的数据很巨大，或者说读取的数据是无边界的，该如何处理？</div>2023-02-15</li><br/><li><span>Junjie.M</span> 👍（0） 💬（1）<div>一个pipeline可以有多个input和output吗</div>2020-04-11</li><br/>
+<li><span>cricket1981</span> 👍（3） 💬（0）<p>自定义输入输出能个代码示例吗？按时间分区以parquet格式写入hdfs，代码要怎么写？</p>2019-07-17</li><br/><li><span>Mr.Tree</span> 👍（0） 💬（0）<p>之前讲PCollection不会写磁盘，读取操作时，会将读取的结果全部存入到一个PCollection里面，如果返回的数据很巨大，或者说读取的数据是无边界的，该如何处理？</p>2023-02-15</li><br/><li><span>Junjie.M</span> 👍（0） 💬（1）<p>一个pipeline可以有多个input和output吗</p>2020-04-11</li><br/>
 </ul>

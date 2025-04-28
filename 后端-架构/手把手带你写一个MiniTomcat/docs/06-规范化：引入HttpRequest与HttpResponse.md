@@ -739,8 +739,8 @@ public class HttpRequest implements HttpServletRequest {
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>C.</span> 👍（4） 💬（3）<div>buf[pos++]：表示buf的pos索引加一，以便后续read操作，是个后缀递增的操作。
-&amp; 0xff：位操作，字节在Java的中的范围为-128到127，是个有符号数，执行&amp; 0xff是在做一个按位与操作，转换为一个无符号数，返回的值在0-255。0xff等于十进制的255，二进制位11111111。buf[pos]字节会与11111111进行按位与操作，基本保持了原始字节的值不变。</div>2023-12-20</li><br/><li><span>Clark Chen</span> 👍（1） 💬（1）<div>老师好， 关于`SocketInputStream .readRequestLine(HttpRequestLine requestLine)`   方法的这段代码
+<li><span>C.</span> 👍（4） 💬（3）<p>buf[pos++]：表示buf的pos索引加一，以便后续read操作，是个后缀递增的操作。
+&amp; 0xff：位操作，字节在Java的中的范围为-128到127，是个有符号数，执行&amp; 0xff是在做一个按位与操作，转换为一个无符号数，返回的值在0-255。0xff等于十进制的255，二进制位11111111。buf[pos]字节会与11111111进行按位与操作，基本保持了原始字节的值不变。</p>2023-12-20</li><br/><li><span>Clark Chen</span> 👍（1） 💬（1）<p>老师好， 关于`SocketInputStream .readRequestLine(HttpRequestLine requestLine)`   方法的这段代码
 ```   
    while (!space) {
             if (pos &gt;= count) {
@@ -776,10 +776,10 @@ public class HttpRequest implements HttpServletRequest {
             readCount++;
         }
 ```
-是有效率上的原因吗？</div>2023-12-24</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+是有效率上的原因吗？</p>2023-12-24</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：parameters用来做什么？
 HttpRequest类中定义了parameters，但好像并没有使用，这个类是用来存什么的？
 Q2：parseHeaders函数用if区分有意义吗？
 HttpRequest类中的parseHeaders用if … else来区分各个部分，但其实最后都是调用headers.put(name, value);
-所有的分支，最后的处理结果都是一样的，这个区分还有意义吗？</div>2023-12-20</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（1）<div>😄感觉像是纠正什么数据</div>2023-12-20</li><br/>
+所有的分支，最后的处理结果都是一样的，这个区分还有意义吗？</p>2023-12-20</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（1）<p>😄感觉像是纠正什么数据</p>2023-12-20</li><br/>
 </ul>

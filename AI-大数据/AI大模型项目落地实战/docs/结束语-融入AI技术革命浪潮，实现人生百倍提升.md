@@ -66,5 +66,5 @@
 
 [![图片](https://static001.geekbang.org/resource/image/67/ed/673yy7ccac5282615d6bc35dd57772ed.jpg?wh=1142x801)](http://jsj.top/f/AVNelq)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>东方奇骥</span> 👍（0） 💬（0）<div>很精彩，感谢老师</div>2025-02-10</li><br/><li><span>V</span> 👍（0） 💬（0）<div>这门课最大的价值在最后一篇，值了。🙂</div>2025-02-05</li><br/><li><span>小车车</span> 👍（0） 💬（0）<div>感动</div>2024-10-30</li><br/><li><span>daydaygo</span> 👍（0） 💬（0）<div>一起加油</div>2024-10-18</li><br/>
+<li><span>东方奇骥</span> 👍（0） 💬（0）<p>很精彩，感谢老师</p>2025-02-10</li><br/><li><span>V</span> 👍（0） 💬（0）<p>这门课最大的价值在最后一篇，值了。🙂</p>2025-02-05</li><br/><li><span>小车车</span> 👍（0） 💬（0）<p>感动</p>2024-10-30</li><br/><li><span>daydaygo</span> 👍（0） 💬（0）<p>一起加油</p>2024-10-18</li><br/>
 </ul>

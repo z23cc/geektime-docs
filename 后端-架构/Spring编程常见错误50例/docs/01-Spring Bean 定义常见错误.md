@@ -422,9 +422,9 @@ public Object instantiate(RootBeanDefinition bd, @Nullable String beanName, Bean
 
 尝试解决一下，我们留言区见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>小不点</span> 👍（1） 💬（2）<div>先马后看，从Netty过来的，Netty篇章反复看了好久才算整明白，希望这次也一样</div>2021-04-21</li><br/><li><span>许金亮</span> 👍（51） 💬（5）<div>案例 3：原型 Bean 被固定
+<li><span>小不点</span> 👍（1） 💬（2）<p>先马后看，从Netty过来的，Netty篇章反复看了好久才算整明白，希望这次也一样</p>2021-04-21</li><br/><li><span>许金亮</span> 👍（51） 💬（5）<p>案例 3：原型 Bean 被固定
 service可以使用scope注解的proxyMode，设置成target_class，这样注入到controller的bean就是代理对象了，每次都会从beanfactory里面重新拿过
-@Scope(value = &quot;prototype&quot;, proxyMode = ScopedProxyMode.TARGET_CLASS)</div>2021-04-21</li><br/><li><span>点点</span> 👍（27） 💬（1）<div>@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)这个是说在每次注入的时候回自动创建一个新的bean实例
+@Scope(value = &quot;prototype&quot;, proxyMode = ScopedProxyMode.TARGET_CLASS)</p>2021-04-21</li><br/><li><span>点点</span> 👍（27） 💬（1）<p>@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)这个是说在每次注入的时候回自动创建一个新的bean实例
 
 @Scope(value=ConfigurableBeanFactory.SCOPE_SINGLETON)单例模式，在整个应用中只能创建一个实例
 
@@ -442,9 +442,9 @@ proxyMode=ScopedProxyMode.INTERFACES创建一个JDK代理模式
 
 proxyMode=ScopedProxyMode.TARGET_CLASS基于类的代理模式
 
-proxyMode=ScopedProxyMode.NO（默认）不进行代理</div>2021-05-06</li><br/><li><span>Monday</span> 👍（13） 💬（1）<div>亲测：
+proxyMode=ScopedProxyMode.NO（默认）不进行代理</p>2021-05-06</li><br/><li><span>Monday</span> 👍（13） 💬（1）<p>亲测：
 1、@ComponentScan可以多个同时使用，且都生效。效果等同于@ComponentScans
-2、@ComponentScans不能与@ComponentScan一起使用</div>2021-06-15</li><br/><li><span>Bumblebee</span> 👍（9） 💬（0）<div>今日收获
+2、@ComponentScans不能与@ComponentScan一起使用</p>2021-06-15</li><br/><li><span>Bumblebee</span> 👍（9） 💬（0）<p>今日收获
 ①  Spring默认扫描包是application类（@SpringBootApplication）所在的包，通过@ComponentScans或@ComponentScan直接可以指定需要扫码的包；
 
 
@@ -472,12 +472,12 @@ public class ServiceImpl {
 被@LookUp注解修饰的方法本身实现不重要
 
 
-</div>2022-05-25</li><br/><li><span>Geek_ca230e</span> 👍（9） 💬（1）<div>案例1 也可以用这样的方式显示指定扫描包：@SpringBootApplication(scanBasePackages = {&quot;com.xxx.xxxxx&quot;,&quot;com.xxx.xxx&quot;})</div>2021-05-08</li><br/><li><span>Sway</span> 👍（5） 💬（4）<div>想咨询一下，是怎么通过 ComponentScan 注解，找到 ComponentScanAnnotationParser 这个类的？在看其他的项目时，看到很多注解，但是想了解它具体做了什么工作，却无从下手。 （ 很可能项目并不能跑起来去 DEBUG ）</div>2021-04-21</li><br/><li><span>jzhongchen</span> 👍（4） 💬（3）<div>案例 3：原型 Bean 被固定
+</p>2022-05-25</li><br/><li><span>Geek_ca230e</span> 👍（9） 💬（1）<p>案例1 也可以用这样的方式显示指定扫描包：@SpringBootApplication(scanBasePackages = {&quot;com.xxx.xxxxx&quot;,&quot;com.xxx.xxx&quot;})</p>2021-05-08</li><br/><li><span>Sway</span> 👍（5） 💬（4）<p>想咨询一下，是怎么通过 ComponentScan 注解，找到 ComponentScanAnnotationParser 这个类的？在看其他的项目时，看到很多注解，但是想了解它具体做了什么工作，却无从下手。 （ 很可能项目并不能跑起来去 DEBUG ）</p>2021-04-21</li><br/><li><span>jzhongchen</span> 👍（4） 💬（3）<p>案例 3：原型 Bean 被固定
 设置scope为prototype的bean是每次调用的时候会产生一个新的bean，案例中由于controller没有设置scope，默认为singleton。每次请求的时候controller是同一个对象，当然service不会变。如果把controller的scope设置为prototype的话，就能够实现每次请求的时候service是一个新对象。
-lookup注解以前没有听说过，还是第一次看到。</div>2021-04-27</li><br/><li><span>慎独明强</span> 👍（4） 💬（1）<div>对于案例3: 最近项目中，我使用构造器模式，构造器scop指定的为prototype；通过autowired去注入构造器；我感觉我自己就踩坑了...在测试过程中由于没有多线程去使用构造器，数据看不出来，待会去增加一个日志看下，是否返回都是同一个对象。</div>2021-04-23</li><br/><li><span>学无涯</span> 👍（4） 💬（1）<div>问题：
+lookup注解以前没有听说过，还是第一次看到。</p>2021-04-27</li><br/><li><span>慎独明强</span> 👍（4） 💬（1）<p>对于案例3: 最近项目中，我使用构造器模式，构造器scop指定的为prototype；通过autowired去注入构造器；我感觉我自己就踩坑了...在测试过程中由于没有多线程去使用构造器，数据看不出来，待会去增加一个日志看下，是否返回都是同一个对象。</p>2021-04-23</li><br/><li><span>学无涯</span> 👍（4） 💬（1）<p>问题：
 1、关于用@ComponentScan修正那段代码，是不是少写了ComponentScan
 2、JDK 1.8已经支持Repeatable注解，那是不是就不需要用@ComponentScans注解了，直接添加多个@ComponentScan注解就行
-思考题：可以给构造器的参数添加@Autowired(required = false)就不会报错了</div>2021-04-21</li><br/><li><span>Oishi上好佳。</span> 👍（2） 💬（0）<div>用的SpringBoot2.6.7版本，第二个案例，按照老师的写法，会报循环依赖，重新提供个类，专门用来注册这个 serviceName 即可。</div>2022-05-22</li><br/><li><span>小飞同学</span> 👍（2） 💬（0）<div>@Service
+思考题：可以给构造器的参数添加@Autowired(required = false)就不会报错了</p>2021-04-21</li><br/><li><span>Oishi上好佳。</span> 👍（2） 💬（0）<p>用的SpringBoot2.6.7版本，第二个案例，按照老师的写法，会报循环依赖，重新提供个类，专门用来注册这个 serviceName 即可。</p>2022-05-22</li><br/><li><span>小飞同学</span> 👍（2） 💬（0）<p>@Service
 public class TestService {
     private String serviceName;
     &#47;&#47; spring创建bean时,如果存在多个构造,会选无参构造。
@@ -491,5 +491,5 @@ public class TestService {
     public String doSomething() {
         return serviceName;
     }
-}</div>2021-04-26</li><br/><li><span>云韵</span> 👍（1） 💬（0）<div>老师，你是根据这个@ComponentScan 注解的 basePackages() 就定位到 ComponentScanAnnotationParser#parse 这个方法的呢</div>2022-08-24</li><br/><li><span>Geek_13168b</span> 👍（1） 💬（1）<div>新版本的spring，对于案例二已经不能运行了，在项目运行之前就会报错</div>2022-04-12</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<div>短短一篇专栏，补齐了5个知识点。太值了。</div>2022-03-07</li><br/>
+}</p>2021-04-26</li><br/><li><span>云韵</span> 👍（1） 💬（0）<p>老师，你是根据这个@ComponentScan 注解的 basePackages() 就定位到 ComponentScanAnnotationParser#parse 这个方法的呢</p>2022-08-24</li><br/><li><span>Geek_13168b</span> 👍（1） 💬（1）<p>新版本的spring，对于案例二已经不能运行了，在项目运行之前就会报错</p>2022-04-12</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<p>短短一篇专栏，补齐了5个知识点。太值了。</p>2022-03-07</li><br/>
 </ul>

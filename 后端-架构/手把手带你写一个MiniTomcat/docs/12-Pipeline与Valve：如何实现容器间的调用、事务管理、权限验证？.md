@@ -1205,12 +1205,12 @@ public class ServletProcessor {
 
 欢迎你把你想到的方案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：Logger接口定义中FATAL 为什么用 Integer.MIN_VALUE？
 用0不就可以了吗？
 Q2：“后端”是指什么？
 “存在 Exception 异常时，后端会调用 printStackTrace 抛出异常”这句话中用到的“后端”是指什么？有“后端”就有“前端”，“前端”和“后端”分别指什么？
 Q3：为什么先调用next再调用自身业务?
 AccessLogValve的invoke方法中，先调用context中的invokeNext，实现职责链调用，再调用自己的业务。那就是先处理下一个，再处理自己，如此迭代下去，变成倒序了，类似于堆栈了。假设有3个业务，先到业务1，业务1调用业务2，业务2调用业务3,；业务3处理完以后再处理业务2，最后处理业务1。为什么这样设计？
-Q4：Tomcat中的日志处理有什么特别之处？</div>2024-01-04</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（2）<div>个人理解是 Valve 先添加先执行，可以当做为 Filter，在 Servlet 前面拦截先执行； Basic 属于自身业务最后执行， 可以当做 Servlet。</div>2024-01-03</li><br/>
+Q4：Tomcat中的日志处理有什么特别之处？</p>2024-01-04</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（2）<p>个人理解是 Valve 先添加先执行，可以当做为 Filter，在 Servlet 前面拦截先执行； Basic 属于自身业务最后执行， 可以当做 Servlet。</p>2024-01-03</li><br/>
 </ul>

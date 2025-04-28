@@ -223,5 +223,5 @@ OLAP分析型数据库其实并不需要支持传统的事务，OLAP型数据库
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。欢迎你加入我们的[读者交流群](http://jinshuju.net/f/QX5mGO)，我们下节课见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Hadesu</span> 👍（3） 💬（1）<div>如果老旧的undolog被删除了，会影响mvcc的正确性吗？</div>2024-06-23</li><br/><li><span>注意力$</span> 👍（0） 💬（0）<div>请问MySQL的undo保留周期由那个参数决定呢</div>2025-02-08</li><br/><li><span>蓝山</span> 👍（0） 💬（0）<div>Oracle中ora15333应该属于这种情况</div>2024-09-24</li><br/><li><span>ls</span> 👍（0） 💬（0）<div>感觉各种数据库 oracle ，mysql ，ch  事务一致性实现方式大的方向都差不多。</div>2024-08-09</li><br/>
+<li><span>Hadesu</span> 👍（3） 💬（1）<p>如果老旧的undolog被删除了，会影响mvcc的正确性吗？</p>2024-06-23</li><br/><li><span>注意力$</span> 👍（0） 💬（0）<p>请问MySQL的undo保留周期由那个参数决定呢</p>2025-02-08</li><br/><li><span>蓝山</span> 👍（0） 💬（0）<p>Oracle中ora15333应该属于这种情况</p>2024-09-24</li><br/><li><span>ls</span> 👍（0） 💬（0）<p>感觉各种数据库 oracle ，mysql ，ch  事务一致性实现方式大的方向都差不多。</p>2024-08-09</li><br/>
 </ul>

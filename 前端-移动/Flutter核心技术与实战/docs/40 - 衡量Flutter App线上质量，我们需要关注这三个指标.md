@@ -242,12 +242,12 @@ flutter: Page render time:548 ms
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>！_新起点</span> 👍（3） 💬（2）<div>如果页面渲染依赖单个或多个网络接口回调，那么我们需要减去用单个或者多个接口请求后，成功或者失败后的最后的回调里加载时间的时长。</div>2019-10-03</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<div>老师，如果一个 App 只有一个继承 StatelessWidget 的页面，那么在不用原生配合的情况下如何得知页面退出了呢？NavigatorObserver 的 didPush 可以知道页面进入了，但是没有页面退出或者销毁的回调。</div>2019-10-30</li><br/><li><span>小米</span> 👍（0） 💬（1）<div>页面加载时长，一般超过多少毫秒算不正常呢？</div>2019-10-26</li><br/><li><span>find</span> 👍（4） 💬（3）<div>当升级到Flutter 1.12.x 之后，onReportTimings应该改成SchedulerBinding的addTimingsCallback,SchedulerBinding.instance.addTimingsCallback(_onReportTimings);</div>2021-04-07</li><br/><li><span>(Jet)黄仲平</span> 👍（0） 💬（1）<div>老师好，在真实运用中这个帧率和界面异常率，是会设定一个阀值，当超出这个值的时候就上报。是吗？</div>2022-01-11</li><br/><li><span>小何</span> 👍（0） 💬（1）<div>return lastFrames.length&#47;sum * 60; 这里写是写反了嘛 不应该是return sum * 60&#47;lastFrames.length;嘛</div>2021-07-22</li><br/><li><span>find</span> 👍（0） 💬（0）<div>那个帧率是怎么打印出来的，什么时机打印，上报呢</div>2021-04-07</li><br/><li><span>IF-Processing</span> 👍（0） 💬（1）<div>两个问题：
+<li><span>！_新起点</span> 👍（3） 💬（2）<p>如果页面渲染依赖单个或多个网络接口回调，那么我们需要减去用单个或者多个接口请求后，成功或者失败后的最后的回调里加载时间的时长。</p>2019-10-03</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<p>老师，如果一个 App 只有一个继承 StatelessWidget 的页面，那么在不用原生配合的情况下如何得知页面退出了呢？NavigatorObserver 的 didPush 可以知道页面进入了，但是没有页面退出或者销毁的回调。</p>2019-10-30</li><br/><li><span>小米</span> 👍（0） 💬（1）<p>页面加载时长，一般超过多少毫秒算不正常呢？</p>2019-10-26</li><br/><li><span>find</span> 👍（4） 💬（3）<p>当升级到Flutter 1.12.x 之后，onReportTimings应该改成SchedulerBinding的addTimingsCallback,SchedulerBinding.instance.addTimingsCallback(_onReportTimings);</p>2021-04-07</li><br/><li><span>(Jet)黄仲平</span> 👍（0） 💬（1）<p>老师好，在真实运用中这个帧率和界面异常率，是会设定一个阀值，当超出这个值的时候就上报。是吗？</p>2022-01-11</li><br/><li><span>小何</span> 👍（0） 💬（1）<p>return lastFrames.length&#47;sum * 60; 这里写是写反了嘛 不应该是return sum * 60&#47;lastFrames.length;嘛</p>2021-07-22</li><br/><li><span>find</span> 👍（0） 💬（0）<p>那个帧率是怎么打印出来的，什么时机打印，上报呢</p>2021-04-07</li><br/><li><span>IF-Processing</span> 👍（0） 💬（1）<p>两个问题：
 1. 下面这段怎么保留的原始回调，没看懂。。保留引用就能保留原始回调了吗？这个调用是链式的？
 void main()
  { runApp(MyApp()); 
 &#47;&#47;设置帧回调函数并保存原始帧回调函数 
  orginalCallback = window.onReportTimings;
  window.onReportTimings = onReportTimings;}
-2.咱们统计出来这3个指标之后，通过什么手段上报呢？也使用类似bugly这种异常上报的机制吗？什么情况下使用，如何使用呢？</div>2020-02-06</li><br/><li><span>Fun</span> 👍（0） 💬（1）<div>请问计算FPS的时候为什么要乘60</div>2019-12-30</li><br/><li><span>时光念你</span> 👍（0） 💬（0）<div>如果接口是when整合过的，取第二次的addPostFrameCallback时间作为Endtime。如果每个接口单独请求，取接口数量➕1的回调次数时间作为Endtime。</div>2019-12-26</li><br/>
+2.咱们统计出来这3个指标之后，通过什么手段上报呢？也使用类似bugly这种异常上报的机制吗？什么情况下使用，如何使用呢？</p>2020-02-06</li><br/><li><span>Fun</span> 👍（0） 💬（1）<p>请问计算FPS的时候为什么要乘60</p>2019-12-30</li><br/><li><span>时光念你</span> 👍（0） 💬（0）<p>如果接口是when整合过的，取第二次的addPostFrameCallback时间作为Endtime。如果每个接口单独请求，取接口数量➕1的回调次数时间作为Endtime。</p>2019-12-26</li><br/>
 </ul>

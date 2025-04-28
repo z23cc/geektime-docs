@@ -166,7 +166,7 @@ public class MyPredicateFactory extends
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>peter</span> 👍（7） 💬（1）<div>请教老师几个问题啊：
+<li><span>peter</span> 👍（7） 💬（1）<p>请教老师几个问题啊：
 Q1：SpringCloud Gateway和zuul相比哪个更好
 Q2：Gateway只对用户的请求起作用吗？对微服务之间的请求起作用吗？
 Q3：gateway路由的具体效果是什么？
@@ -183,13 +183,13 @@ Gateway的目的是将请求路由到某一个微服务，但这个路由中并�
 Q5：actuator是SpringCloud的一个组件吗？
 Q6：声明路由的三种方式会混合使用吗？
 Q7：Nginx和Gateway可以合二为一吗？
-情况1：去掉gateway，只有nginx，用户请求直接到nginx，nginx直接到微服务；情况2：去掉nginx，只有gateway，用户请求直接到gateway，gateway再到微服务。</div>2022-02-09</li><br/><li><span>hhhhhh</span> 👍（2） 💬（1）<div>微服务网关的作用，就是整合各个微服务功能，形成一套或多套系统  看了半天感觉好像是这意思</div>2022-05-30</li><br/><li><span>威威威小哥</span> 👍（2） 💬（1）<div>老师，几个问题请教下
+情况1：去掉gateway，只有nginx，用户请求直接到nginx，nginx直接到微服务；情况2：去掉nginx，只有gateway，用户请求直接到gateway，gateway再到微服务。</p>2022-02-09</li><br/><li><span>hhhhhh</span> 👍（2） 💬（1）<p>微服务网关的作用，就是整合各个微服务功能，形成一套或多套系统  看了半天感觉好像是这意思</p>2022-05-30</li><br/><li><span>威威威小哥</span> 👍（2） 💬（1）<p>老师，几个问题请教下
 1. Gateway 转发到目标服务是重新发起一次http请求吗？
 2. Gateway有没有类似舱壁模式， 如何防止一个下游服务不可用导致整个gateway雪崩？
-3. 哪里可以学习gateway的内部细节？</div>2022-03-04</li><br/><li><span>Charles</span> 👍（1） 💬（1）<div>请教老师，是否推荐使用谓词实现金丝雀测试方案?</div>2022-02-10</li><br/><li><span>微笑的起点</span> 👍（0） 💬（1）<div>老师，请教个问题，springcloudgateway配置几个路由来测试，每个路由地址首次访问都要比后面多将近500ms，调试发现某些filter耗时比较多，每个地址第二次访问都会快很多，这是什么原因呢</div>2023-02-10</li><br/><li><span>斜杠青年</span> 👍（0） 💬（2）<div>老师你好，我一直有一个疑问，nginx、gateWay、FeignClient 他们三者之间的分工怎么洋才是合理的，例如服务A于服务B之间的调用才用 Feign 进行 LB，还是A调用gateway 来进行转发合适？  </div>2022-12-12</li><br/><li><span>Geek_1aaf73</span> 👍（0） 💬（1）<div>请问下 半仙，
+3. 哪里可以学习gateway的内部细节？</p>2022-03-04</li><br/><li><span>Charles</span> 👍（1） 💬（1）<p>请教老师，是否推荐使用谓词实现金丝雀测试方案?</p>2022-02-10</li><br/><li><span>微笑的起点</span> 👍（0） 💬（1）<p>老师，请教个问题，springcloudgateway配置几个路由来测试，每个路由地址首次访问都要比后面多将近500ms，调试发现某些filter耗时比较多，每个地址第二次访问都会快很多，这是什么原因呢</p>2023-02-10</li><br/><li><span>斜杠青年</span> 👍（0） 💬（2）<p>老师你好，我一直有一个疑问，nginx、gateWay、FeignClient 他们三者之间的分工怎么洋才是合理的，例如服务A于服务B之间的调用才用 Feign 进行 LB，还是A调用gateway 来进行转发合适？  </p>2022-12-12</li><br/><li><span>Geek_1aaf73</span> 👍（0） 💬（1）<p>请问下 半仙，
 
 我们现在的架构是阿里云SLB--&gt;NGINX---&gt;微服务，缺少API网关，
 我们这里准备开发自己的API网关，然后链路请求是阿里云SLB--&gt;API网关--&gt;微服务，请问这个架构是否OK？
 
-相当于API网关替代的NGINX，API网关中包含了负载均衡，还可以配置限流、鉴权、路由等，希望这个条没理解错，求回复~</div>2022-08-17</li><br/><li><span>swagger～</span> 👍（0） 💬（1）<div>请问老师同时满足两个路由是用order设置优先级吗</div>2022-02-22</li><br/>
+相当于API网关替代的NGINX，API网关中包含了负载均衡，还可以配置限流、鉴权、路由等，希望这个条没理解错，求回复~</p>2022-08-17</li><br/><li><span>swagger～</span> 👍（0） 💬（1）<p>请问老师同时满足两个路由是用order设置优先级吗</p>2022-02-22</li><br/>
 </ul>

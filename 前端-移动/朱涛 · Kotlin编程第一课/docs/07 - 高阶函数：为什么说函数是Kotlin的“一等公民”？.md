@@ -668,12 +668,12 @@ public inline fun repeat(times: Int, action: (Int) -> Unit) {
 
 好了，这节课就到这里，如果觉得有收获，非常欢迎你把今天的内容分享给更多的朋友，咱们下节课再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>侯金博</span> 👍（13） 💬（4）<div>遭了，是要掉队的感觉</div>2022-01-11</li><br/><li><span>讲道理嘛</span> 👍（8） 💬（1）<div>老师你好，关于带接收者的函数类型，我这样理解不知道对不对？
+<li><span>侯金博</span> 👍（13） 💬（4）<p>遭了，是要掉队的感觉</p>2022-01-11</li><br/><li><span>讲道理嘛</span> 👍（8） 💬（1）<p>老师你好，关于带接收者的函数类型，我这样理解不知道对不对？
 fun User.test1(block: (user: User) -&gt; Unit){}
 fun User.test2(block: User.() -&gt; Unit){}
 
 上面这两个高阶函数其实是等价的，只是在 lambda 表达式的使用时有区别。
-前者的参数是 it，后者是 this(this 可以省略)</div>2022-05-20</li><br/><li><span>Paul Shan</span> 👍（6） 💬（1）<div>run：调用一个函数，作用仅仅限于构建lambda方便一点
+前者的参数是 it，后者是 this(this 可以省略)</p>2022-05-20</li><br/><li><span>Paul Shan</span> 👍（6） 💬（1）<p>run：调用一个函数，作用仅仅限于构建lambda方便一点
 带receiver的run：调用一个带receiver的函数，把this传给这个函数
 with：用第一个参数调用第二个带receiver的函数，把this设定为第一个参数
 apply：带receiver的函数高阶函数，参数为带receiver的函数，接受一个对象，把这个对象作为this传给参数并调用，返回this
@@ -682,7 +682,7 @@ let：和apply类似，但是返回值不是this，而是函数的返回
 takeIf：带receiver的函数高阶函数，参数是一个判断函数，结果判断结果为真就返回this，否者null
 takeUnless：和take相反
 repeat：参数为次数和函数，for循环执行函数
-</div>2022-03-19</li><br/><li><span>女孩子家家</span> 👍（6） 💬（1）<div>简化了页面跳转~
+</p>2022-03-19</li><br/><li><span>女孩子家家</span> 👍（6） 💬（1）<p>简化了页面跳转~
 private const val FRIEND_ID = &quot;friendId&quot;
 
 fun goto(mContext: Context, userId: Long) {
@@ -699,29 +699,29 @@ inline fun &lt;reified T&gt; intent(mContext: Context, block: Intent.() -&gt; Un
     val intent = Intent(mContext, T::class.java)
     intent.block()
     return intent
-}</div>2022-01-10</li><br/><li><span>H.ZWei</span> 👍（5） 💬（1）<div>带接收者的函数类型能不能理解成是这个类的扩展函数，只不过是一个匿名函数。</div>2022-03-21</li><br/><li><span>大顺子</span> 👍（2） 💬（1）<div>1.第一个 run ，返回值为函数体最后一行，或指定 return 表达式
+}</p>2022-01-10</li><br/><li><span>H.ZWei</span> 👍（5） 💬（1）<p>带接收者的函数类型能不能理解成是这个类的扩展函数，只不过是一个匿名函数。</p>2022-03-21</li><br/><li><span>大顺子</span> 👍（2） 💬（1）<p>1.第一个 run ，返回值为函数体最后一行，或指定 return 表达式
 2.第二个 run ,在函数体中可以用 this 指代该对象，返回值为函数体最后一行，或指定 return 表达式
 3.with 是将对象作为参数，在函数体中可以用 this 指代该对象，返回值为函数体最后一行，或指定 return 表达式
 4.apply 在函数体内可以用 this 指代该对象，返回值为对象本身
 5.also 在函数体内可以用 it 指代该对象,返回值为对象本身
 6.let 在函数体内可以用 it 指代该对象,返回值为函数体最后一行，或指定 return 表达式
-理解了上面那些，剩下的 takeIf 、takeUnless、repeat 就很好理解了。</div>2022-01-13</li><br/><li><span>Geek_518c5c</span> 👍（1） 💬（3）<div>
+理解了上面那些，剩下的 takeIf 、takeUnless、repeat 就很好理解了。</p>2022-01-13</li><br/><li><span>Geek_518c5c</span> 👍（1） 💬（3）<p>
 fun User.apply(block: User.() -&gt; Unit): User{   请教这里的 User.()中的（）代表什么意思。
-</div>2022-04-28</li><br/><li><span>neo</span> 👍（1） 💬（1）<div>&#47;&#47; 函数引用 
+</p>2022-04-28</li><br/><li><span>neo</span> 👍（1） 💬（1）<p>&#47;&#47; 函数引用 
 override val creator = ::PersonManager
-函数引用中需要怎么去理解参数呢，因为并没有传参的地方</div>2022-04-06</li><br/><li><span>白乾涛</span> 👍（1） 💬（1）<div>感觉带接收者函数类型讲的太复杂了，单独抽出来放到后面某个章节讲更好一点。</div>2022-02-13</li><br/><li><span>20220106</span> 👍（1） 💬（3）<div>apply和also这两个比较典型的，上下文对象作为【接收者】和作为【参数】，这两个的区别没太领会到</div>2022-01-12</li><br/><li><span>zeki</span> 👍（1） 💬（2）<div>“第4种写法 由于 Kotlin 支持类型推导，所以 View 可以被删掉：”大佬您好，这句话是否不太准确？我的理解是：正常情况下，Kotlin的参数类型是不可以省略的，这里的View可以被删掉的原因不是因为“Kotlin 支持类型推导，所以 View可以被删掉”，而是因为如下代码所示：
+函数引用中需要怎么去理解参数呢，因为并没有传参的地方</p>2022-04-06</li><br/><li><span>白乾涛</span> 👍（1） 💬（1）<p>感觉带接收者函数类型讲的太复杂了，单独抽出来放到后面某个章节讲更好一点。</p>2022-02-13</li><br/><li><span>20220106</span> 👍（1） 💬（3）<p>apply和also这两个比较典型的，上下文对象作为【接收者】和作为【参数】，这两个的区别没太领会到</p>2022-01-12</li><br/><li><span>zeki</span> 👍（1） 💬（2）<p>“第4种写法 由于 Kotlin 支持类型推导，所以 View 可以被删掉：”大佬您好，这句话是否不太准确？我的理解是：正常情况下，Kotlin的参数类型是不可以省略的，这里的View可以被删掉的原因不是因为“Kotlin 支持类型推导，所以 View可以被删掉”，而是因为如下代码所示：
 fun setOnClickListener(l: ((View!) -&gt; Unit)?) 
 这个方法的参数变量 l 声明了函数类型为((View!) -&gt; Unit)?,所以Lambda的参数部分（：View）可以省略
 就像
 val test={x,y-&gt;x+y} 是错误的
 而
 val test:(Int,Int)-&gt;Int={x,y-&gt;x+y}是正确的一样
-我理解的类型推导是“根据具体值来推导出类型”，而参数的值是不定的，所以参数的类型必须显式声明，返回值的类型是由参数的类型和值具体得出来的值,所以可以不需要显式声明,我这么想是否正确呢？</div>2022-01-12</li><br/><li><span>没有昵称</span> 👍（0） 💬（4）<div>fun handleTwoParameters(a: Int,b: Int):(Int,Int) -&gt;Int{
+我理解的类型推导是“根据具体值来推导出类型”，而参数的值是不定的，所以参数的类型必须显式声明，返回值的类型是由参数的类型和值具体得出来的值,所以可以不需要显式声明,我这么想是否正确呢？</p>2022-01-12</li><br/><li><span>没有昵称</span> 👍（0） 💬（4）<p>fun handleTwoParameters(a: Int,b: Int):(Int,Int) -&gt;Int{
     return plusTwo
 }
 val plusTwo:(Int,Int)-&gt;Int={x,y-&gt;x+y}
 
-各位大佬，如何把a和b的入参传给plusTwo使用</div>2022-05-13</li><br/><li><span>Geek_518c5c</span> 👍（0） 💬（1）<div>老师，
+各位大佬，如何把a和b的入参传给plusTwo使用</p>2022-05-13</li><br/><li><span>Geek_518c5c</span> 👍（0） 💬（1）<p>老师，
 &#47;&#47;              带接收者的函数类型
 &#47;&#47;                     ↓  
 fun User.apply(block: User.() -&gt; Unit): User{    问1：User.()是什么意思 问2这一个行代表定义了一个User的扩展函数，对吗
@@ -730,8 +730,8 @@ fun User.apply(block: User.() -&gt; Unit): User{    问1：User.()是什么意�
     block()
     return this ------问3，这个this指向的是什么
 }
-</div>2022-04-28</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>顶级扩展函数编译成字节码，是 static 方法，参数多了一个 this
+</p>2022-04-28</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>顶级扩展函数编译成字节码，是 static 方法，参数多了一个 this
 
-带接收者的函数类型编译成字节码，是一个匿名内部类，实现了 Functionx 接口，invoke 参数由编译器传入接收者实例；</div>2022-04-04</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<div>带接受者的函数，和C++的成员函数指针很像，限定了函数必须是类成员函数或者扩展函数。这带来了定义者和调用者两方面的变化:定义者可以方便的的引用类的公有成员和函数，调用者只能是类的成员函数或者扩展函数。apply函数是高阶函数，接受一个带接受者的函数，然后调用这个函数，并输出接受者对象。利用Lambda表达式,这个带接受者的函数在调用apply的地方构建出扩展函数，并传入apply，apply注入了this，调用函数和输出。如果没有带接受者的函数，函数就没法注入this和返回this，这对于apply这样的函数，就必须增加一个参数处理调用者，会繁琐很多。
-</div>2022-03-19</li><br/>
+带接收者的函数类型编译成字节码，是一个匿名内部类，实现了 Functionx 接口，invoke 参数由编译器传入接收者实例；</p>2022-04-04</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<p>带接受者的函数，和C++的成员函数指针很像，限定了函数必须是类成员函数或者扩展函数。这带来了定义者和调用者两方面的变化:定义者可以方便的的引用类的公有成员和函数，调用者只能是类的成员函数或者扩展函数。apply函数是高阶函数，接受一个带接受者的函数，然后调用这个函数，并输出接受者对象。利用Lambda表达式,这个带接受者的函数在调用apply的地方构建出扩展函数，并传入apply，apply注入了this，调用函数和输出。如果没有带接受者的函数，函数就没法注入this和返回this，这对于apply这样的函数，就必须增加一个参数处理调用者，会繁琐很多。
+</p>2022-03-19</li><br/>
 </ul>

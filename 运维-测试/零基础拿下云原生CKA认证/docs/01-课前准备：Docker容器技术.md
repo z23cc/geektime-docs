@@ -234,6 +234,6 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 
 欢迎你把过程写到留言区。相信经过练习，会让你对知识的理解更加深刻。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Y</span> 👍（1） 💬（1）<div>docker run -d -p 80:80 httpd
-</div>2024-07-09</li><br/><li><span>YH</span> 👍（0） 💬（1）<div>docker id注册网页无法打开了</div>2024-07-08</li><br/><li><span>学生监狱</span> 👍（0） 💬（0）<div>企业级的虚拟化，不是这样的层级，它的OS层和hypervisor层是一个层，比如Vmware的Esxi</div>2024-08-13</li><br/>
+<li><span>Y</span> 👍（1） 💬（1）<p>docker run -d -p 80:80 httpd
+</p>2024-07-09</li><br/><li><span>YH</span> 👍（0） 💬（1）<p>docker id注册网页无法打开了</p>2024-07-08</li><br/><li><span>学生监狱</span> 👍（0） 💬（0）<p>企业级的虚拟化，不是这样的层级，它的OS层和hypervisor层是一个层，比如Vmware的Esxi</p>2024-08-13</li><br/>
 </ul>

@@ -408,11 +408,11 @@ $curl -v http://127.0.0.1:43211/
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>chs</span> 👍（9） 💬（2）<div>老师不明白缓冲区为什么要这样设计。用两块内存当做缓冲区，一个用于接收数据，另一个用于发送数据。这两种方式的优缺点能说一下吗？</div>2019-11-15</li><br/><li><span>keepgoing</span> 👍（4） 💬（1）<div>老师，在tcp_connection.c文件tcp_connection_new方法创建channel时传入的data是tcp_connection类型，但在channel.c中channel_write_event_enable方法会直接从channel-&gt;data中取一个event_loop类型指针出来，阅读了整个tcp框架看起来没有找到直接传入event_loop类型的地方，这里是一个代码bug吗</div>2020-09-07</li><br/><li><span>罗兆峰</span> 👍（2） 💬（1）<div>第二题： 用户申请图片的时候可以申请一个GET 方法的request, GET URI version, URI 是图片相对服务器程序的地址，在服务器端程序使用io 函数read&#47;或者mmap 读取图片文件的内容， 并且写到connectedfd 中即可， http response 中的文件类型标记为image&#47;png。</div>2022-02-18</li><br/><li><span>T------T</span> 👍（2） 💬（2）<div>老师好，发现一个memmem函数运行错误的Bug.
+<li><span>chs</span> 👍（9） 💬（2）<p>老师不明白缓冲区为什么要这样设计。用两块内存当做缓冲区，一个用于接收数据，另一个用于发送数据。这两种方式的优缺点能说一下吗？</p>2019-11-15</li><br/><li><span>keepgoing</span> 👍（4） 💬（1）<p>老师，在tcp_connection.c文件tcp_connection_new方法创建channel时传入的data是tcp_connection类型，但在channel.c中channel_write_event_enable方法会直接从channel-&gt;data中取一个event_loop类型指针出来，阅读了整个tcp框架看起来没有找到直接传入event_loop类型的地方，这里是一个代码bug吗</p>2020-09-07</li><br/><li><span>罗兆峰</span> 👍（2） 💬（1）<p>第二题： 用户申请图片的时候可以申请一个GET 方法的request, GET URI version, URI 是图片相对服务器程序的地址，在服务器端程序使用io 函数read&#47;或者mmap 读取图片文件的内容， 并且写到connectedfd 中即可， http response 中的文件类型标记为image&#47;png。</p>2022-02-18</li><br/><li><span>T------T</span> 👍（2） 💬（2）<p>老师好，发现一个memmem函数运行错误的Bug.
 环境：Ubuntu18.04 GCC 10.3 glic 2.33
 问题：返回void* 的memmem函数未声明，系统默认调用了返回int的memmem函数。返回值由int强转成char*,导致后续处理出现错误。
 解决办法：在#include&lt;string.h&gt; 之前添加#define _GNU_SOURCE解决
-参考：https:&#47;&#47;insidelinuxdev.net&#47;article&#47;a09522.html</div>2021-12-08</li><br/><li><span>小家伙54</span> 👍（2） 💬（4）<div>老师，ubuntu20.4运行lib程序会出现段错误，这是怎么回事啊？
+参考：https:&#47;&#47;insidelinuxdev.net&#47;article&#47;a09522.html</p>2021-12-08</li><br/><li><span>小家伙54</span> 👍（2） 💬（4）<p>老师，ubuntu20.4运行lib程序会出现段错误，这是怎么回事啊？
 
 nuc@nuc-NUC8i5BEHS:~&#47;learn&#47;GeekTime&#47;net_prog&#47;yolanda&#47;build&#47;bin$ .&#47;http_server01
 [msg] set epoll as dispatcher, main thread
@@ -443,7 +443,7 @@ nuc@nuc-NUC8i5BEHS:~&#47;learn&#47;GeekTime&#47;net_prog&#47;yolanda&#47;build&#
 [msg] get message channel fd==13 for read, Thread-1
 [msg] activate channel fd == 13, revents=2, Thread-1
 [msg] get message from tcp connection connection-13
-段错误 (核心已转储)</div>2021-07-09</li><br/><li><span>JeQer</span> 👍（1） 💬（1）<div>没有经过压力测试的服务器怎么能称为高性能呢?</div>2021-02-17</li><br/><li><span>TinyCalf</span> 👍（1） 💬（1）<div>&#47;&#47;初始化一个request对象
+段错误 (核心已转储)</p>2021-07-09</li><br/><li><span>JeQer</span> 👍（1） 💬（1）<p>没有经过压力测试的服务器怎么能称为高性能呢?</p>2021-02-17</li><br/><li><span>TinyCalf</span> 👍（1） 💬（1）<p>&#47;&#47;初始化一个request对象
 struct http_request *http_request_new() {
     struct http_request *httpRequest = malloc(sizeof(struct http_request));
     httpRequest-&gt;method = NULL;
@@ -456,9 +456,9 @@ struct http_request *http_request_new() {
 }
 这里的
 httpRequest-&gt;request_headers = malloc(sizeof(struct http_request) * INIT_REQUEST_HEADER_SIZE);
-是不是写错了 ；）</div>2020-11-17</li><br/><li><span>不诉离殇</span> 👍（1） 💬（2）<div>老师好，parse_http_request函数没太看懂，while循环中如果数据没收全，这个函数不会返回，那么底层的handle_read函数也不会返回?那就没有机会再将数据写到input_buffer了呀？这样不是就卡住了？</div>2020-01-04</li><br/><li><span>J.M.Liu</span> 👍（1） 💬（1）<div>c语言写bbs网站的年代，真的是太疯狂了，一个一个字符的print（哭脸）</div>2019-11-03</li><br/><li><span>沉淀的梦想</span> 👍（1） 💬（6）<div>在ubuntu系统上一运行老师的程序就会出现“interrupted by signal 11: SIGSEGV”错误</div>2019-10-30</li><br/><li><span>dll</span> 👍（0） 💬（1）<div>好不容易看完了 打卡纪念一下</div>2022-08-04</li><br/><li><span>铲铲队</span> 👍（0） 💬（1）<div>make_room 函数就是起这个作用的，如果右边绿色的连续空间不足以容纳新的数据，而最左边灰色部分加上右边绿色部分一起可以容纳下新数据，就会触发这样的移动拷贝，最终红色部分占据了最左边，绿色部分占据了右边，右边绿色的部分成为一个连续的可写入空间，就可以容纳下新的数据
+是不是写错了 ；）</p>2020-11-17</li><br/><li><span>不诉离殇</span> 👍（1） 💬（2）<p>老师好，parse_http_request函数没太看懂，while循环中如果数据没收全，这个函数不会返回，那么底层的handle_read函数也不会返回?那就没有机会再将数据写到input_buffer了呀？这样不是就卡住了？</p>2020-01-04</li><br/><li><span>J.M.Liu</span> 👍（1） 💬（1）<p>c语言写bbs网站的年代，真的是太疯狂了，一个一个字符的print（哭脸）</p>2019-11-03</li><br/><li><span>沉淀的梦想</span> 👍（1） 💬（6）<p>在ubuntu系统上一运行老师的程序就会出现“interrupted by signal 11: SIGSEGV”错误</p>2019-10-30</li><br/><li><span>dll</span> 👍（0） 💬（1）<p>好不容易看完了 打卡纪念一下</p>2022-08-04</li><br/><li><span>铲铲队</span> 👍（0） 💬（1）<p>make_room 函数就是起这个作用的，如果右边绿色的连续空间不足以容纳新的数据，而最左边灰色部分加上右边绿色部分一起可以容纳下新数据，就会触发这样的移动拷贝，最终红色部分占据了最左边，绿色部分占据了右边，右边绿色的部分成为一个连续的可写入空间，就可以容纳下新的数据
 ----》个人觉得好像不用移动拷贝，数据一部分拷贝满writeable_size,剩余部分拷贝到front_spare_size。即循环缓冲，这样效率更高吧
-</div>2022-04-13</li><br/><li><span>肥磊</span> 👍（0） 💬（2）<div>老师，用wenbench测试出现段错误，是什么原因，
+</p>2022-04-13</li><br/><li><span>肥磊</span> 👍（0） 💬（2）<p>老师，用wenbench测试出现段错误，是什么原因，
 [msg] get message channel i==0, fd==7, Thread-1
 [msg] activate channel fd == 7, revents=2, Thread-1
 [msg] wakeup, Thread-1
@@ -468,5 +468,5 @@ httpRequest-&gt;request_headers = malloc(sizeof(struct http_request) * INIT_REQU
 [msg] activate channel fd == 14, revents=2, Thread-1
 [msg] get message from tcp connection connection-14
 [1]    2424 segmentation fault (core dumped)  .&#47;http_server01
-</div>2022-03-07</li><br/><li><span>菜鸡互啄</span> 👍（0） 💬（1）<div>哦 我知道了。front_spare_size是被读了一段之后产生的。</div>2021-12-27</li><br/><li><span>菜鸡互啄</span> 👍（0） 💬（1）<div>老师你好 为什么要设计front_spare_size？或者说为什么存在front_spare_size？readIndex和writeIndex一开始不是从0开始的吗？</div>2021-12-27</li><br/>
+</p>2022-03-07</li><br/><li><span>菜鸡互啄</span> 👍（0） 💬（1）<p>哦 我知道了。front_spare_size是被读了一段之后产生的。</p>2021-12-27</li><br/><li><span>菜鸡互啄</span> 👍（0） 💬（1）<p>老师你好 为什么要设计front_spare_size？或者说为什么存在front_spare_size？readIndex和writeIndex一开始不是从0开始的吗？</p>2021-12-27</li><br/>
 </ul>

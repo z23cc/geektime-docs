@@ -310,7 +310,7 @@ if (syncRead(server.aof_pipe_read_ack_from_parent,&byte,1,5000) != 1  || byte !=
 
 今天这节课，我给你介绍了重写子进程和主进程间进行操作命令传输、ACK信息传递用的三个管道。那么，你在Redis源码中还能找见其他使用管道的地方吗？
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>土豆种南城</span> 👍（19） 💬（0）<div>一些补充：
+<li><span>土豆种南城</span> 👍（19） 💬（0）<p>一些补充：
 1. 重写子进程写入多少从父进程传来的操作后发出ack？
   答：子进程在正常的重写完成后至多再等一秒，在这一秒内如果有连续20ms没有可读事件发生，那么直接发送ack
 
@@ -318,7 +318,7 @@ if (syncRead(server.aof_pipe_read_ack_from_parent,&byte,1,5000) != 1  || byte !=
  答：父进程收到子进程ack后设置server.aof_stop_sending_diff为1，然后回复ack
 子进程收到ack时会再次调用aofReadDiffFromParent尝试把管道里可能存在的数据都读出来
 最后一步将aof_child_diff的内容写入文件，并将文件名rename为temp-rewriteaof-bg-pid.aof
-父进程在serverCron中调用wait3来确认重写子进程执行结果，读取子进程重写的aof文件，在文件末尾再次写入子进程执行结束后父进程积累的数据，最后将文件名重命名成最终文件</div>2021-09-14</li><br/><li><span>Kaito</span> 👍（17） 💬（4）<div>1、AOF 重写是在子进程中执行，但在此期间父进程还会接收写操作，为了保证新的 AOF 文件数据更完整，所以父进程需要把在这期间的写操作缓存下来，然后发给子进程，让子进程追加到 AOF 文件中
+父进程在serverCron中调用wait3来确认重写子进程执行结果，读取子进程重写的aof文件，在文件末尾再次写入子进程执行结束后父进程积累的数据，最后将文件名重命名成最终文件</p>2021-09-14</li><br/><li><span>Kaito</span> 👍（17） 💬（4）<p>1、AOF 重写是在子进程中执行，但在此期间父进程还会接收写操作，为了保证新的 AOF 文件数据更完整，所以父进程需要把在这期间的写操作缓存下来，然后发给子进程，让子进程追加到 AOF 文件中
 
 2、因为需要父子进程传输数据，所以需要用到操作系统提供的进程间通信机制，这里 Redis 用的是「管道」，管道只能是一个进程写，另一个进程读，特点是单向传输
 
@@ -353,7 +353,7 @@ if (syncRead(server.aof_pipe_read_ack_from_parent,&byte,1,5000) != 1  || byte !=
 int module_blocked_pipe[2]; 
 
 看注释是指，如果被 module 命令阻塞的客户端需要处理，则会唤醒事件循环开始处理。
-</div>2021-09-11</li><br/><li><span>鱼鱼</span> 👍（4） 💬（0）<div>7.0之后的redis使用Multipart AOF的方式，用manifest结构管理AOF文件。
+</p>2021-09-11</li><br/><li><span>鱼鱼</span> 👍（4） 💬（0）<p>7.0之后的redis使用Multipart AOF的方式，用manifest结构管理AOF文件。
 有三种类型的AOF文件
 base incr和history
 AOF rewrite的时候，会生成一个新的incr型的aof用于追加
@@ -364,7 +364,7 @@ AOF rewrite的时候，会生成一个新的incr型的aof用于追加
 当然同时也节约了CPU
 减少了写入管道这种交互过程
 
-重新根据aof恢复数据的时候是base+incrs的方式构建数据库的</div>2022-08-19</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<div>首先回答老师问题：
+重新根据aof恢复数据的时候是base+incrs的方式构建数据库的</p>2022-08-19</li><br/><li><span>曾轼麟</span> 👍（3） 💬（0）<p>首先回答老师问题：
 	1、slave同步RDB文件中返回状态和错误
 		通过rdb_pipe_write_result_to_parent和rdb_pipe_read_result_from_child。在进行fork之前，创建一个管道，用于将成功接收到所有写操作的slave服务器的id发送回父服务器。一般是slave在等待bgsave的情况下主库完成bgsave后进行的处理。在rdbSaveToSlavesSockets函数中调用。
 
@@ -384,9 +384,9 @@ AOF rewrite的时候，会生成一个新的incr型的aof用于追加
 		3、父进程确认收到子进程ack的管道。
 	（这里会发现设计上多少有点和tcp握手类似）
 
-	此外需要主意的是，在管道交互期间，读取管道的数据是通过aeCreateFileEvent创建文件事件进行的。那么结合前面的文章内容-IO多线程可以得知：在主子进程同步命令和处理ack信号是有IO线程参与的。</div>2021-09-13</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<div>除了AOF重写时，用到了管道。我搜索了一下，源码中还有另外3个地方也用到了管道。
+	此外需要主意的是，在管道交互期间，读取管道的数据是通过aeCreateFileEvent创建文件事件进行的。那么结合前面的文章内容-IO多线程可以得知：在主子进程同步命令和处理ack信号是有IO线程参与的。</p>2021-09-13</li><br/><li><span>风轻扬</span> 👍（0） 💬（0）<p>除了AOF重写时，用到了管道。我搜索了一下，源码中还有另外3个地方也用到了管道。
 1、主从复制时，主向从发送RDB文件后，从会使用管道回复主，已收到RDB文件
 2、server.c的main方法中，在初始化module的时候，也会调用管道。这个管道的目的是：如果客户端处理module命令阻塞时，使用该管道可以唤醒事件驱动框架
-3、当进行RDB写入或者AOF写入时，子进程通过这个管道向父进程传递一些信息。比如：copyOnWrite机制使用了多少内存</div>2023-11-26</li><br/><li><span>🤐</span> 👍（0） 💬（0）<div>以前不清楚 redis的qps那么多，什么时候才会写结束？原来是有一个通知回复机制。</div>2022-07-25</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<div>回答问题。
-1.rdbSaveBackground。2.rdbSaveToSlavesSockets，diskless模式下直接把rdb通过socket发送给slave。3.moduleInitModulesSystem，和第三方子模块通信。4.linuxMadvFreeForkBugCheck，检查MADV_FREE在arm64 Linux内核上bug，具体见https:&#47;&#47;github.com&#47;redis&#47;redis&#47;commit&#47;b02780c41dbc5b28d265b5cf141c03c1a7383ef9。</div>2021-09-11</li><br/>
+3、当进行RDB写入或者AOF写入时，子进程通过这个管道向父进程传递一些信息。比如：copyOnWrite机制使用了多少内存</p>2023-11-26</li><br/><li><span>🤐</span> 👍（0） 💬（0）<p>以前不清楚 redis的qps那么多，什么时候才会写结束？原来是有一个通知回复机制。</p>2022-07-25</li><br/><li><span>可怜大灰狼</span> 👍（0） 💬（0）<p>回答问题。
+1.rdbSaveBackground。2.rdbSaveToSlavesSockets，diskless模式下直接把rdb通过socket发送给slave。3.moduleInitModulesSystem，和第三方子模块通信。4.linuxMadvFreeForkBugCheck，检查MADV_FREE在arm64 Linux内核上bug，具体见https:&#47;&#47;github.com&#47;redis&#47;redis&#47;commit&#47;b02780c41dbc5b28d265b5cf141c03c1a7383ef9。</p>2021-09-11</li><br/>
 </ul>

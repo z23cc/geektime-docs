@@ -143,7 +143,7 @@ P = Hash(Record Key) % N
 
 欢迎你在评论区分享你的答案，我在评论区等你。如果这一讲对你有所帮助，你也可以分享给自己的朋友，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_2dfa9a</span> 👍（39） 💬（7）<div>官网配置文档 https:&#47;&#47;spark.apache.org&#47;docs&#47;3.1.2&#47;configuration.html
+<li><span>Geek_2dfa9a</span> 👍（39） 💬（7）<p>官网配置文档 https:&#47;&#47;spark.apache.org&#47;docs&#47;3.1.2&#47;configuration.html
 Directory to use for &quot;scratch&quot; space in Spark, including map output files and RDDs that get stored on disk. This should be on a fast, local disk in your system. It can also be a comma-separated list of multiple directories on different disks.
 Note: This will be overridden by SPARK_LOCAL_DIRS (Standalone), MESOS_SANDBOX (Mesos) or LOCAL_DIRS (YARN) environment variables set by the cluster manager.
 临时目录，用来存map output文件（shuffle产生）和save RDD到磁盘的时候会用到。应该配置成快速的本地磁盘。支持‘,’分隔的多个目录。
@@ -152,28 +152,28 @@ Note: This will be overridden by SPARK_LOCAL_DIRS (Standalone), MESOS_SANDBOX (M
 首先&#47;tmp是会被系统清理的（取决于不同linux分发版的清理策略），如果作业运行时&#47;tmp中的文件被清除了，那就要重新shuffle或
 重新缓存RDD（这块没有仔细研究，简单猜测下缓存失效策略是重新缓存），因此，不适合将配置spark.local.dir设置为默认的&#47;tmp
 其次，部署文档有提该配置项支持多个目录，那可以考虑配置多块硬盘（或者SSD），再把挂载不同硬盘的目录配置到spark.local.dir，
-这样可以显著提升shuffle和RDD缓存的性能。请大家指教。</div>2021-09-22</li><br/><li><span>qinsi</span> 👍（13） 💬（2）<div>看到哈希那边有个问题，就是遇到不均匀的数据会怎么样？比如对这篇论文执行word count：https:&#47;&#47;isotropic.org&#47;papers&#47;chicken.pdf
+这样可以显著提升shuffle和RDD缓存的性能。请大家指教。</p>2021-09-22</li><br/><li><span>qinsi</span> 👍（13） 💬（2）<p>看到哈希那边有个问题，就是遇到不均匀的数据会怎么样？比如对这篇论文执行word count：https:&#47;&#47;isotropic.org&#47;papers&#47;chicken.pdf
 
 原本可能指望所有工人一起搬砖，结果发现只有一个工人在搬砖？
 
-另外前几讲说过大数据的精髓在于数据不动代码动，但这讲说还是无法避免shuffle搬运数据，这个要怎么理解？</div>2021-09-23</li><br/><li><span>Unknown element</span> 👍（10） 💬（1）<div>老师您在shuffle read部分说“不同的 Reduce Task 正是根据 index 文件中的起始索引来确定哪些数据内容是属于自己的”，这一步具体是怎么实现的呢？以文中的index文件举例，文中的index文件是0,3,7，那么不同的reduce task是各自有一个编号，然后按编号大小顺序确定自己应该拉取哪一部分数据吗？比如编号为0的reduce task拉取index文件的第一个索引到第二个索引之间的数据，也就是index为0,1,2的数据；编号为1的reduce task拉取index文件的第二个索引到第三个索引之间的数据，也就是index为3,4,5,6的数据；编号为2的reduce task拉取index文件的第三个索引到最后的数据，也就是index为7,8,9的数据？这样的话如果map task计算出来没有数据应该被发到第二个reduce task那index文件是0,3,3吗？</div>2021-10-08</li><br/><li><span>Unknown element</span> 👍（8） 💬（3）<div>老师您好  我有两个问题想问下：
+另外前几讲说过大数据的精髓在于数据不动代码动，但这讲说还是无法避免shuffle搬运数据，这个要怎么理解？</p>2021-09-23</li><br/><li><span>Unknown element</span> 👍（10） 💬（1）<p>老师您在shuffle read部分说“不同的 Reduce Task 正是根据 index 文件中的起始索引来确定哪些数据内容是属于自己的”，这一步具体是怎么实现的呢？以文中的index文件举例，文中的index文件是0,3,7，那么不同的reduce task是各自有一个编号，然后按编号大小顺序确定自己应该拉取哪一部分数据吗？比如编号为0的reduce task拉取index文件的第一个索引到第二个索引之间的数据，也就是index为0,1,2的数据；编号为1的reduce task拉取index文件的第二个索引到第三个索引之间的数据，也就是index为3,4,5,6的数据；编号为2的reduce task拉取index文件的第三个索引到最后的数据，也就是index为7,8,9的数据？这样的话如果map task计算出来没有数据应该被发到第二个reduce task那index文件是0,3,3吗？</p>2021-10-08</li><br/><li><span>Unknown element</span> 👍（8） 💬（3）<p>老师您好  我有两个问题想问下：
 1. 对于所有 Map Task 生成的中间文件，Reduce Task 需要通过网络从不同节点的硬盘中下载并拉取属于自己的数据内容  那不同的reduce task是怎么知道哪些内容是属于自己的呢？比如对于文中的例子，reduce阶段的3个任务怎么知道自己应该拉取中间文件的哪些记录？
-2. 对于评论区AIK的问题，您说shuffle过程不是数据交换，而是数据流转，那意思是在map阶段 所有将要执行reduce task的节点都是空闲的吗（等待map task生成shuffle中间文件）？那他们是不是在这个stage的整个计算过程中都是空闲的？这样的话岂不是没有发挥出集群的最大算力？</div>2021-09-29</li><br/><li><span>钟强</span> 👍（3） 💬（1）<div>如果集群中只有一个executor, 但是executor上面有多个map task, 这样的环境是不是不需要shuffle?</div>2022-03-08</li><br/><li><span>Ebdaoli</span> 👍（3） 💬（1）<div>磊哥，关于 spark shuffle write 阶段有个问题不太理解，①：Maptask的 任务数的并行度由什么来决定的？根据文件大小来切分划分的吗？ ②：为什么最终数据需要进行 sort？合并的方式选择的是 归并排序？</div>2022-03-06</li><br/><li><span>A</span> 👍（3） 💬（2）<div>因rdd得依赖属性shuffle划分了两个stage0和1
+2. 对于评论区AIK的问题，您说shuffle过程不是数据交换，而是数据流转，那意思是在map阶段 所有将要执行reduce task的节点都是空闲的吗（等待map task生成shuffle中间文件）？那他们是不是在这个stage的整个计算过程中都是空闲的？这样的话岂不是没有发挥出集群的最大算力？</p>2021-09-29</li><br/><li><span>钟强</span> 👍（3） 💬（1）<p>如果集群中只有一个executor, 但是executor上面有多个map task, 这样的环境是不是不需要shuffle?</p>2022-03-08</li><br/><li><span>Ebdaoli</span> 👍（3） 💬（1）<p>磊哥，关于 spark shuffle write 阶段有个问题不太理解，①：Maptask的 任务数的并行度由什么来决定的？根据文件大小来切分划分的吗？ ②：为什么最终数据需要进行 sort？合并的方式选择的是 归并排序？</p>2022-03-06</li><br/><li><span>A</span> 👍（3） 💬（2）<p>因rdd得依赖属性shuffle划分了两个stage0和1
 运行stage0的executor产生的数据称作建材，结束后driver继续提交stage1，运行stage1的executor全集群得去拉去各自所需的建材，可以这样理解嘛老师？
 那stage0产生的临时data、index是记录在哪里？如何返回给driver的呢？以及stage1提交时是如何获取的呢？
 目前想到的是重新封装但是又说不过去
 还望老师给条路，自己再去研究一下！
-感谢老师！</div>2022-01-15</li><br/><li><span>猫太太</span> 👍（3） 💬（1）<div>您好，讲的很清楚，看完都有点想去去自己看源码了。这句有点不太理解，可以解释一下么：“Reduce 阶段不同于 Reduce Task 拉取数据的过程，往往也被叫做 Shuffle Read。” 请问shuffle read属于reduce阶段么？reduce task拉取数据的过程不包括在reduce阶段么？reduce task拉取数据的过程不是shuffle read么？reduce阶段有什么事情发生呢？谢谢～</div>2021-12-05</li><br/><li><span>阿狸弟弟的包子店</span> 👍（2） 💬（1）<div>Shuffle算法感觉需要补一补，看评论有hash得，还有sort-base的，还有其他的吗？</div>2022-01-27</li><br/><li><span>实数</span> 👍（2） 💬（1）<div>这个讲的是hashshuffle是吗，那么第二代的sortshuffle相比较如何呢。是不是两代的shuffle都不能保证全局有序啊</div>2021-11-29</li><br/><li><span>啊秋秋秋秋</span> 👍（2） 💬（2）<div>老师您好！请问为什么是reducer从mapper那里拉取数据，而不是mapper把数据push到reducer端呢？我自己的理解是，如果是mapper push的话，传递数据这部分工作主要在mapper端，比如需要存储各个reducer的地址，会给mapper增加workload？但是感觉两种方式都可以，不太清楚为什么MR Spark这种分布式计算模型里都是采用reducer pull，请指点一下！谢谢！！</div>2021-11-11</li><br/><li><span>Neo-dqy</span> 👍（2） 💬（3）<div>老师好，学完这节课我主要有三个问题：
+感谢老师！</p>2022-01-15</li><br/><li><span>猫太太</span> 👍（3） 💬（1）<p>您好，讲的很清楚，看完都有点想去去自己看源码了。这句有点不太理解，可以解释一下么：“Reduce 阶段不同于 Reduce Task 拉取数据的过程，往往也被叫做 Shuffle Read。” 请问shuffle read属于reduce阶段么？reduce task拉取数据的过程不包括在reduce阶段么？reduce task拉取数据的过程不是shuffle read么？reduce阶段有什么事情发生呢？谢谢～</p>2021-12-05</li><br/><li><span>阿狸弟弟的包子店</span> 👍（2） 💬（1）<p>Shuffle算法感觉需要补一补，看评论有hash得，还有sort-base的，还有其他的吗？</p>2022-01-27</li><br/><li><span>实数</span> 👍（2） 💬（1）<p>这个讲的是hashshuffle是吗，那么第二代的sortshuffle相比较如何呢。是不是两代的shuffle都不能保证全局有序啊</p>2021-11-29</li><br/><li><span>啊秋秋秋秋</span> 👍（2） 💬（2）<p>老师您好！请问为什么是reducer从mapper那里拉取数据，而不是mapper把数据push到reducer端呢？我自己的理解是，如果是mapper push的话，传递数据这部分工作主要在mapper端，比如需要存储各个reducer的地址，会给mapper增加workload？但是感觉两种方式都可以，不太清楚为什么MR Spark这种分布式计算模型里都是采用reducer pull，请指点一下！谢谢！！</p>2021-11-11</li><br/><li><span>Neo-dqy</span> 👍（2） 💬（3）<p>老师好，学完这节课我主要有三个问题：
 1. Shuffle Write 过程中，对所有临时文件和内存数据结构中剩余的数据记录做归并排序，这里是按照目标分区的ID进行排序，还是按照value（词频）进行排序的啊？
 2. 除了reduce类型的算子会触发shuffle操作，还有什么别的算子能触发呢？
-3. 既然shuffle操作是不可避免的，那我们又要怎么优化这个操作呢？</div>2021-09-22</li><br/><li><span>GAC·DU</span> 👍（1） 💬（2）<div>中间存储文件，我理解它是一个不用永久存储的临时文件，理论上放到任何位置都可以。但是如果在生成文件这个临界点Executor宕机，存放在&#47;tmp目录下的文件就会丢失，如果存放在正常的目录下就会避免这种问题。还有shuffle write如果是顺序写，选SSD或者HDD硬盘也没什么区别。
+3. 既然shuffle操作是不可避免的，那我们又要怎么优化这个操作呢？</p>2021-09-22</li><br/><li><span>GAC·DU</span> 👍（1） 💬（2）<p>中间存储文件，我理解它是一个不用永久存储的临时文件，理论上放到任何位置都可以。但是如果在生成文件这个临界点Executor宕机，存放在&#47;tmp目录下的文件就会丢失，如果存放在正常的目录下就会避免这种问题。还有shuffle write如果是顺序写，选SSD或者HDD硬盘也没什么区别。
 
 有两个问题想请教老师
 
 第一，您说Reduce Task 通过 index 文件来“定位”属于自己的数据内容和index 文件，是用来标记目标分区所属数据记录的起始索引。那么Reduce Task如何知道从起始索引读取多少个数据为止，是Reduce Task内部还有算法吗？
 
-第二，您说Map 阶段与 Reduce 阶段，通过生产与消费 Shuffle 中间文件的方式，来完成集群范围内的数据交换，我对此处的交换不是很理解，交换不应该是相互的吗，我理解的交换是双方拿出自己的交给对方，比如我在篮子里放一个苹果，您在篮子里放一个梨，我拿到了梨而您拿到了苹果。但是Map和Reduce两者之间Reduce更像是白拿。这里的数据交换能不能理解成数据传递或者数据流转？</div>2021-09-22</li><br/><li><span>Tianchen</span> 👍（0） 💬（1）<div>老师好，想问下公式1的哈希值P，在后续流程中是对应的Map 结构中Reduce Task Partition ID（P0,P1 ,P2）还是index（0,3,7）</div>2022-03-03</li><br/><li><span>小西门</span> 👍（0） 💬（1）<div>老师好，我的问题是：
+第二，您说Map 阶段与 Reduce 阶段，通过生产与消费 Shuffle 中间文件的方式，来完成集群范围内的数据交换，我对此处的交换不是很理解，交换不应该是相互的吗，我理解的交换是双方拿出自己的交给对方，比如我在篮子里放一个苹果，您在篮子里放一个梨，我拿到了梨而您拿到了苹果。但是Map和Reduce两者之间Reduce更像是白拿。这里的数据交换能不能理解成数据传递或者数据流转？</p>2021-09-22</li><br/><li><span>Tianchen</span> 👍（0） 💬（1）<p>老师好，想问下公式1的哈希值P，在后续流程中是对应的Map 结构中Reduce Task Partition ID（P0,P1 ,P2）还是index（0,3,7）</p>2022-03-03</li><br/><li><span>小西门</span> 👍（0） 💬（1）<p>老师好，我的问题是：
 如果计算记录所属那个Reduce Task的算法是一致的话，会不会出现某些exectors中只有单个(k,v)，但是通过算法计算出来的reduce task partition ID是另外一个executor？这样就产生了不必要的网络IO。
 
-我个人猜想是，会不会计算reduce task partition ID是在各map task做完之后，通知到driver，dirver获得了全局信息后，再通知到reduce task不用去shuffle read只有单个(k,v)的executor的shuffle中间文件。</div>2022-02-16</li><br/>
+我个人猜想是，会不会计算reduce task partition ID是在各map task做完之后，通知到driver，dirver获得了全局信息后，再通知到reduce task不用去shuffle read只有单个(k,v)的executor的shuffle中间文件。</p>2022-02-16</li><br/>
 </ul>

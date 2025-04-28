@@ -308,19 +308,19 @@ Network Namespace可以隔离网络设备，ip协议栈，ip路由表，防火�
 
 欢迎你在留言区分享你的收获和疑问。如果这篇文章对你有帮助，也欢迎转发给你的同事和朋友，一起交流探讨。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>莫名</span> 👍（15） 💬（2）<div># nsenter -t &lt;pid&gt; -n bash -c &#39;echo 600 &gt; &#47;proc&#47;sys&#47;net&#47;ipv4&#47;tcp_keepalive_time&#39; （root 用户）
+<li><span>莫名</span> 👍（15） 💬（2）<p># nsenter -t &lt;pid&gt; -n bash -c &#39;echo 600 &gt; &#47;proc&#47;sys&#47;net&#47;ipv4&#47;tcp_keepalive_time&#39; （root 用户）
 $ sudo nsenter -t &lt;pid&gt; -n sudo bash -c &#39;echo 600 &gt; &#47;proc&#47;sys&#47;net&#47;ipv4&#47;tcp_keepalive_time&#39; （非 root 用户）
 
-其中，&lt;pid&gt; 表示容器 init 进程在宿主机上看到的 PID。</div>2020-12-19</li><br/><li><span>谢哈哈</span> 👍（7） 💬（3）<div>宿主机的进入容器网络地址空间通过nsenter --target $(docker inspect -f {.State.Pid}) --net</div>2020-12-19</li><br/><li><span>🐭</span> 👍（4） 💬（1）<div>既然nsenter与docker exec 原理一样，为啥nsenter修改proc&#47;sys&#47;net不会报错无权限呢</div>2021-08-03</li><br/><li><span>aMaMiMoU</span> 👍（4） 💬（2）<div>老师您好，有几个问题能否帮忙解答下，谢谢
+其中，&lt;pid&gt; 表示容器 init 进程在宿主机上看到的 PID。</p>2020-12-19</li><br/><li><span>谢哈哈</span> 👍（7） 💬（3）<p>宿主机的进入容器网络地址空间通过nsenter --target $(docker inspect -f {.State.Pid}) --net</p>2020-12-19</li><br/><li><span>🐭</span> 👍（4） 💬（1）<p>既然nsenter与docker exec 原理一样，为啥nsenter修改proc&#47;sys&#47;net不会报错无权限呢</p>2021-08-03</li><br/><li><span>aMaMiMoU</span> 👍（4） 💬（2）<p>老师您好，有几个问题能否帮忙解答下，谢谢
 1.在&#47;proc&#47;sys&#47;net 的诸多参数里，如何确认哪些是host level 哪些是容器level的呢？
-2.对于host level的这些参数，在启动容器的时候通过sysctl能修改么？如果能修改，是不是相当于同时影响了同host里其他容器的运行时参数呢？</div>2020-12-26</li><br/><li><span>Helios</span> 👍（4） 💬（1）<div>这些问题文档上都没写，还是老师功力高，场景多。
-请教个问题，对于proc文件系统的其他目录容器怎么隔离的呢，比如在容器里面free命令看到的是宿主机的内存。</div>2020-12-22</li><br/><li><span>Geek_c2089d</span> 👍（3） 💬（1）<div>老师，咨询一个问题，就是我有一个容器里面有两个服务，映射出8000和9000的端口，在容器内会出现8000端口的服务访问宿主机ip：9000的端口不通，但是我service iptables stop ; seriver docker stop ;
+2.对于host level的这些参数，在启动容器的时候通过sysctl能修改么？如果能修改，是不是相当于同时影响了同host里其他容器的运行时参数呢？</p>2020-12-26</li><br/><li><span>Helios</span> 👍（4） 💬（1）<p>这些问题文档上都没写，还是老师功力高，场景多。
+请教个问题，对于proc文件系统的其他目录容器怎么隔离的呢，比如在容器里面free命令看到的是宿主机的内存。</p>2020-12-22</li><br/><li><span>Geek_c2089d</span> 👍（3） 💬（1）<p>老师，咨询一个问题，就是我有一个容器里面有两个服务，映射出8000和9000的端口，在容器内会出现8000端口的服务访问宿主机ip：9000的端口不通，但是我service iptables stop ; seriver docker stop ;
 server docker start ; 就可以访问了。一旦reboot就不行了。请问是怎么样的问题
- </div>2021-01-22</li><br/><li><span>乔纳森</span> 👍（2） 💬（1）<div>我们是在 initContainers 中 执行 如下来修改容器内的内核参数的，需要privileged: true
+ </p>2021-01-22</li><br/><li><span>乔纳森</span> 👍（2） 💬（1）<p>我们是在 initContainers 中 执行 如下来修改容器内的内核参数的，需要privileged: true
 mount -o remount rw &#47;proc&#47;sys
-          sysctl -w net.core.somaxconn=65535</div>2021-07-04</li><br/><li><span>Demon.Lee</span> 👍（1） 💬（1）<div>老师，为啥隔离的这些网络参数不和 &#47;sys&#47;fs&#47;cgroup&#47;net_cls,net_prio,cpu,pid 等一样，统一放在&#47;sys&#47;fs&#47;cgroup&#47;下面，而是跟宿主机共用一套 ？</div>2021-07-02</li><br/><li><span>程序员老王</span> 👍（1） 💬（2）<div>网卡是通过端口号来区分栈数据吧，命名空间在这里隔离是网络参数配置吗？还是网卡</div>2020-12-18</li><br/><li><span>小Y</span> 👍（0） 💬（1）<div>来到网络的章节基本不太懂，得多听几遍，多补充补充了😆</div>2022-02-28</li><br/><li><span>莫名</span> 👍（23） 💬（2）<div>docker exec、kubectl exec、ip netns exec、nsenter 等命令原理相同，都是基于 setns 系统调用，切换至指定的一个或多个 namespace(s)。 </div>2020-12-19</li><br/><li><span>麻瓜镇</span> 👍（4） 💬（1）<div>为什么有的参数是从host namespace复制，有的参数直接使用缺省值呢？为什么要这样设计？</div>2021-01-09</li><br/><li><span>Geek_fd78c0</span> 👍（1） 💬（1）<div>想问一下，容器启动时网络是桥接模式，启动以后，如何新增容器中端口到host端口的映射？</div>2022-05-24</li><br/><li><span>没伞的孩子得使劲奔跑</span> 👍（0） 💬（0）<div>Kubernetes 里的allowed-unsafe-sysctls 这个特性，需要1.21版本，老版本可以尝试在initcontainer初始化，但是需要privileged权限
+          sysctl -w net.core.somaxconn=65535</p>2021-07-04</li><br/><li><span>Demon.Lee</span> 👍（1） 💬（1）<p>老师，为啥隔离的这些网络参数不和 &#47;sys&#47;fs&#47;cgroup&#47;net_cls,net_prio,cpu,pid 等一样，统一放在&#47;sys&#47;fs&#47;cgroup&#47;下面，而是跟宿主机共用一套 ？</p>2021-07-02</li><br/><li><span>程序员老王</span> 👍（1） 💬（2）<p>网卡是通过端口号来区分栈数据吧，命名空间在这里隔离是网络参数配置吗？还是网卡</p>2020-12-18</li><br/><li><span>小Y</span> 👍（0） 💬（1）<p>来到网络的章节基本不太懂，得多听几遍，多补充补充了😆</p>2022-02-28</li><br/><li><span>莫名</span> 👍（23） 💬（2）<p>docker exec、kubectl exec、ip netns exec、nsenter 等命令原理相同，都是基于 setns 系统调用，切换至指定的一个或多个 namespace(s)。 </p>2020-12-19</li><br/><li><span>麻瓜镇</span> 👍（4） 💬（1）<p>为什么有的参数是从host namespace复制，有的参数直接使用缺省值呢？为什么要这样设计？</p>2021-01-09</li><br/><li><span>Geek_fd78c0</span> 👍（1） 💬（1）<p>想问一下，容器启动时网络是桥接模式，启动以后，如何新增容器中端口到host端口的映射？</p>2022-05-24</li><br/><li><span>没伞的孩子得使劲奔跑</span> 👍（0） 💬（0）<p>Kubernetes 里的allowed-unsafe-sysctls 这个特性，需要1.21版本，老版本可以尝试在initcontainer初始化，但是需要privileged权限
 
 Docker 的–sysctl 这个学到了.
 
-之前我也一直理解docker 本质是一个进程，有隔离机制，也没想到net内核参数也被隔离了。</div>2023-11-06</li><br/><li><span>静心</span> 👍（0） 💬（0）<div>不仅学习到了docker命令的--sysctl参数的用法，还了解到了其原理，真是酣畅淋漓。</div>2022-02-21</li><br/>
+之前我也一直理解docker 本质是一个进程，有隔离机制，也没想到net内核参数也被隔离了。</p>2023-11-06</li><br/><li><span>静心</span> 👍（0） 💬（0）<p>不仅学习到了docker命令的--sysctl参数的用法，还了解到了其原理，真是酣畅淋漓。</p>2022-02-21</li><br/>
 </ul>

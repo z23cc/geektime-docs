@@ -219,21 +219,21 @@ ping 的输出，可以分为两部分。
 
 欢迎在留言区和我讨论，也欢迎你把这篇文章分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>分清云淡</span> 👍（38） 💬（6）<div>小狗同学问到： 老师，您好 ss —lntp 这个 当session处于listening中 rec-q 确定是 syn的backlog吗？  
-A:  Recv-Q为全连接队列当前使用了多少。 中文资料里这个问题讲得最明白的文章：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;yH3PzGEFopbpA-jw4MythQ</div>2019-03-01</li><br/><li><span>Days</span> 👍（14） 💬（1）<div>老师春节不休息，大赞啊，老师可否讲解一下一个包从网卡接收，发送在内核协议栈的整个流程，这样性能分析的时候，更好的理解数据包阻塞在哪里？</div>2019-02-09</li><br/><li><span>[小狗]</span> 👍（8） 💬（3）<div>老师，您好  ss —lntp  这个  当session处于listening中  rec-q  确定是  syn的backlog吗？  我之前都是当做全队列的长度</div>2019-02-09</li><br/><li><span>code2</span> 👍（5） 💬（1）<div>每期读两遍，看看别人怎么做!</div>2019-02-10</li><br/><li><span>MJ</span> 👍（4） 💬（1）<div>老师，有一事疑惑，希望帮忙解惑。
+<li><span>分清云淡</span> 👍（38） 💬（6）<p>小狗同学问到： 老师，您好 ss —lntp 这个 当session处于listening中 rec-q 确定是 syn的backlog吗？  
+A:  Recv-Q为全连接队列当前使用了多少。 中文资料里这个问题讲得最明白的文章：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;yH3PzGEFopbpA-jw4MythQ</p>2019-03-01</li><br/><li><span>Days</span> 👍（14） 💬（1）<p>老师春节不休息，大赞啊，老师可否讲解一下一个包从网卡接收，发送在内核协议栈的整个流程，这样性能分析的时候，更好的理解数据包阻塞在哪里？</p>2019-02-09</li><br/><li><span>[小狗]</span> 👍（8） 💬（3）<p>老师，您好  ss —lntp  这个  当session处于listening中  rec-q  确定是  syn的backlog吗？  我之前都是当做全队列的长度</p>2019-02-09</li><br/><li><span>code2</span> 👍（5） 💬（1）<p>每期读两遍，看看别人怎么做!</p>2019-02-10</li><br/><li><span>MJ</span> 👍（4） 💬（1）<p>老师，有一事疑惑，希望帮忙解惑。
 
 一台64个千兆端口的交换机，全双工模式，交换容量计算：64*1000*2
 包转发速率计算：64*1.488Mpp
 
 交换容量有个乘以2，为什么包转发速率不需要乘以2？
-（我理解，端口速率1000bps，在全双工模式下，按照双向速率计算，即总速率是2000bps）</div>2019-03-12</li><br/><li><span>zhoufeng</span> 👍（3） 💬（1）<div>老师好，
+（我理解，端口速率1000bps，在全双工模式下，按照双向速率计算，即总速率是2000bps）</p>2019-03-12</li><br/><li><span>zhoufeng</span> 👍（3） 💬（1）<p>老师好，
 “当套接字处于listen状态时，使用ss命令看到的Send-Q表示最大的syn_backlog值”
 但是和&#47;proc&#47;sys&#47;net&#47;ipv4&#47;tcp_max_syn_backlog   查看到的值不一致，是我理解错了吗？
-谢谢</div>2019-05-21</li><br/><li><span>Gaoyc</span> 👍（3） 💬（1）<div>通过ifconfig和ss看到的错误包或丢弃包等的一些错误是累加的嘛？是否可以清空这些错误包信息？</div>2019-02-22</li><br/><li><span>xfan</span> 👍（3） 💬（1）<div>Speed 有的通过ethtool查不到，是什么原因呢，那查不到的话，默认值是多少呢</div>2019-02-11</li><br/><li><span>zhoufeng</span> 👍（2） 💬（1）<div>老师好，再请教一个问题，查看max_syn_backlog值为2048，表示同时最大只能接受2048个请求吗？
+谢谢</p>2019-05-21</li><br/><li><span>Gaoyc</span> 👍（3） 💬（1）<p>通过ifconfig和ss看到的错误包或丢弃包等的一些错误是累加的嘛？是否可以清空这些错误包信息？</p>2019-02-22</li><br/><li><span>xfan</span> 👍（3） 💬（1）<p>Speed 有的通过ethtool查不到，是什么原因呢，那查不到的话，默认值是多少呢</p>2019-02-11</li><br/><li><span>zhoufeng</span> 👍（2） 💬（1）<p>老师好，再请教一个问题，查看max_syn_backlog值为2048，表示同时最大只能接受2048个请求吗？
 # cat &#47;proc&#47;sys&#47;net&#47;ipv4&#47;tcp_max_syn_backlog 
 2048
-</div>2019-05-21</li><br/><li><span>好好学习</span> 👍（2） 💬（1）<div>eth0: flags=4163
-这个什么意思，有点好奇</div>2019-03-09</li><br/><li><span>天草二十六</span> 👍（1） 💬（1）<div>请教下：丢包率，计算客户端程序到IDC机房的，一般使用什么量化工具？</div>2019-10-23</li><br/><li><span>Maxwell</span> 👍（1） 💬（1）<div>centos 6.8执行 sar 命令没有%ifutil,这个指标可以理解为网络利用率吗？</div>2019-03-26</li><br/><li><span>bzadhere</span> 👍（1） 💬（2）<div>netstat -nta  命令看到Listening状态下的Send-Q 值都是0，用man netstat 看到说明和实际情况不一样； 然后用ss -lnt 看到Send-Q  非0，应该怎么理解？
+</p>2019-05-21</li><br/><li><span>好好学习</span> 👍（2） 💬（1）<p>eth0: flags=4163
+这个什么意思，有点好奇</p>2019-03-09</li><br/><li><span>天草二十六</span> 👍（1） 💬（1）<p>请教下：丢包率，计算客户端程序到IDC机房的，一般使用什么量化工具？</p>2019-10-23</li><br/><li><span>Maxwell</span> 👍（1） 💬（1）<p>centos 6.8执行 sar 命令没有%ifutil,这个指标可以理解为网络利用率吗？</p>2019-03-26</li><br/><li><span>bzadhere</span> 👍（1） 💬（2）<p>netstat -nta  命令看到Listening状态下的Send-Q 值都是0，用man netstat 看到说明和实际情况不一样； 然后用ss -lnt 看到Send-Q  非0，应该怎么理解？
 
 [root@localhost ~]# man netstat
 ......
@@ -262,5 +262,5 @@ LISTEN      0      32                             *:21                          
 LISTEN      0      128                            *:22                                         *:*                  
 LISTEN      0      100                    127.0.0.1:25                                         *:*                  
 LISTEN      0      128                           :::22                                        :::*                  
-LISTEN      0      100                          ::1:25                                        :::*  </div>2019-03-07</li><br/><li><span>MJ</span> 👍（1） 💬（1）<div>老师，带宽和吞吐量指标。区分上下行吗，？还是统计总量？</div>2019-02-25</li><br/><li><span>--SNIPER</span> 👍（1） 💬（1）<div>老师好，netstat -anu 输出中：网卡收发队列时不时的会排队500，这种该如何再深入排查下是哪里的问题</div>2019-02-20</li><br/>
+LISTEN      0      100                          ::1:25                                        :::*  </p>2019-03-07</li><br/><li><span>MJ</span> 👍（1） 💬（1）<p>老师，带宽和吞吐量指标。区分上下行吗，？还是统计总量？</p>2019-02-25</li><br/><li><span>--SNIPER</span> 👍（1） 💬（1）<p>老师好，netstat -anu 输出中：网卡收发队列时不时的会排队500，这种该如何再深入排查下是哪里的问题</p>2019-02-20</li><br/>
 </ul>

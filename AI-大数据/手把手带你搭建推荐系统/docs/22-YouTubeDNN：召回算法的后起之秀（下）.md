@@ -381,15 +381,15 @@ def scheduler(self):
 
 欢迎你在留言区与我交流讨论，如果这节课对你有帮助，也欢迎你推荐给朋友一起学习。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>静心</span> 👍（1） 💬（1）<div>有两个问题没弄明白，请老师指点：
+<li><span>静心</span> 👍（1） 💬（1）<p>有两个问题没弄明白，请老师指点：
 1、embedding_dim的大小是如何确定的？
-2、什么时候用离散特征，什么时候用变长特征？</div>2023-09-11</li><br/><li><span>爱极客</span> 👍（1） 💬（2）<div>老师，后面会出一篇课后答疑的文章吗？</div>2023-06-06</li><br/><li><span>alexliu</span> 👍（0） 💬（1）<div>老师，faiss.IndexFlagIP这个应该是faiss.IndexFlatIP吧？另外index.add(n,x)有两个参数，为什么在代码里只有item_embs一个参数？
+2、什么时候用离散特征，什么时候用变长特征？</p>2023-09-11</li><br/><li><span>爱极客</span> 👍（1） 💬（2）<p>老师，后面会出一篇课后答疑的文章吗？</p>2023-06-06</li><br/><li><span>alexliu</span> 👍（0） 💬（1）<p>老师，faiss.IndexFlagIP这个应该是faiss.IndexFlatIP吧？另外index.add(n,x)有两个参数，为什么在代码里只有item_embs一个参数？
 ps：add源码如下：
     def add(self, n, x):
         r&quot;&quot;&quot; default add uses sa_encode&quot;&quot;&quot;
-        return _swigfaiss.IndexFlatCodes_add(self, n, x)</div>2023-06-07</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>YoutubeDNN是拿来就能用吗？类似于工具软件那种，不需要开发。</div>2023-06-06</li><br/><li><span>Emma</span> 👍（1） 💬（0）<div>请问老师，youtubeDNN的排序部分的代码有吗</div>2024-09-29</li><br/><li><span>爱极客</span> 👍（0） 💬（1）<div># 定义模型
+        return _swigfaiss.IndexFlatCodes_add(self, n, x)</p>2023-06-07</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>YoutubeDNN是拿来就能用吗？类似于工具软件那种，不需要开发。</p>2023-06-06</li><br/><li><span>Emma</span> 👍（1） 💬（0）<p>请问老师，youtubeDNN的排序部分的代码有吗</p>2024-09-29</li><br/><li><span>爱极客</span> 👍（0） 💬（1）<p># 定义模型
         model = YoutubeDNN(self.user_feature_columns, self.item_feature_columns, num_sampled=100,
                            user_dnn_hidden_units=(128, 64, self.embedding_dim))  
 
-这个参数 num_sampled=100 在新版的模型API里面是没有的，希望老师解答</div>2024-06-30</li><br/>
+这个参数 num_sampled=100 在新版的模型API里面是没有的，希望老师解答</p>2024-06-30</li><br/>
 </ul>

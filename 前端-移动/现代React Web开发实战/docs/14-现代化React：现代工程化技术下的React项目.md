@@ -503,11 +503,11 @@ npm install -D lint-staged
 
 好了，这节课内容就是这些。“独狼”React工程师，我们下节课不见不散！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Geek_82fd2f</span> 👍（1） 💬（1）<div>在添加ESLint的时候，如果选择Yes也就是使用TS， Does your project use TypeScript? · No &#47; Yes，规则里就不会出现Airbnb代码风格了，请问是不是Airbnb还不支持</div>2022-11-17</li><br/><li><span>huangshan</span> 👍（1） 💬（2）<div>可以补充一下关于turbopack相关的工程化吗？</div>2022-10-29</li><br/><li><span>船长</span> 👍（1） 💬（1）<div>记得想要 Eslint 生效要启动 vscode 中的 eslint 插件。。</div>2022-09-30</li><br/><li><span>DullSword</span> 👍（1） 💬（1）<div>增加NPM 命令lint出错的小伙伴可以试试：
+<li><span>Geek_82fd2f</span> 👍（1） 💬（1）<p>在添加ESLint的时候，如果选择Yes也就是使用TS， Does your project use TypeScript? · No &#47; Yes，规则里就不会出现Airbnb代码风格了，请问是不是Airbnb还不支持</p>2022-11-17</li><br/><li><span>huangshan</span> 👍（1） 💬（2）<p>可以补充一下关于turbopack相关的工程化吗？</p>2022-10-29</li><br/><li><span>船长</span> 👍（1） 💬（1）<p>记得想要 Eslint 生效要启动 vscode 中的 eslint 插件。。</p>2022-09-30</li><br/><li><span>DullSword</span> 👍（1） 💬（1）<p>增加NPM 命令lint出错的小伙伴可以试试：
 
 ```
 &quot;lint&quot;: &quot;eslint \&quot;.&#47;src&#47;**&#47;*.{js,jsx}\&quot;&quot;,
-```</div>2022-09-28</li><br/><li><span>船长</span> 👍（1） 💬（3）<div>3-13 痛点：
+```</p>2022-09-28</li><br/><li><span>船长</span> 👍（1） 💬（3）<p>3-13 痛点：
 没有报错提醒
-没有智能提示，比如在引入 useEffect，浏览器直接报错，原因是没有在顶部 import，这时候还需要手写去引入</div>2022-09-27</li><br/><li><span>百里</span> 👍（0） 💬（0）<div>最近独立负责一个项目，这个课程像及时雨一样，助我成长</div>2023-01-24</li><br/>
+没有智能提示，比如在引入 useEffect，浏览器直接报错，原因是没有在顶部 import，这时候还需要手写去引入</p>2022-09-27</li><br/><li><span>百里</span> 👍（0） 💬（0）<p>最近独立负责一个项目，这个课程像及时雨一样，助我成长</p>2023-01-24</li><br/>
 </ul>

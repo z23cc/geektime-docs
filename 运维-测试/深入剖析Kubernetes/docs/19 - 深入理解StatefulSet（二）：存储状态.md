@@ -273,16 +273,16 @@ hello web-0
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>虎虎❤️</span> 👍（80） 💬（6）<div>老师，由于无法追问，恳请能够回复详细一些。提前谢过了。
+<li><span>虎虎❤️</span> 👍（80） 💬（6）<p>老师，由于无法追问，恳请能够回复详细一些。提前谢过了。
 pvc的使用方式当中，对于由运维人员去创建pv，我始终有些疑问。
 首先，一个pv对应一个pvc。如果实际绑定的pvc小于pv声明的存储大小，会造成存储的浪费吗？
 其次，运维人员事先要创建多少个，以及多大容量的pv呢？因为并不清楚开发人员将来可能用多少1g的,10g的或者100g的pvc。创建的数量或大小不合适，会导致pv不够用。开发还是会来找运维的。
 最后，如果回收方式是retain，那么pvc删除后，原来的pv并不会删除，如果开发人员想重新使用同一块存储，需要重建pv。这带来了很多运维工作。
 所以，手动创建pv的最佳实践是怎样的呢？当然，如果用storage class去动态创建pv可以解决这件事，但是有时我们希望针对namespace创建属于自己的pv来限制存储的使用quota，而不得不用手动创建pv的模式。
-</div>2018-10-05</li><br/><li><span>不知所措</span> 👍（26） 💬（3）<div>老师你好，statefulset 如果 不同的pod ，需要不同的配置，
-比如说 zk集群，每个集群的myid 都是不同的，比如mysql集群每个主机的serverid 也是不同的，这种的怎么处理呢？</div>2018-12-11</li><br/><li><span>silver</span> 👍（18） 💬（4）<div>所以大体是Pod与PVC绑定，PVC与PV绑定，所以完成了Pod与PV的绑定?</div>2018-10-10</li><br/><li><span>Terry Hu</span> 👍（15） 💬（5）<div>由于没有ceph server ，pv用hostPath方式，在master上创建了index.html，pv pvc都创建好了，bound上了，登陆容器后在&#47;usr&#47;share&#47;nginx&#47;html目录下死活找不到index.html，搞了一个小时。突然猛醒原来hostPath指的是worker节点的path......哎，蠢啊</div>2018-11-28</li><br/><li><span>Alery</span> 👍（15） 💬（1）<div>前辈，我有个疑问，我通过deployment创建一个pods，在podTemplate中我声明volume使用persistentVolumeClaim并指定我事先创建pvc name， 这个时候我删除pod， 同样当pod删除的时候并不影响我事先创建的这个pvc，我是不是可以认为deployment这种资源也是能保存存储状态的呢？</div>2018-10-16</li><br/><li><span>Joe Black</span> 👍（14） 💬（1）<div>对于有些应用，比如关系数据库，它保存数据文件的位置必须严格符合POSIX接口，远程文件系统例如NFS对于类似锁定这样的操作支持的不好，即使是sqlite官方文档也不推荐用NFS。这种情况下，数据库应用好像只能用本地硬盘或者iSCSI的存储盘，这不就等同必须把重启的StatefulSet的Pod每次调度到同一个机器上才行吗？因为那个机器硬盘上的文件不会自动传输到其它机器上。是不是可以这么理解？</div>2018-10-14</li><br/><li><span>kitsdk</span> 👍（12） 💬（3）<div>pv对象不会绑定namespace吗？
+</p>2018-10-05</li><br/><li><span>不知所措</span> 👍（26） 💬（3）<p>老师你好，statefulset 如果 不同的pod ，需要不同的配置，
+比如说 zk集群，每个集群的myid 都是不同的，比如mysql集群每个主机的serverid 也是不同的，这种的怎么处理呢？</p>2018-12-11</li><br/><li><span>silver</span> 👍（18） 💬（4）<p>所以大体是Pod与PVC绑定，PVC与PV绑定，所以完成了Pod与PV的绑定?</p>2018-10-10</li><br/><li><span>Terry Hu</span> 👍（15） 💬（5）<p>由于没有ceph server ，pv用hostPath方式，在master上创建了index.html，pv pvc都创建好了，bound上了，登陆容器后在&#47;usr&#47;share&#47;nginx&#47;html目录下死活找不到index.html，搞了一个小时。突然猛醒原来hostPath指的是worker节点的path......哎，蠢啊</p>2018-11-28</li><br/><li><span>Alery</span> 👍（15） 💬（1）<p>前辈，我有个疑问，我通过deployment创建一个pods，在podTemplate中我声明volume使用persistentVolumeClaim并指定我事先创建pvc name， 这个时候我删除pod， 同样当pod删除的时候并不影响我事先创建的这个pvc，我是不是可以认为deployment这种资源也是能保存存储状态的呢？</p>2018-10-16</li><br/><li><span>Joe Black</span> 👍（14） 💬（1）<p>对于有些应用，比如关系数据库，它保存数据文件的位置必须严格符合POSIX接口，远程文件系统例如NFS对于类似锁定这样的操作支持的不好，即使是sqlite官方文档也不推荐用NFS。这种情况下，数据库应用好像只能用本地硬盘或者iSCSI的存储盘，这不就等同必须把重启的StatefulSet的Pod每次调度到同一个机器上才行吗？因为那个机器硬盘上的文件不会自动传输到其它机器上。是不是可以这么理解？</p>2018-10-14</li><br/><li><span>kitsdk</span> 👍（12） 💬（3）<p>pv对象不会绑定namespace吗？
 命令 kubectl -n myns  delete pv --all --include-uninitialized 
-执行完了，所有的pv也进入删除状态，当然因为有其他的pv绑定，没有立即删除。</div>2019-04-16</li><br/><li><span>北卡</span> 👍（12） 💬（1）<div>asdf100的问题应该是：一个集群中可能有很多个pv, pvc是如何找到他对应的pv的?
+执行完了，所有的pv也进入删除状态，当然因为有其他的pv绑定，没有立即删除。</p>2019-04-16</li><br/><li><span>北卡</span> 👍（12） 💬（1）<p>asdf100的问题应该是：一个集群中可能有很多个pv, pvc是如何找到他对应的pv的?
 
 试着回答一下：
 1、 指定了storageClassName的pv, 只有指定了同样storageClassName的pvc才能绑定到它上面。
@@ -290,12 +290,12 @@ pvc的使用方式当中，对于由运维人员去创建pv，我始终有些疑
 3、pvc可以用matchLabels和matchExpressions来指定标签完成更详细的匹配需求。
 4、匹配成功应该还需要一些基本的存储条件吧，比如pvc申请的存储空间肯定不能大于指定的pv.
 
-关于第四点没有验证过，用aws的efs可以动态扩展空间的，好像没有这些限制。请张老师详细解答一下。</div>2018-10-06</li><br/><li><span>LQ</span> 👍（7） 💬（3）<div>在一个 Pod 里面有两个容器， 容器 a 里自己实现一个 fuse filesystem，将远程的文件（比如 hdfs 上的数据）mount 到该容器里，另外一个容器 b 通过什么方式能读取到容器 a 里 mount 的数据呢，通过 PV 吗？有啥解决方案没？</div>2018-10-17</li><br/><li><span>silver</span> 👍（5） 💬（1）<div>如果一个stateful set的pod挂了，PV所在的机子被分配给了其他pod。那当stateful pod重新schedule的时候会不会出现PV所在机器资源不足导致无法schedule的情况？k8s是否针对这种问题有优化?</div>2018-10-10</li><br/><li><span>yuliz</span> 👍（4） 💬（1）<div>storage: 1Gi，表示我想要的 Volume 大小至少是 1 GB；这里是笔误么？1Gi不等于1GB,如果这里是1G应该更符合语景</div>2018-10-10</li><br/><li><span>艾利特-G</span> 👍（3） 💬（2）<div>老师您好，请问下只用Statefulset情况下，能做到指定编号的副本创建pvc，其他副本不创建pvc吗？还是说由Statefulset管理的副本必须有pvc呢？</div>2020-03-06</li><br/><li><span>我来也</span> 👍（3） 💬（3）<div>表示 nginx:1.9.1 里并没有 curl 命令.
+关于第四点没有验证过，用aws的efs可以动态扩展空间的，好像没有这些限制。请张老师详细解答一下。</p>2018-10-06</li><br/><li><span>LQ</span> 👍（7） 💬（3）<p>在一个 Pod 里面有两个容器， 容器 a 里自己实现一个 fuse filesystem，将远程的文件（比如 hdfs 上的数据）mount 到该容器里，另外一个容器 b 通过什么方式能读取到容器 a 里 mount 的数据呢，通过 PV 吗？有啥解决方案没？</p>2018-10-17</li><br/><li><span>silver</span> 👍（5） 💬（1）<p>如果一个stateful set的pod挂了，PV所在的机子被分配给了其他pod。那当stateful pod重新schedule的时候会不会出现PV所在机器资源不足导致无法schedule的情况？k8s是否针对这种问题有优化?</p>2018-10-10</li><br/><li><span>yuliz</span> 👍（4） 💬（1）<p>storage: 1Gi，表示我想要的 Volume 大小至少是 1 GB；这里是笔误么？1Gi不等于1GB,如果这里是1G应该更符合语景</p>2018-10-10</li><br/><li><span>艾利特-G</span> 👍（3） 💬（2）<p>老师您好，请问下只用Statefulset情况下，能做到指定编号的副本创建pvc，其他副本不创建pvc吗？还是说由Statefulset管理的副本必须有pvc呢？</p>2020-03-06</li><br/><li><span>我来也</span> 👍（3） 💬（3）<p>表示 nginx:1.9.1 里并没有 curl 命令.
 通过 for i in 0 1; do kubectl exec -it web-$i -- curl localhost; done 无法获取到期待的结果.
 通过
 不知道其他小伙伴尝试过没有.
 当然最终通过其他方式 比如之前的:
 kubectl run -i --tty --image busybox:1.28.4 dns-test --restart=Never --rm &#47;bin&#47;sh
 使用 wget 也是可以验证.
-</div>2018-10-13</li><br/><li><span>Geek_dn82ci</span> 👍（2） 💬（1）<div>请问pvc声明的存储容量是多个pod副本share还是每一个独立的存储容量？</div>2018-11-11</li><br/><li><span>宋晓明</span> 👍（1） 💬（1）<div>我怎么感觉PV与PVC的关系就像LVM(逻辑卷管理)中的PV和VG的关系如出一辙呢？  也就是说PVC是在PV那么大的地盘里划出一小部分(PVC)供用户读写的，不知道理解的对不对？</div>2018-11-08</li><br/>
+</p>2018-10-13</li><br/><li><span>Geek_dn82ci</span> 👍（2） 💬（1）<p>请问pvc声明的存储容量是多个pod副本share还是每一个独立的存储容量？</p>2018-11-11</li><br/><li><span>宋晓明</span> 👍（1） 💬（1）<p>我怎么感觉PV与PVC的关系就像LVM(逻辑卷管理)中的PV和VG的关系如出一辙呢？  也就是说PVC是在PV那么大的地盘里划出一小部分(PVC)供用户读写的，不知道理解的对不对？</p>2018-11-08</li><br/>
 </ul>

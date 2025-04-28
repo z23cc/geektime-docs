@@ -200,7 +200,7 @@ telnet 实例IP 实例端口
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你分享给你的朋友或同事。我们下节课见。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>杨逸林</span> 👍（10） 💬（2）<div>语音中有一个和文本内容不符合的地方，就是那个“正常的 0 字符”。语音是正常的空字符，文本就是前面引号的部分，是哪个对的呢，还是都对的？</div>2020-10-25</li><br/><li><span>谢小路</span> 👍（3） 💬（1）<div>RESP 也可以通过抓包的方式来具体查看格式，使用 tcpdump 进行抓包得到的文件，使用 wireshark 进行查看，也比较直观。</div>2020-11-19</li><br/><li><span>Kaito</span> 👍（125） 💬（3）<div>key为mylist，使用LPUSH写入是1、2、3.3、4、hello，执行LRANGE mylist 0 4命令时，实例返回给客户端的编码结果是怎样的？
+<li><span>杨逸林</span> 👍（10） 💬（2）<p>语音中有一个和文本内容不符合的地方，就是那个“正常的 0 字符”。语音是正常的空字符，文本就是前面引号的部分，是哪个对的呢，还是都对的？</p>2020-10-25</li><br/><li><span>谢小路</span> 👍（3） 💬（1）<p>RESP 也可以通过抓包的方式来具体查看格式，使用 tcpdump 进行抓包得到的文件，使用 wireshark 进行查看，也比较直观。</p>2020-11-19</li><br/><li><span>Kaito</span> 👍（125） 💬（3）<p>key为mylist，使用LPUSH写入是1、2、3.3、4、hello，执行LRANGE mylist 0 4命令时，实例返回给客户端的编码结果是怎样的？
 
 测试结果如下，写入命令：
 
@@ -246,9 +246,9 @@ Redis 6.0重新设计RESP 3，比较重要的原因就是RESP 2的语义能力�
 
 4、消息本身包含格式：发送方在消息中就设置了开始和结束标识，接收方根据这个标识截取出中间的数据。例如&lt;start&gt;msg data&lt;end&gt;。
 
-如果我们在设计一个通信协议时，可以作为参考，根据自己的场景进行选择。</div>2020-10-23</li><br/><li><span>悟空聊架构</span> 👍（3） 💬（0）<div>文中最后的小结完美总结了本篇的主要内容。这篇可以先看小结内容，然后再通读全文，这样整体脉络会比较清晰。
+如果我们在设计一个通信协议时，可以作为参考，根据自己的场景进行选择。</p>2020-10-23</li><br/><li><span>悟空聊架构</span> 👍（3） 💬（0）<p>文中最后的小结完美总结了本篇的主要内容。这篇可以先看小结内容，然后再通读全文，这样整体脉络会比较清晰。
 另外文中的一张总结图很棒，一图胜千言。
-</div>2021-05-30</li><br/><li><span>escray</span> 👍（1） 💬（0）<div>在 macOS 上默认似乎是没有 telnet 的，放狗搜索，似乎是可以安装一个 telnet，也可以使用 ssh 或者 nc 工具。
+</p>2021-05-30</li><br/><li><span>escray</span> 👍（1） 💬（0）<p>在 macOS 上默认似乎是没有 telnet 的，放狗搜索，似乎是可以安装一个 telnet，也可以使用 ssh 或者 nc 工具。
 
 我尝试使用 ssh 被拒绝了，然后使用 nc 连上了阿里云的 Redis 实例。
 
@@ -338,7 +338,7 @@ $1
 c
 $1
 3
-```</div>2021-03-22</li><br/><li><span>Geek_zbvt62</span> 👍（1） 💬（0）<div>用旧的客户端连接6没看到返回合适有变化，2和3的兼容是服务端做的嘛？</div>2021-02-05</li><br/><li><span>GJXAIOU</span> 👍（0） 💬（0）<div>MAC  ARM 验证示例：
+```</p>2021-03-22</li><br/><li><span>Geek_zbvt62</span> 👍（1） 💬（0）<p>用旧的客户端连接6没看到返回合适有变化，2和3的兼容是服务端做的嘛？</p>2021-02-05</li><br/><li><span>GJXAIOU</span> 👍（0） 💬（0）<p>MAC  ARM 验证示例：
 ```shell
 brew install telnet
 ```
@@ -357,7 +357,7 @@ GET KEY
 $3
 123
 ```
-```</div>2024-08-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<div>lpush mylist 1 2 3.3 4 hello
+```</p>2024-08-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<p>lpush mylist 1 2 3.3 4 hello
 :5                                                                                                                                
 
 lrange mylist 0 4
@@ -371,11 +371,11 @@ $3
 $1
 2
 $1
-1</div>2023-02-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<div>在 telnet 中，向 Redis 实例发送用 RESP 2 协议编写的命令操作，为什么报错？
+1</p>2023-02-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<p>在 telnet 中，向 Redis 实例发送用 RESP 2 协议编写的命令操作，为什么报错？
 
 *2\r\n$3\r\nGET\r\n$7\r\ntestkey\r\n
 
--ERR Protocol error: invalid multibulk length</div>2023-02-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<div>字符串长度达到多长时不使用简单字符串类型，而使用长字符串类型进行编码呢？</div>2023-02-18</li><br/><li><span>NULL</span> 👍（0） 💬（0）<div>Redis Serialization Protocol (RESP) Specifications
-https:&#47;&#47;github.com&#47;redis&#47;redis-specifications&#47;tree&#47;master&#47;protocol</div>2022-09-10</li><br/><li><span>少</span> 👍（0） 💬（0）<div>Redis6 默认也是支持RESP2的</div>2021-11-08</li><br/><li><span>L-an</span> 👍（0） 💬（0）<div>老师，HSET testhash a 1 b 2 c 3  这个命令是不是有问题呢？
-长字符串类型返回长度之后应该有换行吧，应该是： $9\r\ntestvalue\r\n</div>2021-08-24</li><br/><li><span>dfuru</span> 👍（0） 💬（0）<div>*5\r\n:1\r\n:2\r\n,3.3\r\n:4\r\n$5\r\nhello\r\n</div>2020-11-05</li><br/>
+-ERR Protocol error: invalid multibulk length</p>2023-02-18</li><br/><li><span>Geek_LIAO</span> 👍（0） 💬（0）<p>字符串长度达到多长时不使用简单字符串类型，而使用长字符串类型进行编码呢？</p>2023-02-18</li><br/><li><span>NULL</span> 👍（0） 💬（0）<p>Redis Serialization Protocol (RESP) Specifications
+https:&#47;&#47;github.com&#47;redis&#47;redis-specifications&#47;tree&#47;master&#47;protocol</p>2022-09-10</li><br/><li><span>少</span> 👍（0） 💬（0）<p>Redis6 默认也是支持RESP2的</p>2021-11-08</li><br/><li><span>L-an</span> 👍（0） 💬（0）<p>老师，HSET testhash a 1 b 2 c 3  这个命令是不是有问题呢？
+长字符串类型返回长度之后应该有换行吧，应该是： $9\r\ntestvalue\r\n</p>2021-08-24</li><br/><li><span>dfuru</span> 👍（0） 💬（0）<p>*5\r\n:1\r\n:2\r\n,3.3\r\n:4\r\n$5\r\nhello\r\n</p>2020-11-05</li><br/>
 </ul>

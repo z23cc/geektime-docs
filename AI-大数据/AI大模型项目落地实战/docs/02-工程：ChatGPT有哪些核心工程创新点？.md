@@ -316,7 +316,7 @@ ChatGPT有1750亿参数，往往写做175b，1b=10亿参数。
 
 [&gt;&gt;戳此加入课程交流群](https://jsj.top/f/hm26hN)
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>张申傲</span> 👍（2） 💬（1）<div>业内一直有一些吐槽的声音，说OpenAI就是“大力出奇迹”，只会用更大规模的参数和训练数据来卷大模型，但是实际上，OpenAI在大模型的pre-training、fine-tuning、in-content-learning和AI工程等领域，做出了非常多创新的成果！</div>2024-08-21</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<div>copilot may improve 33% coding efficiency; but coding is only a part of software development lifecycle. although it can help write test case and some documentation, software engineer still need to spend lots of time on design, implementation, integration etc.. </div>2024-08-15</li><br/><li><span>YOUNG</span> 👍（0） 💬（1）<div>第一次学习还在更新中的可成，希望自己能坚持下去</div>2024-08-27</li><br/><li><span>vincent</span> 👍（0） 💬（1）<div>大模型编程不靠谱我觉得还是因为模型对项目细节需求理解方面</div>2024-08-14</li><br/><li><span>黄海洲</span> 👍（0） 💬（1）<div>讲得太好了，追更追更~</div>2024-08-13</li><br/><li><span>Ethan New</span> 👍（0） 💬（3）<div>ChatGPT预训练阶段怎么是有监督学习？没有搞错吧</div>2024-08-09</li><br/><li><span>石云升</span> 👍（0） 💬（1）<div>追更，第一时间看完。看完后更好的理解了大模型。然后，边睡边思考。</div>2024-08-09</li><br/><li><span>sami</span> 👍（2） 💬（0）<div>
+<li><span>张申傲</span> 👍（2） 💬（1）<p>业内一直有一些吐槽的声音，说OpenAI就是“大力出奇迹”，只会用更大规模的参数和训练数据来卷大模型，但是实际上，OpenAI在大模型的pre-training、fine-tuning、in-content-learning和AI工程等领域，做出了非常多创新的成果！</p>2024-08-21</li><br/><li><span>binzhang</span> 👍（1） 💬（1）<p>copilot may improve 33% coding efficiency; but coding is only a part of software development lifecycle. although it can help write test case and some documentation, software engineer still need to spend lots of time on design, implementation, integration etc.. </p>2024-08-15</li><br/><li><span>YOUNG</span> 👍（0） 💬（1）<p>第一次学习还在更新中的可成，希望自己能坚持下去</p>2024-08-27</li><br/><li><span>vincent</span> 👍（0） 💬（1）<p>大模型编程不靠谱我觉得还是因为模型对项目细节需求理解方面</p>2024-08-14</li><br/><li><span>黄海洲</span> 👍（0） 💬（1）<p>讲得太好了，追更追更~</p>2024-08-13</li><br/><li><span>Ethan New</span> 👍（0） 💬（3）<p>ChatGPT预训练阶段怎么是有监督学习？没有搞错吧</p>2024-08-09</li><br/><li><span>石云升</span> 👍（0） 💬（1）<p>追更，第一时间看完。看完后更好的理解了大模型。然后，边睡边思考。</p>2024-08-09</li><br/><li><span>sami</span> 👍（2） 💬（0）<p>
 ### 金字塔结构
 1. ChatGPT核心工程创新
    1.1 Transformer模型
@@ -362,5 +362,5 @@ ChatGPT有1750亿参数，往往写做175b，1b=10亿参数。
 
 专业解释：在预训练模型基础上，使用特定任务的数据集进行进一步训练，以获得专业能力。
 
-生活类比：如果说预训练是上完高中，那么模型微调就像上大学选择专业。例如，给模型&quot;喂&quot;大量翻译数据，就能让它成为翻译高手；输入大量编程代码，它就能成为编程高手。</div>2024-08-16</li><br/>
+生活类比：如果说预训练是上完高中，那么模型微调就像上大学选择专业。例如，给模型&quot;喂&quot;大量翻译数据，就能让它成为翻译高手；输入大量编程代码，它就能成为编程高手。</p>2024-08-16</li><br/>
 </ul>

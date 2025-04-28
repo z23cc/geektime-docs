@@ -218,7 +218,7 @@ int main(int argc, char **argv) {
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>拂尘</span> 👍（52） 💬（3）<div>我一直很好奇，为啥说select函数对fd有1024的限制，找了点资料共勉：
+<li><span>拂尘</span> 👍（52） 💬（3）<p>我一直很好奇，为啥说select函数对fd有1024的限制，找了点资料共勉：
 首先，man select，搜索FD_SETSIZE会看到如下的内容
 An fd_set is a fixed size buffer. Executing FD_CLR() or FD_SET() with a value of fd that is negative or is equal to or larger than FD_SETSIZE will result in undefined behavior. Moreover, POSIX requires fd to be a valid file descriptor.
 其中最关键的是FD_SETSIZE，是在bitmap位图运算的时候会受到他的影响
@@ -229,9 +229,9 @@ typesizes.h头文件有如下定义：
 
 由此，终于看到了1024的准确限制。
 
-同时man里也说明了一个限制，不是0-1023的fd会导致未定义的行为。</div>2020-02-29</li><br/><li><span>Keep-Moving</span> 👍（16） 💬（9）<div>allreads = {0, 3};
+同时man里也说明了一个限制，不是0-1023的fd会导致未定义的行为。</p>2020-02-29</li><br/><li><span>Keep-Moving</span> 👍（16） 💬（9）<p>allreads = {0, 3};
 老师，这一步是怎么实现的？没看出来
-</div>2019-09-23</li><br/><li><span>无名</span> 👍（14） 💬（4）<div>对于套接字可写状态中说的：套接字发送缓冲区足够大，怎么样算足够大呢？</div>2019-11-04</li><br/><li><span>钱</span> 👍（12） 💬（5）<div>1：I&#47;O 多路复用的设计初衷就是解决这样的场景，把标准输入、套接字等都看做 I&#47;O 的一路，多路复用的意思，就是在任何一路 I&#47;O 有“事件”发生的情况下，通知应用程序去处理相应的 I&#47;O 事件，这样我们的程序就变成了“多面手”，在同一时刻仿佛可以处理多个 I&#47;O 事件。
+</p>2019-09-23</li><br/><li><span>无名</span> 👍（14） 💬（4）<p>对于套接字可写状态中说的：套接字发送缓冲区足够大，怎么样算足够大呢？</p>2019-11-04</li><br/><li><span>钱</span> 👍（12） 💬（5）<p>1：I&#47;O 多路复用的设计初衷就是解决这样的场景，把标准输入、套接字等都看做 I&#47;O 的一路，多路复用的意思，就是在任何一路 I&#47;O 有“事件”发生的情况下，通知应用程序去处理相应的 I&#47;O 事件，这样我们的程序就变成了“多面手”，在同一时刻仿佛可以处理多个 I&#47;O 事件。
 2：select 函数就是这样一种常见的 I&#47;O 多路复用技术，使用 select 函数，通知内核挂起进程，当一个或多个 I&#47;O 事件发生后，控制权返还给应用程序，由应用程序进行 I&#47;O 事件的处理。
 
 int select(int maxfd, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);
@@ -250,22 +250,22 @@ timeout设置成不同的值，会有不同的可能：
 内核通知我们套接字可以往里写了，使用 write 函数就不会阻塞。
 
 读了几遍，感觉还是没有抓住核心，所以，就将文中的要点摘录下来。
-对IO多路复用的大概理解是，通过select函数去监听一组文件描述符，如果有事件就绪就交给应用程序去做对应的处理。</div>2019-11-24</li><br/><li><span>无名</span> 👍（11） 💬（1）<div>size_t rt = write(socket_fd, send_line, strlen(send_line));
+对IO多路复用的大概理解是，通过select函数去监听一组文件描述符，如果有事件就绪就交给应用程序去做对应的处理。</p>2019-11-24</li><br/><li><span>无名</span> 👍（11） 💬（1）<p>size_t rt = write(socket_fd, send_line, strlen(send_line));
 if (rt &lt; 0) {
      error(1, errno, &quot;write failed &quot;);
  }
-这个代码中有错吧，应该将size_t改为sszie_t，size_t为unsigned long，这样错误-1被转换了。</div>2019-09-27</li><br/><li><span>乔丹</span> 👍（10） 💬（1）<div>老师，两个疑问：
+这个代码中有错吧，应该将size_t改为sszie_t，size_t为unsigned long，这样错误-1被转换了。</p>2019-09-27</li><br/><li><span>乔丹</span> 👍（10） 💬（1）<p>老师，两个疑问：
 1. 为什么socket_fd一定是3呢？ 
 2. 如果socket_fd = 2000, 那么传入select函数的值就是2001了， 这样不是大于1024了吗？
-这个点我没有想通。</div>2020-12-20</li><br/><li><span>awmthink</span> 👍（7） 💬（1）<div>老师，哪种场景下需要多路复用　“写描述符”　呢？ 什么时候能写应用程序不知道吗？</div>2020-04-16</li><br/><li><span>莫珣</span> 👍（7） 💬（2）<div>我有些疑问，select的FD数组大小默认是1024，但是Linux的文件描述符大小一定不是1024，假设现在使用ulimit将一个进程可以打开的文件数设置成了65535，那么大于1024的文件描述符怎么加到FD数组中去呢，如果按照文本里说的，文件描述符代表数组下标的话不就加不进去了？
+这个点我没有想通。</p>2020-12-20</li><br/><li><span>awmthink</span> 👍（7） 💬（1）<p>老师，哪种场景下需要多路复用　“写描述符”　呢？ 什么时候能写应用程序不知道吗？</p>2020-04-16</li><br/><li><span>莫珣</span> 👍（7） 💬（2）<p>我有些疑问，select的FD数组大小默认是1024，但是Linux的文件描述符大小一定不是1024，假设现在使用ulimit将一个进程可以打开的文件数设置成了65535，那么大于1024的文件描述符怎么加到FD数组中去呢，如果按照文本里说的，文件描述符代表数组下标的话不就加不进去了？
 
 第二个问题，套接字有两个属性，接收低水位线和发送低水位线，当接收缓冲区中待接收的字节数大于接收低水位线，一个可读事件产生，那么如果永远都不能达到接收低水位线呢？
-</div>2019-09-23</li><br/><li><span>нáпの゛</span> 👍（5） 💬（2）<div>第一道题，理解管道也是文件，往管道输入数据和输出数据对应可读可写的就绪条件。
-第二道题，我理解fd_set本身是数组，如果不传入描述字基数，无法得知fd_set的具体大小，应该是无法进行遍历操作的。</div>2020-09-01</li><br/><li><span>rongyefeng</span> 👍（4） 💬（1）<div>“第一种是套接字发送缓冲区足够大，如果我们使用非阻塞套接字进行 write 操作，将不会被阻塞，直接返回。”
-老师，请问这里是不是应该写成“如果我们使用阻塞套接字进行write操作......”才对？</div>2020-05-19</li><br/><li><span>麻雀</span> 👍（4） 💬（1）<div>您好，
+</p>2019-09-23</li><br/><li><span>нáпの゛</span> 👍（5） 💬（2）<p>第一道题，理解管道也是文件，往管道输入数据和输出数据对应可读可写的就绪条件。
+第二道题，我理解fd_set本身是数组，如果不传入描述字基数，无法得知fd_set的具体大小，应该是无法进行遍历操作的。</p>2020-09-01</li><br/><li><span>rongyefeng</span> 👍（4） 💬（1）<p>“第一种是套接字发送缓冲区足够大，如果我们使用非阻塞套接字进行 write 操作，将不会被阻塞，直接返回。”
+老师，请问这里是不是应该写成“如果我们使用阻塞套接字进行write操作......”才对？</p>2020-05-19</li><br/><li><span>麻雀</span> 👍（4） 💬（1）<p>您好，
 第一，想问下select是不是能够在处理数据的同时继续轮询（监听）是否有新的套接字来到，它的内部是不是多线程呢？因为accept就是因为单线程在处理数据时，不能对这段时间内到来的套接字进行监听。 
-第二，FD_SET它是一个unsigned long数组，那么它怎么实现Bitmap，只是对数组的每个元素例如fd_set[10]对文件描述符为10的套接字来数据的时候设置为1吗？</div>2019-12-30</li><br/><li><span>Joker</span> 👍（3） 💬（1）<div>小明原来只在一个家书店里等着，后来发现等着无聊，回家，然后在去书店等；后来发现别的书店，索性就好几家一起问，问了这个去下一家，看看哪家书到了，就先买哪一家的。</div>2020-04-17</li><br/><li><span>打奥特曼的小怪兽</span> 👍（3） 💬（1）<div>关于 FD_SET() 函数，debug看了下内存结构，{0,3} 如果设置了，实际上存储的是 2^0 + 2^3 = 9,并不会像图示的在每个位置上设置1。</div>2019-11-06</li><br/><li><span>imsunv</span> 👍（2） 💬（2）<div>内核通知我们套接字可以往里写了，使用 write 函数就不会阻塞 。
-那么如果写的内容超过了 缓冲区的大小，会阻塞么</div>2020-08-09</li><br/><li><span>小仙女</span> 👍（2） 💬（1）<div>int select(int maxfd, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);
+第二，FD_SET它是一个unsigned long数组，那么它怎么实现Bitmap，只是对数组的每个元素例如fd_set[10]对文件描述符为10的套接字来数据的时候设置为1吗？</p>2019-12-30</li><br/><li><span>Joker</span> 👍（3） 💬（1）<p>小明原来只在一个家书店里等着，后来发现等着无聊，回家，然后在去书店等；后来发现别的书店，索性就好几家一起问，问了这个去下一家，看看哪家书到了，就先买哪一家的。</p>2020-04-17</li><br/><li><span>打奥特曼的小怪兽</span> 👍（3） 💬（1）<p>关于 FD_SET() 函数，debug看了下内存结构，{0,3} 如果设置了，实际上存储的是 2^0 + 2^3 = 9,并不会像图示的在每个位置上设置1。</p>2019-11-06</li><br/><li><span>imsunv</span> 👍（2） 💬（2）<p>内核通知我们套接字可以往里写了，使用 write 函数就不会阻塞 。
+那么如果写的内容超过了 缓冲区的大小，会阻塞么</p>2020-08-09</li><br/><li><span>小仙女</span> 👍（2） 💬（1）<p>int select(int maxfd, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);
 这里的fd_set 是什么结构
 
 0:标准输入
@@ -274,5 +274,5 @@ if (rt &lt; 0) {
 3：socket
 
 是这样吗？？
-</div>2020-07-23</li><br/>
+</p>2020-07-23</li><br/>
 </ul>

@@ -104,6 +104,6 @@ public class ResourceServlet extends HttpServlet {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;7</div>2022-06-28</li><br/><li><span>张铁林</span> 👍（0） 💬（0）<div>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-restful
-小步提交</div>2022-06-23</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>代码 https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-framework&#47;tree&#47;7</p>2022-06-28</li><br/><li><span>张铁林</span> 👍（0） 💬（0）<p>https:&#47;&#47;github.com&#47;vfbiby&#47;tdd-restful
+小步提交</p>2022-06-23</li><br/>
 </ul>

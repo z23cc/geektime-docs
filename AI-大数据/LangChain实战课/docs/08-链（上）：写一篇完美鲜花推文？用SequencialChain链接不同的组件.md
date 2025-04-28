@@ -352,11 +352,11 @@ for flower, price in zip(flowers, prices):
 1. GitHub上各种各样的[链](https://github.com/langchain-ai/langchain/tree/master/libs/langchain/langchain/chains)
 2. 代码，[LLMChain](https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/chains/llm.py) 的实现细节
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>在路上</span> 👍（9） 💬（1）<div>Chain有三个能力，有状态，可观测，可组合。
+<li><span>在路上</span> 👍（9） 💬（1）<p>Chain有三个能力，有状态，可观测，可组合。
 有状态：Chain类定义了memory: Optional[BaseMemory]成员变量，记录了chain执行过程的状态。调用chain._call(inputs)可得到输出对象outputs，之后会调用chain.prep_outputs(inputs, outputs)加输入和输出对象成对放入memory对象。
 可观测：Chain类定义了callbacks: Callbacks成员变量，在chain执行过程中回调on_xxx()方法。
-可组合：比如SequentialChain类定义了chains: List[Chain]成员变量，会遍历chains列表调用，将初始输入inputs和已调用的chain的outputs合并到一个字典，作为当前chain的inputs，具体可阅读SequentialChain._call()。</div>2023-09-21</li><br/><li><span>Nikola</span> 👍（2） 💬（1）<div>上面的例子是不是也可以用思维链来实现？这样可以只调用一次模型。
-思维链和langChain的chain组件的使用场景上有区别？</div>2023-10-03</li><br/><li><span>在路上</span> 👍（2） 💬（2）<div># -*- coding: utf-8 -*-
+可组合：比如SequentialChain类定义了chains: List[Chain]成员变量，会遍历chains列表调用，将初始输入inputs和已调用的chain的outputs合并到一个字典，作为当前chain的inputs，具体可阅读SequentialChain._call()。</p>2023-09-21</li><br/><li><span>Nikola</span> 👍（2） 💬（1）<p>上面的例子是不是也可以用思维链来实现？这样可以只调用一次模型。
+思维链和langChain的chain组件的使用场景上有区别？</p>2023-10-03</li><br/><li><span>在路上</span> 👍（2） 💬（2）<p># -*- coding: utf-8 -*-
 import os
 
 # 设置网络代理
@@ -409,13 +409,13 @@ for flower, price in zip(flowers, prices):
         &quot;price&quot;: price
     })
     print(result)
-</div>2023-09-21</li><br/><li><span>悟尘</span> 👍（0） 💬（2）<div>from langchain import PromptTemplate, OpenAI, LLMChain 
+</p>2023-09-21</li><br/><li><span>悟尘</span> 👍（0） 💬（2）<p>from langchain import PromptTemplate, OpenAI, LLMChain 
 这行代码，为什么会有warning呢？
 换成下面的import后，就没有告警了
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
-</div>2023-11-09</li><br/><li><span>一面湖水</span> 👍（0） 💬（1）<div>为什么生成的文案不完整呢？看起来是被截断了。</div>2023-10-17</li><br/><li><span>赤色闪电</span> 👍（0） 💬（2）<div>老师，您好！在文中构造顺序链的过程中，chains=[introduction_chain, review_chain, social_post_chain]中的social_post_chain是从哪里定义的？</div>2023-09-21</li><br/><li><span>.。。。</span> 👍（0） 💬（1）<div>老师，您好！学习了langchain后，实现了咱们课程中讲的case,但是有个疑问请假下，通过langchain框架调用的模型，如何对正在运行的模型进行停止呢？</div>2023-09-21</li><br/><li><span>冬青</span> 👍（2） 💬（0）<div>今日加更，快冲快冲！！！</div>2023-09-21</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<div># 导入LangChain
+</p>2023-11-09</li><br/><li><span>一面湖水</span> 👍（0） 💬（1）<p>为什么生成的文案不完整呢？看起来是被截断了。</p>2023-10-17</li><br/><li><span>赤色闪电</span> 👍（0） 💬（2）<p>老师，您好！在文中构造顺序链的过程中，chains=[introduction_chain, review_chain, social_post_chain]中的social_post_chain是从哪里定义的？</p>2023-09-21</li><br/><li><span>.。。。</span> 👍（0） 💬（1）<p>老师，您好！学习了langchain后，实现了咱们课程中讲的case,但是有个疑问请假下，通过langchain框架调用的模型，如何对正在运行的模型进行停止呢？</p>2023-09-21</li><br/><li><span>冬青</span> 👍（2） 💬（0）<p>今日加更，快冲快冲！！！</p>2023-09-21</li><br/><li><span>yanyu-xin</span> 👍（1） 💬（0）<p># 导入LangChain
 from langchain import LLMChain 
 # 导入LangChain中的提示模板
 from langchain import PromptTemplate
@@ -463,10 +463,10 @@ llm_chain = LLMChain( # 创建链
     prompt=prompt,
     output_parser=output_parser) 
 result = llm_chain.apply(input_list)      # 运行链
-print(result)</div>2024-07-27</li><br/><li><span>eagle</span> 👍（1） 💬（1）<div>LangChainDeprecationWarning: The class `LLMChain` was deprecated in LangChain 0.1.17 and will be removed in 0.3.0. Use RunnableSequence, e.g., `prompt | llm` instead.</div>2024-07-13</li><br/><li><span>刘双荣</span> 👍（0） 💬（0）<div>多个提示链完成完整的业务生成</div>2024-09-18</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第8讲打卡~</div>2024-07-13</li><br/><li><span>黎楚萱</span> 👍（0） 💬（0）<div>为什么我的result会把所有的prompt都拼接在一起？有谁遇到同样的情况吗
+print(result)</p>2024-07-27</li><br/><li><span>eagle</span> 👍（1） 💬（1）<p>LangChainDeprecationWarning: The class `LLMChain` was deprecated in LangChain 0.1.17 and will be removed in 0.3.0. Use RunnableSequence, e.g., `prompt | llm` instead.</p>2024-07-13</li><br/><li><span>刘双荣</span> 👍（0） 💬（0）<p>多个提示链完成完整的业务生成</p>2024-09-18</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第8讲打卡~</p>2024-07-13</li><br/><li><span>黎楚萱</span> 👍（0） 💬（0）<p>为什么我的result会把所有的prompt都拼接在一起？有谁遇到同样的情况吗
 我的输出是这样的：
 introduction：\n你是一个植物学家，给定花的名称和类型，你需要为这种花写一个100字左右的介绍。\n花名：玫瑰\n颜色：red\n植物学家：这是关于上述花的介绍：\n玫瑰是一种美丽的花卉，通常被种植在花园或庭院中。它们通常有红色的花朵，通常有五到六片花瓣。玫瑰花的花瓣通常有五到六片，它们通常有红色的花粉，这使得它们成为一种非常受欢迎的花卉。玫瑰花通常需要充足的阳光和水分，以保持其健康和美丽。
 review:\n你是一个鲜花评论家，给定一种花的介绍，你需要为这种花写一个200字左右的评论。\n鲜花介绍：\n\n你是一个植物学家，给定花的名称和类型，你需要为这种花写一个100字左右的介绍。\n花名：玫瑰\n颜色：red\n植物学家：这是关于上述花的介绍：\n玫瑰是一种美丽的花卉，通常被种植在花园或庭院中。它们通常有红色的花朵，通常有五到六片花瓣。玫瑰花的花瓣通常有五到六片，它们通常有红色的花粉，这使得它们成为一种非常受欢迎的花卉。玫瑰花通常需要充足的阳光和水分，以保持其健康和美丽。\n花评人对上述花的评论：\n玫瑰是一种非常美丽的花卉，它们通常有红色的花朵，通常有五到六片花瓣。玫瑰花的花瓣通常有五到六片，它们通常有红色的花粉，这使得它们成为一种非常受欢迎的花卉。玫瑰花通常需要充足的阳光和水分，以保持其健康和美丽。
 ...
-</div>2024-03-07</li><br/>
+</p>2024-03-07</li><br/>
 </ul>

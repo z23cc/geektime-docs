@@ -604,7 +604,7 @@ VBA数组拼接字符串的工作，我们也是让ChatGPT指导我们做的
 
 最近有一个很火的新的代码编辑器，叫做cursor.so。它背后也是GPT的模型，能够快速根据你输入的需求描述生成Python和Typescript代码。如果你没有订阅GitHub Copilot，也可以去尝试一下这个应用。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Toni</span> 👍（8） 💬（1）<div>试着在 ChatGPT 的帮助下写代码。为了验证结果，选用了第9课中的题目&quot;让 AI 生成实验数据&quot;，过程如下。
+<li><span>Toni</span> 👍（8） 💬（1）<p>试着在 ChatGPT 的帮助下写代码。为了验证结果，选用了第9课中的题目&quot;让 AI 生成实验数据&quot;，过程如下。
 问: 使用 openai.Completion.create 生成数据集
 答: 抱歉，OpenAI ChatGPT 是一个语言模型，无法直接生成数据集。但我可以为您提供如何使用 OpenAI GPT-3 API 中的 openai.Completion.create 方法来生成文本数据的示例代码。
 首先，您需要导入 OpenAI Python 包并设置您的 API 密钥：
@@ -648,9 +648,9 @@ print(data_set)
 这段代码已经可以运行并给出正确答案。使用
 prompt=&quot;生成10条淘宝网里的商品的标题，每条在30个字左右，品类是3C数码产品，每行一条。&quot;
 
-提出合适的问题。</div>2023-04-07</li><br/><li><span>Viktor</span> 👍（6） 💬（1）<div>使用ChatGPT的确要开放我们的思路，我尝试使用curso，使用python写了一个简单的web功能，包含登录注册、获取列表、展示详情等。所有都是curso提示写的，就像建房子一样，从打地基开始。看了老师这一讲，也是深有感触。
+提出合适的问题。</p>2023-04-07</li><br/><li><span>Viktor</span> 👍（6） 💬（1）<p>使用ChatGPT的确要开放我们的思路，我尝试使用curso，使用python写了一个简单的web功能，包含登录注册、获取列表、展示详情等。所有都是curso提示写的，就像建房子一样，从打地基开始。看了老师这一讲，也是深有感触。
 
-不过现在curso要付费了，而且比copilot还贵10刀。</div>2023-04-07</li><br/><li><span>翟利宁</span> 👍（1） 💬（1）<div>请为我写这样一段在Excel里面运行的VBA程序：
+不过现在curso要付费了，而且比copilot还贵10刀。</p>2023-04-07</li><br/><li><span>翟利宁</span> 👍（1） 💬（1）<p>请为我写这样一段在Excel里面运行的VBA程序：
 1. 读取表格里面的第一列的内容
 2. 内容的每一行，都是一个商品标题。对这个商品标题，通过下面的Prompt，调用OpenAI的API拿到返回结果：
 &quot;&quot;&quot;
@@ -683,9 +683,9 @@ Output the result in json format with three properties called title, selling_poi
 
 
 
-现在已经学会打太极，不给代码了</div>2023-04-26</li><br/><li><span>自然卷的Neil</span> 👍（1） 💬（2）<div>现在看起来ChatGPT让有编程基础的人效率大幅提高，如果完全零基础，从零编写还是会一些处理不了的报错的（不知道这样的想法目光是不是太短浅了）</div>2023-04-08</li><br/><li><span>蔡雪钧</span> 👍（0） 💬（1）<div>curso -&gt; cursor，老师是不是打错了？</div>2023-04-21</li><br/><li><span>Oli张帆</span> 👍（2） 💬（0）<div>这讲很有意思。我也经常利用AI帮我写我不熟悉的语言的代码，比如旧版的PHP。</div>2023-04-07</li><br/><li><span>Geek_0386e5</span> 👍（1） 💬（1）<div>cursor.so
+现在已经学会打太极，不给代码了</p>2023-04-26</li><br/><li><span>自然卷的Neil</span> 👍（1） 💬（2）<p>现在看起来ChatGPT让有编程基础的人效率大幅提高，如果完全零基础，从零编写还是会一些处理不了的报错的（不知道这样的想法目光是不是太短浅了）</p>2023-04-08</li><br/><li><span>蔡雪钧</span> 👍（0） 💬（1）<p>curso -&gt; cursor，老师是不是打错了？</p>2023-04-21</li><br/><li><span>Oli张帆</span> 👍（2） 💬（0）<p>这讲很有意思。我也经常利用AI帮我写我不熟悉的语言的代码，比如旧版的PHP。</p>2023-04-07</li><br/><li><span>Geek_0386e5</span> 👍（1） 💬（1）<p>cursor.so
 
-https:&#47;&#47;www.cursor.so&#47;</div>2023-04-16</li><br/><li><span>Toni</span> 👍（1） 💬（0）<div>不给提示语 openai.Completion.create 条件下 ChatGPT 回答如下
+https:&#47;&#47;www.cursor.so&#47;</p>2023-04-16</li><br/><li><span>Toni</span> 👍（1） 💬（0）<p>不给提示语 openai.Completion.create 条件下 ChatGPT 回答如下
 问: 如何生成一个数据集
 答: 生成一个数据集可以包含以下步骤：(列出了10 条，最后还不忘提醒: 需要注意的是，生成数据集时应遵循合法、道德和隐私的原则，确保生成的数据不违反相关法律法规，保护个人隐私和敏感信息。)
 
@@ -733,5 +733,5 @@ for i, text in enumerate(generated_texts):
 文本 1:
 近日，随着人工智能技术的不断发展，人们对人工智能的认知也在日益深入。今天，人类不仅能利用人工智能技术解决复杂的问题，而且还能利用人工智能技术
 文本 2:
-近日，人工智能技术又迎来了新的突破。来自华为研究院的研究团队利用“智能推理”技术，成功完成了一项历史性的任务，那就是智能机器人能够通过推理，根据给定的输入和规则，</div>2023-04-07</li><br/><li><span>蒸发杰作</span> 👍（0） 💬（0）<div>平时我用GPT帮自己写代码是最多的，这个最重要的就是问题拆分，他会帮你准备很多细节知识，你需要微调，不停的微调</div>2024-01-07</li><br/><li><span>钟超</span> 👍（0） 💬（0）<div>“VBA所有的变量在赋值之前” 然后就没有声音了</div>2023-08-02</li><br/><li><span>Allan</span> 👍（0） 💬（0）<div>收获满满</div>2023-05-05</li><br/><li><span>Ethan New</span> 👍（0） 💬（0）<div>学习打卡</div>2023-04-09</li><br/>
+近日，人工智能技术又迎来了新的突破。来自华为研究院的研究团队利用“智能推理”技术，成功完成了一项历史性的任务，那就是智能机器人能够通过推理，根据给定的输入和规则，</p>2023-04-07</li><br/><li><span>蒸发杰作</span> 👍（0） 💬（0）<p>平时我用GPT帮自己写代码是最多的，这个最重要的就是问题拆分，他会帮你准备很多细节知识，你需要微调，不停的微调</p>2024-01-07</li><br/><li><span>钟超</span> 👍（0） 💬（0）<p>“VBA所有的变量在赋值之前” 然后就没有声音了</p>2023-08-02</li><br/><li><span>Allan</span> 👍（0） 💬（0）<p>收获满满</p>2023-05-05</li><br/><li><span>Ethan New</span> 👍（0） 💬（0）<p>学习打卡</p>2023-04-09</li><br/>
 </ul>

@@ -287,16 +287,16 @@ func main() {
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>江湖夜雨十年灯</span> 👍（1） 💬（1）<div>感觉context的例子太少了老师，实际中context用的场景其实最多对复杂</div>2022-12-09</li><br/><li><span>syuan</span> 👍（1） 💬（2）<div>老师，您好。
+<li><span>江湖夜雨十年灯</span> 👍（1） 💬（1）<p>感觉context的例子太少了老师，实际中context用的场景其实最多对复杂</p>2022-12-09</li><br/><li><span>syuan</span> 👍（1） 💬（2）<p>老师，您好。
 var (
     background = new(emptyCtx)
     todo       = new(emptyCtx)
 )
 在实际使用中，这两个变量在什么时候执行，在引入包的时候就执行了吗？
 还是在执行Background() ，TODO() 这两个函数调用的时候执行？
-在一个main函数中多次调用Background() ，TODO()，background，todo变量始终是指向同一个值吗？</div>2020-11-07</li><br/><li><span>严光</span> 👍（0） 💬（1）<div>这篇如果能多一点 demo 就好了</div>2025-01-24</li><br/><li><span>锋</span> 👍（0） 💬（2）<div>老师好。
+在一个main函数中多次调用Background() ，TODO()，background，todo变量始终是指向同一个值吗？</p>2020-11-07</li><br/><li><span>严光</span> 👍（0） 💬（1）<p>这篇如果能多一点 demo 就好了</p>2025-01-24</li><br/><li><span>锋</span> 👍（0） 💬（2）<p>老师好。
 【记住，不是只有你想中途放弃，才去调用 cancel，只要你的任务正常完成了，就需要调用 cancel，这样，这个 Context 才能释放它的资源（通知它的 children 处理 cancel，从它的 parent 中把自己移除，甚至释放相关的 goroutine】
-上面这一段中任务正常完成 parent来cancel不太理解，正常父主动cancel基本都属于中断操作。但是老师讲到要正常退出的时候来cancel一下，既然是正常结束，那么父应该知道子结束了才去cancel，那父子之间不是还要单独建立一个channel来进行通讯？没有get到老师的点，麻烦老师能不能举个例子</div>2020-11-06</li><br/><li><span>那时刻</span> 👍（0） 💬（2）<div>请问老师，文中提到的 exported key 的静态类型和保守的 unexported 的类型，它们各自指的是什么类型呢？</div>2020-11-05</li><br/><li><span>楼梯口倒立</span> 👍（30） 💬（3）<div>这个例子讲的一言难尽，还不如百度出来的</div>2021-09-17</li><br/><li><span>虫子樱桃</span> 👍（18） 💬（2）<div>Using Context Package in GO (Golang) – Complete Guide https:&#47;&#47;golangbyexample.com&#47;using-context-in-golang-complete-guide&#47;</div>2020-11-04</li><br/><li><span>Panda</span> 👍（11） 💬（1）<div>Context  就像 糖葫芦中的 竹签子  </div>2021-01-27</li><br/><li><span>Remember九离</span> 👍（10） 💬（1）<div>思考题简单写了下:
+上面这一段中任务正常完成 parent来cancel不太理解，正常父主动cancel基本都属于中断操作。但是老师讲到要正常退出的时候来cancel一下，既然是正常结束，那么父应该知道子结束了才去cancel，那父子之间不是还要单独建立一个channel来进行通讯？没有get到老师的点，麻烦老师能不能举个例子</p>2020-11-06</li><br/><li><span>那时刻</span> 👍（0） 💬（2）<p>请问老师，文中提到的 exported key 的静态类型和保守的 unexported 的类型，它们各自指的是什么类型呢？</p>2020-11-05</li><br/><li><span>楼梯口倒立</span> 👍（30） 💬（3）<p>这个例子讲的一言难尽，还不如百度出来的</p>2021-09-17</li><br/><li><span>虫子樱桃</span> 👍（18） 💬（2）<p>Using Context Package in GO (Golang) – Complete Guide https:&#47;&#47;golangbyexample.com&#47;using-context-in-golang-complete-guide&#47;</p>2020-11-04</li><br/><li><span>Panda</span> 👍（11） 💬（1）<p>Context  就像 糖葫芦中的 竹签子  </p>2021-01-27</li><br/><li><span>Remember九离</span> 👍（10） 💬（1）<p>思考题简单写了下:
 ```go
 package main
 
@@ -332,7 +332,7 @@ func main() {
 }
 
 ```
-源码在：https:&#47;&#47;github.com&#47;wuqinqiang&#47;Go_Concurrency</div>2020-11-04</li><br/><li><span>虫子樱桃</span> 👍（10） 💬（0）<div>context其实上几个例子更好。哈哈。大家可以参考 go by Example的例子 http:&#47;&#47;play.golang.org&#47;p&#47;0_bu1o8rIBO</div>2020-11-04</li><br/><li><span>愤怒的显卡</span> 👍（9） 💬（1）<div>可以写几个应用的实例</div>2020-11-11</li><br/><li><span>50%</span> 👍（8） 💬（0）<div>其实这章我觉得通过例子来吃透比较好，建议大家看看那个golangbyexample的文章</div>2020-11-30</li><br/><li><span>缘</span> 👍（6） 💬（0）<div>context讲的比较简单，特别是goroutine怎么不断的去检查是否超时，什么阶段检查合适</div>2020-12-11</li><br/><li><span>极客酱酱</span> 👍（0） 💬（0）<div>思考题实践
+源码在：https:&#47;&#47;github.com&#47;wuqinqiang&#47;Go_Concurrency</p>2020-11-04</li><br/><li><span>虫子樱桃</span> 👍（10） 💬（0）<p>context其实上几个例子更好。哈哈。大家可以参考 go by Example的例子 http:&#47;&#47;play.golang.org&#47;p&#47;0_bu1o8rIBO</p>2020-11-04</li><br/><li><span>愤怒的显卡</span> 👍（9） 💬（1）<p>可以写几个应用的实例</p>2020-11-11</li><br/><li><span>50%</span> 👍（8） 💬（0）<p>其实这章我觉得通过例子来吃透比较好，建议大家看看那个golangbyexample的文章</p>2020-11-30</li><br/><li><span>缘</span> 👍（6） 💬（0）<p>context讲的比较简单，特别是goroutine怎么不断的去检查是否超时，什么阶段检查合适</p>2020-12-11</li><br/><li><span>极客酱酱</span> 👍（0） 💬（0）<p>思考题实践
 
 package main
 
@@ -358,5 +358,5 @@ func main() {
 	cancel()
 	time.Sleep(time.Millisecond)
 }
-</div>2022-04-15</li><br/><li><span>努力的狗狗</span> 👍（0） 💬（0）<div>只是概念，应该多举两个例子的</div>2021-11-19</li><br/>
+</p>2022-04-15</li><br/><li><span>努力的狗狗</span> 👍（0） 💬（0）<p>只是概念，应该多举两个例子的</p>2021-11-19</li><br/>
 </ul>

@@ -218,11 +218,11 @@ target     prot opt source               destination
 
 欢迎你在留言区和我交流互动。如果学完这一讲让你有所收获，也欢迎转发给你的同事、或者朋友，一起交流探讨容器安全的问题。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>莫名</span> 👍（37） 💬（3）<div>getcap $(which ping)
+<li><span>莫名</span> 👍（37） 💬（3）<p>getcap $(which ping)
 setcap -r $(which ping)
 
 顺便举个之前使用过的例子：普通用户默认没有 tcpdump 抓包权限，可添加 net_raw、net_admin caps：
-sudo setcap cap_net_raw,cap_net_admin+ep $(which tcpdump)</div>2020-12-29</li><br/><li><span>朱新威</span> 👍（7） 💬（3）<div>已经更新20讲了，莫名有点心慌，生怕这么好的专栏结束了🤪</div>2020-12-28</li><br/><li><span>morse</span> 👍（4） 💬（1）<div>老师, 您好, 我在 Ubuntu20.04 下删除 ping 的 capabilities 后, 切换别的用户后, 还是可以正常使用 ping 的, 我进行了以下操作. 
+sudo setcap cap_net_raw,cap_net_admin+ep $(which tcpdump)</p>2020-12-29</li><br/><li><span>朱新威</span> 👍（7） 💬（3）<p>已经更新20讲了，莫名有点心慌，生怕这么好的专栏结束了🤪</p>2020-12-28</li><br/><li><span>morse</span> 👍（4） 💬（1）<p>老师, 您好, 我在 Ubuntu20.04 下删除 ping 的 capabilities 后, 切换别的用户后, 还是可以正常使用 ping 的, 我进行了以下操作. 
 # getcap &#47;usr&#47;bin&#47;ping # 发现ping 具有cap_net_raw capability
 
 &#47;usr&#47;bin&#47;ping = cap_net_raw+ep
@@ -240,6 +240,6 @@ Bounding set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fset
 给我的感觉, 在 Ubuntu 20.04 中, useradd appuser 创建好的用户, 初始就具有一定的 capabilites, 所以在运行程序的时候, 用户自身的 capabilities+程序的 capabliities 是最终的. 所以就算把文件的 capabilities 删除, 只要用户还具有这个能力, 那么还是可以正常执行的. 
 
 那么我的问题来了, 我没有找到, 如何对一个用户限制这种 capabilities, 即我 useradd 一个 用户, 怎么限制这个用户的 capabilities.
-</div>2021-01-11</li><br/><li><span>Sports</span> 👍（2） 💬（1）<div>selinux是不是实际上就是限制cap权限的操作</div>2021-08-02</li><br/><li><span>Tony</span> 👍（1） 💬（2）<div>老师你好。请问在Linux中（比如centos），在允许普通用户使用docker以后，如何如何限制用户不能读取，宿主机上非该普通用户的文件？</div>2020-12-28</li><br/><li><span>老酒馆</span> 👍（6） 💬（0）<div>getcap &#47;usr&#47;bin&#47;ping 查看ping进程当前cap
-setcap cap_net_admin,cap_net_raw+p &#47;usr&#47;bin&#47;ping 设置ping进程cap</div>2020-12-28</li><br/><li><span>heyhd9475</span> 👍（1） 💬（0）<div>老师想问一下文件的capabilities是保存在什么地方呢，getcap应该也是从什么地方读取的这些信息吧，是inode,file,dentry？</div>2021-10-11</li><br/><li><span>王皓月</span> 👍（1） 💬（0）<div>老师您好，我想要在容器中使用systemctl，除了启用特权模式还有别的办法吗？看到过大牛在docker run的时候加了&#47;sys&#47;fs&#47;cgroup:&#47;sys&#47;fs&#47;cgroup就可以在容器内使用systemctl，这个和特权模式有什么区别？</div>2021-01-25</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>李老师，请教一个问题：“因为安全方面的考虑，容器缺省启动的时候，哪怕是容器中 root 用户的进程，系统也只允许了 15 个 capabilities。这个你可以查看runC spec 文档中的 security 部分，你也可以查看容器 init 进程 status 里的 Cap 参数，看一下容器中缺省的 capabilities。” 在这个例子当中，为什么容器中启动的 1 号进程的 CapPrm 是 00000000a80425fb？00000000a80425fb 只有 14 个 1，剩下的一个 1 哪里去了？</div>2023-12-19</li><br/><li><span>段殷澄</span> 👍（0） 💬（0）<div>我ubuntu的root用户怎么默认只赋予了15个capabilities</div>2022-11-07</li><br/><li><span>Bill</span> 👍（0） 💬（0）<div>Best ever</div>2022-05-25</li><br/><li><span>罗峰</span> 👍（0） 💬（0）<div>有的gpu容器需要privileged这个是啥原因呢</div>2021-08-30</li><br/>
+</p>2021-01-11</li><br/><li><span>Sports</span> 👍（2） 💬（1）<p>selinux是不是实际上就是限制cap权限的操作</p>2021-08-02</li><br/><li><span>Tony</span> 👍（1） 💬（2）<p>老师你好。请问在Linux中（比如centos），在允许普通用户使用docker以后，如何如何限制用户不能读取，宿主机上非该普通用户的文件？</p>2020-12-28</li><br/><li><span>老酒馆</span> 👍（6） 💬（0）<p>getcap &#47;usr&#47;bin&#47;ping 查看ping进程当前cap
+setcap cap_net_admin,cap_net_raw+p &#47;usr&#47;bin&#47;ping 设置ping进程cap</p>2020-12-28</li><br/><li><span>heyhd9475</span> 👍（1） 💬（0）<p>老师想问一下文件的capabilities是保存在什么地方呢，getcap应该也是从什么地方读取的这些信息吧，是inode,file,dentry？</p>2021-10-11</li><br/><li><span>王皓月</span> 👍（1） 💬（0）<p>老师您好，我想要在容器中使用systemctl，除了启用特权模式还有别的办法吗？看到过大牛在docker run的时候加了&#47;sys&#47;fs&#47;cgroup:&#47;sys&#47;fs&#47;cgroup就可以在容器内使用systemctl，这个和特权模式有什么区别？</p>2021-01-25</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>李老师，请教一个问题：“因为安全方面的考虑，容器缺省启动的时候，哪怕是容器中 root 用户的进程，系统也只允许了 15 个 capabilities。这个你可以查看runC spec 文档中的 security 部分，你也可以查看容器 init 进程 status 里的 Cap 参数，看一下容器中缺省的 capabilities。” 在这个例子当中，为什么容器中启动的 1 号进程的 CapPrm 是 00000000a80425fb？00000000a80425fb 只有 14 个 1，剩下的一个 1 哪里去了？</p>2023-12-19</li><br/><li><span>段殷澄</span> 👍（0） 💬（0）<p>我ubuntu的root用户怎么默认只赋予了15个capabilities</p>2022-11-07</li><br/><li><span>Bill</span> 👍（0） 💬（0）<p>Best ever</p>2022-05-25</li><br/><li><span>罗峰</span> 👍（0） 💬（0）<p>有的gpu容器需要privileged这个是啥原因呢</p>2021-08-30</li><br/>
 </ul>

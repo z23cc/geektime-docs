@@ -434,12 +434,12 @@ NumPy是用于Python中科学计算的一个基础包。它提供了一个多维
 
 欢迎你在留言区记录你的疑问或者收获，也推荐你把这节课分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>于小咸</span> 👍（7） 💬（2）<div>之前一直没搞清楚轴的概念，听方老师讲解以后终于明白了，轴的方向就是行序号或者列序号增长的方向</div>2021-10-19</li><br/><li><span>lwg0452</span> 👍（20） 💬（2）<div>思考题
-np.average(interest_score, axis=1)</div>2021-10-13</li><br/><li><span>jssfy</span> 👍（13） 💬（2）<div>pytorch哪些场景必须或者强烈建议用np? 不用python数组的原因是什么?可否举个例子?</div>2021-10-13</li><br/><li><span>AstrHan</span> 👍（3） 💬（1）<div>数组轴的这个例子好记！老师是自行车爱好者啊，每张头图都是，，</div>2021-10-13</li><br/><li><span>qifeng.wang</span> 👍（2） 💬（2）<div>作者没有介绍四维轴的概念，三轴的可以理解，就是长方体，X(0),Y(1),Z(2), axis=0就按照这个方向 做投影转换成 二维（Y,Z），四维的有点理解不出来，麻烦解读一下。</div>2022-06-23</li><br/><li><span>人间失格</span> 👍（2） 💬（1）<div>给老师点赞，老师轴抽象的很好，比我初次看更具体，希望后面网络结构和优化也能这样。请问numpy快和并行的原因是因为底层storage方式吗？</div>2021-10-13</li><br/><li><span>芜风</span> 👍（1） 💬（1）<div>老师的专栏又简洁又有重点，真的很好！</div>2022-05-07</li><br/><li><span>Geek_Frank</span> 👍（1） 💬（2）<div>被一个问题困扰了，想请教方老师。
+<li><span>于小咸</span> 👍（7） 💬（2）<p>之前一直没搞清楚轴的概念，听方老师讲解以后终于明白了，轴的方向就是行序号或者列序号增长的方向</p>2021-10-19</li><br/><li><span>lwg0452</span> 👍（20） 💬（2）<p>思考题
+np.average(interest_score, axis=1)</p>2021-10-13</li><br/><li><span>jssfy</span> 👍（13） 💬（2）<p>pytorch哪些场景必须或者强烈建议用np? 不用python数组的原因是什么?可否举个例子?</p>2021-10-13</li><br/><li><span>AstrHan</span> 👍（3） 💬（1）<p>数组轴的这个例子好记！老师是自行车爱好者啊，每张头图都是，，</p>2021-10-13</li><br/><li><span>qifeng.wang</span> 👍（2） 💬（2）<p>作者没有介绍四维轴的概念，三轴的可以理解，就是长方体，X(0),Y(1),Z(2), axis=0就按照这个方向 做投影转换成 二维（Y,Z），四维的有点理解不出来，麻烦解读一下。</p>2022-06-23</li><br/><li><span>人间失格</span> 👍（2） 💬（1）<p>给老师点赞，老师轴抽象的很好，比我初次看更具体，希望后面网络结构和优化也能这样。请问numpy快和并行的原因是因为底层storage方式吗？</p>2021-10-13</li><br/><li><span>芜风</span> 👍（1） 💬（1）<p>老师的专栏又简洁又有重点，真的很好！</p>2022-05-07</li><br/><li><span>Geek_Frank</span> 👍（1） 💬（2）<p>被一个问题困扰了，想请教方老师。
 tensor和numpy的ndarray数据结构上究竟有何不同？
 或者说它们在内存中存在形式、结构有哪些本质区别？
-为何二者要转换而不能混用？转换的过程中到底改变了啥？</div>2022-01-20</li><br/><li><span>John(易筋)</span> 👍（0） 💬（1）<div>```
+为何二者要转换而不能混用？转换的过程中到底改变了啥？</p>2022-01-20</li><br/><li><span>John(易筋)</span> 👍（0） 💬（1）<p>```
 mean_1 = np.mean(interest_score, axis=1)
 print(mean_1)
-```</div>2022-07-25</li><br/><li><span>starwonder</span> 👍（0） 💬（1）<div>数据降维的本质就是按照某（几）个轴的方向进行聚合吧？</div>2022-07-07</li><br/><li><span>亚林</span> 👍（0） 💬（1）<div>np.average(interest_score, axis=0)</div>2022-05-06</li><br/><li><span>亚林</span> 👍（0） 💬（1）<div>这里的轴就是维度的概念吧</div>2022-05-06</li><br/><li><span>海阔天空</span> 👍（0） 💬（1）<div>讲得好</div>2022-03-16</li><br/><li><span>Geek_Frank</span> 👍（0） 💬（1）<div>方远老师喜欢骑行？</div>2022-01-20</li><br/><li><span>与子成说＆亦我所欲</span> 👍（0） 💬（1）<div>思考题：np.average(scores,axis=1)</div>2022-01-15</li><br/>
+```</p>2022-07-25</li><br/><li><span>starwonder</span> 👍（0） 💬（1）<p>数据降维的本质就是按照某（几）个轴的方向进行聚合吧？</p>2022-07-07</li><br/><li><span>亚林</span> 👍（0） 💬（1）<p>np.average(interest_score, axis=0)</p>2022-05-06</li><br/><li><span>亚林</span> 👍（0） 💬（1）<p>这里的轴就是维度的概念吧</p>2022-05-06</li><br/><li><span>海阔天空</span> 👍（0） 💬（1）<p>讲得好</p>2022-03-16</li><br/><li><span>Geek_Frank</span> 👍（0） 💬（1）<p>方远老师喜欢骑行？</p>2022-01-20</li><br/><li><span>与子成说＆亦我所欲</span> 👍（0） 💬（1）<p>思考题：np.average(scores,axis=1)</p>2022-01-15</li><br/>
 </ul>

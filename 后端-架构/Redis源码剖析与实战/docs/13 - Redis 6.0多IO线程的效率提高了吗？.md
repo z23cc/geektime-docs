@@ -453,7 +453,7 @@ void stopThreadedIO(void) {
 
 欢迎在留言区分享你的答案和思考过程，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Kaito</span> 👍（37） 💬（0）<div>1、Redis 6.0 之前，处理客户端请求是单线程，这种模型的缺点是，只能用到「单核」CPU。如果并发量很高，那么在读写客户端数据时，容易引发性能瓶颈，所以 Redis 6.0 引入了多 IO 线程解决这个问题
+<li><span>Kaito</span> 👍（37） 💬（0）<p>1、Redis 6.0 之前，处理客户端请求是单线程，这种模型的缺点是，只能用到「单核」CPU。如果并发量很高，那么在读写客户端数据时，容易引发性能瓶颈，所以 Redis 6.0 引入了多 IO 线程解决这个问题
 
 2、配置文件开启 io-threads N 后，Redis Server 启动时，会启动 N - 1 个 IO 线程（主线程也算一个 IO 线程），这些 IO 线程执行的逻辑是 networking.c 的 IOThreadMain 函数。但默认只开启多线程「写」client socket，如果要开启多线程「读」，还需配置 io-threads-do-reads = yes
 
@@ -499,7 +499,7 @@ void *IOThreadMain(void *myid) {
 因为每次 IO 线程在执行时必须先拿到锁，才能执行后面的逻辑，如果主线程执行了 stopThreadedIO，就会先拿到锁，那么 IOThreadMain 函数在执行时就会因为拿不到锁阻塞「等待」，这就达到了 stop IO 线程的目的。
 
 同样地，调用 startThreadedIO 函数后，会释放锁，IO 线程就可以拿到锁，继续「恢复」执行。
-</div>2021-08-24</li><br/><li><span>曾轼麟</span> 👍（8） 💬（1）<div>一样首先回答老师的问题，你知道为什么这两个函数要执行解锁和加锁操作么？
+</p>2021-08-24</li><br/><li><span>曾轼麟</span> 👍（8） 💬（1）<p>一样首先回答老师的问题，你知道为什么这两个函数要执行解锁和加锁操作么？
 
 答案：是为了方便主线程动态，灵活调整IO线程而设计的，当clients数量较少的时候可以方便直接停止IO线程。停止IO线程的阈值是，当等待写的client客户端数量小于IO线程数量的两倍，就会停止IO线程避免多线程带来不必要的开销
 
@@ -521,7 +521,7 @@ void *IOThreadMain(void *myid) {
     本篇文章，老师带我们了解了IO线程的设计原理和多IO给Redis带了了性能上的提升，从代码中可以看出，IO线程的数量并不是随心所欲的设置的，应当结合Redis client的数量而定的，并且上限是128，此外IO线程，是和主线程共同协调运行的，最典型的就是主线程通过控制io_threads_op来协调IO线程是同步读取还是写入
 
 建议:
-    IO线程这块其实还涉及一个比较大的内容，就是RESP的协议编解码，IO线程虽然不涉及命令执行，但是会协助主线程进行协议编解码，而RESP协议的设计很巧妙，对粘包拆包等处理也是其一大亮点</div>2021-08-31</li><br/><li><span>土豆种南城</span> 👍（3） 💬（0）<div>回答课后题：为什么 startThreadedIO &#47; stopThreadedIO 要执行加解锁？
+    IO线程这块其实还涉及一个比较大的内容，就是RESP的协议编解码，IO线程虽然不涉及命令执行，但是会协助主线程进行协议编解码，而RESP协议的设计很巧妙，对粘包拆包等处理也是其一大亮点</p>2021-08-31</li><br/><li><span>土豆种南城</span> 👍（3） 💬（0）<p>回答课后题：为什么 startThreadedIO &#47; stopThreadedIO 要执行加解锁？
 几个评论都提到这部分代码：
 
 &#47;* Give the main thread a chance to stop this thread. *&#47;
@@ -548,7 +548,7 @@ if (io_threads_pending[id] == 0) {
 2. 主线程打开了多线程模式，但是还没来得及调用setIOPendingCount设置任务
 1情况下pthread_mutex_lock会阻塞子线程，相当于子线程进入沉睡状态了
 2情况下不会阻塞子线程，子线程进入下次循环，依然处于“狂热”状态，只要主线程调用setIOPendingCount就可以立即工作
-综上，startThreadedIO的解锁操作相当于是“唤醒”了子线程在“狂热”状态未满足下进入的沉睡。stopThreadedIO能让子线程在一个阶段的“狂热”结束后进入沉睡</div>2021-09-05</li><br/><li><span>里咯破</span> 👍（1） 💬（0）<div>redis6刚出时用redis-benchmark 测试过,的确会有提升,get能有将近一倍,set根据数据量不同有20%~40%的提升.但是只是单机测试,没有考虑网络环境.</div>2021-09-09</li><br/><li><span>可怜大灰狼</span> 👍（1） 💬（0）<div>networking.c中IOThreadMain方法有如下一小段代码：
+综上，startThreadedIO的解锁操作相当于是“唤醒”了子线程在“狂热”状态未满足下进入的沉睡。stopThreadedIO能让子线程在一个阶段的“狂热”结束后进入沉睡</p>2021-09-05</li><br/><li><span>里咯破</span> 👍（1） 💬（0）<p>redis6刚出时用redis-benchmark 测试过,的确会有提升,get能有将近一倍,set根据数据量不同有20%~40%的提升.但是只是单机测试,没有考虑网络环境.</p>2021-09-09</li><br/><li><span>可怜大灰狼</span> 👍（1） 💬（0）<p>networking.c中IOThreadMain方法有如下一小段代码：
 &#47;* Give the main thread a chance to stop this thread. *&#47;
 if (getIOPendingCount(id) == 0) {
        pthread_mutex_lock(&amp;io_threads_mutex[id]);
@@ -556,16 +556,16 @@ if (getIOPendingCount(id) == 0) {
        continue;
  }
 就像代码里说的，给主线程暂停子线程的机会。
-如果主线程没有在startThreadedIO做unlock和在stopThreadedIO做lock，主线程也无法暂停和开始子线程，进而会导致cpu资源浪费。</div>2021-08-24</li><br/><li><span>孤独患者</span> 👍（0） 💬（1）<div>假设按顺序先后收到a、b、c三个命令，分别被线程1、2、3成功解析，redis是怎么保证主线程执行命令也是按a、b、c这个顺序的呢？</div>2024-01-11</li><br/><li><span>孤独患者</span> 👍（0） 💬（1）<div>多线程的话，能保证先到的命令先执行吗？虽然说执行命令还是在一个线程顺序进行，但是命令解析是在不同的线程，有没有可能后收到的命令，被先执行了？</div>2024-01-11</li><br/><li><span>Hubery</span> 👍（0） 💬（0）<div>老师，最近遇到个问题。压测的时候，本地机子是16核的，然后redis只会把一个核打满，其他核都是空闲的，花费的时间主要是在软中断上面。不知道啥原因</div>2023-09-26</li><br/><li><span>kobe</span> 👍（0） 💬（0）<div>你好，关于handleClientsWithPendingReadsUsingThreads和handleClientsWithPendingWritesUsingThreads两个方法的第四步，为什么前者是直接由主线程处理new buffers，包括解析和执行命令，而后者是注册个新的可写事件，交由事件驱动框架去处理？</div>2023-08-31</li><br/><li><span>水滴s</span> 👍（0） 💬（1）<div>判断所有多线程是否处理完读，这里不会造成CPU忙等待吗，为啥不使用锁条件变量实现呢？
+如果主线程没有在startThreadedIO做unlock和在stopThreadedIO做lock，主线程也无法暂停和开始子线程，进而会导致cpu资源浪费。</p>2021-08-24</li><br/><li><span>孤独患者</span> 👍（0） 💬（1）<p>假设按顺序先后收到a、b、c三个命令，分别被线程1、2、3成功解析，redis是怎么保证主线程执行命令也是按a、b、c这个顺序的呢？</p>2024-01-11</li><br/><li><span>孤独患者</span> 👍（0） 💬（1）<p>多线程的话，能保证先到的命令先执行吗？虽然说执行命令还是在一个线程顺序进行，但是命令解析是在不同的线程，有没有可能后收到的命令，被先执行了？</p>2024-01-11</li><br/><li><span>Hubery</span> 👍（0） 💬（0）<p>老师，最近遇到个问题。压测的时候，本地机子是16核的，然后redis只会把一个核打满，其他核都是空闲的，花费的时间主要是在软中断上面。不知道啥原因</p>2023-09-26</li><br/><li><span>kobe</span> 👍（0） 💬（0）<p>你好，关于handleClientsWithPendingReadsUsingThreads和handleClientsWithPendingWritesUsingThreads两个方法的第四步，为什么前者是直接由主线程处理new buffers，包括解析和执行命令，而后者是注册个新的可写事件，交由事件驱动框架去处理？</p>2023-08-31</li><br/><li><span>水滴s</span> 👍（0） 💬（1）<p>判断所有多线程是否处理完读，这里不会造成CPU忙等待吗，为啥不使用锁条件变量实现呢？
  while(1) {
         unsigned long pending = 0;
         for (int j = 1; j &lt; server.io_threads_num; j++)
             pending += io_threads_pending[j];
         if (pending == 0) break;
-    }</div>2022-06-25</li><br/><li><span>🐟🐙🐬🐆🦌🦍🐑🦃</span> 👍（0） 💬（1）<div>handleClientsWithPendingReadsUsingThreads 在把clients_pending_read 放到io_threads_list 时，为啥不加锁，主线程放，消费线程读取时，不会有问题么，加入时，有指针的变更</div>2022-03-26</li><br/><li><span>YFW</span> 👍（0） 💬（0）<div>老师看了文章还有一个疑问？ 还望解答， 主线程在调用 函数initThreadedIO 的时候，会给 io_threads_mutex[i]进行加锁， 
+    }</p>2022-06-25</li><br/><li><span>🐟🐙🐬🐆🦌🦍🐑🦃</span> 👍（0） 💬（1）<p>handleClientsWithPendingReadsUsingThreads 在把clients_pending_read 放到io_threads_list 时，为啥不加锁，主线程放，消费线程读取时，不会有问题么，加入时，有指针的变更</p>2022-03-26</li><br/><li><span>YFW</span> 👍（0） 💬（0）<p>老师看了文章还有一个疑问？ 还望解答， 主线程在调用 函数initThreadedIO 的时候，会给 io_threads_mutex[i]进行加锁， 
 这个时候IO子线程就无法获取到锁，只有在主线程调用 startThreadedIO 中才会把这些锁释放，
 此时IO子线程才能够继续运行， 查看了源码发现startThreadedIO只会在函数handleClientsWithPendingWritesUsingThreads中被调用，
-那如果只有可读事件， IO子线程不就一直pending 在 io_threads_mutex[i] 上？</div>2022-01-22</li><br/><li><span>ikel</span> 👍（0） 💬（0）<div>你知道为什么这两个函数要执行解锁和加锁操作么？
+那如果只有可读事件， IO子线程不就一直pending 在 io_threads_mutex[i] 上？</p>2022-01-22</li><br/><li><span>ikel</span> 👍（0） 💬（0）<p>你知道为什么这两个函数要执行解锁和加锁操作么？
 让多线程模式下的部分子线程休眠以释放cpu资源
-在networking,c文件中_Atomic unsigned long io_threads_pending[IO_THREADS_MAX_NUM]中_Atomic用法是类似于多线程中锁的作用么？这个用法没查到相关资料</div>2021-11-10</li><br/><li><span>Geek_3930c2</span> 👍（0） 💬（2）<div>io_threads_op为啥不用volatile修改</div>2021-09-13</li><br/><li><span>Milittle</span> 👍（0） 💬（0）<div>课后题我的猜测：就是对于一个线程完整的释放和触发，启动线程，将线程的mutex释放，意味着你在这个线程中，去访问一些共享资源，那么你可以使用这个mutex。关闭线程，将线程的mutex获取，让线程中其他获取mutex的能力失效。一点猜测，不知道对不对。</div>2021-08-24</li><br/>
+在networking,c文件中_Atomic unsigned long io_threads_pending[IO_THREADS_MAX_NUM]中_Atomic用法是类似于多线程中锁的作用么？这个用法没查到相关资料</p>2021-11-10</li><br/><li><span>Geek_3930c2</span> 👍（0） 💬（2）<p>io_threads_op为啥不用volatile修改</p>2021-09-13</li><br/><li><span>Milittle</span> 👍（0） 💬（0）<p>课后题我的猜测：就是对于一个线程完整的释放和触发，启动线程，将线程的mutex释放，意味着你在这个线程中，去访问一些共享资源，那么你可以使用这个mutex。关闭线程，将线程的mutex获取，让线程中其他获取mutex的能力失效。一点猜测，不知道对不对。</p>2021-08-24</li><br/>
 </ul>

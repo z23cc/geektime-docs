@@ -209,13 +209,13 @@ Missing changelog entry (ignore if minor change)
 
 欢迎你在评论区留下你的思考，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>村口大发</span> 👍（1） 💬（1）<div>请教一下老师，平时一般是如何阅读源码和编译调试的？以及有没有什么工具推荐呢？</div>2022-08-27</li><br/><li><span>路上的骑士</span> 👍（0） 💬（1）<div>请教老师一个使用场景：我想把摄像头的数据和其他网络数据（比如日志）封装到一起存储下来，然后播放，需要做哪些工作呢？</div>2023-10-26</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>村口大发</span> 👍（1） 💬（1）<p>请教一下老师，平时一般是如何阅读源码和编译调试的？以及有没有什么工具推荐呢？</p>2022-08-27</li><br/><li><span>路上的骑士</span> 👍（0） 💬（1）<p>请教老师一个使用场景：我想把摄像头的数据和其他网络数据（比如日志）封装到一起存储下来，然后播放，需要做哪些工作呢？</p>2023-10-26</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：给视频配上另外一段台词，声音不变，有这样的软件吗？用FFmpeg能实现吗？
 前一段看到一个视频，是射雕中的视频，是郭靖在说话。改变以后，声音没有变，还是郭靖的声音，但台词换成搞笑的词了。这是怎么做出来的？ 是软件做的吗？ 还是说是请人配的音？
 
-Q2：改变一个音频文件的速度，FFmpeg的命令是什么？</div>2022-08-26</li><br/><li><span>jcy</span> 👍（2） 💬（1）<div>本地验证代码，内存检测的时候用的参数
+Q2：改变一个音频文件的速度，FFmpeg的命令是什么？</p>2022-08-26</li><br/><li><span>jcy</span> 👍（2） 💬（1）<p>本地验证代码，内存检测的时候用的参数
 
 --extra-ldflags=&#39; -O0 -g3 -fsanitize=address -Wno-error -fPIC -I&#47;usr&#47;local&#47;include&#39; --extra-ldflags=&#39;-O0 -g3 -fsanitize=address -Wno-error -fPIC &#39;
 
-里面两个 --extra-ldflags 是不是弄错了？</div>2022-09-21</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-01-02</li><br/>
+里面两个 --extra-ldflags 是不是弄错了？</p>2022-09-21</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-01-02</li><br/>
 </ul>

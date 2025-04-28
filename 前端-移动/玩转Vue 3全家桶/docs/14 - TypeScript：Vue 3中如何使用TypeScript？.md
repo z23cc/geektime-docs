@@ -229,7 +229,7 @@ TypeScript最终还是要编译成为JavaScript，并在浏览器里执行。对
 
 欢迎你在评论区留言分享，也欢迎你把这一讲的内容分享给你的同事和朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ll</span> 👍（27） 💬（1）<div>几节课学下来，发现工程就是“灵活与稳定”之间的平衡。
+<li><span>ll</span> 👍（27） 💬（1）<p>几节课学下来，发现工程就是“灵活与稳定”之间的平衡。
 上节是 template 与 JSX 各自的优缺点，实际上也能看出各自设计对“灵活”与“稳定”的取舍。我非专业转行，对于类型系统有点学习体会：
   1. 动态 vs 静态语言
     从运行过程上说，动态比较简单，你写代码，然后丢给解释器运行，如果出错，就会报运行时错误 
@@ -249,14 +249,14 @@ TypeScript最终还是要编译成为JavaScript，并在浏览器里执行。对
 
  4. 也挑个小错
      let todos:Ref(Todo[]) = ref([{title: &quot;学习Vue&quot;, done: false}]) 中，应该是 Ref&lt;Todo[]&gt; 吧
-</div>2021-11-17</li><br/><li><span>费城的二鹏</span> 👍（3） 💬（1）<div>了解了 TypeScript 的使用后，你可以回想一下 Vue 2 里有哪些写法是对 TypeScript 不友好的，以及我们应该怎么在 Vue 3 优化呢？
+</p>2021-11-17</li><br/><li><span>费城的二鹏</span> 👍（3） 💬（1）<p>了解了 TypeScript 的使用后，你可以回想一下 Vue 2 里有哪些写法是对 TypeScript 不友好的，以及我们应该怎么在 Vue 3 优化呢？
 
-在公司项目使用 ts 开发 vue2，感觉这个写法掩盖了很多 vue2 本身的概念。比如说 data 方法没了，watch 方法没了，都变成了注解，不太容易理解到 vue 本身的设计思路。</div>2021-11-17</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（1）<div>const emit = defineEmits&lt;{
+在公司项目使用 ts 开发 vue2，感觉这个写法掩盖了很多 vue2 本身的概念。比如说 data 方法没了，watch 方法没了，都变成了注解，不太容易理解到 vue 本身的设计思路。</p>2021-11-17</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（1）<p>const emit = defineEmits&lt;{
 
-代码片段貌似不完整</div>2021-11-17</li><br/><li><span>Geek_0c8aff</span> 👍（0） 💬（1）<div>typescript加餐++++++</div>2021-11-30</li><br/><li><span>以梦为马</span> 👍（0） 💬（1）<div>TS 加个餐吧，如何系统得在 Vue3 项目实战 TS，感觉现在 TS 都快成标准了，都在用</div>2021-11-22</li><br/><li><span>Geek_073752</span> 👍（0） 💬（1）<div>大圣老师，有计划TypeScript加餐吗？</div>2021-11-18</li><br/><li><span>Geek_a84b8d</span> 👍（63） 💬（1）<div>希望大圣老师有TS的加餐</div>2021-11-17</li><br/><li><span>关关君</span> 👍（10） 💬（0）<div>加餐 想看 TypeScript 和 Vue3 的 项目最佳实践</div>2021-11-19</li><br/><li><span>东东</span> 👍（10） 💬（0）<div>老师，后面的项目可以用TS写不？</div>2021-11-17</li><br/><li><span>哎哟迪奥</span> 👍（5） 💬（0）<div>typescript yyds，大圣大佬yyds，加餐yyds。</div>2021-11-17</li><br/><li><span>aehyok</span> 👍（2） 💬（0）<div>TS必须加餐</div>2021-11-19</li><br/><li><span>晴空万里</span> 👍（2） 💬（0）<div>别加了 ts可以单独成课 毕竟前端不需要强类型 影响效率</div>2021-11-18</li><br/><li><span>YK菌</span> 👍（1） 💬（0）<div>直接看文档吧~ https:&#47;&#47;v3.cn.vuejs.org&#47;guide&#47;typescript-support.html
-</div>2022-04-26</li><br/><li><span>风一样</span> 👍（1） 💬（2）<div>你好，老师：我在&lt;script setup lang=&#39;ts&#39;&gt;里添加下面的代码：
+代码片段貌似不完整</p>2021-11-17</li><br/><li><span>Geek_0c8aff</span> 👍（0） 💬（1）<p>typescript加餐++++++</p>2021-11-30</li><br/><li><span>以梦为马</span> 👍（0） 💬（1）<p>TS 加个餐吧，如何系统得在 Vue3 项目实战 TS，感觉现在 TS 都快成标准了，都在用</p>2021-11-22</li><br/><li><span>Geek_073752</span> 👍（0） 💬（1）<p>大圣老师，有计划TypeScript加餐吗？</p>2021-11-18</li><br/><li><span>Geek_a84b8d</span> 👍（63） 💬（1）<p>希望大圣老师有TS的加餐</p>2021-11-17</li><br/><li><span>关关君</span> 👍（10） 💬（0）<p>加餐 想看 TypeScript 和 Vue3 的 项目最佳实践</p>2021-11-19</li><br/><li><span>东东</span> 👍（10） 💬（0）<p>老师，后面的项目可以用TS写不？</p>2021-11-17</li><br/><li><span>哎哟迪奥</span> 👍（5） 💬（0）<p>typescript yyds，大圣大佬yyds，加餐yyds。</p>2021-11-17</li><br/><li><span>aehyok</span> 👍（2） 💬（0）<p>TS必须加餐</p>2021-11-19</li><br/><li><span>晴空万里</span> 👍（2） 💬（0）<p>别加了 ts可以单独成课 毕竟前端不需要强类型 影响效率</p>2021-11-18</li><br/><li><span>YK菌</span> 👍（1） 💬（0）<p>直接看文档吧~ https:&#47;&#47;v3.cn.vuejs.org&#47;guide&#47;typescript-support.html
+</p>2022-04-26</li><br/><li><span>风一样</span> 👍（1） 💬（2）<p>你好，老师：我在&lt;script setup lang=&#39;ts&#39;&gt;里添加下面的代码：
 let num: number = 100
 num = &#39;aaa&#39;
 怎么没有错误的提示呢？
-而在单独的 ts 文件里这样写，就有一个错误信息。</div>2022-02-09</li><br/><li><span>未央-</span> 👍（1） 💬（0）<div>TS加餐加餐</div>2022-02-09</li><br/>
+而在单独的 ts 文件里这样写，就有一个错误信息。</p>2022-02-09</li><br/><li><span>未央-</span> 👍（1） 💬（0）<p>TS加餐加餐</p>2022-02-09</li><br/>
 </ul>

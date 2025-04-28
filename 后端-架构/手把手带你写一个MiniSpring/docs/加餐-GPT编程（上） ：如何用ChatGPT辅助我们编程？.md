@@ -507,5 +507,5 @@ public void testGetReliabilityCorner() {
 
 好了，今天的内容就到这里，如果你觉得这节课的知识对你有帮助的话，欢迎你分享给你的朋友和同事，如果你有好的想法也欢迎你分享到评论区，我们一起讨论，共同进步，我们下节课见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（3）<div>Idea无法安装Bito.操作顺序是：File-&gt;Settings-&gt;Plugins，输入Bito，提示搜不到。Idea版本是2019。国内上网，没有用梯子，是否和这个有关？另外，如果安装成功，使用它需要账号吗？以及需要能上国外网站吗？</div>2023-05-17</li><br/>
+<li><span>peter</span> 👍（0） 💬（3）<p>Idea无法安装Bito.操作顺序是：File-&gt;Settings-&gt;Plugins，输入Bito，提示搜不到。Idea版本是2019。国内上网，没有用梯子，是否和这个有关？另外，如果安装成功，使用它需要账号吗？以及需要能上国外网站吗？</p>2023-05-17</li><br/>
 </ul>

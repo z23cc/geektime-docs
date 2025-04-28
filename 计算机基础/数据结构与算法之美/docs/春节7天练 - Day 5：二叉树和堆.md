@@ -49,7 +49,7 @@
 
 祝你取得好成绩！明天见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>失火的夏天</span> 👍（4） 💬（1）<div>&#47;&#47; 翻转二叉树
+<li><span>失火的夏天</span> 👍（4） 💬（1）<p>&#47;&#47; 翻转二叉树
 public TreeNode invertTree(TreeNode root) {
         if(root == null){
 			return root;
@@ -123,7 +123,7 @@ public boolean hasPathSum(TreeNode root, int sum) {
         }
         return hasPathSum(root.left, root.left.val + tmp, sum) ||
                 hasPathSum(root.right, root.right.val + tmp, sum);
-    }</div>2019-02-09</li><br/><li><span>啵啵啵</span> 👍（0） 💬（1）<div>作者可以提供pdf版的课程资料吗，不然我觉得不值，因为不能大量复制，不能形成书面笔记，毕竟我付费了。</div>2019-10-06</li><br/><li><span>虎虎❤️</span> 👍（0） 💬（1）<div>Golang max depth
+    }</p>2019-02-09</li><br/><li><span>啵啵啵</span> 👍（0） 💬（1）<p>作者可以提供pdf版的课程资料吗，不然我觉得不值，因为不能大量复制，不能形成书面笔记，毕竟我付费了。</p>2019-10-06</li><br/><li><span>虎虎❤️</span> 👍（0） 💬（1）<p>Golang max depth
 &#47;**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -144,7 +144,7 @@ func maxDepth(root *TreeNode) int {
         
     return int(math.Max(float64(maxDepth(root.Left)), float64(maxDepth(root.Right)))) + 1
     
-}</div>2019-02-09</li><br/><li><span>黄丹</span> 👍（0） 💬（1）<div>王争老师新年的第五天快乐！
+}</p>2019-02-09</li><br/><li><span>黄丹</span> 👍（0） 💬（1）<p>王争老师新年的第五天快乐！
 放上今天LeetCode四题的代码和思路
 解题思路：对于树，这个结构很特殊，树是由根节点，根节点的左子树，根节点的右子树组成的，定义的时候就是一个递归的定义。因此在解决与树相关的问题的时候，经常会用到递归。今天的四题都不例外。
 翻转二叉树：就是递归的让节点的左子树指向右子树，右子树指向左子树。
@@ -152,7 +152,7 @@ func maxDepth(root *TreeNode) int {
 验证二叉查找树：一颗树是二叉查找树必须满足：当前的节点&gt;=左子树&amp;&amp;当前的节点&lt;=右子树，左子树是二叉查找树，右子树是二叉查找树，也是递归的定义。
 路径总和：遍历树的路径，看是否和为sum值（树的遍历也是递归的哦）
 四道题的代码在：https:&#47;&#47;github.com&#47;yyxd&#47;leetcode&#47;tree&#47;master&#47;src&#47;leetcode&#47;tree
-</div>2019-02-09</li><br/><li><span>李皮皮皮皮皮</span> 👍（20） 💬（0）<div>平衡树的各种操作太烧脑了，左旋右旋，红黑树就更别提了。过段时间就忘。😢</div>2019-02-09</li><br/><li><span>kai</span> 👍（5） 💬（0）<div>树的前中后序遍历-递归实现：
+</p>2019-02-09</li><br/><li><span>李皮皮皮皮皮</span> 👍（20） 💬（0）<p>平衡树的各种操作太烧脑了，左旋右旋，红黑树就更别提了。过段时间就忘。😢</p>2019-02-09</li><br/><li><span>kai</span> 👍（5） 💬（0）<p>树的前中后序遍历-递归实现：
 
 public class TreeTraversal {
 
@@ -198,7 +198,7 @@ public class TreeTraversal {
     }
 
 }
-</div>2019-02-11</li><br/><li><span>kai</span> 👍（2） 💬（0）<div>树的前中后序遍历-非递归实现：
+</p>2019-02-11</li><br/><li><span>kai</span> 👍（2） 💬（0）<p>树的前中后序遍历-非递归实现：
 import java.util.Stack;
 
 
@@ -282,7 +282,7 @@ public class TreeTraversal {
         System.out.println();
     }
 }
-</div>2019-02-11</li><br/><li><span>星夜</span> 👍（1） 💬（0）<div>二叉查找树节点删除逻辑，不知道对不对：
+</p>2019-02-11</li><br/><li><span>星夜</span> 👍（1） 💬（0）<p>二叉查找树节点删除逻辑，不知道对不对：
     public boolean removeNode(int val) {
         if (null == root) {
             return false;
@@ -320,7 +320,7 @@ public class TreeTraversal {
         cur.left = null;
         cur.right = null;
         return res;
-    }</div>2020-11-27</li><br/><li><span>Abner</span> 👍（1） 💬（0）<div>java实现二叉树前序、中序、后序和层次遍历
+    }</p>2020-11-27</li><br/><li><span>Abner</span> 👍（1） 💬（0）<p>java实现二叉树前序、中序、后序和层次遍历
 代码如下：
 package tree;
 
@@ -390,7 +390,7 @@ public class BinaryTree {
         }
     }
 }
-</div>2019-02-14</li><br/><li><span>kai</span> 👍（1） 💬（0）<div>今天看了一下这一节的题目，发现校招面试的时候都考过，今天又刷了一下，总结了一波，相应的知识点也总结了一下~</div>2019-02-10</li><br/><li><span>纯洁的憎恶</span> 👍（1） 💬（0）<div>今天的题目很适合递归实现，当然递归公式离代码实现还是存在一定距离。
+</p>2019-02-14</li><br/><li><span>kai</span> 👍（1） 💬（0）<p>今天看了一下这一节的题目，发现校招面试的时候都考过，今天又刷了一下，总结了一波，相应的知识点也总结了一下~</p>2019-02-10</li><br/><li><span>纯洁的憎恶</span> 👍（1） 💬（0）<p>今天的题目很适合递归实现，当然递归公式离代码实现还是存在一定距离。
 1.翻转二叉树（T）｛
 当T为Null时则返回；
 翻转二叉树（T的左子树）；
@@ -421,7 +421,7 @@ T的值小于等于右最小值，并且大于等于左最大值时，最大值=
 计算路径和（T的左子树，sum+T的值）；
 计算路径和（T的右子树，sum+T的值）；
 ｝
-计算路径和（T，0）返回true时则存在于目标值相同的路径之和；</div>2019-02-10</li><br/><li><span>mgxian</span> 👍（1） 💬（0）<div>二叉树的最大深度 go 语言实现
+计算路径和（T，0）返回true时则存在于目标值相同的路径之和；</p>2019-02-10</li><br/><li><span>mgxian</span> 👍（1） 💬（0）<p>二叉树的最大深度 go 语言实现
 &#47;**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -450,7 +450,7 @@ func maxDepth(root *TreeNode) int {
     } else {
         return rightDepth + 1
     }
-}</div>2019-02-09</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>路径总和
+}</p>2019-02-09</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>路径总和
 private static boolean deep(TreeNode treeNode, int targetSum, int curr) {
         if (treeNode == null &amp;&amp; curr == targetSum) {
             return true;
@@ -462,7 +462,7 @@ private static boolean deep(TreeNode treeNode, int targetSum, int curr) {
             return false;
         }
         return deep(treeNode.left, targetSum, curr + treeNode.val) || deep(treeNode.right, targetSum, curr + treeNode.val);
-    }</div>2023-07-03</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>验证二叉查找树
+    }</p>2023-07-03</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>验证二叉查找树
 private static boolean deep(TreeNode treeNode) {
         if (treeNode == null) {
             return true;
@@ -475,11 +475,11 @@ private static boolean deep(TreeNode treeNode) {
             return false;
         }
         return deep(treeNode.left) &amp;&amp; deep(treeNode.right);
-    }</div>2023-07-03</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>最大深度
+    }</p>2023-07-03</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>最大深度
 private static int deep(TreeNode treeNode, int dep) {
         if (treeNode == null) {
             return dep;
         }
         return Math.max(deep(treeNode.left, dep + 1), deep(treeNode.right, dep + 1));
-    }</div>2023-07-03</li><br/>
+    }</p>2023-07-03</li><br/>
 </ul>

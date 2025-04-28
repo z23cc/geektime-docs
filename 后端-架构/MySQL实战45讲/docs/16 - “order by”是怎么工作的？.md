@@ -341,7 +341,7 @@ session A的第二个select 语句是一致性读（快照读)，它是不能看
 > 第一，hexdump看出来没改应该是WAL机制生效了，要过一会儿，或者把库shutdown看看。  
 > 第二，binlog没写是MySQL Server层知道行的值没变，所以故意不写的，这个是在row格式下的策略。你可以把binlog\_format 改成statement再验证下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>XD</span> 👍（159） 💬（7）<div>老师，基于早上知道的sort_buffer是在server层，我重新理解了下rowid排序的过程，
+<li><span>XD</span> 👍（159） 💬（7）<p>老师，基于早上知道的sort_buffer是在server层，我重新理解了下rowid排序的过程，
 1，执行器查看表定义，发现name、city、age字段的长度之和超过max_length_for_sort_data，所以初始化sort_buffer的时候只放入id和name字段。
 2，执行器调用存储引擎的读数据接口，依次获取满足条件的数据的id和name，存入sort_buffer。
 3，排序。
@@ -350,10 +350,10 @@ session A的第二个select 语句是一致性读（快照读)，它是不能看
 
 但是对于using index condition的场景，执行器只调用了一次查询接口，回表是由存储层来完成的，所以扫描行数只算一次，即只算走索引搜索的过程中扫描的行数。（@b-@a只会是4000）
 
-不知道这么理解对不对？</div>2019-02-27</li><br/><li><span>null</span> 👍（56） 💬（11）<div>re: 问题3:回答得也很好，需要注意的是255这个边界。小于255都需要一个字节记录长度，超过255就需要两个字节
+不知道这么理解对不对？</p>2019-02-27</li><br/><li><span>null</span> 👍（56） 💬（11）<p>re: 问题3:回答得也很好，需要注意的是255这个边界。小于255都需要一个字节记录长度，超过255就需要两个字节
 
 11 月过数据库设计方案，总监现场抛了一个问题，就是关于 varchar 255 的。现在回看，木有人回答到点上，都说是历史原因。
-下回再问，就可以分享这一点了。ꉂ ೭(˵¯̴͒ꇴ¯̴͒˵)౨”哇哈哈～</div>2018-12-21</li><br/><li><span>某、人</span> 👍（211） 💬（20）<div>回答下@发条橙子同学的问题:
+下回再问，就可以分享这一点了。ꉂ ೭(˵¯̴͒ꇴ¯̴͒˵)౨”哇哈哈～</p>2018-12-21</li><br/><li><span>某、人</span> 👍（211） 💬（20）<p>回答下@发条橙子同学的问题:
 问题一：
 1)无条件查询如果只有order by create_time,即便create_time上有索引,也不会使用到。
 因为优化器认为走二级索引再去回表成本比全表扫描排序更高。
@@ -376,8 +376,8 @@ bigint(1)和bigint(19)都能存储2^64-1范围内的值,int是2^32-1。只是有
 老师我有几个问题:
 1.我还是想在确认之前问的问题。一个长连接,一条sql申请了sort_buffer_size等一系列的会话级别的内存,sql成功执行完,该连接变为sleep状态。这些内存只是内容会被情况,但是占用的内存空间不会释放?
 2.假设要给a值加1,执行器先找引擎取a=1的行,然后执行器给a+1,在调用接口写入a+1了数据。那么加锁不应该是在执行器第一次去取数据时，引擎层就加该加的锁？为什么要等到第二次调用写入数据时,才加锁。第一次和第二次之间,难道不会被其他事务修改吗？如果没有锁保证
-3.始终没太明白堆排序是采用的什么算法使得只需要对limit的数据进行排序就可以,而不是排序所有的数据在取前m条。--不过这里期待明天的文章</div>2018-12-20</li><br/><li><span>didiren</span> 👍（64） 💬（7）<div>刚才又测了一下，在binlog-row-image=full的情况下，第二次update是不写redolog的，说明update并没有发生
-这样我就理解了，当full时，mysql需要读到在更新时读到a值，所以会判断a值不变，不需要更新，与你给出的update t set a=3 where id=1 and a=3原理相同，但binlog-row-image会影响查询结果还是会让人吃一惊</div>2018-12-19</li><br/><li><span>老杨同志</span> 👍（90） 💬（7）<div>1)
+3.始终没太明白堆排序是采用的什么算法使得只需要对limit的数据进行排序就可以,而不是排序所有的数据在取前m条。--不过这里期待明天的文章</p>2018-12-20</li><br/><li><span>didiren</span> 👍（64） 💬（7）<p>刚才又测了一下，在binlog-row-image=full的情况下，第二次update是不写redolog的，说明update并没有发生
+这样我就理解了，当full时，mysql需要读到在更新时读到a值，所以会判断a值不变，不需要更新，与你给出的update t set a=3 where id=1 and a=3原理相同，但binlog-row-image会影响查询结果还是会让人吃一惊</p>2018-12-19</li><br/><li><span>老杨同志</span> 👍（90） 💬（7）<p>1)
 mysql&gt; select * from t where city in (&#39;杭州&#39;,&quot; 苏州 &quot;) order by name limit 100;
 需要排序
 原因是索引顺序城市、名称 与 单独按name排序的顺序不一致。
@@ -406,7 +406,7 @@ select * from (
   最后使用 select * from t where id in (); 取得结果
   对于这个优化方法，我不好确定的是临界点，前几页直接查询就可以，最后几页使用这个优化方法。
   但是中间的页码应该怎么选择不太清楚
-  </div>2018-12-19</li><br/><li><span>波波</span> 👍（78） 💬（1）<div>笔记:
+  </p>2018-12-19</li><br/><li><span>波波</span> 👍（78） 💬（1）<p>笔记:
 1.MySQL会为每个线程分配一个内存（sort_buffer）用于排序该内存大小为sort_buffer_size
   1&gt;如果排序的数据量小于sort_buffer_size，排序将会在内存中完成
   2&gt;如果排序数据量很大，内存中无法存下这么多数据，则会使用磁盘临时文件来辅助排序，也称外部排序
@@ -442,18 +442,18 @@ rowid排序
 缺点：回表的操作是随机IO，会造成大量的随机读，不一定就比全字段排序减少对磁盘的访问
 
 
-3.按照排序的结果返回客户所取行数</div>2018-12-19</li><br/><li><span>看不到de颜色</span> 👍（38） 💬（9）<div>关于上期问题里的最后一个例子不太明白，还请老师指点一下。按说在更新操作的时候应该是当前读，那么应该能读到id=1 and a = 3的记录并修改。那么为什么再select还会查到a = 2。难道是即便update但是where条件也是快照读？但是如果这样那么幻读的问题不就不会存在了吗？（B insert了一条记录，此时A范围update后再select会把B insert的语句查出来）</div>2019-02-02</li><br/><li><span>胡楚坚</span> 👍（33） 💬（9）<div>不好意思，上个留言没打完。
+3.按照排序的结果返回客户所取行数</p>2018-12-19</li><br/><li><span>看不到de颜色</span> 👍（38） 💬（9）<p>关于上期问题里的最后一个例子不太明白，还请老师指点一下。按说在更新操作的时候应该是当前读，那么应该能读到id=1 and a = 3的记录并修改。那么为什么再select还会查到a = 2。难道是即便update但是where条件也是快照读？但是如果这样那么幻读的问题不就不会存在了吗？（B insert了一条记录，此时A范围update后再select会把B insert的语句查出来）</p>2019-02-02</li><br/><li><span>胡楚坚</span> 👍（33） 💬（9）<p>不好意思，上个留言没打完。
 问题一，在跟max_length_for_sort_data坐比较时，mysql是怎么判断一行数据的大小的？是直接根据表定义字段的大小吗？
 
 问题二，另外这‘一行’的含义是整行数据，还是单单最终引擎层需要返回的字段(即select字段+where字段+order by字段)？
 
-麻烦老师有空解答下，谢谢哈</div>2019-02-21</li><br/><li><span>发条橙子 。</span> 👍（27） 💬（3）<div>老师 ， 接前面 create_time的回答 。 语句确实是 select * from t order by create_time desc ;
+麻烦老师有空解答下，谢谢哈</p>2019-02-21</li><br/><li><span>发条橙子 。</span> 👍（27） 💬（3）<p>老师 ， 接前面 create_time的回答 。 语句确实是 select * from t order by create_time desc ;
 
 老师是指 优化器会根据 order by create_time 来选择使用 create_time 索引么 
 
 我之前误以为优化器是根据 where 后面的字段条件来选择索引 ，所以上面那条语句没有where 的时候我就想当然地以为不会走索引 。 看来是自己跳进了一个大坑里面 😅
 
-另 ： 我之前在本地建了张表加了20w数据 ，用explain 查了一次 ，发现走的是全表没有走索引， 老师说会走索引。我想了一下， 可能是统计的数据有误的缘故，用 analyze table重新统计 ，再次查询果然走了索引  。😁</div>2018-12-20</li><br/><li><span>didiren</span> 👍（24） 💬（1）<div>感谢！针对我之前提出的疑问，我又详细的做了实验，发现一个新的问题，我感觉是个bug，希望解答
+另 ： 我之前在本地建了张表加了20w数据 ，用explain 查了一次 ，发现走的是全表没有走索引， 老师说会走索引。我想了一下， 可能是统计的数据有误的缘故，用 analyze table重新统计 ，再次查询果然走了索引  。😁</p>2018-12-20</li><br/><li><span>didiren</span> 👍（24） 💬（1）<p>感谢！针对我之前提出的疑问，我又详细的做了实验，发现一个新的问题，我感觉是个bug，希望解答
 # SessionA
 mysql&gt; show variables like &#39;%binlog_row_image%&#39;;
 | Variable_name    | Value |
@@ -498,7 +498,7 @@ mysql&gt; update t set a=3 where id = 1;
 Rows matched: 1  Changed: 0  Warnings: 0
 mysql&gt; select * from t where id = 1; 
 | id | a    |
-|  1 |    3 |</div>2018-12-19</li><br/><li><span>发条橙子 。</span> 👍（12） 💬（2）<div>
+|  1 |    3 |</p>2018-12-19</li><br/><li><span>发条橙子 。</span> 👍（12） 💬（2）<p>
 正好有个 order by 使用场景 ， 有个页面，需要按数据插入时间倒序来查看一张记录表的信息 ，因为除了分页的参数 ， 没有其他 where 的条件 ，所以除了主键外没有其他索引 。 
 
 这时候 DBA 让我给 create_time 创建索引， 说是按照顺序排列 ，查询会增快 。这篇文章看完后 ， 让我感觉实际上创建 create_time 索引是没用的 。 
@@ -527,7 +527,7 @@ mysql&gt; select * from t where id = 1;
 问题三 ：老师之后的文章会有讲解 bigInt(20)  、 tinyint(2) 、varchar(32) 这种后面带数字与不带数字有何区别的文章么 。 每次建字段都会考虑长度 ，但实际却不知道他有何作用 
 
 
-</div>2018-12-20</li><br/><li><span>coderbee</span> 👍（11） 💬（1）<div>请教下林老师：
+</p>2018-12-20</li><br/><li><span>coderbee</span> 👍（11） 💬（1）<p>请教下林老师：
 以文章中的 t 表，索引 city(city) 其实等价于 city(city, id) ，第2条语句加了 order by id，Extra 列多了 Using where ，为啥还要这个？？两个都是用到了覆盖索引。
 
 mysql&gt; explain select id from t where city = &#39;city102&#39; limit 1, 10;
@@ -546,9 +546,9 @@ mysql&gt; explain select id from t where city = &#39;city102&#39; order by id li
 +----+-------------+-------+------------+------+---------------+------+---------+-------+------+----------+--------------------------+
 1 row in set, 1 warning (0.00 sec)
 
-</div>2019-01-20</li><br/><li><span>看不到de颜色</span> 👍（9） 💬（2）<div>图14那个疑问明白了，是因为where条件中存在update的值InnoDB认为值一致所以没有修改，从而导致A的一致性视图中看不到B的修改。
+</p>2019-01-20</li><br/><li><span>看不到de颜色</span> 👍（9） 💬（2）<p>图14那个疑问明白了，是因为where条件中存在update的值InnoDB认为值一致所以没有修改，从而导致A的一致性视图中看不到B的修改。
 这篇又看了一遍，还有个疑问，想请老师解答一下。
 1.asc和desc会影响使用索引排序吗？
-2.如果采用rowid也无法放入排序字段还是会转用磁盘排序吧。</div>2019-02-06</li><br/><li><span>唐名之</span> 👍（6） 💬（3）<div>1：用@cyberbit 提供的方式，执行计划是不会使用到排序，但执行时间比使用排序消耗的多；
-2：分页limit过大时会导致大量排序，可以记录上一页最后的ID，下一页查询条件带上 where  ID&gt;上一页最后ID limit 100</div>2019-01-09</li><br/><li><span>啊啊啊哦哦</span> 👍（5） 💬（2）<div>假设超过sort buffer  排序是一部分在内存中排序 超出的部分 用临时文件吗。</div>2019-03-17</li><br/>
+2.如果采用rowid也无法放入排序字段还是会转用磁盘排序吧。</p>2019-02-06</li><br/><li><span>唐名之</span> 👍（6） 💬（3）<p>1：用@cyberbit 提供的方式，执行计划是不会使用到排序，但执行时间比使用排序消耗的多；
+2：分页limit过大时会导致大量排序，可以记录上一页最后的ID，下一页查询条件带上 where  ID&gt;上一页最后ID limit 100</p>2019-01-09</li><br/><li><span>啊啊啊哦哦</span> 👍（5） 💬（2）<p>假设超过sort buffer  排序是一部分在内存中排序 超出的部分 用临时文件吗。</p>2019-03-17</li><br/>
 </ul>

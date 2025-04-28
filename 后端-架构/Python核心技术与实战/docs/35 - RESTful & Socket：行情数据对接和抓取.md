@@ -326,16 +326,16 @@ if __name__ == '__main__':
 
 最后给你留一道思考题。WebSocket 会丢包吗？如果丢包的话， Orderbook 爬虫又会发生什么？这一点应该如何避免呢？欢迎留言和我讨论，也欢迎你把这篇文章分享出去。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（58） 💬（0）<div>思考题答案：
-Websocket 可能丢包。TCP 协议保证了所有的包按顺序抵达（即使是乱序抵达，在前面的包收到之前，TCP 协议下的底层程序也会讲先到达的靠后的包缓存，直到前面的包抵达，才送给上层的应用程序），但是并不能保证不可恢复的错误发生的时候，包不会丢失。这种情况发生的时候，就会出现 Orderbook 中一个或多个（价格，数量）信息没得到及时更新。这种错误越积攒越多的情况下，就会导致本地的 Orderbook 充满垃圾信息，变得完全不可靠。因此一个很好的做法是，可以设置一个时间间隔，通过 RESTFul 或者其他方式重新抓一下 Orderbook 的 Snapshot，然后和本地的 Orderbook 进行比对，纠正错误。</div>2019-08-01</li><br/><li><span>SCAR</span> 👍（47） 💬（1）<div>思考题：
+<li><span>Jingxiao</span> 👍（58） 💬（0）<p>思考题答案：
+Websocket 可能丢包。TCP 协议保证了所有的包按顺序抵达（即使是乱序抵达，在前面的包收到之前，TCP 协议下的底层程序也会讲先到达的靠后的包缓存，直到前面的包抵达，才送给上层的应用程序），但是并不能保证不可恢复的错误发生的时候，包不会丢失。这种情况发生的时候，就会出现 Orderbook 中一个或多个（价格，数量）信息没得到及时更新。这种错误越积攒越多的情况下，就会导致本地的 Orderbook 充满垃圾信息，变得完全不可靠。因此一个很好的做法是，可以设置一个时间间隔，通过 RESTFul 或者其他方式重新抓一下 Orderbook 的 Snapshot，然后和本地的 Orderbook 进行比对，纠正错误。</p>2019-08-01</li><br/><li><span>SCAR</span> 👍（47） 💬（1）<p>思考题：
 1. websocket基于tcp的，虽然协议上有纠错，重传和等待的机制，但一些特殊的情况还是可能会有丢包的情况，比如同时有超过服务器负载的客户端在请求数据。
 2.如果丢包的情况发生时，类似开大会会场人人都发微信图片，看着WiFi信号满格，却发不出去，差不多一样的道理爬虫也是收不到数据的。
-3.查了下websocket的WebSocketApp的函数，有个参数on_error，是websocket发生错误的时候触发的，那么我们可以编写这个对应的回调函数来让服务器重发或者其他有效的处理。</div>2019-07-29</li><br/><li><span>JustDoDT</span> 👍（6） 💬（1）<div>websocket资料
-https:&#47;&#47;pypi.org&#47;project&#47;websocket_client&#47;</div>2019-07-29</li><br/><li><span>Geek_adeba6</span> 👍（4） 💬（1）<div>想请问是否可以使用STOMP协议与Gemini这样的交易平台通信, 像消息队列rabbitmq 有 stomp的plugins</div>2019-07-30</li><br/><li><span>shiziwen</span> 👍（3） 💬（1）<div>请问文章中，接口获取的数据中，bids和ask是什么意思呢？</div>2020-05-20</li><br/><li><span>Merlin</span> 👍（3） 💬（1）<div>对于web socket的编程，可以用asyncio，我觉得用asyncio来开发web socket更为方便</div>2019-11-26</li><br/><li><span>_stuView</span> 👍（1） 💬（2）<div>我之前看到Linux公众号讲python并不是一个解释型语言，而是一个运行在虚拟机上的语言https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;Yqwk_eXO1t5N2cjRz_u0sw</div>2019-07-31</li><br/><li><span>tt</span> 👍（45） 💬（1）<div>websocket包的安装使用如下命令:
+3.查了下websocket的WebSocketApp的函数，有个参数on_error，是websocket发生错误的时候触发的，那么我们可以编写这个对应的回调函数来让服务器重发或者其他有效的处理。</p>2019-07-29</li><br/><li><span>JustDoDT</span> 👍（6） 💬（1）<p>websocket资料
+https:&#47;&#47;pypi.org&#47;project&#47;websocket_client&#47;</p>2019-07-29</li><br/><li><span>Geek_adeba6</span> 👍（4） 💬（1）<p>想请问是否可以使用STOMP协议与Gemini这样的交易平台通信, 像消息队列rabbitmq 有 stomp的plugins</p>2019-07-30</li><br/><li><span>shiziwen</span> 👍（3） 💬（1）<p>请问文章中，接口获取的数据中，bids和ask是什么意思呢？</p>2020-05-20</li><br/><li><span>Merlin</span> 👍（3） 💬（1）<p>对于web socket的编程，可以用asyncio，我觉得用asyncio来开发web socket更为方便</p>2019-11-26</li><br/><li><span>_stuView</span> 👍（1） 💬（2）<p>我之前看到Linux公众号讲python并不是一个解释型语言，而是一个运行在虚拟机上的语言https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;Yqwk_eXO1t5N2cjRz_u0sw</p>2019-07-31</li><br/><li><span>tt</span> 👍（45） 💬（1）<p>websocket包的安装使用如下命令:
 
 pip -m install websocket_client安装。
 
-pip -m install websocket会安装另外一个完全不同的包</div>2019-07-29</li><br/><li><span>tux</span> 👍（16） 💬（0）<div>干布球和tt 的提示，解决了报错。
+pip -m install websocket会安装另外一个完全不同的包</p>2019-07-29</li><br/><li><span>tux</span> 👍（16） 💬（0）<p>干布球和tt 的提示，解决了报错。
 import websocket     #pip install websocket-client
 import _thread as thread
 
@@ -345,15 +345,15 @@ try:
     import thread
 except ImportError:
     import _thread as thread
-</div>2019-07-29</li><br/><li><span>干布球</span> 👍（8） 💬（1）<div>第二段代码少了个import time，python3里面thread用import _thread，不知是不是这样？</div>2019-07-29</li><br/><li><span>Claywoow</span> 👍（7） 💬（1）<div>老师，请教个问题，为什么我把这两个类分成两个模块来测试的时候，程序会进入无响应的状态，好像一直在运行，这会是什么原因呢？</div>2019-08-04</li><br/><li><span>SCAR</span> 👍（7） 💬（3）<div>尝试回答下Destroy的问题：
+</p>2019-07-29</li><br/><li><span>干布球</span> 👍（8） 💬（1）<p>第二段代码少了个import time，python3里面thread用import _thread，不知是不是这样？</p>2019-07-29</li><br/><li><span>Claywoow</span> 👍（7） 💬（1）<p>老师，请教个问题，为什么我把这两个类分成两个模块来测试的时候，程序会进入无响应的状态，好像一直在运行，这会是什么原因呢？</p>2019-08-04</li><br/><li><span>SCAR</span> 👍（7） 💬（3）<p>尝试回答下Destroy的问题：
 查看WebsocketApp函数：
 on_message: callable object which is called when received data.
  on_message has 2 arguments.
  The 1st argument is this class object.
  The 2nd argument is utf-8 string which we get from the server.
 你如果直接on_message = self.on_message，那么会缺少第一个参数，因为class Crawler类里on_message(self,message)是缺少如最上面老师例子def on_message(ws, message)里的ws的。所以
-on_message = lambda ws, message: self.on_message(message)是通过lambda补上第一个参数ws。</div>2019-07-29</li><br/><li><span>jxs1211</span> 👍（4） 💬（0）<div>实测on_message = self.on_message没有问题，源码中_callback中只是对回调函数做了类型判断，self.on_message是和method，所以直接将返回data给了形参message，执行接受数据的处理</div>2019-08-03</li><br/><li><span>Geek_688e7c</span> 👍（3） 💬（2）<div>按照老师的代码来都没有反应，是不是Url失效了？ 我直接在浏览器里访问Url是说无法访问。
-出现程序运行没有报错但是没有任何输出和结果的情况，是不是就是服务端出了问题呢</div>2022-02-07</li><br/><li><span>TKbook</span> 👍（3） 💬（2）<div>因此，应该你注意到了，它的第一个参数是 self，这里如果直接写成 on_message = self.on_message 将会出错。
+on_message = lambda ws, message: self.on_message(message)是通过lambda补上第一个参数ws。</p>2019-07-29</li><br/><li><span>jxs1211</span> 👍（4） 💬（0）<p>实测on_message = self.on_message没有问题，源码中_callback中只是对回调函数做了类型判断，self.on_message是和method，所以直接将返回data给了形参message，执行接受数据的处理</p>2019-08-03</li><br/><li><span>Geek_688e7c</span> 👍（3） 💬（2）<p>按照老师的代码来都没有反应，是不是Url失效了？ 我直接在浏览器里访问Url是说无法访问。
+出现程序运行没有报错但是没有任何输出和结果的情况，是不是就是服务端出了问题呢</p>2022-02-07</li><br/><li><span>TKbook</span> 👍（3） 💬（2）<p>因此，应该你注意到了，它的第一个参数是 self，这里如果直接写成 on_message = self.on_message 将会出错。
 为了避免这个问题，我们需要将函数再次包装一下。这里我使用了前面学过的匿名函数，来传递中间状态，注意我们只需要 message，因此传入 message 即可。
-这段没看懂，老师或者哪位大神能解释一下？</div>2019-07-29</li><br/>
+这段没看懂，老师或者哪位大神能解释一下？</p>2019-07-29</li><br/>
 </ul>

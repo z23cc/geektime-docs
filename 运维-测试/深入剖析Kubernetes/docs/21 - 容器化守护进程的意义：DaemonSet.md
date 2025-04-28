@@ -373,7 +373,7 @@ daemonset.extensions/fluentd-elasticsearch rolled back
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>虎虎❤️</span> 👍（75） 💬（2）<div>思考题，
+<li><span>虎虎❤️</span> 👍（75） 💬（2）<p>思考题，
 
 我觉得应该是效率的问题。
 
@@ -383,12 +383,12 @@ daemonset.extensions/fluentd-elasticsearch rolled back
 之前的做法是：
 controller判断调度谓词，符合的话直接在controller中直接设置spec.hostName去调度。
 目前的做法是：
-controller不再判断调度条件，给每个pode设置NodeAffinity。控制器根据NodeAffinity去检查每个node上是否启动了相应的Pod。并且可以利用调度优先级去优先调度关键的ds pods。</div>2018-10-10</li><br/><li><span>北卡</span> 👍（40） 💬（1）<div>我跟上面的朋友有同样的疑问，关于Partition更新的。
+controller不再判断调度条件，给每个pode设置NodeAffinity。控制器根据NodeAffinity去检查每个node上是否启动了相应的Pod。并且可以利用调度优先级去优先调度关键的ds pods。</p>2018-10-10</li><br/><li><span>北卡</span> 👍（40） 💬（1）<p>我跟上面的朋友有同样的疑问，关于Partition更新的。
 
 我设置了Partition，用部分pod来做灰度发布，然后发现没问题，我要全部更新，就只需要去掉Partition字段吗？
 然后我下一次更新的时候，就要再先加上Partition，然后再更新。全部更新时再去掉。
 
-我看了老师的回复，表达的是这个意思吗？</div>2018-10-10</li><br/><li><span>紫夜</span> 👍（33） 💬（4）<div>张老师，DaemonSet的滚动更新，是先delete旧的pod，再启动新的pod，还是和Deployment一样，先创建新的pod，再删除旧的pod?</div>2019-08-15</li><br/><li><span>DJH</span> 👍（24） 💬（1）<div>张老师，请教几个基础问题：
+我看了老师的回复，表达的是这个意思吗？</p>2018-10-10</li><br/><li><span>紫夜</span> 👍（33） 💬（4）<p>张老师，DaemonSet的滚动更新，是先delete旧的pod，再启动新的pod，还是和Deployment一样，先创建新的pod，再删除旧的pod?</p>2019-08-15</li><br/><li><span>DJH</span> 👍（24） 💬（1）<p>张老师，请教几个基础问题：
 1. 在上一讲中，有一点我还是没想通，为何MySQL的数据复制操作必须要用sidecar容器来处理，而不用Mysql主容器来一并解决，你当时提到说是因为容器是单进程模型。如果取消sidecar容器，把数据复制操作和启动MySQL服务这两个操作一并写到MySQL主容器的sh -c命令中，这样算不算一个进程呢？
 
 2. StatefulSet的容器启动有先后顺序，那么当序号较小的容器由于某种原因需要重启时，会不会先把序号较大的容器KILL掉，再按照它们本来的顺序重新启动一次？
@@ -399,11 +399,11 @@ controller不再判断调度条件，给每个pode设置NodeAffinity。控制器
 
 5. Deployment里可以控制保留历史ReplicaSet的数量，那么ControllerRevision这个API对象能不能做到保留指定数量的版本记录？
 
-问题比较多，谢谢！</div>2018-10-10</li><br/><li><span>Kanner</span> 👍（23） 💬（3）<div>那为什么Deployment不用ControllerRevison管理版本呢</div>2018-10-10</li><br/><li><span>虎虎❤️</span> 👍（13） 💬（1）<div>一直不理解notation和label的区别，他们的设计思想是什么呢？加污点是前者还是后者？</div>2018-10-10</li><br/><li><span>宋晓明</span> 👍（10） 💬（4）<div>老师：有没有公司这样用k8s的：apiserver管理很多pod 每个pod的ip地址全部暴露出来 nginx的upstream配置全是pod的ip地址，访问流程也就是client—&gt;nginx—&gt;pod:port  还有一个程序会监控pod地址变化，一旦变化，自动更新nginx配置。这是新公司使用k8s的流程，感觉好多k8s特性都没用到，比如service，ingress等 大材小用了。。。</div>2018-10-10</li><br/><li><span>Geek_dn82ci</span> 👍（9） 💬（2）<div>Stateful set 管理的replica 不是通过RS实现的么？</div>2018-11-12</li><br/><li><span>donson</span> 👍（7） 💬（1）<div>“需要注意的是，在 Kubernetes v1.11 之前，由于调度器尚不完善，DaemonSet 是由 DaemonSet Controller 自行调度的，即它会直接设置 Pod 的 spec.nodename 字段，这样就可以跳过调度器了。”，后来随着调度器的完善，调度器就把DaemonSet的调度逻辑收回，由调度器统一调度。划清边界，领域内聚</div>2018-10-10</li><br/><li><span>初学者</span> 👍（6） 💬（1）<div>还是没有明白damonset的实现与&quot;污点&quot;的关系，理论上为了实现每个node上有且只有pod, daemonset controller 和nodeaffinity就可以了，为啥需要&quot;污点&quot;机制？</div>2018-10-29</li><br/><li><span>虎虎❤️</span> 👍（4） 💬（1）<div>sts 在update的过程中如果失败，并且没有办法restore，比如pulling image fail。这种情况应该怎么恢复？
+问题比较多，谢谢！</p>2018-10-10</li><br/><li><span>Kanner</span> 👍（23） 💬（3）<p>那为什么Deployment不用ControllerRevison管理版本呢</p>2018-10-10</li><br/><li><span>虎虎❤️</span> 👍（13） 💬（1）<p>一直不理解notation和label的区别，他们的设计思想是什么呢？加污点是前者还是后者？</p>2018-10-10</li><br/><li><span>宋晓明</span> 👍（10） 💬（4）<p>老师：有没有公司这样用k8s的：apiserver管理很多pod 每个pod的ip地址全部暴露出来 nginx的upstream配置全是pod的ip地址，访问流程也就是client—&gt;nginx—&gt;pod:port  还有一个程序会监控pod地址变化，一旦变化，自动更新nginx配置。这是新公司使用k8s的流程，感觉好多k8s特性都没用到，比如service，ingress等 大材小用了。。。</p>2018-10-10</li><br/><li><span>Geek_dn82ci</span> 👍（9） 💬（2）<p>Stateful set 管理的replica 不是通过RS实现的么？</p>2018-11-12</li><br/><li><span>donson</span> 👍（7） 💬（1）<p>“需要注意的是，在 Kubernetes v1.11 之前，由于调度器尚不完善，DaemonSet 是由 DaemonSet Controller 自行调度的，即它会直接设置 Pod 的 spec.nodename 字段，这样就可以跳过调度器了。”，后来随着调度器的完善，调度器就把DaemonSet的调度逻辑收回，由调度器统一调度。划清边界，领域内聚</p>2018-10-10</li><br/><li><span>初学者</span> 👍（6） 💬（1）<p>还是没有明白damonset的实现与&quot;污点&quot;的关系，理论上为了实现每个node上有且只有pod, daemonset controller 和nodeaffinity就可以了，为啥需要&quot;污点&quot;机制？</p>2018-10-29</li><br/><li><span>虎虎❤️</span> 👍（4） 💬（1）<p>sts 在update的过程中如果失败，并且没有办法restore，比如pulling image fail。这种情况应该怎么恢复？
 
-我尝试再patch一个正确的image 路径，但是没有反应。 然后我delete掉了出错的pod。正常的做法应该是什么？roll out 到上一个&#47;下一个正确版本？</div>2018-10-10</li><br/><li><span>放开那坨便便</span> 👍（4） 💬（1）<div>“这样，mysql 这个 StatefulSet 就会严格按照 Pod 的序号，逐一更新 MySQL 容器的镜像。而如果更新有错误，它会自动回滚到原先的版本。”
+我尝试再patch一个正确的image 路径，但是没有反应。 然后我delete掉了出错的pod。正常的做法应该是什么？roll out 到上一个&#47;下一个正确版本？</p>2018-10-10</li><br/><li><span>放开那坨便便</span> 👍（4） 💬（1）<p>“这样，mysql 这个 StatefulSet 就会严格按照 Pod 的序号，逐一更新 MySQL 容器的镜像。而如果更新有错误，它会自动回滚到原先的版本。”
 
-我测试的时候没有自动回滚，请问自动回滚是如何实现的？需要修改什么配置么？</div>2018-10-10</li><br/><li><span>abc</span> 👍（0） 💬（1）<div>老师，咨询个问题：既然DaemonSet也是可以定义selector的，那是不是可以理解为可以人为干预DaemonSet Pod调度到指定的节点上去？</div>2018-10-12</li><br/><li><span>starnop</span> 👍（0） 💬（1）<div>磊哥，请教一个问题， 使用kubeadm 部署kubernetes ，宿主机ip使用dhcp方式，无法固定，在重启后ip改变，这个问题目前看到的一种解法是修改配置文件，重新生成证书等操作，每次开机做这个操作有些繁琐，不知有没有什么别的解法？</div>2018-10-10</li><br/><li><span>Andy</span> 👍（15） 💬（1）<div>k8s.gcr.io&#47;fluentd-elasticsearch镜像下不到，百度搜到有人用 mirrorgooglecontainers&#47;前头的镜像替代“科学上网”，
+我测试的时候没有自动回滚，请问自动回滚是如何实现的？需要修改什么配置么？</p>2018-10-10</li><br/><li><span>abc</span> 👍（0） 💬（1）<p>老师，咨询个问题：既然DaemonSet也是可以定义selector的，那是不是可以理解为可以人为干预DaemonSet Pod调度到指定的节点上去？</p>2018-10-12</li><br/><li><span>starnop</span> 👍（0） 💬（1）<p>磊哥，请教一个问题， 使用kubeadm 部署kubernetes ，宿主机ip使用dhcp方式，无法固定，在重启后ip改变，这个问题目前看到的一种解法是修改配置文件，重新生成证书等操作，每次开机做这个操作有些繁琐，不知有没有什么别的解法？</p>2018-10-10</li><br/><li><span>Andy</span> 👍（15） 💬（1）<p>k8s.gcr.io&#47;fluentd-elasticsearch镜像下不到，百度搜到有人用 mirrorgooglecontainers&#47;前头的镜像替代“科学上网”，
 于是访问 https:&#47;&#47;hub.docker.com&#47;r&#47;镜像名&#47;tags 来查看替代镜像的所有版本。
 
 https:&#47;&#47;hub.docker.com&#47;r&#47;mirrorgooglecontainers&#47;fluentd-elasticsearch&#47;tags
@@ -411,5 +411,5 @@ https:&#47;&#47;hub.docker.com&#47;r&#47;mirrorgooglecontainers&#47;fluentd-elas
 找到了以下两个版本来做实验。
 mirrorgooglecontainers&#47;fluentd-elasticsearch:v2.0.0
 
-mirrorgooglecontainers&#47;fluentd-elasticsearch:v2.4.0</div>2020-06-26</li><br/>
+mirrorgooglecontainers&#47;fluentd-elasticsearch:v2.4.0</p>2020-06-26</li><br/>
 </ul>

@@ -411,7 +411,7 @@ public class HelloServlet implements Servlet {
 
 欢迎你把你的方法分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>so long</span> 👍（2） 💬（1）<div>老师请教一个问题，ServletProcessor没有设置响应头Content-Length，浏览器不会有拆包或者粘包的问题吗？</div>2023-12-18</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（1）<div>🤪匹配 web.xml 或注解定义的 servlet 名称， 找到就可以当做动态 servlet。 不知道对不对， 想法比较单调， 希望老师和朋友给出点评和意见</div>2023-12-13</li><br/><li><span>Xiaosong</span> 👍（0） 💬（1）<div>欸 从来没 单独编译过单独的 java文件，我看target里面不编译test dir底下的文件，请教一下怎么操作</div>2024-01-27</li><br/><li><span>Geek_50a5cc</span> 👍（0） 💬（1）<div>所以 Servlet 动态资源的 classloader 都是去 编译后的classes定位需要的Servlet，对吗</div>2023-12-15</li><br/><li><span>彩笔采购</span> 👍（0） 💬（1）<div>啊我悟了</div>2023-12-15</li><br/><li><span>peter</span> 👍（0） 💬（2）<div>请教老师几个问题：
+<li><span>so long</span> 👍（2） 💬（1）<p>老师请教一个问题，ServletProcessor没有设置响应头Content-Length，浏览器不会有拆包或者粘包的问题吗？</p>2023-12-18</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（1）<p>🤪匹配 web.xml 或注解定义的 servlet 名称， 找到就可以当做动态 servlet。 不知道对不对， 想法比较单调， 希望老师和朋友给出点评和意见</p>2023-12-13</li><br/><li><span>Xiaosong</span> 👍（0） 💬（1）<p>欸 从来没 单独编译过单独的 java文件，我看target里面不编译test dir底下的文件，请教一下怎么操作</p>2024-01-27</li><br/><li><span>Geek_50a5cc</span> 👍（0） 💬（1）<p>所以 Servlet 动态资源的 classloader 都是去 编译后的classes定位需要的Servlet，对吗</p>2023-12-15</li><br/><li><span>彩笔采购</span> 👍（0） 💬（1）<p>啊我悟了</p>2023-12-15</li><br/><li><span>peter</span> 👍（0） 💬（2）<p>请教老师几个问题：
 Q1：老师开发用的IDE是Idea吗？
 我用Idea2019，打开老师的第三课代码，打开HttpServer.java,运行main函数，提示编译错误：“Error:java: 错误: 不支持发行版本 5”。
 我的电脑上java版本是java8。老师的代码只有三部分：src目录、webroot目录、pom.xml，都没有包含Java版本信息啊。
@@ -424,5 +424,5 @@ Q2：Response类只有这些内容吗？
 本课中，Response只当做实体类处理，实体类的话，应该包含响应的多个字段，比如状态行、响应头等字段，但本文只有Request和OutputStream，是没有全部列出来吗？
 
 Q3：对于图片，Response是怎么处理的？
-把图片也当做文件，读取文件，读出的结果应该是二进制数据，然后把二进制数据放到response的响应体中，是这样吗？</div>2023-12-14</li><br/><li><span>wild wings.Luv</span> 👍（0） 💬（0）<div>请问老师，在02处理静态资源的时候，contenttype设置为12，hello.txt是整个http报文的内容，此时会解析前面的内容作为响应头。但是在03处理静态资源，是拼接响应头，所以hello.txt整个文件都被当成了响应体。此时hello.txt就不需要是整个报文了。</div>2024-09-05</li><br/><li><span>Martito</span> 👍（0） 💬（1）<div>为什么我编译这个HelloServlet.java报错呢 idea中也没有提示错误呀</div>2023-12-19</li><br/>
+把图片也当做文件，读取文件，读出的结果应该是二进制数据，然后把二进制数据放到response的响应体中，是这样吗？</p>2023-12-14</li><br/><li><span>wild wings.Luv</span> 👍（0） 💬（0）<p>请问老师，在02处理静态资源的时候，contenttype设置为12，hello.txt是整个http报文的内容，此时会解析前面的内容作为响应头。但是在03处理静态资源，是拼接响应头，所以hello.txt整个文件都被当成了响应体。此时hello.txt就不需要是整个报文了。</p>2024-09-05</li><br/><li><span>Martito</span> 👍（0） 💬（1）<p>为什么我编译这个HelloServlet.java报错呢 idea中也没有提示错误呀</p>2023-12-19</li><br/>
 </ul>

@@ -193,6 +193,6 @@ DevSecOps相比较而言多了Sec三个字母，事实上，**它确实就是将
 
 欢迎在评论区中分享。如果觉得今天的内容对你有所帮助的话，也欢迎你把课程分享给其他同事或朋友，我们共同学习进步！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>leslie</span> 👍（1） 💬（0）<div>Sec处于Dev和Ops的全生命周期</div>2022-03-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-31</li><br/><li><span>DoHer4S</span> 👍（0） 💬（0）<div>安全组件比如比较著名的： Apache Shiro - 关于Apache的Web安全组件(CVE-2020-17523) 
-漏洞大户： IIS， 基本上一搜一大堆。</div>2022-03-08</li><br/>
+<li><span>leslie</span> 👍（1） 💬（0）<p>Sec处于Dev和Ops的全生命周期</p>2022-03-07</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-31</li><br/><li><span>DoHer4S</span> 👍（0） 💬（0）<p>安全组件比如比较著名的： Apache Shiro - 关于Apache的Web安全组件(CVE-2020-17523) 
+漏洞大户： IIS， 基本上一搜一大堆。</p>2022-03-08</li><br/>
 </ul>

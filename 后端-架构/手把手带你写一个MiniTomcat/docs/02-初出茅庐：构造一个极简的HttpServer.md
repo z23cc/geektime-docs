@@ -335,7 +335,7 @@ Hello World!
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>猛禽不是鸟</span> 👍（1） 💬（1）<div>在应用服务器中维护一个请求地址和对应处理类【方法】的映射关系，然后在parse解析出来uri之后，通过映射关系找到对应的处理方法。</div>2024-02-19</li><br/><li><span>听风有信</span> 👍（1） 💬（2）<div>应用服务器的话，要根据客户端的请求，然后执行相应的业务处理程序，最后将业务程序的输出返回给客户端，这种输出的内容是动态生成的。</div>2023-12-18</li><br/><li><span>阿加西</span> 👍（1） 💬（1）<div>参考了《How Tomcat Works》</div>2023-12-12</li><br/><li><span>Xiaosong</span> 👍（0） 💬（1）<div>好奇为什么parseUri要写的这么麻烦，直接requestString.split(&#39; &#39;)，检查一下length，然后 取第二个不就行了吗</div>2024-01-25</li><br/><li><span>健康的小牛犊</span> 👍（0） 💬（3）<div>Spring和tomcat是如何结合在一起的呢，按理说tomcat本身就可以作为一个web服务器了，那spring的作用是啥呢</div>2024-01-02</li><br/><li><span>Geek_50a5cc</span> 👍（0） 💬（1）<div>如果将读取的文件内容，放在message里面返回过去；
+<li><span>猛禽不是鸟</span> 👍（1） 💬（1）<p>在应用服务器中维护一个请求地址和对应处理类【方法】的映射关系，然后在parse解析出来uri之后，通过映射关系找到对应的处理方法。</p>2024-02-19</li><br/><li><span>听风有信</span> 👍（1） 💬（2）<p>应用服务器的话，要根据客户端的请求，然后执行相应的业务处理程序，最后将业务程序的输出返回给客户端，这种输出的内容是动态生成的。</p>2023-12-18</li><br/><li><span>阿加西</span> 👍（1） 💬（1）<p>参考了《How Tomcat Works》</p>2023-12-12</li><br/><li><span>Xiaosong</span> 👍（0） 💬（1）<p>好奇为什么parseUri要写的这么麻烦，直接requestString.split(&#39; &#39;)，检查一下length，然后 取第二个不就行了吗</p>2024-01-25</li><br/><li><span>健康的小牛犊</span> 👍（0） 💬（3）<p>Spring和tomcat是如何结合在一起的呢，按理说tomcat本身就可以作为一个web服务器了，那spring的作用是啥呢</p>2024-01-02</li><br/><li><span>Geek_50a5cc</span> 👍（0） 💬（1）<p>如果将读取的文件内容，放在message里面返回过去；
 String Message = &quot;HTTP&#47;1.1 404 FIle Not Found\r\n&quot; +
                         &quot;Content-Type: text&#47;html\r\n&quot; +
                         &quot;Content-Length: 23\r\n&quot; +
@@ -345,5 +345,5 @@ String Message = &quot;HTTP&#47;1.1 404 FIle Not Found\r\n&quot; +
                         &quot;&lt;&#47;h1&gt;&quot;;
                 output.write(Message.getBytes());
 如果文件里 字符 很多的时候，这个是否都会完全输出显示出来呢；
-（result就是文件字节流转换的字符串）</div>2023-12-15</li><br/><li><span>Koyi</span> 👍（0） 💬（1）<div>Request类 第13行 读取数据时，使用一个while循环判断返回值是否大于0以保证成功读取完数据是不是好些</div>2023-12-13</li><br/><li><span>斜杠青年</span> 👍（0） 💬（0）<div>我自己在学习 http 协议的时候，就想到了，可以直接基于字节码来进行开始到 socket 进而到 http 协议，到多路复用，异步IO，到 tomcat 的知识点串起来，但是一直没有决心进行梳理，看到这个课程如获珍宝，学会此课程可以明白理解为什么压测的时候，无论如何提升服务器规格，数据库规格，吞吐还是上不去，以及各种状态码代表什么，瓶颈在TCP层还是Tomcat层，都会得到答案。</div>2024-09-19</li><br/><li><span>旷野之希</span> 👍（0） 💬（2）<div>我遇到一个问题，当时随便使用了一个端口号7000，会报403 forbidden的异常，但是换一个端口，比如8888就可以正常访问hello.txt了，这可能是什么原因呢？</div>2024-03-07</li><br/>
+（result就是文件字节流转换的字符串）</p>2023-12-15</li><br/><li><span>Koyi</span> 👍（0） 💬（1）<p>Request类 第13行 读取数据时，使用一个while循环判断返回值是否大于0以保证成功读取完数据是不是好些</p>2023-12-13</li><br/><li><span>斜杠青年</span> 👍（0） 💬（0）<p>我自己在学习 http 协议的时候，就想到了，可以直接基于字节码来进行开始到 socket 进而到 http 协议，到多路复用，异步IO，到 tomcat 的知识点串起来，但是一直没有决心进行梳理，看到这个课程如获珍宝，学会此课程可以明白理解为什么压测的时候，无论如何提升服务器规格，数据库规格，吞吐还是上不去，以及各种状态码代表什么，瓶颈在TCP层还是Tomcat层，都会得到答案。</p>2024-09-19</li><br/><li><span>旷野之希</span> 👍（0） 💬（2）<p>我遇到一个问题，当时随便使用了一个端口号7000，会报403 forbidden的异常，但是换一个端口，比如8888就可以正常访问hello.txt了，这可能是什么原因呢？</p>2024-03-07</li><br/>
 </ul>

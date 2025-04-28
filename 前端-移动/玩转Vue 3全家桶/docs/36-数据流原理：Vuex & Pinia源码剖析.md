@@ -392,5 +392,5 @@ Pinia就是Vuex5提案产出的框架，现在已经是Vue官方的框架了，�
 
 欢迎到评论区分享你的想法，也欢迎你把这一讲的内容分享给你的朋友们，我们下一讲再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>james</span> 👍（3） 💬（0）<div>没有关联的组件之间可以使用 pinia</div>2022-01-13</li><br/><li><span>李增</span> 👍（2） 💬（3）<div>createSetupStore 函数的实现分析部分，有点收尾匆忙了，只说了重点，没有完整捋清楚createSetupStore 的完整实现细节。对于能自己去阅读源码的人来说，倒是没啥，但是对于底子差点的人来说，就很难懂createSetupStore 函数的整个内部实现运作原理了。大圣老师是否可以再补充下这一块的细节哈～</div>2022-03-27</li><br/><li><span>浣花公子</span> 👍（0） 💬（0）<div>嗯 这个写法就很像 React + Redux + immer</div>2022-10-28</li><br/>
+<li><span>james</span> 👍（3） 💬（0）<p>没有关联的组件之间可以使用 pinia</p>2022-01-13</li><br/><li><span>李增</span> 👍（2） 💬（3）<p>createSetupStore 函数的实现分析部分，有点收尾匆忙了，只说了重点，没有完整捋清楚createSetupStore 的完整实现细节。对于能自己去阅读源码的人来说，倒是没啥，但是对于底子差点的人来说，就很难懂createSetupStore 函数的整个内部实现运作原理了。大圣老师是否可以再补充下这一块的细节哈～</p>2022-03-27</li><br/><li><span>浣花公子</span> 👍（0） 💬（0）<p>嗯 这个写法就很像 React + Redux + immer</p>2022-10-28</li><br/>
 </ul>

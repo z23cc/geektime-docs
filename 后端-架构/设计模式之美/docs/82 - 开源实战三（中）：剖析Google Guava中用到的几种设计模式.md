@@ -322,10 +322,10 @@ public class ImmutableDemo {
 
 欢迎留言和我分享你的想法，如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>3Spiders</span> 👍（63） 💬（5）<div>JDK是浅拷贝，Guava使用的是深拷贝。一个复制引用，一个复制值。</div>2020-05-11</li><br/><li><span>hhhh</span> 👍（22） 💬（2）<div>猜测jdk中的不变集合保存了原始集合的引用，而guava应该是复制了原始集合的值。</div>2020-05-11</li><br/><li><span>不能忍的地精</span> 👍（11） 💬（0）<div>Guava里面的引用已经是一个新的集合,Jdk里面的引用还是原来的集合</div>2020-05-11</li><br/><li><span>何用</span> 👍（11） 💬（2）<div>我是个特别能关注到细节的人。Memcached 是个开源库，不知道为何好多人都喜欢把它叫做 Memcache，本文也不例外。</div>2020-05-11</li><br/><li><span>leezer</span> 👍（7） 💬（0）<div>我觉得我更赞同wrapper类的理解，因为装饰器的主要功能是在原始的类上做功能增强，而代理模式更多关注对非业务功能的关注。通过组合的方式我们能实现更多的Wrapper模式。这时候就不只是算装饰器的设计模式了
-。</div>2020-05-11</li><br/><li><span>梦倚栏杆</span> 👍（6） 💬（0）<div>老师给这个深拷贝和浅拷贝不是太形象。String 本身就是不可变的。
+<li><span>3Spiders</span> 👍（63） 💬（5）<p>JDK是浅拷贝，Guava使用的是深拷贝。一个复制引用，一个复制值。</p>2020-05-11</li><br/><li><span>hhhh</span> 👍（22） 💬（2）<p>猜测jdk中的不变集合保存了原始集合的引用，而guava应该是复制了原始集合的值。</p>2020-05-11</li><br/><li><span>不能忍的地精</span> 👍（11） 💬（0）<p>Guava里面的引用已经是一个新的集合,Jdk里面的引用还是原来的集合</p>2020-05-11</li><br/><li><span>何用</span> 👍（11） 💬（2）<p>我是个特别能关注到细节的人。Memcached 是个开源库，不知道为何好多人都喜欢把它叫做 Memcache，本文也不例外。</p>2020-05-11</li><br/><li><span>leezer</span> 👍（7） 💬（0）<p>我觉得我更赞同wrapper类的理解，因为装饰器的主要功能是在原始的类上做功能增强，而代理模式更多关注对非业务功能的关注。通过组合的方式我们能实现更多的Wrapper模式。这时候就不只是算装饰器的设计模式了
+。</p>2020-05-11</li><br/><li><span>梦倚栏杆</span> 👍（6） 💬（0）<p>老师给这个深拷贝和浅拷贝不是太形象。String 本身就是不可变的。
 从这个例子可以看出的是guava 重新创建了list，jdk 是持有的原list的引用。那么guava 有没有进一步的深copy呢？答案是：没有。里面的对象存储的还是引用
-也或许老师说的深copy和浅copy只是指collection的引用。</div>2020-05-15</li><br/><li><span>辣么大</span> 👍（5） 💬（0）<div>在JDK中只是将list的地址赋给了UnmodifiableList
+也或许老师说的深copy和浅copy只是指collection的引用。</p>2020-05-15</li><br/><li><span>辣么大</span> 👍（5） 💬（0）<p>在JDK中只是将list的地址赋给了UnmodifiableList
 final List&lt;? extends E&gt; list;
 UnmodifiableList(List&lt;? extends E&gt; list) {
  super(list);
@@ -355,7 +355,7 @@ public static void main(String[] args) {
     System.out.println(guavaCopy);
 &#47;&#47;    [Student{age=10, name=&#39;xiaoqiang&#39;}, Student{age=8, name=&#39;mutable&#39;}, Student{age=12, name=&#39;lameda&#39;}]
 
-  }</div>2020-05-11</li><br/><li><span>小晏子</span> 👍（4） 💬（0）<div>JDK中的unmodifiableList的构造函数是对原始集合的浅拷贝，而Guava.ImmutableList.copyOf是对原始集合的深拷贝。从source code可以看出来：
+  }</p>2020-05-11</li><br/><li><span>小晏子</span> 👍（4） 💬（0）<p>JDK中的unmodifiableList的构造函数是对原始集合的浅拷贝，而Guava.ImmutableList.copyOf是对原始集合的深拷贝。从source code可以看出来：
 UnmodifiableList
       UnmodifiableList(List&lt;? extends E&gt; list) {
             super(list);
@@ -400,5 +400,5 @@ public static &lt;E&gt; ImmutableList&lt;E&gt; copyOf(Collection&lt;? extends E&
         }
         return new RegularImmutableList&lt;E&gt;(elements);
     }
-  }</div>2020-05-11</li><br/><li><span>test</span> 👍（4） 💬（0）<div>jdk是浅拷贝，guava是深拷贝，在修改的时候报错</div>2020-05-11</li><br/><li><span>Frank</span> 👍（2） 💬（0）<div>unmodifiableList 内部还是使用了Warpper模式，重新实现了某些方法，比如add,remove等，当调用这些方法时，抛出异常，而有些方法还是委托给原始list进行操作，比如get操作。所以这里在原始类添加元素后，使用不jdk的变类可以打印出新添加的元素。而Guava 中的ImmutableList 时采用拷贝的方式将原始集合中的数据拷贝到一个对象数组中，后续原始集合添加，删除元素，其结果都不会影响该ImmutableList。</div>2020-05-11</li><br/><li><span>汝林外史</span> 👍（2） 💬（1）<div>我觉得 ForwardingCollection 类就应该理解为缺省的装饰器类，前面的文章就说过代理模式、装饰器模式、适配器模式代码的写法几乎一样，差别就是各自的使用场景，我觉得ForwardingCollection这些类的使用场景就是作为装饰类来用的，不会应用到代理和适配器的场景，王老师貌似又掉入了以代码写法判断设计模式的自己说的陷阱中。</div>2020-05-11</li><br/><li><span>八年老萌新</span> 👍（1） 💬（0）<div>jdk的UnmodifiableCollection看起来更像是个装饰器，内部持有源集合的引用，对源集合的操作进行包装。所以直接操作源集合的同时也改变了不可变集合。而guava的ImmutableList则是通过Arrays.copyOf去创建新的不可变集合，所以改变源集合并不能改变不可变集合</div>2023-05-19</li><br/><li><span>yu</span> 👍（1） 💬（0）<div>JDK与Guava的不可变集合都是属于普通不可变集合，试了一下，无法增减元素，但都是可以对集合中的对像的成员变量修改的。不同的是，原集合改动之后，JDK跟着改变，Guava不跟着变</div>2020-05-22</li><br/><li><span>董大大</span> 👍（1） 💬（0）<div>深究设计模式，对阅读开源代码大有好处</div>2020-05-21</li><br/><li><span>落尘kira</span> 👍（1） 💬（0）<div>还有一点就是 作者觉得 不可变的例子，我看起来深拷贝和浅拷贝的代码是一摸一样的？深拷贝是对于对象类型的是否要加入 deepCopy（object）方法？</div>2020-05-13</li><br/>
+  }</p>2020-05-11</li><br/><li><span>test</span> 👍（4） 💬（0）<p>jdk是浅拷贝，guava是深拷贝，在修改的时候报错</p>2020-05-11</li><br/><li><span>Frank</span> 👍（2） 💬（0）<p>unmodifiableList 内部还是使用了Warpper模式，重新实现了某些方法，比如add,remove等，当调用这些方法时，抛出异常，而有些方法还是委托给原始list进行操作，比如get操作。所以这里在原始类添加元素后，使用不jdk的变类可以打印出新添加的元素。而Guava 中的ImmutableList 时采用拷贝的方式将原始集合中的数据拷贝到一个对象数组中，后续原始集合添加，删除元素，其结果都不会影响该ImmutableList。</p>2020-05-11</li><br/><li><span>汝林外史</span> 👍（2） 💬（1）<p>我觉得 ForwardingCollection 类就应该理解为缺省的装饰器类，前面的文章就说过代理模式、装饰器模式、适配器模式代码的写法几乎一样，差别就是各自的使用场景，我觉得ForwardingCollection这些类的使用场景就是作为装饰类来用的，不会应用到代理和适配器的场景，王老师貌似又掉入了以代码写法判断设计模式的自己说的陷阱中。</p>2020-05-11</li><br/><li><span>八年老萌新</span> 👍（1） 💬（0）<p>jdk的UnmodifiableCollection看起来更像是个装饰器，内部持有源集合的引用，对源集合的操作进行包装。所以直接操作源集合的同时也改变了不可变集合。而guava的ImmutableList则是通过Arrays.copyOf去创建新的不可变集合，所以改变源集合并不能改变不可变集合</p>2023-05-19</li><br/><li><span>yu</span> 👍（1） 💬（0）<p>JDK与Guava的不可变集合都是属于普通不可变集合，试了一下，无法增减元素，但都是可以对集合中的对像的成员变量修改的。不同的是，原集合改动之后，JDK跟着改变，Guava不跟着变</p>2020-05-22</li><br/><li><span>董大大</span> 👍（1） 💬（0）<p>深究设计模式，对阅读开源代码大有好处</p>2020-05-21</li><br/><li><span>落尘kira</span> 👍（1） 💬（0）<p>还有一点就是 作者觉得 不可变的例子，我看起来深拷贝和浅拷贝的代码是一摸一样的？深拷贝是对于对象类型的是否要加入 deepCopy（object）方法？</p>2020-05-13</li><br/>
 </ul>

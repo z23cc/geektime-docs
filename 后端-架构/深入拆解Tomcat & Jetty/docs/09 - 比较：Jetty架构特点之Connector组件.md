@@ -211,11 +211,11 @@ Jetty的Connector主要完成了三件事件：接收连接、I/O事件查询以
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Li Shunduo</span> 👍（47） 💬（2）<div>有两个问题请教老师：
+<li><span>Li Shunduo</span> 👍（47） 💬（2）<p>有两个问题请教老师：
 问题一：根据文章看，Jetty中有多个Acceptor组件，请问这些Acceptor背后是共享同一个ServerSocketChannel？还是每个Acceptor有自己的ServerSocketChannel? 如果有多个ServerSocketChannel的话，这些ServerSocketChannel如何做到监听同一个端口？连接到来时如何决定分配到哪一个ServerSocketChannel?
 问题二：Acceptor组件是直接使用ServerSocketChannel.accept()方法来接受连接的，为什么不使用向Selector注册OP_ACCEPT事件的方式来接受连接？直接调用.accept()方法有什么考虑？
 问题三：Jetty中有多个ManagedSelector，这些ManagedSelector背后是共享同一个Selector吗？还是每个ManagedSelector有自己的Selector？如果是多个Selector有什么好处，注册IO事件时如何选择合适的Selector？
-</div>2019-06-01</li><br/><li><span>why</span> 👍（22） 💬（1）<div>- Jetty 也是 Http 服务器 + Servlet 容器, 更小巧, 更易于定制
+</p>2019-06-01</li><br/><li><span>why</span> 👍（22） 💬（1）<p>- Jetty 也是 Http 服务器 + Servlet 容器, 更小巧, 更易于定制
 - Jetty 架构: 多个 Connector + 多个 Handler + 一个全局线程池(Connector 和 Handler 共享)
 - 多个 Connector 在不同端口监听请求, 可以根据应用场景选择 Handler : ServletHandler 和 SessionHandler
 - Jetty 用 Server 启动和协调上述组件
@@ -247,17 +247,17 @@ Jetty的Connector主要完成了三件事件：接收连接、I/O事件查询以
             - 相应处理: Handler 返回 Response, HttpConnection 通过 EndPoint 写到 Channel
 - 留言
     - 每次请求跟一个 Hanlder 线程是一对一的关系, 下一次再来请求，会分配一个新的 Hanlder 线程。
-    - 多个 Acceptor 共享同一个 ServerSocketChannel 。多个 Acceptor 线程调用同一个 ServerSocketChannel 的 accept 方法，由操作系统保证线程安全</div>2019-06-02</li><br/><li><span>锦</span> 👍（16） 💬（1）<div>使用不同的线程是为了合理的使用全局线程池。
+    - 多个 Acceptor 共享同一个 ServerSocketChannel 。多个 Acceptor 线程调用同一个 ServerSocketChannel 的 accept 方法，由操作系统保证线程安全</p>2019-06-02</li><br/><li><span>锦</span> 👍（16） 💬（1）<p>使用不同的线程是为了合理的使用全局线程池。
 我有两个问题请教老师：
 问题一：负责读写的socket与handle线程是什么对应关系呢？多对1，还是1对1？
 问题二：如果有很多tcp建立连接后迟迟没有写入数据导致连接请求堵塞，或者如果有很多handle在处理耗时io操作时，
-同样可能拖慢整个线程池，进而影响到accepters和selectors，那么可能会拖慢整个线程池，jetty是如何考虑的呢？</div>2019-05-30</li><br/><li><span>focus</span> 👍（13） 💬（1）<div>源码都是怎么导入，怎么编译，怎么看呢</div>2019-05-30</li><br/><li><span>-W.LI-</span> 👍（10） 💬（1）<div>老师好!在线程模型设计上 Tomcat 的 NioEndpoint 跟 Jetty 的 Connector 是相似的，都是用一个 Acceptor 数组监听连接，用一个 Selector 数组侦测 I&#47;O 事件。这句话怎么理解啊?
+同样可能拖慢整个线程池，进而影响到accepters和selectors，那么可能会拖慢整个线程池，jetty是如何考虑的呢？</p>2019-05-30</li><br/><li><span>focus</span> 👍（13） 💬（1）<p>源码都是怎么导入，怎么编译，怎么看呢</p>2019-05-30</li><br/><li><span>-W.LI-</span> 👍（10） 💬（1）<p>老师好!在线程模型设计上 Tomcat 的 NioEndpoint 跟 Jetty 的 Connector 是相似的，都是用一个 Acceptor 数组监听连接，用一个 Selector 数组侦测 I&#47;O 事件。这句话怎么理解啊?
 问题1:Acceptor 数组监听连接,监听的是一次TCP链接么?
 
 问题2:Selector 数组侦测 I&#47;O 事件，具体监听的是啥?
 
 问题3:长链接下，每次http请求会新打开一个channel的，还是复用原有的channel，channel是阻塞还是非阻塞的。
 
-说的有点乱不晓得老师看的懂不😂。我就是想知道，一次TCP链接，多次http具体是和connector怎么绑定的。</div>2019-06-01</li><br/><li><span>gameboy120</span> 👍（9） 💬（1）<div>请问注册一堆回调函数的用意是什么？</div>2019-07-09</li><br/><li><span>-W.LI-</span> 👍（9） 💬（1）<div>老师好，跑在不同的线程里是为了解耦么?实在想不出，告诉答案吧</div>2019-06-02</li><br/><li><span>强哥</span> 👍（9） 💬（1）<div>说了各自的特点。但是感觉缺少关键性的对比，以及背后设计的理念，建议再深入探讨各自的主要差异及场景</div>2019-05-30</li><br/><li><span>kxkq2000</span> 👍（7） 💬（1）<div>分在不同的线程里我认为是这样分工明确好比工厂流水线最大化提升处理能力。
-我有个疑问是用全局线程池真的好吗，不是应该根据任务类型分配线程池的吗？用全局的不会互相干扰吗？</div>2019-06-01</li><br/><li><span>Lrwin</span> 👍（7） 💬（2）<div>感觉jetty就是一个netty模型</div>2019-05-30</li><br/><li><span>Lc</span> 👍（4） 💬（1）<div>Jetty作为后起之秀，跟tomcat相比，它的优势在哪儿？他们的设计思路不同，我们自己在设计的时候应该依据什么来确定使用哪种呢？</div>2019-05-30</li><br/><li><span>Geek_28b75e</span> 👍（3） 💬（1）<div>老师，麻烦您给说说bio和nio的区别，表面上的差别我看过了，能不能从操作系统角度给讲解一下呢？麻烦您了，实在有点难理解</div>2019-06-04</li><br/><li><span>802.11</span> 👍（3） 💬（1）<div>老师，在一个类里再写接口或者类，一般是基于什么样的设计思想呢</div>2019-06-02</li><br/><li><span>毕延文</span> 👍（2） 💬（1）<div>前面几章还好，到这里就有些看不懂了，我还是太菜了。</div>2019-06-22</li><br/><li><span>Monday</span> 👍（2） 💬（1）<div>tomcat还没学透，就学jetty，两者还相互比较，生怕自己混淆了</div>2019-05-30</li><br/>
+说的有点乱不晓得老师看的懂不😂。我就是想知道，一次TCP链接，多次http具体是和connector怎么绑定的。</p>2019-06-01</li><br/><li><span>gameboy120</span> 👍（9） 💬（1）<p>请问注册一堆回调函数的用意是什么？</p>2019-07-09</li><br/><li><span>-W.LI-</span> 👍（9） 💬（1）<p>老师好，跑在不同的线程里是为了解耦么?实在想不出，告诉答案吧</p>2019-06-02</li><br/><li><span>强哥</span> 👍（9） 💬（1）<p>说了各自的特点。但是感觉缺少关键性的对比，以及背后设计的理念，建议再深入探讨各自的主要差异及场景</p>2019-05-30</li><br/><li><span>kxkq2000</span> 👍（7） 💬（1）<p>分在不同的线程里我认为是这样分工明确好比工厂流水线最大化提升处理能力。
+我有个疑问是用全局线程池真的好吗，不是应该根据任务类型分配线程池的吗？用全局的不会互相干扰吗？</p>2019-06-01</li><br/><li><span>Lrwin</span> 👍（7） 💬（2）<p>感觉jetty就是一个netty模型</p>2019-05-30</li><br/><li><span>Lc</span> 👍（4） 💬（1）<p>Jetty作为后起之秀，跟tomcat相比，它的优势在哪儿？他们的设计思路不同，我们自己在设计的时候应该依据什么来确定使用哪种呢？</p>2019-05-30</li><br/><li><span>Geek_28b75e</span> 👍（3） 💬（1）<p>老师，麻烦您给说说bio和nio的区别，表面上的差别我看过了，能不能从操作系统角度给讲解一下呢？麻烦您了，实在有点难理解</p>2019-06-04</li><br/><li><span>802.11</span> 👍（3） 💬（1）<p>老师，在一个类里再写接口或者类，一般是基于什么样的设计思想呢</p>2019-06-02</li><br/><li><span>毕延文</span> 👍（2） 💬（1）<p>前面几章还好，到这里就有些看不懂了，我还是太菜了。</p>2019-06-22</li><br/><li><span>Monday</span> 👍（2） 💬（1）<p>tomcat还没学透，就学jetty，两者还相互比较，生怕自己混淆了</p>2019-05-30</li><br/>
 </ul>

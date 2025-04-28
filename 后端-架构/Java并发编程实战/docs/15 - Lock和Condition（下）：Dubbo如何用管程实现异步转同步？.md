@@ -183,7 +183,7 @@ DefaultFuture里面唤醒等待的线程，用的是signal()，而不是signalAl
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ZOU志伟</span> 👍（164） 💬（20）<div>不合理，会导致很多请求超时，看了源码是调用signalAll()</div>2019-04-03</li><br/><li><span>张天屹</span> 👍（112） 💬（13）<div>我理解异步的本质是利用多线程提升性能，异步一定是基于一个新开的线程，从调用线程来看是异步的，但是从新开的那个线程来看，正是同步（等待）的，只是对于调用方而言这种同步是透明的。正所谓生活哪有什么岁月静好，只是有人替你负重前行。</div>2019-04-04</li><br/><li><span>右耳听海</span> 👍（50） 💬（1）<div>in the method of org.apache.dubbo.remoting.exchange.support.DefaultFuture#doReceived, I think we should call done.signalAll() instead of done.signal() ,and it&#39;s unnecessary to check done != null because it&#39;s always true</div>2019-04-28</li><br/><li><span>Geek_e6f3ec</span> 👍（20） 💬（4）<div>老师关于dubbo源码的执行流程有一点疑问。
+<li><span>ZOU志伟</span> 👍（164） 💬（20）<p>不合理，会导致很多请求超时，看了源码是调用signalAll()</p>2019-04-03</li><br/><li><span>张天屹</span> 👍（112） 💬（13）<p>我理解异步的本质是利用多线程提升性能，异步一定是基于一个新开的线程，从调用线程来看是异步的，但是从新开的那个线程来看，正是同步（等待）的，只是对于调用方而言这种同步是透明的。正所谓生活哪有什么岁月静好，只是有人替你负重前行。</p>2019-04-04</li><br/><li><span>右耳听海</span> 👍（50） 💬（1）<p>in the method of org.apache.dubbo.remoting.exchange.support.DefaultFuture#doReceived, I think we should call done.signalAll() instead of done.signal() ,and it&#39;s unnecessary to check done != null because it&#39;s always true</p>2019-04-28</li><br/><li><span>Geek_e6f3ec</span> 👍（20） 💬（4）<p>老师关于dubbo源码的执行流程有一点疑问。
 以下是源码
 &#47;&#47; 调用通过该方法等待结果
 Object get(int timeout){
@@ -208,14 +208,14 @@ Object get(int timeout){
 
 
 
-</div>2019-05-15</li><br/><li><span>木刻</span> 👍（18） 💬（1）<div>老师今天提到异步转同步，让我想到这两天看的zookeeper客户端源码，感觉应该也是这个机制，客户端同步模式下发送请求后会执行packet.wait，收到服务端响应后执行packet.notifyAll</div>2019-04-02</li><br/><li><span>苏格拉底23</span> 👍（14） 💬（2）<div>老师您好！
+</p>2019-05-15</li><br/><li><span>木刻</span> 👍（18） 💬（1）<p>老师今天提到异步转同步，让我想到这两天看的zookeeper客户端源码，感觉应该也是这个机制，客户端同步模式下发送请求后会执行packet.wait，收到服务端响应后执行packet.notifyAll</p>2019-04-02</li><br/><li><span>苏格拉底23</span> 👍（14） 💬（2）<p>老师您好！
 
-有一个基本的问题不明白，如果每个request对应一个线程，似乎并没有用到共享的资源，那么为什么要加锁呢？</div>2019-06-23</li><br/><li><span>ban</span> 👍（8） 💬（2）<div>老师，求指教
+有一个基本的问题不明白，如果每个request对应一个线程，似乎并没有用到共享的资源，那么为什么要加锁呢？</p>2019-06-23</li><br/><li><span>ban</span> 👍（8） 💬（2）<p>老师，求指教
 DefaultFuturewhile这个类为什么要加 while(!isDone()) 这个条件，我看代码while里面加了done.await(timeout);是支持超时的，就是说设置5秒超时， if (isDone() || cur-start &gt; timeout){，只要超过没有被signal()唤醒，那5秒就会自动唤醒，这时候就会在if (isDone() || cur-start &gt; timeout){ 被校验通过，从而break，退出。这时候在加个while条件是不是没必要。
-还是说加个while条件是因为时间到点的时候自动唤醒后，Response可能是空，而且时间cur-start &gt; timeout 不超时，所以才有必要进行while再一次判断isDone()是否有值。</div>2019-04-03</li><br/><li><span>水目沾</span> 👍（7） 💬（1）<div>这是一对一的关系，肯定只需要 signal。每个线程都是相互独立的，lock 和 condition 也是各自独享的。</div>2019-04-02</li><br/><li><span>ycfHH</span> 👍（5） 💬（3）<div>作为一个完全不懂dubbo的新人，我很好奇是什么bug能让signal改成signalAll,因为不管怎么看都感觉signal就已经可以了啊(虽然使用signalall也不错)</div>2019-05-06</li><br/><li><span>7</span> 👍（5） 💬（1）<div>老师，有个疑问
-为什么要判断done!=null呢？这个条件不是永远为true吗。</div>2019-04-03</li><br/><li><span>阿甘</span> 👍（3） 💬（2）<div>看了最新的DefaultFuture，已经去掉了lock，老师能分析下最新实现的原理吗</div>2020-01-08</li><br/><li><span>遇见阳光</span> 👍（3） 💬（1）<div>老师，我想问下locksupport与此处用lock来阻塞调用者线程有什么区别</div>2019-04-05</li><br/><li><span>sibyl</span> 👍（2） 💬（1）<div>动手实现阻塞队列时，一定注意synchronized&#47;wait&#47;notify ， Lock&#47;Condition&#47;await&#47;signal的组合！ 
+还是说加个while条件是因为时间到点的时候自动唤醒后，Response可能是空，而且时间cur-start &gt; timeout 不超时，所以才有必要进行while再一次判断isDone()是否有值。</p>2019-04-03</li><br/><li><span>水目沾</span> 👍（7） 💬（1）<p>这是一对一的关系，肯定只需要 signal。每个线程都是相互独立的，lock 和 condition 也是各自独享的。</p>2019-04-02</li><br/><li><span>ycfHH</span> 👍（5） 💬（3）<p>作为一个完全不懂dubbo的新人，我很好奇是什么bug能让signal改成signalAll,因为不管怎么看都感觉signal就已经可以了啊(虽然使用signalall也不错)</p>2019-05-06</li><br/><li><span>7</span> 👍（5） 💬（1）<p>老师，有个疑问
+为什么要判断done!=null呢？这个条件不是永远为true吗。</p>2019-04-03</li><br/><li><span>阿甘</span> 👍（3） 💬（2）<p>看了最新的DefaultFuture，已经去掉了lock，老师能分析下最新实现的原理吗</p>2020-01-08</li><br/><li><span>遇见阳光</span> 👍（3） 💬（1）<p>老师，我想问下locksupport与此处用lock来阻塞调用者线程有什么区别</p>2019-04-05</li><br/><li><span>sibyl</span> 👍（2） 💬（1）<p>动手实现阻塞队列时，一定注意synchronized&#47;wait&#47;notify ， Lock&#47;Condition&#47;await&#47;signal的组合！ 
 
-我在实现时，同时用了Lock和notify，一直报错IllegalMonitorStateException，该异常表示没加锁，而norify要求的锁必须是synchronized的锁，的确notify必须在synchronized临界区中使用，这是才加synchronized锁的！！！</div>2020-07-09</li><br/><li><span>Demon.Lee</span> 👍（2） 💬（1）<div>TCP 协议本身就是异步的，我们工作中经常用到的 RPC 调用，在 TCP 协议层面，发送完 RPC 请求后，线程是不会等待 RPC 的响应结果的。
+我在实现时，同时用了Lock和notify，一直报错IllegalMonitorStateException，该异常表示没加锁，而norify要求的锁必须是synchronized的锁，的确notify必须在synchronized临界区中使用，这是才加synchronized锁的！！！</p>2020-07-09</li><br/><li><span>Demon.Lee</span> 👍（2） 💬（1）<p>TCP 协议本身就是异步的，我们工作中经常用到的 RPC 调用，在 TCP 协议层面，发送完 RPC 请求后，线程是不会等待 RPC 的响应结果的。
 -------------
-老师，我也有类似的疑问，如果说TCP都是异步的，那么我们平时用的各种httpClient的sdk开发，它们也做了异步转同步的事情？</div>2019-10-30</li><br/><li><span>yc</span> 👍（2） 💬（2）<div>请问老师，阻塞队列的实现，入队和出队都要先获取锁，如果有一个线程正在入队同时又有一个线程在出队，是不是只有一个线程能拿到锁从而成功操作，另一个需要灯unlock，那么入队和出队就是串行了；又或者有两个线程同时入队，也是只有一个线程能够拿到锁从而成功执行入队，另一个线程需要等unlock，也是变成串行了。这样不会影响效率吗？</div>2019-10-15</li><br/>
+老师，我也有类似的疑问，如果说TCP都是异步的，那么我们平时用的各种httpClient的sdk开发，它们也做了异步转同步的事情？</p>2019-10-30</li><br/><li><span>yc</span> 👍（2） 💬（2）<p>请问老师，阻塞队列的实现，入队和出队都要先获取锁，如果有一个线程正在入队同时又有一个线程在出队，是不是只有一个线程能拿到锁从而成功操作，另一个需要灯unlock，那么入队和出队就是串行了；又或者有两个线程同时入队，也是只有一个线程能够拿到锁从而成功执行入队，另一个线程需要等unlock，也是变成串行了。这样不会影响效率吗？</p>2019-10-15</li><br/>
 </ul>

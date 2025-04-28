@@ -318,7 +318,7 @@ public class ProductAPITest {
 
 欢迎在留言区分享你的想法，我会让编辑置顶一些优质回答供大家学习讨论。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>范飞扬</span> 👍（2） 💬（0）<div>同学问：自己设计Q1的测试用例，有典型用法、边界值、对象状态、耗时性能、并发情况、误用情况、反复调用等方面的考虑，这些在目前的示例里没体现，是否有必要考虑，在哪个步骤做合适？
+<li><span>范飞扬</span> 👍（2） 💬（0）<p>同学问：自己设计Q1的测试用例，有典型用法、边界值、对象状态、耗时性能、并发情况、误用情况、反复调用等方面的考虑，这些在目前的示例里没体现，是否有必要考虑，在哪个步骤做合适？
 
 ===
 我理解，这个问题其实是，How many tests should you write? 
@@ -338,7 +338,7 @@ TDD’s view of testing is pragmatic. In TDD, the tests are a means to have grea
 
 总结一下就是：“看情况”。测与不测，黑盒白盒，覆盖范围，都看情况。
 怎么看情况？
-如果很有 confidence，那就不测了。如果有 fear，那可以测测，就像 Kent Beck 说的：“Write tests until fear is transformed into boredom.” 这里 boredom 也可以理解成 Confidence</div>2024-04-23</li><br/><li><span>术子米德</span> 👍（0） 💬（2）<div>🤔☕️🤔☕️🤔
+如果很有 confidence，那就不测了。如果有 fear，那可以测测，就像 Kent Beck 说的：“Write tests until fear is transformed into boredom.” 这里 boredom 也可以理解成 Confidence</p>2024-04-23</li><br/><li><span>术子米德</span> 👍（0） 💬（2）<p>🤔☕️🤔☕️🤔
 【R】Prompt4Q1：
 架构描述：技术栈、架构风格、规则和示例；
 功能需求：$FuncLists；
@@ -346,9 +346,9 @@ TDD’s view of testing is pragmatic. In TDD, the tests are a means to have grea
 任务-Step2：根据指定技术栈，为目标场景提供测试代码；
 【Q】最终的Clear是任务-Step2，这个步骤里，执行清晰明确的任务步骤即可，这之前的任务-Step1是Complicated，这个步骤里，要根据架构描述和功能需求，分析做出选择，并生成下一步的清晰任务列表，如此理解合理吗？
 【Q】自己设计Q1的测试用例，有典型用法、边界值、对象状态、耗时性能、并发情况、误用情况、反复调用等方面的考虑，这些在目前的示例里没体现，是否有必要考虑，在哪个步骤做合适？
-— by 术子米德@2024年4月22日</div>2024-04-23</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<div>代词消除真是妙，
+— by 术子米德@2024年4月22日</p>2024-04-23</li><br/><li><span>范飞扬</span> 👍（0） 💬（0）<p>代词消除真是妙，
 
 1、感觉架构可以通过 mermaid class diagram 加上 半结构化自然语言 来表达吧，这样更凝炼一点？
 
-2、功能需求也可以用验收测试或者用户故事表达</div>2024-04-22</li><br/>
+2、功能需求也可以用验收测试或者用户故事表达</p>2024-04-22</li><br/>
 </ul>

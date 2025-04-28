@@ -333,8 +333,8 @@ hello from D
 
 恭喜你已经完成了Rust学习的第29次打卡，如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见～
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>罗杰</span> 👍（9） 💬（2）<div>虽然一直做的后端，控制平台&#47;平台数据分离 我都没了解过，P2P 也只是知道个概念而已。</div>2021-11-03</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<div>在 *nix 操作系统层面
+<li><span>罗杰</span> 👍（9） 💬（2）<p>虽然一直做的后端，控制平台&#47;平台数据分离 我都没了解过，P2P 也只是知道个概念而已。</p>2021-11-03</li><br/><li><span>杨学者</span> 👍（0） 💬（0）<p>在 *nix 操作系统层面
 
-怎么回事，敏感字被和谐了？还是说linux&#47;unix？</div>2023-08-21</li><br/><li><span>RG</span> 👍（0） 💬（0）<div>文章里面提到一个stun，有一个栈是webrtc，是一系列的技术的集合，包括网络、多媒体之类的很多东西，用来点对点的做多媒体传输。同样的也可以用来做文件传输，比如说snapdrop。webrtc的好处在于浏览器可用，可以非常方便的构建基于web的p2p应用</div>2023-02-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>思考题：将 floodsub 替换成 gossipsub 的实现：
-https:&#47;&#47;gist.github.com&#47;rust-play&#47;abc70764587405a8a0fa5be30c46886c</div>2022-09-17</li><br/><li><span>Lucifer</span> 👍（0） 💬（0）<div>不错，谢谢</div>2022-03-28</li><br/>
+怎么回事，敏感字被和谐了？还是说linux&#47;unix？</p>2023-08-21</li><br/><li><span>RG</span> 👍（0） 💬（0）<p>文章里面提到一个stun，有一个栈是webrtc，是一系列的技术的集合，包括网络、多媒体之类的很多东西，用来点对点的做多媒体传输。同样的也可以用来做文件传输，比如说snapdrop。webrtc的好处在于浏览器可用，可以非常方便的构建基于web的p2p应用</p>2023-02-06</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>思考题：将 floodsub 替换成 gossipsub 的实现：
+https:&#47;&#47;gist.github.com&#47;rust-play&#47;abc70764587405a8a0fa5be30c46886c</p>2022-09-17</li><br/><li><span>Lucifer</span> 👍（0） 💬（0）<p>不错，谢谢</p>2022-03-28</li><br/>
 </ul>

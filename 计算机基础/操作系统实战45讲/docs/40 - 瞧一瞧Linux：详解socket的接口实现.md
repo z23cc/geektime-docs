@@ -440,7 +440,7 @@ int __sys_shutdown(int fd, int how)
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>neohope</span> 👍（5） 💬（1）<div>四次挥手过程分析下【V5.8，正常流程】
+<li><span>neohope</span> 👍（5） 💬（1）<p>四次挥手过程分析下【V5.8，正常流程】
 5、客户端收到FIN包，子状态从TCP_FIN_WAIT2变为TCP_TIME_WAIT，返回ACK包
 A、状态和子状态都为TCP_TIME_WAIT
 【tcp_protocol.handler】tcp_v4_rcv-&gt;
@@ -471,7 +471,7 @@ B、超时后，回调tw_timer_handler-&gt;inet_twsk_kill，进行inet_timewait_
 
 C、没有找到状态变从TCP_TIME_WAIT变为TCP_CLOSE的代码
 
-D、只看没调，有问题的，欢迎小伙伴告诉一下</div>2021-08-15</li><br/><li><span>neohope</span> 👍（3） 💬（0）<div>四次挥手过程分析上【V5.8，正常流程】
+D、只看没调，有问题的，欢迎小伙伴告诉一下</p>2021-08-15</li><br/><li><span>neohope</span> 👍（3） 💬（0）<p>四次挥手过程分析上【V5.8，正常流程】
 1、客户端主动断开连接，状态从TCP_ESTABLISHED变为TCP_FIN_WAIT1，发送FIN包给服务端
 A、状态变为TCP_FIN_WAIT1
 tcp_close-&gt;tcp_close_state
@@ -514,7 +514,7 @@ tcp_close-&gt;tcp_close_state
 
 B、发送FIN包
 tcp_close-&gt;tcp_close_state
--&gt;tcp_send_fin</div>2021-08-15</li><br/><li><span>neohope</span> 👍（6） 💬（1）<div>三次握手过程分析【V5.8，正常流程】
+-&gt;tcp_send_fin</p>2021-08-15</li><br/><li><span>neohope</span> 👍（6） 💬（1）<p>三次握手过程分析【V5.8，正常流程】
 1、客户端发起第一次握手，状态调变为TCP_SYN_SENT，发送SYN包
 connect-&gt;__sys_connect-&gt;__sys_connect_file-&gt;【sock-&gt;ops-&gt;connect】tcp_v4_connect
 A、状态变化
@@ -561,8 +561,8 @@ B、发送ACK包
 -&gt;case TCP_SYN_RECV:
 -&gt;tcp_set_state(sk, TCP_ESTABLISHED);
 
-只看没调，有问题的欢迎各位小伙伴指出。</div>2021-08-14</li><br/><li><span>pedro</span> 👍（2） 💬（3）<div>今天的问题不好回答，因为文中无明显三次握手的代码，而且三次握手的机制其实比较复杂，涉及到几个状态和几个队列之间的切换，笼统的 connect 和 accept 函数是说不清楚的，感兴趣可以看看这里：
+只看没调，有问题的欢迎各位小伙伴指出。</p>2021-08-14</li><br/><li><span>pedro</span> 👍（2） 💬（3）<p>今天的问题不好回答，因为文中无明显三次握手的代码，而且三次握手的机制其实比较复杂，涉及到几个状态和几个队列之间的切换，笼统的 connect 和 accept 函数是说不清楚的，感兴趣可以看看这里：
 https:&#47;&#47;blog.csdn.net&#47;tennysonsky&#47;article&#47;details&#47;45621341
 
-当然这些不能全信，所以还是得自己看linux内核代码，待我看了再来补充😂</div>2021-08-09</li><br/><li><span>王子虾</span> 👍（0） 💬（1）<div>老师，有一个问题，tcp在调用listen的时候，有全连接队列的概念，一般上限是128。但是问题是，我们比如实现单机百万链接的时候，一个server端的源组（server_ip+port），比如有65535个client，那会不会受限于这个全连接队列？</div>2022-04-09</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>nice</div>2022-02-25</li><br/><li><span>GeekCoder</span> 👍（0） 💬（1）<div>能讲讲epoll吗？</div>2021-10-24</li><br/><li><span>pedro</span> 👍（0） 💬（1）<div>这里有一篇三次握手的源码图解：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;vlrzGc5bFrPIr9a7HIr2eA</div>2021-08-09</li><br/><li><span>MacBao</span> 👍（1） 💬（0）<div>服务器端处于listen状态，客户端connect发起TCP三次握手？</div>2021-08-09</li><br/>
+当然这些不能全信，所以还是得自己看linux内核代码，待我看了再来补充😂</p>2021-08-09</li><br/><li><span>王子虾</span> 👍（0） 💬（1）<p>老师，有一个问题，tcp在调用listen的时候，有全连接队列的概念，一般上限是128。但是问题是，我们比如实现单机百万链接的时候，一个server端的源组（server_ip+port），比如有65535个client，那会不会受限于这个全连接队列？</p>2022-04-09</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>nice</p>2022-02-25</li><br/><li><span>GeekCoder</span> 👍（0） 💬（1）<p>能讲讲epoll吗？</p>2021-10-24</li><br/><li><span>pedro</span> 👍（0） 💬（1）<p>这里有一篇三次握手的源码图解：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;vlrzGc5bFrPIr9a7HIr2eA</p>2021-08-09</li><br/><li><span>MacBao</span> 👍（1） 💬（0）<p>服务器端处于listen状态，客户端connect发起TCP三次握手？</p>2021-08-09</li><br/>
 </ul>

@@ -426,21 +426,21 @@ metadata
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>周龙亭</span> 👍（129） 💬（5）<div>是因为envoy提供了api形式的配置入口，更方便做流量治理</div>2018-11-26</li><br/><li><span>虎虎❤️</span> 👍（82） 💬（14）<div>老师，用声明式api的好处没有体会太深刻。
+<li><span>周龙亭</span> 👍（129） 💬（5）<p>是因为envoy提供了api形式的配置入口，更方便做流量治理</p>2018-11-26</li><br/><li><span>虎虎❤️</span> 👍（82） 💬（14）<p>老师，用声明式api的好处没有体会太深刻。
 如果在dosomething中merge出新的yaml，然后用replace会有什么缺点？
 好像在这篇文章中仅仅提到声明式的可以多个客户端同时写。除此之外，还有其他优点吗？
-也就是说修改对象比替换对象的优势在哪？</div>2018-10-15</li><br/><li><span>mazhen</span> 👍（49） 💬（3）<div>有个疑问，在envoy-initializer的“控制循环”中获取新创建的Pod，这个Pod是否已经在正常运行了？
-Initializer 提交patch修改Pod对象，Kubernetes发现Pod更新，然后以“滚动升级”的方式更新运行中的Pod？</div>2018-10-15</li><br/><li><span>虎虎❤️</span> 👍（47） 💬（2）<div>kubectl apply 是通过mvcc 实现的并发写吗？</div>2018-10-16</li><br/><li><span>混沌渺无极</span> 👍（43） 💬（2）<div>dynamic admission control有点像防火墙的DNAT，数据包即将进入路由表的瞬间被修改了目的地址，这样路由表就对数据包的修改[无感]。
-patch就像多人使用git来进行文件的&quot;合并型&quot;修改。</div>2018-10-16</li><br/><li><span>DJH</span> 👍（28） 💬（2）<div>请教老师，Initializer和Preset都能注入POD配置，那么这两种方法的适用场景有何不同？</div>2018-10-15</li><br/><li><span>huan</span> 👍（23） 💬（5）<div>又查了下envoy的设计，感觉它支持热更新和热重启，应该很适合声明式规则的开发范式，这可以看做一种优势，相比而言，nginx的reload需要把worker进程退出，比较面向命令</div>2018-10-15</li><br/><li><span>lucasun</span> 👍（19） 💬（3）<div>Initializer不是一直bata然后废弃了嘛，istio用的是MutatingAdmissionWebhook吧</div>2020-03-03</li><br/><li><span>Alex</span> 👍（19） 💬（2）<div>Initializer与新的pod 在git merge冲突了该怎么解决？</div>2018-11-14</li><br/><li><span>羽翼1982</span> 👍（16） 💬（1）<div>所以这个问题的答案是什么呢？
-我的理解是Envy性能更高，占用系统资源更少</div>2018-11-27</li><br/><li><span>闫飞</span> 👍（12） 💬（1）<div>服务网格最初是由linkerd项目提出概念的，lstio是另外一个后起之秀，使大家都关注到了边车代理模式和服务治理的新方法的巨大威力。文中应该笔误写错为微服务了。
+也就是说修改对象比替换对象的优势在哪？</p>2018-10-15</li><br/><li><span>mazhen</span> 👍（49） 💬（3）<p>有个疑问，在envoy-initializer的“控制循环”中获取新创建的Pod，这个Pod是否已经在正常运行了？
+Initializer 提交patch修改Pod对象，Kubernetes发现Pod更新，然后以“滚动升级”的方式更新运行中的Pod？</p>2018-10-15</li><br/><li><span>虎虎❤️</span> 👍（47） 💬（2）<p>kubectl apply 是通过mvcc 实现的并发写吗？</p>2018-10-16</li><br/><li><span>混沌渺无极</span> 👍（43） 💬（2）<p>dynamic admission control有点像防火墙的DNAT，数据包即将进入路由表的瞬间被修改了目的地址，这样路由表就对数据包的修改[无感]。
+patch就像多人使用git来进行文件的&quot;合并型&quot;修改。</p>2018-10-16</li><br/><li><span>DJH</span> 👍（28） 💬（2）<p>请教老师，Initializer和Preset都能注入POD配置，那么这两种方法的适用场景有何不同？</p>2018-10-15</li><br/><li><span>huan</span> 👍（23） 💬（5）<p>又查了下envoy的设计，感觉它支持热更新和热重启，应该很适合声明式规则的开发范式，这可以看做一种优势，相比而言，nginx的reload需要把worker进程退出，比较面向命令</p>2018-10-15</li><br/><li><span>lucasun</span> 👍（19） 💬（3）<p>Initializer不是一直bata然后废弃了嘛，istio用的是MutatingAdmissionWebhook吧</p>2020-03-03</li><br/><li><span>Alex</span> 👍（19） 💬（2）<p>Initializer与新的pod 在git merge冲突了该怎么解决？</p>2018-11-14</li><br/><li><span>羽翼1982</span> 👍（16） 💬（1）<p>所以这个问题的答案是什么呢？
+我的理解是Envy性能更高，占用系统资源更少</p>2018-11-27</li><br/><li><span>闫飞</span> 👍（12） 💬（1）<p>服务网格最初是由linkerd项目提出概念的，lstio是另外一个后起之秀，使大家都关注到了边车代理模式和服务治理的新方法的巨大威力。文中应该笔误写错为微服务了。
 
-不过瑕不掩瑜，本节写的极其精彩和深入浅出。</div>2019-01-16</li><br/><li><span>gotojeff</span> 👍（8） 💬（1）<div>Hi 老师
+不过瑕不掩瑜，本节写的极其精彩和深入浅出。</p>2019-01-16</li><br/><li><span>gotojeff</span> 👍（8） 💬（1）<p>Hi 老师
 ‘’‘有个疑问： name 为envoy的configmap是在哪里定义的呢？
 2018-10-16
  作者回复
 文中不是贴出来了？
 ’‘’
 configmap模板中的 metadata - name是envoy-initializer，但是在下面的container volumes中的configmap name是envoy，我的疑惑是这是2个不同的configmap吧？后者是在其他地方定义的？
-</div>2018-10-17</li><br/><li><span>公众号：云原生Serverless</span> 👍（8） 💬（1）<div>磊哥竟然穿插了istio的讲解，后续有没有计划讲讲knative呢</div>2018-10-15</li><br/><li><span>虎虎❤️</span> 👍（7） 💬（3）<div>老师，为什么修改对象可以多个客户端同时写，而替换不行？感觉还差一层窗户纸，老师帮我捅破:)
-或者有什么资料可以让我更深入理解下吗？</div>2018-10-15</li><br/><li><span>silver</span> 👍（6） 💬（1）<div>kubectl apply怎么做concurrency control呢？假设client A和B都有version 1的spec。然后他们在各自修改了spec之后call apply。假设client A的patch操作先成功，如果kubectl简单的与etcd里有的spec做一个diff，会不会出现一个client B把client A的更新个revert的情况？</div>2018-10-16</li><br/>
+</p>2018-10-17</li><br/><li><span>公众号：云原生Serverless</span> 👍（8） 💬（1）<p>磊哥竟然穿插了istio的讲解，后续有没有计划讲讲knative呢</p>2018-10-15</li><br/><li><span>虎虎❤️</span> 👍（7） 💬（3）<p>老师，为什么修改对象可以多个客户端同时写，而替换不行？感觉还差一层窗户纸，老师帮我捅破:)
+或者有什么资料可以让我更深入理解下吗？</p>2018-10-15</li><br/><li><span>silver</span> 👍（6） 💬（1）<p>kubectl apply怎么做concurrency control呢？假设client A和B都有version 1的spec。然后他们在各自修改了spec之后call apply。假设client A的patch操作先成功，如果kubectl简单的与etcd里有的spec做一个diff，会不会出现一个client B把client A的更新个revert的情况？</p>2018-10-16</li><br/>
 </ul>

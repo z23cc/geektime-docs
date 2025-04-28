@@ -538,7 +538,7 @@ protected List<MediaType> getProducibleMediaTypes(
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>雨落～紫竹</span> 👍（3） 💬（0）<div>这章所有问题都是不规范导致的</div>2022-06-20</li><br/><li><span>天天向上</span> 👍（0） 💬（0）<div>请教下什么情况下需要修改content type</div>2022-10-01</li><br/><li><span>星期八</span> 👍（0） 💬（0）<div>案例3中“决定用哪一种 MediaType 返回” header有值，为什么会走到下面去选择MediaType#TEXT_PLAIN？</div>2022-03-13</li><br/><li><span>虹炎</span> 👍（0） 💬（4）<div>案例2说：1. 存取 Map 的 Header 是没有忽略大小写的 然后给出了源码：
+<li><span>雨落～紫竹</span> 👍（3） 💬（0）<p>这章所有问题都是不规范导致的</p>2022-06-20</li><br/><li><span>天天向上</span> 👍（0） 💬（0）<p>请教下什么情况下需要修改content type</p>2022-10-01</li><br/><li><span>星期八</span> 👍（0） 💬（0）<p>案例3中“决定用哪一种 MediaType 返回” header有值，为什么会走到下面去选择MediaType#TEXT_PLAIN？</p>2022-03-13</li><br/><li><span>虹炎</span> 👍（0） 💬（4）<p>案例2说：1. 存取 Map 的 Header 是没有忽略大小写的 然后给出了源码：
 private void findNext() {
     next=null;
     for(; pos&lt; size; pos++ ) {
@@ -563,5 +563,5 @@ private void findNext() {
 
 这里说的返回结果指什么？ if( headers.getName( j ).equalsIgnoreCase( next ))  这行代码不是忽略了大小写了吗？
 
-</div>2021-05-16</li><br/>
+</p>2021-05-16</li><br/>
 </ul>

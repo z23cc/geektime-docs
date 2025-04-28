@@ -172,8 +172,8 @@ ControlNet模型需要与预训练好的SD模型配合使用。ControlNet拷贝�
 
 欢迎你在留言区和我交流讨论。如果这一讲对你有启发，也推荐你分享给身边更多同事、朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Geek_fbb96d</span> 👍（0） 💬（1）<div>老师你好，我在 Stable Diffusion 的界面上没有找到 ControlNet 的位置？请问在哪里？</div>2024-05-21</li><br/><li><span>hallo128</span> 👍（0） 💬（1）<div>ControlNet官方GitHub：https:&#47;&#47;github.com&#47;lllyasviel&#47;ControlNet
-ControlNet论文原文：https:&#47;&#47;arxiv.org&#47;abs&#47;2302.05543</div>2024-05-03</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>Geek_fbb96d</span> 👍（0） 💬（1）<p>老师你好，我在 Stable Diffusion 的界面上没有找到 ControlNet 的位置？请问在哪里？</p>2024-05-21</li><br/><li><span>hallo128</span> 👍（0） 💬（1）<p>ControlNet官方GitHub：https:&#47;&#47;github.com&#47;lllyasviel&#47;ControlNet
+ControlNet论文原文：https:&#47;&#47;arxiv.org&#47;abs&#47;2302.05543</p>2024-05-03</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：ControlNet可以独立使用吗?
-Q2：ControlNet只能配合SD使用吗？还是可以和其他模型配合?</div>2023-09-03</li><br/><li><span>hallo128</span> 👍（0） 💬（0）<div>老师，想请问下，如何训练自己的ControlNet插件呢？如果要更精细化的控制一些不一样的场景，而不是直接调用已训练好的ControlNet插件</div>2024-04-25</li><br/>
+Q2：ControlNet只能配合SD使用吗？还是可以和其他模型配合?</p>2023-09-03</li><br/><li><span>hallo128</span> 👍（0） 💬（0）<p>老师，想请问下，如何训练自己的ControlNet插件呢？如果要更精细化的控制一些不一样的场景，而不是直接调用已训练好的ControlNet插件</p>2024-04-25</li><br/>
 </ul>

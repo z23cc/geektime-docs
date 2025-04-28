@@ -126,13 +126,13 @@ RocketMQ和Kafka都使用了顺序写机制，但相比Kafka，RocketMQ在消息
 
 欢迎你在留言区与我交流讨论，我们下节课见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Y a n g</span> 👍（2） 💬（1）<div>文件布局：更改commitlog副本为分区维度,充分利用磁盘性能。
+<li><span>Y a n g</span> 👍（2） 💬（1）<p>文件布局：更改commitlog副本为分区维度,充分利用磁盘性能。
 数据写入方式：FileChannel调用transferTo而不是wirte，发挥块设备优势
 客户端消息发送：加入缓存队列，存储格式的数据组装放在客户端，引入批处理思想
-</div>2022-07-28</li><br/><li><span>xueerfei007</span> 👍（0） 💬（1）<div>又来催更了</div>2022-12-15</li><br/><li><span>在路上</span> 👍（0） 💬（1）<div>事务消息方面，老师可以补充下吗</div>2022-11-29</li><br/><li><span>syz</span> 👍（0） 💬（1）<div>老师求助个问题， 在window server 2012下使用RocketMQ，日志清理时会宕机吗，谢谢
+</p>2022-07-28</li><br/><li><span>xueerfei007</span> 👍（0） 💬（1）<p>又来催更了</p>2022-12-15</li><br/><li><span>在路上</span> 👍（0） 💬（1）<p>事务消息方面，老师可以补充下吗</p>2022-11-29</li><br/><li><span>syz</span> 👍（0） 💬（1）<p>老师求助个问题， 在window server 2012下使用RocketMQ，日志清理时会宕机吗，谢谢
 问题：历史项目在win下运行，运行一段时间kafka后日志清理时宕机
 方案：win中装centos、使用网上kafka补丁版本、换RocketMQ
-</div>2022-08-04</li><br/><li><span>麻婆豆腐</span> 👍（0） 💬（3）<div>首先文件组织方式可以考虑更多的利用磁盘的IO。
+</p>2022-08-04</li><br/><li><span>麻婆豆腐</span> 👍（0） 💬（3）<p>首先文件组织方式可以考虑更多的利用磁盘的IO。
 数据写入采用零拷贝。
-数据发送可以客户端组织数据来提高吞吐。</div>2022-07-23</li><br/><li><span>芋头</span> 👍（0） 💬（0）<div>rocketmq如何通过commitlog构建队列文件的？本文漏了对比消费端的情况</div>2023-05-29</li><br/>
+数据发送可以客户端组织数据来提高吞吐。</p>2022-07-23</li><br/><li><span>芋头</span> 👍（0） 💬（0）<p>rocketmq如何通过commitlog构建队列文件的？本文漏了对比消费端的情况</p>2023-05-29</li><br/>
 </ul>

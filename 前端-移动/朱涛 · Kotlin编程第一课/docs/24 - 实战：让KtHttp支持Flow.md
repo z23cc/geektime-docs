@@ -785,10 +785,10 @@ fun <T : Any> KtCall<T>.asFlow(): Flow<T> = callbackFlow {
 }
 ```
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>PoPlus</span> 👍（5） 💬（1）<div>网络请求是一次性事件，我都改用 Flow 的话合适吗？</div>2022-03-14</li><br/><li><span>魏全运</span> 👍（1） 💬（2）<div>awaitClose感觉有等待协程执行结束的作用，等待老师的专业解答</div>2022-03-16</li><br/><li><span>白泽丶</span> 👍（0） 💬（1）<div>是不是和 delay() 一样，在外部取消时抛出 CancellationException 异常并从而让协程退出呢</div>2022-04-12</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<div>去掉awaitClose后程序有异常了。
+<li><span>PoPlus</span> 👍（5） 💬（1）<p>网络请求是一次性事件，我都改用 Flow 的话合适吗？</p>2022-03-14</li><br/><li><span>魏全运</span> 👍（1） 💬（2）<p>awaitClose感觉有等待协程执行结束的作用，等待老师的专业解答</p>2022-03-16</li><br/><li><span>白泽丶</span> 👍（0） 💬（1）<p>是不是和 delay() 一样，在外部取消时抛出 CancellationException 异常并从而让协程退出呢</p>2022-04-12</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<p>去掉awaitClose后程序有异常了。
 java.lang.IllegalStateException: &#39;awaitClose { yourCallbackOrListener.cancel() }&#39; should be used in the end of callbackFlow block.
 Otherwise, a callback&#47;listener may leak in case of external cancellation.
 See callbackFlow API documentation for the details.
-原因还不清楚。。。</div>2022-03-16</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<div>为什么第5版中的程序要等一会儿才会退出呢？</div>2022-03-16</li><br/><li><span>漱口杯</span> 👍（1） 💬（0）<div>注释调awaitClose可能会发生内存泄漏，官方文档里是这样写的：
-使用awaitClose是强制性的，以防止取消流量收集时发生内存泄漏，否则即使流量收集器已经完成，回调也可能继续运行。为避免此类泄漏，如果块返回但通道尚未关闭，此方法将抛出IllegalStateException </div>2023-04-28</li><br/><li><span>彭Kai.</span> 👍（0） 💬（0）<div>挂起当前的协程，好让flow里的代码执行，要不然不会执行</div>2022-10-10</li><br/><li><span>郑峰</span> 👍（0） 💬（0）<div>awaitClose内部实现是suspendCancellableCoroutine。 所以它可以支持结构化的取消，比如从parent job来的取消请求。</div>2022-08-20</li><br/>
+原因还不清楚。。。</p>2022-03-16</li><br/><li><span>魏全运</span> 👍（0） 💬（1）<p>为什么第5版中的程序要等一会儿才会退出呢？</p>2022-03-16</li><br/><li><span>漱口杯</span> 👍（1） 💬（0）<p>注释调awaitClose可能会发生内存泄漏，官方文档里是这样写的：
+使用awaitClose是强制性的，以防止取消流量收集时发生内存泄漏，否则即使流量收集器已经完成，回调也可能继续运行。为避免此类泄漏，如果块返回但通道尚未关闭，此方法将抛出IllegalStateException </p>2023-04-28</li><br/><li><span>彭Kai.</span> 👍（0） 💬（0）<p>挂起当前的协程，好让flow里的代码执行，要不然不会执行</p>2022-10-10</li><br/><li><span>郑峰</span> 👍（0） 💬（0）<p>awaitClose内部实现是suspendCancellableCoroutine。 所以它可以支持结构化的取消，比如从parent job来的取消请求。</p>2022-08-20</li><br/>
 </ul>

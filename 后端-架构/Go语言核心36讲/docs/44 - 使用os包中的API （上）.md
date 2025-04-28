@@ -123,8 +123,8 @@ if file3 != nil {
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>HF</span> 👍（8） 💬（1）<div>老师，高级语言的标准库实现方式有哪些？用到的系统服务是封装系统调用还是用系统库函数</div>2020-05-26</li><br/><li><span>lesserror</span> 👍（7） 💬（1）<div>郝林老师能简单说一下demo87.go 中的 ：reflect.TypeOf((*io.ReadWriteSeeker)(nil)).Elem() 运作流程吗？ 感觉这种写法还挺特别的。
-</div>2021-08-30</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<div>郝林老师，demo87.go 样例中好像少了这一段 关闭文件的代码：
+<li><span>HF</span> 👍（8） 💬（1）<p>老师，高级语言的标准库实现方式有哪些？用到的系统服务是封装系统调用还是用系统库函数</p>2020-05-26</li><br/><li><span>lesserror</span> 👍（7） 💬（1）<p>郝林老师能简单说一下demo87.go 中的 ：reflect.TypeOf((*io.ReadWriteSeeker)(nil)).Elem() 运作流程吗？ 感觉这种写法还挺特别的。
+</p>2021-08-30</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<p>郝林老师，demo87.go 样例中好像少了这一段 关闭文件的代码：
 
-defer file3.Close()</div>2021-08-30</li><br/><li><span>Walking In The Air</span> 👍（30） 💬（0）<div>最希望老师把net包内极相关的包讲解一下，这部分用的最频繁，但是总有一种似懂非懂的感觉，只是知道是这样用，不知道为什么，对底层知识不清晰，没有一个轮廓</div>2018-11-22</li><br/><li><span>上山的o牛</span> 👍（2） 💬（0）<div>同求net包讲解</div>2019-10-12</li><br/><li><span>Timo</span> 👍（0） 💬（0）<div>打卡</div>2019-06-13</li><br/><li><span>海盗船长</span> 👍（0） 💬（0）<div>打卡</div>2019-04-17</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<div>打卡</div>2019-03-13</li><br/>
+defer file3.Close()</p>2021-08-30</li><br/><li><span>Walking In The Air</span> 👍（30） 💬（0）<p>最希望老师把net包内极相关的包讲解一下，这部分用的最频繁，但是总有一种似懂非懂的感觉，只是知道是这样用，不知道为什么，对底层知识不清晰，没有一个轮廓</p>2018-11-22</li><br/><li><span>上山的o牛</span> 👍（2） 💬（0）<p>同求net包讲解</p>2019-10-12</li><br/><li><span>Timo</span> 👍（0） 💬（0）<p>打卡</p>2019-06-13</li><br/><li><span>海盗船长</span> 👍（0） 💬（0）<p>打卡</p>2019-04-17</li><br/><li><span>虢國技醬</span> 👍（0） 💬（0）<p>打卡</p>2019-03-13</li><br/>
 </ul>

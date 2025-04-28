@@ -118,7 +118,7 @@ Producer端关闭TCP连接的方式有两种：**一种是用户主动关闭；�
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>注定非凡</span> 👍（51） 💬（6）<div>Apache Kafka的所有通信都是基于TCP的，而不是于HTTP或其他协议的
+<li><span>注定非凡</span> 👍（51） 💬（6）<p>Apache Kafka的所有通信都是基于TCP的，而不是于HTTP或其他协议的
 1 为什采用TCP?
 （1）TCP拥有一些高级功能，如多路复用请求和同时轮询多个连接的能力。
 	（2）很多编程语言的HTTP库功能相对的比较简陋。
@@ -135,26 +135,26 @@ B：此时不知道要连接哪个Broker，kafka会通过METADATA请求获取集
 		A：用户主动关闭，通过调用producer.close()方关闭，也包括kill -9暴力关闭。
 		B：Kafka自动关闭，这与Producer端参数connection.max.idles.ms的值有关，默认为9分钟，9分钟内没有任何请求流过，就会被自动关闭。这个参数可以调整。
 		C：第二种方式中，TCP连接是在Broker端被关闭的，但这个连接请求是客户端发起的，对TCP而言这是被动的关闭，被动关闭会产生大量的CLOSE_WAIT连接。
-</div>2019-10-31</li><br/><li><span>旭杰</span> 👍（28） 💬（4）<div>Producer 通过 metadata.max.age.ms定期更新元数据，在连接多个broker的情况下，producer是如何决定向哪个broker发起该请求？</div>2019-07-23</li><br/><li><span>小马</span> 👍（23） 💬（2）<div>老师有个问题请教下：
-Producer 通过 metadata.max.age.ms 参数定期地去更新元数据信息，默认5分钟更新元数据，如果没建立TCP连接则会创建，而connections.max.idle.ms默认9分钟不使用该连接就会关闭。那岂不是会循环往复地不断地在创建关闭TCP连接了吗？</div>2020-01-09</li><br/><li><span>Frank</span> 👍（19） 💬（1）<div>最近在使用kafka Connector做数据同步服务，在kafka中创建了许多topic，目前对kafka了解还不够深入，不知道这个对性能有什么影响？topic的数量多大范围比较合适？</div>2019-07-10</li><br/><li><span>你好旅行者</span> 👍（16） 💬（4）<div>老师好，看了今天的文章我有几个问题：
+</p>2019-10-31</li><br/><li><span>旭杰</span> 👍（28） 💬（4）<p>Producer 通过 metadata.max.age.ms定期更新元数据，在连接多个broker的情况下，producer是如何决定向哪个broker发起该请求？</p>2019-07-23</li><br/><li><span>小马</span> 👍（23） 💬（2）<p>老师有个问题请教下：
+Producer 通过 metadata.max.age.ms 参数定期地去更新元数据信息，默认5分钟更新元数据，如果没建立TCP连接则会创建，而connections.max.idle.ms默认9分钟不使用该连接就会关闭。那岂不是会循环往复地不断地在创建关闭TCP连接了吗？</p>2020-01-09</li><br/><li><span>Frank</span> 👍（19） 💬（1）<p>最近在使用kafka Connector做数据同步服务，在kafka中创建了许多topic，目前对kafka了解还不够深入，不知道这个对性能有什么影响？topic的数量多大范围比较合适？</p>2019-07-10</li><br/><li><span>你好旅行者</span> 👍（16） 💬（4）<p>老师好，看了今天的文章我有几个问题：
 
 1.Kafka的元数据信息是存储在zookeeper中的，而Producer是通过broker来获取元数据信息的，那么这个过程是否是这样的，Producer向Broker发送一个获取元数据的请求给Broker，之后Broker再向zookeeper请求这个信息返回给Producer?
 
-2.如果Producer在获取完元数据信息之后要和所有的Broker建立连接，那么假设一个Kafka集群中有1000台Broker，对于一个只需要与5台Broker交互的Producer，它连接池中的链接数量是不是从1000-&gt;5-&gt;1000-&gt;5?这样不是显得非常得浪费连接池资源？</div>2019-07-02</li><br/><li><span>蓝魔丶</span> 👍（14） 💬（8）<div>老师，如果Broker端被动关闭，会导致client端产生close_wait状态，这个状态持续一段时间之后，client端不是应该发生FIN完成TCP断开的正常四次握手吗？怎么感觉老师讲的这个FIN就不会再发了，导致了僵尸连接的产生？</div>2019-08-04</li><br/><li><span>kursk.ye</span> 👍（12） 💬（12）<div>试想一下，在一个有着 1000 台 Broker 的集群中，你的 Producer 可能只会与其中的 3～5 台 Broker 长期通信，但是 Producer 启动后依次创建与这 1000 台 Broker 的 TCP 连接。一段时间之后，大约有 995 个 TCP 连接又被强制关闭。这难道不是一种资源浪费吗？很显然，这里是有改善和优化的空间的。
+2.如果Producer在获取完元数据信息之后要和所有的Broker建立连接，那么假设一个Kafka集群中有1000台Broker，对于一个只需要与5台Broker交互的Producer，它连接池中的链接数量是不是从1000-&gt;5-&gt;1000-&gt;5?这样不是显得非常得浪费连接池资源？</p>2019-07-02</li><br/><li><span>蓝魔丶</span> 👍（14） 💬（8）<p>老师，如果Broker端被动关闭，会导致client端产生close_wait状态，这个状态持续一段时间之后，client端不是应该发生FIN完成TCP断开的正常四次握手吗？怎么感觉老师讲的这个FIN就不会再发了，导致了僵尸连接的产生？</p>2019-08-04</li><br/><li><span>kursk.ye</span> 👍（12） 💬（12）<p>试想一下，在一个有着 1000 台 Broker 的集群中，你的 Producer 可能只会与其中的 3～5 台 Broker 长期通信，但是 Producer 启动后依次创建与这 1000 台 Broker 的 TCP 连接。一段时间之后，大约有 995 个 TCP 连接又被强制关闭。这难道不是一种资源浪费吗？很显然，这里是有改善和优化的空间的。
 
 这段不敢苟同。作为消息服务器中国，连接应该是种必要资源，所以部署时就该充分给予，而且创建连接会消耗CPU,用到时再创建不合适，我甚至觉得Kafka应该有连接池的设计。
 
-另外最后一部分关于TCP关闭第二种情况，客户端到服务端没有关闭，只是服务端到客户端关闭了，tcp是四次断开，可以单方向关闭，另一方向继续保持连接</div>2019-07-02</li><br/><li><span>半瓶醋</span> 👍（9） 💬（2）<div>胡夕老师，Kafka集群的元数据信息是保存在哪里的呢，以CDH集群为例，我比较菜：）</div>2020-05-13</li><br/><li><span>yzh</span> 👍（8） 💬（1）<div>老是您好，咨询两个问题。
+另外最后一部分关于TCP关闭第二种情况，客户端到服务端没有关闭，只是服务端到客户端关闭了，tcp是四次断开，可以单方向关闭，另一方向继续保持连接</p>2019-07-02</li><br/><li><span>半瓶醋</span> 👍（9） 💬（2）<p>胡夕老师，Kafka集群的元数据信息是保存在哪里的呢，以CDH集群为例，我比较菜：）</p>2020-05-13</li><br/><li><span>yzh</span> 👍（8） 💬（1）<p>老是您好，咨询两个问题。
 1. Producer实例创建和维护的tcp连接在底层是否是多个Producer实例共享的，还是Jvm内，多个Producer实例会各自独立创建和所有broker的tcp连接
 2.Producer实例会和所有broker维持连接，这里的所有，是指和topic下各个分区leader副本所在的broker进行连接的，还是所有的broker，即使该broker下的所有topic分区都是flower
-</div>2019-08-20</li><br/><li><span>电光火石</span> 👍（5） 💬（1）<div>谢谢老师。有几个问题请教一下：
+</p>2019-08-20</li><br/><li><span>电光火石</span> 👍（5） 💬（1）<p>谢谢老师。有几个问题请教一下：
 1. producer连接是每个broker一个连接，跟topic没有关系是吗？（consumer也是这样是吗？）
 2. 我们运维在所有的broker之前放了一个F5做负载均衡，但其实应该也没用，他会自动去获取kafka所有的broker，绕过这个F5，不知道我的理解是否正确？
 3. 在线上我们有个kafka集群，大概200个topic，数据不是很均衡，有的一天才十几m，有的一天500G，我们是想consumer读取所有的topic，然后后面做分发，但是consumer会卡死在哪，也没有报错，也没有日志输出，不知道老师有没有思路可能是什么原因？
-谢谢了！</div>2019-07-07</li><br/><li><span>曾轼麟</span> 👍（4） 💬（1）<div>老师下面就有一个问题，KafkaProducer是建议创建实例后复用，像连接池那样使用，还是建议每次发送构造一个实例？听完这讲后感觉哪个都不合理，每次new会有很大的开销，但是一次new感觉又有僵尸连接，KafkaProducer适合池化吗？还是建议单例？</div>2019-07-02</li><br/><li><span>Wenthkim</span> 👍（3） 💬（1）<div>老师，请教一个问题，目前遇到一个文中所提的一个问题，就是broker端被直接kill -9,然后产生不量的close_wait,导致重启broker后，producer和consumer都连不上，刷了大量的日志，把机器磁盘给刷爆了，请问老师这个问题我应该怎么去处理？</div>2019-07-23</li><br/><li><span>吴宇晨</span> 👍（3） 💬（1）<div>老师你好，kafka更新元数据的方法只有每5分钟的轮训吗，如果有监控zk节点之类的，是不是可以把轮询元数据时间调大甚至取消</div>2019-07-02</li><br/><li><span>Liam</span> 👍（3） 💬（1）<div>producer是否会有类似于heart beat的机制去探测可能被broker关闭的连接然后建立重连呢？</div>2019-07-02</li><br/><li><span>James</span> 👍（2） 💬（1）<div>请问老师，
+谢谢了！</p>2019-07-07</li><br/><li><span>曾轼麟</span> 👍（4） 💬（1）<p>老师下面就有一个问题，KafkaProducer是建议创建实例后复用，像连接池那样使用，还是建议每次发送构造一个实例？听完这讲后感觉哪个都不合理，每次new会有很大的开销，但是一次new感觉又有僵尸连接，KafkaProducer适合池化吗？还是建议单例？</p>2019-07-02</li><br/><li><span>Wenthkim</span> 👍（3） 💬（1）<p>老师，请教一个问题，目前遇到一个文中所提的一个问题，就是broker端被直接kill -9,然后产生不量的close_wait,导致重启broker后，producer和consumer都连不上，刷了大量的日志，把机器磁盘给刷爆了，请问老师这个问题我应该怎么去处理？</p>2019-07-23</li><br/><li><span>吴宇晨</span> 👍（3） 💬（1）<p>老师你好，kafka更新元数据的方法只有每5分钟的轮训吗，如果有监控zk节点之类的，是不是可以把轮询元数据时间调大甚至取消</p>2019-07-02</li><br/><li><span>Liam</span> 👍（3） 💬（1）<p>producer是否会有类似于heart beat的机制去探测可能被broker关闭的连接然后建立重连呢？</p>2019-07-02</li><br/><li><span>James</span> 👍（2） 💬（1）<p>请问老师，
 第一次创建实例，获取metadata数据，比如有1000个Broker，则会创建1000个连接吗
 然后跟不存在的主题发送消息，也会获取metadata数据，然后也是创建1000个连接吗
 最后，定时更新metadada也是会创建1000个连接吗
 
-然后最大保活时间又删除无用的连接，是吧。</div>2020-05-14</li><br/>
+然后最大保活时间又删除无用的连接，是吧。</p>2020-05-14</li><br/>
 </ul>

@@ -660,7 +660,7 @@ ref="basebaseservice" />
 
 学完这节课内容，我也给你留一道思考题。你认为能不能在一个Bean的构造器中注入另一个Bean？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>每天晒白牙</span> 👍（32） 💬（3）<div>回复BattleMan1994
+<li><span>每天晒白牙</span> 👍（32） 💬（3）<p>回复BattleMan1994
 
 老师这个用了两个缓存，spring多一个创建bean实例工厂缓存，详细如下
 
@@ -675,28 +675,28 @@ ref="basebaseservice" />
 
 当Spring发现两个或更多个bean之间存在循环依赖关系时，它会将其中一个bean创建的过程中尚未完成的实例放入earlySingletonObjects缓存中，然后将创建该bean的工厂对象放入singletonFactories缓存中。接着，Spring会暂停当前bean的创建过程，去创建它所依赖的bean。当依赖的bean创建完成后，Spring会将其放入singletonObjects缓存中，并使用它来完成当前bean的创建过程。在创建当前bean的过程中，如果发现它还依赖其他的bean，Spring会重复上述过程，直到所有bean的创建过程都完成为止。
 
-需要注意的是，当使用构造函数注入方式时，循环依赖是无法解决的。因为在创建bean时，必须先创建它所依赖的bean实例，而构造函数注入方式需要在创建bean实例时就将依赖的bean实例传入构造函数中。如果依赖的bean实例尚未创建完成，就无法将其传入构造函数中，从而导致循环依赖无法解决。此时，可以考虑使用setter注入方式来解决循环依赖问题。</div>2023-03-18</li><br/><li><span>大胖子呀、</span> 👍（13） 💬（1）<div>个人感觉循环依赖是一种非常糟糕的设计，往往意味着写出这段代码的程序员没有理清层级关系，没有设计好上下层的依赖，是一种非常明显的坏味道。
+需要注意的是，当使用构造函数注入方式时，循环依赖是无法解决的。因为在创建bean时，必须先创建它所依赖的bean实例，而构造函数注入方式需要在创建bean实例时就将依赖的bean实例传入构造函数中。如果依赖的bean实例尚未创建完成，就无法将其传入构造函数中，从而导致循环依赖无法解决。此时，可以考虑使用setter注入方式来解决循环依赖问题。</p>2023-03-18</li><br/><li><span>大胖子呀、</span> 👍（13） 💬（1）<p>个人感觉循环依赖是一种非常糟糕的设计，往往意味着写出这段代码的程序员没有理清层级关系，没有设计好上下层的依赖，是一种非常明显的坏味道。
 Spring对于循环依赖的支持，反而导致了程序员写出了坏味道代码而不自知，或许从一开始Spring就不该支持循环依赖。
-所以Spring官方也建议大家使用构造器注入，一个是避免写出这种层级依赖不清晰的糟糕代码，二是也方便了后续单元测试的编写。</div>2023-04-20</li><br/><li><span>每天晒白牙</span> 👍（10） 💬（3）<div>思考题
+所以Spring官方也建议大家使用构造器注入，一个是避免写出这种层级依赖不清晰的糟糕代码，二是也方便了后续单元测试的编写。</p>2023-04-20</li><br/><li><span>每天晒白牙</span> 👍（10） 💬（3）<p>思考题
 Spring支持一个Bean构造器注入另一个Bean，工作中也都是尽量通过构造器注入，有很多优点
 
 通过属性注入的方式能解决循环依赖的问题，原理是通过缓存的方式解决的，这里的关键点是属性注入是在bean创建后注入的
 
 而构造器注入不能解决循环依赖问题
-因为需要在创建bean时就需要将依赖的bean传入到构造函数中，如果依赖的bean尚未创建完成，就不能传入到构造函数中，循环依赖就不能解决</div>2023-03-17</li><br/><li><span>Geek_320730</span> 👍（9） 💬（1）<div>loadBeanDefinitions结束的时候会registerBeanDefinition，看代码中registerBeanDefinition又会根据这个Bean是否是单例来判断要不要getBean。如果getBean的话：如果这个Bean有依赖的Bean,会继续getBean,如果xml中 这个被依赖的Bean定义在这个Bean后面，那么后面被依赖的Bean的BeanDefintion还没有被loadBeanDefinitions，createBean的时候就会报错。</div>2023-03-19</li><br/><li><span>木  昜</span> 👍（5） 💬（2）<div>您好，目前所写的逻辑是加载一个BeanDefinition，然后放入Map，同时判断是否为懒加载，不是的话就创建该bean，然后加载下一个bean定义。
+因为需要在创建bean时就需要将依赖的bean传入到构造函数中，如果依赖的bean尚未创建完成，就不能传入到构造函数中，循环依赖就不能解决</p>2023-03-17</li><br/><li><span>Geek_320730</span> 👍（9） 💬（1）<p>loadBeanDefinitions结束的时候会registerBeanDefinition，看代码中registerBeanDefinition又会根据这个Bean是否是单例来判断要不要getBean。如果getBean的话：如果这个Bean有依赖的Bean,会继续getBean,如果xml中 这个被依赖的Bean定义在这个Bean后面，那么后面被依赖的Bean的BeanDefintion还没有被loadBeanDefinitions，createBean的时候就会报错。</p>2023-03-19</li><br/><li><span>木  昜</span> 👍（5） 💬（2）<p>您好，目前所写的逻辑是加载一个BeanDefinition，然后放入Map，同时判断是否为懒加载，不是的话就创建该bean，然后加载下一个bean定义。
 如果xml在a的bean定义在b之前，并且a依赖了b。
 此时 加载a的定义，创建a，发现a依赖b，就去getBean（b），但是此时b的定义还没有加载进map，就会抛出异常。
-是否可以改为加载完全部的bean定义之后再进行bean的创建。把两步骤分开？</div>2023-03-19</li><br/><li><span>风轻扬</span> 👍（4） 💬（1）<div>老师，我看其他同学提了这个问题。就是如果xml中A定义在前，依赖B，但是B定义在后。此时会因为beanDefinitionMap中不存在beanDefinition而报错。我看您给你的解决方案是先将beanDefinition对象一次性全部加载完成。那是不是将SimpleBeanFactory类中的方法registerBeanDefinition中的以下逻辑去掉就可以了。
+是否可以改为加载完全部的bean定义之后再进行bean的创建。把两步骤分开？</p>2023-03-19</li><br/><li><span>风轻扬</span> 👍（4） 💬（1）<p>老师，我看其他同学提了这个问题。就是如果xml中A定义在前，依赖B，但是B定义在后。此时会因为beanDefinitionMap中不存在beanDefinition而报错。我看您给你的解决方案是先将beanDefinition对象一次性全部加载完成。那是不是将SimpleBeanFactory类中的方法registerBeanDefinition中的以下逻辑去掉就可以了。
 if (!bd.isLazyInit()) {
             getBean(name);
         }
-我试了试，这样是ok的，因为ClassPathXmlApplicationContext中的refresh方法会执行到getBean</div>2023-03-22</li><br/><li><span>追梦</span> 👍（3） 💬（2）<div>老师好，这个反射构造器和反射setXXX()方法这样写有点硬编码的味道，有没有简洁的写法，如何不硬编码解决基本类型的反射问题</div>2023-03-27</li><br/><li><span>康Geek</span> 👍（2） 💬（1）<div>文稿中 ClassPathXmlApplicationContext 这个类的构造方法中 isRefresh 有个错误：
+我试了试，这样是ok的，因为ClassPathXmlApplicationContext中的refresh方法会执行到getBean</p>2023-03-22</li><br/><li><span>追梦</span> 👍（3） 💬（2）<p>老师好，这个反射构造器和反射setXXX()方法这样写有点硬编码的味道，有没有简洁的写法，如何不硬编码解决基本类型的反射问题</p>2023-03-27</li><br/><li><span>康Geek</span> 👍（2） 💬（1）<p>文稿中 ClassPathXmlApplicationContext 这个类的构造方法中 isRefresh 有个错误：
 if (!isRefresh) { this.beanFactory.refresh(); } 这个 if 的条件中时取反的，但是在老师 github 仓库中 geek_ioc3 分支的 ClassPathXmlApplicationContext.java 构造方法中是没有取反的：
 if (isRefresh) { this.beanFactory.refresh();}
-</div>2023-04-13</li><br/><li><span>塵</span> 👍（2） 💬（3）<div>createBean从哪里冒出来的，上面的课程里面SimpleBeanFactory类里没有看到</div>2023-04-12</li><br/><li><span>Jackwey</span> 👍（1） 💬（2）<div>老师，Cbean依赖的是A的毛坯实例，那A的属性岂不是没有被Cbean依赖了？</div>2023-06-03</li><br/><li><span>TableBear</span> 👍（1） 💬（1）<div>思考题回答：
+</p>2023-04-13</li><br/><li><span>塵</span> 👍（2） 💬（3）<p>createBean从哪里冒出来的，上面的课程里面SimpleBeanFactory类里没有看到</p>2023-04-12</li><br/><li><span>Jackwey</span> 👍（1） 💬（2）<p>老师，Cbean依赖的是A的毛坯实例，那A的属性岂不是没有被Cbean依赖了？</p>2023-06-03</li><br/><li><span>TableBear</span> 👍（1） 💬（1）<p>思考题回答：
 在Spring中Bean构造器注入另一个Bean是支持，但是看上面MinSpring的实现好像不支持。
 但是，Bean构造器注入没法用earlySingletonObjects解决循环依赖。
-不知道正不正确😂</div>2023-03-17</li><br/><li><span>Geek_94fbda</span> 👍（0） 💬（1）<div>BeanDefinition 里面要把lazyInit 的值改成True，这个在文章里没有提到。 否则的话是运行不了的</div>2024-02-02</li><br/><li><span>Geek_94fbda</span> 👍（0） 💬（1）<div>else { &#47;&#47;is ref, create the dependent beans
+不知道正不正确😂</p>2023-03-17</li><br/><li><span>Geek_94fbda</span> 👍（0） 💬（1）<p>BeanDefinition 里面要把lazyInit 的值改成True，这个在文章里没有提到。 否则的话是运行不了的</p>2024-02-02</li><br/><li><span>Geek_94fbda</span> 👍（0） 💬（1）<p>else { &#47;&#47;is ref, create the dependent beans
     				try {
 						paramTypes[0] = Class.forName(pType);
 					} catch (ClassNotFoundException e) {
@@ -708,7 +708,7 @@ if (isRefresh) { this.beanFactory.refresh();}
 						e.printStackTrace();
 					}
     			}
-isRef的类定义 是没有value这个值 的那pValue不是null么？</div>2024-02-01</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<div>老师写的很清晰，让我对spring有了更清楚的认识了，但是spring为什么要有第三个缓存，我还是没明白！别人博客解释，是代理的对象的原因，需要三级缓存；我的疑惑是，把代理对象直接放入第一个缓存中，不就行了吗？</div>2023-05-16</li><br/><li><span>Robert Tsai</span> 👍（0） 💬（1）<div>其实解决循环依赖的问题，就是一个办法：把创建bean的过程分成两阶段，第一阶段是一个毛胚的bean，第二阶段补齐属性。所有的毛胚bean都是提前创建出来的，后面面对循环依赖的时候，拿到的是这个提前准备好的毛胚bean。
+isRef的类定义 是没有value这个值 的那pValue不是null么？</p>2024-02-01</li><br/><li><span>Geek_7jwpfc</span> 👍（0） 💬（1）<p>老师写的很清晰，让我对spring有了更清楚的认识了，但是spring为什么要有第三个缓存，我还是没明白！别人博客解释，是代理的对象的原因，需要三级缓存；我的疑惑是，把代理对象直接放入第一个缓存中，不就行了吗？</p>2023-05-16</li><br/><li><span>Robert Tsai</span> 👍（0） 💬（1）<p>其实解决循环依赖的问题，就是一个办法：把创建bean的过程分成两阶段，第一阶段是一个毛胚的bean，第二阶段补齐属性。所有的毛胚bean都是提前创建出来的，后面面对循环依赖的时候，拿到的是这个提前准备好的毛胚bean。
 ---
-老师，我对这个过程还有一点不解。ABean 依赖 BBean，BBean 又依赖 CBean，而 CBean 反过来还要依赖 ABean，此时CBean拿到的却是毛坯的“ABean”，但是拿到这个毛坯Bean其实并不影响整体ABean的创建，因为最终完成创建后，从IOC中getBean()时候就是一个完成的ABean。不知理解是否正确？</div>2023-05-14</li><br/>
+老师，我对这个过程还有一点不解。ABean 依赖 BBean，BBean 又依赖 CBean，而 CBean 反过来还要依赖 ABean，此时CBean拿到的却是毛坯的“ABean”，但是拿到这个毛坯Bean其实并不影响整体ABean的创建，因为最终完成创建后，从IOC中getBean()时候就是一个完成的ABean。不知理解是否正确？</p>2023-05-14</li><br/>
 </ul>

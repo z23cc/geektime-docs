@@ -555,15 +555,15 @@ fun addString(leftNum: String, rightNum: String): String {
 
 欢迎你在评论区分享你的实现思路，我们下节课再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>qinsi</span> 👍（32） 💬（5）<div>val left = exp.left
+<li><span>qinsi</span> 👍（32） 💬（5）<p>val left = exp.left
 val operator = exp.operator
 val right = exp.right
 
 是不是可以写成
 
-val (left, operator, right) = exp</div>2022-01-04</li><br/><li><span>王玉朋</span> 👍（6） 💬（1）<div>老师，135+99的加法竖式动画图是用什么做的？</div>2022-01-04</li><br/><li><span>Geek_Adr</span> 👍（3） 💬（1）<div>V3实战 加 算法 ！提高语言的手感？
+val (left, operator, right) = exp</p>2022-01-04</li><br/><li><span>王玉朋</span> 👍（6） 💬（1）<p>老师，135+99的加法竖式动画图是用什么做的？</p>2022-01-04</li><br/><li><span>Geek_Adr</span> 👍（3） 💬（1）<p>V3实战 加 算法 ！提高语言的手感？
 坏学生偷懒 string.toBigInteger()
-</div>2022-02-04</li><br/><li><span>JokerFake</span> 👍（3） 💬（1）<div>所以枚举那只能传ADD 不能传+ 这个bug是故意就给我们自己改的？</div>2022-01-06</li><br/><li><span>苍王</span> 👍（2） 💬（2）<div>private fun minusString(left: String, right: String): String {
+</p>2022-02-04</li><br/><li><span>JokerFake</span> 👍（3） 💬（1）<p>所以枚举那只能传ADD 不能传+ 这个bug是故意就给我们自己改的？</p>2022-01-06</li><br/><li><span>苍王</span> 👍（2） 💬（2）<p>private fun minusString(left: String, right: String): String {
         val result = StringBuilder()
 
         &#47;&#47;判断是否结果位负数
@@ -628,10 +628,10 @@ val (left, operator, right) = exp</div>2022-01-04</li><br/><li><span>王玉朋</
 
         val result = calculatorV.calculate(&quot;233333333333333333333-1&quot;)
         assertEquals(&quot;233333333333333333332&quot;, result)
-    }</div>2022-01-30</li><br/><li><span>JL</span> 👍（2） 💬（1）<div>您好，想问一个关于单元测试的问题：
+    }</p>2022-01-30</li><br/><li><span>JL</span> 👍（2） 💬（1）<p>您好，想问一个关于单元测试的问题：
 我在工作中assertEquals 和 assertThat().equals() 两种都遇到过 但是有人说 第二种更好一点。 想听听您的意见和建议。
 
-之前网上搜了一下 也没有看到过说哪个好哪个坏</div>2022-01-05</li><br/><li><span>droidYu</span> 👍（1） 💬（2）<div>老师，V1版本的代码输入 3 + 4 会报错：No enum constant Operation.+；需要输入3 ADD 4才能正常运行，是您标的①处的代码的问题Operation.valueOf()方法抛错，为什么要故意写错，是有什么设计要讲解吗？</div>2022-03-20</li><br/><li><span>爱学习的小羊</span> 👍（1） 💬（1）<div>private fun minus(left: String, right: String): String {
+之前网上搜了一下 也没有看到过说哪个好哪个坏</p>2022-01-05</li><br/><li><span>droidYu</span> 👍（1） 💬（2）<p>老师，V1版本的代码输入 3 + 4 会报错：No enum constant Operation.+；需要输入3 ADD 4才能正常运行，是您标的①处的代码的问题Operation.valueOf()方法抛错，为什么要故意写错，是有什么设计要讲解吗？</p>2022-03-20</li><br/><li><span>爱学习的小羊</span> 👍（1） 💬（1）<p>private fun minus(left: String, right: String): String {
 
         var maxNumber = String()
         var mainNumber = String()
@@ -680,7 +680,7 @@ val (left, operator, right) = exp</div>2022-01-04</li><br/><li><span>王玉朋</
         }
         return result.append(resultMean).reverse().toString()
     }
-大佬这样写可吗</div>2022-02-23</li><br/><li><span>故事与酒</span> 👍（0） 💬（1）<div>大数加和乘
+大佬这样写可吗</p>2022-02-23</li><br/><li><span>故事与酒</span> 👍（0） 💬（1）<p>大数加和乘
 
 fun minusString(left:String,right:String):String{
     val result = StringBuilder()
@@ -705,7 +705,7 @@ fun minusString(left:String,right:String):String{
         val leftVal = if (leftIndex &gt;= 0) _left.get(leftIndex).digitToInt() else 0
         val rightVal = if (rightIndex &gt;= 0) _right.get(rightIndex).digitToInt() else 0
 
-        val digitResult = leftVal - rightVal - borrow</div>2022-02-14</li><br/><li><span>剑来</span> 👍（0） 💬（1）<div>讲一个不是很关键的东西，通过你这个方式拉取代码后，一般刚下来本地是没有start分支的，需要通过origin&#47;start这个远程分支去checkout。</div>2022-01-24</li><br/><li><span>浅色的风</span> 👍（0） 💬（1）<div> fun minusString(leftNum: String, rightNum: String): String {
+        val digitResult = leftVal - rightVal - borrow</p>2022-02-14</li><br/><li><span>剑来</span> 👍（0） 💬（1）<p>讲一个不是很关键的东西，通过你这个方式拉取代码后，一般刚下来本地是没有start分支的，需要通过origin&#47;start这个远程分支去checkout。</p>2022-01-24</li><br/><li><span>浅色的风</span> 👍（0） 💬（1）<p> fun minusString(leftNum: String, rightNum: String): String {
         val result = StringBuilder()
         var leftIndex = leftNum.length - 1
         var rightIndex = rightNum.length - 1
@@ -732,11 +732,11 @@ fun minusString(left:String,right:String):String{
             result.deleteAt(result.lastIndex)
         }
         return result.reverse().toString()
-    }</div>2022-01-17</li><br/><li><span>郑峰</span> 👍（0） 💬（1）<div>  private fun addString(left: String, right: String) = left.toBigDecimal().add(right.toBigDecimal()).toString()
+    }</p>2022-01-17</li><br/><li><span>郑峰</span> 👍（0） 💬（1）<p>  private fun addString(left: String, right: String) = left.toBigDecimal().add(right.toBigDecimal()).toString()
   private fun minusString(left: String, right: String) = left.toBigDecimal().subtract(right.toBigDecimal()).toString()
   private fun multiString(left: String, right: String) = left.toBigDecimal().multiply(right.toBigDecimal()).toString()
   private fun divString(left: String, right: String) = left.toBigDecimal().divideToIntegralValue(right.toBigDecimal()).toString()
-</div>2022-01-16</li><br/><li><span>爱学习的小羊</span> 👍（0） 💬（2）<div>大佬以后出书的话  可以送我一本吗</div>2022-01-11</li><br/><li><span>Marten</span> 👍（0） 💬（3）<div>大数的减法
+</p>2022-01-16</li><br/><li><span>爱学习的小羊</span> 👍（0） 💬（2）<p>大佬以后出书的话  可以送我一本吗</p>2022-01-11</li><br/><li><span>Marten</span> 👍（0） 💬（3）<p>大数的减法
 fun minusString(left: String, right: String): String {
         val result = StringBuilder()
         var leftIndex = left.length - 1
@@ -761,7 +761,7 @@ fun minusString(left: String, right: String): String {
         }
 
         return result.reverse().toString().toInt().toString()
-    }</div>2022-01-05</li><br/><li><span>Marten</span> 👍（0） 💬（2）<div> fun minusString(left: String, right: String): String {
+    }</p>2022-01-05</li><br/><li><span>Marten</span> 👍（0） 💬（2）<p> fun minusString(left: String, right: String): String {
         val result = StringBuilder()
         var leftIndex = left.length - 1
         var rightIndex = right.length - 1
@@ -783,5 +783,5 @@ fun minusString(left: String, right: String): String {
 
         }
         return result.reverse().toString()
-    }</div>2022-01-05</li><br/>
+    }</p>2022-01-05</li><br/>
 </ul>

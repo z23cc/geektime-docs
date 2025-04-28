@@ -271,11 +271,11 @@ TypeError: Derived constructors may only return object or undefine
 
 最后，希望你喜欢我的分享，也欢迎你把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>行问</span> 👍（11） 💬（1）<div>谈谈今天的理解：
+<li><span>行问</span> 👍（11） 💬（1）<p>谈谈今天的理解：
 
 在 instanceof 运算中，x instanceof AClass 表达式的右侧是一个类名（对于 instanceof 的理解之前是有误解，今天才领悟到）
 
-ECMAScript 6 的类是由父类或祖先类创建 this 实例的（也就是 this 是继承而来的，也能够契合前面说的”在调用结束之前，是不能使用 this 引用。不知道这个理解能否正确）</div>2019-12-13</li><br/><li><span>青史成灰</span> 👍（7） 💬（1）<div>首先谢谢老师每次都认真的回答每个问题，但是下面的这个问题，我一下子没想明白。。。
+ECMAScript 6 的类是由父类或祖先类创建 this 实例的（也就是 this 是继承而来的，也能够契合前面说的”在调用结束之前，是不能使用 this 引用。不知道这个理解能否正确）</p>2019-12-13</li><br/><li><span>青史成灰</span> 👍（7） 💬（1）<p>首先谢谢老师每次都认真的回答每个问题，但是下面的这个问题，我一下子没想明白。。。
 
 ```
 function Device() {
@@ -292,7 +292,7 @@ Car.prototype = new Device();
 var x = new Car();
 console.log(x.id); &#47;&#47;
 ```
-这个例子中， 为什么`x.constructor === Device`，按我的理解应该是`x.constructor === Car`才对。但是如果我把`Car.prototype = new Device()`这行代码注释掉，那么就符合我的理解了。。。</div>2020-01-12</li><br/><li><span>油菜</span> 👍（4） 💬（1）<div>“函数的“.prototype”的属性描述符中的设置比较特殊，它不能删除，但可以修改（‘writable’ is true）。当这个值被修改成 null 值时，它的子类对象是以 null 值为原型的；当它被修改成非对象值时，它的子类对象是以 Object.prototype 为原型的；否则，当它是一个对象类型的值时，它的子类才会使用该对象作为原型来创建实例。”
+这个例子中， 为什么`x.constructor === Device`，按我的理解应该是`x.constructor === Car`才对。但是如果我把`Car.prototype = new Device()`这行代码注释掉，那么就符合我的理解了。。。</p>2020-01-12</li><br/><li><span>油菜</span> 👍（4） 💬（1）<p>“函数的“.prototype”的属性描述符中的设置比较特殊，它不能删除，但可以修改（‘writable’ is true）。当这个值被修改成 null 值时，它的子类对象是以 null 值为原型的；当它被修改成非对象值时，它的子类对象是以 Object.prototype 为原型的；否则，当它是一个对象类型的值时，它的子类才会使用该对象作为原型来创建实例。”
 ---------------------
 老师，我的测试结果和这个结论不大一样。
 function F(){ this.name1 = &#39;father&#39;}
@@ -308,37 +308,37 @@ class S2 extends F {}
 var s2 = new S2();
 s2.constructor.prototype; &#47;&#47;  &#47;原型对象是S2 {}，不是null
 s2 instanceof S2; &#47;&#47; true;
-s2 instanceof F; &#47;&#47;Function has non-object prototype &#39;null&#39; in instanceof check</div>2020-11-16</li><br/><li><span>westfall</span> 👍（1） 💬（1）<div>请问老师，constructor 这个属性是不是可有可无的？</div>2021-02-04</li><br/><li><span>二二</span> 👍（1） 💬（1）<div>老师您好，关于：有一些“类 &#47; 构造器”在 ECMAScript 6 之前是不能派生子类的，例如 Function，又例如 Date。
+s2 instanceof F; &#47;&#47;Function has non-object prototype &#39;null&#39; in instanceof check</p>2020-11-16</li><br/><li><span>westfall</span> 👍（1） 💬（1）<p>请问老师，constructor 这个属性是不是可有可无的？</p>2021-02-04</li><br/><li><span>二二</span> 👍（1） 💬（1）<p>老师您好，关于：有一些“类 &#47; 构造器”在 ECMAScript 6 之前是不能派生子类的，例如 Function，又例如 Date。
 但是我看babel将es6转成es5是可以实现对于Function的继承，并调用的，请问babel是怎么达到这个效果的呢？
-</div>2020-10-14</li><br/><li><span>人间动物园</span> 👍（1） 💬（3）<div>思考题 1 ，
+</p>2020-10-14</li><br/><li><span>人间动物园</span> 👍（1） 💬（3）<p>思考题 1 ，
 直接执行一个函数也可以创建新的对象：
 function Person(name){
     this.name = name;
     return this;
 }
-person1 = Person(&#39;xiaoming&#39;);</div>2020-05-26</li><br/><li><span>CoolSummer</span> 👍（1） 💬（1）<div>1.创建新的对象
+person1 = Person(&#39;xiaoming&#39;);</p>2020-05-26</li><br/><li><span>CoolSummer</span> 👍（1） 💬（1）<p>1.创建新的对象
 字面量方法创建、Object.create()、工厂模式、构造函数模式
 2.操作原型 &#47; 原型链
 Object.defineProperty( )&#47;Object.getProperty( )
-ES6 的 proxy 和 Reflect</div>2020-02-23</li><br/><li><span>Smallfly</span> 👍（1） 💬（1）<div>老师文中多次提到类继承，您这里指的是从类抄写属性到对象么？我的理解是这个过程属于对象的实例化。JS 只有原型继承一种方式。
+ES6 的 proxy 和 Reflect</p>2020-02-23</li><br/><li><span>Smallfly</span> 👍（1） 💬（1）<p>老师文中多次提到类继承，您这里指的是从类抄写属性到对象么？我的理解是这个过程属于对象的实例化。JS 只有原型继承一种方式。
 
-还是说因为实例化的过程，包含向 this 对象写入原型，所以称它为类继承，并且包含原型继承？</div>2020-02-20</li><br/><li><span>小胖</span> 👍（1） 💬（1）<div>{Foo () {}}创建的Foo方法不能使用new关键字调用；
+还是说因为实例化的过程，包含向 this 对象写入原型，所以称它为类继承，并且包含原型继承？</p>2020-02-20</li><br/><li><span>小胖</span> 👍（1） 💬（1）<p>{Foo () {}}创建的Foo方法不能使用new关键字调用；
 但{Foo: function Foo() {}}是可以的。
 所以说，ES6提供的方法简写形式添加的方法和不使用简写形式添加的方法是有区别的。
-</div>2019-12-25</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<div>请问老师，在规范里有没有具体哪里讲了如何比较两个object的？比如为什么两个empty object不想等 `{} !== {}` 在规范里找了很久没找到. 在规范里 https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-samevaluenonnumeric 只说了 &quot;7. If x and y are the same Object value, return true. Otherwise, return false. &quot;. 但是没有具体地说怎么样的object value算一样，怎么样算不一样。比如`{}` 和 `{}`就不一样。</div>2022-01-20</li><br/><li><span>Chor</span> 👍（0） 💬（1）<div>老师，下面这段话：
+</p>2019-12-25</li><br/><li><span>Kids See Ghost</span> 👍（0） 💬（1）<p>请问老师，在规范里有没有具体哪里讲了如何比较两个object的？比如为什么两个empty object不想等 `{} !== {}` 在规范里找了很久没找到. 在规范里 https:&#47;&#47;tc39.es&#47;ecma262&#47;#sec-samevaluenonnumeric 只说了 &quot;7. If x and y are the same Object value, return true. Otherwise, return false. &quot;. 但是没有具体地说怎么样的object value算一样，怎么样算不一样。比如`{}` 和 `{}`就不一样。</p>2022-01-20</li><br/><li><span>Chor</span> 👍（0） 💬（1）<p>老师，下面这段话：
 “函数的“.prototype”的属性描述符中的设置比较特殊，它不能删除，但可以修改（‘writable’ is true）。当这个值被修改成 null 值时，它的子类对象是以 null 值为原型的” 是否可以改成 “它的子类对象是以 Object.prototype 为原型的” 呢？
 因为：
 const Fn = function( ){ }
 Fn.prototype = null
 const obj = new Fn( )
 Object.getPrototypeOf(obj) === Object.prototype      &#47;&#47; true
-</div>2021-05-31</li><br/><li><span>孜孜</span> 👍（0） 💬（1）<div>我还是理解不了以下代码? `testF.call` 明明是function啊。
+</p>2021-05-31</li><br/><li><span>孜孜</span> 👍（0） 💬（1）<p>我还是理解不了以下代码? `testF.call` 明明是function啊。
 let testF = Object.create(Function.prototype);
-testF.call({}) &#47;&#47;Uncaught TypeError: testF.call is not a function</div>2020-08-04</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>「后两种特征（没有[[Construct]]内部槽和prototype属性）完全排除了一个普通方法用作构造器的可能」
-老师没有prototype能直接看到，「没有[[Construct]]内部槽」这个能看见吗，这是在方法对象上还是方法对象的原型链上？</div>2020-05-23</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>在ES6之前 new X 先生成this,再将设置this.__proto__=X.prototype
+testF.call({}) &#47;&#47;Uncaught TypeError: testF.call is not a function</p>2020-08-04</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>「后两种特征（没有[[Construct]]内部槽和prototype属性）完全排除了一个普通方法用作构造器的可能」
+老师没有prototype能直接看到，「没有[[Construct]]内部槽」这个能看见吗，这是在方法对象上还是方法对象的原型链上？</p>2020-05-23</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>在ES6之前 new X 先生成this,再将设置this.__proto__=X.prototype
 那在class 继承中这一步是在何时执行的，最后一个supuer执行完后，还是最祖先类生成this的时候执行的？
 class X extends Y{}
-new X</div>2020-05-23</li><br/><li><span>行问</span> 👍（5） 💬（0）<div>Object.create( )
+new X</p>2020-05-23</li><br/><li><span>行问</span> 👍（5） 💬（0）<p>Object.create( )
 Object.defineProperty( )
-ES6 的 proxy 和 Reflect</div>2019-12-13</li><br/>
+ES6 的 proxy 和 Reflect</p>2019-12-13</li><br/>
 </ul>

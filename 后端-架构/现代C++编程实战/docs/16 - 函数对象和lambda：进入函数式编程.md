@@ -459,10 +459,10 @@ map<string, function<int(int, int)>>
 
 \[6a] cppreference.com, “std::function”. [https://zh.cppreference.com/w/cpp/utility/functional/function](https://zh.cppreference.com/w/cpp/utility/functional/function)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>zhengfan</span> 👍（34） 💬（1）<div>吴老师，您好。
+<li><span>zhengfan</span> 👍（34） 💬（1）<p>吴老师，您好。
 四刷本讲。
-我对您文中的这一句介绍有点好奇，“每个 lambda 表达式都有一个全局唯一的类型”。 请问这是怎么做到的？本质上不应该是一个函数指针么？这么规定的目的是什么？</div>2020-07-10</li><br/><li><span>廖熊猫</span> 👍（17） 💬（1）<div>老师新年快乐。
-lambda表达式大概是生成了一个匿名的struct吧，实现了operator(), 捕获的话对应struct上的字段。</div>2020-01-02</li><br/><li><span>tt</span> 👍（9） 💬（1）<div>1、感觉lambda表达式就是C++中的闭包。
+我对您文中的这一句介绍有点好奇，“每个 lambda 表达式都有一个全局唯一的类型”。 请问这是怎么做到的？本质上不应该是一个函数指针么？这么规定的目的是什么？</p>2020-07-10</li><br/><li><span>廖熊猫</span> 👍（17） 💬（1）<p>老师新年快乐。
+lambda表达式大概是生成了一个匿名的struct吧，实现了operator(), 捕获的话对应struct上的字段。</p>2020-01-02</li><br/><li><span>tt</span> 👍（9） 💬（1）<p>1、感觉lambda表达式就是C++中的闭包。
 
 2、lambda表达式可以立即进行求职，这一点和JavaScript里的立即执行函数（Imdiately Invoked Function Expression，IIFE）一样。在JavaScript里，它是用来解决作用域缺陷的。
 
@@ -472,9 +472,9 @@ lambda的定义对应一个匿名函数对象，捕获就是构造这个对象�
 
 老师，我对协程很感兴趣，C++会有协程么？隐约感觉捕获变量这个东西是不是可以用在实现协程上？
 
-最后，祝老师新年快乐！</div>2020-01-02</li><br/><li><span>tt</span> 👍（5） 💬（2）<div>老师，回过头来看得时候，遇到了一个问题。
+最后，祝老师新年快乐！</p>2020-01-02</li><br/><li><span>tt</span> 👍（5） 💬（2）<p>老师，回过头来看得时候，遇到了一个问题。
 
-在用LAMBDA表达式解决多重初始化路径的问题时，说到这样还可以提高性能，因为不需要默认构造和不需要拷贝&#47;移动。可是在第10讲中讲返回值优化的时候，不是说如果返回值时有条件判断，编译器都被会难倒，从而导致NRVO失效么（函数getA_duang）？</div>2020-02-14</li><br/><li><span>总统老唐</span> 👍（4） 💬（1）<div>2020第一课，吴老师新年好</div>2020-01-01</li><br/><li><span>Daniel</span> 👍（3） 💬（2）<div>class task {
+在用LAMBDA表达式解决多重初始化路径的问题时，说到这样还可以提高性能，因为不需要默认构造和不需要拷贝&#47;移动。可是在第10讲中讲返回值优化的时候，不是说如果返回值时有条件判断，编译器都被会难倒，从而导致NRVO失效么（函数getA_duang）？</p>2020-02-14</li><br/><li><span>总统老唐</span> 👍（4） 💬（1）<p>2020第一课，吴老师新年好</p>2020-01-01</li><br/><li><span>Daniel</span> 👍（3） 💬（2）<p>class task {
 public:
   task(int data) : data_(data) {}
   auto lazy_launch()
@@ -507,9 +507,9 @@ private:
 Done work 37 (No. 2) in thread 3
 Done work 37 (No. 2) in thread 3
 
-按引用捕获，应该是线程1输出之前msg_被线程2覆盖了。</div>2022-03-21</li><br/><li><span>ReCharge</span> 👍（2） 💬（1）<div>&amp; 加本地变量名标明对其按引用捕获（不能在默认捕获符 &amp; 后出现；因其已自动按引用捕获所有本地变量）
+按引用捕获，应该是线程1输出之前msg_被线程2覆盖了。</p>2022-03-21</li><br/><li><span>ReCharge</span> 👍（2） 💬（1）<p>&amp; 加本地变量名标明对其按引用捕获（不能在默认捕获符 &amp; 后出现；因其已自动按引用捕获所有本地变量）
 老师这句话有问题么？括号内外感觉描述矛盾
-&amp;本地变量名：这种写法不被允许么？</div>2022-06-11</li><br/><li><span>橙子888</span> 👍（2） 💬（2）<div>最近项目里使用到了libgo这个C++写的协程库，示例代码中用到了好多老师今天讲的知识点：
+&amp;本地变量名：这种写法不被允许么？</p>2022-06-11</li><br/><li><span>橙子888</span> 👍（2） 💬（2）<p>最近项目里使用到了libgo这个C++写的协程库，示例代码中用到了好多老师今天讲的知识点：
 void foo()
 {
     printf(&quot;function pointer\n&quot;);
@@ -533,15 +533,15 @@ int main()
     go fn;
 }
 其中跟在&quot;go&quot;后面的内容总算能理解了，但是&quot;go&quot;的实现原理还是没搞懂，不知道后面协程这块的内容会不会有讲到。
-另外对老师今天讲的 ”一般而言，按值捕获是比较安全的做法。按引用捕获时则需要更小心些，必须能够确保被捕获的变量和 lambda 表达式的生命期至少一样长“ 这句话深有体会，我在项目里按值捕获指针给协程用，结果调试的时候就是各种随机的崩溃。。。</div>2020-01-04</li><br/><li><span>罗 乾 林</span> 👍（2） 💬（1）<div>编译器遇到lambda 表达式时，产生一个匿名的函数对象，各种捕获相当于按值或者按引用设置给匿名对象的成员字段。
+另外对老师今天讲的 ”一般而言，按值捕获是比较安全的做法。按引用捕获时则需要更小心些，必须能够确保被捕获的变量和 lambda 表达式的生命期至少一样长“ 这句话深有体会，我在项目里按值捕获指针给协程用，结果调试的时候就是各种随机的崩溃。。。</p>2020-01-04</li><br/><li><span>罗 乾 林</span> 👍（2） 💬（1）<p>编译器遇到lambda 表达式时，产生一个匿名的函数对象，各种捕获相当于按值或者按引用设置给匿名对象的成员字段。
 不对的地方，望老师指正。
-对function&lt;int(int, int)&gt;这货怎么实现的比较好奇，大多数模板参数都是类型，做的都是是类型推导，这货居然是int(int, int)</div>2020-01-01</li><br/><li><span>西雨川久</span> 👍（1） 💬（1）<div>我提一个小问题：
+对function&lt;int(int, int)&gt;这货怎么实现的比较好奇，大多数模板参数都是类型，做的都是是类型推导，这货居然是int(int, int)</p>2020-01-01</li><br/><li><span>西雨川久</span> 👍（1） 💬（1）<p>我提一个小问题：
 
 原文：虽然函数名字叫 accumulate——累加——但它的行为是通过第四个参数可修改的。我们把上面的加号 + 改成星号 *，上面的计算就从从 1 加到 5 变成了算 5 的阶乘了。
 
-实际上，还需要把第三个参数改成1，否则结果是0.</div>2022-11-17</li><br/><li><span>zhengfan</span> 👍（1） 💬（2）<div>吴老师您好，请教一下：
-对于形如[]() mutable {}的lamda表达式 还能够被认为是一个constexpr吗？</div>2020-06-30</li><br/><li><span>EncodedStar</span> 👍（1） 💬（1）<div>函数指针和引用这个模块中
+实际上，还需要把第三个参数改成1，否则结果是0.</p>2022-11-17</li><br/><li><span>zhengfan</span> 👍（1） 💬（2）<p>吴老师您好，请教一下：
+对于形如[]() mutable {}的lamda表达式 还能够被认为是一个constexpr吗？</p>2020-06-30</li><br/><li><span>EncodedStar</span> 👍（1） 💬（1）<p>函数指针和引用这个模块中
 当我们拿 add_2 去调用这三个函数模板时，fn 的类型将分别被推导为 int (*)(int)、int (&amp;)(int) 和 int (*)(int)。
-第一个和第三个都是 int (*)(int) 第一个是不是  int (int)</div>2020-01-09</li><br/><li><span>空气</span> 👍（1） 💬（1）<div>吴老师，我在工作中很经常用到function。文中讲到function对象的创建比较耗资源，能否介绍一下原因，或者可以参考哪些资料？确实要使用的话，是否有必要使用共享指针管理来减轻复制和转移消耗？
-如果lambda的推导类型不是function，那是什么类型呢？和function有什么区别？</div>2020-01-04</li><br/><li><span>viper</span> 👍（1） 💬（2）<div>老师，为什么上面会说用add_2去调用那三模版函数返回值都是2，不该是4吗？</div>2020-01-01</li><br/><li><span>你好梦梦</span> 👍（0） 💬（1）<div>老师，对于一个function类型，如果把他作为函数型参，是用引用好，还是直接传值好</div>2022-09-08</li><br/>
+第一个和第三个都是 int (*)(int) 第一个是不是  int (int)</p>2020-01-09</li><br/><li><span>空气</span> 👍（1） 💬（1）<p>吴老师，我在工作中很经常用到function。文中讲到function对象的创建比较耗资源，能否介绍一下原因，或者可以参考哪些资料？确实要使用的话，是否有必要使用共享指针管理来减轻复制和转移消耗？
+如果lambda的推导类型不是function，那是什么类型呢？和function有什么区别？</p>2020-01-04</li><br/><li><span>viper</span> 👍（1） 💬（2）<p>老师，为什么上面会说用add_2去调用那三模版函数返回值都是2，不该是4吗？</p>2020-01-01</li><br/><li><span>你好梦梦</span> 👍（0） 💬（1）<p>老师，对于一个function类型，如果把他作为函数型参，是用引用好，还是直接传值好</p>2022-09-08</li><br/>
 </ul>

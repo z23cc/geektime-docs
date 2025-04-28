@@ -352,9 +352,9 @@ MiniCPU设计好了之后，我们进入运行调试环节，用RISC-V指令编�
 
 期待你在留言区跟我交流互动，说说这个模块学习下来的感受，如果觉得手写CPU很酷，别忘了分享给身边更多的朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>mantra</span> 👍（1） 💬（1）<div>询问小编一个小问题：学到此处 mini_cpu 小结了，还有后续的扩展吗？后续 “RISC-V 指令精讲（X）” 系列是在 GCC + QEMU 环境实现吗？会和 min_cpu 有关联吗？谢谢！</div>2022-08-19</li><br/><li><span>Liu Zheng</span> 👍（3） 💬（1）<div>需要指出一下，如果同学用13讲里的方法安装toolchain的话，需要作以下修改才能跑出hello world来：
+<li><span>mantra</span> 👍（1） 💬（1）<p>询问小编一个小问题：学到此处 mini_cpu 小结了，还有后续的扩展吗？后续 “RISC-V 指令精讲（X）” 系列是在 GCC + QEMU 环境实现吗？会和 min_cpu 有关联吗？谢谢！</p>2022-08-19</li><br/><li><span>Liu Zheng</span> 👍（3） 💬（1）<p>需要指出一下，如果同学用13讲里的方法安装toolchain的话，需要作以下修改才能跑出hello world来：
 1. 在`sim&#47;asm&#47;Makefile`中，需要把所有的`riscv32`都替换成`riscv64`。详情见12讲里面的multilib部分。
-2. 如果你和我一样用的是ubuntu 20.04，那么需要`mini_cpu&#47;Makefile`里面，把`python`换成`python3`。因为默认ubuntu20.04开始已经没有`python`了。</div>2022-08-24</li><br/><li><span>likejjj</span> 👍（1） 💬（3）<div>可以在fpga上面跑这个cpu不？</div>2022-08-22</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<div>打算写个汇编搞一下！</div>2022-08-19</li><br/><li><span>😇</span> 👍（0） 💬（1）<div>总线你的cpu--&gt;imem的imem是啥意思啊</div>2022-09-26</li><br/><li><span>😇</span> 👍（0） 💬（2）<div>老师你好，我的运行make asm后显示
+2. 如果你和我一样用的是ubuntu 20.04，那么需要`mini_cpu&#47;Makefile`里面，把`python`换成`python3`。因为默认ubuntu20.04开始已经没有`python`了。</p>2022-08-24</li><br/><li><span>likejjj</span> 👍（1） 💬（3）<p>可以在fpga上面跑这个cpu不？</p>2022-08-22</li><br/><li><span>青玉白露</span> 👍（1） 💬（1）<p>打算写个汇编搞一下！</p>2022-08-19</li><br/><li><span>😇</span> 👍（0） 💬（1）<p>总线你的cpu--&gt;imem的imem是啥意思啊</p>2022-09-26</li><br/><li><span>😇</span> 👍（0） 💬（2）<p>老师你好，我的运行make asm后显示
 make -C .&#47;sim&#47;asm 
 make[1]: 进入目录“&#47;home&#47;qianq&#47;mini_cpu&#47;sim&#47;asm”
 + AS src&#47;miniCPU_sim.asm build&#47;miniCPU_sim.o
@@ -364,7 +364,7 @@ make[1]: *** [build&#47;miniCPU_sim.o] Error 127
 make[1]: 离开目录“&#47;home&#47;qianq&#47;mini_cpu&#47;sim&#47;asm”
 Makefile:11: recipe for target &#39;asm&#39; failed
 make: *** [asm] Error 2
-请问这个出错是什么原因呢</div>2022-08-28</li><br/><li><span>Liu Zheng</span> 👍（0） 💬（2）<div>老师，想问一下，这里汇编代码里面没发送一个字符延时1ms是为了匹配uart的波特率吗？请问这个mini cpu的串口的波特率是在哪里指明的啊？是固定在uart的verilog代码的某个地方了吗？</div>2022-08-22</li><br/><li><span>云海</span> 👍（0） 💬（1）<div>为什么我运行 make asm 的时候出现这样的error？谢谢
+请问这个出错是什么原因呢</p>2022-08-28</li><br/><li><span>Liu Zheng</span> 👍（0） 💬（2）<p>老师，想问一下，这里汇编代码里面没发送一个字符延时1ms是为了匹配uart的波特率吗？请问这个mini cpu的串口的波特率是在哪里指明的啊？是固定在uart的verilog代码的某个地方了吗？</p>2022-08-22</li><br/><li><span>云海</span> 👍（0） 💬（1）<p>为什么我运行 make asm 的时候出现这样的error？谢谢
 
 make -C .&#47;sim&#47;asm 
 make[1]: Entering directory &#39;&#47;home&#47;yh&#47;ws&#47;riscv&#47;Geek-time-computer-foundation&#47;lesson06~11&#47;mini_cpu&#47;sim&#47;asm&#39;
@@ -375,7 +375,7 @@ make[1]: *** [build&#47;miniCPU_sim.o] Error 127
 make[1]: Leaving directory &#39;&#47;home&#47;yh&#47;ws&#47;riscv&#47;Geek-time-computer-foundation&#47;lesson06~11&#47;mini_cpu&#47;sim&#47;asm&#39;
 Makefile:11: recipe for target &#39;asm&#39; failed
 make: *** [asm] Error 2
-</div>2022-08-20</li><br/><li><span>TableBear</span> 👍（0） 💬（1）<div>好难o(╥﹏╥)o</div>2022-08-19</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<div>哈佛结构？</div>2022-08-19</li><br/><li><span>范廷东</span> 👍（0） 💬（0）<div>跑通这个案例，需要用ubuntu或centos的虚拟机？需要安装什么工具？
+</p>2022-08-20</li><br/><li><span>TableBear</span> 👍（0） 💬（1）<p>好难o(╥﹏╥)o</p>2022-08-19</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（1）<p>哈佛结构？</p>2022-08-19</li><br/><li><span>范廷东</span> 👍（0） 💬（0）<p>跑通这个案例，需要用ubuntu或centos的虚拟机？需要安装什么工具？
 
-这些能不能补充说一下；</div>2024-02-23</li><br/><li><span>氢原子</span> 👍（0） 💬（0）<div>计算机两大体系结构分别是冯诺依曼体系结构和哈弗体系结构，可以自己设计第三个体系结构吗？</div>2023-09-13</li><br/>
+这些能不能补充说一下；</p>2024-02-23</li><br/><li><span>氢原子</span> 👍（0） 💬（0）<p>计算机两大体系结构分别是冯诺依曼体系结构和哈弗体系结构，可以自己设计第三个体系结构吗？</p>2023-09-13</li><br/>
 </ul>

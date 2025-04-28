@@ -456,5 +456,5 @@ Lilliput 1 在加载 Java 对象的类时需要执行额外的移位计算操作
 
 有兴趣尝试 Lilliput 1 的同学，可以通过使用 -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders 选项进行实验。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Geek_f24e8e</span> 👍（0） 💬（0）<div>这个项目似乎有点得不偿失</div>2025-02-21</li><br/><li><span>陈时锐</span> 👍（0） 💬（0）<div>昨天刚翻lilliput的相关文档，今天就看到这篇文章</div>2025-02-14</li><br/>
+<li><span>Geek_f24e8e</span> 👍（0） 💬（0）<p>这个项目似乎有点得不偿失</p>2025-02-21</li><br/><li><span>陈时锐</span> 👍（0） 💬（0）<p>昨天刚翻lilliput的相关文档，今天就看到这篇文章</p>2025-02-14</li><br/>
 </ul>

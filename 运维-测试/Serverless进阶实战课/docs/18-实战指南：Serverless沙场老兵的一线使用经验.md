@@ -198,5 +198,5 @@ def handler(event, context):
 
 感谢你的阅读，也欢迎你把这节课分享给更多的朋友一起阅读。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Wisdom</span> 👍（2） 💬（1）<div>我是想构建自己的serverless平台，不直接使用云厂商的serverless平台.</div>2022-10-08</li><br/><li><span>初夏</span> 👍（0） 💬（1）<div>最近大模型火起来了，老师什么时候讲一讲怎么结合哈</div>2023-06-04</li><br/><li><span>Wisdom</span> 👍（0） 💬（1）<div>能不能有老师的联系方式？邮箱或是什么的，做一些交流呢</div>2022-10-08</li><br/><li><span>奕</span> 👍（0） 💬（2）<div>Serverless 平台是否支持 设置日记级别的？ 在开发的打印 debug ，生产的时候 不打印， 还是只能开发自己在代码中进行控制</div>2022-10-07</li><br/>
+<li><span>Wisdom</span> 👍（2） 💬（1）<p>我是想构建自己的serverless平台，不直接使用云厂商的serverless平台.</p>2022-10-08</li><br/><li><span>初夏</span> 👍（0） 💬（1）<p>最近大模型火起来了，老师什么时候讲一讲怎么结合哈</p>2023-06-04</li><br/><li><span>Wisdom</span> 👍（0） 💬（1）<p>能不能有老师的联系方式？邮箱或是什么的，做一些交流呢</p>2022-10-08</li><br/><li><span>奕</span> 👍（0） 💬（2）<p>Serverless 平台是否支持 设置日记级别的？ 在开发的打印 debug ，生产的时候 不打印， 还是只能开发自己在代码中进行控制</p>2022-10-07</li><br/>
 </ul>

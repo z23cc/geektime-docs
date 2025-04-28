@@ -176,7 +176,7 @@ function getSubset(arr, start, end) {
 
 不知道你对AIGC和JS的关系有什么看法呢？期待你的观点，我们一起交流进步。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>WGH丶</span> 👍（1） 💬（0）<div>赞～有理有据
+<li><span>WGH丶</span> 👍（1） 💬（0）<p>赞～有理有据
 
-学起来</div>2023-07-28</li><br/><li><span>静心</span> 👍（0） 💬（0）<div>感谢加餐，老师是一个负责任的老师👍</div>2023-11-05</li><br/><li><span>Sarai李</span> 👍（0） 💬（0）<div>哇老师紧跟时代潮流</div>2023-07-30</li><br/>
+学起来</p>2023-07-28</li><br/><li><span>静心</span> 👍（0） 💬（0）<p>感谢加餐，老师是一个负责任的老师👍</p>2023-11-05</li><br/><li><span>Sarai李</span> 👍（0） 💬（0）<p>哇老师紧跟时代潮流</p>2023-07-30</li><br/>
 </ul>

@@ -189,7 +189,7 @@ public void execute(Runnable command) {
 
 你的朋友是不是也在准备面试呢？你可以“请朋友读”，把今天的题目分享给好友，或许你能帮到他。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>I am a psycho</span> 👍（64） 💬（3）<div>通过看源码可以得知，core和max都是1，而且通过FinalizableDelegatedExecutorService进行了包装，保证线程池无法修改。同时shutdown方法通过调用interruptIdleWorkers方法，去停掉没有工作的线程，而shutdownNow方法是直接粗暴的停掉所有线程。无论是shutdown还是shutdownNow都不会进行等待，都会直接将线程池状态设置成shutdown或者stop，如果需要等待，需要调用awaitTernination方法。查找了一下threadFactory的使用，只找到了在worker创建的时候，用来初始化了线程。</div>2018-06-23</li><br/><li><span>李二木</span> 👍（52） 💬（5）<div>我觉得还有一点很重要，就是放在线程池中的线程要捕获异常，如果直接抛出异常，每次都会创建线程，也就等于线程池没有发挥作用，如果大并发下一直创建线程可能会导致JVM挂掉。最近遇到的一个坑</div>2018-06-23</li><br/><li><span>Geek_zbvt62</span> 👍（27） 💬（11）<div>疑问，为什么当初sun的线程池模式要设计成队列满了才能创建非核心线程？类比其他类似池的功能实现，很多都是设置最小数最大数，达到最大数才向等待队列里加入，比如有的连接池实现。</div>2018-06-23</li><br/><li><span>沈琦斌</span> 👍（15） 💬（1）<div>老师，我想问的是cache的线程池大小是1，每次还要新创建，那和我自己创建而不用线程池有什么区别？</div>2018-06-28</li><br/><li><span>饭粒</span> 👍（11） 💬（2）<div>写了个简单demo玩了下。
+<li><span>I am a psycho</span> 👍（64） 💬（3）<p>通过看源码可以得知，core和max都是1，而且通过FinalizableDelegatedExecutorService进行了包装，保证线程池无法修改。同时shutdown方法通过调用interruptIdleWorkers方法，去停掉没有工作的线程，而shutdownNow方法是直接粗暴的停掉所有线程。无论是shutdown还是shutdownNow都不会进行等待，都会直接将线程池状态设置成shutdown或者stop，如果需要等待，需要调用awaitTernination方法。查找了一下threadFactory的使用，只找到了在worker创建的时候，用来初始化了线程。</p>2018-06-23</li><br/><li><span>李二木</span> 👍（52） 💬（5）<p>我觉得还有一点很重要，就是放在线程池中的线程要捕获异常，如果直接抛出异常，每次都会创建线程，也就等于线程池没有发挥作用，如果大并发下一直创建线程可能会导致JVM挂掉。最近遇到的一个坑</p>2018-06-23</li><br/><li><span>Geek_zbvt62</span> 👍（27） 💬（11）<p>疑问，为什么当初sun的线程池模式要设计成队列满了才能创建非核心线程？类比其他类似池的功能实现，很多都是设置最小数最大数，达到最大数才向等待队列里加入，比如有的连接池实现。</p>2018-06-23</li><br/><li><span>沈琦斌</span> 👍（15） 💬（1）<p>老师，我想问的是cache的线程池大小是1，每次还要新创建，那和我自己创建而不用线程池有什么区别？</p>2018-06-28</li><br/><li><span>饭粒</span> 👍（11） 💬（2）<p>写了个简单demo玩了下。
 创建线程池会初始化线程工厂，工作线程是在提交任务的创建的。工作线程在执行任务中抛出异常，再次提交任务会又新建工作线程。newFixedThreadPool 正常执行任务时会优先创建线程已达到核心线程数，不会优先复用空闲工作线程。
 ```
 &#47;**
@@ -215,17 +215,17 @@ public void test03() throws InterruptedException {
 
     TimeUnit.SECONDS.sleep(3);
 }
-```</div>2019-01-15</li><br/><li><span>王磊</span> 👍（6） 💬（1）<div>core和max应该都是1。验证的方法是自己写一个Threadlocal, 里面有相应创建线程的日志，然后把它传入创建线程池。</div>2018-06-25</li><br/><li><span>GK java</span> 👍（5） 💬（1）<div>线程池到底需不需要关闭</div>2019-01-26</li><br/><li><span>欣</span> 👍（5） 💬（2）<div>杨老师，我照着文章翻看源码，下面那块是不是不太对？
+```</p>2019-01-15</li><br/><li><span>王磊</span> 👍（6） 💬（1）<p>core和max应该都是1。验证的方法是自己写一个Threadlocal, 里面有相应创建线程的日志，然后把它传入创建线程池。</p>2018-06-25</li><br/><li><span>GK java</span> 👍（5） 💬（1）<p>线程池到底需不需要关闭</p>2019-01-26</li><br/><li><span>欣</span> 👍（5） 💬（2）<p>杨老师，我照着文章翻看源码，下面那块是不是不太对？
 ----------------
 Executors 目前提供了 5 种不同的线程池创建配置：
 
 newSingleThreadExecutor，它创建的是个 FinalizableDelegatedExecutorService
 
-newSingleThreadScheduledExecutor 创建的是 ScheduledThreadPoolExecutor</div>2018-07-04</li><br/><li><span>镰仓</span> 👍（3） 💬（1）<div>听了一段时间课程，质量很高。我的需求是android JavaVM</div>2018-06-28</li><br/><li><span>灰飞灰猪不会灰飞.烟灭</span> 👍（2） 💬（1）<div>老师 放入队列中的线程是直接调用start方法还是把队列中的线程放入线程工厂，让线程工厂执行？
-另外，怎么判断一个线程是否执行完成呢？（只有执行完成才返回结果）谢谢老师</div>2018-06-25</li><br/><li><span>JasonLai</span> 👍（1） 💬（1）<div>老师你好，我在学些线程池时候遇到一个说法，创建线程池不推荐使用executors
-而是使用threadpoolexecutor去创建。首先executor都是继承于threadpoolexecutor 其次是编写的线程池更为明确运行规则，有助于规避资源耗尽的风险。请老师分析下这种说法，其次是您的观点</div>2019-02-10</li><br/><li><span>饭粒</span> 👍（1） 💬（1）<div>Geotz那本java并发实战线程池大小计算还有个CPU利用率？
-线程数 = CPU 核数 × CPU利用率 ×（1 + 平均等待时间 &#47; 平均工作时间）</div>2019-01-15</li><br/><li><span>洗头用酱油</span> 👍（0） 💬（1）<div>老师，我看NewSingleExecutor 所有的队列是LinkedBlockingQueue，它好像是有界的队列不是无界的吧？</div>2018-08-03</li><br/><li><span>Harry陈祥</span> 👍（36） 💬（11）<div>老师您好。有次面试，面试官问：为什么java的线程池当核心线程满了以后，先往blockingQueue中存任务，queue满了以后才会创建非核心线程？ 是在问，为什么要这么设计？
-请问这个问题应该怎么回答？</div>2019-02-12</li><br/><li><span>nb Ack</span> 👍（17） 💬（1）<div>阻塞性：
+newSingleThreadScheduledExecutor 创建的是 ScheduledThreadPoolExecutor</p>2018-07-04</li><br/><li><span>镰仓</span> 👍（3） 💬（1）<p>听了一段时间课程，质量很高。我的需求是android JavaVM</p>2018-06-28</li><br/><li><span>灰飞灰猪不会灰飞.烟灭</span> 👍（2） 💬（1）<p>老师 放入队列中的线程是直接调用start方法还是把队列中的线程放入线程工厂，让线程工厂执行？
+另外，怎么判断一个线程是否执行完成呢？（只有执行完成才返回结果）谢谢老师</p>2018-06-25</li><br/><li><span>JasonLai</span> 👍（1） 💬（1）<p>老师你好，我在学些线程池时候遇到一个说法，创建线程池不推荐使用executors
+而是使用threadpoolexecutor去创建。首先executor都是继承于threadpoolexecutor 其次是编写的线程池更为明确运行规则，有助于规避资源耗尽的风险。请老师分析下这种说法，其次是您的观点</p>2019-02-10</li><br/><li><span>饭粒</span> 👍（1） 💬（1）<p>Geotz那本java并发实战线程池大小计算还有个CPU利用率？
+线程数 = CPU 核数 × CPU利用率 ×（1 + 平均等待时间 &#47; 平均工作时间）</p>2019-01-15</li><br/><li><span>洗头用酱油</span> 👍（0） 💬（1）<p>老师，我看NewSingleExecutor 所有的队列是LinkedBlockingQueue，它好像是有界的队列不是无界的吧？</p>2018-08-03</li><br/><li><span>Harry陈祥</span> 👍（36） 💬（11）<p>老师您好。有次面试，面试官问：为什么java的线程池当核心线程满了以后，先往blockingQueue中存任务，queue满了以后才会创建非核心线程？ 是在问，为什么要这么设计？
+请问这个问题应该怎么回答？</p>2019-02-12</li><br/><li><span>nb Ack</span> 👍（17） 💬（1）<p>阻塞性：
 BlockQueue存入任务队列时是没有阻塞，使用的是offer，无阻塞添加方法。
 BlockQueue取出任务队列时是有阻塞，有超时使用poll取值，无超时使用take阻塞方法取值
 
@@ -234,5 +234,5 @@ BlockQueue取出任务队列时是有阻塞，有超时使用poll取值，无超
 2.任务数大于核心线程数，队列不满，放入任务队列
 3.任务数大于核心线程数，队列已满，新建线程执行
 4.任务数大于核心线程数，队列已满，工作线程已达最大线程数，拒绝任务，抛出异常（而不是阻塞任务，等待进入队列）
-</div>2019-05-22</li><br/>
+</p>2019-05-22</li><br/>
 </ul>

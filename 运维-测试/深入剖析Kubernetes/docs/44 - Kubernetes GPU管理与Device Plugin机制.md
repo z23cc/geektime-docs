@@ -147,19 +147,19 @@ Kubernetes 的 Device Plugin 机制，我可以用如下所示的一幅示意图
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Eric</span> 👍（38） 💬（2）<div>单块GPU资源都不能共享，还得自己fork一份device plugin维护虚拟化的GPU。 社区有时候办事真的不利索</div>2018-12-05</li><br/><li><span>hlzhu1983</span> 👍（6） 💬（2）<div>张老师，问一下现在k8s关于GPU资源调度粒度是否能像CPU调度粒度那么细？现在还只能按照1块GPU卡来分配GPU资源吗？</div>2018-12-03</li><br/><li><span>ch_ort</span> 👍（13） 💬（0）<div>Kuberentes通过Extended Resource来支持自定义资源，比如GPU。为了让调度器知道这种自定义资源在各Node上的数量，需要的Node里添加自定义资源的数量。实际上，这些信息并不需要人工去维护，所有的硬件加速设备的管理都通过Device Plugin插件来支持，也包括对该硬件的Extended Resource进行汇报的逻辑。
+<li><span>Eric</span> 👍（38） 💬（2）<p>单块GPU资源都不能共享，还得自己fork一份device plugin维护虚拟化的GPU。 社区有时候办事真的不利索</p>2018-12-05</li><br/><li><span>hlzhu1983</span> 👍（6） 💬（2）<p>张老师，问一下现在k8s关于GPU资源调度粒度是否能像CPU调度粒度那么细？现在还只能按照1块GPU卡来分配GPU资源吗？</p>2018-12-03</li><br/><li><span>ch_ort</span> 👍（13） 💬（0）<p>Kuberentes通过Extended Resource来支持自定义资源，比如GPU。为了让调度器知道这种自定义资源在各Node上的数量，需要的Node里添加自定义资源的数量。实际上，这些信息并不需要人工去维护，所有的硬件加速设备的管理都通过Device Plugin插件来支持，也包括对该硬件的Extended Resource进行汇报的逻辑。
 
 Device Plugin 、kubelet、调度器如何协同工作：
 
 汇报资源： Device Plugin通过gRPC与本机kubelet连接 -&gt;  Device Plugin定期向kubelet汇报设备信息，比如GPU的数量 -&gt; kubelet 向APIServer发送的心跳中，以Extended Reousrce的方式加上这些设备信息，比如GPU的数量 
 
 调度： Pod申明需要一个GPU -&gt; 调度器找到GPU数量满足条件的node -&gt; Pod绑定到对应的Node上 -&gt; kubelet发现需要拉起一个Pod，且该Pod需要GPU -&gt; kubelet向 Device Plugin 发起 Allocate()请求 -&gt; Device Plugin根据kubelet传递过来的需求，找到这些设备对应的设备路径和驱动目录，并返回给kubelet -&gt; kubelet将这些信息追加在创建Pod所对应的CRI请求中 -&gt; 容器创建完成之后，就会出现这个GPU设备（设备路径+驱动目录）-&gt; 调度完成
-</div>2020-12-20</li><br/><li><span>江山未</span> 👍（8） 💬（0）<div>GPU共享及虚拟化，可以搜索一下Orion VGPU</div>2020-10-22</li><br/><li><span>小河</span> 👍（7） 💬（2）<div>hi，张老师，我现在将gpu的服务迁移到kubernetes上，对外提供的是gRRC接口，我使用了ingres-nginx对gRPC进行负载均衡，但是发现支持并不好，又想使用Istio以sidecar模式代理gPRC，但是又觉得太重，请问目前有什么较好的方案在kuberntes支持对gRPC的负载均衡么😀</div>2019-08-04</li><br/><li><span>凌</span> 👍（7） 💬（1）<div>https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;NU8Cj6DL8wEKFzVYhuyzbQ</div>2019-05-27</li><br/><li><span>勇敢的心</span> 👍（4） 💬（0）<div>所以目前是无法实现多用户同时共享单块GPU咯？有没有可以实现这一功能的Magic？还有，目前可能实现GPU或者CPU数量的动态改变吗，在不重建pod的情况下？期待老师的解答</div>2018-12-13</li><br/><li><span>每日都想上班</span> 👍（4） 💬（0）<div>今天爆出kubenetes安全漏洞需要升级，请问要如何升级
-</div>2018-12-04</li><br/><li><span>乱愣黎</span> 👍（3） 💬（0）<div>1、device plugin只能通过patch操作来实现device信息的添加吗？能否在节点添加的时候自动添加
+</p>2020-12-20</li><br/><li><span>江山未</span> 👍（8） 💬（0）<p>GPU共享及虚拟化，可以搜索一下Orion VGPU</p>2020-10-22</li><br/><li><span>小河</span> 👍（7） 💬（2）<p>hi，张老师，我现在将gpu的服务迁移到kubernetes上，对外提供的是gRRC接口，我使用了ingres-nginx对gRPC进行负载均衡，但是发现支持并不好，又想使用Istio以sidecar模式代理gPRC，但是又觉得太重，请问目前有什么较好的方案在kuberntes支持对gRPC的负载均衡么😀</p>2019-08-04</li><br/><li><span>凌</span> 👍（7） 💬（1）<p>https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;NU8Cj6DL8wEKFzVYhuyzbQ</p>2019-05-27</li><br/><li><span>勇敢的心</span> 👍（4） 💬（0）<p>所以目前是无法实现多用户同时共享单块GPU咯？有没有可以实现这一功能的Magic？还有，目前可能实现GPU或者CPU数量的动态改变吗，在不重建pod的情况下？期待老师的解答</p>2018-12-13</li><br/><li><span>每日都想上班</span> 👍（4） 💬（0）<p>今天爆出kubenetes安全漏洞需要升级，请问要如何升级
+</p>2018-12-04</li><br/><li><span>乱愣黎</span> 👍（3） 💬（0）<p>1、device plugin只能通过patch操作来实现device信息的添加吗？能否在节点添加的时候自动添加
 2、在第1点的情况下，在服务器持续集成的情况下，新旧设备device信息肯定是会不一致的，如何解决device plugin机制无法区分设备属性的情况？
     以本篇文章的内容来看，可以这么设置
     批次A使用nvidia.com&#47;GP100=4，批次B使用amd.com&#47;VEGA64=4
     这样编写资源需求和新旧设备交替都需要人为指定，这样对于运维来说很难受啊
-3、是否能把GPU抽象成类似于CPU的时间片，将整个GPU计算能力池化，然后根据pod.spec.containers.resources里面的require和limits字段来分配GPU计算资源</div>2018-12-05</li><br/><li><span>张振宇</span> 👍（1） 💬（0）<div>老师，我们的2个pod经常出现共用一张gpu卡的情况，导致性能互相影响，求解救。</div>2020-12-15</li><br/><li><span>PatHoo</span> 👍（1） 💬（0）<div>请问现在K8S支持按硬件拓扑结构调度了吗? </div>2020-01-01</li><br/><li><span>普罗@庞铮</span> 👍（1） 💬（0）<div>社区就是江湖，开源不是免费。
-差异性如何体现，lol</div>2018-12-22</li><br/><li><span>硕</span> 👍（1） 💬（0）<div>刚公司需要 使用nvdia-docker 管理 gpu 用于部署ai 图像 这就来了</div>2018-12-03</li><br/><li><span>陸思21-15-9</span> 👍（0） 💬（0）<div>看了有些cuda劫持方案，通过cuda memory computing device interface allocate </div>2024-12-07</li><br/><li><span>gecko</span> 👍（0） 💬（0）<div>请教老师 当前是2024年 有啥比较推荐的方案吗</div>2024-11-02</li><br/>
+3、是否能把GPU抽象成类似于CPU的时间片，将整个GPU计算能力池化，然后根据pod.spec.containers.resources里面的require和limits字段来分配GPU计算资源</p>2018-12-05</li><br/><li><span>张振宇</span> 👍（1） 💬（0）<p>老师，我们的2个pod经常出现共用一张gpu卡的情况，导致性能互相影响，求解救。</p>2020-12-15</li><br/><li><span>PatHoo</span> 👍（1） 💬（0）<p>请问现在K8S支持按硬件拓扑结构调度了吗? </p>2020-01-01</li><br/><li><span>普罗@庞铮</span> 👍（1） 💬（0）<p>社区就是江湖，开源不是免费。
+差异性如何体现，lol</p>2018-12-22</li><br/><li><span>硕</span> 👍（1） 💬（0）<p>刚公司需要 使用nvdia-docker 管理 gpu 用于部署ai 图像 这就来了</p>2018-12-03</li><br/><li><span>陸思21-15-9</span> 👍（0） 💬（0）<p>看了有些cuda劫持方案，通过cuda memory computing device interface allocate </p>2024-12-07</li><br/><li><span>gecko</span> 👍（0） 💬（0）<p>请教老师 当前是2024年 有啥比较推荐的方案吗</p>2024-11-02</li><br/>
 </ul>

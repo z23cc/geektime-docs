@@ -102,16 +102,16 @@ OBS的功能非常强大，这里我们主要介绍抓取本地窗口的场景�
 
 通过刚刚的操作，我们推流成功了，而且也能在播放器端看到推流成功后的直播流了，那么我们怎么确认这个直播流是不是我们设置好的1280x720的分辨率，帧率是不是25fps呢？期待在评论区看到你的答案，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>Geek_e2e4e9</span> 👍（3） 💬（2）<div>ffmpeg安装太费劲了，分享个靠谱的文档：https:&#47;&#47;www.jianshu.com&#47;p&#47;663267e13769</div>2022-08-20</li><br/><li><span>村口大发</span> 👍（2） 💬（1）<div>请教一下老师，按照上面说的，试了一下ffmpeg推流，不过一直错误，难道是我参数有误？信息如下：xxx@xxx-MB4 FFmpeg % ffmpeg -re -f  -i &#47;Users&#47;allenchen&#47;workspace&#47;FFmpeg&#47;output.flv lavfi -i testsrc=s=1280x720:r=25 -pix_fmt yuv420p -vcodec libx264 -f flv rtmp:&#47;&#47;open-push.voip.yximgs.com&#47;gifshow&#47;kwai_actL_ol_act_9934790925_strL_origin?sign=633d0143-c210c0d7d91c2c1849c18bbeeac98244&amp;ks_fix_ts
+<li><span>Geek_e2e4e9</span> 👍（3） 💬（2）<p>ffmpeg安装太费劲了，分享个靠谱的文档：https:&#47;&#47;www.jianshu.com&#47;p&#47;663267e13769</p>2022-08-20</li><br/><li><span>村口大发</span> 👍（2） 💬（1）<p>请教一下老师，按照上面说的，试了一下ffmpeg推流，不过一直错误，难道是我参数有误？信息如下：xxx@xxx-MB4 FFmpeg % ffmpeg -re -f  -i &#47;Users&#47;allenchen&#47;workspace&#47;FFmpeg&#47;output.flv lavfi -i testsrc=s=1280x720:r=25 -pix_fmt yuv420p -vcodec libx264 -f flv rtmp:&#47;&#47;open-push.voip.yximgs.com&#47;gifshow&#47;kwai_actL_ol_act_9934790925_strL_origin?sign=633d0143-c210c0d7d91c2c1849c18bbeeac98244&amp;ks_fix_ts
 输出内容：
 [4] 32198
 zsh: no matches found: rtmp:&#47;&#47;open-push.voip.yximgs.com&#47;gifshow&#47;kwai_actL_ol_act_9934790925_strL_origin?sign=633d0143-c210c0d7d91c2c1849c18bbeeac98244
 [4]    exit 1     ffmpeg -re -f -i &#47;Users&#47;allenchen&#47;workspace&#47;FFmpeg&#47;output.flv lavfi -i      -
-zsh: command not found: ks_fix_ts</div>2022-08-28</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>老师，请问抖音，B站等平台提供的Pc直播工具，算是类似OBS的推流工具吗？</div>2023-12-23</li><br/><li><span>包美丽</span> 👍（0） 💬（1）<div>成功了！</div>2022-11-13</li><br/><li><span>Geek_3b601e</span> 👍（0） 💬（1）<div>大师兄 答案是什么，直播的过程中怎么看分辨率和帧率</div>2022-08-30</li><br/><li><span>晓风残月</span> 👍（0） 💬（1）<div>老师，我想做个远程控制Android平板，Android录屏用H264编码，服务器做转发（NAT穿越局限太大），但服务器只有5M带宽，还跑着别的项目，同一时刻最多有一个设备远程连接,您觉得我用什么传输协议好一些？RTMP还是RTSP或者是其他？麻烦告知一下</div>2022-08-12</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师一个问题：
-Q1：我对于“FFmpeg推流操作步骤”的理解是： Step1：手机上安装快手APP，创建一个直播间，该直播间会有文中提到的收流地址，Step2：在PC机上安装FFmpeg，安装后采用命令行来推送视频到直播间的收流地址。 我的理解是否对？</div>2022-08-08</li><br/><li><span>村口大发</span> 👍（1） 💬（0）<div>补充下上面推流失败的后续，经老师的指出，对推流命令中的目标地址url必须加上双引号，加上双引号之后还是报错，后来发现有参数的顺序错了，最终执行OK的命令如下：
+zsh: command not found: ks_fix_ts</p>2022-08-28</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>老师，请问抖音，B站等平台提供的Pc直播工具，算是类似OBS的推流工具吗？</p>2023-12-23</li><br/><li><span>包美丽</span> 👍（0） 💬（1）<p>成功了！</p>2022-11-13</li><br/><li><span>Geek_3b601e</span> 👍（0） 💬（1）<p>大师兄 答案是什么，直播的过程中怎么看分辨率和帧率</p>2022-08-30</li><br/><li><span>晓风残月</span> 👍（0） 💬（1）<p>老师，我想做个远程控制Android平板，Android录屏用H264编码，服务器做转发（NAT穿越局限太大），但服务器只有5M带宽，还跑着别的项目，同一时刻最多有一个设备远程连接,您觉得我用什么传输协议好一些？RTMP还是RTSP或者是其他？麻烦告知一下</p>2022-08-12</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师一个问题：
+Q1：我对于“FFmpeg推流操作步骤”的理解是： Step1：手机上安装快手APP，创建一个直播间，该直播间会有文中提到的收流地址，Step2：在PC机上安装FFmpeg，安装后采用命令行来推送视频到直播间的收流地址。 我的理解是否对？</p>2022-08-08</li><br/><li><span>村口大发</span> 👍（1） 💬（0）<p>补充下上面推流失败的后续，经老师的指出，对推流命令中的目标地址url必须加上双引号，加上双引号之后还是报错，后来发现有参数的顺序错了，最终执行OK的命令如下：
 
 ffmpeg -re -i &#47;Users&#47;allenchen&#47;workspace&#47;FFmpeg&#47;output.flv -f lavfi -i testsrc=s=1280x720:r=25 -pix_fmt yuv420p -vcodec libx264 -f flv &quot;rtmp:&#47;&#47;open-push.voip.yximgs.com&#47;gifshow&#47;kwai_actL_ol_act_9934790925_strL_origin?sign=633d0143-c210c0d7d91c2c1849c18bbeeac98244&amp;ks_fix_tsb&quot;
 
-希望对其他同学有帮助</div>2022-08-28</li><br/><li><span>dog_brother</span> 👍（1） 💬（0）<div>之前基于nginx搭建过直播服务器</div>2022-08-03</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（2）<div>云直播仅对媒体政务号和企业认证账号开放，其他账号请使用直播伴侣或快手App开播，并遵守快手直播规范</div>2023-12-06</li><br/><li><span>徐溪越</span> 👍（0） 💬（0）<div>ffplay -i
-</div>2022-08-21</li><br/>
+希望对其他同学有帮助</p>2022-08-28</li><br/><li><span>dog_brother</span> 👍（1） 💬（0）<p>之前基于nginx搭建过直播服务器</p>2022-08-03</li><br/><li><span>啊良梓是我</span> 👍（0） 💬（2）<p>云直播仅对媒体政务号和企业认证账号开放，其他账号请使用直播伴侣或快手App开播，并遵守快手直播规范</p>2023-12-06</li><br/><li><span>徐溪越</span> 👍（0） 💬（0）<p>ffplay -i
+</p>2022-08-21</li><br/>
 </ul>

@@ -214,11 +214,11 @@ if __name__ == "__main__":
 
 如果你跑通了，可以在留言中打个卡。如果遇到了问题，也请你在文章中留言，与我和其他同学一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>斯盖丸</span> 👍（2） 💬（1）<div>.groupBy(&quot;Value&quot;)这个value是什么意思？</div>2019-05-29</li><br/><li><span>JustDoDT</span> 👍（1） 💬（2）<div>python 直接安装
+<li><span>斯盖丸</span> 👍（2） 💬（1）<p>.groupBy(&quot;Value&quot;)这个value是什么意思？</p>2019-05-29</li><br/><li><span>JustDoDT</span> 👍（1） 💬（2）<p>python 直接安装
 pip install pyspark
 pip帮你搞定一切安装配置问题。
 参考资料：
-https:&#47;&#47;pypi.org&#47;project&#47;pyspark&#47;</div>2019-09-01</li><br/><li><span>JustDoDT</span> 👍（0） 💬（1）<div>实践成功
+https:&#47;&#47;pypi.org&#47;project&#47;pyspark&#47;</p>2019-09-01</li><br/><li><span>JustDoDT</span> 👍（0） 💬（1）<p>实践成功
 demo.txt:
 I hava a dog
 He has a Dog
@@ -229,7 +229,7 @@ DF写法：
 [Row(word=&#39;dog&#39;, count=1), Row(word=&#39;He&#39;, count=1), Row(word=&#39;Dog&#39;, count=1), Row(word=&#39;I&#39;, count=1), Row(word=&#39;a&#39;, count=2), Row(word=&#39;hava&#39;, count=1), Row(word=&#39;has&#39;, count=1)]
 [Row(word=&#39;a&#39;, count=2), Row(word=&#39;I&#39;, count=1), Row(word=&#39;Dog&#39;, count=1), Row(word=&#39;hava&#39;, count=1), Row(word=&#39;dog&#39;, count=1), Row(word=&#39;has&#39;, count=1), Row(word=&#39;He&#39;, count=1)]
 
-从启动到出结果，DF写法速度要比rdd慢。</div>2019-09-02</li><br/><li><span>Qi Liu 刘祺</span> 👍（0） 💬（1）<div>继续学习~</div>2019-06-29</li><br/><li><span>朱同学</span> 👍（20） 💬（0）<div>java万金油，什么都可以干，人好招，特别是我们这种偏远地区，scala，虽然开发效率高，但是人少，难招，所以我们大数据团队选择了java。至于运行效率，py是最慢的，java和scala应该半斤八俩吧</div>2019-05-29</li><br/><li><span>科学Jia</span> 👍（9） 💬（2）<div>女同学看完2015年出的spark快速大数据分析这本书以后，再来看老师写的这些文字，觉得言简意赅，印象深刻，至于用什么语言倒无所谓了，主要是思路。后期希望老师能多说一些案例和处理中需要注意的技巧。</div>2019-06-20</li><br/><li><span>一</span> 👍（7） 💬（0）<div>看了这一讲意识到之前对Python欠缺了重视，现在明白Python在大数据处理领域是很有竞争力的，因为Spark和众多的库的原因，甚至超越Java，所以现在要重新重视起来Python的学习了</div>2019-05-29</li><br/><li><span>hallo128</span> 👍（6） 💬（0）<div>【以下代码可以运行，但对df格式的操作是借助二楼的网址去找的，具体含义也不太清楚，只是可以运行出来】
+从启动到出结果，DF写法速度要比rdd慢。</p>2019-09-02</li><br/><li><span>Qi Liu 刘祺</span> 👍（0） 💬（1）<p>继续学习~</p>2019-06-29</li><br/><li><span>朱同学</span> 👍（20） 💬（0）<p>java万金油，什么都可以干，人好招，特别是我们这种偏远地区，scala，虽然开发效率高，但是人少，难招，所以我们大数据团队选择了java。至于运行效率，py是最慢的，java和scala应该半斤八俩吧</p>2019-05-29</li><br/><li><span>科学Jia</span> 👍（9） 💬（2）<p>女同学看完2015年出的spark快速大数据分析这本书以后，再来看老师写的这些文字，觉得言简意赅，印象深刻，至于用什么语言倒无所谓了，主要是思路。后期希望老师能多说一些案例和处理中需要注意的技巧。</p>2019-06-20</li><br/><li><span>一</span> 👍（7） 💬（0）<p>看了这一讲意识到之前对Python欠缺了重视，现在明白Python在大数据处理领域是很有竞争力的，因为Spark和众多的库的原因，甚至超越Java，所以现在要重新重视起来Python的学习了</p>2019-05-29</li><br/><li><span>hallo128</span> 👍（6） 💬（0）<p>【以下代码可以运行，但对df格式的操作是借助二楼的网址去找的，具体含义也不太清楚，只是可以运行出来】
 
 #python前运行调用包
 from pyspark.sql import SparkSession
@@ -251,7 +251,7 @@ wordCounts = words.groupBy(&quot;word&quot;).count()
 #展示
 wordCounts.show()
 #关闭spark
-spark.stop()</div>2019-06-08</li><br/><li><span>9527</span> 👍（6） 💬（1）<div>spark_session = SparkSession.builder.appName(&quot;PySparkShell&quot;).getOrCreate()
+spark.stop()</p>2019-06-08</li><br/><li><span>9527</span> 👍（6） 💬（1）<p>spark_session = SparkSession.builder.appName(&quot;PySparkShell&quot;).getOrCreate()
 ds_lines = spark_session.read.textFile(&quot;README.md&quot;)
 ds = ds_lines.flatMap(lambda x: x.split(&#39; &#39;)).groupBy(&quot;Value&quot;).count()
 ds.show()
@@ -261,9 +261,9 @@ AttributeError: &#39;DataFrameReader&#39; object has no attribute &#39;textFile&
 如果把textFile()改成text()就对了
 再执行flatMap那段，也报错了
 AttributeError: &#39;DataFrame&#39; object has no attribute &#39;flatMap&#39;
-是不是API变动了，我用的是2.4.3版本单机执行的</div>2019-05-29</li><br/><li><span>hallo128</span> 👍（4） 💬（1）<div>“虽然 Spark 还支持 Java 和 R，但是我个人不推荐你使用。用 Java 写程序实在有些冗长，而且速度上没有优势。”
+是不是API变动了，我用的是2.4.3版本单机执行的</p>2019-05-29</li><br/><li><span>hallo128</span> 👍（4） 💬（1）<p>“虽然 Spark 还支持 Java 和 R，但是我个人不推荐你使用。用 Java 写程序实在有些冗长，而且速度上没有优势。”
 推荐使用，还是应该详细说明对比下，不能只因为自己偏好某种工具给出建议。对于spark原生来说，速度和库同步更新更快的是Scala，如果你想随时用到spark最新功能库的话，就应该选择Scala，同时速度也是最快的。
-至于Python，R，Java，一方面和你的熟悉程度有关，另一方面也与你到底准备用spark来做什么的目的有关。是集群控制，还是数据分析，还是建模，来选择合适的编程语言与spark进行连接编写。</div>2019-06-08</li><br/><li><span>Quincy</span> 👍（3） 💬（0）<div>Spark 不应该是首选Scala 么</div>2019-06-13</li><br/><li><span>青石</span> 👍（3） 💬（0）<div>#!&#47;usr&#47;bin&#47;python3
+至于Python，R，Java，一方面和你的熟悉程度有关，另一方面也与你到底准备用spark来做什么的目的有关。是集群控制，还是数据分析，还是建模，来选择合适的编程语言与spark进行连接编写。</p>2019-06-08</li><br/><li><span>Quincy</span> 👍（3） 💬（0）<p>Spark 不应该是首选Scala 么</p>2019-06-13</li><br/><li><span>青石</span> 👍（3） 💬（0）<p>#!&#47;usr&#47;bin&#47;python3
 
 import os
 from pyspark import SparkContext, SparkConf
@@ -283,5 +283,5 @@ print(&#39;|{0: ^20}|{1: ^20}|&#39;.format(&#39;Word&#39;, &#39;Count&#39;))
 for (word, num) in counts.take(10):
     print(&#39;|{0: ^20}|{1: ^20}|&#39;.format(word, num))
 
-</div>2019-05-31</li><br/><li><span>Geek_4ldh1g</span> 👍（3） 💬（0）<div>用java写 有点冗长  我不敢苟同，因为java8 已经是函数编程了！而且spark开发我觉得大部分还是spark  sql多点！这样基本没啥区别  </div>2019-05-29</li><br/><li><span>这个名字居然都有</span> 👍（3） 💬（1）<div>老师，你给一个完整的案例吧，</div>2019-05-29</li><br/><li><span>大志</span> 👍（2） 💬（1）<div>老师，本地已经安装了Spark，有Demo吗，只看代码片段的话还是无从下手啊</div>2019-05-29</li><br/>
+</p>2019-05-31</li><br/><li><span>Geek_4ldh1g</span> 👍（3） 💬（0）<p>用java写 有点冗长  我不敢苟同，因为java8 已经是函数编程了！而且spark开发我觉得大部分还是spark  sql多点！这样基本没啥区别  </p>2019-05-29</li><br/><li><span>这个名字居然都有</span> 👍（3） 💬（1）<p>老师，你给一个完整的案例吧，</p>2019-05-29</li><br/><li><span>大志</span> 👍（2） 💬（1）<p>老师，本地已经安装了Spark，有Demo吗，只看代码片段的话还是无从下手啊</p>2019-05-29</li><br/>
 </ul>

@@ -227,9 +227,9 @@ Docker正是使用了这个方法，也就是**用XFS Quota来限制OverlayFS的
 
 欢迎你在留言区分享你的思考或疑问。如果这篇文章让你有所收获，也欢迎转发给你的同事、朋友，一起交流和学习。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>莫名</span> 👍（21） 💬（3）<div>容器 quota 的局限性：容器通常采用 overlay2 driver，仅支持在宿主文件系统 xfs 上开启 quota 功能。意味着 overlay over ext4 不支持 quota 功能，而实际生产环境上 ext4 的使用远多于 xfs。</div>2020-12-11</li><br/><li><span>Geek2014</span> 👍（13） 💬（2）<div>上篇的评论中提到：“我们在2019年初就不用docker了。”
-这篇中，老师提到了containerd，是说你们已经用containerd替换了docker吗？有机会对containerd和docker之间的使用对比做个介绍吗？</div>2020-12-11</li><br/><li><span>Sun</span> 👍（12） 💬（2）<div>老师，我觉得可以补充下 现在k8s 1.14 开始，默认开启 LocalStorageCapacityIsolation， 可以通过限制resources.limits.ephemeral-storage 和resources.requests.ephemeral-storage 来保护宿主机 rootfs了。</div>2020-12-22</li><br/><li><span>徐少文</span> 👍（4） 💬（1）<div>老师，CGroup子系统中没有对硬盘使用量进行限制的功能模块吗？除了通过文件系统的quota去限制还有其他的方法吗？</div>2021-07-13</li><br/><li><span>Helios</span> 👍（4） 💬（2）<div>老师能说下你们应用容器Quota的场景么。对于无状态服务一般就是日志会写文件了，离线任务比如机器学习的模型也不敢给人家限制呀😂
-</div>2020-12-13</li><br/><li><span>DayDayUp</span> 👍（1） 💬（1）<div>老师讲的太好了，不知道面试贵司会不会有机会呢？老师在eBay哪个team啊？应届生要吗？？？</div>2021-11-28</li><br/><li><span>Action</span> 👍（1） 💬（1）<div>老师 为什么overlayFS 并不是docker_id 呢？
+<li><span>莫名</span> 👍（21） 💬（3）<p>容器 quota 的局限性：容器通常采用 overlay2 driver，仅支持在宿主文件系统 xfs 上开启 quota 功能。意味着 overlay over ext4 不支持 quota 功能，而实际生产环境上 ext4 的使用远多于 xfs。</p>2020-12-11</li><br/><li><span>Geek2014</span> 👍（13） 💬（2）<p>上篇的评论中提到：“我们在2019年初就不用docker了。”
+这篇中，老师提到了containerd，是说你们已经用containerd替换了docker吗？有机会对containerd和docker之间的使用对比做个介绍吗？</p>2020-12-11</li><br/><li><span>Sun</span> 👍（12） 💬（2）<p>老师，我觉得可以补充下 现在k8s 1.14 开始，默认开启 LocalStorageCapacityIsolation， 可以通过限制resources.limits.ephemeral-storage 和resources.requests.ephemeral-storage 来保护宿主机 rootfs了。</p>2020-12-22</li><br/><li><span>徐少文</span> 👍（4） 💬（1）<p>老师，CGroup子系统中没有对硬盘使用量进行限制的功能模块吗？除了通过文件系统的quota去限制还有其他的方法吗？</p>2021-07-13</li><br/><li><span>Helios</span> 👍（4） 💬（2）<p>老师能说下你们应用容器Quota的场景么。对于无状态服务一般就是日志会写文件了，离线任务比如机器学习的模型也不敢给人家限制呀😂
+</p>2020-12-13</li><br/><li><span>DayDayUp</span> 👍（1） 💬（1）<p>老师讲的太好了，不知道面试贵司会不会有机会呢？老师在eBay哪个team啊？应届生要吗？？？</p>2021-11-28</li><br/><li><span>Action</span> 👍（1） 💬（1）<p>老师 为什么overlayFS 并不是docker_id 呢？
 [root@localhost overlay2]# docker inspect 5440662c8db
 [
     {
@@ -249,7 +249,7 @@ Docker正是使用了这个方法，也就是**用XFS Quota来限制OverlayFS的
 
     }
 ]
-</div>2020-12-16</li><br/><li><span>宝仔</span> 👍（1） 💬（1）<div>这个是一定要基于xfs文件系统吗？如果是ext4文件系统呢？</div>2020-12-11</li><br/><li><span>谢哈哈</span> 👍（6） 💬（0）<div>可以通过xfs_quota -x -c &quot;report -pbih &quot; 目录名称查询projectid</div>2020-12-11</li><br/><li><span>上邪忘川</span> 👍（3） 💬（0）<div>[root@localhost ~]# xfs_quota -x -c &#39;report -h &#47;tmp&#47;xfs_prjquota&#39;
+</p>2020-12-16</li><br/><li><span>宝仔</span> 👍（1） 💬（1）<p>这个是一定要基于xfs文件系统吗？如果是ext4文件系统呢？</p>2020-12-11</li><br/><li><span>谢哈哈</span> 👍（6） 💬（0）<p>可以通过xfs_quota -x -c &quot;report -pbih &quot; 目录名称查询projectid</p>2020-12-11</li><br/><li><span>上邪忘川</span> 👍（3） 💬（0）<p>[root@localhost ~]# xfs_quota -x -c &#39;report -h &#47;tmp&#47;xfs_prjquota&#39;
 Project quota on &#47; (&#47;dev&#47;mapper&#47;centos-root)
                         Blocks              
 Project ID   Used   Soft   Hard Warn&#47;Grace   
@@ -258,6 +258,6 @@ Project ID   Used   Soft   Hard Warn&#47;Grace
 #2             8K   100M   100M  00 [------]
 #3           100M   100M   100M  00 [------]
 #101          10M      0    10M  00 [------]
-</div>2020-12-11</li><br/><li><span>李梦嘉</span> 👍（0） 💬（0）<div>老师好，通过xfs quota设置了容器容量后，怎么扩容呢？
-</div>2024-07-18</li><br/><li><span>kissingers</span> 👍（0） 💬（1）<div>k8s 中readonlyrootfs 也是同样的场景吧</div>2021-06-12</li><br/><li><span>我来也</span> 👍（0） 💬（0）<div>之前工作中就经常因为es错误日志把宿主机的磁盘撑满。但还从未往这个方向想，还可以限制某个项目的磁盘使用量。😂</div>2021-01-03</li><br/>
+</p>2020-12-11</li><br/><li><span>李梦嘉</span> 👍（0） 💬（0）<p>老师好，通过xfs quota设置了容器容量后，怎么扩容呢？
+</p>2024-07-18</li><br/><li><span>kissingers</span> 👍（0） 💬（1）<p>k8s 中readonlyrootfs 也是同样的场景吧</p>2021-06-12</li><br/><li><span>我来也</span> 👍（0） 💬（0）<p>之前工作中就经常因为es错误日志把宿主机的磁盘撑满。但还从未往这个方向想，还可以限制某个项目的磁盘使用量。😂</p>2021-01-03</li><br/>
 </ul>

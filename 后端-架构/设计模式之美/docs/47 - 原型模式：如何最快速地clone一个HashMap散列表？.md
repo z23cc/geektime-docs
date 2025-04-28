@@ -302,7 +302,7 @@ item.setPrice(19.0); // 这里修改了item的价格属性
 
 欢迎留言和我分享你的疑惑和见解，如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>冬瓜蔡</span> 👍（5） 💬（3）<div>日常开发中常用的是spring提供的对象之间拷贝的方法： BeanUtils.copyProperties
+<li><span>冬瓜蔡</span> 👍（5） 💬（3）<p>日常开发中常用的是spring提供的对象之间拷贝的方法： BeanUtils.copyProperties
 1、如果是基础类型，则没有问题。
 2、如果要拷贝对象里面有小对象，且小对象的全限定名不一样，则拷贝结束后，该对象为null；
 public class Person {
@@ -313,8 +313,8 @@ public class Person {
     private List&lt;Photo&gt; photo;
 }
 
-本质上BeanUtils.copyProperties是浅拷贝，在使用过程中需要对嵌套对象或者集合进行额外处理</div>2020-11-17</li><br/><li><span>南北少卿</span> 👍（1） 💬（1）<div>如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同） ...
-这句话没有想明白</div>2020-07-05</li><br/><li><span>唯她命</span> 👍（0） 💬（2）<div>
+本质上BeanUtils.copyProperties是浅拷贝，在使用过程中需要对嵌套对象或者集合进行额外处理</p>2020-11-17</li><br/><li><span>南北少卿</span> 👍（1） 💬（1）<p>如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同） ...
+这句话没有想明白</p>2020-07-05</li><br/><li><span>唯她命</span> 👍（0） 💬（2）<p>
 public class Demo {
   private ConcurrentHashMap&lt;String, SearchWord&gt; currentKeywords = new ConcurrentHashMap&lt;&gt;();
   private long lastUpdateTime = -1;
@@ -332,8 +332,8 @@ public class Demo {
 代码有问题啊，   List&lt;SearchWord&gt; toBeUpdatedSearchWords = getSearchWords(lastUpdateTime);
 toBeUpdatedSearchWords里的数据是改过的数据，时间都大于lastUpdateTime
 那为啥下面还要searchWord.getLastUpdateTime() &gt; maxNewUpdatedTime？？？？
-</div>2020-07-05</li><br/><li><span>L🚲🐱</span> 👍（94） 💬（2）<div>问题 1: 逻辑删除即可
-问题 2:  返回深拷贝对象</div>2020-02-19</li><br/><li><span>skull</span> 👍（60） 💬（0）<div>原型模式，最为常用经典就是BeanUtils</div>2020-04-24</li><br/><li><span>辣么大</span> 👍（18） 💬（2）<div>问题1:
+</p>2020-07-05</li><br/><li><span>L🚲🐱</span> 👍（94） 💬（2）<p>问题 1: 逻辑删除即可
+问题 2:  返回深拷贝对象</p>2020-02-19</li><br/><li><span>skull</span> 👍（60） 💬（0）<p>原型模式，最为常用经典就是BeanUtils</p>2020-04-24</li><br/><li><span>辣么大</span> 👍（18） 💬（2）<p>问题1:
 方法一：新旧的数据取交集，可以删除旧map中的删除关键字，之后的逻辑就和文章中一样了。
 方法二：逻辑删除，当map的size中已删除占比过高时，resize map。
 
@@ -348,8 +348,8 @@ protected Object clone() throws CloneNotSupportedException {
   SearchWord newWord = new SearchWord(this.keyWord, this.times, this.tmstamp);
   return newWord;
 }
-</div>2020-02-19</li><br/><li><span>岁月</span> 👍（17） 💬（3）<div>课堂讨论题
-关键字如果支持删除, 最简单高效的方法就是在数据表里加一个delete bool类型的字段, 占用空间不多, 但是很方便程序识别最近更新的数据里面, 有哪条是需要删除的. 不过这样会带来一个问题, 就是插入新关键字的时候, 要先检查一下是否存在同名的关键字, 有的话要把delete字段修改为false, 所以还需要对关键字建立索引, 这样可以高效查找出是否存在同名关键字</div>2020-02-21</li><br/><li><span>新的起点，新的开始^_^</span> 👍（15） 💬（8）<div>我有个问题，最后一种方式使用copy()的浅拷贝+对象替换可以提高效率。但是copy()之后，数据库中更没有发生变化的数据其实newKeywords中指向的还是之前的对象引用啊，不是一个新的对象，那这个结果不久和需求冲突了吗？需求是：任何时刻，系统 A 中的所有数据都必须是同一个版本的。举个例子，比如说我修改了一个newKeywords中value对应的SearchWord对象的某个属性，那么响应的，currentKeywords中肯定也会发生变化，因为SearchWord地址值时一样的，这个就不是刚开始讲的深拷贝得到的是一份完完全全独立的对象，它不是独立的，只有数据库中被更新过的数据是独立的，因为执行了map.remove()和map.put()</div>2020-04-26</li><br/><li><span>安静</span> 👍（14） 💬（1）<div>老师，就是java分层架构中各层的对象，比如VO，BO，PO之间的互相转换，使用的就是原型模式，而做业务开发每天都要与这些打交道。</div>2020-04-08</li><br/><li><span>不似旧日</span> 👍（13） 💬（2）<div>既然说在Java中不常用那我就不看了，以后有时间再学。</div>2020-02-24</li><br/><li><span>忆水寒</span> 👍（10） 💬（13）<div>让我想到了linux下面fork，其实内核也是拷贝了一份数据。Java里面的copyonwrite是不是也是这种深拷贝原理呢？</div>2020-02-19</li><br/><li><span>小晏子</span> 👍（6） 💬（4）<div>1. 考虑到删除关键词，那么最好数据库使用软删除，这样可以知道哪些关键词是被删除的，那么拿到这些被删除的关键词就可以在clone出来的newKeywords基础上，直接remove掉已经删除的哪些关键词就可以了。反之如果不是使用的软删除，那么就不好使用原型模式，需要获取新版本全量数据，然后和旧版本数据一一比对，看哪些数据是被删除的了。
+</p>2020-02-19</li><br/><li><span>岁月</span> 👍（17） 💬（3）<p>课堂讨论题
+关键字如果支持删除, 最简单高效的方法就是在数据表里加一个delete bool类型的字段, 占用空间不多, 但是很方便程序识别最近更新的数据里面, 有哪条是需要删除的. 不过这样会带来一个问题, 就是插入新关键字的时候, 要先检查一下是否存在同名的关键字, 有的话要把delete字段修改为false, 所以还需要对关键字建立索引, 这样可以高效查找出是否存在同名关键字</p>2020-02-21</li><br/><li><span>新的起点，新的开始^_^</span> 👍（15） 💬（8）<p>我有个问题，最后一种方式使用copy()的浅拷贝+对象替换可以提高效率。但是copy()之后，数据库中更没有发生变化的数据其实newKeywords中指向的还是之前的对象引用啊，不是一个新的对象，那这个结果不久和需求冲突了吗？需求是：任何时刻，系统 A 中的所有数据都必须是同一个版本的。举个例子，比如说我修改了一个newKeywords中value对应的SearchWord对象的某个属性，那么响应的，currentKeywords中肯定也会发生变化，因为SearchWord地址值时一样的，这个就不是刚开始讲的深拷贝得到的是一份完完全全独立的对象，它不是独立的，只有数据库中被更新过的数据是独立的，因为执行了map.remove()和map.put()</p>2020-04-26</li><br/><li><span>安静</span> 👍（14） 💬（1）<p>老师，就是java分层架构中各层的对象，比如VO，BO，PO之间的互相转换，使用的就是原型模式，而做业务开发每天都要与这些打交道。</p>2020-04-08</li><br/><li><span>不似旧日</span> 👍（13） 💬（2）<p>既然说在Java中不常用那我就不看了，以后有时间再学。</p>2020-02-24</li><br/><li><span>忆水寒</span> 👍（10） 💬（13）<p>让我想到了linux下面fork，其实内核也是拷贝了一份数据。Java里面的copyonwrite是不是也是这种深拷贝原理呢？</p>2020-02-19</li><br/><li><span>小晏子</span> 👍（6） 💬（4）<p>1. 考虑到删除关键词，那么最好数据库使用软删除，这样可以知道哪些关键词是被删除的，那么拿到这些被删除的关键词就可以在clone出来的newKeywords基础上，直接remove掉已经删除的哪些关键词就可以了。反之如果不是使用的软删除，那么就不好使用原型模式，需要获取新版本全量数据，然后和旧版本数据一一比对，看哪些数据是被删除的了。
 2. 代码如下，将原来的items deep clone一份，这样就切断了与原来items的联系。
   public class ShoppingCart { 
     &#47;&#47; ...省略其他代码... 
@@ -358,8 +358,8 @@ protected Object clone() throws CloneNotSupportedException {
       tmpShoppingCartItems.addAll(this.items);
       return Collections.unmodifiableList(tmpShoppingCartItems); 
     }
-  }</div>2020-02-19</li><br/><li><span>小情绪</span> 👍（5） 💬（0）<div>copy-on-write</div>2020-09-08</li><br/><li><span>张三</span> 👍（5） 💬（2）<div>看了几遍才明白第一次的浅拷贝问题在哪，在遍历的时候就已经替换了其中一些旧对象；而最后浅拷贝和深拷贝结合的方式，是先把浅拷贝得到的索引（引用）删除，然后再添加新的对象到浅拷贝中，最后在遍历结束后一并替换原型。</div>2020-04-06</li><br/><li><span>javaadu</span> 👍（4） 💬（3）<div>我在实际工作中就用到了类似的代码，这就是一个关键词识别模块，第一次在学习专栏中看到如此契合生产的代码，很赞👍
+  }</p>2020-02-19</li><br/><li><span>小情绪</span> 👍（5） 💬（0）<p>copy-on-write</p>2020-09-08</li><br/><li><span>张三</span> 👍（5） 💬（2）<p>看了几遍才明白第一次的浅拷贝问题在哪，在遍历的时候就已经替换了其中一些旧对象；而最后浅拷贝和深拷贝结合的方式，是先把浅拷贝得到的索引（引用）删除，然后再添加新的对象到浅拷贝中，最后在遍历结束后一并替换原型。</p>2020-04-06</li><br/><li><span>javaadu</span> 👍（4） 💬（3）<p>我在实际工作中就用到了类似的代码，这就是一个关键词识别模块，第一次在学习专栏中看到如此契合生产的代码，很赞👍
 
 问题1: 数据库中新增一个字段标识逻辑删除
-问题2:深拷贝出去，不过为啥我外部需要一个深拷贝的对象呢，还没理解</div>2020-02-22</li><br/>
+问题2:深拷贝出去，不过为啥我外部需要一个深拷贝的对象呢，还没理解</p>2020-02-22</li><br/>
 </ul>

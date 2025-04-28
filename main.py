@@ -179,8 +179,7 @@ def  make_all_pdf(source, output, timeout, compress, power, port):
     webdriver_options.add_experimental_option("prefs", webdriver_prefs)
     webdriver_options.add_experimental_option("excludeSwitches", ['enable-automation'])
 
-    http_client = requests.Session()
-    download_manager = WDMDownloadManager(http_client=http_client)
+    download_manager = WDMDownloadManager(http_client=reqsession)
     service = Service(ChromeDriverManager(download_manager=download_manager).install())
     host = f"http://127.0.0.1:{port}/"
     for dirname, _, file_lst in os.walk(source):
@@ -191,13 +190,33 @@ def  make_all_pdf(source, output, timeout, compress, power, port):
                 try:
                     os.popen("lsof -i:" + str(port) + " | grep -v 'PID' | awk '{print $2}' |  xargs kill -9")
                     parts_dir = os.path.join(dirname, "parts")
-                    part_dir = os.path.join(parts_dir, os.path.basename(dirname))
-                    if not os.path.exists(part_dir):
-                        os.makedirs(part_dir, exist_ok=True)
                     pattern = r'https?://[^\s]+'
                     fpath = os.path.join(dirname, "mkdocs.yml")
                     data = yaml.safe_load(open(fpath))
                     print(f'dirname: {dirname}')
+                    output_dir = f'{output}/{os.path.basename(os.path.dirname(dirname))}'
+                    if len(data.get('nav')) < 200:
+                        curr_pdf_name = f"{os.path.basename(dirname)}.pdf"
+                        curr_output_file = os.path.join(output_dir, curr_pdf_name)
+                        if os.path.exists(curr_output_file):
+                            if os.path.exists(parts_dir):
+                                shutil.rmtree(parts_dir)
+                            break
+                    else:
+                        curr_pdf_name = f"{os.path.basename(dirname)}-上.pdf"
+                        curr_output_file_1 = os.path.join(output_dir, curr_pdf_name)
+
+                        curr_pdf_name = f"{os.path.basename(dirname)}-下.pdf"
+                        curr_output_file_2 = os.path.join(output_dir, curr_pdf_name)
+                        if os.path.exists(curr_output_file_1) and os.path.exists(curr_output_file_2):
+                            if os.path.exists(parts_dir):
+                                shutil.rmtree(parts_dir)
+                            break
+
+                    part_dir = os.path.join(parts_dir, os.path.basename(dirname))
+                    if not os.path.exists(part_dir):
+                        os.makedirs(part_dir, exist_ok=True)
+
                     with tempfile.TemporaryDirectory() as tmpdir:
                         shutil.copytree(dirname, tmpdir, dirs_exist_ok=True)
                         for nav in data.get('nav'):
@@ -222,7 +241,7 @@ def  make_all_pdf(source, output, timeout, compress, power, port):
                             matches = re.findall(pattern, mk_data)
                             images = []
                             for match in matches:
-                                if 'static001.geekbang.org' not in match:
+                                if 'static001.geekbang.org/' not in match or 'image/' not in match:
                                     continue
                                 match = match if match.count(')') <= 0 else match[:match.index(')')]
                                 if match.count('('):
@@ -235,7 +254,10 @@ def  make_all_pdf(source, output, timeout, compress, power, port):
                                 for future in futures:
                                     bs, im_uri = future.result()
                                     if bs and im_uri:
-                                        format = parse.urlparse(im_uri).path.split('.')[1]
+                                        uri_path = parse.urlparse(im_uri).path
+                                        if '.' not in uri_path:
+                                            continue
+                                        format = uri_path.split('.')[1]
                                         format =  'png' if not format else format
                                         mk_data = mk_data.replace(im_uri, f'data:image/{format};base64,{bs}')
                                         print('replace image', format, len(bs), im_uri, mk_path)
@@ -295,7 +317,6 @@ def  make_all_pdf(source, output, timeout, compress, power, port):
                         proc.kill()
                         os.popen("lsof -i:" + str(port) + " | grep -v 'PID' | awk '{print $2}' |  xargs kill -9")
 
-                        output_dir = f'{output}/{os.path.basename(os.path.dirname(dirname))}'
                         if not os.path.exists(output_dir):
                             os.makedirs(output_dir, exist_ok=True)
 
@@ -399,8 +420,7 @@ def make_pdf(source, output, timeout, compress, power, port):
     webdriver_options.add_argument("--disable-dev-shm-usage")
     webdriver_options.experimental_options["prefs"] = webdriver_prefs
 
-    http_client = requests.Session()
-    download_manager = WDMDownloadManager(http_client=http_client)
+    download_manager = WDMDownloadManager(http_client=reqsession)
     service = Service(ChromeDriverManager(download_manager=download_manager).install())
     host = f"http://127.0.0.1:{port}/"
     source = os.path.abspath(source)
@@ -435,7 +455,7 @@ def make_pdf(source, output, timeout, compress, power, port):
                 matches = re.findall(pattern, mk_data)
                 images = []
                 for match in matches:
-                    if 'static001.geekbang.org' not in match:
+                    if 'static001.geekbang.org/' not in match:
                         continue
                     match = match if match.count(')') <= 0 else match[:match.index(')')]
                     if match.count('('):

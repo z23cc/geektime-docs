@@ -157,10 +157,10 @@ self.onmessage = ({data: buffer}) => {
 
 欢迎在留言区分享你的答案、交流学习心得或者提出问题，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>郭慧娟</span> 👍（1） 💬（1）<div>waitAsync 和 热路径 这里不太了解，有没有什么资料可以推荐一下</div>2022-12-04</li><br/><li><span>郭慧娟</span> 👍（1） 💬（1）<div>https:&#47;&#47;static001.geekbang.org&#47;resource&#47;image&#47;f8&#47;6c&#47;f81f3b9e0d9347ffc9d1a23e0758ae6c.jpeg?wh=1920x1080  这个图片感觉表意不太明白
+<li><span>郭慧娟</span> 👍（1） 💬（1）<p>waitAsync 和 热路径 这里不太了解，有没有什么资料可以推荐一下</p>2022-12-04</li><br/><li><span>郭慧娟</span> 👍（1） 💬（1）<p>https:&#47;&#47;static001.geekbang.org&#47;resource&#47;image&#47;f8&#47;6c&#47;f81f3b9e0d9347ffc9d1a23e0758ae6c.jpeg?wh=1920x1080  这个图片感觉表意不太明白
 
 参考链接 
 https:&#47;&#47;juejin.cn&#47;post&#47;7016962394479919118
 https:&#47;&#47;github.com&#47;mdn&#47;dom-examples&#47;tree&#47;main&#47;web-workers&#47;simple-web-worker
-https:&#47;&#47;developer.chrome.com&#47;blog&#47;enabling-shared-array-buffer&#47;</div>2022-12-04</li><br/>
+https:&#47;&#47;developer.chrome.com&#47;blog&#47;enabling-shared-array-buffer&#47;</p>2022-12-04</li><br/>
 </ul>

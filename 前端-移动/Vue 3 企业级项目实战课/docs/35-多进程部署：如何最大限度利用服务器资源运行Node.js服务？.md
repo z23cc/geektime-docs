@@ -450,6 +450,6 @@ for (let i = 0; i < processCount; i++) {
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/35)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（0）<div>多线程和多进程主要是解决cpu阻塞操作问题，比如io阻塞，网络阻塞问题。
-至于计算密集型，一般就是要改代码才能充分利用cpu多核的性能优势，比如大任务切分为小任务，然后利用多任务执行提高性能。</div>2024-10-08</li><br/>
+<li><span>ifelse</span> 👍（0） 💬（0）<p>多线程和多进程主要是解决cpu阻塞操作问题，比如io阻塞，网络阻塞问题。
+至于计算密集型，一般就是要改代码才能充分利用cpu多核的性能优势，比如大任务切分为小任务，然后利用多任务执行提高性能。</p>2024-10-08</li><br/>
 </ul>

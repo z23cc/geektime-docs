@@ -190,14 +190,14 @@ WSDL还是有些复杂的，不过好在有工具可以生成。
 
 欢迎你留言和我讨论。趣谈网络协议，我们下期见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>叹息无门</span> 👍（37） 💬（1）<div>感觉这篇写的不是很严谨:
+<li><span>叹息无门</span> 👍（37） 💬（1）<p>感觉这篇写的不是很严谨:
 1，首先SOAP并非只能通过HTTP进行传输，关于SOAP binding应该提一下？
-2，SOAP 的HTTP Binding 支持比较完整的Web Method，http GET&#47;POST都是可以支持的，并且对应不同的模式。大多数情况下只使用POST是具体实现的问题。</div>2018-08-01</li><br/><li><span>燃</span> 👍（11） 💬（1）<div>webservice   soap的初始目标：服务自描述，其实就是没有达成，UDDI早已默默死掉</div>2018-08-16</li><br/><li><span>雪山飞猪</span> 👍（5） 💬（1）<div>这套教程真的是比以前看过的好多书都要生动形象，高手出马，化繁为简，非常感谢老师的倾情分享</div>2019-05-17</li><br/><li><span>Jerry Chan</span> 👍（0） 💬（1）<div>但是这个二进制格式，怎么转换为xml这种格式呢？过程是怎么解析的呢？主要是这块不清楚，作者能解惑下不？</div>2018-08-18</li><br/><li><span>凡凡</span> 👍（17） 💬（0）<div>1.虽然http协议有post，get，head，put，delete等多种方法，但是平常来说post，get基本足够用。所以soap只支持post方法的差别应该在缺少get方法，get方法可以浏览器直接跳转，post必须借助表单或者ajax等提交。也就限制了soap请求只能在页面内获取或者提交数据。 
+2，SOAP 的HTTP Binding 支持比较完整的Web Method，http GET&#47;POST都是可以支持的，并且对应不同的模式。大多数情况下只使用POST是具体实现的问题。</p>2018-08-01</li><br/><li><span>燃</span> 👍（11） 💬（1）<p>webservice   soap的初始目标：服务自描述，其实就是没有达成，UDDI早已默默死掉</p>2018-08-16</li><br/><li><span>雪山飞猪</span> 👍（5） 💬（1）<p>这套教程真的是比以前看过的好多书都要生动形象，高手出马，化繁为简，非常感谢老师的倾情分享</p>2019-05-17</li><br/><li><span>Jerry Chan</span> 👍（0） 💬（1）<p>但是这个二进制格式，怎么转换为xml这种格式呢？过程是怎么解析的呢？主要是这块不清楚，作者能解惑下不？</p>2018-08-18</li><br/><li><span>凡凡</span> 👍（17） 💬（0）<p>1.虽然http协议有post，get，head，put，delete等多种方法，但是平常来说post，get基本足够用。所以soap只支持post方法的差别应该在缺少get方法，get方法可以浏览器直接跳转，post必须借助表单或者ajax等提交。也就限制了soap请求只能在页面内获取或者提交数据。 
 另外，soap协议规范上是支持get的，但是由于一般xml比较复杂，不适合放在get请求的查询参数里，所以soap协议的服务多采用post请求方法。
-2.应该要讲restful协议了，一种使用json格式交互数据的，基于http协议的，轻量级网络数据交互规范。</div>2018-08-01</li><br/><li><span>mgxian</span> 👍（10） 💬（3）<div>1.没有充分利用http协议原有的体系 比如get表示获取资源 post表示创建资源 delete表示删除资源 patch表示更新资源
-2.restful协议</div>2018-08-01</li><br/><li><span>blackpiglet</span> 👍（3） 💬（0）<div>1. POST 请求构造比较麻烦，需要专门的工具，所以调用和调试更费事。
-2. 更简单的应该就是RESTful 了吧，SOAP 感觉不太好用，复杂度比较高，用起来没有http顺手。</div>2018-08-01</li><br/><li><span>vloz</span> 👍（3） 💬（0）<div>面向函数和面向对象在信息交互上的特征是什么？为什么讲onc合适面向函数？</div>2018-08-01</li><br/><li><span>悟空聊架构</span> 👍（2） 💬（0）<div>题目1:
+2.应该要讲restful协议了，一种使用json格式交互数据的，基于http协议的，轻量级网络数据交互规范。</p>2018-08-01</li><br/><li><span>mgxian</span> 👍（10） 💬（3）<p>1.没有充分利用http协议原有的体系 比如get表示获取资源 post表示创建资源 delete表示删除资源 patch表示更新资源
+2.restful协议</p>2018-08-01</li><br/><li><span>blackpiglet</span> 👍（3） 💬（0）<p>1. POST 请求构造比较麻烦，需要专门的工具，所以调用和调试更费事。
+2. 更简单的应该就是RESTful 了吧，SOAP 感觉不太好用，复杂度比较高，用起来没有http顺手。</p>2018-08-01</li><br/><li><span>vloz</span> 👍（3） 💬（0）<p>面向函数和面向对象在信息交互上的特征是什么？为什么讲onc合适面向函数？</p>2018-08-01</li><br/><li><span>悟空聊架构</span> 👍（2） 💬（0）<p>题目1:
 HTTP请求里面有很多种提交方式，文中只是提到了可以用post，其实还是可以用其他方式的，比如get。
 题目2:
-restful，用json格式的数据发送请求和返回数据。</div>2018-08-06</li><br/><li><span>spdia</span> 👍（2） 💬（0）<div>soap的方言问题过于严重。其实简单场景可以用http rest或者json+http post,或者用比较新的graphql</div>2018-08-01</li><br/><li><span>沈洪彬</span> 👍（1） 💬（1）<div>不是网络传输都要变成二进制传输么？  是不是xml也要变成二进制才能传输，这个是谁去做？ stub么？</div>2020-12-16</li><br/><li><span>LHW</span> 👍（1） 💬（0）<div>不用get是考虑传输的内容长度大小吧，如果是提交文件流的形式，post怎么处理？</div>2019-02-13</li><br/><li><span>andy</span> 👍（1） 💬（0）<div>可以使用类似thrift的DSL来描述服务接口，然后生成服务端和客户端</div>2018-08-01</li><br/><li><span>我在你的视线里</span> 👍（0） 💬（0）<div>webserice和HTTP 有什么区别和联系呢？接口传数据不都是http传输吗？</div>2022-11-09</li><br/><li><span>牛年榴莲</span> 👍（0） 💬（0）<div>现在还有用SOAP协议的吗？</div>2022-02-11</li><br/>
+restful，用json格式的数据发送请求和返回数据。</p>2018-08-06</li><br/><li><span>spdia</span> 👍（2） 💬（0）<p>soap的方言问题过于严重。其实简单场景可以用http rest或者json+http post,或者用比较新的graphql</p>2018-08-01</li><br/><li><span>沈洪彬</span> 👍（1） 💬（1）<p>不是网络传输都要变成二进制传输么？  是不是xml也要变成二进制才能传输，这个是谁去做？ stub么？</p>2020-12-16</li><br/><li><span>LHW</span> 👍（1） 💬（0）<p>不用get是考虑传输的内容长度大小吧，如果是提交文件流的形式，post怎么处理？</p>2019-02-13</li><br/><li><span>andy</span> 👍（1） 💬（0）<p>可以使用类似thrift的DSL来描述服务接口，然后生成服务端和客户端</p>2018-08-01</li><br/><li><span>我在你的视线里</span> 👍（0） 💬（0）<p>webserice和HTTP 有什么区别和联系呢？接口传数据不都是http传输吗？</p>2022-11-09</li><br/><li><span>牛年榴莲</span> 👍（0） 💬（0）<p>现在还有用SOAP协议的吗？</p>2022-02-11</li><br/>
 </ul>

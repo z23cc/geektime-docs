@@ -115,7 +115,7 @@ LangChain 社区蓬勃发展，各种扩展层出不穷，但所有这些扩展�
 
 这一讲我们概览了 LangChain 整个生态。对我们日常工作来说，通常是要到社区中寻找我们需要的东西。我建议你到[集成](https://python.langchain.com/docs/integrations/platforms/)页面上去转转，看看有哪些东西，可能你会在这个页面上发现很多你不知道的东西，欢迎在留言区分享你的意外收获。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>hao-kuai</span> 👍（2） 💬（1）<div>简单总结：LangChain可以理解成一个简化大模型接入的框架，是框架就会有自己的社区和生态。</div>2024-11-22</li><br/><li><span>Seachal</span> 👍（1） 💬（1）<div>今日学习打卡： LangChain是一个多功能开发框架，拥有自己的表达式语言LCEL，简化了开发流程。它拥有丰富的社区和扩展生态，提供多种工具和平台。用户应根据自己的需求选择适合的实现，并持续关注其发展。LangChain不仅是框架，还包含大量示例和模板，适合作为学习材料。同时，它也提供了基础抽象，而具体实现则依赖社区。LangChain团队还开发了其他应用，如LangServe等。最终，是否选择LangChain应基于个人需求评估。
-</div>2024-11-16</li><br/><li><span>大叶枫</span> 👍（0） 💬（1）<div>能不能这么理解，LangChain的趋势有点像做大模型时代的“Spring”？？</div>2025-01-10</li><br/><li><span>煜寶</span> 👍（0） 💬（1）<div>老师能顺便介绍下langfuse么？感觉langsmith对有数据安全隐私要求的团队不是很友好？</div>2024-11-25</li><br/><li><span>张申傲</span> 👍（2） 💬（0）<div>第7讲打卡~</div>2024-11-22</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<div>1、LangChain 不仅仅是一个开发框架，更是一个生态：社区 + 扩展，就像 spring 一样；
-2、开发 LLM 应用不一定得用 LangChain 框架，但 LangChain 框架中的抽象，模板，工具以及实现思路是我们非常好的学习资料。</div>2024-12-24</li><br/>
+<li><span>hao-kuai</span> 👍（2） 💬（1）<p>简单总结：LangChain可以理解成一个简化大模型接入的框架，是框架就会有自己的社区和生态。</p>2024-11-22</li><br/><li><span>Seachal</span> 👍（1） 💬（1）<p>今日学习打卡： LangChain是一个多功能开发框架，拥有自己的表达式语言LCEL，简化了开发流程。它拥有丰富的社区和扩展生态，提供多种工具和平台。用户应根据自己的需求选择适合的实现，并持续关注其发展。LangChain不仅是框架，还包含大量示例和模板，适合作为学习材料。同时，它也提供了基础抽象，而具体实现则依赖社区。LangChain团队还开发了其他应用，如LangServe等。最终，是否选择LangChain应基于个人需求评估。
+</p>2024-11-16</li><br/><li><span>大叶枫</span> 👍（0） 💬（1）<p>能不能这么理解，LangChain的趋势有点像做大模型时代的“Spring”？？</p>2025-01-10</li><br/><li><span>煜寶</span> 👍（0） 💬（1）<p>老师能顺便介绍下langfuse么？感觉langsmith对有数据安全隐私要求的团队不是很友好？</p>2024-11-25</li><br/><li><span>张申傲</span> 👍（2） 💬（0）<p>第7讲打卡~</p>2024-11-22</li><br/><li><span>Demon.Lee</span> 👍（0） 💬（0）<p>1、LangChain 不仅仅是一个开发框架，更是一个生态：社区 + 扩展，就像 spring 一样；
+2、开发 LLM 应用不一定得用 LangChain 框架，但 LangChain 框架中的抽象，模板，工具以及实现思路是我们非常好的学习资料。</p>2024-12-24</li><br/>
 </ul>

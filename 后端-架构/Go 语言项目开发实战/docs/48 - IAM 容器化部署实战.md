@@ -570,15 +570,15 @@ $ kubectl -n iam apply -f ${IAM_ROOT}/deployments/iam.yaml
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>yandongxiao</span> 👍（1） 💬（1）<div>总结：
+<li><span>yandongxiao</span> 👍（1） 💬（1）<p>总结：
 1. 开通容器服务镜像仓库，自己搭建的话可以使用 harbor
 2. 安装并配置Docker，配置主要包括，docker 通过非 root 用户使用；配置 docker 开启启动；
-3. 准备一个 Kubernetes 集群。可以参见 follow-me-install-kubernetes-cluster 教程</div>2021-12-05</li><br/><li><span>Mr.凉</span> 👍（0） 💬（1）<div>老师您好，这块有点没懂，为什么执行make push 就会生成下面四个镜像？
+3. 准备一个 Kubernetes 集群。可以参见 follow-me-install-kubernetes-cluster 教程</p>2021-12-05</li><br/><li><span>Mr.凉</span> 👍（0） 💬（1）<p>老师您好，这块有点没懂，为什么执行make push 就会生成下面四个镜像？
 
 $ make push REGISTRY_PREFIX=ccr.ccs.tencentyun.com&#47;marmotedu VERSION=v1.1.0
 
 上述命令，会构建 iam-apiserver-amd64、iam-authz-server-amd64、iam-pump-amd64、iamctl-amd64 四个镜像
 
 
-</div>2021-12-28</li><br/><li><span>Realm</span> 👍（0） 💬（1）<div>老师好！iam-apiserver使用到MySQL和cache，在k8s集群中部署以上4个应用，iam-apiserver的Pod连不上MySQL，应用拉不起来。</div>2021-09-26</li><br/>
+</p>2021-12-28</li><br/><li><span>Realm</span> 👍（0） 💬（1）<p>老师好！iam-apiserver使用到MySQL和cache，在k8s集群中部署以上4个应用，iam-apiserver的Pod连不上MySQL，应用拉不起来。</p>2021-09-26</li><br/>
 </ul>

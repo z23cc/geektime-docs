@@ -652,8 +652,8 @@ $ curl -H"Host: iam.api.marmotedu.com" http://106.52.252.139/healthz -H"iam.api.
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>pedro</span> 👍（8） 💬（3）<div>iamctl 好用的不行，已经沉淀为了自己的 pctl 了，这不是抄袭，这是模仿～</div>2021-08-29</li><br/><li><span>㊣Coldstar</span> 👍（0） 💬（1）<div>阿里云有免费的内网负载均衡可以使用 腾讯云 没看到可以创建 内网专用的负载均衡，这样的话，利用云基础设施可以简化部署</div>2021-12-06</li><br/><li><span>yandongxiao</span> 👍（0） 💬（0）<div>总结：
+<li><span>pedro</span> 👍（8） 💬（3）<p>iamctl 好用的不行，已经沉淀为了自己的 pctl 了，这不是抄袭，这是模仿～</p>2021-08-29</li><br/><li><span>㊣Coldstar</span> 👍（0） 💬（1）<p>阿里云有免费的内网负载均衡可以使用 腾讯云 没看到可以创建 内网专用的负载均衡，这样的话，利用云基础设施可以简化部署</p>2021-12-06</li><br/><li><span>yandongxiao</span> 👍（0） 💬（0）<p>总结：
 1. 在服务器上部署 IAM应用中的服务。20 机器上还会部署 Mysql, Redis, MongoDB
 2. 配置 Nginx。主要是添加两个 server，在 http{} 中添加 upstream。
-4. 配置 Keepalived</div>2021-12-04</li><br/>
+4. 配置 Keepalived</p>2021-12-04</li><br/>
 </ul>

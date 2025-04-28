@@ -833,7 +833,7 @@ fn it_works() {
 
 今天你已经完成了Rust学习的第14次打卡，坚持学习，如果你觉得有收获，也欢迎分享给身边的朋友，邀TA一起讨论。我们下节课见～
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>记事本</span> 👍（36） 💬（1）<div>老师，你讲得太通透，太详细了，太负责任了，全网最好的教程了</div>2021-09-25</li><br/><li><span>c4f</span> 👍（18） 💬（4）<div>1. 不行。因为 Vec 和 Copy 都不是用户自己 crate 中定义的，所以根据孤儿原则无法为 Vec 实现 Copy trait
+<li><span>记事本</span> 👍（36） 💬（1）<p>老师，你讲得太通透，太详细了，太负责任了，全网最好的教程了</p>2021-09-25</li><br/><li><span>c4f</span> 👍（18） 💬（4）<p>1. 不行。因为 Vec 和 Copy 都不是用户自己 crate 中定义的，所以根据孤儿原则无法为 Vec 实现 Copy trait
 
 2. 因为 Arc 实现了 Deref 和 DerefMut trait，解应用可以直接访问内部的 Mutex
 
@@ -860,11 +860,11 @@ fn index(&amp;self, index: isize) -&gt; &amp;Self::Output {
 }
 ```
 
-</div>2021-09-24</li><br/><li><span>noisyes</span> 👍（12） 💬（1）<div>刚才的小例子中要额外说明一下的是，如果你的代码出现 v.as_ref().clone() 这样的语句，也就是说你要对 v 进行引用转换，然后又得到了拥有所有权的值，那么你应该实现 From，然后做 v.into()。  这句话怎么理解呀</div>2021-09-27</li><br/><li><span>核桃</span> 👍（5） 💬（1）<div>老师，这里有一些概念没搞清晰。
+</p>2021-09-24</li><br/><li><span>noisyes</span> 👍（12） 💬（1）<p>刚才的小例子中要额外说明一下的是，如果你的代码出现 v.as_ref().clone() 这样的语句，也就是说你要对 v 进行引用转换，然后又得到了拥有所有权的值，那么你应该实现 From，然后做 v.into()。  这句话怎么理解呀</p>2021-09-27</li><br/><li><span>核桃</span> 👍（5） 💬（1）<p>老师，这里有一些概念没搞清晰。
 1. * 这个符号，有时表示解引用，有时表示获取变量地址的值，对吗？有点搞混场景了。
 2. trait继承这里，经常看到一句话，组合优于继承，怎么理解。同时对于实现和继承来说，可能基础不扎实，一直没理解好什么时候继承什么时候实现，学java的时候，那些抽象类和接口也迷糊的很。
 
-另外这里隐藏了很多东西，看老师代码的时候经常用unwrap，其实生产环境代码是非常危险的。例如今天写hashmap替换里面内容时，最好用containkeys判断一下，如果没有则插入一个空的，再使用get_mut和unwarp，这样就保证安全不会panic了。</div>2021-10-27</li><br/><li><span>彭亚伦</span> 👍（4） 💬（3）<div>第3题, 同样使用标准库的2个方法, `checked_rem_euclid`取得合理索引值, `iter().nth()`获得实际值
+另外这里隐藏了很多东西，看老师代码的时候经常用unwrap，其实生产环境代码是非常危险的。例如今天写hashmap替换里面内容时，最好用containkeys判断一下，如果没有则插入一个空的，再使用get_mut和unwarp，这样就保证安全不会panic了。</p>2021-10-27</li><br/><li><span>彭亚伦</span> 👍（4） 💬（3）<p>第3题, 同样使用标准库的2个方法, `checked_rem_euclid`取得合理索引值, `iter().nth()`获得实际值
 ```rust
 use std::{
     collections::LinkedList,
@@ -922,7 +922,7 @@ fn it_works() {
 }
 ```
 
-playground 链接:  https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=73b4129f1a6608892691da92d501ba15</div>2021-11-17</li><br/><li><span>周烨</span> 👍（4） 💬（3）<div>1. 不能，因为不能确定T是否实现了Copy trait。
+playground 链接:  https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=73b4129f1a6608892691da92d501ba15</p>2021-11-17</li><br/><li><span>周烨</span> 👍（4） 💬（3）<p>1. 不能，因为不能确定T是否实现了Copy trait。
 2. 因为Arc实现了Deref trait
 3. ```impl&lt;T&gt; Index&lt;isize&gt; for List&lt;T&gt; {
     type Output = T;
@@ -937,16 +937,16 @@ playground 链接:  https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;m
         let it = self.iter();
         return it.skip(i).next().unwrap();
     }
-}```</div>2021-10-08</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（3）<div>let a = *list;
+}```</p>2021-10-08</li><br/><li><span>夏洛克Moriaty</span> 👍（2） 💬（3）<p>let a = *list;
 let b  = list.deref();
 
-老师请问下这两种方式有什么区别，为什么a和b的类型不同？</div>2021-09-26</li><br/><li><span>GE</span> 👍（1） 💬（1）<div>1. 不能，但是这里和T关系无关，而是因为Vec本身已经实现了Drop trait，所以和Copy trait是冲突的
+老师请问下这两种方式有什么区别，为什么a和b的类型不同？</p>2021-09-26</li><br/><li><span>GE</span> 👍（1） 💬（1）<p>1. 不能，但是这里和T关系无关，而是因为Vec本身已经实现了Drop trait，所以和Copy trait是冲突的
 ```
 &#47;&#47; source code
 unsafe impl&lt;#[may_dangle] T, A: Allocator&gt; Drop for Vec&lt;T, A&gt;
 ```
 
-</div>2022-01-04</li><br/><li><span>Taozi</span> 👍（1） 💬（3）<div>第三题里面给List&lt;T&gt;实现DerefMut时，为什么不需要加type Target = LinkedList，那返回的Self::Target是什么。</div>2021-09-26</li><br/><li><span>0@1</span> 👍（1） 💬（2）<div>老师，想提前问下unsafe相关的问题，这个目前比较困扰我进一步学习Rust.
+</p>2022-01-04</li><br/><li><span>Taozi</span> 👍（1） 💬（3）<p>第三题里面给List&lt;T&gt;实现DerefMut时，为什么不需要加type Target = LinkedList，那返回的Self::Target是什么。</p>2021-09-26</li><br/><li><span>0@1</span> 👍（1） 💬（2）<p>老师，想提前问下unsafe相关的问题，这个目前比较困扰我进一步学习Rust.
 比如这个 std::mem::forget(t), 看了下源码，是直接调用 ManuallyDrop::new(t), 看文档，好像这2个又不是直接等价的。forget的源码如下，多了些属性宏修饰，编译器是不是多加了处理，从而跟直接调用 ManuallyDrop::new(t)起到的效果不一样？
 
 如果是的话，这些宏的文档在哪里可以看到，类似的这些编译器处理的宏有哪些，他们的文档在哪里，谢谢。
@@ -962,7 +962,7 @@ pub const fn forget&lt;T&gt;(t: T) {
 
 
 
-</div>2021-09-26</li><br/><li><span>james</span> 👍（0） 💬（1）<div>向老师请教一个问题：在如下Deref范例中，既然deref的self变量是&amp;Self类型，那self.value的类型应该就是&amp;Self.Target，但汉服返回时为何还要在self.value前加&amp;呢？
+</p>2021-09-26</li><br/><li><span>james</span> 👍（0） 💬（1）<p>向老师请教一个问题：在如下Deref范例中，既然deref的self变量是&amp;Self类型，那self.value的类型应该就是&amp;Self.Target，但汉服返回时为何还要在self.value前加&amp;呢？
 
 use std::ops::Deref;
 
@@ -977,7 +977,7 @@ impl&lt;T&gt; Deref for DerefExample&lt;T&gt; {
     }
 }
 
-</div>2021-12-10</li><br/><li><span>作死的卡基</span> 👍（0） 💬（1）<div>想请教一下老师，比如要自己实现 Drop trait，有没有类似 Java 中子类覆写父类方法的机制，甚至覆写时还能用super.xxx()还能调用父类的被覆写方法。还是只能自己新建一个 trait？</div>2021-11-24</li><br/><li><span>阿成</span> 👍（0） 💬（1）<div>impl&lt;T&gt; Index&lt;isize&gt; for List&lt;T&gt; {
+</p>2021-12-10</li><br/><li><span>作死的卡基</span> 👍（0） 💬（1）<p>想请教一下老师，比如要自己实现 Drop trait，有没有类似 Java 中子类覆写父类方法的机制，甚至覆写时还能用super.xxx()还能调用父类的被覆写方法。还是只能自己新建一个 trait？</p>2021-11-24</li><br/><li><span>阿成</span> 👍（0） 💬（1）<p>impl&lt;T&gt; Index&lt;isize&gt; for List&lt;T&gt; {
     type Output = T;
 
     fn index(&amp;self, index: isize) -&gt; &amp;Self::Output {
@@ -989,5 +989,5 @@ impl&lt;T&gt; Deref for DerefExample&lt;T&gt; {
         self.iter().nth(index as usize).unwrap()
     }
 }
-</div>2021-11-24</li><br/><li><span>核桃</span> 👍（0） 💬（3）<div>clone_from 这里说提高效率的，没看出来区别到底在哪里，源码里面也是直接 clone的？解释也没看懂，多谢了。</div>2021-11-21</li><br/><li><span>三叶虫tlb</span> 👍（0） 💬（2）<div>&amp;self.0，0是指下标第一个属性的意思吗？</div>2021-11-17</li><br/>
+</p>2021-11-24</li><br/><li><span>核桃</span> 👍（0） 💬（3）<p>clone_from 这里说提高效率的，没看出来区别到底在哪里，源码里面也是直接 clone的？解释也没看懂，多谢了。</p>2021-11-21</li><br/><li><span>三叶虫tlb</span> 👍（0） 💬（2）<p>&amp;self.0，0是指下标第一个属性的意思吗？</p>2021-11-17</li><br/>
 </ul>

@@ -264,13 +264,13 @@ shift信号是根据aluOp判断是算术右移还是逻辑右移，如果是算�
 
 欢迎你在留言区跟我交流讨论，积极参与思考有助于你深化理解。如果觉得这节课还不错，别忘了分享给身边的朋友，邀他跟你一起手写CPU！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Abcd</span> 👍（3） 💬（1）<div>左移运算复用右移运算的电路，也体现了RISC－V精简的哲学：能够用基本的组合出来，就不创造新的电路</div>2022-08-21</li><br/><li><span>peter</span> 👍（1） 💬（2）<div>请教老师几个问题：
+<li><span>Abcd</span> 👍（3） 💬（1）<p>左移运算复用右移运算的电路，也体现了RISC－V精简的哲学：能够用基本的组合出来，就不创造新的电路</p>2022-08-21</li><br/><li><span>peter</span> 👍（1） 💬（2）<p>请教老师几个问题：
 Q1：[31:0]，什么意思？
 input  [31:0] regWData,   是说regWData占31位，每一位是0吗？
 Q2：reg [31:0] regs[31:0];： 这条语句什么意思？
 Q3：regs[ii] &lt;= 32&#39;b0;   是把32&#39;b0写到regs[ii]吗？
-32&#39;b0;，是说有32位，每一位是0吗？</div>2022-08-12</li><br/><li><span>吴建平</span> 👍（1） 💬（3）<div>“如果它们的最高位不相等，则根据 ALU 运算控制码 aluOp 的最低位判断。如果 aluOp 最低位为“1”，表示是无符号数比较，直接取操作数 2 的最高位作为比较结果。如果 aluOp 最低位为“0”，表示是有符号数比较，直接取操作数 1 的最高位作为比较结果。”
-这句话什么意思，比如，为什么无符号数比较，直接取操作数2的最高位为比较结果，这个最高位和大小没关系吧</div>2022-08-23</li><br/><li><span>😇</span> 👍（0） 💬（1）<div>always @(posedge clk or posedge reset) begin if(reset) begin for(ii=0; ii&lt;32; ii=ii+1) regs[ii] &lt;= 32&#39;b0; end else if(wen &amp; (|regWAddr)) regs[regWAddr] &lt;= regWData; end
-请问这里为什么|regWAddr，没太看懂</div>2022-08-27</li><br/><li><span>+1</span> 👍（0） 💬（1）<div>还是没懂$signed() 函数将符号位扩位后的作用是什么</div>2022-08-20</li><br/><li><span>小博(微信/手机号1849登录)</span> 👍（0） 💬（1）<div>itype我咋没找到在哪里</div>2022-08-18</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（2）<div>在 ALU 模块代码中，为什么要把左移操作转换为右移进行处理？
-这和cpu小端模式有关？</div>2022-08-12</li><br/>
+32&#39;b0;，是说有32位，每一位是0吗？</p>2022-08-12</li><br/><li><span>吴建平</span> 👍（1） 💬（3）<p>“如果它们的最高位不相等，则根据 ALU 运算控制码 aluOp 的最低位判断。如果 aluOp 最低位为“1”，表示是无符号数比较，直接取操作数 2 的最高位作为比较结果。如果 aluOp 最低位为“0”，表示是有符号数比较，直接取操作数 1 的最高位作为比较结果。”
+这句话什么意思，比如，为什么无符号数比较，直接取操作数2的最高位为比较结果，这个最高位和大小没关系吧</p>2022-08-23</li><br/><li><span>😇</span> 👍（0） 💬（1）<p>always @(posedge clk or posedge reset) begin if(reset) begin for(ii=0; ii&lt;32; ii=ii+1) regs[ii] &lt;= 32&#39;b0; end else if(wen &amp; (|regWAddr)) regs[regWAddr] &lt;= regWData; end
+请问这里为什么|regWAddr，没太看懂</p>2022-08-27</li><br/><li><span>+1</span> 👍（0） 💬（1）<p>还是没懂$signed() 函数将符号位扩位后的作用是什么</p>2022-08-20</li><br/><li><span>小博(微信/手机号1849登录)</span> 👍（0） 💬（1）<p>itype我咋没找到在哪里</p>2022-08-18</li><br/><li><span>苏流郁宓</span> 👍（0） 💬（2）<p>在 ALU 模块代码中，为什么要把左移操作转换为右移进行处理？
+这和cpu小端模式有关？</p>2022-08-12</li><br/>
 </ul>

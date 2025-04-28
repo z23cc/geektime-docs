@@ -657,5 +657,5 @@ ListKlass::ListKlass() {
 
 字符串的 contains 方法需要在字符串中进行子串查找操作。你知道有哪些高效的子串查找算法吗？欢迎你把你知道的方法分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>枫树_6177003</span> 👍（1） 💬（2）<div>KMP算法</div>2024-06-03</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-10-28</li><br/>
+<li><span>枫树_6177003</span> 👍（1） 💬（2）<p>KMP算法</p>2024-06-03</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-10-28</li><br/>
 </ul>

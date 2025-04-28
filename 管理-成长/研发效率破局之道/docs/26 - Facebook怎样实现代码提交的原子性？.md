@@ -1150,7 +1150,7 @@ Applying: Add spec for all endpoints
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎你把这篇文章分享给更多的朋友一起阅读。我们下期再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Johnson</span> 👍（5） 💬（4）<div>第一种太烧脑了，对开发人员的git技能要求太高了，大部分的开发人员都不能正确驾驭，感觉工作中更多的是以第二种为主，然后在某个branch内部结合第一种的情况比较容易驾驭。很头疼的问题是很多老同事没有深入学习git的主动性和激情，稍微复杂点儿的操作就让别人帮忙操作。</div>2019-10-23</li><br/><li><span>于小咸</span> 👍（3） 💬（1）<div>葛老师，请问提交代码的原子性，除了提高git技巧外，在工程上有什么需要注意的点吗？比如软件架构，设计模式。这方面应该随着语言和项目的不同会有较大的差异，有没有什么通用的原则？</div>2019-11-03</li><br/><li><span>Weining Cao</span> 👍（2） 💬（1）<div>从来不用rebase, 一直用merge，看来要好好学习下rebase了</div>2019-10-23</li><br/><li><span>我来也</span> 👍（2） 💬（2）<div>学习了，这两种方式我都会，也经常用。
+<li><span>Johnson</span> 👍（5） 💬（4）<p>第一种太烧脑了，对开发人员的git技能要求太高了，大部分的开发人员都不能正确驾驭，感觉工作中更多的是以第二种为主，然后在某个branch内部结合第一种的情况比较容易驾驭。很头疼的问题是很多老同事没有深入学习git的主动性和激情，稍微复杂点儿的操作就让别人帮忙操作。</p>2019-10-23</li><br/><li><span>于小咸</span> 👍（3） 💬（1）<p>葛老师，请问提交代码的原子性，除了提高git技巧外，在工程上有什么需要注意的点吗？比如软件架构，设计模式。这方面应该随着语言和项目的不同会有较大的差异，有没有什么通用的原则？</p>2019-11-03</li><br/><li><span>Weining Cao</span> 👍（2） 💬（1）<p>从来不用rebase, 一直用merge，看来要好好学习下rebase了</p>2019-10-23</li><br/><li><span>我来也</span> 👍（2） 💬（2）<p>学习了，这两种方式我都会，也经常用。
 我比较喜欢线性的提交历史，不喜欢merge。
 
 但有个比较纠结的是。
@@ -1169,5 +1169,5 @@ Applying: Add spec for all endpoints
 2。git reset —hard HEAD^
 3。修改并git commit —amend —no-edit
 4。git cherry-pick 后面的commit 😄
-或者git checkout temp ；git rebase xxx 刚才修改后的commit （不知道可不可行）</div>2019-10-23</li><br/><li><span>LearnAndTry</span> 👍（0） 💬（0）<div>单分支那个是给人用的吗？？？</div>2024-11-30</li><br/><li><span>浇了汁鸡</span> 👍（0） 💬（0）<div>还有一种合并方式叫做&#39;半线性历史记录&#39;，(https:&#47;&#47;stackoverflow.com&#47;questions&#47;59714347&#47;semi-linear-merge)，先把特性分支基于master做rebase，再merge --no-ff，既可以看到每次合并引入点，又能近似拥有线性历史的定位问题的便捷性</div>2021-11-29</li><br/><li><span>巫山老妖</span> 👍（0） 💬（0）<div>第一种虽然能够不切换分支完成原子性提交，但感觉复杂性也变高了，要求所有人都能掌握还是比较困难，目前我们团队还是以第二种为主，不过有些同学还是习惯用merge来合并分支</div>2021-04-18</li><br/>
+或者git checkout temp ；git rebase xxx 刚才修改后的commit （不知道可不可行）</p>2019-10-23</li><br/><li><span>LearnAndTry</span> 👍（0） 💬（0）<p>单分支那个是给人用的吗？？？</p>2024-11-30</li><br/><li><span>浇了汁鸡</span> 👍（0） 💬（0）<p>还有一种合并方式叫做&#39;半线性历史记录&#39;，(https:&#47;&#47;stackoverflow.com&#47;questions&#47;59714347&#47;semi-linear-merge)，先把特性分支基于master做rebase，再merge --no-ff，既可以看到每次合并引入点，又能近似拥有线性历史的定位问题的便捷性</p>2021-11-29</li><br/><li><span>巫山老妖</span> 👍（0） 💬（0）<p>第一种虽然能够不切换分支完成原子性提交，但感觉复杂性也变高了，要求所有人都能掌握还是比较困难，目前我们团队还是以第二种为主，不过有些同学还是习惯用merge来合并分支</p>2021-04-18</li><br/>
 </ul>

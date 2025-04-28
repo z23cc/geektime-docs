@@ -292,15 +292,15 @@ public:
 
 \[8] 吴咏炜, “Design and implementation of a static memory pool”. [http://wyw.dcweb.cn/static\_mem\_pool.htm](http://wyw.dcweb.cn/static_mem_pool.htm)
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>罗 乾 林</span> 👍（11） 💬（5）<div>前一个相同，后一个不同（除开POD）。数组会在头部存放对象的大小，这样才能依次找到数组中的每个对象地址，调用析构函数</div>2022-02-24</li><br/><li><span>tang_ming_wu</span> 👍（1） 💬（1）<div>new Obj返回的是调用构造函数初始化完成的对象指针；
+<li><span>罗 乾 林</span> 👍（11） 💬（5）<p>前一个相同，后一个不同（除开POD）。数组会在头部存放对象的大小，这样才能依次找到数组中的每个对象地址，调用析构函数</p>2022-02-24</li><br/><li><span>tang_ming_wu</span> 👍（1） 💬（1）<p>new Obj返回的是调用构造函数初始化完成的对象指针；
 operator new 返回的只是一块足够容纳这个对象大小的空白的内存空间。
-不知道我的理解准不准确。</div>2022-02-24</li><br/><li><span>记事本</span> 👍（0） 💬（1）<div>看不懂 怎么整？</div>2022-10-18</li><br/><li><span>禾桃</span> 👍（0） 💬（1）<div>麻烦问下，
+不知道我的理解准不准确。</p>2022-02-24</li><br/><li><span>记事本</span> 👍（0） 💬（1）<p>看不懂 怎么整？</p>2022-10-18</li><br/><li><span>禾桃</span> 👍（0） 💬（1）<p>麻烦问下，
 
 new Obj 对应的表达式是 auto ptr = new Obj;
-operator new对应的表达式是？</div>2022-04-22</li><br/><li><span>高伸</span> 👍（0） 💬（1）<div>吴老师有个问题想请教下，在查阅gcc4.9中stl源码时，发现allocator申请内存时直接调用::operator new，为什么没有如以前一样采用二级缓存pool_allocator的方式呢</div>2022-03-29</li><br/><li><span>怪兽</span> 👍（0） 💬（1）<div>在&quot;不分配内存的布置分配和释放函数&quot;小节里，老师有提到&quot;另外注意，跟大部分其他分配函数和释放函数不同，这个函数是不能被用户提供的版本替换的&quot;。这里说的&quot;这个函数&quot;是指这两个函数吗？
+operator new对应的表达式是？</p>2022-04-22</li><br/><li><span>高伸</span> 👍（0） 💬（1）<p>吴老师有个问题想请教下，在查阅gcc4.9中stl源码时，发现allocator申请内存时直接调用::operator new，为什么没有如以前一样采用二级缓存pool_allocator的方式呢</p>2022-03-29</li><br/><li><span>怪兽</span> 👍（0） 💬（1）<p>在&quot;不分配内存的布置分配和释放函数&quot;小节里，老师有提到&quot;另外注意，跟大部分其他分配函数和释放函数不同，这个函数是不能被用户提供的版本替换的&quot;。这里说的&quot;这个函数&quot;是指这两个函数吗？
 inline void* operator new(size_t, void* ptr) noexcept
 { return ptr; }
 
 inline void operator delete(void*, void*) noexcept
-{}</div>2022-02-24</li><br/><li><span>农民园丁</span> 👍（0） 💬（1）<div>居然还有31，太值了！</div>2022-02-24</li><br/>
+{}</p>2022-02-24</li><br/><li><span>农民园丁</span> 👍（0） 💬（1）<p>居然还有31，太值了！</p>2022-02-24</li><br/>
 </ul>

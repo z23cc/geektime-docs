@@ -584,13 +584,13 @@ public class JstlView implements View{
 
 学完这节课，我也给你留一道思考题。现在我们返回的数据只支持Date、Number和String三种类型，如何扩展到更多的数据类型？现在也只支持JSP，如何扩展到别的前端？欢迎你在留言区和我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>Geek3485</span> 👍（1） 💬（1）<div>老师的minitomcat源码在哪可以看到</div>2023-08-04</li><br/><li><span>马儿</span> 👍（0） 💬（2）<div>1.目前如果加了ResponseBody注解返回String的话返回的是String在内存中的信息，而需要的字符串值字段在这个json中也是内存中的地址值，这将导致结果不符合预期，这里应该还需要对writeValuesAsString这个函数优化一下，或者是拓展一些其他的实现。
+<li><span>Geek3485</span> 👍（1） 💬（1）<p>老师的minitomcat源码在哪可以看到</p>2023-08-04</li><br/><li><span>马儿</span> 👍（0） 💬（2）<p>1.目前如果加了ResponseBody注解返回String的话返回的是String在内存中的信息，而需要的字符串值字段在这个json中也是内存中的地址值，这将导致结果不符合预期，这里应该还需要对writeValuesAsString这个函数优化一下，或者是拓展一些其他的实现。
 2. 目前在InternalResourceViewResolver中写死了处理Jsp的View，可以在加一个有参构造函数，传入参数为资源类型，InternalResourceViewResolver内部维护一个资源类型和View的Map
 
-希望老师可以抽时间加一些答疑课，对之前一些同学问到的问题在课上统一解答一下。或者是将一些mini-spring中的一些拓展点提供一个思路，比如上节课遇到的传参数不支持基本类型和自定义类型中WebDataBinder不可用的问题。谢谢老师。</div>2023-04-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+希望老师可以抽时间加一些答疑课，对之前一些同学问到的问题在课上统一解答一下。或者是将一些mini-spring中的一些拓展点提供一个思路，比如上节课遇到的传参数不支持基本类型和自定义类型中WebDataBinder不可用的问题。谢谢老师。</p>2023-04-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：本文所讲的内容，就是模仿SpringMVC，对吗？
 Q2：很多信息都存在request中，那这个request对象会占用很大内存吗？对于一个用户，一般地讲，会占用多大内存？比如10M？
-Q3：View这个类，是生成一个页面文件吗？还是把数据填充到已经存在的页面上？</div>2023-04-06</li><br/><li><span>梦某人</span> 👍（2） 💬（0）<div>打卡成功，从理解上这节课并不难，虽然很多代码（主要是User类和一些辅助）需要参考GitHub不然无法进行。但是调整环境浪费了接近2个小时，因为访问jsp一直报404的错误，后来意识到是没在idea的Project Structe 中的 Module设置资源文件夹。。。。另外目前的返回来讲，string包装成了 ModelAndView，但是这样做在reander的时候无法辨别，导致最基础的 &#47;test反而无法访问。思考题来说，View的两个类，一个负责分析内容，一个负责渲染内容，将 ViewResolver 进行扩展就可以解决相关问题了。</div>2023-04-18</li><br/><li><span>Geek_b3425a</span> 👍（1） 💬（0）<div>最新版初始化的handleAdapter的时候并没有给webBindingInitialize赋值，只给了一个set方法但是没有找到调用的地方，这样有请求进来的时候不会就空指针了吗？是我漏看东西了吗</div>2023-09-14</li><br/><li><span>Geek_b3425a</span> 👍（0） 💬（0）<div>
+Q3：View这个类，是生成一个页面文件吗？还是把数据填充到已经存在的页面上？</p>2023-04-06</li><br/><li><span>梦某人</span> 👍（2） 💬（0）<p>打卡成功，从理解上这节课并不难，虽然很多代码（主要是User类和一些辅助）需要参考GitHub不然无法进行。但是调整环境浪费了接近2个小时，因为访问jsp一直报404的错误，后来意识到是没在idea的Project Structe 中的 Module设置资源文件夹。。。。另外目前的返回来讲，string包装成了 ModelAndView，但是这样做在reander的时候无法辨别，导致最基础的 &#47;test反而无法访问。思考题来说，View的两个类，一个负责分析内容，一个负责渲染内容，将 ViewResolver 进行扩展就可以解决相关问题了。</p>2023-04-18</li><br/><li><span>Geek_b3425a</span> 👍（1） 💬（0）<p>最新版初始化的handleAdapter的时候并没有给webBindingInitialize赋值，只给了一个set方法但是没有找到调用的地方，这样有请求进来的时候不会就空指针了吗？是我漏看东西了吗</p>2023-09-14</li><br/><li><span>Geek_b3425a</span> 👍（0） 💬（0）<p>
 
-有点不懂，老师仓库代码，handleMaping和handleAdapter都实现了applicationContextAware接口，类中applicationContext属性是abstractApplicationContext在getBean的时候给set进去的，不懂得是在容器启动的时候并没有这个bean相应的实体对象，并不会调用这个方法，我本地handleMapping中容器属性也是空，并没有掉set方法给他赋值</div>2023-09-14</li><br/><li><span>C.</span> 👍（0） 💬（1）<div>结束结束！</div>2023-04-06</li><br/>
+有点不懂，老师仓库代码，handleMaping和handleAdapter都实现了applicationContextAware接口，类中applicationContext属性是abstractApplicationContext在getBean的时候给set进去的，不懂得是在容器启动的时候并没有这个bean相应的实体对象，并不会调用这个方法，我本地handleMapping中容器属性也是空，并没有掉set方法给他赋值</p>2023-09-14</li><br/><li><span>C.</span> 👍（0） 💬（1）<p>结束结束！</p>2023-04-06</li><br/>
 </ul>

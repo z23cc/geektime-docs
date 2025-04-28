@@ -369,16 +369,16 @@ static configuration是指集群中各个成员节点信息是已知的，dynami
 
 感谢你的阅读，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>唐聪</span> 👍（20） 💬（2）<div>最近我们开源了一个etcd一站式治理平台kstone.
+<li><span>唐聪</span> 👍（20） 💬（2）<p>最近我们开源了一个etcd一站式治理平台kstone.
 Kstone 是一个针对 etcd 的全方位运维解决方案，提供集群管理（关联已有集群、创建新集群等)、监控、备份、巡检、数据迁移、数据可视化、智能诊断等一系列特性。
 Kstone 将帮助你高效管理etcd集群，显著降低运维成本、及时发现潜在隐患、提升k8s etcd存储的稳定性和用户体验。
-https:&#47;&#47;github.com&#47;tkestack&#47;kstone, 欢迎大家star、fork，并加入我们，推动kstone越来越好。</div>2021-12-29</li><br/><li><span>ly</span> 👍（11） 💬（3）<div>唐老师，在实际的使用中，有一些问题需要咨询您下，还望指点下，多谢老师
+https:&#47;&#47;github.com&#47;tkestack&#47;kstone, 欢迎大家star、fork，并加入我们，推动kstone越来越好。</p>2021-12-29</li><br/><li><span>ly</span> 👍（11） 💬（3）<p>唐老师，在实际的使用中，有一些问题需要咨询您下，还望指点下，多谢老师
 1、 etcd auto compact 有推荐的值吗？
 2、 etcd backup 是否需要在每个节点上执行？learner 节点 db 文件时候可以当做备份文件来使用？ learner 节点后面可以支持 snapshot吗？ 
 3、 etcd 是否需要单独部署，与其他组件分开来？
-4、 etcd 巡检有没有开源项目推荐？</div>2021-04-06</li><br/><li><span>jeffery</span> 👍（5） 💬（1）<div>kubeadm部署.k8s版本升级遇到过数据不一致的情况.还好有backup😀大赞 巡检和混搭工程！level有提高了</div>2021-03-18</li><br/><li><span>Geek_edd932</span> 👍（2） 💬（2）<div>唐老师，我们生产上有3园区，分别是ABC园区，其中AB园区同城。AB园区到C园区有20-30ms的网络延迟。之前集群部署了7个节点，在A部署2节点，在B部署3节点，在C部署2节点。由于网络故障等原因Leader转移到少数派C园区，导致请求延迟将近100ms，从而影响业务。
+4、 etcd 巡检有没有开源项目推荐？</p>2021-04-06</li><br/><li><span>jeffery</span> 👍（5） 💬（1）<p>kubeadm部署.k8s版本升级遇到过数据不一致的情况.还好有backup😀大赞 巡检和混搭工程！level有提高了</p>2021-03-18</li><br/><li><span>Geek_edd932</span> 👍（2） 💬（2）<p>唐老师，我们生产上有3园区，分别是ABC园区，其中AB园区同城。AB园区到C园区有20-30ms的网络延迟。之前集群部署了7个节点，在A部署2节点，在B部署3节点，在C部署2节点。由于网络故障等原因Leader转移到少数派C园区，导致请求延迟将近100ms，从而影响业务。
 目前想在AB园区部署节点数量为5的主ETCD集群，其中A园区2个节点，B园区3个节点。在C园区部署节点数量为3的备ETCD集群。通过Maker-mirror工具实现主备ETCD集群数据同步。应用从主ETCD集群存取数据，当主ETCD集群不肯用时，切到备ETCD集群存取数据。由此实现三园区高可用低延迟。
-老师，帮忙看看此方案可行性。是否有更好的方案？</div>2021-10-13</li><br/><li><span>不想说</span> 👍（1） 💬（1）<div>kubeadm部署堆叠的，每个node有etcd和master的组件的方式可以吗？机器数不是很多</div>2021-07-14</li><br/><li><span>Geek_edd932</span> 👍（0） 💬（1）<div>唐老师，我看了您上次发给我的斗鱼文章，里面提到了腾讯云etcd集群同步工具etcd-syncer，这个工具是开源的吗？</div>2021-10-27</li><br/><li><span>lidabai</span> 👍（0） 💬（1）<div>用kubeadm的方式部署etcd，是先部署kubernetes集群还是先部署etcd？</div>2021-08-10</li><br/><li><span>Geek_daf51a</span> 👍（0） 💬（3）<div>老师我们目前是通过bitnami提供etcd helm来部署的，与推荐等业务使用</div>2021-03-18</li><br/><li><span>柠檬🍋</span> 👍（1） 💬（0）<div>唐老师，请教个问题，etcd必须部署在ssd上面吗？etcd对磁盘最低的性能要求（支持k8s集群能够健康稳定运行）是多少呢？</div>2022-01-05</li><br/><li><span>王山石</span> 👍（0） 💬（0）<div>唐老师，您好。我看腾讯云开发了异地容灾工具etcd-syncer，不知道这个开源了没有？</div>2023-03-10</li><br/><li><span>sunnoy</span> 👍（0） 💬（0）<div>其实部署最好的etcd集群工具是k3s </div>2023-02-01</li><br/><li><span>hifine</span> 👍（0） 💬（1）<div>老师，有空麻烦回一下，我网上找了好久关于 learner 的说明，包括官网，都没有相关操作的资料。
+老师，帮忙看看此方案可行性。是否有更好的方案？</p>2021-10-13</li><br/><li><span>不想说</span> 👍（1） 💬（1）<p>kubeadm部署堆叠的，每个node有etcd和master的组件的方式可以吗？机器数不是很多</p>2021-07-14</li><br/><li><span>Geek_edd932</span> 👍（0） 💬（1）<p>唐老师，我看了您上次发给我的斗鱼文章，里面提到了腾讯云etcd集群同步工具etcd-syncer，这个工具是开源的吗？</p>2021-10-27</li><br/><li><span>lidabai</span> 👍（0） 💬（1）<p>用kubeadm的方式部署etcd，是先部署kubernetes集群还是先部署etcd？</p>2021-08-10</li><br/><li><span>Geek_daf51a</span> 👍（0） 💬（3）<p>老师我们目前是通过bitnami提供etcd helm来部署的，与推荐等业务使用</p>2021-03-18</li><br/><li><span>柠檬🍋</span> 👍（1） 💬（0）<p>唐老师，请教个问题，etcd必须部署在ssd上面吗？etcd对磁盘最低的性能要求（支持k8s集群能够健康稳定运行）是多少呢？</p>2022-01-05</li><br/><li><span>王山石</span> 👍（0） 💬（0）<p>唐老师，您好。我看腾讯云开发了异地容灾工具etcd-syncer，不知道这个开源了没有？</p>2023-03-10</li><br/><li><span>sunnoy</span> 👍（0） 💬（0）<p>其实部署最好的etcd集群工具是k3s </p>2023-02-01</li><br/><li><span>hifine</span> 👍（0） 💬（1）<p>老师，有空麻烦回一下，我网上找了好久关于 learner 的说明，包括官网，都没有相关操作的资料。
 问题是这样：
 我们有 A和B两个区，A 部署3个节点的集群，B区使用一个 learner 做灾备，请问如果A区全部故障了，我这个 learner 该怎么操作？
 
@@ -386,5 +386,5 @@ https:&#47;&#47;github.com&#47;tkestack&#47;kstone, 欢迎大家star、fork，�
 
 ETCDCTL_API=3 .&#47;etcdctl --endpoints=172.168.111.129:62379 member promote ebcec9c01f280618       
 {&quot;level&quot;:&quot;warn&quot;,&quot;ts&quot;:&quot;2022-08-25T14:31:06.673+0800&quot;,&quot;caller&quot;:&quot;clientv3&#47;retry_interceptor.go:62&quot;,&quot;msg&quot;:&quot;retrying of unary invoker failed&quot;,&quot;target&quot;:&quot;endpoint:&#47;&#47;client-3c29945a-de04-4bec-9ad3-48c50f3fd135&#47;172.168.111.129:62379&quot;,&quot;attempt&quot;:0,&quot;error&quot;:&quot;rpc error: code = Unavailable desc = etcdserver: rpc not supported for learner&quot;}
-Error: etcdserver: rpc not supported for learner</div>2022-08-25</li><br/><li><span>hifine</span> 👍（0） 💬（0）<div>老师好，请问A和B跨区，B区部署learner, A区故障时，learner该如何操作，网上资料太少了，搜边了都没找到，我操作learner一直提示 rpc not supported for learner</div>2022-08-25</li><br/><li><span>Magic Star Trace</span> 👍（0） 💬（0）<div>我们线上 etcd  是用虚拟机部署的，没有在k8s集群内 能否将error级别的日志 重定向到其他目录呢？</div>2021-03-29</li><br/>
+Error: etcdserver: rpc not supported for learner</p>2022-08-25</li><br/><li><span>hifine</span> 👍（0） 💬（0）<p>老师好，请问A和B跨区，B区部署learner, A区故障时，learner该如何操作，网上资料太少了，搜边了都没找到，我操作learner一直提示 rpc not supported for learner</p>2022-08-25</li><br/><li><span>Magic Star Trace</span> 👍（0） 💬（0）<p>我们线上 etcd  是用虚拟机部署的，没有在k8s集群内 能否将error级别的日志 重定向到其他目录呢？</p>2021-03-29</li><br/>
 </ul>

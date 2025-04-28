@@ -338,5 +338,5 @@ void StackElementKlass::print(HiObject* x) {
 
 在现有的条件下，如果让你自己实现自定义类的迭代器，你会如何实现呢？欢迎你把思考结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-11-12</li><br/>
+<li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-11-12</li><br/>
 </ul>

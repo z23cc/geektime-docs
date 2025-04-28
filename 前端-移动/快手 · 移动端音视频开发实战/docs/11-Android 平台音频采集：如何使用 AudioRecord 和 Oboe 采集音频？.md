@@ -222,7 +222,7 @@ $$44100\\times16\\times2\\times60\\div8\\div1024=10.09MB$$
 
 在一些K歌的App，比如回森中有一个功能是实时耳返功能，它可以让带有线耳机的用户在演唱歌曲的同时，在耳机中听到自己的声音，要想实现这个功能肯定需要将采集到的音频立马播放出来。而这里面的难点就是低延迟，因为如果延迟高了用户跟着伴奏演唱是非常糟糕的体验。那如果让你来实现这个功能，应该怎么实现呢？欢迎在评论区分享你的思考，也欢迎你把这节课分享给更多对音视频感兴趣的朋友，我们一起交流、共同进步。下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：SDK层的MediaRecorder是对AudioRecord的封装吗？
 Q2：NDK层的AAudio是基于OpenSL ES吗？（或者说，AAudio是对OpenSL ES的封装吗）
 Q3：SDK层的方法，都是基于NDK层的方法吗？ 比如SDK层的MediaRecorder是基于NDK层的AAudio或OpenSL ES。
@@ -239,5 +239,5 @@ Q9：PCM转WAV的命令中，哪一项是表示WAV？
 ffmpeg -f s16le -sample_rate 44100 -channels 1 -i vocal.pcm -acodec pcm_s16le vocal.wav，哪一项是表示wav？pcm_s16se吗？
 Q10：用两种采集方法，是播放器项目会同时采用这两种吗？
 选取了 SDK 层的 AudioRecord 和 Native 层的 Oboe 采集音频的方法，只是为了分别说明这两种方法吗？
-还是说播放器项目会同时采用这两种方法来采集音频？（同时用两种，好像没有道理）</div>2022-08-17</li><br/><li><span>一日</span> 👍（0） 💬（0）<div>手机熄屏后还可以录制吗？</div>2024-05-11</li><br/><li><span>Loy</span> 👍（0） 💬（0）<div>老师，你好。低延时耳返需要底层特殊定制吗？</div>2023-04-06</li><br/>
+还是说播放器项目会同时采用这两种方法来采集音频？（同时用两种，好像没有道理）</p>2022-08-17</li><br/><li><span>一日</span> 👍（0） 💬（0）<p>手机熄屏后还可以录制吗？</p>2024-05-11</li><br/><li><span>Loy</span> 👍（0） 💬（0）<p>老师，你好。低延时耳返需要底层特殊定制吗？</p>2023-04-06</li><br/>
 </ul>

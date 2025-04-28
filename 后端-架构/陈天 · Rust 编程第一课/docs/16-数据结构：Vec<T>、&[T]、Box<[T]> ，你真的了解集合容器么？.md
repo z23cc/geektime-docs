@@ -354,7 +354,7 @@ where
 
 所以 Rust 在对函数式编程，尤其是 Iterator 上的优化，还是非常不错的。这里面除了 inline 外，Rust 闭包的优异性能也提供了很多支持（未来我们会讲为什么）。在使用时，你完全不用担心性能。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>pedro</span> 👍（24） 💬（1）<div>问老师一个工程性上的问题，也困扰了我好久，之前我在用rust开发项目的时候，数据解析性项目，会存在一个字段被多个类，或者函数使用，由于所有权的问题，导致代码中出现了大量的clone函数，后面在做性能分析的时候，发现20%的时间竟然浪费在clone上，求问老师，如何减少clone的调用次数？</div>2021-09-29</li><br/><li><span>lisiur</span> 👍（12） 💬（4）<div>1. 不可以，但稍微改造下也是可以的
+<li><span>pedro</span> 👍（24） 💬（1）<p>问老师一个工程性上的问题，也困扰了我好久，之前我在用rust开发项目的时候，数据解析性项目，会存在一个字段被多个类，或者函数使用，由于所有权的问题，导致代码中出现了大量的clone函数，后面在做性能分析的时候，发现20%的时间竟然浪费在clone上，求问老师，如何减少clone的调用次数？</p>2021-09-29</li><br/><li><span>lisiur</span> 👍（12） 💬（4）<p>1. 不可以，但稍微改造下也是可以的
 
 str 实现了 AsRef&lt;[u8]&gt;，AsRef&lt;OsStr&gt;，AsRef&lt;Path&gt;，AsRef&lt;str&gt;
 
@@ -437,7 +437,7 @@ trait IteratorExt: Iterator {
 }
 
 impl&lt;T: Iterator&gt; IteratorExt for T {}
-```</div>2021-09-30</li><br/><li><span>阿海</span> 👍（5） 💬（3）<div>老师问个问题，为什么rust解引用是用&amp;T 来表示，而不是用*T</div>2021-09-29</li><br/><li><span>阿成</span> 👍（4） 💬（1）<div>怎么留言越来越少了……
+```</p>2021-09-30</li><br/><li><span>阿海</span> 👍（5） 💬（3）<p>老师问个问题，为什么rust解引用是用&amp;T 来表示，而不是用*T</p>2021-09-29</li><br/><li><span>阿成</span> 👍（4） 💬（1）<p>怎么留言越来越少了……
 不要放弃啊，我也有被卡好几天的时候，但慢慢地就走出来了。
 1. 编译器推断不出 U 的类型，因为 T 实现了多个 AsRef trait。可以使用 turbofish 手动指定 U，同时也要注意到对于 str 和 [u8] 来说，U 需要是 ?Sized。
 2. 一开始我以为 WindowCount 结构体 next 方法返回的是一个新的 Iterator，这个新的 Iterator 里是 count 个 Item。后来我发现这不可能实现啊……我为什么一开始是这么想的呢，是受 slice 的 chunks 方法影响，chunks 方法这不是正好符合题目要求么，但 slice 是有长度信息的，而 Iterator 只能一直 next。后来我偷瞄了老师的实现，发现原来是想用 Vec 来承载每一组数据…… 具体实现代码就不贴了，和老师的差不多。
@@ -448,7 +448,7 @@ rxjs 单独使用 windowCount 是这样的效果：假如数据源是点击事�
 但这个 Iterator 是个同步模型，而且还没有数据总量的信息，我根本无法判断这次 next 是应该返回 None 还是 Some。
 
 建议类似题目可以给出多一点的提示……
-</div>2021-12-01</li><br/><li><span>Marvichov</span> 👍（3） 💬（3）<div>还有个问题, 为啥需要 import FromIterator 才能使用 String::from_iter呢? String不都已经impl了吗? https:&#47;&#47;doc.rust-lang.org&#47;src&#47;alloc&#47;string.rs.html#1866-1872</div>2021-09-30</li><br/><li><span>Marvichov</span> 👍（3） 💬（2）<div>1. 有歧义, U可以是str, 也可以是[u8];
+</p>2021-12-01</li><br/><li><span>Marvichov</span> 👍（3） 💬（3）<p>还有个问题, 为啥需要 import FromIterator 才能使用 String::from_iter呢? String不都已经impl了吗? https:&#47;&#47;doc.rust-lang.org&#47;src&#47;alloc&#47;string.rs.html#1866-1872</p>2021-09-30</li><br/><li><span>Marvichov</span> 👍（3） 💬（2）<p>1. 有歧义, U可以是str, 也可以是[u8];
 
 2. 用vec作弊了: eagerly load window_size大小的element; 没有lazy load
 
@@ -513,13 +513,13 @@ trait IteratorExt: Iterator {
 }
 
 impl&lt;T: Iterator&gt; IteratorExt for T {}
-```</div>2021-09-30</li><br/><li><span>给我点阳光就灿烂</span> 👍（1） 💬（1）<div>写了一个缓存库，想问一下老师如何优化hashmap的性能，目前为了算法上的O1，使用了box和raw指针，但是会box和rebox又让性能慢了一些。https:&#47;&#47;github.com&#47;al8n&#47;caches-rs</div>2021-09-29</li><br/><li><span>朱中喜</span> 👍（0） 💬（2）<div> let b1 = v1.into_boxed_slice();
+```</p>2021-09-30</li><br/><li><span>给我点阳光就灿烂</span> 👍（1） 💬（1）<p>写了一个缓存库，想问一下老师如何优化hashmap的性能，目前为了算法上的O1，使用了box和raw指针，但是会box和rebox又让性能慢了一些。https:&#47;&#47;github.com&#47;al8n&#47;caches-rs</p>2021-09-29</li><br/><li><span>朱中喜</span> 👍（0） 💬（2）<p> let b1 = v1.into_boxed_slice();
     let mut b2 = b1.clone();
     let v2 = b1.into_vec();
     println!(&quot;cap should be exactly 5: {}&quot;, v2.capacity());
     assert!(b2.deref() == v2);
 
-b2的类型是Box([T]), 为何对b2做deref就变成Vec了？在标准库里没找到针对Box slice的Deref实现😭</div>2021-10-17</li><br/><li><span>D. D</span> 👍（0） 💬（2）<div>1. 可以为同一个具体类型实现不同的AsRef Trait, 编译器无法从上下文中推断出U的具体类型，所以不能这样写。
+b2的类型是Box([T]), 为何对b2做deref就变成Vec了？在标准库里没找到针对Box slice的Deref实现😭</p>2021-10-17</li><br/><li><span>D. D</span> 👍（0） 💬（2）<p>1. 可以为同一个具体类型实现不同的AsRef Trait, 编译器无法从上下文中推断出U的具体类型，所以不能这样写。
 
 2. 不知道实现的符不符合要求，以及有什么问题。
 pub struct Window&lt;I&gt; {
@@ -592,7 +592,7 @@ fn if_it_works() {
     let mut window = v4.iter().window_count(3, 100);
     assert_eq!(window.next(), None);
 }
-</div>2021-09-29</li><br/><li><span>罗杰</span> 👍（0） 💬（4）<div>漂亮，老师叕解答了我的好多疑惑。现在唯一有点要适应的就是函数数式编程。C++ 和 Go 写多了，一上来就是 for 循环，要适应 Rust 的想法也是个不小的挑战。</div>2021-09-29</li><br/><li><span>陈溯</span> 👍（0） 💬（0）<div>第二题。 按照陈老师的思路让gpt写了代码。基本是一样的。就是有一行微调了。
+</p>2021-09-29</li><br/><li><span>罗杰</span> 👍（0） 💬（4）<p>漂亮，老师叕解答了我的好多疑惑。现在唯一有点要适应的就是函数数式编程。C++ 和 Go 写多了，一上来就是 for 循环，要适应 Rust 的想法也是个不小的挑战。</p>2021-09-29</li><br/><li><span>陈溯</span> 👍（0） 💬（0）<p>第二题。 按照陈老师的思路让gpt写了代码。基本是一样的。就是有一行微调了。
 
 &#47;&#47; 这句很重要，它让所有实现了 Iterator 的 T 都自动实现 IteratorExt
 impl&lt;T: ?Sized&gt; IteratorExt for T where T: Iterator {}
@@ -601,13 +601,13 @@ impl&lt;T: ?Sized&gt; IteratorExt for T where T: Iterator {}
 
 &#47;&#47; Implement IteratorExt for all types that implement the Iterator trait
 impl&lt;I: Iterator&gt; IteratorExt for I {}
-</div>2024-08-29</li><br/><li><span>哈哈哈哈哈哈哈</span> 👍（0） 💬（0）<div>第二题可以结合slice的chunks, 加上文中的函数式调用：
+</p>2024-08-29</li><br/><li><span>哈哈哈哈哈哈哈</span> 👍（0） 💬（0）<p>第二题可以结合slice的chunks, 加上文中的函数式调用：
 ```rust
     let data = vec![1, 2, 3, 4, 5];
     let ret = data.as_slice().chunks(2).collect::&lt;Vec&lt;_&gt;&gt;();
     println!(&quot;{:?}&quot;, ret);
 ```
-不过这种解法可能脱离这题的初衷了</div>2024-06-28</li><br/><li><span>Geek_a6c6ce</span> 👍（0） 💬（0）<div>咔哒</div>2022-09-05</li><br/><li><span>沈畅</span> 👍（0） 💬（1）<div>官方文档 filter里面用了两个 **
+不过这种解法可能脱离这题的初衷了</p>2024-06-28</li><br/><li><span>Geek_a6c6ce</span> 👍（0） 💬（0）<p>咔哒</p>2022-09-05</li><br/><li><span>沈畅</span> 👍（0） 💬（1）<p>官方文档 filter里面用了两个 **
 let a = [0, 1, 2];
 
 let mut iter = a.iter().filter(|x| **x &gt; 1); &#47;&#47; need two *s!
@@ -621,5 +621,5 @@ let v = vec![1,2,3,4];
                .map(|v| v*v)
                .filter(|v| *v &lt; 16)
                .take(5)
-               .collect::&lt;Vec&lt;_&gt;&gt;();</div>2022-07-25</li><br/>
+               .collect::&lt;Vec&lt;_&gt;&gt;();</p>2022-07-25</li><br/>
 </ul>

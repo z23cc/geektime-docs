@@ -113,7 +113,7 @@ jdbcTemplate.setDatasource(readDataSource);
 
 也就是说，每一次用SqlSession执行SQL语句的时候，都判断一下SQL类型，如果是read，则设置readDatasource，否则设置writeDatasource.
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>风轻扬</span> 👍（2） 💬（1）<div>读写分离的实现，按照老师的思路，实现了一下。
+<li><span>风轻扬</span> 👍（2） 💬（1）<p>读写分离的实现，按照老师的思路，实现了一下。
 1、增加sqlType参数。
 首先改造MapperNode，增加sqlType参数.
 
@@ -167,10 +167,10 @@ public class DefaultSqlSession implements SqlSession{
         return jdbcTemplate.delete(mapperNode.getSql(), args);
     }
     .........
-}</div>2023-05-21</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+}</p>2023-05-21</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：会讲解MiniTomcat吗？
 很期望针对Tomcat也出一个类似的专栏。
 
 Q2：MVC会导致低并发吗？
-MVC用一个单一的 Servlet 拦截所有请求，这个设计会降低系统的并发吗？</div>2023-04-17</li><br/>
+MVC用一个单一的 Servlet 拦截所有请求，这个设计会降低系统的并发吗？</p>2023-04-17</li><br/>
 </ul>

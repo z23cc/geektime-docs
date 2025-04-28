@@ -123,24 +123,24 @@ OOM killer除了会杀掉一些无辜进程外，它选择杀进程的策略也�
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，我们下一讲见。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>springchan</span> 👍（12） 💬（1）<div>老师您好，
-有一个疑问：tmpfs是一种基于内存的虚拟文件系统，存储空间是在虚拟内存里，重启机器后会丢失，但是我用mmap 在tmpfs下面映射文件以后，通过使用stat 查看tmpfs下面的文件，为什么会占用block 块呢？block 块不是硬盘的空间么？</div>2020-09-17</li><br/><li><span>欧阳洲</span> 👍（7） 💬（1）<div>老师好，看完这一讲有两个疑问想请教：
+<li><span>springchan</span> 👍（12） 💬（1）<p>老师您好，
+有一个疑问：tmpfs是一种基于内存的虚拟文件系统，存储空间是在虚拟内存里，重启机器后会丢失，但是我用mmap 在tmpfs下面映射文件以后，通过使用stat 查看tmpfs下面的文件，为什么会占用block 块呢？block 块不是硬盘的空间么？</p>2020-09-17</li><br/><li><span>欧阳洲</span> 👍（7） 💬（1）<p>老师好，看完这一讲有两个疑问想请教：
 （1）tmpfs的特点是快，那么与内存有什么不同呢？
 假设一个app只有白天可访问，晚上不提供服务。
 白天用tmpfs，晚上再来做耗时的部分：写磁盘，清理tmpfs。
 那这样的话，为什么白天不直接存储在内存就好，不必写入tmpfs吧？
-（2）tmpfs与mmap有什么区别和联系吗，除了mmap属于进程，tmpfs不属于进程之外。</div>2020-09-10</li><br/><li><span>KennyQ</span> 👍（6） 💬（1）<div>有几个问题：
+（2）tmpfs与mmap有什么区别和联系吗，除了mmap属于进程，tmpfs不属于进程之外。</p>2020-09-10</li><br/><li><span>KennyQ</span> 👍（6） 💬（1）<p>有几个问题：
 1. 哪些进程会去使用tmpfs? 
 2. 如何使用tmpfs，是在启动进程的时候把代码嵌入进去？还是说有接口可以调用？
 3. tmpfs是怎么被挂载起来的？重启后是否会自动挂载？
 4. tmpfs如果被100个进程调用了，会挂载100次么？
 5. 启动tmpfs后是否会修改&#47;etc&#47;mtab?
 6. tmpfs使用是否有最佳实践？
-7. tmpfs是否可以在线扩缩容？</div>2020-09-06</li><br/><li><span>J.Smile</span> 👍（2） 💬（1）<div>要点总结：
+7. tmpfs是否可以在线扩缩容？</p>2020-09-06</li><br/><li><span>J.Smile</span> 👍（2） 💬（1）<p>要点总结：
 ①tmpfs ,可以通过 df -h来看是不是 tmpfs 占用的内存较多
 ②tmpfs 作为一种特殊的 Shmem，它消耗的内存是不会体现在进程内存中的，这往往会给问题排查带来一些难度。
-③可以通过 &#47;proc&#47;meminfo 找到哪种类型的内存开销比较大，来作为一种辅助手段，比如找到就是tempfs类型的内存，紧接着就可以分析tmpfs的内存占用情况。</div>2020-10-11</li><br/><li><span>飞翔</span> 👍（1） 💬（3）<div>我这里有一个这样的问题，服务器集群每隔一段时间就有机器进入死机状态，可以ping通，但是ssh连不上， 这时候就得联系现场人员去重启机器，很麻烦。怀疑是内存耗尽的原因，但是重启机器后，从message日子又看不到证据，oom是不是不一定会释放内存？ 这种问题应该怎么定位呢？有什么解决方案呢？</div>2020-09-05</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<div>看了下那个patch，为啥原始代码里要把负分给截断阿，是有什么特别的考虑吗</div>2020-09-09</li><br/><li><span>ray</span> 👍（0） 💬（1）<div>老师您好，
+③可以通过 &#47;proc&#47;meminfo 找到哪种类型的内存开销比较大，来作为一种辅助手段，比如找到就是tempfs类型的内存，紧接着就可以分析tmpfs的内存占用情况。</p>2020-10-11</li><br/><li><span>飞翔</span> 👍（1） 💬（3）<p>我这里有一个这样的问题，服务器集群每隔一段时间就有机器进入死机状态，可以ping通，但是ssh连不上， 这时候就得联系现场人员去重启机器，很麻烦。怀疑是内存耗尽的原因，但是重启机器后，从message日子又看不到证据，oom是不是不一定会释放内存？ 这种问题应该怎么定位呢？有什么解决方案呢？</p>2020-09-05</li><br/><li><span>qinsi</span> 👍（0） 💬（1）<p>看了下那个patch，为啥原始代码里要把负分给截断阿，是有什么特别的考虑吗</p>2020-09-09</li><br/><li><span>ray</span> 👍（0） 💬（1）<p>老师您好，
 请问我们该怎么判断一个process会不会使用到tmpfs呢？
 
-谢谢老师的解答^^</div>2020-09-06</li><br/><li><span>jssfy</span> 👍（0） 💬（1）<div>这个patch很赞！请问老师这个mm oom的bug在centos 7下是否也有?</div>2020-09-05</li><br/><li><span>冬风向左吹</span> 👍（9） 💬（0）<div>&#47;PROC&#47;MEMINFO之谜：http:&#47;&#47;linuxperf.com&#47;?p=142</div>2020-09-05</li><br/><li><span>Linuxer</span> 👍（2） 💬（0）<div>赞！意犹未尽，爽！</div>2020-09-05</li><br/><li><span>Sky</span> 👍（0） 💬（0）<div>请问一下，发现tmpfs过大后，是怎么再一步定位到是systemd 占用了tmpfs呢？</div>2024-09-09</li><br/><li><span>nobody</span> 👍（0） 💬（0）<div>tmpfs 内存是不是也会被 swap out?</div>2024-07-24</li><br/><li><span>老酒馆</span> 👍（0） 💬（0）<div>精彩</div>2020-09-06</li><br/>
+谢谢老师的解答^^</p>2020-09-06</li><br/><li><span>jssfy</span> 👍（0） 💬（1）<p>这个patch很赞！请问老师这个mm oom的bug在centos 7下是否也有?</p>2020-09-05</li><br/><li><span>冬风向左吹</span> 👍（9） 💬（0）<p>&#47;PROC&#47;MEMINFO之谜：http:&#47;&#47;linuxperf.com&#47;?p=142</p>2020-09-05</li><br/><li><span>Linuxer</span> 👍（2） 💬（0）<p>赞！意犹未尽，爽！</p>2020-09-05</li><br/><li><span>Sky</span> 👍（0） 💬（0）<p>请问一下，发现tmpfs过大后，是怎么再一步定位到是systemd 占用了tmpfs呢？</p>2024-09-09</li><br/><li><span>nobody</span> 👍（0） 💬（0）<p>tmpfs 内存是不是也会被 swap out?</p>2024-07-24</li><br/><li><span>老酒馆</span> 👍（0） 💬（0）<p>精彩</p>2020-09-06</li><br/>
 </ul>

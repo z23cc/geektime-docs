@@ -509,5 +509,5 @@ pmm-admin add mysql \
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>小猪猪猪蛋</span> 👍（0） 💬（2）<div>老师 怎么用一个exporter采集多台mysql 实例呢，因为现在用的云RDS</div>2024-12-02</li><br/>
+<li><span>小猪猪猪蛋</span> 👍（0） 💬（2）<p>老师 怎么用一个exporter采集多台mysql 实例呢，因为现在用的云RDS</p>2024-12-02</li><br/>
 </ul>

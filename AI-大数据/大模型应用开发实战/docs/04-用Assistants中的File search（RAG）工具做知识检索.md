@@ -370,7 +370,7 @@ OpenAI在其Assistant产品中提供了一个极简版的Retrieval工具，让�
 
 如果今天的内容让你有所收获，也欢迎你把这节课转发给有需要的朋友！我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Mr King</span> 👍（0） 💬（2）<div>具备感知输入、利用内部知识进行分析和推理、最终产生输出的能力</div>2024-05-30</li><br/><li><span>Mr King</span> 👍（0） 💬（1）<div>国内的 质朴轻言 有这个能力么？</div>2024-05-30</li><br/><li><span>qinsi</span> 👍（0） 💬（3）<div>chatgpt刚出来那会看到铺天盖地炒作AI是下一代的搜索引擎时就觉得纳闷，没有时效性，胡言乱语，甚至参考资料都可以编造出来的玩意儿要怎么取代搜索引擎？有了rag以后感觉似乎有希望了，不过那么久了还没看到商业上成功的AI搜索引擎出现又是为什么？</div>2024-05-27</li><br/><li><span>coderlee</span> 👍（0） 💬（0）<div>Q1:
+<li><span>Mr King</span> 👍（0） 💬（2）<p>具备感知输入、利用内部知识进行分析和推理、最终产生输出的能力</p>2024-05-30</li><br/><li><span>Mr King</span> 👍（0） 💬（1）<p>国内的 质朴轻言 有这个能力么？</p>2024-05-30</li><br/><li><span>qinsi</span> 👍（0） 💬（3）<p>chatgpt刚出来那会看到铺天盖地炒作AI是下一代的搜索引擎时就觉得纳闷，没有时效性，胡言乱语，甚至参考资料都可以编造出来的玩意儿要怎么取代搜索引擎？有了rag以后感觉似乎有希望了，不过那么久了还没看到商业上成功的AI搜索引擎出现又是为什么？</p>2024-05-27</li><br/><li><span>coderlee</span> 👍（0） 💬（0）<p>Q1:
 1）常见问题、流程引导、律所介绍等
 2）检索、归纳总结、建议、
 3）历年案例、司法等
@@ -384,8 +384,8 @@ Q3:
 1.直接将非结构化数据存入知识库
 2.借助自定义工具（例如，深度学习训练出来的模型对视音频进行分析后得出的结论）存入知识库
 3.本地模型与大模型相结合
-4.领域多模态大模型的微调训练</div>2024-11-16</li><br/><li><span>Alex</span> 👍（0） 💬（0）<div>main方法中:
+4.领域多模态大模型的微调训练</p>2024-11-16</li><br/><li><span>Alex</span> 👍（0） 💬（0）<p>main方法中:
 # 将新的Vector Store关联到Assistant 
 assistant = update_assistant_vector_store(assistant.id, vector_store.id)
-这里 assistant 会覆盖掉 assistant.id会为None (python 3.11  openai 1.25.0)</div>2024-06-16</li><br/>
+这里 assistant 会覆盖掉 assistant.id会为None (python 3.11  openai 1.25.0)</p>2024-06-16</li><br/>
 </ul>

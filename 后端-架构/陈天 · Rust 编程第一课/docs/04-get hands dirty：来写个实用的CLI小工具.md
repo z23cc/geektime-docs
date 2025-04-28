@@ -556,7 +556,7 @@ mod tests {
 
 注意：本篇文章中依赖用到了 beta 版本的 crate，可能未来会有破坏性更新，如果在本地无法编译，请参考 [GitHub repo](https://github.com/tyrchen/geektime-rust/tree/master/04_httpie) 中的代码。后续文章中，如果出现类似问题，同样参考GitHub上的最新代码。学习愉快～
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>胖胖的奥利奥</span> 👍（9） 💬（2）<div>2023年 1 月 28 日可運行代碼：
+<li><span>胖胖的奥利奥</span> 👍（9） 💬（2）<p>2023年 1 月 28 日可運行代碼：
 
 extern crate clap;
 use anyhow::{anyhow, Ok, Result};
@@ -634,8 +634,8 @@ fn main() {
 
     println!(&quot;{:?}&quot;, opts);
 }
-</div>2023-01-28</li><br/><li><span>Faith信</span> 👍（2） 💬（1）<div>rustc 1.58.1 
-不能编译的参考老师github代码依赖修改</div>2022-07-20</li><br/><li><span>linuxfish</span> 👍（5） 💬（3）<div>遇到一个问题，提醒下刚开始学的同学：
+</p>2023-01-28</li><br/><li><span>Faith信</span> 👍（2） 💬（1）<p>rustc 1.58.1 
+不能编译的参考老师github代码依赖修改</p>2022-07-20</li><br/><li><span>linuxfish</span> 👍（5） 💬（3）<p>遇到一个问题，提醒下刚开始学的同学：
 
 老师使用了 clap 包的 Pre-releases 版本，Pre-releases 版本并不保证 API 的稳定。
 
@@ -645,7 +645,7 @@ cargo 在安装依赖的时候会自动使用【最新】的 Pre-releases 版本
 
 当然，还是建议把课程里的代码也更新下，或者用红字提示下【代码已过期，请参考 Github 上的最新代码】，不然新手会比较懵逼
 
-参考：https:&#47;&#47;doc.rust-lang.org&#47;cargo&#47;reference&#47;resolver.html#pre-releases</div>2021-12-29</li><br/><li><span>Quincy</span> 👍（16） 💬（1）<div>&#47;&#47;&#47; 打印服务器返回的 HTTP body
+参考：https:&#47;&#47;doc.rust-lang.org&#47;cargo&#47;reference&#47;resolver.html#pre-releases</p>2021-12-29</li><br/><li><span>Quincy</span> 👍（16） 💬（1）<p>&#47;&#47;&#47; 打印服务器返回的 HTTP body
 fn print_body(m: Option&lt;Mime&gt;, body: &amp;String) {
     match m {
         &#47;&#47; 对于 &quot;application&#47;json&quot; 我们 pretty print
@@ -669,7 +669,7 @@ fn print_syntect(s: &amp;str) {
         let escaped = as_24_bit_terminal_escaped(&amp;ranges[..], true);
         println!(&quot;{}&quot;, escaped);
     }
-}</div>2021-08-31</li><br/><li><span>王槐铤</span> 👍（9） 💬（2）<div>环境 
+}</p>2021-08-31</li><br/><li><span>王槐铤</span> 👍（9） 💬（2）<p>环境 
 cargo --version
 cargo 1.52.0 (69767412a 2021-04-21)
 
@@ -688,20 +688,20 @@ clap = &quot;=3.0.0-beta.2&quot;
 clap_derive = &quot;=3.0.0-beta.2&quot;
 即可通过 
 
-具体原因 详见 https:&#47;&#47;github.com&#47;dfinity&#47;agent-rs&#47;pull&#47;260</div>2021-08-30</li><br/><li><span>Tyr</span> 👍（21） 💬（10）<div>这堂课的源代码可以在这里找到：https:&#47;&#47;github.com&#47;tyrchen&#47;geektime-rust&#47;tree&#47;master&#47;04_httpie</div>2021-08-30</li><br/><li><span>qinsi</span> 👍（54） 💬（3）<div>习惯了 npm install 的可以试试 cargo-edit:
+具体原因 详见 https:&#47;&#47;github.com&#47;dfinity&#47;agent-rs&#47;pull&#47;260</p>2021-08-30</li><br/><li><span>Tyr</span> 👍（21） 💬（10）<p>这堂课的源代码可以在这里找到：https:&#47;&#47;github.com&#47;tyrchen&#47;geektime-rust&#47;tree&#47;master&#47;04_httpie</p>2021-08-30</li><br/><li><span>qinsi</span> 👍（54） 💬（3）<p>习惯了 npm install 的可以试试 cargo-edit:
 
 $ cargo install cargo-edit
 $ cargo add anyhow colored jsonxf mime
 $ cargo add clap --allow-prerelease
 $ cargo add reqwest --features json
-$ cargo add tokio --features full</div>2021-08-30</li><br/><li><span>Arthur</span> 👍（14） 💬（1）<div>对Rust里的derive, impl, trait等概念，和Java&#47;C++中面向对象编程概念里的封装、继承、方法等概念，有怎样的类比和不同，一直模糊不清，希望老师后面能讲到</div>2021-09-05</li><br/><li><span>Marvichov</span> 👍（12） 💬（2）<div>查了下colorize trait的doc (https:&#47;&#47;docs.rs&#47;colored&#47;2.0.0&#47;colored&#47;trait.Colorize.html), 没看到这个trait impl for String啊, 为啥可以call blue on String type呢?
+$ cargo add tokio --features full</p>2021-08-30</li><br/><li><span>Arthur</span> 👍（14） 💬（1）<p>对Rust里的derive, impl, trait等概念，和Java&#47;C++中面向对象编程概念里的封装、继承、方法等概念，有怎样的类比和不同，一直模糊不清，希望老师后面能讲到</p>2021-09-05</li><br/><li><span>Marvichov</span> 👍（12） 💬（2）<p>查了下colorize trait的doc (https:&#47;&#47;docs.rs&#47;colored&#47;2.0.0&#47;colored&#47;trait.Colorize.html), 没看到这个trait impl for String啊, 为啥可以call blue on String type呢?
 ```
 format!(&quot;{:?} {}&quot;, resp.version(), resp.status()).blue();
 ```
-老师知道这里面发生了什么转换么?</div>2021-09-07</li><br/><li><span>qinsi</span> 👍（12） 💬（1）<div>疑问：查了下reqwest似乎是依赖tokio运行时的，是否意味着用了reqwest就必须用tokio而不能用其他的运行时比如async-std？</div>2021-08-30</li><br/><li><span>逸风</span> 👍（12） 💬（1）<div>喜欢这样的教学方式！</div>2021-08-30</li><br/><li><span>Kerry</span> 👍（9） 💬（3）<div>简洁的背后意味着大量的抽象。
+老师知道这里面发生了什么转换么?</p>2021-09-07</li><br/><li><span>qinsi</span> 👍（12） 💬（1）<p>疑问：查了下reqwest似乎是依赖tokio运行时的，是否意味着用了reqwest就必须用tokio而不能用其他的运行时比如async-std？</p>2021-08-30</li><br/><li><span>逸风</span> 👍（12） 💬（1）<p>喜欢这样的教学方式！</p>2021-08-30</li><br/><li><span>Kerry</span> 👍（9） 💬（3）<p>简洁的背后意味着大量的抽象。
 
 而初学者见到这么简洁的代码，会迷惑：”我复制了啥，怎么这么短就跑出这么多功能来？？？“
 
-假以时日，就不禁感叹Rust语言表达力的强大。</div>2021-08-31</li><br/><li><span>gzgywh</span> 👍（7） 💬（1）<div>Rust里面的宏感觉跟Python里面的装饰器作用差不多嘛？</div>2021-09-12</li><br/><li><span>CR</span> 👍（7） 💬（1）<div>很想知道老师的画图工具都有哪些🤔</div>2021-09-03</li><br/><li><span>chinandy</span> 👍（6） 💬（1）<div>大家参考老师写的代码的时候，如果是网页不能正常的美化显示，有可能是网页是UTF8的原因，print_body函数match分支加一个TEXT_HTML_UTF_8判断，        Some(v) if v == mime::TEXT_HTML_UTF_8 || v == mime::TEXT_HTML =&gt; print_syntect(body, &quot;html&quot;),即可。
-</div>2021-09-18</li><br/>
+假以时日，就不禁感叹Rust语言表达力的强大。</p>2021-08-31</li><br/><li><span>gzgywh</span> 👍（7） 💬（1）<p>Rust里面的宏感觉跟Python里面的装饰器作用差不多嘛？</p>2021-09-12</li><br/><li><span>CR</span> 👍（7） 💬（1）<p>很想知道老师的画图工具都有哪些🤔</p>2021-09-03</li><br/><li><span>chinandy</span> 👍（6） 💬（1）<p>大家参考老师写的代码的时候，如果是网页不能正常的美化显示，有可能是网页是UTF8的原因，print_body函数match分支加一个TEXT_HTML_UTF_8判断，        Some(v) if v == mime::TEXT_HTML_UTF_8 || v == mime::TEXT_HTML =&gt; print_syntect(body, &quot;html&quot;),即可。
+</p>2021-09-18</li><br/>
 </ul>

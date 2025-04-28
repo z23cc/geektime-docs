@@ -241,6 +241,6 @@ time.sleep(10)
 
 欢迎把你的想法和思考分享在留言区，我们一起交流讨论。也欢迎你把课程分享给你的同事、朋友，我们一起做职场中的效率人。我们下节课再见！
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>浮华～</span> 👍（0） 💬（2）<div>关于微信授权的 签到小程序也可以这样弄吗</div>2021-10-06</li><br/><li><span>LDxy</span> 👍（4） 💬（2）<div>可以开始研究下上下班的自动签到了</div>2021-03-27</li><br/><li><span>Eco</span> 👍（0） 💬（1）<div>用 ChatGPT 结合本课程学习了，发现其中有一个问题：
-在Selenium 4及以上版本中，find_element_by_xpath方法已被弃用。你应该使用find_element方法配合By.XPATH来替代。</div>2024-03-11</li><br/><li><span>Jerry</span> 👍（0） 💬（1）<div>老师，完整代码在哪里下载啊</div>2021-06-08</li><br/><li><span>武明</span> 👍（0） 💬（2）<div>不添加请求头，不去除window.navigator.webdriver 好像不行吧，直接出滑块了</div>2021-04-01</li><br/><li><span>范</span> 👍（1） 💬（0）<div>借助http相关类库，DOM结构，可以模拟浏览器很多操作。</div>2021-04-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-16</li><br/><li><span>David</span> 👍（0） 💬（0）<div>这两节结不就是爬虫的操作嘛，密码、验证码的输入的时间控制，在最小值的基础上上还可以使用个random随机函数吧，这样模仿得更像人工操作一些</div>2021-12-30</li><br/>
+<li><span>浮华～</span> 👍（0） 💬（2）<p>关于微信授权的 签到小程序也可以这样弄吗</p>2021-10-06</li><br/><li><span>LDxy</span> 👍（4） 💬（2）<p>可以开始研究下上下班的自动签到了</p>2021-03-27</li><br/><li><span>Eco</span> 👍（0） 💬（1）<p>用 ChatGPT 结合本课程学习了，发现其中有一个问题：
+在Selenium 4及以上版本中，find_element_by_xpath方法已被弃用。你应该使用find_element方法配合By.XPATH来替代。</p>2024-03-11</li><br/><li><span>Jerry</span> 👍（0） 💬（1）<p>老师，完整代码在哪里下载啊</p>2021-06-08</li><br/><li><span>武明</span> 👍（0） 💬（2）<p>不添加请求头，不去除window.navigator.webdriver 好像不行吧，直接出滑块了</p>2021-04-01</li><br/><li><span>范</span> 👍（1） 💬（0）<p>借助http相关类库，DOM结构，可以模拟浏览器很多操作。</p>2021-04-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-16</li><br/><li><span>David</span> 👍（0） 💬（0）<p>这两节结不就是爬虫的操作嘛，密码、验证码的输入的时间控制，在最小值的基础上上还可以使用个random随机函数吧，这样模仿得更像人工操作一些</p>2021-12-30</li><br/>
 </ul>

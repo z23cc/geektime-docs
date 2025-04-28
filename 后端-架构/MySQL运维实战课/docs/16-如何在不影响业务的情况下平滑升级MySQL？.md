@@ -771,5 +771,5 @@ mysql> source sakila/sakila-mv-data.sql
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>binzhang</span> 👍（1） 💬（3）<div>mysql官方不是不支持从mysql5.8 复制到mysql5.7 吗？</div>2024-09-25</li><br/><li><span>Geek_2e8a42</span> 👍（0） 💬（2）<div>老师，请问MySQL5.7升级到MySQL58.0之后，5.7是使用systemctl start mysqld的方式启动的，要如何把这个启动方式也改成8.0去启动呢？</div>2024-10-12</li><br/>
+<li><span>binzhang</span> 👍（1） 💬（3）<p>mysql官方不是不支持从mysql5.8 复制到mysql5.7 吗？</p>2024-09-25</li><br/><li><span>Geek_2e8a42</span> 👍（0） 💬（2）<p>老师，请问MySQL5.7升级到MySQL58.0之后，5.7是使用systemctl start mysqld的方式启动的，要如何把这个启动方式也改成8.0去启动呢？</p>2024-10-12</li><br/>
 </ul>

@@ -329,5 +329,5 @@ class NotificationFacadeBlock(AIConversationBlock):
 
 AutoGPT Server 适合于实现哪些类型的应用？不适合实现哪些类型的应用？欢迎你在留言区交流你的看法，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>颛顼</span> 👍（0） 💬（1）<div>此处当流量大了以后，要水平扩展，是将 AutoGPT Server 进行多副本部署？那每个AutoGPT Server实例负责启动6个关联的agent？这块不太理解，AutoGPT Server 是如何做到水平扩展的</div>2025-02-21</li><br/>
+<li><span>颛顼</span> 👍（0） 💬（1）<p>此处当流量大了以后，要水平扩展，是将 AutoGPT Server 进行多副本部署？那每个AutoGPT Server实例负责启动6个关联的agent？这块不太理解，AutoGPT Server 是如何做到水平扩展的</p>2025-02-21</li><br/>
 </ul>

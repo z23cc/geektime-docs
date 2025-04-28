@@ -205,7 +205,7 @@ etcd在执行读请求过程中涉及磁盘IO吗？如果涉及，是什么模�
 
 感谢你阅读，也欢迎你把这篇文章分享给更多的朋友一起阅读，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>hiroshi</span> 👍（71） 💬（10）<div>老师，readIndex 需要请求 leader，那为啥不直接让 leader 返回读请求的结果，而要等待自己的进度赶上 leader？</div>2021-02-16</li><br/><li><span>姜姜</span> 👍（29） 💬（6）<div>老师，文中有些地方不太明白:
+<li><span>hiroshi</span> 👍（71） 💬（10）<p>老师，readIndex 需要请求 leader，那为啥不直接让 leader 返回读请求的结果，而要等待自己的进度赶上 leader？</p>2021-02-16</li><br/><li><span>姜姜</span> 👍（29） 💬（6）<p>老师，文中有些地方不太明白:
 1, KVServer中的拦截器
 我认为它只是作为一个辅助的功能吧，用于实现一些观测功能。但对于一个普通的读请求，是否必须通过拦截器才能完成读取数据的操作？
 
@@ -224,14 +224,14 @@ etcd在执行读请求过程中涉及磁盘IO吗？如果涉及，是什么模�
 您说是一个递增的全局ID， revision{2, 0}，ID指的是2还是0？ 版本号的格式是怎样的，另一个数字代表什么？
 
 6,  bucket
-请问一个 bucket 相当于一整个 B+ tree 索引树吗？还是相当于 B+ tree 中一个节点？</div>2021-01-26</li><br/><li><span>小军</span> 👍（24） 💬（1）<div>请问老师，当Readindex结束并等待本节点的状态机apply的时候，key又被最新的更新请求给更新了怎么办，这个时候读取到的value是不是又是旧值了</div>2021-01-26</li><br/><li><span>chapin</span> 👍（11） 💬（1）<div>没有基础，学习这个，可能会比较吃力。</div>2021-01-26</li><br/><li><span>站在树上的松鼠</span> 👍（7） 💬（5）<div>老师，下面这句话没有理解到，麻烦解答下呢，谢谢！
+请问一个 bucket 相当于一整个 B+ tree 索引树吗？还是相当于 B+ tree 中一个节点？</p>2021-01-26</li><br/><li><span>小军</span> 👍（24） 💬（1）<p>请问老师，当Readindex结束并等待本节点的状态机apply的时候，key又被最新的更新请求给更新了怎么办，这个时候读取到的value是不是又是旧值了</p>2021-01-26</li><br/><li><span>chapin</span> 👍（11） 💬（1）<p>没有基础，学习这个，可能会比较吃力。</p>2021-01-26</li><br/><li><span>站在树上的松鼠</span> 👍（7） 💬（5）<p>老师，下面这句话没有理解到，麻烦解答下呢，谢谢！
 在client 3.4之前的版本中，负载均衡算法有一个严重的Bug：如果第一个节点异常了，可能会导致你的client访问etcd server异常。
 	（1）这里第一个节点怎么理解呢？ 是指的负载均衡刚好选中的那个etcd server节点异常吗？
 	（2）如果访问的节点异常了，是client库中会做重试机制，还是业务代码需要做重试呢？
-</div>2021-01-22</li><br/><li><span>jeffery</span> 👍（7） 💬（1）<div>干货太多需要慢慢消化！老师能把课程代码放到github上吗……谢谢老师</div>2021-01-22</li><br/><li><span>Want less</span> 👍（5） 💬（4）<div>当收到一个线性读请求时，它首先会从 Leader 获取集群最新的已提交的日志索引 (committed index)。
-所有的client请求不是应该都通过leader下发至follower吗？</div>2021-01-27</li><br/><li><span>Alery</span> 👍（5） 💬（1）<div>请教一个问题，在treeIndex中查询key对应的版本号，这里是会返回当前key的所有版本号吗？</div>2021-01-26</li><br/><li><span>yayiyaya</span> 👍（4） 💬（2）<div>问答： etcd 在执行读请求过程中涉及磁盘 IO 吗？
-答： 涉及到磁盘， 当读请求从treeIndex获取到用户的 key 和相关版本号信息后，去查询value值时， 没有命中 buffer， 会从boltdb获取数据， 这个时候就涉及到了磁盘。</div>2021-02-04</li><br/><li><span>于途</span> 👍（4） 💬（1）<div>如果你的 client 版本 &lt;= 3.3，那么当你配置多个 endpoint 时，负载均衡算法仅会从中选择一个 IP 并创建一个连接（Pinned endpoint）
+</p>2021-01-22</li><br/><li><span>jeffery</span> 👍（7） 💬（1）<p>干货太多需要慢慢消化！老师能把课程代码放到github上吗……谢谢老师</p>2021-01-22</li><br/><li><span>Want less</span> 👍（5） 💬（4）<p>当收到一个线性读请求时，它首先会从 Leader 获取集群最新的已提交的日志索引 (committed index)。
+所有的client请求不是应该都通过leader下发至follower吗？</p>2021-01-27</li><br/><li><span>Alery</span> 👍（5） 💬（1）<p>请教一个问题，在treeIndex中查询key对应的版本号，这里是会返回当前key的所有版本号吗？</p>2021-01-26</li><br/><li><span>yayiyaya</span> 👍（4） 💬（2）<p>问答： etcd 在执行读请求过程中涉及磁盘 IO 吗？
+答： 涉及到磁盘， 当读请求从treeIndex获取到用户的 key 和相关版本号信息后，去查询value值时， 没有命中 buffer， 会从boltdb获取数据， 这个时候就涉及到了磁盘。</p>2021-02-04</li><br/><li><span>于途</span> 👍（4） 💬（1）<p>如果你的 client 版本 &lt;= 3.3，那么当你配置多个 endpoint 时，负载均衡算法仅会从中选择一个 IP 并创建一个连接（Pinned endpoint）
 
-请问，此句提到的负载均衡算法是否等同：随机选中某个IP？</div>2021-01-22</li><br/><li><span>范闲</span> 👍（4） 💬（2）<div>wal log里面会涉及到磁盘读写。lsm树，双memtable，都满了刷到磁盘，继续写memtable.</div>2021-01-22</li><br/><li><span>Geek_ddfeca</span> 👍（3） 💬（1）<div>有一点没明白，文中提到：C 节点则会等待，直到状态机已应用索引 (applied index) 大于等于 Leader 的已提交索引时 (committed Index)(上图中的流程四)，然后去通知读请求，数据已赶上 Leader，你可以去状态机中访问数据了 (上图中的流程五)。
-但12中提到，“etcd 无论 Apply 流程是成功还是失败，都会更新 raftAppliedIndex 值&quot;。那岂不是即使apply失败了，也会更新raftAppliedIndex ，但其实follower并没真正赶上leader，读到的还是旧数据?</div>2021-10-09</li><br/><li><span>七里</span> 👍（2） 💬（1）<div>boltdb怎么保证全局的revision呢</div>2021-01-26</li><br/><li><span>no-one</span> 👍（2） 💬（1）<div>如果读之前follower节点的索引已经是最新的了，还会先去leader节点读readindex吗</div>2021-01-23</li><br/><li><span>写点啥呢</span> 👍（2） 💬（1）<div>另外还想问下唐老师，是否会有章节介绍下etcd集群管理和请求路由的原理，比如节点如何探活及增减，及像在线性读场景里，请求是否一定要通过已提交的quorum内节点处理还是任何节点都可以处理呢？</div>2021-01-22</li><br/>
+请问，此句提到的负载均衡算法是否等同：随机选中某个IP？</p>2021-01-22</li><br/><li><span>范闲</span> 👍（4） 💬（2）<p>wal log里面会涉及到磁盘读写。lsm树，双memtable，都满了刷到磁盘，继续写memtable.</p>2021-01-22</li><br/><li><span>Geek_ddfeca</span> 👍（3） 💬（1）<p>有一点没明白，文中提到：C 节点则会等待，直到状态机已应用索引 (applied index) 大于等于 Leader 的已提交索引时 (committed Index)(上图中的流程四)，然后去通知读请求，数据已赶上 Leader，你可以去状态机中访问数据了 (上图中的流程五)。
+但12中提到，“etcd 无论 Apply 流程是成功还是失败，都会更新 raftAppliedIndex 值&quot;。那岂不是即使apply失败了，也会更新raftAppliedIndex ，但其实follower并没真正赶上leader，读到的还是旧数据?</p>2021-10-09</li><br/><li><span>七里</span> 👍（2） 💬（1）<p>boltdb怎么保证全局的revision呢</p>2021-01-26</li><br/><li><span>no-one</span> 👍（2） 💬（1）<p>如果读之前follower节点的索引已经是最新的了，还会先去leader节点读readindex吗</p>2021-01-23</li><br/><li><span>写点啥呢</span> 👍（2） 💬（1）<p>另外还想问下唐老师，是否会有章节介绍下etcd集群管理和请求路由的原理，比如节点如何探活及增减，及像在线性读场景里，请求是否一定要通过已提交的quorum内节点处理还是任何节点都可以处理呢？</p>2021-01-22</li><br/>
 </ul>

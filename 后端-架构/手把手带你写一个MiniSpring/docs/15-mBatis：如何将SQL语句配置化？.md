@@ -480,7 +480,7 @@ public class DefaultSqlSession implements SqlSession{
 
 学完这节课，我也给你留一道思考题。我们只是简单地实现了select语句的配置，如何扩展到update语句？还有进一步地，如何实现读写分离？比如说select的时候从一个数据库来取，update的时候从另一个数据库来取。欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题啊：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题啊：
 Q1：Mapper配置的几个问题
 在“Mapper配置”部分，有一个xml文件的说明：
 &lt;mapper namespace=&quot;com.test.entity.User&quot;&gt;
@@ -493,5 +493,5 @@ namespace与resultType相同，是必须相同吗？还是可以不相同？
 Q2：没有请求时候访问数据库。
 SpringBoot项目，controller中自动注入service，service中自动注入Mapper。请求来了之后，由controller处理，controller调用自动注入的service，service再调用自动注入的Mapper，这是典型的ssm流程。
 但是，现在有一个需求：软件启动后，需要访问数据库，此时并没有请求。我现在的实现方法是：controller的构造函数中使用JDBC访问数据库，是成功的。
-问题：软件启动后，controller的构造函数执行了，说明controller被实例化了，此时service会自动注入吗？ （项目是两年前做的，当时一开始是尝试还用ssm来访问数据库，但好像失败了；印象中好像是service为null,就是说没有自动注入。）</div>2023-04-16</li><br/><li><span>dirtychill</span> 👍（0） 💬（0）<div>一个sqlSession对应一个数据库，因此要做一个核心batis的配置文件逻辑</div>2024-06-11</li><br/><li><span>云从</span> 👍（0） 💬（0）<div>老师这节课在xml 中配置sqlSessionFactory时，使用了init-method，如果我没看漏的话 ，前面代码我们应该没有处理这个属性 需要在XmlBeanDefinitionReader 处理一下</div>2023-10-16</li><br/>
+问题：软件启动后，controller的构造函数执行了，说明controller被实例化了，此时service会自动注入吗？ （项目是两年前做的，当时一开始是尝试还用ssm来访问数据库，但好像失败了；印象中好像是service为null,就是说没有自动注入。）</p>2023-04-16</li><br/><li><span>dirtychill</span> 👍（0） 💬（0）<p>一个sqlSession对应一个数据库，因此要做一个核心batis的配置文件逻辑</p>2024-06-11</li><br/><li><span>云从</span> 👍（0） 💬（0）<p>老师这节课在xml 中配置sqlSessionFactory时，使用了init-method，如果我没看漏的话 ，前面代码我们应该没有处理这个属性 需要在XmlBeanDefinitionReader 处理一下</p>2023-10-16</li><br/>
 </ul>

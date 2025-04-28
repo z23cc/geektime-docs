@@ -211,10 +211,10 @@ var KanbanCard = function KanbanCard(_ref) {
 
 好了，这节加餐就到这里。如果你还有其他想听的话题，或者在课程学习中有什么疑问，欢迎在留言区告诉我。下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>杨永安</span> 👍（1） 💬（1）<div>夜宵支持</div>2022-09-27</li><br/><li><span>joel</span> 👍（0） 💬（1）<div>老师你好，我希望以下心愿单：
+<li><span>杨永安</span> 👍（1） 💬（1）<p>夜宵支持</p>2022-09-27</li><br/><li><span>joel</span> 👍（0） 💬（1）<p>老师你好，我希望以下心愿单：
 1、react 更新机制原理等比较进阶的东西
 2、react 自定义hooks 比较经典的案例场景，以及hooks 实现原理
-3、对比vue 的原理机制，比如 vue 没有fiber, react 的设计的原理貌似跟vue 不一样，虽然都是有xxx等特点</div>2022-09-23</li><br/><li><span>风太大太大</span> 👍（0） 💬（1）<div>想听听react的高阶级用法，例如使用高阶组件。
+3、对比vue 的原理机制，比如 vue 没有fiber, react 的设计的原理貌似跟vue 不一样，虽然都是有xxx等特点</p>2022-09-23</li><br/><li><span>风太大太大</span> 👍（0） 💬（1）<p>想听听react的高阶级用法，例如使用高阶组件。
 怎么利用react-hooks 进行项目工程化改造，
-怎么自己封装合理且好用的自定义hooks</div>2022-09-20</li><br/>
+怎么自己封装合理且好用的自定义hooks</p>2022-09-20</li><br/>
 </ul>

@@ -287,7 +287,7 @@ DOM API中还提供了NodeIterator 和 TreeWalker 来遍历树。比起直接用
 
 [![unpreview](https://static001.geekbang.org/resource/image/1a/08/1a49758821bdbdf6f0a8a1dc5bf39f08.jpg?wh=1032%2A330)](https://time.geekbang.org/course/intro/163?utm_term=zeusMTA7L&utm_source=app&utm_medium=chongxueqianduan&utm_campaign=163-presell)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>kgdmhny</span> 👍（0） 💬（2）<div>老师,请问一下,&quot;对 DOM 而言，Attribute 和 Property 是完全不同的含义，只有特性场景下，两者才会互相关联（这里在后面我会详细讲解，今天的文章里我就不展开了）&quot;后面有讲解这块吗？</div>2019-06-05</li><br/><li><span>周序猿</span> 👍（41） 💬（1）<div>&#47;&#47; 深度优先
+<li><span>kgdmhny</span> 👍（0） 💬（2）<p>老师,请问一下,&quot;对 DOM 而言，Attribute 和 Property 是完全不同的含义，只有特性场景下，两者才会互相关联（这里在后面我会详细讲解，今天的文章里我就不展开了）&quot;后面有讲解这块吗？</p>2019-06-05</li><br/><li><span>周序猿</span> 👍（41） 💬（1）<p>&#47;&#47; 深度优先
 function deepLogTagNames(parentNode){
   console.log(parentNode.tagName)
   const childNodes = parentNode.childNodes
@@ -313,7 +313,7 @@ function breadLogTagNames(root){
     }) 
   }
 }
-breadLogTagNames(document.body)</div>2019-03-10</li><br/><li><span>阿成</span> 👍（14） 💬（2）<div>第一段代码中的 DocumentFragment 应该改为 DocumentType...
+breadLogTagNames(document.body)</p>2019-03-10</li><br/><li><span>阿成</span> 👍（14） 💬（2）<p>第一段代码中的 DocumentFragment 应该改为 DocumentType...
 
 &#47;**
  * @param {Element} el
@@ -335,9 +335,9 @@ walk(document.documentElement, el =&gt; {
 })
 for (let n of set)
   console.log(n)
-</div>2019-03-09</li><br/><li><span>天亮了</span> 👍（11） 💬（3）<div>这样可以把tagName全打印出来...
+</p>2019-03-09</li><br/><li><span>天亮了</span> 👍（11） 💬（3）<p>这样可以把tagName全打印出来...
 document.getElementsByTagName(&#39;*&#39;);
-</div>2019-05-06</li><br/><li><span>拾迹</span> 👍（3） 💬（0）<div>document.querySelectorAll(&#39;*&#39;)，这样有点过分了</div>2019-06-17</li><br/><li><span>kino</span> 👍（3） 💬（1）<div>insertBefore(newNode,null)和appendChild的区别是啥</div>2019-03-12</li><br/><li><span>我叫张小咩²⁰¹⁹</span> 👍（3） 💬（0）<div>var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, null, false)
+</p>2019-05-06</li><br/><li><span>拾迹</span> 👍（3） 💬（0）<p>document.querySelectorAll(&#39;*&#39;)，这样有点过分了</p>2019-06-17</li><br/><li><span>kino</span> 👍（3） 💬（1）<p>insertBefore(newNode,null)和appendChild的区别是啥</p>2019-03-12</li><br/><li><span>我叫张小咩²⁰¹⁹</span> 👍（3） 💬（0）<p>var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, null, false)
 var node
 while(node = walker.nextNode())
     console.log(node.tagName)
@@ -358,7 +358,7 @@ getAllTagName(document)
 console.log(result)
 
 
-</div>2019-03-10</li><br/><li><span>小二子大人</span> 👍（1） 💬（0）<div>const root = document.getElementsByTagName(&#39;html&#39;)[0];
+</p>2019-03-10</li><br/><li><span>小二子大人</span> 👍（1） 💬（0）<p>const root = document.getElementsByTagName(&#39;html&#39;)[0];
     &#47;&#47; 深度优先遍历
     function deepLogTagName(root) {
         console.log(root.tagName);
@@ -389,7 +389,7 @@ console.log(result)
             }
         }
     }
-    breadLogTagName(root)</div>2019-05-08</li><br/><li><span>笨鸟</span> 👍（1） 💬（0）<div>function loop(node){
+    breadLogTagName(root)</p>2019-05-08</li><br/><li><span>笨鸟</span> 👍（1） 💬（0）<p>function loop(node){
 	if(!node){
 		return
 	}
@@ -401,7 +401,7 @@ console.log(result)
 		})
 	}
 }
-loop(document)</div>2019-03-26</li><br/><li><span>Link</span> 👍（1） 💬（0）<div>第一段代码中的 DocumentFragment 应该改为 DocumentType</div>2019-03-11</li><br/><li><span>「前端天地」公众号</span> 👍（0） 💬（0）<div>document好像没有createDocumentType方法</div>2021-09-30</li><br/><li><span>杜森垚</span> 👍（0） 💬（0）<div>document.body.attributes.class = &quot;a&quot; 少了.value 应该为 document.body.attributes.class.value = &quot;a&quot;</div>2020-11-22</li><br/><li><span>不曾相识</span> 👍（0） 💬（0）<div>
+loop(document)</p>2019-03-26</li><br/><li><span>Link</span> 👍（1） 💬（0）<p>第一段代码中的 DocumentFragment 应该改为 DocumentType</p>2019-03-11</li><br/><li><span>「前端天地」公众号</span> 👍（0） 💬（0）<p>document好像没有createDocumentType方法</p>2021-09-30</li><br/><li><span>杜森垚</span> 👍（0） 💬（0）<p>document.body.attributes.class = &quot;a&quot; 少了.value 应该为 document.body.attributes.class.value = &quot;a&quot;</p>2020-11-22</li><br/><li><span>不曾相识</span> 👍（0） 💬（0）<p>
     &lt;main&gt;
         &lt;!-- &lt;header&gt;
             &lt;h1&gt;遍历所有dom打印tagName&lt;&#47;h1&gt;
@@ -472,9 +472,9 @@ loop(document)</div>2019-03-26</li><br/><li><span>Link</span> 👍（1） 💬�
         &#47;&#47; 现在在li当中加入p元素，看结果有没有加入打印  看了，大佬们的答案随便填入的p，我也不懂啥事广度优先，深度优先
         console.log(getChildrenNodes(html));
     &lt;&#47;script&gt;
-</div>2020-10-10</li><br/><li><span>Peter</span> 👍（0） 💬（0）<div>var allTags = {};
+</p>2020-10-10</li><br/><li><span>Peter</span> 👍（0） 💬（0）<p>var allTags = {};
 [].forEach.call(document.body.getElementsByTagName(&#39;*&#39;), (e) =&gt; { 
   allTags[e.tagName] = (allTags[e.tagName] || 0) + 1 
 })
-console.log(allTags)</div>2020-06-30</li><br/><li><span>pcxpccccx_</span> 👍（0） 💬（0）<div>讲的真好很全面</div>2020-03-22</li><br/>
+console.log(allTags)</p>2020-06-30</li><br/><li><span>pcxpccccx_</span> 👍（0） 💬（0）<p>讲的真好很全面</p>2020-03-22</li><br/>
 </ul>

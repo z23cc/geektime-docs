@@ -694,8 +694,8 @@ PyO3 是一个非常成熟的让 Python 和 Rust 互操作的库。很多 Rust �
 
 欢迎在留言区分享讨论。感谢你的收听，今天你完成了第32次Rust打卡啦，继续坚持。我们下节课见～
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Marshal SHI</span> 👍（6） 💬（1）<div>之前我在medium上分享过比较PyO3和rust、python速度的文章，大家有兴趣可以看看。在release下PyO3可以提供和rust相似的速度
+<li><span>Marshal SHI</span> 👍（6） 💬（1）<p>之前我在medium上分享过比较PyO3和rust、python速度的文章，大家有兴趣可以看看。在release下PyO3可以提供和rust相似的速度
 （不要忘记`--release`） 
-文章链接：https:&#47;&#47;link.medium.com&#47;iWSbYCrS3kb</div>2021-11-10</li><br/><li><span>nuan</span> 👍（1） 💬（1）<div>准备工作-&gt;&quot;创建 build.rs，并添入：&quot; 中，build.rs 的链接链到哪里了？</div>2022-02-15</li><br/><li><span>Litt1eQ</span> 👍（0） 💬（2）<div>老师您好，想咨询一下，如果使用pyo3能否有什么比较方便的办法可以在mac上直接编译出来linux win mac可运行的package 现在我用的maturin 如果用借助docker官方给出了可以编译出来Linux可运行的package的方案，但是编译出win可用package我也没发现可用的方案，谢谢了。</div>2021-11-15</li><br/><li><span>阿海</span> 👍（0） 💬（1）<div>作者你好，看到Makefile文件中，有一句mv xxx.dylib yyy.so
-百度了下， dylib是macos平台下的，对这个格式不是很了解，看构建脚本，是可以直接将.dylib重命名为.so 文件使用的吗</div>2021-11-14</li><br/><li><span>余泽锋</span> 👍（0） 💬（1）<div>平时工作一直用python来做数据处理，老师说的这些对我来说太有用了，使用rust提供一些高性能库给python使用。真是太棒了。</div>2021-11-10</li><br/><li><span>雪无痕</span> 👍（0） 💬（1）<div>老师能否讲下，在rust下如何开发一个通用的插件框架？</div>2021-11-10</li><br/>
+文章链接：https:&#47;&#47;link.medium.com&#47;iWSbYCrS3kb</p>2021-11-10</li><br/><li><span>nuan</span> 👍（1） 💬（1）<p>准备工作-&gt;&quot;创建 build.rs，并添入：&quot; 中，build.rs 的链接链到哪里了？</p>2022-02-15</li><br/><li><span>Litt1eQ</span> 👍（0） 💬（2）<p>老师您好，想咨询一下，如果使用pyo3能否有什么比较方便的办法可以在mac上直接编译出来linux win mac可运行的package 现在我用的maturin 如果用借助docker官方给出了可以编译出来Linux可运行的package的方案，但是编译出win可用package我也没发现可用的方案，谢谢了。</p>2021-11-15</li><br/><li><span>阿海</span> 👍（0） 💬（1）<p>作者你好，看到Makefile文件中，有一句mv xxx.dylib yyy.so
+百度了下， dylib是macos平台下的，对这个格式不是很了解，看构建脚本，是可以直接将.dylib重命名为.so 文件使用的吗</p>2021-11-14</li><br/><li><span>余泽锋</span> 👍（0） 💬（1）<p>平时工作一直用python来做数据处理，老师说的这些对我来说太有用了，使用rust提供一些高性能库给python使用。真是太棒了。</p>2021-11-10</li><br/><li><span>雪无痕</span> 👍（0） 💬（1）<p>老师能否讲下，在rust下如何开发一个通用的插件框架？</p>2021-11-10</li><br/>
 </ul>

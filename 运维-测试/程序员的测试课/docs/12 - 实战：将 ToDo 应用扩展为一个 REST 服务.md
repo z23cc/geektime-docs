@@ -324,12 +324,12 @@ final TodoParameter parameter = TodoParameter.of(request.getContent());
 
 今天我们用 Spring 的基础设施演示了如何进行测试。你使用过 Spring 吗？有哪些测试特性让你印象深刻的？或者你用哪个框架给你提供了很好地测试支持呢？欢迎在留言区分享你的经验。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>闻人</span> 👍（2） 💬（3）<div>文中外部对象转为内部对象的实现有必要放到单独的类里吗，减少两个对象的依赖</div>2021-08-30</li><br/><li><span>chon</span> 👍（1） 💬（1）<div>集成restful的例子写的挺好的，如何处理dubbo的呢？后续章节能否给个完整的例子？谢谢</div>2021-09-08</li><br/><li><span>不二先生</span> 👍（1） 💬（1）<div>郑老师，你好：
+<li><span>闻人</span> 👍（2） 💬（3）<p>文中外部对象转为内部对象的实现有必要放到单独的类里吗，减少两个对象的依赖</p>2021-08-30</li><br/><li><span>chon</span> 👍（1） 💬（1）<p>集成restful的例子写的挺好的，如何处理dubbo的呢？后续章节能否给个完整的例子？谢谢</p>2021-09-08</li><br/><li><span>不二先生</span> 👍（1） 💬（1）<p>郑老师，你好：
 有一个问题想请教下。
-MockMVC 创建的模拟网络环境可以连接到数据库？这个数据库是本地的吗？</div>2021-09-02</li><br/><li><span>Fredo</span> 👍（1） 💬（1）<div>老师你好 ，更新了一下ToDo项目 build无法通过了，task migrateToDev 这里是不还有漏了啥没上传的</div>2021-08-31</li><br/><li><span>大碗</span> 👍（1） 💬（1）<div>有几个问题请教下老师：
+MockMVC 创建的模拟网络环境可以连接到数据库？这个数据库是本地的吗？</p>2021-09-02</li><br/><li><span>Fredo</span> 👍（1） 💬（1）<p>老师你好 ，更新了一下ToDo项目 build无法通过了，task migrateToDev 这里是不还有漏了啥没上传的</p>2021-08-31</li><br/><li><span>大碗</span> 👍（1） 💬（1）<p>有几个问题请教下老师：
 1, 参数校验的逻辑在core层也有，算不算重复？现在写在的api里，能否移动到request的构造函数里面判断，然后抛出全局异常再返回BadRequest？实际业务一个add有好几个字段要check，写起来api的函数就好长了
 2，测试接口的时候，构造request的使用的字符串json，为什么不用new对象再用工具toJsonString，手打json字符串容易出错
-3，测试的数据库用了mysql的一个test库，不用h2是基于什么考虑呢</div>2021-08-31</li><br/><li><span>深云</span> 👍（0） 💬（1）<div>final TodoParameter parameter = TodoParameter.of(request.getContent());这种方式，不会导致TodoParameter依赖于外部request的content吗，是不是在api层设计一个converter专门用于处理这个转换比较好</div>2025-01-24</li><br/><li><span>sylan215</span> 👍（4） 💬（0）<div>本节是一个实例验证把一个应用扩展为 REST 服务（自查下具体的意思）。
+3，测试的数据库用了mysql的一个test库，不用h2是基于什么考虑呢</p>2021-08-31</li><br/><li><span>深云</span> 👍（0） 💬（1）<p>final TodoParameter parameter = TodoParameter.of(request.getContent());这种方式，不会导致TodoParameter依赖于外部request的content吗，是不是在api层设计一个converter专门用于处理这个转换比较好</p>2025-01-24</li><br/><li><span>sylan215</span> 👍（4） 💬（0）<p>本节是一个实例验证把一个应用扩展为 REST 服务（自查下具体的意思）。
 
 因为是基于 Java 语言的，所以里面提到很多 Java 的工具，这部分不会，所以不是特别懂，但是大概意思是知道的，几个关键点：
 
@@ -337,7 +337,7 @@ MockMVC 创建的模拟网络环境可以连接到数据库？这个数据库是
 
 2、接口如果涉及对数据的操作，测试完之后尽量要进行清场操作，避免垃圾数据残留（数据构造也是测试的一大难点）；
 
-3、本次演示还是遵循接口测试的原则，不涉及接口实现的覆盖；</div>2021-09-16</li><br/><li><span>ifelse</span> 👍（1） 💬（0）<div>集成测试回滚数据，保证测试的可重复性。--记下来
-Springboot很方便</div>2022-06-11</li><br/><li><span>Geek_3b1096</span> 👍（1） 💬（0）<div>...而不仅仅是围绕着前端需求去做... 期待老师推出API设计课</div>2021-09-08</li><br/><li><span>一打七</span> 👍（0） 💬（0）<div>没有理解为什么用构造函数的方式进行注入，老师能解答一下吗？谢谢</div>2023-02-11</li><br/><li><span>无道win</span> 👍（0） 💬（0）<div>如果数据库使用的mybatias有没有类似 @DataJpaTest的注解？</div>2022-10-18</li><br/><li><span>一步</span> 👍（0） 💬（0）<div>mockmvc全流程测试，特别耗时的问题该从哪些方面优化，提高测试速度，特别是环境构建速度。</div>2022-05-20</li><br/><li><span>花花大脸猫</span> 👍（0） 💬（0）<div>老师，如果单元测试需要依赖spring容器的运行时环境才能支撑，那如果后续我开发一个项目但是并没有用到问题提到的那些部分，应该如何处理？我认为单元测试应该不依赖任何组件的，直接可以运行。</div>2022-04-12</li><br/><li><span>Geek_a8ce05</span> 👍（0） 💬（1）<div>原来是面向java的测试课，php溜了溜了</div>2022-03-30</li><br/><li><span>sidabw</span> 👍（0） 💬（0）<div>great!
-</div>2022-02-23</li><br/>
+3、本次演示还是遵循接口测试的原则，不涉及接口实现的覆盖；</p>2021-09-16</li><br/><li><span>ifelse</span> 👍（1） 💬（0）<p>集成测试回滚数据，保证测试的可重复性。--记下来
+Springboot很方便</p>2022-06-11</li><br/><li><span>Geek_3b1096</span> 👍（1） 💬（0）<p>...而不仅仅是围绕着前端需求去做... 期待老师推出API设计课</p>2021-09-08</li><br/><li><span>一打七</span> 👍（0） 💬（0）<p>没有理解为什么用构造函数的方式进行注入，老师能解答一下吗？谢谢</p>2023-02-11</li><br/><li><span>无道win</span> 👍（0） 💬（0）<p>如果数据库使用的mybatias有没有类似 @DataJpaTest的注解？</p>2022-10-18</li><br/><li><span>一步</span> 👍（0） 💬（0）<p>mockmvc全流程测试，特别耗时的问题该从哪些方面优化，提高测试速度，特别是环境构建速度。</p>2022-05-20</li><br/><li><span>花花大脸猫</span> 👍（0） 💬（0）<p>老师，如果单元测试需要依赖spring容器的运行时环境才能支撑，那如果后续我开发一个项目但是并没有用到问题提到的那些部分，应该如何处理？我认为单元测试应该不依赖任何组件的，直接可以运行。</p>2022-04-12</li><br/><li><span>Geek_a8ce05</span> 👍（0） 💬（1）<p>原来是面向java的测试课，php溜了溜了</p>2022-03-30</li><br/><li><span>sidabw</span> 👍（0） 💬（0）<p>great!
+</p>2022-02-23</li><br/>
 </ul>

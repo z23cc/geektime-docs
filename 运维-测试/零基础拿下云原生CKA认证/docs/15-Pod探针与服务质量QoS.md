@@ -221,7 +221,7 @@ Containers:
 
 相信经过动手实践，会让你对知识的理解更加深刻。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Y</span> 👍（0） 💬（1）<div>1.设置启动探针
+<li><span>Y</span> 👍（0） 💬（1）<p>1.设置启动探针
 # my-pod-probe.yaml 
 apiVersion: v1
 kind: Pod
@@ -265,7 +265,7 @@ spec:
       successThreshold: 1
       failureThreshold: 3
 
-</div>2024-08-21</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（0） 💬（1）<div>
+</p>2024-08-21</li><br/><li><span>抱紧我的小鲤鱼</span> 👍（0） 💬（1）<p>
     readinessProbe:
       exec:
         command:
@@ -275,5 +275,5 @@ spec:
       periodSeconds: 5
       successThreshold: 1
       failureThreshold: 3
-</div>2024-07-27</li><br/>
+</p>2024-07-27</li><br/>
 </ul>

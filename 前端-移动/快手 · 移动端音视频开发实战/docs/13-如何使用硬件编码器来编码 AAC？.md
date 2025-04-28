@@ -313,7 +313,7 @@ AudioConverterDispose(_audioConverter);
 
 这两节课我们重点讲解了音频的AAC编码，那么我来考考你，AAC常用的编码规格中，HE-AAC和LC-AAC两种编码的每一帧音频帧的时长是多少呢？做一个实验来看看吧，欢迎在评论区分享你的答案，也欢迎你把这节课分享给更多对音视频感兴趣的朋友，我们一起交流、共同进步。下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>peter</span> 👍（2） 💬（1）<div>请教老师几个问题啊：
+<li><span>peter</span> 👍（2） 💬（1）<p>请教老师几个问题啊：
 Q1：AAC可以通过硬件编码，也可以通过硬件解码吗？
 Q2：硬件编码只能对于AAC吗？可以用于其他类型的音频文件吗？ 比如mp3。
 Q3：MediaCodec对应的硬件设备叫什么啊？ 就是一个专门的编解码芯片吗？可以查询手机是否有硬件编解码芯片吗？
@@ -327,5 +327,5 @@ Q8：编码以后怎么还要放回到待编码填充队列？
 文中有一句“需要我们自己添加上 ADTS 头部，然后写文件，最后把这个 outputBuffer 放回待编码填充队列里面去”， 已经完成编码了啊，怎么还需要这个操作？
 Q9：iOS代码，老师用OC还是swift编码？
 Q10：讲硬件编码，怎么会用软件编码？
-本讲是说明硬件编码的，但文中iOS部分有一句“编码的实现方式使用兼容性更好的软件编码方式 kAppleSoftwareAudioCodecManufacturer”，怎么又用到软件编码了？</div>2022-08-22</li><br/><li><span>keepgoing</span> 👍（0） 💬（2）<div>老师请教一下，kAudioFormatFlagIsPacked是表示交错存储吗，跟其对应的平面存储请问是kAudioFormatFlagIsNonInterleaved吗。如果把输入输出对调一下换成解码场景，参数设置是不是就反过来了，但同样要考虑交错和平铺两种数据格式对吧</div>2022-12-18</li><br/>
+本讲是说明硬件编码的，但文中iOS部分有一句“编码的实现方式使用兼容性更好的软件编码方式 kAppleSoftwareAudioCodecManufacturer”，怎么又用到软件编码了？</p>2022-08-22</li><br/><li><span>keepgoing</span> 👍（0） 💬（2）<p>老师请教一下，kAudioFormatFlagIsPacked是表示交错存储吗，跟其对应的平面存储请问是kAudioFormatFlagIsNonInterleaved吗。如果把输入输出对调一下换成解码场景，参数设置是不是就反过来了，但同样要考虑交错和平铺两种数据格式对吧</p>2022-12-18</li><br/>
 </ul>

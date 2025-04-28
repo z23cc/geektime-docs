@@ -216,7 +216,7 @@ sklearn已经为我们提供了很好的工具，对上节课中讲到的SVM的�
 
 欢迎在评论区与我分享你的答案，也欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事，一起来交流，一起来进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_dancer</span> 👍（46） 💬（2）<div>默认SVC训练模型，6个特征变量，训练集准确率：96.0%，测试集准确率：92.4%
+<li><span>Geek_dancer</span> 👍（46） 💬（2）<p>默认SVC训练模型，6个特征变量，训练集准确率：96.0%，测试集准确率：92.4%
 默认SVC训练模型，10个特征变量，训练集准确率：98.7% ，测试集准确率：98.2%
 LinearSVC训练模型， 6个特征变量， 训练集准确率：93.9%，测试集准确率：92.3%
 LinearSVC训练模型， 10个特征变量， 训练集准确率：99.4%，测试集准确率：96.0%
@@ -224,22 +224,22 @@ LinearSVC训练模型， 10个特征变量， 训练集准确率：99.4%，测�
 结论：
 1. 增加特征变量可以提高准确率，可能是因为模型维度变高，模型变得更加复杂。可以看出特征变量的选取很重要。
 2. 训练集拟合都比较好，但是测试集准确率出现不同程度的下降。
-3. 模型训练的准确率与人类水平之间偏差可以通过增加特征变量或采用新的训练模型来降低；模型训练的准确率与测试集测试的准确率之间的方差可以通过正则化，提高泛化性能等方式来降低。</div>2019-02-27</li><br/><li><span>滢</span> 👍（14） 💬（1）<div>利用SVM做分类，特征选择影响度大，要想SVM分类准确，人工处理数据这一步很重要</div>2019-04-18</li><br/><li><span>hlz-123</span> 👍（11） 💬（1）<div>首先要说，老师的课讲得非常好，深奥的算法和理论通过生动有趣的例子让人通俗易懂，兴趣盎然。
+3. 模型训练的准确率与人类水平之间偏差可以通过增加特征变量或采用新的训练模型来降低；模型训练的准确率与测试集测试的准确率之间的方差可以通过正则化，提高泛化性能等方式来降低。</p>2019-02-27</li><br/><li><span>滢</span> 👍（14） 💬（1）<p>利用SVM做分类，特征选择影响度大，要想SVM分类准确，人工处理数据这一步很重要</p>2019-04-18</li><br/><li><span>hlz-123</span> 👍（11） 💬（1）<p>首先要说，老师的课讲得非常好，深奥的算法和理论通过生动有趣的例子让人通俗易懂，兴趣盎然。
 老师的本课案例中，对特征数据都做了Z-Score规范化处理（正态分布），准确率在90%以上，如果数据不做规范化处理，准确率在88%左右，我的问题：
 1、数据规范化处理，是不是人为地提供了准确率？实际情况，数据不一定是正态分布。
-2、模型建好后，在实际应用中去评估某个案例时，该案例数据是不是也要规范化，这样做是不是很麻烦并且数据对比不是很直观呢？</div>2019-03-16</li><br/><li><span>Rickie</span> 👍（7） 💬（1）<div>思考题：
-使用全部数据进行训练得到的准确率为0.9766，高于示例中的准确率。是否是由于多重共线性，使得测试结果偏高？</div>2019-02-05</li><br/><li><span>明翼</span> 👍（4） 💬（3）<div>老师我利用了结果和特征的相关性，选择特征，发现结果更好：
+2、模型建好后，在实际应用中去评估某个案例时，该案例数据是不是也要规范化，这样做是不是很麻烦并且数据对比不是很直观呢？</p>2019-03-16</li><br/><li><span>Rickie</span> 👍（7） 💬（1）<p>思考题：
+使用全部数据进行训练得到的准确率为0.9766，高于示例中的准确率。是否是由于多重共线性，使得测试结果偏高？</p>2019-02-05</li><br/><li><span>明翼</span> 👍（4） 💬（3）<p>老师我利用了结果和特征的相关性，选择特征，发现结果更好：
 # 特征选择 按照结果和数据相关性选择特征准确率0.9707602339181286
-features_remain = [&#39;radius_mean&#39;,&#39;perimeter_mean&#39;,&#39;area_mean&#39;,&#39;concave points_mean&#39;,&#39;radius_worst&#39;,&#39;perimeter_worst&#39;,&#39;area_worst&#39;,&#39;concave points_worst&#39;]</div>2019-11-10</li><br/><li><span>Ricky</span> 👍（2） 💬（1）<div>谢谢，提2个问题，
+features_remain = [&#39;radius_mean&#39;,&#39;perimeter_mean&#39;,&#39;area_mean&#39;,&#39;concave points_mean&#39;,&#39;radius_worst&#39;,&#39;perimeter_worst&#39;,&#39;area_worst&#39;,&#39;concave points_worst&#39;]</p>2019-11-10</li><br/><li><span>Ricky</span> 👍（2） 💬（1）<p>谢谢，提2个问题，
 1）在实际应用中如何平衡特征变量和准确率的关系？有没有方法论？
 增加特征变量意味着增加运算时间，提高准确率，但是这个得失怎么把握？同时如何评估会增加多少运算时间，一个一个尝试似乎比较费劲吧
 2）此文的案例是选用平均值，丢弃了最大值和标准差，这个是多少案例的通用做法么？
 
-谢谢</div>2020-04-15</li><br/><li><span>恬恬</span> 👍（2） 💬（2）<div>对比几组feature后，发现用feature_worst进行训练，效果更好。
+谢谢</p>2020-04-15</li><br/><li><span>恬恬</span> 👍（2） 💬（2）<p>对比几组feature后，发现用feature_worst进行训练，效果更好。
 1）SVC(kernel=&#39;linear&#39;)的测试集准确率为：99.42%；
 2)  LinearSVC()的测试集准确率为：97.07%
 2）SVC()的测试集准确率为：96.49%
-觉得建模过程中，特征选择很重要，不同的数据集划分，正负样本是否平衡也会对结果有一定的影响，所以最好是可以采用交叉验证来训练模型。这个地方多次测试SVC(kernel=&#39;linear&#39;）和LinearSVC()，感觉还是会存在2个百分点左右的差异，这两个都算是线性分类，是因为采用了不同的线性核函数吗？还是其他参数或是方法差异的原因呢？</div>2020-03-31</li><br/><li><span>滢</span> 👍（2） 💬（1）<div>语言Python3.6  没有z-score规范化数据以及规范化后两种情况前提预测准确率，使用LinearSVC，选取所有mean属性
+觉得建模过程中，特征选择很重要，不同的数据集划分，正负样本是否平衡也会对结果有一定的影响，所以最好是可以采用交叉验证来训练模型。这个地方多次测试SVC(kernel=&#39;linear&#39;）和LinearSVC()，感觉还是会存在2个百分点左右的差异，这两个都算是线性分类，是因为采用了不同的线性核函数吗？还是其他参数或是方法差异的原因呢？</p>2020-03-31</li><br/><li><span>滢</span> 👍（2） 💬（1）<p>语言Python3.6  没有z-score规范化数据以及规范化后两种情况前提预测准确率，使用LinearSVC，选取所有mean属性
 
 import  pandas as  pd
 import  matplotlib.pyplot as  plt
@@ -313,7 +313,7 @@ new_model.fit(train_data,train_result)
 #重新预测
 new_prediction = new_model.predict(test_data)
 #准确率
-print(&#39;准确率:&#39;,metrics.accuracy_score(new_prediction,test_result))</div>2019-04-18</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<div>选取全部特征：
+print(&#39;准确率:&#39;,metrics.accuracy_score(new_prediction,test_result))</p>2019-04-18</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<p>选取全部特征：
 SVM分类器准确率： 0.9824561403508771
 cross_val_score的准确率为：0.9727
 linearSVM分类器的准确率： 0.9766081871345029
@@ -327,9 +327,9 @@ cross_val_score的准确率为：0.9247
 
 数据结果上看：
 SVM的结果要好于linearSVM;
-选取多特征的结果要好于选取少特征的结果</div>2019-11-14</li><br/><li><span>third</span> 👍（1） 💬（1）<div>第二个，准确率 0.935672514619883。
+选取多特征的结果要好于选取少特征的结果</p>2019-11-14</li><br/><li><span>third</span> 👍（1） 💬（1）<p>第二个，准确率 0.935672514619883。
 
-感觉还蛮好用的，只是不是很熟练的使用各个算法做分类和回归</div>2019-02-18</li><br/><li><span>Python</span> 👍（1） 💬（1）<div>老师可以用PCA进行特征选择吗？如果可以，那和你这种手动的方法比有什么差别</div>2019-02-04</li><br/><li><span>晨曦</span> 👍（0） 💬（1）<div>老师，如果这个病症改为不得病，轻症，重症三个分类，不是二分类问题，对应改成分类序号，0,1,2。那么这套算法是不是也不算错</div>2021-01-23</li><br/><li><span>邹洲</span> 👍（0） 💬（1）<div># coding=utf-8
+感觉还蛮好用的，只是不是很熟练的使用各个算法做分类和回归</p>2019-02-18</li><br/><li><span>Python</span> 👍（1） 💬（1）<p>老师可以用PCA进行特征选择吗？如果可以，那和你这种手动的方法比有什么差别</p>2019-02-04</li><br/><li><span>晨曦</span> 👍（0） 💬（1）<p>老师，如果这个病症改为不得病，轻症，重症三个分类，不是二分类问题，对应改成分类序号，0,1,2。那么这套算法是不是也不算错</p>2021-01-23</li><br/><li><span>邹洲</span> 👍（0） 💬（1）<p># coding=utf-8
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -407,8 +407,8 @@ print(&quot;高斯准确率：&quot;,metrics.accuracy_score(test_label,predict_l
 print(&quot;线性准确度：&quot;,metrics.accuracy_score(test_label,predict_label2))
 
 
-</div>2020-08-26</li><br/><li><span>朱一江</span> 👍（0） 💬（1）<div>我们所测的准确率是与train_y进行比较的吗
-</div>2020-08-22</li><br/><li><span>鱼非子</span> 👍（0） 💬（1）<div>import numpy as np
+</p>2020-08-26</li><br/><li><span>朱一江</span> 👍（0） 💬（1）<p>我们所测的准确率是与train_y进行比较的吗
+</p>2020-08-22</li><br/><li><span>鱼非子</span> 👍（0） 💬（1）<p>import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -455,5 +455,5 @@ prediction = model.predict(X_test)
 print(&quot;准确率：&quot;,metrics.accuracy_score(prediction,y_test))
 
 准确率： 0.9239766081871345
-</div>2020-03-04</li><br/>
+</p>2020-03-04</li><br/>
 </ul>

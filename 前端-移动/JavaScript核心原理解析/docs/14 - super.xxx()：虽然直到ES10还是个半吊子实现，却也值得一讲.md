@@ -181,9 +181,9 @@ class MyClass extends Object {
 
 希望你能将自己的答案分享出来，让我也有机会听听你的收获。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>穿秋裤的男孩</span> 👍（5） 💬（1）<div>读后感
+<li><span>穿秋裤的男孩</span> 👍（5） 💬（1）<p>读后感
 1. super的出现是为了解决子类同名属性覆盖父类的属性，通过super可以直接访问到父类。
-2. 伪代码：key[[HomeObject]].__proto__ === super，不知道对不对</div>2020-01-07</li><br/><li><span>小毛</span> 👍（3） 💬（1）<div>老师，请教个问题，为什么ECMAScript 6中的class定义里方式是prototype原型方法，而属性又是实例属性呢，这样有点诡异
+2. 伪代码：key[[HomeObject]].__proto__ === super，不知道对不对</p>2020-01-07</li><br/><li><span>小毛</span> 👍（3） 💬（1）<p>老师，请教个问题，为什么ECMAScript 6中的class定义里方式是prototype原型方法，而属性又是实例属性呢，这样有点诡异
 class A {
     x=1
 }
@@ -195,16 +195,16 @@ class B extends A {
 }
 let b = new B;
 console.log(b.x);&#47;&#47;1
-console.log(b.y);&#47;&#47;NAN</div>2020-03-20</li><br/><li><span>行问</span> 👍（3） 💬（1）<div>实话实说，对 Class 和 super 的知识概念还不熟悉，有几个问题请教下老师
+console.log(b.y);&#47;&#47;NAN</p>2020-03-20</li><br/><li><span>行问</span> 👍（3） 💬（1）<p>实话实说，对 Class 和 super 的知识概念还不熟悉，有几个问题请教下老师
 
 1、在“继承”上，xxx.apply() 和 xxx.call() 算是继承吗？与 super.xxx() 又有什么区别？
 
 2、super.xxx() 的 this 引用是在当前环境的上下文中查找的。那么，x = super.xxx.bind(...) 绑定的 this 是从父类 or 祖先类“继承”而来，这与 constructor() 中直接调用 super() 是否一致？
 
 另，大师可以适当添加一些代码 or 图片 or 思维导图，在阅读理解上可以帮助我们更好理清，感谢！
-</div>2019-12-16</li><br/><li><span>蛋黄酱</span> 👍（2） 💬（2）<div>二刷了，来回又看了三遍左右才理解老师表达的是什么。特来评论一下。
+</p>2019-12-16</li><br/><li><span>蛋黄酱</span> 👍（2） 💬（2）<p>二刷了，来回又看了三遍左右才理解老师表达的是什么。特来评论一下。
 老师的内容真的很好，但是我强烈觉得老师的语言表达需要提高，很多地方其实本身并不复杂，但是因为老师的表述具有强烈的迷惑性，绕了一个大弯，把人给绕晕了，最后并不知道你在讲什么。
-实际上你看楼上@穿秋裤的男孩 的总结就及其简洁好懂。</div>2020-03-28</li><br/><li><span>油菜</span> 👍（1） 💬（2）<div>“在 JavaScript 中，super 只能在方法中使用”
+实际上你看楼上@穿秋裤的男孩 的总结就及其简洁好懂。</p>2020-03-28</li><br/><li><span>油菜</span> 👍（1） 💬（2）<p>“在 JavaScript 中，super 只能在方法中使用”
 ----
 老师，我的测试问题在哪呢？
 
@@ -223,7 +223,7 @@ class S1 extends F1{
 	}
 	
 new S1().f1(); &#47;&#47; f1f1
-new S1().k1(); &#47;&#47; Uncaught TypeError: (intermediate value).f1 is not a function</div>2020-11-17</li><br/><li><span>海绵薇薇</span> 👍（1） 💬（1）<div>老师好，我理解的基于类构造对象的过程如下：
+new S1().k1(); &#47;&#47; Uncaught TypeError: (intermediate value).f1 is not a function</p>2020-11-17</li><br/><li><span>海绵薇薇</span> 👍（1） 💬（1）<p>老师好，我理解的基于类构造对象的过程如下：
 
 类的构造过程是在继承的顶层通过new.target拿到最底层的构造函数，
 
@@ -316,7 +316,7 @@ javascript语编3中描述 = 是运算，并不能理解 = 是运算（表达式
 
 ------------------------------------------------------------------------
 再次感谢老师的时间
-------------------------------------------------------------------------</div>2020-09-19</li><br/><li><span>zy</span> 👍（0） 💬（2）<div>最近看到一段代码：
+------------------------------------------------------------------------</p>2020-09-19</li><br/><li><span>zy</span> 👍（0） 💬（2）<p>最近看到一段代码：
 {
     function foo(){}
     foo = 1
@@ -332,11 +332,11 @@ javascript语编3中描述 = 是运算，并不能理解 = 是运算（表达式
     foo = 10
 }
 console.log(foo)
-打印出来是5，分析了半天没搞明白为什么，能不能请老师帮忙分析一下</div>2021-03-24</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>「ECMAScript 约定了优先取 Super 引用中的 thisValue 值，然后再取函数上下文中的」
+打印出来是5，分析了半天没搞明白为什么，能不能请老师帮忙分析一下</p>2021-03-24</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>「ECMAScript 约定了优先取 Super 引用中的 thisValue 值，然后再取函数上下文中的」
 「super.xxx() 是对 super.xxx 这个引用（SuperReference）作函数调用操作，调用中传入的 this 引用是在当前环境的上下文中查找的」
 老师，前面一段话说可能从两个地方取「Super 引用中的 thisValue 值」是指通过bind方法绑定的值？
-</div>2020-05-25</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<div>「在 MyClass 的构造方法中访问 super 时，通过 HomeObject 找到的将是原型的父级对象。而这并不是父类构造器」
-老师，理论上可以通过HomeObject.constructor 拿到 MyClass，是因为HomeObject.constructor拿到的值不靠谱，所以不这么去拿？</div>2020-05-25</li><br/><li><span>穿秋裤的男孩</span> 👍（0） 💬（1）<div>ECMAScript 为此约定：只能在调用了父类构造方法之后，才能使用 super.xxx 的方式来引用父类的属性，或者调用父类的方法，也就是访问 SuperReference 之前必须先调用父类构造方法
+</p>2020-05-25</li><br/><li><span>HoSalt</span> 👍（0） 💬（1）<p>「在 MyClass 的构造方法中访问 super 时，通过 HomeObject 找到的将是原型的父级对象。而这并不是父类构造器」
+老师，理论上可以通过HomeObject.constructor 拿到 MyClass，是因为HomeObject.constructor拿到的值不靠谱，所以不这么去拿？</p>2020-05-25</li><br/><li><span>穿秋裤的男孩</span> 👍（0） 💬（1）<p>ECMAScript 为此约定：只能在调用了父类构造方法之后，才能使用 super.xxx 的方式来引用父类的属性，或者调用父类的方法，也就是访问 SuperReference 之前必须先调用父类构造方法
 -----------------
 eg:
 class Parent { getName() { return this } };
@@ -344,7 +344,7 @@ class Son extends Parent { getName() { return super.getName() } };
 const s = new Son();
 s.getName(); &#47;&#47; 会正常打印Son类。
 -----------------
-疑问：现在的js引擎是不是会自动加一个默认的constructor函数，并且执行super(),不然按照老师的说法，这边在用super之前没有super(),是不能访问super.getName()的吧？</div>2020-01-07</li><br/><li><span>穿秋裤的男孩</span> 👍（0） 💬（3）<div>1. 在类声明中，如果是类静态声明，也就是使用 static 声明的方法，那么主对象就是这个类，例如 AClass
+疑问：现在的js引擎是不是会自动加一个默认的constructor函数，并且执行super(),不然按照老师的说法，这边在用super之前没有super(),是不能访问super.getName()的吧？</p>2020-01-07</li><br/><li><span>穿秋裤的男孩</span> 👍（0） 💬（3）<p>1. 在类声明中，如果是类静态声明，也就是使用 static 声明的方法，那么主对象就是这个类，例如 AClass
 -----------------
 前提：我理解您这边的说的主对象就是指super
 -----------------
@@ -356,10 +356,10 @@ class Son extends Parent {
 }
 Son.getObj(); &#47;&#47; true
 --------------------
-问：按照您说的话，static声明的方法，super应该指像Son，那么Son.obj应该是指向自己的static obj,也就不应该出现super.obj === Parent.obj为true的结论。这边是不是应该是：super指向Son的__proto__,也就是Parent本身？</div>2020-01-07</li><br/><li><span>Elmer</span> 👍（0） 💬（1）<div>其实很简单，在这种情况下 JavaScript 会从当前调用栈上找到当前函数——也就是 new MyClass() 中的当前构造器，并且返回该构造器的原型作为 super。
+问：按照您说的话，static声明的方法，super应该指像Son，那么Son.obj应该是指向自己的static obj,也就不应该出现super.obj === Parent.obj为true的结论。这边是不是应该是：super指向Son的__proto__,也就是Parent本身？</p>2020-01-07</li><br/><li><span>Elmer</span> 👍（0） 💬（1）<p>其实很简单，在这种情况下 JavaScript 会从当前调用栈上找到当前函数——也就是 new MyClass() 中的当前构造器，并且返回该构造器的原型作为 super。
 这句话没懂。。
  JavaScript 会从当前调用栈上找到当前函数——也就是 new MyClass() 中的当前构造器， 是MyClass.prototype.constructor? 指向的是MyClass ?
-该构造器的原型？请问这里是怎么指向Object.prototype.constructor的。</div>2020-01-06</li><br/><li><span>海绵薇薇</span> 👍（0） 💬（1）<div>Hello 老师好：
+该构造器的原型？请问这里是怎么指向Object.prototype.constructor的。</p>2020-01-06</li><br/><li><span>海绵薇薇</span> 👍（0） 💬（1）<p>Hello 老师好：
 
 感悟：
 
@@ -379,5 +379,5 @@ a.b()方法中this是动态获取的，是作为this传入的a。
 super.b 中的this是super.b这个引用的thisValue（执行环境的this），引用的thisValue优先级高于作为this传入的super。
 通过测试发现bind绑定的this优先级高于super.a这个引用的thisValue。
 
-但是bind，call，apply这些方法绑定的this是存在哪里的呢？bind的mixin底层也是调用的apply。</div>2019-12-29</li><br/><li><span>小童</span> 👍（0） 💬（1）<div>https:&#47;&#47;github.com&#47;aimingoo&#47;prepack-core 我克隆下来了  我不理解在如何引擎级别打断点？ 不知道怎么搞 看到一个scripts文件夹里面有 test262-runner.js文件  然后运行了脚本没运行成功。</div>2019-12-27</li><br/><li><span>小童</span> 👍（0） 💬（1）<div>我在浏览器中输出的方法中没有看到 [[HomeObject]]插槽，老师这个能在哪里找到吗？</div>2019-12-27</li><br/>
+但是bind，call，apply这些方法绑定的this是存在哪里的呢？bind的mixin底层也是调用的apply。</p>2019-12-29</li><br/><li><span>小童</span> 👍（0） 💬（1）<p>https:&#47;&#47;github.com&#47;aimingoo&#47;prepack-core 我克隆下来了  我不理解在如何引擎级别打断点？ 不知道怎么搞 看到一个scripts文件夹里面有 test262-runner.js文件  然后运行了脚本没运行成功。</p>2019-12-27</li><br/><li><span>小童</span> 👍（0） 💬（1）<p>我在浏览器中输出的方法中没有看到 [[HomeObject]]插槽，老师这个能在哪里找到吗？</p>2019-12-27</li><br/>
 </ul>

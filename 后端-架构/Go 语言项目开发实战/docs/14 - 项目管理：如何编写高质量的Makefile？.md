@@ -481,23 +481,23 @@ make[1]: Leaving directory `/home/colin/workspace/golang/src/github.com/marmoted
 
 期待在留言区看到你的思考和答案，也欢迎和我一起探讨关于Makefile的问题，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>helloworld</span> 👍（16） 💬（4）<div>格式化代码、静态代码检查，这种ide或vim都会配置保存时格式化和代码检查，还有必要写在makefile中吗</div>2021-06-26</li><br/><li><span>yandongxiao</span> 👍（4） 💬（2）<div>总结：Makefile 是高效项目管理的重要工具，编写高质量的 Makefile，方便你做CI的检查，不至于自己的代码提交上以后，被提示各种不通过（静态代码检查、格式错误、单元测试等）。
+<li><span>helloworld</span> 👍（16） 💬（4）<p>格式化代码、静态代码检查，这种ide或vim都会配置保存时格式化和代码检查，还有必要写在makefile中吗</p>2021-06-26</li><br/><li><span>yandongxiao</span> 👍（4） 💬（2）<p>总结：Makefile 是高效项目管理的重要工具，编写高质量的 Makefile，方便你做CI的检查，不至于自己的代码提交上以后，被提示各种不通过（静态代码检查、格式错误、单元测试等）。
 
 要做好 Makefile 的管理，可按照下面的步骤：1. 学习 Makefile 语法；2. 规划 Makefile 要实现的功能；3. 规划 Makefile 结构；4. 善用 Makefile 技巧。
 
-直接拷贝IAM项目的Makefile，也很香。</div>2021-11-26</li><br/><li><span>Vackine</span> 👍（4） 💬（1）<div>写好一个功能齐全的项目的makefile，然后只对makefile 的各个功能做编排，是不是就可以做到基本的持续发布了？</div>2021-06-26</li><br/><li><span>青苔入镜</span> 👍（2） 💬（1）<div>我有些困惑，iam项目将控制流和数据流放在了一个仓库中，然后使用makefile进行管理，方便我们学习部署，这个我倒是可以理解。
+直接拷贝IAM项目的Makefile，也很香。</p>2021-11-26</li><br/><li><span>Vackine</span> 👍（4） 💬（1）<p>写好一个功能齐全的项目的makefile，然后只对makefile 的各个功能做编排，是不是就可以做到基本的持续发布了？</p>2021-06-26</li><br/><li><span>青苔入镜</span> 👍（2） 💬（1）<p>我有些困惑，iam项目将控制流和数据流放在了一个仓库中，然后使用makefile进行管理，方便我们学习部署，这个我倒是可以理解。
 实际企业中是将所有组件也放在一个大仓库中的吗？我所在公司是将项目各个组件分为各个小仓库，开发后进行持续交付和持续部署。我感觉这样也比较合理一些啊，适合现在微服务这样，单个人就维护几个组件。而且控制面和数据面如果部署在一台机器上不会影响数据面的性能吗？
-什么场景需要用makefile来管理项目呢？私有化部署的项目吗？我没有想的太明白</div>2022-11-08</li><br/><li><span>兔嘟嘟</span> 👍（1） 💬（2）<div>请问老师如何看待Makefile已过时的言论？
-在知乎上查找相关资料时，发现很多人认为Makefile过时了，只需要学习cmake、bazel之类的，各种说法都有，现在有点晕</div>2021-10-26</li><br/><li><span>Daiver</span> 👍（1） 💬（2）<div>老师，看到iam项目下面的license 文件中添加了其他库的说明，这个是手动加上去的吗</div>2021-09-23</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<div>make lint执行完为什么会报这个错误
+什么场景需要用makefile来管理项目呢？私有化部署的项目吗？我没有想的太明白</p>2022-11-08</li><br/><li><span>兔嘟嘟</span> 👍（1） 💬（2）<p>请问老师如何看待Makefile已过时的言论？
+在知乎上查找相关资料时，发现很多人认为Makefile过时了，只需要学习cmake、bazel之类的，各种说法都有，现在有点晕</p>2021-10-26</li><br/><li><span>Daiver</span> 👍（1） 💬（2）<p>老师，看到iam项目下面的license 文件中添加了其他库的说明，这个是手动加上去的吗</p>2021-09-23</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<p>make lint执行完为什么会报这个错误
 make[1]: *** [go.lint] Error 1
-make: *** [lint] Error 2</div>2022-10-30</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<div>运行make lint报错 ，这个怎么排查
+make: *** [lint] Error 2</p>2022-10-30</li><br/><li><span>tiny🌾</span> 👍（0） 💬（1）<p>运行make lint报错 ，这个怎么排查
 make[1]: *** [go.lint] Error 1
 make: *** [lint] Error 2
-</div>2022-10-20</li><br/><li><span>左耳朵东</span> 👍（0） 💬（2）<div>.PHONY: format
+</p>2022-10-20</li><br/><li><span>左耳朵东</span> 👍（0） 💬（2）<p>.PHONY: format
 format: tools.verify.golines
 .PHONY: tools.verify.%
 tools.verify.%:
 	@if ! which $* &amp;&gt;&#47;dev&#47;null; then $(MAKE) tools.install.$*; fi
-这里的 $* 是指 ‘golines’ 还是 ‘tools.verify.golines’ 呢？</div>2022-08-23</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<div>对 Windows 系统不友好，实际 CRUD 业务中，更多人是在 Windows 下开发吧（IDE 选 VSCode 或 GoLand）。</div>2022-04-18</li><br/><li><span>牛2特工</span> 👍（0） 💬（1）<div>go为什么不设计专用的构建工具 
-把常见通用的任务都集成了</div>2022-03-15</li><br/><li><span>CSB22</span> 👍（0） 💬（1）<div>您有没有比较好的makefile editor推荐么？</div>2022-03-02</li><br/><li><span>夏心C.J</span> 👍（0） 💬（1）<div>$*是指示目标模式中 % 及其之前的部分，不是指代被匹配的值swagger、mockgen吧？</div>2022-02-11</li><br/><li><span>党</span> 👍（0） 💬（1）<div>win上没有make命令 老师你的开发环境是linux或者mac么 win上怎么搞make</div>2022-01-26</li><br/><li><span>ggchangan</span> 👍（0） 💬（1）<div>老师的课程真是超值，特别感谢！有个问题请教下，怎么自动生成基于suite的测试代码呢？</div>2021-10-14</li><br/>
+这里的 $* 是指 ‘golines’ 还是 ‘tools.verify.golines’ 呢？</p>2022-08-23</li><br/><li><span>Calvin</span> 👍（0） 💬（1）<p>对 Windows 系统不友好，实际 CRUD 业务中，更多人是在 Windows 下开发吧（IDE 选 VSCode 或 GoLand）。</p>2022-04-18</li><br/><li><span>牛2特工</span> 👍（0） 💬（1）<p>go为什么不设计专用的构建工具 
+把常见通用的任务都集成了</p>2022-03-15</li><br/><li><span>CSB22</span> 👍（0） 💬（1）<p>您有没有比较好的makefile editor推荐么？</p>2022-03-02</li><br/><li><span>夏心C.J</span> 👍（0） 💬（1）<p>$*是指示目标模式中 % 及其之前的部分，不是指代被匹配的值swagger、mockgen吧？</p>2022-02-11</li><br/><li><span>党</span> 👍（0） 💬（1）<p>win上没有make命令 老师你的开发环境是linux或者mac么 win上怎么搞make</p>2022-01-26</li><br/><li><span>ggchangan</span> 👍（0） 💬（1）<p>老师的课程真是超值，特别感谢！有个问题请教下，怎么自动生成基于suite的测试代码呢？</p>2021-10-14</li><br/>
 </ul>

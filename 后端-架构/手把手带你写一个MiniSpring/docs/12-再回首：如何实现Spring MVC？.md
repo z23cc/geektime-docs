@@ -81,12 +81,12 @@ Servlet容器启动的时候，按照时序，是先启动Listener，在Listener
 
 对于JSP之外的View，我们现在的结构是可扩展的。只要自己另外实现一个View和一个View resolver即可。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Geek_320730</span> 👍（4） 💬（1）<div>https:&#47;&#47;github.com&#47;kuifir&#47;practice&#47;tree&#47;master&#47;miniSpring 跟着老师每节课程跟着学完都很有收获，完成一个课程的内容并且测试成功后也很有成就感。</div>2023-04-11</li><br/><li><span>欧阳利</span> 👍（1） 💬（1）<div>怎么感觉越到后面，内容越简单了</div>2023-04-11</li><br/><li><span>peter</span> 👍（1） 💬（2）<div>请教老师几个问题：
+<li><span>Geek_320730</span> 👍（4） 💬（1）<p>https:&#47;&#47;github.com&#47;kuifir&#47;practice&#47;tree&#47;master&#47;miniSpring 跟着老师每节课程跟着学完都很有收获，完成一个课程的内容并且测试成功后也很有成就感。</p>2023-04-11</li><br/><li><span>欧阳利</span> 👍（1） 💬（1）<p>怎么感觉越到后面，内容越简单了</p>2023-04-11</li><br/><li><span>peter</span> 👍（1） 💬（2）<p>请教老师几个问题：
 Q1：SpringMVC与Spring是什么关系？
 SpringMVC是Spring的一个子模块或子组件吗？或者两者不是包含关系，是平等、相互独立的两个东西？
 Q2：SpringMVC是基于servlet，可以基于其他的吗？
 Q3：SpringMVC需要依赖于一个容器，比如tomcat，但spring不需要依赖tomcat，是这样吗？
 Q4：servlet具体是一个进程还是一个线程？ Redis速度快，因为是单线程，现在servlet处理全部请求，是不是类似于redis的单线程？
 Q5：前后盾分离开发，前端用vue，应该会有一个“vue引擎”一类的东西。前端开发完成后，页面会打包放到后端idea项目中，那么，此时，后端会有一个“vue引擎”吗？
-Q6：wac访问不到servlet，是不需要吗？还是技术上不可行？可以把wac放到ServletContext中，为什么不可以把DispatchServlet放到wac中？</div>2023-04-08</li><br/><li><span>Jay</span> 👍（0） 💬（1）<div>请教老师，有个问题一直没想明白，RequestMappingHandlerMapping和RequestMappingHandlerAdapter都是配置在applicationContext.xml里面由IOC容器管理的，DispatcherServlet中通过wac.getBean()方法获取，这一步没有问题。但是，RequestMappingHandlerMapping依赖的WebApplicationContext必须是MVC容器（initMapping方法中需要获取MVC容器中维护的controllerNames），我一直没有看到RequestMappingHandlerMapping依赖的这个wac是如何注入的。master代码里面实现了ApplicationContextAware接口，但是我想即便实现了这里也只能得到IOC容器对应的ApplicationContext，好像依然不能解决这个问题？不知道到我理解的有没有问题？</div>2023-04-07</li><br/>
+Q6：wac访问不到servlet，是不需要吗？还是技术上不可行？可以把wac放到ServletContext中，为什么不可以把DispatchServlet放到wac中？</p>2023-04-08</li><br/><li><span>Jay</span> 👍（0） 💬（1）<p>请教老师，有个问题一直没想明白，RequestMappingHandlerMapping和RequestMappingHandlerAdapter都是配置在applicationContext.xml里面由IOC容器管理的，DispatcherServlet中通过wac.getBean()方法获取，这一步没有问题。但是，RequestMappingHandlerMapping依赖的WebApplicationContext必须是MVC容器（initMapping方法中需要获取MVC容器中维护的controllerNames），我一直没有看到RequestMappingHandlerMapping依赖的这个wac是如何注入的。master代码里面实现了ApplicationContextAware接口，但是我想即便实现了这里也只能得到IOC容器对应的ApplicationContext，好像依然不能解决这个问题？不知道到我理解的有没有问题？</p>2023-04-07</li><br/>
 </ul>

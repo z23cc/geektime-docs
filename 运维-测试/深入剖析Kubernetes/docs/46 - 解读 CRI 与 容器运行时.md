@@ -84,10 +84,10 @@ CRI shim 里对 Streaming API 的实现，依赖于一套独立的 Streaming Ser
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>初学者</span> 👍（20） 💬（1）<div>kubelet 可以直接对接contained ? 中间不需要额外实现cri shim ？还是containerd 中已经集成了cri shim？</div>2018-12-08</li><br/><li><span>勤劳的小胖子-libo</span> 👍（36） 💬（1）<div>DevicePlugin中的allocate函数是是在container creating的时候被调用，从而device plugin可以执行特定的操作，比如attach设备以及驱动目录。
+<li><span>初学者</span> 👍（20） 💬（1）<p>kubelet 可以直接对接contained ? 中间不需要额外实现cri shim ？还是containerd 中已经集成了cri shim？</p>2018-12-08</li><br/><li><span>勤劳的小胖子-libo</span> 👍（36） 💬（1）<p>DevicePlugin中的allocate函数是是在container creating的时候被调用，从而device plugin可以执行特定的操作，比如attach设备以及驱动目录。
 所以应该是使用到了：
 Createcontainer()这个接口
-</div>2018-12-11</li><br/><li><span>Geek_dn82ci</span> 👍（10） 💬（0）<div>containerd应该会把请求交给contained-shim，然后再调runC吧</div>2019-07-16</li><br/><li><span>ch_ort</span> 👍（8） 💬（0）<div>调度器将Pod调度到某一个Node上后，Node上的Kubelet就需要负责将这个Pod拉起来。在Kuberentes社区中，Kubelet以及CRI相关的内容，都属于SIG-Node。
+</p>2018-12-11</li><br/><li><span>Geek_dn82ci</span> 👍（10） 💬（0）<p>containerd应该会把请求交给contained-shim，然后再调runC吧</p>2019-07-16</li><br/><li><span>ch_ort</span> 👍（8） 💬（0）<p>调度器将Pod调度到某一个Node上后，Node上的Kubelet就需要负责将这个Pod拉起来。在Kuberentes社区中，Kubelet以及CRI相关的内容，都属于SIG-Node。
 
 Kubelet也是通过控制循环来完成各种工作的。kubelet调用下层容器运行时通过一组叫作CRI的gRPC接口来间接执行的。通过CRI， kubelet与具体的容器运行时解耦。在目前的kubelet实现里，内置了dockershim这个CRI的实现，但这部分实现未来肯定会被kubelet移除。未来更普遍的方案是在宿主机上安装负责响应的CRI组件（CRI shim），kubelet负责调用CRI shim，CRI shim把具体的请求“翻译”成对后端容器项目的请求或者操作 。
 
@@ -98,10 +98,10 @@ Docker: 创建出一个名叫foo的Infra容器来hold住整个pod，接着启动
 Kata container: 创建出一个轻量级的虚拟机来hold住整个pod，接着创建A、B容器对应的 Mount Namespace。所以，最后在宿主机上，只会有一个叫做foo的轻量级虚拟机在运行
 
 
-</div>2020-12-22</li><br/><li><span>Vinsec</span> 👍（4） 💬（0）<div>天冷适合搞学习 打卡</div>2018-12-07</li><br/><li><span>geraltlaush</span> 👍（3） 💬（1）<div>docker shim 是不是可以理解成remote+CRI shim的一个k8s内部集成的一种实现</div>2019-02-16</li><br/><li><span>Join</span> 👍（2） 💬（0）<div>对CRI的认识更进一层了</div>2021-12-15</li><br/><li><span>Geek_dn82ci</span> 👍（2） 💬（4）<div>Containerd 中的cri-shim和用来控制runC的containerd-shim有什么区别呢？</div>2020-08-13</li><br/><li><span>郑然</span> 👍（2） 💬（1）<div>老师请教两个问题: 
+</p>2020-12-22</li><br/><li><span>Vinsec</span> 👍（4） 💬（0）<p>天冷适合搞学习 打卡</p>2018-12-07</li><br/><li><span>geraltlaush</span> 👍（3） 💬（1）<p>docker shim 是不是可以理解成remote+CRI shim的一个k8s内部集成的一种实现</p>2019-02-16</li><br/><li><span>Join</span> 👍（2） 💬（0）<p>对CRI的认识更进一层了</p>2021-12-15</li><br/><li><span>Geek_dn82ci</span> 👍（2） 💬（4）<p>Containerd 中的cri-shim和用来控制runC的containerd-shim有什么区别呢？</p>2020-08-13</li><br/><li><span>郑然</span> 👍（2） 💬（1）<p>老师请教两个问题: 
 1. 为什么kubelet要给apiserver返回redirect url呢? 这样做有什么特殊考虑吗?
-2. 镜像服务, 以及下载完镜像之后, 如何和createcontainer接口发生关联的, 这块的细节能讲讲吗?</div>2018-12-07</li><br/><li><span>陈斯佳</span> 👍（1） 💬（0）<div>第四十四课:解读CRI与容器运行时
+2. 镜像服务, 以及下载完镜像之后, 如何和createcontainer接口发生关联的, 这块的细节能讲讲吗?</p>2018-12-07</li><br/><li><span>陈斯佳</span> 👍（1） 💬（0）<p>第四十四课:解读CRI与容器运行时
 CRI机制能够发挥作用的核心，就在于每个容器项目现在都能自己实现一个CRI shim，自行对CRI请求进行处理。
 
-CRI可以分为两组，第一组是RuntimeService。它提供的接口主要是跟容器相关的操作，比如创建或启动容器，删除容器，和执行exec命令等。这组的设计原则是确保这个接口本身只关注容器。第二组是ImageService，它提供的接口主要是容器镜像相关的操作，比如拉取和删除镜像等。</div>2021-11-05</li><br/><li><span>窝窝头</span> 👍（0） 💬（0）<div>CreateContainer或者RunPodSandbox吧</div>2022-08-03</li><br/><li><span>lttzzlll</span> 👍（0） 💬（5）<div>k8s中是否可以同时存在 docker, containerd, gVisor 等不同的容器？根据label分配不同的任务。</div>2021-09-13</li><br/>
+CRI可以分为两组，第一组是RuntimeService。它提供的接口主要是跟容器相关的操作，比如创建或启动容器，删除容器，和执行exec命令等。这组的设计原则是确保这个接口本身只关注容器。第二组是ImageService，它提供的接口主要是容器镜像相关的操作，比如拉取和删除镜像等。</p>2021-11-05</li><br/><li><span>窝窝头</span> 👍（0） 💬（0）<p>CreateContainer或者RunPodSandbox吧</p>2022-08-03</li><br/><li><span>lttzzlll</span> 👍（0） 💬（5）<p>k8s中是否可以同时存在 docker, containerd, gVisor 等不同的容器？根据label分配不同的任务。</p>2021-09-13</li><br/>
 </ul>

@@ -453,9 +453,9 @@ in task_b
 
 你可以说一说从任务中搜集返回结果有几种方式吗？欢迎你把你对课程的思考和疑问留在评论区，我会和你一起交流探讨，如果你觉得这节课的内容对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>刘丹</span> 👍（4） 💬（2）<div>请问老师： r = task_a =&gt; r.unwrap() 这是闭包，还是匿名函数？
+<li><span>刘丹</span> 👍（4） 💬（2）<p>请问老师： r = task_a =&gt; r.unwrap() 这是闭包，还是匿名函数？
 
-</div>2023-11-24</li><br/><li><span>superggn</span> 👍（1） 💬（1）<div>背压 - back pressure
+</p>2023-11-24</li><br/><li><span>superggn</span> 👍（1） 💬（1）<p>背压 - back pressure
 
 带背压的 channel
 tokio::mpsc::channel(n)
@@ -463,16 +463,16 @@ std::mpsc::sync_channel(n)
 
 不带背压的 channel
 tokio::mpsc::unbounded_channel();
-std::mpsc::channel();</div>2024-01-26</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（1）<div>join 和 select 类似于 JavaScript 中的 Promise.all 和 Promise.race</div>2024-01-26</li><br/><li><span>superggn</span> 👍（0） 💬（1）<div>思考题
+std::mpsc::channel();</p>2024-01-26</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（1）<p>join 和 select 类似于 JavaScript 中的 Promise.all 和 Promise.race</p>2024-01-26</li><br/><li><span>superggn</span> 👍（0） 💬（1）<p>思考题
 - Arc::new(Mutex::new(target_var));
 - res = join_handler.await.unwrap();
 - channel
-</div>2023-12-25</li><br/><li><span>superggn</span> 👍（0） 💬（1）<div>捉虫： `等待所有任务一起返回`  main 前面少个 fn</div>2023-12-25</li><br/><li><span>刘永臣</span> 👍（0） 💬（1）<div>.await()类似于等待组吧？ channel的四种模式也是go channel常用的四种场景。</div>2023-11-28</li><br/><li><span>学水</span> 👍（0） 💬（1）<div>如果通道都没有任何生产者消息，select语句中的消费者是堵塞在那里还是会之间进入下一个语句呢</div>2023-11-25</li><br/><li><span>老大</span> 👍（0） 💬（1）<div>为啥我按照你写的，运行不起来呢？</div>2023-11-24</li><br/><li><span>PEtFiSh</span> 👍（0） 💬（1）<div>从任务收集返回结果的方式有：
+</p>2023-12-25</li><br/><li><span>superggn</span> 👍（0） 💬（1）<p>捉虫： `等待所有任务一起返回`  main 前面少个 fn</p>2023-12-25</li><br/><li><span>刘永臣</span> 👍（0） 💬（1）<p>.await()类似于等待组吧？ channel的四种模式也是go channel常用的四种场景。</p>2023-11-28</li><br/><li><span>学水</span> 👍（0） 💬（1）<p>如果通道都没有任何生产者消息，select语句中的消费者是堵塞在那里还是会之间进入下一个语句呢</p>2023-11-25</li><br/><li><span>老大</span> 👍（0） 💬（1）<p>为啥我按照你写的，运行不起来呢？</p>2023-11-24</li><br/><li><span>PEtFiSh</span> 👍（0） 💬（1）<p>从任务收集返回结果的方式有：
 1、任务直接返回值，然后通过handler取回，比如：a = task_a.await.unwrap();
 2、通过锁的方式直接写在目标位置
 3、通过channel的形式传递结果
-4、似乎也可以unsafe来写全局变量。</div>2023-11-24</li><br/><li><span>伯阳</span> 👍（0） 💬（1）<div>这种无锁并发，快是快了点，但是如果给通道打满了，怎么处理呢</div>2023-11-24</li><br/><li><span>BBJB</span> 👍（0） 💬（0）<div>MPSC Channel模式，如果在send的异步线程中，套一层循环 for i in 0..100{tx1.send(50).await}
-为什么接受线程需要等循环完才开始执行recv。而不是send一个，recv一个。</div>2024-04-25</li><br/><li><span>superggn</span> 👍（0） 💬（0）<div>背压 - back pressure
+4、似乎也可以unsafe来写全局变量。</p>2023-11-24</li><br/><li><span>伯阳</span> 👍（0） 💬（1）<p>这种无锁并发，快是快了点，但是如果给通道打满了，怎么处理呢</p>2023-11-24</li><br/><li><span>BBJB</span> 👍（0） 💬（0）<p>MPSC Channel模式，如果在send的异步线程中，套一层循环 for i in 0..100{tx1.send(50).await}
+为什么接受线程需要等循环完才开始执行recv。而不是send一个，recv一个。</p>2024-04-25</li><br/><li><span>superggn</span> 👍（0） 💬（0）<p>背压 - back pressure
 
 带背压的 channel
 tokio::mpsc::channel(n)
@@ -480,5 +480,5 @@ std::mpsc::sync_channel(n)
 
 不带背压的 channel
 tokio::mpsc::unbounded_channel();
-std::mpsc::channel();</div>2024-01-26</li><br/>
+std::mpsc::channel();</p>2024-01-26</li><br/>
 </ul>

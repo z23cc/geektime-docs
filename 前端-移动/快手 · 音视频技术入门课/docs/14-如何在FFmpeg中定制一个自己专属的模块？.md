@@ -397,7 +397,7 @@ $ xxd out.kwai | head -n 4
 
 这节课我们学习的是添加一个muxer，那么你能否为muxer添加一个demuxer呢？ 欢迎你在评论区留言和我讨论，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>大土豆</span> 👍（3） 💬（1）<div>这种私有文件格式的玩法，确实很多😄，微信的语音文件是silkv3格式，和标准格式有点差别是文件最前面加了一个字节的点号“.” ，导致其他播放器都打不开，也不知道是图个啥。</div>2022-08-26</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+<li><span>大土豆</span> 👍（3） 💬（1）<p>这种私有文件格式的玩法，确实很多😄，微信的语音文件是silkv3格式，和标准格式有点差别是文件最前面加了一个字节的点号“.” ，导致其他播放器都打不开，也不知道是图个啥。</p>2022-08-26</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：查看FFmpeg源码，linux下一般用什么软件？ Win10下一般用什么软件？（win10下用sourceInsight吗？）
 
 Q2：添加文件封装格式之后，编译失败
@@ -413,7 +413,7 @@ const AVInputFormat  ff_kwai_demuxer;
 然后编译： make -j4
 报错：&#47;usr&#47;bin&#47;ld: libavformat&#47;libavformat.a(allformats.o):(.data.rel.ro+0xa40): undefined reference to `ff_kwai_demuxer&#39;
 
-请问错误原因是什么？ 怎么修改？</div>2022-08-24</li><br/><li><span>青晨昊天</span> 👍（1） 💬（0）<div>请问老师，关于自定义filter的编写，有哪些教程</div>2022-11-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-01-01</li><br/><li><span>jcy</span> 👍（0） 💬（1）<div>写音视频数据 部分里的函数开头部分：
+请问错误原因是什么？ 怎么修改？</p>2022-08-24</li><br/><li><span>青晨昊天</span> 👍（1） 💬（0）<p>请问老师，关于自定义filter的编写，有哪些教程</p>2022-11-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-01-01</li><br/><li><span>jcy</span> 👍（0） 💬（1）<p>写音视频数据 部分里的函数开头部分：
 static int kwai_write_packet(AVFormatContext *s, AVPacket *pkt) { 
 &#47;&#47; kwaiMuxContext *mov = s-&gt;priv_data; 
 uint32_t size = pkt-&gt;size; &#47;&#47; 获取数据大小 
@@ -422,5 +422,5 @@ if (!pkt) {
 }
 ...
 
-这里应该在函数开头先判断指针是否为空 if (!pkt) 然后再取 pkt-&gt;size</div>2022-09-20</li><br/>
+这里应该在函数开头先判断指针是否为空 if (!pkt) 然后再取 pkt-&gt;size</p>2022-09-20</li><br/>
 </ul>

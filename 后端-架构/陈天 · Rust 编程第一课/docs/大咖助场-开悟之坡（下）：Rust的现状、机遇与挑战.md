@@ -522,6 +522,6 @@ Rust在系统语言的地位上，更像是当年的 C 语言。同样是通用�
 
 我们也看到，Rust 语言还有很多需要完善的地方，但这些都在官方团队的计划之中。我相信，在 Rust 基金会的引领下，Rust 肯定会迈向广泛应用的美好未来。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>pedro</span> 👍（3） 💬（2）<div>满屏的特性，不禁让我想到当年的c++。
-我们真的需要这么多的特性吗，感觉像是中国大厂做APP，一堆Tab页，没几个能用的</div>2021-12-20</li><br/><li><span>overheat</span> 👍（0） 💬（1）<div>有Rust写Linux Device Driver的例子吗？</div>2021-12-29</li><br/><li><span>手滑的小熊猫</span> 👍（0） 💬（1）<div>噗哈哈哈哈汉东老师说话是很厚重很慢速的。小编代读的吧</div>2021-12-20</li><br/><li><span>陈小虎</span> 👍（0） 💬（1）<div>东西太多了。。</div>2021-12-20</li><br/><li><span>Geek_zbvt62</span> 👍（1） 💬（0）<div>Try trait那里，有些不明白，为什么关联类型要写成 type Residual = Result&lt;!, E&gt;;（我现在使用的是1.65版本，是Result&lt;convert::Infallible, E&gt;）而不是E?我感觉type Residual = E也可以工作呀？</div>2022-12-02</li><br/>
+<li><span>pedro</span> 👍（3） 💬（2）<p>满屏的特性，不禁让我想到当年的c++。
+我们真的需要这么多的特性吗，感觉像是中国大厂做APP，一堆Tab页，没几个能用的</p>2021-12-20</li><br/><li><span>overheat</span> 👍（0） 💬（1）<p>有Rust写Linux Device Driver的例子吗？</p>2021-12-29</li><br/><li><span>手滑的小熊猫</span> 👍（0） 💬（1）<p>噗哈哈哈哈汉东老师说话是很厚重很慢速的。小编代读的吧</p>2021-12-20</li><br/><li><span>陈小虎</span> 👍（0） 💬（1）<p>东西太多了。。</p>2021-12-20</li><br/><li><span>Geek_zbvt62</span> 👍（1） 💬（0）<p>Try trait那里，有些不明白，为什么关联类型要写成 type Residual = Result&lt;!, E&gt;;（我现在使用的是1.65版本，是Result&lt;convert::Infallible, E&gt;）而不是E?我感觉type Residual = E也可以工作呀？</p>2022-12-02</li><br/>
 </ul>

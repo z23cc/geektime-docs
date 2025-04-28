@@ -176,12 +176,12 @@ df = df.withColumn("inputs", split($"value", ","))
 
 欢迎你在留言区跟我交流讨论，也推荐你把这一讲分享给更多同事、朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>姚礼垚</span> 👍（4） 💬（2）<div>老师，我想问下Sliding Window的应用场景是啥，如果按照时间聚合的话，Tumbling Window界限好像更清晰一些</div>2022-01-06</li><br/><li><span>Geek_63fe1e</span> 👍（1） 💬（5）<div>怎么觉得消息8也被丢弃，最大的watermark 是9：44，能容忍的最晚的消息不应该是9：34，而消息8已经早于这个时间了</div>2022-02-27</li><br/><li><span>苏文进</span> 👍（8） 💬（0）<div>   event time                                               水印        水位线       上沿      下沿
+<li><span>姚礼垚</span> 👍（4） 💬（2）<p>老师，我想问下Sliding Window的应用场景是啥，如果按照时间聚合的话，Tumbling Window界限好像更清晰一些</p>2022-01-06</li><br/><li><span>Geek_63fe1e</span> 👍（1） 💬（5）<p>怎么觉得消息8也被丢弃，最大的watermark 是9：44，能容忍的最晚的消息不应该是9：34，而消息8已经早于这个时间了</p>2022-02-27</li><br/><li><span>苏文进</span> 👍（8） 💬（0）<p>   event time                                               水印        水位线       上沿      下沿
 2021-10-01 09:30:00, Apache Spark           09:30:00    09:20:00  09:25:00    09:20:00  ok
 2021-10-01 09:36:00, Structured Streaming   09:36:00    09:26:00  09:30:00    09:25:00  ok
 2021-10-01 09:39:00, Spark Streaming        09:39:00    09:29:00  09:30:00    09:25:00  ok
 2021-10-01 09:41:00, AMP Lab                09:41:00    09:31:00  09:35:00    09:30:00  ok
 2021-10-01 09:44:00, Spark SQL              09:44:00    09:34:00  09:35:00    09:30:00  ok
 2021-10-01 09:29:00, Test Test              09:44:00    09:34:00  09:35:00    09:30:00  no
-2021-10-01 09:33:00, Spark is cool          09:44:00    09:33:00  09:35:00    09:30:00  ok</div>2022-05-21</li><br/><li><span>PCZ</span> 👍（0） 💬（1）<div>为什么 scala下的spark element_at这个函数找不到，需要什么依赖吗</div>2023-04-16</li><br/>
+2021-10-01 09:33:00, Spark is cool          09:44:00    09:33:00  09:35:00    09:30:00  ok</p>2022-05-21</li><br/><li><span>PCZ</span> 👍（0） 💬（1）<p>为什么 scala下的spark element_at这个函数找不到，需要什么依赖吗</p>2023-04-16</li><br/>
 </ul>

@@ -156,15 +156,15 @@ pling period of length delay.  The process and memory reports are instantaneous 
 
 最后，欢迎继续在留言区写下你的疑问，我会持续不断地解答。我的目的仍然不变，希望可以和你一起，把文章的知识变成你的能力，我们不仅仅在实战中演练，也要在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ninuxer</span> 👍（44） 💬（4）<div>打卡day14
+<li><span>ninuxer</span> 👍（44） 💬（4）<p>打卡day14
 之前一直理解有误，感谢指出！
 pidstat 中， %wait 表示进程等待 CPU 的时间百分比。此时进程是运行状态。
 top 中 ，iowait% 则表示等待 I&#47;O 的 CPU 时间百分比。此时进程处于不可中断睡眠态。
-等待 CPU 的进程已经在 CPU 的就绪队列中，处于运行状态；而等待 I&#47;O 的进程则处于不可中断状态。</div>2018-12-19</li><br/><li><span>念你如昔</span> 👍（18） 💬（1）<div>非常非常感谢，这钱花的值，之前没有对这些东西形成体系，老是感觉有力使不上的感觉，自从看了老师的文档，终于飘了，都想跳槽了？！。</div>2018-12-19</li><br/><li><span>微思</span> 👍（8） 💬（1）<div>老师，等待IO的不可中断进程是否一直占用CPU？</div>2018-12-19</li><br/><li><span>神奇小懒懒</span> 👍（8） 💬（1）<div>课程很系统，把自己以前的知识都串起来了，后续争取每个案例自己都做一次，并且融合自己的经验改进下案例</div>2018-12-19</li><br/><li><span>MoFanDon</span> 👍（4） 💬（1）<div>做了几年运维一直想要掌握，却了解的很零散。这段时间的课程让我学习很多，感谢老师。</div>2018-12-19</li><br/><li><span>我来也</span> 👍（2） 💬（1）<div>[D13打卡]
+等待 CPU 的进程已经在 CPU 的就绪队列中，处于运行状态；而等待 I&#47;O 的进程则处于不可中断状态。</p>2018-12-19</li><br/><li><span>念你如昔</span> 👍（18） 💬（1）<p>非常非常感谢，这钱花的值，之前没有对这些东西形成体系，老是感觉有力使不上的感觉，自从看了老师的文档，终于飘了，都想跳槽了？！。</p>2018-12-19</li><br/><li><span>微思</span> 👍（8） 💬（1）<p>老师，等待IO的不可中断进程是否一直占用CPU？</p>2018-12-19</li><br/><li><span>神奇小懒懒</span> 👍（8） 💬（1）<p>课程很系统，把自己以前的知识都串起来了，后续争取每个案例自己都做一次，并且融合自己的经验改进下案例</p>2018-12-19</li><br/><li><span>MoFanDon</span> 👍（4） 💬（1）<p>做了几年运维一直想要掌握，却了解的很零散。这段时间的课程让我学习很多，感谢老师。</p>2018-12-19</li><br/><li><span>我来也</span> 👍（2） 💬（1）<p>[D13打卡]
 多谢老师提出来, pidstat 和 top 中的 %wait 含义并不一样.
 之前只知道top是io的wait, 而新接触的pidstat的倒没有细想过.
 确实是应该多man一下,看下命令文档.
-刚开始要把工具用起来, 之后再查看命令的详细文档.</div>2018-12-19</li><br/><li><span>大哈</span> 👍（1） 💬（1）<div>老师，您好，我想知道像pidstat这样的工具是怎么获取到这些性能数据的，我自己去开发应该从那里获取呢？</div>2019-07-10</li><br/><li><span>胡莉婷</span> 👍（1） 💬（2）<div>补充一点。我们的进程都是后台服务，机器1和机器2启动后都没有业务进来</div>2019-01-08</li><br/><li><span>胡莉婷</span> 👍（1） 💬（1）<div>老师你好，我们有个问题，还请给个思路。同样的应用程序，部署在两台机器上，比如机器1和机器2.。top发现机器2上进程数据段大小是机器1上数据段的10倍大。还有一个情况是机器2的进程(有上百个)启动后，比较集中在某一个cpu上，而机器1上我们的进程分布就比较均匀。还请指点一下</div>2019-01-08</li><br/><li><span>dexter</span> 👍（1） 💬（1）<div>[root@localhost ~]# docker run --name phpfpm -itd --network container:nginx feisky&#47;php-fpm
+刚开始要把工具用起来, 之后再查看命令的详细文档.</p>2018-12-19</li><br/><li><span>大哈</span> 👍（1） 💬（1）<p>老师，您好，我想知道像pidstat这样的工具是怎么获取到这些性能数据的，我自己去开发应该从那里获取呢？</p>2019-07-10</li><br/><li><span>胡莉婷</span> 👍（1） 💬（2）<p>补充一点。我们的进程都是后台服务，机器1和机器2启动后都没有业务进来</p>2019-01-08</li><br/><li><span>胡莉婷</span> 👍（1） 💬（1）<p>老师你好，我们有个问题，还请给个思路。同样的应用程序，部署在两台机器上，比如机器1和机器2.。top发现机器2上进程数据段大小是机器1上数据段的10倍大。还有一个情况是机器2的进程(有上百个)启动后，比较集中在某一个cpu上，而机器1上我们的进程分布就比较均匀。还请指点一下</p>2019-01-08</li><br/><li><span>dexter</span> 👍（1） 💬（1）<p>[root@localhost ~]# docker run --name phpfpm -itd --network container:nginx feisky&#47;php-fpm
 flag provided but not defined: --network
 See &#39;docker run --help&#39;.
 [root@localhost ~]# docker version
@@ -178,7 +178,7 @@ Server API version: 1.19
 Go version (server): go1.4.2
 Git commit (server): 786b29d&#47;1.7.1
 OS&#47;Arch (server): linux&#47;amd64
-centos6.10 安装发现没有--network参数</div>2018-12-20</li><br/><li><span>辉晖</span> 👍（0） 💬（1）<div>我的机器出现最多的不是RES，而是Local timer interrupts</div>2019-06-27</li><br/><li><span>Musisan</span> 👍（0） 💬（1）<div>Package man-pages-3.53-5.el7.noarch already installed and latest version。
+centos6.10 安装发现没有--network参数</p>2018-12-20</li><br/><li><span>辉晖</span> 👍（0） 💬（1）<p>我的机器出现最多的不是RES，而是Local timer interrupts</p>2019-06-27</li><br/><li><span>Musisan</span> 👍（0） 💬（1）<p>Package man-pages-3.53-5.el7.noarch already installed and latest version。
 No manual entry for vmstat，
-老师，这是为啥，centos7，6的。</div>2019-05-14</li><br/><li><span>爱学习的小学生</span> 👍（0） 💬（1）<div>打卡</div>2019-02-19</li><br/><li><span>、荒唐_戏_</span> 👍（0） 💬（1）<div>day2   昨晚排查一台机器load200+  8  core 觉得摸到一点思路了，但是还没查到具体问题，还要继续加油୧( ⁼̴̶̤̀ω⁼̴̶̤́ )૭</div>2019-01-26</li><br/><li><span>小老鼠</span> 👍（0） 💬（1）<div>机械磁盘（HDD）、低端固态磁盘（SSD）与高端固态。性能差别有多大</div>2018-12-26</li><br/>
+老师，这是为啥，centos7，6的。</p>2019-05-14</li><br/><li><span>爱学习的小学生</span> 👍（0） 💬（1）<p>打卡</p>2019-02-19</li><br/><li><span>、荒唐_戏_</span> 👍（0） 💬（1）<p>day2   昨晚排查一台机器load200+  8  core 觉得摸到一点思路了，但是还没查到具体问题，还要继续加油୧( ⁼̴̶̤̀ω⁼̴̶̤́ )૭</p>2019-01-26</li><br/><li><span>小老鼠</span> 👍（0） 💬（1）<p>机械磁盘（HDD）、低端固态磁盘（SSD）与高端固态。性能差别有多大</p>2018-12-26</li><br/>
 </ul>

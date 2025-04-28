@@ -1177,7 +1177,7 @@ public class TestListener implements ContainerListener{
 
 欢迎你把你的答案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>抓大放小， 个人觉得核心流程： ApplicationFilterChain.doFilter()  --&gt;  ApplicationFilterChain.internalDoFilter()   --&gt;   Filter.doFilter()  --&gt; ApplicationFilterChain.doFilter()   一个环状； 入口 StandardWrapperValve ， 出口是否有下一个Filter。 </div>2024-01-07</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>抓大放小， 个人觉得核心流程： ApplicationFilterChain.doFilter()  --&gt;  ApplicationFilterChain.internalDoFilter()   --&gt;   Filter.doFilter()  --&gt; ApplicationFilterChain.doFilter()   一个环状； 入口 StandardWrapperValve ， 出口是否有下一个Filter。 </p>2024-01-07</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：BootStrap代替了HttpServer吗？为什么这么做？
 Q2：Filter、Listener可以扩展吗？
 比如，用户自定义Filter、Listener，是否支持？
@@ -1186,6 +1186,6 @@ Q3：用 ArrayList 存放所有的 filter和listener，有什么考虑？
 Q4：对于Filter，是FilterChain最后调用servlet吗？
 按说不应该由Filter调用servlet，而是由一个更高层的一个东西来调用，类似于控制器或调度器一类的来调用。
 Q5：有浏览器上的servlet吗？
-我们这里说的servlet，都是运行在后端。我听说有运行在浏览器上的servlet，是否有？</div>2024-01-07</li><br/><li><span>到不了的塔</span> 👍（0） 💬（0）<div>郭老师，你好，请问下为啥StandardContext中会有listenerDefs字段来保存listener config呢, 有listeners字段来保存listener实例应该就足够满足需求了吧。 
-我看filter的设计也跟这类似，也有filter config，这种设计的好处是啥？</div>2024-05-02</li><br/>
+我们这里说的servlet，都是运行在后端。我听说有运行在浏览器上的servlet，是否有？</p>2024-01-07</li><br/><li><span>到不了的塔</span> 👍（0） 💬（0）<p>郭老师，你好，请问下为啥StandardContext中会有listenerDefs字段来保存listener config呢, 有listeners字段来保存listener实例应该就足够满足需求了吧。 
+我看filter的设计也跟这类似，也有filter config，这种设计的好处是啥？</p>2024-05-02</li><br/>
 </ul>

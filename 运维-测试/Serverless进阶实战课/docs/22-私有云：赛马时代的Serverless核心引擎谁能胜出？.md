@@ -160,5 +160,5 @@ Fission有Pool-based和New Deploy两种执行模式，能够支持资源池以�
 
 链接16，[https://www.openfaas.com/](https://www.openfaas.com/)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Wisdom</span> 👍（3） 💬（1）<div>老师，还有openfunction 也进入了cncf sandbox project</div>2022-10-18</li><br/>
+<li><span>Wisdom</span> 👍（3） 💬（1）<p>老师，还有openfunction 也进入了cncf sandbox project</p>2022-10-18</li><br/>
 </ul>

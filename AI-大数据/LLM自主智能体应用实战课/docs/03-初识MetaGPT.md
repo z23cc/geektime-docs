@@ -238,9 +238,9 @@ MetaGPT 最初的设计就是为了支持多 Agent 协作的，堪称目前最�
 
 期待你的分享。如果今天的内容对你有所帮助，也期待你转发给你的同事或者朋友，大家一起学习，共同进步。我们下节课再见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>月狼葱葱</span> 👍（1） 💬（1）<div>我使用win11，在执行poetry install --no-root &amp;&amp; poetry run pip install -e &quot;..&#47;MetaGPT&quot; --config-settings editable_mode=compat，会报错： ERROR: Failed building wheel for volcengine-python-sdk，原因是文件路径过长：Windows 系统默认对文件路径长度有限制，可能会导致某些文件无法正确创建。，用win的伙伴可以参考解决方案 https:&#47;&#47;github.com&#47;geekan&#47;MetaGPT&#47;issues&#47;1677</div>2025-02-05</li><br/><li><span>种花家</span> 👍（1） 💬（1）<div>sudo npm install -g @mermaid-js&#47;mermaid-cli 之前加上 sudo apt install npm
+<li><span>月狼葱葱</span> 👍（1） 💬（1）<p>我使用win11，在执行poetry install --no-root &amp;&amp; poetry run pip install -e &quot;..&#47;MetaGPT&quot; --config-settings editable_mode=compat，会报错： ERROR: Failed building wheel for volcengine-python-sdk，原因是文件路径过长：Windows 系统默认对文件路径长度有限制，可能会导致某些文件无法正确创建。，用win的伙伴可以参考解决方案 https:&#47;&#47;github.com&#47;geekan&#47;MetaGPT&#47;issues&#47;1677</p>2025-02-05</li><br/><li><span>种花家</span> 👍（1） 💬（1）<p>sudo npm install -g @mermaid-js&#47;mermaid-cli 之前加上 sudo apt install npm
 然后检查 node -v
-npm -v</div>2025-01-08</li><br/><li><span>蝈大虾</span> 👍（0） 💬（2）<div>如何配置metagpt调用通过vllm部署的qwen模型?
+npm -v</p>2025-01-08</li><br/><li><span>蝈大虾</span> 👍（0） 💬（2）<p>如何配置metagpt调用通过vllm部署的qwen模型?
 
 
 ### 测试设置config.yaml配置如下：
@@ -285,9 +285,9 @@ response = client.chat.completions.create(
     temperature=0,
     stream=True
 )
-...</div>2025-02-19</li><br/><li><span>yangchao</span> 👍（0） 💬（1）<div>思考题
-在 build_customized_multi_agents.py 中，不同的 Agent（即 Role 的子类实例）通过消息传递和动作执行来进行协作，具体就是每个角色都有特定的职责和可以执行的操作。角色之间通过_watch机制建立联系，形成工作流。</div>2025-02-19</li><br/><li><span>欠债太多</span> 👍（0） 💬（1）<div>老师，如果推荐的配置机器没有，使用mac air替代是否可行，现在机器的配置是Apple M3 16g内存？会有哪些影响
-</div>2025-02-13</li><br/><li><span>蓝天</span> 👍（0） 💬（1）<div>Linux 5.4.0-117-generic
+...</p>2025-02-19</li><br/><li><span>yangchao</span> 👍（0） 💬（1）<p>思考题
+在 build_customized_multi_agents.py 中，不同的 Agent（即 Role 的子类实例）通过消息传递和动作执行来进行协作，具体就是每个角色都有特定的职责和可以执行的操作。角色之间通过_watch机制建立联系，形成工作流。</p>2025-02-19</li><br/><li><span>欠债太多</span> 👍（0） 💬（1）<p>老师，如果推荐的配置机器没有，使用mac air替代是否可行，现在机器的配置是Apple M3 16g内存？会有哪些影响
+</p>2025-02-13</li><br/><li><span>蓝天</span> 👍（0） 💬（1）<p>Linux 5.4.0-117-generic
 npm ERR! argv &quot;&#47;usr&#47;bin&#47;node&quot; &quot;&#47;usr&#47;bin&#47;npm&quot; &quot;install&quot; &quot;-g&quot; &quot;@mermaid-js&#47;mermaid-cli&quot;
 npm ERR! node v8.10.0
 npm ERR! npm  v3.5.2
@@ -306,7 +306,7 @@ npm ERR! typeerror     at asyncMap (&#47;usr&#47;share&#47;npm&#47;node_modules&
 npm ERR! typeerror     at exports.loadRequestedDeps (&#47;usr&#47;share&#47;npm&#47;lib&#47;install&#47;deps.js:188:3)
 npm ERR! typeerror This is an error with npm itself. Please report this error at:
 npm ERR! typeerror     &lt;http:&#47;&#47;github.com&#47;npm&#47;npm&#47;issues&gt;
-</div>2025-02-11</li><br/><li><span>zshanjun</span> 👍（0） 💬（2）<div>运行报错，跑不通。老师帮忙看看
+</p>2025-02-11</li><br/><li><span>zshanjun</span> 👍（0） 💬（2）<p>运行报错，跑不通。老师帮忙看看
 
 poetry run metagpt &quot;write a cli blackjack game&quot;
 2025-02-10 17:24:03.997 | INFO     | metagpt.team:invest:93 - Investment: $3.0.
@@ -327,12 +327,12 @@ AttributeError: &#39;dict&#39; object has no attribute &#39;lower&#39;
 
 
 
-</div>2025-02-10</li><br/><li><span>月狼葱葱</span> 👍（0） 💬（1）<div>win11用户无法使用 命令
+</p>2025-02-10</li><br/><li><span>月狼葱葱</span> 👍（0） 💬（1）<p>win11用户无法使用 命令
 mkdir ~&#47;.metagpt
 vi ~&#47;.metagpt&#47;config2.yaml 
 假设你的用户名是 username，转换命令如下
 mkdir C:\Users\username\.metagpt
-notepad C:\Users\username\.metagpt\config2.yaml</div>2025-02-05</li><br/><li><span>花前不枉此生壹梦</span> 👍（0） 💬（1）<div>poetry add pysocks socksio 
+notepad C:\Users\username\.metagpt\config2.yaml</p>2025-02-05</li><br/><li><span>花前不枉此生壹梦</span> 👍（0） 💬（1）<p>poetry add pysocks socksio 
 
 The currently activated Python version 3.12.3 is not supported by the project (&gt;=3.9, &lt;3.12).
 Trying to find and use a compatible version. 
@@ -340,7 +340,7 @@ Trying to find and use a compatible version.
 Poetry was unable to find a compatible version. If you have one, you can explicitly use it via the &quot;env use&quot; command.
 
 执行的时候报错，应该怎么搞
-</div>2025-01-15</li><br/><li><span>Geek_9708db</span> 👍（0） 💬（2）<div>用qwen:14b运行报错JSON parse的问题，应该是解析出了问题；换成llama3:latest好用了。这个怎么解决呢，总觉得如果不能支持大部分模型就不太好用呀</div>2025-01-10</li><br/><li><span>木法沙</span> 👍（2） 💬（0）<div>➜  learn_metagpt python3 main.py
+</p>2025-01-15</li><br/><li><span>Geek_9708db</span> 👍（0） 💬（2）<p>用qwen:14b运行报错JSON parse的问题，应该是解析出了问题；换成llama3:latest好用了。这个怎么解决呢，总觉得如果不能支持大部分模型就不太好用呀</p>2025-01-10</li><br/><li><span>木法沙</span> 👍（2） 💬（0）<p>➜  learn_metagpt python3 main.py
 Welcome to Blackjack!
 Player&#39;s hand: (&#39;Hearts&#39;, 3)
 Player&#39;s hand: (&#39;Spades&#39;, &#39;Jack&#39;)
@@ -353,5 +353,5 @@ Welcome to Blackjack!
 Player&#39;s hand: (&#39;Spades&#39;, 8)
 Player&#39;s hand: (&#39;Spades&#39;, 7)
 Do you want to hit or stand? (h&#47;s): s
-Dealer busts! You win this round!</div>2025-01-08</li><br/>
+Dealer busts! You win this round!</p>2025-01-08</li><br/>
 </ul>

@@ -29,5 +29,5 @@
 
 [![](https://static001.geekbang.org/resource/image/b9/d6/b90c9c03f317ec3f7e07fe82defbc9d6.jpg?wh=1342%2A638)](https://time.geekbang.org/column/intro/324?utm_term=zeusE5AJR&utm_source=app&utm_medium=geektime&utm_campaign=diyiji&utm_content=0720)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>人在江湖龙在江湖</span> 👍（1） 💬（0）<div>vim相对emacs还是好用一些，只要是在命令行下，没有任何偷懒办法，必须要把那些快捷键用熟，所以选择一个最流行的吧</div>2020-11-12</li><br/><li><span>村长</span> 👍（1） 💬（0）<div>抱歉 我是emacs党</div>2020-07-21</li><br/>
+<li><span>人在江湖龙在江湖</span> 👍（1） 💬（0）<p>vim相对emacs还是好用一些，只要是在命令行下，没有任何偷懒办法，必须要把那些快捷键用熟，所以选择一个最流行的吧</p>2020-11-12</li><br/><li><span>村长</span> 👍（1） 💬（0）<p>抱歉 我是emacs党</p>2020-07-21</li><br/>
 </ul>

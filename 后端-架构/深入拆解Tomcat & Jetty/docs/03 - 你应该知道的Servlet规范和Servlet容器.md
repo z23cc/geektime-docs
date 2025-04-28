@@ -93,15 +93,15 @@ Servlet容器与Spring容器有什么关系？
 
 不知道今天的内容你消化得如何？如果还有疑问，请大胆的在留言区提问，也欢迎你把你的课后思考和心得记录下来，与我和其他同学一起讨论。如果你觉得今天有所收获，欢迎你把它分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>天琊</span> 👍（390） 💬（24）<div>文章中提到
+<li><span>天琊</span> 👍（390） 💬（24）<p>文章中提到
 1.SpringMVC 容器实在DispatcherServlet中init方法里创建的。
 2.Spring 容器是通过Listener创建的
 a、就是说SpringMVC容器和Spring容器还不一样，那么他们是什么关系？
-b、他们和Servlet容器又是啥关系？</div>2019-05-16</li><br/><li><span>Monday</span> 👍（51） 💬（2）<div>基于思考题，我在梦中醒来，觉得servlet容器管理的是servlet（把controller也理解成了servlet），spring容器则是管理service，DAO这类bean。这样理解的话springMVC不就是多余的了吗？但是我们项目中都有使用springMVC，存在即合理，所以我的理解是有误的。于是想老师帮忙给出以下三张图。非常感谢，
+b、他们和Servlet容器又是啥关系？</p>2019-05-16</li><br/><li><span>Monday</span> 👍（51） 💬（2）<p>基于思考题，我在梦中醒来，觉得servlet容器管理的是servlet（把controller也理解成了servlet），spring容器则是管理service，DAO这类bean。这样理解的话springMVC不就是多余的了吗？但是我们项目中都有使用springMVC，存在即合理，所以我的理解是有误的。于是想老师帮忙给出以下三张图。非常感谢，
 1，恳求老师能给出servlet，spring，springMVC三个容器的关系图。
 2，恳求老师给出初始化三个容器的顺序图
 3，恳求老师给出tomcat在响应客户端请求时，以上3个容器的分工以及各自是在什么时候产生作用的。类似于第2节http必知必会中，用户在浏览器输入url到最后浏览器返回展示的那样的11步的图，并做出每一步的解释。
-PS：本文通读不少于3遍，收获颇丰。提这个问题是手机敲的字，和整理提问思路一起花了半小时。</div>2019-05-17</li><br/><li><span>neohope</span> 👍（48） 💬（9）<div>Servlet容器，是用于管理Servlet生命周期的。
+PS：本文通读不少于3遍，收获颇丰。提这个问题是手机敲的字，和整理提问思路一起花了半小时。</p>2019-05-17</li><br/><li><span>neohope</span> 👍（48） 💬（9）<p>Servlet容器，是用于管理Servlet生命周期的。
 Spring容器，是用于管理Spring Bean生命周期的。
 SpringMVC容器，适用于管理SpringMVC Bean生命周期的。
 
@@ -120,7 +120,7 @@ Tomcat&#47;Jetty启动，对于每个WebApp，依次进行初始化工作：
 4.3、SpringMVC容器可以通过ServletContext获取Spring容器，并将Spring容器设置为自己的根容器。而子容器可以访问父容器，从而在Controller里可以访问Service对象，但是在Service里不可以访问Controller对象。
 4.2、初始化完毕后，DispatcherServlet开始处理MVC中的请求映射关系。
 
-有一个很坑问题，Servlet默认是单例模式的，Spring的Bean默认是单例模式的，那Spring MVC是如何处理并发请求的呢？</div>2019-05-19</li><br/><li><span>而立斋</span> 👍（40） 💬（3）<div>spring容器中还包含许多的子容器，其中springmvc容器就是其中常用的一个，文中的DispatcherServlet就是springmvc容器中的servlet接口，也是springmvc容器的核心类。spring容器主要用于整个Web应用程序需要共享的一些组件，比如DAO、数据库的ConnectionFactory等,springmvc的容器主要用于和该Servlet相关的一些组件,比如Controller、ViewResovler等。至此就清楚了spring容器内部的关系，那servlet容器跟spring容器又有什么关系呢？有人说spring容器是servlet容器的子容器，但是这个servlet容器到底是tomcat实现的容器呢，还是jetty实现的容器呢？所以我觉得spring容器与servlet容器他们之间并没有直接的血缘关系，可以说spring容器依赖了servlet容器，spring容器的实现遵循了Servlet 规范。不知道这么理解是可以，还请老师给予指导？</div>2019-05-16</li><br/><li><span>Geek_ebda96</span> 👍（32） 💬（2）<div>老师，spring容器指的是spring本身的ioc容器吧，是用来管理所有的bean，servlet本身会把sping的容器设置到上下文中，而spring mvc的容器dispatch servlet相当于是一个具体的servlet的实现，然后会创建一个全局的上下文application context spring的ioc容器会注入到这个上下文中，后面通过上下文getbean，其实是先找到上下文中的ioc容器，然后再从这个容器拿到具体的bean，这是不是对的？</div>2019-05-17</li><br/><li><span>jaryoung</span> 👍（31） 💬（3）<div>没有Spring boot以前，他们的关系为tomcat抱着Spring的关系，有了Spring boot之后他们关系刚好反过来。</div>2019-08-14</li><br/><li><span>xxxxL</span> 👍（27） 💬（1）<div>请问service方法为什么把request和response都当作输入参数，而不是输入参数只有request，response放到返回值里呢？</div>2019-05-31</li><br/><li><span>菜鸡小王子</span> 👍（17） 💬（1）<div>老师问一下  tomcat分为http服务器+sevlet服务器  这个http服务器怎么理解呢</div>2019-05-30</li><br/><li><span>inrtyx</span> 👍（16） 💬（1）<div>老题，问下。springmvc如何实现url到方法的映射</div>2019-05-23</li><br/><li><span>蓝士钦</span> 👍（14） 💬（2）<div>课后思考：
+有一个很坑问题，Servlet默认是单例模式的，Spring的Bean默认是单例模式的，那Spring MVC是如何处理并发请求的呢？</p>2019-05-19</li><br/><li><span>而立斋</span> 👍（40） 💬（3）<p>spring容器中还包含许多的子容器，其中springmvc容器就是其中常用的一个，文中的DispatcherServlet就是springmvc容器中的servlet接口，也是springmvc容器的核心类。spring容器主要用于整个Web应用程序需要共享的一些组件，比如DAO、数据库的ConnectionFactory等,springmvc的容器主要用于和该Servlet相关的一些组件,比如Controller、ViewResovler等。至此就清楚了spring容器内部的关系，那servlet容器跟spring容器又有什么关系呢？有人说spring容器是servlet容器的子容器，但是这个servlet容器到底是tomcat实现的容器呢，还是jetty实现的容器呢？所以我觉得spring容器与servlet容器他们之间并没有直接的血缘关系，可以说spring容器依赖了servlet容器，spring容器的实现遵循了Servlet 规范。不知道这么理解是可以，还请老师给予指导？</p>2019-05-16</li><br/><li><span>Geek_ebda96</span> 👍（32） 💬（2）<p>老师，spring容器指的是spring本身的ioc容器吧，是用来管理所有的bean，servlet本身会把sping的容器设置到上下文中，而spring mvc的容器dispatch servlet相当于是一个具体的servlet的实现，然后会创建一个全局的上下文application context spring的ioc容器会注入到这个上下文中，后面通过上下文getbean，其实是先找到上下文中的ioc容器，然后再从这个容器拿到具体的bean，这是不是对的？</p>2019-05-17</li><br/><li><span>jaryoung</span> 👍（31） 💬（3）<p>没有Spring boot以前，他们的关系为tomcat抱着Spring的关系，有了Spring boot之后他们关系刚好反过来。</p>2019-08-14</li><br/><li><span>xxxxL</span> 👍（27） 💬（1）<p>请问service方法为什么把request和response都当作输入参数，而不是输入参数只有request，response放到返回值里呢？</p>2019-05-31</li><br/><li><span>菜鸡小王子</span> 👍（17） 💬（1）<p>老师问一下  tomcat分为http服务器+sevlet服务器  这个http服务器怎么理解呢</p>2019-05-30</li><br/><li><span>inrtyx</span> 👍（16） 💬（1）<p>老题，问下。springmvc如何实现url到方法的映射</p>2019-05-23</li><br/><li><span>蓝士钦</span> 👍（14） 💬（2）<p>课后思考：
 Servlet容器与Spring容器的关系：
 1.Servlet容器管理Servlet对象
 2.Spring容器管理Spring 的Bean对象（Service和Dao）
@@ -129,8 +129,8 @@ Spring容器管理所有的Bean并且包括SpringMVC容器。
 
 疑问：
 为什么SpringMVC要实现自己的容器，并且和Spring容器为父子关系，直接用Spring容器不可以吗？Spring是如何区分Bean属于哪个容器的呢？
-</div>2019-06-11</li><br/><li><span>王皓月</span> 👍（12） 💬（1）<div>老师您好！请问您的置顶回复中“IoC容器初始化完毕后，Spring将其存储到ServletContext中，便于以后来获取”，对于这句话我不是很理解，想请老师解答一下IoC容器是如何被存储到ServletContext中的，以及为什么要这么做，相应的源码在哪里看。非常感谢老师~</div>2019-05-17</li><br/><li><span>木木木</span> 👍（11） 💬（1）<div>老师能不能大概介绍下tomcat这种容器的具体调试方式，比如结合一个场景，加载实例化serverlet。</div>2019-05-30</li><br/><li><span>石头狮子</span> 👍（11） 💬（1）<div>servlet 容器抽象了网络处理，请求封装等事情，同样提供了可以处理其他非 http 协议的能力。
+</p>2019-06-11</li><br/><li><span>王皓月</span> 👍（12） 💬（1）<p>老师您好！请问您的置顶回复中“IoC容器初始化完毕后，Spring将其存储到ServletContext中，便于以后来获取”，对于这句话我不是很理解，想请老师解答一下IoC容器是如何被存储到ServletContext中的，以及为什么要这么做，相应的源码在哪里看。非常感谢老师~</p>2019-05-17</li><br/><li><span>木木木</span> 👍（11） 💬（1）<p>老师能不能大概介绍下tomcat这种容器的具体调试方式，比如结合一个场景，加载实例化serverlet。</p>2019-05-30</li><br/><li><span>石头狮子</span> 👍（11） 💬（1）<p>servlet 容器抽象了网络处理，请求封装等事情，同样提供了可以处理其他非 http 协议的能力。
 spring 容器是依赖注入设计模式的体现，其主要抽象了类初始化，注入，依赖解决，动态代理等功能。
 两者主要解决的问题不同。
-</div>2019-05-16</li><br/><li><span>LoveDlei</span> 👍（10） 💬（1）<div>请问老师：springboot 和tomcat 如何融合到一起的啊？</div>2019-05-24</li><br/><li><span>-W.LI-</span> 👍（10） 💬（3）<div>老师好!我看留言里有同学说，spring上下文负责创建service和dao的bean，MVC负责创建controller的bean。我们平时说的IOC容器是指哪个啊?还有就是controller注解是一个组合注解，我在controller上用service注解一样能注册成功，spring和MVC容器又是怎么区分这个bean是controller还是service,或者是dao，bean的?还是我完全理解错了。</div>2019-05-18</li><br/>
+</p>2019-05-16</li><br/><li><span>LoveDlei</span> 👍（10） 💬（1）<p>请问老师：springboot 和tomcat 如何融合到一起的啊？</p>2019-05-24</li><br/><li><span>-W.LI-</span> 👍（10） 💬（3）<p>老师好!我看留言里有同学说，spring上下文负责创建service和dao的bean，MVC负责创建controller的bean。我们平时说的IOC容器是指哪个啊?还有就是controller注解是一个组合注解，我在controller上用service注解一样能注册成功，spring和MVC容器又是怎么区分这个bean是controller还是service,或者是dao，bean的?还是我完全理解错了。</p>2019-05-18</li><br/>
 </ul>

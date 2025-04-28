@@ -342,10 +342,10 @@ Docker Compose 多是用在单主机的开发环境中。在更大规模的生�
 
 欢迎你在留言区与我交流讨论，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Realm</span> 👍（3） 💬（0）<div>思考题：
+<li><span>Realm</span> 👍（3） 💬（0）<p>思考题：
 docker-compose down时，会自动删除原有容器以及虚拟网。但是其中定义的volumes会保留。
 
 如果要down的同时清理干净，就直接加参数--volumes.
 
-这样做是为了保护用户数据，下次启动容器可以直接用.</div>2023-02-07</li><br/><li><span>青鹿</span> 👍（0） 💬（0）<div>https:&#47;&#47;goproxy.cn不生效，可在Dockerfile里添加RUN go env -w GOPROXY=https:&#47;&#47;goproxy.cn这一行，做尝试</div>2023-10-10</li><br/>
+这样做是为了保护用户数据，下次启动容器可以直接用.</p>2023-02-07</li><br/><li><span>青鹿</span> 👍（0） 💬（0）<p>https:&#47;&#47;goproxy.cn不生效，可在Dockerfile里添加RUN go env -w GOPROXY=https:&#47;&#47;goproxy.cn这一行，做尝试</p>2023-10-10</li><br/>
 </ul>

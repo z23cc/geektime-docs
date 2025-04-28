@@ -248,12 +248,12 @@ a = b, b = 1, null;
 
 最后给你留一个作业，把今天讲到的所有运算符按优先级排列成一个表格，下节课我们会补完剩下的部分。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>奋逗的码农哥</span> 👍（13） 💬（6）<div>js中的运算符有很多，推荐这篇教程 http:&#47;&#47;www.w3school.com.cn&#47;js&#47;js_operators.asp</div>2019-07-09</li><br/><li><span>木木</span> 👍（9） 💬（3）<div>f`a${b}c`;
-没有明白这个是什么意思</div>2019-04-04</li><br/><li><span>mingingคิดถึง</span> 👍（1） 💬（4）<div>winter老师，模板字符串当做参数传入时不带括号的写法不是很懂：
+<li><span>奋逗的码农哥</span> 👍（13） 💬（6）<p>js中的运算符有很多，推荐这篇教程 http:&#47;&#47;www.w3school.com.cn&#47;js&#47;js_operators.asp</p>2019-07-09</li><br/><li><span>木木</span> 👍（9） 💬（3）<p>f`a${b}c`;
+没有明白这个是什么意思</p>2019-04-04</li><br/><li><span>mingingคิดถึง</span> 👍（1） 💬（4）<p>winter老师，模板字符串当做参数传入时不带括号的写法不是很懂：
 function f(a){console.log(a)}
 const b = 1
 f`a${b}c`
-打印出来是：[&quot;a&quot;, &quot;c&quot;, raw: Array(2)]</div>2019-10-17</li><br/><li><span>炒饭</span> 👍（16） 💬（0）<div>@嗨海海 winter老师讲得是语言细节，这些应该都是基础知识，但实际上很多一线前端都忽略了这些。比起常见那些框架工具应用，这课在国内还是很难得的，特别还是winter老师开的，讲的透彻，感谢winter老师，让我受益匪浅</div>2019-04-15</li><br/><li><span>vspt</span> 👍（14） 💬（1）<div>winter老师，问个问题，在react源码中经常看到如下写法，一直没太理解，请问这种写法有什么好处吗？
+打印出来是：[&quot;a&quot;, &quot;c&quot;, raw: Array(2)]</p>2019-10-17</li><br/><li><span>炒饭</span> 👍（16） 💬（0）<p>@嗨海海 winter老师讲得是语言细节，这些应该都是基础知识，但实际上很多一线前端都忽略了这些。比起常见那些框架工具应用，这课在国内还是很难得的，特别还是winter老师开的，讲的透彻，感谢winter老师，让我受益匪浅</p>2019-04-15</li><br/><li><span>vspt</span> 👍（14） 💬（1）<p>winter老师，问个问题，在react源码中经常看到如下写法，一直没太理解，请问这种写法有什么好处吗？
 
 ```
 var validateFormat = function () {};
@@ -265,19 +265,19 @@ var validateFormat = function () {};
     }
   };
 }
-```</div>2019-04-04</li><br/><li><span>桂马</span> 👍（5） 💬（0）<div>平时不确定优先级的一般都加括号</div>2019-04-07</li><br/><li><span>乃乎</span> 👍（3） 💬（0）<div>literal 翻译成字面量会不会更好，好像大多数翻译都是用的那个</div>2019-04-23</li><br/><li><span>木木</span> 👍（1） 💬（0）<div>f`a${b}c`;</div>2019-04-04</li><br/><li><span>小耿</span> 👍（0） 💬（0）<div>&quot;不加 new 也可以构成 New Expression&quot;，请问这句咋理解？New Expression 不都需要加 new 吗？
-</div>2023-03-21</li><br/><li><span>你好，阳光</span> 👍（0） 💬（3）<div>winter老师，有个疑问，new expression属于左值表达式，为何new Object()={}会报错invalid assignment left-hand side？</div>2021-09-11</li><br/><li><span>「前端天地」公众号</span> 👍（0） 💬（0）<div>LeftHandSideExpression a() = b那里有点没看明白.
+```</p>2019-04-04</li><br/><li><span>桂马</span> 👍（5） 💬（0）<p>平时不确定优先级的一般都加括号</p>2019-04-07</li><br/><li><span>乃乎</span> 👍（3） 💬（0）<p>literal 翻译成字面量会不会更好，好像大多数翻译都是用的那个</p>2019-04-23</li><br/><li><span>木木</span> 👍（1） 💬（0）<p>f`a${b}c`;</p>2019-04-04</li><br/><li><span>小耿</span> 👍（0） 💬（0）<p>&quot;不加 new 也可以构成 New Expression&quot;，请问这句咋理解？New Expression 不都需要加 new 吗？
+</p>2023-03-21</li><br/><li><span>你好，阳光</span> 👍（0） 💬（3）<p>winter老师，有个疑问，new expression属于左值表达式，为何new Object()={}会报错invalid assignment left-hand side？</p>2021-09-11</li><br/><li><span>「前端天地」公众号</span> 👍（0） 💬（0）<p>LeftHandSideExpression a() = b那里有点没看明白.
 比如:
 function a () {
  return {};
 }
 var b = 1;
 a() = b;
-这个时候会报错</div>2021-03-04</li><br/><li><span>Geek_e6f5a9</span> 👍（0） 💬（0）<div>运算符优先级：一元(delete,~,!等)&gt;算术&gt;关系&gt;位移&gt;二进制位运算&gt;逻辑&gt;条件&gt;赋值&gt;逗号，mdn链接https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;JavaScript&#47;Reference&#47;Operators</div>2020-12-14</li><br/><li><span>难上加难</span> 👍（0） 💬（1）<div>老师您好，想问一下，
+这个时候会报错</p>2021-03-04</li><br/><li><span>Geek_e6f5a9</span> 👍（0） 💬（0）<p>运算符优先级：一元(delete,~,!等)&gt;算术&gt;关系&gt;位移&gt;二进制位运算&gt;逻辑&gt;条件&gt;赋值&gt;逗号，mdn链接https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;JavaScript&#47;Reference&#47;Operators</p>2020-12-14</li><br/><li><span>难上加难</span> 👍（0） 💬（1）<p>老师您好，想问一下，
 function f(a){console.log(a)}
 const b = 1
 f`a${b}c`，
-这里面的f`a${b}c`是不是跟console,log(&#39;a&#39;+b+&#39;c&#39;)差不多</div>2020-06-08</li><br/><li><span>难上加难</span> 👍（0） 💬（0）<div>老师您好，想问一下function f(a){console.log(a)}
+这里面的f`a${b}c`是不是跟console,log(&#39;a&#39;+b+&#39;c&#39;)差不多</p>2020-06-08</li><br/><li><span>难上加难</span> 👍（0） 💬（0）<p>老师您好，想问一下function f(a){console.log(a)}
 const b = 1
-f`a${b}c`</div>2020-06-08</li><br/><li><span>mingingคิดถึง</span> 👍（0） 💬（1）<div>winter老师，函数传入模板标签，不带括号的写法不是很了解，我在浏览器运行了一下得到结果也看不懂：</div>2019-10-17</li><br/>
+f`a${b}c`</p>2020-06-08</li><br/><li><span>mingingคิดถึง</span> 👍（0） 💬（1）<p>winter老师，函数传入模板标签，不带括号的写法不是很了解，我在浏览器运行了一下得到结果也看不懂：</p>2019-10-17</li><br/>
 </ul>

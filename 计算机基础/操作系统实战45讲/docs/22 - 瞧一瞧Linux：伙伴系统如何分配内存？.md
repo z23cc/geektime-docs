@@ -798,7 +798,7 @@ static __always_inline struct page *__rmqueue_smallest(struct zone *zone, unsign
 
 好，我是LMOS，我们下节课见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>neohope</span> 👍（33） 💬（1）<div>一、整理一下思路
+<li><span>neohope</span> 👍（33） 💬（1）<p>一、整理一下思路
 NUMA体系下，每个CPU都有自己直接管理的一部分内存，叫做内存节点【node】，CPU访问自己的内存节点速度，快于访问其他CPU的内存节点；
 每个内存节点，按内存的迁移类型，被划分为多个内存区域【zone】；迁移类型包括ZONE_DMA、ZONE_DMA32、ZONE_NORMAL 、ZONE_HIGHMEM、ZONE_MOVABLE、ZONE_DEVICE等；
 每个内存区域中，是一段逻辑上的连续内存，包括多个可用页面；但在这个连续内存中，同样有不能使用的地方，叫做内存空洞；在处理内存操作时，要避免掉到洞里；
@@ -829,16 +829,16 @@ alloc_pages-&gt;alloc_pages_current-&gt;__alloc_pages_nodemask
 四、此外
 1、在整个过程中，有一个水位_watermark的概念，其实就是用于控制内存区是否需要进行内存回收
 2、申请内存时，会先按请求的 migratetype 从对应类型的page结构块中寻找，如果不成功，才会从其他 migratetype 的 page 结构块中分配， 降低内存碎片【rmqueue-&gt;__rmqueue-&gt;__rmqueue_fallback】
-3、申请内存时，一般先在CPU所属内存节点申请；如果失败，再去其他内存节点申请；具体顺序，和NUMA memory policy有关；</div>2021-06-29</li><br/><li><span>pedro</span> 👍（8） 💬（2）<div>迟到了，迟到了！每节都评论是我一直坚持的事，我以此为傲。
+3、申请内存时，一般先在CPU所属内存节点申请；如果失败，再去其他内存节点申请；具体顺序，和NUMA memory policy有关；</p>2021-06-29</li><br/><li><span>pedro</span> 👍（8） 💬（2）<p>迟到了，迟到了！每节都评论是我一直坚持的事，我以此为傲。
 
 问题答案已经在文中了，最大1024页，每页4kb，答案也就呼之欲出了。
 
-之前我一直在内心吐槽东哥写代码的函数名太难伺候了，现在来看linux的命名，不说优雅与否，就连基本的表意都办不到啊，东哥简直就是内核届的一股清流啊。</div>2021-06-28</li><br/><li><span>blentle</span> 👍（4） 💬（1）<div>最大order是11. 一个块是4k大小所以最大能分配
-2的10次方乘以4 也就是4MB的的物理内存吧</div>2021-06-28</li><br/><li><span>Shawn Duan</span> 👍（2） 💬（1）<div>请问内存空洞是如何形成的呢？</div>2021-11-02</li><br/><li><span>springXu</span> 👍（2） 💬（1）<div>还是按照阅读理解题解答问的问题。
+之前我一直在内心吐槽东哥写代码的函数名太难伺候了，现在来看linux的命名，不说优雅与否，就连基本的表意都办不到啊，东哥简直就是内核届的一股清流啊。</p>2021-06-28</li><br/><li><span>blentle</span> 👍（4） 💬（1）<p>最大order是11. 一个块是4k大小所以最大能分配
+2的10次方乘以4 也就是4MB的的物理内存吧</p>2021-06-28</li><br/><li><span>Shawn Duan</span> 👍（2） 💬（1）<p>请问内存空洞是如何形成的呢？</p>2021-11-02</li><br/><li><span>springXu</span> 👍（2） 💬（1）<p>还是按照阅读理解题解答问的问题。
 free_area 结构的数组，这个数组就是用于实现伙伴系统的。其中 MAX_ORDER 的值默认为 11，分别表示挂载地址连续的 page 结构数目为 1，2，4，8，16，32……最大为 1024。
 
-所以是1024个pages，如果每个page是4k大小的话，那1024x4k=4m。 所以按MAX_ORDER默认值11，连续内存是4M</div>2021-06-28</li><br/><li><span>卖薪沽酒</span> 👍（0） 💬（1）<div>打卡打卡</div>2022-07-03</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<div>先打卡这个吧，轻松一下，啃完之前的，这个理解起来轻车熟路</div>2022-04-21</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>膜拜评论区各位大神</div>2022-02-16</li><br/><li><span>lzd</span> 👍（0） 💬（1）<div>最大连续内存 = MAX_ORDER_NR_PAGES * PAGE_SIZE
+所以是1024个pages，如果每个page是4k大小的话，那1024x4k=4m。 所以按MAX_ORDER默认值11，连续内存是4M</p>2021-06-28</li><br/><li><span>卖薪沽酒</span> 👍（0） 💬（1）<p>打卡打卡</p>2022-07-03</li><br/><li><span>艾恩凝</span> 👍（0） 💬（1）<p>先打卡这个吧，轻松一下，啃完之前的，这个理解起来轻车熟路</p>2022-04-21</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>膜拜评论区各位大神</p>2022-02-16</li><br/><li><span>lzd</span> 👍（0） 💬（1）<p>最大连续内存 = MAX_ORDER_NR_PAGES * PAGE_SIZE
 MAX_ORDER_NR_PAGES : (1 &lt;&lt; (MAX_ORDER-1))
 MAX_ORDER : (11)
-PAGE_SIZE : 4k&#47;16k&#47;64k</div>2021-10-14</li><br/><li><span>Geek2808</span> 👍（0） 💬（1）<div>老师好，请教一个问题，当内核分配内存时，__alloc_pages_slowpath找不到也没法回收或者整理出空闲页，在开启swap的情况下，其中slab&#47;slub部分的匿名页会调用shrink_inactive_list 函数会扫描inactive list，将不活跃的page置换到swap分区。但是swap有的时候几M、几百M甚至几个G，这个内核置换的机制或算法逻辑是啥？为啥一次性会swap out这么多内存数据？(我理解这个时间点本身应用程序或内核不会一次性申请几个G的内存)</div>2021-07-31</li><br/><li><span>Jesus</span> 👍（0） 💬（1）<div>老师，这个课程什么时候更新完呀？想攒一些章节连续看。</div>2021-06-28</li><br/>
+PAGE_SIZE : 4k&#47;16k&#47;64k</p>2021-10-14</li><br/><li><span>Geek2808</span> 👍（0） 💬（1）<p>老师好，请教一个问题，当内核分配内存时，__alloc_pages_slowpath找不到也没法回收或者整理出空闲页，在开启swap的情况下，其中slab&#47;slub部分的匿名页会调用shrink_inactive_list 函数会扫描inactive list，将不活跃的page置换到swap分区。但是swap有的时候几M、几百M甚至几个G，这个内核置换的机制或算法逻辑是啥？为啥一次性会swap out这么多内存数据？(我理解这个时间点本身应用程序或内核不会一次性申请几个G的内存)</p>2021-07-31</li><br/><li><span>Jesus</span> 👍（0） 💬（1）<p>老师，这个课程什么时候更新完呀？想攒一些章节连续看。</p>2021-06-28</li><br/>
 </ul>

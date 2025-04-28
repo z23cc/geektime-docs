@@ -513,7 +513,7 @@ void main() {
 
 课程中完整示例代码见 [GitHub仓库](https://github.com/akira-cn/graphics/tree/master/3d-basic)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>阿鑫</span> 👍（3） 💬（2）<div>正四面体光照效果，https:&#47;&#47;stupidehorizon.github.io&#47;graphics&#47;demo&#47;07_3d_box&#47; 一开始没注意每个面的法向量方向，结果有的面发向量朝里了，还 debugger 了半天。</div>2020-08-28</li><br/><li><span>有一种踏实</span> 👍（1） 💬（0）<div>正四面体，就是取正立方体的四个非共棱顶点组成
+<li><span>阿鑫</span> 👍（3） 💬（2）<p>正四面体光照效果，https:&#47;&#47;stupidehorizon.github.io&#47;graphics&#47;demo&#47;07_3d_box&#47; 一开始没注意每个面的法向量方向，结果有的面发向量朝里了，还 debugger 了半天。</p>2020-08-28</li><br/><li><span>有一种踏实</span> 👍（1） 💬（0）<p>正四面体，就是取正立方体的四个非共棱顶点组成
 
 function tetrahedron(size, colors = [[1, 0, 0, 1]]) {
       const h = 0.5 * size;
@@ -561,5 +561,5 @@ function tetrahedron(size, colors = [[1, 0, 0, 1]]) {
       triangle(6, 4, 3);
 
       return { positions, color, cells, normal };
-    }</div>2024-02-02</li><br/><li><span>H</span> 👍（1） 💬（0）<div>老师写的文章还不错！！！</div>2022-01-07</li><br/><li><span>蹦哒</span> 👍（0） 💬（0）<div>老师、同学们，立方体每个面的颜色为啥不会插值，而是同一个颜色呢？</div>2023-03-06</li><br/><li><span>JackWang</span> 👍（0） 💬（0）<div>老师，为什么我按照您的方法渲染后，发现圆柱体两个圆经常会被截断啊</div>2022-03-29</li><br/><li><span>卖烧烤夫斯基</span> 👍（0） 💬（0）<div>老师是不是隐藏了一些webgl原始的细节。例如缓冲处理，着色器的初始化编译等。</div>2021-03-17</li><br/>
+    }</p>2024-02-02</li><br/><li><span>H</span> 👍（1） 💬（0）<p>老师写的文章还不错！！！</p>2022-01-07</li><br/><li><span>蹦哒</span> 👍（0） 💬（0）<p>老师、同学们，立方体每个面的颜色为啥不会插值，而是同一个颜色呢？</p>2023-03-06</li><br/><li><span>JackWang</span> 👍（0） 💬（0）<p>老师，为什么我按照您的方法渲染后，发现圆柱体两个圆经常会被截断啊</p>2022-03-29</li><br/><li><span>卖烧烤夫斯基</span> 👍（0） 💬（0）<p>老师是不是隐藏了一些webgl原始的细节。例如缓冲处理，着色器的初始化编译等。</p>2021-03-17</li><br/>
 </ul>

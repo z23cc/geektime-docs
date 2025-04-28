@@ -121,8 +121,8 @@ LLVM 是一套综合性的软件工具链。内部提供了一系列基于 LLVM-
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>军秋</span> 👍（5） 💬（2）<div>使用llc编译后可以在浏览器中运行了吗？好emscripten编译上有什么差异？</div>2020-10-06</li><br/><li><span>俺足</span> 👍（0） 💬（1）<div>请教于老师，我mac里没有wasm32 或 wasm64的目标怎么安装呢？ 有其他同学知道吗</div>2022-05-03</li><br/><li><span>鹦鹉</span> 👍（9） 💬（0）<div>类似操作系统的 32 位与 64 位之分. 简而言之, wasm32 与 wasm64 的区别主要在于内存寻址范围的不同, 对于 wasm32 仅能对 2 的 32 次方(大约 4GB) 的线性内存范围进行寻址, 而 wasm64 能够在更大范围的内存中寻址. 虽然现在我们的操作系统基本都是 64 位, 但对于 wasm 来说, 区分 wasm32 和 wasm64 两个编译目标的主要的原因在于: 绝大多数 wasm 应用都不需要使用到超过 4GB 的内存.
-参考: https:&#47;&#47;webassembly.org&#47;docs&#47;faq&#47;</div>2020-10-02</li><br/><li><span>奕</span> 👍（3） 💬（0）<div>llc add.ll -filetype=obj -mtriple=wasm64 -o add1.wasm
+<li><span>军秋</span> 👍（5） 💬（2）<p>使用llc编译后可以在浏览器中运行了吗？好emscripten编译上有什么差异？</p>2020-10-06</li><br/><li><span>俺足</span> 👍（0） 💬（1）<p>请教于老师，我mac里没有wasm32 或 wasm64的目标怎么安装呢？ 有其他同学知道吗</p>2022-05-03</li><br/><li><span>鹦鹉</span> 👍（9） 💬（0）<p>类似操作系统的 32 位与 64 位之分. 简而言之, wasm32 与 wasm64 的区别主要在于内存寻址范围的不同, 对于 wasm32 仅能对 2 的 32 次方(大约 4GB) 的线性内存范围进行寻址, 而 wasm64 能够在更大范围的内存中寻址. 虽然现在我们的操作系统基本都是 64 位, 但对于 wasm 来说, 区分 wasm32 和 wasm64 两个编译目标的主要的原因在于: 绝大多数 wasm 应用都不需要使用到超过 4GB 的内存.
+参考: https:&#47;&#47;webassembly.org&#47;docs&#47;faq&#47;</p>2020-10-02</li><br/><li><span>奕</span> 👍（3） 💬（0）<p>llc add.ll -filetype=obj -mtriple=wasm64 -o add1.wasm
 在 Mac 平台 执行这行命令，生成  wasm64 的目标代码，提示 不支持的
 LLVM ERROR: 64-bit WebAssembly (wasm64) is not currently supported
 
@@ -131,7 +131,7 @@ LLVM (http:&#47;&#47;llvm.org&#47;):
   LLVM version 10.0.1
   Optimized build.
   Default target: x86_64-apple-darwin19.3.0
-  Host CPU: skylake</div>2020-10-07</li><br/><li><span>奕</span> 👍（1） 💬（0）<div>存在 wasm32 和 wasm64的平台， 应该可以操作系统 中存在64和32 位的原因是一样的
+  Host CPU: skylake</p>2020-10-07</li><br/><li><span>奕</span> 👍（1） 💬（0）<p>存在 wasm32 和 wasm64的平台， 应该可以操作系统 中存在64和32 位的原因是一样的
 1:  64 有更大的 CPU 位宽，可以进行更大的数值的计算
-2:  内存寻址空间大小不一样</div>2020-10-07</li><br/>
+2:  内存寻址空间大小不一样</p>2020-10-07</li><br/>
 </ul>

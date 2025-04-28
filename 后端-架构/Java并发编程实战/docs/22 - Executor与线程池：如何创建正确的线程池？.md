@@ -156,8 +156,8 @@ try {
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>南琛一梦</span> 👍（132） 💬（6）<div>回答下Lrwin和张天屹同学的问题：当线程池中无可用线程，且阻塞队列已满，那么此时就会触发拒绝策略。对于采用何种策略，具体要看执行的任务重要程度。如果是一些不重要任务，可以选择直接丢弃。但是如果为重要任务，可以采用降级处理，例如将任务信息插入数据库或者消息队列，启用一个专门用作补偿的线程池去进行补偿。所谓降级就是在服务无法正常提供功能的情况下，采取的补救措施。具体采用何种降级手段，这也是要看具体场景。技术的世界里没有一尘不变的方案。另外，看到很多同学都提到让老师多讲讲源码，其实我觉得真没必要，老师目前的思路起到提纲契领的作用，让我们有大的思路，有全局观，具体细节我觉得大家私下去研究更合适。小弟不才，可以加微信（SevenBlue）一起讨论。</div>2019-04-22</li><br/><li><span>随风🐿</span> 👍（95） 💬（8）<div>老师，有个问题一直不是很明确，①一个项目中如果多个业务需要用到线程池，是定义一个公共的线程池比较好，还是按照业务定义各自不同的线程池？②如果定义一个公共的线程池那里面的线程数的理论值应该是按照老师前面章节讲的去计算吗？还是按照如果有多少个业务就分别去计算他们各自创建线程池线程数的加和?③如果不同的业务各自定义不同的线程池，那线程数的理论值也是按照前面的去计算吗？</div>2019-04-29</li><br/><li><span>木卫六</span> 👍（44） 💬（2）<div>guava的ThreadFactoryBuilder.setNameFormat可以指定一个前缀，使用%d表示序号；
-或者自己实现ThreadFactory并制定给线程池，在实现的ThreadFactory中设定计数和调用Thread.setName</div>2019-04-18</li><br/><li><span>张天屹</span> 👍（34） 💬（5）<div>老师你好，使用有界队列虽然避免了OOM  但是如果请求量太大，我又不想丢弃和异常的情况下一般怎么实践呢。我对降级这一块没经验，我能直观想到的就是存放在缓存，如果缓存内存也不够了就只能持久化了</div>2019-04-18</li><br/><li><span>曾轼麟</span> 👍（27） 💬（2）<div>public class ReNameThreadFactory implements ThreadFactory {
+<li><span>南琛一梦</span> 👍（132） 💬（6）<p>回答下Lrwin和张天屹同学的问题：当线程池中无可用线程，且阻塞队列已满，那么此时就会触发拒绝策略。对于采用何种策略，具体要看执行的任务重要程度。如果是一些不重要任务，可以选择直接丢弃。但是如果为重要任务，可以采用降级处理，例如将任务信息插入数据库或者消息队列，启用一个专门用作补偿的线程池去进行补偿。所谓降级就是在服务无法正常提供功能的情况下，采取的补救措施。具体采用何种降级手段，这也是要看具体场景。技术的世界里没有一尘不变的方案。另外，看到很多同学都提到让老师多讲讲源码，其实我觉得真没必要，老师目前的思路起到提纲契领的作用，让我们有大的思路，有全局观，具体细节我觉得大家私下去研究更合适。小弟不才，可以加微信（SevenBlue）一起讨论。</p>2019-04-22</li><br/><li><span>随风🐿</span> 👍（95） 💬（8）<p>老师，有个问题一直不是很明确，①一个项目中如果多个业务需要用到线程池，是定义一个公共的线程池比较好，还是按照业务定义各自不同的线程池？②如果定义一个公共的线程池那里面的线程数的理论值应该是按照老师前面章节讲的去计算吗？还是按照如果有多少个业务就分别去计算他们各自创建线程池线程数的加和?③如果不同的业务各自定义不同的线程池，那线程数的理论值也是按照前面的去计算吗？</p>2019-04-29</li><br/><li><span>木卫六</span> 👍（44） 💬（2）<p>guava的ThreadFactoryBuilder.setNameFormat可以指定一个前缀，使用%d表示序号；
+或者自己实现ThreadFactory并制定给线程池，在实现的ThreadFactory中设定计数和调用Thread.setName</p>2019-04-18</li><br/><li><span>张天屹</span> 👍（34） 💬（5）<p>老师你好，使用有界队列虽然避免了OOM  但是如果请求量太大，我又不想丢弃和异常的情况下一般怎么实践呢。我对降级这一块没经验，我能直观想到的就是存放在缓存，如果缓存内存也不够了就只能持久化了</p>2019-04-18</li><br/><li><span>曾轼麟</span> 👍（27） 💬（2）<p>public class ReNameThreadFactory implements ThreadFactory {
     &#47;**
      * 线程池编号（static修饰）(容器里面所有线程池的数量)
      *&#47;
@@ -207,14 +207,14 @@ try {
         }
         return t;
     }
-}</div>2019-04-21</li><br/><li><span>Red Cape</span> 👍（25） 💬（6）<div>请问老师，有界队列的长度怎么确定呢</div>2019-04-22</li><br/><li><span>海鸿</span> 👍（21） 💬（1）<div>1.利用guava的ThreadFactoryBuilder
-2.自己实现ThreadFactory</div>2019-04-18</li><br/><li><span>Uncle Drew</span> 👍（20） 💬（4）<div>老师请教一下，如果线上系统宕机了，线程池中的阻塞队列怎么处理才能保证任务不丢失</div>2019-12-06</li><br/><li><span>yang</span> 👍（15） 💬（1）<div>老师，有一个问题想问一下:
+}</p>2019-04-21</li><br/><li><span>Red Cape</span> 👍（25） 💬（6）<p>请问老师，有界队列的长度怎么确定呢</p>2019-04-22</li><br/><li><span>海鸿</span> 👍（21） 💬（1）<p>1.利用guava的ThreadFactoryBuilder
+2.自己实现ThreadFactory</p>2019-04-18</li><br/><li><span>Uncle Drew</span> 👍（20） 💬（4）<p>老师请教一下，如果线上系统宕机了，线程池中的阻塞队列怎么处理才能保证任务不丢失</p>2019-12-06</li><br/><li><span>yang</span> 👍（15） 💬（1）<p>老师，有一个问题想问一下:
 
 如果corePoolSize为10，maxinumPoolSize为20，而此时线程池中有15个线程在运行，过了一段时间后，其中有3个线程处于等待状态的时间超过keepAliveTime指定的时间，则结束这3个线程，此时线程池中则还有12个线程正在运行；若有六个线程处于等待状态的时间超过keepAliveTime指定的时间，则只会结束5个线程，此时线程池中则还有10个线程，即核心线程数。
 
-是这样吗？</div>2019-04-22</li><br/><li><span>君哥聊技术</span> 👍（14） 💬（1）<div>我们项目中用了guava的new ThreadFactoryBuilder().setNameFormat()
+是这样吗？</p>2019-04-22</li><br/><li><span>君哥聊技术</span> 👍（14） 💬（1）<p>我们项目中用了guava的new ThreadFactoryBuilder().setNameFormat()
 
-老师，请教个问题，在工程中，线程池的定义一般是在全局还是局部呢？如果全局的话，是不用shutdown吗？不关闭线程池有没有问题呢？</div>2019-04-18</li><br/><li><span>郑晨Cc</span> 👍（9） 💬（2）<div>可参照SDK中的 DefaultThreadFactory 自定义DYIThreadFactory
+老师，请教个问题，在工程中，线程池的定义一般是在全局还是局部呢？如果全局的话，是不用shutdown吗？不关闭线程池有没有问题呢？</p>2019-04-18</li><br/><li><span>郑晨Cc</span> 👍（9） 💬（2）<p>可参照SDK中的 DefaultThreadFactory 自定义DYIThreadFactory
 static class DIYThreadFactory implements ThreadFactory {
         private static final AtomicInteger poolNumber = new AtomicInteger(1);
         private final ThreadGroup group;
@@ -241,5 +241,5 @@ static class DIYThreadFactory implements ThreadFactory {
         }
     }
 	
-	ExecutorService executor = Executors.newFixedThreadPool(4,new DIYThreadFactory(&quot;xxx&quot;));</div>2019-04-18</li><br/><li><span>大胖子呀、</span> 👍（7） 💬（2）<div>请教一下大家，线程池执行数据更新任务，还能简单的使用事务注解来回滚事务吗？</div>2020-08-05</li><br/><li><span>linqw</span> 👍（7） 💬（1）<div>最近打算分析下Executor系列源码，先分析了下FutureTask源码，https:&#47;&#47;juejin.im&#47;post&#47;5d08be8ce51d455d6c0ad925，老师有空帮忙看下哦</div>2019-06-19</li><br/><li><span>magict4</span> 👍（4） 💬（1）<div>老师您好，请问有什么推荐的替代 Executors 的方案吗？</div>2019-04-18</li><br/><li><span>ub8</span> 👍（3） 💬（2）<div>老师您好，在我们使用线程池时候，如果队列中还有任务未执行，此时重启了服务，那队列中的任务是否会丢。像这样的场景线程池配置的策略应该是什么样的呢</div>2021-08-30</li><br/>
+	ExecutorService executor = Executors.newFixedThreadPool(4,new DIYThreadFactory(&quot;xxx&quot;));</p>2019-04-18</li><br/><li><span>大胖子呀、</span> 👍（7） 💬（2）<p>请教一下大家，线程池执行数据更新任务，还能简单的使用事务注解来回滚事务吗？</p>2020-08-05</li><br/><li><span>linqw</span> 👍（7） 💬（1）<p>最近打算分析下Executor系列源码，先分析了下FutureTask源码，https:&#47;&#47;juejin.im&#47;post&#47;5d08be8ce51d455d6c0ad925，老师有空帮忙看下哦</p>2019-06-19</li><br/><li><span>magict4</span> 👍（4） 💬（1）<p>老师您好，请问有什么推荐的替代 Executors 的方案吗？</p>2019-04-18</li><br/><li><span>ub8</span> 👍（3） 💬（2）<p>老师您好，在我们使用线程池时候，如果队列中还有任务未执行，此时重启了服务，那队列中的任务是否会丢。像这样的场景线程池配置的策略应该是什么样的呢</p>2021-08-30</li><br/>
 </ul>

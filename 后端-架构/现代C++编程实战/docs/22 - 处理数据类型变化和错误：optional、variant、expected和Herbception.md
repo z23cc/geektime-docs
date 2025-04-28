@@ -453,9 +453,9 @@ int main()
 
 \[10] Niall Douglas, “P1028R0: SG14 `status_code` and standard `error object` for P0709 Zero-overhead deterministic exceptions”. [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1028r0.pdf](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1028r0.pdf)
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>廖熊猫</span> 👍（2） 💬（1）<div>有的语言里面没有try catch，统一使用类似optional的结局方案，比如Rust里面的Err，Haskell中对应的应该是Either类型，这些都是处理可以恢复的错误，不可恢复的直接就让程序崩了。
+<li><span>廖熊猫</span> 👍（2） 💬（1）<p>有的语言里面没有try catch，统一使用类似optional的结局方案，比如Rust里面的Err，Haskell中对应的应该是Either类型，这些都是处理可以恢复的错误，不可恢复的直接就让程序崩了。
 lift_optional让我想起来被Haskell支配的恐惧 (Just (+) ) &lt;*&gt;  Just 41 &lt;*&gt; Just 1
-不知道老师后面会不会讲到monad😂</div>2020-01-15</li><br/><li><span>tt</span> 👍（2） 💬（2）<div>老师，听了您的课后，觉得现在C++标准提案有很多都是利用C++的语义和语法来写提升编程便利性的模板，是这样么？
+不知道老师后面会不会讲到monad😂</p>2020-01-15</li><br/><li><span>tt</span> 👍（2） 💬（2）<p>老师，听了您的课后，觉得现在C++标准提案有很多都是利用C++的语义和语法来写提升编程便利性的模板，是这样么？
 
-还有，一直不知道C++的异常是怎么实现的，还有这里说的异常处理的性能问题，有推荐的比较好阅读的参考文献么？</div>2020-01-15</li><br/><li><span>×22</span> 👍（0） 💬（1）<div>&quot;就我们上面的例子而言，obj.index() 即为 1。&quot; 这里应该是0吧</div>2024-03-27</li><br/><li><span>Geek_7d9f3b</span> 👍（0） 💬（2）<div>C++中是否有关闭异常的方式，实践中经常遇到分配内存时出现了bad_alloc直接让程序terminate掉了，涉及的历史代码又非常多，一个个try catch(...)既耗时又会造成程序性能的下降…</div>2023-09-17</li><br/><li><span>×22</span> 👍（0） 💬（1）<div>感觉optional就和rust里面的Option&lt;&gt;一样？</div>2022-09-27</li><br/>
+还有，一直不知道C++的异常是怎么实现的，还有这里说的异常处理的性能问题，有推荐的比较好阅读的参考文献么？</p>2020-01-15</li><br/><li><span>×22</span> 👍（0） 💬（1）<p>&quot;就我们上面的例子而言，obj.index() 即为 1。&quot; 这里应该是0吧</p>2024-03-27</li><br/><li><span>Geek_7d9f3b</span> 👍（0） 💬（2）<p>C++中是否有关闭异常的方式，实践中经常遇到分配内存时出现了bad_alloc直接让程序terminate掉了，涉及的历史代码又非常多，一个个try catch(...)既耗时又会造成程序性能的下降…</p>2023-09-17</li><br/><li><span>×22</span> 👍（0） 💬（1）<p>感觉optional就和rust里面的Option&lt;&gt;一样？</p>2022-09-27</li><br/>
 </ul>

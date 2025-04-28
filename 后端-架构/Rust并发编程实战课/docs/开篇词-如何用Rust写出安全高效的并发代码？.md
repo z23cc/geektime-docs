@@ -62,5 +62,5 @@ Rust的并发单元是线程。线程是基础，我们应该牢牢掌握线程�
 
 ![图片](https://static001.geekbang.org/resource/image/7e/fb/7e5901e52232c0459fc07336b9f978fb.png?wh=1920x1421)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>大布丁</span> 👍（0） 💬（1）<div>支持！</div>2025-02-17</li><br/><li><span>Porter Zhang</span> 👍（0） 💬（1）<div>老师能给一些并发环境下写rust单测的例子吗，如果有的话，这块比较碎片化，所以想看看老师平时怎么做的。</div>2025-02-17</li><br/><li><span>Shopman</span> 👍（0） 💬（1）<div>统计单元测试覆盖率很不方便系统范围内缺少单测的执行顺序功能给测试环准备带来了不方便，pprof支持不如golang，并发代码的基准测试也不方便，希望老师在后面提一嘴</div>2025-02-17</li><br/><li><span>Vincent_Li</span> 👍（0） 💬（1）<div>惊喜，前几天还在看老师的Rust并发编程文档。这会已经上新了课程</div>2025-02-16</li><br/>
+<li><span>大布丁</span> 👍（0） 💬（1）<p>支持！</p>2025-02-17</li><br/><li><span>Porter Zhang</span> 👍（0） 💬（1）<p>老师能给一些并发环境下写rust单测的例子吗，如果有的话，这块比较碎片化，所以想看看老师平时怎么做的。</p>2025-02-17</li><br/><li><span>Shopman</span> 👍（0） 💬（1）<p>统计单元测试覆盖率很不方便系统范围内缺少单测的执行顺序功能给测试环准备带来了不方便，pprof支持不如golang，并发代码的基准测试也不方便，希望老师在后面提一嘴</p>2025-02-17</li><br/><li><span>Vincent_Li</span> 👍（0） 💬（1）<p>惊喜，前几天还在看老师的Rust并发编程文档。这会已经上新了课程</p>2025-02-16</li><br/>
 </ul>

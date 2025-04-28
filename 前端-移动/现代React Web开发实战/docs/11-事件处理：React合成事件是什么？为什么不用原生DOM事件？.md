@@ -464,7 +464,7 @@ useEffect(() => {
 
 欢迎把你的思考和想法分享在评论区，我们下节课再见！
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（0）<div>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考：https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.11.0</div>2022-09-19</li><br/><li><span>海华呀</span> 👍（3） 💬（1）<div>1、执行顺序 是父-子-父，有些洋葱圈模型的感觉 
+<li><span>🐑</span> 👍（0） 💬（0）<p>你好，我是《现代React Web开发实战》的编辑辰洋，这是👇项目的源代码链接，供你学习与参考：https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.11.0</p>2022-09-19</li><br/><li><span>海华呀</span> 👍（3） 💬（1）<p>1、执行顺序 是父-子-父，有些洋葱圈模型的感觉 
 &lt;div onClickCapture={() =&gt; console.log(1)} onClick={() =&gt;console.log(4)} &gt;
       &lt;p onClickCapture={() =&gt; console.log(2)} onClick={() =&gt; { console.log(3) }}&gt;
         target
@@ -472,6 +472,6 @@ useEffect(() => {
     &lt;&#47;div &gt; 
 例如这个点击会依次打印出1、2、3、4；
 阻止冒泡 一般是父子组件都对事件做了处理，例如 文章列表页 ，点赞按钮，和打开详情页面；
-</div>2022-10-18</li><br/><li><span>阿阳</span> 👍（1） 💬（1）<div>每节课的内容好多，全是干货。需要反复的听，看，动手实践。请问老师，每节课的课后习题有没有专门的章节做解答啊？</div>2022-11-29</li><br/><li><span>WL</span> 👍（1） 💬（1）<div>感觉老师讲得过于多内容了，看着挺花时间；可以简化些就更好了</div>2022-09-15</li><br/><li><span>潮汐</span> 👍（0） 💬（3）<div>老师，想问一下，这节课的拖拽的例子，你的拖拽开始的时候，卡片会不会有一闪而过的卡片时间从status的时间变成相对时间的画面。分析了下，感觉像是KanbanCard的setDraggedItem触发了App的更新渲染，KanbanColumn和KanbanCard也会被重新渲染。但是draggedItem也并没有传给KanbanCard，为啥会触发KanbanCard的协调更新呢。</div>2023-01-08</li><br/><li><span>癡癡的等你歸</span> 👍（0） 💬（1）<div>老师，课程源码不见了，404了</div>2022-11-16</li><br/><li><span>Geek_8e9c8d</span> 👍（0） 💬（1）<div>已经开始期待以后开的项目课了
-希望能得到省份和城市的那个思考题的更多提示~,谢谢</div>2022-10-10</li><br/><li><span>01</span> 👍（0） 💬（2）<div>对目前发展来讲， 合成事件是否是个好的选择。 同时是否增加了开发的心智负担。 许多类react相关库不采用合成事件代替原生事件。</div>2022-09-27</li><br/><li><span>joel</span> 👍（0） 💬（1）<div>终于追上来了</div>2022-09-15</li><br/><li><span>C0S_02</span> 👍（2） 💬（0）<div>老师您好，我一直没明白 合成事件 的必要性是什么，react 到底在解决什么需求</div>2023-05-27</li><br/><li><span>joel</span> 👍（0） 💬（0）<div>还没有更吗</div>2022-09-16</li><br/>
+</p>2022-10-18</li><br/><li><span>阿阳</span> 👍（1） 💬（1）<p>每节课的内容好多，全是干货。需要反复的听，看，动手实践。请问老师，每节课的课后习题有没有专门的章节做解答啊？</p>2022-11-29</li><br/><li><span>WL</span> 👍（1） 💬（1）<p>感觉老师讲得过于多内容了，看着挺花时间；可以简化些就更好了</p>2022-09-15</li><br/><li><span>潮汐</span> 👍（0） 💬（3）<p>老师，想问一下，这节课的拖拽的例子，你的拖拽开始的时候，卡片会不会有一闪而过的卡片时间从status的时间变成相对时间的画面。分析了下，感觉像是KanbanCard的setDraggedItem触发了App的更新渲染，KanbanColumn和KanbanCard也会被重新渲染。但是draggedItem也并没有传给KanbanCard，为啥会触发KanbanCard的协调更新呢。</p>2023-01-08</li><br/><li><span>癡癡的等你歸</span> 👍（0） 💬（1）<p>老师，课程源码不见了，404了</p>2022-11-16</li><br/><li><span>Geek_8e9c8d</span> 👍（0） 💬（1）<p>已经开始期待以后开的项目课了
+希望能得到省份和城市的那个思考题的更多提示~,谢谢</p>2022-10-10</li><br/><li><span>01</span> 👍（0） 💬（2）<p>对目前发展来讲， 合成事件是否是个好的选择。 同时是否增加了开发的心智负担。 许多类react相关库不采用合成事件代替原生事件。</p>2022-09-27</li><br/><li><span>joel</span> 👍（0） 💬（1）<p>终于追上来了</p>2022-09-15</li><br/><li><span>C0S_02</span> 👍（2） 💬（0）<p>老师您好，我一直没明白 合成事件 的必要性是什么，react 到底在解决什么需求</p>2023-05-27</li><br/><li><span>joel</span> 👍（0） 💬（0）<p>还没有更吗</p>2022-09-16</li><br/>
 </ul>

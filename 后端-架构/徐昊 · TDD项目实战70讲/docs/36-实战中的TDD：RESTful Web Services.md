@@ -92,5 +92,5 @@ public class UsersResource {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Flynn</span> 👍（0） 💬（1）<div>老师，科普一下什么是RESTful呗</div>2022-06-06</li><br/>
+<li><span>Flynn</span> 👍（0） 💬（1）<p>老师，科普一下什么是RESTful呗</p>2022-06-06</li><br/>
 </ul>

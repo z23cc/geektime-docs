@@ -786,5 +786,5 @@ ProxySQL的配置主要通过一些配置表来实现。这里我对文章中用
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>美妙的代码</span> 👍（0） 💬（1）<div>MySQLproxy，MySQL router 都是这个功能吧</div>2024-12-03</li><br/>
+<li><span>美妙的代码</span> 👍（0） 💬（1）<p>MySQLproxy，MySQL router 都是这个功能吧</p>2024-12-03</li><br/>
 </ul>

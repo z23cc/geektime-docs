@@ -158,5 +158,5 @@ Chrome作为入口是可怕，再结合Android，使得Google轻松完成技术�
 
 狼叔（网名i5ting），现为阿里巴巴前端技术专家，Node.js 技术布道者，Node全栈公众号运营者。曾就职于去哪儿、新浪、网秦，做过前端、后端、数据分析，是一名全栈技术的实践者，目前主要关注技术架构和团队梯队建设方向。即将出版《狼书》3卷。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Fei</span> 👍（1） 💬（0）<div>Hey 狼叔，lowjs的link有点问题，有时间可以fix下。</div>2019-08-28</li><br/>
+<li><span>Fei</span> 👍（1） 💬（0）<p>Hey 狼叔，lowjs的link有点问题，有时间可以fix下。</p>2019-08-28</li><br/>
 </ul>

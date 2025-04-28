@@ -341,11 +341,11 @@ static int handle_io(struct kvm_vcpu *vcpu)
 
 我是LMOS，我们下节课见！
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>pedro</span> 👍（12） 💬（4）<div>以我所在的腾讯云为例。
+<li><span>pedro</span> 👍（12） 💬（4）<p>以我所在的腾讯云为例。
 腾讯云服务器 CVM 支持用户自定义一切资源：CPU、内存、硬盘、网络、安全等，并可以在需求发生变化时轻松地调整它们，还支持随时扩容，迁移，运维等管理功能。
-一个成熟的IAAS平台搭建起来不容易啊，要考虑的事情太多了。</div>2021-08-16</li><br/><li><span>苏流郁宓</span> 👍（3） 💬（2）<div>装虚拟机出现过ghost系统（如win系统ghost版），在VM虚拟机上面识别不了，需要装原版官网下载的非ghost版本才安装成功，以及AMD的cpu装苹果系统也没成功，故认为开发虚拟机系统（如VM），需要对厂家的cpu指令以及各系统的启动流程有一定的了解。如此才好“欺骗”，虚拟机安装系统失败的很大部分原因是没找对原版系统，也就是修改过的系统启动流程和虚拟机表中的流程不完全一致，识别不了。
+一个成熟的IAAS平台搭建起来不容易啊，要考虑的事情太多了。</p>2021-08-16</li><br/><li><span>苏流郁宓</span> 👍（3） 💬（2）<p>装虚拟机出现过ghost系统（如win系统ghost版），在VM虚拟机上面识别不了，需要装原版官网下载的非ghost版本才安装成功，以及AMD的cpu装苹果系统也没成功，故认为开发虚拟机系统（如VM），需要对厂家的cpu指令以及各系统的启动流程有一定的了解。如此才好“欺骗”，虚拟机安装系统失败的很大部分原因是没找对原版系统，也就是修改过的系统启动流程和虚拟机表中的流程不完全一致，识别不了。
 故，认为开发虚拟机可以单独做一个启动表（允许修改），还有就是扫描表，就是在安装系统前对要装的系统进行扫描，识别不了的东西也显示出来，方便用户网上查询和修改参数，而不是猜。还有就是文件格式的识别需要改进，iso或者dmg都能识别最好，这样覆盖的厂家更多！
-还可以设计一种网络虚拟机，就是虚拟机装在A电脑上，但是用户在B电脑上，用户的操作通过平台翻译成标准信息输出，然后传送到A电脑上，这样就不用考虑用户在B电脑（手机）用的是什么系统，硬件性能如何。只要他能联网就行，这样可以在A电脑上允许多个用户分时间操作，更能利用好资源。</div>2021-08-16</li><br/><li><span>neohope</span> 👍（8） 💬（1）<div>二、下半部分
+还可以设计一种网络虚拟机，就是虚拟机装在A电脑上，但是用户在B电脑上，用户的操作通过平台翻译成标准信息输出，然后传送到A电脑上，这样就不用考虑用户在B电脑（手机）用的是什么系统，硬件性能如何。只要他能联网就行，这样可以在A电脑上允许多个用户分时间操作，更能利用好资源。</p>2021-08-16</li><br/><li><span>neohope</span> 👍（8） 💬（1）<p>二、下半部分
 5、在调用ioctl时
 SYSCALL_DEFINE3(ioctl, unsigned int, fd, unsigned int, cmd, unsigned long, arg)
 -&gt;vfs_ioctl，会用到vfs_ioctl.unlocked_ioctl也就是kvm_vm_ioctl
@@ -388,7 +388,7 @@ case KVM_RUN:
 
 其中，kvm_arch_vcpu_ioctl_run-&gt;vcpu_run-&gt;vcpu_enter_guest
 
-8、IO同样有虚拟化和半虚拟化两种，一个处理函数为kvm_fast_pio，另一个为kvm_emulate_instruction</div>2021-08-24</li><br/><li><span>neohope</span> 👍（6） 💬（1）<div>一、上半部分
+8、IO同样有虚拟化和半虚拟化两种，一个处理函数为kvm_fast_pio，另一个为kvm_emulate_instruction</p>2021-08-24</li><br/><li><span>neohope</span> 👍（6） 💬（1）<p>一、上半部分
 1、内核模块初始化
 module_init(vmx_init)-&gt;kvm_init
 module_init(svm_init)-&gt;kvm_init
@@ -439,6 +439,6 @@ static struct file_operations kvm_vm_fops = {
     .llseek     = noop_llseek,
     KVM_COMPAT(kvm_vm_compat_ioctl),
 };
-创建虚拟机时，anon_inode_getfile(&quot;kvm-vm&quot;, &amp;kvm_vm_fops, kvm, O_RDWR)，实际上就把文件和kvm_vm_fops绑定了起来。</div>2021-08-24</li><br/><li><span>吴建平</span> 👍（0） 💬（1）<div>文中用到的kvm的源码，是linux的么，哪个版本的，或者去哪里可以下载到对应源码
-</div>2022-08-29</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<div>老师，JVM 属于软虚拟还是硬虚拟？</div>2022-07-08</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>秀啊</div>2022-02-27</li><br/><li><span>云师兄</span> 👍（0） 💬（1）<div>软硬结合才是虚拟化的关键啊！</div>2021-09-08</li><br/><li><span>springXu</span> 👍（0） 💬（1）<div>这课的例子和内容相当精彩，还是意犹未尽呀。由于虚拟化知识欠缺了，想问还有后续不？</div>2021-08-16</li><br/><li><span>李亮亮</span> 👍（0） 💬（0）<div>哥，你太强了。什么都懂。</div>2024-08-29</li><br/>
+创建虚拟机时，anon_inode_getfile(&quot;kvm-vm&quot;, &amp;kvm_vm_fops, kvm, O_RDWR)，实际上就把文件和kvm_vm_fops绑定了起来。</p>2021-08-24</li><br/><li><span>吴建平</span> 👍（0） 💬（1）<p>文中用到的kvm的源码，是linux的么，哪个版本的，或者去哪里可以下载到对应源码
+</p>2022-08-29</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<p>老师，JVM 属于软虚拟还是硬虚拟？</p>2022-07-08</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>秀啊</p>2022-02-27</li><br/><li><span>云师兄</span> 👍（0） 💬（1）<p>软硬结合才是虚拟化的关键啊！</p>2021-09-08</li><br/><li><span>springXu</span> 👍（0） 💬（1）<p>这课的例子和内容相当精彩，还是意犹未尽呀。由于虚拟化知识欠缺了，想问还有后续不？</p>2021-08-16</li><br/><li><span>李亮亮</span> 👍（0） 💬（0）<p>哥，你太强了。什么都懂。</p>2024-08-29</li><br/>
 </ul>

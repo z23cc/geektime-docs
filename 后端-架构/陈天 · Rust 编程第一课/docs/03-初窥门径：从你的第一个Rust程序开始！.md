@@ -480,7 +480,7 @@ for arg in std::env::args() {
 6. [More about cargo and crates.io](https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html)
 7. Rust 支持声明宏（declarative macro）和过程宏（procedure macro），其中过程宏又包含三种方式：函数宏（function macro），派生宏（derive macro）和属性宏（attribute macro）。println! 是函数宏，是因为 Rust 是强类型语言，函数的类型需要在编译期敲定，而 println! 接受任意个数的参数，所以只能用宏来表达。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>树静风止</span> 👍（8） 💬（1）<div>2022-12-28，这是一条较新的错误处理解决留言。
+<li><span>树静风止</span> 👍（8） 💬（1）<p>2022-12-28，这是一条较新的错误处理解决留言。
 如果你是在windows环境下cargo run课程中的代码发现出现以下错误：
 error: linking with `x86_64-w64-mingw32-gcc` failed: exit code: 1
 网上解决方案是安装x86_64-pc-windows-msvc，但是你已经成功安装，却依然报错。
@@ -490,10 +490,10 @@ rustup show
 # 设置当前默认工具链
  rustup default stable-x86_64-pc-windows-msvc
 
-这样你就可以正常编译运行了。</div>2022-12-28</li><br/><li><span>Roy Liang</span> 👍（53） 💬（6）<div>export RUSTUP_DIST_SERVER=https:&#47;&#47;mirrors.sjtug.sjtu.edu.cn&#47;rust-static
+这样你就可以正常编译运行了。</p>2022-12-28</li><br/><li><span>Roy Liang</span> 👍（53） 💬（6）<p>export RUSTUP_DIST_SERVER=https:&#47;&#47;mirrors.sjtug.sjtu.edu.cn&#47;rust-static
 export RUSTUP_UPDATE_ROOT=https:&#47;&#47;mirrors.sjtug.sjtu.edu.cn&#47;rust-static&#47;rustup
 
-rust国内安装必备环境配置</div>2021-08-27</li><br/><li><span>赵岩松</span> 👍（61） 💬（4）<div>
+rust国内安装必备环境配置</p>2021-08-27</li><br/><li><span>赵岩松</span> 👍（61） 💬（4）<p>
 文中的&quot;Rust 没有语句（statement），只有表达式（expression）&quot;表述我认为是错误的，
 我猜这里想表达的内容应该类似于《Rust程序设计语言中》的如下语句
 &quot;Rust 是一门基于表达式（expression-based）的语言，这是一个需要理解的（不同于其他语言）重要区别&quot;
@@ -504,7 +504,7 @@ rust国内安装必备环境配置</div>2021-08-27</li><br/><li><span>赵岩松<
 `let y = 6;`中，6为一个表达式，它计算出的值是 6,`let y = 6;`做为一个整体是一条语句，他并不返回值，所以我们不能在Rust中这样书写`let x = (let y = 6);`
 关于这个问题还有来自交流群内&quot;Tai Huei&quot;提供的截图中的文字作为依据
 &quot;Statements are instructions that do something, they do not return a value. Expressions evaluate to a value, they return that value&quot;
-&quot;Rust is an expression-oriented language. This means that most things are expressions, and evaluate to some kind of value. However, there are also statements. -Steve Klabnik(member if the Rust core team)&quot;</div>2021-08-27</li><br/><li><span>pedro</span> 👍（38） 💬（3）<div>我想很多人不会被课后问题所困扰而是被 Copy 和 Clone，初学时我也很纠结，这里贴上某位大佬的总结：
+&quot;Rust is an expression-oriented language. This means that most things are expressions, and evaluate to some kind of value. However, there are also statements. -Steve Klabnik(member if the Rust core team)&quot;</p>2021-08-27</li><br/><li><span>pedro</span> 👍（38） 💬（3）<p>我想很多人不会被课后问题所困扰而是被 Copy 和 Clone，初学时我也很纠结，这里贴上某位大佬的总结：
 
 Copy 和 Clone 两者的区别和联系有：
 
@@ -516,14 +516,14 @@ Copy trait不是你想实现就实现，它对类型是有要求的，有些类�
 
 Copy trait规定了这个类型在执行变量绑定、函数参数传递、函数返回等场景下的操作方式。即这个类型在这种场景下，必然执行的是“简单内存拷贝”操作，这是由编译器保证的，程序员无法控制。Clone trait 里面的 clone 方法究竟会执行什么操作，则是取决于程序员自己写的逻辑。一般情况下，clone 方法应该执行一个“深拷贝”操作，但这不是强制的，如果你愿意，也可以在里面启动一个人工智能程序，都是有可能的。
 
-链接：https:&#47;&#47;zhuanlan.zhihu.com&#47;p&#47;21730929</div>2021-08-27</li><br/><li><span>GengTeng</span> 👍（14） 💬（2）<div>2. 一个模式匹配就行了，还做到了 panic-free：
+链接：https:&#47;&#47;zhuanlan.zhihu.com&#47;p&#47;21730929</p>2021-08-27</li><br/><li><span>GengTeng</span> 👍（14） 💬（2）<p>2. 一个模式匹配就行了，还做到了 panic-free：
 
 let args = std::env::args().collect::&lt;Vec&lt;String&gt;&gt;();
 if let [_path, url, output, ..] = args.as_slice() {
     println!(&quot;url: {}, output: {}&quot;, url, output);
 } else {
     eprintln!(&quot;参数缺失&quot;);
-}</div>2021-09-03</li><br/><li><span>Kerry</span> 👍（10） 💬（3）<div>课后习题需要自己查一点接口资料，结合错误信息来逐步解决编译问题。
+}</p>2021-09-03</li><br/><li><span>Kerry</span> 👍（10） 💬（3）<p>课后习题需要自己查一点接口资料，结合错误信息来逐步解决编译问题。
 
 问题一：
 
@@ -581,7 +581,7 @@ fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 }
 ```
 
-好歹是跑起来了……装了智能提示真不错，有better impl的建议 :)</div>2021-08-27</li><br/><li><span>Quincy</span> 👍（10） 💬（3）<div>use std::fs;
+好歹是跑起来了……装了智能提示真不错，有better impl的建议 :)</p>2021-08-27</li><br/><li><span>Quincy</span> 👍（10） 💬（3）<p>use std::fs;
 use structopt::StructOpt;
 
 #[derive(StructOpt, Debug)]
@@ -608,7 +608,7 @@ fn main() {
     fs::write(output, md.as_bytes()).unwrap();
     println!(&quot;Converted markdown has been saved in {}.&quot;, output);
 }
-</div>2021-08-27</li><br/><li><span>慢动作</span> 👍（9） 💬（1）<div>字符串字面量为什么有into方法，这中间经历了什么过程？看文档根本不知道这个方法哪里来的，😂。还是有点操之过急，看到不明白就瞎忙活，感觉还是得循序渐进</div>2021-08-27</li><br/><li><span>🔥神山 | 雷神山</span> 👍（8） 💬（1）<div>
+</p>2021-08-27</li><br/><li><span>慢动作</span> 👍（9） 💬（1）<p>字符串字面量为什么有into方法，这中间经历了什么过程？看文档根本不知道这个方法哪里来的，😂。还是有点操之过急，看到不明白就瞎忙活，感觉还是得循序渐进</p>2021-08-27</li><br/><li><span>🔥神山 | 雷神山</span> 👍（8） 💬（1）<p>
 2. 在 scrape_url 的例子里，我们在代码中写死了要获取的 URL 和要输出的文件名，这太不灵活了。你能改进这个代码，从命令行参数中获取用户提供的信息来绑定 URL 和文件名么？类似这样：
 ```rust
 use std::env;
@@ -677,15 +677,15 @@ fn main() {
         },
     }
 }
-```</div>2021-08-27</li><br/><li><span>核桃</span> 👍（6） 💬（1）<div>这里有几个小疑惑.
+```</p>2021-08-27</li><br/><li><span>核桃</span> 👍（6） 💬（1）<p>这里有几个小疑惑.
 1.首先把函数作为参数这里，例如a(1，b(2))这样的，那么和先调用b得到结果再填入a中有什么本质区别吗？我不理解的是，分开调用好像也没什么问题，有什么场景下需要函数作为参数这样调用的？
 2.派生宏这里#[derive(Debug)]，这个例子中实现的是什么功能不太理解？
 3.println! 这里的语法多了一个感叹号，很多语言都有println，多了这个感叹号封装多了一些什么吗？看过一些资料也不太理解
-多谢了</div>2021-09-08</li><br/><li><span>Raina</span> 👍（6） 💬（1）<div>所以还是要有rust基础才行，我先去看看Rust圣经再回来&gt;_&lt;</div>2021-08-27</li><br/><li><span>一期一会</span> 👍（4） 💬（1）<div>运行2md代码，发生openssl编译问题：
+多谢了</p>2021-09-08</li><br/><li><span>Raina</span> 👍（6） 💬（1）<p>所以还是要有rust基础才行，我先去看看Rust圣经再回来&gt;_&lt;</p>2021-08-27</li><br/><li><span>一期一会</span> 👍（4） 💬（1）<p>运行2md代码，发生openssl编译问题：
 Compiling openssl-sys v0.9.66
 error: failed to run custom build command for `openssl-sys v0.9.66`
 
-折腾了大半天还是不行</div>2021-09-08</li><br/><li><span>太子长琴</span> 👍（4） 💬（1）<div>fib 这个还挺有意思的，可以把 next 单独拿出来，在内部做赋值（c = *a+*b, *a=*b, *b=c）；也可以把 a 先算出来，然后 swap ab（a = a+b, swap(a,b)）；或者使用 mut reference tuple（fib = (fib.1, fib.0+fib.1)）。
+折腾了大半天还是不行</p>2021-09-08</li><br/><li><span>太子长琴</span> 👍（4） 💬（1）<p>fib 这个还挺有意思的，可以把 next 单独拿出来，在内部做赋值（c = *a+*b, *a=*b, *b=c）；也可以把 a 先算出来，然后 swap ab（a = a+b, swap(a,b)）；或者使用 mut reference tuple（fib = (fib.1, fib.0+fib.1)）。
 
 第二个在RPL中有个I&#47;O Project的例子，用了 Config，不过感觉捕捉一下 Err 就可以了：
 ```rust
@@ -696,7 +696,7 @@ let args: Vec&lt;String&gt; = env::args().collect();
     }
 ```
 
-课程真心不错~深入浅出不啰嗦~</div>2021-08-30</li><br/><li><span>🔥神山 | 雷神山</span> 👍（4） 💬（3）<div>1. 在上面的斐波那契数列的代码中，你也许注意到计算数列中下一个数的代码在三个函数中不断重复。这不符合 DRY（Don’t Repeat Yourself）原则。你可以写一个函数把它抽取出来么？
+课程真心不错~深入浅出不啰嗦~</p>2021-08-30</li><br/><li><span>🔥神山 | 雷神山</span> 👍（4） 💬（3）<p>1. 在上面的斐波那契数列的代码中，你也许注意到计算数列中下一个数的代码在三个函数中不断重复。这不符合 DRY（Don’t Repeat Yourself）原则。你可以写一个函数把它抽取出来么？
 1) 定义一个loop_calc:
 ```rust
 fn loop_calc(mut first_num: i32, mut second_num: i32, limit: u8) {
@@ -743,7 +743,7 @@ fn main() {
     fib_for(n);
 }
 ```
-</div>2021-08-27</li><br/><li><span>Geek_67a5d1</span> 👍（3） 💬（1）<div>初学者，花了一天时间才基本消化了老师讲20分钟的东西😅。简单方式做一下思考题2：
+</p>2021-08-27</li><br/><li><span>Geek_67a5d1</span> 👍（3） 💬（1）<p>初学者，花了一天时间才基本消化了老师讲20分钟的东西😅。简单方式做一下思考题2：
 
 use std::fs;
 
@@ -770,5 +770,5 @@ fn main() {
     fs::write(output, md.as_bytes()).unwrap();
     println!(&quot;Converted markdown has been saved in {}.&quot;, output);
 }
-</div>2021-09-23</li><br/>
+</p>2021-09-23</li><br/>
 </ul>

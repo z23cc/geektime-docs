@@ -270,7 +270,7 @@ GitHub Action的配置很长，为了让你聚焦重点，这里我将两步的�
 
 欢迎在评论区里给我留言。如果这一讲对你有启发，别忘了分享给身边更多朋友。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>陈斯佳</span> 👍（0） 💬（1）<div>老师 关于AWS如何授权Github Action 我还是不太理解 上面那一步在AWS的IAM里配置Github token url的同时 是不是还需要我登入github认证？ 还是说 那个url是统一的 只要你指明github id  那只要是github这个id发来的请求都是合法的？</div>2024-04-24</li><br/><li><span>黑石</span> 👍（0） 💬（0）<div>&quot;token.actions.githubusercontent.com:sub&quot;: &quot;repo:cloudnative-automation&#47;github-action-terrafrom:*&quot; } } } ]}
+<li><span>陈斯佳</span> 👍（0） 💬（1）<p>老师 关于AWS如何授权Github Action 我还是不太理解 上面那一步在AWS的IAM里配置Github token url的同时 是不是还需要我登入github认证？ 还是说 那个url是统一的 只要你指明github id  那只要是github这个id发来的请求都是合法的？</p>2024-04-24</li><br/><li><span>黑石</span> 👍（0） 💬（0）<p>&quot;token.actions.githubusercontent.com:sub&quot;: &quot;repo:cloudnative-automation&#47;github-action-terrafrom:*&quot; } } } ]}
 
-老师，这里的repo要改成自己的repo 吗</div>2024-06-03</li><br/><li><span>Dexter</span> 👍（0） 💬（1）<div>开通EKS是不是需要额外的费用？</div>2024-04-25</li><br/><li><span>橙汁</span> 👍（0） 💬（0）<div>很不错，解答了我上节课后的疑问，因为我都是在本地apply所以会让手动确认，action后只要pr通过merge到main就生成，也很省事</div>2024-04-08</li><br/>
+老师，这里的repo要改成自己的repo 吗</p>2024-06-03</li><br/><li><span>Dexter</span> 👍（0） 💬（1）<p>开通EKS是不是需要额外的费用？</p>2024-04-25</li><br/><li><span>橙汁</span> 👍（0） 💬（0）<p>很不错，解答了我上节课后的疑问，因为我都是在本地apply所以会让手动确认，action后只要pr通过merge到main就生成，也很省事</p>2024-04-08</li><br/>
 </ul>

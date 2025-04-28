@@ -824,19 +824,19 @@ GORM中，还有一个非常有用的功能是支持Hooks。Hooks可以在执行
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Sch0ng</span> 👍（6） 💬（1）<div>go语言中，orm使用gorm包。
-gorm功能全，操作界面符合直觉，不需要额外的理解负担。</div>2021-08-16</li><br/><li><span>Geek_004fb2</span> 👍（3） 💬（1）<div>老师,企业级的应用往往需要在业务层处理&quot;事物&quot;,这个模式应该如何设计比较优雅?我看了iam项目暂时没发现相关处理</div>2022-11-08</li><br/><li><span>helloworld</span> 👍（3） 💬（1）<div>测试发现项目中的软删除功能不起作用, 需要将源码
+<li><span>Sch0ng</span> 👍（6） 💬（1）<p>go语言中，orm使用gorm包。
+gorm功能全，操作界面符合直觉，不需要额外的理解负担。</p>2021-08-16</li><br/><li><span>Geek_004fb2</span> 👍（3） 💬（1）<p>老师,企业级的应用往往需要在业务层处理&quot;事物&quot;,这个模式应该如何设计比较优雅?我看了iam项目暂时没发现相关处理</p>2022-11-08</li><br/><li><span>helloworld</span> 👍（3） 💬（1）<p>测试发现项目中的软删除功能不起作用, 需要将源码
 https:&#47;&#47;github.com&#47;marmotedu&#47;component-base&#47;blob&#47;master&#47;pkg&#47;meta&#47;v1&#47;types.go 中的
 DeletedAt *time.Time `json:&quot;-&quot; gorm:&quot;column:deletedAt;index:idx_deletedAt&quot;` 
 改为: 	
 DeletedAt gorm.DeletedAt `json:&quot;-&quot; gorm:&quot;index;column:deletedAt&quot;`
 
-</div>2021-11-09</li><br/><li><span>潘达</span> 👍（3） 💬（1）<div>gorm下是否有从表中直接生成struct的工具呢，xorm下的反向生成工具还是挺实用的</div>2021-09-15</li><br/><li><span>huining</span> 👍（2） 💬（1）<div>如果按照这样写，那用不了事务啊，比如老师的代码里删除用户时，是先调用polices.delete(),然后再delete用户，那假如中途出错，也无法回滚。我的做法是再加一个*DB参数，但是感觉写起来很丑，方法里要判断之前是否启动了事务。所以如果想要添加对事务的支持应该怎么做呢？</div>2021-12-15</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<div>总结：
+</p>2021-11-09</li><br/><li><span>潘达</span> 👍（3） 💬（1）<p>gorm下是否有从表中直接生成struct的工具呢，xorm下的反向生成工具还是挺实用的</p>2021-09-15</li><br/><li><span>huining</span> 👍（2） 💬（1）<p>如果按照这样写，那用不了事务啊，比如老师的代码里删除用户时，是先调用polices.delete(),然后再delete用户，那假如中途出错，也无法回滚。我的做法是再加一个*DB参数，但是感觉写起来很丑，方法里要判断之前是否启动了事务。所以如果想要添加对事务的支持应该怎么做呢？</p>2021-12-15</li><br/><li><span>yandongxiao</span> 👍（2） 💬（1）<p>总结：
 1. 首先定义一个 GORM 模型（Models），GORM模型就是一个普普通通的golang struct。使用结构体名的 snake_cases 作为表名，使用字段名的 snake_case 作为列名。
 2. gorm.Model 为表增加了 ID、CreatedAt、UpdatedAt、DeletedAt 等字段。如果是资源表，建议统一资源的元数据。参见第29章节。
 3. 在结构体中，通过 tag，指定数据库中字段的名称。
 4. gorm 支持表CRUD操作，每种操作也会有各种变形，与 数据库操作相对应。
-</div>2021-12-03</li><br/><li><span>XI</span> 👍（2） 💬（1）<div>go的连接池网上教程有点少，go 连接redis,monggodb 应该都需要连接池，gorm官方文档连接池的讲解也是寥寥数语，老师能不能详细补充点连接池相关的，如何使用，如果能再加上redis ，mongdb 的连接池一类的就更好了</div>2021-10-12</li><br/><li><span>wei 丶</span> 👍（1） 💬（1）<div>孔大，ent咋样 有没有ent的讲解呢 👀</div>2022-08-01</li><br/><li><span>邵俊达</span> 👍（1） 💬（2）<div>请问 gorm 如何处理操作多张表的事务？比如类似
+</p>2021-12-03</li><br/><li><span>XI</span> 👍（2） 💬（1）<p>go的连接池网上教程有点少，go 连接redis,monggodb 应该都需要连接池，gorm官方文档连接池的讲解也是寥寥数语，老师能不能详细补充点连接池相关的，如何使用，如果能再加上redis ，mongdb 的连接池一类的就更好了</p>2021-10-12</li><br/><li><span>wei 丶</span> 👍（1） 💬（1）<p>孔大，ent咋样 有没有ent的讲解呢 👀</p>2022-08-01</li><br/><li><span>邵俊达</span> 👍（1） 💬（2）<p>请问 gorm 如何处理操作多张表的事务？比如类似
 ```
 begin
  User.save
@@ -845,9 +845,9 @@ begin
 commit
 ```
 
-用 gorm 的 transaction 就要用他的 tx 来操作数据，那封装好的 dao 是不是就没法用了？</div>2021-12-14</li><br/><li><span>liaomars</span> 👍（1） 💬（1）<div>老师：
+用 gorm 的 transaction 就要用他的 tx 来操作数据，那封装好的 dao 是不是就没法用了？</p>2021-12-14</li><br/><li><span>liaomars</span> 👍（1） 💬（1）<p>老师：
 sqlDB.SetMaxIdleConns(10)              &#47;&#47; 设置MySQL的最大空闲连接数（推荐100）
-这个最大空闲连接数是10还是100？代码写的是10，注释写的是100</div>2021-12-03</li><br/><li><span>刘世杰</span> 👍（1） 💬（1）<div>老师您好，
+这个最大空闲连接数是10还是100？代码写的是10，注释写的是100</p>2021-12-03</li><br/><li><span>刘世杰</span> 👍（1） 💬（1）<p>老师您好，
 我在使用 github.com&#47;go-xorm&#47;xorm 这个包连接 mycat 的时候
 当我执行带 ? 号的 sql 语句时出现 {&quot;Number&quot;:1047,&quot;Message&quot;:&quot;Prepare unsupported!&quot;} 报错
 我应该怎么配置连接信息呢？
@@ -869,5 +869,5 @@ data := map[string]interface{}{
 res 运行的 sql 能够正常运行
 直连数据库的时候，本地连接数据库，以上代码均正常
 使用 mycat 时，无法正常执行 sql
-网上看了一些文档，说是 interpolateparams 这个参数的问题，但是我试了都没有用</div>2021-11-26</li><br/><li><span>徐海浪</span> 👍（1） 💬（2）<div>生产环境不应该使用AutoMigrate，除非有靠谱的code review流程，否则随着协作的人数越多，越容易失控</div>2021-11-23</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<div>看了下iam启动过程的源码，发现依赖的mysql实例获取不到也不会退出程序，个人感觉这样设计是否更好：写两个函数，一个用来初始化mysql单例，一个用来获取mysql单例，在server的Preparerun函数中来初始化，初始化失败则退出程序提示用户，在router中来获取已经初始化过的mysql单例，这样感觉更清晰一些～</div>2021-11-04</li><br/><li><span>Derek</span> 👍（1） 💬（1）<div>老师，拿要是连接多个数据库，不同的struct使用不同的库要怎么搞，是不是要初始化好几个连接，然后指定一下struct用的库？</div>2021-10-27</li><br/><li><span>先听</span> 👍（1） 💬（1）<div>请问 事务的嵌套，有没有什么好的解决方案呢</div>2021-08-15</li><br/>
+网上看了一些文档，说是 interpolateparams 这个参数的问题，但是我试了都没有用</p>2021-11-26</li><br/><li><span>徐海浪</span> 👍（1） 💬（2）<p>生产环境不应该使用AutoMigrate，除非有靠谱的code review流程，否则随着协作的人数越多，越容易失控</p>2021-11-23</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<p>看了下iam启动过程的源码，发现依赖的mysql实例获取不到也不会退出程序，个人感觉这样设计是否更好：写两个函数，一个用来初始化mysql单例，一个用来获取mysql单例，在server的Preparerun函数中来初始化，初始化失败则退出程序提示用户，在router中来获取已经初始化过的mysql单例，这样感觉更清晰一些～</p>2021-11-04</li><br/><li><span>Derek</span> 👍（1） 💬（1）<p>老师，拿要是连接多个数据库，不同的struct使用不同的库要怎么搞，是不是要初始化好几个连接，然后指定一下struct用的库？</p>2021-10-27</li><br/><li><span>先听</span> 👍（1） 💬（1）<p>请问 事务的嵌套，有没有什么好的解决方案呢</p>2021-08-15</li><br/>
 </ul>

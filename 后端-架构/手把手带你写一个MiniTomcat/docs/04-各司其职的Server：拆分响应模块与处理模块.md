@@ -655,12 +655,12 @@ public class HelloServlet implements Servlet{
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>？新！</span> 👍（1） 💬（2）<div>老师我有个关于tomcat连接层的问题求教？
+<li><span>？新！</span> 👍（1） 💬（2）<p>老师我有个关于tomcat连接层的问题求教？
     场景：外部nginx日志记录调用了A服务并且超时，但是A服务本地日志localhost_access_log，没有记录，了解后怀疑是连接层，会等待队列就超时了，所以没有到容器层，没有被localhost_access_log记录？
     问题：
         1  我的怀疑是否可能？
         2 有办法验证吗？比如tomcat等待队列超时或者accept超时，能记录日志
-      </div>2024-01-02</li><br/><li><span>peter</span> 👍（1） 💬（5）<div>请教老师几个问题：
+      </p>2024-01-02</li><br/><li><span>peter</span> 👍（1） 💬（5）<p>请教老师几个问题：
 Q1：streamHandler不需要赋值吗？
 ServletProcessor.java的process方法中：
 URLStreamHandler streamHandler = null;
@@ -677,5 +677,5 @@ Missing &#39;@Override&#39; annotation on &#39;run()&#39; 。
 
 Q3：第03课代码，一次请求，socket = serverSocket.accept();为什么运行两次？
 HttpServer.java文件中,while(true)代码块,在serverSocket.accept();这里阻塞。浏览器中输入请求，创建Request，成功地走完了整个流程。走完整个流程后按道理应该还在serverSocket.accept();这里阻塞。但竟然再次创建Request，不过在Request类的parse函数中，在i = input.read(buffer);这个地方不再往下面执行。我在input.read前后都加了打印语句，前面的打印语句执行了，后面的没有执行，神奇啊，为什么啊？
-简单地说，就是：浏览器发送一个请求，HttpServer收到了两个request,第一个正常处理，第二个不能正常执行。（我用的是Chrome浏览器，也许和浏览器有关？）</div>2023-12-16</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（2）<div>😄池子+队列， 学艺不精具体细节答不上来， 请老师指点。</div>2023-12-15</li><br/><li><span>stars</span> 👍（0） 💬（1）<div>只是在主线程启动了一个子线程，这样就提高吞吐率了吗？请教老师。</div>2023-12-25</li><br/>
+简单地说，就是：浏览器发送一个请求，HttpServer收到了两个request,第一个正常处理，第二个不能正常执行。（我用的是Chrome浏览器，也许和浏览器有关？）</p>2023-12-16</li><br/><li><span>HH🐷🐠</span> 👍（1） 💬（2）<p>😄池子+队列， 学艺不精具体细节答不上来， 请老师指点。</p>2023-12-15</li><br/><li><span>stars</span> 👍（0） 💬（1）<p>只是在主线程启动了一个子线程，这样就提高吞吐率了吗？请教老师。</p>2023-12-25</li><br/>
 </ul>

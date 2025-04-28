@@ -189,6 +189,6 @@ function workLoop() {
 
 如果你还有其他想听的话题，或者在课程学习中有什么疑问，欢迎在留言区告诉我。下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>学习前端-react</span> 👍（2） 💬（1）<div>感谢宋老师的精彩加餐。目前看下来一餐可能不太够，有点囫囵吞枣的感觉。
-</div>2022-09-29</li><br/><li><span>joel</span> 👍（2） 💬（1）<div>要是有视频就更好，老师辛苦了</div>2022-09-23</li><br/><li><span>乐雨</span> 👍（1） 💬（2）<div>没有讲到任务优先级和饥饿问题的处理</div>2022-09-26</li><br/><li><span>学习前端-react</span> 👍（0） 💬（1）<div>请问：修改state 是生成fiber 并 diffing的过程？</div>2022-09-29</li><br/><li><span>silence_wh</span> 👍（0） 💬（0）<div>推荐一篇帮助理解 React 工作流程的文章：https:&#47;&#47;pomb.us&#47;build-your-own-react&#47;</div>2024-04-01</li><br/><li><span>潮汐</span> 👍（0） 💬（0）<div>这篇加餐结合正文课程第6、8节和文中的图，对渲染、协调有更深的理解。与6、8节正文的图形成互相诠释说明，值得反复对比理解！</div>2023-02-19</li><br/>
+<li><span>学习前端-react</span> 👍（2） 💬（1）<p>感谢宋老师的精彩加餐。目前看下来一餐可能不太够，有点囫囵吞枣的感觉。
+</p>2022-09-29</li><br/><li><span>joel</span> 👍（2） 💬（1）<p>要是有视频就更好，老师辛苦了</p>2022-09-23</li><br/><li><span>乐雨</span> 👍（1） 💬（2）<p>没有讲到任务优先级和饥饿问题的处理</p>2022-09-26</li><br/><li><span>学习前端-react</span> 👍（0） 💬（1）<p>请问：修改state 是生成fiber 并 diffing的过程？</p>2022-09-29</li><br/><li><span>silence_wh</span> 👍（0） 💬（0）<p>推荐一篇帮助理解 React 工作流程的文章：https:&#47;&#47;pomb.us&#47;build-your-own-react&#47;</p>2024-04-01</li><br/><li><span>潮汐</span> 👍（0） 💬（0）<p>这篇加餐结合正文课程第6、8节和文中的图，对渲染、协调有更深的理解。与6、8节正文的图形成互相诠释说明，值得反复对比理解！</p>2023-02-19</li><br/>
 </ul>

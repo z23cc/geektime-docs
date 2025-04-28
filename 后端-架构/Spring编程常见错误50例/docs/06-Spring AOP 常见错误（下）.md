@@ -475,7 +475,7 @@ public class AopConfig {
 
 期待在留言区看到你的思考，我们下节课再见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>yihang</span> 👍（13） 💬（0）<div>拆分成两个切面，用@Order或Ordered接口控制顺序。个人觉得Spring在排序设计上比较混乱，各种排序规则不统一</div>2021-05-13</li><br/><li><span>luke Y</span> 👍（8） 💬（4）<div>老师你好，请教个问题，案例一的问题修正doCharge() 方法在charge()中调用，这个代理应该不会走到doCharge()的切面吧</div>2021-05-08</li><br/><li><span>大斌啊啊啊</span> 👍（7） 💬（4）<div>&quot;如果两个方法名长度相同，则依次比较每一个字母的 ASCII 码，ASCII 码越小，排序越靠前；若长度不同，且短的方法名字符串是长的子集时，短的排序靠前。&quot; 这里的描述好像有点问题，短的方法名字符串是长的子集时，短的排序不一定靠前。因为子集不能保证起始值相同，比如说”bc“是”abc“的子集，但是abc会排前面吧</div>2021-07-28</li><br/><li><span>Monday</span> 👍（4） 💬（5）<div>这段代码调用doCharge()会失效的。这不是上节课的坑吗？就躺进去了
+<li><span>yihang</span> 👍（13） 💬（0）<p>拆分成两个切面，用@Order或Ordered接口控制顺序。个人觉得Spring在排序设计上比较混乱，各种排序规则不统一</p>2021-05-13</li><br/><li><span>luke Y</span> 👍（8） 💬（4）<p>老师你好，请教个问题，案例一的问题修正doCharge() 方法在charge()中调用，这个代理应该不会走到doCharge()的切面吧</p>2021-05-08</li><br/><li><span>大斌啊啊啊</span> 👍（7） 💬（4）<p>&quot;如果两个方法名长度相同，则依次比较每一个字母的 ASCII 码，ASCII 码越小，排序越靠前；若长度不同，且短的方法名字符串是长的子集时，短的排序靠前。&quot; 这里的描述好像有点问题，短的方法名字符串是长的子集时，短的排序不一定靠前。因为子集不能保证起始值相同，比如说”bc“是”abc“的子集，但是abc会排前面吧</p>2021-07-28</li><br/><li><span>Monday</span> 👍（4） 💬（5）<p>这段代码调用doCharge()会失效的。这不是上节课的坑吗？就躺进去了
 
 @Service
 public class ElectricService {
@@ -486,21 +486,21 @@ public class ElectricService {
     public void doCharge() {
         System.out.println(&quot;Electric charging ...&quot;);
     }
-}</div>2021-06-22</li><br/><li><span>松松</span> 👍（3） 💬（1）<div>直觉上@Around和@Before是各干各的，容易把优先级理解成“先用@Around包一圈然后把@Before挂前头”，实际上同一个切面配置类里是捆在一起然后判断执行顺序的。
+}</p>2021-06-22</li><br/><li><span>松松</span> 👍（3） 💬（1）<p>直觉上@Around和@Before是各干各的，容易把优先级理解成“先用@Around包一圈然后把@Before挂前头”，实际上同一个切面配置类里是捆在一起然后判断执行顺序的。
 若干切面配置类之间的Order则是优先级高（数字小）的越外层（@Around和@Before先执行），优先级低的在内层。
 怎么说呢，有点儿反直觉，特别是后者，圆环套圆环直觉上来说优先级越高越靠近本体来着。
-把@Around、@Before、@After拆到三个优先级从高到低的配置类中，那么会变成@Around-&gt;@Before-&gt;proceed()-&gt;@After-&gt;@Around的顺序，和放在同一个配置类中的@Around-&gt;@Before-&gt;proceed()-&gt;@Around()-&gt;@After是不一样的。</div>2021-12-11</li><br/><li><span>尘灬</span> 👍（2） 💬（0）<div>spring5.3.x版本之前的顺序是上面这样的 
+把@Around、@Before、@After拆到三个优先级从高到低的配置类中，那么会变成@Around-&gt;@Before-&gt;proceed()-&gt;@After-&gt;@Around的顺序，和放在同一个配置类中的@Around-&gt;@Before-&gt;proceed()-&gt;@Around()-&gt;@After是不一样的。</p>2021-12-11</li><br/><li><span>尘灬</span> 👍（2） 💬（0）<p>spring5.3.x版本之前的顺序是上面这样的 
 之后的顺序是
-around前置，before 目标方法 afterreturning&#47;afterthrowing  after  around后置</div>2022-08-15</li><br/><li><span>小飞同学</span> 👍（2） 💬（1）<div>思考题：切面实现Order接口或者增加@Ordered注解
+around前置，before 目标方法 afterreturning&#47;afterthrowing  after  around后置</p>2022-08-15</li><br/><li><span>小飞同学</span> 👍（2） 💬（1）<p>思考题：切面实现Order接口或者增加@Ordered注解
 AspectJAwareAdvisorAutoProxyCreator#sortAdvisors  --&gt;  
 AnnotationAwareOrderComparator.sort(advisors)    AnnotationAwareOrderComparator
 
 另外有个小问题：PartialOrder.sort(partiallyComparableAdvisors) 这段代码是在干啥，没看明白。
-</div>2021-05-06</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<div>师傅领进门，修行在个人。
+</p>2021-05-06</li><br/><li><span>安迪密恩</span> 👍（1） 💬（0）<p>师傅领进门，修行在个人。
 专栏有瑕疵不要紧，知识学到手才是重要的啊同学们。
-共勉。</div>2022-03-09</li><br/><li><span>李米</span> 👍（0） 💬（0）<div>请问下案例和示例代码在哪里下载？</div>2023-03-05</li><br/><li><span>中国杰</span> 👍（0） 💬（0）<div>在手机上听了好几节课了，总听音频里说是有附件，电脑上打开文稿看了下，哦，是傅健！</div>2023-03-01</li><br/><li><span>lava</span> 👍（0） 💬（0）<div>应该可以用order注解把，值越小越先执行</div>2022-12-07</li><br/><li><span>行者</span> 👍（0） 💬（0）<div>笔记：
+共勉。</p>2022-03-09</li><br/><li><span>李米</span> 👍（0） 💬（0）<p>请问下案例和示例代码在哪里下载？</p>2023-03-05</li><br/><li><span>中国杰</span> 👍（0） 💬（0）<p>在手机上听了好几节课了，总听音频里说是有附件，电脑上打开文稿看了下，哦，是傅健！</p>2023-03-01</li><br/><li><span>lava</span> 👍（0） 💬（0）<p>应该可以用order注解把，值越小越先执行</p>2022-12-07</li><br/><li><span>行者</span> 👍（0） 💬（0）<p>笔记：
 在同一个切面配置中，如果存在多个不同类型的增强，那么其执行优先级是按照增强类型的特定顺序排列，依次的增强类型为 Around.class,Before.class,After.class,AfterReturning.class,AfterThrowing.class;
-在同一个切面配置中，如果存在多个相同类型的增强，那么其执行优先级是按照该增强的方法名排序，排序放松依次为比较方法名的每一个字母，直到发现第一个不相同且ASCII码较小的字母</div>2022-04-10</li><br/><li><span>安迪密恩</span> 👍（0） 💬（0）<div>这里的 字符l 是不是写错了， 应该是字符 v？
+在同一个切面配置中，如果存在多个相同类型的增强，那么其执行优先级是按照该增强的方法名排序，排序放松依次为比较方法名的每一个字母，直到发现第一个不相同且ASCII码较小的字母</p>2022-04-10</li><br/><li><span>安迪密恩</span> 👍（0） 💬（0）<p>这里的 字符l 是不是写错了， 应该是字符 v？
 
-我们可以将原来的 validateAuthority() 改为 checkAuthority()，这种情况下，对增强（Advisor）的排序，其实最后就是在比较字符 l 和 字符 c。</div>2022-03-09</li><br/><li><span>学习</span> 👍（0） 💬（0）<div>关于doChange()问题，好似后面都重新发文章了，现在是自己注入了自己，看得我一脸懵逼</div>2021-10-27</li><br/>
+我们可以将原来的 validateAuthority() 改为 checkAuthority()，这种情况下，对增强（Advisor）的排序，其实最后就是在比较字符 l 和 字符 c。</p>2022-03-09</li><br/><li><span>学习</span> 👍（0） 💬（0）<p>关于doChange()问题，好似后面都重新发文章了，现在是自己注入了自己，看得我一脸懵逼</p>2021-10-27</li><br/>
 </ul>

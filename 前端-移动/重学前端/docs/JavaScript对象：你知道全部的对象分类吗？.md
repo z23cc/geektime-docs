@@ -275,9 +275,9 @@ for(var i = 0; i < objects.length; i++) {
 }
 ```
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>XXX</span> 👍（8） 💬（2）<div>关于原生构造器无法用 class&#47;extend 语法来继承的观点，能否举例说明呢？我写个demo跑了一下，发现还是可以的呐
+<li><span>XXX</span> 👍（8） 💬（2）<p>关于原生构造器无法用 class&#47;extend 语法来继承的观点，能否举例说明呢？我写个demo跑了一下，发现还是可以的呐
 
-</div>2019-02-26</li><br/><li><span>Jaykey</span> 👍（3） 💬（3）<div>打印出来了989个对象，有很多是没有用过的，区分清楚了内置对象的差距，也知道了平时使用的一些方法是“构造器”</div>2019-06-13</li><br/><li><span>有铭</span> 👍（1） 💬（2）<div>这个“原型继承方法”不能正常工作，是什么意思？我放狗搜了一下，发现，Number对象仍然可以用prototype属性来添加方法和属性啊</div>2019-02-19</li><br/><li><span>LaMer</span> 👍（0） 💬（1）<div>这些构造器创建的对象多数使用了私有字段, 例如：Error: [[ErrorData]]。  [[ErrorData]]指的是什么  不明白 可以说的清楚一些吗  望老师回答下</div>2019-10-14</li><br/><li><span>卡洛斯(๑Ő௰Ő๑)</span> 👍（0） 💬（1）<div>winter 你好，
+</p>2019-02-26</li><br/><li><span>Jaykey</span> 👍（3） 💬（3）<p>打印出来了989个对象，有很多是没有用过的，区分清楚了内置对象的差距，也知道了平时使用的一些方法是“构造器”</p>2019-06-13</li><br/><li><span>有铭</span> 👍（1） 💬（2）<p>这个“原型继承方法”不能正常工作，是什么意思？我放狗搜了一下，发现，Number对象仍然可以用prototype属性来添加方法和属性啊</p>2019-02-19</li><br/><li><span>LaMer</span> 👍（0） 💬（1）<p>这些构造器创建的对象多数使用了私有字段, 例如：Error: [[ErrorData]]。  [[ErrorData]]指的是什么  不明白 可以说的清楚一些吗  望老师回答下</p>2019-10-14</li><br/><li><span>卡洛斯(๑Ő௰Ő๑)</span> 👍（0） 💬（1）<p>winter 你好，
 对于用户使用 function 语法或者 Function 构造器创建的对象来说，[[call]] 和 [[construct]] 行为总是相似的，它们执行同一段代码。
 
 function f(){
@@ -291,19 +291,19 @@ var o = new f(); &#47;&#47; {}
 
 代码执行的结果是不同，函数调用返回的是 1，构造器调用返回的一个对象。
 这里的行为是指什么呢，为什么又总是相似的呢。
-相似是指 函数调用和构造器调用，都能被调用？还是指都调用的同一个代码？</div>2019-08-25</li><br/><li><span>丁丁丁丁丁大树。</span> 👍（0） 💬（1）<div>winter老师你好，我对08节的内容有一个疑问，老师有空的话请为学生解惑
+相似是指 函数调用和构造器调用，都能被调用？还是指都调用的同一个代码？</p>2019-08-25</li><br/><li><span>丁丁丁丁丁大树。</span> 👍（0） 💬（1）<p>winter老师你好，我对08节的内容有一个疑问，老师有空的话请为学生解惑
 文中你有一句话“构造器对象的定义是：具有私有字段 [[construct]]”
 我的理解是带有constructor的对象就是构造器对象，所以我做了下面这个实验
 var obj = {constructor:function(){return {say:function(){alert(&#39;hello&#39;)}}}}
 var ins = new obj() 
 但是会报错obj不是一个construct，
 我想问老师是不是我理解错了？
-</div>2019-02-27</li><br/><li><span>Miss</span> 👍（0） 💬（1）<div>在讲到函数对象和构造器对象时[[call]]和[[construct]] 指的是？</div>2019-02-15</li><br/><li><span>大雄</span> 👍（0） 💬（1）<div>proxy模拟array怎样？</div>2019-02-13</li><br/><li><span>九</span> 👍（0） 💬（2）<div>当然了，用户用 function 关键字创建的函数必定同时是函数和构造器。不过，它们表现出来的行为效果却并不相同。
+</p>2019-02-27</li><br/><li><span>Miss</span> 👍（0） 💬（1）<p>在讲到函数对象和构造器对象时[[call]]和[[construct]] 指的是？</p>2019-02-15</li><br/><li><span>大雄</span> 👍（0） 💬（1）<p>proxy模拟array怎样？</p>2019-02-13</li><br/><li><span>九</span> 👍（0） 💬（2）<p>当然了，用户用 function 关键字创建的函数必定同时是函数和构造器。不过，它们表现出来的行为效果却并不相同。
 
 对于用户使用 function 语法或者 Function 构造器创建的对象来说，[[call]] 和 [[construct]] 行为总是相似的，它们执行同一段代码。
 
 请问这里的意思是，call 和 construct 它们虽然执行同一段代码，但是行为效果是不同的？感觉读起来似乎有歧义……
-</div>2019-02-13</li><br/><li><span>William</span> 👍（215） 💬（3）<div>&#47;&#47; 1. 利用字面量
+</p>2019-02-13</li><br/><li><span>William</span> 👍（215） 💬（3）<p>&#47;&#47; 1. 利用字面量
 var a = [], b = {}, c = &#47;abc&#47;g
 &#47;&#47; 2. 利用dom api
 var d = document.createElement(&#39;p&#39;)
@@ -312,10 +312,10 @@ var e = Object.create(null)
 var f = Object.assign({k1:3, k2:8}, {k3: 9})
 var g = JSON.parse(&#39;{}&#39;)
 &#47;&#47; 4.利用装箱转换
-var h = Object(undefined), i = Object(null), k = Object(1), l = Object(&#39;abc&#39;), m = Object(true)</div>2019-02-05</li><br/><li><span>多啦斯基周</span> 👍（129） 💬（2）<div>这块的内容确实有些复杂，作者讲的很深入。
-但是个人觉得思路是否可以再整理一下，总是感觉有一些绕，把知识讲得更易理解一些呢？</div>2019-02-14</li><br/><li><span>Alan</span> 👍（69） 💬（1）<div>一期比一期深入，一期比一期了解的更少了，蓝瘦</div>2019-02-02</li><br/><li><span>kesikesie</span> 👍（30） 💬（5）<div>    console.log(new Date); &#47;&#47; 1
+var h = Object(undefined), i = Object(null), k = Object(1), l = Object(&#39;abc&#39;), m = Object(true)</p>2019-02-05</li><br/><li><span>多啦斯基周</span> 👍（129） 💬（2）<p>这块的内容确实有些复杂，作者讲的很深入。
+但是个人觉得思路是否可以再整理一下，总是感觉有一些绕，把知识讲得更易理解一些呢？</p>2019-02-14</li><br/><li><span>Alan</span> 👍（69） 💬（1）<p>一期比一期深入，一期比一期了解的更少了，蓝瘦</p>2019-02-02</li><br/><li><span>kesikesie</span> 👍（30） 💬（5）<p>    console.log(new Date); &#47;&#47; 1
     console.log(Date())
-这个在控制台打印的都是日期</div>2019-03-19</li><br/><li><span>吃不饱</span> 👍（29） 💬（2）<div>前端工作一年，好难理解。</div>2019-02-08</li><br/><li><span>米斯特菠萝</span> 👍（23） 💬（7）<div>利用构造器的执行规则来实现私有，真是个意外的发现
+这个在控制台打印的都是日期</p>2019-03-19</li><br/><li><span>吃不饱</span> 👍（29） 💬（2）<p>前端工作一年，好难理解。</p>2019-02-08</li><br/><li><span>米斯特菠萝</span> 👍（23） 💬（7）<p>利用构造器的执行规则来实现私有，真是个意外的发现
 
-之前用class构建一个类，有一些方法暴露给外面总觉得怪怪的。现在好了，在constructor函数里return一个对象，在对象里写方法来对应返回类里写的需要暴露的method就解决了</div>2019-02-03</li><br/>
+之前用class构建一个类，有一些方法暴露给外面总觉得怪怪的。现在好了，在constructor函数里return一个对象，在对象里写方法来对应返回类里写的需要暴露的method就解决了</p>2019-02-03</li><br/>
 </ul>

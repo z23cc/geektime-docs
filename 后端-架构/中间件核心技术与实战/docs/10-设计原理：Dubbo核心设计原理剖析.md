@@ -180,5 +180,5 @@ Dubbo的泛化调用在服务提供方的转化是通过Filter机制统一处理
 
 欢迎你在留言区与我交流讨论，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>zhengyu.nie</span> 👍（0） 💬（0）<div>作者你好，dubbo线程池默认200个线程设置基于什么考虑？你的线程池文章推荐是20个线程</div>2022-10-26</li><br/><li><span>fantasyer</span> 👍（0） 💬（2）<div>老师好，网络通信模型这部分提到，iothreads默认为 CPU 核数再加一，如果增加iothreads的话也建议保持在“2*CPU 核数”以下，这里线程数不超过2*CPU核数原因是什么？</div>2022-07-19</li><br/>
+<li><span>zhengyu.nie</span> 👍（0） 💬（0）<p>作者你好，dubbo线程池默认200个线程设置基于什么考虑？你的线程池文章推荐是20个线程</p>2022-10-26</li><br/><li><span>fantasyer</span> 👍（0） 💬（2）<p>老师好，网络通信模型这部分提到，iothreads默认为 CPU 核数再加一，如果增加iothreads的话也建议保持在“2*CPU 核数”以下，这里线程数不超过2*CPU核数原因是什么？</p>2022-07-19</li><br/>
 </ul>

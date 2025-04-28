@@ -385,9 +385,9 @@ dfCPU
 
 欢迎你把今天这讲内容转发给更多同事、朋友，跟他一起动手试验一下Spark + Kafka的实例，我再留言区等你分享。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>毕务刚</span> 👍（2） 💬（1）<div>老师， 有个需求是利用spark stream读kafka，分析后更新几个 mongodb表， 有几个疑问。
+<li><span>毕务刚</span> 👍（2） 💬（1）<p>老师， 有个需求是利用spark stream读kafka，分析后更新几个 mongodb表， 有几个疑问。
 
 1. 如果利用foreach sink 更新mongodb表， foreach sink 是运行在driver侧， 还是 executor侧,如果是运行在driver侧， 那么并行处理能力是不是很差(没有利用executor的资源)
 2. 如果利用 foreachBatch sink 更新mongodb表,  structured-streaming-programming-guide中foreachBatch sink的Fault-tolerant是Depends on the implementation，是不是说 foreachBatch sink 不能利用checkpoint来获得已经处理的offset?
-   这种情况下， 如果管理 kafka的offset?</div>2021-12-13</li><br/>
+   这种情况下， 如果管理 kafka的offset?</p>2021-12-13</li><br/>
 </ul>

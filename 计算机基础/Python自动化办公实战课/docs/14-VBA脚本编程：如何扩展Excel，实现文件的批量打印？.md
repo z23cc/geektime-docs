@@ -190,5 +190,5 @@ printtofile参数类似一个开关，使用这个参数的目的，是让打印
 
 欢迎把你的思考和想法写在评论区，我们一起交流讨论。此外，你还可以点击课程详情页的“戳我进群”，扫描二维码，加入我们的课程读者群，我也会在群里为你解疑答惑。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>zhb</span> 👍（0） 💬（1）<div>用老师介绍的sublime text2编写vba需要安装什么插件吗？</div>2021-03-29</li><br/><li><span>zhb</span> 👍（0） 💬（2）<div>老师，vba的编辑器能美化不？不能美化的话，有替代的好看点的编辑器吗？</div>2021-03-20</li><br/><li><span>zhb</span> 👍（0） 💬（1）<div>老师，今天有用了python的xlwings模块，它有一个api属性，我用的vscode怎么没办法智能提示，自动补全呢?</div>2021-03-20</li><br/><li><span>Dr.Strangelove</span> 👍（2） 💬（0）<div>现在office和wps都支持js宏、js API了，这要比vba好用</div>2022-05-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-11</li><br/>
+<li><span>zhb</span> 👍（0） 💬（1）<p>用老师介绍的sublime text2编写vba需要安装什么插件吗？</p>2021-03-29</li><br/><li><span>zhb</span> 👍（0） 💬（2）<p>老师，vba的编辑器能美化不？不能美化的话，有替代的好看点的编辑器吗？</p>2021-03-20</li><br/><li><span>zhb</span> 👍（0） 💬（1）<p>老师，今天有用了python的xlwings模块，它有一个api属性，我用的vscode怎么没办法智能提示，自动补全呢?</p>2021-03-20</li><br/><li><span>Dr.Strangelove</span> 👍（2） 💬（0）<p>现在office和wps都支持js宏、js API了，这要比vba好用</p>2022-05-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-11</li><br/>
 </ul>

@@ -819,5 +819,5 @@ Xtrabackup备份开始时，启动一个Redo复制线程，然后再启动一些
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>浮生</span> 👍（0） 💬（1）<div>如提示Neither found #innodb_redo subdirectory, nor ib_logfile* files in .&#47; 可以指定.&#47;bin&#47;xtrabackup --defaults-file=&#47;data&#47;mysql3306&#47;my.cnf</div>2025-02-19</li><br/>
+<li><span>浮生</span> 👍（0） 💬（1）<p>如提示Neither found #innodb_redo subdirectory, nor ib_logfile* files in .&#47; 可以指定.&#47;bin&#47;xtrabackup --defaults-file=&#47;data&#47;mysql3306&#47;my.cnf</p>2025-02-19</li><br/>
 </ul>

@@ -562,9 +562,9 @@ map类型对key元素的类型是有约束的，它要求key元素的类型必�
 
 欢迎你把这节课分享给更多对Go语言map类型感兴趣的朋友。我是Tony Bai，我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>用0和1改变自己</span> 👍（37） 💬（3）<div>可以用一个有序结构存储key,如slice,然后for这个slice,用key获取值。资料来源至：https:&#47;&#47;go.dev&#47;blog&#47;maps</div>2021-11-17</li><br/><li><span>ddh</span> 👍（19） 💬（3）<div>请问一下老师， map 元素不能寻址， 是因为动态扩容， 那么切片不也有动态扩容吗。 为什么切片元素可以寻址呢？  难道切片动态扩容之后， 它的元素地址不会变吗</div>2022-04-25</li><br/><li><span>thomas</span> 👍（17） 💬（2）<div>go团队为什么要故意把map的遍历设置为随机？</div>2022-04-12</li><br/><li><span>Geek_244c46</span> 👍（13） 💬（2）<div>map的key和value的值，是否可以为null</div>2022-05-26</li><br/><li><span>flexiver</span> 👍（7） 💬（1）<div>老师，想请问一下，hmap这个结构中的extra字段， 在key和value都不是指针的情况下，会存储所有的overflow bucket的指针，里面有提到一个内联，这个内联是什么意思？以及为什么当key和value都不是指针的情况下，会将bucket中的overflow指针全部放到extra字段存储</div>2022-04-21</li><br/><li><span>不负青春不负己🤘</span> 👍（6） 💬（1）<div>可以把key 赋值到变量，使用sort 排序，在遍历</div>2021-11-19</li><br/><li><span>Unknown element</span> 👍（5） 💬（2）<div>老师我想问下这里：
+<li><span>用0和1改变自己</span> 👍（37） 💬（3）<p>可以用一个有序结构存储key,如slice,然后for这个slice,用key获取值。资料来源至：https:&#47;&#47;go.dev&#47;blog&#47;maps</p>2021-11-17</li><br/><li><span>ddh</span> 👍（19） 💬（3）<p>请问一下老师， map 元素不能寻址， 是因为动态扩容， 那么切片不也有动态扩容吗。 为什么切片元素可以寻址呢？  难道切片动态扩容之后， 它的元素地址不会变吗</p>2022-04-25</li><br/><li><span>thomas</span> 👍（17） 💬（2）<p>go团队为什么要故意把map的遍历设置为随机？</p>2022-04-12</li><br/><li><span>Geek_244c46</span> 👍（13） 💬（2）<p>map的key和value的值，是否可以为null</p>2022-05-26</li><br/><li><span>flexiver</span> 👍（7） 💬（1）<p>老师，想请问一下，hmap这个结构中的extra字段， 在key和value都不是指针的情况下，会存储所有的overflow bucket的指针，里面有提到一个内联，这个内联是什么意思？以及为什么当key和value都不是指针的情况下，会将bucket中的overflow指针全部放到extra字段存储</p>2022-04-21</li><br/><li><span>不负青春不负己🤘</span> 👍（6） 💬（1）<p>可以把key 赋值到变量，使用sort 排序，在遍历</p>2021-11-19</li><br/><li><span>Unknown element</span> 👍（5） 💬（2）<p>老师我想问下这里：
 “如果是因为 overflow bucket 过多导致的“扩容”，实际上运行时会新建一个和现有规模一样的 bucket 数组，然后在 assign 和 delete 时做排空和迁移。”
-如果bucket规模不变的话，那所有key在hash之后还是分到原来的桶中，好像该overflow还是会overflow？主要是因为这里既没有通过真正增加桶的数量实现扩容，也没有通过更换hash函数改变key在桶中的分布，那么这个overflow的问题到底是怎么解决的呢？谢谢老师</div>2022-11-03</li><br/><li><span>文经</span> 👍（4） 💬（1）<div>我看了《Go语言实践》，《Go专家编程》，《Go语言底层原理剖析》这几本书对map的描述，对比才发现白老师讲得最清晰，在封装和细节方面拿捏得最好，大大地赞👍 剩下不清楚的地方就只能自己看源码了。</div>2022-01-05</li><br/><li><span>ddh</span> 👍（4） 💬（2）<div>把key存到有序切片中，用切片遍历</div>2021-11-17</li><br/><li><span>wu526</span> 👍（3） 💬（1）<div>老师，请问一下如果是因为overflow bucket过多导致的&quot;扩容&quot;, 是否可以理解为这个hash函数的算法不太合理，导致大部分的key都分配到了一个bucket中，是否可以通过修改hash算法来重新hash一遍呢？</div>2021-12-02</li><br/><li><span>多选参数</span> 👍（3） 💬（2）<div>突然想到之前碰到的一个问题，就是golang 结构体作为map的元素时，不能够直接赋值给结构体的某个字段。这个也有“Go 不允许获取 map 中 value 的地址”的原因在嘛？假如这样的话，那么为什么读结构体中的某个字段是可以的？</div>2021-11-22</li><br/><li><span>TonyGao</span> 👍（3） 💬（2）<div>func doIteration(m map[int]int) {
+如果bucket规模不变的话，那所有key在hash之后还是分到原来的桶中，好像该overflow还是会overflow？主要是因为这里既没有通过真正增加桶的数量实现扩容，也没有通过更换hash函数改变key在桶中的分布，那么这个overflow的问题到底是怎么解决的呢？谢谢老师</p>2022-11-03</li><br/><li><span>文经</span> 👍（4） 💬（1）<p>我看了《Go语言实践》，《Go专家编程》，《Go语言底层原理剖析》这几本书对map的描述，对比才发现白老师讲得最清晰，在封装和细节方面拿捏得最好，大大地赞👍 剩下不清楚的地方就只能自己看源码了。</p>2022-01-05</li><br/><li><span>ddh</span> 👍（4） 💬（2）<p>把key存到有序切片中，用切片遍历</p>2021-11-17</li><br/><li><span>wu526</span> 👍（3） 💬（1）<p>老师，请问一下如果是因为overflow bucket过多导致的&quot;扩容&quot;, 是否可以理解为这个hash函数的算法不太合理，导致大部分的key都分配到了一个bucket中，是否可以通过修改hash算法来重新hash一遍呢？</p>2021-12-02</li><br/><li><span>多选参数</span> 👍（3） 💬（2）<p>突然想到之前碰到的一个问题，就是golang 结构体作为map的元素时，不能够直接赋值给结构体的某个字段。这个也有“Go 不允许获取 map 中 value 的地址”的原因在嘛？假如这样的话，那么为什么读结构体中的某个字段是可以的？</p>2021-11-22</li><br/><li><span>TonyGao</span> 👍（3） 💬（2）<p>func doIteration(m map[int]int) {
 	mu.RLock()
 	defer mu.RUnlock()
 
@@ -605,7 +605,7 @@ func doWrite(m map[int]int) {
 [1, 18] [2, 19] [3, 20] 
 [1, 19] [2, 20] [3, 21] 
 [1, 20] [2, 21] [3, 22] 
-。。。</div>2021-11-17</li><br/><li><span>邹志鹏.Joey ⁷⁷⁷</span> 👍（2） 💬（1）<div>既切片之后, 应该是 &quot;继切片之后&quot;?</div>2023-01-18</li><br/><li><span>不说话装糕手</span> 👍（2） 💬（1）<div>关于老师并发读写map的示例，做了如下修改
+。。。</p>2021-11-17</li><br/><li><span>邹志鹏.Joey ⁷⁷⁷</span> 👍（2） 💬（1）<p>既切片之后, 应该是 &quot;继切片之后&quot;?</p>2023-01-18</li><br/><li><span>不说话装糕手</span> 👍（2） 💬（1）<p>关于老师并发读写map的示例，做了如下修改
 	&#47;&#47;go func() {
 	&#47;&#47;	for i := 0; i &lt; 1000; i++ {
 	&#47;&#47;		doIteration(m)
@@ -625,7 +625,7 @@ output:
 map[1:10011 2:10012 3:10013]
 进程 已完成，退出代码为 0
 
-我本地是1.16版本，看起来是可以并发写的？</div>2022-10-20</li><br/><li><span>pythonbug</span> 👍（2） 💬（1）<div>func sortMap(m map[string]int) {
+我本地是1.16版本，看起来是可以并发写的？</p>2022-10-20</li><br/><li><span>pythonbug</span> 👍（2） 💬（1）<p>func sortMap(m map[string]int) {
 	&#47;&#47; 存key
 	var s []string
 	for k, _ := range m {
@@ -639,5 +639,5 @@ map[1:10011 2:10012 3:10013]
 	for _, v := range s {
 		fmt.Println(v, m[v])
 	}
-}</div>2022-10-09</li><br/>
+}</p>2022-10-09</li><br/>
 </ul>

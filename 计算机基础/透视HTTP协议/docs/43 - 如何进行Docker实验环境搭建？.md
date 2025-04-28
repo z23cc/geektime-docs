@@ -207,19 +207,19 @@ docker cp xxx:/tmp/a.log .   #需要指定容器的ID
 
 ![](https://static001.geekbang.org/resource/image/26/e3/26bbe56074b40fd5c259f396ddcfd6e3.png?wh=750%2A892)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Howard.Wundt</span> 👍（5） 💬（2）<div>首先祝老师教师节快乐！很期待着与老师的重逢。有个问题请教老师：轻量化虚拟机技术除了Docker 外还有其他选择吗？Docker 现在的政治化让人很不舒服。</div>2020-09-10</li><br/><li><span>Geek_78044b</span> 👍（3） 💬（1）<div>老师确实很敬业，最近刚买了课程，一周多时间快速学习了一篇，开始的破冰篇确实特别基础，我还以为这门科是只针对的初学者的，没什么难度，后面讲http1.1， 2， 3， 安全篇等都还是比较有深度，感谢老师的付出。</div>2020-09-20</li><br/><li><span>Shanks-王冲</span> 👍（2） 💬（1）<div>谢谢老师的Docker tutorial quick guide，让我对Docker有了fist touch；前几天看Android开发的技术博客时，不知怎么地就跳到Docker官网，并瞧了瞧，没敢下载来玩；但今天又机缘巧合看到这篇文章，I just pulled，感谢老师！</div>2020-11-07</li><br/><li><span>點點點，点顛</span> 👍（2） 💬（1）<div>老师教师节快乐😁。感谢老师还记得我们</div>2020-09-10</li><br/><li><span>dongge</span> 👍（1） 💬（1）<div>Chrono老师，是我在极客时间见过的最负责的老师。</div>2021-10-17</li><br/><li><span>silence</span> 👍（1） 💬（3）<div>老师请问我在测试tcpdump抓包的时候，将您的命令粘贴进去
+<li><span>Howard.Wundt</span> 👍（5） 💬（2）<p>首先祝老师教师节快乐！很期待着与老师的重逢。有个问题请教老师：轻量化虚拟机技术除了Docker 外还有其他选择吗？Docker 现在的政治化让人很不舒服。</p>2020-09-10</li><br/><li><span>Geek_78044b</span> 👍（3） 💬（1）<p>老师确实很敬业，最近刚买了课程，一周多时间快速学习了一篇，开始的破冰篇确实特别基础，我还以为这门科是只针对的初学者的，没什么难度，后面讲http1.1， 2， 3， 安全篇等都还是比较有深度，感谢老师的付出。</p>2020-09-20</li><br/><li><span>Shanks-王冲</span> 👍（2） 💬（1）<p>谢谢老师的Docker tutorial quick guide，让我对Docker有了fist touch；前几天看Android开发的技术博客时，不知怎么地就跳到Docker官网，并瞧了瞧，没敢下载来玩；但今天又机缘巧合看到这篇文章，I just pulled，感谢老师！</p>2020-11-07</li><br/><li><span>點點點，点顛</span> 👍（2） 💬（1）<p>老师教师节快乐😁。感谢老师还记得我们</p>2020-09-10</li><br/><li><span>dongge</span> 👍（1） 💬（1）<p>Chrono老师，是我在极客时间见过的最负责的老师。</p>2021-10-17</li><br/><li><span>silence</span> 👍（1） 💬（3）<p>老师请问我在测试tcpdump抓包的时候，将您的命令粘贴进去
 tcpdump tcp port 443 -i lo -w &#47;tmp&#47;a.pcap
 报了以下错误怎么解决呢？
-tcpdump: lo: SIOCETHTOOL(ETHTOOL_GET_TS_INFO) ioctl failed: Function not implemented</div>2021-09-13</li><br/><li><span>大土豆</span> 👍（1） 💬（1）<div>HTTP&#47;3会有个正式的发布会吗。。。我看现在快手和百度，HTTP3都已经在线上用了</div>2020-09-10</li><br/><li><span>dongge</span> 👍（1） 💬（1）<div>好敬业。</div>2020-09-10</li><br/><li><span>giteebravo</span> 👍（1） 💬（1）<div>
+tcpdump: lo: SIOCETHTOOL(ETHTOOL_GET_TS_INFO) ioctl failed: Function not implemented</p>2021-09-13</li><br/><li><span>大土豆</span> 👍（1） 💬（1）<p>HTTP&#47;3会有个正式的发布会吗。。。我看现在快手和百度，HTTP3都已经在线上用了</p>2020-09-10</li><br/><li><span>dongge</span> 👍（1） 💬（1）<p>好敬业。</p>2020-09-10</li><br/><li><span>giteebravo</span> 👍（1） 💬（1）<p>
 期待再次与老师相会，
-谢谢老师！</div>2020-09-10</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<div>老师，很棒👍🏻！</div>2020-09-10</li><br/><li><span>朝阳</span> 👍（0） 💬（1）<div>求教个线上问题:PHP使用curl请求内部地址频繁偶现connect time  out 问题
+谢谢老师！</p>2020-09-10</li><br/><li><span>lesserror</span> 👍（1） 💬（1）<p>老师，很棒👍🏻！</p>2020-09-10</li><br/><li><span>朝阳</span> 👍（0） 💬（1）<p>求教个线上问题:PHP使用curl请求内部地址频繁偶现connect time  out 问题
 几个疑问点
 ①服务请求少出现概率大，请求多出现概率小
 ②同一项目请求另外一个服务就没有connect timeout  
 ③其他java服务请求有问题的内部服务没没出现connect timeout 
-跪求排查方向～PHP服务是使用contos  docker搭建的</div>2023-07-26</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<div>打卡</div>2023-02-10</li><br/><li><span>忧天小鸡</span> 👍（0） 💬（1）<div>又学了一点点docker，很棒的体验，认真负责</div>2021-12-22</li><br/><li><span>zha.qiang</span> 👍（0） 💬（1）<div>Found a typo:
+跪求排查方向～PHP服务是使用contos  docker搭建的</p>2023-07-26</li><br/><li><span>ifelse</span> 👍（0） 💬（1）<p>打卡</p>2023-02-10</li><br/><li><span>忧天小鸡</span> 👍（0） 💬（1）<p>又学了一点点docker，很棒的体验，认真负责</p>2021-12-22</li><br/><li><span>zha.qiang</span> 👍（0） 💬（1）<p>Found a typo:
 
 ```
 cu加l https:&#47;&#47;www.chrono.com&#47;30-1 -k --tlsv1.2
-```</div>2020-10-19</li><br/><li><span>candy</span> 👍（0） 💬（2）<div>谢谢老师，节日快乐！还建立了镜像，学习更方便了</div>2020-09-10</li><br/>
+```</p>2020-10-19</li><br/><li><span>candy</span> 👍（0） 💬（2）<p>谢谢老师，节日快乐！还建立了镜像，学习更方便了</p>2020-09-10</li><br/>
 </ul>

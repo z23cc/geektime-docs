@@ -343,7 +343,7 @@ static int __init kprobe_init(void)
 
 欢迎你在留言区记录你的思考或者疑问。如果这一讲对你有帮助，也欢迎你转发给同事、朋友，跟他们一起交流、进步。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>莫名</span> 👍（12） 💬（3）<div>关于思考题，想到一个比较笨拙的方法：gdb + qemu 调试内核。先进入虚拟机在某个内核函数上注册一个 kprobe，然后 gdb 远程调试内核，查看该内核函数的汇编指令（disass）是否被替换。
+<li><span>莫名</span> 👍（12） 💬（3）<p>关于思考题，想到一个比较笨拙的方法：gdb + qemu 调试内核。先进入虚拟机在某个内核函数上注册一个 kprobe，然后 gdb 远程调试内核，查看该内核函数的汇编指令（disass）是否被替换。
 
-应该有更简单的方法，这方面了解不深。</div>2021-02-05</li><br/><li><span>A免帅叫哥</span> 👍（0） 💬（1）<div>看到内核还有一个kretprobe_example</div>2021-08-28</li><br/><li><span>piboye</span> 👍（0） 💬（0）<div>kprobe 用int3的方式性能会差吧，为神马不替换callq的指令呢？</div>2023-03-14</li><br/><li><span>janey</span> 👍（0） 💬（0）<div>一下子讲清楚了tracepoint核kprobe函数的区别，谢谢老师！另外eBPF还涉及了uprobe和USDT这两种类型又是啥意思呢？</div>2022-11-18</li><br/><li><span>Geek_e4cf2e</span> 👍（0） 💬（0）<div>crash来查看很方便</div>2021-09-19</li><br/>
+应该有更简单的方法，这方面了解不深。</p>2021-02-05</li><br/><li><span>A免帅叫哥</span> 👍（0） 💬（1）<p>看到内核还有一个kretprobe_example</p>2021-08-28</li><br/><li><span>piboye</span> 👍（0） 💬（0）<p>kprobe 用int3的方式性能会差吧，为神马不替换callq的指令呢？</p>2023-03-14</li><br/><li><span>janey</span> 👍（0） 💬（0）<p>一下子讲清楚了tracepoint核kprobe函数的区别，谢谢老师！另外eBPF还涉及了uprobe和USDT这两种类型又是啥意思呢？</p>2022-11-18</li><br/><li><span>Geek_e4cf2e</span> 👍（0） 💬（0）<p>crash来查看很方便</p>2021-09-19</li><br/>
 </ul>

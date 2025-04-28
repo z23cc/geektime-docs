@@ -281,11 +281,11 @@ private:
 
 \[5] 吴咏炜, nvwa. [https://github.com/adah1972/nvwa/](https://github.com/adah1972/nvwa/)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>小一日一</span> 👍（31） 💬（4）<div>看了老师的代码再看自己学的代码，感觉我的C++是小学生水平。
+<li><span>小一日一</span> 👍（31） 💬（4）<p>看了老师的代码再看自己学的代码，感觉我的C++是小学生水平。
 
 以为自己看过几遍C++ PRIMER 5th, 看过并理解effective++, more effective c++, inside the c++ object model, 能应付平时的开发需要，也能看懂公司别人的代码，就觉得自己的C++不错了，看了老师github的代码后我是彻底服了，感叹C++太博大精深，永远不敢说自己精通C++。
 
-我什么时候才能达到老师对C++理解并使用的高度呢，难道也需要20年么？</div>2019-12-11</li><br/><li><span>Geek_b68b74</span> 👍（10） 💬（3）<div>1、使用输入行迭代器  这一部分里，“ auto&amp;&amp; r = istream_line_reader(is);”  这里为什么要用右值引用呢？
+我什么时候才能达到老师对C++理解并使用的高度呢，难道也需要20年么？</p>2019-12-11</li><br/><li><span>Geek_b68b74</span> 👍（10） 💬（3）<p>1、使用输入行迭代器  这一部分里，“ auto&amp;&amp; r = istream_line_reader(is);”  这里为什么要用右值引用呢？
 2、还是使用输入行迭代器这里， 
 
 for (const string&amp; line :
@@ -295,17 +295,17 @@ for (const string&amp; line :
 }
 “获取冒号后边的范围表达式的结果，并隐式产生一个引用，在整个循环期间都有效。注意根据生命期延长规则，表达式结果如果是临时对象的话，这个对象要在循环结束后才被销毁。”  
  第一句是说line在整个循环期间有效？这是想表达什么呢？还有第二句，指的是哪个临时对象呢？在哪个循环结束后销毁呢？期待您的解答
-</div>2020-01-17</li><br/><li><span>千鲤湖</span> 👍（10） 💬（1）<div>过来看看老师问的那两个问题，好奇中。。。</div>2019-12-18</li><br/><li><span>禾桃</span> 👍（6） 💬（1）<div>输入迭代器和输出迭代器，
+</p>2020-01-17</li><br/><li><span>千鲤湖</span> 👍（10） 💬（1）<p>过来看看老师问的那两个问题，好奇中。。。</p>2019-12-18</li><br/><li><span>禾桃</span> 👍（6） 💬（1）<p>输入迭代器和输出迭代器，
 这个入和出是相对于什么而言的？
 感觉有点绕。
 
-谢谢！</div>2019-12-11</li><br/><li><span>Slience-0°C</span> 👍（4） 💬（6）<div>有个问题请教老师，工作中看到基于范围的for循环中，使用了auto &amp;&amp;来获取数据，而不是auto&amp;,有啥区别么？难道是为了使用移动构造函数？伪代码如下：std::vectors&lt;std::string&gt; vec;
-for (auto&amp;&amp; : vec)</div>2022-04-21</li><br/><li><span>nelson</span> 👍（3） 💬（2）<div>如果stream_是nullptr会怎么样？</div>2019-12-12</li><br/><li><span>EncodedStar</span> 👍（2） 💬（1）<div>课后思考
+谢谢！</p>2019-12-11</li><br/><li><span>Slience-0°C</span> 👍（4） 💬（6）<p>有个问题请教老师，工作中看到基于范围的for循环中，使用了auto &amp;&amp;来获取数据，而不是auto&amp;,有啥区别么？难道是为了使用移动构造函数？伪代码如下：std::vectors&lt;std::string&gt; vec;
+for (auto&amp;&amp; : vec)</p>2022-04-21</li><br/><li><span>nelson</span> 👍（3） 💬（2）<p>如果stream_是nullptr会怎么样？</p>2019-12-12</li><br/><li><span>EncodedStar</span> 👍（2） 💬（1）<p>课后思考
 1.目前这个输入迭代器的行为，在干什么情况下可能导致意料之外的后果？
 答：目前这个输入迭代器在构造里调用了++，所以，多一次构造就可能读到意料之外的结果了。
 
 2.请尝试一下改进这个输入行迭代器，看看能不能消除这种意外，如果可以，该怎么做？如果不可以，为什么？
-答：可以啊，文章里提到了，这个输入行迭代器构造的使用了++，是为了与日常使用一致，如果想改进这个一块，我们也可以改构造的时候</div>2019-12-24</li><br/><li><span>旭东</span> 👍（2） 💬（1）<div>老师，您好，iterater中后置++的实现是不是应该返回const；避免（i++)++这样的代码通过编译？</div>2019-12-14</li><br/><li><span>晚风·和煦</span> 👍（2） 💬（1）<div>从 C++17 开始，I 和 S 可以是不同的类型。这带来了更大的灵活性和更多的优化可能性。   没太理解这句话😂</div>2019-12-11</li><br/><li><span>doge</span> 👍（1） 💬（1）<div>第二个问题想了半天，好像做不到，根据begin的语义，拿到stream_对象后就必须取得第一行内容，否则返回的就是一个空string而不是文件的第一行。但是在iterator对象内好像没办法记录“第一次从strem_读”这样的一个状态。我尝试标记第一次，但是会忽视读的操作，这样还是会导致第一行内容的丢失。希望老师解惑。
+答：可以啊，文章里提到了，这个输入行迭代器构造的使用了++，是为了与日常使用一致，如果想改进这个一块，我们也可以改构造的时候</p>2019-12-24</li><br/><li><span>旭东</span> 👍（2） 💬（1）<p>老师，您好，iterater中后置++的实现是不是应该返回const；避免（i++)++这样的代码通过编译？</p>2019-12-14</li><br/><li><span>晚风·和煦</span> 👍（2） 💬（1）<p>从 C++17 开始，I 和 S 可以是不同的类型。这带来了更大的灵活性和更多的优化可能性。   没太理解这句话😂</p>2019-12-11</li><br/><li><span>doge</span> 👍（1） 💬（1）<p>第二个问题想了半天，好像做不到，根据begin的语义，拿到stream_对象后就必须取得第一行内容，否则返回的就是一个空string而不是文件的第一行。但是在iterator对象内好像没办法记录“第一次从strem_读”这样的一个状态。我尝试标记第一次，但是会忽视读的操作，这样还是会导致第一行内容的丢失。希望老师解惑。
     explicit iterator(istream&amp; is) : stream_(&amp;is) {}
     iterator begin() {
         cout &lt;&lt; &quot;first_ = &quot; &lt;&lt; first_ &lt;&lt; endl;
@@ -315,12 +315,12 @@ for (auto&amp;&amp; : vec)</div>2022-04-21</li><br/><li><span>nelson</span> 👍
         } else {
             return iterator(*stream_);
         }
-    }</div>2021-02-24</li><br/><li><span>englefly</span> 👍（1） 💬（1）<div>&quot;从 C++17 开始，I 和 S 可以是不同的类型&quot; 意味着 &quot; r.begin() 和 r.end() 可以是不同类型了。&quot;
+    }</p>2021-02-24</li><br/><li><span>englefly</span> 👍（1） 💬（1）<p>&quot;从 C++17 开始，I 和 S 可以是不同的类型&quot; 意味着 &quot; r.begin() 和 r.end() 可以是不同类型了。&quot;
 那么常见的循环遍历是不是就有问题了?比如下代码, it = r.begin() 此时 it是r.begin() 的类型,但it还要和r.end()比较,这时就是两个不同类型在比较了
 
 auto it = r.begin(); 
 auto end = r.end(); 
-for (; it != end; ++it) {...}</div>2020-03-13</li><br/><li><span>公众号【xii说孔方兄】</span> 👍（1） 💬（1）<div>吴老师，您好，我对您的自建博客很感兴趣，https:&#47;&#47;yongweiwu.wordpress.com&#47;  ，看域名使用WordPress搭建的，想向您将请教这方面的问题。</div>2020-02-22</li><br/><li><span>robonix</span> 👍（1） 💬（1）<div>老师，iterator begin()函数返回一个iterator对象，这个对象还包含了string成员，这样就得拷贝了吧，效率会不会不高呢</div>2020-01-02</li><br/><li><span>总统老唐</span> 👍（1） 💬（1）<div>吴老师，这一课有两个疑问：
+for (; it != end; ++it) {...}</p>2020-03-13</li><br/><li><span>公众号【xii说孔方兄】</span> 👍（1） 💬（1）<p>吴老师，您好，我对您的自建博客很感兴趣，https:&#47;&#47;yongweiwu.wordpress.com&#47;  ，看域名使用WordPress搭建的，想向您将请教这方面的问题。</p>2020-02-22</li><br/><li><span>robonix</span> 👍（1） 💬（1）<p>老师，iterator begin()函数返回一个iterator对象，这个对象还包含了string成员，这样就得拷贝了吧，效率会不会不高呢</p>2020-01-02</li><br/><li><span>总统老唐</span> 👍（1） 💬（1）<p>吴老师，这一课有两个疑问：
 1，“到底应该让 * 负责读取还是 ++ 负责读取”，该怎样理解？如果“读取”指的是在istream上读取一行，放入line_成员中，用++实现这个操作是最常见和直觉的，同时，用 * 返回读取的内容也在最容易想到的方式，反过来，什么情况下会需要”用*来负责读取“？
-2，输入迭代器为什么要定义 iterator operator++(int) </div>2019-12-16</li><br/><li><span>我不生产bug，我只是bug的搬运工</span> 👍（1） 💬（1）<div>遍历一遍后，第二次调用begin会崩溃，stream_指针已经为空</div>2019-12-13</li><br/>
+2，输入迭代器为什么要定义 iterator operator++(int) </p>2019-12-16</li><br/><li><span>我不生产bug，我只是bug的搬运工</span> 👍（1） 💬（1）<p>遍历一遍后，第二次调用begin会崩溃，stream_指针已经为空</p>2019-12-13</li><br/>
 </ul>

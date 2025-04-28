@@ -157,7 +157,7 @@ PCollection的设计是否能表达你的大规模数据处理场景呢？
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>人唯优</span> 👍（8） 💬（1）<div>Beam的register机制是否和spark里面的kryo register是一样的概念？Beam为何不提前为基本类型注册好coder或者使用默认的java序列化反序列化机制？就像spark里面的java和kryo.register一样。这样读取基本的常见数据源比如mysql的表就不用单独注册了吧，不然不是有很多重复工作？</div>2019-06-17</li><br/><li><span>张凯江</span> 👍（6） 💬（0）<div>感觉跟rdd差不多。
+<li><span>人唯优</span> 👍（8） 💬（1）<p>Beam的register机制是否和spark里面的kryo register是一样的概念？Beam为何不提前为基本类型注册好coder或者使用默认的java序列化反序列化机制？就像spark里面的java和kryo.register一样。这样读取基本的常见数据源比如mysql的表就不用单独注册了吧，不然不是有很多重复工作？</p>2019-06-17</li><br/><li><span>张凯江</span> 👍（6） 💬（0）<p>感觉跟rdd差不多。
 一个天生设计成有界
-一个天生设计成无界</div>2019-06-18</li><br/><li><span>张凯江</span> 👍（0） 💬（0）<div>参数是匿名内部类，而不是简单的操作。  匿名内部类可以应用外层或其它pc吧</div>2019-06-23</li><br/><li><span>胡墨</span> 👍（0） 💬（0）<div>请问后半部分的例子是否可以有Python实现呢？生物背景对Java一窍不通...</div>2019-06-19</li><br/><li><span>cricket1981</span> 👍（0） 💬（0）<div>请问PCollection和RDD的相同点和不同点都有哪些呢？</div>2019-06-17</li><br/>
+一个天生设计成无界</p>2019-06-18</li><br/><li><span>张凯江</span> 👍（0） 💬（0）<p>参数是匿名内部类，而不是简单的操作。  匿名内部类可以应用外层或其它pc吧</p>2019-06-23</li><br/><li><span>胡墨</span> 👍（0） 💬（0）<p>请问后半部分的例子是否可以有Python实现呢？生物背景对Java一窍不通...</p>2019-06-19</li><br/><li><span>cricket1981</span> 👍（0） 💬（0）<p>请问PCollection和RDD的相同点和不同点都有哪些呢？</p>2019-06-17</li><br/>
 </ul>

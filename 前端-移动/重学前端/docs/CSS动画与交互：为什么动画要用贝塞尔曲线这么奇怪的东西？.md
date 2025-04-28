@@ -283,7 +283,7 @@ CSS用transition和animation两个属性来实现动画，这两个属性的基�
 
 最后，留给你一个小问题，请纯粹用JavaScript来实现一个transition函数，用它来跟CSS的transition来做一下对比，看看有哪些区别。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>阿成</span> 👍（26） 💬（1）<div>const tweenFns = {
+<li><span>阿成</span> 👍（26） 💬（1）<p>const tweenFns = {
   linear: (from, to, t, d) =&gt; from + (to - from) * (t &#47; d)
 }
 
@@ -350,7 +350,7 @@ function generateNewStyle(from, to, t, duration, tweenFn) {
   }
   result += from.slice(lastIndex)
   return result
-}</div>2019-04-20</li><br/><li><span>阿成</span> 👍（21） 💬（3）<div>跟CSS的transition比，JS更加偏向指令式，而CSS更加偏向声明式，当然，这本身也是两门语言自身的特点，CSS用法简单直观，JS则在控制方面有更大的灵活性。
+}</p>2019-04-20</li><br/><li><span>阿成</span> 👍（21） 💬（3）<p>跟CSS的transition比，JS更加偏向指令式，而CSS更加偏向声明式，当然，这本身也是两门语言自身的特点，CSS用法简单直观，JS则在控制方面有更大的灵活性。
 
 上面我只实现了 linear timing function（其他的函数实现网上大把大把的...），具体用法如下：
 &lt;!DOCTYPE html&gt;
@@ -379,7 +379,7 @@ function generateNewStyle(from, to, t, duration, tweenFn) {
     ])
   &lt;&#47;script&gt;
 &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2019-04-20</li><br/><li><span>许童童</span> 👍（7） 💬（0）<div>这个课后练习有点难啊。希望老师可以带着大家过一遍。</div>2019-04-20</li><br/><li><span>Marvin</span> 👍（2） 💬（0）<div>&#47;&#47; 利用老师提供的贝塞尔曲线函数
+&lt;&#47;html&gt;</p>2019-04-20</li><br/><li><span>许童童</span> 👍（7） 💬（0）<p>这个课后练习有点难啊。希望老师可以带着大家过一遍。</p>2019-04-20</li><br/><li><span>Marvin</span> 👍（2） 💬（0）<p>&#47;&#47; 利用老师提供的贝塞尔曲线函数
     function timing_function(easing) {
         let resolve;
         if (easing === &#39;linear&#39;) resolve = generate(0, 0, 1, 1);
@@ -424,9 +424,9 @@ function generateNewStyle(from, to, t, duration, tweenFn) {
 
 
     let ball = document.getElementsByClassName(&quot;ball&quot;)[0];
-    transition(ball, &quot;50px&quot;, &quot;font-size&quot;, 2000, &quot;liner&quot;, 1000);</div>2020-08-03</li><br/><li><span>剑客不能说</span> 👍（2） 💬（1）<div>一脸懵逼状态看完的~</div>2019-09-27</li><br/><li><span>Marvin</span> 👍（0） 💬（0）<div>不是非常严谨的实现，但是差不多了。可以设置各种属性和时间曲线。
+    transition(ball, &quot;50px&quot;, &quot;font-size&quot;, 2000, &quot;liner&quot;, 1000);</p>2020-08-03</li><br/><li><span>剑客不能说</span> 👍（2） 💬（1）<p>一脸懵逼状态看完的~</p>2019-09-27</li><br/><li><span>Marvin</span> 👍（0） 💬（0）<p>不是非常严谨的实现，但是差不多了。可以设置各种属性和时间曲线。
 只支持数值+单位的形式例如：left: 200px 或者 font-size: 20px;
 
-https:&#47;&#47;github.com&#47;OleileiA&#47;TransitionJs&#47;blob&#47;master&#47;transition.html</div>2020-08-03</li><br/><li><span>zlxag</span> 👍（0） 💬（0）<div>交互没有？
-</div>2020-06-09</li><br/>
+https:&#47;&#47;github.com&#47;OleileiA&#47;TransitionJs&#47;blob&#47;master&#47;transition.html</p>2020-08-03</li><br/><li><span>zlxag</span> 👍（0） 💬（0）<p>交互没有？
+</p>2020-06-09</li><br/>
 </ul>

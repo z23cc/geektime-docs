@@ -268,7 +268,7 @@ Address 1: 10.244.2.8
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>我来也</span> 👍（109） 💬（5）<div>今天按文章中的内容来, 确实也遇到了nslookup 反馈失败的状况.
+<li><span>我来也</span> 👍（109） 💬（5）<p>今天按文章中的内容来, 确实也遇到了nslookup 反馈失败的状况.
 ** server can&#39;t find web-0.nginx: NXDOMAIN
 *** Can&#39;t find web-0.nginx: No answer
 但是直接ping  web-0.nginx 是可以获取真实ip地址的.
@@ -277,14 +277,14 @@ kubectl run -i --tty --image busybox:1.28.4 dns-test --restart=Never --rm &#47;b
 这样就可获得期待的结果了.
 我也是google到了 https:&#47;&#47;github.com&#47;kubernetes&#47;kubernetes&#47;issues&#47;66924 才知道的.
 再看楼下的评论,才发现有其他同学也遇到了,且在几天前已经给出了解决方案. 👍
-新技术确实变化太快了,作者在写文章时用的没问题,也许隔一天因为某个默认镜像修改了,就会出现新的状况.</div>2018-10-13</li><br/><li><span>Geek_hfne2s</span> 👍（64） 💬（7）<div>创建statefulset必须要先创建一个headless的service?分两步操作？</div>2018-10-08</li><br/><li><span>Dillion</span> 👍（49） 💬（5）<div>在上面的例子中，web-0、web-1启动后，此时如果web-0挂了，那在创建web-0的过程中，web-1也会被重新创建一次么？？？也就是如果一个StatefulSet中只有某个Pod挂了，在重启它的时候，如何确保文中说的Pod启动顺序呢？？</div>2018-10-03</li><br/><li><span>千寻</span> 👍（35） 💬（2）<div>说dns访问不到那个童鞋，不要用latest标签的busybox，用busybox:1.28.4这个tag的就可以了，我也是这样。</div>2018-10-09</li><br/><li><span>巩夫建</span> 👍（31） 💬（9）<div>Headless Service中不通过vip，外部访问的时候，是轮询还是随机还是热备的方式访问到web-0和web-1，dns解析好像没有轮询随机概念吧。</div>2018-10-06</li><br/><li><span>fldhmily63319</span> 👍（26） 💬（5）<div>我也想问， &quot;Normal Service&quot;和&quot;Headless Service“的应用场景是什么？
+新技术确实变化太快了,作者在写文章时用的没问题,也许隔一天因为某个默认镜像修改了,就会出现新的状况.</p>2018-10-13</li><br/><li><span>Geek_hfne2s</span> 👍（64） 💬（7）<p>创建statefulset必须要先创建一个headless的service?分两步操作？</p>2018-10-08</li><br/><li><span>Dillion</span> 👍（49） 💬（5）<p>在上面的例子中，web-0、web-1启动后，此时如果web-0挂了，那在创建web-0的过程中，web-1也会被重新创建一次么？？？也就是如果一个StatefulSet中只有某个Pod挂了，在重启它的时候，如何确保文中说的Pod启动顺序呢？？</p>2018-10-03</li><br/><li><span>千寻</span> 👍（35） 💬（2）<p>说dns访问不到那个童鞋，不要用latest标签的busybox，用busybox:1.28.4这个tag的就可以了，我也是这样。</p>2018-10-09</li><br/><li><span>巩夫建</span> 👍（31） 💬（9）<p>Headless Service中不通过vip，外部访问的时候，是轮询还是随机还是热备的方式访问到web-0和web-1，dns解析好像没有轮询随机概念吧。</p>2018-10-06</li><br/><li><span>fldhmily63319</span> 👍（26） 💬（5）<p>我也想问， &quot;Normal Service&quot;和&quot;Headless Service“的应用场景是什么？
 
 根据文章所说的，”Headless Service不需要分配一个 VIP，而是可以直接以 DNS 记录的方式解析出被代理 Pod 的 IP 地址“，同时由于其编号的严格规定，会按照编号顺序完成创建工作。
 
-这样是不是说，如果在部署StatefulSet的时候，大部分是推荐使用&quot;Headless Service&quot; ，而不是&quot;Normal Service”呢？</div>2018-10-03</li><br/><li><span>jssfy</span> 👍（15） 💬（1）<div>通过这种方法，Kubernetes 就成功地将 Pod 的拓扑状态（比如：哪个节点先启动，哪个节点后启动），按照 Pod 的“名字 + 编号”的方式固定了下来。
+这样是不是说，如果在部署StatefulSet的时候，大部分是推荐使用&quot;Headless Service&quot; ，而不是&quot;Normal Service”呢？</p>2018-10-03</li><br/><li><span>jssfy</span> 👍（15） 💬（1）<p>通过这种方法，Kubernetes 就成功地将 Pod 的拓扑状态（比如：哪个节点先启动，哪个节点后启动），按照 Pod 的“名字 + 编号”的方式固定了下来。
 如上所述，
 1. 是否可以这样理解：sts在这里只是保留了“名字 + 编号”这种网络身份，而不同网络身份对应的pod其实本质上是一样的，都是同一个模板replicate出来的？
-2. 这里sts的主要意义是什么呢：仅仅是保证不同网络身份的启动顺序？</div>2018-11-04</li><br/><li><span>刘欣洲</span> 👍（15） 💬（3）<div>访问不到啊
+2. 这里sts的主要意义是什么呢：仅仅是保证不同网络身份的启动顺序？</p>2018-11-04</li><br/><li><span>刘欣洲</span> 👍（15） 💬（3）<p>访问不到啊
 &#47; # nslookup web-0.nginx
 Server:		10.96.0.10
 Address:	10.96.0.10:53
@@ -293,6 +293,6 @@ Address:	10.96.0.10:53
 
 *** Can&#39;t find web-0.nginx: No answer
 
-是不是需要DNS插件啊， 该如何启动呢？</div>2018-10-04</li><br/><li><span>Plantegg</span> 👍（11） 💬（1）<div>首先busybox镜像的&#47;bin&#47; 下几百个可执行命令的md5签名都是一样的。不能按照正常的ping、nslookup逻辑来理解了。 也就是md5sum &#47;bin&#47;ping 和 md5sum &#47;bin&#47;nslookup 签名一样，我猜测这个可执行命令都是空架子，会被拦截下来。
-另外就是1.28.4和1.29.3（latest) 的 nslookup 签名也不一样了</div>2018-10-18</li><br/><li><span>IOVE.-Minn</span> 👍（8） 💬（2）<div>请教张大佬，当我跑jenkins in k8s的时候是用的statefulset部署的jenkins的master，我关联的service但是却不是无头服务啊，  spec.ports 是用的nodeport  也没有用clusterIP：none这样。但是整个服务也是正常的。这不是和你讲的statefulset必须是关联headless service违背了么？</div>2018-10-09</li><br/><li><span>Tim Zhang</span> 👍（8） 💬（3）<div>既然默认有安装dns 为啥还要开启dns插件呢</div>2018-10-04</li><br/><li><span>vx:jiancheng_goon</span> 👍（7） 💬（1）<div>service里的dns信息是存在etcd里的嘛？有些应用的pod的域名是自己定义的。而不是k8s创建出来的带有local的域名。我可以更改service里的dns信息嘛？</div>2018-10-04</li><br/><li><span>虎虎❤️</span> 👍（7） 💬（1）<div>您好。滚动升级的时候，如果新的web-0和老的web-2同时ready，但新老版本不兼容怎么办？</div>2018-10-03</li><br/><li><span>兽医</span> 👍（6） 💬（1）<div>请问当需要对StatefulSet进行缩容后，再扩容到原有规模。在涉及变动的Pod中，状态也会被保持吗？</div>2018-10-03</li><br/><li><span>Rodinian</span> 👍（5） 💬（1）<div>一直很好奇，normal service和headless service都可以指定DNS name。那两者的区别是什么？</div>2019-05-16</li><br/>
+是不是需要DNS插件啊， 该如何启动呢？</p>2018-10-04</li><br/><li><span>Plantegg</span> 👍（11） 💬（1）<p>首先busybox镜像的&#47;bin&#47; 下几百个可执行命令的md5签名都是一样的。不能按照正常的ping、nslookup逻辑来理解了。 也就是md5sum &#47;bin&#47;ping 和 md5sum &#47;bin&#47;nslookup 签名一样，我猜测这个可执行命令都是空架子，会被拦截下来。
+另外就是1.28.4和1.29.3（latest) 的 nslookup 签名也不一样了</p>2018-10-18</li><br/><li><span>IOVE.-Minn</span> 👍（8） 💬（2）<p>请教张大佬，当我跑jenkins in k8s的时候是用的statefulset部署的jenkins的master，我关联的service但是却不是无头服务啊，  spec.ports 是用的nodeport  也没有用clusterIP：none这样。但是整个服务也是正常的。这不是和你讲的statefulset必须是关联headless service违背了么？</p>2018-10-09</li><br/><li><span>Tim Zhang</span> 👍（8） 💬（3）<p>既然默认有安装dns 为啥还要开启dns插件呢</p>2018-10-04</li><br/><li><span>vx:jiancheng_goon</span> 👍（7） 💬（1）<p>service里的dns信息是存在etcd里的嘛？有些应用的pod的域名是自己定义的。而不是k8s创建出来的带有local的域名。我可以更改service里的dns信息嘛？</p>2018-10-04</li><br/><li><span>虎虎❤️</span> 👍（7） 💬（1）<p>您好。滚动升级的时候，如果新的web-0和老的web-2同时ready，但新老版本不兼容怎么办？</p>2018-10-03</li><br/><li><span>兽医</span> 👍（6） 💬（1）<p>请问当需要对StatefulSet进行缩容后，再扩容到原有规模。在涉及变动的Pod中，状态也会被保持吗？</p>2018-10-03</li><br/><li><span>Rodinian</span> 👍（5） 💬（1）<p>一直很好奇，normal service和headless service都可以指定DNS name。那两者的区别是什么？</p>2019-05-16</li><br/>
 </ul>

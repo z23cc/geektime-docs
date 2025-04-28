@@ -811,5 +811,5 @@ Go的泛型只存在于编译时，它以增加少量编译时间为代价，换
 
 Go泛型通过扩展接口的能力实现了类型的集合与约束，但是当前Go中的泛型仍然有[不少的限制](https://go101.org/generics/888-the-status-quo-of-go-custom-generics.html)。在实际使用时，我建议你像往常一样书写代码，当真正需要代码抽象时替换为泛型也不迟。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>牙小木</span> 👍（1） 💬（1）<div>Key 可以是 int 或者 string，而 Value 必须是 string 或者 float。没get到这句话啥意思</div>2023-08-19</li><br/>
+<li><span>牙小木</span> 👍（1） 💬（1）<p>Key 可以是 int 或者 string，而 Value 必须是 string 或者 float。没get到这句话啥意思</p>2023-08-19</li><br/>
 </ul>

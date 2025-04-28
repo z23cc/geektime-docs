@@ -46,5 +46,5 @@ HANA是High-Performance Analytic Appliance的简称。SAP要做的这个数据�
 
 但是对2009年的SAP来说，HANA这个吸引眼球的宣传，一下子让原本已经成为或者即将成为二流公司的SAP回到了聚光灯前，不管产品有没有做出来，最起码先把风头抢占了。接下来，大家关注的就是SAP会做出一个什么样的产品来，是让大家刮目相看，还是烂泥扶不上墙呢？
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>拉欧</span> 👍（1） 💬（0）<div>有意思，城会玩</div>2019-06-12</li><br/><li><span>丁乐洪</span> 👍（0） 💬（0）<div>SAP没被Oracle收购是有原因</div>2020-03-21</li><br/>
+<li><span>拉欧</span> 👍（1） 💬（0）<p>有意思，城会玩</p>2019-06-12</li><br/><li><span>丁乐洪</span> 👍（0） 💬（0）<p>SAP没被Oracle收购是有原因</p>2020-03-21</li><br/>
 </ul>

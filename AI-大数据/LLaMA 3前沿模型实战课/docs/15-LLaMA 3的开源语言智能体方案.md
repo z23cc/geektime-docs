@@ -218,5 +218,5 @@ What !<INPUT 1>! high-level insights can you infer from the above statements? (e
 
 欢迎你把你实现的代码贴在留言区，和我一起一起交流、讨论，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（0） 💬（0）<div>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</div>2024-11-25</li><br/><li><span>小歪歪的狗子</span> 👍（0） 💬（1）<div>很好，很期待老师给出具体的代码实现</div>2024-11-15</li><br/>
+<li><span>小虎子11🐯</span> 👍（0） 💬（0）<p>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</p>2024-11-25</li><br/><li><span>小歪歪的狗子</span> 👍（0） 💬（1）<p>很好，很期待老师给出具体的代码实现</p>2024-11-15</li><br/>
 </ul>

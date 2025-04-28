@@ -219,7 +219,7 @@ void glGetProgramInfoLog(GLuint object, int maxLen, int *len, char *log);
 
 学完了OpenGL ES基础内容，想必你已经对OpenGL ES有了比较深的了解。那我来考考你。OpenGL ES渲染管线分为哪几个步骤呢？哪些步骤是我们开发者可以自己去完成的？期待在评论区看到你的回答，也欢迎你把这节课分享给需要的朋友。我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>大土豆</span> 👍（2） 💬（1）<div>老师，屏幕有自己的缓冲区，和FBO还不能等同😀。FBO是我们自己新建的帧缓冲对象，通常可用来做离屏渲染，还有就是要上屏之前做个统一处理的节点，OpenGL的一些管线步骤之后可以先渲染到FBO上。但是我们完全可以绕过FBO，h264解封装解码之后的YUV数据，直接走纹理贴图的流程，对接到屏幕的缓冲区，上屏。</div>2022-08-01</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>大土豆</span> 👍（2） 💬（1）<p>老师，屏幕有自己的缓冲区，和FBO还不能等同😀。FBO是我们自己新建的帧缓冲对象，通常可用来做离屏渲染，还有就是要上屏之前做个统一处理的节点，OpenGL的一些管线步骤之后可以先渲染到FBO上。但是我们完全可以绕过FBO，h264解封装解码之后的YUV数据，直接走纹理贴图的流程，对接到屏幕的缓冲区，上屏。</p>2022-08-01</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：Android10.0以后，还能使用OpenGL ES吗？
 文中提到，Android10.0以后，系统开始支持Vulkan，那么，还支持OpenGL ES吗？如果应用原来用OpenGL ES开发的，在10.0版本还能使用吗？
 Q2：视频播放器是否有源代码？
@@ -229,5 +229,5 @@ Q3：OpenGL ES本身不能完成底层绘制功能吗？
 文中有一句：“由于 OpenGL 是基于跨平台设计的，所以每个平台需要自己提供渲染的基础实现”，从这句话看，似乎OpenGL ES本身不能完成绘制功能。
 Q4：安卓中canvas.draw跟OpenGL ES是什么关系？
 在安卓中使用自定义View时，常用的操作是canvas.draw（）。请问，这个draw函数和
-OpenGL ES是什么关系？</div>2022-08-02</li><br/>
+OpenGL ES是什么关系？</p>2022-08-02</li><br/>
 </ul>

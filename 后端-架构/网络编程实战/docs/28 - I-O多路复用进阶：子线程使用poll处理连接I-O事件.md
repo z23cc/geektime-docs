@@ -292,7 +292,7 @@ fasgasdg
 
 欢迎你在评论区写下你的思考，或者在GitHub上上传修改过的代码，我会和你一起交流，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>钱</span> 👍（81） 💬（1）<div>1：阻塞IO+多进程——实现简单，性能一般
+<li><span>钱</span> 👍（81） 💬（1）<p>1：阻塞IO+多进程——实现简单，性能一般
 
 2：阻塞IO+多线程——相比于阻塞IO+多进程，减少了上下文切换所带来的开销，性能有所提高。
 
@@ -303,14 +303,14 @@ fasgasdg
 5：主从Reactor+线程池——相比于Reactor+线程池，将连接建立事件和已建立连接的各种IO事件分离，主Reactor只负责处理连接事件，从Reactor只负责处理各种IO事件，这样能增加客户端连接的成功率，并且可以充分利用现在多CPU的资源特性进一步的提高IO事件的处理效率。
 
 
-6：主 - 从Reactor模式的核心思想是，主Reactor线程只负责分发 Acceptor 连接建立，已连接套接字上的 I&#47;O 事件交给 从Reactor 负责分发。其中 sub-reactor 的数量，可以根据 CPU 的核数来灵活设置。</div>2019-11-24</li><br/><li><span>ray</span> 👍（12） 💬（2）<div>老师您好，
+6：主 - 从Reactor模式的核心思想是，主Reactor线程只负责分发 Acceptor 连接建立，已连接套接字上的 I&#47;O 事件交给 从Reactor 负责分发。其中 sub-reactor 的数量，可以根据 CPU 的核数来灵活设置。</p>2019-11-24</li><br/><li><span>ray</span> 👍（12） 💬（2）<p>老师您好，
 如果在worker thread pool里面的thread在执行工作时，又遇到了I&#47;O。是不是也可以在worker thread pool里面加入epoll来轮询？但通常在worker thread里面遇到的I&#47;O应该都已经不是network I&#47;O了，而是sql、读写file、或是向第三方发起api，我不是很确定能否用epoll来处理。
 
 有在google上查到，worker thread或worker process若遇到I&#47;O，似乎会用一种叫作coroutine的方式来切换cpu的使用权。此种切换方式，不涉及kernel，全是在应用程序做切换。
 
 这边想请教老师，对在worker thread里面遇到I&#47;O问题时的处理方式或是心得是什么？
 
-谢谢老师的分享！</div>2020-04-12</li><br/><li><span>马不停蹄</span> 👍（7） 💬（1）<div>学习 netty 的时候了解到 reactor 模式，netty 的 （单 、主从）reactor 可以灵活配置，老师讲的模式真的是和 netty 设计一样 ，这次学习算是真正搞明白了哈哈</div>2019-11-12</li><br/><li><span>刘系</span> 👍（5） 💬（2）<div>老师，我试验了程序，发现有一个问题。
+谢谢老师的分享！</p>2020-04-12</li><br/><li><span>马不停蹄</span> 👍（7） 💬（1）<p>学习 netty 的时候了解到 reactor 模式，netty 的 （单 、主从）reactor 可以灵活配置，老师讲的模式真的是和 netty 设计一样 ，这次学习算是真正搞明白了哈哈</p>2019-11-12</li><br/><li><span>刘系</span> 👍（5） 💬（2）<p>老师，我试验了程序，发现有一个问题。
 服务器程序启动后输出结果与文章中的不一样。
  .&#47;poll-server-multithreads 
 [msg] set poll as dispatcher, main thread
@@ -346,7 +346,7 @@ fasgasdg
 各个子线程启动后创建的套接字对是添加在子线程的eventloop上的，而不是像文章中的全是添加在主线程中。
 从我阅读代码来看，确实也是添加在子线程中。不知道哪里不对？
 主线程给子线程下发连接套接字是通过主线程调用event_loop_add_channel_event完成的，当主线程中发现eventloop和自己不是同一个线程，就通过给这个evenloop的套接字对发送一个“a”产生事件唤醒，然后子线程处理pending_channel，实现在子线程中添加连接套接字。
-</div>2019-10-17</li><br/><li><span>Simple life</span> 👍（4） 💬（1）<div>我觉得老师这里onMessage回调中使用线程池方式有误，这里解码，处理，编码是串行操作的，多线程并不能带来性能的提升，主线程还是会阻塞不释放的，我觉得最佳的做法是，解码交给线程池去做，然后返回，解码完成后注册进sub-reactor中再交由下一个业务处理，业务处理，编码同上，实现解耦充分利用多线程</div>2020-08-03</li><br/><li><span>进击的巨人</span> 👍（3） 💬（2）<div>Netty的主从reactor分别对应bossGroup和workerGroup，workerGroup处理非accept的io事件，至于业务逻辑是否交给另外的线程池处理，可以理解为netty并没有支持，原因是因为业务逻辑都需要开发者自己自定义提供，但在这点上，netty通过ChannelHandler+pipline提供了io事件和业务逻辑分离的能力，需要开发者添加自定义ChannelHandler，实现io事件到业务逻辑处理的线程分离。</div>2020-11-15</li><br/><li><span>疯狂的石头</span> 👍（2） 💬（1）<div>看老师源码，channel，buffer各种对象，调来调去的，给我调懵了。</div>2020-05-06</li><br/><li><span>绿箭侠</span> 👍（1） 💬（1）<div>event_loop.c --- struct event_loop *event_loop_init_with_name(char *thread_name)：
+</p>2019-10-17</li><br/><li><span>Simple life</span> 👍（4） 💬（1）<p>我觉得老师这里onMessage回调中使用线程池方式有误，这里解码，处理，编码是串行操作的，多线程并不能带来性能的提升，主线程还是会阻塞不释放的，我觉得最佳的做法是，解码交给线程池去做，然后返回，解码完成后注册进sub-reactor中再交由下一个业务处理，业务处理，编码同上，实现解耦充分利用多线程</p>2020-08-03</li><br/><li><span>进击的巨人</span> 👍（3） 💬（2）<p>Netty的主从reactor分别对应bossGroup和workerGroup，workerGroup处理非accept的io事件，至于业务逻辑是否交给另外的线程池处理，可以理解为netty并没有支持，原因是因为业务逻辑都需要开发者自己自定义提供，但在这点上，netty通过ChannelHandler+pipline提供了io事件和业务逻辑分离的能力，需要开发者添加自定义ChannelHandler，实现io事件到业务逻辑处理的线程分离。</p>2020-11-15</li><br/><li><span>疯狂的石头</span> 👍（2） 💬（1）<p>看老师源码，channel，buffer各种对象，调来调去的，给我调懵了。</p>2020-05-06</li><br/><li><span>绿箭侠</span> 👍（1） 💬（1）<p>event_loop.c --- struct event_loop *event_loop_init_with_name(char *thread_name)：
 
 #ifdef EPOLL_ENABLE
     yolanda_msgx(&quot;set epoll as dispatcher, %s&quot;, eventLoop-&gt;thread_name);
@@ -357,14 +357,14 @@ fasgasdg
 #endif
     eventLoop-&gt;event_dispatcher_data = eventLoop-&gt;eventDispatcher-&gt;init(eventLoop);
 
-没找到 EPOLL_ENABLE 的定义，老师怎么考虑的！！这里的话是否只能在event_loop.h 所包含的头文件中去找定义？</div>2020-03-06</li><br/><li><span>李朝辉</span> 👍（1） 💬（1）<div>fd为7的套接字应该是socketpair()调用创建的主-从reactor套接字对中，从reactor线程写，主reactor线程读的套接字，作用的话，个人推测应该是从reactor线程中的连接套接字关闭了（即连接断开了），将这样的事件反馈给主reactor，以通知主reactor线程，我已经准备好接收下一个连接套接字？</div>2020-01-12</li><br/><li><span>李朝辉</span> 👍（1） 💬（1）<div>4核cpu，主reactor要占掉一个，只有3个可以分配给从核心。
-按照老师的说法，是因为主reactor的工作相对比较简单，所以占用内核的时间很少，所以将从reactor分配满，然后最大化对连接套接字的处理能力吗？</div>2020-01-12</li><br/><li><span>川云</span> 👍（1） 💬（1）<div>可不可以把调用poll代码的位置展示一下</div>2019-10-11</li><br/><li><span>王蓬勃</span> 👍（0） 💬（1）<div>老师 请问那个event_loop_do_channel_event函数什么时候才进入不是同一个线程的判断中去？看不明白了</div>2021-12-20</li><br/><li><span>这一行，30年</span> 👍（0） 💬（1）<div>
+没找到 EPOLL_ENABLE 的定义，老师怎么考虑的！！这里的话是否只能在event_loop.h 所包含的头文件中去找定义？</p>2020-03-06</li><br/><li><span>李朝辉</span> 👍（1） 💬（1）<p>fd为7的套接字应该是socketpair()调用创建的主-从reactor套接字对中，从reactor线程写，主reactor线程读的套接字，作用的话，个人推测应该是从reactor线程中的连接套接字关闭了（即连接断开了），将这样的事件反馈给主reactor，以通知主reactor线程，我已经准备好接收下一个连接套接字？</p>2020-01-12</li><br/><li><span>李朝辉</span> 👍（1） 💬（1）<p>4核cpu，主reactor要占掉一个，只有3个可以分配给从核心。
+按照老师的说法，是因为主reactor的工作相对比较简单，所以占用内核的时间很少，所以将从reactor分配满，然后最大化对连接套接字的处理能力吗？</p>2020-01-12</li><br/><li><span>川云</span> 👍（1） 💬（1）<p>可不可以把调用poll代码的位置展示一下</p>2019-10-11</li><br/><li><span>王蓬勃</span> 👍（0） 💬（1）<p>老师 请问那个event_loop_do_channel_event函数什么时候才进入不是同一个线程的判断中去？看不明白了</p>2021-12-20</li><br/><li><span>这一行，30年</span> 👍（0） 💬（1）<p>
    
 #include &lt;lib&#47;acceptor.h&gt;
 #include &quot;lib&#47;common.h&quot;
 #include &quot;lib&#47;event_loop.h&quot;
 #include &quot;lib&#47;tcp_server.h&quot;
 
-把老师的代码copy过去，这些类库都报错，不用老师引用的宏用什么宏？</div>2021-11-09</li><br/><li><span>企鹅</span> 👍（0） 💬（1）<div>老师，主reactor只分发acceptor上建立连接的事件，不应该是client-&gt;acceptor -&gt; master reactor么，图上是client-&gt;master reactor-&gt;acceptor这里看晕了</div>2021-09-17</li><br/><li><span>Morton</span> 👍（0） 💬（1）<div>老师，Reactor线程池占用了一部分cpu核，然后worker线程如果用线程池又会占用一部分cpu核，假设8核机器应该怎么分配线程池？reactor占4个worker线程占4个？
-</div>2021-01-25</li><br/>
+把老师的代码copy过去，这些类库都报错，不用老师引用的宏用什么宏？</p>2021-11-09</li><br/><li><span>企鹅</span> 👍（0） 💬（1）<p>老师，主reactor只分发acceptor上建立连接的事件，不应该是client-&gt;acceptor -&gt; master reactor么，图上是client-&gt;master reactor-&gt;acceptor这里看晕了</p>2021-09-17</li><br/><li><span>Morton</span> 👍（0） 💬（1）<p>老师，Reactor线程池占用了一部分cpu核，然后worker线程如果用线程池又会占用一部分cpu核，假设8核机器应该怎么分配线程池？reactor占4个worker线程占4个？
+</p>2021-01-25</li><br/>
 </ul>

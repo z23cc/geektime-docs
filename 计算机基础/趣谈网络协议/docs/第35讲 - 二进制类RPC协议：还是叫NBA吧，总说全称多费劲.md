@@ -164,13 +164,13 @@ Hessian2是Dubbo默认的RPC序列化方式，当然还有其他选择。例如�
 
 欢迎你留言和我讨论。趣谈网络协议，我们下期见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>问题究竟系边度</span> 👍（35） 💬（0）<div>dubbo 是这个rpc框架包括服务发现，服务均衡负载，接口层面监控。对于rpc中的扩展点比较多。后面会用servicemesh ,传输协议较多选择
+<li><span>问题究竟系边度</span> 👍（35） 💬（0）<p>dubbo 是这个rpc框架包括服务发现，服务均衡负载，接口层面监控。对于rpc中的扩展点比较多。后面会用servicemesh ,传输协议较多选择
 
 
 spring cloud 是一个完整微服务框架，包括rpc框架,整体链路监控，熔断降级，网关，配置中心，安全验证。主要用http协议传输
 
 
-对于跨语言的，首先要定义非编程语言相关的协议，例如http，protobuf ，然后需要每个语言需要写相关客户端，至于复杂程度，就要看服务发现，均衡负载是在客户端实现还是另外写一个代理</div>2018-08-10</li><br/><li><span>andy</span> 👍（17） 💬（2）<div>spring cloud的restful方式虽然基于json，但是服务端在发送数据之前会将DTO对象转换为JSON，客户端收到JSON之后还会转换为DTO。这时会在客户端和服务端分别创建各自的DTO对象，会出现代码的重复，如果共享jar，又出现jar管理的问题。</div>2018-08-06</li><br/><li><span>咸鱼与果汁</span> 👍（8） 💬（2）<div>同样是基于TCP协议，为什么RPC会比HTTP快呢？</div>2019-06-21</li><br/><li><span>咕咕咕</span> 👍（4） 💬（1）<div>还真是越到后面人越来越少 我看到现在也好多没看懂  准备先看完整体后  再回过头 仔细再看一遍</div>2019-04-29</li><br/><li><span>怎么肥四</span> 👍（3） 💬（1）<div>书读百遍，其义自现。听不懂不要急，多看多听时间会让我们成长。</div>2019-06-02</li><br/><li><span>悟空聊架构</span> 👍（24） 💬（0）<div>题目1:
+对于跨语言的，首先要定义非编程语言相关的协议，例如http，protobuf ，然后需要每个语言需要写相关客户端，至于复杂程度，就要看服务发现，均衡负载是在客户端实现还是另外写一个代理</p>2018-08-10</li><br/><li><span>andy</span> 👍（17） 💬（2）<p>spring cloud的restful方式虽然基于json，但是服务端在发送数据之前会将DTO对象转换为JSON，客户端收到JSON之后还会转换为DTO。这时会在客户端和服务端分别创建各自的DTO对象，会出现代码的重复，如果共享jar，又出现jar管理的问题。</p>2018-08-06</li><br/><li><span>咸鱼与果汁</span> 👍（8） 💬（2）<p>同样是基于TCP协议，为什么RPC会比HTTP快呢？</p>2019-06-21</li><br/><li><span>咕咕咕</span> 👍（4） 💬（1）<p>还真是越到后面人越来越少 我看到现在也好多没看懂  准备先看完整体后  再回过头 仔细再看一遍</p>2019-04-29</li><br/><li><span>怎么肥四</span> 👍（3） 💬（1）<p>书读百遍，其义自现。听不懂不要急，多看多听时间会让我们成长。</p>2019-06-02</li><br/><li><span>悟空聊架构</span> 👍（24） 💬（0）<p>题目1:
 1.Dubbo只实现了服务治理，而Spring Cloud子项目分别覆盖了微服务架构下的众多部件。
 
 2.Dubbo使用RPC通讯协议
@@ -182,7 +182,7 @@ Spring Cloud使用HTTP协议REST API
 Spring Cloud 无接口依赖，定义好相关的json字段即可，对程序有一定入侵性
 
 
-</div>2018-08-06</li><br/><li><span>谢晋</span> 👍（8） 💬（0）<div>Dubbo 和 SpringCloud 各有优缺点？
+</p>2018-08-06</li><br/><li><span>谢晋</span> 👍（8） 💬（0）<p>Dubbo 和 SpringCloud 各有优缺点？
 Dubbo只实现了服务治理，而Spring Cloud子项目分别覆盖了微服务架构下的众多部件。
 Spring Cloud使用HTTP协议REST API
 Dubbo使用RPC通讯协议
@@ -191,9 +191,9 @@ Dubbo通过接口的方式相互依赖，强依赖关系，需要严格的版本
 Spring Cloud 无接口依赖，定义好相关的json字段即可，对程序有一定入侵性
 跨语言的RPC调用协议？
 Thrift是Facebook提供的跨语言轻量级RPC消息和数据交换框架；
-Ptotocol Buffers是Google提供的一个开源序列化框架，类似于XML、JSON这样的数据表示语言</div>2019-05-12</li><br/><li><span>blackpiglet</span> 👍（7） 💬（0）<div>第二题，可以使用 thrift 和 protobuf</div>2018-08-10</li><br/><li><span>及子龙</span> 👍（6） 💬（0）<div>我们用的是gRpc，对多语言支持的比较好。</div>2018-08-06</li><br/><li><span>忆水寒</span> 👍（4） 💬（0）<div>跨语言调用的场景，可以使用序列化工具，比如Thrift、protobuf等序列化框架。</div>2018-08-07</li><br/><li><span>悟空聊架构</span> 👍（4） 💬（0）<div>题目2:
+Ptotocol Buffers是Google提供的一个开源序列化框架，类似于XML、JSON这样的数据表示语言</p>2019-05-12</li><br/><li><span>blackpiglet</span> 👍（7） 💬（0）<p>第二题，可以使用 thrift 和 protobuf</p>2018-08-10</li><br/><li><span>及子龙</span> 👍（6） 💬（0）<p>我们用的是gRpc，对多语言支持的比较好。</p>2018-08-06</li><br/><li><span>忆水寒</span> 👍（4） 💬（0）<p>跨语言调用的场景，可以使用序列化工具，比如Thrift、protobuf等序列化框架。</p>2018-08-07</li><br/><li><span>悟空聊架构</span> 👍（4） 💬（0）<p>题目2:
 可以使用Thrift和Protocol Buffers。
 Thrift是Facebook提供的跨语言轻量级RPC消息和数据交换框架；
-Ptotocol Buffers是Google提供的一个开源序列化框架，类似于XML、JSON这样的数据表示语言。</div>2018-08-06</li><br/><li><span>朱显杰</span> 👍（3） 💬（1）<div>请教下，文中说的dubbo的jar包，具体是指啥？我们公司正在用dubbo，不需要在应用离单独部署jar包啊</div>2018-08-06</li><br/><li><span>mgxian</span> 👍（2） 💬（0）<div>2.跨语言如果使用 restful 基本可以直接用 如果用二进制rpc需要分别实现相应的客户端sdk</div>2018-08-06</li><br/><li><span>mickey</span> 👍（1） 💬（1）<div>“0x92，表示有两个参数。其实这里存的应该是 2，之所以加上 0x90，就是为了防止歧义，表示这里一定是一个 int。”  
-请问，是与谁发生了什么歧义呢？0x92不是与下面的参数值2（0x92）产生了歧义吗？谢谢。</div>2021-12-02</li><br/><li><span>Jason Ding</span> 👍（1） 💬（0）<div>dubbo的rpc协议应该是dubbo协议，dubbo协议的序列化协议的 缺省值为hessian2，rmi协议缺省为java，http协议缺省为json</div>2021-11-24</li><br/>
+Ptotocol Buffers是Google提供的一个开源序列化框架，类似于XML、JSON这样的数据表示语言。</p>2018-08-06</li><br/><li><span>朱显杰</span> 👍（3） 💬（1）<p>请教下，文中说的dubbo的jar包，具体是指啥？我们公司正在用dubbo，不需要在应用离单独部署jar包啊</p>2018-08-06</li><br/><li><span>mgxian</span> 👍（2） 💬（0）<p>2.跨语言如果使用 restful 基本可以直接用 如果用二进制rpc需要分别实现相应的客户端sdk</p>2018-08-06</li><br/><li><span>mickey</span> 👍（1） 💬（1）<p>“0x92，表示有两个参数。其实这里存的应该是 2，之所以加上 0x90，就是为了防止歧义，表示这里一定是一个 int。”  
+请问，是与谁发生了什么歧义呢？0x92不是与下面的参数值2（0x92）产生了歧义吗？谢谢。</p>2021-12-02</li><br/><li><span>Jason Ding</span> 👍（1） 💬（0）<p>dubbo的rpc协议应该是dubbo协议，dubbo协议的序列化协议的 缺省值为hessian2，rmi协议缺省为java，http协议缺省为json</p>2021-11-24</li><br/>
 </ul>

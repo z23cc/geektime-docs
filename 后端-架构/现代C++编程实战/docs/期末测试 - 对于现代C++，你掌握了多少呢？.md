@@ -6,5 +6,5 @@
 
 [![](https://static001.geekbang.org/resource/image/28/a4/28d1be62669b4f3cc01c36466bf811a4.png?wh=1142%2A201)](http://time.geekbang.org/quiz/intro?act_id=136&exam_id=293)
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>老师的题太难啦，C++真的太难啦</div>2023-11-06</li><br/><li><span>三味</span> 👍（0） 💬（1）<div>一顿操作猛如虎，回头一看五十五。知识不用，就记不住啊。</div>2023-05-19</li><br/><li><span>皮皮侠</span> 👍（0） 💬（1）<div>老师，刚才听你的讲座啦，哈</div>2021-03-09</li><br/><li><span>每天进步一点点</span> 👍（0） 💬（0）<div>通读第一遍完成，受益匪浅！！！ 感谢吴老师的分享</div>2021-11-25</li><br/>
+<li><span>李云龙</span> 👍（1） 💬（1）<p>老师的题太难啦，C++真的太难啦</p>2023-11-06</li><br/><li><span>三味</span> 👍（0） 💬（1）<p>一顿操作猛如虎，回头一看五十五。知识不用，就记不住啊。</p>2023-05-19</li><br/><li><span>皮皮侠</span> 👍（0） 💬（1）<p>老师，刚才听你的讲座啦，哈</p>2021-03-09</li><br/><li><span>每天进步一点点</span> 👍（0） 💬（0）<p>通读第一遍完成，受益匪浅！！！ 感谢吴老师的分享</p>2021-11-25</li><br/>
 </ul>

@@ -309,7 +309,7 @@ public class AppConfig {
 
 ![图片](https://static001.geekbang.org/resource/image/44/8d/440862d95dfd38fc2fd32acfca2edf8d.jpg?wh=10117x7256)
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Demon.Lee</span> 👍（0） 💬（3）<div>获取 Class 对象的三种方式，其动态性不断降低，没太理解。既然拿到了 Class 对象这把钥匙，不管哪种方式拿到，其本质不都一样吗，后面想怎么玩就怎么玩。我是不是角度理解错了。</div>2023-09-07</li><br/><li><span>白不吃</span> 👍（3） 💬（0）<div>深度差点意思</div>2023-09-27</li><br/><li><span>^_^</span> 👍（2） 💬（0）<div>1，获取一个 class 对象不同方式的差异点
+<li><span>Demon.Lee</span> 👍（0） 💬（3）<p>获取 Class 对象的三种方式，其动态性不断降低，没太理解。既然拿到了 Class 对象这把钥匙，不管哪种方式拿到，其本质不都一样吗，后面想怎么玩就怎么玩。我是不是角度理解错了。</p>2023-09-07</li><br/><li><span>白不吃</span> 👍（3） 💬（0）<p>深度差点意思</p>2023-09-27</li><br/><li><span>^_^</span> 👍（2） 💬（0）<p>1，获取一个 class 对象不同方式的差异点
     1）， 对象的getClass()方法获取的Class对象是针对具体的对象的，而.class语法和Class.forName()方法获取的Class对象是针对类本身的。
     2），使用对象的getClass()方法获取的Class对象是在运行时动态获取的，而使用.class语法和Class.forName()方法获取的Class对象是在编译时就确定的。
     3），使用.class语法和Class.forName()方法获取的Class对象可以在没有实例化对象的情况下使用，而对象的getClass()方法需要有一个实例化对象才能调用。
@@ -337,8 +337,8 @@ public class MyClass {
             e.printStackTrace();
         }
     }
-}</div>2023-09-06</li><br/><li><span>C.</span> 👍（0） 💬（0）<div>第一个问题：Class.forName静态方法一般用于加载驱动或者判断类是否存在的情况，.class必须事先知道有这个类，object.getClass必须要有类实例对象。
+}</p>2023-09-06</li><br/><li><span>C.</span> 👍（0） 💬（0）<p>第一个问题：Class.forName静态方法一般用于加载驱动或者判断类是否存在的情况，.class必须事先知道有这个类，object.getClass必须要有类实例对象。
 第二个问题：clazz.getFields();&#47;&#47;获取当前类及其父类的所有公有字段。clazz.getDeclaredFields();&#47;&#47;取私有字段或受保护的字段和公共字段。
-</div>2023-09-08</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>Q1：最简单程序，只是打印一个“hello”字符串；此程序的运行，会有哪些类加载器参与？ 以及加载顺序？
-Q2：JAVA的“动态性”，除了反射，还有其他的吗？</div>2023-09-06</li><br/>
+</p>2023-09-08</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>Q1：最简单程序，只是打印一个“hello”字符串；此程序的运行，会有哪些类加载器参与？ 以及加载顺序？
+Q2：JAVA的“动态性”，除了反射，还有其他的吗？</p>2023-09-06</li><br/>
 </ul>

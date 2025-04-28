@@ -201,7 +201,7 @@ Seata分布式事务是个双刃剑，当我们给项目引入Seata的时候，�
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>药味</span> 👍（12） 💬（5）<div>怎么理解&quot;传统的事务型消息 + 日志补偿 + 跑批补偿的方式&quot;</div>2022-03-02</li><br/><li><span>奔跑的蚂蚁</span> 👍（5） 💬（4）<div>大佬，能加个餐 详情说下 传统的方式嘛，最好再说点rocketMq</div>2022-03-02</li><br/><li><span>奔跑的蚂蚁</span> 👍（4） 💬（1）<div>今天用seata 遇到一个问题，没有配置代理数据源 好像也能使用，请问下老师 这个和配置数据源在使用上有什么区别嘛</div>2022-03-15</li><br/><li><span>peter</span> 👍（3） 💬（2）<div>请教老师几个问题啊：
+<li><span>药味</span> 👍（12） 💬（5）<p>怎么理解&quot;传统的事务型消息 + 日志补偿 + 跑批补偿的方式&quot;</p>2022-03-02</li><br/><li><span>奔跑的蚂蚁</span> 👍（5） 💬（4）<p>大佬，能加个餐 详情说下 传统的方式嘛，最好再说点rocketMq</p>2022-03-02</li><br/><li><span>奔跑的蚂蚁</span> 👍（4） 💬（1）<p>今天用seata 遇到一个问题，没有配置代理数据源 好像也能使用，请问下老师 这个和配置数据源在使用上有什么区别嘛</p>2022-03-15</li><br/><li><span>peter</span> 👍（3） 💬（2）<p>请教老师几个问题啊：
 Q1：undo_log问题：
 A undo_log是文件还是数据库的表？从文中看，似乎是数据库的表。B 如果是表的话，该表由seata框架自己创建并维护，不需要开发人员维护，对吗？
 Q2：RM是怎么监测到业务代码的DB操作的？
@@ -209,19 +209,19 @@ Q2：RM是怎么监测到业务代码的DB操作的？
 Q3：阶段二回滚的时候，RM 无法获取本地锁，它会原地打转不停重试。一直处于这个状态吗？这样岂不是相当于死机了？
 Q4：阶段一，每个本地事务会提交或回滚吗？
 每个本地事务不都是在阶段二执行提交或回滚吗？
-Q5：能否单独讲一讲&quot;“传统的事务型消息 + 日志补偿 + 跑批补偿的方式”？ 比如以加餐形式写一章？</div>2022-03-02</li><br/><li><span>Geek_eabafe</span> 👍（0） 💬（1）<div>姚老师，阶段二是全局事务的 Commit 和 Rollback 是异步执行。
+Q5：能否单独讲一讲&quot;“传统的事务型消息 + 日志补偿 + 跑批补偿的方式”？ 比如以加餐形式写一章？</p>2022-03-02</li><br/><li><span>Geek_eabafe</span> 👍（0） 💬（1）<p>姚老师，阶段二是全局事务的 Commit 和 Rollback 是异步执行。
 1. 这里的异步执行是指哪里异步呢？
 2. 如果异步执行失败了 TC 仍认为整个事务已经结束了吗？ 如果是这样 肯定有脏数据的
-</div>2024-01-11</li><br/><li><span>天天有吃的</span> 👍（0） 💬（1）<div>请问下，阶段二是全局事务的 Commit 和 Rollback 是异步执行。这里的异步执行是指哪里异步呢？</div>2023-11-09</li><br/><li><span>天天有吃的</span> 👍（0） 💬（1）<div>请问下这里支持的 db 回滚有哪些db呀？hbase mongo这些也都支持吗</div>2023-11-08</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（1）<div>timestamp&quot;: &quot;2023-10-18T14:34:46.564+00:00&quot;,
+</p>2024-01-11</li><br/><li><span>天天有吃的</span> 👍（0） 💬（1）<p>请问下，阶段二是全局事务的 Commit 和 Rollback 是异步执行。这里的异步执行是指哪里异步呢？</p>2023-11-09</li><br/><li><span>天天有吃的</span> 👍（0） 💬（1）<p>请问下这里支持的 db 回滚有哪些db呀？hbase mongo这些也都支持吗</p>2023-11-08</li><br/><li><span>Geek_bf202a</span> 👍（0） 💬（1）<p>timestamp&quot;: &quot;2023-10-18T14:34:46.564+00:00&quot;,
     &quot;status&quot;: 500,
     &quot;error&quot;: &quot;Internal Server Error&quot;,
     &quot;message&quot;: &quot;Executing an update&#47;delete query; nested exception is javax.persistence.TransactionRequiredException: Executing an update&#47;delete query&quot;,
     &quot;path&quot;: &quot;&#47;coupon-customer&#47;template&quot;
 }
-请求总是报这个啊，老师</div>2023-10-18</li><br/><li><span>Amy</span> 👍（0） 💬（1）<div>老师，请教下几个问题
+请求总是报这个啊，老师</p>2023-10-18</li><br/><li><span>Amy</span> 👍（0） 💬（1）<p>老师，请教下几个问题
 1.RM执行第一阶段完成，是不是可以理解为对于mysql来说已经执行了commit，只是在undo_log表中记录了回滚的数据，第二阶段依赖这个数据对数据进行还原
-2.基于问题1，如果RM1执行了一个update操作，比如把id=1的姓名从张三更新了李四，那RM2，第一阶段还没执行完，此时有其他的业务B去查id=1的数据，取出的名字是李四，然后RM2执行失败，触发了RM1的回滚操作，这个时候业务B查的不就是错误数据了吗</div>2023-05-16</li><br/><li><span>Q</span> 👍（0） 💬（1）<div>老师customer调template卡流程了，脑壳痛
+2.基于问题1，如果RM1执行了一个update操作，比如把id=1的姓名从张三更新了李四，那RM2，第一阶段还没执行完，此时有其他的业务B去查id=1的数据，取出的名字是李四，然后RM2执行失败，触发了RM1的回滚操作，这个时候业务B查的不就是错误数据了吗</p>2023-05-16</li><br/><li><span>Q</span> 👍（0） 💬（1）<p>老师customer调template卡流程了，脑壳痛
 template服务启动一直报 ERROR [coupon-template-serv,,] 21120 --- [  main] i.s.c.r.netty.NettyClientChannelManager  : no available service &#39;null&#39; found, 这个错
-customer调template的时候报这个错Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Unable to commit against JDBC Connection; nested exception is org.hibernate.TransactionException: Unable to commit against JDBC Connection] with root cause，我查了下是jpa和seata在强数据库资源，</div>2022-06-25</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<div>本地锁该如何理解呢？</div>2022-06-02</li><br/><li><span>天天有吃的</span> 👍（0） 💬（0）<div>这个图中，tm也是rm吗
-</div>2023-11-09</li><br/><li><span>Geek_5c44aa</span> 👍（0） 💬（0）<div>可不可以不使用Nacos，直接Kubernetes、Redis和Seata一起的？</div>2023-10-21</li><br/><li><span>加油加油</span> 👍（0） 💬（0）<div>您好，请教下，使用了@GlobalTransactional 之后，有没有对应的全局事务钩子方法，比如说传统的本地事务@Transaction 对应的钩子是 TransactionSynchronizationManager.registerSynchronization  那么全局事务有类似的机制吗 ？</div>2023-08-16</li><br/>
+customer调template的时候报这个错Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Unable to commit against JDBC Connection; nested exception is org.hibernate.TransactionException: Unable to commit against JDBC Connection] with root cause，我查了下是jpa和seata在强数据库资源，</p>2022-06-25</li><br/><li><span>西门吹牛</span> 👍（0） 💬（1）<p>本地锁该如何理解呢？</p>2022-06-02</li><br/><li><span>天天有吃的</span> 👍（0） 💬（0）<p>这个图中，tm也是rm吗
+</p>2023-11-09</li><br/><li><span>Geek_5c44aa</span> 👍（0） 💬（0）<p>可不可以不使用Nacos，直接Kubernetes、Redis和Seata一起的？</p>2023-10-21</li><br/><li><span>加油加油</span> 👍（0） 💬（0）<p>您好，请教下，使用了@GlobalTransactional 之后，有没有对应的全局事务钩子方法，比如说传统的本地事务@Transaction 对应的钩子是 TransactionSynchronizationManager.registerSynchronization  那么全局事务有类似的机制吗 ？</p>2023-08-16</li><br/>
 </ul>

@@ -162,12 +162,12 @@ Kafka Broker会在内存中为每个分区都缓存Leader Epoch数据，同时�
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>朱东旭</span> 👍（17） 💬（5）<div>胡老师您好，在您讲的leader epoch机制案例中，在我看来最关键的操作是broker重启后先向leader确认leo,而不是直接基于自己的高水位截断数据，来防止数据不一致。。可是有无leader epoch都可以做这个操作呀，我看不出leader epoch必要性在哪。。
-</div>2019-11-02</li><br/><li><span>李先生</span> 👍（13） 💬（3）<div>胡哥，有两个问题：
+<li><span>朱东旭</span> 👍（17） 💬（5）<p>胡老师您好，在您讲的leader epoch机制案例中，在我看来最关键的操作是broker重启后先向leader确认leo,而不是直接基于自己的高水位截断数据，来防止数据不一致。。可是有无leader epoch都可以做这个操作呀，我看不出leader epoch必要性在哪。。
+</p>2019-11-02</li><br/><li><span>李先生</span> 👍（13） 💬（3）<p>胡哥，有两个问题：
 1:为什么broker重启要进行日志截断，触发日志截断的前提是什么？目的是什么？
-2:acks=all,是代表同步到所有isr中broker的pagecache中还是磁盘？min.insync.replicas是配合acks=all来使用的，是一个保证消息可靠性的配置，比如设置为2，是代表在isr中至少两个broker上写入消息，这个写入是写入pagecache中还是磁盘中？如果都是写入pagecache中，kafka是有异步线程来定时从pagecache中拉消息写入磁盘吗？</div>2020-04-14</li><br/><li><span>td901105</span> 👍（9） 💬（6）<div>老师您好,我怎么感觉只需要在副本拉取Leader的LOG就不会产生日志截断的问题了,感觉不需要Leader Epoch?</div>2020-01-19</li><br/><li><span>Johnson</span> 👍（8） 💬（2）<div>老师您好，有个疑问，leader epoch怎么做到像hw里的数据可见性的，比如hw可以保证消费端只能消费hw之前提交的消息，leader epoch如何保证这点，谢谢！</div>2020-04-13</li><br/><li><span>faunjoe</span> 👍（7） 💬（1）<div>多个broker 中的leader epoch 他们是版本号是怎么保持累加的</div>2020-05-10</li><br/><li><span>thomas</span> 👍（7） 💬（2）<div>倘若此时副本 B 所在的 Broker 宕机，当它重启回来后，副本 B 会执行日志截断操作，将 LEO 值调整为之前的高水位值，也就是 1。
+2:acks=all,是代表同步到所有isr中broker的pagecache中还是磁盘？min.insync.replicas是配合acks=all来使用的，是一个保证消息可靠性的配置，比如设置为2，是代表在isr中至少两个broker上写入消息，这个写入是写入pagecache中还是磁盘中？如果都是写入pagecache中，kafka是有异步线程来定时从pagecache中拉消息写入磁盘吗？</p>2020-04-14</li><br/><li><span>td901105</span> 👍（9） 💬（6）<p>老师您好,我怎么感觉只需要在副本拉取Leader的LOG就不会产生日志截断的问题了,感觉不需要Leader Epoch?</p>2020-01-19</li><br/><li><span>Johnson</span> 👍（8） 💬（2）<p>老师您好，有个疑问，leader epoch怎么做到像hw里的数据可见性的，比如hw可以保证消费端只能消费hw之前提交的消息，leader epoch如何保证这点，谢谢！</p>2020-04-13</li><br/><li><span>faunjoe</span> 👍（7） 💬（1）<p>多个broker 中的leader epoch 他们是版本号是怎么保持累加的</p>2020-05-10</li><br/><li><span>thomas</span> 👍（7） 💬（2）<p>倘若此时副本 B 所在的 Broker 宕机，当它重启回来后，副本 B 会执行日志截断操作，将 LEO 值调整为之前的高水位值，也就是 1。
 -------------------------------------------------------------&gt;
-老师，请问为什么要将LE0的值设置为HW的值。LEO的值是消息写入磁盘后才被更新的，也就是数据已经落地。重启后继续用LEO的值会有什么问题吗</div>2020-04-26</li><br/><li><span>😈😈😈😈😈</span> 👍（7） 💬（2）<div>这个是我理解的HW和LEO更新的机制步骤，有错误的话请大神指明下，非常感谢
+老师，请问为什么要将LE0的值设置为HW的值。LEO的值是消息写入磁盘后才被更新的，也就是数据已经落地。重启后继续用LEO的值会有什么问题吗</p>2020-04-26</li><br/><li><span>😈😈😈😈😈</span> 👍（7） 💬（2）<p>这个是我理解的HW和LEO更新的机制步骤，有错误的话请大神指明下，非常感谢
 更新对象 更新时机
 Broker1上Follower副本 Follwer会从Leader副本不停的拉取数据，但是Leader副本现在的没有数据。所以Leader副本和Follower副本的高水位值和LEO值都是0
 Broker0上的Leader副本 生产者向Leader副本中写入一条数据，此时LEO值是1,HW值是0。也就是说位移为0的位置上已经有数据了
@@ -176,15 +176,15 @@ Broker1上Follower副本 获取到数据之后，再次向Leader副本拉数据�
 Broker0上的远程副本 Leader收到Follower的拉取请求后，发现Follower要拉取的数据是在位移值为1的位置上的数据，此时会更新远程副本的LEO值为1。所以所有的远程副本的LEO等于各自对应的Follower副本的LEO值
 Brober0上的Leader副本 Broker0上的远程副本的LEO已经更新为1了。所以开始更新Leader副本的HW值。HW=max{HW,min(LEO1,LEO2,LEO3......LEON)},更新HW值为1，之后会发送Follower副本请求的数据（如果有数据的话，没有数据的话只发送HW值）并一起发送HW值
 Broker1上Follower副本 Follwer副本收到Leader返回的数据和HW值（如果Leader返回了数据那么LEO就是2，没有数据的话LEO还是1），用HW值和自己的LEO值比较选择较小作为自己的HW值并更新HW值为1（如果俩个值相等的话HW=LEO）
-一次副本间的同步过程完成 </div>2019-10-22</li><br/><li><span>Geek_0819</span> 👍（6） 💬（4）<div>胡老师有个疑问：生产者同步发送消息时指定同步到所有副本，生产者是等待所有副本的LEO都写入成功才返回吗？如果是这样Follower副本从Leader上拉取LEO是有时间间隔的，这样生产者都在这里等待很久吗？还是其他方式的交互？</div>2020-01-21</li><br/><li><span>常超</span> 👍（6） 💬（3）<div>请问老师，与 Leader 副本保持同步的两个判断条件，是OR还是AND的关系？</div>2019-08-07</li><br/><li><span>lmtoo</span> 👍（5） 💬（3）<div>“当获知到 Leader LEO=2 后，B 发现该 LEO值不比它自己的 LEO 值小，而且缓存中也没有保存任何起始位移值 &gt; 2 的 Epoch 条目”是什么意思？
-如果follower B重启回来之后去取Leader A的LEO，但是此时Leader A已经挂了，这套机制不就玩不转了吗？</div>2019-08-03</li><br/><li><span>我来也</span> 👍（4） 💬（4）<div>1.该远程 Follower 副本在 ISR 中。
+一次副本间的同步过程完成 </p>2019-10-22</li><br/><li><span>Geek_0819</span> 👍（6） 💬（4）<p>胡老师有个疑问：生产者同步发送消息时指定同步到所有副本，生产者是等待所有副本的LEO都写入成功才返回吗？如果是这样Follower副本从Leader上拉取LEO是有时间间隔的，这样生产者都在这里等待很久吗？还是其他方式的交互？</p>2020-01-21</li><br/><li><span>常超</span> 👍（6） 💬（3）<p>请问老师，与 Leader 副本保持同步的两个判断条件，是OR还是AND的关系？</p>2019-08-07</li><br/><li><span>lmtoo</span> 👍（5） 💬（3）<p>“当获知到 Leader LEO=2 后，B 发现该 LEO值不比它自己的 LEO 值小，而且缓存中也没有保存任何起始位移值 &gt; 2 的 Epoch 条目”是什么意思？
+如果follower B重启回来之后去取Leader A的LEO，但是此时Leader A已经挂了，这套机制不就玩不转了吗？</p>2019-08-03</li><br/><li><span>我来也</span> 👍（4） 💬（4）<p>1.该远程 Follower 副本在 ISR 中。
 
 如果 Kafka 只判断第 1 个条件的话，就可能出现某些副本具备了“进入 ISR”的资格，但却尚未进入到 ISR 中的情况。
 
 ————————
 这里是不是把条件的编号写反了？
-</div>2019-08-03</li><br/><li><span>山里小龙</span> 👍（3） 💬（1）<div>”当它重启回来后，副本 B 会执行日志截断操作，将 LEO 值调整为之前的高水位值，也就是 1。这就是说，位移值为 1 的那条消息被副本 B 从磁盘中删除，此时副本 B 的底层磁盘文件中只保存有 1 条消息，即位移值为 0 的那条消息。”
-这里有点不明白，主从的高水位都是1了，说明数据1已经成功同步了，为什么要把1给截断删除呢？follower重启只需要把leo值设置为1就行了，hw不用动了吧！</div>2021-02-02</li><br/><li><span>店小二#2</span> 👍（3） 💬（1）<div>引用一下@thomas与老师交流。
+</p>2019-08-03</li><br/><li><span>山里小龙</span> 👍（3） 💬（1）<p>”当它重启回来后，副本 B 会执行日志截断操作，将 LEO 值调整为之前的高水位值，也就是 1。这就是说，位移值为 1 的那条消息被副本 B 从磁盘中删除，此时副本 B 的底层磁盘文件中只保存有 1 条消息，即位移值为 0 的那条消息。”
+这里有点不明白，主从的高水位都是1了，说明数据1已经成功同步了，为什么要把1给截断删除呢？follower重启只需要把leo值设置为1就行了，hw不用动了吧！</p>2021-02-02</li><br/><li><span>店小二#2</span> 👍（3） 💬（1）<p>引用一下@thomas与老师交流。
 
 thomas
 iii. 更新 currentHW = max{currentHW, min（LEO-1, LEO-2, ……，LEO-n）}
@@ -194,10 +194,10 @@ iii. 更新 currentHW = max{currentHW, min（LEO-1, LEO-2, ……，LEO-n）}
 
 ====================================================
 老师的解答的场景我理解了。但是不明白的是，该场景下，恢复过来的follower副本replica.lag.time.max.ms &lt; 10s，且还未到ISR中时，此时的分区高水位不是也大于LEO了么？
-</div>2020-07-09</li><br/><li><span>亚洲舞王.尼古拉斯赵四</span> 👍（3） 💬（3）<div>我还奇怪为什么老师讲的和Apache kafka实战这部分内容差不多，还以为是抄袭，后来一看，原来老师就是我看的这本书的作者，😂</div>2019-11-06</li><br/><li><span>信信</span> 👍（3） 💬（2）<div>原文中“如果 Kafka 只判断第 1 个条件的话”--这里应该是：第2个条件？评论区其他人也有提到
+</p>2020-07-09</li><br/><li><span>亚洲舞王.尼古拉斯赵四</span> 👍（3） 💬（3）<p>我还奇怪为什么老师讲的和Apache kafka实战这部分内容差不多，还以为是抄袭，后来一看，原来老师就是我看的这本书的作者，😂</p>2019-11-06</li><br/><li><span>信信</span> 👍（3） 💬（2）<p>原文中“如果 Kafka 只判断第 1 个条件的话”--这里应该是：第2个条件？评论区其他人也有提到
 对这块的个人理解：
 两个条件之间的关系是与不是或
 这里想表达的应该是--这个即将进入isr的副本的LEO值比分区高水位小，但满足条件2；
 文中对条件2的描述好像有点歧义，以下是网上找的一段：
-假设replica.lag.max.messages设置为4，表明只要follower落后leader不超过3，就不会从同步副本列表中移除。replica.lag.time.max设置为500 ms，表明只要follower向leader发送请求时间间隔不超过500 ms，就不会被标记为死亡,也不会从同步副本列中移除。 </div>2019-08-04</li><br/>
+假设replica.lag.max.messages设置为4，表明只要follower落后leader不超过3，就不会从同步副本列表中移除。replica.lag.time.max设置为500 ms，表明只要follower向leader发送请求时间间隔不超过500 ms，就不会被标记为死亡,也不会从同步副本列中移除。 </p>2019-08-04</li><br/>
 </ul>

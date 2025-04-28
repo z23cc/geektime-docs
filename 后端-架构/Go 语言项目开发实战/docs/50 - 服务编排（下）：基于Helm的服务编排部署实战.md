@@ -343,14 +343,14 @@ $ helm -n iam install -f configs/values-test-env.yaml iam deployments/iam # 安�
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>我来也</span> 👍（7） 💬（1）<div>“给所有字符串类型的值加上引号。”
+<li><span>我来也</span> 👍（7） 💬（1）<p>“给所有字符串类型的值加上引号。”
 深有体会，很多开源的chart也可能存在这种问题。比如pvc的名称，没有用quote加引号，用户如果非得来一个全数字的pvc就悲剧了。helm会默认转换为数字类型。
 
-我一般调试时使用helm upgrade --install —debug —dry-run。如果可以看到渲染后的yaml，调试起来还是蛮方便的。</div>2021-09-25</li><br/><li><span>yandongxiao</span> 👍（1） 💬（1）<div>总结：
+我一般调试时使用helm upgrade --install —debug —dry-run。如果可以看到渲染后的yaml，调试起来还是蛮方便的。</p>2021-09-25</li><br/><li><span>yandongxiao</span> 👍（1） 💬（1）<p>总结：
 制作chart的流程：
 1. 使用 helm create 命令创建一个 chart；
 2. chart 的目录结构：Chart.yaml, values.yaml, templates, charts 等。
 3. templates 目录中包含资源的定义文件，使用了 go template 语法，有点凌乱。
 4. 建议 values.yaml 文件中个，给所有字符串类型的值加上引号；使用字符串来表示整型，通过 {{ int $values }} 方式来引用。
-5. 使用 helm lint 或者 helm install --dry-run 方式，验证helm package的格式，但内容上不一定符合你预期。</div>2021-12-05</li><br/><li><span>GeekCoder</span> 👍（0） 💬（1）<div>一个应用有多个服务，其中一个服务改动之后，得重新打一个chart包？全部重新部署？</div>2022-05-25</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<div>对于一些yaml配置，如果pro 使用，test 不需要，该如何配置呢。比如node 亲和性配置，可能线上要配，测试环境就无所谓了。</div>2022-04-08</li><br/><li><span>Wongkakui</span> 👍（0） 💬（0）<div>有个疑问，一般集群内的资源都是运维管理的，但我们项目使用到的资源可以通过helm values维护在自己代码仓库，运维缺改不了，这种情况有最佳实践吗</div>2023-03-05</li><br/>
+5. 使用 helm lint 或者 helm install --dry-run 方式，验证helm package的格式，但内容上不一定符合你预期。</p>2021-12-05</li><br/><li><span>GeekCoder</span> 👍（0） 💬（1）<p>一个应用有多个服务，其中一个服务改动之后，得重新打一个chart包？全部重新部署？</p>2022-05-25</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<p>对于一些yaml配置，如果pro 使用，test 不需要，该如何配置呢。比如node 亲和性配置，可能线上要配，测试环境就无所谓了。</p>2022-04-08</li><br/><li><span>Wongkakui</span> 👍（0） 💬（0）<p>有个疑问，一般集群内的资源都是运维管理的，但我们项目使用到的资源可以通过helm values维护在自己代码仓库，运维缺改不了，这种情况有最佳实践吗</p>2023-03-05</li><br/>
 </ul>

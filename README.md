@@ -6,12 +6,12 @@
 
 * 看 markdown文档，推荐: https://github.com/uaxe/geektime-docs 🌟🌟🌟
 * 看 pdf文档，推荐: https://github.com/uaxe/geektime-pdfs 🌟🌟🌟
-* 看 音视频，推荐: https://github.com/zkep/mygeektime 🌟🌟🌟🌟🌟
+* 看 音视频，推荐: https://github.com/zkep/my-geektime 🌟🌟🌟🌟🌟
 
 ###  markdown 在线文档
 
- * [netlify](https://geektime-docs.netlify.app/)
- * [github](https://uaxe.github.io/geektime-docs/)
+ * [github](https://uaxe.github.io/geektime-docs/) （可能有裂图问题，可以在仓库里直接看markdown）
+ * [netlify](https://geektime-docs.netlify.app/)   (可能有裂图问题，可以在仓库里直接看markdown)
 
 
 > tips: 在线文档支持 PC 浏览器，也支持移动端浏览器
@@ -38,7 +38,7 @@ mkdocs serve
 浏览器访问：<http://127.0.0.1:8000/>
 
 
-#### 本项目markdown文档全部由 [mygeektime](https://github.com/zkep/mygeektime) 生成
+#### 本项目markdown文档全部由 [my-geektime](https://github.com/zkep/my-geektime) 生成
 
 
 ### 问题汇总
@@ -47,7 +47,7 @@ mkdocs serve
 
 方案1： 直接看pdf吧 [geektime-pdfs](https://github.com/uaxe/geektime-pdfs)
 
-方案2： VIP用户，部署[mygeektime](https://github.com/zkep/mygeektime)服务，缓存对应的VIP课程 
+方案2： VIP用户，部署[my-geektime](https://github.com/zkep/my-geektime)服务，缓存对应的VIP课程 
 
 方案3： 推荐本地使用中间代理人服务，拦截请求，改写 http 请求的 Referer 的思路
 

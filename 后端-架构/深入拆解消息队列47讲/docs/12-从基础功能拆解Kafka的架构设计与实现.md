@@ -176,7 +176,7 @@ Broker 接收到数据后，会先使用Remoting反序列化数据。然后解�
 
 在消费端，可以先选择Pull、Push、Pop其中的一种消费模型。客户端同样需要先和NameServer完成寻址操作。消费端有消费分组的概念，所以会先进行消费者和分区的消费关系分配的流程，然后消费者会和自己消费的分区的Leader所在的Broker建立连接。接着，客户端会使用 Remoting 协议从Broker消费数据。数据消费成功后，最后会提交消费进度。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>张洋</span> 👍（3） 💬（2）<div>关于存储模块有一个问题，Kafka为什么每个分区一个文件（逻辑上的会分段），rocketMQ为什么一个Broker所有的queue都在一个commitlog中？
+<li><span>张洋</span> 👍（3） 💬（2）<p>关于存储模块有一个问题，Kafka为什么每个分区一个文件（逻辑上的会分段），rocketMQ为什么一个Broker所有的queue都在一个commitlog中？
 自己想的是Kafka的方式如果分区太多会创建大量的资源，如果FD资源耗尽就会出现问题，所以Rocketmq会支持的分区更多。
-还有其他原因吗？</div>2023-07-20</li><br/><li><span>fc1997</span> 👍（1） 💬（2）<div>想问下，如果kafka一个topic有五个partition然后有三台broker，这种情况下会存在一台broker有三个partition的情况嘛，因为没用过kafka</div>2023-07-21</li><br/><li><span>jackfan</span> 👍（0） 💬（1）<div>有一个疑问 就是客户端寻址，寻的是哪个的地址？是broker的还是topic、分区这些的</div>2023-07-20</li><br/><li><span>林龍</span> 👍（1） 💬（1）<div>看完前面的篇章，我以为kafka是poll的，认为poll = pull + ack ；能够更加详细讲一下poll这个模式吗？</div>2023-07-19</li><br/><li><span>开发很忙</span> 👍（0） 💬（1）<div>文中提到，“消费分组模式下，一个分区只能给一个消费者消费，消费是顺序的。”意思是说Kafka不能实现共享消息吗？即消息粒度的负载均衡？</div>2023-09-24</li><br/><li><span>鲁米</span> 👍（0） 💬（1）<div>消费端的消费分组是出于高可用目的设计么？客户端寻址是怎样动态保持与生产端元数据的一致的呢？</div>2023-08-10</li><br/>
+还有其他原因吗？</p>2023-07-20</li><br/><li><span>fc1997</span> 👍（1） 💬（2）<p>想问下，如果kafka一个topic有五个partition然后有三台broker，这种情况下会存在一台broker有三个partition的情况嘛，因为没用过kafka</p>2023-07-21</li><br/><li><span>jackfan</span> 👍（0） 💬（1）<p>有一个疑问 就是客户端寻址，寻的是哪个的地址？是broker的还是topic、分区这些的</p>2023-07-20</li><br/><li><span>林龍</span> 👍（1） 💬（1）<p>看完前面的篇章，我以为kafka是poll的，认为poll = pull + ack ；能够更加详细讲一下poll这个模式吗？</p>2023-07-19</li><br/><li><span>开发很忙</span> 👍（0） 💬（1）<p>文中提到，“消费分组模式下，一个分区只能给一个消费者消费，消费是顺序的。”意思是说Kafka不能实现共享消息吗？即消息粒度的负载均衡？</p>2023-09-24</li><br/><li><span>鲁米</span> 👍（0） 💬（1）<p>消费端的消费分组是出于高可用目的设计么？客户端寻址是怎样动态保持与生产端元数据的一致的呢？</p>2023-08-10</li><br/>
 </ul>

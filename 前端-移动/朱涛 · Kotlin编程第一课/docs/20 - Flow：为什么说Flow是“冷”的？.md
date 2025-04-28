@@ -842,7 +842,7 @@ IllegalStateException: Flow invariant is violated
 
 这个问题的答案，我会在第32讲介绍Flow源码的时候给出详细的解释。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（15） 💬（1）<div>思考题:flow本身已经提供了线程切换的中间操作符flowOn和launchIn，来确定不同部分的线程边界并优化，withContext要再次切换线程，势必打破flow规划好的线程边界，估计要出错，抛出异常来提前报错。</div>2022-03-24</li><br/><li><span>白乾涛</span> 👍（4） 💬（1）<div>以下代码，为啥没有任何日志输出？
+<li><span>Paul Shan</span> 👍（15） 💬（1）<p>思考题:flow本身已经提供了线程切换的中间操作符flowOn和launchIn，来确定不同部分的线程边界并优化，withContext要再次切换线程，势必打破flow规划好的线程边界，估计要出错，抛出异常来提前报错。</p>2022-03-24</li><br/><li><span>白乾涛</span> 👍（4） 💬（1）<p>以下代码，为啥没有任何日志输出？
 而且，为啥程序不会结束？
 
 fun main() = runBlocking {
@@ -852,8 +852,8 @@ fun main() = runBlocking {
             .filter { log(&quot;filter&quot;); it &gt; 0 }
             .collect { log(&quot;collect&quot;) }
     }
-}</div>2022-03-12</li><br/><li><span>曾帅</span> 👍（4） 💬（1）<div>关于思考题，翻了一下 emit() 的代码，发现里面有说到这一点。
-里面说不允许在 withContext 里 调用 emit() 是因为 emit() 默认不是线程安全的，而且还给出了一种解决方案，那就是使用 channel 来处理。</div>2022-03-10</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<div>原来在使用Rxjava还是Coroutine的时候，我还是支持使用Rxjava的，Flow出来之后，我就倒向Coroutine Flow。</div>2022-03-24</li><br/><li><span>魏全运</span> 👍（2） 💬（3）<div>Flow 跟RxJava 的使用方式太像了</div>2022-03-04</li><br/><li><span>pengzhaoyang coder</span> 👍（0） 💬（2）<div>发送的数据必须来自同一个协程内，不允许来自多个CoroutineContext，所以默认不能在flow{}中创建新协程或通过withContext()切换协程。如需切换上游的CoroutineContext，可以通过flowOn()进行切换</div>2022-04-01</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<div>Flow也有热的SharedFlow，还支持一对多的服务，我自己的经验是，Channel在具体场景中基本可以被Flow替代，而且更方便更安全。</div>2022-03-24</li><br/><li><span>梁中华</span> 👍（0） 💬（1）<div>大佬，能结合几个服务端的例子讲讲不，其实协程的主要发挥场景还是在服务端，就像gorouting一样</div>2022-03-22</li><br/><li><span>dawn</span> 👍（0） 💬（2）<div>大佬，为什么下面的代码没法结束
+}</p>2022-03-12</li><br/><li><span>曾帅</span> 👍（4） 💬（1）<p>关于思考题，翻了一下 emit() 的代码，发现里面有说到这一点。
+里面说不允许在 withContext 里 调用 emit() 是因为 emit() 默认不是线程安全的，而且还给出了一种解决方案，那就是使用 channel 来处理。</p>2022-03-10</li><br/><li><span>Paul Shan</span> 👍（2） 💬（1）<p>原来在使用Rxjava还是Coroutine的时候，我还是支持使用Rxjava的，Flow出来之后，我就倒向Coroutine Flow。</p>2022-03-24</li><br/><li><span>魏全运</span> 👍（2） 💬（3）<p>Flow 跟RxJava 的使用方式太像了</p>2022-03-04</li><br/><li><span>pengzhaoyang coder</span> 👍（0） 💬（2）<p>发送的数据必须来自同一个协程内，不允许来自多个CoroutineContext，所以默认不能在flow{}中创建新协程或通过withContext()切换协程。如需切换上游的CoroutineContext，可以通过flowOn()进行切换</p>2022-04-01</li><br/><li><span>Paul Shan</span> 👍（0） 💬（1）<p>Flow也有热的SharedFlow，还支持一对多的服务，我自己的经验是，Channel在具体场景中基本可以被Flow替代，而且更方便更安全。</p>2022-03-24</li><br/><li><span>梁中华</span> 👍（0） 💬（1）<p>大佬，能结合几个服务端的例子讲讲不，其实协程的主要发挥场景还是在服务端，就像gorouting一样</p>2022-03-22</li><br/><li><span>dawn</span> 👍（0） 💬（2）<p>大佬，为什么下面的代码没法结束
 fun main() {
     val asCoroutineDispatcher = Executors.newSingleThreadExecutor().asCoroutineDispatcher()
     val scope = CoroutineScope(asCoroutineDispatcher)
@@ -883,7 +883,7 @@ fun main() {
 
         logX(&quot;end&quot;)
     }
-}</div>2022-03-16</li><br/><li><span>白乾涛</span> 👍（0） 💬（3）<div>为啥下面代码中的 emit 也执行在 IO 线程？
+}</p>2022-03-16</li><br/><li><span>白乾涛</span> 👍（0） 💬（3）<p>为啥下面代码中的 emit 也执行在 IO 线程？
 
 fun main() = runBlocking {
     val flow = flow { log(&quot;emit&quot;); emit(1) }
@@ -891,5 +891,5 @@ fun main() = runBlocking {
         flow.filter { log(&quot;filter&quot;); it &gt; 0 }
             .collect { log(&quot;collect&quot;) }
     }
-}</div>2022-03-12</li><br/><li><span>神秘嘉Bin</span> 👍（0） 💬（1）<div>我猜是避免withContext和flowOn、launchIn的冲突，主动抛出一个异常对业务进行提示。</div>2022-03-07</li><br/><li><span>从心所欲</span> 👍（0） 💬（1）<div>怎样在onCompletion的时候拿到flow的内容呢？</div>2022-03-07</li><br/><li><span>PoPlus</span> 👍（0） 💬（1）<div>既然 launchIn 也是用 collect 实现的，那么为什么需要在程序末尾 delay 一下呢？</div>2022-03-06</li><br/><li><span>稚者</span> 👍（1） 💬（0）<div>协程和Channel都有讲取消操作，那Flow有取消操作吗？</div>2023-05-10</li><br/><li><span>钟意</span> 👍（1） 💬（0）<div>作者的课程源代码，在哪里下载呢？</div>2022-07-28</li><br/>
+}</p>2022-03-12</li><br/><li><span>神秘嘉Bin</span> 👍（0） 💬（1）<p>我猜是避免withContext和flowOn、launchIn的冲突，主动抛出一个异常对业务进行提示。</p>2022-03-07</li><br/><li><span>从心所欲</span> 👍（0） 💬（1）<p>怎样在onCompletion的时候拿到flow的内容呢？</p>2022-03-07</li><br/><li><span>PoPlus</span> 👍（0） 💬（1）<p>既然 launchIn 也是用 collect 实现的，那么为什么需要在程序末尾 delay 一下呢？</p>2022-03-06</li><br/><li><span>稚者</span> 👍（1） 💬（0）<p>协程和Channel都有讲取消操作，那Flow有取消操作吗？</p>2023-05-10</li><br/><li><span>钟意</span> 👍（1） 💬（0）<p>作者的课程源代码，在哪里下载呢？</p>2022-07-28</li><br/>
 </ul>

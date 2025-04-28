@@ -183,21 +183,21 @@ break/continue 语句如果后跟了关键字，会产生带target的完成记�
 
 你遇到哪些语句中的执行的实际效果，是跟你想象的有所出入呢，你可以给我留言，我们一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>csᵏᵒᵖ</span> 👍（7） 💬（2）<div>winter老师，特殊处理就是指后面的 “因为 finally 中的内容必须保证执行，所以 try&#47;catch 执行完毕，即使得到的结果是非 normal 型的完成记录，也必须要执行 finally“ 吗</div>2019-10-26</li><br/><li><span>小say</span> 👍（6） 💬（1）<div>老师你好，前面说[[value]]如果没有返回值就是empty但是为什么在Chrome调试器下显示的是undefined？
+<li><span>csᵏᵒᵖ</span> 👍（7） 💬（2）<p>winter老师，特殊处理就是指后面的 “因为 finally 中的内容必须保证执行，所以 try&#47;catch 执行完毕，即使得到的结果是非 normal 型的完成记录，也必须要执行 finally“ 吗</p>2019-10-26</li><br/><li><span>小say</span> 👍（6） 💬（1）<p>老师你好，前面说[[value]]如果没有返回值就是empty但是为什么在Chrome调试器下显示的是undefined？
 后文中语句块中
 {
   var i = 1; &#47;&#47; normal, empty, empty
   i ++; &#47;&#47; normal, 1, empty
   console.log(i) &#47;&#47;normal, undefined, empty
 } &#47;&#47; normal, undefined, empty
-其中 var i = 1; 为什么[[value]]会是empty？console.log(i)的[[value]]为什么是undefined？所以到底什么时候是empty什么时候是undefined？</div>2019-09-17</li><br/><li><span>Smallfly</span> 👍（2） 💬（1）<div>winter 老师，有什么工具能查看 JS 引擎的运行时的特殊类型么？</div>2019-10-17</li><br/><li><span>Puru</span> 👍（1） 💬（2）<div>Python 也是先执行finally后执行return</div>2019-06-25</li><br/><li><span>尤璐洁</span> 👍（0） 💬（1）<div>winter老师，这些个私有属性的值执行时的值是如何得出的，是靠分析，还是说有某种方式可以看到验证呢？</div>2019-10-23</li><br/><li><span>东</span> 👍（0） 💬（3）<div>void function() {
+其中 var i = 1; 为什么[[value]]会是empty？console.log(i)的[[value]]为什么是undefined？所以到底什么时候是empty什么时候是undefined？</p>2019-09-17</li><br/><li><span>Smallfly</span> 👍（2） 💬（1）<p>winter 老师，有什么工具能查看 JS 引擎的运行时的特殊类型么？</p>2019-10-17</li><br/><li><span>Puru</span> 👍（1） 💬（2）<p>Python 也是先执行finally后执行return</p>2019-06-25</li><br/><li><span>尤璐洁</span> 👍（0） 💬（1）<p>winter老师，这些个私有属性的值执行时的值是如何得出的，是靠分析，还是说有某种方式可以看到验证呢？</p>2019-10-23</li><br/><li><span>东</span> 👍（0） 💬（3）<p>void function() {
 	if(true){
 		console.log(1)
 		break
 		console.log(2)
 	}
 }()
-在if中用break、continue会报错VM506:4 Uncaught SyntaxError: Illegal break statement，而不是穿透，为什么和表格举出的不一致呢</div>2019-07-09</li><br/><li><span>热爱减肥的胖子</span> 👍（0） 💬（1）<div>请问，上图上那个“特殊处理”怎么理解？</div>2019-06-26</li><br/><li><span>有铭</span> 👍（98） 💬（8）<div>很感兴趣这些高级特性的知识老师是从哪里学到的，我翻过js高级编程那本书都没讲到过这些</div>2019-03-02</li><br/><li><span>周小成</span> 👍（88） 💬（3）<div>穿透和消费，报错应该是连贯的，“穿透”就是指不在当前这一层处理，向外逐层寻找可以“消费”的那一层，直到最后都没找到就报错，比如：function里面有while, while里面有switch, switch里面又有continue，按图表来看，switch-continue应该是穿透，向上层寻找消费，碰到while-contine,那就是消费，再如switch里面是return, switch-return穿透，向上层whlie-return穿透，最后function-return是消费。</div>2019-03-12</li><br/><li><span>Rushan-Chen</span> 👍（59） 💬（13）<div>请问老师，表格中的“穿透”和“消费”是什么意思？</div>2019-03-02</li><br/><li><span>AICC</span> 👍（46） 💬（0）<div>3楼你好，我的理解是，消费指对应的代码被有效的执行了，穿透指对应代码被跳过了，也就是对应控制的语句体被有效执行比如try catch,当try中出现了throw,能被有效捕获进而执行catch，这在我理解就是try被消费执行了，而当catch中还有throw时，由于catch不具备处理throw的能力，于是catch被中断跳出，也就是作者所说的穿透，希望能帮到你</div>2019-03-02</li><br/><li><span>加利率的钟摆</span> 👍（33） 💬（4）<div>```javascript
+在if中用break、continue会报错VM506:4 Uncaught SyntaxError: Illegal break statement，而不是穿透，为什么和表格举出的不一致呢</p>2019-07-09</li><br/><li><span>热爱减肥的胖子</span> 👍（0） 💬（1）<p>请问，上图上那个“特殊处理”怎么理解？</p>2019-06-26</li><br/><li><span>有铭</span> 👍（98） 💬（8）<p>很感兴趣这些高级特性的知识老师是从哪里学到的，我翻过js高级编程那本书都没讲到过这些</p>2019-03-02</li><br/><li><span>周小成</span> 👍（88） 💬（3）<p>穿透和消费，报错应该是连贯的，“穿透”就是指不在当前这一层处理，向外逐层寻找可以“消费”的那一层，直到最后都没找到就报错，比如：function里面有while, while里面有switch, switch里面又有continue，按图表来看，switch-continue应该是穿透，向上层寻找消费，碰到while-contine,那就是消费，再如switch里面是return, switch-return穿透，向上层whlie-return穿透，最后function-return是消费。</p>2019-03-12</li><br/><li><span>Rushan-Chen</span> 👍（59） 💬（13）<p>请问老师，表格中的“穿透”和“消费”是什么意思？</p>2019-03-02</li><br/><li><span>AICC</span> 👍（46） 💬（0）<p>3楼你好，我的理解是，消费指对应的代码被有效的执行了，穿透指对应代码被跳过了，也就是对应控制的语句体被有效执行比如try catch,当try中出现了throw,能被有效捕获进而执行catch，这在我理解就是try被消费执行了，而当catch中还有throw时，由于catch不具备处理throw的能力，于是catch被中断跳出，也就是作者所说的穿透，希望能帮到你</p>2019-03-02</li><br/><li><span>加利率的钟摆</span> 👍（33） 💬（4）<p>```javascript
 function test(){
   if(true){
     console.log(&quot;111&quot;);
@@ -241,7 +241,7 @@ test();
 
 1. if 和 break 相遇，break 穿透至 switch
 2. swicth 和 break 相遇，消费掉 break
-3. 接着执行之后的代码</div>2019-04-17</li><br/><li><span>火云邪神0007</span> 👍（16） 💬（0）<div>老师在前面讲过，穿透就是去上一层的作用域或者控制语句找可以消费break，continue的执行环境，消费就是在这一层就执行了这个break或者continue</div>2019-03-04</li><br/><li><span>Dream.</span> 👍（15） 💬（1）<div>第一次看见『消费』与『穿透』这样的描述。
+3. 接着执行之后的代码</p>2019-04-17</li><br/><li><span>火云邪神0007</span> 👍（16） 💬（0）<p>老师在前面讲过，穿透就是去上一层的作用域或者控制语句找可以消费break，continue的执行环境，消费就是在这一层就执行了这个break或者continue</p>2019-03-04</li><br/><li><span>Dream.</span> 👍（15） 💬（1）<p>第一次看见『消费』与『穿透』这样的描述。
 
 这两个词的来源自哪里呢？
 
@@ -249,5 +249,5 @@ test();
 
 『消费』是控制语句里的内容执行完毕。
 『穿透』是控制语句里的内容没能执行完，被中止了。
-</div>2019-03-03</li><br/><li><span>夜空中最亮的星</span> 👍（10） 💬（0）<div>老师，我昨天成功的把您的课推销出去了一份，哈哈😄高兴</div>2019-03-02</li><br/>
+</p>2019-03-03</li><br/><li><span>夜空中最亮的星</span> 👍（10） 💬（0）<p>老师，我昨天成功的把您的课推销出去了一份，哈哈😄高兴</p>2019-03-02</li><br/>
 </ul>

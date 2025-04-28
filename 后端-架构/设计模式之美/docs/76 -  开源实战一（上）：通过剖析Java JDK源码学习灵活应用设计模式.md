@@ -348,27 +348,27 @@ public static <T> Enumeration<T> enumeration(final Collection<T> c) {
 
 欢迎留言和我分享你的想法。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Laughing</span> 👍（23） 💬（1）<div>我个人理解是建造者模式的典型实现。虽然只有append方法，但是每个append的参数构造是不同的，从方面也反映出，append的方法可以通过不同的参数构造不同的String。当然该类也不只是只有append的参数，还有例如insert delete参数。以上说明符合建造者模式中所要解决的构建复杂对象的目的。</div>2020-11-27</li><br/><li><span>Darren</span> 👍（92） 💬（0）<div>我觉得是，因为StringBuilder的主要方法append，其实就是类似于建造者模式中的set方法，只不过构建者模式的set方法可能是对象的不同属性，但append其实是在一直修改一个属性，且最后没有build(),但StringBuilder出现的目的其实是为了解决String不可变的问题，最终输出其实是String，所以可以类比toString()就是build()，所以认为算是建造者模式。</div>2020-04-27</li><br/><li><span>辣么大</span> 👍（25） 💬（0）<div>StringBuilder没有使用建造者模式，只是名字碰巧用了builder这个单词。它只是用来构建可变字符串，仅此而已，别想太多。</div>2020-05-01</li><br/><li><span>小晏子</span> 👍（11） 💬（1）<div>课后思考：
+<li><span>Laughing</span> 👍（23） 💬（1）<p>我个人理解是建造者模式的典型实现。虽然只有append方法，但是每个append的参数构造是不同的，从方面也反映出，append的方法可以通过不同的参数构造不同的String。当然该类也不只是只有append的参数，还有例如insert delete参数。以上说明符合建造者模式中所要解决的构建复杂对象的目的。</p>2020-11-27</li><br/><li><span>Darren</span> 👍（92） 💬（0）<p>我觉得是，因为StringBuilder的主要方法append，其实就是类似于建造者模式中的set方法，只不过构建者模式的set方法可能是对象的不同属性，但append其实是在一直修改一个属性，且最后没有build(),但StringBuilder出现的目的其实是为了解决String不可变的问题，最终输出其实是String，所以可以类比toString()就是build()，所以认为算是建造者模式。</p>2020-04-27</li><br/><li><span>辣么大</span> 👍（25） 💬（0）<p>StringBuilder没有使用建造者模式，只是名字碰巧用了builder这个单词。它只是用来构建可变字符串，仅此而已，别想太多。</p>2020-05-01</li><br/><li><span>小晏子</span> 👍（11） 💬（1）<p>课后思考：
 我的答案是算也不算…，如果按照学院派的思想，stringbuilder和GOF中的对于builder模式的定义完全不同，stringbuilder并不会创建新的string对象，只是将多个字符连接在一起，而builder模式的基本功能是生成新对象，两个本质就不一样了，从这个角度来讲，stringbuilder不能算是builder模式。
-那为什么又说算呢？这样从另外一个角度想，stringbuilder得到的字符串是一步一步append出来的，这个builder模式的一步一步set在build的行为很像，因为文中也说了不要太学院派，要灵活使用，那么从这个角度来说可以认为stringbuilder也是属于builder的一种实现，只是它不是典型实现。</div>2020-04-27</li><br/><li><span>Jxin</span> 👍（8） 💬（0）<div>回答课后题：
+那为什么又说算呢？这样从另外一个角度想，stringbuilder得到的字符串是一步一步append出来的，这个builder模式的一步一步set在build的行为很像，因为文中也说了不要太学院派，要灵活使用，那么从这个角度来说可以认为stringbuilder也是属于builder的一种实现，只是它不是典型实现。</p>2020-04-27</li><br/><li><span>Jxin</span> 👍（8） 💬（0）<p>回答课后题：
 
 我认为应该算是建造者模式。
 
 拿餐厅类比，对于披萨加番茄，起司等不同配料来定制披萨，这属于建造者模式要解决的问题（实例对象的定制）。而stringbuild的应用场景，更像是对披萨加一个番茄还是两个番茄更或者三个番茄的定制方式（某个字段的定制）。
 
-所以strbuild的应用场景比传统的建造者模式更细更具体（前者实现字段的定制，后者实现对象的定制）。但字段定制依旧属于对象定制的范涛，所以我认为其依旧算是建造者模式。</div>2020-04-27</li><br/><li><span>守拙</span> 👍（5） 💬（0）<div>课堂讨论: 
+所以strbuild的应用场景比传统的建造者模式更细更具体（前者实现字段的定制，后者实现对象的定制）。但字段定制依旧属于对象定制的范涛，所以我认为其依旧算是建造者模式。</p>2020-04-27</li><br/><li><span>守拙</span> 👍（5） 💬（0）<p>课堂讨论: 
 StringBuilder应用了Builder模式. 其主要方式是append(), 即通过不断append创建复杂对象. 
 不同于传统Builder模式的是: 
 1. StringBuilder的目的是创建String, 但StringBuilder并不是String的内部类.
 2. StringBuilder的创建过程可以断续, 传统的Builder模式一次性填入参数后调用build()方法创建对象.
-3. StringBuilder通过内部维护字符数组(char[])的方式实现拼接. </div>2020-04-27</li><br/><li><span>QQ怪</span> 👍（5） 💬（0）<div>StringBuilder的append()方法使用了建造者模式，StringBuilder把构建者的角色交给了其的父类AbstractStringBuilder，最终调用的是父类的append（）方法</div>2020-04-27</li><br/><li><span>Richie</span> 👍（4） 💬（1）<div>The intent of the Builder design pattern is to separate the construction of a complex object from its representation. By doing so the same construction process can create different representations.
+3. StringBuilder通过内部维护字符数组(char[])的方式实现拼接. </p>2020-04-27</li><br/><li><span>QQ怪</span> 👍（5） 💬（0）<p>StringBuilder的append()方法使用了建造者模式，StringBuilder把构建者的角色交给了其的父类AbstractStringBuilder，最终调用的是父类的append（）方法</p>2020-04-27</li><br/><li><span>Richie</span> 👍（4） 💬（1）<p>The intent of the Builder design pattern is to separate the construction of a complex object from its representation. By doing so the same construction process can create different representations.
 
-从StringBuilder的代码实现来看，他通过append方法来设置其value属性，最终使用toString()方法来创建对象。这符合建造者模式的定义。这跟我们平时使用的建造者模式唯一的不同就是他一直设置的是同一个属性，而平时我们会设置多个属性，并最终调用build()方法来创建对象。</div>2020-05-08</li><br/><li><span>javaadu</span> 👍（3） 💬（0）<div>StringBuilder并没有使用构造者模式，从设计意图上看这俩不是一回事—构造者模式得意图是为同一个类生成不同定制需求的对象，而StringBuilder的设计意图是为了实现可变更的字符串来优化内存占用</div>2020-05-03</li><br/><li><span>Demon.Lee</span> 👍（3） 💬（0）<div>如果说要创建一个复杂的String对象，那么通过StringBuilder的append()方法会非常方便，最后通过toString()方法返回，从这个角度看算建造者模式。
+从StringBuilder的代码实现来看，他通过append方法来设置其value属性，最终使用toString()方法来创建对象。这符合建造者模式的定义。这跟我们平时使用的建造者模式唯一的不同就是他一直设置的是同一个属性，而平时我们会设置多个属性，并最终调用build()方法来创建对象。</p>2020-05-08</li><br/><li><span>javaadu</span> 👍（3） 💬（0）<p>StringBuilder并没有使用构造者模式，从设计意图上看这俩不是一回事—构造者模式得意图是为同一个类生成不同定制需求的对象，而StringBuilder的设计意图是为了实现可变更的字符串来优化内存占用</p>2020-05-03</li><br/><li><span>Demon.Lee</span> 👍（3） 💬（0）<p>如果说要创建一个复杂的String对象，那么通过StringBuilder的append()方法会非常方便，最后通过toString()方法返回，从这个角度看算建造者模式。
     @Override
     public String toString() {
         &#47;&#47; Create a copy, don&#39;t share the array
         return new String(value, 0, count);
-    }</div>2020-04-27</li><br/><li><span>J.Smile</span> 👍（3） 💬（0）<div>总结：
+    }</p>2020-04-27</li><br/><li><span>J.Smile</span> 👍（3） 💬（0）<p>总结：
 1 工厂模式：简单工厂模式+工厂方法模式
 ● 简单工厂模式直接在条件判断中根据不同参数将目标对象new了出来。
 ● 工厂方法模式是将目标对象的创建过程根据参数分类抽取到各自独立的工厂类中，以应对目标对象创建过程的复杂度。条件分支可以使用map来缓存起来！
@@ -379,6 +379,6 @@ StringBuilder应用了Builder模式. 其主要方式是append(), 即通过不断
 
 3 装饰器模式：
 装饰器模式把每个要装饰的功能放到单独的类中，并让这个类包装它所需要装饰的对象，从而实现对原始类的增强。
-案例：java的IO类库比如InputStream和BufferInputStream。还有Collections类。</div>2020-04-27</li><br/><li><span>Nano</span> 👍（2） 💬（2）<div>虽然建造者模式有个明确的定义。
-但是对于我个人来说，只要是可以一直return this，可以一直.setA().setB().setC()....的我都会把它当做建造者模式来理解。因为每次set都会给这个实例添砖加瓦，添加属性。至于要不要最后build()一下做一些逻辑，按需使用吧。</div>2020-10-15</li><br/><li><span>飞翔</span> 👍（2） 💬（1）<div>不是，从源码角度看，构造方法不私有，没有复杂构造逻辑，完全不符合构建这模式定义，唯一关联就是名字里面有一个Builder</div>2020-09-18</li><br/><li><span>落尘kira</span> 👍（2） 💬（0）<div>StringBuilder本意是创建可变字符串，如果调用toString（）那么就是；如果不调用，那严格意义上不是。但由于出发点是创建可变字符串，理论上其设计的目的就是让使用者最终都会调用toString（）方法，因此我认为他是</div>2020-05-13</li><br/><li><span>Heaven</span> 👍（2） 💬（0）<div>个人认为,是属于建造者模式的,在其中,最主要的append方法,是将其抛给了父类AbstractStringBuilder,然后返回自己,其父类AbstractStringBuilder中维护了一个数组,并且可以动然扩容,在我们最后获取结果的toString()方法中,就是直接new String对象,这种模式其实更像是装饰器模式的实现</div>2020-04-27</li><br/>
+案例：java的IO类库比如InputStream和BufferInputStream。还有Collections类。</p>2020-04-27</li><br/><li><span>Nano</span> 👍（2） 💬（2）<p>虽然建造者模式有个明确的定义。
+但是对于我个人来说，只要是可以一直return this，可以一直.setA().setB().setC()....的我都会把它当做建造者模式来理解。因为每次set都会给这个实例添砖加瓦，添加属性。至于要不要最后build()一下做一些逻辑，按需使用吧。</p>2020-10-15</li><br/><li><span>飞翔</span> 👍（2） 💬（1）<p>不是，从源码角度看，构造方法不私有，没有复杂构造逻辑，完全不符合构建这模式定义，唯一关联就是名字里面有一个Builder</p>2020-09-18</li><br/><li><span>落尘kira</span> 👍（2） 💬（0）<p>StringBuilder本意是创建可变字符串，如果调用toString（）那么就是；如果不调用，那严格意义上不是。但由于出发点是创建可变字符串，理论上其设计的目的就是让使用者最终都会调用toString（）方法，因此我认为他是</p>2020-05-13</li><br/><li><span>Heaven</span> 👍（2） 💬（0）<p>个人认为,是属于建造者模式的,在其中,最主要的append方法,是将其抛给了父类AbstractStringBuilder,然后返回自己,其父类AbstractStringBuilder中维护了一个数组,并且可以动然扩容,在我们最后获取结果的toString()方法中,就是直接new String对象,这种模式其实更像是装饰器模式的实现</p>2020-04-27</li><br/>
 </ul>

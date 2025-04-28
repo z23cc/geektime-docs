@@ -130,7 +130,7 @@ MapReduce可以说是一种批量计算，与我们今天介绍的用于实时�
 
 我是聂鹏程，感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎你把这篇文章分享给更多的朋友一起阅读。我们下期再会！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Eternal</span> 👍（14） 💬（1）<div>
+<li><span>Eternal</span> 👍（14） 💬（1）<p>
 老师课后思考题：“离线计算和批量计算，实时计算和流式计算是等价的吗？”
 
 其实留言去已经有小伙伴总结得很好（自认为，如果有错望指正）：
@@ -152,7 +152,7 @@ MapReduce可以说是一种批量计算，与我们今天介绍的用于实时�
 因为目前现有的技术发展，不能大批量计算做到实时的效果，所以只能少量资源做到实时计算，且通过流式计算来达到实时的效果；
 但是如果一旦当前的硬件指标和技术能力突破后，能大批量计算做到实时的效果，这也是可能的。因此我认为，我们的演进目标是想能
 做到批量实时的。两个维度之间由相关联的因素来驱动它们相互变化。
-</div>2019-11-02</li><br/><li><span>随心而至</span> 👍（5） 💬（0）<div>In computer science, an online algorithm[1] is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start.
+</p>2019-11-02</li><br/><li><span>随心而至</span> 👍（5） 💬（0）<p>In computer science, an online algorithm[1] is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start.
 
 In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.
 
@@ -170,13 +170,13 @@ In computer science, real-time computing (RTC), or reactive computing describes 
 参考自https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Online_algorithm 及其See also:
 
 
-</div>2019-10-28</li><br/><li><span>Jackey</span> 👍（5） 💬（0）<div>不太好说是否等价，因为离线和实时是针对时延判断的，批量和流式是针对数据处理方式判断的。只能目前说离线和批量使用的框架、处理方法相同（实时和流式相同）。但如果以后发展出能批量进行实时数据计算的计算机就不能说批量=离线了吧</div>2019-10-28</li><br/><li><span>林通</span> 👍（2） 💬（0）<div>storm都快被淘汰了吧，为啥不讲讲最流行的框架呢</div>2020-11-12</li><br/><li><span>随心而至</span> 👍（2） 💬（0）<div>聂老师从一般到具体，讲的真好。
-我认为批量计算是离线计算的一种实现方式；流式计算是实习计算的一种实现方式。待会我查下他们的定义看看自己理解的对不对</div>2019-10-28</li><br/><li><span>旭东(Frank)</span> 👍（2） 💬（2）<div>如果历史数据回放进行就处理也算流量处理吧；个人认为注意区别点还是处理数据的时效性，如果对处理结果不要求那么及时，新鲜。
+</p>2019-10-28</li><br/><li><span>Jackey</span> 👍（5） 💬（0）<p>不太好说是否等价，因为离线和实时是针对时延判断的，批量和流式是针对数据处理方式判断的。只能目前说离线和批量使用的框架、处理方法相同（实时和流式相同）。但如果以后发展出能批量进行实时数据计算的计算机就不能说批量=离线了吧</p>2019-10-28</li><br/><li><span>林通</span> 👍（2） 💬（0）<p>storm都快被淘汰了吧，为啥不讲讲最流行的框架呢</p>2020-11-12</li><br/><li><span>随心而至</span> 👍（2） 💬（0）<p>聂老师从一般到具体，讲的真好。
+我认为批量计算是离线计算的一种实现方式；流式计算是实习计算的一种实现方式。待会我查下他们的定义看看自己理解的对不对</p>2019-10-28</li><br/><li><span>旭东(Frank)</span> 👍（2） 💬（2）<p>如果历史数据回放进行就处理也算流量处理吧；个人认为注意区别点还是处理数据的时效性，如果对处理结果不要求那么及时，新鲜。
 
-流处理就像喝豆浆，批量处理像吃豆腐。</div>2019-10-28</li><br/><li><span>信xin_n</span> 👍（1） 💬（0）<div>终于明白了 Nimbus 和 Supervisor 的关系了</div>2019-11-16</li><br/><li><span>Allan</span> 👍（0） 💬（0）<div>1、离线计算和批量计算，实时计算和流式计算是等价的吗？你能和我说说你做出判断的原因吗？
+流处理就像喝豆浆，批量处理像吃豆腐。</p>2019-10-28</li><br/><li><span>信xin_n</span> 👍（1） 💬（0）<p>终于明白了 Nimbus 和 Supervisor 的关系了</p>2019-11-16</li><br/><li><span>Allan</span> 👍（0） 💬（0）<p>1、离线计算和批量计算，实时计算和流式计算是等价的吗？你能和我说说你做出判断的原因吗？
 
-离线计算数据已经过去的数据了，基于这些数据进行某时段统计。批量技术可以是离线计算任务也可以实时任务，实时任务的时候就是根据时间窗口进行时间窗口内的批量数据进行计算；实时计算就是实时数据的计算，流式计算只是计算的模式采用流式的架构进去的。</div>2024-08-22</li><br/><li><span>lcken</span> 👍（0） 💬（0）<div>flink也应该纳入流式计算框架。它是以流计算批数据的</div>2020-04-03</li><br/><li><span>王涛</span> 👍（0） 💬（0）<div>MR 针对静态数据，Stream 针对动态数据。并实时性较高。</div>2020-03-29</li><br/><li><span>王涛</span> 👍（0） 💬（0）<div>继续打卡</div>2020-03-29</li><br/><li><span>钱</span> 👍（0） 💬（0）<div>阅过留痕
+离线计算数据已经过去的数据了，基于这些数据进行某时段统计。批量技术可以是离线计算任务也可以实时任务，实时任务的时候就是根据时间窗口进行时间窗口内的批量数据进行计算；实时计算就是实时数据的计算，流式计算只是计算的模式采用流式的架构进去的。</p>2024-08-22</li><br/><li><span>lcken</span> 👍（0） 💬（0）<p>flink也应该纳入流式计算框架。它是以流计算批数据的</p>2020-04-03</li><br/><li><span>王涛</span> 👍（0） 💬（0）<p>MR 针对静态数据，Stream 针对动态数据。并实时性较高。</p>2020-03-29</li><br/><li><span>王涛</span> 👍（0） 💬（0）<p>继续打卡</p>2020-03-29</li><br/><li><span>钱</span> 👍（0） 💬（0）<p>阅过留痕
 知识盲区地带，流式计算没接触过，概念大概能明白。
 流数据的价值会随时间的流逝而降低，“时间就是金钱”在流计算中体现得淋漓尽致。这就要求流计算框架必须是低延迟、可扩展、高可靠的。
-不过流计算框架具体怎么实现低延迟、可扩展、高可靠的没领会到。</div>2020-02-17</li><br/><li><span>陈</span> 👍（0） 💬（0）<div>老师请问流计算怎么做增量计算？</div>2019-11-21</li><br/><li><span>simon</span> 👍（0） 💬（0）<div>流计算看上去，这些框架跟普通的分布式微服务框架是不是一样，都是可以并发处理实时数据，并且可以横向扩展？</div>2019-11-08</li><br/><li><span>张先生</span> 👍（0） 💬（0）<div>实习的时候做过写过mapreduce和storm的代码，一直不是特别清楚两者的区别，看了这篇文章豁然开朗</div>2019-11-04</li><br/>
+不过流计算框架具体怎么实现低延迟、可扩展、高可靠的没领会到。</p>2020-02-17</li><br/><li><span>陈</span> 👍（0） 💬（0）<p>老师请问流计算怎么做增量计算？</p>2019-11-21</li><br/><li><span>simon</span> 👍（0） 💬（0）<p>流计算看上去，这些框架跟普通的分布式微服务框架是不是一样，都是可以并发处理实时数据，并且可以横向扩展？</p>2019-11-08</li><br/><li><span>张先生</span> 👍（0） 💬（0）<p>实习的时候做过写过mapreduce和storm的代码，一直不是特别清楚两者的区别，看了这篇文章豁然开朗</p>2019-11-04</li><br/>
 </ul>

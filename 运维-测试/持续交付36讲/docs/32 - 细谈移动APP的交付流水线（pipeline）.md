@@ -171,15 +171,15 @@ end
 
 感谢你的收听，欢迎你给我留言。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>lyonger</span> 👍（0） 💬（0）<div>老师，移动APP的自动构建和持续集成工具有什么区别呢？不知我下面这么理解有无问题。
+<li><span>lyonger</span> 👍（0） 💬（0）<p>老师，移动APP的自动构建和持续集成工具有什么区别呢？不知我下面这么理解有无问题。
 
 1）自动构建比如gradle&#47;maven是解决工程类的打包编译，包依赖问题，实际上是一个包管理器是么？
-2）而持续集成工具是一个可以自定义流水线的平台？</div>2021-03-13</li><br/><li><span>三件事</span> 👍（0） 💬（0）<div>老师还有一个问题
+2）而持续集成工具是一个可以自定义流水线的平台？</p>2021-03-13</li><br/><li><span>三件事</span> 👍（0） 💬（0）<p>老师还有一个问题
 
-3.如果我们的实际开发比线上版本领先一到两个版本的话，采用 git flow 这种方式，分支管理就比较麻烦。对于这一点老师有没有什么好的办法？</div>2019-10-15</li><br/><li><span>三件事</span> 👍（0） 💬（0）<div>老师你好，受益匪浅，想请教两个问题：
+3.如果我们的实际开发比线上版本领先一到两个版本的话，采用 git flow 这种方式，分支管理就比较麻烦。对于这一点老师有没有什么好的办法？</p>2019-10-15</li><br/><li><span>三件事</span> 👍（0） 💬（0）<p>老师你好，受益匪浅，想请教两个问题：
 
 1.如何最大程度的提高构建速度？在打包设备一定的情况下。
-2.从 master merge 回 dev 的时候有没有什么好的实践方式？</div>2019-10-15</li><br/><li><span>春和景明</span> 👍（0） 💬（1）<div>老师，我们知道
+2.从 master merge 回 dev 的时候有没有什么好的实践方式？</p>2019-10-15</li><br/><li><span>春和景明</span> 👍（0） 💬（1）<p>老师，我们知道
 stages有如下特点 :
 
 所有 stages 会按照顺序运行，即当一个 stage 完成后，下一个 stage 才会开始
@@ -195,5 +195,5 @@ stages有如下特点 :
 Stage &quot;xxx&quot; skipped due to earlier failure(s)
 
 是什么意思？该如何避免呢？
-</div>2019-05-14</li><br/><li><span>心在飞</span> 👍（0） 💬（0）<div>我们分支模型为 master -&gt; integration-&gt;feature, 叫法不同，但使用方式上一样。master 打tag发布，每次feature合并到integration都要做DoD(definition of done)检查，包括sonar，coverity等。但我们是嵌入式设备（医疗行业），没有持续交付，只有持续部署。</div>2019-02-27</li><br/>
+</p>2019-05-14</li><br/><li><span>心在飞</span> 👍（0） 💬（0）<p>我们分支模型为 master -&gt; integration-&gt;feature, 叫法不同，但使用方式上一样。master 打tag发布，每次feature合并到integration都要做DoD(definition of done)检查，包括sonar，coverity等。但我们是嵌入式设备（医疗行业），没有持续交付，只有持续部署。</p>2019-02-27</li><br/>
 </ul>

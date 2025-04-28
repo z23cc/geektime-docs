@@ -335,5 +335,5 @@ Markdown有不同的标准，在解析或生成Markdown时，应注意所使用�
 
 [&gt;&gt;戳此加入课程交流群](https://jsj.top/f/hm26hN)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Aoinatsume</span> 👍（1） 💬（0）<div>《Does Prompt Formatting Have Any Impact on LLM Performance?》（https:&#47;&#47;arxiv.org&#47;html&#47;2411.10541v1）这篇论文里有提到提示格式化方式会显著影响基于GPT的模型性能，例如，在GPT-4模型上使用Markdown的表现更好一些，而GPT-3.5-turbo模型中使用JSON进行翻译任务时性能会比其他提示格式高40%。老师您觉得以后不同的提示格式、不同的大模型和不同的任务类型进行适配会是一项常规工作吗，还是最终会统一出一种格式。</div>2024-11-28</li><br/>
+<li><span>Aoinatsume</span> 👍（1） 💬（0）<p>《Does Prompt Formatting Have Any Impact on LLM Performance?》（https:&#47;&#47;arxiv.org&#47;html&#47;2411.10541v1）这篇论文里有提到提示格式化方式会显著影响基于GPT的模型性能，例如，在GPT-4模型上使用Markdown的表现更好一些，而GPT-3.5-turbo模型中使用JSON进行翻译任务时性能会比其他提示格式高40%。老师您觉得以后不同的提示格式、不同的大模型和不同的任务类型进行适配会是一项常规工作吗，还是最终会统一出一种格式。</p>2024-11-28</li><br/>
 </ul>

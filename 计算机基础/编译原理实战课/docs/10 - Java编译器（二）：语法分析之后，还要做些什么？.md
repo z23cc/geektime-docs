@@ -377,7 +377,7 @@ public class MyClass4 extends MyClass3{
 
 总体来说，Java的编译器会根据需要加入一些AST节点，实现一些缺省的功能。其中包括缺省的构造方法、对父类构造方法的缺省调用，以及缺省的父类（Object）。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>宫文学Richard</span> 👍（6） 💬（0）<div>上一讲的参考：
+<li><span>宫文学Richard</span> 👍（6） 💬（0）<p>上一讲的参考：
 对于a&gt;b*2+3，
 step1: a                移进a
 step2: a,b  &gt;  *      移进&gt;，再移进b。那现在能否对a&gt;b做规约呢？不能，因为后面跟的是*，优先级更高。
@@ -387,5 +387,5 @@ step5: a,b*2,3 &gt;,+    继续移进+和3。现在后面已经是$了，所以�
 step6: a,b*2+3 &gt;      规约掉+操作，把操作数栈顶弹出两个值来，构建一棵加法子树。
 step7 a&gt;b*2+3        再把&gt;操作规约掉。
 
-注意，我可能一步会做两个移进，而你的步骤会比我多。但没关系，只要掌握算法规则就行了。</div>2020-06-30</li><br/><li><span>wusiration</span> 👍（2） 💬（1）<div>我的理解是有四个作用域，一个ScopeTest类的作用域，一个foo函数内部的作用域，if语句a&gt;0分支中的作用域以及if语句else分支中的作用域。</div>2020-06-29</li><br/><li><span>lion_fly</span> 👍（1） 💬（2）<div>老师，您好，HelloWorldProcessor中是通过直接写文件的方式来生成相应的编译后的目标类，想问下老师，如何去通过修改语法树的方式来修改目标的类呢？我个人这边看到的资料，都是基于JDK8的来实现的，因为JDK8中是可以直接访问jdk.compiler中的定义的语法树的节点的，但是现在的JDK15这些数据结构已经无法直接在JDK的外部来直接访问了</div>2021-05-19</li><br/><li><span>lion_fly</span> 👍（1） 💬（2）<div>老师可以提供一下这个类HelloWorldProcessor.java的源代码吗？</div>2021-03-03</li><br/>
+注意，我可能一步会做两个移进，而你的步骤会比我多。但没关系，只要掌握算法规则就行了。</p>2020-06-30</li><br/><li><span>wusiration</span> 👍（2） 💬（1）<p>我的理解是有四个作用域，一个ScopeTest类的作用域，一个foo函数内部的作用域，if语句a&gt;0分支中的作用域以及if语句else分支中的作用域。</p>2020-06-29</li><br/><li><span>lion_fly</span> 👍（1） 💬（2）<p>老师，您好，HelloWorldProcessor中是通过直接写文件的方式来生成相应的编译后的目标类，想问下老师，如何去通过修改语法树的方式来修改目标的类呢？我个人这边看到的资料，都是基于JDK8的来实现的，因为JDK8中是可以直接访问jdk.compiler中的定义的语法树的节点的，但是现在的JDK15这些数据结构已经无法直接在JDK的外部来直接访问了</p>2021-05-19</li><br/><li><span>lion_fly</span> 👍（1） 💬（2）<p>老师可以提供一下这个类HelloWorldProcessor.java的源代码吗？</p>2021-03-03</li><br/>
 </ul>

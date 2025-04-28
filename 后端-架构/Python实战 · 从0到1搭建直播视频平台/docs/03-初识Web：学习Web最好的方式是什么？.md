@@ -358,7 +358,7 @@ function showAlert(){
 
 欢迎你在留言区和我交流互动，如果这节课对你有帮助，也推荐你分享给身边的朋友。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>一米</span> 👍（3） 💬（1）<div>思考题：
+<li><span>一米</span> 👍（3） 💬（1）<p>思考题：
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -383,7 +383,7 @@ function showAlert(){
         }
     }
 &lt;&#47;script&gt;
-&lt;&#47;html&gt;</div>2023-04-28</li><br/><li><span>Geek_6634a6</span> 👍（0） 💬（1）<div>&lt;!DOCTYPE html&gt;
+&lt;&#47;html&gt;</p>2023-04-28</li><br/><li><span>Geek_6634a6</span> 👍（0） 💬（1）<p>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -401,7 +401,7 @@ function showAlert(){
 
 &lt;&#47;body&gt;
 &lt;&#47;html&gt;
-</div>2024-07-28</li><br/><li><span>银角大王</span> 👍（0） 💬（1）<div>&lt;!DOCTYPE html&gt;
+</p>2024-07-28</li><br/><li><span>银角大王</span> 👍（0） 💬（1）<p>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -423,7 +423,7 @@ function changetext(){
 }
 
 &lt;&#47;script&gt;
-&lt;&#47;html&gt;</div>2023-12-20</li><br/><li><span>Geek_6c0b90</span> 👍（0） 💬（1）<div>老师，没有视频课程吗？</div>2023-12-07</li><br/><li><span>好困啊</span> 👍（0） 💬（1）<div>&lt;!DOCTYPE html&gt;
+&lt;&#47;html&gt;</p>2023-12-20</li><br/><li><span>Geek_6c0b90</span> 👍（0） 💬（1）<p>老师，没有视频课程吗？</p>2023-12-07</li><br/><li><span>好困啊</span> 👍（0） 💬（1）<p>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
@@ -451,7 +451,7 @@ function changetext(){
 &lt;&#47;script&gt;
 
 &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2023-08-21</li><br/><li><span>ZENG</span> 👍（0） 💬（1）<div>思考题
+&lt;&#47;html&gt;</p>2023-08-21</li><br/><li><span>ZENG</span> 👍（0） 💬（1）<p>思考题
 
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -482,10 +482,10 @@ function changetext(){
 		}
 	&lt;&#47;script&gt;
 &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2023-06-03</li><br/><li><span>camel</span> 👍（0） 💬（1）<div>请问前端开发应该用什么idea？可能会介绍前端开发环境的搭建吗？</div>2023-05-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+&lt;&#47;html&gt;</p>2023-06-03</li><br/><li><span>camel</span> 👍（0） 💬（1）<p>请问前端开发应该用什么idea？可能会介绍前端开发环境的搭建吗？</p>2023-05-13</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1: PyCharm自身没有python解释器吗？我用PyCharm创建了一个工程，interpreter是本机上安装的Anaconda的python.exe。
 
-Q2：前端开发IDE是用VSCode吗？</div>2023-05-02</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<div>思考题
+Q2：前端开发IDE是用VSCode吗？</p>2023-05-02</li><br/><li><span>Geek_840593</span> 👍（0） 💬（1）<p>思考题
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -501,7 +501,7 @@ Q2：前端开发IDE是用VSCode吗？</div>2023-05-02</li><br/><li><span>Geek_8
 &lt;p&gt;变化前-1&lt;&#47;p&gt;
 &lt;button type=&quot;button&quot; onclick=&quot;displayDate()&quot;&gt;文本变换&lt;&#47;button&gt;
 &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2023-04-29</li><br/><li><span>GAC·DU</span> 👍（0） 💬（2）<div>&lt;!DOCTYPE html&gt;
+&lt;&#47;html&gt;</p>2023-04-29</li><br/><li><span>GAC·DU</span> 👍（0） 💬（2）<p>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -518,8 +518,8 @@ Q2：前端开发IDE是用VSCode吗？</div>2023-05-02</li><br/><li><span>Geek_8
         }
     &lt;&#47;script&gt;
 &lt;&#47;body&gt;
-&lt;&#47;html&gt;</div>2023-04-28</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第3讲打卡~</div>2024-07-18</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+&lt;&#47;html&gt;</p>2023-04-28</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第3讲打卡~</p>2024-07-18</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1: PyCharm自身没有python解释器吗？我用PyCharm创建了一个工程，interpreter是本机上安装的Anaconda的python.exe。
 
-Q2：前端开发IDE是用VSCode吗？</div>2023-05-02</li><br/>
+Q2：前端开发IDE是用VSCode吗？</p>2023-05-02</li><br/>
 </ul>

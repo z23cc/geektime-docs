@@ -125,7 +125,7 @@
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>aoe</span> 👍（5） 💬（0）<div>老师在微信群中提了一个思考题：学习重构这部分需要注意的地方
+<li><span>aoe</span> 👍（5） 💬（0）<p>老师在微信群中提了一个思考题：学习重构这部分需要注意的地方
 - 第一个，你们可以反思一下，bad smell 是什么的，是怎么发现的。这个最重要。
 - 第二个，对比重构前和重构后的代码结构。到底做了什么改变。这个慢慢你们就会养成习惯，有重构的大局观。
 - 第三个，列一下用的重构手法，看如何改变的。这个反而没那么重要，每个人做法也不一样。
@@ -161,13 +161,13 @@
 附录
 设计原则：https:&#47;&#47;wyyl1.com&#47;post&#47;18&#47;02&#47;#51-%E4%B8%BA%E4%BD%95%E8%A6%81%E5%85%B3%E5%BF%83%E8%AE%BE%E8%AE%A1
 
-格式化后的思考题：https:&#47;&#47;wyyl1.com&#47;post&#47;19&#47;wq&#47;#%E8%AF%B4%E4%B8%80%E4%B8%8B%E5%AD%A6%E4%B9%A0%E9%87%8D%E6%9E%84%E8%BF%99%E9%83%A8%E5%88%86-</div>2022-04-24</li><br/><li><span>aoe</span> 👍（1） 💬（1）<div>奇怪的问题
+格式化后的思考题：https:&#47;&#47;wyyl1.com&#47;post&#47;19&#47;wq&#47;#%E8%AF%B4%E4%B8%80%E4%B8%8B%E5%AD%A6%E4%B9%A0%E9%87%8D%E6%9E%84%E8%BF%99%E9%83%A8%E5%88%86-</p>2022-04-24</li><br/><li><span>aoe</span> 👍（1） 💬（1）<p>奇怪的问题
 单独运行测试 void should_throw_exception_if_transitive_dependency_not_found() 不通过
 整体运行 ContainerTest 则通过
 使用命令运行和老师的测试结果一样：.&#47;gradlew test
 代码：https:&#47;&#47;github.com&#47;wyyl1&#47;geektime-tdd-di-container&#47;tree&#47;di-container-6-strange
 开发工具：IntelliJ IDEA 2021.3.3 (Community Edition)
-环境：openjdk version &quot;17.0.1&quot; 2021-10-19</div>2022-04-24</li><br/><li><span>favorlm</span> 👍（0） 💬（0）<div>我对问题2感触颇深：让我理解了TDD是驱动的架构，在完成本课程的学习过程中，我忘记了大学学的图监测环的算法，这也让我意识到，一些实现的知识和学习TDD驱动方法，并不冲突。</div>2024-04-20</li><br/><li><span>奇小易</span> 👍（0） 💬（0）<div>Q1：在当前的代码结构下，后续任务需要做何种改变？
+环境：openjdk version &quot;17.0.1&quot; 2021-10-19</p>2022-04-24</li><br/><li><span>favorlm</span> 👍（0） 💬（0）<p>我对问题2感触颇深：让我理解了TDD是驱动的架构，在完成本课程的学习过程中，我忘记了大学学的图监测环的算法，这也让我意识到，一些实现的知识和学习TDD驱动方法，并不冲突。</p>2024-04-20</li><br/><li><span>奇小易</span> 👍（0） 💬（0）<p>Q1：在当前的代码结构下，后续任务需要做何种改变？
 按照现有代码结构下，方法注入和字段注入的实现可以预见应该是提供两个provider的实现来完成。
 按照这个预期可以直接将这两部分的功能直接分到新的测试单元中进行测试。
 因为目前的结构比较清晰，而最开始的时候并没有一个清晰的结构。
@@ -176,9 +176,9 @@
 Q2：在学习课程的过程中，你对 TDD 的认识有发生什么变化吗？
 1、必须要在多种场景下见识下，TDD能够自己演进出合理的结构，才能真正的相信这种假设。
 （这次重构后再次感受这种现实）
-2、感觉在调整整个结构时的满足感好像比前面的重构更大。</div>2022-05-18</li><br/><li><span>新的一页</span> 👍（0） 💬（0）<div>1. 我觉得后续的调整可以这样走，happy path放在config中，sadly path放在provider里面；
-2. 实践TDD的时候，我发现需要一台好的机器，以支持我频繁的跑测试。</div>2022-05-09</li><br/><li><span>keep_curiosity</span> 👍（0） 💬（0）<div>循环依赖抛出异常时，抛出具体要实例化的类型相比只抛接口的类型是不是对用户更友好？
-本节课跟练结束后的tag：https:&#47;&#47;github.com&#47;codingthought&#47;TDD-DI&#47;releases&#47;tag&#47;18</div>2022-05-01</li><br/><li><span>胡小寒</span> 👍（0） 💬（1）<div>测试</div>2022-04-25</li><br/><li><span>临风</span> 👍（0） 💬（1）<div>重构到contextConfig部分的时候，和老师的实现有所不同。我的理解中，老师是将通过一个context接口，将get逻辑通过context接口进行了二次的封装，来间接调用provider中的ComponentProvider来获取实例，再将原有的get方法从contextConfig调用，改为context调用，有点像对get方法做了一个aop的增强，这样就能实现dependencies的前置校验校验。
+2、感觉在调整整个结构时的满足感好像比前面的重构更大。</p>2022-05-18</li><br/><li><span>新的一页</span> 👍（0） 💬（0）<p>1. 我觉得后续的调整可以这样走，happy path放在config中，sadly path放在provider里面；
+2. 实践TDD的时候，我发现需要一台好的机器，以支持我频繁的跑测试。</p>2022-05-09</li><br/><li><span>keep_curiosity</span> 👍（0） 💬（0）<p>循环依赖抛出异常时，抛出具体要实例化的类型相比只抛接口的类型是不是对用户更友好？
+本节课跟练结束后的tag：https:&#47;&#47;github.com&#47;codingthought&#47;TDD-DI&#47;releases&#47;tag&#47;18</p>2022-05-01</li><br/><li><span>胡小寒</span> 👍（0） 💬（1）<p>测试</p>2022-04-25</li><br/><li><span>临风</span> 👍（0） 💬（1）<p>重构到contextConfig部分的时候，和老师的实现有所不同。我的理解中，老师是将通过一个context接口，将get逻辑通过context接口进行了二次的封装，来间接调用provider中的ComponentProvider来获取实例，再将原有的get方法从contextConfig调用，改为context调用，有点像对get方法做了一个aop的增强，这样就能实现dependencies的前置校验校验。
 在我的实现中，我是将原本的context变为contextConfiguration，代码基本保持不变，新增initContainer方法。通过该方法将providers生成的实例，直接传递给新的Context类，在新的Context中保存在Map&lt;Class&lt;?&gt;, Object&gt; container中，然后把get方法移到Context类中。这样contextConfiguration只有bind的逻辑，而新的Context只有get的逻辑。但是我不知道我这样写会有什么问题，希望老师能指点一下。
-https:&#47;&#47;github.com&#47;lenwind&#47;TDD-Learn</div>2022-04-22</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>消除坏味道，这句语气很可爱</div>2022-04-21</li><br/><li><span>Flynn</span> 👍（0） 💬（0）<div>加餐想老师搞一节Android开发的TDD</div>2022-04-19</li><br/>
+https:&#47;&#47;github.com&#47;lenwind&#47;TDD-Learn</p>2022-04-22</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>消除坏味道，这句语气很可爱</p>2022-04-21</li><br/><li><span>Flynn</span> 👍（0） 💬（0）<p>加餐想老师搞一节Android开发的TDD</p>2022-04-19</li><br/>
 </ul>

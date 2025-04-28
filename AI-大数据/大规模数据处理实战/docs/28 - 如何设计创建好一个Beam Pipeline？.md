@@ -193,11 +193,11 @@ mergedCollectionWithFlatten.apply(...);
 
 欢迎你把答案写在留言区，与我和其他同学一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>cricket1981</span> 👍（4） 💬（2）<div>Beam Pipeline的合并模式是否支持keyed join，inner&#47;left outer&#47;right outer&#47;full outer都支持吗? 看上面的代码示例虽然是叫Joiner Pattern，实际效果却是Union。分离模式倒是跟flink的split&#47;select算子组合很类似。</div>2019-06-26</li><br/><li><span>人唯优</span> 👍（3） 💬（1）<div>平台的自然语言理解（NLP）的数据处理模块可以分析视频数据，自动生成视频字幕。
-感觉这里不是很严谨，字幕这块应该是OCR+ASR为主吧</div>2019-08-21</li><br/><li><span>Ming</span> 👍（2） 💬（2）<div>我也有个小问题：在实践中一个集群往往同一时间只能执行一个pipeline吗？假如一个产品需要用到文中的全部四个例子，两个流处理两个批处理，实践中往往是有四个集群，还是一个集群？</div>2019-06-26</li><br/><li><span>蒙开强</span> 👍（1） 💬（3）<div>老师你好，我问一个大数据相关的问题呢，在大数据处理场景中有没有什么好的CDC方案额。</div>2019-06-26</li><br/><li><span>闫少伟</span> 👍（1） 💬（0）<div>PCollection userCollection = ...;
+<li><span>cricket1981</span> 👍（4） 💬（2）<p>Beam Pipeline的合并模式是否支持keyed join，inner&#47;left outer&#47;right outer&#47;full outer都支持吗? 看上面的代码示例虽然是叫Joiner Pattern，实际效果却是Union。分离模式倒是跟flink的split&#47;select算子组合很类似。</p>2019-06-26</li><br/><li><span>人唯优</span> 👍（3） 💬（1）<p>平台的自然语言理解（NLP）的数据处理模块可以分析视频数据，自动生成视频字幕。
+感觉这里不是很严谨，字幕这块应该是OCR+ASR为主吧</p>2019-08-21</li><br/><li><span>Ming</span> 👍（2） 💬（2）<p>我也有个小问题：在实践中一个集群往往同一时间只能执行一个pipeline吗？假如一个产品需要用到文中的全部四个例子，两个流处理两个批处理，实践中往往是有四个集群，还是一个集群？</p>2019-06-26</li><br/><li><span>蒙开强</span> 👍（1） 💬（3）<p>老师你好，我问一个大数据相关的问题呢，在大数据处理场景中有没有什么好的CDC方案额。</p>2019-06-26</li><br/><li><span>闫少伟</span> 👍（1） 💬（0）<p>PCollection userCollection = ...;
 PCollection diamondUserCollection = userCollection.apply(&quot;filterDiamondUserTransform&quot;, ParDo.of(new DoFn(){ @ProcessElement public void processElement(ProcessContext c) { if (isDiamondUser(c.element()) { c.output(c.element()); } }}));
 PCollection notifiedUserCollection = userCollection.apply(&quot;notifyUserTransform&quot;, ParDo.of(new DoFn(){ @ProcessElement public void processElement(ProcessContext c) { if (notifyUser(c.element()) { c.output(c.element()); } }}));
-这里notifiedUserCollection ，是不是要用diamondUserCollection.apply呀？</div>2022-05-24</li><br/><li><span>abc-web</span> 👍（1） 💬（0）<div>老师，你的课程是否有实际的实例代码，这样学习效果会更好些；</div>2019-08-24</li><br/><li><span>JohnT3e</span> 👍（1） 💬（0）<div>老师，有几个问题不解。在复制或者分离模式下，每个处理和输出是不同步的吧，如果业务上对不同输出有同步要求时，怎么办？复制或者分离模式和组合模式进行组合时，上一步的输出不同步或者延迟较大会加大后续组合时数据业务时间乱序问题（特别是流处理）这时有解决办法吗或者其它思路</div>2019-06-26</li><br/><li><span>juan</span> 👍（0） 💬（0）<div>
+这里notifiedUserCollection ，是不是要用diamondUserCollection.apply呀？</p>2022-05-24</li><br/><li><span>abc-web</span> 👍（1） 💬（0）<p>老师，你的课程是否有实际的实例代码，这样学习效果会更好些；</p>2019-08-24</li><br/><li><span>JohnT3e</span> 👍（1） 💬（0）<p>老师，有几个问题不解。在复制或者分离模式下，每个处理和输出是不同步的吧，如果业务上对不同输出有同步要求时，怎么办？复制或者分离模式和组合模式进行组合时，上一步的输出不同步或者延迟较大会加大后续组合时数据业务时间乱序问题（特别是流处理）这时有解决办法吗或者其它思路</p>2019-06-26</li><br/><li><span>juan</span> 👍（0） 💬（0）<p>
           @ProcessElement
           public void processElement(ProcessContext c) {
             if (isFiveStartMember(c.element())) {
@@ -211,5 +211,5 @@ PCollection notifiedUserCollection = userCollection.apply(&quot;notifyUserTransf
         })
 
 
-</div>2019-07-03</li><br/>
+</p>2019-07-03</li><br/>
 </ul>

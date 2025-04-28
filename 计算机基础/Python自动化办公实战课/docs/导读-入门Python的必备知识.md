@@ -230,10 +230,10 @@ pip3 install python-docx
 
 编辑小提示：专栏的完整代码位置是https://github.com/wilsonyin123/python\_productivity，可点击链接下载查看。或者通过网盘链接提取后下载，链接是: [https://pan.baidu.com/s/1UvEKDCGnU6yb0a7gHLSE4Q?pwd=5wf1，提取码:](https://pan.baidu.com/s/1UvEKDCGnU6yb0a7gHLSE4Q?pwd=5wf1%EF%BC%8C%E6%8F%90%E5%8F%96%E7%A0%81%3A) 5wf1。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（0）<div>编辑小提示：专栏的完整代码位置是https:&#47;&#47;github.com&#47;wilsonyin123&#47;python_productivity，可点击链接下载查看。
+<li><span>🐑</span> 👍（0） 💬（0）<p>编辑小提示：专栏的完整代码位置是https:&#47;&#47;github.com&#47;wilsonyin123&#47;python_productivity，可点击链接下载查看。
 
-或者通过网盘链接提取后下载，链接是: https:&#47;&#47;pan.baidu.com&#47;s&#47;1UvEKDCGnU6yb0a7gHLSE4Q?pwd=5wf1，提取码: 5wf1。</div>2022-03-30</li><br/><li><span>Fan</span> 👍（29） 💬（2）<div>重要的事情说三遍，多看官方文档，多看官方文档，多看官方文档。会让你少走很多弯路。</div>2021-02-03</li><br/><li><span>咱是吓大的</span> 👍（12） 💬（1）<div>个人经验，技能类的学习应该先模仿后理解再创新</div>2021-02-25</li><br/><li><span>海的对岸</span> 👍（7） 💬（1）<div>边看便敲，碰到问题，排查问题，上网查
-编程的学习过程，在我看来，就是一条缓慢的学习曲线，很长一段时间，成效看起来比较低，但是你学着学着，之前学的，慢慢就都理解了，然后就会了</div>2021-02-09</li><br/><li><span>王波</span> 👍（4） 💬（1）<div>这节课相当于整个课程的基石，需要反复琢磨、反复学习。</div>2021-03-16</li><br/><li><span>建明</span> 👍（4） 💬（1）<div>分支结构代码的最后一句，print(&quot;程序执行结束&quot;)，总是出错，我试了好多遍，最后发现可能是最后这段代码前面那个符号的问题，怎么把‘...’换成‘&gt;&gt;&gt;’呢？</div>2021-02-20</li><br/><li><span>建明</span> 👍（3） 💬（1）<div>x = 20if x &gt; 10: # 注意结尾的冒号: print(&quot;if的判断结果为True&quot;) print(&quot;x的值大于10&quot;)else: print(&quot;if的判断结果为False&quot;) print(&quot;x的值小于10&quot;)print(&quot;程序执行结束&quot;)
+或者通过网盘链接提取后下载，链接是: https:&#47;&#47;pan.baidu.com&#47;s&#47;1UvEKDCGnU6yb0a7gHLSE4Q?pwd=5wf1，提取码: 5wf1。</p>2022-03-30</li><br/><li><span>Fan</span> 👍（29） 💬（2）<p>重要的事情说三遍，多看官方文档，多看官方文档，多看官方文档。会让你少走很多弯路。</p>2021-02-03</li><br/><li><span>咱是吓大的</span> 👍（12） 💬（1）<p>个人经验，技能类的学习应该先模仿后理解再创新</p>2021-02-25</li><br/><li><span>海的对岸</span> 👍（7） 💬（1）<p>边看便敲，碰到问题，排查问题，上网查
+编程的学习过程，在我看来，就是一条缓慢的学习曲线，很长一段时间，成效看起来比较低，但是你学着学着，之前学的，慢慢就都理解了，然后就会了</p>2021-02-09</li><br/><li><span>王波</span> 👍（4） 💬（1）<p>这节课相当于整个课程的基石，需要反复琢磨、反复学习。</p>2021-03-16</li><br/><li><span>建明</span> 👍（4） 💬（1）<p>分支结构代码的最后一句，print(&quot;程序执行结束&quot;)，总是出错，我试了好多遍，最后发现可能是最后这段代码前面那个符号的问题，怎么把‘...’换成‘&gt;&gt;&gt;’呢？</p>2021-02-20</li><br/><li><span>建明</span> 👍（3） 💬（1）<p>x = 20if x &gt; 10: # 注意结尾的冒号: print(&quot;if的判断结果为True&quot;) print(&quot;x的值大于10&quot;)else: print(&quot;if的判断结果为False&quot;) print(&quot;x的值小于10&quot;)print(&quot;程序执行结束&quot;)
 以上这段代码在pycharm中运行可得到正确的结果，但是在Python中运行就会出错，如下：
 &gt;&gt;&gt; x = 20
 &gt;&gt;&gt; if x &gt; 10:  # 注意结尾的冒号:
@@ -247,15 +247,15 @@ pip3 install python-docx
     print(&quot;程序执行结束&quot;)
     ^
 SyntaxError: invalid syntax
-</div>2021-03-11</li><br/><li><span>Geek_bc5d2d</span> 👍（3） 💬（3）<div>pip3 install python-docx
+</p>2021-03-11</li><br/><li><span>Geek_bc5d2d</span> 👍（3） 💬（3）<p>pip3 install python-docx
 提示SyntaxError: invalid syntax
-这个是扩展库没有下载成功吗</div>2021-02-20</li><br/><li><span>小伟</span> 👍（3） 💬（1）<div>基础入门，我喜欢搜索&quot;xxx the right way&quot;的入门指南文档，跟着入门指南熟悉基础知识和进阶路径，后面实战敲代码做demo，遇到问题查阅官方文档，当然还有stackoverflow</div>2021-02-17</li><br/><li><span>炫丽生活</span> 👍（2） 💬（2）<div>cmd怎么运行pycharm文件</div>2021-02-24</li><br/><li><span>公号-技术夜未眠</span> 👍（2） 💬（1）<div>一门新语言的快速入门指北:
+这个是扩展库没有下载成功吗</p>2021-02-20</li><br/><li><span>小伟</span> 👍（3） 💬（1）<p>基础入门，我喜欢搜索&quot;xxx the right way&quot;的入门指南文档，跟着入门指南熟悉基础知识和进阶路径，后面实战敲代码做demo，遇到问题查阅官方文档，当然还有stackoverflow</p>2021-02-17</li><br/><li><span>炫丽生活</span> 👍（2） 💬（2）<p>cmd怎么运行pycharm文件</p>2021-02-24</li><br/><li><span>公号-技术夜未眠</span> 👍（2） 💬（1）<p>一门新语言的快速入门指北:
 鸟瞰全貌
 对比之前已经掌握过语言间的差异
 写一个简单的demo，先运行，后一步步调试
 写一个小的项目，比如爬虫程序
-多看官方文档，多看优秀的开源项目</div>2021-02-08</li><br/><li><span>落曦</span> 👍（2） 💬（1）<div>基础入门，这一篇就够了，开心，复习了！
-学编程 知行合一 多写代码就可以啦</div>2021-02-07</li><br/><li><span>linker</span> 👍（2） 💬（2）<div>学c语言，先照着书上敲代码。</div>2021-02-04</li><br/><li><span>👊</span> 👍（2） 💬（1）<div>刚好学到了老师零基础入门python课程的while 和 for循环语句，看这一节就比较容易理解。
-两门课可以同时进行。</div>2021-02-04</li><br/><li><span>sunlight_r</span> 👍（1） 💬（2）<div>老师，这句没能理解为啥是1-10
-list(range(1,11)) # 定义一个1-10 的列表</div>2023-01-04</li><br/>
+多看官方文档，多看优秀的开源项目</p>2021-02-08</li><br/><li><span>落曦</span> 👍（2） 💬（1）<p>基础入门，这一篇就够了，开心，复习了！
+学编程 知行合一 多写代码就可以啦</p>2021-02-07</li><br/><li><span>linker</span> 👍（2） 💬（2）<p>学c语言，先照着书上敲代码。</p>2021-02-04</li><br/><li><span>👊</span> 👍（2） 💬（1）<p>刚好学到了老师零基础入门python课程的while 和 for循环语句，看这一节就比较容易理解。
+两门课可以同时进行。</p>2021-02-04</li><br/><li><span>sunlight_r</span> 👍（1） 💬（2）<p>老师，这句没能理解为啥是1-10
+list(range(1,11)) # 定义一个1-10 的列表</p>2023-01-04</li><br/>
 </ul>

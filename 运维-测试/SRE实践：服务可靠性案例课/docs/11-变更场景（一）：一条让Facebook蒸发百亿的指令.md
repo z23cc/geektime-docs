@@ -101,5 +101,5 @@ Facebook在服务恢复后成功应对了凌晨5点的业务高峰期，这一�
 
 如果你的业务的DNS故障了，你有什么好的办法来应对。欢迎你把你的答案分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>xd</span> 👍（0） 💬（1）<div>节点不多的话，dns 写入 hosts，，</div>2024-09-11</li><br/><li><span>E</span> 👍（0） 💬（2）<div>dns服务撤销bgp路由？</div>2024-08-08</li><br/>
+<li><span>xd</span> 👍（0） 💬（1）<p>节点不多的话，dns 写入 hosts，，</p>2024-09-11</li><br/><li><span>E</span> 👍（0） 💬（2）<p>dns服务撤销bgp路由？</p>2024-08-08</li><br/>
 </ul>

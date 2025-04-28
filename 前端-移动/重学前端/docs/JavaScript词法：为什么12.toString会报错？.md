@@ -284,29 +284,29 @@ f`Hello ${a}!`; // [["Hello", "!"], world]
 
 [![unpreview](https://static001.geekbang.org/resource/image/1a/08/1a49758821bdbdf6f0a8a1dc5bf39f08.jpg?wh=1032%2A330)](https://time.geekbang.org/course/intro/163?utm_term=zeusMTA7L&utm_source=app&utm_medium=chongxueqianduan&utm_campaign=163-presell)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Nandy</span> 👍（11） 💬（4）<div>十进制的number的小数点前后的内容可以省略，但是不能同时省略
+<li><span>Nandy</span> 👍（11） 💬（4）<p>十进制的number的小数点前后的内容可以省略，但是不能同时省略
         .01 = 0.01    10. = 10
 12.toString() 12.被当做了一个整体，所以会报错， 
 加入空格 12 .toString() 这样.就成为了一个单独的token
 
-嘻嘻~请winter老师表扬我学的认真(#^.^#)</div>2019-07-25</li><br/><li><span>lsy</span> 👍（11） 💬（2）<div>&#39;敏\u200d感词&#39;.length === 4 &#47;&#47; true</div>2019-07-10</li><br/><li><span>大海</span> 👍（1） 💬（10）<div>为什么parseInt(12).toString()就不会报错呢，parseInt(12)返回的不也是一个数值吗</div>2019-06-19</li><br/><li><span>🐻🔫🐸</span> 👍（54） 💬（1）<div>为啥不支持直接回复呢？
+嘻嘻~请winter老师表扬我学的认真(#^.^#)</p>2019-07-25</li><br/><li><span>lsy</span> 👍（11） 💬（2）<p>&#39;敏\u200d感词&#39;.length === 4 &#47;&#47; true</p>2019-07-10</li><br/><li><span>大海</span> 👍（1） 💬（10）<p>为什么parseInt(12).toString()就不会报错呢，parseInt(12)返回的不也是一个数值吗</p>2019-06-19</li><br/><li><span>🐻🔫🐸</span> 👍（54） 💬（1）<p>为啥不支持直接回复呢？
 
-这里讨论一下@Snow同学的问题 别忘了JS是允许直接写小数的，也就说12.toString() 他无法分辨你是想要创建一个小数位为toString()的数 还是创建一个12 然后调用toString()这种情况。也就说 JS里面的. 是拥有两种含义的 一种是小数点 一种是方法调用。 你可以试试12..toString() 这样就可以消除这种歧义</div>2019-03-24</li><br/><li><span>曾侃</span> 👍（43） 💬（2）<div>之前没有接触过零宽字符，学完这节课后网上搜了下零宽字符的应用，看到了这篇文章《[翻译]小心你复制的内容：使用零宽字符将用户名不可见的插入文本中》，受益匪浅。自己用这个思路实现了一样的给字符串添加水印的功能。
-代码地址：https:&#47;&#47;github.com&#47;zengkan0703&#47;text-watermark，有不对的地方请同学们指正。</div>2019-04-10</li><br/><li><span>田野的嘴好冰</span> 👍（42） 💬（2）<div>零宽空格
+这里讨论一下@Snow同学的问题 别忘了JS是允许直接写小数的，也就说12.toString() 他无法分辨你是想要创建一个小数位为toString()的数 还是创建一个12 然后调用toString()这种情况。也就说 JS里面的. 是拥有两种含义的 一种是小数点 一种是方法调用。 你可以试试12..toString() 这样就可以消除这种歧义</p>2019-03-24</li><br/><li><span>曾侃</span> 👍（43） 💬（2）<p>之前没有接触过零宽字符，学完这节课后网上搜了下零宽字符的应用，看到了这篇文章《[翻译]小心你复制的内容：使用零宽字符将用户名不可见的插入文本中》，受益匪浅。自己用这个思路实现了一样的给字符串添加水印的功能。
+代码地址：https:&#47;&#47;github.com&#47;zengkan0703&#47;text-watermark，有不对的地方请同学们指正。</p>2019-04-10</li><br/><li><span>田野的嘴好冰</span> 👍（42） 💬（2）<p>零宽空格
 var a = &#39;\uFEFF&#39;,b = &#39;b&#39;, c = &#39;c&#39;, d = (b+a+c);
 console.log(d); &#47;&#47;bc
 console.log(d.length); &#47;&#47;3
-console.log(d.indexOf(a)); &#47;&#47;1</div>2019-03-26</li><br/><li><span>是零壹呀</span> 👍（20） 💬（0）<div>12.toString() 会被解析成 12.（数字字面量） 和 toString()。
-所以正常的写法是12..toString()才是正常的</div>2019-04-24</li><br/><li><span>王益</span> 👍（15） 💬（1）<div>(12).toString()也可以</div>2020-03-31</li><br/><li><span>Yully</span> 👍（12） 💬（0）<div>原来零宽空格和零宽连接符、零宽非连接符还有妙用， 隐形水印、加密信息分享和逃脱关键词匹配。</div>2020-05-06</li><br/><li><span>CaveShao</span> 👍（5） 💬（0）<div>js 中 . 有两种含义，一种是代表一个小数，一种是调用方法。12.toString() 中的 12. 会被浏览器解析为一个省略了小数后面部分的数字。一个数字后面直接写一个方法，就像 333toString 一样，肯定会报错。
-Invalid or unexpected token</div>2019-05-20</li><br/><li><span>Smallfly</span> 👍（4） 💬（1）<div>${} 的括号中完全可以出现 } 符号呀，老师你别骗人哦。
+console.log(d.indexOf(a)); &#47;&#47;1</p>2019-03-26</li><br/><li><span>是零壹呀</span> 👍（20） 💬（0）<p>12.toString() 会被解析成 12.（数字字面量） 和 toString()。
+所以正常的写法是12..toString()才是正常的</p>2019-04-24</li><br/><li><span>王益</span> 👍（15） 💬（1）<p>(12).toString()也可以</p>2020-03-31</li><br/><li><span>Yully</span> 👍（12） 💬（0）<p>原来零宽空格和零宽连接符、零宽非连接符还有妙用， 隐形水印、加密信息分享和逃脱关键词匹配。</p>2020-05-06</li><br/><li><span>CaveShao</span> 👍（5） 💬（0）<p>js 中 . 有两种含义，一种是代表一个小数，一种是调用方法。12.toString() 中的 12. 会被浏览器解析为一个省略了小数后面部分的数字。一个数字后面直接写一个方法，就像 333toString 一样，肯定会报错。
+Invalid or unexpected token</p>2019-05-20</li><br/><li><span>Smallfly</span> 👍（4） 💬（1）<p>${} 的括号中完全可以出现 } 符号呀，老师你别骗人哦。
 
 `${function(){console.log(1)}}`
 
  输出：
 
 &quot;function(){console.log(1)}&quot;
-</div>2019-10-17</li><br/><li><span>wingsico</span> 👍（3） 💬（0）<div>全文大概阐述了js中的词法分析中得到的不同类型的token，以及针对js语言特性的一些特殊token（需要根据语法分析来回传递标志来判断具体如何分词），也说了一些零宽空白符号等。但感觉实际使用时，这方面属于比较偏的方面了，但有助于我们去理解编译原理中的词法分析和一些特殊处理，以及对一些特殊场景的错误可以知其原因。</div>2020-04-13</li><br/><li><span>Geek_666</span> 👍（3） 💬（1）<div>文中的&lt;ZWNBSP&gt;(旧称&lt;BOM&gt;) 字符 BOM的全称应该是&quot;byte-order mark&quot;而不是 &quot;bit order mark”吧</div>2020-03-15</li><br/><li><span>商志远🤪</span> 👍（3） 💬（1）<div>【理论上，“ ${ } ”内部可以放任何 JavaScript 表达式代码，而这些代码是以“ } ” 结尾的，也就是说，这部分词法不允许出现“ } ”运算符。】
-这段话没理解</div>2019-03-19</li><br/><li><span>起风了</span> 👍（1） 💬（0）<div>零宽空格（zero-width space, ZWSP）用于可能需要换行处。
+</p>2019-10-17</li><br/><li><span>wingsico</span> 👍（3） 💬（0）<p>全文大概阐述了js中的词法分析中得到的不同类型的token，以及针对js语言特性的一些特殊token（需要根据语法分析来回传递标志来判断具体如何分词），也说了一些零宽空白符号等。但感觉实际使用时，这方面属于比较偏的方面了，但有助于我们去理解编译原理中的词法分析和一些特殊处理，以及对一些特殊场景的错误可以知其原因。</p>2020-04-13</li><br/><li><span>Geek_666</span> 👍（3） 💬（1）<p>文中的&lt;ZWNBSP&gt;(旧称&lt;BOM&gt;) 字符 BOM的全称应该是&quot;byte-order mark&quot;而不是 &quot;bit order mark”吧</p>2020-03-15</li><br/><li><span>商志远🤪</span> 👍（3） 💬（1）<p>【理论上，“ ${ } ”内部可以放任何 JavaScript 表达式代码，而这些代码是以“ } ” 结尾的，也就是说，这部分词法不允许出现“ } ”运算符。】
+这段话没理解</p>2019-03-19</li><br/><li><span>起风了</span> 👍（1） 💬（0）<p>零宽空格（zero-width space, ZWSP）用于可能需要换行处。
     Unicode: U+200B  HTML: &amp;#8203;
 零宽不连字 (zero-width non-joiner，ZWNJ)放在电子文本的两个字符之间，抑制本来会发生的连字，而是以这两个字符原本的字形来绘制。
     Unicode: U+200C  HTML: &amp;#8204;
@@ -317,5 +317,5 @@ Invalid or unexpected token</div>2019-05-20</li><br/><li><span>Smallfly</span> �
 右至左符号（Right-to-left mark，RLM）是一种控制字符，用于计算机的双向文稿排版中。
     Unicode: U+200F  HTML: &amp;rlm; &amp;#x200F; 或&amp;#8207;
 字节顺序标记（byte-order mark，BOM）常被用来当做标示文件是以UTF-8、UTF-16或UTF-32编码的标记。
-    Unicode: U+FEFF</div>2021-05-13</li><br/>
+    Unicode: U+FEFF</p>2021-05-13</li><br/>
 </ul>

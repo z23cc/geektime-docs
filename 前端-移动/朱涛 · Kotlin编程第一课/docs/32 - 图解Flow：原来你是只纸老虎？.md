@@ -577,8 +577,8 @@ public fun interface FlowCollector<in T> {
 }
 ```
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（11） 💬（1）<div>Flow 接口引用了FlowCollector接口，并封装了一段调用逻辑，作为将来FlowCollector使用的来源。FlowCollector，带有emit函数的接口，统一了上游的发送方的数据输出和下游接收方的数据输入。FlowCollector的做法和通常扩展函数不太一样，通常的扩展函数是先有核心类，然后扩展函数扩充核心类的功能。FlowCollector是先在上游的构造器里构建了高阶的扩展函数，然后在下游collect里实现了带有emit的核心类。下游collect触发流程，然后上游的emit驱动下游的emit。这么设计原因应该是上游的构造器，相对复杂，而且是推迟执行的，需要给开发人员以足够的灵活性，所以采用了扩展函数的格式，下游接受数据相对固定，而且是同步执行的，采用固定的FlowCollector接口。
-</div>2022-04-06</li><br/><li><span>大土豆</span> 👍（3） 💬（1）<div>老师，下节课的目录得改下。。。应该是Android开发者还有未来吗？市场基本都没需求了</div>2022-04-06</li><br/><li><span>zyaire</span> 👍（1） 💬（2）<div>老师，“Flow 上游与下游的协程上下文就会不一致，它们整体的结构也会被破坏，从而导致“结构化并发”的特性也被破坏。”这句话不是很能理解，以代码11来说，即使在flow中调用withContext切换了上下文，当外部协程取消时，不也是会响应取消操作吗</div>2022-04-11</li><br/><li><span>再前进一点</span> 👍（1） 💬（1）<div>同问：为啥transform{}这方法在IDE里点击跳转到的源码是unsafeTransform这个方法呢</div>2022-04-08</li><br/><li><span>dawn</span> 👍（1） 💬（3）<div>@PublishedApi
+<li><span>Paul Shan</span> 👍（11） 💬（1）<p>Flow 接口引用了FlowCollector接口，并封装了一段调用逻辑，作为将来FlowCollector使用的来源。FlowCollector，带有emit函数的接口，统一了上游的发送方的数据输出和下游接收方的数据输入。FlowCollector的做法和通常扩展函数不太一样，通常的扩展函数是先有核心类，然后扩展函数扩充核心类的功能。FlowCollector是先在上游的构造器里构建了高阶的扩展函数，然后在下游collect里实现了带有emit的核心类。下游collect触发流程，然后上游的emit驱动下游的emit。这么设计原因应该是上游的构造器，相对复杂，而且是推迟执行的，需要给开发人员以足够的灵活性，所以采用了扩展函数的格式，下游接受数据相对固定，而且是同步执行的，采用固定的FlowCollector接口。
+</p>2022-04-06</li><br/><li><span>大土豆</span> 👍（3） 💬（1）<p>老师，下节课的目录得改下。。。应该是Android开发者还有未来吗？市场基本都没需求了</p>2022-04-06</li><br/><li><span>zyaire</span> 👍（1） 💬（2）<p>老师，“Flow 上游与下游的协程上下文就会不一致，它们整体的结构也会被破坏，从而导致“结构化并发”的特性也被破坏。”这句话不是很能理解，以代码11来说，即使在flow中调用withContext切换了上下文，当外部协程取消时，不也是会响应取消操作吗</p>2022-04-11</li><br/><li><span>再前进一点</span> 👍（1） 💬（1）<p>同问：为啥transform{}这方法在IDE里点击跳转到的源码是unsafeTransform这个方法呢</p>2022-04-08</li><br/><li><span>dawn</span> 👍（1） 💬（3）<p>@PublishedApi
 internal inline fun &lt;T, R&gt; Flow&lt;T&gt;.unsafeTransform(
     @BuilderInference crossinline transform: suspend FlowCollector&lt;R&gt;.(value: T) -&gt; Unit
 ): Flow&lt;R&gt; = unsafeFlow { &#47;&#47; Note: unsafe flow is used here, because unsafeTransform is only for internal use
@@ -596,7 +596,7 @@ internal inline fun &lt;T&gt; unsafeFlow(@BuilderInference crossinline block: su
             collector.block()
         }
     }
-}</div>2022-04-08</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>&#47;&#47; 2
+}</p>2022-04-08</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>&#47;&#47; 2
 internal inline fun &lt;T, R&gt; Flow&lt;T&gt;.unsafeTransform(
     crossinline transform: suspend FlowCollector&lt;R&gt;.(value: T) -&gt; Unit
 ): Flow&lt;R&gt; = unsafeFlow { 
@@ -615,7 +615,7 @@ internal inline fun &lt;T, R&gt; Flow&lt;T&gt;.unsafeTransform(
 
 按照逻辑的话，应该是终止操作符号 collect {} 传入的 FlowCollector。
 
-但是看逻辑，注释 6 处的 collect 的参数也是个 FlowCollector 实例，那么 transform 的接受者应该是它？？</div>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>&#47;&#47; 2
+但是看逻辑，注释 6 处的 collect 的参数也是个 FlowCollector 实例，那么 transform 的接受者应该是它？？</p>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>&#47;&#47; 2
 internal inline fun &lt;T, R&gt; Flow&lt;T&gt;.unsafeTransform (
     crossinline transform: suspend FlowCollector&lt;R&gt;.(value: T) -&gt; Unit
 ): Flow&lt;R&gt; = unsafeFlow { 
@@ -624,7 +624,7 @@ internal inline fun &lt;T, R&gt; Flow&lt;T&gt;.unsafeTransform (
         &#47;&#47; 7
         return@collect transform (value)
     }
-}</div>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>
+}</p>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>
 &#47;&#47; 代码段8
 
 &#47;&#47; 1
@@ -665,7 +665,7 @@ unsafeTransform  中的 collect 参数是一个 FlowCollector 匿名内部类实
 
 那 return@collect transform(value) 中的  transform 的接收者是这个 FlowCollector 匿名内部类实例
 
-还是 flow{}.filter{}.collect{} 中，终止操作符传入的 FlowCollector 匿名内部类实例呢？？</div>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>老师好，对于 Flow 的 fliter 的源码，确实没看懂，可以详细讲下么？？
+还是 flow{}.filter{}.collect{} 中，终止操作符传入的 FlowCollector 匿名内部类实例呢？？</p>2022-04-26</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>老师好，对于 Flow 的 fliter 的源码，确实没看懂，可以详细讲下么？？
 
 直接看源码不直观，反编译看 java 有很凌乱
 
@@ -688,12 +688,12 @@ inline fun &lt;T&gt; Flow&lt;T&gt;.unsafeTransform(
 &#47;&#47;            return@collect transform(value)
 &#47;&#47;        }
     }
-}</div>2022-04-24</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（2）<div>难道说是因为 unsafeFlow 创建的是一个匿名内部类的实例，匿名内部类的实例是持有外部对象 SafeFlow 的引用？？？</div>2022-04-23</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<div>filter(..）貌似是新建了一个 FLow，flow {... ... ...} 创建  SafeFlow 貌似没用到呀
+}</p>2022-04-24</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（2）<p>难道说是因为 unsafeFlow 创建的是一个匿名内部类的实例，匿名内部类的实例是持有外部对象 SafeFlow 的引用？？？</p>2022-04-23</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（1）<p>filter(..）貌似是新建了一个 FLow，flow {... ... ...} 创建  SafeFlow 貌似没用到呀
 
 老师解答下呀，谢谢。。
 
-</div>2022-04-23</li><br/><li><span>飓风</span> 👍（0） 💬（3）<div>“它的类型是Function3, Any?, Continuation, Any?&gt;” 这个怎么理解？</div>2022-04-13</li><br/><li><span>ZircoN</span> 👍（0） 💬（1）<div>1. 为啥transform{}这方法在IDE里点击跳转到的源码是unsafeTransform这个方法呢
-2. SharedFlow等是否准备讲一下呢</div>2022-04-08</li><br/><li><span>anmi</span> 👍（0） 💬（0）<div>扁平化后的filter函数：
+</p>2022-04-23</li><br/><li><span>飓风</span> 👍（0） 💬（3）<p>“它的类型是Function3, Any?, Continuation, Any?&gt;” 这个怎么理解？</p>2022-04-13</li><br/><li><span>ZircoN</span> 👍（0） 💬（1）<p>1. 为啥transform{}这方法在IDE里点击跳转到的源码是unsafeTransform这个方法呢
+2. SharedFlow等是否准备讲一下呢</p>2022-04-08</li><br/><li><span>anmi</span> 👍（0） 💬（0）<p>扁平化后的filter函数：
 inline fun &lt;T&gt; Flow&lt;T&gt;.filter(
     crossinline predicate: suspend (T) -&gt; Boolean
 ): Flow&lt;T&gt; = object : Flow&lt;T&gt; {
@@ -705,7 +705,7 @@ inline fun &lt;T&gt; Flow&lt;T&gt;.filter(
         }
     }
 }
-</div>2024-04-12</li><br/><li><span>Geek_3074ac</span> 👍（0） 💬（0）<div>“Flow 上游与下游的协程上下文就会不一致，它们整体的结构也会被破坏，从而导致“结构化并发”的特性也被破坏。”
+</p>2024-04-12</li><br/><li><span>Geek_3074ac</span> 👍（0） 💬（0）<p>“Flow 上游与下游的协程上下文就会不一致，它们整体的结构也会被破坏，从而导致“结构化并发”的特性也被破坏。”
 
 老师我想问下，假设我维持了父子关系，从理论来说是不是就没问题了
 
@@ -723,5 +723,5 @@ lifecycleScope.launch {
         }
 
 限制的原因是因为使用成本太高，要懂得 Job 的结构化并发，所以禁止这样使用吗
-</div>2023-09-12</li><br/>
+</p>2023-09-12</li><br/>
 </ul>

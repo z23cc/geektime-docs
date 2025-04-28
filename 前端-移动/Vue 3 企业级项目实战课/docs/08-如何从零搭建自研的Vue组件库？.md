@@ -713,7 +713,7 @@ require('@my/components/css/comp-002/style/index.css');
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/08)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ZR-rd</span> 👍（9） 💬（3）<div>提个建议：这么多文件配置完了但最后怎么用还是不太清楚。建议可以编写一个简单的组件进行示例，然后打包，发布，再在其他项目中引入使用，这样能够更清晰的了解组件库开发的整个流程</div>2022-12-16</li><br/><li><span>风太大太大</span> 👍（6） 💬（1）<div>按需加载实现方式，
+<li><span>ZR-rd</span> 👍（9） 💬（3）<p>提个建议：这么多文件配置完了但最后怎么用还是不太清楚。建议可以编写一个简单的组件进行示例，然后打包，发布，再在其他项目中引入使用，这样能够更清晰的了解组件库开发的整个流程</p>2022-12-16</li><br/><li><span>风太大太大</span> 👍（6） 💬（1）<p>按需加载实现方式，
 1. 文中提及的方案，手动按需加载。
 import { Comp001, Comp002 } from &#39;@my&#47;components&#39;
 import &#39;@my&#47;components&#47;css&#47;index.css&#39;
@@ -731,10 +731,10 @@ import &#39;@my&#47;components&#47;css&#47;index.css&#39;
 
 
 
-</div>2022-12-09</li><br/><li><span>海是蓝天的倒影</span> 👍（2） 💬（2）<div>`scripts&#47;build-module.ts`
-老师，源码打包编译成ES Module 和 CommonJS 模块两种代码的配置这块，可以详细讲下rollup执行过程吗？理解起来有点吃力</div>2022-12-13</li><br/><li><span>沉默的话唠</span> 👍（1） 💬（1）<div>到第二步主package.json没贴出来，确实pnpm i 后，啥都没有，直接 Already up-to-date。 
+</p>2022-12-09</li><br/><li><span>海是蓝天的倒影</span> 👍（2） 💬（2）<p>`scripts&#47;build-module.ts`
+老师，源码打包编译成ES Module 和 CommonJS 模块两种代码的配置这块，可以详细讲下rollup执行过程吗？理解起来有点吃力</p>2022-12-13</li><br/><li><span>沉默的话唠</span> 👍（1） 💬（1）<p>到第二步主package.json没贴出来，确实pnpm i 后，啥都没有，直接 Already up-to-date。 
 
 去看了下源代码的package.json 都是配好了的，第二步的时候是什么也不知道是什么。
 
-细节流程呀，任重道远~ </div>2023-02-16</li><br/><li><span>善良的老王</span> 👍（1） 💬（1）<div>我们公司就是按这种方式把elementPlus引入二开 看完这篇文章 再看公司的组件库 感觉豁然开朗 👍</div>2022-12-29</li><br/><li><span>落叶🍂建良</span> 👍（0） 💬（2）<div>子项目package.json声明, 是需要自己写吗?还是有快捷命令帮忙生成?</div>2023-03-16</li><br/><li><span>浩明啦</span> 👍（0） 💬（1）<div>老师还有 side effect 的设置</div>2023-02-16</li><br/><li><span>Nexus丶</span> 👍（0） 💬（1）<div>三个脚本的import文件来源是哪里，突然冒出来一堆引用文件很迷呀。向类似import { resolvePackagePath } from &#39;.&#47;util&#39;;这个方法是哪来的具体是干嘛用的，有点看不懂</div>2023-01-13</li><br/><li><span>青丘</span> 👍（0） 💬（1）<div>老师，为什么rollup打包的时候设置了 `treeshake: false`。</div>2023-01-12</li><br/><li><span>ZH 小小浩</span> 👍（0） 💬（2）<div>提个建议：本来就是冲着学习一下怎么自己从零搭建一个组件库买的这个课程，看完这篇发现写的有点太粗略了，相关的设计、配置文件都直接粘代码，也不讲解下这么多配置分别用来干嘛的...就看的挺迷的。嗯嗯嗯...也可能是自己这方面的知识储备不够</div>2022-12-25</li><br/><li><span>Geek_b454df</span> 👍（0） 💬（1）<div>最外层的package.json没有东西， pnpm 报错了</div>2022-12-20</li><br/><li><span>withoutmeat</span> 👍（0） 💬（1）<div>老师, 一般情况下写vue组件, 样式代码都是直接写在了vue文件中, 要怎么满足这个呢？ 另外有个自己的问题，我使用了postcss+tailwindcss， 但是直接使用tailwindcss的api的方式去打包组件这个文档没有找到，有点苦恼～</div>2022-12-09</li><br/><li><span>杜子</span> 👍（0） 💬（1）<div>看懵了，要多看几遍才行</div>2022-12-09</li><br/><li><span>初烬</span> 👍（0） 💬（1）<div>学到很多原来不理解的组件库的知识，感谢老师。</div>2022-12-09</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-05</li><br/>
+细节流程呀，任重道远~ </p>2023-02-16</li><br/><li><span>善良的老王</span> 👍（1） 💬（1）<p>我们公司就是按这种方式把elementPlus引入二开 看完这篇文章 再看公司的组件库 感觉豁然开朗 👍</p>2022-12-29</li><br/><li><span>落叶🍂建良</span> 👍（0） 💬（2）<p>子项目package.json声明, 是需要自己写吗?还是有快捷命令帮忙生成?</p>2023-03-16</li><br/><li><span>浩明啦</span> 👍（0） 💬（1）<p>老师还有 side effect 的设置</p>2023-02-16</li><br/><li><span>Nexus丶</span> 👍（0） 💬（1）<p>三个脚本的import文件来源是哪里，突然冒出来一堆引用文件很迷呀。向类似import { resolvePackagePath } from &#39;.&#47;util&#39;;这个方法是哪来的具体是干嘛用的，有点看不懂</p>2023-01-13</li><br/><li><span>青丘</span> 👍（0） 💬（1）<p>老师，为什么rollup打包的时候设置了 `treeshake: false`。</p>2023-01-12</li><br/><li><span>ZH 小小浩</span> 👍（0） 💬（2）<p>提个建议：本来就是冲着学习一下怎么自己从零搭建一个组件库买的这个课程，看完这篇发现写的有点太粗略了，相关的设计、配置文件都直接粘代码，也不讲解下这么多配置分别用来干嘛的...就看的挺迷的。嗯嗯嗯...也可能是自己这方面的知识储备不够</p>2022-12-25</li><br/><li><span>Geek_b454df</span> 👍（0） 💬（1）<p>最外层的package.json没有东西， pnpm 报错了</p>2022-12-20</li><br/><li><span>withoutmeat</span> 👍（0） 💬（1）<p>老师, 一般情况下写vue组件, 样式代码都是直接写在了vue文件中, 要怎么满足这个呢？ 另外有个自己的问题，我使用了postcss+tailwindcss， 但是直接使用tailwindcss的api的方式去打包组件这个文档没有找到，有点苦恼～</p>2022-12-09</li><br/><li><span>杜子</span> 👍（0） 💬（1）<p>看懵了，要多看几遍才行</p>2022-12-09</li><br/><li><span>初烬</span> 👍（0） 💬（1）<p>学到很多原来不理解的组件库的知识，感谢老师。</p>2022-12-09</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-05</li><br/>
 </ul>

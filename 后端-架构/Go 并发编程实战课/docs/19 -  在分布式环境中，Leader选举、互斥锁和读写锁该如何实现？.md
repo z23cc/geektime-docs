@@ -474,15 +474,15 @@ func testReadLocker(m1 *recipe.RWMutex) {
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>鸟窝</span> 👍（9） 💬（1）<div>这一讲和下一讲的代码在 https:&#47;&#47;github.com&#47;smallnest&#47;distributed</div>2020-11-25</li><br/><li><span>K菌无惨</span> 👍（1） 💬（1）<div>老师, Locker是超时解锁是通过NewSession时添加WithTTL这个SessionOption来设置的吗</div>2021-01-23</li><br/><li><span>gone with the wind</span> 👍（0） 💬（1）<div>        module declares its path as: go.etcd.io&#47;bbolt
+<li><span>鸟窝</span> 👍（9） 💬（1）<p>这一讲和下一讲的代码在 https:&#47;&#47;github.com&#47;smallnest&#47;distributed</p>2020-11-25</li><br/><li><span>K菌无惨</span> 👍（1） 💬（1）<p>老师, Locker是超时解锁是通过NewSession时添加WithTTL这个SessionOption来设置的吗</p>2021-01-23</li><br/><li><span>gone with the wind</span> 👍（0） 💬（1）<p>        module declares its path as: go.etcd.io&#47;bbolt
                 but was required as: github.com&#47;coreos&#47;bbolt
-例子现在运行不起来了</div>2023-04-01</li><br/><li><span>tianfeiyu</span> 👍（0） 💬（1）<div>老师，问一下您这边有用过 redis 相关的分布式的并发原语库吗</div>2021-08-04</li><br/><li><span>types</span> 👍（0） 💬（1）<div>关于leader选举，几个问题：
+例子现在运行不起来了</p>2023-04-01</li><br/><li><span>tianfeiyu</span> 👍（0） 💬（1）<p>老师，问一下您这边有用过 redis 相关的分布式的并发原语库吗</p>2021-08-04</li><br/><li><span>types</span> 👍（0） 💬（1）<p>关于leader选举，几个问题：
 1. 如何获取从节点的信息？？
-2. leader选举成功后， resign是只有主节点可以发起吗，还是从节点也可以发起resign</div>2021-07-02</li><br/><li><span>Kepler</span> 👍（8） 💬（0）<div>类似zookeeper 的分布式锁原理，节点宕机对应session 销毁，持有的锁会被释放</div>2020-12-10</li><br/><li><span>那时刻</span> 👍（1） 💬（0）<div>关于思考题，
+2. leader选举成功后， resign是只有主节点可以发起吗，还是从节点也可以发起resign</p>2021-07-02</li><br/><li><span>Kepler</span> 👍（8） 💬（0）<p>类似zookeeper 的分布式锁原理，节点宕机对应session 销毁，持有的锁会被释放</p>2020-12-10</li><br/><li><span>那时刻</span> 👍（1） 💬（0）<p>关于思考题，
 如果持有互斥锁或者读写锁的节点意外宕机了，从调用接口来看，与当前节点启动的session有关系，节点宕机之后，感觉应该有与该session相关的处理，比如超时机制，所以它持有的锁会被释放。
 etcd 提供的读写锁，按照rwmutex的实现写锁应该比读锁优先级高，但是在分布式环境下，如此实现的话，我想会增加复杂度和出问题的几率。
 
-</div>2020-11-23</li><br/><li><span>文武木子</span> 👍（0） 💬（0）<div>Redis实现分布式锁大家用的多吗</div>2022-03-20</li><br/><li><span>myrfy</span> 👍（0） 💬（0）<div>还没来得及去看etcd库的代码，盲猜一下。
+</p>2020-11-23</li><br/><li><span>文武木子</span> 👍（0） 💬（0）<p>Redis实现分布式锁大家用的多吗</p>2022-03-20</li><br/><li><span>myrfy</span> 👍（0） 💬（0）<p>还没来得及去看etcd库的代码，盲猜一下。
 第一个问题，我觉得要看场景，如果被锁住的资源可以被重新分配，我相信etcd能检测到持有锁的节点断开，concurrent包里应该有相关的实现把锁释放。但是，如果被锁住的资源非常重要，影响到整个系统的状态，必须要人工介入才能把破损的数据修复，那这个时候自动释放锁反而可能完成更大规模的损失。
-第二个问题，还是得去看代码再说</div>2020-11-23</li><br/>
+第二个问题，还是得去看代码再说</p>2020-11-23</li><br/>
 </ul>

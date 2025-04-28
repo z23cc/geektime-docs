@@ -308,7 +308,7 @@ while (iSelEdgeCount < (m_numVertices - 1)){......}
 
 欢迎你在留言区和我互动。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习，我们下节课见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Yj.yolo</span> 👍（0） 💬（1）<div>有两个疑问：
+<li><span>Yj.yolo</span> 👍（0） 💬（1）<p>有两个疑问：
 （1）图3中顶点D的linksign[3]=-1，但是图4中顶点D的linksign[3]=0，没有给出为什么？
-（2）图4中顶点B的linksign[1]=0？是不是应该先是-1，直到图6才会变成顶点B的linksign[3]才是0</div>2023-07-10</li><br/>
+（2）图4中顶点B的linksign[1]=0？是不是应该先是-1，直到图6才会变成顶点B的linksign[3]才是0</p>2023-07-10</li><br/>
 </ul>

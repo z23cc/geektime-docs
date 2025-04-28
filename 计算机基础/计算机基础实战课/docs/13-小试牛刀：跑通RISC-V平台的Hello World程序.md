@@ -203,7 +203,7 @@ sudo apt-get install -f *.deb
 
 欢迎你在留言区提问或者晒晒你的实验记录。如果觉得有收获，也推荐你把这节课分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>廖雪峰</span> 👍（10） 💬（4）<div>如果有不想编译的同学，可以按照以下步骤运行：
+<li><span>廖雪峰</span> 👍（10） 💬（4）<p>如果有不想编译的同学，可以按照以下步骤运行：
 
 1. 安装Ubuntu 22.04
 
@@ -236,13 +236,13 @@ qemu-riscv64: Could not open &#39;&#47;lib&#47;ld-linux-riscv64-lp64d.so.1&#39;:
 $ qemu-riscv64 -L &#47;usr&#47;riscv64-linux-gnu hello
 Hello, riscv!
 
-最后，riscv64-unknown-elf-gcc编译还没搞定，正在找原因</div>2022-08-24</li><br/><li><span>光华路小霸王</span> 👍（1） 💬（1）<div>使用了 VS Code 的 Remote Development 远程调试，发现 F5 debug 回找不到编译器和 qemu，shell
+最后，riscv64-unknown-elf-gcc编译还没搞定，正在找原因</p>2022-08-24</li><br/><li><span>光华路小霸王</span> 👍（1） 💬（1）<p>使用了 VS Code 的 Remote Development 远程调试，发现 F5 debug 回找不到编译器和 qemu，shell
 登录可以，一通谷歌是  .bashrc 与 .bash_profile 的问题，把环境变量加到 bash_profile 就可以了，vscode 是运行在 login shell 的，加载的是 bash_profile ，不会加载  .bashrc 
 refs: https:&#47;&#47;github.com&#47;microsoft&#47;vscode-remote-release&#47;issues&#47;854
-</div>2022-09-02</li><br/><li><span>Liu Zheng</span> 👍（1） 💬（1）<div>纠正一下。在环境变量设置好之前，即使在`&#47;opt&#47;riscv&#47;qemu&#47;bin`目录下，也不能直接跑`
-qemu-riscv32 -version &amp;&amp; qemu-riscv64 -version &amp;&amp; qemu-system-riscv32 -version &amp;&amp; qemu-system-riscv64 -version`. 而是需要`.&#47;qemu-riscv32 ...`.</div>2022-08-24</li><br/><li><span>TableBear</span> 👍（1） 💬（1）<div>source 的主要用途是执行文件并从文件加载变量及函数到执行环境。
-~&#47;.bashrc文件中的环境变量已经在用户登录shell的时候加载进执行环境了，此时编辑不会触发加载。必须使用source或者重新登录才能触发重新加载</div>2022-08-24</li><br/><li><span>筱琲</span> 👍（0） 💬（1）<div>在build 目录下执行配置命令时，遇到几个包缺失，依次安装就好：
-sudo apt install libglib2.0-dev libpixman-1-dev libsdl2-dev</div>2022-11-02</li><br/><li><span>overheat</span> 👍（0） 💬（1）<div>sudo make -j8, 这里应该不用sudo。</div>2022-09-22</li><br/><li><span>Geek_d47998</span> 👍（0） 💬（1）<div>tasks.json和launch.json在老师给的代码，gitee仓库下有，main.c文件里还需要放Makefile后才能按F5编译</div>2022-09-12</li><br/><li><span>jeigiye</span> 👍（0） 💬（1）<div>root@zgye-ubuntu:~&#47;test# cat hello.s 
+</p>2022-09-02</li><br/><li><span>Liu Zheng</span> 👍（1） 💬（1）<p>纠正一下。在环境变量设置好之前，即使在`&#47;opt&#47;riscv&#47;qemu&#47;bin`目录下，也不能直接跑`
+qemu-riscv32 -version &amp;&amp; qemu-riscv64 -version &amp;&amp; qemu-system-riscv32 -version &amp;&amp; qemu-system-riscv64 -version`. 而是需要`.&#47;qemu-riscv32 ...`.</p>2022-08-24</li><br/><li><span>TableBear</span> 👍（1） 💬（1）<p>source 的主要用途是执行文件并从文件加载变量及函数到执行环境。
+~&#47;.bashrc文件中的环境变量已经在用户登录shell的时候加载进执行环境了，此时编辑不会触发加载。必须使用source或者重新登录才能触发重新加载</p>2022-08-24</li><br/><li><span>筱琲</span> 👍（0） 💬（1）<p>在build 目录下执行配置命令时，遇到几个包缺失，依次安装就好：
+sudo apt install libglib2.0-dev libpixman-1-dev libsdl2-dev</p>2022-11-02</li><br/><li><span>overheat</span> 👍（0） 💬（1）<p>sudo make -j8, 这里应该不用sudo。</p>2022-09-22</li><br/><li><span>Geek_d47998</span> 👍（0） 💬（1）<p>tasks.json和launch.json在老师给的代码，gitee仓库下有，main.c文件里还需要放Makefile后才能按F5编译</p>2022-09-12</li><br/><li><span>jeigiye</span> 👍（0） 💬（1）<p>root@zgye-ubuntu:~&#47;test# cat hello.s 
 	.file	&quot;hello.c&quot;
 	.option nopic
 	.attribute arch, &quot;rv64i2p0_m2p0_a2p0_f2p0_d2p0_c2p0&quot;
@@ -282,7 +282,7 @@ root@zgye-ubuntu:~&#47;test# &#47;opt&#47;riscv&#47;qemu&#47;bin&#47;qemu-riscv6
 Hello Risc-V
 root@zgye-ubuntu:~&#47;test#
 
-ubuntu22.04上跑通。</div>2022-09-06</li><br/><li><span>Liu Zheng</span> 👍（0） 💬（3）<div>想问一下，https:&#47;&#47;gitee.com&#47;lmos&#47;Geek-time-computer-foundation&#47;blob&#47;master&#47;lesson12~13&#47;main.c#L7-8 这里面func和sumdata分别都是什么呢？没有看到哪个地方有定义这两个东西，跑make或者vscode里面按F5也是会报错。</div>2022-08-25</li><br/><li><span>LooMou</span> 👍（0） 💬（0）<div>window 的 wsl
+ubuntu22.04上跑通。</p>2022-09-06</li><br/><li><span>Liu Zheng</span> 👍（0） 💬（3）<p>想问一下，https:&#47;&#47;gitee.com&#47;lmos&#47;Geek-time-computer-foundation&#47;blob&#47;master&#47;lesson12~13&#47;main.c#L7-8 这里面func和sumdata分别都是什么呢？没有看到哪个地方有定义这两个东西，跑make或者vscode里面按F5也是会报错。</p>2022-08-25</li><br/><li><span>LooMou</span> 👍（0） 💬（0）<p>window 的 wsl
 Distributor ID: Ubuntu
 Description:    Ubuntu 20.04.6 LTS
 Release:        20.04
@@ -314,9 +314,9 @@ CC -[M] 正在构建... main.elf
  *  正在执行任务: echo Starting RISCV-QEMU&amp;qemu-riscv32 -g 1234 .&#47;*.elf 
 
 Starting RISCV-QEMU
-hello world i is 250 3 250!</div>2024-12-03</li><br/><li><span>Pony</span> 👍（0） 💬（0）<div>&#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;..&#47;..&#47;..&#47;..&#47;riscv64-unknown-elf&#47;bin&#47;ld: error: &#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;rv32i&#47;ilp32&#47;crtbegin.o: Mis-matched ISA version for &#39;i&#39; extension. 2.0 vs 2.1
+hello world i is 250 3 250!</p>2024-12-03</li><br/><li><span>Pony</span> 👍（0） 💬（0）<p>&#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;..&#47;..&#47;..&#47;..&#47;riscv64-unknown-elf&#47;bin&#47;ld: error: &#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;rv32i&#47;ilp32&#47;crtbegin.o: Mis-matched ISA version for &#39;i&#39; extension. 2.0 vs 2.1
 &#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;..&#47;..&#47;..&#47;..&#47;riscv64-unknown-elf&#47;bin&#47;ld: failed to merge target specific data of file &#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;rv32i&#47;ilp32&#47;crtbegin.o
-在make all的时候报这个错误是为什么</div>2024-11-15</li><br/><li><span>🔥Burn</span> 👍（0） 💬（0）<div>archlinux,在编译qemu时报了编译错误,麻烦老师看看什么问题:
+在make all的时候报这个错误是为什么</p>2024-11-15</li><br/><li><span>🔥Burn</span> 👍（0） 💬（0）<p>archlinux,在编译qemu时报了编译错误,麻烦老师看看什么问题:
 lssh -lstdc++ -Wl,--end-group
 &#47;usr&#47;bin&#47;ld: libcommon.fa.p&#47;ebpf_ebpf_rss.c.o: in function `ebpf_rss_load&#39;:
 &#47;home&#47;burn&#47;riscv-gnu-toolchain&#47;qemu-6.2.0&#47;build&#47;..&#47;ebpf&#47;ebpf_rss.c:52: undefined reference to `bpf_program__set_socket_filter&#39;
@@ -327,7 +327,7 @@ collect2: 错误：ld 返回 1
 ninja: build stopped: subcommand failed.
 make: *** [Makefile:162：run-ninja] 错误 1
 
-</div>2023-05-18</li><br/><li><span>Geek_72a577</span> 👍（0） 💬（1）<div>qemu-6.2.0.tar.xz无法下载，有gitee替代地址的吗？</div>2023-03-14</li><br/><li><span>Dean🌞中偉</span> 👍（0） 💬（2）<div>gcc编译成功：
+</p>2023-05-18</li><br/><li><span>Geek_72a577</span> 👍（0） 💬（1）<p>qemu-6.2.0.tar.xz无法下载，有gitee替代地址的吗？</p>2023-03-14</li><br/><li><span>Dean🌞中偉</span> 👍（0） 💬（2）<p>gcc编译成功：
 riscv64-unknown-elf-gcc -v
 Using built-in specs.
 COLLECT_GCC=riscv64-unknown-elf-gcc
@@ -345,5 +345,5 @@ CC -[M] 正在构建... main.c
 &#47;opt&#47;riscv&#47;gcc&#47;lib&#47;gcc&#47;riscv64-unknown-elf&#47;10.2.0&#47;..&#47;..&#47;..&#47;..&#47;riscv64-unknown-elf&#47;bin&#47;ld: cannot find -lgcc
 collect2: error: ld returned 1 exit status
 make: *** [Makefile:37: main.elf] Error 1
-是为啥呢</div>2023-01-23</li><br/><li><span>释迦</span> 👍（0） 💬（0）<div>为什么我按f5后弹出的对画框中cpu的寄存器是x86-64的寄存器，没有显示risc-v寄存器？步骤也是按照老师文中的步骤操作的。</div>2022-12-21</li><br/>
+是为啥呢</p>2023-01-23</li><br/><li><span>释迦</span> 👍（0） 💬（0）<p>为什么我按f5后弹出的对画框中cpu的寄存器是x86-64的寄存器，没有显示risc-v寄存器？步骤也是按照老师文中的步骤操作的。</p>2022-12-21</li><br/>
 </ul>

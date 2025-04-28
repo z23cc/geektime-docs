@@ -325,7 +325,7 @@ winner = winner ? sdsnew(winner) : NULL;
 
 哨兵在sentinelTimer函数中调用sentinelHandleDictOfRedisInstances函数，对每个主节点都执行sentinelHandleRedisInstance函数，并且还会对主节点的所有从节点也执行sentinelHandleRedisInstance函数，那么，哨兵会判断从节点的主观下线和客观下线吗？
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Kaito</span> 👍（11） 💬（2）<div>1、一个哨兵检测判定主库故障，这个过程是「主观下线」，另外这个哨兵还会向其它哨兵询问（发送 sentinel is-master-down-by-addr 命令），多个哨兵都检测主库故障，数量达到配置的 quorum 值，则判定为「客观下线」
+<li><span>Kaito</span> 👍（11） 💬（2）<p>1、一个哨兵检测判定主库故障，这个过程是「主观下线」，另外这个哨兵还会向其它哨兵询问（发送 sentinel is-master-down-by-addr 命令），多个哨兵都检测主库故障，数量达到配置的 quorum 值，则判定为「客观下线」
 
 2、首先判定为客观下线的哨兵，会发起选举，让其它哨兵给自己投票成为「领导者」，成为领导者的条件是，拿到超过「半数」的确认票 + 超过预设的 quorum 阈值的赞成票
 
@@ -355,7 +355,7 @@ void sentinelHandleRedisInstance(sentinelRedisInstance *ri) {
     }
 }
 
-可以看到，无论主库还是从库，哨兵都判断了「主观下线」，但只有主库才判断「客观下线」和「故障切换」。</div>2021-09-28</li><br/><li><span>曾轼麟</span> 👍（8） 💬（0）<div>首先回到老师的问题：哨兵会判断从节点的主观下线和客观下线吗？
+可以看到，无论主库还是从库，哨兵都判断了「主观下线」，但只有主库才判断「客观下线」和「故障切换」。</p>2021-09-28</li><br/><li><span>曾轼麟</span> 👍（8） 💬（0）<p>首先回到老师的问题：哨兵会判断从节点的主观下线和客观下线吗？
 答:根据代码，我认为只会判断主观下线，并且在当前实例中，主观下线的slave实例是不能被选举的。
 
 1、首先我们会发现在sentinelHandleDictOfRedisInstances函数中是存在递归调用的，当发现传入的instances是master的时候会继续对其slaves和sentinels进行递归调用，代码如下：
@@ -405,6 +405,6 @@ void sentinelHandleRedisInstance(sentinelRedisInstance *ri) {
             compareSlavesForPromotion);
         selected = instance[0];
     }
-</div>2021-09-29</li><br/><li><span>Jian</span> 👍（1） 💬（0）<div>硬是对了代码看了3遍才看懂：）</div>2022-03-25</li><br/><li><span>木</span> 👍（0） 💬（0）<div>这里有一个很奇怪的问题，选举主节点的时候怎么能够设置2倍的配置时间呢，如果在2倍的配置时间还没有完全主从切换，又会怎么样呢</div>2023-05-30</li><br/><li><span>e⃰v⃰a⃰n⃰</span> 👍（0） 💬（2）<div>我想问假如master宕机了，直接在其他的从节点中随机一个做为主节点不就行了吗？为啥还要选举？选举也是随机啊！</div>2022-05-20</li><br/><li><span>Benson_Geek</span> 👍（0） 💬（3）<div>master 记录的 Leader 的纪元（master-&gt;leader_epoch）
-求问这个到底是什么东西。。。。。。。。。。。。。。。。。。。。。。。。。救命</div>2021-12-25</li><br/>
+</p>2021-09-29</li><br/><li><span>Jian</span> 👍（1） 💬（0）<p>硬是对了代码看了3遍才看懂：）</p>2022-03-25</li><br/><li><span>木</span> 👍（0） 💬（0）<p>这里有一个很奇怪的问题，选举主节点的时候怎么能够设置2倍的配置时间呢，如果在2倍的配置时间还没有完全主从切换，又会怎么样呢</p>2023-05-30</li><br/><li><span>e⃰v⃰a⃰n⃰</span> 👍（0） 💬（2）<p>我想问假如master宕机了，直接在其他的从节点中随机一个做为主节点不就行了吗？为啥还要选举？选举也是随机啊！</p>2022-05-20</li><br/><li><span>Benson_Geek</span> 👍（0） 💬（3）<p>master 记录的 Leader 的纪元（master-&gt;leader_epoch）
+求问这个到底是什么东西。。。。。。。。。。。。。。。。。。。。。。。。。救命</p>2021-12-25</li><br/>
 </ul>

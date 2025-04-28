@@ -151,7 +151,7 @@ TIPS：如何用MapReduce实现SQL计算，我们在后面还会进一步讨论�
 
 欢迎你写下自己的思考或疑问，与我和其他同学一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>大数据技术与数仓</span> 👍（35） 💬（2）<div>package com.company.sparkcore
+<li><span>大数据技术与数仓</span> 👍（35） 💬（2）<p>package com.company.sparkcore
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -178,7 +178,7 @@ object CountPVByGroup {
     pvid_age_count.collect().foreach(println)
   }
 
-}</div>2018-11-13</li><br/><li><span>朱国伟</span> 👍（29） 💬（1）<div>单机安装伪hadoop集群
+}</p>2018-11-13</li><br/><li><span>朱国伟</span> 👍（29） 💬（1）<p>单机安装伪hadoop集群
 见：https:&#47;&#47;hadoop.apache.org&#47;docs&#47;stable&#47;hadoop-project-dist&#47;hadoop-common&#47;SingleCluster.html
 注：在Mac中安装遇到了一些问题 但是google一下就能解决 恕不一一道来
 
@@ -200,7 +200,7 @@ bin&#47;hdfs dfs -cat pv_users_count&#47;part-r-00000
 1,25	1
 1,32	1
 2,25	2
-</div>2018-11-17</li><br/><li><span>喜笑延开</span> 👍（21） 💬（1）<div>不能光想，必须动手实践：
+</p>2018-11-17</li><br/><li><span>喜笑延开</span> 👍（21） 💬（1）<p>不能光想，必须动手实践：
 ## Mapper
 public class PageMapper extends Mapper&lt;LongWritable,Text,Text,IntWritable&gt; {
     @Override
@@ -250,12 +250,12 @@ public class PageMain {
 hadoop jar page-1.0-SNAPSHOT.jar PageMain &#47;input&#47;page  &#47;output5
 ps：第一次运行报错了~~（不练不知道）
 错误：Initialization of all the collectors failed. Error in last collector was :interface javax.xml.soap.
-原因：编写Main的时候，Text的引用import错了，习惯了弹出提示直接确定~应该导入`import org.apache.hadoop.io.Text;`</div>2018-11-23</li><br/><li><span>有铭</span> 👍（18） 💬（3）<div>我想问一下那个计算过程的示意图里map输入部分，上面的是0，12，下面是0，13，是啥意思？</div>2018-11-15</li><br/><li><span>小辉辉</span> 👍（13） 💬（1）<div>java8中的流式框架也用的MapReduce，之前一直没理解用MapReduce的意义何在，今天突然顿悟。
-软件中很多思想和设计都是通用的，今天接触一种新东西，明天说不定在其它地方又能碰到，又能加深一遍印象。所以说学得多了，很多时间就可以融会贯通了。</div>2018-11-13</li><br/><li><span>呆猫</span> 👍（7） 💬（1）<div>文章真的是看的赏心悦目，尤其是那段描述抽象的文字😃</div>2018-11-15</li><br/><li><span>老男孩</span> 👍（5） 💬（1）<div>老师关于抽象是洞察事物本质的总结很精辟。关于思考题，我的思路是把pageid+age作为map函数计算key值，value分别是1。然后reduce再根据key对value的集合进行sum。就可以得出sql的结果。</div>2018-11-13</li><br/><li><span>明天更美好</span> 👍（4） 💬（1）<div>对于大数据来说是盲区，如果应用直接往hbase中写可以吗？2.5万的并发。hbase可以满足我们的查询需求吗？还有日志分析</div>2018-11-13</li><br/><li><span>牛油果</span> 👍（3） 💬（1）<div>后面一段话，一看就是好人，好老师。</div>2018-11-21</li><br/><li><span>Geek_0yda1p</span> 👍（3） 💬（1）<div>为什么相同key的合并是形成&lt;key, value集合&gt;而不是直接形成一个&lt;key,  value reduce后的结果&gt;呢？后者不是效率更高吗？</div>2018-11-14</li><br/><li><span>极客人</span> 👍（2） 💬（1）<div>老师，文章中的代码是Java语言写的吗，因为我是0基础的，看不懂上面的代码，是否需要去补充基本的语言编程基础？</div>2021-03-03</li><br/><li><span>ward-wolf</span> 👍（2） 💬（1）<div>我的思路和前面几个同学的类似，就是把文本直接当做key，value使用数字统计，最后就是通过reduce统计出现次数了</div>2018-11-14</li><br/><li><span>万东海</span> 👍（1） 💬（1）<div>思考题的答案就是老师文中的吗? 
+原因：编写Main的时候，Text的引用import错了，习惯了弹出提示直接确定~应该导入`import org.apache.hadoop.io.Text;`</p>2018-11-23</li><br/><li><span>有铭</span> 👍（18） 💬（3）<p>我想问一下那个计算过程的示意图里map输入部分，上面的是0，12，下面是0，13，是啥意思？</p>2018-11-15</li><br/><li><span>小辉辉</span> 👍（13） 💬（1）<p>java8中的流式框架也用的MapReduce，之前一直没理解用MapReduce的意义何在，今天突然顿悟。
+软件中很多思想和设计都是通用的，今天接触一种新东西，明天说不定在其它地方又能碰到，又能加深一遍印象。所以说学得多了，很多时间就可以融会贯通了。</p>2018-11-13</li><br/><li><span>呆猫</span> 👍（7） 💬（1）<p>文章真的是看的赏心悦目，尤其是那段描述抽象的文字😃</p>2018-11-15</li><br/><li><span>老男孩</span> 👍（5） 💬（1）<p>老师关于抽象是洞察事物本质的总结很精辟。关于思考题，我的思路是把pageid+age作为map函数计算key值，value分别是1。然后reduce再根据key对value的集合进行sum。就可以得出sql的结果。</p>2018-11-13</li><br/><li><span>明天更美好</span> 👍（4） 💬（1）<p>对于大数据来说是盲区，如果应用直接往hbase中写可以吗？2.5万的并发。hbase可以满足我们的查询需求吗？还有日志分析</p>2018-11-13</li><br/><li><span>牛油果</span> 👍（3） 💬（1）<p>后面一段话，一看就是好人，好老师。</p>2018-11-21</li><br/><li><span>Geek_0yda1p</span> 👍（3） 💬（1）<p>为什么相同key的合并是形成&lt;key, value集合&gt;而不是直接形成一个&lt;key,  value reduce后的结果&gt;呢？后者不是效率更高吗？</p>2018-11-14</li><br/><li><span>极客人</span> 👍（2） 💬（1）<p>老师，文章中的代码是Java语言写的吗，因为我是0基础的，看不懂上面的代码，是否需要去补充基本的语言编程基础？</p>2021-03-03</li><br/><li><span>ward-wolf</span> 👍（2） 💬（1）<p>我的思路和前面几个同学的类似，就是把文本直接当做key，value使用数字统计，最后就是通过reduce统计出现次数了</p>2018-11-14</li><br/><li><span>万东海</span> 👍（1） 💬（1）<p>思考题的答案就是老师文中的吗? 
 把 
 1,25
 2,25
 1,32
 2,25
-直接当成单词理解</div>2018-11-14</li><br/><li><span>无形</span> 👍（1） 💬（1）<div>感觉大数据处理和需要汇总处理结果的多线程有点类似，任务分发到多个线程，并行处理，等到所有线程处理完毕汇总结果再统一处理返回，不知道理解的对不对</div>2018-11-13</li><br/><li><span>*其</span> 👍（0） 💬（1）<div>安装Hadoop的各种组件对硬件配置要求很高吧</div>2021-12-21</li><br/>
+直接当成单词理解</p>2018-11-14</li><br/><li><span>无形</span> 👍（1） 💬（1）<p>感觉大数据处理和需要汇总处理结果的多线程有点类似，任务分发到多个线程，并行处理，等到所有线程处理完毕汇总结果再统一处理返回，不知道理解的对不对</p>2018-11-13</li><br/><li><span>*其</span> 👍（0） 💬（1）<p>安装Hadoop的各种组件对硬件配置要求很高吧</p>2021-12-21</li><br/>
 </ul>

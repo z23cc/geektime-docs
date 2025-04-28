@@ -230,12 +230,12 @@ int main() {
 
 欢迎把你的方案分享出来。我们一同交流。下一讲见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Geek_7c0961</span> 👍（2） 💬（1）<div>同步, 异步, 阻塞, 非阻塞 这四个概念还是有必要区分清楚. 详见 https:&#47;&#47;www.cnblogs.com&#47;lixinjie&#47;p&#47;a-post-about-io-clearly.html</div>2023-02-07</li><br/><li><span>王子面</span> 👍（0） 💬（1）<div>&quot;static void count(int32_t maxValue)&quot;声明为静态的原因是什么？</div>2023-10-02</li><br/><li><span>王子面</span> 👍（0） 💬（1）<div>“绝大多数异步计算都跟 I&#47;O”的根本原因是什么？能不能举一两个跟I&#47;O无关的异步计算的例子？</div>2023-10-02</li><br/><li><span>Geek_6778f9</span> 👍（0） 💬（1）<div>“接着，我们在 main 函数中创建了三个异步任务，给每个任务分别创建对应的目录。这三个任务会同时启动并独立执行。我们在这些线程对象上调用 join，让主线程等待这三个线程结束。”
+<li><span>Geek_7c0961</span> 👍（2） 💬（1）<p>同步, 异步, 阻塞, 非阻塞 这四个概念还是有必要区分清楚. 详见 https:&#47;&#47;www.cnblogs.com&#47;lixinjie&#47;p&#47;a-post-about-io-clearly.html</p>2023-02-07</li><br/><li><span>王子面</span> 👍（0） 💬（1）<p>&quot;static void count(int32_t maxValue)&quot;声明为静态的原因是什么？</p>2023-10-02</li><br/><li><span>王子面</span> 👍（0） 💬（1）<p>“绝大多数异步计算都跟 I&#47;O”的根本原因是什么？能不能举一两个跟I&#47;O无关的异步计算的例子？</p>2023-10-02</li><br/><li><span>Geek_6778f9</span> 👍（0） 💬（1）<p>“接着，我们在 main 函数中创建了三个异步任务，给每个任务分别创建对应的目录。这三个任务会同时启动并独立执行。我们在这些线程对象上调用 join，让主线程等待这三个线程结束。”
 
 
-老师，这里主线程需要等待子线程执行结束，我理解这是同步编程，为什么是异步？</div>2023-04-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师两个问题：
+老师，这里主线程需要等待子线程执行结束，我理解这是同步编程，为什么是异步？</p>2023-04-28</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师两个问题：
 Q1：子线程之间可以用future和promise传递数据吗？
-Q2：结构化异常是什么意思？</div>2023-01-31</li><br/><li><span>Geek_7c0961</span> 👍（2） 💬（0）<div>github 上面的星最多的线程池实现, 可以收藏.
+Q2：结构化异常是什么意思？</p>2023-01-31</li><br/><li><span>Geek_7c0961</span> 👍（2） 💬（0）<p>github 上面的星最多的线程池实现, 可以收藏.
 https:&#47;&#47;github.com&#47;progschj&#47;ThreadPool&#47;blob&#47;master&#47;ThreadPool.h
-</div>2023-02-07</li><br/>
+</p>2023-02-07</li><br/>
 </ul>

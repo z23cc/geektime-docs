@@ -101,7 +101,7 @@ RootResource的测试要如何改造？
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>皮特尔</span> 👍（0） 💬（0）<div>视频 22:19 处的这行代码
+<li><span>皮特尔</span> 👍（0） 💬（0）<p>视频 22:19 处的这行代码
  result.getRemaining() == null ? &quot;&quot; : result.getRemaining();
-不应该放到测试代码里吧？是不是应该放到实现代码里？</div>2024-05-11</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>因为测试数据是一样的，可以将其打包成 Stream&lt;DynamicTest&gt;，简化测试</div>2022-07-30</li><br/>
+不应该放到测试代码里吧？是不是应该放到实现代码里？</p>2024-05-11</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>因为测试数据是一样的，可以将其打包成 Stream&lt;DynamicTest&gt;，简化测试</p>2022-07-30</li><br/>
 </ul>

@@ -73,16 +73,16 @@ Spring Cloud Alibaba是由Alibaba贡献的组件库，随着阿里在开源路�
 
 好啦，这节课就结束啦。也欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>PueC</span> 👍（19） 💬（1）<div>课程不涉及总线？</div>2021-12-22</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（11） 💬（1）<div>第二排看戏，不拿生产小白鼠！</div>2021-12-15</li><br/><li><span>Q</span> 👍（6） 💬（2）<div>我们公司用的就是eureka老的那一套，主业务的微服务代码堆砌已经相当臃肿了</div>2021-12-15</li><br/><li><span>Nico</span> 👍（6） 💬（2）<div>一直还在用Greenwich版本，对于Gateway，做压测发现网关还是会对性能有一定的影响，不知道新版本的会不会好一些</div>2021-12-15</li><br/><li><span>奕</span> 👍（5） 💬（1）<div>Spring Cloud 是一个组件库的集合，为什么 Spring Cloud 还有版本号的迭代呢？ 还是说 Spring Cloud 本身就是只有规范，组件库只是实现这些规范？</div>2022-07-09</li><br/><li><span>Dobbykim</span> 👍（5） 💬（1）<div>老师你好，项目地址在哪里呀</div>2021-12-16</li><br/><li><span>无崖子Z</span> 👍（4） 💬（1）<div>首先会考虑框架是否成熟，是否有组织或社区的支持，与公司现有的中间件的整合度。如果有很大的问题，对于线上项目是灾难性的。
+<li><span>PueC</span> 👍（19） 💬（1）<p>课程不涉及总线？</p>2021-12-22</li><br/><li><span>第一装甲集群司令克莱斯特</span> 👍（11） 💬（1）<p>第二排看戏，不拿生产小白鼠！</p>2021-12-15</li><br/><li><span>Q</span> 👍（6） 💬（2）<p>我们公司用的就是eureka老的那一套，主业务的微服务代码堆砌已经相当臃肿了</p>2021-12-15</li><br/><li><span>Nico</span> 👍（6） 💬（2）<p>一直还在用Greenwich版本，对于Gateway，做压测发现网关还是会对性能有一定的影响，不知道新版本的会不会好一些</p>2021-12-15</li><br/><li><span>奕</span> 👍（5） 💬（1）<p>Spring Cloud 是一个组件库的集合，为什么 Spring Cloud 还有版本号的迭代呢？ 还是说 Spring Cloud 本身就是只有规范，组件库只是实现这些规范？</p>2022-07-09</li><br/><li><span>Dobbykim</span> 👍（5） 💬（1）<p>老师你好，项目地址在哪里呀</p>2021-12-16</li><br/><li><span>无崖子Z</span> 👍（4） 💬（1）<p>首先会考虑框架是否成熟，是否有组织或社区的支持，与公司现有的中间件的整合度。如果有很大的问题，对于线上项目是灾难性的。
 其次会考虑提供的技术组件对业务功能的支持，或是扩展支持。
 再次会考虑普及度，是否容易上手，团队人员的技术熟悉成度。
 这三点不一定是绝对的优先级，要根据实际情况进行trade-off
-</div>2021-12-18</li><br/><li><span>Fan</span> 👍（2） 💬（1）<div>spring cloud 的版本(Angel, Brixtion,..., Jubilee) 跟 Netflix 组件库和 Alibaba 组件库 是什么关系呢？</div>2022-02-23</li><br/><li><span>Fan</span> 👍（2） 💬（1）<div>会有具体的项目吗？</div>2021-12-15</li><br/><li><span>Geek_7b7a93</span> 👍（1） 💬（1）<div>老师，可以通俗易懂的解释一下中台，总是感觉对中台的感念有点模糊</div>2023-09-03</li><br/><li><span>小豪</span> 👍（1） 💬（1）<div>spring cloud组件必须依赖spring boot才能使用吗
-</div>2022-08-28</li><br/><li><span>被水淹没</span> 👍（1） 💬（1）<div>课程学完的话，能做到自己随意切换组件吗，例如把网关切换成shenyu？</div>2022-05-17</li><br/><li><span>iLeGeND</span> 👍（1） 💬（1）<div>有项目源码吗</div>2022-04-09</li><br/><li><span>Magic</span> 👍（1） 💬（1）<div>当你考虑给自己的项目做底层技术框架升版的时候，你会基于哪些因素做出“升级版本”的决定：
+</p>2021-12-18</li><br/><li><span>Fan</span> 👍（2） 💬（1）<p>spring cloud 的版本(Angel, Brixtion,..., Jubilee) 跟 Netflix 组件库和 Alibaba 组件库 是什么关系呢？</p>2022-02-23</li><br/><li><span>Fan</span> 👍（2） 💬（1）<p>会有具体的项目吗？</p>2021-12-15</li><br/><li><span>Geek_7b7a93</span> 👍（1） 💬（1）<p>老师，可以通俗易懂的解释一下中台，总是感觉对中台的感念有点模糊</p>2023-09-03</li><br/><li><span>小豪</span> 👍（1） 💬（1）<p>spring cloud组件必须依赖spring boot才能使用吗
+</p>2022-08-28</li><br/><li><span>被水淹没</span> 👍（1） 💬（1）<p>课程学完的话，能做到自己随意切换组件吗，例如把网关切换成shenyu？</p>2022-05-17</li><br/><li><span>iLeGeND</span> 👍（1） 💬（1）<p>有项目源码吗</p>2022-04-09</li><br/><li><span>Magic</span> 👍（1） 💬（1）<p>当你考虑给自己的项目做底层技术框架升版的时候，你会基于哪些因素做出“升级版本”的决定：
 1、旧版本存在的问题修复
 2、新版本的新特性是否适用于项目
-3、性能优化</div>2021-12-31</li><br/><li><span>Geek_ac4e9c</span> 👍（1） 💬（1）<div>1.讲解springboot和SpringCloud的关系；Springboot是基石，springCloud基于springboot实现微服务功能。
+3、性能优化</p>2021-12-31</li><br/><li><span>Geek_ac4e9c</span> 👍（1） 💬（1）<p>1.讲解springboot和SpringCloud的关系；Springboot是基石，springCloud基于springboot实现微服务功能。
 2.springcloud发展历史
 3.springcloud版本依赖
-</div>2021-12-19</li><br/>
+</p>2021-12-19</li><br/>
 </ul>

@@ -43,7 +43,7 @@
 
 按照三角法，接下来要如何增加新的测试案例？
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>第一次听说“三角法”，搜索了一下，分享一下我的理解：
+<li><span>aoe</span> 👍（0） 💬（0）<p>第一次听说“三角法”，搜索了一下，分享一下我的理解：
 三角法 = happy path + sad path
 
 参考资料：
@@ -51,9 +51,9 @@ TDD笔记3 三角测量Triangulation
 https:&#47;&#47;blog.csdn.net&#47;rockieyungn&#47;article&#47;details&#47;83288313
 
 《Professional Test-Driven Development with C#: Developing Real World Applications with TDD》
-https:&#47;&#47;www.oreilly.com&#47;library&#47;view&#47;professional-test-driven-development&#47;9780470643204&#47;ch007-sec010.html</div>2022-07-23</li><br/><li><span>忘川</span> 👍（2） 💬（0）<div>- 三角法
+https:&#47;&#47;www.oreilly.com&#47;library&#47;view&#47;professional-test-driven-development&#47;9780470643204&#47;ch007-sec010.html</p>2022-07-23</li><br/><li><span>忘川</span> 👍（2） 💬（0）<p>- 三角法
 	- 我理解是基于 两条线相交 只有一个点 能同时在两条线上 也就是同事满足两个测试用例
 - 三角法和TDD的关系
 	- 刚开始 我们有N种方法 可以满足第一个或者前几个测试用例 然后随着测试用例的不断增加 也就是线的增加 那么能同时满足的点 会越来越少
-	- 通过不断新增的测试 给生产代码划定更多的边界 更小的空间 然后在狭小的空间内 驱动出代码结构 这也是我理解的tdd里面的驱动  </div>2023-01-09</li><br/>
+	- 通过不断新增的测试 给生产代码划定更多的边界 更小的空间 然后在狭小的空间内 驱动出代码结构 这也是我理解的tdd里面的驱动  </p>2023-01-09</li><br/>
 </ul>

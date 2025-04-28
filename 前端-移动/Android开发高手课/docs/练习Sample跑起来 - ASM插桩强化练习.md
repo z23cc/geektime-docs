@@ -171,7 +171,7 @@ GMTC门票还有剩余，给自己一个进阶的机会，从现在开始一切�
 
 * * *
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>唯鹿</span> 👍（31） 💬（1）<div>感谢老师的认可与鼓励，我会继续坚持学习与分享！🙏</div>2019-02-23</li><br/><li><span>Neil</span> 👍（2） 💬（4）<div>这个插件是不是在AS3.3上失效了啊</div>2019-03-11</li><br/><li><span>Geek_p7uia1</span> 👍（1） 💬（2）<div>请问在写Transform的过程中，如何debug代码呢？初期对ASM不熟悉，在写的过程中如果能debug最好了</div>2019-03-01</li><br/><li><span>blithe</span> 👍（0） 💬（1）<div>为什么是使用发射的方式，替换了transformClassesWithDexBuilderForDebug，而不是直接在plugin中直接加入进去一个</div>2019-12-12</li><br/><li><span>王大大</span> 👍（0） 💬（1）<div>@splm 我的方法是在本地建repo，然后在项目中classpath引进去，然后在apply进去，但是修改了代码调试需要重新uploadArchives，就很麻烦，有什么好的调试办法吗</div>2019-03-28</li><br/><li><span>splm</span> 👍（0） 💬（1）<div>如果不上传maven的话，本地工程使用，提示找不到插件类，这个是什么问题？</div>2019-03-26</li><br/><li><span>杨泉</span> 👍（3） 💬（0）<div>如何运行Demo
+<li><span>唯鹿</span> 👍（31） 💬（1）<p>感谢老师的认可与鼓励，我会继续坚持学习与分享！🙏</p>2019-02-23</li><br/><li><span>Neil</span> 👍（2） 💬（4）<p>这个插件是不是在AS3.3上失效了啊</p>2019-03-11</li><br/><li><span>Geek_p7uia1</span> 👍（1） 💬（2）<p>请问在写Transform的过程中，如何debug代码呢？初期对ASM不熟悉，在写的过程中如果能debug最好了</p>2019-03-01</li><br/><li><span>blithe</span> 👍（0） 💬（1）<p>为什么是使用发射的方式，替换了transformClassesWithDexBuilderForDebug，而不是直接在plugin中直接加入进去一个</p>2019-12-12</li><br/><li><span>王大大</span> 👍（0） 💬（1）<p>@splm 我的方法是在本地建repo，然后在项目中classpath引进去，然后在apply进去，但是修改了代码调试需要重新uploadArchives，就很麻烦，有什么好的调试办法吗</p>2019-03-28</li><br/><li><span>splm</span> 👍（0） 💬（1）<p>如果不上传maven的话，本地工程使用，提示找不到插件类，这个是什么问题？</p>2019-03-26</li><br/><li><span>杨泉</span> 👍（3） 💬（0）<p>如何运行Demo
 ASMSample项目先注释掉
 &#47;&#47; apply plugin: &#39;com.geektime.asm-plugin&#39;
 &#47;&#47; classpath (&quot;com.geektime.asm:asm-gradle-plugin:1.0&quot;) { changing = true }`
@@ -185,6 +185,6 @@ ASMSample项目先注释掉
 3 asm-gradle-plugin module中的
 dependencies {
 compile &#39;com.android.tools.build:gradle:3.6.1&#39; &#47;&#47;从2.1.0改为3.6.1，否则com.android.build.gradle.internal.pipeline和com.android.build.api.transform包找不到
-}</div>2020-05-02</li><br/><li><span>ysnows</span> 👍（0） 💬（0）<div>https:&#47;&#47;plugins.jetbrains.com&#47;plugin&#47;14860-asm-bytecode-viewer-support-kotlin 大家也可以用这个插件，ASM Bytecode Outline已经不更新了</div>2022-01-26</li><br/><li><span>haizhiyun</span> 👍（0） 💬（0）<div>你好，asm 如何在一个方法的调用后面插入一个方法 ，并获取这个方法的所有参数，实现类似  aspectJ @After(&quot;call(...)&quot;)  或者 @Around(&quot;call(...)&quot;)的功能 </div>2019-11-29</li><br/><li><span>splm</span> 👍（0） 💬（0）<div>Could not find implementation class for plugin error when using Gradle 4.1+。
-有遇到这个问题的朋友，可以肯定是找不到类，第一要看插件的properties文件命名和里面的内容指向，命名是用来apply的，内容是用来找到对应插件类，要明确这个关系。第二，要仔细groovy文件是否有后缀。我之前就是粗心连续的回车，导致忘记给文件家后缀，一直报这个恶心的错误。</div>2019-03-26</li><br/>
+}</p>2020-05-02</li><br/><li><span>ysnows</span> 👍（0） 💬（0）<p>https:&#47;&#47;plugins.jetbrains.com&#47;plugin&#47;14860-asm-bytecode-viewer-support-kotlin 大家也可以用这个插件，ASM Bytecode Outline已经不更新了</p>2022-01-26</li><br/><li><span>haizhiyun</span> 👍（0） 💬（0）<p>你好，asm 如何在一个方法的调用后面插入一个方法 ，并获取这个方法的所有参数，实现类似  aspectJ @After(&quot;call(...)&quot;)  或者 @Around(&quot;call(...)&quot;)的功能 </p>2019-11-29</li><br/><li><span>splm</span> 👍（0） 💬（0）<p>Could not find implementation class for plugin error when using Gradle 4.1+。
+有遇到这个问题的朋友，可以肯定是找不到类，第一要看插件的properties文件命名和里面的内容指向，命名是用来apply的，内容是用来找到对应插件类，要明确这个关系。第二，要仔细groovy文件是否有后缀。我之前就是粗心连续的回车，导致忘记给文件家后缀，一直报这个恶心的错误。</p>2019-03-26</li><br/>
 </ul>

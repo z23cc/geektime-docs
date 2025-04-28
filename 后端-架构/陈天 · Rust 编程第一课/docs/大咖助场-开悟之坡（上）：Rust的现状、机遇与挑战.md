@@ -135,5 +135,5 @@ Rust 语言也支持高并发零成本的异步编程，Rust 应该是首个支�
 
 Rust 的现状和机遇，我们今天就聊到这里，下半篇会讲一讲 Rust 语言的挑战。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>overheat</span> 👍（3） 💬（1）<div>陈天的课请了汉东，声音是zhenglin，有趣</div>2021-12-17</li><br/><li><span>大头君</span> 👍（0） 💬（2）<div>哈哈哈 在 tubitv rust 有机会吗😁</div>2021-12-17</li><br/><li><span>D</span> 👍（0） 💬（1）<div>陈老师，第九讲中大量提到了运行时，但是这里说没有运行时，那rust到底有没有运行时呢？</div>2021-12-17</li><br/><li><span>Geek_442d8b</span> 👍（0） 💬（1）<div>没想到在追更的过程中能看到张老师的文章，有观点、有数据、更有结论，妥妥的又被打了鸡血～</div>2021-12-17</li><br/><li><span>newzai</span> 👍（4） 💬（0）<div>加油，rust  未来40年靠你了</div>2021-12-17</li><br/><li><span>彭亚伦</span> 👍（0） 💬（0）<div>哈, 果然是东佬过来助力~</div>2021-12-17</li><br/>
+<li><span>overheat</span> 👍（3） 💬（1）<p>陈天的课请了汉东，声音是zhenglin，有趣</p>2021-12-17</li><br/><li><span>大头君</span> 👍（0） 💬（2）<p>哈哈哈 在 tubitv rust 有机会吗😁</p>2021-12-17</li><br/><li><span>D</span> 👍（0） 💬（1）<p>陈老师，第九讲中大量提到了运行时，但是这里说没有运行时，那rust到底有没有运行时呢？</p>2021-12-17</li><br/><li><span>Geek_442d8b</span> 👍（0） 💬（1）<p>没想到在追更的过程中能看到张老师的文章，有观点、有数据、更有结论，妥妥的又被打了鸡血～</p>2021-12-17</li><br/><li><span>newzai</span> 👍（4） 💬（0）<p>加油，rust  未来40年靠你了</p>2021-12-17</li><br/><li><span>彭亚伦</span> 👍（0） 💬（0）<p>哈, 果然是东佬过来助力~</p>2021-12-17</li><br/>
 </ul>

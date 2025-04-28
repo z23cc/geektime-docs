@@ -102,12 +102,12 @@ Test Loss 0.5198314250707626, Test Accuracy 0.7426666617393494, Test ROC AUC 0.8
 
 期待在留言区看到你对DeepFM模型的思考和使用评估指标的经验，我们下节课见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_e642b8</span> 👍（21） 💬（1）<div>第二个问题是FM部分使用两两点积的缘故吗？</div>2020-12-11</li><br/><li><span>老庄</span> 👍（4） 💬（1）<div>请教老师，这个wide&amp;deep的ROC和PR AUC的数值，如果使用不同的epochs，得到的结果差别很大。
+<li><span>Geek_e642b8</span> 👍（21） 💬（1）<p>第二个问题是FM部分使用两两点积的缘故吗？</p>2020-12-11</li><br/><li><span>老庄</span> 👍（4） 💬（1）<p>请教老师，这个wide&amp;deep的ROC和PR AUC的数值，如果使用不同的epochs，得到的结果差别很大。
 
 为什么这里没有把train_dataset分为train和validate两部分，也没有配置EarlyStopping，感觉会一直跑。
 
 这样的结果对比，会不会不大对？
 
-</div>2021-03-04</li><br/><li><span>Geek_b6c3b5</span> 👍（0） 💬（0）<div>为什么emp我没有上线默认是emb计算猜你喜欢？ 而neuralCF我上线了还需要手动输出model=neuralCF
-</div>2024-03-13</li><br/>
+</p>2021-03-04</li><br/><li><span>Geek_b6c3b5</span> 👍（0） 💬（0）<p>为什么emp我没有上线默认是emb计算猜你喜欢？ 而neuralCF我上线了还需要手动输出model=neuralCF
+</p>2024-03-13</li><br/>
 </ul>

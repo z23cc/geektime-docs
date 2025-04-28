@@ -438,15 +438,15 @@ App
 
 希望通过这一过程，能帮助你巩固对React组件颗粒度的把握。我们下节课再见！
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>🐑</span> 👍（1） 💬（0）<div>大家好，咱们课程的代码地址在这里哦👇
+<li><span>🐑</span> 👍（1） 💬（0）<p>大家好，咱们课程的代码地址在这里哦👇
 
 对应的Pull Request是： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;pulls&#47;3
-打了一个v0.5.0版本标签： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.5.0</div>2022-09-01</li><br/><li><span>杨永安</span> 👍（3） 💬（1）<div>哇，周四的凌晨更新</div>2022-09-01</li><br/><li><span>杨永安</span> 👍（1） 💬（2）<div>好奇真子组件模式</div>2022-09-01</li><br/><li><span>流乔</span> 👍（0） 💬（1）<div>唉，现在写开源项目就特别容易决策疲劳</div>2022-09-22</li><br/><li><span>tron</span> 👍（0） 💬（1）<div>对 React 子组件概念的澄清这一小节
+打了一个v0.5.0版本标签： https:&#47;&#47;gitee.com&#47;evisong&#47;geektime-column-oh-my-kanban&#47;releases&#47;tag&#47;v0.5.0</p>2022-09-01</li><br/><li><span>杨永安</span> 👍（3） 💬（1）<p>哇，周四的凌晨更新</p>2022-09-01</li><br/><li><span>杨永安</span> 👍（1） 💬（2）<p>好奇真子组件模式</p>2022-09-01</li><br/><li><span>流乔</span> 👍（0） 💬（1）<p>唉，现在写开源项目就特别容易决策疲劳</p>2022-09-22</li><br/><li><span>tron</span> 👍（0） 💬（1）<p>对 React 子组件概念的澄清这一小节
 对于组件树和元素树的不同之处，有点不是太理解
-不知道是不是可以理解为，组件树是代码运行前的结构，代码运行后，组件return出元素，就成了元素树呢</div>2022-09-13</li><br/><li><span>都市夜归人</span> 👍（0） 💬（1）<div>const KanbanBoard = ({ children }) =&gt; (  &lt;main className=&quot;kanban-board&quot;&gt;{children}&lt;&#47;main&gt;);
-缺少 return</div>2022-09-01</li><br/><li><span>莫比斯</span> 👍（0） 💬（0）<div>pc存储空间
+不知道是不是可以理解为，组件树是代码运行前的结构，代码运行后，组件return出元素，就成了元素树呢</p>2022-09-13</li><br/><li><span>都市夜归人</span> 👍（0） 💬（1）<p>const KanbanBoard = ({ children }) =&gt; (  &lt;main className=&quot;kanban-board&quot;&gt;{children}&lt;&#47;main&gt;);
+缺少 return</p>2022-09-01</li><br/><li><span>莫比斯</span> 👍（0） 💬（0）<p>pc存储空间
 |——本地磁盘
 |        |——文件夹
 |        |——文件
-|——其他存储设备</div>2023-07-03</li><br/><li><span>Lucas Lin</span> 👍（0） 💬（0）<div>不理解为什么老师会说「就拆分方向而言，一般面对中小型应用，更倾向于从上到下拆分，先定义最大粒度的组件，然后逐渐缩小粒度；面对大型应用，则更倾向于从下往上拆分，先从较小粒度的组件开始。」，有例子或是不同拆分方向带来的优缺点吗？</div>2022-12-09</li><br/><li><span>InfoQ_3906e8b6c95f</span> 👍（0） 💬（0）<div>React 的Component和Element是不是类似于Flutter的Widget和Element? Component&#47;Widget 只是轻量级的UI逻辑封装，也就是文章中说的POJO，真正参与渲染的其实是Element或更加底层的RenderObject(Flutter)</div>2022-10-19</li><br/><li><span>阿阳</span> 👍（0） 💬（0）<div>周四，继续追</div>2022-09-01</li><br/>
+|——其他存储设备</p>2023-07-03</li><br/><li><span>Lucas Lin</span> 👍（0） 💬（0）<p>不理解为什么老师会说「就拆分方向而言，一般面对中小型应用，更倾向于从上到下拆分，先定义最大粒度的组件，然后逐渐缩小粒度；面对大型应用，则更倾向于从下往上拆分，先从较小粒度的组件开始。」，有例子或是不同拆分方向带来的优缺点吗？</p>2022-12-09</li><br/><li><span>InfoQ_3906e8b6c95f</span> 👍（0） 💬（0）<p>React 的Component和Element是不是类似于Flutter的Widget和Element? Component&#47;Widget 只是轻量级的UI逻辑封装，也就是文章中说的POJO，真正参与渲染的其实是Element或更加底层的RenderObject(Flutter)</p>2022-10-19</li><br/><li><span>阿阳</span> 👍（0） 💬（0）<p>周四，继续追</p>2022-09-01</li><br/>
 </ul>

@@ -555,7 +555,7 @@ if __name__ == '__main__':
 
 最后，给你留一个思考题。之前我们介绍了如何抓取tick数据，你可以根据抓取的tick数据，生成5分钟、每小时和每天的OHLCV数据吗？欢迎在留言区写下你的答案和问题，也欢迎你把这篇文章分享出去。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（44） 💬（1）<div>整理后的代码在这里：https:&#47;&#47;github.com&#47;Eyelidstl&#47;GeekTimePythonClass</div>2019-08-01</li><br/><li><span>自由民</span> 👍（2） 💬（1）<div>这章比较难了，照着课程敲代码，调了半天可以运行了，结果却不对。把老师的代码下载回来仔细研究，终于清楚一些了。</div>2019-11-01</li><br/><li><span>方向</span> 👍（9） 💬（0）<div>有没有整理后的源代码，想统一查看</div>2019-07-31</li><br/><li><span>fy</span> 👍（6） 💬（0）<div>老师，可以用git管理每次分析的代码么？</div>2019-07-31</li><br/><li><span>Geek_kuntena</span> 👍（5） 💬（0）<div>pandas 的 resample 函数方便的进行合成大周期的k线数据</div>2020-03-17</li><br/><li><span>马建华</span> 👍（3） 💬（0）<div>    def buy(self):
+<li><span>Jingxiao</span> 👍（44） 💬（1）<p>整理后的代码在这里：https:&#47;&#47;github.com&#47;Eyelidstl&#47;GeekTimePythonClass</p>2019-08-01</li><br/><li><span>自由民</span> 👍（2） 💬（1）<p>这章比较难了，照着课程敲代码，调了半天可以运行了，结果却不对。把老师的代码下载回来仔细研究，终于清楚一些了。</p>2019-11-01</li><br/><li><span>方向</span> 👍（9） 💬（0）<p>有没有整理后的源代码，想统一查看</p>2019-07-31</li><br/><li><span>fy</span> 👍（6） 💬（0）<p>老师，可以用git管理每次分析的代码么？</p>2019-07-31</li><br/><li><span>Geek_kuntena</span> 👍（5） 💬（0）<p>pandas 的 resample 函数方便的进行合成大周期的k线数据</p>2020-03-17</li><br/><li><span>马建华</span> 👍（3） 💬（0）<p>    def buy(self):
         &quot;&quot;&quot;
         用当前账户剩余资金，按照市场价格全部买入
         :return:
@@ -563,20 +563,20 @@ if __name__ == '__main__':
         self._position = float(self._cash &#47; (self.current_price * (1 + self._commission)))
         self._cash = 0.0
 
-老师，这里应该是：self._position = float(self._cash * (1-self._commission) &#47; (self.current_price))吧？</div>2020-08-11</li><br/><li><span>马建华</span> 👍（3） 💬（0）<div>assert_msg(isinstance(commission, Number), &#39;commission不是浮点数值类型&#39;)为何不是用float而是number</div>2020-08-10</li><br/><li><span>宋强</span> 👍（2） 💬（1）<div>按照代码逻辑实现了一遍，发现即便是交易经手费是0，最后的收益也很大取决于数据本身。策略并不一定能盈利</div>2020-02-11</li><br/><li><span>小侠龙旋风</span> 👍（1） 💬（0）<div>SMA函数只做了一件事：pd.Series(values).rolling(n).mean()
+老师，这里应该是：self._position = float(self._cash * (1-self._commission) &#47; (self.current_price))吧？</p>2020-08-11</li><br/><li><span>马建华</span> 👍（3） 💬（0）<p>assert_msg(isinstance(commission, Number), &#39;commission不是浮点数值类型&#39;)为何不是用float而是number</p>2020-08-10</li><br/><li><span>宋强</span> 👍（2） 💬（1）<p>按照代码逻辑实现了一遍，发现即便是交易经手费是0，最后的收益也很大取决于数据本身。策略并不一定能盈利</p>2020-02-11</li><br/><li><span>小侠龙旋风</span> 👍（1） 💬（0）<p>SMA函数只做了一件事：pd.Series(values).rolling(n).mean()
 将传入的values转成一位数组以n个数据为单位滚动切分取平均值，返回一个均值数组
 SMA的调用位置：
 SmaCross在继承Strategy后必须要重写的抽象方法init中：
 self.sma1 = self.I(SMA, self.data.Close, self.fast)  # 用收盘价计算的10日均线
 self.sma2 = self.I(SMA, self.data.Close, self.slow)  # 用收盘价计算的20日均线
 
-提议：数据可视化更能直观表达实现策略的方案。</div>2019-09-01</li><br/><li><span>小侠龙旋风</span> 👍（1） 💬（0）<div>30日均线、10日均线、5日均线、小时、分钟...
+提议：数据可视化更能直观表达实现策略的方案。</p>2019-09-01</li><br/><li><span>小侠龙旋风</span> 👍（1） 💬（0）<p>30日均线、10日均线、5日均线、小时、分钟...
 大窗口SMA -&gt; 小窗口SMA
 策略：小窗口SMA从下穿过大窗口SMA，买入。大窗口SMA从下方突破小窗口 SMA，卖出。
-这要先看看股市的简单策略分析才能明白。刚开始看，完全不懂。。。</div>2019-09-01</li><br/><li><span>长青</span> 👍（1） 💬（1）<div>老师iself._indicators.append(value)这一步有有什么意义呢   没大看明白。还有
+这要先看看股市的简单策略分析才能明白。刚开始看，完全不懂。。。</p>2019-09-01</li><br/><li><span>长青</span> 👍（1） 💬（1）<p>老师iself._indicators.append(value)这一步有有什么意义呢   没大看明白。还有
 buy和sell是不是应该在下一根K线执行才对？比如我指标计算时用的15分钟K线   在10:15分出现买卖信号后，应该在10:30执行操作 ，因为指标时根据收盘价计算的
 
-</div>2019-08-12</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<div>第36讲打卡~</div>2024-07-17</li><br/><li><span>杨宇</span> 👍（0） 💬（0）<div>def __init__(self, data: pd.DataFrame, ...)
+</p>2019-08-12</li><br/><li><span>张申傲</span> 👍（0） 💬（0）<p>第36讲打卡~</p>2024-07-17</li><br/><li><span>杨宇</span> 👍（0） 💬（0）<p>def __init__(self, data: pd.DataFrame, ...)
 def crossover(series1, series2) -&gt; bool: ...
-——方法参数、返回值，怎么带类型了，之前的课没教过这种写法吧？</div>2021-12-05</li><br/><li><span>rock feng</span> 👍（0） 💬（0）<div>这堂课，看得我迷糊，第一次接触量化交易，太多知识点....</div>2021-09-08</li><br/><li><span>忧伤的胡萝卜</span> 👍（0） 💬（0）<div>assert_msg(not data[[&#39;Open&#39;, &#39;High&#39;, &#39;Low&#39;, &#39;Close&#39;]].max().isnull().any(), (&#39;部分OHLC包含缺失值，请去掉那些行或者通过差值填充. &#39;)) 请问这里为什么要用.max().isnull().any()来进行判空？</div>2021-05-11</li><br/>
+——方法参数、返回值，怎么带类型了，之前的课没教过这种写法吧？</p>2021-12-05</li><br/><li><span>rock feng</span> 👍（0） 💬（0）<p>这堂课，看得我迷糊，第一次接触量化交易，太多知识点....</p>2021-09-08</li><br/><li><span>忧伤的胡萝卜</span> 👍（0） 💬（0）<p>assert_msg(not data[[&#39;Open&#39;, &#39;High&#39;, &#39;Low&#39;, &#39;Close&#39;]].max().isnull().any(), (&#39;部分OHLC包含缺失值，请去掉那些行或者通过差值填充. &#39;)) 请问这里为什么要用.max().isnull().any()来进行判空？</p>2021-05-11</li><br/>
 </ul>

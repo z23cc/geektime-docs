@@ -315,8 +315,8 @@ notifyWaiters方法是按照先入先出的方式唤醒调用者。当释放100�
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得有所收获，也欢迎你把今天的内容分享给你的朋友或同事。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>木头发芽</span> 👍（5） 💬（1）<div>semaphore是用Mutex和Channel通知实现的,而Mutex又依赖于go内部的信号量实现,那这个内部的信号量又是用什么实现的?</div>2020-12-14</li><br/><li><span>刚子</span> 👍（2） 💬（1）<div>不是很理解这句话 ：&quot;一次请求多个资源，这是通过 Channel 实现的信号量所不具备的。&quot;
-Channel 也可以开启多个goroutine 去请求多个资源</div>2020-11-16</li><br/><li><span>lufofire</span> 👍（0） 💬（1）<div>
+<li><span>木头发芽</span> 👍（5） 💬（1）<p>semaphore是用Mutex和Channel通知实现的,而Mutex又依赖于go内部的信号量实现,那这个内部的信号量又是用什么实现的?</p>2020-12-14</li><br/><li><span>刚子</span> 👍（2） 💬（1）<p>不是很理解这句话 ：&quot;一次请求多个资源，这是通过 Channel 实现的信号量所不具备的。&quot;
+Channel 也可以开启多个goroutine 去请求多个资源</p>2020-11-16</li><br/><li><span>lufofire</span> 👍（0） 💬（1）<p>
 import (
 	&quot;context&quot;
 	&quot;errors&quot;
@@ -363,7 +363,7 @@ func (s *ChannelSemaphore) Release(ctx context.Context, n int64) error {
 	}
 	return nil
 }
-</div>2024-12-25</li><br/><li><span>Geek_2c2c44</span> 👍（0） 💬（1）<div>基于channel的lock实现这里， Lock和UnLock的实现互换一下顺序是不是也是可以的呢？如果寻Accquire（P）是减去信号量的规范的话， 是不是lock那里把channel写在右边会更好（从channel中拿出一个信号量）？PS：前面一节的Lock顺序和这里就是不同的</div>2024-01-24</li><br/><li><span>白开d水</span> 👍（0） 💬（1）<div>打卡</div>2023-03-23</li><br/><li><span>Geek_a6104e</span> 👍（0） 💬（1）<div>return &amp;semaphore{ch: make(chan struct{}, capacity)} 请问一下最后一个例子semaphore结构初始化为啥会多个capacity</div>2022-07-31</li><br/><li><span>8.13.3.27.30</span> 👍（0） 💬（1）<div>打卡完成</div>2022-01-06</li><br/><li><span>伟伟</span> 👍（0） 💬（6）<div>type Semaphore chan struct{}
+</p>2024-12-25</li><br/><li><span>Geek_2c2c44</span> 👍（0） 💬（1）<p>基于channel的lock实现这里， Lock和UnLock的实现互换一下顺序是不是也是可以的呢？如果寻Accquire（P）是减去信号量的规范的话， 是不是lock那里把channel写在右边会更好（从channel中拿出一个信号量）？PS：前面一节的Lock顺序和这里就是不同的</p>2024-01-24</li><br/><li><span>白开d水</span> 👍（0） 💬（1）<p>打卡</p>2023-03-23</li><br/><li><span>Geek_a6104e</span> 👍（0） 💬（1）<p>return &amp;semaphore{ch: make(chan struct{}, capacity)} 请问一下最后一个例子semaphore结构初始化为啥会多个capacity</p>2022-07-31</li><br/><li><span>8.13.3.27.30</span> 👍（0） 💬（1）<p>打卡完成</p>2022-01-06</li><br/><li><span>伟伟</span> 👍（0） 💬（6）<p>type Semaphore chan struct{}
 
 func NewSemaphore(cap int) Semaphore {
 	return make(chan struct{}, cap)
@@ -399,12 +399,12 @@ func (s Semaphore) Release2(n int) {
 	for i := 0; i &lt; n; i++ {
 		s &lt;- struct{}{}
 	}
-}</div>2020-11-23</li><br/><li><span>虫子樱桃</span> 👍（0） 💬（1）<div>老师的例子里面，是通过 计算机的协程 runtime.GOMAXPROCS(0) 来模拟有限的资源（比喻例子里面的书），那么这个semaphore的场景是不是就是比较适用于请求有流量或者调用次数限制的场景呢？</div>2020-11-19</li><br/><li><span>Ethan Liu</span> 👍（0） 💬（3）<div>老师，Acquire函数为什么还会有第二个select语句？这部分逻辑是什么啊？</div>2020-11-17</li><br/><li><span>thomas</span> 👍（20） 💬（1）<div>补充说明下 信号量 p&#47;v的含义：
-P—— passeren，中文译为&quot;通过&quot;，V—— vrijgeven，中文译为&quot;释放&quot; （因为作者是荷兰人，上面单词为荷兰语）</div>2021-01-01</li><br/><li><span>myrfy</span> 👍（7） 💬（1）<div>第一个问题:
+}</p>2020-11-23</li><br/><li><span>虫子樱桃</span> 👍（0） 💬（1）<p>老师的例子里面，是通过 计算机的协程 runtime.GOMAXPROCS(0) 来模拟有限的资源（比喻例子里面的书），那么这个semaphore的场景是不是就是比较适用于请求有流量或者调用次数限制的场景呢？</p>2020-11-19</li><br/><li><span>Ethan Liu</span> 👍（0） 💬（3）<p>老师，Acquire函数为什么还会有第二个select语句？这部分逻辑是什么啊？</p>2020-11-17</li><br/><li><span>thomas</span> 👍（20） 💬（1）<p>补充说明下 信号量 p&#47;v的含义：
+P—— passeren，中文译为&quot;通过&quot;，V—— vrijgeven，中文译为&quot;释放&quot; （因为作者是荷兰人，上面单词为荷兰语）</p>2021-01-01</li><br/><li><span>myrfy</span> 👍（7） 💬（1）<p>第一个问题:
 至少两种，写入ch算获取，自己读取ch算获取
 
-第二个问题应该是防止错误获取或者释放信号量时，出现负数溢出到无穷大的问题。如果溢出到无穷大，就会让信号量失效，从而导致1被保护资源更大规模的破坏</div>2020-11-16</li><br/><li><span>大漠胡萝卜</span> 👍（4） 💬（0）<div>在日常开发中，没怎么使用信号量semaphore，一般使用channel来解决这种问题。
-另外，并发的时候使用池化技术感觉更加通用吧。</div>2020-11-21</li><br/><li><span>米琴香光</span> 👍（0） 💬（0）<div>type Semaphore struct {
+第二个问题应该是防止错误获取或者释放信号量时，出现负数溢出到无穷大的问题。如果溢出到无穷大，就会让信号量失效，从而导致1被保护资源更大规模的破坏</p>2020-11-16</li><br/><li><span>大漠胡萝卜</span> 👍（4） 💬（0）<p>在日常开发中，没怎么使用信号量semaphore，一般使用channel来解决这种问题。
+另外，并发的时候使用池化技术感觉更加通用吧。</p>2020-11-21</li><br/><li><span>米琴香光</span> 👍（0） 💬（0）<p>type Semaphore struct {
 	c        chan struct{}
 	acq, rel chan []struct{}
 }
@@ -429,6 +429,6 @@ func (s Semaphore) Release(n int) {
 	for range &lt;-s.rel {
 		&lt;-s.c
 	}
-}</div>2024-01-15</li><br/><li><span>友</span> 👍（0） 💬（0）<div>https:&#47;&#47;github.com&#47;zzm996-zzm&#47;go-concurrent&#47;blob&#47;main&#47;semaphore&#47;semaphore.go
-基于chan实现的信号量 其实和文章中的思路是一样的 不过全都是自己实现的</div>2021-08-21</li><br/>
+}</p>2024-01-15</li><br/><li><span>友</span> 👍（0） 💬（0）<p>https:&#47;&#47;github.com&#47;zzm996-zzm&#47;go-concurrent&#47;blob&#47;main&#47;semaphore&#47;semaphore.go
+基于chan实现的信号量 其实和文章中的思路是一样的 不过全都是自己实现的</p>2021-08-21</li><br/>
 </ul>

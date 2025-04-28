@@ -331,7 +331,7 @@ step2: a,b  >  *     //用逗号分隔栈里的多个元素
 
 我会在下一讲的留言区，通过置顶的方式公布标准答案。好了，这节课就到这里，感谢你的阅读，欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>ヾ(◍°∇°◍)ﾉﾞ</span> 👍（5） 💬（1）<div>jabel这种让jdk8支持高版本java语法的项目也是用到了编译技术了吧</div>2020-06-24</li><br/><li><span>minghu6</span> 👍（2） 💬（1）<div>说编译器成熟后就要自举,这绝对是一个槽点太多以至于无处下嘴的迷思,任何脚踏实地的人不应该迷信这种东西.
+<li><span>ヾ(◍°∇°◍)ﾉﾞ</span> 👍（5） 💬（1）<p>jabel这种让jdk8支持高版本java语法的项目也是用到了编译技术了吧</p>2020-06-24</li><br/><li><span>minghu6</span> 👍（2） 💬（1）<p>说编译器成熟后就要自举,这绝对是一个槽点太多以至于无处下嘴的迷思,任何脚踏实地的人不应该迷信这种东西.
 
 首先,不管你如何自举,不可能根本摆脱依赖某些原生操作平台上的工具链的支持,当然也不排除有些人通过重新造轮子的方法把这些工具链全部重新实现一遍,但那只是意味着要额外安装一份儿二进制文件.
 
@@ -339,8 +339,8 @@ step2: a,b  >  *     //用逗号分隔栈里的多个元素
 
 那么好了,自举有实际的好处吗? 并没有,因为对于一个语言关键得是解决某一类领域的问题具有优势, 不管这个优势是开发效率高\性能表现好\还是上手简单招工容易等等. 人们关注得是否有杀手级应用和大公司的背书,而不是它是否完成了自举.
 
-最后, 个人认为自举在国外流行主要是来源于早期部分黑客&quot;非我不用&quot;的这种有宗教狂热色彩的值得商榷的风格的演化,如果一门语言本身就是用系统原生语言比如C或者其他系统级编程语言比如C++&#47;Rust写的,那我不认为有自举的必要.</div>2021-06-15</li><br/><li><span>易昊</span> 👍（2） 💬（1）<div>老师请教一个问题，最近在看Javac的源码中的词法分析部分，其中Tokens.java中，enum Tag定义有一个是NAMED，我不理解这个NAMED Tag是做什么用的，并且看enum TokenKind的定义，似乎仅有assert, 
-boolean, byte, char,  double, enum, float, int, long, short, super, this, void, true, false, null, _  是对应的NAMED tag，想弄明白为什么会这样设计。</div>2021-02-07</li><br/><li><span>wusiration</span> 👍（2） 💬（1）<div>补交作业，没有看下一讲的答案....
+最后, 个人认为自举在国外流行主要是来源于早期部分黑客&quot;非我不用&quot;的这种有宗教狂热色彩的值得商榷的风格的演化,如果一门语言本身就是用系统原生语言比如C或者其他系统级编程语言比如C++&#47;Rust写的,那我不认为有自举的必要.</p>2021-06-15</li><br/><li><span>易昊</span> 👍（2） 💬（1）<p>老师请教一个问题，最近在看Javac的源码中的词法分析部分，其中Tokens.java中，enum Tag定义有一个是NAMED，我不理解这个NAMED Tag是做什么用的，并且看enum TokenKind的定义，似乎仅有assert, 
+boolean, byte, char,  double, enum, float, int, long, short, super, this, void, true, false, null, _  是对应的NAMED tag，想弄明白为什么会这样设计。</p>2021-02-07</li><br/><li><span>wusiration</span> 👍（2） 💬（1）<p>补交作业，没有看下一讲的答案....
 ​			odStack     opStack      后续运算符
 
 step1: a
@@ -353,22 +353,22 @@ step4: a,b*2          &gt;                  +
 
 step5: a&gt;b*2,3      +                  
 
-step6: a&gt;b*2+7 </div>2020-07-01</li><br/><li><span>lion_fly</span> 👍（1） 💬（1）<div>老师，我在debugJava编译器的代码：
+step6: a&gt;b*2+7 </p>2020-07-01</li><br/><li><span>lion_fly</span> 👍（1） 💬（1）<p>老师，我在debugJava编译器的代码：
 在源码的注释里面出现了这样的内容
 Qualident = Ident { DOT [Annotations] Ident }
-Java编译器的这种文法是什么文法，感觉不是上下文无关文法</div>2021-01-21</li><br/><li><span>Apsaras</span> 👍（1） 💬（1）<div>step1: a
+Java编译器的这种文法是什么文法，感觉不是上下文无关文法</p>2021-01-21</li><br/><li><span>Apsaras</span> 👍（1） 💬（1）<p>step1: a
 step2: a,b  &gt;   *
 step3: a,b,2  &gt;,*  +
 step4: a,b*2  &gt;,+
 step5: a,b*2,3  &gt;,+
 step6: a,b*2+3
-step7: a&gt;b*2+3</div>2020-06-23</li><br/><li><span>冬天里的懒猫</span> 👍（0） 💬（1）<div>原来竟然是这样。。。
-用了这么多年的java，从来没有想过编译器是如何实现的。这篇课程非常有用。</div>2020-10-28</li><br/><li><span>chris</span> 👍（0） 💬（2）<div>老师能否介绍一下如何建一个ide工程阅读源码？</div>2020-06-23</li><br/><li><span>Geek_71d4ac</span> 👍（0） 💬（1）<div>交作业
+step7: a&gt;b*2+3</p>2020-06-23</li><br/><li><span>冬天里的懒猫</span> 👍（0） 💬（1）<p>原来竟然是这样。。。
+用了这么多年的java，从来没有想过编译器是如何实现的。这篇课程非常有用。</p>2020-10-28</li><br/><li><span>chris</span> 👍（0） 💬（2）<p>老师能否介绍一下如何建一个ide工程阅读源码？</p>2020-06-23</li><br/><li><span>Geek_71d4ac</span> 👍（0） 💬（1）<p>交作业
 step1: a
 step2: a,b           &gt;     *
 step3: a,b,2        &gt;,*   +
 step4: a,b*2       &gt;      +
 step5:a, b*2,3     &gt;,+  
 step6:a, b*2+3   &gt;
-step7: a &gt;b *2+3</div>2020-06-22</li><br/><li><span>mikewt</span> 👍（1） 💬（0）<div>老师 javacc编译器跟这个有啥关系 为啥java不用javacc编译</div>2023-08-04</li><br/>
+step7: a &gt;b *2+3</p>2020-06-22</li><br/><li><span>mikewt</span> 👍（1） 💬（0）<p>老师 javacc编译器跟这个有啥关系 为啥java不用javacc编译</p>2023-08-04</li><br/>
 </ul>

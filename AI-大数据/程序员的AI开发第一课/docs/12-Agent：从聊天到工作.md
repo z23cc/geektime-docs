@@ -94,9 +94,9 @@ AutoGPT 刚刚出来的时候，惊艳到了很多人。只需要一个简单提
 
 Agent 是一个蓬勃发展的领域，各种项目层出不穷。我建议你去了解一下现在有哪些开源的 Agent 实现，它们分别解决了怎样的问题，欢迎在留言区分享你的搜索心得。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>张申傲</span> 👍（3） 💬（1）<div>第12讲打卡~
-业界很多大佬预测，2025年会是“AI Agent 元年”，我们拭目以待！</div>2025-01-21</li><br/><li><span>范</span> 👍（0） 💬（1）<div>翻译为智能体，比“代理”更好理解了</div>2024-12-10</li><br/><li><span>grok</span> 👍（0） 💬（0）<div>老师 请教一个问题：前两天Anthropic发布了MCP &lt;https:&#47;&#47;www.anthropic.com&#47;news&#47;model-context-protocol&gt;, 请问这个东西和agent有多大关系？这个MCP当前是否有竞争产品？对程序员的参考价值有多大？
+<li><span>张申傲</span> 👍（3） 💬（1）<p>第12讲打卡~
+业界很多大佬预测，2025年会是“AI Agent 元年”，我们拭目以待！</p>2025-01-21</li><br/><li><span>范</span> 👍（0） 💬（1）<p>翻译为智能体，比“代理”更好理解了</p>2024-12-10</li><br/><li><span>grok</span> 👍（0） 💬（0）<p>老师 请教一个问题：前两天Anthropic发布了MCP &lt;https:&#47;&#47;www.anthropic.com&#47;news&#47;model-context-protocol&gt;, 请问这个东西和agent有多大关系？这个MCP当前是否有竞争产品？对程序员的参考价值有多大？
 
 ---
-思考题答案在此：https:&#47;&#47;www.perplexity.ai&#47;search&#47;llm-ai-agent-shi-yi-ge-peng-bo-0nk8rr6nRmyvXEzl3JY1sg</div>2024-11-27</li><br/>
+思考题答案在此：https:&#47;&#47;www.perplexity.ai&#47;search&#47;llm-ai-agent-shi-yi-ge-peng-bo-0nk8rr6nRmyvXEzl3JY1sg</p>2024-11-27</li><br/>
 </ul>

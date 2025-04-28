@@ -530,10 +530,10 @@ Node<E> node(int index) {
 
 你还遇到过与集合类相关的其他坑吗？我是朱晔，欢迎在评论区与我留言分享你的想法，也欢迎你把这篇文章分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Darren</span> 👍（107） 💬（4）<div>哈哈，好巧，前两年有段时间比较闲，研究ArrayList和LinkedList，也对于所谓的ArrayList查询快，增删慢以及LinkedList查询慢，增删快提出过疑问，也做过类似的实验，然后去年给19年校招生入职培训的时候还专门分享过。要打破常规思维，多问为什么，要多听多看，多实验。
+<li><span>Darren</span> 👍（107） 💬（4）<p>哈哈，好巧，前两年有段时间比较闲，研究ArrayList和LinkedList，也对于所谓的ArrayList查询快，增删慢以及LinkedList查询慢，增删快提出过疑问，也做过类似的实验，然后去年给19年校招生入职培训的时候还专门分享过。要打破常规思维，多问为什么，要多听多看，多实验。
 回答下问题：
 1、int类型是index，也就是索引，是按照元素位置删除的；Integer是删除某个元素，内部是通过遍历数组然后对比，找到指定的元素，然后删除；两个都需要进行数组拷贝，是通过System.arraycopy进行的
-2、以foreach为例说，遍历删除实质是变化为迭代器实现，不管是迭代器里面的remove()还是next()方法,都会checkForComodification();而这个方法是判断modCount和expectedModCount是否相等，这个modCount是这个list集合修改的次数，每一次add或者remove都会增加这个变量，然后迭代器每次去next或者去remove的时候检查checkForComodification();发现expectedModCount(这个迭代器修改的次数)和modCount(这个集合实际修改的次数)不相等，就会抛出ConcurrentModificationException，迭代器里面没有add方法，用迭代器时，可以删除原来集合的元素，但是！一定要用迭代器的remove方法而不是集合自身的remove方法，否则抛异常。</div>2020-03-31</li><br/><li><span>eazonshaw</span> 👍（39） 💬（1）<div>思考题：
+2、以foreach为例说，遍历删除实质是变化为迭代器实现，不管是迭代器里面的remove()还是next()方法,都会checkForComodification();而这个方法是判断modCount和expectedModCount是否相等，这个modCount是这个list集合修改的次数，每一次add或者remove都会增加这个变量，然后迭代器每次去next或者去remove的时候检查checkForComodification();发现expectedModCount(这个迭代器修改的次数)和modCount(这个集合实际修改的次数)不相等，就会抛出ConcurrentModificationException，迭代器里面没有add方法，用迭代器时，可以删除原来集合的元素，但是！一定要用迭代器的remove方法而不是集合自身的remove方法，否则抛异常。</p>2020-03-31</li><br/><li><span>eazonshaw</span> 👍（39） 💬（1）<p>思考题：
 1. 不一样。使用 ArrayList 的 remove方法，如果传参是 Integer类型的话，表示的是删除元素，如果传参是int类型的话，表示的是删除相对应索引位置的元素。
 同时，做了个小实验，如果是String类型的ArrayList，传参是Integer类型时，remove方法只是返回false，视为元素不存在。
 2. 原因：查看源码可以发现，remove方法会发生结构化修改，也就是 modCount 会增加。当循环过程中，比较当前 List 的 modCount 与初始的 modCount 不相等，就会报 ConcurrentModificationException。解决方法：1.使用 ArrayList 的迭代器 iterator，并调用之中的remove方法。查看源码可以发现，内部类的remove方法，会维护一个expectedModCount，使其与 ArrayList 的modCount保持一致。2.如果是java 8，可以使用removeIf方法进行删除操作。
@@ -555,7 +555,7 @@ final void checkForComodification() {
     if (modCount != expectedModCount)
         throw new ConcurrentModificationException();
 }
-```</div>2020-03-31</li><br/><li><span>👽</span> 👍（15） 💬（1）<div>思考题2：
+```</p>2020-03-31</li><br/><li><span>👽</span> 👍（15） 💬（1）<p>思考题2：
 便利通常的实现方式for冒号的实现，其实底层还是用Iterator 删除元素，查看class文件大概是这样：
 
 Iterator var2 = list.iterator();
@@ -598,35 +598,35 @@ Iterator var2 = list.iterator();
 
 代码写的比较随意，可能存在纰漏。欢迎指点
 
-</div>2020-03-31</li><br/><li><span>失火的夏天</span> 👍（6） 💬（2）<div>1.remove包装类数字是删除对象，基本类型的int数字是删除下标。
+</p>2020-03-31</li><br/><li><span>失火的夏天</span> 👍（6） 💬（2）<p>1.remove包装类数字是删除对象，基本类型的int数字是删除下标。
 2.好像是modcount和什么东西对不上来着，具体忘记了，看看其他大佬怎么说。解决这玩意就是改用迭代器遍历，调用迭代器的remove方法。
 
 话说到这个linkedlist，真是感觉全面被arraylist压制。那这数据结构还留着干嘛呢？为什么不删掉算了。。。我个人感觉linekdlist只有在头尾加入删除元素的时候有一点点优势了吧。用队列或者双端队列的时候会偶然用到。但是感觉用对应的数组模式实现，效率会更高些，就是要考虑扩容的问题。
 
-老师能帮忙解答一下linkedlist留下没删是因为什么吗？</div>2020-03-31</li><br/><li><span>👽</span> 👍（5） 💬（1）<div>感触颇深：
+老师能帮忙解答一下linkedlist留下没删是因为什么吗？</p>2020-03-31</li><br/><li><span>👽</span> 👍（5） 💬（1）<p>感触颇深：
 Arrays的asList和subList，使用过程中需要谨慎，甚至可以考虑直接不用。
 要熟悉数据结构。ArrayList 和 HashMap就是典型对比，ArrayList更适合随机访问，节约内存空间，大多数情况下性能不错。但，因为其本质上是数组，所以，无法实现快速找到想要的值。
 LinkedList  没有想象中好用，使用前请考虑清楚。
-</div>2020-03-31</li><br/><li><span>hellojd</span> 👍（5） 💬（1）<div>学习到了老师的探索精神，linedlist随机插入性能居然不高，刷新了认知。</div>2020-03-31</li><br/><li><span>看不到de颜色</span> 👍（4） 💬（1）<div>老师这期的课程太让人产生共鸣了。之前生产就出过问题。调用方法，达到了用Arrays.asList返回的集合，然后对集合操作时就出了一场。当时看了asList的源码时才发现JDK居然还有这种坑。subList也确实是一个很容易采坑的地方，subList本质上就是把原List报了层皮返回了。关于ListList，头插的话性能应该是会碾压ArrayList，但是就看有没有这种场景了。
+</p>2020-03-31</li><br/><li><span>hellojd</span> 👍（5） 💬（1）<p>学习到了老师的探索精神，linedlist随机插入性能居然不高，刷新了认知。</p>2020-03-31</li><br/><li><span>看不到de颜色</span> 👍（4） 💬（1）<p>老师这期的课程太让人产生共鸣了。之前生产就出过问题。调用方法，达到了用Arrays.asList返回的集合，然后对集合操作时就出了一场。当时看了asList的源码时才发现JDK居然还有这种坑。subList也确实是一个很容易采坑的地方，subList本质上就是把原List报了层皮返回了。关于ListList，头插的话性能应该是会碾压ArrayList，但是就看有没有这种场景了。
 课后练习：
 1.根据API可以看出，remove(int index) &#47; remove(Object element)
 2.Iterator过程中集合结构不能发生变化，通常是遍历过程中其他线程对集合进行了add&#47;remove。可以用CopyOnWrite集合来避免。
-</div>2020-04-02</li><br/><li><span>大大大熊myeh</span> 👍（3） 💬（1）<div>巧了，思考题1与我之前遇到的问题一样，List#remove方法竟然没删掉里面的元素，最后才发现原来是重载方法的锅，int是删List中该索引的元素，Integer是删除List中值为该Integer的元素。
+</p>2020-04-02</li><br/><li><span>大大大熊myeh</span> 👍（3） 💬（1）<p>巧了，思考题1与我之前遇到的问题一样，List#remove方法竟然没删掉里面的元素，最后才发现原来是重载方法的锅，int是删List中该索引的元素，Integer是删除List中值为该Integer的元素。
 
 当时还写了篇博客记录，恬不知耻的放上来：https:&#47;&#47;planeswalker23.github.io&#47;2018&#47;09&#47;10&#47;List-remove&#47;
 
 本篇收获颇多，特别是关于LinkedList的增删复杂度，之前也没看过LinkedList源码，于是一直以为增删很快。
 
-得到一个结论：任何总结，还是得以源码为基础。所有不看源码的总结都是耍流氓。</div>2020-04-11</li><br/><li><span>蚂蚁内推+v</span> 👍（2） 💬（3）<div>int[] arr = {1, 2, 3};
+得到一个结论：任何总结，还是得以源码为基础。所有不看源码的总结都是耍流氓。</p>2020-04-11</li><br/><li><span>蚂蚁内推+v</span> 👍（2） 💬（3）<p>int[] arr = {1, 2, 3};
 List list = Arrays.asList(arr);
 System.out.println(list + &quot; &quot; + list.size() + &quot; &quot; + list.get(0).getClass());
 
 
-[1, 2, 3] 3 class java.lang.Integer 为何我本地和老师演示的不一样？？</div>2020-04-02</li><br/><li><span>pedro</span> 👍（2） 💬（1）<div>第二个问题，使用 for-each 或者 iterator 进行迭代删除 remove 时，容易导致 next() 检测的 modCount 不等于 expectedModCount 从而引发 ConcurrentModificationException。
-在单线程下，推荐使用 next() 得到元素，然后直接调用 remove(),注意是无参的 remove; 多线程情况下还是使用并发容器吧😃</div>2020-03-31</li><br/><li><span>jacy</span> 👍（1） 💬（1）<div>问题二可以用迭代器进行删除。
+[1, 2, 3] 3 class java.lang.Integer 为何我本地和老师演示的不一样？？</p>2020-04-02</li><br/><li><span>pedro</span> 👍（2） 💬（1）<p>第二个问题，使用 for-each 或者 iterator 进行迭代删除 remove 时，容易导致 next() 检测的 modCount 不等于 expectedModCount 从而引发 ConcurrentModificationException。
+在单线程下，推荐使用 next() 得到元素，然后直接调用 remove(),注意是无参的 remove; 多线程情况下还是使用并发容器吧😃</p>2020-03-31</li><br/><li><span>jacy</span> 👍（1） 💬（1）<p>问题二可以用迭代器进行删除。
 看源码遍历的remove是代参数的remove方法,会导致ModCount++，但expectedModCount不会改变，next会检查两值是否相等，因此会抛异常。从代码上也可以读出作者的想法，就是通过此种方式来禁止遍历时直接remove。
 
-迭代器删除是用的无参数remove，删除后会执行expectedModCount = modCount，将两值置为相等。</div>2020-09-09</li><br/><li><span>Avalon</span> 👍（1） 💬（1）<div>我有一个疑问，在LinkedList中addFirst方法调用的私有方法linkFirst方法如下：
+迭代器删除是用的无参数remove，删除后会执行expectedModCount = modCount，将两值置为相等。</p>2020-09-09</li><br/><li><span>Avalon</span> 👍（1） 💬（1）<p>我有一个疑问，在LinkedList中addFirst方法调用的私有方法linkFirst方法如下：
 ```
     private void linkFirst(E e) {
         LinkedList.Node&lt;E&gt; f = this.first;
@@ -643,7 +643,7 @@ System.out.println(list + &quot; &quot; + list.size() + &quot; &quot; + list.get
     }
 ```
 这段代码里面仅针对一个位置进行了增加节点的操作，为什么addFirst的性能还是不及ArrayList的add方法呢？
-</div>2020-06-18</li><br/><li><span>LovePeace</span> 👍（1） 💬（1）<div>大量的业务开发其实没那么大的数据,linkendList在插入小量数据的时候还是比arraylist有优势的
+</p>2020-06-18</li><br/><li><span>LovePeace</span> 👍（1） 💬（1）<p>大量的业务开发其实没那么大的数据,linkendList在插入小量数据的时候还是比arraylist有优势的
         int loopCount = 100;
         StopWatch stopWatch = new StopWatch();
         stopWatch.start(&quot;linkedListadd&quot;);
@@ -674,5 +674,5 @@ StopWatch &#39;&#39;: running time = 93300 ns
 ns         %     Task name
 ---------------------------------------------
 000025500  027%  linkedListadd
-000067800  073%  arrayListadd</div>2020-05-19</li><br/><li><span>苏暮沉觞</span> 👍（1） 💬（1）<div>老师，对于ArrayList和LinkedList插入性能测试有点疑问：我们这是测量10W的数据量下的结果，如果数据量达到100W，推论还是成立吗？（想测试100W数据量，但是数据量逐步提高到30W以后，程序就运行很久很久）。判断两种数据类型的速度，能不能简单归纳为判断LinkedList查找下一个节点的时间和（ArrayList数组后移一个数据时间+扩容平均时间）哪个比较短？</div>2020-05-09</li><br/><li><span>csyangchsh</span> 👍（1） 💬（1）<div>ArrayList分配的内存空间是连续的，对会CPU Cache很友好。LinkedList还要包装成Node，又增加了开销。这个测试使用JMH，根据CPU Cache大小，定义不同的元素个数，可能更严谨一点。</div>2020-03-31</li><br/>
+000067800  073%  arrayListadd</p>2020-05-19</li><br/><li><span>苏暮沉觞</span> 👍（1） 💬（1）<p>老师，对于ArrayList和LinkedList插入性能测试有点疑问：我们这是测量10W的数据量下的结果，如果数据量达到100W，推论还是成立吗？（想测试100W数据量，但是数据量逐步提高到30W以后，程序就运行很久很久）。判断两种数据类型的速度，能不能简单归纳为判断LinkedList查找下一个节点的时间和（ArrayList数组后移一个数据时间+扩容平均时间）哪个比较短？</p>2020-05-09</li><br/><li><span>csyangchsh</span> 👍（1） 💬（1）<p>ArrayList分配的内存空间是连续的，对会CPU Cache很友好。LinkedList还要包装成Node，又增加了开销。这个测试使用JMH，根据CPU Cache大小，定义不同的元素个数，可能更严谨一点。</p>2020-03-31</li><br/>
 </ul>

@@ -397,16 +397,16 @@ while (true) {
 - PlayScript.g4（语法规则）： [码云](https://gitee.com/richard-gong/PlayWithCompiler/blob/master/playscript-java/src/main/play/PlayScript.g4) [GitHub](https://github.com/RichardGong/PlayWithCompiler/blob/master/playscript-java/src/main/play/PlayScript.g4)
 - ASTEvaluator.java（解释器）： [码云](https://gitee.com/richard-gong/PlayWithCompiler/blob/master/playscript-java/src/main/play/ASTEvaluator.java) [GitHub](https://github.com/RichardGong/PlayWithCompiler/blob/master/playscript-java/src/main/play/ASTEvaluator.java)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>李懂</span> 👍（20） 💬（2）<div>现在都是用一门语言去实现这些功能，我想知道最开始的语言是怎么实现分析的呢！有一点鸡生蛋蛋生鸡！</div>2019-08-29</li><br/><li><span>Spring</span> 👍（17） 💬（1）<div>老师，你好。请教一下，词法，语法解析后生成 AST 后，计算机怎么指导我的AST 中的“+” 就是执行 add  的计算呢？这其中是不是还有还存在一个中间层？</div>2019-08-28</li><br/><li><span>Void_seT</span> 👍（15） 💬（1）<div>老师，目前的学习过程中，比如表达式语法规则、语句语法规则等，虽然能知道它们表示了什么，但是并不知道它是怎么凭空产生的；请问：这种规则是相对比较固定的，我们要使用时，可以参照“标准”的规则文法进行修改呢？还是要自己掌握各种类型语法规则的各个组成细节，以便于在写语法规则时可以信手拈来呢？如果需要熟练掌握语法规则的各个组成细节，目前的工作如果还用不到生成“小编译器”这种技能，也就是没有练习或高强度的训练时间的话，是否需要现在就硬啃下这块硬骨头（因为怕长时间不使用，将来真正要使用时，还是要重新再训练一遍）？</div>2019-08-28</li><br/><li><span>宇智波芭芭干</span> 👍（8） 💬（7）<div>学习时总感觉节奏在老师那边，自己的思路并不连贯，对于初学者容易出现断片。在极客时间其它老师那里也同步购买了linux以及网络协议，另外一边通过故事的形式通熟易懂的讲解了一些底层知识原理，学习也是相当顺畅有兴趣，而这里不知道为啥就是顺畅不起来，差距不是一般的大。</div>2019-09-10</li><br/><li><span>windpiaoxue</span> 👍（8） 💬（1）<div>老师您好
+<li><span>李懂</span> 👍（20） 💬（2）<p>现在都是用一门语言去实现这些功能，我想知道最开始的语言是怎么实现分析的呢！有一点鸡生蛋蛋生鸡！</p>2019-08-29</li><br/><li><span>Spring</span> 👍（17） 💬（1）<p>老师，你好。请教一下，词法，语法解析后生成 AST 后，计算机怎么指导我的AST 中的“+” 就是执行 add  的计算呢？这其中是不是还有还存在一个中间层？</p>2019-08-28</li><br/><li><span>Void_seT</span> 👍（15） 💬（1）<p>老师，目前的学习过程中，比如表达式语法规则、语句语法规则等，虽然能知道它们表示了什么，但是并不知道它是怎么凭空产生的；请问：这种规则是相对比较固定的，我们要使用时，可以参照“标准”的规则文法进行修改呢？还是要自己掌握各种类型语法规则的各个组成细节，以便于在写语法规则时可以信手拈来呢？如果需要熟练掌握语法规则的各个组成细节，目前的工作如果还用不到生成“小编译器”这种技能，也就是没有练习或高强度的训练时间的话，是否需要现在就硬啃下这块硬骨头（因为怕长时间不使用，将来真正要使用时，还是要重新再训练一遍）？</p>2019-08-28</li><br/><li><span>宇智波芭芭干</span> 👍（8） 💬（7）<p>学习时总感觉节奏在老师那边，自己的思路并不连贯，对于初学者容易出现断片。在极客时间其它老师那里也同步购买了linux以及网络协议，另外一边通过故事的形式通熟易懂的讲解了一些底层知识原理，学习也是相当顺畅有兴趣，而这里不知道为啥就是顺畅不起来，差距不是一般的大。</p>2019-09-10</li><br/><li><span>windpiaoxue</span> 👍（8） 💬（1）<p>老师您好
 例如下面这个规则：
 stmt -&gt; if expr stmt
       | if expr stmt else stmt
       | other
 我测试了一下，antlr使用上面这个规则可以正确的处理悬挂else的问题，
 antlr在处理这种二义性问题的时候，是依据什么来处理的。
-</div>2019-08-31</li><br/><li><span>fung</span> 👍（2） 💬（2）<div>老师，这一段看不懂咋办，有的救吗？看不懂这些语法啊，能解析下吗？或有其他资料介绍吗？谢谢
-expression : primary | expression bop=&#39;.&#39; ( IDENTIFIER | functionCall | THIS ) | expression &#39;[&#39; expression &#39;]&#39; | functionCall | expression postfix=(&#39;++&#39; | &#39;--&#39;) | prefix=(&#39;+&#39;|&#39;-&#39;|&#39;++&#39;|&#39;--&#39;) expression | prefix=(&#39;~&#39;|&#39;!&#39;) expression | expression bop=(&#39;*&#39;|&#39;&#47;&#39;|&#39;%&#39;) expression | expression bop=(&#39;+&#39;|&#39;-&#39;) expression | expression (&#39;&lt;&#39; &#39;&lt;&#39; | &#39;&gt;&#39; &#39;&gt;&#39; &#39;&gt;&#39; | &#39;&gt;&#39; &#39;&gt;&#39;) expression | expression bop=(&#39;&lt;=&#39; | &#39;&gt;=&#39; | &#39;&gt;&#39; | &#39;&lt;&#39;) expression .......</div>2019-11-05</li><br/><li><span>shantelle</span> 👍（2） 💬（1）<div>宫老师你好，请问这个匹配的是什么内容呢
-&#39;\\&#39; [btnfr&quot;&#39;\\]</div>2019-10-25</li><br/><li><span>zhj</span> 👍（2） 💬（1）<div>现在拿到的ASTEvaluator，都裹扎了编译器相关的代码，这里才看到Ast树，这边没有很好的 版本迭代吗，上来直接就是讲课同步的代码，看的云里雾里，没法循序渐进</div>2019-10-16</li><br/><li><span>石维康</span> 👍（2） 💬（1）<div>statement
+</p>2019-08-31</li><br/><li><span>fung</span> 👍（2） 💬（2）<p>老师，这一段看不懂咋办，有的救吗？看不懂这些语法啊，能解析下吗？或有其他资料介绍吗？谢谢
+expression : primary | expression bop=&#39;.&#39; ( IDENTIFIER | functionCall | THIS ) | expression &#39;[&#39; expression &#39;]&#39; | functionCall | expression postfix=(&#39;++&#39; | &#39;--&#39;) | prefix=(&#39;+&#39;|&#39;-&#39;|&#39;++&#39;|&#39;--&#39;) expression | prefix=(&#39;~&#39;|&#39;!&#39;) expression | expression bop=(&#39;*&#39;|&#39;&#47;&#39;|&#39;%&#39;) expression | expression bop=(&#39;+&#39;|&#39;-&#39;) expression | expression (&#39;&lt;&#39; &#39;&lt;&#39; | &#39;&gt;&#39; &#39;&gt;&#39; &#39;&gt;&#39; | &#39;&gt;&#39; &#39;&gt;&#39;) expression | expression bop=(&#39;&lt;=&#39; | &#39;&gt;=&#39; | &#39;&gt;&#39; | &#39;&lt;&#39;) expression .......</p>2019-11-05</li><br/><li><span>shantelle</span> 👍（2） 💬（1）<p>宫老师你好，请问这个匹配的是什么内容呢
+&#39;\\&#39; [btnfr&quot;&#39;\\]</p>2019-10-25</li><br/><li><span>zhj</span> 👍（2） 💬（1）<p>现在拿到的ASTEvaluator，都裹扎了编译器相关的代码，这里才看到Ast树，这边没有很好的 版本迭代吗，上来直接就是讲课同步的代码，看的云里雾里，没法循序渐进</p>2019-10-16</li><br/><li><span>石维康</span> 👍（2） 💬（1）<p>statement
     : blockLabel=block
     | IF parExpression statement (ELSE statement)?
     | FOR &#39;(&#39; forControl &#39;)&#39; statement
@@ -418,12 +418,12 @@ expression : primary | expression bop=&#39;.&#39; ( IDENTIFIER | functionCall | 
     | SEMI
     | statementExpression=expression &#39;;&#39;
     ;
-请问&quot; : blockLabel=block&quot;这个规则如何解释?谢谢!</div>2019-08-28</li><br/><li><span>草戊</span> 👍（1） 💬（1）<div>老师，有些语言的部分文法是上下文有关，比如说必须是第七列写*号来注释。对于这样的语言分析，有什么好的建议吗？在parser前先做预处理变换？</div>2019-12-15</li><br/><li><span>cry soul</span> 👍（1） 💬（1）<div>建议老师用用git搭好tag来表示每个课程到到哪部分源码，不然需要读好几篇才能自己尝试。</div>2019-10-05</li><br/><li><span>李懂</span> 👍（1） 💬（4）<div>JavaScript中的this是咋实现的，这个一直处于迷糊当中，好想弄清楚，不同语言之间语意的差别，学完语意能理解么😇 😇 😇 ，看了很多课程，都很失望，都是再讲几种场景，怎么指向，没实质的改变！</div>2019-08-29</li><br/><li><span>中年男子</span> 👍（1） 💬（1）<div>编译 git 里 PlayScript-cpp， 我这里报错， PlayScriptJit.h 这个文件， 搞了半天没搞懂
+请问&quot; : blockLabel=block&quot;这个规则如何解释?谢谢!</p>2019-08-28</li><br/><li><span>草戊</span> 👍（1） 💬（1）<p>老师，有些语言的部分文法是上下文有关，比如说必须是第七列写*号来注释。对于这样的语言分析，有什么好的建议吗？在parser前先做预处理变换？</p>2019-12-15</li><br/><li><span>cry soul</span> 👍（1） 💬（1）<p>建议老师用用git搭好tag来表示每个课程到到哪部分源码，不然需要读好几篇才能自己尝试。</p>2019-10-05</li><br/><li><span>李懂</span> 👍（1） 💬（4）<p>JavaScript中的this是咋实现的，这个一直处于迷糊当中，好想弄清楚，不同语言之间语意的差别，学完语意能理解么😇 😇 😇 ，看了很多课程，都很失望，都是再讲几种场景，怎么指向，没实质的改变！</p>2019-08-29</li><br/><li><span>中年男子</span> 👍（1） 💬（1）<p>编译 git 里 PlayScript-cpp， 我这里报错， PlayScriptJit.h 这个文件， 搞了半天没搞懂
 In file included from &#47;Users&#47;shiny&#47;learn&#47;PlayWithCompiler&#47;playscript-cpp&#47;src&#47;PlayScript.cpp:5:
 [build] In file included from &#47;Users&#47;shiny&#47;learn&#47;PlayWithCompiler&#47;playscript-cpp&#47;src&#47;grammar&#47;IRGen.h:28:
 [build] &#47;Users&#47;shiny&#47;learn&#47;PlayWithCompiler&#47;playscript-cpp&#47;src&#47;grammar&#47;PlayScriptJIT.h:33:31: error: unknown type name &#39;LegacyRTDyldObjectLinkingLayer&#39;; did you mean &#39;RTDyldObjectLinkingLayer&#39;?
 [build]             using ObjLayerT = LegacyRTDyldObjectLinkingLayer;
 [build]                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[build]                               RTDyldObjectLinkingLayer</div>2019-08-28</li><br/><li><span>许童童</span> 👍（1） 💬（1）<div>难度越来越大了，要好好消化才行。</div>2019-08-28</li><br/><li><span>(￣_￣ )</span> 👍（1） 💬（1）<div>写了一晚上终于用c语言模仿着实现了第二节课的内容
-https:&#47;&#47;github.com&#47;hongningexpro&#47;Play_with_Compiler&#47;tree&#47;master&#47;01-Simple_Lexer</div>2019-08-28</li><br/>
+[build]                               RTDyldObjectLinkingLayer</p>2019-08-28</li><br/><li><span>许童童</span> 👍（1） 💬（1）<p>难度越来越大了，要好好消化才行。</p>2019-08-28</li><br/><li><span>(￣_￣ )</span> 👍（1） 💬（1）<p>写了一晚上终于用c语言模仿着实现了第二节课的内容
+https:&#47;&#47;github.com&#47;hongningexpro&#47;Play_with_Compiler&#47;tree&#47;master&#47;01-Simple_Lexer</p>2019-08-28</li><br/>
 </ul>

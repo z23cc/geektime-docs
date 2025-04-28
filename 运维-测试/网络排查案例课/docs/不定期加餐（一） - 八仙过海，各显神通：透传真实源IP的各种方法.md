@@ -193,9 +193,9 @@ PROXY TCP 10.0.2.2 10.0.2.15 51866 80
 
 欢迎在留言区分享你的答案，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>woJA1wCgAASVwFBCYVuFLQY8_9xjIc3w</span> 👍（1） 💬（3）<div>toa就算服务器加载内核模块了，但后端应用也需要改造吧</div>2022-03-25</li><br/><li><span>Realm</span> 👍（1） 💬（1）<div>思考题：
+<li><span>woJA1wCgAASVwFBCYVuFLQY8_9xjIc3w</span> 👍（1） 💬（3）<p>toa就算服务器加载内核模块了，但后端应用也需要改造吧</p>2022-03-25</li><br/><li><span>Realm</span> 👍（1） 💬（1）<p>思考题：
 选中tcp option
-</div>2022-03-23</li><br/><li><span>liubiqianmoney</span> 👍（0） 💬（1）<div>FULLNAT LVS 的VIP有IPV6和IPV4，用户通过DNS的A和AAAA获取相应的VIP，RS是Nginx，Nginx的deny指令只能拒绝IPV4用户的请求，似乎是TOA不支持？</div>2024-10-04</li><br/><li><span>追风筝的人</span> 👍（0） 💬（1）<div>tcp option  address:
-它是利用 TCP Options 的字段来承载真实源 IP 信息，这个是目前比较常见的第四层方案。不过，这并非是 TCP 标准所支持的，所以需要通信双方都进行改造。也就是：对于发送方来说，需要有能力把真实源 IP 插入到 TCP Options 里面。对于接收方来说，需要有能力把 TCP Options 里面的 IP 地址读取出来。</div>2022-03-23</li><br/><li><span>Chao</span> 👍（0） 💬（1）<div>1、http headers 允许使用逗号分隔的值分开成多个。 比如 vary 等。
-2、tcp应用可以直接回包给真实源。 如果负载与RS使用IPIP的话。</div>2022-03-23</li><br/><li><span>潘政宇</span> 👍（0） 💬（1）<div>Toa </div>2022-03-23</li><br/><li><span>原则</span> 👍（1） 💬（0）<div>IP 层的方法不太理解，为什么是通过 LB 传递了真实源 IP，后续通信却绕开了 LB 呢？这是什么架构？好像没见过。</div>2023-06-18</li><br/>
+</p>2022-03-23</li><br/><li><span>liubiqianmoney</span> 👍（0） 💬（1）<p>FULLNAT LVS 的VIP有IPV6和IPV4，用户通过DNS的A和AAAA获取相应的VIP，RS是Nginx，Nginx的deny指令只能拒绝IPV4用户的请求，似乎是TOA不支持？</p>2024-10-04</li><br/><li><span>追风筝的人</span> 👍（0） 💬（1）<p>tcp option  address:
+它是利用 TCP Options 的字段来承载真实源 IP 信息，这个是目前比较常见的第四层方案。不过，这并非是 TCP 标准所支持的，所以需要通信双方都进行改造。也就是：对于发送方来说，需要有能力把真实源 IP 插入到 TCP Options 里面。对于接收方来说，需要有能力把 TCP Options 里面的 IP 地址读取出来。</p>2022-03-23</li><br/><li><span>Chao</span> 👍（0） 💬（1）<p>1、http headers 允许使用逗号分隔的值分开成多个。 比如 vary 等。
+2、tcp应用可以直接回包给真实源。 如果负载与RS使用IPIP的话。</p>2022-03-23</li><br/><li><span>潘政宇</span> 👍（0） 💬（1）<p>Toa </p>2022-03-23</li><br/><li><span>原则</span> 👍（1） 💬（0）<p>IP 层的方法不太理解，为什么是通过 LB 传递了真实源 IP，后续通信却绕开了 LB 呢？这是什么架构？好像没见过。</p>2023-06-18</li><br/>
 </ul>

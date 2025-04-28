@@ -552,9 +552,9 @@ GORM 有一个功能我非常喜欢，DryRun 空跑，这个设置是在 gorm.DB
 
 欢迎在留言区分享你的思考。感谢你的收听，如果你觉得今天的内容对你有所帮助，也欢迎分享给身边的朋友，邀请他一起学习。我们下节课见～
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Vincent</span> 👍（1） 💬（2）<div>对优秀的开源代码，应该吃透</div>2021-11-15</li><br/><li><span>友</span> 👍（0） 💬（1）<div>fns 中 真正的 Create 里面有判断 dryRun </div>2021-12-14</li><br/><li><span>友</span> 👍（0） 💬（1）<div>isDryRun := !db.DryRun &amp;&amp; db.Error == nil
+<li><span>Vincent</span> 👍（1） 💬（2）<p>对优秀的开源代码，应该吃透</p>2021-11-15</li><br/><li><span>友</span> 👍（0） 💬（1）<p>fns 中 真正的 Create 里面有判断 dryRun </p>2021-12-14</li><br/><li><span>友</span> 👍（0） 💬（1）<p>isDryRun := !db.DryRun &amp;&amp; db.Error == nil
 		if !isDryRun {
 			return
-		}</div>2021-12-14</li><br/><li><span>牛玉富</span> 👍（1） 💬（0）<div>本篇切入curd正题了😄</div>2022-01-13</li><br/><li><span>武汉行驶证查违章信息</span> 👍（0） 💬（0）<div>gorm 代码走读笔记
-https:&#47;&#47;blog.csdn.net&#47;u013010890&#47;article&#47;details&#47;132613100</div>2023-08-31</li><br/>
+		}</p>2021-12-14</li><br/><li><span>牛玉富</span> 👍（1） 💬（0）<p>本篇切入curd正题了😄</p>2022-01-13</li><br/><li><span>武汉行驶证查违章信息</span> 👍（0） 💬（0）<p>gorm 代码走读笔记
+https:&#47;&#47;blog.csdn.net&#47;u013010890&#47;article&#47;details&#47;132613100</p>2023-08-31</li><br/>
 </ul>

@@ -76,7 +76,7 @@
 
 祝你取得好成绩！明天见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Abner</span> 👍（0） 💬（1）<div>java实现一个循环队列
+<li><span>Abner</span> 👍（0） 💬（1）<p>java实现一个循环队列
 代码如下：
 package queue;
 
@@ -132,7 +132,7 @@ public class CircularQueue {
         circularQueue.printAll();
     }
 }
-</div>2019-02-12</li><br/><li><span>神盾局闹别扭</span> 👍（0） 💬（1）<div>全排列实现：
+</p>2019-02-12</li><br/><li><span>神盾局闹别扭</span> 👍（0） 💬（1）<p>全排列实现：
 void Dopermute(char *pstr, char *pBegin)
 {
 	if (*pBegin == &#39;\0&#39;)
@@ -158,9 +158,9 @@ void Permute(char* pstr)
 	if (pstr == nullptr)
 		return;
 	Dopermute(pstr, pstr);
-}</div>2019-02-09</li><br/><li><span>molybdenum</span> 👍（0） 💬（1）<div>老师新年好 这是我的作业
+}</p>2019-02-09</li><br/><li><span>molybdenum</span> 👍（0） 💬（1）<p>老师新年好 这是我的作业
 
-https:&#47;&#47;blog.csdn.net&#47;github_38313296&#47;article&#47;details&#47;86819684</div>2019-02-09</li><br/><li><span>菜菜</span> 👍（0） 💬（1）<div>求斐波那契数列，当然最经典的算法就是递归，但是递归的效率非常低，因为中间过车会计算大量重复的子节点。在《剑指Offer》一书中，提到了一个自下而上计算的方法。我们知道f(0)=0,f(1)=1,再计算f(2),f(3)一直到f(n)。这样，时间复杂度就是O(n)。</div>2019-02-06</li><br/><li><span>李皮皮皮皮皮</span> 👍（11） 💬（1）<div>基础数据结构和算法是基石，灵活运用是解题的关键。栈，队列这些数据结构说到底就是给顺序表添加约束，更便于解决某一类问题。学习中培养算法的设计思想是非常关键的。而且思想是可以通用的。之前读《暗时间》一书，收获颇深。书中介绍之正推反推我在做程序题时竟出奇的好用。</div>2019-02-05</li><br/><li><span>Abner</span> 👍（3） 💬（0）<div>java用数组实现一个顺序栈
+https:&#47;&#47;blog.csdn.net&#47;github_38313296&#47;article&#47;details&#47;86819684</p>2019-02-09</li><br/><li><span>菜菜</span> 👍（0） 💬（1）<p>求斐波那契数列，当然最经典的算法就是递归，但是递归的效率非常低，因为中间过车会计算大量重复的子节点。在《剑指Offer》一书中，提到了一个自下而上计算的方法。我们知道f(0)=0,f(1)=1,再计算f(2),f(3)一直到f(n)。这样，时间复杂度就是O(n)。</p>2019-02-06</li><br/><li><span>李皮皮皮皮皮</span> 👍（11） 💬（1）<p>基础数据结构和算法是基石，灵活运用是解题的关键。栈，队列这些数据结构说到底就是给顺序表添加约束，更便于解决某一类问题。学习中培养算法的设计思想是非常关键的。而且思想是可以通用的。之前读《暗时间》一书，收获颇深。书中介绍之正推反推我在做程序题时竟出奇的好用。</p>2019-02-05</li><br/><li><span>Abner</span> 👍（3） 💬（0）<p>java用数组实现一个顺序栈
 代码如下：
 package stack;
 
@@ -195,7 +195,7 @@ public class ArrayStack {
         }
     }
 }
-</div>2019-02-11</li><br/><li><span>Abner</span> 👍（2） 💬（0）<div>java用递归实现斐波那契数列
+</p>2019-02-11</li><br/><li><span>Abner</span> 👍（2） 💬（0）<p>java用递归实现斐波那契数列
 代码如下：
 package recursion;
 
@@ -215,7 +215,7 @@ public class Fib {
         System.out.println(result);
     }
 }
-</div>2019-02-11</li><br/><li><span>Abner</span> 👍（2） 💬（0）<div>java用递归实现求解n!
+</p>2019-02-11</li><br/><li><span>Abner</span> 👍（2） 💬（0）<p>java用递归实现求解n!
 代码如下：
 package recursion;
 
@@ -233,7 +233,7 @@ public class Fac {
         long result = fac.calFac(10);
         System.out.println(result);
     }
-}</div>2019-02-11</li><br/><li><span>kai</span> 👍（2） 💬（0）<div>1. 编程实现斐波那契数列求值 f(n)=f(n-1)+f(n-2）
+}</p>2019-02-11</li><br/><li><span>kai</span> 👍（2） 💬（0）<p>1. 编程实现斐波那契数列求值 f(n)=f(n-1)+f(n-2）
 public class Fibonacci {
     public static int fib(int n) {
         if (n &lt;= 0) {
@@ -316,7 +316,7 @@ public class MaxNumOfSlidingWindow {
 
         return res;
     }
-}</div>2019-02-11</li><br/><li><span>Abner</span> 👍（1） 💬（0）<div>java用链表实现一个链式栈
+}</p>2019-02-11</li><br/><li><span>Abner</span> 👍（1） 💬（0）<p>java用链表实现一个链式栈
 代码如下：
 package stack;
 
@@ -374,7 +374,7 @@ public class LinkedStack {
         linkedStack.printAll();
     }
 }
-</div>2019-02-12</li><br/><li><span>Abner</span> 👍（1） 💬（0）<div>java用数组实现一个顺序队列
+</p>2019-02-12</li><br/><li><span>Abner</span> 👍（1） 💬（0）<p>java用数组实现一个顺序队列
 代码如下：
 package queue;
 
@@ -410,7 +410,7 @@ public class ArrayQueue {
         return value;
     }
 }
-</div>2019-02-11</li><br/><li><span>ALAN</span> 👍（1） 💬（0）<div>import java.util.Arrays;
+</p>2019-02-11</li><br/><li><span>ALAN</span> 👍（1） 💬（0）<p>import java.util.Arrays;
 
 &#47;**
  * 
@@ -482,7 +482,7 @@ class Node {
 	public Node(Object ele) {
 		value = ele;
 	}
-}</div>2019-02-08</li><br/><li><span>TryTs</span> 👍（1） 💬（0）<div>之前有个类似的题，走楼梯，装苹果，就是把苹果装入盘子，可以分为有一个盘子为空（递归），和全部装满没有空的情况，找出状态方程，递归就可以列出来了。我觉得最关键是要列出状态方程，之前老师类似于说的不需要关注特别细节，不要想把每一步都要想明白，快速排序与递归排序之类的算法，之前总是想把很细节的弄懂，却发现理解有困难。</div>2019-02-06</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>滑动窗口最大值
+}</p>2019-02-08</li><br/><li><span>TryTs</span> 👍（1） 💬（0）<p>之前有个类似的题，走楼梯，装苹果，就是把苹果装入盘子，可以分为有一个盘子为空（递归），和全部装满没有空的情况，找出状态方程，递归就可以列出来了。我觉得最关键是要列出状态方程，之前老师类似于说的不需要关注特别细节，不要想把每一步都要想明白，快速排序与递归排序之类的算法，之前总是想把很细节的弄懂，却发现理解有困难。</p>2019-02-06</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>滑动窗口最大值
 public static void main(String[] args) {
 
         PriorityQueue&lt;Integer[]&gt; queue = new PriorityQueue(3, new Comparator&lt;Integer[]&gt;() {
@@ -513,7 +513,7 @@ public static void main(String[] args) {
         System.out.println(ret);
 
 
-    }</div>2023-06-29</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<div>双端队列
+    }</p>2023-06-29</li><br/><li><span>杨建斌(young)</span> 👍（0） 💬（0）<p>双端队列
     static class MyCircularDeque {
         private int[] elements;
         &#47;&#47;获得双端队列的最后rear一个元素
@@ -593,5 +593,5 @@ public static void main(String[] args) {
             }
             return -1;
         }
-    }</div>2023-06-29</li><br/>
+    }</p>2023-06-29</li><br/>
 </ul>

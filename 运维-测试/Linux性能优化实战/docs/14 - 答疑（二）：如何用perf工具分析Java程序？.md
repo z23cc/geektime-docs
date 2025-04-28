@@ -245,7 +245,7 @@ $ perf report -g graph,0.3
 
 最后，欢迎继续在留言区写下你的疑问，我会持续不断地解答。我的目的仍然不变，希望可以和你一起，把文章的知识变成你的能力，我们不仅仅在实战中演练，也要在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>我来也</span> 👍（19） 💬（1）<div>[D14打卡]
+<li><span>我来也</span> 👍（19） 💬（1）<p>[D14打卡]
 很赞同老师的观点:
 &quot;任何东西的第一遍学习有不懂的地方很正常，忍住恐惧别放弃，继续往后走，前面很多问题可能会一并解决掉 ，再看第二遍、第三遍就更轻松了。&quot;
 我好像很早就这样实践了: 第一遍不管看不看得懂,先尽量细看. 再特意过一段时间回头重新学一遍,除了能掌握更多的东西,还能体会到&quot;温故而知新&quot;的感觉.
@@ -254,14 +254,14 @@ $ perf report -g graph,0.3
 &quot;先从最基本的原理开始，掌握性能分析的思路，然后再逐步深入，探究细节&quot;
 ----------------------------
 自从学了专栏,越来越觉得自己的&lt;英语&gt;该好好补补了,深感能力不足啊.
-那么多好的资源,一手资料几乎都是英文的,看不懂真是可惜了!</div>2018-12-21</li><br/><li><span>ninuxer</span> 👍（13） 💬（2）<div>打卡day15
+那么多好的资源,一手资料几乎都是英文的,看不懂真是可惜了!</p>2018-12-21</li><br/><li><span>ninuxer</span> 👍（13） 💬（2）<p>打卡day15
 perf report中关于swapper的内容，后面我也去查了，才发现是自己理解有误，感谢老师指出，这里的swapper不是内存概念的swap，而是cpu空闲时执行的一个默认调用
 要啃啃《性能之巅：洞悉系统、企业与云计算》了，作者博客http:&#47;&#47;www.brendangregg.com&#47;
-请教老师，理解内核这块，有合适的书推荐么？我查了下，看了下目录，感觉《Linux内核设计与实现》可能比较适合，其他的如《Linux内核情景分析》，《深入理解Linux内核》怎么样？</div>2018-12-21</li><br/><li><span>辉晖</span> 👍（2） 💬（1）<div>对于问题1，使用方法4还是看不到函数名，只能看到一些 16 进制格式的函数地址
+请教老师，理解内核这块，有合适的书推荐么？我查了下，看了下目录，感觉《Linux内核设计与实现》可能比较适合，其他的如《Linux内核情景分析》，《深入理解Linux内核》怎么样？</p>2018-12-21</li><br/><li><span>辉晖</span> 👍（2） 💬（1）<p>对于问题1，使用方法4还是看不到函数名，只能看到一些 16 进制格式的函数地址
 
 在载入perf.data过程不断出现提示：Failed to open ***, continuing without symbols
-载入完成后，perf 界面最下面的那一行警告信息是：Cannot load tips.txt file, please install perf!</div>2019-06-27</li><br/><li><span>子轩Zixuan</span> 👍（2） 💬（1）<div>趁周末跟上了老师的脚步，老师讲解的很好，感谢！另外我注意到老师在专栏里的实例都是现场调试，但是我遇到过实际情况需要尽快恢复服务，先把代码还原重新发布保证服务可用，只留下一台保留问题现场的机器，但是已经不接受请求了，像这种情况除了事先监控以外，还有别的方案能定位问题吗？</div>2018-12-23</li><br/><li><span>Griffin</span> 👍（2） 💬（1）<div>终于赶上了，倪老师能不能讲讲网络问题应该怎么排查呀，最近老是被docker，docker swarm的container寻址困扰。</div>2018-12-23</li><br/><li><span>郡主秋</span> 👍（1） 💬（2）<div>老师，我的在centos7上用perf分析宿主机上的应用也是显示16进制地址，没有函数名 ，这种怎么处理呢
-</div>2019-07-18</li><br/><li><span>辣椒</span> 👍（1） 💬（1）<div>老师，我把perf.data拷贝进容器，然后在容器中按照提示安装了perf, 再执行perf_4.9 report时报以下信息：
+载入完成后，perf 界面最下面的那一行警告信息是：Cannot load tips.txt file, please install perf!</p>2019-06-27</li><br/><li><span>子轩Zixuan</span> 👍（2） 💬（1）<p>趁周末跟上了老师的脚步，老师讲解的很好，感谢！另外我注意到老师在专栏里的实例都是现场调试，但是我遇到过实际情况需要尽快恢复服务，先把代码还原重新发布保证服务可用，只留下一台保留问题现场的机器，但是已经不接受请求了，像这种情况除了事先监控以外，还有别的方案能定位问题吗？</p>2018-12-23</li><br/><li><span>Griffin</span> 👍（2） 💬（1）<p>终于赶上了，倪老师能不能讲讲网络问题应该怎么排查呀，最近老是被docker，docker swarm的container寻址困扰。</p>2018-12-23</li><br/><li><span>郡主秋</span> 👍（1） 💬（2）<p>老师，我的在centos7上用perf分析宿主机上的应用也是显示16进制地址，没有函数名 ，这种怎么处理呢
+</p>2019-07-18</li><br/><li><span>辣椒</span> 👍（1） 💬（1）<p>老师，我把perf.data拷贝进容器，然后在容器中按照提示安装了perf, 再执行perf_4.9 report时报以下信息：
 Kernel address maps (&#47;proc&#47;{kallsyms,modules}) were restricted.   
 Check &#47;proc&#47;sys&#47;kernel&#47;kptr_restrict before running &#39;perf record&#39;
 As no suitable kallsyms nor vmlinux was found, kernel samples     
@@ -271,7 +271,7 @@ Samples in kernel modules can&#39;t be resolved as well.
 
 我本身的机器是centos7.2. 请老师提示一下解决的思路，谢谢！
 
-                                                </div>2019-01-07</li><br/><li><span>子轩Zixuan</span> 👍（1） 💬（1）<div>感谢老师耐心回复，接着线上定位问题想问下，如果要事先做好监控系统，一般需要做到什么程度？目前只有阿里云的监控感觉不够用</div>2018-12-25</li><br/><li><span>无名老卒</span> 👍（1） 💬（1）<div>全部刷完了，把各个CPU容易出现问题的情况基本上都写清楚了，而且都有详细的测试用例，除了软中断那个需要SYN攻击之外，其他的测试用例都一五一十的都做过了，受益良多。我有以下疑问，希望老师可以解答下：
+                                                </p>2019-01-07</li><br/><li><span>子轩Zixuan</span> 👍（1） 💬（1）<p>感谢老师耐心回复，接着线上定位问题想问下，如果要事先做好监控系统，一般需要做到什么程度？目前只有阿里云的监控感觉不够用</p>2018-12-25</li><br/><li><span>无名老卒</span> 👍（1） 💬（1）<p>全部刷完了，把各个CPU容易出现问题的情况基本上都写清楚了，而且都有详细的测试用例，除了软中断那个需要SYN攻击之外，其他的测试用例都一五一十的都做过了，受益良多。我有以下疑问，希望老师可以解答下：
 1、软中断老师是用SYN攻击的方式来讲解这部分的实例的，那还有没有其他典型的软中断的案例呢？
 2、硬中断的实例老师没有讲，可以补一篇吗？
 3、老师所讲的实例，都是单一模式的，在实际的生产环境下，情况要复杂很多，老师能再讲一下印象最深刻的实际情况吗？
@@ -282,14 +282,14 @@ Samples in kernel modules can&#39;t be resolved as well.
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES
 0ecb229f87e4        feisky&#47;app:iowait   &quot;&#47;app&quot;              3 minutes ago       Up 3 minutes                                      app-fix
 a251996e0d60        feisky&#47;app:iowait   &quot;&#47;app&quot;              5 hours ago         Exited (137) 20 minutes ago                       app
-```</div>2018-12-23</li><br/><li><span>geraltlaush</span> 👍（1） 💬（1）<div>老师，有个问题，如果iowait过高，导致系统卡死，ssh几乎操作不动，怎么快速找出进程杀掉，iotop敲了20分钟没响应</div>2018-12-22</li><br/><li><span>叶先生</span> 👍（0） 💬（1）<div>老师你好：
-我在学习使用perf 分析打包docker 下的.net core应用时，有个问题困扰了很久 在采用你的第四条建议 外面使用 perf record 记录然后进入容器分析，一直看不到.net core 函数名 网上找了一些资料比如在dock镜像打包的时候 export COMPlus_PerfMapEnabled=1，还是无法看到，不知道哪里出了问题 </div>2019-05-13</li><br/><li><span>一木成舟🌊</span> 👍（0） 💬（1）<div>我是在一台机器上，report record和perf reprot的，report函数名是16进制的，看各位同学的留言是在centos下才会出现。
+```</p>2018-12-23</li><br/><li><span>geraltlaush</span> 👍（1） 💬（1）<p>老师，有个问题，如果iowait过高，导致系统卡死，ssh几乎操作不动，怎么快速找出进程杀掉，iotop敲了20分钟没响应</p>2018-12-22</li><br/><li><span>叶先生</span> 👍（0） 💬（1）<p>老师你好：
+我在学习使用perf 分析打包docker 下的.net core应用时，有个问题困扰了很久 在采用你的第四条建议 外面使用 perf record 记录然后进入容器分析，一直看不到.net core 函数名 网上找了一些资料比如在dock镜像打包的时候 export COMPlus_PerfMapEnabled=1，还是无法看到，不知道哪里出了问题 </p>2019-05-13</li><br/><li><span>一木成舟🌊</span> 👍（0） 💬（1）<p>我是在一台机器上，report record和perf reprot的，report函数名是16进制的，看各位同学的留言是在centos下才会出现。
 但是我是Ubuntu 14.04.2 LTS。也是出现这种问题了。按照老师上面的步骤，
 $ apt-get install -y linux-tools-common linux-tools-generic linux-tools-$(uname -r)）
-安装后，还是不行，实在让人费解。</div>2019-03-26</li><br/><li><span>韦伯</span> 👍（0） 💬（1）<div>老师，我用的是ubuntu16.04，内核版本4.4.0.117，安装perf时提示需要安装linux-4.4.0.117-generic，但是安装上述包时又找不到。需要升级内核版本解决吗？有没有其他方式可以解决呢</div>2019-03-04</li><br/><li><span>全大神啊</span> 👍（0） 💬（2）<div>花了两天时间看完了CPU部分，收获良多，以前不怎么用的命令，看了老师的文章了解知道了工具的作用，以及原理，大爱~接下来内存部分-.-。</div>2019-02-15</li><br/><li><span>刘飞</span> 👍（0） 💬（1）<div>给大家分享下mac 跑docker时如果安装perf工具：
+安装后，还是不行，实在让人费解。</p>2019-03-26</li><br/><li><span>韦伯</span> 👍（0） 💬（1）<p>老师，我用的是ubuntu16.04，内核版本4.4.0.117，安装perf时提示需要安装linux-4.4.0.117-generic，但是安装上述包时又找不到。需要升级内核版本解决吗？有没有其他方式可以解决呢</p>2019-03-04</li><br/><li><span>全大神啊</span> 👍（0） 💬（2）<p>花了两天时间看完了CPU部分，收获良多，以前不怎么用的命令，看了老师的文章了解知道了工具的作用，以及原理，大爱~接下来内存部分-.-。</p>2019-02-15</li><br/><li><span>刘飞</span> 👍（0） 💬（1）<p>给大家分享下mac 跑docker时如果安装perf工具：
 首先启动容器时，要增加启动参数--privileged，否则后续操作提示没权限
 安装工具：apt-get install linux-source
 可以在&#47;usr&#47;src下找到压缩宝，解压，进入tools&#47;perf，然后make&amp;&amp;make install进行编译
 把编译生成的perf拷贝到&#47;usr&#47;bin下
-注意：如果使用的时候不显示调用函数名，需要回到编译脚本那一步，仔细看报警信息缺哪些依赖的包，都下载下来重新编译。</div>2019-01-23</li><br/>
+注意：如果使用的时候不显示调用函数名，需要回到编译脚本那一步，仔细看报警信息缺哪些依赖的包，都下载下来重新编译。</p>2019-01-23</li><br/>
 </ul>

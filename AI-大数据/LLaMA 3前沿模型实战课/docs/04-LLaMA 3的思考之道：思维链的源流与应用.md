@@ -227,7 +227,7 @@ LLaMA模型在思维链推理中的出色表现，主要得益于其在指令微
 
 GPT-4o1 的能力和思维链之间的关系是什么？欢迎你把思考后的结果分享到留言区，和我一起讨论，如果你觉得这节课的内容对你有帮助的话，欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（0） 💬（0）<div>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</div>2024-11-25</li><br/><li><span>兵戈</span> 👍（3） 💬（1）<div>Tyler老师，学完了您《LLaMA 3 前沿模型实战课》的第4课，并跑通了其中的相关案例代码。
+<li><span>小虎子11🐯</span> 👍（0） 💬（0）<p>课程代码地址：https:&#47;&#47;github.com&#47;tylerelyt&#47;LLaMa-in-Action</p>2024-11-25</li><br/><li><span>兵戈</span> 👍（3） 💬（1）<p>Tyler老师，学完了您《LLaMA 3 前沿模型实战课》的第4课，并跑通了其中的相关案例代码。
 
 但我看当前工程中还一直没有第4课的工程代码，于是我提交PR：https:&#47;&#47;github.com&#47;tylerelyt&#47;llama&#47;pull&#47;2
 
@@ -240,5 +240,5 @@ response[&#39;content&#39;] -&gt; response[&#39;message&#39;][&#39;content&#39;]
 
 # 2、example4 中添加step判断，减少循环次数
 if step == &#39;&#39;:
-    continue</div>2024-10-23</li><br/>
+    continue</p>2024-10-23</li><br/>
 </ul>

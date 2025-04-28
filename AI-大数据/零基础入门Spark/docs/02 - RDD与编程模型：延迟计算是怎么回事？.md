@@ -177,7 +177,7 @@ Spark程序的整个运行流程如下图所示：
 
 欢迎你把答案分享到评论区，我在评论区等你，也欢迎你把这一讲分享给更多的朋友和同事，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>cfwseven</span> 👍（37） 💬（3）<div>作者大大能说一下，为什么action算子要设置成延迟计算吗</div>2021-10-27</li><br/><li><span>GAC·DU</span> 👍（21） 💬（1）<div>从两者的整体流程来看，结果都是不可逆的，但是WordCount可以设置Cache和Checkpoint，方便加速访问和故障修复，而土豆加工流程却不可以。土豆加工流程是DAG的概图。</div>2021-09-13</li><br/><li><span>宇</span> 👍（14） 💬（4）<div>怎样知道程序里哪个算子最耗时，现在薯片生产速度很慢，我想知道最耗时生产环节是哪个（清洗，切割，还是烘烤）？</div>2022-01-13</li><br/><li><span>LJK</span> 👍（5） 💬（1）<div>Action中漏了一个reduce，今天才注意到reduceByKey是transformation而reduce是action</div>2021-09-18</li><br/><li><span>Geek_dcxai9</span> 👍（5） 💬（2）<div>从两者不同点看，workdcount切切实实为延迟计算，而土豆工坊的流程为切实发生的。</div>2021-09-16</li><br/><li><span>zx</span> 👍（4） 💬（1）<div>计算wordcount的时候文件路径写错了，但是却是在reduceByKey这一步报错，这步并不是action算子，这是和partitions属性有关吗</div>2021-11-01</li><br/><li><span>welldo</span> 👍（4） 💬（3）<div>&quot;我们再来看 RDD 的 partitioner 属性，这个属性定义了把原始数据集切割成数据分片的切割规则。在土豆工坊的例子中，“带泥土豆”RDD 的切割规则是随机拿取，也就是从麻袋中随机拿取一颗脏兮兮的土豆放到流水线上。后面的食材形态，如“干净土豆”、“土豆片”和“即食薯片”，则沿用了“带泥土豆”RDD 的切割规则。换句话说，后续的这些 RDD，分别继承了前一个 RDD 的 partitioner 属性。&quot;
+<li><span>cfwseven</span> 👍（37） 💬（3）<p>作者大大能说一下，为什么action算子要设置成延迟计算吗</p>2021-10-27</li><br/><li><span>GAC·DU</span> 👍（21） 💬（1）<p>从两者的整体流程来看，结果都是不可逆的，但是WordCount可以设置Cache和Checkpoint，方便加速访问和故障修复，而土豆加工流程却不可以。土豆加工流程是DAG的概图。</p>2021-09-13</li><br/><li><span>宇</span> 👍（14） 💬（4）<p>怎样知道程序里哪个算子最耗时，现在薯片生产速度很慢，我想知道最耗时生产环节是哪个（清洗，切割，还是烘烤）？</p>2022-01-13</li><br/><li><span>LJK</span> 👍（5） 💬（1）<p>Action中漏了一个reduce，今天才注意到reduceByKey是transformation而reduce是action</p>2021-09-18</li><br/><li><span>Geek_dcxai9</span> 👍（5） 💬（2）<p>从两者不同点看，workdcount切切实实为延迟计算，而土豆工坊的流程为切实发生的。</p>2021-09-16</li><br/><li><span>zx</span> 👍（4） 💬（1）<p>计算wordcount的时候文件路径写错了，但是却是在reduceByKey这一步报错，这步并不是action算子，这是和partitions属性有关吗</p>2021-11-01</li><br/><li><span>welldo</span> 👍（4） 💬（3）<p>&quot;我们再来看 RDD 的 partitioner 属性，这个属性定义了把原始数据集切割成数据分片的切割规则。在土豆工坊的例子中，“带泥土豆”RDD 的切割规则是随机拿取，也就是从麻袋中随机拿取一颗脏兮兮的土豆放到流水线上。后面的食材形态，如“干净土豆”、“土豆片”和“即食薯片”，则沿用了“带泥土豆”RDD 的切割规则。换句话说，后续的这些 RDD，分别继承了前一个 RDD 的 partitioner 属性。&quot;
 -----------------------
 老师, 看完这段话和土豆流水线的图片, 我有几个疑问.
 
@@ -186,12 +186,12 @@ Spark程序的整个运行流程如下图所示：
 
 问题1：那么，一坨数据，在成为&lt;key,value&gt;类型的rdd的时候（假如4片），分片方式，是不是平均分成4份呢？
 
-2. &lt;value&gt;类型的rdd，没有分区器，那么它刚刚生成的时候，也是平均分吗？</div>2021-10-14</li><br/><li><span>田大侠</span> 👍（2） 💬（1）<div>作者大大有个问题问一下
+2. &lt;value&gt;类型的rdd，没有分区器，那么它刚刚生成的时候，也是平均分吗？</p>2021-10-14</li><br/><li><span>田大侠</span> 👍（2） 💬（1）<p>作者大大有个问题问一下
 这里的依赖关系有个比较明显的差别
 1.map计算是一个数据分片依赖于前一个RDD“数据分片”，就是说在同一个分片上可以连续计算直到reduce之前
 2.reduce计算是依赖关系前面一个RDD的所有的数据集 spark实际计算的时候要等前面所有的map计算完成才能进行reduce操作
 
-上面的我的两个理解是否有偏差？</div>2022-02-19</li><br/><li><span>Eazow</span> 👍（0） 💬（2）<div>请问土豆工坊图是用什么画滴那？</div>2021-11-24</li><br/><li><span>xuchuan</span> 👍（0） 💬（1）<div>都是来料加工，目标都是高效率生产。</div>2021-10-17</li><br/><li><span>小马哥</span> 👍（0） 💬（0）<div>老师，打扰想问下action算子，最终收集任务结果，然后计算是在driver中执行吗？</div>2024-10-24</li><br/><li><span>小马哥</span> 👍（0） 💬（0）<div>想问下action算子，怎么收集每个任务的执行结果？是在哪里收集的？</div>2024-10-24</li><br/><li><span>廖子博</span> 👍（0） 💬（0）<div>Java代码
+上面的我的两个理解是否有偏差？</p>2022-02-19</li><br/><li><span>Eazow</span> 👍（0） 💬（2）<p>请问土豆工坊图是用什么画滴那？</p>2021-11-24</li><br/><li><span>xuchuan</span> 👍（0） 💬（1）<p>都是来料加工，目标都是高效率生产。</p>2021-10-17</li><br/><li><span>小马哥</span> 👍（0） 💬（0）<p>老师，打扰想问下action算子，最终收集任务结果，然后计算是在driver中执行吗？</p>2024-10-24</li><br/><li><span>小马哥</span> 👍（0） 💬（0）<p>想问下action算子，怎么收集每个任务的执行结果？是在哪里收集的？</p>2024-10-24</li><br/><li><span>廖子博</span> 👍（0） 💬（0）<p>Java代码
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.sql.SparkSession;
@@ -220,5 +220,5 @@ public class WorkCount {
 $SPARK_HOME&#47;bin&#47;spark-submit \
 --class &quot;WorkCount&quot; \
 --master local[4] \
-target&#47;spark-demo-1.0-SNAPSHOT.jar</div>2024-09-05</li><br/><li><span>Geek_5bd5c5</span> 👍（0） 💬（0）<div>不是，买了复制还是乱码啊</div>2024-06-01</li><br/><li><span>Juha</span> 👍（0） 💬（0）<div>老师好，如果说rdd的单元是partition的话，那map函数的作用为啥是元素，而mapPartitions作用是partition内所有元素呢</div>2023-08-17</li><br/>
+target&#47;spark-demo-1.0-SNAPSHOT.jar</p>2024-09-05</li><br/><li><span>Geek_5bd5c5</span> 👍（0） 💬（0）<p>不是，买了复制还是乱码啊</p>2024-06-01</li><br/><li><span>Juha</span> 👍（0） 💬（0）<p>老师好，如果说rdd的单元是partition的话，那map函数的作用为啥是元素，而mapPartitions作用是partition内所有元素呢</p>2023-08-17</li><br/>
 </ul>

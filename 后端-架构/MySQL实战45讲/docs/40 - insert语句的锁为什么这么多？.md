@@ -229,20 +229,20 @@ insert 语句如果出现唯一键冲突，会在冲突的唯一值上加共享�
 
 > @长杰 同学回答得非常准确。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>huolang</span> 👍（112） 💬（28）<div>老师，死锁的例子，关于sessionA拿到的c=5的记录锁，sessionB和sessionC发现唯一键冲突会加上读锁我有几个疑惑：
+<li><span>huolang</span> 👍（112） 💬（28）<p>老师，死锁的例子，关于sessionA拿到的c=5的记录锁，sessionB和sessionC发现唯一键冲突会加上读锁我有几个疑惑：
 1. sessionA拿到的c=5的记录锁是写锁吗？
 2. 为什么sessionB和sessionC发现唯一键冲突会加上读锁？
 3. 如果sessionA拿到c=5的记录所是写锁，那为什么sessionB和sessionC还能加c=5的读锁，写锁和读锁不应该是互斥的吗？
-4.  sessionA还没有提交，为什么sessionB和sessionC能发现唯一键冲突？</div>2019-02-13</li><br/><li><span>轻松的鱼</span> 👍（72） 💬（12）<div>老师好，想请教一下死锁的例子中：
+4.  sessionA还没有提交，为什么sessionB和sessionC能发现唯一键冲突？</p>2019-02-13</li><br/><li><span>轻松的鱼</span> 👍（72） 💬（12）<p>老师好，想请教一下死锁的例子中：
 1. 在 session A rollback 前，session B&#47;C 都因为唯一性冲突申请了 S Next-key lock，但是被 session A 的 X but not gap lock 阻塞；
 2. 在 session A rollbak 后，session B&#47;C 顺利获得 S Next-key lock，并且都要继续进行插入，这时候我认为是因为插入意向锁（LOCK_INSERT_INTENTION）导致的死锁，因为插入意向锁会被 gap lock 阻塞，造成了相互等待。还没有进入到记录 X lock。
-不知道我分析的对不对？</div>2019-03-06</li><br/><li><span>sonic</span> 👍（51） 💬（4）<div>你好，
+不知道我分析的对不对？</p>2019-03-06</li><br/><li><span>sonic</span> 👍（51） 💬（4）<p>你好，
 我想问下文章中关于为什么需要创建临时表有这一句话：
 如果读出来的数据直接写回原表，就可能在遍历过程中，读到刚刚插入的记录，新插入的记录如果参与计算逻辑，就跟语义不符。
 
-我的疑问是：既然隔离级别是可重复读，照理来说新插入的的记录应该不会参与计算逻辑呀。</div>2019-02-14</li><br/><li><span>夹心面包</span> 👍（51） 💬（2）<div>
+我的疑问是：既然隔离级别是可重复读，照理来说新插入的的记录应该不会参与计算逻辑呀。</p>2019-02-14</li><br/><li><span>夹心面包</span> 👍（51） 💬（2）<p>
 1 关于insert造成死锁的情况,我之前做过测试,事务1并非只有insert,delete和update都可能造成死锁问题,核心还是插入唯一值冲突导致的.我们线上的处理办法是 1 去掉唯一值检测 2减少重复值的插入 3降低并发线程数量
-2 关于数据拷贝大表我建议采用pt-archiver,这个工具能自动控制频率和速度,效果很不错,提议在低峰期进行数据操作</div>2019-02-13</li><br/><li><span>Mr.Strive.Z.H.L</span> 👍（36） 💬（2）<div>老师您好：
+2 关于数据拷贝大表我建议采用pt-archiver,这个工具能自动控制频率和速度,效果很不错,提议在低峰期进行数据操作</p>2019-02-13</li><br/><li><span>Mr.Strive.Z.H.L</span> 👍（36） 💬（2）<p>老师您好：
 关于文中的锁描述有所疑惑。
 
 文中出现过 共享的next-key锁 和 排他的next-key锁。
@@ -258,25 +258,25 @@ insert 语句如果出现唯一键冲突，会在冲突的唯一值上加共享�
 
 文中直接描述next-key lock是排他的，总让我认为gap lock和行锁都是x锁。
 
-不知道我理解得对不对？</div>2019-02-27</li><br/><li><span>老杨同志</span> 👍（32） 💬（1）<div>课后问题：
+不知道我理解得对不对？</p>2019-02-27</li><br/><li><span>老杨同志</span> 👍（32） 💬（1）<p>课后问题：
       我用的最多还是insert into select 。如果数量比较大，会加上limit 100,000这种。并且看看后面的select条件是否走索引。缺点是会锁select的表。方法二：导出成excel，然后拼sql 成 insert into values(),(),()的形式。方法3，写类似淘宝调动的定时任务，任务的逻辑是查询100条记录，然后多个线程分到几个任务执行，比如是个线程，每个线程10条记录，插入后，在查询新的100条记录处理。
-      </div>2019-02-13</li><br/><li><span>Justin</span> 👍（25） 💬（7）<div>插入意向锁的gal lock和next key lock中的 gaplock互斥吗？</div>2019-02-15</li><br/><li><span>一大只😴</span> 👍（19） 💬（6）<div>老师，我想问下：insert 语句出现唯一键冲突，会加next-key lock，而产生死锁的例子中，同样也是唯一键冲突却只加了记录锁，然后我按照唯一键冲突中的两个例子试了试
+      </p>2019-02-13</li><br/><li><span>Justin</span> 👍（25） 💬（7）<p>插入意向锁的gal lock和next key lock中的 gaplock互斥吗？</p>2019-02-15</li><br/><li><span>一大只😴</span> 👍（19） 💬（6）<p>老师，我想问下：insert 语句出现唯一键冲突，会加next-key lock，而产生死锁的例子中，同样也是唯一键冲突却只加了记录锁，然后我按照唯一键冲突中的两个例子试了试
 1、比如t表中有两条记录(19,19,19)，(22,22,22)，这时候我再insert (22,22,22)造成了主键冲突，这时候加的就是(19,22]的next-key lock，这个insert为啥不是等值查询？
 2、根据死锁的例子，我又在t表中准备插入一行
       session A :begin; insert into t values (25,25,25)
       session B :insert into t values (25,25,25)  这时候sessionB锁等待
       session C：insert into t values (24,24,24)  锁等待，等B锁等待超时，session C插入成功
       那这里的session B应该是加了个(22,25]的next-key lock，并没有因为是唯一键退化成记录锁
-我想死锁的例子中t表已经有了(1,1,1),(2,2,2),(3,3,3),(4,4,4)4条记录，这时候insert (null,5,5)，是不是加的(4,5]这个next-key lock，由于是整型并且间隙非常小，所以将他当成记录锁？</div>2019-02-13</li><br/><li><span>inrtyx</span> 👍（17） 💬（2）<div>现在一般都用utf8mb4?</div>2019-04-07</li><br/><li><span>roaming</span> 👍（15） 💬（1）<div>MySQL8.0.12环境下，
+我想死锁的例子中t表已经有了(1,1,1),(2,2,2),(3,3,3),(4,4,4)4条记录，这时候insert (null,5,5)，是不是加的(4,5]这个next-key lock，由于是整型并且间隙非常小，所以将他当成记录锁？</p>2019-02-13</li><br/><li><span>inrtyx</span> 👍（17） 💬（2）<p>现在一般都用utf8mb4?</p>2019-04-07</li><br/><li><span>roaming</span> 👍（15） 💬（1）<p>MySQL8.0.12环境下，
 执行insert into t(c,d)  (select c+1, d from t force index(c) order by c desc limit 1);
 slow log Rows_examined: 2
 Innodb_rows_read 的值增加1
 
-是不是MySQL8进行了优化，先把子查询的结果读出来，再写入临时表？</div>2019-02-13</li><br/><li><span>信信</span> 👍（13） 💬（1）<div>老师好，文中提到：insert into t2(c,d) (select c+1, d from t force index(c) order by c desc limit 1)的加锁范围是表 t 索引 c 上的 (4,supremum] 这个 next-key lock 和主键索引上 id=4 这一行。
+是不是MySQL8进行了优化，先把子查询的结果读出来，再写入临时表？</p>2019-02-13</li><br/><li><span>信信</span> 👍（13） 💬（1）<p>老师好，文中提到：insert into t2(c,d) (select c+1, d from t force index(c) order by c desc limit 1)的加锁范围是表 t 索引 c 上的 (4,supremum] 这个 next-key lock 和主键索引上 id=4 这一行。
 可是如果我把表t的id为3这行先删除，再执行这个insert...select，那么别的会话执行insert into t values(3,3,3)会被阻塞，这说明4之前也是有间隙锁的？
-另外，select c+1, d from t force index(c) order by c desc limit 1 for update 是不是不能用作等值查询那样分析？因为如果算等值查询，根据优化1是没有间隙锁的。</div>2019-02-17</li><br/><li><span>Justin</span> 👍（11） 💬（2）<div>为什么insert 还会使用到next key lock 呢 ，我记得我原来看的资料写的是插入使用的是插入意向锁啊</div>2019-02-15</li><br/><li><span>信信</span> 👍（10） 💬（3）<div>老师好，
+另外，select c+1, d from t force index(c) order by c desc limit 1 for update 是不是不能用作等值查询那样分析？因为如果算等值查询，根据优化1是没有间隙锁的。</p>2019-02-17</li><br/><li><span>Justin</span> 👍（11） 💬（2）<p>为什么insert 还会使用到next key lock 呢 ，我记得我原来看的资料写的是插入使用的是插入意向锁啊</p>2019-02-15</li><br/><li><span>信信</span> 👍（10） 💬（3）<p>老师好，
 图6下方“发生主键冲突的时候”是不是应该改为“发生唯一键冲突的时候”？因为c不是主键。
-还有，图7下方：T2时刻session b 发现“唯一键冲突”，这里为啥不是锁冲突？因为如果没有锁冲突，仅有唯一键冲突，就对应图6的情况，这时加的是next-key lock，而不仅仅是记录锁了。</div>2019-02-14</li><br/><li><span>王伯轩</span> 👍（9） 💬（4）<div>老师你好,去年双11碰到了dbcrash掉的情况.至今没有找到答案,心里渗得慌.老师帮忙分析下.  
+还有，图7下方：T2时刻session b 发现“唯一键冲突”，这里为啥不是锁冲突？因为如果没有锁冲突，仅有唯一键冲突，就对应图6的情况，这时加的是next-key lock，而不仅仅是记录锁了。</p>2019-02-14</li><br/><li><span>王伯轩</span> 👍（9） 💬（4）<p>老师你好,去年双11碰到了dbcrash掉的情况.至今没有找到答案,心里渗得慌.老师帮忙分析下.  
 我是一个开发,关于db的知识更多是在应用和基本原理上面,实在是找不到原因. 我也搜了一些资料 感觉像是mysql的bug,不过在其buglist中没有找到完全一致的，当然也可能是我们业务也许导致库的压力大的原因.   
 应用端看到的现象是db没有响应，应用需要访问db的线程全部僵死.db表现是hang住 , 当时的诊断日志如下，表面表现为一直获取不到latch锁（被一个insert线程持有不释放） https:&#47;&#47;note.youdao.com&#47;ynoteshare1&#47;index.html?id=1771445db3ff1e08cbdd8328ea6765a7&amp;type=note#&#47;  隔离级别是rr
 
@@ -285,5 +285,5 @@ Innodb_rows_read 的值增加1
 
 后面应用层面做了一样优化,没有再crash过，优化主要如下：
 1.减小读压力，去除一些不必要的查询，
-2.优化前，有并发事务写和查询同一条数据记录，即事务a执行insert 尚未提交，事务b就来查询（快照读），优化后保证查询时insert事务已经提交</div>2019-02-19</li><br/><li><span>phpzheng</span> 👍（8） 💬（1）<div>循环插入数据，然后拿着刚刚插入的主键id，更新数据。请问怎么提高这个情况的效率</div>2019-02-15</li><br/>
+2.优化前，有并发事务写和查询同一条数据记录，即事务a执行insert 尚未提交，事务b就来查询（快照读），优化后保证查询时insert事务已经提交</p>2019-02-19</li><br/><li><span>phpzheng</span> 👍（8） 💬（1）<p>循环插入数据，然后拿着刚刚插入的主键id，更新数据。请问怎么提高这个情况的效率</p>2019-02-15</li><br/>
 </ul>

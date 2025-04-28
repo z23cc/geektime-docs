@@ -380,17 +380,17 @@ CFG Scale: 7
 
 期待你在留言区和我交流讨论，也推荐你把今天的内容分享给身边更多朋友，和他一起尝试训练LoRA模型。
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>Geek_7401d2</span> 👍（5） 💬（1）<div>老师你好，看完后还是不知道如何入手训练，有几个问题
+<li><span>Geek_7401d2</span> 👍（5） 💬（1）<p>老师你好，看完后还是不知道如何入手训练，有几个问题
 1、选择素材图片时要用多少张，什么样的图片合适，比方说训练某个人物的Lora时，选择该人的图片时要选择什么样的，全身照、半身照、面部特写等各占多少合适
 2、Lora 模型训练多少轮（num_epochs）合适
 3、训练完会有多个Lora模型，选择哪一个呢，选最后一轮训练的吗
-4、我理解训练lora模型的原理是一样的，为什么同样的素材、用同样的基础模型，用不同的代码会出现不同的训练效果，文中用到的这两个代码库差异在哪呢</div>2023-08-31</li><br/><li><span>cmsgoogle</span> 👍（1） 💬（1）<div>使用diffusers库训练Lora，文中提到：耐心等待 20 分钟，我们就完成了 LoRA 模型的训练。
-需要说明下是什么环境，如果再colab上使用T4服务器，大约要1个小时10多分钟。</div>2023-09-16</li><br/><li><span>王大叶</span> 👍（1） 💬（1）<div>老师好，请教两个问题：
+4、我理解训练lora模型的原理是一样的，为什么同样的素材、用同样的基础模型，用不同的代码会出现不同的训练效果，文中用到的这两个代码库差异在哪呢</p>2023-08-31</li><br/><li><span>cmsgoogle</span> 👍（1） 💬（1）<p>使用diffusers库训练Lora，文中提到：耐心等待 20 分钟，我们就完成了 LoRA 模型的训练。
+需要说明下是什么环境，如果再colab上使用T4服务器，大约要1个小时10多分钟。</p>2023-09-16</li><br/><li><span>王大叶</span> 👍（1） 💬（1）<p>老师好，请教两个问题：
 1. 对于人像 LoRA 的训练，精细化的打标是否有必要，对 LoRA 质量的影响会很大吗？
-2. 实验发现用 deepbooru 给写实人像打标不是很准确，比如经常会把男性图片标注成 1girl，用 BLIP 打标信息又比较少，无法完全涵盖画面的内容。请教人像 LoRA 训练有什么推荐的打标方法吗？</div>2023-09-13</li><br/><li><span>易企秀-郭彦超</span> 👍（1） 💬（2）<div>Y=（W+weight1​∗A1​⋅B1​+weight2​∗A2​⋅B2​）⋅X
+2. 实验发现用 deepbooru 给写实人像打标不是很准确，比如经常会把男性图片标注成 1girl，用 BLIP 打标信息又比较少，无法完全涵盖画面的内容。请教人像 LoRA 训练有什么推荐的打标方法吗？</p>2023-09-13</li><br/><li><span>易企秀-郭彦超</span> 👍（1） 💬（2）<p>Y=（W+weight1​∗A1​⋅B1​+weight2​∗A2​⋅B2​）⋅X
 老师你好，按照上面公式权重融合的过程是加权融合，W的值在相同维度上会同时受到A和B的影响，最终导致结果既不像A也不像B, 有没有一种累计方式 避免A和B的互相影响？ 比如多lora融合前先merge， 根据CNN的思想， 取d&#47;2的A模型参数量 与d&#47;2的B模型参数量 合并成新的d*d lora模型，新的模型保留了原始的A 和 B的部分参数 并没有累加A和B
-</div>2023-08-31</li><br/><li><span>Geek_ca0b19</span> 👍（0） 💬（1）<div>老师好我有一个问题
-如果采用五六张类似风格画风的图，可以通过这几张图训练出一个代表类似风格的lora吗？</div>2023-09-14</li><br/><li><span>石沉溪洞</span> 👍（0） 💬（1）<div>老师您好，请问这个能支持将基本模型改为SDXL吗？谢谢您</div>2023-09-14</li><br/><li><span>@二十一大叔</span> 👍（0） 💬（1）<div>老师，lora训练可以写一个本地运行的python版本吗，colab上看的不是很明白</div>2023-09-05</li><br/><li><span>陈问渔</span> 👍（0） 💬（2）<div>请问 make_captions.py 的代码在哪看呀？</div>2023-09-05</li><br/><li><span>Alex</span> 👍（0） 💬（1）<div>最新的sd 的bweui 的additional networks 是已经集成了么？我不太确定 我安装了一下 没有显示这个选项  请老师指教下 </div>2023-09-03</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>是否有安卓手机上可以使用绘画AI?</div>2023-08-31</li><br/><li><span>zec123</span> 👍（0） 💬（2）<div>老师，24年1月11日运行colab彩铅代码，在def train代码块会发成报错导致运行不了报错如下：RuntimeError: 
+</p>2023-08-31</li><br/><li><span>Geek_ca0b19</span> 👍（0） 💬（1）<p>老师好我有一个问题
+如果采用五六张类似风格画风的图，可以通过这几张图训练出一个代表类似风格的lora吗？</p>2023-09-14</li><br/><li><span>石沉溪洞</span> 👍（0） 💬（1）<p>老师您好，请问这个能支持将基本模型改为SDXL吗？谢谢您</p>2023-09-14</li><br/><li><span>@二十一大叔</span> 👍（0） 💬（1）<p>老师，lora训练可以写一个本地运行的python版本吗，colab上看的不是很明白</p>2023-09-05</li><br/><li><span>陈问渔</span> 👍（0） 💬（2）<p>请问 make_captions.py 的代码在哪看呀？</p>2023-09-05</li><br/><li><span>Alex</span> 👍（0） 💬（1）<p>最新的sd 的bweui 的additional networks 是已经集成了么？我不太确定 我安装了一下 没有显示这个选项  请老师指教下 </p>2023-09-03</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>是否有安卓手机上可以使用绘画AI?</p>2023-08-31</li><br/><li><span>zec123</span> 👍（0） 💬（2）<p>老师，24年1月11日运行colab彩铅代码，在def train代码块会发成报错导致运行不了报错如下：RuntimeError: 
         CUDA Setup failed despite GPU being available. Please run the following command to get more 
 information:
 
@@ -404,7 +404,7 @@ bitsandbytes
 CalledProcessError: Command &#39;[&#39;&#47;usr&#47;bin&#47;python3&#39;, &#39;train_network.py&#39;, 
 &#39;--sample_prompts=&#47;content&#47;LoRA&#47;config&#47;sample_prompt.txt&#39;, 
 &#39;--dataset_config=&#47;content&#47;LoRA&#47;config&#47;dataset_config.toml&#39;, 
-&#39;--config_file=&#47;content&#47;LoRA&#47;config&#47;config_file.toml&#39;]&#39; returned non-zero exit status 1.</div>2024-01-11</li><br/><li><span>ALAN</span> 👍（0） 💬（0）<div>还有这块代码在哪个文件里，好像也没找到。
+&#39;--config_file=&#47;content&#47;LoRA&#47;config&#47;config_file.toml&#39;]&#39; returned non-zero exit status 1.</p>2024-01-11</li><br/><li><span>ALAN</span> 👍（0） 💬（0）<p>还有这块代码在哪个文件里，好像也没找到。
  for epoch in range(num_train_epochs):
      for step, batch in enumerate(train_dataloader):
      
@@ -423,9 +423,9 @@ CalledProcessError: Command &#39;[&#39;&#47;usr&#47;bin&#47;python3&#39;, &#39;t
          # 预测噪声并计算loss
          model_pred = unet(noisy_latents, timesteps, encoder_hidden_states).sample
          loss = F.mse_loss(model_pred.float(), target.float(), reduction=&quot;mean&quot;)
-         optimizer.step()</div>2023-10-31</li><br/><li><span>糖糖丸</span> 👍（0） 💬（0）<div>文章里的make_captions.py文件，在哪里可以看？</div>2023-10-23</li><br/><li><span>Toni</span> 👍（0） 💬（2）<div>在LoRA 模型训练时，采用变化的学习率(learning rate)，从较大的学习率开始，逐渐将其减小到较小值，帮助优化器(optimizer)能够较快较好地达到全局或局部最优，以期训练出的模型有更高的质量。
+         optimizer.step()</p>2023-10-31</li><br/><li><span>糖糖丸</span> 👍（0） 💬（0）<p>文章里的make_captions.py文件，在哪里可以看？</p>2023-10-23</li><br/><li><span>Toni</span> 👍（0） 💬（2）<p>在LoRA 模型训练时，采用变化的学习率(learning rate)，从较大的学习率开始，逐渐将其减小到较小值，帮助优化器(optimizer)能够较快较好地达到全局或局部最优，以期训练出的模型有更高的质量。
 
 为了比较，采用同样的基础模型，训练集，优化器，但将学习率调度器(Learning Rate Scheduler)改成了Cosine，lr_scheduler = &quot;cosine_with_restarts&quot;，出图质量有明显改进。
 
-还有其它优化模型的方法，大家可以分享。</div>2023-08-30</li><br/>
+还有其它优化模型的方法，大家可以分享。</p>2023-08-30</li><br/>
 </ul>

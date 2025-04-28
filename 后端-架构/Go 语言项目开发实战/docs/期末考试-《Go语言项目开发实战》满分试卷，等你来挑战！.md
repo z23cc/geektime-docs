@@ -8,5 +8,5 @@
 最后，我还给你准备了一个[调查问卷](https://jinshuju.net/f/o1nVPp)。题目不多，大概两分钟就可以填完，主要是想听一下你对这门课的看法和建议。期待你的反馈！  
 [![](https://static001.geekbang.org/resource/image/fc/e1/fc9610a599691da13d617a4a2c61b5e1.jpg?wh=1142x801)](https://jinshuju.net/f/o1nVPp)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>大可</span> 👍（0） 💬（0）<div>课程的源码和课件在哪里有呢？</div>2023-11-21</li><br/>
+<li><span>大可</span> 👍（0） 💬（0）<p>课程的源码和课件在哪里有呢？</p>2023-11-21</li><br/>
 </ul>

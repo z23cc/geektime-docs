@@ -234,7 +234,7 @@ ALTER TABLE titanic_train CHANGE Fare Fare DECIMAL(7,4) NOT NULL;
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>JustDoDT</span> 👍（13） 💬（1）<div># Mac只能用Python了
+<li><span>JustDoDT</span> 👍（13） 💬（1）<p># Mac只能用Python了
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -263,13 +263,13 @@ Embarked
 C	75	93
 Q	47	30
 S	427	219
-</div>2019-09-23</li><br/><li><span>骑行的掌柜J</span> 👍（10） 💬（3）<div>陈老师 我对这一节的操作全部用MySQL进行了一个实操 中间遇到一些问题 我也全部做了一个整理补充 放到了我的博客里面：https:&#47;&#47;blog.csdn.net&#47;weixin_41013322&#47;article&#47;details&#47;103616783  希望对后面学习的朋友有帮助 谢谢</div>2019-12-19</li><br/><li><span>ABC</span> 👍（4） 💬（1）<div>WPS同样可以使用,这种方式很方便.所需下载的文件我放到网盘了，地址: 链接: https:&#47;&#47;pan.baidu.com&#47;s&#47;1Wrq7VcypQiofKp70YaQLBA 提取码: 2avt
+</p>2019-09-23</li><br/><li><span>骑行的掌柜J</span> 👍（10） 💬（3）<p>陈老师 我对这一节的操作全部用MySQL进行了一个实操 中间遇到一些问题 我也全部做了一个整理补充 放到了我的博客里面：https:&#47;&#47;blog.csdn.net&#47;weixin_41013322&#47;article&#47;details&#47;103616783  希望对后面学习的朋友有帮助 谢谢</p>2019-12-19</li><br/><li><span>ABC</span> 👍（4） 💬（1）<p>WPS同样可以使用,这种方式很方便.所需下载的文件我放到网盘了，地址: 链接: https:&#47;&#47;pan.baidu.com&#47;s&#47;1Wrq7VcypQiofKp70YaQLBA 提取码: 2avt
 
-看了这一课，忽然想去买数据分析的课学习一下.</div>2019-11-30</li><br/><li><span>JustDoDT</span> 👍（3） 💬（1）<div>仅对某一列缺失值处理
+看了这一课，忽然想去买数据分析的课学习一下.</p>2019-11-30</li><br/><li><span>JustDoDT</span> 👍（3） 💬（1）<p>仅对某一列缺失值处理
 时序数据：线性插值
 频谱数据：重采样
-……</div>2019-09-23</li><br/><li><span>哈66</span> 👍（2） 💬（1）<div>老是想问一下收集过来的数据为什么需要清洗啊，能具体举一些使用场景嘛？</div>2019-12-16</li><br/><li><span>Venom</span> 👍（2） 💬（2）<div>找不到数据集的人，这里能下，我也是刚找到。https:&#47;&#47;download.csdn.net&#47;download&#47;qq_44851287&#47;11142360</div>2019-11-12</li><br/><li><span>Elliot</span> 👍（2） 💬（2）<div>https:&#47;&#47;www.kaggle.com&#47;c&#47;titanic&#47;data 这个属于github的吗？</div>2019-10-27</li><br/><li><span>JustDoDT</span> 👍（2） 💬（1）<div>我的Python代码github地址
-https:&#47;&#47;github.com&#47;LearningChanging&#47;sql_must_konw&#47;tree&#47;master&#47;45-%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SQL%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%B8%85%E6%B4%97%EF%BC%9F</div>2019-09-23</li><br/><li><span>海洋</span> 👍（6） 💬（0）<div>检查全面性修改字段类型时，直接使用Navicat的设计表格功能修改，更快，只不过不利于新手锻炼SQL代码能力，同时可视化这块，一般清洗后，直接导出，然后使用Python或者BI软件进行进一步分析可视化</div>2019-09-23</li><br/><li><span>完美坚持</span> 👍（2） 💬（0）<div>可以用 LOAD DATA 导入，但是要注意，在默认的严格模式下，如果设置 age 列为 numeric 的类型，将会报错无法读取，原因是空字符段无法读取。
+……</p>2019-09-23</li><br/><li><span>哈66</span> 👍（2） 💬（1）<p>老是想问一下收集过来的数据为什么需要清洗啊，能具体举一些使用场景嘛？</p>2019-12-16</li><br/><li><span>Venom</span> 👍（2） 💬（2）<p>找不到数据集的人，这里能下，我也是刚找到。https:&#47;&#47;download.csdn.net&#47;download&#47;qq_44851287&#47;11142360</p>2019-11-12</li><br/><li><span>Elliot</span> 👍（2） 💬（2）<p>https:&#47;&#47;www.kaggle.com&#47;c&#47;titanic&#47;data 这个属于github的吗？</p>2019-10-27</li><br/><li><span>JustDoDT</span> 👍（2） 💬（1）<p>我的Python代码github地址
+https:&#47;&#47;github.com&#47;LearningChanging&#47;sql_must_konw&#47;tree&#47;master&#47;45-%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8SQL%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%B8%85%E6%B4%97%EF%BC%9F</p>2019-09-23</li><br/><li><span>海洋</span> 👍（6） 💬（0）<p>检查全面性修改字段类型时，直接使用Navicat的设计表格功能修改，更快，只不过不利于新手锻炼SQL代码能力，同时可视化这块，一般清洗后，直接导出，然后使用Python或者BI软件进行进一步分析可视化</p>2019-09-23</li><br/><li><span>完美坚持</span> 👍（2） 💬（0）<p>可以用 LOAD DATA 导入，但是要注意，在默认的严格模式下，如果设置 age 列为 numeric 的类型，将会报错无法读取，原因是空字符段无法读取。
 即使调整为非严格模式读取成功，Age 和 cabin 空的部分，本来该是NULL，但是在SQL读取后，分别是 0 和 空字符串，并非NULL。
 先创建表格：
 CREATE TABLE titanic_train(
@@ -293,7 +293,7 @@ LOAD DATA INFILE &#39;文件位置&#47;train.csv&#39;
   LINES TERMINATED BY &#39;\n&#39;
   IGNORE 1 LINES
   (passenger_id, survived, pcalss, name, sex, @age, sibsp, parch, ticket, fare, @cabin, embarked)
-  SET age = NULLIF(@age,&#39;&#39;), cabin = NULLIF(@cabin,&#39;&#39;);</div>2021-06-10</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<div>mport pandas as pd
+  SET age = NULLIF(@age,&#39;&#39;), cabin = NULLIF(@cabin,&#39;&#39;);</p>2021-06-10</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<p>mport pandas as pd
 import matplotlib.pyplot as plt
 
 # Python导入数据
@@ -361,7 +361,7 @@ plt.show()
 
 # 法二直接画图
 import seaborn as sns
-ax = sns.countplot(x=&quot;Embarked&quot;, hue=&quot;Survived&quot;, data=titanic_train1)</div>2021-06-11</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<div>LOAD DATA 导入数据 （二）
+ax = sns.countplot(x=&quot;Embarked&quot;, hue=&quot;Survived&quot;, data=titanic_train1)</p>2021-06-11</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<p>LOAD DATA 导入数据 （二）
 下面就来解决这个问题：
 很容易想到方法一，但是觉得在数据量很大的时候，方法一还要在扫一遍表，而方法二只需要在读取扫描的时候，顺带加一个判断就行了，觉得这样的话，方法一消耗了一些不必要的资源。
 
@@ -399,7 +399,7 @@ Query OK, 891 rows affected (0.05 sec)
 Records: 891  Deleted: 0  Skipped: 0  Warnings: 0
 可以看到相应空字符的位置是 null 而不是 0 了
 NULLIF 的文档：意思就是如果这个变量是空字符就设置为null
-https:&#47;&#47;dev.mysql.com&#47;doc&#47;refman&#47;8.0&#47;en&#47;flow-control-functions.html#function_nullif</div>2021-06-10</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<div>LOAD DATA 导入数据（没有Navicat）（一）：
+https:&#47;&#47;dev.mysql.com&#47;doc&#47;refman&#47;8.0&#47;en&#47;flow-control-functions.html#function_nullif</p>2021-06-10</li><br/><li><span>完美坚持</span> 👍（1） 💬（0）<p>LOAD DATA 导入数据（没有Navicat）（一）：
 CREATE TABLE titanic_train(
 	passenger_id INT(3) PRIMARY KEY,
 	survived INT(1),
@@ -438,6 +438,6 @@ SHOW warnings;
 -- 官方文档和很多资料里，都是 LINES TERMINATED BY &#39;\r\n&#39;，但是我只有用 \n 才能插入成功
 -- 发现空字符串不能被正常读取为（数据库中的）NULL，cabin就算了（空字符和NULL的区别可能影响不大），但是age空字符串在非严格模式下（在严格模式下根本无法导入数据，会报错：Incorrect integer value: &#39;&#39; for column &#39;出错的column&#39; at row 出错的行数），空字符导入后就变成了0，但是那些乘客显然不是零岁啊（我的数据里面出错的是 Age 一列）
 【mysql 导入csv空值_如何处理csv中的空值】https:&#47;&#47;blog.csdn.net&#47;weixin_29969209&#47;article&#47;details&#47;114795753 这篇文章也提到了这个问题，主要讲了讲可能会带来那些衍生的问题，并且讨论了Python和 mysql 数据交互时，空字符串读取的情况，但是并没有解决问题。
-</div>2021-06-10</li><br/><li><span>ClaireToffler</span> 👍（1） 💬（0）<div>LTP 称之为联机事务处理，我们之前讲解的对数据进行增删改查，SQL 查询优化，事务处理等就属于 OLTP 的范畴。它对实时性要求高，需要将用户的数据有效地存储到数据库中，同时有时候针对互联网应用的需求，我们还需要设置数据库的主从架构保证数据库的高并发和高可用性。 忽然感觉平时好像只接触了这个领域</div>2020-04-01</li><br/><li><span>阿飛</span> 👍（1） 💬（0）<div>有没有oracle for excel
-</div>2019-12-29</li><br/>
+</p>2021-06-10</li><br/><li><span>ClaireToffler</span> 👍（1） 💬（0）<p>LTP 称之为联机事务处理，我们之前讲解的对数据进行增删改查，SQL 查询优化，事务处理等就属于 OLTP 的范畴。它对实时性要求高，需要将用户的数据有效地存储到数据库中，同时有时候针对互联网应用的需求，我们还需要设置数据库的主从架构保证数据库的高并发和高可用性。 忽然感觉平时好像只接触了这个领域</p>2020-04-01</li><br/><li><span>阿飛</span> 👍（1） 💬（0）<p>有没有oracle for excel
+</p>2019-12-29</li><br/>
 </ul>

@@ -202,7 +202,7 @@ document.onkeypress = function(evt) {
 
 欢迎在评论区留下你的思考。如果觉得今天的内容对你有所帮助的话，也欢迎你把课程分享给其他同事或朋友，我们共同学习进步！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>ifelse</span> 👍（0） 💬（0）<div>阔怕，打卡</div>2023-03-21</li><br/><li><span>peter</span> 👍（0） 💬（0）<div>请教老师三个问题啊：
+<li><span>ifelse</span> 👍（0） 💬（0）<p>阔怕，打卡</p>2023-03-21</li><br/><li><span>peter</span> 👍（0） 💬（0）<p>请教老师三个问题啊：
 Q1：拿到cookie以后，可以直接访问，并不需要使用“用户名+密码”登录，
         相当于绕过了登录，对吗？
        文中这句话“如果攻击者拿到 cookie 信息了，那他就可以实现登录我们的账号”，
@@ -210,5 +210,5 @@ Q1：拿到cookie以后，可以直接访问，并不需要使用“用户名+�
 
 Q2：BeEF的Hooked Browsers界面上，192.168.3.102前面的几个“？”是什么意思？
         乱码吗？ 还是有其他含义？
-Q3：本专栏所用的软件、脚本等内容，放在一个公共地方了吗？</div>2022-02-15</li><br/><li><span>DoHer4S</span> 👍（0） 💬（0）<div>XSS攻击还可以盗取CSRF TOKEN来进行CSRF攻击；</div>2022-02-14</li><br/>
+Q3：本专栏所用的软件、脚本等内容，放在一个公共地方了吗？</p>2022-02-15</li><br/><li><span>DoHer4S</span> 👍（0） 💬（0）<p>XSS攻击还可以盗取CSRF TOKEN来进行CSRF攻击；</p>2022-02-14</li><br/>
 </ul>

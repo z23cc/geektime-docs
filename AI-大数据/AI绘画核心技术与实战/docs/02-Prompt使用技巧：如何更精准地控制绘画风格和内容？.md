@@ -136,7 +136,7 @@ CFG Scale是文生成图模型中的一个重要参数，它表示输入文本�
 
 期待你在留言区和我交流讨论，也推荐你把今天学到的内容分享给更多朋友，我们一起探索AI绘画的无限潜力！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Toni</span> 👍（11） 💬（3）<div>思考题:
+<li><span>Toni</span> 👍（11） 💬（3）<p>思考题:
 如果你想绘制一幅精细化的人物肖像，AI 绘画生成的图像在手部和脸部细节存在瑕疵。这种情况下，有哪些方法可以改善这些问题？
 
 我尝试了下面的提示词:
@@ -150,16 +150,16 @@ a utral detailed portrait of a beautiful women,
 
 mutated hands, fused fingers, too many fingers, missing fingers, poorly drawn hands, blurry eyes, blurred iris, blurry face, poorly drawn face, mutation, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, out of frame, multiple faces, long neck, nsfw, 
 
-请大家补充好的想法。</div>2023-07-19</li><br/><li><span>IT蜗壳-Tango</span> 👍（8） 💬（2）<div>介绍两个插件，方便小伙伴们更好的使用webui和提示词
-http:&#47;&#47;gk.link&#47;a&#47;1277p</div>2023-07-19</li><br/><li><span>天敌</span> 👍（5） 💬（1）<div>找到一个还不错的提示词网站
-https:&#47;&#47;stablediffusion.fr&#47;prompts</div>2023-07-19</li><br/><li><span>Guanpj</span> 👍（3） 💬（1）<div>prompt 中使用 lora 时文本必须与文件名一致吗？</div>2023-07-31</li><br/><li><span>我就是我，烟火不一样的我</span> 👍（0） 💬（1）<div>盲盒使用的基础模型sd1.5是啥？在webui绘画的时候，上面基础模型选择啥？</div>2024-01-14</li><br/><li><span>Chengfei.Xu</span> 👍（0） 💬（2）<div>思考题（简易版）：
+请大家补充好的想法。</p>2023-07-19</li><br/><li><span>IT蜗壳-Tango</span> 👍（8） 💬（2）<p>介绍两个插件，方便小伙伴们更好的使用webui和提示词
+http:&#47;&#47;gk.link&#47;a&#47;1277p</p>2023-07-19</li><br/><li><span>天敌</span> 👍（5） 💬（1）<p>找到一个还不错的提示词网站
+https:&#47;&#47;stablediffusion.fr&#47;prompts</p>2023-07-19</li><br/><li><span>Guanpj</span> 👍（3） 💬（1）<p>prompt 中使用 lora 时文本必须与文件名一致吗？</p>2023-07-31</li><br/><li><span>我就是我，烟火不一样的我</span> 👍（0） 💬（1）<p>盲盒使用的基础模型sd1.5是啥？在webui绘画的时候，上面基础模型选择啥？</p>2024-01-14</li><br/><li><span>Chengfei.Xu</span> 👍（0） 💬（2）<p>思考题（简易版）：
 1、在webUI中发现有相关“面部修复”、“高清修复”功能
 2、通过promet和negative promet尝试
 
 ——
-另外作者的SD 基础模型选择为 realv1.3是怎么选择的，我的默认只能使用“v1-5-pruned-emaonly.safetensors”</div>2023-08-23</li><br/><li><span>Geek_a7f70d</span> 👍（0） 💬（1）<div>希望可以教一下civitai和hugging face两个社区的使用方法</div>2023-08-03</li><br/><li><span>刘泓呈</span> 👍（0） 💬（1）<div>我用的SD是整合安装包，后半篇的内容跟我使用的有点割裂了。。。</div>2023-08-03</li><br/><li><span>AI悦创</span> 👍（0） 💬（1）<div>文中提到的1.1倍强度等，这些从哪里可以查询到？范围是什么？</div>2023-07-23</li><br/><li><span>Seeyo</span> 👍（0） 💬（1）<div>老师 请问一下后续会讲 stable diffusion的部署吗？找了一圈跟control net相关的量化资料 都没找到</div>2023-07-20</li><br/><li><span>永远积极向上的韩冬</span> 👍（0） 💬（1）<div>可以用局部重绘</div>2023-07-20</li><br/><li><span>石云升</span> 👍（0） 💬（1）<div>期待下一节课。</div>2023-07-19</li><br/><li><span>和某欢</span> 👍（0） 💬（1）<div>希望老师再多增加一些关于 CFG Scale的讲解</div>2023-07-19</li><br/><li><span>syp</span> 👍（3） 💬（0）<div>思考题：面部，手部瑕疵如何处理
+另外作者的SD 基础模型选择为 realv1.3是怎么选择的，我的默认只能使用“v1-5-pruned-emaonly.safetensors”</p>2023-08-23</li><br/><li><span>Geek_a7f70d</span> 👍（0） 💬（1）<p>希望可以教一下civitai和hugging face两个社区的使用方法</p>2023-08-03</li><br/><li><span>刘泓呈</span> 👍（0） 💬（1）<p>我用的SD是整合安装包，后半篇的内容跟我使用的有点割裂了。。。</p>2023-08-03</li><br/><li><span>AI悦创</span> 👍（0） 💬（1）<p>文中提到的1.1倍强度等，这些从哪里可以查询到？范围是什么？</p>2023-07-23</li><br/><li><span>Seeyo</span> 👍（0） 💬（1）<p>老师 请问一下后续会讲 stable diffusion的部署吗？找了一圈跟control net相关的量化资料 都没找到</p>2023-07-20</li><br/><li><span>永远积极向上的韩冬</span> 👍（0） 💬（1）<p>可以用局部重绘</p>2023-07-20</li><br/><li><span>石云升</span> 👍（0） 💬（1）<p>期待下一节课。</p>2023-07-19</li><br/><li><span>和某欢</span> 👍（0） 💬（1）<p>希望老师再多增加一些关于 CFG Scale的讲解</p>2023-07-19</li><br/><li><span>syp</span> 👍（3） 💬（0）<p>思考题：面部，手部瑕疵如何处理
 re：常用方式
 1.sd中开启面部修复
 2.蒙版局部重绘
-3.利用sd插件After Detailer（最推荐）</div>2023-08-23</li><br/><li><span>学习吧技术储备</span> 👍（0） 💬（0）<div>有推荐的好书吗</div>2024-01-09</li><br/>
+3.利用sd插件After Detailer（最推荐）</p>2023-08-23</li><br/><li><span>学习吧技术储备</span> 👍（0） 💬（0）<p>有推荐的好书吗</p>2024-01-09</li><br/>
 </ul>

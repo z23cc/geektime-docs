@@ -150,16 +150,16 @@ void *malloc_zone_malloc(malloc_zone_t *zone, size_t size)
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎把它分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>鼠辈</span> 👍（3） 💬（2）<div>info.resident_size这个获取的内存和xcode上显示的内存是对不上的。不知道您怎么看这个问题？</div>2019-04-11</li><br/><li><span>drunkenMouse</span> 👍（2） 💬（1）<div>线程使用优先级时，CPU 占用多的线程的优先级会被降低。这句话怎么读不懂呢？
+<li><span>鼠辈</span> 👍（3） 💬（2）<p>info.resident_size这个获取的内存和xcode上显示的内存是对不上的。不知道您怎么看这个问题？</p>2019-04-11</li><br/><li><span>drunkenMouse</span> 👍（2） 💬（1）<p>线程使用优先级时，CPU 占用多的线程的优先级会被降低。这句话怎么读不懂呢？
 
 利用didReceivedMemoryWarning 这个代理时间，看得我一愣。。应该是代理事件，我这算不算鸡蛋里面挑骨头？
 
 task_infk的使用需要导入&lt;mach&#47;mach.h&gt; 
 
-最后一段意思是，系统通过malloc_logger来统计并管理内存的分配情况？</div>2019-04-12</li><br/><li><span>无名</span> 👍（0） 💬（1）<div>当系统还剩多少内存时，会发出内存不足的通知。</div>2019-06-25</li><br/><li><span>drunkenMouse</span> 👍（0） 💬（1）<div>系统在强杀App前，会先做优先级判断。意思是：如果优先级高的话，本来会强杀的也不强杀了，而去强杀那些没有达到limit的进程？</div>2019-04-13</li><br/><li><span>drunkenMouse</span> 👍（0） 💬（1）<div>didReceivedMemory 动态获取内存值的方法，没有找到啊 大佬能说一下吗？</div>2019-04-13</li><br/><li><span>mαnajay</span> 👍（0） 💬（1）<div>hook malloc_logger aop收集日志，然后在OOM那6秒内收集所有内存分配信息，然后在再次启动应用时 上报这两部分日志吗？ 
-oom那一刻是指的哪个时机，接受内存警告？ didReceiveMemoryWarning 中判断 是否靠近 limit吗 </div>2019-04-11</li><br/><li><span>欢乐的小马驹</span> 👍（17） 💬（0）<div>我建议，以后写这样的专栏，最后把所有参考的原始资料都下。你觉得呢？</div>2020-05-21</li><br/><li><span>白开了杯水</span> 👍（16） 💬（1）<div>一直不知道内存分配最大值获取和怎么获取当前内存分配，看了文章豁然开朗，想问的是，老师这些知识都是通过分析源码得来的吗？</div>2019-04-11</li><br/><li><span>drunkenMouse</span> 👍（10） 💬（0）<div>iOS通过堆栈管理所有的app进程，通过一个优先级最高的线程去监控系统内存的压力，还有一个快速对照表记录所有app的内存使用情况。如果内存有压力了，就按照优先级去释放优先级低还使用内存多的。
+最后一段意思是，系统通过malloc_logger来统计并管理内存的分配情况？</p>2019-04-12</li><br/><li><span>无名</span> 👍（0） 💬（1）<p>当系统还剩多少内存时，会发出内存不足的通知。</p>2019-06-25</li><br/><li><span>drunkenMouse</span> 👍（0） 💬（1）<p>系统在强杀App前，会先做优先级判断。意思是：如果优先级高的话，本来会强杀的也不强杀了，而去强杀那些没有达到limit的进程？</p>2019-04-13</li><br/><li><span>drunkenMouse</span> 👍（0） 💬（1）<p>didReceivedMemory 动态获取内存值的方法，没有找到啊 大佬能说一下吗？</p>2019-04-13</li><br/><li><span>mαnajay</span> 👍（0） 💬（1）<p>hook malloc_logger aop收集日志，然后在OOM那6秒内收集所有内存分配信息，然后在再次启动应用时 上报这两部分日志吗？ 
+oom那一刻是指的哪个时机，接受内存警告？ didReceiveMemoryWarning 中判断 是否靠近 limit吗 </p>2019-04-11</li><br/><li><span>欢乐的小马驹</span> 👍（17） 💬（0）<p>我建议，以后写这样的专栏，最后把所有参考的原始资料都下。你觉得呢？</p>2020-05-21</li><br/><li><span>白开了杯水</span> 👍（16） 💬（1）<p>一直不知道内存分配最大值获取和怎么获取当前内存分配，看了文章豁然开朗，想问的是，老师这些知识都是通过分析源码得来的吗？</p>2019-04-11</li><br/><li><span>drunkenMouse</span> 👍（10） 💬（0）<p>iOS通过堆栈管理所有的app进程，通过一个优先级最高的线程去监控系统内存的压力，还有一个快速对照表记录所有app的内存使用情况。如果内存有压力了，就按照优先级去释放优先级低还使用内存多的。
 
-所以app得内存阈值是没有固定大小的。我一直以为每个app可以使用的内存大小是固定的。。</div>2019-04-14</li><br/><li><span>D</span> 👍（6） 💬（0）<div>腾讯的OOMDetector就是干这个事的https:&#47;&#47;github.com&#47;Tencent&#47;OOMDetector</div>2021-08-16</li><br/><li><span>我唔知点死啊</span> 👍（4） 💬（2）<div>fishhook初学者提问：
+所以app得内存阈值是没有固定大小的。我一直以为每个app可以使用的内存大小是固定的。。</p>2019-04-14</li><br/><li><span>D</span> 👍（6） 💬（0）<p>腾讯的OOMDetector就是干这个事的https:&#47;&#47;github.com&#47;Tencent&#47;OOMDetector</p>2021-08-16</li><br/><li><span>我唔知点死啊</span> 👍（4） 💬（2）<p>fishhook初学者提问：
 关于fishhook malloc_logger，在libmalloc中找到malloc_logger是一个结构体：
 typedef void(malloc_logger_t)(uint32_t type,
 		uintptr_t arg1,
@@ -188,12 +188,12 @@ void new_disk_stack_logging_log_stack(uint32_t type_flags,
 }
 
         struct rebinding malloc_logger_rebinding = { &quot;__disk_stack_logging_log_stack&quot;, original_disk_stack_logging_log_stack, (void *)&amp;original_disk_stack_logging_log_stack};
-        rebind_symbols((struct rebinding[1]){malloc_logger_rebinding}, 1);</div>2019-04-18</li><br/><li><span>无名</span> 👍（3） 💬（2）<div>我问这个问题的原因是看到SDWebImage 2.6版本的源码中释放内存缓存有两种方式：
+        rebind_symbols((struct rebinding[1]){malloc_logger_rebinding}, 1);</p>2019-04-18</li><br/><li><span>无名</span> 👍（3） 💬（2）<p>我问这个问题的原因是看到SDWebImage 2.6版本的源码中释放内存缓存有两种方式：
 第一种：监听到内存不足时，释放所有内存缓存；
 第二种：当系统剩余内存小于12M时，释放内存缓存。
 
 刚开始版本是没有加第二种判断的。我的疑问是加上第二种判断有必要吗？如果有必要的话，那么就是，当系统只剩12M内存都还没有触发内存不足的通知。
 
 所以说这个内存不足通知是否在应用能给它分配的最大内存都全部使用完了才发出通知还是？
-如：当前app能使用的最大内存为2G，系统总共内存为4G。那是否说不管系统是否还剩余多少内存，只要app的内存达到2G就发出内存警告通知？还是说快到2G,如达到最大可用内存的百分之95以上就发出内存警告通知。有哪里可以看到这个值吗？</div>2019-06-25</li><br/><li><span>徐秀滨</span> 👍（3） 💬（0）<div>老师，我没找到malloc_logger这个方法，没法hook，咋搞？</div>2019-04-17</li><br/><li><span>Master</span> 👍（2） 💬（1）<div>有个疑问，就算 hook 了malloc_logger ，知晓了内存分配地址和大小，又如何知道是代码中哪块或者哪个对象申请的呢？望各位大佬不吝赐教！</div>2020-03-11</li><br/><li><span>Jaker</span> 👍（2） 💬（1）<div>接上面的问题，问一下老师，task_vm_info_data_t的phys_footprint 打印输出的内存值和xcode的显示内存还是不一致啊，这是怎么回事，望解惑，谢谢。</div>2019-04-16</li><br/>
+如：当前app能使用的最大内存为2G，系统总共内存为4G。那是否说不管系统是否还剩余多少内存，只要app的内存达到2G就发出内存警告通知？还是说快到2G,如达到最大可用内存的百分之95以上就发出内存警告通知。有哪里可以看到这个值吗？</p>2019-06-25</li><br/><li><span>徐秀滨</span> 👍（3） 💬（0）<p>老师，我没找到malloc_logger这个方法，没法hook，咋搞？</p>2019-04-17</li><br/><li><span>Master</span> 👍（2） 💬（1）<p>有个疑问，就算 hook 了malloc_logger ，知晓了内存分配地址和大小，又如何知道是代码中哪块或者哪个对象申请的呢？望各位大佬不吝赐教！</p>2020-03-11</li><br/><li><span>Jaker</span> 👍（2） 💬（1）<p>接上面的问题，问一下老师，task_vm_info_data_t的phys_footprint 打印输出的内存值和xcode的显示内存还是不一致啊，这是怎么回事，望解惑，谢谢。</p>2019-04-16</li><br/>
 </ul>

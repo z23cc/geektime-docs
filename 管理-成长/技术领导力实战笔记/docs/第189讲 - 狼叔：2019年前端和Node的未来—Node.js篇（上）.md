@@ -195,5 +195,5 @@ class MyComponent extends React.Component {
 
 狼叔（网名i5ting），现为阿里巴巴前端技术专家，Node.js 技术布道者，Node全栈公众号运营者。曾就职于去哪儿、新浪、网秦，做过前端、后端、数据分析，是一名全栈技术的实践者，目前主要关注技术架构和团队梯队建设方向。即将出版《狼书》3卷。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>yanger2004</span> 👍（0） 💬（0）<div>全是干货</div>2021-09-25</li><br/>
+<li><span>yanger2004</span> 👍（0） 💬（0）<p>全是干货</p>2021-09-25</li><br/>
 </ul>

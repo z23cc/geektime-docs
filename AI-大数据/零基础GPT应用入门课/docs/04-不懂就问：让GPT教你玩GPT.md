@@ -365,7 +365,7 @@ Python 安装完毕，问题来了，那现在我要开始学Python吗？答案�
 
 期待在评论区看到你的思考或感受分享，也祝你早日成为 GPT 老师的 Master。戳此加入[课程交流群](http://jinshuju.net/f/oI1KKM)，我们下节课再会。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Toni</span> 👍（5） 💬（2）<div>邮票设计，全新的题目，让ChatGPT帮忙
+<li><span>Toni</span> 👍（5） 💬（2）<p>邮票设计，全新的题目，让ChatGPT帮忙
 
 提问:
 设计邮票需要注意什么，给出5个方面建议
@@ -397,5 +397,5 @@ https:&#47;&#47;designerapp.officeapps.live.com&#47;designerapp&#47;document.ash
 https:&#47;&#47;designerapp.officeapps.live.com&#47;designerapp&#47;document.ashx?path=&#47;a85ddd71691124c7&#47;UserAssets&#47;dalle-3d7116ac-7c75-4edb-a0f7-8909bfb31d9d0251716348286101959800.jpg&amp;dcHint=FranceCentral&amp;fileToken=e57bd3fa-2182-4b7f-ac08-1f3790a92425
 
 调制过的prompt
-https:&#47;&#47;designerapp.officeapps.live.com&#47;designerapp&#47;document.ashx?path=&#47;a85ddd71691124c7&#47;UserAssets&#47;dalle-ccae1985-ef18-4de1-8f34-4440e319a5f60251716350994076934400.jpg&amp;dcHint=FranceCentral&amp;fileToken=e57bd3fa-2182-4b7f-ac08-1f3790a92425</div>2023-06-05</li><br/><li><span>峰回路转</span> 👍（3） 💬（3）<div>请问下目前在国内使用的chatGPT版本是3.5还是4？如何安装使用？请提供一个windows的安装版本？需要翻墙？费用如何？</div>2023-06-05</li><br/><li><span>Geek_340694</span> 👍（0） 💬（1）<div>你在提问是使用的❌之类的符号是怎么输入的</div>2023-08-18</li><br/>
+https:&#47;&#47;designerapp.officeapps.live.com&#47;designerapp&#47;document.ashx?path=&#47;a85ddd71691124c7&#47;UserAssets&#47;dalle-ccae1985-ef18-4de1-8f34-4440e319a5f60251716350994076934400.jpg&amp;dcHint=FranceCentral&amp;fileToken=e57bd3fa-2182-4b7f-ac08-1f3790a92425</p>2023-06-05</li><br/><li><span>峰回路转</span> 👍（3） 💬（3）<p>请问下目前在国内使用的chatGPT版本是3.5还是4？如何安装使用？请提供一个windows的安装版本？需要翻墙？费用如何？</p>2023-06-05</li><br/><li><span>Geek_340694</span> 👍（0） 💬（1）<p>你在提问是使用的❌之类的符号是怎么输入的</p>2023-08-18</li><br/>
 </ul>

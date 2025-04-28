@@ -200,19 +200,19 @@ db.recommendation_demo.insert({"name":"welcome to recommendation system class"})
 
 欢迎你把代码上传到GitHub并在评论区留下你的代码链接，我会选择有代表性的代码进行点评。我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>👂🏻阿难👂🏻</span> 👍（11） 💬（6）<div>能不能提个建议，比如这节课，讲了一个工具的安装和一个使用demo，这个内容个人感觉很单薄，其实网上搜索一下就有很多教程，作为学员其实希望了解更多的是：1当前用户在推荐系统中都会和其他模块如何交互，它在推荐架构中的作用是什么？
+<li><span>👂🏻阿难👂🏻</span> 👍（11） 💬（6）<p>能不能提个建议，比如这节课，讲了一个工具的安装和一个使用demo，这个内容个人感觉很单薄，其实网上搜索一下就有很多教程，作为学员其实希望了解更多的是：1当前用户在推荐系统中都会和其他模块如何交互，它在推荐架构中的作用是什么？
 2为什么选用了mgdb而不是其他的db？有哪些考虑？ 
 3 实际推荐系统中，和当前技术有关的技术“坑”有哪些？老师啥如何解决的。
-能围绕以上问题做教学对于学习者来说才有真正的价值。 谢谢</div>2023-04-17</li><br/><li><span>云中君</span> 👍（3） 💬（1）<div>mongo安装与使用，放一个链接就可以…建议以后的安装与使用不用重点讲，多讲点推荐核心点</div>2023-04-20</li><br/><li><span>地铁林黛玉</span> 👍（2） 💬（1）<div>我感觉这节可以直接略过，docker直接一键安装即可。</div>2023-05-04</li><br/><li><span>贾维斯Echo</span> 👍（0） 💬（3）<div>我想知道为什么选用MongoDB? 而不是其他NoSQL数据库</div>2023-05-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>老师这节课真的很详细，一步一步，每一步都很详细，对于基础薄弱的同学尤其有用，必须赞一个！
+能围绕以上问题做教学对于学习者来说才有真正的价值。 谢谢</p>2023-04-17</li><br/><li><span>云中君</span> 👍（3） 💬（1）<p>mongo安装与使用，放一个链接就可以…建议以后的安装与使用不用重点讲，多讲点推荐核心点</p>2023-04-20</li><br/><li><span>地铁林黛玉</span> 👍（2） 💬（1）<p>我感觉这节可以直接略过，docker直接一键安装即可。</p>2023-05-04</li><br/><li><span>贾维斯Echo</span> 👍（0） 💬（3）<p>我想知道为什么选用MongoDB? 而不是其他NoSQL数据库</p>2023-05-08</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>老师这节课真的很详细，一步一步，每一步都很详细，对于基础薄弱的同学尤其有用，必须赞一个！
 另外，请教几个问题：
 Q1：讲“Field”部分时，有一句话“在 Document 中嵌套 Document 等，因此，它的 Field 类型更加灵活”。应该是Field嵌套，不是Document嵌套吧，也许是笔误。
 Q2：MongoDB是分布式，多个节点会有一个中心节点吗？
-Q3：MongoDB的可扩展性，体现在哪里？是体现在“列”可以任意扩展吗？还是体现在分布式应用时可以任意增加节点？</div>2023-04-17</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<div>为什么选用了MongoDB而不是其他的db如ES？有哪些考虑？ 能否列一个表格做一个对比？做对比后感觉整篇文章就更好了。</div>2023-12-11</li><br/><li><span>地铁林黛玉</span> 👍（0） 💬（0）<div>这是我的docker安装mongo的命令；
+Q3：MongoDB的可扩展性，体现在哪里？是体现在“列”可以任意扩展吗？还是体现在分布式应用时可以任意增加节点？</p>2023-04-17</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<p>为什么选用了MongoDB而不是其他的db如ES？有哪些考虑？ 能否列一个表格做一个对比？做对比后感觉整篇文章就更好了。</p>2023-12-11</li><br/><li><span>地铁林黛玉</span> 👍（0） 💬（0）<p>这是我的docker安装mongo的命令；
 docker run -v &#47;Users&#47;apple&#47;data&#47;mongo&#47;data:&#47;data&#47;db -v &#47;Users&#47;apple&#47;data&#47;mongo&#47;backup:&#47;data&#47;backup -v &#47;Users&#47;apple&#47;data&#47;mongo&#47;conf:&#47;data&#47;configdb --name mongod -p 27017:27017 -d mongo --auth
 创建用户：
 db.createUser({user: &#39;admin&#39;, pwd: &#39;123456&#39;, roles: [ {role: &#39;userAdminAnyDa&#39;} ]}) db.createUser({user: &#39;admin&#39;, pwd: &#39;123456&#39;, roles: [ {role: &#39;userAdminAnyDat&#39;} ]})db.createUser({user: &#39;admin&#39;, pwd: &#39;123456&#39;, roles: [ {role: &#39;userAdminAnyData&#39;} ]}db.createUser({user: &#39;admin&#39;, pwd: &#39;123456&#39;, roles: [ {role: &#39;userAdminAnyDat&#39;} ]})db.createUser({user: &#39;admin&#39;, pwd: &#39;123456&#39;, roles: [ {role: &#39;userAdminAnyDa&#39;} ]}) &#39;} ]})
 +++++++
 db.createUser({ user:&#39;admin&#39;,pwd:&#39;123456&#39;,roles:[ { role:&#39;userAdminAnyDatabase&#39;, db: &#39;admin&#39;},&quot;readWriteAnyDatabase&quot;]});
 +++++++
-db.auth(&#39;admin&#39;, &#39;123456&#39;)</div>2023-05-04</li><br/>
+db.auth(&#39;admin&#39;, &#39;123456&#39;)</p>2023-05-04</li><br/>
 </ul>

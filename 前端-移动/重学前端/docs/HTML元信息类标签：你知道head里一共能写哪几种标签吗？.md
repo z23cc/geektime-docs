@@ -160,7 +160,7 @@ application-name：如果页面是Web application，用这个标签表示应用�
 
 最后，给你留一个问题，你还见过哪些meta标签的用法？欢迎留言告诉我。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>火云邪神0007</span> 👍（203） 💬（6）<div>老师，我家的猫不让我给他剪指甲，怎么办？</div>2019-02-23</li><br/><li><span>AICC</span> 👍（158） 💬（1）<div>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+<li><span>火云邪神0007</span> 👍（203） 💬（6）<p>老师，我家的猫不让我给他剪指甲，怎么办？</p>2019-02-23</li><br/><li><span>AICC</span> 👍（158） 💬（1）<p>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
 &lt;!-- 默认使用最新浏览器 --&gt;
 &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot;&gt;
 &lt;!-- 不被网页(加速)转码 --&gt;
@@ -171,7 +171,7 @@ application-name：如果页面是Web application，用这个标签表示应用�
 &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
 &lt;!-- 删除苹果默认的工具栏和菜单栏 --&gt;
 &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
-&lt;!-- 设置苹果工具栏颜色 --&gt;</div>2019-02-21</li><br/><li><span>CC</span> 👍（38） 💬（2）<div>阅读完今天的文章，才感觉自己其实不懂 meta，之前对 meta 的细节缺少分类和整理。感谢老师。
+&lt;!-- 设置苹果工具栏颜色 --&gt;</p>2019-02-21</li><br/><li><span>CC</span> 👍（38） 💬（2）<p>阅读完今天的文章，才感觉自己其实不懂 meta，之前对 meta 的细节缺少分类和整理。感谢老师。
 
 回到老师的问题，我平时还见过以下三种（组）标签：
 
@@ -180,22 +180,22 @@ application-name：如果页面是Web application，用这个标签表示应用�
 2. Twitter 的标签组，包括 card, title, description 和 image，是为 Twitter 分享提供信息；
 
 3. msapplication 的标签组，包括 TileColor 和 TileImage，是为 Windows 8 以及以上系统识别 favicons 用的。
-</div>2019-02-21</li><br/><li><span>MarlboroKay</span> 👍（8） 💬（1）<div>meta基本用法：
+</p>2019-02-21</li><br/><li><span>MarlboroKay</span> 👍（8） 💬（1）<p>meta基本用法：
   &lt;meta name=application-name content=&quot;lsForums&quot;&gt;
 name = application-name 是不是少了 “”
-name = &quot;applicaiton-name&quot; ?</div>2019-02-21</li><br/><li><span>靠人品去赢</span> 👍（5） 💬（1）<div>突然想问一下，老是本尊是不是一个猫奴啊，感觉很喜欢那猫举例子做封面什么的。</div>2019-02-21</li><br/><li><span>有铭</span> 👍（4） 💬（1）<div>我是说为什么viewport在html标准里找不到，一直很疑惑是从哪里蹦出来的，搞了半天原来不是html标准是行业约定</div>2019-02-23</li><br/><li><span>阿成</span> 👍（2） 💬（1）<div>常见的还有
+name = &quot;applicaiton-name&quot; ?</p>2019-02-21</li><br/><li><span>靠人品去赢</span> 👍（5） 💬（1）<p>突然想问一下，老是本尊是不是一个猫奴啊，感觉很喜欢那猫举例子做封面什么的。</p>2019-02-21</li><br/><li><span>有铭</span> 👍（4） 💬（1）<p>我是说为什么viewport在html标准里找不到，一直很疑惑是从哪里蹦出来的，搞了半天原来不是html标准是行业约定</p>2019-02-23</li><br/><li><span>阿成</span> 👍（2） 💬（1）<p>常见的还有
 format-detection 禁止 iPhone 的自动识别
-</div>2019-02-21</li><br/><li><span>丘丘</span> 👍（11） 💬（2）<div>上面评论中的
+</p>2019-02-21</li><br/><li><span>丘丘</span> 👍（11） 💬（2）<p>上面评论中的
 &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
 &lt;!-- 删除苹果默认的工具栏和菜单栏 --&gt;
 &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
 &lt;!-- 设置苹果工具栏颜色 --&gt;
 这两条，我试着似乎没有效果。
-keywords这个属性，理论上对seo有作用，但是我随便进行了搜索，打开排名第一页的几个网站，都没有这么属性，是不是现在这种简单的seo打法已经被放弃了呢？</div>2019-03-24</li><br/><li><span>LiH</span> 👍（10） 💬（1）<div>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
+keywords这个属性，理论上对seo有作用，但是我随便进行了搜索，打开排名第一页的几个网站，都没有这么属性，是不是现在这种简单的seo打法已经被放弃了呢？</p>2019-03-24</li><br/><li><span>LiH</span> 👍（10） 💬（1）<p>&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
 &lt;meta name=&quot;format-detection&quot; content=&quot;date=no&quot;&gt;
 &lt;meta name=&quot;format-detection&quot; content=&quot;address=no&quot;&gt;
 &lt;meta name=&quot;format-detection&quot; content=&quot;email=no&quot;&gt;
-关闭iOS上的内容识别</div>2019-03-01</li><br/><li><span>码屁</span> 👍（5） 💬（0）<div>@丘丘 你难道忘了 竞价排名[滑稽]</div>2019-05-15</li><br/><li><span>Alen</span> 👍（5） 💬（0）<div>http:&#47;&#47;www.alenqi.site&#47;2018&#47;03&#47;04&#47;complete-tags&#47; 之前总结的</div>2019-05-08</li><br/><li><span>Geek_fc1551</span> 👍（2） 💬（0）<div> &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot; &#47;&gt; 
+关闭iOS上的内容识别</p>2019-03-01</li><br/><li><span>码屁</span> 👍（5） 💬（0）<p>@丘丘 你难道忘了 竞价排名[滑稽]</p>2019-05-15</li><br/><li><span>Alen</span> 👍（5） 💬（0）<p>http:&#47;&#47;www.alenqi.site&#47;2018&#47;03&#47;04&#47;complete-tags&#47; 之前总结的</p>2019-05-08</li><br/><li><span>Geek_fc1551</span> 👍（2） 💬（0）<p> &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot; &#47;&gt; 
   &lt;!-- 添加到主屏后的标题 --&gt; 
   &lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot; &#47;&gt; 
   &lt;!-- 忽略数字自动识别为电话号码 --&gt; 
@@ -203,6 +203,6 @@ keywords这个属性，理论上对seo有作用，但是我随便进行了搜索
   &lt;!-- 忽略识别邮箱 --&gt; 
   &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot; &#47;&gt; 
   &lt;meta name=&quot;apple-itunes-app&quot; content=&quot;app-id=myAppStoreID, 
-affiliate-data=myAffiliateData, app-argument=myURL&quot; &#47;&gt; </div>2019-12-04</li><br/><li><span>July</span> 👍（2） 💬（0）<div>老师好，keywords 现在对seo还有用吗？</div>2019-02-28</li><br/><li><span>老纪程序</span> 👍（1） 💬（0）<div>style script  link  平时还看到有这几个</div>2021-12-03</li><br/><li><span>渴望做梦</span> 👍（1） 💬（0）<div>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt;
-对于多核浏览器，控制浏览器以哪种类型内核来显示，好像是 360 浏览器首先主导的</div>2019-07-08</li><br/>
+affiliate-data=myAffiliateData, app-argument=myURL&quot; &#47;&gt; </p>2019-12-04</li><br/><li><span>July</span> 👍（2） 💬（0）<p>老师好，keywords 现在对seo还有用吗？</p>2019-02-28</li><br/><li><span>老纪程序</span> 👍（1） 💬（0）<p>style script  link  平时还看到有这几个</p>2021-12-03</li><br/><li><span>渴望做梦</span> 👍（1） 💬（0）<p>&lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;&gt;
+对于多核浏览器，控制浏览器以哪种类型内核来显示，好像是 360 浏览器首先主导的</p>2019-07-08</li><br/>
 </ul>

@@ -859,5 +859,5 @@ AI的浪潮已经到来，每个人都需要有AI的相关技能，并且能熟�
 - [https://juejin.cn/post/7231362257337368631](https://juejin.cn/post/7231362257337368631)
 - [https://community.openai.com/t/dissecting-auto-gpts-prompt/163892](https://community.openai.com/t/dissecting-auto-gpts-prompt/163892)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>wanghaijie</span> 👍（0） 💬（0）<div>jianfeng 666</div>2023-08-02</li><br/><li><span>怎么睡才能做这种梦</span> 👍（0） 💬（0）<div>干货满满哇</div>2023-07-09</li><br/>
+<li><span>wanghaijie</span> 👍（0） 💬（0）<p>jianfeng 666</p>2023-08-02</li><br/><li><span>怎么睡才能做这种梦</span> 👍（0） 💬（0）<p>干货满满哇</p>2023-07-09</li><br/>
 </ul>

@@ -282,12 +282,12 @@ INP指标英文全称叫Interaction to Next Paint。INP就是用来监听用户�
 
 期待你的思考，如果今天的课程对你有帮助，也欢迎分享给有需要的朋友，我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>苏果果</span> 👍（0） 💬（0）<div>完整源码入口：
-https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</div>2024-07-18</li><br/><li><span>苏果果</span> 👍（1） 💬（1）<div>各位同学大家好～我是这门课程的编辑同学。
+<li><span>苏果果</span> 👍（0） 💬（0）<p>完整源码入口：
+https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</p>2024-07-18</li><br/><li><span>苏果果</span> 👍（1） 💬（1）<p>各位同学大家好～我是这门课程的编辑同学。
 
 课程将于五一假期暂停更新，在5月6日（周一）00:00恢复更新。
 
-假期归来之后欢迎继续追更～预祝大家五一假期快乐！</div>2024-04-30</li><br/><li><span>JuneRain</span> 👍（0） 💬（1）<div>利用 performance API获取到的生命周期时间戳，从而计算出来的TCP链接时间，DNS解析时间数值很大，是因为你没给要统计的资源的响应头加上 Timing-Allow-Origin 字段，导致 connectStart ，transferSize 等字段值一直为0
+假期归来之后欢迎继续追更～预祝大家五一假期快乐！</p>2024-04-30</li><br/><li><span>JuneRain</span> 👍（0） 💬（1）<p>利用 performance API获取到的生命周期时间戳，从而计算出来的TCP链接时间，DNS解析时间数值很大，是因为你没给要统计的资源的响应头加上 Timing-Allow-Origin 字段，导致 connectStart ，transferSize 等字段值一直为0
 
-https:&#47;&#47;developer.mozilla.org&#47;en-US&#47;docs&#47;Web&#47;HTTP&#47;Headers&#47;Timing-Allow-Origin</div>2024-05-14</li><br/><li><span>北国风光</span> 👍（0） 💬（0）<div>请教个问题，页面上使用了大量的异步组件，根据条件渲染不同的异步组件，每次FCP的时间都不同，是不是针对异步加载组件的场景，FCP无法衡量加载性能？</div>2024-09-24</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（0）<div>https:&#47;&#47;web.dev&#47;articles&#47;tti 从这里的定义来看 TTI 应该比 FCP 更靠后呀</div>2024-09-14</li><br/>
+https:&#47;&#47;developer.mozilla.org&#47;en-US&#47;docs&#47;Web&#47;HTTP&#47;Headers&#47;Timing-Allow-Origin</p>2024-05-14</li><br/><li><span>北国风光</span> 👍（0） 💬（0）<p>请教个问题，页面上使用了大量的异步组件，根据条件渲染不同的异步组件，每次FCP的时间都不同，是不是针对异步加载组件的场景，FCP无法衡量加载性能？</p>2024-09-24</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（0）<p>https:&#47;&#47;web.dev&#47;articles&#47;tti 从这里的定义来看 TTI 应该比 FCP 更靠后呀</p>2024-09-14</li><br/>
 </ul>

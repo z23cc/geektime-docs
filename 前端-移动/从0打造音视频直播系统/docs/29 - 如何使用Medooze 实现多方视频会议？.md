@@ -174,9 +174,9 @@ SFU 时序图
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Her later</span> 👍（2） 💬（1）<div>大佬 您好 ： 
+<li><span>Her later</span> 👍（2） 💬（1）<p>大佬 您好 ： 
 offer 和 answer 都是客户端自己创建的 ，那RTCPeerConnection  怎么知道要把流推到自己的中转服务器呢 。
-服务器的配置信息是怎么得到的呢 ，是否offer和answer发送到信令服务器后 ，信令服务器对其进行了封装？ </div>2021-04-16</li><br/><li><span>张昌海185</span> 👍（2） 💬（1）<div>老师好，有个问题搞不清楚，就是sfu模式中多人通话，接收着怎么判断收到的媒体数据，是哪一个用户发出的呢？</div>2020-11-16</li><br/><li><span>陈龙</span> 👍（1） 💬（4）<div>老师，centOS 6.5 npm install 失败
+服务器的配置信息是怎么得到的呢 ，是否offer和answer发送到信令服务器后 ，信令服务器对其进行了封装？ </p>2021-04-16</li><br/><li><span>张昌海185</span> 👍（2） 💬（1）<p>老师好，有个问题搞不清楚，就是sfu模式中多人通话，接收着怎么判断收到的媒体数据，是哪一个用户发出的呢？</p>2020-11-16</li><br/><li><span>陈龙</span> 👍（1） 💬（4）<p>老师，centOS 6.5 npm install 失败
 make: *** [Release&#47;obj.target&#47;medooze-media-server&#47;src&#47;media-server_wrap.o] Error 1
 make: *** Waiting for unfinished jobs....
 ..&#47;media-server&#47;src&#47;RTPTransport.cpp: In member function ‘int RTPTransport::SetLocalCryptoSDES(const char*, const uint8_t*, uint32_t)’:
@@ -206,7 +206,7 @@ npm ERR! Exit status 1
 npm ERR! 
 npm ERR! Failed at the medooze-media-server@0.27.2 install script.
 
-</div>2020-03-24</li><br/><li><span>大魔王</span> 👍（1） 💬（1）<div>老师,这个和之前的medooze-server-node 区别是什么啊</div>2019-11-14</li><br/><li><span>No</span> 👍（1） 💬（5）<div>&#47;src&#47;media-server_wrap.cxx: At global scope:
+</p>2020-03-24</li><br/><li><span>大魔王</span> 👍（1） 💬（1）<p>老师,这个和之前的medooze-server-node 区别是什么啊</p>2019-11-14</li><br/><li><span>No</span> 👍（1） 💬（5）<p>&#47;src&#47;media-server_wrap.cxx: At global scope:
 ..&#47;src&#47;media-server_wrap.cxx:909:7: error: ‘Handle’ in namespace ‘v8’ does not name a template type
    v8::Handle&lt;v8::Value&gt; err;
        ^
@@ -218,18 +218,18 @@ npm ERR! Failed at the medooze-media-server@0.27.2 install script.
 我的版本 
  node -v v12.13.0
  node-gyp -v v5.0.5
-系统是 Ubuntu 16.04  </div>2019-10-29</li><br/><li><span>阿良</span> 👍（0） 💬（2）<div>老师你好，我搭建medooze之后，服务顺利跑起来了，但是只能看到自己的图像，而没法看到其他人的。我调试发现他们的video的id编码不一致，想往这方面调试，但是在评论区没看到小伙伴有这样的问题，所以想跟老师请教下，我遇到的这个问题有可能是什么引起的？如有可能，能否提供测试可以正常使用的demo，感谢~</div>2021-04-26</li><br/><li><span>会飞的猪</span> 👍（0） 💬（1）<div>老师，用medooze录制的mp4视频不能播放，您有遇到过吗？
+系统是 Ubuntu 16.04  </p>2019-10-29</li><br/><li><span>阿良</span> 👍（0） 💬（2）<p>老师你好，我搭建medooze之后，服务顺利跑起来了，但是只能看到自己的图像，而没法看到其他人的。我调试发现他们的video的id编码不一致，想往这方面调试，但是在评论区没看到小伙伴有这样的问题，所以想跟老师请教下，我遇到的这个问题有可能是什么引起的？如有可能，能否提供测试可以正常使用的demo，感谢~</p>2021-04-26</li><br/><li><span>会飞的猪</span> 👍（0） 💬（1）<p>老师，用medooze录制的mp4视频不能播放，您有遇到过吗？
 const recorder = MediaServer.createRecorder (ts +&quot;.mp4&quot;,{
 			refresh : 1000,
 			timeShift : 6000,
 			disableHints : true,
 			waitForIntra: true
 		});
-		recorder.record(incomingStream);</div>2020-12-09</li><br/><li><span>张一画</span> 👍（0） 💬（1）<div>老师 我有一些不太理解 这一课里面的HTTPS证书为什么是自己生成 我记得您之前说必须是权威机构发布的证书</div>2020-10-06</li><br/><li><span>Geek_sky</span> 👍（0） 💬（3）<div>老师，我这边连接的时候遇到这个问题：
+		recorder.record(incomingStream);</p>2020-12-09</li><br/><li><span>张一画</span> 👍（0） 💬（1）<p>老师 我有一些不太理解 这一课里面的HTTPS证书为什么是自己生成 我记得您之前说必须是权威机构发布的证书</p>2020-10-06</li><br/><li><span>Geek_sky</span> 👍（0） 💬（3）<p>老师，我这边连接的时候遇到这个问题：
 VM479:1 Uncaught DOMException: Failed to execute &#39;createEncodedVideoStreams&#39; on &#39;RTCRtpSender&#39;: Encoded video streams not requested at PC initialization
     at eval (eval at ws.onopen (https:&#47;&#47;192.168.50.150:8084&#47;js&#47;sfu.js:264:36), &lt;anonymous&gt;:1:8)
     at WebSocket.ws.onopen (https:&#47;&#47;192.168.50.150:8084&#47;js&#47;sfu.js:264:36)
-我换了createEncodedStreams，也不行。这是什么问题？chrome是不是需要设置什么？</div>2020-09-06</li><br/><li><span>sam</span> 👍（0） 💬（2）<div>跑起来后到页面加入房间，点ready后页面刷新一下还是弹窗让加入房间是什么情况，貌似也找不到log</div>2020-07-10</li><br/><li><span>行所当行</span> 👍（0） 💬（8）<div>老师你好，在客户端的chrome打开index.html，提示: Your browser does not support insertable streams，chrome版本83.0.4103.61(正式版本)(64位)，这个是浏览器版本问题吗？</div>2020-06-04</li><br/><li><span>dayu</span> 👍（0） 💬（1）<div>老师，可以基于medooze开发安卓版的视频会议么？</div>2020-05-08</li><br/><li><span>pyg</span> 👍（0） 💬（2）<div>老师我在本地运行了sfu服务，打开了两个Chrome窗口，但是互相看不见对方。哪些原因会导致这样呢？</div>2020-03-25</li><br/><li><span>檸檬稻</span> 👍（0） 💬（3）<div>最后卡在，
+我换了createEncodedStreams，也不行。这是什么问题？chrome是不是需要设置什么？</p>2020-09-06</li><br/><li><span>sam</span> 👍（0） 💬（2）<p>跑起来后到页面加入房间，点ready后页面刷新一下还是弹窗让加入房间是什么情况，貌似也找不到log</p>2020-07-10</li><br/><li><span>行所当行</span> 👍（0） 💬（8）<p>老师你好，在客户端的chrome打开index.html，提示: Your browser does not support insertable streams，chrome版本83.0.4103.61(正式版本)(64位)，这个是浏览器版本问题吗？</p>2020-06-04</li><br/><li><span>dayu</span> 👍（0） 💬（1）<p>老师，可以基于medooze开发安卓版的视频会议么？</p>2020-05-08</li><br/><li><span>pyg</span> 👍（0） 💬（2）<p>老师我在本地运行了sfu服务，打开了两个Chrome窗口，但是互相看不见对方。哪些原因会导致这样呢？</p>2020-03-25</li><br/><li><span>檸檬稻</span> 👍（0） 💬（3）<p>最后卡在，
 我的版本
  node 12.15.0&#47;10.13.0
  npm 6.4.1
@@ -248,5 +248,5 @@ nit
     at Module.require (internal&#47;modules&#47;cjs&#47;loader.js:636:17)                                                           
     at require (internal&#47;modules&#47;cjs&#47;helpers.js:20:18)                                                                  
     at Object.&lt;anonymous&gt; (&#47;root&#47;sfu&#47;node_modules&#47;medooze-media-server&#47;lib&#47;Native.js:10:19)                             
-    at Module._compile (internal&#47;modules&#47;cjs&#47;loader.js:688:30)                                             </div>2020-02-07</li><br/><li><span>ralph</span> 👍（0） 💬（1）<div>老师，能不能提高一个视频通信的例子，音频的看完，还是没想明白视频怎么弄.....</div>2020-01-02</li><br/>
+    at Module._compile (internal&#47;modules&#47;cjs&#47;loader.js:688:30)                                             </p>2020-02-07</li><br/><li><span>ralph</span> 👍（0） 💬（1）<p>老师，能不能提高一个视频通信的例子，音频的看完，还是没想明白视频怎么弄.....</p>2020-01-02</li><br/>
 </ul>

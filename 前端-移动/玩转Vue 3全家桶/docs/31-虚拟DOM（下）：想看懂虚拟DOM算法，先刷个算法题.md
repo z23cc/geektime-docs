@@ -348,7 +348,7 @@ const lengthOfLIS = function(nums) {
 
 最后给你留个思考题，你现在的项目中有哪些地方能用到位运算的地方呢？欢迎在评论区留言分享你的想法，我们下一讲再见。
 <div><strong>精选留言（8）</strong></div><ul>
-<li><span>Geek_ec138d</span> 👍（1） 💬（1）<div>大圣老师，全景图的里的newIndexOldIndexMap的长度和值好像不对。。。。</div>2022-01-19</li><br/><li><span>xzq</span> 👍（0） 💬（1）<div>&#47;&#47; 获取最长递增子序列之后这一步是干啥的，。， 太难理解了 
+<li><span>Geek_ec138d</span> 👍（1） 💬（1）<p>大圣老师，全景图的里的newIndexOldIndexMap的长度和值好像不对。。。。</p>2022-01-19</li><br/><li><span>xzq</span> 👍（0） 💬（1）<p>&#47;&#47; 获取最长递增子序列之后这一步是干啥的，。， 太难理解了 
 &#47;&#47; 还有一个就是为啥要获取最长递增子序列       
 if (j &lt; 0 || i !== increasingNewIndexSequence[j]) {
             &#47;&#47; insertBefore(nextChild, anchor)
@@ -356,8 +356,8 @@ if (j &lt; 0 || i !== increasingNewIndexSequence[j]) {
             move(nextChild, container, anchor, MoveType.REORDER)
           } else {
             j--
-          }</div>2022-01-15</li><br/><li><span>Kim Yin</span> 👍（5） 💬（0）<div>感觉 newIndexOldIndexMap 不太对</div>2022-03-03</li><br/><li><span>Mr_shaojun</span> 👍（1） 💬（0）<div>太费脑子了</div>2022-12-30</li><br/><li><span>小花（fa）</span> 👍（1） 💬（0）<div>newIndexOldIndexMap=[0,3,6,5,0,3]的值没看懂, 然后图中 老序列 h b f d c计算后的最长子序列是多少呢</div>2022-02-23</li><br/><li><span>微扰理论</span> 👍（1） 💬（0）<div>厉害呀 感觉是讲虚拟dom比较清晰的一篇文章了～</div>2022-01-06</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（0）<div>思考题
-后端用户权限的设计，采用了位运算，前端也需要位运算解析</div>2021-12-31</li><br/><li><span>NULL</span> 👍（0） 💬（1）<div>刚补完算法差不多搞懂LIS后，一转到这个结尾……可是太仓促了，以及评论大家都在质疑尾图里的MAP，作者说去确认可并没有个明确结果，多年未改——
+          }</p>2022-01-15</li><br/><li><span>Kim Yin</span> 👍（5） 💬（0）<p>感觉 newIndexOldIndexMap 不太对</p>2022-03-03</li><br/><li><span>Mr_shaojun</span> 👍（1） 💬（0）<p>太费脑子了</p>2022-12-30</li><br/><li><span>小花（fa）</span> 👍（1） 💬（0）<p>newIndexOldIndexMap=[0,3,6,5,0,3]的值没看懂, 然后图中 老序列 h b f d c计算后的最长子序列是多少呢</p>2022-02-23</li><br/><li><span>微扰理论</span> 👍（1） 💬（0）<p>厉害呀 感觉是讲虚拟dom比较清晰的一篇文章了～</p>2022-01-06</li><br/><li><span>费城的二鹏</span> 👍（1） 💬（0）<p>思考题
+后端用户权限的设计，采用了位运算，前端也需要位运算解析</p>2021-12-31</li><br/><li><span>NULL</span> 👍（0） 💬（1）<p>刚补完算法差不多搞懂LIS后，一转到这个结尾……可是太仓促了，以及评论大家都在质疑尾图里的MAP，作者说去确认可并没有个明确结果，多年未改——
 是对的，毋庸置疑呢（只是最后讲得仓促稀烂让所有人搞不懂）？
-还是就不对，可就懒得、忘了改呢（反正也没几个人看）？</div>2024-01-09</li><br/>
+还是就不对，可就懒得、忘了改呢（反正也没几个人看）？</p>2024-01-09</li><br/>
 </ul>

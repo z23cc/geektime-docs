@@ -349,7 +349,7 @@ llm = HuggingFaceHub(model_id="bigscience/bloom-1b7")
 2. [OpenAI API 官方文档](https://platform.openai.com/docs/introduction)，深入学习OpenAI API的地方。
 3. [HuggingFace 官方网站](https://huggingface.co/)，玩开源大模型的好地方。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>黄佳</span> 👍（9） 💬（4）<div>OpenAI，最近戏比较多，旧代码是0.28版本，任何以上的版本，都需要比较大的改动，记录如下。
+<li><span>黄佳</span> 👍（9） 💬（4）<p>OpenAI，最近戏比较多，旧代码是0.28版本，任何以上的版本，都需要比较大的改动，记录如下。
 
 旧代码
 # import openai
@@ -395,7 +395,7 @@ response = client.completions.create(  model=&quot;gpt-4&quot;,
   max_tokens=60
 )
 
-print(response.choices[0].message.content)</div>2024-01-19</li><br/><li><span>吴曦</span> 👍（12） 💬（1）<div>搭建了基础的langchain问答机器人，怎样评估回答质量？有适合的指标吗？</div>2023-09-12</li><br/><li><span>黄振宇</span> 👍（11） 💬（1）<div>最近在死磕langchain 终于有中文的详细课程啦</div>2023-09-11</li><br/><li><span>在路上</span> 👍（6） 💬（5）<div>1.我认为LangChain的核心价值在于功能模块化和模块链接化，这意味着AI应用开发被提炼成了很多个标准步骤，每个步骤有标准的参数和接口，便于灵活的替换和组合。这就像Java中Spring，封装了各种组件，并通过控制反转将它们组合在一起。
+print(response.choices[0].message.content)</p>2024-01-19</li><br/><li><span>吴曦</span> 👍（12） 💬（1）<p>搭建了基础的langchain问答机器人，怎样评估回答质量？有适合的指标吗？</p>2023-09-12</li><br/><li><span>黄振宇</span> 👍（11） 💬（1）<p>最近在死磕langchain 终于有中文的详细课程啦</p>2023-09-11</li><br/><li><span>在路上</span> 👍（6） 💬（5）<p>1.我认为LangChain的核心价值在于功能模块化和模块链接化，这意味着AI应用开发被提炼成了很多个标准步骤，每个步骤有标准的参数和接口，便于灵活的替换和组合。这就像Java中Spring，封装了各种组件，并通过控制反转将它们组合在一起。
 
 2.HuggingFace模型：
 import os
@@ -412,22 +412,22 @@ llm = HuggingFaceHub(repo_id=&quot;bigscience&#47;bloom-1b7&quot;)
 resp = llm.predict(&quot;请给我的花店起个名&quot;)
 print(resp)
 
-#输出：,叫&quot;花之恋&quot;。&quot;花之恋&quot;</div>2023-09-14</li><br/><li><span>Crazy</span> 👍（5） 💬（1）<div>使用LangChain编程，是一个编程思维的转化，你定义工具，流程，让大模型的能力去提供逻辑判断，流程组建，我写的过程中感觉其对传统编程思维挑战最大。同时，调试的复杂度更高，更要语义化的编程，导致你要获取确定的答案或者拿到预期的结果挑战很大。希望课程后续能分享到系统化地讲解调试输出，目前个人调试方法是各种参数、提示词，工具描述一顿改，花费比之前更长的时间调试一个功能，能解决这个效率问题对之后的产品化或者应用至关重要。</div>2023-09-19</li><br/><li><span>dengyu</span> 👍（5） 💬（3）<div>windows中使用把openai API key保存在.env 文件中，读取文件，能否给出具体代码？</div>2023-09-11</li><br/><li><span>neohope</span> 👍（3） 💬（1）<div>对于开发人员来说，LangChain是一个工具箱，可以方便的组合各类AI和非AI的能力，并通过抽象实现各相似组件的快速替代，有点儿类似于java生态下的spring。
-对于AI来说，会有两个门槛，一个是AI学会使用和组合这些工具，二是可以自行创造新的工具并予以使用。一旦走到第二步，硅基生物的时代可能就到来了。</div>2023-09-12</li><br/><li><span>抽象派</span> 👍（3） 💬（1）<div>请问Python用什么版本？</div>2023-09-11</li><br/><li><span>aLong</span> 👍（1） 💬（1）<div>磕磕绊绊，跑到openai看API文档，跑到langchain去看文档。然后按照课程内容写下了新版本的东西。
+#输出：,叫&quot;花之恋&quot;。&quot;花之恋&quot;</p>2023-09-14</li><br/><li><span>Crazy</span> 👍（5） 💬（1）<p>使用LangChain编程，是一个编程思维的转化，你定义工具，流程，让大模型的能力去提供逻辑判断，流程组建，我写的过程中感觉其对传统编程思维挑战最大。同时，调试的复杂度更高，更要语义化的编程，导致你要获取确定的答案或者拿到预期的结果挑战很大。希望课程后续能分享到系统化地讲解调试输出，目前个人调试方法是各种参数、提示词，工具描述一顿改，花费比之前更长的时间调试一个功能，能解决这个效率问题对之后的产品化或者应用至关重要。</p>2023-09-19</li><br/><li><span>dengyu</span> 👍（5） 💬（3）<p>windows中使用把openai API key保存在.env 文件中，读取文件，能否给出具体代码？</p>2023-09-11</li><br/><li><span>neohope</span> 👍（3） 💬（1）<p>对于开发人员来说，LangChain是一个工具箱，可以方便的组合各类AI和非AI的能力，并通过抽象实现各相似组件的快速替代，有点儿类似于java生态下的spring。
+对于AI来说，会有两个门槛，一个是AI学会使用和组合这些工具，二是可以自行创造新的工具并予以使用。一旦走到第二步，硅基生物的时代可能就到来了。</p>2023-09-12</li><br/><li><span>抽象派</span> 👍（3） 💬（1）<p>请问Python用什么版本？</p>2023-09-11</li><br/><li><span>aLong</span> 👍（1） 💬（1）<p>磕磕绊绊，跑到openai看API文档，跑到langchain去看文档。然后按照课程内容写下了新版本的东西。
 
 #我让他给我返回三个店名供我挑选，格式是list。
 Sure! Here are three name suggestions for your flower shop:
 1. Blossom Boutique
 2. Petal Paradise
 3. Floral Haven
-</div>2023-11-21</li><br/><li><span>卓丁</span> 👍（1） 💬（1）<div>老师好，请教一下关于assistant的讲解：
+</p>2023-11-21</li><br/><li><span>卓丁</span> 👍（1） 💬（1）<p>老师好，请教一下关于assistant的讲解：
 
 assistant：助手消息是模型的回复。例如，在你使用 API 发送多轮对话中新的对话请求时，可以通过助手消息提供先前对话的上下文。然而，请注意在对话的最后一条消息应始终为用户消息，因为模型总是要回应最后这条用户消息。
 
 这里的assistant的用途，我还是比较模糊，意思就是说：比如在多轮对话的场景中，可以将 跟模型的历史对话 通过 assistant 字段 再次传递给llm，是吗？
 额外，“然而，请注意在对话的最后一条消息应始终为用户消息，因为模型总是要回应最后这条用户消息。”中你所说的 “最后一条” 是什么含义？没理解；
 
-是否可以理解为：每次对话中user字段就是传递的用户最新的一次提问， 然后assistant 字段传递的是历史消息，但是需要记着：assistant字段的最后一条为历史消息中的用户消息？ 是这个意思否？ </div>2023-11-15</li><br/><li><span>阿斯蒂芬</span> 👍（1） 💬（2）<div>LangChain 作为LLM模型的应用开发框架，个人理解是致力于为模型落地提供技术层面的“一站式”解决方案。或者说是把大模型相关的技术集成和最佳流程实践，通过模块化、链式的方式，为应用开发者提供易用的脚手架。</div>2023-09-11</li><br/><li><span>DOOM</span> 👍（1） 💬（1）<div>LangChain提供一个抽象层，这样后期更换其他语言模型的话，就不用修改已经写好的应用代码逻辑</div>2023-09-11</li><br/><li><span>秋天</span> 👍（0） 💬（1）<div>import os
+是否可以理解为：每次对话中user字段就是传递的用户最新的一次提问， 然后assistant 字段传递的是历史消息，但是需要记着：assistant字段的最后一条为历史消息中的用户消息？ 是这个意思否？ </p>2023-11-15</li><br/><li><span>阿斯蒂芬</span> 👍（1） 💬（2）<p>LangChain 作为LLM模型的应用开发框架，个人理解是致力于为模型落地提供技术层面的“一站式”解决方案。或者说是把大模型相关的技术集成和最佳流程实践，通过模块化、链式的方式，为应用开发者提供易用的脚手架。</p>2023-09-11</li><br/><li><span>DOOM</span> 👍（1） 💬（1）<p>LangChain提供一个抽象层，这样后期更换其他语言模型的话，就不用修改已经写好的应用代码逻辑</p>2023-09-11</li><br/><li><span>秋天</span> 👍（0） 💬（1）<p>import os
 os.environ[&quot;OPENAI_API_KEY&quot;] = &#39;你的Open API Key&#39;
 from langchain.llms import OpenAI
 llm = OpenAI(  
@@ -435,5 +435,5 @@ llm = OpenAI(
     temperature=0.8,
     max_tokens=60,)
 response = llm.predict(&quot;请给我的花店起个名&quot;)
-print(response)  这个代码 在目前这个时间段已经运行不了啦，老师</div>2024-05-11</li><br/><li><span>Coding</span> 👍（0） 💬（1）<div>老师，调用聊天模型，我理解应该是client.chat.completions.create，代码示例是不是少了个chat</div>2024-05-06</li><br/><li><span>saltedfish</span> 👍（0） 💬（1）<div>gpt-3.5-turbo-instruct是chat模型不是text模型（可能是后来改的）</div>2024-04-19</li><br/>
+print(response)  这个代码 在目前这个时间段已经运行不了啦，老师</p>2024-05-11</li><br/><li><span>Coding</span> 👍（0） 💬（1）<p>老师，调用聊天模型，我理解应该是client.chat.completions.create，代码示例是不是少了个chat</p>2024-05-06</li><br/><li><span>saltedfish</span> 👍（0） 💬（1）<p>gpt-3.5-turbo-instruct是chat模型不是text模型（可能是后来改的）</p>2024-04-19</li><br/>
 </ul>

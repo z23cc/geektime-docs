@@ -244,21 +244,21 @@
 
 [![unpreview](https://static001.geekbang.org/resource/image/1a/08/1a49758821bdbdf6f0a8a1dc5bf39f08.jpg?wh=1032%2A330)](https://time.geekbang.org/course/intro/163?utm_term=zeusMTA7L&utm_source=app&utm_medium=chongxueqianduan&utm_campaign=163-presell)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>芝草晟林💦</span> 👍（0） 💬（1）<div>感觉 formatting那一段有点难理解...</div>2019-07-09</li><br/><li><span>Scorpio</span> 👍（112） 💬（5）<div>我大flex天下第一！！！😂 </div>2019-03-14</li><br/><li><span>AICC</span> 👍（56） 💬（1）<div>试了一下，发现上面第二个例子的代码并不能实现想要的效果
+<li><span>芝草晟林💦</span> 👍（0） 💬（1）<p>感觉 formatting那一段有点难理解...</p>2019-07-09</li><br/><li><span>Scorpio</span> 👍（112） 💬（5）<p>我大flex天下第一！！！😂 </p>2019-03-14</li><br/><li><span>AICC</span> 👍（56） 💬（1）<p>试了一下，发现上面第二个例子的代码并不能实现想要的效果
 首先，因为hmtl代码的换行使得在inline-block的布局下两个盒子不能被放在一行这个通过父级font-size:0可解决
-第二，由于auto在html的上的顺序是比fixed后面的，想像中的层级是高于fixed的，当auto是一个有背景的盒子，fixed就被完全遮挡了,可以通过transform：translateZ(0)把它提起来</div>2019-03-14</li><br/><li><span>William</span> 👍（17） 💬（2）<div>1. 等宽布局，不用外层font-size:0的方法的话，应该是.inner:not(last-child) {
+第二，由于auto在html的上的顺序是比fixed后面的，想像中的层级是高于fixed的，当auto是一个有背景的盒子，fixed就被完全遮挡了,可以通过transform：translateZ(0)把它提起来</p>2019-03-14</li><br/><li><span>William</span> 👍（17） 💬（2）<p>1. 等宽布局，不用外层font-size:0的方法的话，应该是.inner:not(last-child) {
   margin-right: -5px;
 }吧，前面元素均添加一个负外边距抵消掉空格大小。
 2. 因为也是用inline-block，所以自适应宽需要加上
 .outer {
   font-size: 0;
-}</div>2019-03-14</li><br/><li><span>阿成</span> 👍（15） 💬（2）<div>Sir, have a look at this...
-https:&#47;&#47;github.com&#47;aimergenge&#47;inline-block-layout</div>2019-03-16</li><br/><li><span>ycswaves</span> 👍（10） 💬（0）<div>.auto {
+}</p>2019-03-14</li><br/><li><span>阿成</span> 👍（15） 💬（2）<p>Sir, have a look at this...
+https:&#47;&#47;github.com&#47;aimergenge&#47;inline-block-layout</p>2019-03-16</li><br/><li><span>ycswaves</span> 👍（10） 💬（0）<p>.auto {
   width: calc(100% - 200px);
   &#47;&#47; ... rest of the necessary styles
-}</div>2019-03-24</li><br/><li><span>王天狗</span> 👍（7） 💬（0）<div>为什么不用 calc 呢</div>2020-01-17</li><br/><li><span>我要飞</span> 👍（7） 💬（0）<div>一个元素规定了自身周围至少需要的空间,这个解释深有体会,无可挑剔啊
-</div>2019-05-21</li><br/><li><span>七月有风</span> 👍（7） 💬（1）<div>在 CSS 标准中，规定了如何排布每一个文字或者盒的算法，这个算法依赖一个排版的“当前状态”，CSS 把这个当前状态称为“格式化上下文（formatting context）”。
-还是没有理解这句话</div>2019-03-17</li><br/><li><span>彧豪</span> 👍（7） 💬（0）<div>grid写大的整体的布局框架，flex写一维的可线性化的布局，这两种布局的兼容性已经更好了，再加上一些模块和脚手架打包的时候能自动为你添加浏览器前缀，布局变得越来越容易了</div>2019-03-15</li><br/><li><span>沉默的话唠</span> 👍（4） 💬（2）<div>为什么我写后面的完整版的，不会自动排布，宽度总是不够。被撑下去了。</div>2019-03-20</li><br/><li><span>有铭</span> 👍（3） 💬（1）<div>为什么三栏平分的那个样式里，给 outer 添加一个特定宽度和给最后一个 div 加上一个负的右 margin，我用chrome试验的结果，是变成了3个宽度很窄的盒子，而且第三个盒子在第二排？</div>2019-03-14</li><br/><li><span>梧桐</span> 👍（2） 💬（1）<div>给 outer 添加一个特定宽度， 没有看到什么实际效果啊，下面这段代码还是会换行。
+}</p>2019-03-24</li><br/><li><span>王天狗</span> 👍（7） 💬（0）<p>为什么不用 calc 呢</p>2020-01-17</li><br/><li><span>我要飞</span> 👍（7） 💬（0）<p>一个元素规定了自身周围至少需要的空间,这个解释深有体会,无可挑剔啊
+</p>2019-05-21</li><br/><li><span>七月有风</span> 👍（7） 💬（1）<p>在 CSS 标准中，规定了如何排布每一个文字或者盒的算法，这个算法依赖一个排版的“当前状态”，CSS 把这个当前状态称为“格式化上下文（formatting context）”。
+还是没有理解这句话</p>2019-03-17</li><br/><li><span>彧豪</span> 👍（7） 💬（0）<p>grid写大的整体的布局框架，flex写一维的可线性化的布局，这两种布局的兼容性已经更好了，再加上一些模块和脚手架打包的时候能自动为你添加浏览器前缀，布局变得越来越容易了</p>2019-03-15</li><br/><li><span>沉默的话唠</span> 👍（4） 💬（2）<p>为什么我写后面的完整版的，不会自动排布，宽度总是不够。被撑下去了。</p>2019-03-20</li><br/><li><span>有铭</span> 👍（3） 💬（1）<p>为什么三栏平分的那个样式里，给 outer 添加一个特定宽度和给最后一个 div 加上一个负的右 margin，我用chrome试验的结果，是变成了3个宽度很窄的盒子，而且第三个盒子在第二排？</p>2019-03-14</li><br/><li><span>梧桐</span> 👍（2） 💬（1）<p>给 outer 添加一个特定宽度， 没有看到什么实际效果啊，下面这段代码还是会换行。
 
 .outer {
     width:101px
@@ -273,5 +273,5 @@ https:&#47;&#47;github.com&#47;aimergenge&#47;inline-block-layout</div>2019-03-1
 
 .inner:last-child {
     margin-right:-5px;
-}</div>2020-01-16</li><br/><li><span>Sticker</span> 👍（2） 💬（0）<div>感觉自适应宽还是浮动更爽一点！</div>2019-04-30</li><br/><li><span>翰弟</span> 👍（2） 💬（0）<div>日拱一卒</div>2019-03-15</li><br/>
+}</p>2020-01-16</li><br/><li><span>Sticker</span> 👍（2） 💬（0）<p>感觉自适应宽还是浮动更爽一点！</p>2019-04-30</li><br/><li><span>翰弟</span> 👍（2） 💬（0）<p>日拱一卒</p>2019-03-15</li><br/>
 </ul>

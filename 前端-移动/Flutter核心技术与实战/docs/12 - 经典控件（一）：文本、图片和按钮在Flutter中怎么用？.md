@@ -205,7 +205,7 @@ UI控件是构建一个视图的基本元素，而文本、图片和按钮则是
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>小米</span> 👍（36） 💬（3）<div>Button都是由RawMaterialButton承载视觉，Image都是RawImage，Text是RichText。它们都继承自RenderObjectWidget，而RenderObjectWidget的父类就是Widget。</div>2019-07-25</li><br/><li><span>欢</span> 👍（17） 💬（1）<div>老师，我想问下，不同手机的分辨率不同，对于同样是fontSize: 16的字号，显示的大小会不一样，这个问题一般会怎么处理。 问了下原生的开发，他们好像有库专门处理这类问题，而web中也有rem之类或其他的处理方式， flutter中我就不知道该怎么办了，求老师解答。 </div>2019-08-22</li><br/><li><span>巫山老妖</span> 👍（11） 💬（1）<div>**Text**
+<li><span>小米</span> 👍（36） 💬（3）<p>Button都是由RawMaterialButton承载视觉，Image都是RawImage，Text是RichText。它们都继承自RenderObjectWidget，而RenderObjectWidget的父类就是Widget。</p>2019-07-25</li><br/><li><span>欢</span> 👍（17） 💬（1）<p>老师，我想问下，不同手机的分辨率不同，对于同样是fontSize: 16的字号，显示的大小会不一样，这个问题一般会怎么处理。 问了下原生的开发，他们好像有库专门处理这类问题，而web中也有rem之类或其他的处理方式， flutter中我就不知道该怎么办了，求老师解答。 </p>2019-08-22</li><br/><li><span>巫山老妖</span> 👍（11） 💬（1）<p>**Text**
 
 &gt; 比如Android中的TextView，iOS中的UILabel
 
@@ -245,9 +245,9 @@ Text参数分类：
 
 两个最重要的参数：
 - onPressed（用于设置点击回调）
-- child（用于设置按钮的内容）</div>2019-10-03</li><br/><li><span>杨闯</span> 👍（7） 💬（1）<div>你好，我在使用控件的时候有一个疑问：对于一个字符串，我想在定宽的时候计算出它将会占据多大的高度，因为我们现在的项目是要根据高度进行特殊的处理，不知道您是否有什么解决办法</div>2019-07-25</li><br/><li><span>我想静静</span> 👍（6） 💬（1）<div>在用Text或者Icon控件显示竖直方向居中时总会有一点偏下，设置了各种属性都没有修正，最后还是给控件加了paddingBottom强行改变了内容区域的空间才正常，这是什么原因？</div>2019-08-17</li><br/><li><span>李耀</span> 👍（4） 💬（1）<div>flutter 打包之后就简单一个页面，apk包感觉比正常的大号好多</div>2019-07-29</li><br/><li><span>烘哄轰、</span> 👍（2） 💬（1）<div>Image.asset(‘images&#47;logo.png’)；的路径需要在配置文件里配置，当时被这个问题坑了好久😂</div>2019-08-03</li><br/><li><span>江宁彭于晏</span> 👍（2） 💬（1）<div>Text、Image、FadeInImage、FlatButton、RaisedBUTTON
+- child（用于设置按钮的内容）</p>2019-10-03</li><br/><li><span>杨闯</span> 👍（7） 💬（1）<p>你好，我在使用控件的时候有一个疑问：对于一个字符串，我想在定宽的时候计算出它将会占据多大的高度，因为我们现在的项目是要根据高度进行特殊的处理，不知道您是否有什么解决办法</p>2019-07-25</li><br/><li><span>我想静静</span> 👍（6） 💬（1）<p>在用Text或者Icon控件显示竖直方向居中时总会有一点偏下，设置了各种属性都没有修正，最后还是给控件加了paddingBottom强行改变了内容区域的空间才正常，这是什么原因？</p>2019-08-17</li><br/><li><span>李耀</span> 👍（4） 💬（1）<p>flutter 打包之后就简单一个页面，apk包感觉比正常的大号好多</p>2019-07-29</li><br/><li><span>烘哄轰、</span> 👍（2） 💬（1）<p>Image.asset(‘images&#47;logo.png’)；的路径需要在配置文件里配置，当时被这个问题坑了好久😂</p>2019-08-03</li><br/><li><span>江宁彭于晏</span> 👍（2） 💬（1）<p>Text、Image、FadeInImage、FlatButton、RaisedBUTTON
 都由SingleChildRenderObjectWidget承载视觉
-并且这些Widget都隐式的定义了 Semantics ，因为他们可能都直接或者间接的在 Screen Reader 引擎中被使用</div>2019-07-25</li><br/><li><span>🌻Arvin</span> 👍（1） 💬（1）<div>FlatButton(
+并且这些Widget都隐式的定义了 Semantics ，因为他们可能都直接或者间接的在 Screen Reader 引擎中被使用</p>2019-07-25</li><br/><li><span>🌻Arvin</span> 👍（1） 💬（1）<p>FlatButton(
     color: Colors.yellow, &#47;&#47; 设置背景色为黄色
     shape:BeveledRectangleBorder(borderRadius: BorderRadius.circular(20.0)), &#47;&#47; 设置斜角矩形边框
     colorBrightness: Brightness.light, &#47;&#47; 确保文字按钮为深色
@@ -255,13 +255,13 @@ Text参数分类：
     child: Row(children: &lt;Widget&gt;[Icon(Icons.add), Text(&quot;Add&quot;)],)
 )；
 
-好像是版本更新了,背景色color细化成backgroundColor</div>2019-08-06</li><br/><li><span>sixgod</span> 👍（0） 💬（1）<div>老师有个问题 为什么container或者sizedbox有时候设置宽高不生效 在外面包裹一个align就生效了</div>2019-11-20</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<div>老师 怎么加载本地的图片。我设置好了之后 在pubspec.yaml中一直报警告,The asset images&#47;fapiaoshenhe.png does not exist.
+好像是版本更新了,背景色color细化成backgroundColor</p>2019-08-06</li><br/><li><span>sixgod</span> 👍（0） 💬（1）<p>老师有个问题 为什么container或者sizedbox有时候设置宽高不生效 在外面包裹一个align就生效了</p>2019-11-20</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<p>老师 怎么加载本地的图片。我设置好了之后 在pubspec.yaml中一直报警告,The asset images&#47;fapiaoshenhe.png does not exist.
 Try creating the file or fixing the path to the file.
-但是感觉设置的没错啊。有专门讲的没</div>2019-10-10</li><br/><li><span>jlj</span> 👍（0） 💬（1）<div>老师请教个问题:
-fontSize要怎么设置, 才能让字体大小不随系统字体大小改变而改变.?</div>2019-08-16</li><br/><li><span>llons</span> 👍（0） 💬（1）<div>FadeInImage设置gif占位符，会一直触发addPersistentFrameCallback，但远程图片已经加载完毕，占位符已经不显示了</div>2019-08-08</li><br/><li><span>刘洪林</span> 👍（14） 💬（0）<div>老师，浮动按钮和扁平按钮 v1.26.0-18.0后被废弃了，是不是应该更新一下课件
+但是感觉设置的没错啊。有专门讲的没</p>2019-10-10</li><br/><li><span>jlj</span> 👍（0） 💬（1）<p>老师请教个问题:
+fontSize要怎么设置, 才能让字体大小不随系统字体大小改变而改变.?</p>2019-08-16</li><br/><li><span>llons</span> 👍（0） 💬（1）<p>FadeInImage设置gif占位符，会一直触发addPersistentFrameCallback，但远程图片已经加载完毕，占位符已经不显示了</p>2019-08-08</li><br/><li><span>刘洪林</span> 👍（14） 💬（0）<p>老师，浮动按钮和扁平按钮 v1.26.0-18.0后被废弃了，是不是应该更新一下课件
 FlatButton =&gt; TextButton
-RaisedButton =&gt; ElevatedButton</div>2021-05-02</li><br/><li><span>许先森</span> 👍（3） 💬（0）<div>Text-&gt;RichText-&gt;LeafRenderObjectWidget-&gt;RenderObjectWidget-&gt;Widget
+RaisedButton =&gt; ElevatedButton</p>2021-05-02</li><br/><li><span>许先森</span> 👍（3） 💬（0）<p>Text-&gt;RichText-&gt;LeafRenderObjectWidget-&gt;RenderObjectWidget-&gt;Widget
 Image-&gt;RawImage-&gt;LeafRenderObjectWidget-&gt;RenderObjectWidget-&gt;Widget
 Button-&gt;RawMaterialButton-&gt;Semantics-&gt;SingleChildRenderObjectWidget-&gt;RenderObjectWidget-&gt;Widget
-</div>2020-09-15</li><br/>
+</p>2020-09-15</li><br/>
 </ul>

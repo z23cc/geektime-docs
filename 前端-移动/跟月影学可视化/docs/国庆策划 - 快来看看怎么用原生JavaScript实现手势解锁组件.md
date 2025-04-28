@@ -615,5 +615,5 @@ touchmove 事件在 Chrome 下默认是一个 [Passive Event](https://dom.spec.w
 
 [GitHub 工程](https://github.com/akira-cn/handlock)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>安东</span> 👍（2） 💬（0）<div>老师真的厉害 我怎么就没想到这样写。 我写的还是太粗糙了</div>2020-10-21</li><br/>
+<li><span>安东</span> 👍（2） 💬（0）<p>老师真的厉害 我怎么就没想到这样写。 我写的还是太粗糙了</p>2020-10-21</li><br/>
 </ul>

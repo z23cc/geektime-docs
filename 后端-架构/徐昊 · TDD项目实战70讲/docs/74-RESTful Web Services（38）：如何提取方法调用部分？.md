@@ -321,6 +321,6 @@ class ResourceHandler implements ResourceRouter.Resource {
 
 欢迎把你的思考和想法分享在留言区，咱们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>看到开头想起了姚琪琳老师在微信讨论群中说的一句话:
-static 说明当前类没有依赖,是一个可以移出去的信号</div>2022-09-04</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>看到开头想起了姚琪琳老师在微信讨论群中说的一句话:
+static 说明当前类没有依赖,是一个可以移出去的信号</p>2022-09-04</li><br/>
 </ul>

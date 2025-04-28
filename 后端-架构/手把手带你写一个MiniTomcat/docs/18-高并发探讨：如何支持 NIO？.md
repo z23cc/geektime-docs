@@ -290,7 +290,7 @@ executor.execute(sc);
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：thread不属于服务器吗？
 本课第一张图，几个thread连接到server。“server”如果是服务器，那thread难道不是服务器端的吗？
 
@@ -304,5 +304,5 @@ Q5：socketChannel与serverSocketChannel有什么区别？
 搜“你可以看一个细化后的结构图”后找到的图中，有socketChannel和serverSocketChannel，两者有什么区别？ （文中有多个图的时候，图有个编号还是比较好的）
 
 Q6：thread怎么从Multiplexer Selector读取数据？
-搜“图示如下”后找到的图中，thread从Multiplexer Selector读取数据，具体是怎么实现的？轮询一个队列吗？ （哎呀，图最好有个编号啊）</div>2024-01-21</li><br/>
+搜“图示如下”后找到的图中，thread从Multiplexer Selector读取数据，具体是怎么实现的？轮询一个队列吗？ （哎呀，图最好有个编号啊）</p>2024-01-21</li><br/>
 </ul>

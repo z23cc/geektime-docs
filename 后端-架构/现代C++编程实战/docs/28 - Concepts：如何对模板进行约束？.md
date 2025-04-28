@@ -476,7 +476,7 @@ auto fmap(F&& f, R&& inputs);
 
 \[9] Andrew Sutton, “Introducing concepts”. [https://accu.org/index.php/journals/2157](https://accu.org/index.php/journals/2157)
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>老师，您的这段代码，OutContainer是需要2个模板参数的，但是特化的时候只提供了一个类型作为模板参数，是不是漏写了一个模板参数？我回到13讲，是不是应该加上 allocator&lt;decay_t&lt;decltype(f(*begin(inputs)))&gt;&gt;&gt;?还是编译期会帮我们自动推断第二个类型？
+<li><span>李云龙</span> 👍（1） 💬（1）<p>老师，您的这段代码，OutContainer是需要2个模板参数的，但是特化的时候只提供了一个类型作为模板参数，是不是漏写了一个模板参数？我回到13讲，是不是应该加上 allocator&lt;decay_t&lt;decltype(f(*begin(inputs)))&gt;&gt;&gt;?还是编译期会帮我们自动推断第二个类型？
 template &lt;
   template &lt;typename, typename&gt;
   class OutContainer = vector,
@@ -487,24 +487,24 @@ auto fmap(F&amp;&amp; f, R&amp;&amp; inputs)
     end(inputs),
     OutContainer&lt;decay_t&lt;
       decltype(f(*begin(
-        inputs)))&gt;&gt;());</div>2023-11-05</li><br/><li><span>Geek_QiDian</span> 👍（1） 💬（1）<div>请问老师的 output_container 的概念实现版本有吗？想研究一下</div>2021-08-08</li><br/><li><span>廖熊猫</span> 👍（1） 💬（1）<div>c++里的泛型约束和java或者c#中的泛型约束很像，但是复杂了好多...不像后者只能约束泛型参数实现某一接口，c++可以通过很小的约束组合成需要的约束，感觉这就是函数式里面经常提的组合的力量吧</div>2020-02-10</li><br/><li><span>易轻尘</span> 👍（0） 💬（1）<div>个人认为好处就是1. 代码量减少，2. 代码变得更加易读，和老师说的3. 出错信息变得更友善了。
+        inputs)))&gt;&gt;());</p>2023-11-05</li><br/><li><span>Geek_QiDian</span> 👍（1） 💬（1）<p>请问老师的 output_container 的概念实现版本有吗？想研究一下</p>2021-08-08</li><br/><li><span>廖熊猫</span> 👍（1） 💬（1）<p>c++里的泛型约束和java或者c#中的泛型约束很像，但是复杂了好多...不像后者只能约束泛型参数实现某一接口，c++可以通过很小的约束组合成需要的约束，感觉这就是函数式里面经常提的组合的力量吧</p>2020-02-10</li><br/><li><span>易轻尘</span> 👍（0） 💬（1）<p>个人认为好处就是1. 代码量减少，2. 代码变得更加易读，和老师说的3. 出错信息变得更友善了。
 
 我对模板编程不是很熟练，所以之前很少通过SFINAE来直接规制函数的模板参数类型，反而是通过模仿java的做法，写模板类作为接口，包装实际的类型。如果需要的约束简单这样写也不麻烦，但是无法像concepts的写法那样随意的组合各种约束，要实现这节图中那种类似树状的结构麻烦得就不是一点半点了。
 
-至于缺点，暂时没有想到，希望老师能提示提示</div>2020-06-22</li><br/><li><span>范闲</span> 👍（0） 💬（1）<div>如果是引入概念的话
+至于缺点，暂时没有想到，希望老师能提示提示</p>2020-06-22</li><br/><li><span>范闲</span> 👍（0） 💬（1）<p>如果是引入概念的话
 1.从当前的标准库里可以抽取更多近似概念的操作（类似于itrerator），直接调用即可。
 2.在class的设计上直接标记概念相关关键字就可以检查class的设计是不是符合原则
 
-缺点:理解起来比较困难</div>2020-04-07</li><br/><li><span>李亮亮</span> 👍（0） 💬（2）<div>vs2019  c++17
+缺点:理解起来比较困难</p>2020-04-07</li><br/><li><span>李亮亮</span> 👍（0） 💬（2）<p>vs2019  c++17
 template &lt;typename, typename&gt;
     class OutContainer = vector,
 这里提示错误：	C2065	“vector”: 未声明的标识符	
-</div>2020-03-05</li><br/><li><span>始之源稳于心</span> 👍（0） 💬（2）<div>吴老师，你好，我问一个与此文章无关的，一个GDB调试的问题：
+</p>2020-03-05</li><br/><li><span>始之源稳于心</span> 👍（0） 💬（2）<p>吴老师，你好，我问一个与此文章无关的，一个GDB调试的问题：
 一个网络多线程服务，一个socket一个线程。有一个共享变量用boost的unordered_map，同步也用boost的unique_lock
 程序在运行时基本正常，但在gdb调试时只要打印共享变量(即使里面没有数据)，就会收到SIGSEG，调试其它变量或用下面的步骤就没事
 1   handle SIGPIPE nostop noprint
 2   set print elements 0
 3   将共享的变量的类型变为 stl的map
 问题：
-  这种情况产生的主要原因是什么，用了boost的 hash map吗，和屏蔽管道关系有多大？</div>2020-02-05</li><br/>
+  这种情况产生的主要原因是什么，用了boost的 hash map吗，和屏蔽管道关系有多大？</p>2020-02-05</li><br/>
 </ul>

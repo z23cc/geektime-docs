@@ -225,7 +225,7 @@ riscv64-unknown-elf-gcc -v
 
 期待你再留言区分享自己的实验笔记，或者与我交流讨论。也推荐你把这节课分享给更多朋友，我们一起玩转交叉编译。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Vic</span> 👍（5） 💬（3）<div>host使用的是Ubuntu 20.04 Desktop, 在Windows 11的笔记本, 用Virtualbox 6.1 搭建的虚机 (cpu 2 cores, 40GB 存储，4GB内存) ，按照老师的教程，以下是我的实验笔记： 
+<li><span>Vic</span> 👍（5） 💬（3）<p>host使用的是Ubuntu 20.04 Desktop, 在Windows 11的笔记本, 用Virtualbox 6.1 搭建的虚机 (cpu 2 cores, 40GB 存储，4GB内存) ，按照老师的教程，以下是我的实验笔记： 
 1. 在我的环境就只有一个libpython-dev 报错，因为有提示换成libpython2-dev，不碍事，而且不同的os，不同的版本，可能不会有这个问题，可以先用老师的命令。
 sudo apt-get install git autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf patchutils bc libexpat-dev libglib2.0-dev ninja-build zlib1g-dev pkg-config libboost-all-dev libtool libssl-dev libpixman-1-dev libpython2-dev virtualenv libmount-dev libsdl2-dev
 2. mkdir RISCV_TOOLS; cd RISCV_TOOLS
@@ -251,7 +251,7 @@ Thread model: single
 Supported LTO compression algorithms: zlib
 gcc version 12.1.0 () 
 9. 收工。
-</div>2022-08-22</li><br/><li><span>光华路小霸王</span> 👍（5） 💬（3）<div>编译中会卡在 
+</p>2022-08-22</li><br/><li><span>光华路小霸王</span> 👍（5） 💬（3）<p>编译中会卡在 
 Cloning into &#39;&#47;home&#47;qing&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;gcc&#39;...
 还是会去下载仓库，应该是我们下载的文件夹名称不是默认的，查看 README.md 文件，在最后说明了如何指定子模块的路径，在配置环节添加配置之后，戴尔笔记本双核  i5-4200U CPU @ 1.60GHz 编译，编译完成四十多分钟，系统使用  Debian 4.19.181-1 
 
@@ -263,13 +263,13 @@ Cloning into &#39;&#47;home&#47;qing&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47
 --with-newlib-src=&#47;home&#47;name&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;riscv-newlib \
 --with-glibc-src=&#47;home&#47;name&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;riscv-glibc \
 --with-gdb-src=&#47;home&#47;name&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;riscv-gdb
-</div>2022-08-27</li><br/><li><span>筱琲</span> 👍（1） 💬（2）<div>用虚拟机的需要注意下，CPU核数，内存，磁盘，都要尽可能大一些，我设置的是4核&#47;8G&#47;100G，这样才能一路通关。不然要么卡死要么到最后提示空间不足，你连系统都启动不了。</div>2022-11-02</li><br/><li><span>bubble</span> 👍（1） 💬（2）<div>mkdir -p stamps&#47; &amp;&amp; touch stamps&#47;build-gdb-newlib 卡住一直不动了。
+</p>2022-08-27</li><br/><li><span>筱琲</span> 👍（1） 💬（2）<p>用虚拟机的需要注意下，CPU核数，内存，磁盘，都要尽可能大一些，我设置的是4核&#47;8G&#47;100G，这样才能一路通关。不然要么卡死要么到最后提示空间不足，你连系统都启动不了。</p>2022-11-02</li><br/><li><span>bubble</span> 👍（1） 💬（2）<p>mkdir -p stamps&#47; &amp;&amp; touch stamps&#47;build-gdb-newlib 卡住一直不动了。
  riscv-gnu-toolchain git:(master) ✗ ps -aux | grep make
 root      580153  0.1  0.0  19764  4876 pts&#47;1    S+   15:36   0:00 sudo make -j8
 root      580156  0.0  0.0  19764   748 pts&#47;2    Ss   15:36   0:00 sudo make -j8
 root      580157  0.0  0.0  11792  2356 pts&#47;2    S+   15:36   0:00 make -j8
-paralle+  621310  0.0  0.0  12120  1844 pts&#47;3    S+   15:38   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox make</div>2022-09-01</li><br/><li><span>吴卫</span> 👍（0） 💬（1）<div>你好，请问你当时使用的riscv-gnu-toolchain是什么版本的？我刚订了你的课程，由于riscv-gnu-toolchain版本更新，所以按照当前的课程指导装不起来。
-</div>2024-10-16</li><br/><li><span>gzh4869</span> 👍（0） 💬（1）<div>直接sudo apt install gcc-riscv64-unknown-elf 是不是也行</div>2023-01-11</li><br/><li><span>Geekysl17</span> 👍（0） 💬（1）<div>请问我在ubuntu20上运行sudo make -j8后为什么出现下面的问题啊，怎么解决呢？
+paralle+  621310  0.0  0.0  12120  1844 pts&#47;3    S+   15:38   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox make</p>2022-09-01</li><br/><li><span>吴卫</span> 👍（0） 💬（1）<p>你好，请问你当时使用的riscv-gnu-toolchain是什么版本的？我刚订了你的课程，由于riscv-gnu-toolchain版本更新，所以按照当前的课程指导装不起来。
+</p>2024-10-16</li><br/><li><span>gzh4869</span> 👍（0） 💬（1）<p>直接sudo apt install gcc-riscv64-unknown-elf 是不是也行</p>2023-01-11</li><br/><li><span>Geekysl17</span> 👍（0） 💬（1）<p>请问我在ubuntu20上运行sudo make -j8后为什么出现下面的问题啊，怎么解决呢？
 Submodule &#39;gcc&#39; (https:&#47;&#47;gcc.gnu.org&#47;git&#47;gcc.git) registered for path &#39;gcc&#39;
 Submodule &#39;binutils&#39; (https:&#47;&#47;sourceware.org&#47;git&#47;binutils-gdb.git) registered for path &#39;binutils&#39;
 Cloning into &#39;&#47;home&#47;ysl&#47;code&#47;OS&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;gcc&#39;...
@@ -281,7 +281,7 @@ Cloning into &#39;&#47;home&#47;ysl&#47;code&#47;OS&#47;RISCV_TOOLS&#47;riscv-gn
 fatal: unable to access &#39;https:&#47;&#47;sourceware.org&#47;git&#47;binutils-gdb.git&#47;&#39;: gnutls_handshake() failed: Error in the pull function.
 fatal: clone of &#39;https:&#47;&#47;sourceware.org&#47;git&#47;binutils-gdb.git&#39; into submodule path &#39;&#47;home&#47;ysl&#47;code&#47;OS&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;binutils&#39; failed
 Failed to clone &#39;binutils&#39;. Retry scheduled
-</div>2022-12-05</li><br/><li><span>miraclezhb</span> 👍（0） 💬（1）<div>&#47;home&#47;miraclezhb&#47;projects&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;..&#47;riscv-gdb&#47;gdb&#47;ada-exp.y: In function ‘int ada_parse(parser_state*)’:
+</p>2022-12-05</li><br/><li><span>miraclezhb</span> 👍（0） 💬（1）<p>&#47;home&#47;miraclezhb&#47;projects&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;..&#47;riscv-gdb&#47;gdb&#47;ada-exp.y: In function ‘int ada_parse(parser_state*)’:
 &#47;home&#47;miraclezhb&#47;projects&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;..&#47;riscv-gdb&#47;gdb&#47;ada-exp.y:736:15: error: ‘yyin’ was not declared in this scope; did you mean ‘yyrline’?
   736 |   lexer_init (yyin);  &#47;* (Re-)initialize lexer.  *&#47;
       |               ^~~~
@@ -291,7 +291,7 @@ Failed to clone &#39;binutils&#39;. Retry scheduled
       |   ^~~~~~~~~~
       |   pex_init
 
-老师我在编译时一直报这个错误，这个该怎么处理啊？</div>2022-11-25</li><br/><li><span>bubble</span> 👍（0） 💬（3）<div>老师我在M1的环境下用虚拟机折腾，一直编译不过去，我可以用其他环境吗？比如直接在M1的环境下学习</div>2022-09-02</li><br/><li><span>肖水平</span> 👍（0） 💬（3）<div>sean@sean-VirtualBox:&#47;opt&#47;riscv&#47;gcc&#47;bin$ .&#47;riscv64-minicpu-elf-gcc -v
+老师我在编译时一直报这个错误，这个该怎么处理啊？</p>2022-11-25</li><br/><li><span>bubble</span> 👍（0） 💬（3）<p>老师我在M1的环境下用虚拟机折腾，一直编译不过去，我可以用其他环境吗？比如直接在M1的环境下学习</p>2022-09-02</li><br/><li><span>肖水平</span> 👍（0） 💬（3）<p>sean@sean-VirtualBox:&#47;opt&#47;riscv&#47;gcc&#47;bin$ .&#47;riscv64-minicpu-elf-gcc -v
 Using built-in specs.
 COLLECT_GCC=.&#47;riscv64-minicpu-elf-gcc
 COLLECT_LTO_WRAPPER=&#47;opt&#47;riscv&#47;gcc&#47;libexec&#47;gcc&#47;riscv64-minicpu-elf&#47;10.2.0&#47;lto-wrapper
@@ -300,7 +300,7 @@ Configured with: &#47;home&#47;sean&#47;risc-v&#47;RISCV_TOOLS&#47;riscv-gnu-too
 Thread model: single
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (gca312387ab1) 
-</div>2022-08-31</li><br/><li><span>Abcd</span> 👍（0） 💬（1）<div>以前玩ARM的时候我记得有crosstool_ng?</div>2022-08-22</li><br/><li><span>bubble</span> 👍（0） 💬（1）<div>开始构建工作环境了呗</div>2022-08-22</li><br/><li><span>LooMou</span> 👍（0） 💬（0）<div>window的wsl
+</p>2022-08-31</li><br/><li><span>Abcd</span> 👍（0） 💬（1）<p>以前玩ARM的时候我记得有crosstool_ng?</p>2022-08-22</li><br/><li><span>bubble</span> 👍（0） 💬（1）<p>开始构建工作环境了呗</p>2022-08-22</li><br/><li><span>LooMou</span> 👍（0） 💬（0）<p>window的wsl
 Distributor ID: Ubuntu
 Description:    Ubuntu 20.04.6 LTS
 Release:        20.04
@@ -310,9 +310,9 @@ Codename:       focal
 git clone https:&#47;&#47;github.com&#47;riscv&#47;riscv-gnu-toolchain 
 我切换到了 2024.04.12-nightly
 git checkout f133b29
-不用 clone 其他仓库了，直接按步骤继续，编译成功</div>2024-12-03</li><br/><li><span>Hideinsecret</span> 👍（0） 💬（0）<div>riscv-binutils-2.35 启动提示链接失败，升级至2.38重新编译后解决问题</div>2023-07-28</li><br/><li><span>。。。</span> 👍（0） 💬（0）<div>make[2]: Leaving directory &#39;&#47;home&#47;len&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;build-gdb-newlib&#39;
+不用 clone 其他仓库了，直接按步骤继续，编译成功</p>2024-12-03</li><br/><li><span>Hideinsecret</span> 👍（0） 💬（0）<p>riscv-binutils-2.35 启动提示链接失败，升级至2.38重新编译后解决问题</p>2023-07-28</li><br/><li><span>。。。</span> 👍（0） 💬（0）<p>make[2]: Leaving directory &#39;&#47;home&#47;len&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;build-gdb-newlib&#39;
 make[1]: *** [Makefile:1000: all] Error 2
 make[1]: Leaving directory &#39;&#47;home&#47;len&#47;RISCV_TOOLS&#47;riscv-gnu-toolchain&#47;build&#47;build-gdb-newlib&#39;
 make: *** [Makefile:549: stamps&#47;build-gdb-newlib] Error 2
-请问老师这是为什么呢</div>2023-04-13</li><br/>
+请问老师这是为什么呢</p>2023-04-13</li><br/>
 </ul>

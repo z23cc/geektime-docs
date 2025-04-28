@@ -124,7 +124,7 @@ ZGC在战略上沿用了前几代垃圾回收器的算法策略，采用并发�
 
 ![图片](https://static001.geekbang.org/resource/image/7c/68/7c4d9e2d386a76bda552809165948f68.jpg?wh=5720x4048)
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师两个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师两个问题：
 Q1：“ZGC 利用了 64 位机器的一些位来存储垃圾收集信息” ，这个具体是指什么？
-Q2：每一个对象都有一个颜色指针吗？</div>2023-09-26</li><br/><li><span>Geek_fd6bd3</span> 👍（2） 💬（0）<div>ZGC 和 Shenandoah 的内容深度讲的太浅了。。。</div>2023-12-03</li><br/><li><span>Geek_f24e8e</span> 👍（1） 💬（0）<div>老师，有个疑惑，是不是三色标记和染色指针弄混了，染色指针是标记不同gc批次的，用来实现延迟更新引用指向的对象，分三个区域remapped和m0 m1</div>2024-03-06</li><br/><li><span>长脖子树</span> 👍（0） 💬（0）<div>Zgc和g1真的是两个级别的，生产环境上g1突刺可能接近100ms，而zgc大于0.2ms都很少</div>2023-10-12</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<div>老师你好，使用ZGC是不是意味着不能使用指针压缩了？</div>2023-10-07</li><br/>
+Q2：每一个对象都有一个颜色指针吗？</p>2023-09-26</li><br/><li><span>Geek_fd6bd3</span> 👍（2） 💬（0）<p>ZGC 和 Shenandoah 的内容深度讲的太浅了。。。</p>2023-12-03</li><br/><li><span>Geek_f24e8e</span> 👍（1） 💬（0）<p>老师，有个疑惑，是不是三色标记和染色指针弄混了，染色指针是标记不同gc批次的，用来实现延迟更新引用指向的对象，分三个区域remapped和m0 m1</p>2024-03-06</li><br/><li><span>长脖子树</span> 👍（0） 💬（0）<p>Zgc和g1真的是两个级别的，生产环境上g1突刺可能接近100ms，而zgc大于0.2ms都很少</p>2023-10-12</li><br/><li><span>浩仔是程序员</span> 👍（0） 💬（0）<p>老师你好，使用ZGC是不是意味着不能使用指针压缩了？</p>2023-10-07</li><br/>
 </ul>

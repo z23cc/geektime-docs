@@ -575,10 +575,10 @@ public class SingleConnectionDataSource implements DataSource {
 
 学完这节课，我也给你留一道思考题。我们现在只实现了query，想一想如果想要实现update应该如何做呢？欢迎你在留言区与我交流讨论，也欢迎你把这节课分享给需要的朋友。我们下节课见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（7） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（7） 💬（1）<p>请教老师几个问题：
 Q1：JDBC driver复杂吗？代码规模一般多大？能否以加餐形式讲一下driver？
 Q2：JDBC Template还有用吗？
 现在一般的开发都是SSM或SSH，不会用JDBC Template。
 Q3：JDBC template能支持多大并发？
-用JDBC template的话，一个数据库实例，比如一个mysql实例，能支持多大的并发量？200？</div>2023-04-11</li><br/><li><span>云从</span> 👍（0） 💬（2）<div>如果本地测试能够连接mysql  但是tomcat中可连接不上的话  看看tomcal  lib 下面有没有mysql 的驱动</div>2023-06-21</li><br/><li><span>马儿</span> 👍（0） 💬（1）<div>实现dml语句如果只是简单的实现就像最初的那一版拼接sql就可以实现了，但是这样的话需要每次更新都手动拼接sql比较麻烦。如果想要传入相应的对象就更新，可以利用本节课的callback来实现将相应的对象字段转换为sql语句的过程。但是这节课的结果可能整体上离最终感知不到sql还比较远，如果需要完全不感知sql应该是用一个类专门负责根据类属性的注解来自动映射。</div>2023-04-11</li><br/><li><span>C.</span> 👍（0） 💬（0）<div>前几天有点忙，这次补齐了。https:&#47;&#47;github.com&#47;caozhenyuan&#47;mini-spring.git。请看jdbc1、2、3分支</div>2023-04-27</li><br/>
+用JDBC template的话，一个数据库实例，比如一个mysql实例，能支持多大的并发量？200？</p>2023-04-11</li><br/><li><span>云从</span> 👍（0） 💬（2）<p>如果本地测试能够连接mysql  但是tomcat中可连接不上的话  看看tomcal  lib 下面有没有mysql 的驱动</p>2023-06-21</li><br/><li><span>马儿</span> 👍（0） 💬（1）<p>实现dml语句如果只是简单的实现就像最初的那一版拼接sql就可以实现了，但是这样的话需要每次更新都手动拼接sql比较麻烦。如果想要传入相应的对象就更新，可以利用本节课的callback来实现将相应的对象字段转换为sql语句的过程。但是这节课的结果可能整体上离最终感知不到sql还比较远，如果需要完全不感知sql应该是用一个类专门负责根据类属性的注解来自动映射。</p>2023-04-11</li><br/><li><span>C.</span> 👍（0） 💬（0）<p>前几天有点忙，这次补齐了。https:&#47;&#47;github.com&#47;caozhenyuan&#47;mini-spring.git。请看jdbc1、2、3分支</p>2023-04-27</li><br/>
 </ul>

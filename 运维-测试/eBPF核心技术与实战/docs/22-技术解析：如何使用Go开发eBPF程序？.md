@@ -268,7 +268,7 @@ var _HelloBytes []byte
 
 期待你在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。让我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>0mfg</span> 👍（0） 💬（0）<div>老师，今年的更新可以来个rust开发ebpf程序吗</div>2024-11-06</li><br/><li><span>疯狂的小企鹅</span> 👍（0） 💬（1）<div>&gt; 也可以通过 BTF 来解决不同内核版本中数据结构不同的问题，从而实现一次编译到处执行。
+<li><span>0mfg</span> 👍（0） 💬（0）<p>老师，今年的更新可以来个rust开发ebpf程序吗</p>2024-11-06</li><br/><li><span>疯狂的小企鹅</span> 👍（0） 💬（1）<p>&gt; 也可以通过 BTF 来解决不同内核版本中数据结构不同的问题，从而实现一次编译到处执行。
 
-请教一下哦，要想通过BTF来解决不同内核版本数据结构不同的问题，应该还需要用户态程序能够通过类似libbpf的方式来完成eBPF程序的重定位工作吧？请问cilium&#47;ebpf库是怎么解决这个问题的？我看官方文档写着也比较浅https:&#47;&#47;ebpf-go.dev&#47;guides&#47;portable-ebpf&#47;#compile-once-run-everywhere 。目前我们采用的办法是根据不同kernel版本生成多份.o文件，然后用户态程序再判断下kernel版本来决定加载哪一份.o。但我感觉这不是最佳实践，求老师赐教。</div>2024-03-21</li><br/>
+请教一下哦，要想通过BTF来解决不同内核版本数据结构不同的问题，应该还需要用户态程序能够通过类似libbpf的方式来完成eBPF程序的重定位工作吧？请问cilium&#47;ebpf库是怎么解决这个问题的？我看官方文档写着也比较浅https:&#47;&#47;ebpf-go.dev&#47;guides&#47;portable-ebpf&#47;#compile-once-run-everywhere 。目前我们采用的办法是根据不同kernel版本生成多份.o文件，然后用户态程序再判断下kernel版本来决定加载哪一份.o。但我感觉这不是最佳实践，求老师赐教。</p>2024-03-21</li><br/>
 </ul>

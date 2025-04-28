@@ -209,5 +209,5 @@ print(cosine_distance(a, b))
 
 期待你在留言区里和我交流互动，如果你觉得这一讲对你有启发，也推荐你分享给身边更多的朋友。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>沐瑞Lynn</span> 👍（0） 💬（1）<div>极客时间能不能把更新的通知发一下，很多人估计都还不知道有更新吧</div>2023-11-03</li><br/><li><span>zhihai.tu</span> 👍（0） 💬（1）<div>太棒啦，期待下一讲</div>2023-11-03</li><br/><li><span>静心</span> 👍（0） 💬（1）<div>分析的很巧妙，感谢加餐</div>2023-11-02</li><br/><li><span>我听着呢</span> 👍（0） 💬（1）<div>前排打卡，终于等到了更新</div>2023-11-02</li><br/><li><span>Grace</span> 👍（0） 💬（0）<div>没有用GPT 4 Vison训练所有的数据，是因为GPT 4 Vison，太！贵！啦！</div>2024-02-01</li><br/>
+<li><span>沐瑞Lynn</span> 👍（0） 💬（1）<p>极客时间能不能把更新的通知发一下，很多人估计都还不知道有更新吧</p>2023-11-03</li><br/><li><span>zhihai.tu</span> 👍（0） 💬（1）<p>太棒啦，期待下一讲</p>2023-11-03</li><br/><li><span>静心</span> 👍（0） 💬（1）<p>分析的很巧妙，感谢加餐</p>2023-11-02</li><br/><li><span>我听着呢</span> 👍（0） 💬（1）<p>前排打卡，终于等到了更新</p>2023-11-02</li><br/><li><span>Grace</span> 👍（0） 💬（0）<p>没有用GPT 4 Vison训练所有的数据，是因为GPT 4 Vison，太！贵！啦！</p>2024-02-01</li><br/>
 </ul>

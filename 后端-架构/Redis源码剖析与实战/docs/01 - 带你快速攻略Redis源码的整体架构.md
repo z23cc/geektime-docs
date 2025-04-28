@@ -189,7 +189,7 @@ Redis从4.0版本开始，能够支持后台异步执行任务，比如异步删
 
 欢迎在留言区分享你的思考和操作过程，我们一起交流讨论。如果觉得有收获的话，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>lison</span> 👍（1） 💬（1）<div>老师，有幸听了您的集训班，想咨询下 后续章节是否有具体版本和编译工具的介绍，后续好和您保持同步</div>2021-07-26</li><br/><li><span>Leven</span> 👍（0） 💬（1）<div>请问老师，没有c语言基础适合吗</div>2021-07-26</li><br/><li><span>Kaito</span> 👍（158） 💬（11）<div>重新看了一下源码目录，结合这篇文章的内容，整理了一下代码分类（忽略.h头文件），这也更清晰一些：
+<li><span>lison</span> 👍（1） 💬（1）<p>老师，有幸听了您的集训班，想咨询下 后续章节是否有具体版本和编译工具的介绍，后续好和您保持同步</p>2021-07-26</li><br/><li><span>Leven</span> 👍（0） 💬（1）<p>请问老师，没有c语言基础适合吗</p>2021-07-26</li><br/><li><span>Kaito</span> 👍（158） 💬（11）<p>重新看了一下源码目录，结合这篇文章的内容，整理了一下代码分类（忽略.h头文件），这也更清晰一些：
 
 数据类型：
 - String（t_string.c、sds.c、bitops.c）
@@ -248,7 +248,7 @@ Redis Server 在启动时，会在 server.c 中调用 bioInit 函数，这个函
 
 消费者从链表中拿到生产者发过来的「任务类型 + 参数」，执行上面任务对应的方法即可。当然，由于是「多线程」读写链表数据，这个过程是需要「加锁」操作的。
 
-如果要找「异步删除数据」的逻辑，可以从 server.c 的 unlink 命令为起点，一路跟代码进去，就会看到调用了 lazyfree.c 的 dbAsyncDelete 函数，这个函数最终会调到上面提到的发布异步任务函数 bioCreateBackgroundJob，整个链条就串起来了。</div>2021-07-28</li><br/><li><span>悟空聊架构</span> 👍（14） 💬（6）<div>回答每课一问：
+如果要找「异步删除数据」的逻辑，可以从 server.c 的 unlink 命令为起点，一路跟代码进去，就会看到调用了 lazyfree.c 的 dbAsyncDelete 函数，这个函数最终会调到上面提到的发布异步任务函数 bioCreateBackgroundJob，整个链条就串起来了。</p>2021-07-28</li><br/><li><span>悟空聊架构</span> 👍（14） 💬（6）<p>回答每课一问：
 Redis 从 4.0 版本开始，能够支持后台异步执行任务，比如异步删除数据，你能在 Redis 功能源码中，找到实现后台任务的代码文件么？
 
 我翻看了 3.0 的源码，发现 3.0 就支持后台任务了。在文件 src\bio.c 里面有一个后台任务的函数：
@@ -270,7 +270,7 @@ bioProcessBackgroundJobs，支持两种后台任务：关闭文件和 AOF 文件
 
 吐槽下：Github 上下载源码总是下载失败，为了其他同学们方便下载，我整理了多套源码的下载地址，都是国内的网盘链接，只有几MB 大小，下载比较快的。
 
-http:&#47;&#47;www.passjava.cn&#47;#&#47;12.Redis&#47;00.DownloadRedis</div>2021-07-27</li><br/><li><span>Ethan New</span> 👍（10） 💬（0）<div>评论区也太强了吧，瑟瑟发抖</div>2021-07-28</li><br/><li><span>陌</span> 👍（9） 💬（1）<div>关于作业，如果一开始对 Redis 源码不熟悉的话，我们可以借用 GDB 工具来回答 Redis 有哪些后台任务:
+http:&#47;&#47;www.passjava.cn&#47;#&#47;12.Redis&#47;00.DownloadRedis</p>2021-07-27</li><br/><li><span>Ethan New</span> 👍（10） 💬（0）<p>评论区也太强了吧，瑟瑟发抖</p>2021-07-28</li><br/><li><span>陌</span> 👍（9） 💬（1）<p>关于作业，如果一开始对 Redis 源码不熟悉的话，我们可以借用 GDB 工具来回答 Redis 有哪些后台任务:
 
 1) 添加 -g 的编码参数，向编译文件中添加调试信息，以便使用 GDB：
 
@@ -285,14 +285,14 @@ run
 4) 查看线程信息:
 info threads
 
-这时候我们就能够看到 4 个线程的相关信息，分别是 redis-server、bio_close_file、bio_aof_fsync、bio_lazy_free，然后就可以按线程名称再去源码中查找了。</div>2021-07-29</li><br/><li><span>可怜大灰狼</span> 👍（5） 💬（0）<div>我的第一反应应该是从unlink命令入手查找。首先肯定是server.c中redisCommandTable[]中的unlinkCommand，找到了lazyfree.c中dbAsyncDelete方法，然后找到了bio.c中bioCreateBackgroundJob方法，很显然bio.h中加了一种后台IO任务类型：BIO_LAZY_FREE=2。我记得我看3.0代码还只有BIO_CLOSE_FILE和BIO_AOF_FSYNC</div>2021-07-26</li><br/><li><span>Darren</span> 👍（5） 💬（0）<div>bio.c
+这时候我们就能够看到 4 个线程的相关信息，分别是 redis-server、bio_close_file、bio_aof_fsync、bio_lazy_free，然后就可以按线程名称再去源码中查找了。</p>2021-07-29</li><br/><li><span>可怜大灰狼</span> 👍（5） 💬（0）<p>我的第一反应应该是从unlink命令入手查找。首先肯定是server.c中redisCommandTable[]中的unlinkCommand，找到了lazyfree.c中dbAsyncDelete方法，然后找到了bio.c中bioCreateBackgroundJob方法，很显然bio.h中加了一种后台IO任务类型：BIO_LAZY_FREE=2。我记得我看3.0代码还只有BIO_CLOSE_FILE和BIO_AOF_FSYNC</p>2021-07-26</li><br/><li><span>Darren</span> 👍（5） 💬（0）<p>bio.c
 在5.x的源码中，后台异步执行又3个子线程
 #define BIO_NUM_OPS       3
 #define BIO_CLOSE_FILE    0 &#47;* Deferred close(2) syscall. *&#47;
 #define BIO_AOF_FSYNC     1 &#47;* Deferred AOF fsync. *&#47;
 #define BIO_LAZY_FREE     2 &#47;* Deferred objects freeing. *&#47;
 
-bioInit方法中通过pthread_create创建BIO_NUM_OPS子线程，不同线程的任务在static list *bio_jobs[BIO_NUM_OPS]中存储。</div>2021-07-26</li><br/><li><span>小五</span> 👍（3） 💬（0）<div>1 Redis 支持 3 大类型的后台任务，它们定义在 bio.h 文件中：
+bioInit方法中通过pthread_create创建BIO_NUM_OPS子线程，不同线程的任务在static list *bio_jobs[BIO_NUM_OPS]中存储。</p>2021-07-26</li><br/><li><span>小五</span> 👍（3） 💬（0）<p>1 Redis 支持 3 大类型的后台任务，它们定义在 bio.h 文件中：
 &#47;* Background job opcodes 后台作业操作码
  * 1 处理关闭文件
  * 2 AOF 异步刷盘
@@ -308,7 +308,7 @@ bioInit方法中通过pthread_create创建BIO_NUM_OPS子线程，不同线程的
 
 2 后台创建的以上三种 bio 后台线程会不断轮询 bio_jobs 任务队列中的任务，并分门别类的处理对应的任务。逻辑操作定义在 bio.c 文件中
 
-3 在 Redis 6.0 中增加了 io 多线程，在 networking.c 中定义了 io 线程的任务队列，以及创建 io_threads_num 个 io 线程，这些 io 线程会不断轮询 IO 读写任务。</div>2021-07-27</li><br/><li><span>Kang</span> 👍（3） 💬（1）<div>请问下老师，各个源码目录的作用是从那里获取到的，mysql的话也会有相应解释吗</div>2021-07-26</li><br/><li><span>汤小高</span> 👍（1） 💬（0）<div>老师，能不能提供完整调试的搭建环境方案呀，看源码应该需要调试的</div>2022-06-17</li><br/><li><span>lzh2nix</span> 👍（1） 💬（0）<div>另外你还需要知道的是，Redis 的主从集群在进行恢复时，主要是依赖于哨兵机制，而这部分功能则直接实现在了 sentinel.c 文件中。
+3 在 Redis 6.0 中增加了 io 多线程，在 networking.c 中定义了 io 线程的任务队列，以及创建 io_threads_num 个 io 线程，这些 io 线程会不断轮询 IO 读写任务。</p>2021-07-27</li><br/><li><span>Kang</span> 👍（3） 💬（1）<p>请问下老师，各个源码目录的作用是从那里获取到的，mysql的话也会有相应解释吗</p>2021-07-26</li><br/><li><span>汤小高</span> 👍（1） 💬（0）<p>老师，能不能提供完整调试的搭建环境方案呀，看源码应该需要调试的</p>2022-06-17</li><br/><li><span>lzh2nix</span> 👍（1） 💬（0）<p>另外你还需要知道的是，Redis 的主从集群在进行恢复时，主要是依赖于哨兵机制，而这部分功能则直接实现在了 sentinel.c 文件中。
 
-老师这里的描述是不是有问题，redis的高可用有两种方式sentinel模式和cluster模式，这里在cluster模式下的主从复制不依赖哨兵机制吧？</div>2021-08-01</li><br/><li><span>Geek_25565b</span> 👍（0） 💬（1）<div>用什么工具看源码？</div>2022-05-23</li><br/><li><span>z</span> 👍（0） 💬（0）<div>bioCreateBackgroundJob 这个就是异步执行逻辑吗？</div>2021-08-31</li><br/><li><span>肖鹏</span> 👍（0） 💬（1）<div>希望了解一下redis 外部数据结构到内部数据结构中间是怎么转换的</div>2021-08-06</li><br/>
+老师这里的描述是不是有问题，redis的高可用有两种方式sentinel模式和cluster模式，这里在cluster模式下的主从复制不依赖哨兵机制吧？</p>2021-08-01</li><br/><li><span>Geek_25565b</span> 👍（0） 💬（1）<p>用什么工具看源码？</p>2022-05-23</li><br/><li><span>z</span> 👍（0） 💬（0）<p>bioCreateBackgroundJob 这个就是异步执行逻辑吗？</p>2021-08-31</li><br/><li><span>肖鹏</span> 👍（0） 💬（1）<p>希望了解一下redis 外部数据结构到内部数据结构中间是怎么转换的</p>2021-08-06</li><br/>
 </ul>

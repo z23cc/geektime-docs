@@ -260,6 +260,6 @@ protected boolean isHandler(Class<?> beanType) {
 
 以上即为Spring Boot处理一个HTTP请求的核心过程，无非就是绑定一个内嵌容器（Tomcat/Jetty/其他）来接收请求，然后为请求寻找一个合适的方法，最后反射执行它。当然，这中间还会掺杂无数的细节，不过这不重要，抓住这个核心思想对你接下来理解Spring Web中各种类型的错误案例才是大有裨益的！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>萧</span> 👍（13） 💬（0）<div>清晰易懂，感觉可以基于此篇文章再自己研究源码写一篇源码解析，哈哈</div>2021-05-10</li><br/><li><span>一记妙蛙直拳</span> 👍（5） 💬（0）<div>spring web前端控制器的执行流程是常被问到的面试题</div>2021-05-14</li><br/><li><span>Monday</span> 👍（4） 💬（0）<div>Springboot1.5.31.RELEASE版本
-EmbeddedTomcat是在EmbeddedServletContainerAutoConfiguration类中定义的</div>2021-06-24</li><br/>
+<li><span>萧</span> 👍（13） 💬（0）<p>清晰易懂，感觉可以基于此篇文章再自己研究源码写一篇源码解析，哈哈</p>2021-05-10</li><br/><li><span>一记妙蛙直拳</span> 👍（5） 💬（0）<p>spring web前端控制器的执行流程是常被问到的面试题</p>2021-05-14</li><br/><li><span>Monday</span> 👍（4） 💬（0）<p>Springboot1.5.31.RELEASE版本
+EmbeddedTomcat是在EmbeddedServletContainerAutoConfiguration类中定义的</p>2021-06-24</li><br/>
 </ul>

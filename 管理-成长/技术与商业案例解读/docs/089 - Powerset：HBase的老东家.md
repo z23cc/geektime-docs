@@ -69,5 +69,5 @@
 
 所以，如果我们中肯地去评论Powerset，它做出了HBase，并且对Hadoop生态圈和大数据开源的贡献依然是极为巨大的。所以，无论如何，我们都还是要感谢Powerset，毕竟，它还是给我们留下了HBase，这个优质的开源产品。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>白杨</span> 👍（0） 💬（0）<div>powerset hbase</div>2019-05-12</li><br/>
+<li><span>白杨</span> 👍（0） 💬（0）<p>powerset hbase</p>2019-05-12</li><br/>
 </ul>

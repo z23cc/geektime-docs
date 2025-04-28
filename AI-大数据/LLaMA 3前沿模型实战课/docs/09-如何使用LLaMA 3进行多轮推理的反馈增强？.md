@@ -219,9 +219,9 @@ Meta 团队在提示生成过程中，确保了 LLaMA 3 的训练数据中的提
 
 请你思考一下，为什么无需任何调整就可以直接使用原生的 LLaMA 3 进行 ReAct 智能体的开发？欢迎你把你思考后的结果分享到留言区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>扭断翅膀的猪</span> 👍（1） 💬（0）<div>为什么无需任何调整就可以直接使用原生的 LLaMA 3 进行 ReAct 智能体的开发?
+<li><span>扭断翅膀的猪</span> 👍（1） 💬（0）<p>为什么无需任何调整就可以直接使用原生的 LLaMA 3 进行 ReAct 智能体的开发?
 
 第一是大模型支持推理能力 Reasoning: The ability to generate structured reasoning traces (e.g., through Chain-of-Thought prompting).
-第二是与外部工具交互的能力 Action: The ability to interact with external tools or environments to retrieve additional information or perform tasks.</div>2025-01-22</li><br/><li><span>方华Elton</span> 👍（0） 💬（0）<div>因为llama3在训练过程中训练了react场景的数据吗?通过数据工程，提高了模型推理，调用工具的能力，并且模型能够根据工具调用结果反馈判断是否结束推理。
-</div>2024-12-18</li><br/>
+第二是与外部工具交互的能力 Action: The ability to interact with external tools or environments to retrieve additional information or perform tasks.</p>2025-01-22</li><br/><li><span>方华Elton</span> 👍（0） 💬（0）<p>因为llama3在训练过程中训练了react场景的数据吗?通过数据工程，提高了模型推理，调用工具的能力，并且模型能够根据工具调用结果反馈判断是否结束推理。
+</p>2024-12-18</li><br/>
 </ul>

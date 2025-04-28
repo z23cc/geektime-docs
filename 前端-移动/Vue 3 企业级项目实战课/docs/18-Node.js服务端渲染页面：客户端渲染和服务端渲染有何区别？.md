@@ -291,5 +291,5 @@ SSR适合SEO场景，例如运营推广类的活动页面宣传。但是要考�
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/18)
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>初烬</span> 👍（1） 💬（1）<div>类似于智慧城市这种有地图和数据模型渲染的场景可以采用SSR吗？</div>2023-01-28</li><br/><li><span>静心</span> 👍（0） 💬（1）<div>SSR感觉也不一定一定能减少白屏时间。比如，如果SSR时服务端渲染较慢，页面也同样不能快速显示出来。另外，页面渲染的性能应该主要取取决于FP、FCP。</div>2023-01-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-09-19</li><br/>
+<li><span>初烬</span> 👍（1） 💬（1）<p>类似于智慧城市这种有地图和数据模型渲染的场景可以采用SSR吗？</p>2023-01-28</li><br/><li><span>静心</span> 👍（0） 💬（1）<p>SSR感觉也不一定一定能减少白屏时间。比如，如果SSR时服务端渲染较慢，页面也同样不能快速显示出来。另外，页面渲染的性能应该主要取取决于FP、FCP。</p>2023-01-04</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-09-19</li><br/>
 </ul>

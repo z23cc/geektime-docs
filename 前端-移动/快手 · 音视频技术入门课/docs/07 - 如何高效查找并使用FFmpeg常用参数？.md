@@ -358,10 +358,10 @@ FFmpeg作为一个必备的音视频开发工具，确实参数比较多，但�
 
 我们应该怎么去实现这个场景呢？欢迎你把自己的想法写在评论区和我交流，也欢迎你把这节课分享给需要的朋友，我们下节课再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>keepgoing</span> 👍（1） 💬（2）<div>老师想请教一下，如果对于 -filter_complex 这种命令完全不了解其用法和作用，应该怎么通过ffmpeg -help相关的内容进行学习，感谢！</div>2022-08-22</li><br/><li><span>西格玛</span> 👍（0） 💬（1）<div>老师的课程内容很饱满，就是部分命令不是太准确，苦了我们初学者，比如这篇里面的&quot;视频操作部分&quot;-vr：设置视频的帧率；应该是 &quot;-r&quot;,我试了好久 “-vr”不可以的
-</div>2022-08-15</li><br/><li><span>Octo</span> 👍（0） 💬（1）<div>请教老师一个问题，我在用ffmpeg对mp4视频做分割后，发现很多视频播放软件无法打开分割后的视频文件，这一般是什么问题呢？
+<li><span>keepgoing</span> 👍（1） 💬（2）<p>老师想请教一下，如果对于 -filter_complex 这种命令完全不了解其用法和作用，应该怎么通过ffmpeg -help相关的内容进行学习，感谢！</p>2022-08-22</li><br/><li><span>西格玛</span> 👍（0） 💬（1）<p>老师的课程内容很饱满，就是部分命令不是太准确，苦了我们初学者，比如这篇里面的&quot;视频操作部分&quot;-vr：设置视频的帧率；应该是 &quot;-r&quot;,我试了好久 “-vr”不可以的
+</p>2022-08-15</li><br/><li><span>Octo</span> 👍（0） 💬（1）<p>请教老师一个问题，我在用ffmpeg对mp4视频做分割后，发现很多视频播放软件无法打开分割后的视频文件，这一般是什么问题呢？
 命令是：
-ffmpeg -i xxx.mp4 -vcodec copy -acodec copy -ss 5 -to 25 xxx_out.mp4</div>2022-08-15</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+ffmpeg -i xxx.mp4 -vcodec copy -acodec copy -ss 5 -to 25 xxx_out.mp4</p>2022-08-15</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：“做解码后再编码”是解释谁的？
 文中有这句话：“来进行只转封装不转码（做解码后再编码）的操作”，括号中的“做解码后再编码”是用来解释“转码”的吧。 刚开始看，以为是解释“只转封装不转码”的。
 Q2: H.264查询结果矛盾问题。
@@ -381,10 +381,10 @@ Q4：源码目录下面没有make文件但能执行，为什么？
 从官网上下载5.1源码，解压后生成ffmpeg目录，先再此目录下面执行：.&#47;configure，
 “ls –al | grep make”没有make这个文件。 输入“make”，刚开始不能执行，提示没有此文件，后来又试了几次，突然就能执行了。 请问：没有make文件，怎么就能执行了？
 Q5：添加meta参数信息的命令，输入文件是什么？
-ffmpeg -f lavfi -i testsrc=s=176x144 -metadata title=&quot;This Is A Test&quot; -t 2 out.mp4， 这个命令中，源文件是什么？ 没有源文件的话，生成的out.mp4没有实际内容吧。</div>2022-08-08</li><br/><li><span>geek</span> 👍（0） 💬（1）<div>貌似本节的小结思维导图，串台了。
-</div>2022-08-08</li><br/><li><span>jcy</span> 👍（2） 💬（1）<div>尝试回答一下思考题：
+ffmpeg -f lavfi -i testsrc=s=176x144 -metadata title=&quot;This Is A Test&quot; -t 2 out.mp4， 这个命令中，源文件是什么？ 没有源文件的话，生成的out.mp4没有实际内容吧。</p>2022-08-08</li><br/><li><span>geek</span> 👍（0） 💬（1）<p>貌似本节的小结思维导图，串台了。
+</p>2022-08-08</li><br/><li><span>jcy</span> 👍（2） 💬（1）<p>尝试回答一下思考题：
 1. 先用 ffprobe -show_format test.mkv 查看视频文件的 duration，假设这里的 duration 是 22.47
 2. 用如下命令生成新的视频文件 out.mkv，其在原来 test.mkv 视频文件上会叠加一个 logo，播放时，按照视频进度比例从左下角向右下角移动
 
-    ffmpeg -re -i test.mkv -vf &quot;movie=logo.PNG[test];[in][test]overlay=x=&#39;if(gte(t,0), t*(W-w)&#47;20.47, NAN)&#39;:y=H-h [out]&quot; out.mkv</div>2022-08-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-25</li><br/>
+    ffmpeg -re -i test.mkv -vf &quot;movie=logo.PNG[test];[in][test]overlay=x=&#39;if(gte(t,0), t*(W-w)&#47;20.47, NAN)&#39;:y=H-h [out]&quot; out.mkv</p>2022-08-23</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-25</li><br/>
 </ul>

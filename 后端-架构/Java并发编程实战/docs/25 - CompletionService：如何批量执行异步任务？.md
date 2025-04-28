@@ -207,7 +207,7 @@ return m;
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>张天屹</span> 👍（139） 💬（11）<div>我觉得问题出在return m这里需要等待三个线程执行完成，但是并没有。
+<li><span>张天屹</span> 👍（139） 💬（11）<p>我觉得问题出在return m这里需要等待三个线程执行完成，但是并没有。
 ...
 AtomicReference&lt;Integer&gt; m = new AtomicReference&lt;&gt;(Integer.MAX_VALUE);
 CountDownLatch latch = new CountDownLatch(3);
@@ -223,7 +223,7 @@ for(int i=0; i&lt;3; i++) {
 	});
 	latch.await();
 	return m;
-}</div>2019-04-25</li><br/><li><span>小华</span> 👍（33） 💬（1）<div>看老师的意图是要等三个比较报假的线程都执行完才能执行主线程的的return  m，但是代码无法保证三个线程都执行完，和主线程执行return的顺序，因此，m的值不是准确的，可以加个线程栈栏，线程执行完计数器，来达到这效果</div>2019-04-25</li><br/><li><span>西行寺咕哒子</span> 👍（31） 💬（8）<div>试过返回值是2147483647，也就是int的最大值。没有等待操作完成就猴急的返回了。 m.set(Integer.min(m.get(), r)... 这个操作也不是原子操作。
+}</p>2019-04-25</li><br/><li><span>小华</span> 👍（33） 💬（1）<p>看老师的意图是要等三个比较报假的线程都执行完才能执行主线程的的return  m，但是代码无法保证三个线程都执行完，和主线程执行return的顺序，因此，m的值不是准确的，可以加个线程栈栏，线程执行完计数器，来达到这效果</p>2019-04-25</li><br/><li><span>西行寺咕哒子</span> 👍（31） 💬（8）<p>试过返回值是2147483647，也就是int的最大值。没有等待操作完成就猴急的返回了。 m.set(Integer.min(m.get(), r)... 这个操作也不是原子操作。
 试着自己弄了一下：
 public Integer run(){
         &#47;&#47; 创建线程池
@@ -246,7 +246,7 @@ public Integer run(){
         }
         return m.get();
     }
-不知道可不可行</div>2019-04-25</li><br/><li><span>ipofss</span> 👍（17） 💬（2）<div>老师，并发工具类，这整个一章，感觉听完似懂非懂的，因为实践中没用过，我要如何弥补这部分，还是说只要听说过，然后用的时候再去查看demo吗</div>2019-10-23</li><br/><li><span>linqw</span> 👍（8） 💬（1）<div>老师stampedLock的获取锁源码，老师能帮忙解惑下么？阻塞的读线程cowait是挂在写节点的下方么？老师能解惑下基于的理论模型
+不知道可不可行</p>2019-04-25</li><br/><li><span>ipofss</span> 👍（17） 💬（2）<p>老师，并发工具类，这整个一章，感觉听完似懂非懂的，因为实践中没用过，我要如何弥补这部分，还是说只要听说过，然后用的时候再去查看demo吗</p>2019-10-23</li><br/><li><span>linqw</span> 👍（8） 💬（1）<p>老师stampedLock的获取锁源码，老师能帮忙解惑下么？阻塞的读线程cowait是挂在写节点的下方么？老师能解惑下基于的理论模型
 private long acquireWrite(boolean interruptible, long deadline) {
         WNode node = null, p;
         for (int spins = -1;;) { &#47;&#47; spin while enqueuing
@@ -284,11 +284,11 @@ private long acquireWrite(boolean interruptible, long deadline) {
             }
         }
 
-        </div>2019-04-25</li><br/><li><span>Sunqc</span> 👍（3） 💬（1）<div>&#47;&#47; 获取电商 S1 报价并保存
+        </p>2019-04-25</li><br/><li><span>Sunqc</span> 👍（3） 💬（1）<p>&#47;&#47; 获取电商 S1 报价并保存
 r=f1.get();
 executor.execute(()-&gt;save(r));
 
-如果把r=f1.get（）放进execute里应该是也能保证先执行完的先保存</div>2019-05-01</li><br/><li><span>黄海峰</span> 👍（3） 💬（1）<div>我实际测试了第一段代码，确实是异步的，f1.get不会阻塞主线程。。。
+如果把r=f1.get（）放进execute里应该是也能保证先执行完的先保存</p>2019-05-01</li><br/><li><span>黄海峰</span> 👍（3） 💬（1）<p>我实际测试了第一段代码，确实是异步的，f1.get不会阻塞主线程。。。
 
 public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(3);
@@ -351,10 +351,10 @@ public static void main(String[] args) {
     }
     private static void save(Integer i) {
         System.out.println(&quot;save &quot; + i);
-    }</div>2019-04-25</li><br/><li><span>Corner</span> 👍（3） 💬（1）<div>1.AtomicReference&lt;Integer&gt;的get方法应该改成使用cas方法
+    }</p>2019-04-25</li><br/><li><span>Corner</span> 👍（3） 💬（1）<p>1.AtomicReference&lt;Integer&gt;的get方法应该改成使用cas方法
 2.最后筛选最小结果的任务是异步执行的，应该在return之前做同步，所以最好使用sumit提交该任务便于判断任务的完成
-最后请教老师一下，第一个例子中为什么主线程会阻塞在f1.get()方法呢？</div>2019-04-25</li><br/><li><span>空空空空</span> 👍（2） 💬（1）<div>算低价的时候是用三个不同的线程去计算，是异步的，因此可能算出来并不是预期的结果
-老师，这样理解对吗？</div>2019-04-25</li><br/><li><span>梅小西</span> 👍（1） 💬（1）<div>老师讲的挺不错的，看了这个例子，有几点疑问，还希望老师说明下：
+最后请教老师一下，第一个例子中为什么主线程会阻塞在f1.get()方法呢？</p>2019-04-25</li><br/><li><span>空空空空</span> 👍（2） 💬（1）<p>算低价的时候是用三个不同的线程去计算，是异步的，因此可能算出来并不是预期的结果
+老师，这样理解对吗？</p>2019-04-25</li><br/><li><span>梅小西</span> 👍（1） 💬（1）<p>老师讲的挺不错的，看了这个例子，有几点疑问，还希望老师说明下：
 &#47;&#47; 这个是老师例子：
 
 &#47;&#47; 创建线程池
@@ -380,7 +380,7 @@ for (int i=0; i&lt;3; i++) {
 
 综上，CompletionService 看来能够做批量处理异步任务的事情，实际应用中，我感觉不太实用！
 
-以上两点是个人见解，有不对之处请老师指教！</div>2019-10-27</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<div>老师，冒昧的问下：在文章刚开始的例子，无论是三个询价任务（通过submit方法提交），还是保存询价任务（通过execute方法提交）都是异步的执行执行的啊！如果s1询价的时间过长的话，也不会影响到s2保存保价的先执行啊！他只影响到s1保存询价的动作。老师不知道我说的有么有道理，有问题请老师帮忙指正</div>2019-08-30</li><br/><li><span>胡小禾</span> 👍（1） 💬（1）<div>&#47;&#47; 创建线程池
+以上两点是个人见解，有不对之处请老师指教！</p>2019-10-27</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<p>老师，冒昧的问下：在文章刚开始的例子，无论是三个询价任务（通过submit方法提交），还是保存询价任务（通过execute方法提交）都是异步的执行执行的啊！如果s1询价的时间过长的话，也不会影响到s2保存保价的先执行啊！他只影响到s1保存询价的动作。老师不知道我说的有么有道理，有问题请老师帮忙指正</p>2019-08-30</li><br/><li><span>胡小禾</span> 👍（1） 💬（1）<p>&#47;&#47; 创建线程池
 ExecutorService executor =
   Executors.newFixedThreadPool(3);
 &#47;&#47; 创建 CompletionService
@@ -418,6 +418,6 @@ try {
 }
 &#47;&#47; 返回结果
 return r;
-</div>2019-07-09</li><br/><li><span>Joker</span> 👍（0） 💬（1）<div>老师，那个futures保存future就是为了后面取消(`cancel()`)，对吧</div>2019-11-06</li><br/><li><span>倚梦流</span> 👍（0） 💬（1）<div>请问老师，任务操作中包含io操作，比如正在增删读写文件，这时候突然cancel，会有什么不良影响吗？或者任务里面包含数据库操作，如果突然cancel，岂不是需要在异步任务中，进行事务回滚？</div>2019-07-28</li><br/><li><span>胡小禾</span> 👍（0） 💬（1）<div>请教下老师，实际生产中，使用BlockingQueue 时，
-若重启实例，BQ 的任务可能会丢，对此有何通用方案？</div>2019-07-09</li><br/>
+</p>2019-07-09</li><br/><li><span>Joker</span> 👍（0） 💬（1）<p>老师，那个futures保存future就是为了后面取消(`cancel()`)，对吧</p>2019-11-06</li><br/><li><span>倚梦流</span> 👍（0） 💬（1）<p>请问老师，任务操作中包含io操作，比如正在增删读写文件，这时候突然cancel，会有什么不良影响吗？或者任务里面包含数据库操作，如果突然cancel，岂不是需要在异步任务中，进行事务回滚？</p>2019-07-28</li><br/><li><span>胡小禾</span> 👍（0） 💬（1）<p>请教下老师，实际生产中，使用BlockingQueue 时，
+若重启实例，BQ 的任务可能会丢，对此有何通用方案？</p>2019-07-09</li><br/>
 </ul>

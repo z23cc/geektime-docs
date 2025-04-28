@@ -500,9 +500,9 @@ curl -H "content-type: application/json" -d '{"name": "john"}' http://localhost:
 
 欢迎你跟我交流讨论，我们也会在后面修复这一问题。下节课见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>shuff1e</span> 👍（0） 💬（1）<div>mux := runtime.NewServeMux()
-看起来是HandleHTTP没指定路由？name是从body取，还是从query参数取，也没指定？</div>2022-12-27</li><br/><li><span>出云</span> 👍（1） 💬（2）<div>回答一下结尾问题：按文中的写法其实不会出现只返回“Hello”的情况。检查了下代码仓库v3.0.0版本。hello.proto文件中hello方法的option注解少了body字段。按这种写法生成proto文件再次运行，才复现了文末说的问题，所以问题就是出在少了一行`body:  &quot;*&quot;`。
+<li><span>shuff1e</span> 👍（0） 💬（1）<p>mux := runtime.NewServeMux()
+看起来是HandleHTTP没指定路由？name是从body取，还是从query参数取，也没指定？</p>2022-12-27</li><br/><li><span>出云</span> 👍（1） 💬（2）<p>回答一下结尾问题：按文中的写法其实不会出现只返回“Hello”的情况。检查了下代码仓库v3.0.0版本。hello.proto文件中hello方法的option注解少了body字段。按这种写法生成proto文件再次运行，才复现了文末说的问题，所以问题就是出在少了一行`body:  &quot;*&quot;`。
 
-（另外，给protoc安装grpc-gateway的两个插件后，生成的hello.pb.micro.go文件中的NewGreeterEndpoints()函数中返回的api.Endpoint对象会多一个不存在的Body字段，需要删掉才能正常编译。）</div>2023-03-17</li><br/><li><span>出云</span> 👍（0） 💬（0）<div>产生多余Body字段的原因也找到了。是因为按文中给的包路径安装不到最新的protoc-gen-micro插件。根据go-micro的官方repo，该插件目前的包路径是` github.com&#47;go-micro&#47;generator&#47;cmd&#47;protoc-gen-micro@latest `。 去$GOPATH&#47;bin 把旧的可执行文件删了，执行`go install 新路径`，再重新生成pb文件即可解决问题。 </div>2023-03-17</li><br/><li><span>tcyi</span> 👍（0） 💬（0）<div>google&#47;api&#47;annotations.proto 报错，按照老师提供的方法 不能成功，win10环境
-</div>2023-02-20</li><br/><li><span>viclilei</span> 👍（0） 💬（1）<div>docker etcd error</div>2023-01-11</li><br/>
+（另外，给protoc安装grpc-gateway的两个插件后，生成的hello.pb.micro.go文件中的NewGreeterEndpoints()函数中返回的api.Endpoint对象会多一个不存在的Body字段，需要删掉才能正常编译。）</p>2023-03-17</li><br/><li><span>出云</span> 👍（0） 💬（0）<p>产生多余Body字段的原因也找到了。是因为按文中给的包路径安装不到最新的protoc-gen-micro插件。根据go-micro的官方repo，该插件目前的包路径是` github.com&#47;go-micro&#47;generator&#47;cmd&#47;protoc-gen-micro@latest `。 去$GOPATH&#47;bin 把旧的可执行文件删了，执行`go install 新路径`，再重新生成pb文件即可解决问题。 </p>2023-03-17</li><br/><li><span>tcyi</span> 👍（0） 💬（0）<p>google&#47;api&#47;annotations.proto 报错，按照老师提供的方法 不能成功，win10环境
+</p>2023-02-20</li><br/><li><span>viclilei</span> 👍（0） 💬（1）<p>docker etcd error</p>2023-01-11</li><br/>
 </ul>

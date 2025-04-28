@@ -194,9 +194,9 @@ JavaScript语言标准也已经明确说明，JavaScript是一门面向对象的
 
 [![unpreview](https://static001.geekbang.org/resource/image/1a/08/1a49758821bdbdf6f0a8a1dc5bf39f08.jpg?wh=1032%2A330)](https://time.geekbang.org/course/intro/163?utm_term=zeusMTA7L&utm_source=app&utm_medium=chongxueqianduan&utm_campaign=163-presell)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>如斯</span> 👍（27） 💬（5）<div>有个疑惑哈，讲道理symbolObj对象也是对象。也可以调用symbolObj.toString方法（ symbolObj.toString()  &#47;&#47; &quot;Symbol(a)&quot; ）。
+<li><span>如斯</span> 👍（27） 💬（5）<p>有个疑惑哈，讲道理symbolObj对象也是对象。也可以调用symbolObj.toString方法（ symbolObj.toString()  &#47;&#47; &quot;Symbol(a)&quot; ）。
 但为什么会 symbolObj+&#39;&#39; 会报错呢。
-Uncaught TypeError: Cannot convert a Symbol value to a string at &lt;anonymous&gt;:1:10</div>2019-02-13</li><br/><li><span>朋友</span> 👍（7） 💬（3）<div>getter setter实际应用的例子有哪些？ vue的数据，视图双向绑定算吗？</div>2019-02-22</li><br/><li><span>Jackchoumine</span> 👍（3） 💬（1）<div>let obj = {};
+Uncaught TypeError: Cannot convert a Symbol value to a string at &lt;anonymous&gt;:1:10</p>2019-02-13</li><br/><li><span>朋友</span> 👍（7） 💬（3）<p>getter setter实际应用的例子有哪些？ vue的数据，视图双向绑定算吗？</p>2019-02-22</li><br/><li><span>Jackchoumine</span> 👍（3） 💬（1）<p>let obj = {};
 &#47;&#47; let _a=&quot;&quot;
 Object.defineProperty(obj, &quot;a&quot;, {
   &#47;&#47; value: 123,
@@ -220,19 +220,19 @@ console.log(obj);
 console.log(&quot;before&quot;, obj.a);
 obj.a = &quot;aaaa&quot;;
 
-为甚么这样报错了：xJAjOnELvGnk:55 Uncaught RangeError: Maximum call stack size exceeded.</div>2019-09-13</li><br/><li><span>cnzhujie</span> 👍（2） 💬（6）<div>个人理解：面向对象就是万物皆为类，离开了类就活不了；比如Java里面，就算只写个main函数也要用class包裹起来。而基于对象说的是这门语言可以使用类和对象，但不使用类和对象也照样玩的转，比如c++、php、js。</div>2019-04-04</li><br/><li><span>艺术就是派大星</span> 👍（0） 💬（1）<div>OC的面向对象思想简直就是反人类。。。一种基于消息发送的smalltalk风格。。。然鹅OC是比C++还早的面向对象语言。。。</div>2019-09-25</li><br/><li><span>胡琦</span> 👍（0） 💬（1）<div>配图是照猫画虎？
-Object. defineProperty是不是有兼容性呢？</div>2019-02-18</li><br/><li><span>恋着歌</span> 👍（0） 💬（1）<div>数据属性、访问器属性，也叫数据描述符、存取描述符，只能选择一种描述符，https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;JavaScript&#47;Reference&#47;Global_Objects&#47;Object&#47;defineProperty</div>2019-02-13</li><br/><li><span>风清不扬</span> 👍（146） 💬（10）<div>php 是世界上最好的編程語言</div>2019-01-29</li><br/><li><span>37°C^boy</span> 👍（105） 💬（1）<div>这篇讲的思路太好了，追本溯源，娓娓道来。在这里不光能学到知识活着重温知识，还有关于学习和讲授的方法lun</div>2019-01-29</li><br/><li><span>hhk</span> 👍（58） 💬（3）<div>关键点在于是否可以在运行时动态改变对象
+为甚么这样报错了：xJAjOnELvGnk:55 Uncaught RangeError: Maximum call stack size exceeded.</p>2019-09-13</li><br/><li><span>cnzhujie</span> 👍（2） 💬（6）<p>个人理解：面向对象就是万物皆为类，离开了类就活不了；比如Java里面，就算只写个main函数也要用class包裹起来。而基于对象说的是这门语言可以使用类和对象，但不使用类和对象也照样玩的转，比如c++、php、js。</p>2019-04-04</li><br/><li><span>艺术就是派大星</span> 👍（0） 💬（1）<p>OC的面向对象思想简直就是反人类。。。一种基于消息发送的smalltalk风格。。。然鹅OC是比C++还早的面向对象语言。。。</p>2019-09-25</li><br/><li><span>胡琦</span> 👍（0） 💬（1）<p>配图是照猫画虎？
+Object. defineProperty是不是有兼容性呢？</p>2019-02-18</li><br/><li><span>恋着歌</span> 👍（0） 💬（1）<p>数据属性、访问器属性，也叫数据描述符、存取描述符，只能选择一种描述符，https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;JavaScript&#47;Reference&#47;Global_Objects&#47;Object&#47;defineProperty</p>2019-02-13</li><br/><li><span>风清不扬</span> 👍（146） 💬（10）<p>php 是世界上最好的編程語言</p>2019-01-29</li><br/><li><span>37°C^boy</span> 👍（105） 💬（1）<p>这篇讲的思路太好了，追本溯源，娓娓道来。在这里不光能学到知识活着重温知识，还有关于学习和讲授的方法lun</p>2019-01-29</li><br/><li><span>hhk</span> 👍（58） 💬（3）<p>关键点在于是否可以在运行时动态改变对象
 
 结合文章通篇看下来，觉得 JS 的 OO 和他基于类的 OO 不同之处，在于 JS 可以在运行时修改对象，而 class based 的类只能预先全部定义好，我们并不能在运行时动态修改类。在我理解来说，条条大路通罗马，面向对象是罗马，class based 是一条路，prototype based 是另一条路。而且 Symbol 的出现，暴露出了许多内置接口，让 JS 又在这条路上走了更远一些。（以前上学背面向对象的三个特征，封装，继承，多态，现在看一下突然觉得很对。。。
 
 像我这种年轻一点的前端，很可能就只是相对熟悉 JS 而已，对于其他语言更多都是道听途说，计算机基础也比较薄弱，所以用来比较其实比较难。
 只知道 class based 的大概有 Java，C++, C#, Python
 
-另外，好奇 Symbol 是怎么实现的，希望老师以后能大概讲讲啦。暂时只想到这些，其他的还在消化</div>2019-01-30</li><br/><li><span>米斯特菠萝</span> 👍（39） 💬（4）<div>好像winter老师没有回答过同学的提问，是我没看见吗？</div>2019-01-30</li><br/><li><span>张汉桂-东莞</span> 👍（37） 💬（3）<div>    var o = { get a() { return 1 } };
+另外，好奇 Symbol 是怎么实现的，希望老师以后能大概讲讲啦。暂时只想到这些，其他的还在消化</p>2019-01-30</li><br/><li><span>米斯特菠萝</span> 👍（39） 💬（4）<p>好像winter老师没有回答过同学的提问，是我没看见吗？</p>2019-01-30</li><br/><li><span>张汉桂-东莞</span> 👍（37） 💬（3）<p>    var o = { get a() { return 1 } };
     console.log(o.a); &#47;&#47; 1
 
-看到这段我就感到值了。我目前在用layui框架，根据layui文档的描述，只有执行var form = layui.form;这一句时才会下载form.js这个文件，我一直没能理解。这篇文章解除了我的疑惑，原来调用getter时可以不写括号()。谢谢老师！</div>2019-01-31</li><br/><li><span>王小宏music</span> 👍（25） 💬（1）<div>var o = { get a() { return 1 } }
+看到这段我就感到值了。我目前在用layui框架，根据layui文档的描述，只有执行var form = layui.form;这一句时才会下载form.js这个文件，我一直没能理解。这篇文章解除了我的疑惑，原来调用getter时可以不写括号()。谢谢老师！</p>2019-01-31</li><br/><li><span>王小宏music</span> 👍（25） 💬（1）<p>var o = { get a() { return 1 } }
 console.log(o.a); &#47;&#47; 1
-肯定有同学对这里有疑问，解释一下吧， 这里边应用到了ES6的getter,setter属性， 为啥o.a，没写小括号呢？ 因为每次访问get，函数返回为1，作为一个value返回的，而非Obj中，调用某个方法，所以才没写成Obj.fun()的方式， 另外 老师下边有一句总结，很容易遗漏 ，每次访问，访问器属性，都会执行get,set方法</div>2019-03-19</li><br/><li><span>bitmxy</span> 👍（24） 💬（2）<div>JS的設計者原本是個Lisp程序員而且不怎麼喜歡Java面向對象，所以採用了原型。在當時基於原型比基於類的做法要靈活很多。
-</div>2019-01-29</li><br/><li><span>咩啊</span> 👍（16） 💬（4）<div>请问“运行时”是指什么？一开始我以为是指“程序执行的时候”这一时间状态，但是在正文倒数第三段又有“但是 JavaScript 提供了完全运行时的对象系统，这使得它可以模仿多数面向对象编程范式”这一句，这里的“完全运行时”是什么意思？我上网查了一下，好像没有比较符合的解析。</div>2019-02-12</li><br/>
+肯定有同学对这里有疑问，解释一下吧， 这里边应用到了ES6的getter,setter属性， 为啥o.a，没写小括号呢？ 因为每次访问get，函数返回为1，作为一个value返回的，而非Obj中，调用某个方法，所以才没写成Obj.fun()的方式， 另外 老师下边有一句总结，很容易遗漏 ，每次访问，访问器属性，都会执行get,set方法</p>2019-03-19</li><br/><li><span>bitmxy</span> 👍（24） 💬（2）<p>JS的設計者原本是個Lisp程序員而且不怎麼喜歡Java面向對象，所以採用了原型。在當時基於原型比基於類的做法要靈活很多。
+</p>2019-01-29</li><br/><li><span>咩啊</span> 👍（16） 💬（4）<p>请问“运行时”是指什么？一开始我以为是指“程序执行的时候”这一时间状态，但是在正文倒数第三段又有“但是 JavaScript 提供了完全运行时的对象系统，这使得它可以模仿多数面向对象编程范式”这一句，这里的“完全运行时”是什么意思？我上网查了一下，好像没有比较符合的解析。</p>2019-02-12</li><br/>
 </ul>

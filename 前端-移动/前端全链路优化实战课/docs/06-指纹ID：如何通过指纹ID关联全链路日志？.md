@@ -160,9 +160,9 @@ getFingerprintId函数接收了两个参数。第一个是必选项，传入业�
 
 欢迎你在留言区和我交流。如果觉得有所收获，也可以把课程分享给更多的朋友一起学习。我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>苏果果</span> 👍（0） 💬（0）<div>06源码：
+<li><span>苏果果</span> 👍（0） 💬（0）<p>06源码：
 https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course&#47;blob&#47;main&#47;trace-sdk&#47;src&#47;core&#47;fingerprint.ts
 
 完整源码入口：
-https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</div>2024-07-18</li><br/><li><span>嘿~那个谁</span> 👍（0） 💬（1）<div>课程中的内容没有课间和源码吗？</div>2024-07-11</li><br/><li><span>JuneRain</span> 👍（0） 💬（5）<div>没太理解这个指纹ID为什么要利用 canvas 来生成，直接利用指定字符串 &quot;geekbang&quot; 然后转成 base64 格式再截取不也一样的效果？</div>2024-05-13</li><br/><li><span>westfall</span> 👍（0） 💬（5）<div>有了指纹ID，还需要 traceId 吗？</div>2024-04-30</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（0）<div>同一个型号的手机加同一个版本的浏览器生成出来的画布也会不同么？</div>2024-09-14</li><br/><li><span>天天</span> 👍（0） 💬（0）<div>canvas这个原理确实没讲清楚，我猜就算是同一个型号的手机，同个版本的浏览器，用canvas画一个图案出来也不一样</div>2024-11-14</li><br/><li><span>雪舞</span> 👍（0） 💬（1）<div>bin2hex 这个是自定义函数吗？作用是干嘛的？函数定义是怎样的？</div>2024-05-17</li><br/>
+https:&#47;&#47;github.com&#47;sankyutang&#47;fontend-trace-geekbang-course</p>2024-07-18</li><br/><li><span>嘿~那个谁</span> 👍（0） 💬（1）<p>课程中的内容没有课间和源码吗？</p>2024-07-11</li><br/><li><span>JuneRain</span> 👍（0） 💬（5）<p>没太理解这个指纹ID为什么要利用 canvas 来生成，直接利用指定字符串 &quot;geekbang&quot; 然后转成 base64 格式再截取不也一样的效果？</p>2024-05-13</li><br/><li><span>westfall</span> 👍（0） 💬（5）<p>有了指纹ID，还需要 traceId 吗？</p>2024-04-30</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（1） 💬（0）<p>同一个型号的手机加同一个版本的浏览器生成出来的画布也会不同么？</p>2024-09-14</li><br/><li><span>天天</span> 👍（0） 💬（0）<p>canvas这个原理确实没讲清楚，我猜就算是同一个型号的手机，同个版本的浏览器，用canvas画一个图案出来也不一样</p>2024-11-14</li><br/><li><span>雪舞</span> 👍（0） 💬（1）<p>bin2hex 这个是自定义函数吗？作用是干嘛的？函数定义是怎样的？</p>2024-05-17</li><br/>
 </ul>

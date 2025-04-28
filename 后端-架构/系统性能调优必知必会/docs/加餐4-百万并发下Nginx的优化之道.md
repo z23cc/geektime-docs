@@ -195,7 +195,7 @@ Nginx上多使用小于256KB的小内存，而且我们通常会按照CPU核数�
 
 以上就是今天的加餐分享，有任何问题欢迎在留言区中提出。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>云学</span> 👍（0） 💬（1）<div>这篇文章关于tcp好多优化参数呀</div>2020-07-24</li><br/><li><span>stackWarn</span> 👍（7） 💬（2）<div>1.&quot;我们还可以将小报文合并后批量发送，通过减少 IP 与 TCP 头部的占比，提高网络效率。在 nginx.conf 文件中打开 tcp_nopush、tcp_nodelay 功能后，都可以实现这些目的      &quot;
+<li><span>云学</span> 👍（0） 💬（1）<p>这篇文章关于tcp好多优化参数呀</p>2020-07-24</li><br/><li><span>stackWarn</span> 👍（7） 💬（2）<p>1.&quot;我们还可以将小报文合并后批量发送，通过减少 IP 与 TCP 头部的占比，提高网络效率。在 nginx.conf 文件中打开 tcp_nopush、tcp_nodelay 功能后，都可以实现这些目的      &quot;
 这里开启nodelay不是关闭nagle算法，从而不合并小包吗？感觉讲的矛盾了，求老师答疑
-2. 出现过一个场景，开启numa2个node  把网卡中断绑定到1个node中的所有cpu，和 网卡中断一对一绑定到2个node的全部cpu，发现后者效果不好，单核si更高了，是numa node的竞争导致的吗？生产接入层nginx是否建议开启numa，是否有生产经验分享下呢？</div>2020-07-11</li><br/><li><span>招谁惹谁</span> 👍（0） 💬（0）<div>并发总有个上限，调优也有极限，调到什么时候是合适的呢？</div>2022-06-12</li><br/><li><span>J.Smile</span> 👍（0） 💬（0）<div>老师的治学态度令人钦佩</div>2020-07-17</li><br/>
+2. 出现过一个场景，开启numa2个node  把网卡中断绑定到1个node中的所有cpu，和 网卡中断一对一绑定到2个node的全部cpu，发现后者效果不好，单核si更高了，是numa node的竞争导致的吗？生产接入层nginx是否建议开启numa，是否有生产经验分享下呢？</p>2020-07-11</li><br/><li><span>招谁惹谁</span> 👍（0） 💬（0）<p>并发总有个上限，调优也有极限，调到什么时候是合适的呢？</p>2022-06-12</li><br/><li><span>J.Smile</span> 👍（0） 💬（0）<p>老师的治学态度令人钦佩</p>2020-07-17</li><br/>
 </ul>

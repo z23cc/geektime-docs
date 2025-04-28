@@ -265,5 +265,5 @@ Service 既可以通过 kubectl 命令创建，也可以使用 YAML 文件的方
 
 相信经过动手实践，会让你对知识的理解更加深刻。
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>Y</span> 👍（0） 💬（1）<div>LoadBalancer 类型能不能给一个实际的例子，方便可以实操或者加深理解</div>2024-07-19</li><br/><li><span>子路无倦</span> 👍（0） 💬（0）<div>pod内可以通过svc 的cluster ip访问其他pod, 无法使用service name 访问是什么情况呢？我看coredns运行状态是正常的。</div>2024-12-31</li><br/>
+<li><span>Y</span> 👍（0） 💬（1）<p>LoadBalancer 类型能不能给一个实际的例子，方便可以实操或者加深理解</p>2024-07-19</li><br/><li><span>子路无倦</span> 👍（0） 💬（0）<p>pod内可以通过svc 的cluster ip访问其他pod, 无法使用service name 访问是什么情况呢？我看coredns运行状态是正常的。</p>2024-12-31</li><br/>
 </ul>

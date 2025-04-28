@@ -297,9 +297,9 @@ Widget build(BuildContext context) {
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>大土豆</span> 👍（11） 💬（3）<div>我想问的最关键的一点是，flutter的列表有重用的概念吗？1000条数据，是会渲染出1000个视图对象还是像Androd或者iOS原生的那样重用机制，就渲染屏幕当中的的视图对象</div>2019-07-27</li><br/><li><span>arronK</span> 👍（7） 💬（1）<div>1. cacheExtent
-2. notification.metrics</div>2019-12-12</li><br/><li><span>季末灬离殇</span> 👍（6） 💬（5）<div>double offsetY = scrollNotification.metrics.pixels;
-滚动过程中通过偏移量更改isTop即可。</div>2019-07-27</li><br/><li><span>NASA</span> 👍（4） 💬（2）<div>希望每节能配有小demo，毕竟每个人水平都不同</div>2019-07-30</li><br/><li><span>有妖气</span> 👍（3） 💬（1）<div>老师，NestedScrollView中body是一个customScrollview。这个customScrollview中包含一个listview，那么怎么知道listview已经滑动到了底部，目前想在内部的listview中做一个上拉刷新的操作。</div>2019-09-08</li><br/><li><span>许童童</span> 👍（2） 💬（4）<div>老师你好，CustomScrollView 的sliver还是不是特别理解，可以再给点参考资料吗？</div>2019-07-27</li><br/><li><span>咖啡凉了</span> 👍（1） 💬（1）<div>    _controller.addListener(() {&#47;&#47; 为控制器注册滚动监听方法
+<li><span>大土豆</span> 👍（11） 💬（3）<p>我想问的最关键的一点是，flutter的列表有重用的概念吗？1000条数据，是会渲染出1000个视图对象还是像Androd或者iOS原生的那样重用机制，就渲染屏幕当中的的视图对象</p>2019-07-27</li><br/><li><span>arronK</span> 👍（7） 💬（1）<p>1. cacheExtent
+2. notification.metrics</p>2019-12-12</li><br/><li><span>季末灬离殇</span> 👍（6） 💬（5）<p>double offsetY = scrollNotification.metrics.pixels;
+滚动过程中通过偏移量更改isTop即可。</p>2019-07-27</li><br/><li><span>NASA</span> 👍（4） 💬（2）<p>希望每节能配有小demo，毕竟每个人水平都不同</p>2019-07-30</li><br/><li><span>有妖气</span> 👍（3） 💬（1）<p>老师，NestedScrollView中body是一个customScrollview。这个customScrollview中包含一个listview，那么怎么知道listview已经滑动到了底部，目前想在内部的listview中做一个上拉刷新的操作。</p>2019-09-08</li><br/><li><span>许童童</span> 👍（2） 💬（4）<p>老师你好，CustomScrollView 的sliver还是不是特别理解，可以再给点参考资料吗？</p>2019-07-27</li><br/><li><span>咖啡凉了</span> 👍（1） 💬（1）<p>    _controller.addListener(() {&#47;&#47; 为控制器注册滚动监听方法
 
       if(_controller.offset &gt; 1000) {&#47;&#47; 如果 ListView 已经向下滚动了 1000，则启用 Top 按钮
 
@@ -312,8 +312,8 @@ Widget build(BuildContext context) {
       }
 
     });
-这里的setstate在滚动中会一直重复调用吧，会不会影响性能呢</div>2019-09-02</li><br/><li><span>Dominic</span> 👍（1） 💬（2）<div>有没有完整的代码放github上，后端程序表示片段代码，运行不起来</div>2019-07-31</li><br/><li><span>杨闯</span> 👍（1） 💬（2）<div>你好，我们现在需要在debug的时候引用一些库，而在release的时候不引用一些库，而这个库使用了fmdb，因此有以下两个问题
+这里的setstate在滚动中会一直重复调用吧，会不会影响性能呢</p>2019-09-02</li><br/><li><span>Dominic</span> 👍（1） 💬（2）<p>有没有完整的代码放github上，后端程序表示片段代码，运行不起来</p>2019-07-31</li><br/><li><span>杨闯</span> 👍（1） 💬（2）<p>你好，我们现在需要在debug的时候引用一些库，而在release的时候不引用一些库，而这个库使用了fmdb，因此有以下两个问题
 1、在dart代码中，如何通过判断来决定要不要将import这个库和使用这个库的相关方法，而现在不能完成编译。
-2、如果将这个库放到dev_dependencies里面，在编译release的时候，这个库没有被引入进来，但是fmdb被引入进来了，怎么避免fmdb给引用进来，是哪里出现问题了吗，还是哪里需要进行特别的设置</div>2019-07-29</li><br/><li><span>Longwei243</span> 👍（1） 💬（2）<div>这个sliver里面想要一个可折叠的多级列表有对应的控件吗？还是需要自己来实现一个</div>2019-07-28</li><br/><li><span>cv0cv0</span> 👍（0） 💬（1）<div>视差那个怎么设置滚动速度比率？</div>2019-12-18</li><br/><li><span>狗子不要喝奶茶</span> 👍（0） 💬（1）<div>课后小作业的预加载：是否使用cacheExtent呢</div>2019-10-29</li><br/><li><span>赤茗</span> 👍（0） 💬（1）<div>问一下问什么ListView和SliverList（其他 list没试）为什么一定要以Scaffold作为根布局？我直接 return  CustomScrollView的话，只有SliverAppBar部分是正常的，下边的SliverList显示是错误的</div>2019-10-24</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<div>老师 ,separated 在分割线里面没法设置itemExtent 是吧
-</div>2019-10-10</li><br/><li><span>巫山老妖</span> 👍（0） 💬（1）<div>如果要用Flutter来实现ListView，其实可以讲的东西很多，比如item复用、item事件点击、下拉刷新实现，滚动底部刷新。</div>2019-10-04</li><br/>
+2、如果将这个库放到dev_dependencies里面，在编译release的时候，这个库没有被引入进来，但是fmdb被引入进来了，怎么避免fmdb给引用进来，是哪里出现问题了吗，还是哪里需要进行特别的设置</p>2019-07-29</li><br/><li><span>Longwei243</span> 👍（1） 💬（2）<p>这个sliver里面想要一个可折叠的多级列表有对应的控件吗？还是需要自己来实现一个</p>2019-07-28</li><br/><li><span>cv0cv0</span> 👍（0） 💬（1）<p>视差那个怎么设置滚动速度比率？</p>2019-12-18</li><br/><li><span>狗子不要喝奶茶</span> 👍（0） 💬（1）<p>课后小作业的预加载：是否使用cacheExtent呢</p>2019-10-29</li><br/><li><span>赤茗</span> 👍（0） 💬（1）<p>问一下问什么ListView和SliverList（其他 list没试）为什么一定要以Scaffold作为根布局？我直接 return  CustomScrollView的话，只有SliverAppBar部分是正常的，下边的SliverList显示是错误的</p>2019-10-24</li><br/><li><span>微笑美男😄</span> 👍（0） 💬（1）<p>老师 ,separated 在分割线里面没法设置itemExtent 是吧
+</p>2019-10-10</li><br/><li><span>巫山老妖</span> 👍（0） 💬（1）<p>如果要用Flutter来实现ListView，其实可以讲的东西很多，比如item复用、item事件点击、下拉刷新实现，滚动底部刷新。</p>2019-10-04</li><br/>
 </ul>

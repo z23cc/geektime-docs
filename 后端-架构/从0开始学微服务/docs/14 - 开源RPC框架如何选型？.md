@@ -147,10 +147,10 @@ Spring Cloud是为了解决微服务架构中服务治理而提供的一系列�
 
 欢迎你在留言区写下自己的思考，与我一起讨论。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>张龙大骗子</span> 👍（7） 💬（2）<div>tars不是介绍说支持C++、Java、PHP、NodeJS ，最近还发布了Go语言版本的</div>2018-09-22</li><br/><li><span>大龄小学生</span> 👍（6） 💬（1）<div>老师，rpc和mq的优势是什么？感觉rpc能做的mq都能做。</div>2018-09-23</li><br/><li><span>long.mr</span> 👍（4） 💬（2）<div>胡老师，c++的，是不是也可以考虑下baidu rpc呢,性能在rpc里还是很强的哈~，对比的时候可以考虑下呀😄</div>2018-09-22</li><br/><li><span>王晓军</span> 👍（2） 💬（1）<div>老师，为什么K8s和service fabric不在你的介绍范围，他们不是微服务框架吗？</div>2018-10-20</li><br/><li><span>。</span> 👍（2） 💬（1）<div>老师你好，请问RPC接口和http接口咋区分？spring cloud的调用方式算rpc接口还是http接口？</div>2018-09-25</li><br/><li><span>everpan</span> 👍（2） 💬（1）<div>tars支撑java php 最近还支持go了</div>2018-09-22</li><br/><li><span>扬扬</span> 👍（0） 💬（1）<div>本人经常使用vs2010开发，但是grpc在开发平台的支持限制性太大了，如何破呢？</div>2018-12-13</li><br/><li><span>段启超</span> 👍（0） 💬（1）<div>胡老师，“相比 Dubbo 和 Motan 所采用的私有协议来说，在高并发的通信场景下，性能相对要差一些
-，所以对性能有苛刻要求的情况下，可以考虑 Dubbo 和 Motan”这里，应该是性能相对要好一些吧。</div>2018-12-01</li><br/><li><span>步＊亮</span> 👍（0） 💬（1）<div>老师你好，我想请教个问题。如果我们平台采用java语言开发，从而选择了springcloud框架。当有一个原有由c++实现的服务要作为服务提供者注册进来，可以实现么？</div>2018-11-15</li><br/><li><span>gggwvg</span> 👍（15） 💬（2）<div>Tars有完整的服务治理生态，支持多语言。</div>2018-09-22</li><br/><li><span>钱</span> 👍（9） 💬（0）<div>感谢开源
+<li><span>张龙大骗子</span> 👍（7） 💬（2）<p>tars不是介绍说支持C++、Java、PHP、NodeJS ，最近还发布了Go语言版本的</p>2018-09-22</li><br/><li><span>大龄小学生</span> 👍（6） 💬（1）<p>老师，rpc和mq的优势是什么？感觉rpc能做的mq都能做。</p>2018-09-23</li><br/><li><span>long.mr</span> 👍（4） 💬（2）<p>胡老师，c++的，是不是也可以考虑下baidu rpc呢,性能在rpc里还是很强的哈~，对比的时候可以考虑下呀😄</p>2018-09-22</li><br/><li><span>王晓军</span> 👍（2） 💬（1）<p>老师，为什么K8s和service fabric不在你的介绍范围，他们不是微服务框架吗？</p>2018-10-20</li><br/><li><span>。</span> 👍（2） 💬（1）<p>老师你好，请问RPC接口和http接口咋区分？spring cloud的调用方式算rpc接口还是http接口？</p>2018-09-25</li><br/><li><span>everpan</span> 👍（2） 💬（1）<p>tars支撑java php 最近还支持go了</p>2018-09-22</li><br/><li><span>扬扬</span> 👍（0） 💬（1）<p>本人经常使用vs2010开发，但是grpc在开发平台的支持限制性太大了，如何破呢？</p>2018-12-13</li><br/><li><span>段启超</span> 👍（0） 💬（1）<p>胡老师，“相比 Dubbo 和 Motan 所采用的私有协议来说，在高并发的通信场景下，性能相对要差一些
+，所以对性能有苛刻要求的情况下，可以考虑 Dubbo 和 Motan”这里，应该是性能相对要好一些吧。</p>2018-12-01</li><br/><li><span>步＊亮</span> 👍（0） 💬（1）<p>老师你好，我想请教个问题。如果我们平台采用java语言开发，从而选择了springcloud框架。当有一个原有由c++实现的服务要作为服务提供者注册进来，可以实现么？</p>2018-11-15</li><br/><li><span>gggwvg</span> 👍（15） 💬（2）<p>Tars有完整的服务治理生态，支持多语言。</p>2018-09-22</li><br/><li><span>钱</span> 👍（9） 💬（0）<p>感谢开源
 感谢GITHUB
-感谢这个时代</div>2019-06-15</li><br/><li><span>上官</span> 👍（6） 💬（3）<div>你好，请问常用的分布式事务解决方案有哪些</div>2018-11-25</li><br/><li><span>上沅同学</span> 👍（5） 💬（0）<div>Tars目前已经支持多语言了，联系老师修改一下文章，不然容易误导读者，而且也有失偏颇</div>2020-01-09</li><br/><li><span>凉人。</span> 👍（2） 💬（0）<div>微信这边用Hikit框架，支持proto。 支持C++和go</div>2020-06-19</li><br/><li><span>明天你好</span> 👍（1） 💬（0）<div>老师好，Grpc 字段值为0或者null时，字段不展示，有什么好的解决方案呢？
+感谢这个时代</p>2019-06-15</li><br/><li><span>上官</span> 👍（6） 💬（3）<p>你好，请问常用的分布式事务解决方案有哪些</p>2018-11-25</li><br/><li><span>上沅同学</span> 👍（5） 💬（0）<p>Tars目前已经支持多语言了，联系老师修改一下文章，不然容易误导读者，而且也有失偏颇</p>2020-01-09</li><br/><li><span>凉人。</span> 👍（2） 💬（0）<p>微信这边用Hikit框架，支持proto。 支持C++和go</p>2020-06-19</li><br/><li><span>明天你好</span> 👍（1） 💬（0）<p>老师好，Grpc 字段值为0或者null时，字段不展示，有什么好的解决方案呢？
 func TransProtoToJson (pb proto.Message) string{
 	var pbMarshaler jsonpb.Marshaler
 	pbMarshaler = jsonpb.Marshaler{
@@ -162,5 +162,5 @@ func TransProtoToJson (pb proto.Message) string{
 	_ = pbMarshaler.Marshal(_buffer, pb)
 	return string(_buffer.Bytes())
 }
-用这种方案，虽然显示字段，但是数字也转成了字符串</div>2021-05-28</li><br/>
+用这种方案，虽然显示字段，但是数字也转成了字符串</p>2021-05-28</li><br/>
 </ul>

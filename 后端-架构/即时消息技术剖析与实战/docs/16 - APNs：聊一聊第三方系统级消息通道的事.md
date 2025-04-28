@@ -156,16 +156,16 @@ Android端下，目前国内主要是由各个手机厂商各自维护的厂商�
 
 以上就是今天课程的内容，欢迎你给我留言，我们可以在留言区一起讨论。感谢你的收听，我们下期再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>GeekAmI</span> 👍（6） 💬（1）<div>“一般情况下，我们的 IM 服务端可以在每次启动 App 时，都去请求 APNs 服务器进行注册，来获取 DeviceToken。” 
-老师，这句话不太理解，到底是App去APNs获取DeviceToken，还是IM服务端获取呢？</div>2019-11-11</li><br/><li><span>冬</span> 👍（2） 💬（1）<div>老师，Apple除了静默推送，还有更可靠的Voip 推送哦</div>2019-11-21</li><br/><li><span>谢炳辉</span> 👍（2） 💬（1）<div>怎么理解
+<li><span>GeekAmI</span> 👍（6） 💬（1）<p>“一般情况下，我们的 IM 服务端可以在每次启动 App 时，都去请求 APNs 服务器进行注册，来获取 DeviceToken。” 
+老师，这句话不太理解，到底是App去APNs获取DeviceToken，还是IM服务端获取呢？</p>2019-11-11</li><br/><li><span>冬</span> 👍（2） 💬（1）<p>老师，Apple除了静默推送，还有更可靠的Voip 推送哦</p>2019-11-21</li><br/><li><span>谢炳辉</span> 👍（2） 💬（1）<p>怎么理解
 因此在没有 WiFi 和移动网络的场景下，我们只要有手机信号就能推送
-不是有信号就有网络了吗</div>2019-11-15</li><br/><li><span>clip</span> 👍（2） 💬（4）<div>“DeviceToken 是 APNs 用于区分识别不同 iOS 设备同一个 App 的唯一标识”
-是“不同 iOS 设备不同 App”吗？</div>2019-10-03</li><br/><li><span>GeekAmI</span> 👍（1） 💬（1）<div>静默推送是不是可以这样搞？
-静默推送-&gt;唤起app-&gt;重新建立长连接通道-&gt;服务端通道长连接通道下达消息。</div>2019-11-11</li><br/><li><span>刘丹</span> 👍（1） 💬（2）<div>请问如果发送方使用小米的推送服务，那么非小米手机怎样接收到消息呢？竞争品牌可能不允许在手机里安装小米的拉取软件。</div>2019-10-02</li><br/><li><span>小可</span> 👍（1） 💬（1）<div>app后台自动升级(如果设置自动更新升级)</div>2019-10-02</li><br/><li><span>白泗小林</span> 👍（0） 💬（1）<div>apns 的消息去重一般怎么做的？</div>2019-10-31</li><br/><li><span>Michael</span> 👍（0） 💬（2）<div>每台iPhone设备的的deviceToken都不一样，IM服务器给APNs推送消息数据需要带上deviceToken,但是IM Server是如何获取到设备的deviceToken的呢？</div>2019-10-20</li><br/><li><span>Michael</span> 👍（0） 💬（1）<div>思考题：可以唤起app，重新建立长连接。</div>2019-10-04</li><br/><li><span>追风筝的人</span> 👍（2） 💬（0）<div>推必达产品还没做出来 凉了应该，域名也不能访问了chinaupa.com</div>2022-09-19</li><br/><li><span>Geek_23ac9c</span> 👍（0） 💬（0）<div>老师，我想请问一下，每次接受到APNs推送后都会唤醒app，但是如何知道将json格式的消息转发给被唤醒的app的哪个页面或者方法进行处理呢？</div>2025-01-03</li><br/><li><span>薛建辉</span> 👍（0） 💬（0）<div>老师你好，我实际工作中遇到一个问题，如何提高自建长连接的在线推送成功率。
+不是有信号就有网络了吗</p>2019-11-15</li><br/><li><span>clip</span> 👍（2） 💬（4）<p>“DeviceToken 是 APNs 用于区分识别不同 iOS 设备同一个 App 的唯一标识”
+是“不同 iOS 设备不同 App”吗？</p>2019-10-03</li><br/><li><span>GeekAmI</span> 👍（1） 💬（1）<p>静默推送是不是可以这样搞？
+静默推送-&gt;唤起app-&gt;重新建立长连接通道-&gt;服务端通道长连接通道下达消息。</p>2019-11-11</li><br/><li><span>刘丹</span> 👍（1） 💬（2）<p>请问如果发送方使用小米的推送服务，那么非小米手机怎样接收到消息呢？竞争品牌可能不允许在手机里安装小米的拉取软件。</p>2019-10-02</li><br/><li><span>小可</span> 👍（1） 💬（1）<p>app后台自动升级(如果设置自动更新升级)</p>2019-10-02</li><br/><li><span>白泗小林</span> 👍（0） 💬（1）<p>apns 的消息去重一般怎么做的？</p>2019-10-31</li><br/><li><span>Michael</span> 👍（0） 💬（2）<p>每台iPhone设备的的deviceToken都不一样，IM服务器给APNs推送消息数据需要带上deviceToken,但是IM Server是如何获取到设备的deviceToken的呢？</p>2019-10-20</li><br/><li><span>Michael</span> 👍（0） 💬（1）<p>思考题：可以唤起app，重新建立长连接。</p>2019-10-04</li><br/><li><span>追风筝的人</span> 👍（2） 💬（0）<p>推必达产品还没做出来 凉了应该，域名也不能访问了chinaupa.com</p>2022-09-19</li><br/><li><span>Geek_23ac9c</span> 👍（0） 💬（0）<p>老师，我想请问一下，每次接受到APNs推送后都会唤醒app，但是如何知道将json格式的消息转发给被唤醒的app的哪个页面或者方法进行处理呢？</p>2025-01-03</li><br/><li><span>薛建辉</span> 👍（0） 💬（0）<p>老师你好，我实际工作中遇到一个问题，如何提高自建长连接的在线推送成功率。
 
 原本国内线上单次推送成功率在70%左右，我将业务心跳从30秒改成5秒之后，线上环境成功率提升到90%，内测环境成功率达到98%，将近10%的差距。请老师给些下一步改造建议。
 
 我想到的下一步改造措施是：从原本单次推送，改成5秒内多次重推的方式。请问老师是否靠谱？
 
-另外，请教下老师你是怎么提高自建长连接推送成功率的？</div>2022-07-19</li><br/><li><span>不卷怎么搞钱</span> 👍（0） 💬（1）<div>老师，我想问下，DeviceToken存的话怎么存好点呢？因为当大批量发push的时候，可能要查几百万的DeviceToken去发push，对于循环查mysql来说，肯定是没那么友好，reids的话也不合适，因为可能有的用户每天就只会收到一条push，redis的成本也高。</div>2022-07-01</li><br/><li><span>laolinshi</span> 👍（0） 💬（0）<div>老师，想问个问题，每次调用APNS通道时需要传人deviceToken, 假如一次需要推送几千万的用户，那传人APNS接口的deviceToken就会达到几千万这个量级？</div>2022-03-28</li><br/>
+另外，请教下老师你是怎么提高自建长连接推送成功率的？</p>2022-07-19</li><br/><li><span>不卷怎么搞钱</span> 👍（0） 💬（1）<p>老师，我想问下，DeviceToken存的话怎么存好点呢？因为当大批量发push的时候，可能要查几百万的DeviceToken去发push，对于循环查mysql来说，肯定是没那么友好，reids的话也不合适，因为可能有的用户每天就只会收到一条push，redis的成本也高。</p>2022-07-01</li><br/><li><span>laolinshi</span> 👍（0） 💬（0）<p>老师，想问个问题，每次调用APNS通道时需要传人deviceToken, 假如一次需要推送几千万的用户，那传人APNS接口的deviceToken就会达到几千万这个量级？</p>2022-03-28</li><br/>
 </ul>

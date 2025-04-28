@@ -320,7 +320,7 @@ while True:
 
 欢迎你把今天的内容分享给身边的朋友，和他一起掌握Python这门功能强大的语言。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>米可哲</span> 👍（36） 💬（3）<div>online judge 会不会要求太高，一般水平的人刷leetcode就足够了吧？？</div>2018-12-30</li><br/><li><span>Hyperuniverse</span> 👍（139） 💬（3）<div>刷题网站:
+<li><span>米可哲</span> 👍（36） 💬（3）<p>online judge 会不会要求太高，一般水平的人刷leetcode就足够了吧？？</p>2018-12-30</li><br/><li><span>Hyperuniverse</span> 👍（139） 💬（3）<p>刷题网站:
 1、LeetCode
 2、Kaggel
 3、老师推荐的Online Judge
@@ -334,7 +334,7 @@ IDE：pycharm（写爬虫）、jupyter notebook+spyder3（数据分析主要IDE�
 py版本：毫不犹豫选择py3（应为2020年py2停止维护了）
 
 提升：没啥好说的，就是“干”，多写多练自然有感觉了，对，当你写多了代码，你看问题的层次也将不一样。所以，对自己狠心一点，不要一直在入门徘徊。
-</div>2018-12-20</li><br/><li><span>●</span> 👍（95） 💬（3）<div>Q1:不是python内置库
+</p>2018-12-20</li><br/><li><span>●</span> 👍（95） 💬（3）<p>Q1:不是python内置库
 采用命令行安装库pip install scikit-learn
 引用库 import scikit-learn
 Q2:
@@ -352,13 +352,13 @@ while i &lt; 100:
 	if i % 2 != 0 :
 		b += i
 	i +=1
-print(b)</div>2018-12-20</li><br/><li><span>小熊猫</span> 👍（47） 💬（3）<div>1. pycharm、sublime、jupyter都用过，个人认为Pycharm适合比较大一点的项目，平时自己开发一些小脚本什么的可以用sublime，比较简洁方便，目前一直在用Jupyter，比较适合做数据分析，显示图表之类的，可视化、一行代码一个结果都很方便，今天的课程已经用Jupyter全部写了一遍。
+print(b)</p>2018-12-20</li><br/><li><span>小熊猫</span> 👍（47） 💬（3）<p>1. pycharm、sublime、jupyter都用过，个人认为Pycharm适合比较大一点的项目，平时自己开发一些小脚本什么的可以用sublime，比较简洁方便，目前一直在用Jupyter，比较适合做数据分析，显示图表之类的，可视化、一行代码一个结果都很方便，今天的课程已经用Jupyter全部写了一遍。
 2. 求和：sum(range(1, 100, 2))
 sum(iterable, start)，sum的输入是iterable对象，比如list、tuple、set等
 range()的返回值就是一个iterable对象，可以直接作为sum的输入参数
 3. 前面有位同学一直出现 ‘int’ object is not iterable.的错误，我今天用Jupyter也碰到了，应该是前面老师的例子中用了sum做变量，后面求和这道题再用sum()做函数，所以出错了， 重启下Jupyter就行了，或者用魔法命令%reset清除变量应该也可以。
 4. 吐槽下极客时间里不能回复其他人的留言，只有老师才能，这个功能需要完善下
-</div>2018-12-21</li><br/><li><span>每天晒白牙</span> 👍（20） 💬（2）<div>第一道题：
+</p>2018-12-21</li><br/><li><span>每天晒白牙</span> 👍（20） 💬（2）<p>第一道题：
 import scikie-learn
 
 第二道题：
@@ -373,7 +373,7 @@ number = 1
 while number &lt; 100:
         sum = sum + number
         number = number +2
-print sum</div>2018-12-20</li><br/><li><span>拉我吃</span> 👍（19） 💬（1）<div>p1.
+print sum</p>2018-12-20</li><br/><li><span>拉我吃</span> 👍（19） 💬（1）<p>p1.
 要先安装库
 pip install -U scikit-learn
 
@@ -383,7 +383,7 @@ import sklearn
 p2. 
 代码 sum(range(1, 99, 2)) 直接求和
 print(sum(range(1, 99, 2))) 打印出来
-</div>2018-12-20</li><br/><li><span>Miracle</span> 👍（12） 💬（2）<div>sklearn库是机器学习领域好用到哭的一个库，数据清洗，各种机器学习算法都给写好了，我们可以直接使用，学习sklearn感觉最好的方式就是通过官方文档学习：https:&#47;&#47;scikit-learn.org&#47;stable&#47;，但是在这之前最好先跟着教程过一遍sklearn，至少知道什么问题应该用什么算法等，然后再通过查阅文档进行补充。 使用的时候也很简单，pip install安装，然后import sklearn 或者 from sklearn import 模块等。  关于学习Python，我觉得可以找一个简单的教程（B站上好多）跟一遍，掌握基础的语法和使用，然后就是刷题或者项目中提高代码编程能力，在这个途中遇到不懂得可以查阅Python的官方文档进行知识补充。 我觉得官方文档是最好的学习方式。</div>2020-01-23</li><br/><li><span>大萌</span> 👍（10） 💬（1）<div>1、安装完成后 import sklearn
+</p>2018-12-20</li><br/><li><span>Miracle</span> 👍（12） 💬（2）<p>sklearn库是机器学习领域好用到哭的一个库，数据清洗，各种机器学习算法都给写好了，我们可以直接使用，学习sklearn感觉最好的方式就是通过官方文档学习：https:&#47;&#47;scikit-learn.org&#47;stable&#47;，但是在这之前最好先跟着教程过一遍sklearn，至少知道什么问题应该用什么算法等，然后再通过查阅文档进行补充。 使用的时候也很简单，pip install安装，然后import sklearn 或者 from sklearn import 模块等。  关于学习Python，我觉得可以找一个简单的教程（B站上好多）跟一遍，掌握基础的语法和使用，然后就是刷题或者项目中提高代码编程能力，在这个途中遇到不懂得可以查阅Python的官方文档进行知识补充。 我觉得官方文档是最好的学习方式。</p>2020-01-23</li><br/><li><span>大萌</span> 👍（10） 💬（1）<p>1、安装完成后 import sklearn
 2、
 （1）采用for循环
 sum = 0
@@ -397,9 +397,9 @@ def sum(x):
 	num = sum(x+2)
 	return x+num
 print(sum(1))
-平常编程会用jupyter notebook，也可以推荐一下</div>2018-12-21</li><br/><li><span>夜路破晓</span> 👍（9） 💬（3）<div>实话说，这篇读起来“有点卡”，应该是没有编程基础的缘故。晚上下班回来鼓捣半天，最后给笔记本装了Anaconda，但是类似“Python中%的含义”就让我百度了半小时才搞懂。
+平常编程会用jupyter notebook，也可以推荐一下</p>2018-12-21</li><br/><li><span>夜路破晓</span> 👍（9） 💬（3）<p>实话说，这篇读起来“有点卡”，应该是没有编程基础的缘故。晚上下班回来鼓捣半天，最后给笔记本装了Anaconda，但是类似“Python中%的含义”就让我百度了半小时才搞懂。
 逻辑不难懂，甚至看完这篇觉得貌似入门Python并不难，关键是想自己写出来就得花点功夫、在搞懂的基础上多做练习了。
-买了从零学Python的视频课，也找到了《Python：从入门到实践》电子书，打算这周末先研究下再回来看。</div>2018-12-21</li><br/><li><span>虎皮青椒</span> 👍（6） 💬（1）<div>1.如果我想在Python中引用scikit-learn库该如何引用？
+买了从零学Python的视频课，也找到了《Python：从入门到实践》电子书，打算这周末先研究下再回来看。</p>2018-12-21</li><br/><li><span>虎皮青椒</span> 👍（6） 💬（1）<p>1.如果我想在Python中引用scikit-learn库该如何引用？
 1）scikit-learn安装
 	Python中安装scikit-learn之前需要以下先决条件：
 	- Python(&gt;= 2.6 or &gt;= 3.3)
@@ -424,13 +424,13 @@ print(sum(1))
 sum = 0
 for number in range(1, 100, 2):
 	sum += number
-print(&quot;1 + 3 + 5 + 7 + … + 99的求和为%d&quot; % sum)</div>2019-04-16</li><br/><li><span>小林子</span> 👍（4） 💬（1）<div>第一题：
+print(&quot;1 + 3 + 5 + 7 + … + 99的求和为%d&quot; % sum)</p>2019-04-16</li><br/><li><span>小林子</span> 👍（4） 💬（1）<p>第一题：
 import sklearn
 
 第二题：
-sum([i for i in range(1,99,2)])</div>2018-12-20</li><br/><li><span>CHEN</span> 👍（3） 💬（1）<div>print(sum([i for i in range(1,100,2)]))</div>2020-07-08</li><br/><li><span>鱼鱼鱼培填</span> 👍（3） 💬（1）<div>看错题目了，第二题应该是：
+sum([i for i in range(1,99,2)])</p>2018-12-20</li><br/><li><span>CHEN</span> 👍（3） 💬（1）<p>print(sum([i for i in range(1,100,2)]))</p>2020-07-08</li><br/><li><span>鱼鱼鱼培填</span> 👍（3） 💬（1）<p>看错题目了，第二题应该是：
 sum = 0
 for i in range(1, 100, 2):
 	sum += i
-print(sum)</div>2018-12-20</li><br/><li><span>nsyao</span> 👍（2） 💬（2）<div>关于ide选择部分，建议老师改一下。其实sunlime不合适新手，反而是anaconda套件更合适，spyder或jupyter对新手都很友好</div>2020-10-22</li><br/><li><span>土豆</span> 👍（2） 💬（1）<div>正好疫情在家封闭期间读完了 learning python英文版本，这本书虽然比较厚，1500页，但是是我读过的最好的python入门服务。所以我算是pyrhon入门了，回头再刷刷老师推荐的oj题目</div>2020-04-12</li><br/>
+print(sum)</p>2018-12-20</li><br/><li><span>nsyao</span> 👍（2） 💬（2）<p>关于ide选择部分，建议老师改一下。其实sunlime不合适新手，反而是anaconda套件更合适，spyder或jupyter对新手都很友好</p>2020-10-22</li><br/><li><span>土豆</span> 👍（2） 💬（1）<p>正好疫情在家封闭期间读完了 learning python英文版本，这本书虽然比较厚，1500页，但是是我读过的最好的python入门服务。所以我算是pyrhon入门了，回头再刷刷老师推荐的oj题目</p>2020-04-12</li><br/>
 </ul>

@@ -217,9 +217,9 @@ SELECT * FROM all_tab_columns WHERE table_name = 'USERS'; -- For Oracle
 
 期待你的动手实践，也欢迎你把这节课分享给有需要的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>leslie</span> 👍（2） 💬（0）<div>where条件的sql注入应当属于典型，目前应当主要是加hash或md5，而且有时不一定是数据库本身的问题，sql注入的问题到现在十多年了，简单的易防，可是如果真正有人恶意去探测其实有点坑。</div>2022-01-18</li><br/><li><span>DoHer4S</span> 👍（1） 💬（0）<div>其实在实际生产环境上，很多业务都需要联合查询 - 即 Union Select，这种经常容易携带额外信息的SQL语句，也是DVWA上经典的注入演示语句；
+<li><span>leslie</span> 👍（2） 💬（0）<p>where条件的sql注入应当属于典型，目前应当主要是加hash或md5，而且有时不一定是数据库本身的问题，sql注入的问题到现在十多年了，简单的易防，可是如果真正有人恶意去探测其实有点坑。</p>2022-01-18</li><br/><li><span>DoHer4S</span> 👍（1） 💬（0）<p>其实在实际生产环境上，很多业务都需要联合查询 - 即 Union Select，这种经常容易携带额外信息的SQL语句，也是DVWA上经典的注入演示语句；
 
 在生产环境部署WAF硬件设备时（我说的是物理硬件设备），如果WAF仅仅根据静态URL携带的参数进行判断是否SQL注入很容易引起误报，所以硬件WAF我认为最终会被很多嵌入到著名开源引擎的软件WAF所替代 - 如 ModSecurity 替代，甚至你自己使用Lua在Nginx就能实现自定义的功能，这也是我认为WAF必将走向没落的原因，一劳永逸的方法 - （购买安全厂商的硬件设备）永远不是解决方法，只能是临时抱佛脚；
 
-</div>2022-01-18</li><br/><li><span>二饼</span> 👍（0） 💬（0）<div>打卡👏👏</div>2024-04-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-03-11</li><br/>
+</p>2022-01-18</li><br/><li><span>二饼</span> 👍（0） 💬（0）<p>打卡👏👏</p>2024-04-05</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-03-11</li><br/>
 </ul>

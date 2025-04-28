@@ -300,9 +300,9 @@ __zone_watermark_ok
 
 另外，虽然eBPF很强大，但是它依然难以替代ftrace在我心中的地位。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>KennyQ</span> 👍（3） 💬（1）<div>后续能不能再开个课程专门讲讲 tracepiont,kprobe和ePBF?网上的内容都太碎片化，不成体系。
+<li><span>KennyQ</span> 👍（3） 💬（1）<p>后续能不能再开个课程专门讲讲 tracepiont,kprobe和ePBF?网上的内容都太碎片化，不成体系。
 作为一个背锅的自身运维工程狮，基本经常要和开发刚正面，急需这方面的知识。
-</div>2020-10-11</li><br/><li><span>我来也</span> 👍（1） 💬（1）<div># 这几个值合并起来是 0x100450 不是 0x104050呀。
+</p>2020-10-11</li><br/><li><span>我来也</span> 👍（1） 💬（1）<p># 这几个值合并起来是 0x100450 不是 0x104050呀。
 
 此时的 GFP flags 是 0x104050，对应于下面这几项：
 #define ___GFP_WAIT             0x10u
@@ -310,6 +310,6 @@ __zone_watermark_ok
 #define ___GFP_REPEAT           0x400u
 #define ___GFP_KMEMCG           0x100000u
 
-</div>2020-10-06</li><br/><li><span>xianhai</span> 👍（0） 💬（2）<div>能不能讲讲zone的概念？
-为什么要右移5？(205324kB &gt;&gt; 5)</div>2020-10-06</li><br/><li><span>镜</span> 👍（0） 💬（0）<div>除了cpu篇都大概看完了，老师功力深厚，点赞👍</div>2021-10-08</li><br/><li><span>Geek_e4c979</span> 👍（0） 💬（0）<div>tracepoint这些一会define一会undef咋理解呀</div>2021-04-21</li><br/>
+</p>2020-10-06</li><br/><li><span>xianhai</span> 👍（0） 💬（2）<p>能不能讲讲zone的概念？
+为什么要右移5？(205324kB &gt;&gt; 5)</p>2020-10-06</li><br/><li><span>镜</span> 👍（0） 💬（0）<p>除了cpu篇都大概看完了，老师功力深厚，点赞👍</p>2021-10-08</li><br/><li><span>Geek_e4c979</span> 👍（0） 💬（0）<p>tracepoint这些一会define一会undef咋理解呀</p>2021-04-21</li><br/>
 </ul>

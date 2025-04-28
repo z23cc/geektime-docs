@@ -230,7 +230,7 @@ for src, title in zip(srcs, titles):
 
 你也可以把这篇文章分享给你的朋友或者同事，一起动手练习一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>滢</span> 👍（63） 💬（2）<div>说明两点问题：
+<li><span>滢</span> 👍（63） 💬（2）<p>说明两点问题：
 （一）.留言里有人评论说用XPath下载的图片打不开，其原因是定义的下载函数保存路径后缀名为&#39;.jpg&#39;，但是用XPath下载获得的图片url为&#39;https:&#47;&#47;img3.doubanio.com&#47;view&#47;celebrity&#47;s_ratio_celebrity&#47;public&#47;p616.webp&#39;，本身图片为webp格式，所以若保存为jpg格式，肯定是打不开的。
 (二).  老师在文章内讲的用XPath下载代码只能下载第一页的内容，并不是全部的数据，不知道大家有没有查看用xpath函数获得的数组，大家留言里的代码似乎和老师的一样，只能得到首页的内容，所以也是需要模拟翻页操作才能获得完整的数据。
 
@@ -268,7 +268,7 @@ for src, title in zip(srcs, titles):
 	titles = html.xpath(title_xpath)
 	for src,title in zip(srcs, titles):
 		download(src, title.text)
-</div>2019-04-10</li><br/><li><span>rOMEo罗密欧</span> 👍（46） 💬（4）<div>老师请问一下：如果是需要用户登陆后才能爬取的数据该怎么用python来实现呢？</div>2019-01-04</li><br/><li><span>Bayes</span> 👍（18） 💬（8）<div>老师你这跳过了太多步骤了，表示对于python跟着你前几节课入门的人什么都不会，按着你的代码运行，要不就是没有定义，要不就是没有这个函数。刚开始的人也不知道哪个函数在哪个库，建议老师按照流程来一步一步给代码，要不就在最后给一个完整的代码示例，真的是学的很困难加上想放弃</div>2019-07-30</li><br/><li><span>LY</span> 👍（16） 💬（1）<div>#环境：Mac Python3
+</p>2019-04-10</li><br/><li><span>rOMEo罗密欧</span> 👍（46） 💬（4）<p>老师请问一下：如果是需要用户登陆后才能爬取的数据该怎么用python来实现呢？</p>2019-01-04</li><br/><li><span>Bayes</span> 👍（18） 💬（8）<p>老师你这跳过了太多步骤了，表示对于python跟着你前几节课入门的人什么都不会，按着你的代码运行，要不就是没有定义，要不就是没有这个函数。刚开始的人也不知道哪个函数在哪个库，建议老师按照流程来一步一步给代码，要不就在最后给一个完整的代码示例，真的是学的很困难加上想放弃</p>2019-07-30</li><br/><li><span>LY</span> 👍（16） 💬（1）<p>#环境：Mac Python3
 #pip install selenium
 #下载chromedriver，放到项目路径下（https:&#47;&#47;npm.taobao.org&#47;mirrors&#47;chromedriver&#47;2.33&#47;）
 # coding:utf-8
@@ -326,8 +326,8 @@ def getMovieImages():
 
     driver.close()
 
-getMovieImages()</div>2019-01-04</li><br/><li><span>伪君子</span> 👍（16） 💬（2）<div>那些用 ChromeDriver 的出现报错的可能是没有安装 ChromeDriver，或者是没给出 ChromeDriver 的路径，具体可以看看下面这篇文章。
-https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;UL0bcLr3KOb-qpI9oegaIQ</div>2019-01-04</li><br/><li><span>飘</span> 👍（9） 💬（3）<div>感谢作者以及评论区的各位大神，终于完成了爬虫代码，总结一下小白编写时遇到的几个问题：
+getMovieImages()</p>2019-01-04</li><br/><li><span>伪君子</span> 👍（16） 💬（2）<p>那些用 ChromeDriver 的出现报错的可能是没有安装 ChromeDriver，或者是没给出 ChromeDriver 的路径，具体可以看看下面这篇文章。
+https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;UL0bcLr3KOb-qpI9oegaIQ</p>2019-01-04</li><br/><li><span>飘</span> 👍（9） 💬（3）<p>感谢作者以及评论区的各位大神，终于完成了爬虫代码，总结一下小白编写时遇到的几个问题：
 1）获取xpath时，chrome浏览器需要安装插件xpatn-helper；
 2）使用python3.7，提前引入模块requests，lxml，selenium，安装这些模块需要更新pip至20版本；
 3）模拟用户访问浏览器，需要下载chromedriver.exe,放入python.exe所在目录；
@@ -373,7 +373,7 @@ def crawler_xpath():
 			download(img, title.text)
 if __name__ == &#39;__main__&#39;:
 	crawler_xpath()
-</div>2020-04-08</li><br/><li><span>germany</span> 👍（6） 💬（2）<div>老师：为什么我在豆瓣网查询图片的网址与你不一样？https:&#47;&#47;www.douban.com&#47;search?cat=1025&amp;q=王祖贤&amp;source=suggest  。是什么原因？</div>2019-01-04</li><br/><li><span>許敲敲</span> 👍（5） 💬（1）<div>要下载所有James 哈登的图片</div>2019-01-04</li><br/><li><span>Geek_2008d9</span> 👍（4） 💬（3）<div>为什么我总是response=json.loads那一行显示json.decoder.JSONDecoderError:expecting value:line 1 column 1(char 0) 呢，怎么解决啊，各位大佬</div>2019-12-14</li><br/><li><span>Geek_c45626</span> 👍（3） 💬（7）<div>老师，运行代码总是出错：JSONDecodeError: Expecting value: line 1 column 1 (char 0)，这个怎么解决？</div>2019-12-06</li><br/><li><span>qinggeouye</span> 👍（3） 💬（1）<div>https:&#47;&#47;github.com&#47;qinggeouye&#47;GeekTime&#47;blob&#47;master&#47;DataAnalysis&#47;10_crawl_xpath.py
+</p>2020-04-08</li><br/><li><span>germany</span> 👍（6） 💬（2）<p>老师：为什么我在豆瓣网查询图片的网址与你不一样？https:&#47;&#47;www.douban.com&#47;search?cat=1025&amp;q=王祖贤&amp;source=suggest  。是什么原因？</p>2019-01-04</li><br/><li><span>許敲敲</span> 👍（5） 💬（1）<p>要下载所有James 哈登的图片</p>2019-01-04</li><br/><li><span>Geek_2008d9</span> 👍（4） 💬（3）<p>为什么我总是response=json.loads那一行显示json.decoder.JSONDecoderError:expecting value:line 1 column 1(char 0) 呢，怎么解决啊，各位大佬</p>2019-12-14</li><br/><li><span>Geek_c45626</span> 👍（3） 💬（7）<p>老师，运行代码总是出错：JSONDecodeError: Expecting value: line 1 column 1 (char 0)，这个怎么解决？</p>2019-12-06</li><br/><li><span>qinggeouye</span> 👍（3） 💬（1）<p>https:&#47;&#47;github.com&#47;qinggeouye&#47;GeekTime&#47;blob&#47;master&#47;DataAnalysis&#47;10_crawl_xpath.py
 
 import os
 import requests
@@ -429,7 +429,7 @@ def get_response_xpath():
 
 
 if __name__ == &#39;__main__&#39;:
-    get_response_xpath()</div>2019-11-06</li><br/><li><span>Yezhiwei</span> 👍（3） 💬（1）<div>用Scrapy爬取数据更方便哈，请问老师怎么做一个通用的爬虫呢？比如要爬取文章标题和内容，不同的网站Xpath结构不一样，如果源少的话可以分别配置，但如果要爬取几百上千的网站数据，分别配置Xpath挺麻烦的。请问这个问题有什么解决方案吗？谢谢</div>2019-01-04</li><br/><li><span>qinggeouye</span> 👍（2） 💬（2）<div>https:&#47;&#47;github.com&#47;qinggeouye&#47;GeekTime&#47;blob&#47;master&#47;DataAnalysis&#47;10_crawl.py
+    get_response_xpath()</p>2019-11-06</li><br/><li><span>Yezhiwei</span> 👍（3） 💬（1）<p>用Scrapy爬取数据更方便哈，请问老师怎么做一个通用的爬虫呢？比如要爬取文章标题和内容，不同的网站Xpath结构不一样，如果源少的话可以分别配置，但如果要爬取几百上千的网站数据，分别配置Xpath挺麻烦的。请问这个问题有什么解决方案吗？谢谢</p>2019-01-04</li><br/><li><span>qinggeouye</span> 👍（2） 💬（2）<p>https:&#47;&#47;github.com&#47;qinggeouye&#47;GeekTime&#47;blob&#47;master&#47;DataAnalysis&#47;10_crawl.py
 
 # coding: utf-8
 import os
@@ -478,5 +478,5 @@ for i in range(start, total, limit):
     for image in response[&#39;images&#39;]:
         print(image[&#39;src&#39;])  # 查看当前下载的图片地址
         download(image[&#39;src&#39;], image[&#39;id&#39;], save_path)  # 下载一张图片
-</div>2019-11-05</li><br/><li><span>爱喝酸奶的程序员</span> 👍（2） 💬（1）<div>有个问题selenium，是用来自动化测试的，他回打开浏览器……我做爬虫是不想让代码打开浏览器，只想要他爬取的动作～要怎么办呢？</div>2019-02-26</li><br/><li><span>十六。</span> 👍（1） 💬（1）<div>由于python学习是爬虫上手的，爬虫还是会一点的，哈哈，去下一章了ღ( ´･ᴗ･` )</div>2020-03-27</li><br/>
+</p>2019-11-05</li><br/><li><span>爱喝酸奶的程序员</span> 👍（2） 💬（1）<p>有个问题selenium，是用来自动化测试的，他回打开浏览器……我做爬虫是不想让代码打开浏览器，只想要他爬取的动作～要怎么办呢？</p>2019-02-26</li><br/><li><span>十六。</span> 👍（1） 💬（1）<p>由于python学习是爬虫上手的，爬虫还是会一点的，哈哈，去下一章了ღ( ´･ᴗ･` )</p>2020-03-27</li><br/>
 </ul>

@@ -293,7 +293,7 @@ ffmpeg -hwaccel d3d11va -hwaccel_output_format d3d11 -i <video> -c:v h264_nvenc 
 
 欢迎在评论区留下你的答案，也欢迎你把这节课分享给需要的朋友。我们下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>大土豆</span> 👍（3） 💬（1）<div>PC和手机还不太一样，PC的音视频硬件是集成在GPU中的，而手机就不一样了，是分开的。手机上职责还挺清楚的，CPU解封装，音视频专用器件硬解码，再给GPU进行渲染和图像处理（OpenGL部分）</div>2022-08-12</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>大土豆</span> 👍（3） 💬（1）<p>PC和手机还不太一样，PC的音视频硬件是集成在GPU中的，而手机就不一样了，是分开的。手机上职责还挺清楚的，CPU解封装，音视频专用器件硬解码，再给GPU进行渲染和图像处理（OpenGL部分）</p>2022-08-12</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：需要安装libx264吗？
 文中有这样一句“使用命令行 ffmpeg -h encoder=libx264 查看”。
 执行命令： ffmpeg -h encoder=libx264
@@ -306,11 +306,11 @@ Q1：需要安装libx264吗？
 Q2: 转码用CPU还GPU，是由谁决定的？
 是用户在ffmpeg的命令里指定吗？ 还是由ffmeg自动决定？
 Q3：“转码”是把一个视频文件的编码从原来的编码方式转换为另外一种编码方式，比如，原来是A编码，转换为B编码。 对吗？
-Q4:：本文讲的是视频转码，请问有音频转码吗？</div>2022-08-12</li><br/><li><span>xueerfei007</span> 👍（0） 💬（2）<div>老师您好，我最近在使用ffmpeg编码工业相机sdk提供的raw帧数据。目前编码后，视频的时间与原始视频流对不上，编码长度比录制时长多了一倍。猜测可能与pts&#47;dts的设置有关。这个需要如何设置，或者有什么方法定位到问题的具体原因？</div>2023-08-05</li><br/><li><span>Wonderfulpeng</span> 👍（0） 💬（1）<div>老师的课非常精彩，看了这节课我想请教的问题如下：
+Q4:：本文讲的是视频转码，请问有音频转码吗？</p>2022-08-12</li><br/><li><span>xueerfei007</span> 👍（0） 💬（2）<p>老师您好，我最近在使用ffmpeg编码工业相机sdk提供的raw帧数据。目前编码后，视频的时间与原始视频流对不上，编码长度比录制时长多了一倍。猜测可能与pts&#47;dts的设置有关。这个需要如何设置，或者有什么方法定位到问题的具体原因？</p>2023-08-05</li><br/><li><span>Wonderfulpeng</span> 👍（0） 💬（1）<p>老师的课非常精彩，看了这节课我想请教的问题如下：
 针对，“设置视频编码流为 CloseGOP，关键帧间隔的 -g 设置成 fps 的一半即可，fps 需要使用参数 -r:v 来设置，例如设置 -r:v 为 30，就是 30 fps”，那想问下：
 1、OPENGOP如何设置呢？
 2、网上说H265编码GOP只是OPENGOP，是否正确？
 3、GOP设置对于视频编码压缩的影响？哪里能参考到相关最好的说明？
-</div>2022-10-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-27</li><br/><li><span>jcy</span> 👍（0） 💬（0）<div>尝试回答一下思考题：
-ffmpeg -i input.mkv -x264opts &quot;bframes=2:b-adapt=0&quot; -r:v 30 -g 60 -sc_threshold 0 -vf &quot;scale=1280:720&quot; output.mkv</div>2022-09-02</li><br/>
+</p>2022-10-30</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-27</li><br/><li><span>jcy</span> 👍（0） 💬（0）<p>尝试回答一下思考题：
+ffmpeg -i input.mkv -x264opts &quot;bframes=2:b-adapt=0&quot; -r:v 30 -g 60 -sc_threshold 0 -vf &quot;scale=1280:720&quot; output.mkv</p>2022-09-02</li><br/>
 </ul>

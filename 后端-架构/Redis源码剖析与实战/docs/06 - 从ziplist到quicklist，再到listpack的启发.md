@@ -405,7 +405,7 @@ ziplist会使用zipTryEncoding函数计算插入元素所需的新增内存空�
 
 欢迎在留言区分享你的答案和思考过程，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Kaito</span> 👍（49） 💬（6）<div>1、ziplist 设计的初衷就是「节省内存」，在存储数据时，把内存利用率发挥到了极致：
+<li><span>Kaito</span> 👍（49） 💬（6）<p>1、ziplist 设计的初衷就是「节省内存」，在存储数据时，把内存利用率发挥到了极致：
 
 - 数字按「整型」编码存储，比直接当字符串存内存占用少
 - 数据「长度」字段，会根据内容的大小选择最小的长度编码
@@ -435,9 +435,9 @@ ziplist 超过上述任一配置，添加新元素就会新建 ziplist 插入到
 
 8、listpack 每个元素项不再保存上一个元素的长度，而是优化元素内字段的顺序，来保证既可以从前也可以向后遍历
 
-9、listpack 是为了替代 ziplist 为设计的，但因为 List&#47;Hash&#47;Set&#47;ZSet 都严重依赖 ziplist，所以这个替换之路很漫长，目前只有 Stream 数据类型用到了 listpack</div>2021-08-07</li><br/><li><span>lzh2nix</span> 👍（15） 💬（0）<div>从ziplist---&gt;quickList这在计算机里也是一个常见的设计模式。
+9、listpack 是为了替代 ziplist 为设计的，但因为 List&#47;Hash&#47;Set&#47;ZSet 都严重依赖 ziplist，所以这个替换之路很漫长，目前只有 Stream 数据类型用到了 listpack</p>2021-08-07</li><br/><li><span>lzh2nix</span> 👍（15） 💬（0）<p>从ziplist---&gt;quickList这在计算机里也是一个常见的设计模式。
 
-为了防止单个数据表太大，我们将其拆分成多个数据表，也叫 [分桶设计]，数据库中的sharding，以及将一个大粒度的锁拆分成多个小粒度的锁都是类似的思想。</div>2021-08-15</li><br/><li><span>奕</span> 👍（6） 💬（0）<div>listpack 解决了 ziplist 连锁更新的问题，但是还是没有解决元素多的时候，查询复杂度高的问题</div>2021-08-08</li><br/><li><span>曾轼麟</span> 👍（3） 💬（2）<div>回答老师的提问，ziplist 能支持的最大整数是多大？
+为了防止单个数据表太大，我们将其拆分成多个数据表，也叫 [分桶设计]，数据库中的sharding，以及将一个大粒度的锁拆分成多个小粒度的锁都是类似的思想。</p>2021-08-15</li><br/><li><span>奕</span> 👍（6） 💬（0）<p>listpack 解决了 ziplist 连锁更新的问题，但是还是没有解决元素多的时候，查询复杂度高的问题</p>2021-08-08</li><br/><li><span>曾轼麟</span> 👍（3） 💬（2）<p>回答老师的提问，ziplist 能支持的最大整数是多大？
 
 分析步骤：
 1、按照问题范围，首先我去查看了zipTryEncoding的实现（ziplist.c），其中在给encoding赋值的时候划分了：极小值，int8，int16，int24，int32和int64
@@ -448,8 +448,8 @@ ziplist 超过上述任一配置，添加新元素就会新建 ziplist 插入到
 
 
 根据第三步个人判断，传入的int值大小不会超过32位，那么最大值应该就是int32的最大值
-</div>2021-08-08</li><br/><li><span>Geek_0cfc2d</span> 👍（1） 💬（1）<div>老师，有个问题想请教一下：
-listpack 中如果不考虑逆序查询，entry 其实使用 encoding+data 就可以，那 entry 中最后一个 len 其实是为了逆序遍历而加入的，这样理解对吗？ </div>2022-02-23</li><br/><li><span>辉度</span> 👍（1） 💬（0）<div>课后题：
+</p>2021-08-08</li><br/><li><span>Geek_0cfc2d</span> 👍（1） 💬（1）<p>老师，有个问题想请教一下：
+listpack 中如果不考虑逆序查询，entry 其实使用 encoding+data 就可以，那 entry 中最后一个 len 其实是为了逆序遍历而加入的，这样理解对吗？ </p>2022-02-23</li><br/><li><span>辉度</span> 👍（1） 💬（0）<p>课后题：
 1. 函数中先判断entrylen，达到32编码则返回0,编码失败。if (entrylen &gt;= 32 || entrylen == 0) return 0;
 2. 其次*encoding 最大为 #define ZIP_INT_64B (0xc0 | 2&lt;&lt;4)，即11000000 | 00100000 == 11100000 == 224
 3. value 类型为 long long，8个字节数，一共64位。
@@ -457,12 +457,12 @@ listpack 中如果不考虑逆序查询，entry 其实使用 encoding+data 就�
 第2个式子我还不是很明白，没有搞懂编码encoding的单位，是位还是什么？
 
 三者取最小，应该就是最多只能保存31位，则整数最大值2*31 - 1
-</div>2021-08-07</li><br/><li><span>胡玲玲</span> 👍（1） 💬（0）<div>请问ziplist、quicklist、listpack 这三者是如何协助redis的数据类型的呢</div>2021-08-07</li><br/><li><span>dawn</span> 👍（0） 💬（0）<div>如果数据存在连续内存里，针对插入和删除操作，只要不是最后一个节点，不都需要给后续的节点重新分配内存地址嘛，listpack并没有解决这个问题啊？而quicklist解决这个问题是方式，实际上是用了链表而非连续空间，牺牲了空间来解决这个事的，那还不如直接全上链表，根据类型归类也挺麻烦的</div>2022-08-29</li><br/><li><span>🤐</span> 👍（0） 💬（0）<div>作为一个写JAVA的，有点理解不了这里</div>2022-07-24</li><br/><li><span>孤独患者</span> 👍（0） 💬（2）<div>quicklist，如果更新某个节点数据，导致节点内存变大了，那是不是当前节点的后续节点都要往后移动呢？因为内存是连续的</div>2022-06-15</li><br/><li><span>柏油</span> 👍（0） 💬（1）<div>在连锁更新代码块中，只看到调用了一次ziplistResize进行内存重分配；在这之前会将所有连锁更新影响的entry找出来，并重新计算len，这样就可以一次性计算得到所有需要的内存大小，也就是只有一次ziplistResize内存重新分配。不过，可能会调用多次memmove来调整元素的位置。
+</p>2021-08-07</li><br/><li><span>胡玲玲</span> 👍（1） 💬（0）<p>请问ziplist、quicklist、listpack 这三者是如何协助redis的数据类型的呢</p>2021-08-07</li><br/><li><span>dawn</span> 👍（0） 💬（0）<p>如果数据存在连续内存里，针对插入和删除操作，只要不是最后一个节点，不都需要给后续的节点重新分配内存地址嘛，listpack并没有解决这个问题啊？而quicklist解决这个问题是方式，实际上是用了链表而非连续空间，牺牲了空间来解决这个事的，那还不如直接全上链表，根据类型归类也挺麻烦的</p>2022-08-29</li><br/><li><span>🤐</span> 👍（0） 💬（0）<p>作为一个写JAVA的，有点理解不了这里</p>2022-07-24</li><br/><li><span>孤独患者</span> 👍（0） 💬（2）<p>quicklist，如果更新某个节点数据，导致节点内存变大了，那是不是当前节点的后续节点都要往后移动呢？因为内存是连续的</p>2022-06-15</li><br/><li><span>柏油</span> 👍（0） 💬（1）<p>在连锁更新代码块中，只看到调用了一次ziplistResize进行内存重分配；在这之前会将所有连锁更新影响的entry找出来，并重新计算len，这样就可以一次性计算得到所有需要的内存大小，也就是只有一次ziplistResize内存重新分配。不过，可能会调用多次memmove来调整元素的位置。
 
 文章中：
 “ziplist 新增某个元素或修改某个元素时，可能会导致后续元素的 prevlen 占用空间都发生变化，从而引起连锁更新问题，导致每个元素的空间都要重新分配”
 
-每个元素都会进行内存重分配是不是有问题？还望解答</div>2022-01-05</li><br/><li><span>路遥知码力</span> 👍（0） 💬（1）<div>quicklist里的quicklistnode存储ziplist，每个quicklistnode里的ziplist是怎么拆分进入不同的node里的？</div>2021-09-28</li><br/><li><span>test</span> 👍（0） 💬（0）<div>entey-encoding算是哈夫曼编码？</div>2021-09-04</li><br/><li><span>嘉木</span> 👍（0） 💬（1）<div>unsigned long lpEncodeBacklen(unsigned char *buf, uint64_t l) { 
+每个元素都会进行内存重分配是不是有问题？还望解答</p>2022-01-05</li><br/><li><span>路遥知码力</span> 👍（0） 💬（1）<p>quicklist里的quicklistnode存储ziplist，每个quicklistnode里的ziplist是怎么拆分进入不同的node里的？</p>2021-09-28</li><br/><li><span>test</span> 👍（0） 💬（0）<p>entey-encoding算是哈夫曼编码？</p>2021-09-04</li><br/><li><span>嘉木</span> 👍（0） 💬（1）<p>unsigned long lpEncodeBacklen(unsigned char *buf, uint64_t l) { 
 	&#47;&#47;编码类型和实际数据的总长度小于等于127，entry-len长度为1字节 
 	if (l &lt;= 127) { ... return 1; } 
 	else if (l &lt; 16383) { &#47;&#47;编码类型和实际数据的总长度大于127但小于16383，entry-len长度为2字节 ... return 2; } 
@@ -476,5 +476,5 @@ listpack 中如果不考虑逆序查询，entry 其实使用 encoding+data 就�
 除了第一个if判断是&lt;=之外，后面的if判断为什么是&lt;，而不是&lt;=了呢？ 
 比如16383，按照&lt;=判断，编码为7f ff，最高位为0，表示下个字节不属于backlen，这样backlen只使用2个字节；
 但是按照源码逻辑的话，16383编码为00 ff ff了，backlen使用了3个字节，这样的话不是浪费了一个字节吗？
-</div>2021-09-04</li><br/><li><span>慢动作</span> 👍（0） 💬（1）<div>listpack有对应的quicklist吗？数组类型存储有最优大小吧，过大以后中间插入代价会很大？</div>2021-08-24</li><br/>
+</p>2021-09-04</li><br/><li><span>慢动作</span> 👍（0） 💬（1）<p>listpack有对应的quicklist吗？数组类型存储有最优大小吧，过大以后中间插入代价会很大？</p>2021-08-24</li><br/>
 </ul>

@@ -540,17 +540,17 @@ Webpack从诞生到现在这么久，核心也迭代了很多大版本，那不�
 
 ### [完整的代码在这里](https://github.com/FE-star/vue3-course/tree/main/chapter/02)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_b640fe</span> 👍（9） 💬（1）<div>‘NODE_ENV’ 不是内部或外部命令，也不是可运行的程序或批处理文件
+<li><span>Geek_b640fe</span> 👍（9） 💬（1）<p>‘NODE_ENV’ 不是内部或外部命令，也不是可运行的程序或批处理文件
 windows 环境必须安装 cross-env 模块，并在启动命令前安装
 npm i -D cross-env
 
     &quot;scripts&quot;: {
         &quot;dev&quot;: &quot;cross-env NODE_ENV=development webpack serve -c .&#47;webpack.config.js&quot;,
         &quot;build&quot;: &quot;cross-env NODE_ENV=production webpack -c .&#47;webpack.config.js&quot;
-    },</div>2022-12-07</li><br/><li><span>风太大太大</span> 👍（5） 💬（1）<div>Webpack 3 4 5每个版本差异还挺大的，plugin变更，语法变更，对缓存的使用程度，打包构建加速那个版本的方案都不同，版本越高越方便</div>2022-11-23</li><br/><li><span>ZR-rd</span> 👍（4） 💬（1）<div>老师，大厂一般都是使用 CDN 来导入 Vue 等第三方库的吗？为什么不是直接打包到 bundle 中呢？这样有什么优缺点呢？</div>2022-12-01</li><br/><li><span>丫头</span> 👍（2） 💬（3）<div>webpack.default.js
+    },</p>2022-12-07</li><br/><li><span>风太大太大</span> 👍（5） 💬（1）<p>Webpack 3 4 5每个版本差异还挺大的，plugin变更，语法变更，对缓存的使用程度，打包构建加速那个版本的方案都不同，版本越高越方便</p>2022-11-23</li><br/><li><span>ZR-rd</span> 👍（4） 💬（1）<p>老师，大厂一般都是使用 CDN 来导入 Vue 等第三方库的吗？为什么不是直接打包到 bundle 中呢？这样有什么优缺点呢？</p>2022-12-01</li><br/><li><span>丫头</span> 👍（2） 💬（3）<p>webpack.default.js
 webpack.dev.js
 webpack.prod.js
-不同环境独立文件，会不会更清晰些</div>2022-12-05</li><br/><li><span>健牌哥.</span> 👍（0） 💬（1）<div>dev配置的devServer把static.directory修改成 path.join(__dirname, &#39;public&#39;)，本地node_modules的vue运行时文件就加载不成功了，index.html已放在public文件夹里。请问下这个怎么解决呢？</div>2023-01-16</li><br/><li><span>定宇</span> 👍（0） 💬（1）<div>想問一下，如果在webpack輸出檔案有加hash值的話
+不同环境独立文件，会不会更清晰些</p>2022-12-05</li><br/><li><span>健牌哥.</span> 👍（0） 💬（1）<p>dev配置的devServer把static.directory修改成 path.join(__dirname, &#39;public&#39;)，本地node_modules的vue运行时文件就加载不成功了，index.html已放在public文件夹里。请问下这个怎么解决呢？</p>2023-01-16</li><br/><li><span>定宇</span> 👍（0） 💬（1）<p>想問一下，如果在webpack輸出檔案有加hash值的話
 ex:
 ```
 output: {
@@ -560,5 +560,5 @@ output: {
 }
 ```
 
-在HtmlWebpackPlugin那邊要怎麼設置呢？</div>2022-12-22</li><br/><li><span>我只想要简单的小幸福👣</span> 👍（0） 💬（1）<div>完整代码地址打不开，能换一个别的地址吗</div>2022-12-20</li><br/><li><span>阿阳</span> 👍（0） 💬（2）<div>在 test: &#47;\.(css|less)$&#47;中，less文件也能直接用css-loader进行处理嘛？不是需要用less-loader进行处理么？</div>2022-12-04</li><br/><li><span>阿阳</span> 👍（0） 💬（2）<div>windows环境下，设置环境变量NODE_ENV需要用到cross-env这个包吧？</div>2022-12-04</li><br/><li><span>莫比斯</span> 👍（0） 💬（3）<div>还有老师，我想补充一点点，在line 50 if语句前，可以申明config，let config；</div>2022-12-03</li><br/><li><span>不是牛仔但很忙ᥬ🙂᭄</span> 👍（0） 💬（1）<div>这个课是纯音频课？没有视频？</div>2022-11-28</li><br/><li><span>joker</span> 👍（0） 💬（1）<div>Vite以后会讲吗</div>2022-11-23</li><br/><li><span>WGH丶</span> 👍（7） 💬（0）<div>推荐资料：《webpack实战：入门、进阶与调优》。</div>2022-11-25</li><br/><li><span>hao-kuai</span> 👍（0） 💬（0）<div>在使用体验上来说：vite之于webpack就像webstorm之于vscode</div>2025-01-06</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2024-08-29</li><br/>
+在HtmlWebpackPlugin那邊要怎麼設置呢？</p>2022-12-22</li><br/><li><span>我只想要简单的小幸福👣</span> 👍（0） 💬（1）<p>完整代码地址打不开，能换一个别的地址吗</p>2022-12-20</li><br/><li><span>阿阳</span> 👍（0） 💬（2）<p>在 test: &#47;\.(css|less)$&#47;中，less文件也能直接用css-loader进行处理嘛？不是需要用less-loader进行处理么？</p>2022-12-04</li><br/><li><span>阿阳</span> 👍（0） 💬（2）<p>windows环境下，设置环境变量NODE_ENV需要用到cross-env这个包吧？</p>2022-12-04</li><br/><li><span>莫比斯</span> 👍（0） 💬（3）<p>还有老师，我想补充一点点，在line 50 if语句前，可以申明config，let config；</p>2022-12-03</li><br/><li><span>不是牛仔但很忙ᥬ🙂᭄</span> 👍（0） 💬（1）<p>这个课是纯音频课？没有视频？</p>2022-11-28</li><br/><li><span>joker</span> 👍（0） 💬（1）<p>Vite以后会讲吗</p>2022-11-23</li><br/><li><span>WGH丶</span> 👍（7） 💬（0）<p>推荐资料：《webpack实战：入门、进阶与调优》。</p>2022-11-25</li><br/><li><span>hao-kuai</span> 👍（0） 💬（0）<p>在使用体验上来说：vite之于webpack就像webstorm之于vscode</p>2025-01-06</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2024-08-29</li><br/>
 </ul>

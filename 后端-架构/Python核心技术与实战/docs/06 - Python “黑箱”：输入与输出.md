@@ -291,7 +291,7 @@ type of original_params = <class 'dict'>, original_params = {'symbol': '123456',
 
 欢迎在留言区写下你的答案，也欢迎你把这篇文章转给你的同事、朋友，一起在思考中学习。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（60） 💬（7）<div>思考题第二题：（省略了一些异常处理，后面会讲到）
+<li><span>Jingxiao</span> 👍（60） 💬（7）<p>思考题第二题：（省略了一些异常处理，后面会讲到）
 server.py
 # 我们假设 server 电脑上的所有的文件都在 BASR_DIR 中，为了简化不考虑文件夹结构，网盘的路径在 NET_DIR
 
@@ -339,7 +339,7 @@ def main():
         time.sleep(3)
 
 if __name__ == &quot;__main__&quot;:
-	main()</div>2019-05-26</li><br/><li><span>Jingxiao</span> 👍（53） 💬（20）<div>思考题第一题：
+	main()</p>2019-05-26</li><br/><li><span>Jingxiao</span> 👍（53） 💬（20）<p>思考题第一题：
 
 import re
 
@@ -374,7 +374,7 @@ def solve():
         sorted_word_cnt = sorted(word_cnt.items(), key=lambda kv: kv[1], reverse=True)
         return sorted_word_cnt
 
-print(solve())</div>2019-05-26</li><br/><li><span>古明地觉</span> 👍（63） 💬（15）<div>from collections import defaultdict
+print(solve())</p>2019-05-26</li><br/><li><span>古明地觉</span> 👍（63） 💬（15）<p>from collections import defaultdict
 import re
 
 f = open(&quot;ini.txt&quot;, mode=&quot;r&quot;, encoding=&quot;utf-8&quot;)
@@ -385,7 +385,7 @@ for line in f:
         d[word] += 1
 
 
-print(d)</div>2019-05-22</li><br/><li><span>逆光飞翔</span> 👍（31） 💬（3）<div>老师，为什么filter（none，list）可以过滤空值，不是保留空值嘛</div>2019-05-22</li><br/><li><span>lmingzhi</span> 👍（12） 💬（2）<div># 第一题， 修改parse函数，使其可以更新word_cnt
+print(d)</p>2019-05-22</li><br/><li><span>逆光飞翔</span> 👍（31） 💬（3）<p>老师，为什么filter（none，list）可以过滤空值，不是保留空值嘛</p>2019-05-22</li><br/><li><span>lmingzhi</span> 👍（12） 💬（2）<p># 第一题， 修改parse函数，使其可以更新word_cnt
 import re
 def parse(text, word_cnt):
     # 转为小写
@@ -410,10 +410,10 @@ sorted_word_cnt = sorted(word_cnt.items(), key=lambda kv: kv[1], reverse=True)
 # 导出
 with open(&#39;out.txt&#39;, &#39;w&#39;) as fout:
     for word, freq in word_and_freq:
-        fout.write(&#39;{} {}\n&#39;.format(word, freq))</div>2019-05-22</li><br/><li><span>許敲敲</span> 👍（11） 💬（1）<div>这门课太值了 哈哈哈 我以前学到的真的toy python</div>2019-05-22</li><br/><li><span>Python高效编程</span> 👍（9） 💬（1）<div>第一问:
+        fout.write(&#39;{} {}\n&#39;.format(word, freq))</p>2019-05-22</li><br/><li><span>許敲敲</span> 👍（11） 💬（1）<p>这门课太值了 哈哈哈 我以前学到的真的toy python</p>2019-05-22</li><br/><li><span>Python高效编程</span> 👍（9） 💬（1）<p>第一问:
 with open(&quot;in.txt&quot;, &quot;rt&quot;) as f:
     for line in f:
-        Counter.update(line)</div>2019-05-22</li><br/><li><span>人间乐园</span> 👍（4） 💬（1）<div>第一道，for.line in fin读取单行，使用result = yied line进行双向传递，直接把line给计数器，先判断line结尾处，如果是单词或者半个单词，则返回result给生成器，拼接到下一个line前，如果是None则不拼接，继续生成这个line。</div>2019-05-22</li><br/><li><span>IT蜗壳-Tango</span> 👍（4） 💬（1）<div>第七天打卡。</div>2019-05-22</li><br/><li><span>mykgzy</span> 👍（3） 💬（1）<div>看着有点费力，但感觉超值，看到了好多python 书都没提到的生产网中涉及的知识。</div>2019-05-22</li><br/><li><span>edward0079</span> 👍（2） 💬（1）<div>判断是否为None的情况
+        Counter.update(line)</p>2019-05-22</li><br/><li><span>人间乐园</span> 👍（4） 💬（1）<p>第一道，for.line in fin读取单行，使用result = yied line进行双向传递，直接把line给计数器，先判断line结尾处，如果是单词或者半个单词，则返回result给生成器，拼接到下一个line前，如果是None则不拼接，继续生成这个line。</p>2019-05-22</li><br/><li><span>IT蜗壳-Tango</span> 👍（4） 💬（1）<p>第七天打卡。</p>2019-05-22</li><br/><li><span>mykgzy</span> 👍（3） 💬（1）<p>看着有点费力，但感觉超值，看到了好多python 书都没提到的生产网中涉及的知识。</p>2019-05-22</li><br/><li><span>edward0079</span> 👍（2） 💬（1）<p>判断是否为None的情况
 
 if not x
 
@@ -425,7 +425,7 @@ if not x is None
 
 if x is not None`是最好的写法，清晰，不会出现错误，以后坚持使用这种写法。
 
-使用if not x这种写法的前提是：必须清楚x等于None,  False, 空字符串&quot;&quot;, 0, 空列表[], 空字典{}, 空元组()时对你的判断没有影响才行</div>2020-02-12</li><br/><li><span>vivien_zh</span> 👍（2） 💬（1）<div>努力跟上老师的进度。</div>2019-05-22</li><br/><li><span>🌻</span> 👍（1） 💬（1）<div>第一问：
+使用if not x这种写法的前提是：必须清楚x等于None,  False, 空字符串&quot;&quot;, 0, 空列表[], 空字典{}, 空元组()时对你的判断没有影响才行</p>2020-02-12</li><br/><li><span>vivien_zh</span> 👍（2） 💬（1）<p>努力跟上老师的进度。</p>2019-05-22</li><br/><li><span>🌻</span> 👍（1） 💬（1）<p>第一问：
 
 import re
 from collections import defaultdict
@@ -453,5 +453,5 @@ Path(&#39;out.txt&#39;).touch()
 
 with open(&#39;out.txt&#39;, &#39;w&#39;) as f:
     for word, count in sort_by_value:
-        f.writelines(&#39;{}: {}\n&#39;.format(word, count))</div>2020-04-02</li><br/><li><span>GentleCP</span> 👍（1） 💬（1）<div>老师github链接还没放出吗</div>2019-05-23</li><br/><li><span>Geek_Stone</span> 👍（1） 💬（1）<div>差不多10年了，还是个初学者。希望尽快摆脱初学者状态。</div>2019-05-22</li><br/>
+        f.writelines(&#39;{}: {}\n&#39;.format(word, count))</p>2020-04-02</li><br/><li><span>GentleCP</span> 👍（1） 💬（1）<p>老师github链接还没放出吗</p>2019-05-23</li><br/><li><span>Geek_Stone</span> 👍（1） 💬（1）<p>差不多10年了，还是个初学者。希望尽快摆脱初学者状态。</p>2019-05-22</li><br/>
 </ul>

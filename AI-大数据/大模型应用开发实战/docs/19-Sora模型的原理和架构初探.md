@@ -225,5 +225,5 @@ AIGC的发展也带来了很多值得思考的问题。
 
 这节课的思考题没有标准答案，期待你畅所欲言，我们下节课再见！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>Ethan New</span> 👍（0） 💬（0）<div>老师，AIGC 三个发展阶段的论文综述能否发下？</div>2024-07-02</li><br/>
+<li><span>Ethan New</span> 👍（0） 💬（0）<p>老师，AIGC 三个发展阶段的论文综述能否发下？</p>2024-07-02</li><br/>
 </ul>

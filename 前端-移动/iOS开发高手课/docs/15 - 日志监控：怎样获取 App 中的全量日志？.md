@@ -227,7 +227,7 @@ NSString *logDirectory = [fileLogger.logFileManager logsDirectory];
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎把它分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_97bcf5</span> 👍（17） 💬（2）<div>一般大厂的app都不会用NSLog来打印日志的，我不知道滴滴打车是否用NSLog来打印日志，所以，本文的方案并不符合生产环境。日志是需要分类的，需要压缩，需要加密，实时染色等。NSLog根本不可能完成这些功能，所以，大厂的app都有专门的日志框架。各个模块中也不会用NSLog来输出日志。</div>2019-04-13</li><br/><li><span>drunkenMouse</span> 👍（2） 💬（1）<div>ASL在iOS10.0之后没法用了。所以CocoaLumberJack无法获取到所有的日志，但除了NSLog日志外，别的日志都能获取到吗？</div>2019-04-13</li><br/><li><span>lhjzzu</span> 👍（1） 💬（1）<div>上周才第一次用CocoaLumberjack做了日志系统，并且看了fishhook的原理，这次看这篇文章就全用上了，太nice了，对两者的使用和理解更深了。哈哈😄</div>2019-04-14</li><br/><li><span>drunkenMouse</span> 👍（1） 💬（1）<div>所以，几个人的小团队直接使用统一的日志库就可以了？
+<li><span>Geek_97bcf5</span> 👍（17） 💬（2）<p>一般大厂的app都不会用NSLog来打印日志的，我不知道滴滴打车是否用NSLog来打印日志，所以，本文的方案并不符合生产环境。日志是需要分类的，需要压缩，需要加密，实时染色等。NSLog根本不可能完成这些功能，所以，大厂的app都有专门的日志框架。各个模块中也不会用NSLog来输出日志。</p>2019-04-13</li><br/><li><span>drunkenMouse</span> 👍（2） 💬（1）<p>ASL在iOS10.0之后没法用了。所以CocoaLumberJack无法获取到所有的日志，但除了NSLog日志外，别的日志都能获取到吗？</p>2019-04-13</li><br/><li><span>lhjzzu</span> 👍（1） 💬（1）<p>上周才第一次用CocoaLumberjack做了日志系统，并且看了fishhook的原理，这次看这篇文章就全用上了，太nice了，对两者的使用和理解更深了。哈哈😄</p>2019-04-14</li><br/><li><span>drunkenMouse</span> 👍（1） 💬（1）<p>所以，几个人的小团队直接使用统一的日志库就可以了？
 
 syslogd是一个进程，保护系统接收分发日志消息的进程？
 
@@ -239,20 +239,20 @@ captureAslLogs方法对ASL日志的处理措施是：将日志消息转换成cha
 
 NSLog的日志级别是Verbose。
 
-最后，iOS10之后，为了兼容新的统一日志系统，需要对NSLog日志的输出进行重定向。iOS10之后CocoaLumberJack获取不到NSLog的日志了？</div>2019-04-13</li><br/><li><span>daniel</span> 👍（8） 💬（0）<div>static void(*orig_nslog) (NSString *format,...); 这里声明的时候是*号不是&amp;号，声明是一个对象，估计老师那边打错了
+最后，iOS10之后，为了兼容新的统一日志系统，需要对NSLog日志的输出进行重定向。iOS10之后CocoaLumberJack获取不到NSLog的日志了？</p>2019-04-13</li><br/><li><span>daniel</span> 👍（8） 💬（0）<p>static void(*orig_nslog) (NSString *format,...); 这里声明的时候是*号不是&amp;号，声明是一个对象，估计老师那边打错了
 还有下面这段代码
 va_list va;
     va_start(va,format);
     NSLogv(format, va);
     va_end(va);
-可以换成orig_nslog(format) ，这时候我们的orig_nslog就是原来NSLog在Mach-o中的地址了，这时候可以直接拦截使用了，老师希望课里面代码可以检查仔细点再发出来，好多次直接报错，然后又找不到原因，这样挺打击人的。。。还有注释可以再清楚点</div>2019-05-31</li><br/><li><span>Ant</span> 👍（6） 💬（0）<div>温故而知新， 对我来说是反过来说的， 知新而温故。
+可以换成orig_nslog(format) ，这时候我们的orig_nslog就是原来NSLog在Mach-o中的地址了，这时候可以直接拦截使用了，老师希望课里面代码可以检查仔细点再发出来，好多次直接报错，然后又找不到原因，这样挺打击人的。。。还有注释可以再清楚点</p>2019-05-31</li><br/><li><span>Ant</span> 👍（6） 💬（0）<p>温故而知新， 对我来说是反过来说的， 知新而温故。
 main函数执行之前  
 加载可执行文件、
 加载动态链接库rebase指针调整和bind符号绑定、
 运行时开始处理，
 objc类注册，category注册，selector唯一性检查，
 load方法，attribute修饰函数调用，
-创建c++静态全局变量</div>2019-04-17</li><br/><li><span>jimbo</span> 👍（3） 💬（0）<div>static void (&amp;orig_nslog)(NSString *format, ...); 这里是不是应该变成 static void (*orig_nslog)(NSString *format, ...);  不然报错</div>2019-04-16</li><br/><li><span>小赢一场</span> 👍（2） 💬（0）<div>不太明白，获取日志，怎么上传，什么时候上传日志到后台</div>2020-04-21</li><br/><li><span>jiang</span> 👍（1） 💬（0）<div>完成第一次作业，这样便可以无侵入的实现日志上报惹
+创建c++静态全局变量</p>2019-04-17</li><br/><li><span>jimbo</span> 👍（3） 💬（0）<p>static void (&amp;orig_nslog)(NSString *format, ...); 这里是不是应该变成 static void (*orig_nslog)(NSString *format, ...);  不然报错</p>2019-04-16</li><br/><li><span>小赢一场</span> 👍（2） 💬（0）<p>不太明白，获取日志，怎么上传，什么时候上传日志到后台</p>2020-04-21</li><br/><li><span>jiang</span> 👍（1） 💬（0）<p>完成第一次作业，这样便可以无侵入的实现日志上报惹
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self outLog];
@@ -281,5 +281,5 @@ int count = 0;
     });
     
 }
-</div>2020-11-27</li><br/><li><span>zhonglaoban</span> 👍（1） 💬（0）<div>所以nslog能输出日志到console.app里面是因为用了asl？</div>2020-08-02</li><br/><li><span>大年初一</span> 👍（1） 💬（0）<div>微信的 xlog 也不错</div>2019-12-21</li><br/><li><span>dingdongfm</span> 👍（1） 💬（0）<div>如果需要获取最终用户手机上的日志来定位问题的话，一般怎么获取日志？</div>2019-06-10</li><br/><li><span>mersa</span> 👍（1） 💬（0）<div>写文件不是耗电，还有影响app运行性能么。这个产线情况怎么能够保存全量日志同时性能和耗电都能最低</div>2019-06-02</li><br/><li><span>二木又土</span> 👍（1） 💬（0）<div>对App来说，网络请求使用AFNetworking，怎么把网络请求的log优雅点的过滤打印出来？另外log，在控制台还会遇到字符串太长显示被截断的问题</div>2019-04-25</li><br/><li><span>Geek_ecfaae</span> 👍（0） 💬（0）<div>iOS10之后，ASL已经被取代了。那磁盘监控就不能用kNotifyVFSLowDiskSpace了吧？</div>2022-02-16</li><br/>
+</p>2020-11-27</li><br/><li><span>zhonglaoban</span> 👍（1） 💬（0）<p>所以nslog能输出日志到console.app里面是因为用了asl？</p>2020-08-02</li><br/><li><span>大年初一</span> 👍（1） 💬（0）<p>微信的 xlog 也不错</p>2019-12-21</li><br/><li><span>dingdongfm</span> 👍（1） 💬（0）<p>如果需要获取最终用户手机上的日志来定位问题的话，一般怎么获取日志？</p>2019-06-10</li><br/><li><span>mersa</span> 👍（1） 💬（0）<p>写文件不是耗电，还有影响app运行性能么。这个产线情况怎么能够保存全量日志同时性能和耗电都能最低</p>2019-06-02</li><br/><li><span>二木又土</span> 👍（1） 💬（0）<p>对App来说，网络请求使用AFNetworking，怎么把网络请求的log优雅点的过滤打印出来？另外log，在控制台还会遇到字符串太长显示被截断的问题</p>2019-04-25</li><br/><li><span>Geek_ecfaae</span> 👍（0） 💬（0）<p>iOS10之后，ASL已经被取代了。那磁盘监控就不能用kNotifyVFSLowDiskSpace了吧？</p>2022-02-16</li><br/>
 </ul>

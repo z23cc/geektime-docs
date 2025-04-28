@@ -321,5 +321,5 @@ async def main(args: Args) -> Output:
 
 [&gt;&gt;戳此加入课程交流群](https://jsj.top/f/hm26hN)
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>jerremyZhang</span> 👍（1） 💬（1）<div>非常期待后续</div>2024-08-28</li><br/><li><span>大魔王汪汪</span> 👍（1） 💬（0）<div>想问下，现在对于Agent的定义，如果实现一个基于用户问题+简单的function call+答案生成的功能可以叫做Agent，那如果后面是一个复杂的工作流也可以叫Agent，所以从功能复杂度角度来说应该怎么定义一个Agent呢？</div>2024-12-30</li><br/>
+<li><span>jerremyZhang</span> 👍（1） 💬（1）<p>非常期待后续</p>2024-08-28</li><br/><li><span>大魔王汪汪</span> 👍（1） 💬（0）<p>想问下，现在对于Agent的定义，如果实现一个基于用户问题+简单的function call+答案生成的功能可以叫做Agent，那如果后面是一个复杂的工作流也可以叫Agent，所以从功能复杂度角度来说应该怎么定义一个Agent呢？</p>2024-12-30</li><br/>
 </ul>

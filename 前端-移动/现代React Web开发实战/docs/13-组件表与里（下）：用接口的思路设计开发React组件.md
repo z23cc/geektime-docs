@@ -529,13 +529,13 @@ export default function KanbanCard({ title, status, onDragStart, onRemove }) {
 
 好了，这节课的内容就到这里。如果你学完之后有动手实践，可以在留言区回复一个“M”，和我分享这份重构的喜悦。我们下节课再见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>船长</span> 👍（1） 💬（3）<div>反馈个 Bug：文章里的 KanbanCard 判断是否展示删除按钮时，isAdmin 会始终为 True，因为从 useContext 引出来后，其值是：{isAdmin:false}，是个 obj，始终为 true，删除按钮会一直显示</div>2022-09-26</li><br/><li><span>Geek_a19712</span> 👍（0） 💬（2）<div>代码是不是写错了，上边 KanbanCard 删除的方法传的是 title ，但是在 App.js 中的 handleRemove 方法中过滤的条件是 item.title !== cardToRemove.title ，所以是不是应该把 KanbanCard  删除方法改成传 props 或者 App.js 中过滤条件 item.title !== cardToRemove.title 改成 item.title !== cardToRemove</div>2023-08-28</li><br/><li><span>网瘾少年</span> 👍（0） 💬（1）<div>M
-https:&#47;&#47;github.com&#47;xzxldl55&#47;FE-collection&#47;tree&#47;main&#47;task-board</div>2023-07-25</li><br/><li><span>莫比斯</span> 👍（0） 💬（1）<div>M_M</div>2023-07-16</li><br/><li><span>Geek_b8f92f</span> 👍（0） 💬（1）<div>请问老师： 代码中有大量的onDragStart &amp;&amp; onDragStart(evt)这种写法
+<li><span>船长</span> 👍（1） 💬（3）<p>反馈个 Bug：文章里的 KanbanCard 判断是否展示删除按钮时，isAdmin 会始终为 True，因为从 useContext 引出来后，其值是：{isAdmin:false}，是个 obj，始终为 true，删除按钮会一直显示</p>2022-09-26</li><br/><li><span>Geek_a19712</span> 👍（0） 💬（2）<p>代码是不是写错了，上边 KanbanCard 删除的方法传的是 title ，但是在 App.js 中的 handleRemove 方法中过滤的条件是 item.title !== cardToRemove.title ，所以是不是应该把 KanbanCard  删除方法改成传 props 或者 App.js 中过滤条件 item.title !== cardToRemove.title 改成 item.title !== cardToRemove</p>2023-08-28</li><br/><li><span>网瘾少年</span> 👍（0） 💬（1）<p>M
+https:&#47;&#47;github.com&#47;xzxldl55&#47;FE-collection&#47;tree&#47;main&#47;task-board</p>2023-07-25</li><br/><li><span>莫比斯</span> 👍（0） 💬（1）<p>M_M</p>2023-07-16</li><br/><li><span>Geek_b8f92f</span> 👍（0） 💬（1）<p>请问老师： 代码中有大量的onDragStart &amp;&amp; onDragStart(evt)这种写法
 为什么不是直接写成onDragStart(evt)，
-这么写的好处是什么，谢谢</div>2023-06-11</li><br/><li><span>进击的莫莫哒</span> 👍（0） 💬（1）<div>M</div>2022-10-16</li><br/><li><span>Geek_8e9c8d</span> 👍（0） 💬（1）<div>M</div>2022-10-11</li><br/><li><span>WL</span> 👍（0） 💬（1）<div>老师讲得很好，组件也可以看作是接口，我们通过props传入一些内容，组件帮我们实现一些功能，组件不负责保存上级组件的状态</div>2022-09-26</li><br/><li><span>船长</span> 👍（0） 💬（2）<div>思考题 2：
+这么写的好处是什么，谢谢</p>2023-06-11</li><br/><li><span>进击的莫莫哒</span> 👍（0） 💬（1）<p>M</p>2022-10-16</li><br/><li><span>Geek_8e9c8d</span> 👍（0） 💬（1）<p>M</p>2022-10-11</li><br/><li><span>WL</span> 👍（0） 💬（1）<p>老师讲得很好，组件也可以看作是接口，我们通过props传入一些内容，组件帮我们实现一些功能，组件不负责保存上级组件的状态</p>2022-09-26</li><br/><li><span>船长</span> 👍（0） 💬（2）<p>思考题 2：
 父-子通信：props，context
 子-父通信：props.callback()   --（查课外资料）
-兄弟通信：context</div>2022-09-26</li><br/><li><span>船长</span> 👍（0） 💬（1）<div>思考题 1：有父子、祖孙之间的 props 传递流，也有组件内部的 state 数据流，也有 context 共享数据流（可以忽略 props 的层层传递，直接一步到位）</div>2022-09-26</li><br/><li><span>Geek_0af63d</span> 👍（0） 💬（0）<div>M</div>2024-07-01</li><br/><li><span>Tanya</span> 👍（0） 💬（0）<div>M</div>2023-08-30</li><br/><li><span>奕晨</span> 👍（0） 💬（0）<div>M</div>2023-06-09</li><br/><li><span>secondmax</span> 👍（0） 💬（1）<div>不知道是不是我code的有问题 按照流程走的 但是项目报错 然后自己查漏补缺 将KanbanBoard.js文件中 ’done&#39;的KanbanColumn的onRemove事件有原来透传的onRemove改成了onDrop，并且在app.js中改写了筛选 从而解决了报错并删不掉已完成card的事件
+兄弟通信：context</p>2022-09-26</li><br/><li><span>船长</span> 👍（0） 💬（1）<p>思考题 1：有父子、祖孙之间的 props 传递流，也有组件内部的 state 数据流，也有 context 共享数据流（可以忽略 props 的层层传递，直接一步到位）</p>2022-09-26</li><br/><li><span>Geek_0af63d</span> 👍（0） 💬（0）<p>M</p>2024-07-01</li><br/><li><span>Tanya</span> 👍（0） 💬（0）<p>M</p>2023-08-30</li><br/><li><span>奕晨</span> 👍（0） 💬（0）<p>M</p>2023-06-09</li><br/><li><span>secondmax</span> 👍（0） 💬（1）<p>不知道是不是我code的有问题 按照流程走的 但是项目报错 然后自己查漏补缺 将KanbanBoard.js文件中 ’done&#39;的KanbanColumn的onRemove事件有原来透传的onRemove改成了onDrop，并且在app.js中改写了筛选 从而解决了报错并删不掉已完成card的事件
  `
 &lt;KanbanColumn
         bgColor={COLUMN_BG_COLOR.done}
@@ -554,6 +554,6 @@ https:&#47;&#47;github.com&#47;xzxldl55&#47;FE-collection&#47;tree&#47;main&#47;
       return currentStat.filter((item) =&gt; item.title !== cardToRemove.title)
     });
   };
-`还望能够指正一下</div>2023-04-17</li><br/><li><span>杨永安</span> 👍（0） 💬（1）<div>初学者请问一下老师，handleRemove这个方法相当于是在爷爷组件中，想在孙子组件中调用，只能通过props一级一级的传递到孙子组件去吗？还有没有其他优雅的做法？
-直接 export 可行否</div>2023-03-13</li><br/>
+`还望能够指正一下</p>2023-04-17</li><br/><li><span>杨永安</span> 👍（0） 💬（1）<p>初学者请问一下老师，handleRemove这个方法相当于是在爷爷组件中，想在孙子组件中调用，只能通过props一级一级的传递到孙子组件去吗？还有没有其他优雅的做法？
+直接 export 可行否</p>2023-03-13</li><br/>
 </ul>

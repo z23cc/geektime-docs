@@ -274,18 +274,18 @@ Boolean isOk = cf.join();
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>J.M.Liu</span> 👍（146） 💬（4）<div>思考题：
+<li><span>J.M.Liu</span> 👍（146） 💬（4）<p>思考题：
 1.没有进行异常处理，
 2.要指定专门的线程池做数据库查询
 3.如果检查和查询都比较耗时，那么应该像之前的对账系统一样，采用生产者和消费者模式，让上一次的检查和下一次的查询并行起来。
 
-另外，老师把javadoc里那一堆那一堆方法进行了分类，分成串行、并行、AND聚合、OR聚合，简直太棒了，一下子就把这些方法纳入到一个完整的结构体系里了。简直棒</div>2019-04-23</li><br/><li><span>袁阳</span> 👍（118） 💬（7）<div>思考题:
+另外，老师把javadoc里那一堆那一堆方法进行了分类，分成串行、并行、AND聚合、OR聚合，简直太棒了，一下子就把这些方法纳入到一个完整的结构体系里了。简直棒</p>2019-04-23</li><br/><li><span>袁阳</span> 👍（118） 💬（7）<p>思考题:
 1，读数据库属于io操作，应该放在单独线程池，避免线程饥饿
-2，异常未处理</div>2019-04-23</li><br/><li><span>密码123456</span> 👍（50） 💬（5）<div>我在想一个问题，明明是串行过程，直接写就可以了。为什么还要用异步去实现串行？</div>2019-04-23</li><br/><li><span>发条橙子 。</span> 👍（45） 💬（2）<div>老师 ，我有个疑问。 completableFuture 中各种关系（并行、串行、聚合），实际上就覆盖了各种需求场景。 例如 ： 线程A 等待 线程B 或者 线程C 等待 线程A和B 。
+2，异常未处理</p>2019-04-23</li><br/><li><span>密码123456</span> 👍（50） 💬（5）<p>我在想一个问题，明明是串行过程，直接写就可以了。为什么还要用异步去实现串行？</p>2019-04-23</li><br/><li><span>发条橙子 。</span> 👍（45） 💬（2）<p>老师 ，我有个疑问。 completableFuture 中各种关系（并行、串行、聚合），实际上就覆盖了各种需求场景。 例如 ： 线程A 等待 线程B 或者 线程C 等待 线程A和B 。
 
-我们之前讲的并发包里面 countdownLatch , 或者 threadPoolExecutor 和future  就是来解决这些关系场景的 ， 那有了 completableFuture 这个类 ，是不是以后有需求都优先考虑用 completableFuture ？感觉这个类就可以解决前面所讲的类的问题了</div>2019-04-24</li><br/><li><span>青莲</span> 👍（22） 💬（1）<div>1.查数据库属于io操作，用定制线程池
+我们之前讲的并发包里面 countdownLatch , 或者 threadPoolExecutor 和future  就是来解决这些关系场景的 ， 那有了 completableFuture 这个类 ，是不是以后有需求都优先考虑用 completableFuture ？感觉这个类就可以解决前面所讲的类的问题了</p>2019-04-24</li><br/><li><span>青莲</span> 👍（22） 💬（1）<p>1.查数据库属于io操作，用定制线程池
 2.查出来的结果做为下一步处理的条件，若结果为空呢，没有对应处理
-3.缺少异常处理机制</div>2019-04-23</li><br/><li><span>笃行之</span> 👍（17） 💬（2）<div>”如果所有 CompletableFuture 共享一个线程池，那么一旦有任务执行一些很慢的 I&#47;O 操作，就会导致线程池中所有线程都阻塞在 I&#47;O 操作上，从而造成线程饥饿，进而影响整个系统的性能。”老师，阻塞在io上和是不是在一个线程池没关系吧？</div>2019-04-29</li><br/><li><span>J.M.Liu</span> 👍（12） 💬（1）<div>我觉得既然都讲到CompletableFuture了，老师是不是有必要不一章ForkJoinPool呀？毕竟，ForkJoinPool和ThreadPoolExecutor还是有很多不一样的。谢谢老师</div>2019-04-23</li><br/><li><span>henry</span> 👍（11） 💬（4）<div>老师我现在有个任务，和您的例子有相似的地方，是从一个库里查询多张表的数据同步到另外一个库，就有双重for循环，最外层用与多张表的遍历，内层的for循环用于批量读取某一张表的数据，因为数据量可能在几万条，我想分批次读出来再同步到另一个数据库，昨天写的时候用的是futuretask,今天正好看到老师的文章就改成了CompletableFuture，还没有用异常处理的，后面我还要看看怎么加上异常处理的。其它的不知道我用的对不对，请老师看看：
+3.缺少异常处理机制</p>2019-04-23</li><br/><li><span>笃行之</span> 👍（17） 💬（2）<p>”如果所有 CompletableFuture 共享一个线程池，那么一旦有任务执行一些很慢的 I&#47;O 操作，就会导致线程池中所有线程都阻塞在 I&#47;O 操作上，从而造成线程饥饿，进而影响整个系统的性能。”老师，阻塞在io上和是不是在一个线程池没关系吧？</p>2019-04-29</li><br/><li><span>J.M.Liu</span> 👍（12） 💬（1）<p>我觉得既然都讲到CompletableFuture了，老师是不是有必要不一章ForkJoinPool呀？毕竟，ForkJoinPool和ThreadPoolExecutor还是有很多不一样的。谢谢老师</p>2019-04-23</li><br/><li><span>henry</span> 👍（11） 💬（4）<p>老师我现在有个任务，和您的例子有相似的地方，是从一个库里查询多张表的数据同步到另外一个库，就有双重for循环，最外层用与多张表的遍历，内层的for循环用于批量读取某一张表的数据，因为数据量可能在几万条，我想分批次读出来再同步到另一个数据库，昨天写的时候用的是futuretask,今天正好看到老师的文章就改成了CompletableFuture，还没有用异常处理的，后面我还要看看怎么加上异常处理的。其它的不知道我用的对不对，请老师看看：
    &#47;&#47; 初始化异步工具类，分别异步执行2个任务
         CompletableFuture&lt;List&lt;PBSEnergyData&gt;&gt; asyncAquirePBSEnergyData = new CompletableFuture();
         CompletableFuture&lt;List&lt;AXEEnergyData&gt;&gt; asyncSaveAxeEnergyData = new CompletableFuture();
@@ -316,5 +316,5 @@ Boolean isOk = cf.join();
                 },saveAxeEnergyDataExecutor));
             }
         });
-全部贴上去，超过字符数了，只能请老师凑合看了 :(</div>2019-04-24</li><br/><li><span>Chocolate</span> 👍（10） 💬（4）<div>回答「密码123456」：CompletableFuture 在执行的过程中可以不阻塞主线程，支持 runAsync、anyOf、allOf 等操作，等某个时间点需要异步执行的结果时再阻塞获取。</div>2019-04-23</li><br/><li><span>Geek_0quh3e</span> 👍（8） 💬（2）<div>带有asyn的方法是异步执行，这里的异步是不在当前线程中执行？  比较困惑</div>2019-05-10</li><br/><li><span>Monday</span> 👍（7） 💬（1）<div>CompletableFuture从来没玩过，老师在工作&#47;实践中有使用过这个类吗？</div>2019-12-23</li><br/><li><span>LW</span> 👍（6） 💬（1）<div>老师，为什么CompletableFuture中默认使用ForkJoinPool这个线程池呢？它为什么不用其他线程池？</div>2019-04-24</li><br/><li><span>Geek_0359eb</span> 👍（5） 💬（1）<div>老师您好，想问下主线程怎么捕获到多线程中抛出的异常，捕获后再抛出自定义异常呢？</div>2020-04-21</li><br/><li><span>易儿易</span> 👍（5） 💬（1）<div>老师我有一个问题：在描述串行关系时，为什么参数没有other？这让我觉得并不是在描述两个子任务的串行关系，而是给第一个子任务追加了一个类似“回调方法”fn等……而并行关系和汇聚关系则很明确的出现了other……</div>2019-04-23</li><br/><li><span>_立斌</span> 👍（2） 💬（2）<div>老师好，想请问一下，如果一个事务里开了多个异步任务，如果其中一个任务抛出异常了，其他任务应该全部回滚，这样的异常如何捕获并处理呢？业界有最佳实践吗？谢谢老师</div>2021-05-09</li><br/>
+全部贴上去，超过字符数了，只能请老师凑合看了 :(</p>2019-04-24</li><br/><li><span>Chocolate</span> 👍（10） 💬（4）<p>回答「密码123456」：CompletableFuture 在执行的过程中可以不阻塞主线程，支持 runAsync、anyOf、allOf 等操作，等某个时间点需要异步执行的结果时再阻塞获取。</p>2019-04-23</li><br/><li><span>Geek_0quh3e</span> 👍（8） 💬（2）<p>带有asyn的方法是异步执行，这里的异步是不在当前线程中执行？  比较困惑</p>2019-05-10</li><br/><li><span>Monday</span> 👍（7） 💬（1）<p>CompletableFuture从来没玩过，老师在工作&#47;实践中有使用过这个类吗？</p>2019-12-23</li><br/><li><span>LW</span> 👍（6） 💬（1）<p>老师，为什么CompletableFuture中默认使用ForkJoinPool这个线程池呢？它为什么不用其他线程池？</p>2019-04-24</li><br/><li><span>Geek_0359eb</span> 👍（5） 💬（1）<p>老师您好，想问下主线程怎么捕获到多线程中抛出的异常，捕获后再抛出自定义异常呢？</p>2020-04-21</li><br/><li><span>易儿易</span> 👍（5） 💬（1）<p>老师我有一个问题：在描述串行关系时，为什么参数没有other？这让我觉得并不是在描述两个子任务的串行关系，而是给第一个子任务追加了一个类似“回调方法”fn等……而并行关系和汇聚关系则很明确的出现了other……</p>2019-04-23</li><br/><li><span>_立斌</span> 👍（2） 💬（2）<p>老师好，想请问一下，如果一个事务里开了多个异步任务，如果其中一个任务抛出异常了，其他任务应该全部回滚，这样的异常如何捕获并处理呢？业界有最佳实践吗？谢谢老师</p>2021-05-09</li><br/>
 </ul>

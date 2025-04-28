@@ -463,7 +463,7 @@ from langchain.prompts.chat import (
 4. 论文：[对示例角色的重新思考：是什么使得上下文学习有效？](https://doi.org/10.48550/arXiv.2202.12837)Min, S., Lyu, X., Holtzman, A., Artetxe, M., Lewis, M., Hajishirzi, H., &amp; Zettlemoyer, L. (2022). Rethinking the Role of Demonstrations: What Makes In-Context Learning Work? Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP 2022).
 5. 论文：[微调后的语言模型是零样本学习者](https://arxiv.org/pdf/2109.01652.pdf)，Wei, J., Bosma, M., Zhao, V. Y., Guu, K., Yu, A. W., Lester, B., Du, N., Dai, A. M., &amp; Le, Q. V. (2022). Finetuned Language Models Are Zero-Shot Learners. Proceedings of the International Conference on Learning Representations (ICLR 2022).
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>黄振宇</span> 👍（9） 💬（3）<div>我使用prompt遇到的一些问题
+<li><span>黄振宇</span> 👍（9） 💬（3）<p>我使用prompt遇到的一些问题
     1. 最常见的initial_agent方法直接传入prompt参数，好像无效。只能通过agent_kwargs的PREFIX和SUFFIX等传入。
     2. 先定义个LLMChain传入prompt参数，在定义一个agent（single action或者multi action）
     3. 有时候传值进去，最后打印agent的prompt，发现好像也没有成功。
@@ -471,9 +471,9 @@ from langchain.prompts.chat import (
     
     以上希望在老师的课程里都能得到解答。
     
-    另外，最近想去解决上述问题，看了langchain的源码，一头雾水，感觉东西太多了，不知从何开始，如果花大量时间在研究langchain上面又担心本末倒置了，毕竟它只是一个工具，还有好多的应用层的东西需要学习和研究，但是不吃透langchain只能做一些简单chatbot的应用。所以也比较迷茫，希望老师也能给出解答，如何做好二者的平衡。</div>2023-09-13</li><br/><li><span>高源</span> 👍（2） 💬（1）<div>老师有个问题问下，例如大模型知道你提出问题后，是如何输出满意的答案呢，例如一道算法编程题目，大模型知道你的问题后，是根据自己以前存储类似答案输出的吗，我提个新的特殊问题，他是怎么思考输出的呢</div>2023-10-29</li><br/><li><span>抽象派</span> 👍（2） 💬（1）<div>老师，请问“模型思考的时间”这个怎么理解啊？可以举个例子吗？</div>2023-10-18</li><br/><li><span>一路前行</span> 👍（1） 💬（1）<div>老师，发现你在讲langchain时候基本以openai为主，这没什么问题。可否讲下。比如自己的本地大模型。如何通过langchain实现调用。比如自己的本地大模型，和嵌入模型。langchain之前的调用方法，是否需要修改，如果需要该怎么修改？</div>2024-03-21</li><br/><li><span>悟尘</span> 👍（1） 💬（1）<div>我发现有时候不指定 .prompts，直接从 LangChain 包也能导入模板。  会有告警信息：
+    另外，最近想去解决上述问题，看了langchain的源码，一头雾水，感觉东西太多了，不知从何开始，如果花大量时间在研究langchain上面又担心本末倒置了，毕竟它只是一个工具，还有好多的应用层的东西需要学习和研究，但是不吃透langchain只能做一些简单chatbot的应用。所以也比较迷茫，希望老师也能给出解答，如何做好二者的平衡。</p>2023-09-13</li><br/><li><span>高源</span> 👍（2） 💬（1）<p>老师有个问题问下，例如大模型知道你提出问题后，是如何输出满意的答案呢，例如一道算法编程题目，大模型知道你的问题后，是根据自己以前存储类似答案输出的吗，我提个新的特殊问题，他是怎么思考输出的呢</p>2023-10-29</li><br/><li><span>抽象派</span> 👍（2） 💬（1）<p>老师，请问“模型思考的时间”这个怎么理解啊？可以举个例子吗？</p>2023-10-18</li><br/><li><span>一路前行</span> 👍（1） 💬（1）<p>老师，发现你在讲langchain时候基本以openai为主，这没什么问题。可否讲下。比如自己的本地大模型。如何通过langchain实现调用。比如自己的本地大模型，和嵌入模型。langchain之前的调用方法，是否需要修改，如果需要该怎么修改？</p>2024-03-21</li><br/><li><span>悟尘</span> 👍（1） 💬（1）<p>我发现有时候不指定 .prompts，直接从 LangChain 包也能导入模板。  会有告警信息：
 langchain&#47;__init__.py:34: UserWarning: Importing PromptTemplate from langchain root module is no longer supported. Please use langchain.prompts.PromptTemplate instead. warnings.warn(
-所以，建议还是指定 .prompts，即from langchain.prompts.prompt import PromptTemplate</div>2023-11-08</li><br/><li><span>曹胖子</span> 👍（0） 💬（1）<div>一路照着内容跑代码  一直到example_selector = SemanticSimilarityExampleSelector.from_examples   就不行了  工具报错 提示 UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 7-8: ordinal not in range(128)  问了gpt也没解决问题</div>2024-05-30</li><br/><li><span>冬瓜蔡</span> 👍（0） 💬（1）<div>黄老师下午好，我在跑野玫瑰 文案这个case时，并没有输出文案，而是如下信息：“这些看起来像是鲜花分类及其搭配的一些文案。需要帮你做些什么呢？”</div>2024-05-09</li><br/><li><span>D.L</span> 👍（0） 💬（1）<div>黄老师，请教一下：
+所以，建议还是指定 .prompts，即from langchain.prompts.prompt import PromptTemplate</p>2023-11-08</li><br/><li><span>曹胖子</span> 👍（0） 💬（1）<p>一路照着内容跑代码  一直到example_selector = SemanticSimilarityExampleSelector.from_examples   就不行了  工具报错 提示 UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 7-8: ordinal not in range(128)  问了gpt也没解决问题</p>2024-05-30</li><br/><li><span>冬瓜蔡</span> 👍（0） 💬（1）<p>黄老师下午好，我在跑野玫瑰 文案这个case时，并没有输出文案，而是如下信息：“这些看起来像是鲜花分类及其搭配的一些文案。需要帮你做些什么呢？”</p>2024-05-09</li><br/><li><span>D.L</span> 👍（0） 💬（1）<p>黄老师，请教一下：
 课程中有段代码
 ```
 # 初始化示例选择器
@@ -517,8 +517,8 @@ b&#39;&#39;
 
 ```
 
-</div>2023-12-05</li><br/><li><span>一面湖水</span> 👍（0） 💬（1）<div># 初始化示例选择器example_selector = SemanticSimilarityExampleSelector.from_examples(    samples,    OpenAIEmbeddings(),    Chroma,    k=1)
-这里改成：Qdrant会报错呢？</div>2023-10-13</li><br/><li><span>杨松</span> 👍（0） 💬（2）<div>老师您好，请教个问题，文中代码：
+</p>2023-12-05</li><br/><li><span>一面湖水</span> 👍（0） 💬（1）<p># 初始化示例选择器example_selector = SemanticSimilarityExampleSelector.from_examples(    samples,    OpenAIEmbeddings(),    Chroma,    k=1)
+这里改成：Qdrant会报错呢？</p>2023-10-13</li><br/><li><span>杨松</span> 👍（0） 💬（2）<p>老师您好，请教个问题，文中代码：
 # 创建一个使用示例选择器的FewShotPromptTemplate对象
 prompt = FewShotPromptTemplate(    
 example_selector=example_selector,
@@ -533,10 +533,10 @@ print(prompt.format(flower_type=&quot;红玫瑰&quot;, occasion=&quot;爱情&quo
 
 鲜花类型: 红玫瑰
 场合: 爱情
-我的问题是 玫瑰的那个文字是example_selector生成的，还是example_prompt生成的，或者是两者同事生成后去重了？</div>2023-10-10</li><br/><li><span>Yimmy</span> 👍（0） 💬（1）<div>template=&quot;鲜花类型: {flower_type}\n场合: {occasion}\n文案: {ad_copy}&quot;)--这里多了括号)</div>2023-09-19</li><br/><li><span>阿斯蒂芬</span> 👍（0） 💬（1）<div>假设做一个垂直领域的对话机器人，是否可以将用户的query通过一定的转换方式，比如embedding去“匹配”一些 Prompt，且增加Few or One example 的参考示例，相当于将query加工后，形成更加“指令化”的请求，便于让模型往更清晰地“理解”用户的说法，并按照更“步骤化”的方式去思考并给出答案。
+我的问题是 玫瑰的那个文字是example_selector生成的，还是example_prompt生成的，或者是两者同事生成后去重了？</p>2023-10-10</li><br/><li><span>Yimmy</span> 👍（0） 💬（1）<p>template=&quot;鲜花类型: {flower_type}\n场合: {occasion}\n文案: {ad_copy}&quot;)--这里多了括号)</p>2023-09-19</li><br/><li><span>阿斯蒂芬</span> 👍（0） 💬（1）<p>假设做一个垂直领域的对话机器人，是否可以将用户的query通过一定的转换方式，比如embedding去“匹配”一些 Prompt，且增加Few or One example 的参考示例，相当于将query加工后，形成更加“指令化”的请求，便于让模型往更清晰地“理解”用户的说法，并按照更“步骤化”的方式去思考并给出答案。
 也就是说，实际上用户与模型的交互，中间还是隐藏了很多“工程师加工”细节～
 
-另外 ExampleSelector 的意义看起来是将 example 的匹配进行高层抽象，屏蔽细节，应该除了 Embbdings 方式，还有其他种种获取 example 的方式。使用Selector还有好处就是可以通过examples的瘦身节省tokens。</div>2023-09-17</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<div>langchain 的很多提示都是针对chatgpt的，是不是可以理解为，chatgpt在进行sft的时候，数据集就用上了langchain很多prompt的措辞方式，所以chatgpt对这些prompt的效果也很好。</div>2023-09-13</li><br/><li><span>yanyu-xin</span> 👍（4） 💬（1）<div>用国产模型改写：03_FewShotPrompt.py
+另外 ExampleSelector 的意义看起来是将 example 的匹配进行高层抽象，屏蔽细节，应该除了 Embbdings 方式，还有其他种种获取 example 的方式。使用Selector还有好处就是可以通过examples的瘦身节省tokens。</p>2023-09-17</li><br/><li><span>骨汤鸡蛋面</span> 👍（0） 💬（1）<p>langchain 的很多提示都是针对chatgpt的，是不是可以理解为，chatgpt在进行sft的时候，数据集就用上了langchain很多prompt的措辞方式，所以chatgpt对这些prompt的效果也很好。</p>2023-09-13</li><br/><li><span>yanyu-xin</span> 👍（4） 💬（1）<p>用国产模型改写：03_FewShotPrompt.py
 用阿里云的通义千问模型 改写  OpenAI 模型。
 改写OpenAIEmbeddings，由于使用阿里云embeddings模型代码复杂，采用百川智能的 BaichuanTextEmbeddings 
 完整代码如下：
@@ -587,6 +587,6 @@ example_selector = SemanticSimilarityExampleSelector.from_examples(
 )
 
 # 创建一个使用示例选择器的FewShotPromptTemplate对象
-&#39;&#39;&#39;  原代码 &#39;&#39;&#39;</div>2024-07-15</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<div>第4讲打卡~
-在LLM应用中，除了准确性和性能，成本也是一个重要的评价指标，SemanticSimilarityExampleSelector可以通过比较余弦相似度，从所有示例中选取出于目标问题语义上最相近的k条示例，在很大程度上可以节省token的消耗，降低成本</div>2024-07-12</li><br/>
+&#39;&#39;&#39;  原代码 &#39;&#39;&#39;</p>2024-07-15</li><br/><li><span>张申傲</span> 👍（1） 💬（0）<p>第4讲打卡~
+在LLM应用中，除了准确性和性能，成本也是一个重要的评价指标，SemanticSimilarityExampleSelector可以通过比较余弦相似度，从所有示例中选取出于目标问题语义上最相近的k条示例，在很大程度上可以节省token的消耗，降低成本</p>2024-07-12</li><br/>
 </ul>

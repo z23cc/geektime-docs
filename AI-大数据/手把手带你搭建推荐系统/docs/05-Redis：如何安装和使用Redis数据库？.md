@@ -103,12 +103,12 @@ set hello “recommendation system class”
 
 你可以把你的问题写在留言区，我们一起交流讨论。我们下节课见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（2）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（2）<p>请教老师几个问题：
 Q1：Redis是分布式系统，那么有多个节点时，会有一个中心节点吗？还是各节点平等？
 Q2：Redis速度快，支持高达每秒 10 万次的并发请求，原因是什么？是因为单线程吗？ 另外，支持每秒 10 万次并发请求这个指标，对硬件有要求吗？（即，在一定的机器配置下才能达到这个指标）
 Q3：AOF方式，是即时写入吗？还是按一定的时间间隔写入（比如间隔10秒写入）？还是按照一定的数据数量写入（比如每100条数据写入）？
 Q4：Redis的同类产品有哪些？
 Q5：Redis经常受黑客攻击吗？
 Q6：记得Redis有一个GUI客户端，需要安装此客户端吗？
-Q7：Redis中选定一个数据库后，一直往里面添加数据，会溢出吗？如果会溢出，溢出后怎么处理？是存到下一个数据库吗？</div>2023-04-19</li><br/><li><span>Geek9469</span> 👍（0） 💬（2）<div>有遇到过redis里面的画像太大，导致redis cpu经常告警的吗？</div>2023-05-19</li><br/><li><span>云中君</span> 👍（4） 💬（0）<div>好着急…</div>2023-04-20</li><br/><li><span>未来已来</span> 👍（1） 💬（0）<div>Mac（intel CPU）安装 Redis 可以看下这个：https:&#47;&#47;blog.csdn.net&#47;realize_dream&#47;article&#47;details&#47;106227622</div>2023-05-07</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<div>这个Redis和上一节的MongoDB其实能合成一个章节的。</div>2023-12-11</li><br/><li><span>Geek9469</span> 👍（0） 💬（0）<div>有遇到过redis里面的画像太大，导致读取的时候经常告警的吗？或者是你们的redis里面一般都存什么数据？有用L1本地缓存解决不？</div>2023-05-19</li><br/><li><span>Geek9469</span> 👍（0） 💬（0）<div>有遇到过redis 里面的画像太大，读取的时候，导致经常告警的吗？</div>2023-05-19</li><br/>
+Q7：Redis中选定一个数据库后，一直往里面添加数据，会溢出吗？如果会溢出，溢出后怎么处理？是存到下一个数据库吗？</p>2023-04-19</li><br/><li><span>Geek9469</span> 👍（0） 💬（2）<p>有遇到过redis里面的画像太大，导致redis cpu经常告警的吗？</p>2023-05-19</li><br/><li><span>云中君</span> 👍（4） 💬（0）<p>好着急…</p>2023-04-20</li><br/><li><span>未来已来</span> 👍（1） 💬（0）<p>Mac（intel CPU）安装 Redis 可以看下这个：https:&#47;&#47;blog.csdn.net&#47;realize_dream&#47;article&#47;details&#47;106227622</p>2023-05-07</li><br/><li><span>悟尘</span> 👍（0） 💬（0）<p>这个Redis和上一节的MongoDB其实能合成一个章节的。</p>2023-12-11</li><br/><li><span>Geek9469</span> 👍（0） 💬（0）<p>有遇到过redis里面的画像太大，导致读取的时候经常告警的吗？或者是你们的redis里面一般都存什么数据？有用L1本地缓存解决不？</p>2023-05-19</li><br/><li><span>Geek9469</span> 👍（0） 💬（0）<p>有遇到过redis 里面的画像太大，读取的时候，导致经常告警的吗？</p>2023-05-19</li><br/>
 </ul>

@@ -415,7 +415,7 @@ Flutter提供了平台视图工厂和视图标识符两个概念，因此Dart层
 
 欢迎你在评论区给我留言分享你的观点，我会在下一篇文章中等待你！感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>宇</span> 👍（6） 💬（1）<div>思考题实现思路
+<li><span>宇</span> 👍（6） 💬（1）<p>思考题实现思路
 
 dart层设置颜色参数的方法：
 changeBackgroundColor(int r, int g, int b) async
@@ -436,7 +436,7 @@ if (methodCall.method.equals(&quot;changeBackgroundColor&quot;)) {
     }else {
       result.notImplemented();
     }
-</div>2019-09-02</li><br/><li><span>舒大飞</span> 👍（3） 💬（2）<div>反过来，可以在原生页面中嵌入一小块Flutter视图吗</div>2019-10-10</li><br/><li><span>kennen</span> 👍（0） 💬（1）<div>iOS中的frame参数并没有用到，flutter是怎么把宽高传给iOS来展示的呢？</div>2019-11-26</li><br/><li><span>Miracle_</span> 👍（0） 💬（1）<div>请问下，嵌入了原生视图后，如果嵌入的是较为复杂的视图，视图带走点击等交互事件，应该在哪边设置监听或者处理呢？</div>2019-10-23</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<div>思考题如下：
+</p>2019-09-02</li><br/><li><span>舒大飞</span> 👍（3） 💬（2）<p>反过来，可以在原生页面中嵌入一小块Flutter视图吗</p>2019-10-10</li><br/><li><span>kennen</span> 👍（0） 💬（1）<p>iOS中的frame参数并没有用到，flutter是怎么把宽高传给iOS来展示的呢？</p>2019-11-26</li><br/><li><span>Miracle_</span> 👍（0） 💬（1）<p>请问下，嵌入了原生视图后，如果嵌入的是较为复杂的视图，视图带走点击等交互事件，应该在哪边设置监听或者处理呢？</p>2019-10-23</li><br/><li><span>和小胖</span> 👍（0） 💬（1）<p>思考题如下：
 
 &#47;&#47;声明修改原生控件背景的方法
   changeBgColor() async {
@@ -460,8 +460,8 @@ override fun onMethodCall(p0: MethodCall, p1: MethodChannel.Result) {
                 &#47;&#47;如果是别的方法则返回未实现
                 else -&gt; p1.notImplemented()
             }
-        }</div>2019-10-14</li><br/><li><span>许童童</span> 👍（5） 💬（1）<div>妙啊，通过平台视图，Flutter就可以使用原生视图了，这样，基本所有需求都可以实现了。如果社区再繁荣一点，许多组件都可以拿来即用，那开发需求的速度就是相当快了。</div>2019-08-29</li><br/><li><span>Verios</span> 👍（2） 💬（1）<div> 每次 widget 重建，都会create一个原生 view 吗？
-</div>2020-03-19</li><br/><li><span>jianwei</span> 👍（2） 💬（0）<div>floatingActionButton: FloatingActionButton(
+        }</p>2019-10-14</li><br/><li><span>许童童</span> 👍（5） 💬（1）<p>妙啊，通过平台视图，Flutter就可以使用原生视图了，这样，基本所有需求都可以实现了。如果社区再繁荣一点，许多组件都可以拿来即用，那开发需求的速度就是相当快了。</p>2019-08-29</li><br/><li><span>Verios</span> 👍（2） 💬（1）<p> 每次 widget 重建，都会create一个原生 view 吗？
+</p>2020-03-19</li><br/><li><span>jianwei</span> 👍（2） 💬（0）<p>floatingActionButton: FloatingActionButton(
 	onPressed: () =&gt; controller.changeBackground(&#39;#FFFFFF&#39;),
 ),
 
@@ -484,7 +484,7 @@ Future&lt;void&gt; changeBackground(String colorString) async {
         }
     }
     result(FlutterMethodNotImplemented);
-}</div>2020-01-08</li><br/><li><span>无名</span> 👍（1） 💬（0）<div>iOS 平台视图中：-(NSObject&lt;FlutterPlatformView&gt; *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id)args{}
+}</p>2020-01-08</li><br/><li><span>无名</span> 👍（1） 💬（0）<p>iOS 平台视图中：-(NSObject&lt;FlutterPlatformView&gt; *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id)args{}
 为何frame的值都是(0.0, 0.0, 0.0, 0.0)，为何没有宽高？这里不应该是显示的视图大小吗？
-</div>2020-08-14</li><br/><li><span>星星</span> 👍（1） 💬（1）<div>这个在io.flutter.embedding.android.FlutterActivity中如何绑定呢，没有响应的方法啊</div>2020-03-16</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（0）<div>这个是不是一个 NativeViewController 对应一个 Widgt？？因为 id 不一样</div>2023-04-05</li><br/><li><span>微尘</span> 👍（0） 💬（0）<div>这一节含金量高啊，不知道windows 是否也可以提供插件给dart端使用呢？</div>2022-11-14</li><br/><li><span>五十度灰黑</span> 👍（0） 💬（0）<div>Flutter 页面嵌入原生视图，有滚动条的情况，原生视图定位问题怎么解决？</div>2021-11-29</li><br/><li><span>刘洪林</span> 👍（0） 💬（1）<div>对前端来说是不是还要学安卓和iOS开发啊</div>2021-05-04</li><br/><li><span>Geek_cc0a3b</span> 👍（0） 💬（0）<div>内嵌原生空间，事件响应比如onClick是直接在原生层响应了吧，flutter不需要负责处理原生事件的响应吧？</div>2021-04-27</li><br/>
+</p>2020-08-14</li><br/><li><span>星星</span> 👍（1） 💬（1）<p>这个在io.flutter.embedding.android.FlutterActivity中如何绑定呢，没有响应的方法啊</p>2020-03-16</li><br/><li><span>荷兰小猪8813</span> 👍（0） 💬（0）<p>这个是不是一个 NativeViewController 对应一个 Widgt？？因为 id 不一样</p>2023-04-05</li><br/><li><span>微尘</span> 👍（0） 💬（0）<p>这一节含金量高啊，不知道windows 是否也可以提供插件给dart端使用呢？</p>2022-11-14</li><br/><li><span>五十度灰黑</span> 👍（0） 💬（0）<p>Flutter 页面嵌入原生视图，有滚动条的情况，原生视图定位问题怎么解决？</p>2021-11-29</li><br/><li><span>刘洪林</span> 👍（0） 💬（1）<p>对前端来说是不是还要学安卓和iOS开发啊</p>2021-05-04</li><br/><li><span>Geek_cc0a3b</span> 👍（0） 💬（0）<p>内嵌原生空间，事件响应比如onClick是直接在原生层响应了吧，flutter不需要负责处理原生事件的响应吧？</p>2021-04-27</li><br/>
 </ul>

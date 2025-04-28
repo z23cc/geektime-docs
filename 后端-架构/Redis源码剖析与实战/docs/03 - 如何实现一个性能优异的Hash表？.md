@@ -380,7 +380,7 @@ Hash函数会影响Hash表的查询效率及哈希冲突情况，那么，你能
 
 欢迎在留言区分享你的答案，如果觉得有收获，也欢迎你把今天的内容分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>悟空聊架构</span> 👍（31） 💬（4）<div>说下我是怎么找到这个 Hash 函数的吧。有点艰辛...
+<li><span>悟空聊架构</span> 👍（31） 💬（4）<p>说下我是怎么找到这个 Hash 函数的吧。有点艰辛...
 
 （1）文中也提到了 rehash 的主要函数就是 dictRehash 函数，所以我们可以直接在这个函数里面找： 
 
@@ -448,7 +448,7 @@ dbDictType 点进去，发现用到了 dictSdsHash 函数：
 
 2. 寻找的过程比较艰辛，但是对源码理解更深了。
 
-3. 可以看 Redis 5 设计与源码实现作为本专栏的补充。比如缩容时也会触发渐见式 hash。当使用量不到总空间 10% 时，则进行缩容。缩容时空间大小则为能恰好包含 d-&gt;ht[0].used 个节点的 2^N 次方幂整数，并把字典中字段 rehashidx 标识为 0。在 server.h 文件中有定义：#define HASHTABLE_MIN_FILL    10。</div>2021-08-01</li><br/><li><span>.</span> 👍（2） 💬（3）<div>老师，您好！我有个疑问，dictRehash 进行迁移n个桶 ，这个n是固定吗？如果不是固定怎么确定呢？</div>2021-08-01</li><br/><li><span>董宗磊</span> 👍（1） 💬（3）<div>老师，当负载因子 &gt; 5 的时候，是不是就不再考虑有没有 RDB 或者 AOF 进程在运行？？</div>2021-07-31</li><br/><li><span>Kaito</span> 👍（116） 💬（13）<div>1、Redis 中的 dict 数据结构，采用「链式哈希」的方式存储，当哈希冲突严重时，会开辟一个新的哈希表，翻倍扩容，并采用「渐进式 rehash」的方式迁移数据
+3. 可以看 Redis 5 设计与源码实现作为本专栏的补充。比如缩容时也会触发渐见式 hash。当使用量不到总空间 10% 时，则进行缩容。缩容时空间大小则为能恰好包含 d-&gt;ht[0].used 个节点的 2^N 次方幂整数，并把字典中字段 rehashidx 标识为 0。在 server.h 文件中有定义：#define HASHTABLE_MIN_FILL    10。</p>2021-08-01</li><br/><li><span>.</span> 👍（2） 💬（3）<p>老师，您好！我有个疑问，dictRehash 进行迁移n个桶 ，这个n是固定吗？如果不是固定怎么确定呢？</p>2021-08-01</li><br/><li><span>董宗磊</span> 👍（1） 💬（3）<p>老师，当负载因子 &gt; 5 的时候，是不是就不再考虑有没有 RDB 或者 AOF 进程在运行？？</p>2021-07-31</li><br/><li><span>Kaito</span> 👍（116） 💬（13）<p>1、Redis 中的 dict 数据结构，采用「链式哈希」的方式存储，当哈希冲突严重时，会开辟一个新的哈希表，翻倍扩容，并采用「渐进式 rehash」的方式迁移数据
 
 2、所谓「渐进式 rehash」是指，把很大块迁移数据的开销，平摊到多次小的操作中，目的是降低主线程的性能影响
 
@@ -504,7 +504,7 @@ for (j = 0; j &lt; server.dbnum; j++) {
 
 这个 dbDictType struct 指定了具体的哈希函数，跟代码进去能看到，使用了 SipHash 算法，具体实现逻辑在 siphash.c。
 
-（SipHash 哈希算法是在 Redis 4.0 才开始使用的，3.0-4.0 使用的是 MurmurHash2 哈希算法，3.0 之前是 DJBX33A 哈希算法）</div>2021-07-31</li><br/><li><span>曾轼麟</span> 👍（22） 💬（3）<div>首先回答老师的提问：Redis使用的hash函数算法是siphash，其代码位于siphash.c的siphash函数中，上层函数是dictGenHashFunction 【注意】：在查找dictGenHashFunction的时候如果发现算法是time33，其实你找到的是C的redis客户端框架hiredis实现的hash函数，并不是redis本身的hash函数
+（SipHash 哈希算法是在 Redis 4.0 才开始使用的，3.0-4.0 使用的是 MurmurHash2 哈希算法，3.0 之前是 DJBX33A 哈希算法）</p>2021-07-31</li><br/><li><span>曾轼麟</span> 👍（22） 💬（3）<p>首先回答老师的提问：Redis使用的hash函数算法是siphash，其代码位于siphash.c的siphash函数中，上层函数是dictGenHashFunction 【注意】：在查找dictGenHashFunction的时候如果发现算法是time33，其实你找到的是C的redis客户端框架hiredis实现的hash函数，并不是redis本身的hash函数
 
 
 此外阅读完文章我产生了三个问题并且自己给出自己的理解：
@@ -539,8 +539,8 @@ for (j = 0; j &lt; server.dbnum; j++) {
     1、serverCron -&gt; updateDictResizePolicy (先判断是否能执行rehash，当AOF重写等高压力操作时候不执行)
     2、serverCron -&gt; databasesCron -&gt; incrementallyRehash -&gt; dictRehashMilliseconds -&gt; dictRehash (dictRehashMilliseconds默认要求每次rehash最多只能执行1ms)
 
-    通过这种方式最终完成整改hash表的扩容</div>2021-07-31</li><br/><li><span>叶坚</span> 👍（7） 💬（7）<div>咨询个问题，当部分bucket 执行 rehash，部分bucket还没有执行rehash，这时增删查请求操作是对ht[1]操作，还是ht[0]，谢谢
-</div>2021-08-01</li><br/><li><span>onno</span> 👍（5） 💬（7）<div>为啥说dictht里的**table是一个二维数组啊，不是一个二级指针的一位数组吗？</div>2021-12-13</li><br/><li><span>shp</span> 👍（4） 💬（0）<div>需要注意的是在渐进式rehash的过程，如果有增删改查操作时，如果index大于rehashindex，访问ht[0]，否则访问ht[1]</div>2022-01-24</li><br/><li><span>陌</span> 👍（3） 💬（0）<div>Hash 表使用的是哪一种 Hash 函数?
+    通过这种方式最终完成整改hash表的扩容</p>2021-07-31</li><br/><li><span>叶坚</span> 👍（7） 💬（7）<p>咨询个问题，当部分bucket 执行 rehash，部分bucket还没有执行rehash，这时增删查请求操作是对ht[1]操作，还是ht[0]，谢谢
+</p>2021-08-01</li><br/><li><span>onno</span> 👍（5） 💬（7）<p>为啥说dictht里的**table是一个二维数组啊，不是一个二级指针的一位数组吗？</p>2021-12-13</li><br/><li><span>shp</span> 👍（4） 💬（0）<p>需要注意的是在渐进式rehash的过程，如果有增删改查操作时，如果index大于rehashindex，访问ht[0]，否则访问ht[1]</p>2022-01-24</li><br/><li><span>陌</span> 👍（3） 💬（0）<p>Hash 表使用的是哪一种 Hash 函数?
 
 各个类型的 dictType 在 server.c 中被初始化，常用的包括 setDictType、zsetDictType 以及 16 个 database 所使用的 dbDictType。
 此时就可以找到 hashFunction 的实现为 dictSdsHash()，最终的底层实现为 siphash()。
@@ -569,14 +569,14 @@ for (j = 0; j &lt; server.dbnum; j++) {
 }
 ```
 
-也就是说，Redis 在启动时将会创建 16 * 5 个功能性的 dict，这些 dcit 是实现 TTL、BLPOP&#47;BRPOP 等功能的关键组件。</div>2021-08-01</li><br/><li><span>日落黄昏下</span> 👍（2） 💬（1）<div>我看源码好像扩容并不是双倍的used大小，在_dictNextPower中要计算出来的新容量是2的n次幂。</div>2021-08-25</li><br/><li><span>木几丶</span> 👍（2） 💬（8）<div>老师你好，有几个问题想请教下：
+也就是说，Redis 在启动时将会创建 16 * 5 个功能性的 dict，这些 dcit 是实现 TTL、BLPOP&#47;BRPOP 等功能的关键组件。</p>2021-08-01</li><br/><li><span>日落黄昏下</span> 👍（2） 💬（1）<p>我看源码好像扩容并不是双倍的used大小，在_dictNextPower中要计算出来的新容量是2的n次幂。</p>2021-08-25</li><br/><li><span>木几丶</span> 👍（2） 💬（8）<p>老师你好，有几个问题想请教下：
 1、判断是否扩容并rehash的条件是d-&gt;ht[0].used &gt;= d-&gt;ht[0].size &amp;&amp;(dict_can_resize || d-&gt;ht[0].used&#47;d-&gt;ht[0].size &gt; dict_force_resize_ratio)，这句逻辑好像不对？应该写成d-&gt;ht[0].used &gt;= d-&gt;ht[0].size &amp;&amp; dict_can_resize || d-&gt;ht[0].used&#47;d-&gt;ht[0].size &gt; dict_force_resize_ratio？
 2、在函数dictRehash中有一段代码是  assert(d-&gt;ht[0].size &gt; (unsigned long)d-&gt;rehashidx)，这是断言rehashidx是否越界，rehashidx为什么会有越界的情况？
-3、另外问个代码上的问题（有可能钻牛角尖了），作为性能抠的很细的redis来说，在计算新哈希表大小的时候需要从初始大小4频繁*2得到最终size，这里为什么不直接用移位操作提升效率？</div>2021-07-31</li><br/><li><span>可怜大灰狼</span> 👍（2） 💬（0）<div>dict.c中dictGenHashFunction调用的是siphash.c中siphash方法。我想从MurmurHash2到siphash，也是看重哈希洪水攻击。不过java的HashMap还是通过平衡树来处理同一位置超过8个元素的哈希碰撞。</div>2021-07-31</li><br/><li><span>thomas</span> 👍（1） 💬（2）<div>&#47;&#47;将当前哈希项添加到扩容后的哈希表ht[1]中        
+3、另外问个代码上的问题（有可能钻牛角尖了），作为性能抠的很细的redis来说，在计算新哈希表大小的时候需要从初始大小4频繁*2得到最终size，这里为什么不直接用移位操作提升效率？</p>2021-07-31</li><br/><li><span>可怜大灰狼</span> 👍（2） 💬（0）<p>dict.c中dictGenHashFunction调用的是siphash.c中siphash方法。我想从MurmurHash2到siphash，也是看重哈希洪水攻击。不过java的HashMap还是通过平衡树来处理同一位置超过8个元素的哈希碰撞。</p>2021-07-31</li><br/><li><span>thomas</span> 👍（1） 💬（2）<p>&#47;&#47;将当前哈希项添加到扩容后的哈希表ht[1]中        
 de-&gt;next = d-&gt;ht[1].table[h];       第一步
 d-&gt;ht[1].table[h] = de;
 ---------------------------------------&gt;
-没想明白，为什么需要第一步的操作？</div>2021-09-26</li><br/><li><span>云海</span> 👍（1） 💬（1）<div>如果当前表的已用空间大小为 size，那么就将表扩容到 size*2 的大小。
+没想明白，为什么需要第一步的操作？</p>2021-09-26</li><br/><li><span>云海</span> 👍（1） 💬（1）<p>如果当前表的已用空间大小为 size，那么就将表扩容到 size*2 的大小。
 这里应该笔误了。
 从_dictNextPower 可以看出，这里的描述有点歧义，size 应该是 hash 表的容量，而不是 hash 表已使用的空间。 
 扩容是从 4开始一直乘以2，直到大于 当前已使用空间+1（下面代码里的size 实际是 used+1）
@@ -590,5 +590,5 @@ static unsigned long _dictNextPower(unsigned long size)
             return i;
         i *= 2;
     }
-}</div>2021-08-15</li><br/><li><span>Milittle</span> 👍（1） 💬（0）<div>使用的hash函数是siphash</div>2021-07-31</li><br/>
+}</p>2021-08-15</li><br/><li><span>Milittle</span> 👍（1） 💬（0）<p>使用的hash函数是siphash</p>2021-07-31</li><br/>
 </ul>

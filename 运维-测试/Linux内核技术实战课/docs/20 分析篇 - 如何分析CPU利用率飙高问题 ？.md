@@ -145,7 +145,7 @@ iterate_supers // 遍历super block
 
 最后，感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友。
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>Linuxer</span> 👍（11） 💬（2）<div>邵老师，你好，有个负载高的问题，我判断是因为开的线程数过多导致的，我想请教一下是下面的这些数据是不是有说服力或者有什么手段进一步确认? 谢谢！
+<li><span>Linuxer</span> 👍（11） 💬（2）<p>邵老师，你好，有个负载高的问题，我判断是因为开的线程数过多导致的，我想请教一下是下面的这些数据是不是有说服力或者有什么手段进一步确认? 谢谢！
 top
 top - 18:46:33 up 186 days,  4:31,  3 users,  load average: 67.47, 55.78, 61.19
 Tasks: 377 total,   1 running, 376 sleeping,   0 stopped,   0 zombie
@@ -189,7 +189,7 @@ procs_running 119
      2,554,107,830      branch-misses             #    2.81% of all branches        
 
       11.776125779 seconds time elapsed
-</div>2020-11-06</li><br/><li><span>莫名</span> 👍（3） 💬（2）<div>推荐使用 ftrace 前端 trace-cmd，直接操作 tracefs 文件略显繁琐。</div>2020-10-21</li><br/><li><span>我来也</span> 👍（3） 💬（1）<div># 老师文中提到的`查看 Page Cache 的组成`这个功能,感觉很吸引人啊!
+</p>2020-11-06</li><br/><li><span>莫名</span> 👍（3） 💬（2）<p>推荐使用 ftrace 前端 trace-cmd，直接操作 tracefs 文件略显繁琐。</p>2020-10-21</li><br/><li><span>我来也</span> 👍（3） 💬（1）<p># 老师文中提到的`查看 Page Cache 的组成`这个功能,感觉很吸引人啊!
 
 # 根据老师的提示,也只找到了这两个方式:
 ## [Is it possible to list the files that are cached?](https:&#47;&#47;serverfault.com&#47;a&#47;782640)
@@ -205,7 +205,7 @@ procs_running 119
 # 疑问
 还是老师的这个方法好,不需要提供文件列表,也可以查看内存中都有哪些文件以及这些文件的大小.
 请问,老师的这个工具有开源版本么?
-</div>2020-10-03</li><br/><li><span>会飞的鱼</span> 👍（2） 💬（1）<div>老师好，我的服务器内核空间的cpu使用率达到了100%，重启了几次依然没有解决，然后我用top查看，没有发现cpu占用很高的进程，用execsnoop也没发现异常，然后用pidstat -w查看，发现rcu_sched的上下文切换很频繁，而且是自愿上下文切换，然后我再用perf top -g -p 9追踪，发现有schedule,finish_task_switch等系统调用，但我还是不清楚是什么原因导致的内核空间cpu使用率高，服务器上也没跑什么程序，这种情况怎么进一步解决呢？ 可以加您微信进一步求教下吗？</div>2020-11-25</li><br/><li><span>Geek_9bf0b0</span> 👍（1） 💬（1）<div>邵老师，关于在 sysrq 里实现显示出系统中所有 R 和 D 状态的任务的功能，我的想法是将
+</p>2020-10-03</li><br/><li><span>会飞的鱼</span> 👍（2） 💬（1）<p>老师好，我的服务器内核空间的cpu使用率达到了100%，重启了几次依然没有解决，然后我用top查看，没有发现cpu占用很高的进程，用execsnoop也没发现异常，然后用pidstat -w查看，发现rcu_sched的上下文切换很频繁，而且是自愿上下文切换，然后我再用perf top -g -p 9追踪，发现有schedule,finish_task_switch等系统调用，但我还是不清楚是什么原因导致的内核空间cpu使用率高，服务器上也没跑什么程序，这种情况怎么进一步解决呢？ 可以加您微信进一步求教下吗？</p>2020-11-25</li><br/><li><span>Geek_9bf0b0</span> 👍（1） 💬（1）<p>邵老师，关于在 sysrq 里实现显示出系统中所有 R 和 D 状态的任务的功能，我的想法是将
 
 show_state_filter()接口的state_filter参数改成指针类型，传递参数NULL时表示显示所有进程信息，
 这样避免与TASK_RUNNING冲突，代码修改量也小，也相对优雅。
@@ -243,5 +243,5 @@ static void sysrq_handle_showstate_load(int key)
 }
 
 关于注册定制化的sysrq，可以通过early_param或者模块的方式。
-以模块的方式注册定制化的sysrq时需要导出内核符号show_state_filter。</div>2020-10-10</li><br/><li><span>nestle</span> 👍（0） 💬（1）<div>老是，IO排队是不是应该看avgqu-sz这个字段？</div>2021-06-14</li><br/><li><span>莫名</span> 👍（1） 💬（0）<div>iotop 没有发现写 I&#47;O 的用户进程，觉得可以往上走，在文件系统层面做些分析，page 紧张的情况下，文件读写操作会变得相对慢一些。借助 BCC 现有工具 ext4slower、ext4dist（假设是 ext4 fs）分析，应该可以看到具体的用户进程。</div>2022-03-17</li><br/><li><span>Wade_阿伟</span> 👍（1） 💬（0）<div>我是一名系统运维工程师，对内核还不太了解。但感觉这节课还是收货了很多，尤其是如何借助ftrace去做进一步分析，以及如何查看page cache中都是哪些文件及文件大小。之前只知道使用cachestat和cachetop去查看缓存命中情况。希望以后工作中能够运用上。</div>2021-10-24</li><br/><li><span>Bin</span> 👍（0） 💬（1）<div>你好，邵老师， 这篇文文章标题写的 cpu利用率高因为系统调用的问题，而这个系统调用主要卡在io wait上，但io wait 跟cpu利用率没关系吧，cpu利用率(用户态加系统态)应该不受影响才对</div>2023-01-09</li><br/>
+以模块的方式注册定制化的sysrq时需要导出内核符号show_state_filter。</p>2020-10-10</li><br/><li><span>nestle</span> 👍（0） 💬（1）<p>老是，IO排队是不是应该看avgqu-sz这个字段？</p>2021-06-14</li><br/><li><span>莫名</span> 👍（1） 💬（0）<p>iotop 没有发现写 I&#47;O 的用户进程，觉得可以往上走，在文件系统层面做些分析，page 紧张的情况下，文件读写操作会变得相对慢一些。借助 BCC 现有工具 ext4slower、ext4dist（假设是 ext4 fs）分析，应该可以看到具体的用户进程。</p>2022-03-17</li><br/><li><span>Wade_阿伟</span> 👍（1） 💬（0）<p>我是一名系统运维工程师，对内核还不太了解。但感觉这节课还是收货了很多，尤其是如何借助ftrace去做进一步分析，以及如何查看page cache中都是哪些文件及文件大小。之前只知道使用cachestat和cachetop去查看缓存命中情况。希望以后工作中能够运用上。</p>2021-10-24</li><br/><li><span>Bin</span> 👍（0） 💬（1）<p>你好，邵老师， 这篇文文章标题写的 cpu利用率高因为系统调用的问题，而这个系统调用主要卡在io wait上，但io wait 跟cpu利用率没关系吧，cpu利用率(用户态加系统态)应该不受影响才对</p>2023-01-09</li><br/>
 </ul>

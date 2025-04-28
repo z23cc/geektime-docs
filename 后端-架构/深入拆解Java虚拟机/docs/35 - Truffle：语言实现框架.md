@@ -199,5 +199,5 @@ Truffle的Polyglot特性支持在一段代码中混用多种不同的语言。�
 
 今天的实践环节，请你试用GraalVM中附带的各项语言实现。你可以运行我们官网上的各个[示例程序](https://www.graalvm.org/docs/examples/)。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>xiaobang</span> 👍（7） 💬（1）<div>感觉truffle的特化和pypy的做法有点像，老师能否评价一下这两者呢？另外，truffle的特化相当于对每份目标语言源码都要搞一个新目标语言解释器，这样似乎比较耗时间，而性能测试说明性能比其它解释器要高，能解释一下为什么吗</div>2018-10-15</li><br/><li><span>simple_孙</span> 👍（0） 💬（0）<div>Polyglot是不是类似于mmap技术，在虚拟机的堆空间上只有一份，但是可以映射到不同语言的对象上</div>2021-09-25</li><br/><li><span>宋世通</span> 👍（0） 💬（0）<div>这招叫做釜底抽薪</div>2021-08-27</li><br/><li><span>zzj</span> 👍（0） 💬（0）<div>想问下对于没有垃圾回收的语言，如 C++，经过 Truffle 解释后，在 JVM 上运行的时候还有 GC 吗？是有 native 方法直接调用对象的析构吗？</div>2019-03-27</li><br/>
+<li><span>xiaobang</span> 👍（7） 💬（1）<p>感觉truffle的特化和pypy的做法有点像，老师能否评价一下这两者呢？另外，truffle的特化相当于对每份目标语言源码都要搞一个新目标语言解释器，这样似乎比较耗时间，而性能测试说明性能比其它解释器要高，能解释一下为什么吗</p>2018-10-15</li><br/><li><span>simple_孙</span> 👍（0） 💬（0）<p>Polyglot是不是类似于mmap技术，在虚拟机的堆空间上只有一份，但是可以映射到不同语言的对象上</p>2021-09-25</li><br/><li><span>宋世通</span> 👍（0） 💬（0）<p>这招叫做釜底抽薪</p>2021-08-27</li><br/><li><span>zzj</span> 👍（0） 💬（0）<p>想问下对于没有垃圾回收的语言，如 C++，经过 Truffle 解释后，在 JVM 上运行的时候还有 GC 吗？是有 native 方法直接调用对象的析构吗？</p>2019-03-27</li><br/>
 </ul>

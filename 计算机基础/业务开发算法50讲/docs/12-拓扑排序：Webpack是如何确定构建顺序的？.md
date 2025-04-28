@@ -417,6 +417,6 @@ module.exports.dependency = (chunks, options, compilation) => {
 
 你可能会疑惑，为什么选择了v3.2.0这个相对较老的版本？主要是因为Webpack4.0之后引入了chunkGroup的概念，用 `SplitChunksPlugin` 替换了 `CommonsChunkPlugin`，代码中不再需要对chunk进行拓扑排序了。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Paul Shan</span> 👍（3） 💬（2）<div>深度优先遍历可以引入颜色的概念，也就是一开始的颜色为白色，遍历的时候颜色为灰色，遍历完成的颜色为黑色。如果遍历过程中发现一个新节点的颜色为灰色，即可判断有环。
-</div>2022-01-06</li><br/><li><span>Amber</span> 👍（0） 💬（1）<div>可不可以提供完整的能运行的例子呢，文章提供的都是片段</div>2022-01-12</li><br/><li><span>Jump</span> 👍（1） 💬（0）<div>感觉dfs把topsort函数贴出来就可以了</div>2022-04-03</li><br/>
+<li><span>Paul Shan</span> 👍（3） 💬（2）<p>深度优先遍历可以引入颜色的概念，也就是一开始的颜色为白色，遍历的时候颜色为灰色，遍历完成的颜色为黑色。如果遍历过程中发现一个新节点的颜色为灰色，即可判断有环。
+</p>2022-01-06</li><br/><li><span>Amber</span> 👍（0） 💬（1）<p>可不可以提供完整的能运行的例子呢，文章提供的都是片段</p>2022-01-12</li><br/><li><span>Jump</span> 👍（1） 💬（0）<p>感觉dfs把topsort函数贴出来就可以了</p>2022-04-03</li><br/>
 </ul>

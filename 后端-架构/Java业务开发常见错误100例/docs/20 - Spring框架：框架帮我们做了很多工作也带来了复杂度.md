@@ -624,7 +624,7 @@ public ConfigurableApplicationContext run(String... args) {
 
 关于Spring Core、Spring Boot和Spring Cloud，你还遇到过其他坑吗？我是朱晔，欢迎在评论区与我留言分享你的想法，也欢迎你把今天的内容分享给你的朋友或同事，一起交流。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>Darren</span> 👍（35） 💬（2）<div>第一个问题：
+<li><span>Darren</span> 👍（35） 💬（2）<p>第一个问题：
 切入点指示符
 Spring AOP 支持10种切点指示符：execution、within、this、target、args、@target、@args、@within、@annotation、bean下面做下简记(没有写@Pointcut(),请注意)：
 
@@ -668,13 +668,13 @@ bean: 用于匹配指定Bean实例内的连接点，传入bean的id或name,支�
 第二个问题其实不太懂，网上搜了搜，核心应该是这个方法：
 org.springframework.util.PropertyPlaceholderHelper#replacePlaceholders(java.lang.String, java.util.Properties)
 
-参考链接：https:&#47;&#47;www.jianshu.com&#47;p&#47;5fecf71024af</div>2020-04-28</li><br/><li><span>hellojd</span> 👍（8） 💬（1）<div>我也经常看框架源码，但缺失了老师的演示及溯源过程，学习到了。</div>2020-04-28</li><br/><li><span>梦倚栏杆</span> 👍（6） 💬（1）<div>1. 配置优先级的问题，理解热加载的时候仔细的看过，知道有这么回事，老师举得这个例子：开发和运维都设置了配置，然后运维的把开发的覆盖了，这种问题如果遇到了怎么查呢？如果是同一个人统一管理还好说，不同的人谁知道谁设置了什么呢？
-2. 切面不成功的内容，我卡在了切面上。切面怎么用还不太了解。</div>2020-04-28</li><br/><li><span>招财</span> 👍（1） 💬（3）<div>老师，我现在项目中遇到了一个问题，就是用springboot的全局异常处理时，响应出去的信息，编码格式都是ISO-8859-1，试过了在配置文件中设置spring.http.encoding.charset=utf-8和过滤器中给response去setCharacterEncoding为utf-8，但是还是不行。正常响应的数据是不乱码的，只有全局异常处理出去的响应有乱码，这个应该怎么解决呀</div>2020-05-21</li><br/><li><span>旅途</span> 👍（1） 💬（1）<div>老师 问两个问题
+参考链接：https:&#47;&#47;www.jianshu.com&#47;p&#47;5fecf71024af</p>2020-04-28</li><br/><li><span>hellojd</span> 👍（8） 💬（1）<p>我也经常看框架源码，但缺失了老师的演示及溯源过程，学习到了。</p>2020-04-28</li><br/><li><span>梦倚栏杆</span> 👍（6） 💬（1）<p>1. 配置优先级的问题，理解热加载的时候仔细的看过，知道有这么回事，老师举得这个例子：开发和运维都设置了配置，然后运维的把开发的覆盖了，这种问题如果遇到了怎么查呢？如果是同一个人统一管理还好说，不同的人谁知道谁设置了什么呢？
+2. 切面不成功的内容，我卡在了切面上。切面怎么用还不太了解。</p>2020-04-28</li><br/><li><span>招财</span> 👍（1） 💬（3）<p>老师，我现在项目中遇到了一个问题，就是用springboot的全局异常处理时，响应出去的信息，编码格式都是ISO-8859-1，试过了在配置文件中设置spring.http.encoding.charset=utf-8和过滤器中给response去setCharacterEncoding为utf-8，但是还是不行。正常响应的数据是不乱码的，只有全局异常处理出去的响应有乱码，这个应该怎么解决呀</p>2020-05-21</li><br/><li><span>旅途</span> 👍（1） 💬（1）<p>老师 问两个问题
 1.第一个例子 去掉ribbon依赖后 ApacheHttpClient注册了bean 所以@FeignClient这里面直接就使用的ApacheHttpClient的bea 不走那个new 的代码了是吗 ？
-2.第二个例子. ConfigurationPropertySourcesPropertySourcess这个类实际上一个代理 查询的走的还是其他的配置源 这么做的意义是什么?</div>2020-05-03</li><br/><li><span>jacy</span> 👍（0） 💬（1）<div>有个疑问，思考与讨论二中的真实数据库密码放哪呢？</div>2021-05-10</li><br/><li><span>龙猫</span> 👍（12） 💬（0）<div>这节课有点难度啊</div>2020-06-07</li><br/><li><span>汝林外史</span> 👍（11） 💬（0）<div>感觉就在等最后的解决方案，然后戛然而止了。。。</div>2020-04-29</li><br/><li><span>程序员小跃</span> 👍（3） 💬（0）<div>源码之下无秘密，但是看源码挑战了一个程序员的心境，需要耐心，细心，恒心，给自己加油</div>2020-07-23</li><br/><li><span>Geek_8b92bf</span> 👍（1） 💬（0）<div>within(feign.Client+) 为什么是切入execute方法，不是切人api方法，这个不太明白</div>2022-06-24</li><br/><li><span>天天向上</span> 👍（1） 💬（0）<div>老师好，对于Spring aop中的args表达式我有疑问：
+2.第二个例子. ConfigurationPropertySourcesPropertySourcess这个类实际上一个代理 查询的走的还是其他的配置源 这么做的意义是什么?</p>2020-05-03</li><br/><li><span>jacy</span> 👍（0） 💬（1）<p>有个疑问，思考与讨论二中的真实数据库密码放哪呢？</p>2021-05-10</li><br/><li><span>龙猫</span> 👍（12） 💬（0）<p>这节课有点难度啊</p>2020-06-07</li><br/><li><span>汝林外史</span> 👍（11） 💬（0）<p>感觉就在等最后的解决方案，然后戛然而止了。。。</p>2020-04-29</li><br/><li><span>程序员小跃</span> 👍（3） 💬（0）<p>源码之下无秘密，但是看源码挑战了一个程序员的心境，需要耐心，细心，恒心，给自己加油</p>2020-07-23</li><br/><li><span>Geek_8b92bf</span> 👍（1） 💬（0）<p>within(feign.Client+) 为什么是切入execute方法，不是切人api方法，这个不太明白</p>2022-06-24</li><br/><li><span>天天向上</span> 👍（1） 💬（0）<p>老师好，对于Spring aop中的args表达式我有疑问：
 1.args可以对连接点的参数类型进行限制，要求参数类型是指定类型的实例，用法是args(类型的全限定名)。
 2.也可以用来访问目标方法的参数，用法是args(变量名)。
-这两种用法目前没看到在同一个地方讲到的。我想知道这两种用法对应的args是同一个args吗（虽然都叫做args）。如果是同一个的话，那spring是如何知道需要用到的是哪种用法呢？</div>2021-01-14</li><br/><li><span>9jay</span> 👍（0） 💬（0）<div>对FeignClient进行Around 切面后，拿到Response的body 字节流无法重复读取。
+这两种用法目前没看到在同一个地方讲到的。我想知道这两种用法对应的args是同一个args吗（虽然都叫做args）。如果是同一个的话，那spring是如何知道需要用到的是哪种用法呢？</p>2021-01-14</li><br/><li><span>9jay</span> 👍（0） 💬（0）<p>对FeignClient进行Around 切面后，拿到Response的body 字节流无法重复读取。
 导致在切面的时候读取了返回值字节流后，Feign再去反序列化时对象就为空。
-这个有好的方法解决吗？</div>2021-12-23</li><br/>
+这个有好的方法解决吗？</p>2021-12-23</li><br/>
 </ul>

@@ -390,7 +390,7 @@ Ok((input, Color { red, green, blue }))
 
 请尝试用Nom解析一个简单版本的CSV格式文件。欢迎你把你解析的内容分享出来，我们一起看一看，如果你觉得这节课对你有帮助的话，也欢迎你分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Promise</span> 👍（1） 💬（1）<div>老师，请问解析器如何优化性能，比如解析器每天需要处理 PB 级别的文本。每个文件 100M并且需要匹配上百种规则。</div>2023-12-27</li><br/><li><span>superggn</span> 👍（0） 💬（2）<div>思考题
+<li><span>Promise</span> 👍（1） 💬（1）<p>老师，请问解析器如何优化性能，比如解析器每天需要处理 PB 级别的文本。每个文件 100M并且需要匹配上百种规则。</p>2023-12-27</li><br/><li><span>superggn</span> 👍（0） 💬（2）<p>思考题
 ```
 use nom::{
     bytes::complete::is_not,
@@ -436,5 +436,5 @@ fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
     Ok(())
 }
 ```
-</div>2024-01-05</li><br/><li><span>tianyu0901</span> 👍（0） 💬（2）<div>老师，推荐一个SQL解析器</div>2023-12-27</li><br/><li><span>Geek_f9c361</span> 👍（0） 💬（0）<div>解析一个坐标这个写的不够健壮，逗号前后应该可以有任意空白，这里没有处理</div>2024-08-30</li><br/>
+</p>2024-01-05</li><br/><li><span>tianyu0901</span> 👍（0） 💬（2）<p>老师，推荐一个SQL解析器</p>2023-12-27</li><br/><li><span>Geek_f9c361</span> 👍（0） 💬（0）<p>解析一个坐标这个写的不够健壮，逗号前后应该可以有任意空白，这里没有处理</p>2024-08-30</li><br/>
 </ul>

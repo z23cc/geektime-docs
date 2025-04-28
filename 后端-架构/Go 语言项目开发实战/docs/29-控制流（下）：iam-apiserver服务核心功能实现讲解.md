@@ -852,13 +852,13 @@ return fmt.Sprintf("name: %s, address: %s, phone: %v, sex: %v", name, address, c
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>helloworld</span> 👍（6） 💬（2）<div>Extend和ExtendShadow设计真的很棒，敢问灵感从哪里来的👍</div>2021-08-11</li><br/><li><span>Realm</span> 👍（5） 💬（4）<div>这两篇老师的总结很受启发。
+<li><span>helloworld</span> 👍（6） 💬（2）<p>Extend和ExtendShadow设计真的很棒，敢问灵感从哪里来的👍</p>2021-08-11</li><br/><li><span>Realm</span> 👍（5） 💬（4）<p>这两篇老师的总结很受启发。
 练习：
 1 在项目中一般还是使用goroutine比较多，或者atomic，或者读写锁；
 2 限流可以使用令牌桶和漏桶，或者自适应限流；
 
 问：
-一个业务通过A-&gt;B-&gt;C完成，通过requestID可以串起来，假如严格一点，是不是还要搞个parnent-request-id ？</div>2021-08-01</li><br/><li><span>宙斯</span> 👍（3） 💬（1）<div>健康检查这里有两个疑问：
+一个业务通过A-&gt;B-&gt;C完成，通过requestID可以串起来，假如严格一点，是不是还要搞个parnent-request-id ？</p>2021-08-01</li><br/><li><span>宙斯</span> 👍（3） 💬（1）<p>健康检查这里有两个疑问：
 1 配置了健康检查会阻塞，不会运行 eg.Wait() ，这是故意阻塞在ping这里的吗？
 2 健康检查ping函数for中，我查看到逻辑是这样的，
   a) 在启动时web服务还未启动，会出错err，每隔1s运行一次，
@@ -866,21 +866,21 @@ return fmt.Sprintf("name: %s, address: %s, phone: %v, sex: %v", name, address, c
 这个逻辑有些疑惑，健康检查不应该总是运行的么？
 
 代码位置：iam&#47;internal&#47;pkg&#47;server&#47;genericapiserver.go
-版本：当前master版本</div>2021-08-30</li><br/><li><span>helloworld</span> 👍（2） 💬（3）<div>项目源码中的var _ UserSrv = (*userService)(nil) 的目的是为了在编译阶段检查 userServer 类型是否实现了 UserSrv 的接口, 如果没有实现则panic, (*userService)(nil)这种语法是出自哪里呢, 在哪里能找到这个语法的详细说明呢, 我找了半天没找到, 只知道(*userService)(nil)用来表示类型*userService的零值.</div>2021-08-13</li><br/><li><span>xgt132</span> 👍（1） 💬（1）<div>老师你好：在 ”并发处理模板“这一模块时，当遇到错误就会返回nil, 此时剩下的协程会不会还在继续运行，这样是不是浪费了系统资源呢</div>2022-08-07</li><br/><li><span>NULL</span> 👍（1） 💬（1）<div>&quot;这样，我们下次需要新增参数的话，只需要调用 context 的 WithValue 方法：&quot;
+版本：当前master版本</p>2021-08-30</li><br/><li><span>helloworld</span> 👍（2） 💬（3）<p>项目源码中的var _ UserSrv = (*userService)(nil) 的目的是为了在编译阶段检查 userServer 类型是否实现了 UserSrv 的接口, 如果没有实现则panic, (*userService)(nil)这种语法是出自哪里呢, 在哪里能找到这个语法的详细说明呢, 我找了半天没找到, 只知道(*userService)(nil)用来表示类型*userService的零值.</p>2021-08-13</li><br/><li><span>xgt132</span> 👍（1） 💬（1）<p>老师你好：在 ”并发处理模板“这一模块时，当遇到错误就会返回nil, 此时剩下的协程会不会还在继续运行，这样是不是浪费了系统资源呢</p>2022-08-07</li><br/><li><span>NULL</span> 👍（1） 💬（1）<p>&quot;这样，我们下次需要新增参数的话，只需要调用 context 的 WithValue 方法：&quot;
 这样不好吧, 传递的sex可能会被修改. 也不清晰, 不知道传递了什么数据
 
 官方文档也说
 &quot;Use context Values only for request-scoped data that transits processes and APIs, not for passing optional parameters to functions.&quot;
-https:&#47;&#47;pkg.go.dev&#47;context</div>2022-08-04</li><br/><li><span>Geek_63505f</span> 👍（1） 💬（2）<div>老师请问下这里 下面那个run方法是启动命令行的命令吗？我看a.cmd.Execute()命令里面是执行os.Args[1:] 。
+https:&#47;&#47;pkg.go.dev&#47;context</p>2022-08-04</li><br/><li><span>Geek_63505f</span> 👍（1） 💬（2）<p>老师请问下这里 下面那个run方法是启动命令行的命令吗？我看a.cmd.Execute()命令里面是执行os.Args[1:] 。
          apiserver.NewApp(&quot;iam-apiserver&quot;).Run()
                    func (a *App) Run() {
 	if err := a.cmd.Execute(); err != nil {
 		fmt.Printf(&quot;%v %v\n&quot;, color.RedString(&quot;Error:&quot;), err)
 		os.Exit(1)
 	}
-}   </div>2022-01-27</li><br/><li><span>Geek_433b2b</span> 👍（1） 💬（1）<div>孔老师，你好。我是 Go 语言初学者，在并发处理模板这块有个疑问：
+}   </p>2022-01-27</li><br/><li><span>Geek_433b2b</span> 👍（1） 💬（1）<p>孔老师，你好。我是 Go 语言初学者，在并发处理模板这块有个疑问：
 为什么在协程中不是直接对参数 user 赋值：user.TotalPolicy = policies.TotalCount，最后直接返回 users。而是重新创建一个 User 对象？包括在 ListWithBadPerformance 中也是重新创建了一个对象。
-我写了个 demo 是可以正常赋值的。这样做的话不就可以不使用 map 了吗，而且也能保证顺序。</div>2021-12-29</li><br/><li><span>ppd0705</span> 👍（1） 💬（1）<div>请问SQL文件里面时间字段为什么是如下语句？和实际gorm的逻辑不一致
+我写了个 demo 是可以正常赋值的。这样做的话不就可以不使用 map 了吗，而且也能保证顺序。</p>2021-12-29</li><br/><li><span>ppd0705</span> 👍（1） 💬（1）<p>请问SQL文件里面时间字段为什么是如下语句？和实际gorm的逻辑不一致
 ```sql
 `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
 `updatedAt` timestamp NOT NULL DEFAULT &#39;0000-00-00 00:00:00&#39;,
@@ -890,10 +890,10 @@ https:&#47;&#47;pkg.go.dev&#47;context</div>2022-08-04</li><br/><li><span>Geek_6
 `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
 `updatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
 ```
-</div>2021-10-03</li><br/><li><span>XI</span> 👍（1） 💬（2）<div> go func() {        &#47;&#47; 将服务在 goroutine 中启动        if err := srv.ListenAndServe(); err != nil &amp;&amp; err != http.ErrServerClosed {            log.Fatalf(&quot;listen: %s\n&quot;, err)        }    }()
+</p>2021-10-03</li><br/><li><span>XI</span> 👍（1） 💬（2）<p> go func() {        &#47;&#47; 将服务在 goroutine 中启动        if err := srv.ListenAndServe(); err != nil &amp;&amp; err != http.ErrServerClosed {            log.Fatalf(&quot;listen: %s\n&quot;, err)        }    }()
 优雅关停机这段代码，当前面有nginx的时候是无法拿到客户端ip的，拿到的ip 会是nginx的ip 详请可见gin 的r.run 方法
 
-</div>2021-09-23</li><br/><li><span>翡翠虎</span> 👍（1） 💬（1）<div>老师可不可以讲讲那些断线重连的实现，例如消息队列的断线重连、数据库的断线重连等。是 go func 协程定时去检查连接状况（异常时重连），还是有其他方法处理这类问题？先谢谢老师</div>2021-09-08</li><br/><li><span>宙斯</span> 👍（1） 💬（1）<div>有个问题咨询下，initRedisStore这个函数 defer cancel() 通常要先执行，若是这样ConnectToRedis会直接retrun吧，是吗？若是这样当ConnectToRedis协程运行到for 时，会直接在 &lt;-ctx.Done():后return，并关闭defer tick.Stop()，因此感觉&lt;-tick.C貌似总是用不到。
+</p>2021-09-23</li><br/><li><span>翡翠虎</span> 👍（1） 💬（1）<p>老师可不可以讲讲那些断线重连的实现，例如消息队列的断线重连、数据库的断线重连等。是 go func 协程定时去检查连接状况（异常时重连），还是有其他方法处理这类问题？先谢谢老师</p>2021-09-08</li><br/><li><span>宙斯</span> 👍（1） 💬（1）<p>有个问题咨询下，initRedisStore这个函数 defer cancel() 通常要先执行，若是这样ConnectToRedis会直接retrun吧，是吗？若是这样当ConnectToRedis协程运行到for 时，会直接在 &lt;-ctx.Done():后return，并关闭defer tick.Stop()，因此感觉&lt;-tick.C貌似总是用不到。
 【见iam&#47;internal&#47;apiserver&#47;server.go的函数initRedisStore()】
 
 func (s *apiServer) initRedisStore() {
@@ -918,5 +918,5 @@ func (s *apiServer) initRedisStore() {
 
 	&#47;&#47; try to connect to redis
 	go storage.ConnectToRedis(ctx, config)
-}</div>2021-08-30</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<div>源码中的storeIns, _ := mysql.GetMySQLFactoryOr(nil),  其中GetMySQLFactoryOr这个函数名的Or是表达的什么意思呢</div>2021-08-13</li><br/><li><span>旋风</span> 👍（1） 💬（1）<div>并发处理模板如何复用，只能复制粘贴吗？</div>2021-08-01</li><br/><li><span>tiny🌾</span> 👍（0） 💬（2）<div>Extend和ExtendShadow 存储在db是json格式，这个怎么去SQL查询了？ 还有每次都需要编解码性能怎么样</div>2022-11-04</li><br/>
+}</p>2021-08-30</li><br/><li><span>helloworld</span> 👍（1） 💬（1）<p>源码中的storeIns, _ := mysql.GetMySQLFactoryOr(nil),  其中GetMySQLFactoryOr这个函数名的Or是表达的什么意思呢</p>2021-08-13</li><br/><li><span>旋风</span> 👍（1） 💬（1）<p>并发处理模板如何复用，只能复制粘贴吗？</p>2021-08-01</li><br/><li><span>tiny🌾</span> 👍（0） 💬（2）<p>Extend和ExtendShadow 存储在db是json格式，这个怎么去SQL查询了？ 还有每次都需要编解码性能怎么样</p>2022-11-04</li><br/>
 </ul>

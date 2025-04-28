@@ -286,15 +286,15 @@ AudioUnit是iOS中最底层的音频框架，对音频能够实现更高程度�
 
 学而不思则罔，最后我给你留一道思考题：你思考一下AudioQueue相比于AVPlayer或者AVAudioPlayer，它的灵活性或者说好处在哪儿呢？欢迎在评论区分享你的思考，也欢迎你把这节课分享给更多对音视频感兴趣的朋友，我们一起交流、共同进步。下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>大土豆</span> 👍（3） 💬（2）<div>播放原始的PCM，优势是不言而喻的，音频轨道解码之后的PCM数据，可以给FFmpeg的音频滤镜做进一步各种效果的处理，还可以接入soundtouch做变速和变调的处理，然后处理过的PCM再给audioqueue播放，各个流程都可以定制。</div>2022-07-25</li><br/><li><span>keepgoing</span> 👍（1） 💬（1）<div>展老师，对于AudioStreamBasicDescription的参数设置，文章中有三个不明白的地方，想请教一下老师：假设我现在需要播放的音频格式为44100采样, 2声道，交错存放，float类型数据，每个包有1024个采样的PCM数据
+<li><span>大土豆</span> 👍（3） 💬（2）<p>播放原始的PCM，优势是不言而喻的，音频轨道解码之后的PCM数据，可以给FFmpeg的音频滤镜做进一步各种效果的处理，还可以接入soundtouch做变速和变调的处理，然后处理过的PCM再给audioqueue播放，各个流程都可以定制。</p>2022-07-25</li><br/><li><span>keepgoing</span> 👍（1） 💬（1）<p>展老师，对于AudioStreamBasicDescription的参数设置，文章中有三个不明白的地方，想请教一下老师：假设我现在需要播放的音频格式为44100采样, 2声道，交错存放，float类型数据，每个包有1024个采样的PCM数据
 1. mFramesPerPacket为什么一般是1呢，怎么理解这里的Frame？如果设置成1是不是可以理解为这里的一个frame也就是输入的一个包的整体数据，也就是我上述情况里 1024个采样 * 2通道 * sizeof(float)的大小
 2. 如果在1成立的基础上，看见接下来两个参数mBytesPerFrame和mBytesPerPacket在样例代码中是对应同一个变量bytesPerSample；bytesPerSample的计算规则是不是可以用44100 * 2 * 1024 * sizeof(float)来计算 （如果非交错存储就不乘以2）
 3. 请问有什么情况mFramesPerPacket这个值设置为非1呢
-感谢老师有空时帮忙解答，刚接触音视频不久，常常为参数问题所困顿，所以问题稍微有点细，如果有一些理解错误的地方拜托老师多多指正，谢谢展老师</div>2022-12-03</li><br/><li><span>data</span> 👍（1） 💬（2）<div>是否案例都有demo可以跑一跑😌</div>2022-08-01</li><br/><li><span>data</span> 👍（0） 💬（1）<div>老师,我想咨询一下 我使用 AudioQueue 来录音,然后封装成rtp包进行发送,里面 有个时间戳 timestamp,我没找到 里面有方法可以获取到这个时间戳的?
+感谢老师有空时帮忙解答，刚接触音视频不久，常常为参数问题所困顿，所以问题稍微有点细，如果有一些理解错误的地方拜托老师多多指正，谢谢展老师</p>2022-12-03</li><br/><li><span>data</span> 👍（1） 💬（2）<p>是否案例都有demo可以跑一跑😌</p>2022-08-01</li><br/><li><span>data</span> 👍（0） 💬（1）<p>老师,我想咨询一下 我使用 AudioQueue 来录音,然后封装成rtp包进行发送,里面 有个时间戳 timestamp,我没找到 里面有方法可以获取到这个时间戳的?
 
  int32_t t = ((float)timestamp.value &#47; timestamp.timescale) * 1000;
  if(start_t == 0) start_t = t;
  header.ts = t - start_t;
 
-</div>2022-08-03</li><br/>
+</p>2022-08-03</li><br/>
 </ul>

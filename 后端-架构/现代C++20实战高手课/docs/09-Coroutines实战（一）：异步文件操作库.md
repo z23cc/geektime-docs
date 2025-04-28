@@ -426,12 +426,12 @@ namespace asyncpp::task {
 
 不妨在这里分享你的答案，我们一同交流。下一讲见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>关于课后思考题：我认为老师课件中的当前代码无法做到等待另一个协程执行结束，因为传递给await_suspend函数的协程句柄是当前协程的，所以无法获知另外一个协程的信息。如果要等待另一个协程执行结束，需要在Awaitable类中存储另外一个协程的句柄，然后defaultAysncAwaitableSuspend函数的第三个实参应该是被存储的另外一个协程的句柄。在defaultAysncAwaitableSuspend函数内部使用循环检查的方式，检查 h.done（） 是否为true，只有条件成立后，再调用 AsyncTaskResumer 。
-烦请老师批评指正</div>2023-12-25</li><br/><li><span>Steiner</span> 👍（0） 💬（1）<div>我想问一下，课程中的代码是在哪个平台上运行，用哪种编译器</div>2024-08-19</li><br/><li><span>常振华</span> 👍（0） 💬（1）<div>.handler = [resumer, awaitable] {
+<li><span>李云龙</span> 👍（1） 💬（1）<p>关于课后思考题：我认为老师课件中的当前代码无法做到等待另一个协程执行结束，因为传递给await_suspend函数的协程句柄是当前协程的，所以无法获知另外一个协程的信息。如果要等待另一个协程执行结束，需要在Awaitable类中存储另外一个协程的句柄，然后defaultAysncAwaitableSuspend函数的第三个实参应该是被存储的另外一个协程的句柄。在defaultAysncAwaitableSuspend函数内部使用循环检查的方式，检查 h.done（） 是否为true，只有条件成立后，再调用 AsyncTaskResumer 。
+烦请老师批评指正</p>2023-12-25</li><br/><li><span>Steiner</span> 👍（0） 💬（1）<p>我想问一下，课程中的代码是在哪个平台上运行，用哪种编译器</p>2024-08-19</li><br/><li><span>常振华</span> 👍（0） 💬（1）<p>.handler = [resumer, awaitable] {
     awaitable-&gt;_taskResult = awaitable-&gt;_taskHandler(); 
     resumer(); 
 }
-这个写法是lamda表达式吗？然后赋值给struct AsyncTask的handler成员？</div>2023-09-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请问：“主线程内”是什么意思？
+这个写法是lamda表达式吗？然后赋值给struct AsyncTask的handler成员？</p>2023-09-20</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请问：“主线程内”是什么意思？
 文中有一句“asyncpp.task：通用异步任务模块，实现了主线程内的异步任务框架”。是说通用异步任务模块运行在主线程中吗？异步 I&#47;O 模块、异步文件系统模块是运行在其他线程吗？
-另外，“主线程”是“库”的主线程，不是调用者的主线程，对吗？</div>2023-02-04</li><br/>
+另外，“主线程”是“库”的主线程，不是调用者的主线程，对吗？</p>2023-02-04</li><br/>
 </ul>

@@ -179,7 +179,7 @@ SQL：SELECT player_name, height FROM player WHERE height > 2.08
 
 欢迎你在评论区写下你的答案，也欢迎把这篇文章分享给你的朋友或者同事，与他们一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>mickey</span> 👍（102） 💬（12）<div>&#47;*
+<li><span>mickey</span> 👍（102） 💬（12）<p>&#47;*
 team 表做一道动手题，表格中一共有 3 支球队，现在这 3 支球队需要进行比赛，请用一条 SQL 语句显示出所有可能的比赛组合。
 *&#47;
 #分主客队
@@ -201,21 +201,21 @@ SELECT a.team_name as &#39;队伍1&#39; ,&#39;VS&#39; , b.team_name as &#39;队�
 ------------------------------------
 底特律活塞	VS	印第安纳步行者
 底特律活塞	VS	亚特兰大老鹰
-印第安纳步行者	VS	亚特兰大老鹰</div>2019-07-03</li><br/><li><span>奕</span> 👍（26） 💬（2）<div>有两个问题：
+印第安纳步行者	VS	亚特兰大老鹰</p>2019-07-03</li><br/><li><span>奕</span> 👍（26） 💬（2）<p>有两个问题：
 1: 在进行连接查询的时候，查询的顺序是什么呢？ 是先进行笛卡尔积在进行条件条件筛选吗？
-2: 在进行连接查询的时候 on 中的条件和 where 中的条件有什么区别呢？ 这两个的筛选顺序一样吗？</div>2019-07-05</li><br/><li><span>长安落雪</span> 👍（22） 💬（1）<div>SELECT t1.team_name,t2.team_name FROM team as t1 LEFT  JOIN team as t2 ON t1.team_id  != t2.team_id
+2: 在进行连接查询的时候 on 中的条件和 where 中的条件有什么区别呢？ 这两个的筛选顺序一样吗？</p>2019-07-05</li><br/><li><span>长安落雪</span> 👍（22） 💬（1）<p>SELECT t1.team_name,t2.team_name FROM team as t1 LEFT  JOIN team as t2 ON t1.team_id  != t2.team_id
 
-SELECT t1.team_name , t2.team_name  FROM team as t1 ,team as t2 where t1.team_id&lt;t2.team_id;</div>2019-07-04</li><br/><li><span>圆子蛋</span> 👍（5） 💬（3）<div>三队对阵的可能组合：
+SELECT t1.team_name , t2.team_name  FROM team as t1 ,team as t2 where t1.team_id&lt;t2.team_id;</p>2019-07-04</li><br/><li><span>圆子蛋</span> 👍（5） 💬（3）<p>三队对阵的可能组合：
 SELECT * FROM team AS a,team AS b WHERE a.team_id &lt; b.team_id
 主客场对阵的可能（只列出名字的话是不是可以这样？）
-SELECT a.team_name as 主场,b.team_name as 客场 FROM team AS a,team AS b WHERE a.team_id != b.team_id</div>2019-07-03</li><br/><li><span>Samson</span> 👍（4） 💬（3）<div>SQL：SELECT p.player_name, p.height, h.height_level
+SELECT a.team_name as 主场,b.team_name as 客场 FROM team AS a,team AS b WHERE a.team_id != b.team_id</p>2019-07-03</li><br/><li><span>Samson</span> 👍（4） 💬（3）<p>SQL：SELECT p.player_name, p.height, h.height_level
 FROM player AS p, height_grades AS h
 WHERE p.height BETWEEN h.height_lowest AND h.height_highest
  
 
 老师，我还是不能够理解这条语句中WHERE之后的部分，可以麻烦详加解释一番吗？
 
-另外，对于外连接的两个例子，可以把已经结果也贴一下吗？感觉这样子下效果会更好</div>2019-07-05</li><br/><li><span>野马</span> 👍（4） 💬（1）<div>那一个RDBMS支持多个SQL标准吗？</div>2019-07-04</li><br/><li><span>技术修行者</span> 👍（3） 💬（1）<div>目前主流的DNMS应该都是按照SQL99的规定来设计连接操作的，在实际工作中，极少看到SAL语句中带+的情况。我的建议是在介绍了基本概念后，可以直接使用SAL99，这样更有利于实战。</div>2019-10-02</li><br/><li><span>太精</span> 👍（3） 💬（1）<div>select * from team as a, team as b where a.team_id != b.team_id;
+另外，对于外连接的两个例子，可以把已经结果也贴一下吗？感觉这样子下效果会更好</p>2019-07-05</li><br/><li><span>野马</span> 👍（4） 💬（1）<p>那一个RDBMS支持多个SQL标准吗？</p>2019-07-04</li><br/><li><span>技术修行者</span> 👍（3） 💬（1）<p>目前主流的DNMS应该都是按照SQL99的规定来设计连接操作的，在实际工作中，极少看到SAL语句中带+的情况。我的建议是在介绍了基本概念后，可以直接使用SAL99，这样更有利于实战。</p>2019-10-02</li><br/><li><span>太精</span> 👍（3） 💬（1）<p>select * from team as a, team as b where a.team_id != b.team_id;
 +---------+-----------------------+---------+-----------------------+
 | team_id | team_name             | team_id | team_name             |
 +---------+-----------------------+---------+-----------------------+
@@ -226,11 +226,11 @@ WHERE p.height BETWEEN h.height_lowest AND h.height_highest
 |    1001 | 底特律活塞            |    1003 | 亚特兰大老鹰          |
 |    1002 | 印第安纳步行者        |    1003 | 亚特兰大老鹰          |
 +---------+-----------------------+---------+-----------------------+
-</div>2019-07-04</li><br/><li><span>xy</span> 👍（2） 💬（2）<div>表怎么下载下来的？</div>2019-07-15</li><br/><li><span>Goal</span> 👍（2） 💬（1）<div>老师好，
+</p>2019-07-04</li><br/><li><span>xy</span> 👍（2） 💬（2）<p>表怎么下载下来的？</p>2019-07-15</li><br/><li><span>Goal</span> 👍（2） 💬（1）<p>老师好，
 1. 文中“等值连接” 的结果图配错了，此处应该是只有：底特律活塞、印第安纳步行者的37名成员的表；
 2. 思考题，主客场共计6场比赛
 SELECT a.team_name,b.team_name  from team a,team b WHERE a.team_id != b.team_id
-SELECT a.team_name,b.team_name FROM team a JOIN team b WHERE a.team_name &lt;&gt; b.team_name</div>2019-07-03</li><br/><li><span>墨禾</span> 👍（1） 💬（1）<div>&#47;*等值连接:两张表存在相同的列属性*&#47;
+SELECT a.team_name,b.team_name FROM team a JOIN team b WHERE a.team_name &lt;&gt; b.team_name</p>2019-07-03</li><br/><li><span>墨禾</span> 👍（1） 💬（1）<p>&#47;*等值连接:两张表存在相同的列属性*&#47;
 SELECT player_id, player.team_id, player_name, height, team_name FROM player, team WHERE player.team_id = team.team_id;
 
 &#47;*非等值连接*&#47;
@@ -276,7 +276,7 @@ SELECT b.player_name, b.height FROM player as a , player as b WHERE a.player_nam
 &#47;*请用一条 SQL 语句显示出所有可能的比赛组合*&#47;
 SELECT * FROM team t1 , team t2 WHERE t1.team_id&lt;&gt; t2.team_id
 -- 或
-SELECT * FROM team t1 , team t2 WHERE t1.team_id !=t2.team_id</div>2019-07-03</li><br/><li><span>高泽林</span> 👍（0） 💬（1）<div>要实际验证一下！</div>2019-12-17</li><br/><li><span>taoist</span> 👍（0） 💬（1）<div>-- MariaDB
+SELECT * FROM team t1 , team t2 WHERE t1.team_id !=t2.team_id</p>2019-07-03</li><br/><li><span>高泽林</span> 👍（0） 💬（1）<p>要实际验证一下！</p>2019-12-17</li><br/><li><span>taoist</span> 👍（0） 💬（1）<p>-- MariaDB
 
 -- 主客
 SELECT CONCAT( t1.team_name ,&#39;(主)－－－－（客）&#39;, t2.team_name) FROM team t1, team t2
@@ -285,7 +285,7 @@ WHERE t1.team_id != t2.team_id;
 
 -- 不分主客
 SELECT CONCAT( t1.team_name ,&#39;－－－－&#39;, t2.team_name) FROM team t1, team t2
-WHERE t1.team_id &lt; t2.team_id;</div>2019-12-16</li><br/><li><span>程序员花卷</span> 👍（0） 💬（1）<div>外连接不仅可以返回符合条件的行，还可以返回一些不符合条件的行
+WHERE t1.team_id &lt; t2.team_id;</p>2019-12-16</li><br/><li><span>程序员花卷</span> 👍（0） 💬（1）<p>外连接不仅可以返回符合条件的行，还可以返回一些不符合条件的行
 内连接只能返回符合条件的行，不能返回不符合条件的行
 自连接自己连接自己，查询的时候用到了自己的字段，也可以多表进行连接
 
@@ -298,5 +298,5 @@ SELECT a.`team_name` AS 主队,b.team_name AS 客队
 FROM team AS a,team AS b
 WHERE a.`team_id` &lt; b.`team_id`;
 
-</div>2019-12-06</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<div>SELECT * FROM team as a, team as b WHERE a.team_name != b.team_name;</div>2019-11-23</li><br/>
+</p>2019-12-06</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<p>SELECT * FROM team as a, team as b WHERE a.team_name != b.team_name;</p>2019-11-23</li><br/>
 </ul>

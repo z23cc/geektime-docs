@@ -185,7 +185,7 @@ $ sar -B 1
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>邵亚方</span> 👍（68） 💬（1）<div>课后作业答案：
+<li><span>邵亚方</span> 👍（68） 💬（1）<p>课后作业答案：
 - 为什么第一次读写某个文件，Page Cache 是 Inactive 的？
 第一次读取文件后，文件内容都是inactive的，只有再次读取这些内容后，才会把它放在active链表上，处于inactive链表上的pagecache在内存紧张是会首先被回收掉，有很多情况下文件内容往往只被读一次，比如日志文件，对于这类典型的one-off文件，它们占用的pagecache需要首先被回收掉；对于业务数据，往往都会读取多次，那么他们就会被放在active链表上，以此来达到保护的目的。
 
@@ -202,10 +202,10 @@ min_free_kbytes会影响整体的pagecache大小;vfs_cache_pressure会影响在�
 这是不合理的，内核社区目前在做这一块的改进。具体可以参考https:&#47;&#47;lwn.net&#47;Articles&#47;816771&#47;。
 
 
-</div>2020-10-11</li><br/><li><span>zwb</span> 👍（21） 💬（3）<div>第二次机会法，避免大量只读一次的文件涌入 active，在需要回收时又从 active 移动到 inactive lru 链表。场景比如编译内核。</div>2020-08-21</li><br/><li><span>x-ray</span> 👍（11） 💬（3）<div>读这个确实需要对一些linux基础概念有一个了解。前几天刚读的时候，我连VFS都没有一个概念，读起来非常吃力，到第二章就看得云里雾里。这两天找了点视频把一些基础概念熟悉了下，今天再来看的时候，就感觉比较容易理解了。不过我有一个疑问，既然mmap映射的效率更高，为什么不都用这个呢？是因为标准IO无法像文件那样提前加载一块内存到PageCache吗？</div>2020-09-15</li><br/><li><span>Geek_162e2a</span> 👍（10） 💬（2）<div>应用开发者的视角
-第一次读写文件，PageCache是inactive的，为什么要这样设计？可能内核底层是采用类似LRU链表的设计来管理PageCache, 如果单纯照搬LRU链表的设计的话，当读大文件的时候会将原本属于热点缓存的PageCache冲刷出去，导致性能波动，因此需要对PageCache进行分类，来避免这个问题，即新读入的文件先进入inactive区域</div>2020-08-27</li><br/><li><span>Geek_circle</span> 👍（9） 💬（1）<div>Memory-Mapped I&#47;O（存储映射 I&#47;O）
- 是否就是零拷贝的概念呢？</div>2020-08-25</li><br/><li><span>小白哥哥</span> 👍（7） 💬（6）<div>不认同邵老师对于pagecache产生原因的描述，应用程序调用了write，内核会根据fd当前的fpos计算出写文件操作的文件偏移，然后根据偏移去inode-&gt;mapping中找出对应的pagecache页，如果没有的话，分配一页，插入inode-&gt;mapping，然后把write调用中的buffer拷贝到pagecache中，这个过程并不会触发page fault。如果是mmap映射文件，然后直接对内存读写，才会触发page fault，进而驱动内核加载文件内容到对应的page cache中。</div>2021-05-13</li><br/><li><span>唐江</span> 👍（3） 💬（1）<div>什么地方讲了inactive 、active 是个数据结构链表啊！不是一个简单的数字吗</div>2021-05-20</li><br/><li><span>Geek_162e2a</span> 👍（3） 💬（1）<div>如何让它变成Active的呢？多读几次文件，达到系统设计的值后，此文件的PageCache会变成热点数据进入Active区域。
-在什么情况Active会变成inactive的呢？热点文件太多，且此文件最近没有被读取过，自然就被挤出去了，静态资源服务器，可能会比较经常出现这种情况</div>2020-08-27</li><br/><li><span>地下城勇士</span> 👍（3） 💬（2）<div>老师的图是用什么工具画的？感觉以后可以尝试一下</div>2020-08-25</li><br/><li><span>Wade_阿伟</span> 👍（1） 💬（1）<div>老师您好，看了上面老师的讲述，对存储映射I&#47;O和标准I&#47;O有了一定的理解。但是系统一般什么时候使用存储映射I&#47;O，什么时候使用标准I&#47;O呢？</div>2021-07-08</li><br/><li><span>奕</span> 👍（1） 💬（1）<div>当第一次写某个文件时，产生的 Page Cache 是 inactive 的，那么在什么事件触发的时候，才会转为 active 的？ </div>2020-08-30</li><br/><li><span>狗蛋</span> 👍（1） 💬（1）<div>这跟mysql策略一样啊，也许是mysql借鉴Linux的</div>2020-08-29</li><br/><li><span>Dylan</span> 👍（0） 💬（2）<div>既然是Cache，那也会存在脏数据丢失的可能，那避免数据丢失的方法是不是和数据库的一些策略类似，比如WAL</div>2020-10-05</li><br/><li><span>wong ka seng</span> 👍（0） 💬（1）<div>老师好，本人对bash认识不多，有没有补充的资料呢？</div>2020-09-03</li><br/><li><span>--SNIPER</span> 👍（1） 💬（3）<div>测试了下都是0，能帮忙解释下为什么吗
+</p>2020-10-11</li><br/><li><span>zwb</span> 👍（21） 💬（3）<p>第二次机会法，避免大量只读一次的文件涌入 active，在需要回收时又从 active 移动到 inactive lru 链表。场景比如编译内核。</p>2020-08-21</li><br/><li><span>x-ray</span> 👍（11） 💬（3）<p>读这个确实需要对一些linux基础概念有一个了解。前几天刚读的时候，我连VFS都没有一个概念，读起来非常吃力，到第二章就看得云里雾里。这两天找了点视频把一些基础概念熟悉了下，今天再来看的时候，就感觉比较容易理解了。不过我有一个疑问，既然mmap映射的效率更高，为什么不都用这个呢？是因为标准IO无法像文件那样提前加载一块内存到PageCache吗？</p>2020-09-15</li><br/><li><span>Geek_162e2a</span> 👍（10） 💬（2）<p>应用开发者的视角
+第一次读写文件，PageCache是inactive的，为什么要这样设计？可能内核底层是采用类似LRU链表的设计来管理PageCache, 如果单纯照搬LRU链表的设计的话，当读大文件的时候会将原本属于热点缓存的PageCache冲刷出去，导致性能波动，因此需要对PageCache进行分类，来避免这个问题，即新读入的文件先进入inactive区域</p>2020-08-27</li><br/><li><span>Geek_circle</span> 👍（9） 💬（1）<p>Memory-Mapped I&#47;O（存储映射 I&#47;O）
+ 是否就是零拷贝的概念呢？</p>2020-08-25</li><br/><li><span>小白哥哥</span> 👍（7） 💬（6）<p>不认同邵老师对于pagecache产生原因的描述，应用程序调用了write，内核会根据fd当前的fpos计算出写文件操作的文件偏移，然后根据偏移去inode-&gt;mapping中找出对应的pagecache页，如果没有的话，分配一页，插入inode-&gt;mapping，然后把write调用中的buffer拷贝到pagecache中，这个过程并不会触发page fault。如果是mmap映射文件，然后直接对内存读写，才会触发page fault，进而驱动内核加载文件内容到对应的page cache中。</p>2021-05-13</li><br/><li><span>唐江</span> 👍（3） 💬（1）<p>什么地方讲了inactive 、active 是个数据结构链表啊！不是一个简单的数字吗</p>2021-05-20</li><br/><li><span>Geek_162e2a</span> 👍（3） 💬（1）<p>如何让它变成Active的呢？多读几次文件，达到系统设计的值后，此文件的PageCache会变成热点数据进入Active区域。
+在什么情况Active会变成inactive的呢？热点文件太多，且此文件最近没有被读取过，自然就被挤出去了，静态资源服务器，可能会比较经常出现这种情况</p>2020-08-27</li><br/><li><span>地下城勇士</span> 👍（3） 💬（2）<p>老师的图是用什么工具画的？感觉以后可以尝试一下</p>2020-08-25</li><br/><li><span>Wade_阿伟</span> 👍（1） 💬（1）<p>老师您好，看了上面老师的讲述，对存储映射I&#47;O和标准I&#47;O有了一定的理解。但是系统一般什么时候使用存储映射I&#47;O，什么时候使用标准I&#47;O呢？</p>2021-07-08</li><br/><li><span>奕</span> 👍（1） 💬（1）<p>当第一次写某个文件时，产生的 Page Cache 是 inactive 的，那么在什么事件触发的时候，才会转为 active 的？ </p>2020-08-30</li><br/><li><span>狗蛋</span> 👍（1） 💬（1）<p>这跟mysql策略一样啊，也许是mysql借鉴Linux的</p>2020-08-29</li><br/><li><span>Dylan</span> 👍（0） 💬（2）<p>既然是Cache，那也会存在脏数据丢失的可能，那避免数据丢失的方法是不是和数据库的一些策略类似，比如WAL</p>2020-10-05</li><br/><li><span>wong ka seng</span> 👍（0） 💬（1）<p>老师好，本人对bash认识不多，有没有补充的资料呢？</p>2020-09-03</li><br/><li><span>--SNIPER</span> 👍（1） 💬（3）<p>测试了下都是0，能帮忙解释下为什么吗
 10:39:31 AM  pgpgin&#47;s pgpgout&#47;s   fault&#47;s  majflt&#47;s  pgfree&#47;s pgscank&#47;s pgscand&#47;s pgsteal&#47;s    %vmeff
 10:39:32 AM      0.00      8.00   1509.00      0.00   3651.00      0.00      0.00      0.00      0.00
 10:39:33 AM      0.00      0.00   1566.00      0.00   3633.00      0.00      0.00      0.00      0.00
@@ -219,5 +219,5 @@ min_free_kbytes会影响整体的pagecache大小;vfs_cache_pressure会影响在�
 ^C
 
 10:39:41 AM      0.00      4.76   1592.86      0.00   4565.48      0.00      0.00      0.00      0.00
-Average:         0.00     10.57   3941.67      0.00   4487.30      0.00      0.00      0.00      0.00</div>2020-12-11</li><br/>
+Average:         0.00     10.57   3941.67      0.00   4487.30      0.00      0.00      0.00      0.00</p>2020-12-11</li><br/>
 </ul>

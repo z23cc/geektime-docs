@@ -69,5 +69,5 @@
 - [Large Margin Methods for Structured and Interdependent Output Variables](http://www.jmlr.org/papers/volume6/tsochantaridis05a/tsochantaridis05a.pdf)
 - [Training Linear SVMs in Linear Time](https://www.cs.cornell.edu/people/tj/publications/joachims_06a.pdf)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>tt</span> 👍（0） 💬（0）<div>对数几率分类器更好应用，因为它直接给出了一个实数结果可以作为分数</div>2019-07-29</li><br/>
+<li><span>tt</span> 👍（0） 💬（0）<p>对数几率分类器更好应用，因为它直接给出了一个实数结果可以作为分数</p>2019-07-29</li><br/>
 </ul>

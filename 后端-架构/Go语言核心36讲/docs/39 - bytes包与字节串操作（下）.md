@@ -127,10 +127,10 @@ fmt.Printf("The unread bytes of the buffer: %v\n", buffer1.Bytes()) // 未读内
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>moonfox</span> 👍（1） 💬（3）<div>文章中说：“如果当前内容容器的容量的一半，仍然大于或等于其现有长度再加上另需的字节数的和，cap(b.buf)&#47;2 &gt;= len(b.buf)+need”。
+<li><span>moonfox</span> 👍（1） 💬（3）<p>文章中说：“如果当前内容容器的容量的一半，仍然大于或等于其现有长度再加上另需的字节数的和，cap(b.buf)&#47;2 &gt;= len(b.buf)+need”。
 
-如果是这样的话，那说明还有很多的未使用的空间，起码有一半，那就不用扩容，直接追加就可以了。所以这里的代码是错的，源码(1.16.2)中是 n &lt;= c&#47;2-m ，即cap(b.buf) &gt;= b.Len() + need，也就是未读字节长度 + 另需的字节数 小于等于容量的一半时，才会把未读字节copy到buf的头部，只有在未读字节较少的时候，才发生copy，如果有太多的未读字节，就不copy到头部了(费时)</div>2021-06-02</li><br/><li><span>Lywane</span> 👍（1） 💬（1）<div>老师，Buffer的Write，WriteString方法返回一个int，一个err，int是参数长度，err永远是nil，感觉这个返回没啥用啊。这么设计是为了实现某些接口么？</div>2020-04-08</li><br/><li><span>疯琴</span> 👍（1） 💬（1）<div>请问老师，用 bytes.Buffer 而不用字节切片是因为它有计数器和一些方法使得操作更方便，还有高效的扩容策略么。这么说对么？</div>2020-01-07</li><br/><li><span>窗外</span> 👍（1） 💬（4）<div>老师你好，为什么我本地的src&#47;runtime包下的stringtoslicebyte方法里面tmpBuf的默认长度是32。
-所以文中例子，输出的容量是32</div>2019-08-11</li><br/><li><span>killer</span> 👍（0） 💬（1）<div>2023年了都，大佬还在看评论吗？写了4年go了总感觉差点意思，最近把郝大佬的文章翻出来每篇仔细阅读、做笔记、看源码，另外也在团队给大家分享golang的学习之路特别充实；
+如果是这样的话，那说明还有很多的未使用的空间，起码有一半，那就不用扩容，直接追加就可以了。所以这里的代码是错的，源码(1.16.2)中是 n &lt;= c&#47;2-m ，即cap(b.buf) &gt;= b.Len() + need，也就是未读字节长度 + 另需的字节数 小于等于容量的一半时，才会把未读字节copy到buf的头部，只有在未读字节较少的时候，才发生copy，如果有太多的未读字节，就不copy到头部了(费时)</p>2021-06-02</li><br/><li><span>Lywane</span> 👍（1） 💬（1）<p>老师，Buffer的Write，WriteString方法返回一个int，一个err，int是参数长度，err永远是nil，感觉这个返回没啥用啊。这么设计是为了实现某些接口么？</p>2020-04-08</li><br/><li><span>疯琴</span> 👍（1） 💬（1）<p>请问老师，用 bytes.Buffer 而不用字节切片是因为它有计数器和一些方法使得操作更方便，还有高效的扩容策略么。这么说对么？</p>2020-01-07</li><br/><li><span>窗外</span> 👍（1） 💬（4）<p>老师你好，为什么我本地的src&#47;runtime包下的stringtoslicebyte方法里面tmpBuf的默认长度是32。
+所以文中例子，输出的容量是32</p>2019-08-11</li><br/><li><span>killer</span> 👍（0） 💬（1）<p>2023年了都，大佬还在看评论吗？写了4年go了总感觉差点意思，最近把郝大佬的文章翻出来每篇仔细阅读、做笔记、看源码，另外也在团队给大家分享golang的学习之路特别充实；
 
 对stringtoslicebyte做了debug，没想到cap为8是这么来的
 
@@ -180,12 +180,12 @@ func divRoundUp(n, a uintptr) uintptr {
 	&#47;&#47; a is generally a power of two. This will get inlined and
 	&#47;&#47; the compiler will optimize the division.
 	return (n + a - 1) &#47; a  &#47;&#47; (8+2-1)&#47; 8=1
-}</div>2023-12-20</li><br/><li><span>costaLong</span> 👍（0） 💬（1）<div>	contents := &quot;ab&quot;
+}</p>2023-12-20</li><br/><li><span>costaLong</span> 👍（0） 💬（1）<p>	contents := &quot;ab&quot;
 	buffer1 := bytes.NewBufferString(contents)
 	fmt.Printf(&quot;The capacity of new buffer with content %q: %d\n&quot;, contents, buffer1.Cap()) &#47;&#47; 内容容器的容量：8
 单独执行这段代码输出的结果是：The capacity of new buffer with content &quot;ab&quot;: 32
- 请问是原因呢</div>2022-02-17</li><br/><li><span>rename</span> 👍（0） 💬（2）<div>如果当前内容容器的容量的一半，仍然大于或等于其现有长度再加上所需的字节数的和，即：cap(b.buf)&#47;2 &gt;= len(b.buf)+need
-这边len(b.buf)用b.Len()似乎更准确？才是获取未读部分的实际长度</div>2019-07-14</li><br/><li><span>嘎嘎</span> 👍（0） 💬（1）<div>源码里给了推荐的构建方法
+ 请问是原因呢</p>2022-02-17</li><br/><li><span>rename</span> 👍（0） 💬（2）<p>如果当前内容容器的容量的一半，仍然大于或等于其现有长度再加上所需的字节数的和，即：cap(b.buf)&#47;2 &gt;= len(b.buf)+need
+这边len(b.buf)用b.Len()似乎更准确？才是获取未读部分的实际长度</p>2019-07-14</li><br/><li><span>嘎嘎</span> 👍（0） 💬（1）<p>源码里给了推荐的构建方法
 &#47;&#47; To build strings more efficiently, see the strings.Builder type.
 func (b *Buffer) String() string {
 	if b == nil {
@@ -193,7 +193,7 @@ func (b *Buffer) String() string {
 		return &quot;&lt;nil&gt;&quot;
 	}
 	return string(b.buf[b.off:])
-}</div>2019-03-15</li><br/><li><span>失了智的沫雨</span> 👍（34） 💬（3）<div>如果只看strings.Builder 和bytes.Buffer的String方法的话，strings.Builder 更高效一些。
+}</p>2019-03-15</li><br/><li><span>失了智的沫雨</span> 👍（34） 💬（3）<p>如果只看strings.Builder 和bytes.Buffer的String方法的话，strings.Builder 更高效一些。
 我们可以直接查看两个String方法的源代码，其中strings.Builder String方法中
 *(*string)(unsafe.Pointer(&amp;b.buf))  是直接取得buf的地址然后转换成string返回。
 而bytes.Buffer的String方法是   string(b.buf[b.off:])
@@ -209,10 +209,10 @@ func BenchmarkStrings(b *testing.B) {
 结果为
 BenchmarkStrings-8   	2000000000	         0.66 ns&#47;op
 BenchmarkBuffer-8    	300000000	         5.64 ns&#47;op
-所以strings.Builder的String方法更高效</div>2018-11-11</li><br/><li><span>🐻</span> 👍（7） 💬（0）<div>https:&#47;&#47;github.com&#47;golang&#47;go&#47;blob&#47;master&#47;src&#47;strings&#47;builder_test.go#L319-L366
+所以strings.Builder的String方法更高效</p>2018-11-11</li><br/><li><span>🐻</span> 👍（7） 💬（0）<p>https:&#47;&#47;github.com&#47;golang&#47;go&#47;blob&#47;master&#47;src&#47;strings&#47;builder_test.go#L319-L366
 
-发现最后的问题，Go 的标准库中，已经给出了相关的测试代码了。</div>2019-04-26</li><br/><li><span>1thinc0</span> 👍（5） 💬（0）<div>bytes.Buffer 值的 String() 方法在转换时采用了指针 *(*string)(unsafe.Pointer(&amp;b.buf))，更节省时间和内存</div>2018-11-16</li><br/><li><span>Geek_51aa7f</span> 👍（3） 💬（0）<div>在Byte()或者Next()结果返回的字节切片处理后才可以返回给外部函数
-unreadBytes = unreadBytes[:len(unreadBytes):len(unreadBytes)]</div>2020-06-07</li><br/><li><span>骏Jero</span> 👍（3） 💬（0）<div>读了老师的两篇文章，strings.Builder更多是拼接数据和以及拼接完成后的读取使用上应该更适合。而buffer更为动态接受和读取数据时，更为高效。</div>2018-11-09</li><br/><li><span>cygnus</span> 👍（2） 💬（1）<div>```
+发现最后的问题，Go 的标准库中，已经给出了相关的测试代码了。</p>2019-04-26</li><br/><li><span>1thinc0</span> 👍（5） 💬（0）<p>bytes.Buffer 值的 String() 方法在转换时采用了指针 *(*string)(unsafe.Pointer(&amp;b.buf))，更节省时间和内存</p>2018-11-16</li><br/><li><span>Geek_51aa7f</span> 👍（3） 💬（0）<p>在Byte()或者Next()结果返回的字节切片处理后才可以返回给外部函数
+unreadBytes = unreadBytes[:len(unreadBytes):len(unreadBytes)]</p>2020-06-07</li><br/><li><span>骏Jero</span> 👍（3） 💬（0）<p>读了老师的两篇文章，strings.Builder更多是拼接数据和以及拼接完成后的读取使用上应该更适合。而buffer更为动态接受和读取数据时，更为高效。</p>2018-11-09</li><br/><li><span>cygnus</span> 👍（2） 💬（1）<p>```
 func (b *Buffer) grow(n int) int {
         ......
 	&#47;&#47; Restore b.off and len(b.buf).
@@ -228,7 +228,7 @@ func (b *Buffer) Grow(n int) {
 	b.buf = b.buf[:m]
 }
 ```
-请问下老师，bytes.Buffer里grow函数返回前做过一次切片b.buf = b.buf[:m+n]，返回后在Grow函数又做了一次切片b.buf = b.buf[:m]，这样做的目的是什么呢？感觉有点冗余</div>2018-11-13</li><br/><li><span>Aeins</span> 👍（0） 💬（0）<div>“你可能会有疑惑，我只在这个Buffer值中放入了一个长度为2的字符串值，但为什么该值的容量却变为了8”
+请问下老师，bytes.Buffer里grow函数返回前做过一次切片b.buf = b.buf[:m+n]，返回后在Grow函数又做了一次切片b.buf = b.buf[:m]，这样做的目的是什么呢？感觉有点冗余</p>2018-11-13</li><br/><li><span>Aeins</span> 👍（0） 💬（0）<p>“你可能会有疑惑，我只在这个Buffer值中放入了一个长度为2的字符串值，但为什么该值的容量却变为了8”
 
-目前，字符串长度小于 32 的直接分配在缓冲区上，Cap 是 32，大于 32 的，再重新分配内存</div>2022-06-10</li><br/>
+目前，字符串长度小于 32 的直接分配在缓冲区上，Cap 是 32，大于 32 的，再重新分配内存</p>2022-06-10</li><br/>
 </ul>

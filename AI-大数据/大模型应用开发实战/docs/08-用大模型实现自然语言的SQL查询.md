@@ -400,6 +400,6 @@ plt.savefig('Average_Salary_by_Department.png')
 
 期待你的分享，欢迎与我交流。如果今天的内容让你有所收获，也欢迎你把这节课转发给有需要的朋友！我们下节课再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>回到原点</span> 👍（1） 💬（2）<div>用gpt-4-turbo弄了一些，每次出来的结果都不一样，感觉有点不太行啊，但是换了gpt-4o每次出来结果就一样了</div>2024-06-07</li><br/><li><span>liyinda0000</span> 👍（0） 💬（1）<div>老师，感觉您的示例还是比较简单，如果正式环境写sql会很复杂，有什么好方法可以保障自然语言能够转化成正确的sql吗？</div>2024-06-07</li><br/><li><span>onemao</span> 👍（0） 💬（1）<div>跟langchian课里是不是类似啊，那里用的gpt，这里换成了Claude</div>2024-06-06</li><br/><li><span>小风</span> 👍（0） 💬（0）<div>这个怎么使用本地的模型呢。https:&#47;&#47;modelscope.cn&#47;models&#47;senjia&#47;llama-3-8B-Instruct-text2sql
-就就像这个模型</div>2024-07-03</li><br/><li><span>谢江涛</span> 👍（0） 💬（0）<div>老师，您好。这两个表之间的关系：employees e ON d.name = e.department，是大模型自动识别的吗？我们使用千问搭建的大模型环境不能正确识别两个表之间的关系，请问该如何处理？谢谢！</div>2024-06-17</li><br/>
+<li><span>回到原点</span> 👍（1） 💬（2）<p>用gpt-4-turbo弄了一些，每次出来的结果都不一样，感觉有点不太行啊，但是换了gpt-4o每次出来结果就一样了</p>2024-06-07</li><br/><li><span>liyinda0000</span> 👍（0） 💬（1）<p>老师，感觉您的示例还是比较简单，如果正式环境写sql会很复杂，有什么好方法可以保障自然语言能够转化成正确的sql吗？</p>2024-06-07</li><br/><li><span>onemao</span> 👍（0） 💬（1）<p>跟langchian课里是不是类似啊，那里用的gpt，这里换成了Claude</p>2024-06-06</li><br/><li><span>小风</span> 👍（0） 💬（0）<p>这个怎么使用本地的模型呢。https:&#47;&#47;modelscope.cn&#47;models&#47;senjia&#47;llama-3-8B-Instruct-text2sql
+就就像这个模型</p>2024-07-03</li><br/><li><span>谢江涛</span> 👍（0） 💬（0）<p>老师，您好。这两个表之间的关系：employees e ON d.name = e.department，是大模型自动识别的吗？我们使用千问搭建的大模型环境不能正确识别两个表之间的关系，请问该如何处理？谢谢！</p>2024-06-17</li><br/>
 </ul>

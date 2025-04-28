@@ -71,5 +71,5 @@ Worker进程初始化时间到底有多长呢？在论文的第5.2节“Grep”�
 
 好了，针对课程中，MapReduce论文的解读和学习的总结与回顾就到这里了，我们下节复习课再见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>EveryDayIsNew</span> 👍（0） 💬（0）<div>理论指导实践，所有的伟大的设计都是权衡</div>2021-11-15</li><br/>
+<li><span>EveryDayIsNew</span> 👍（0） 💬（0）<p>理论指导实践，所有的伟大的设计都是权衡</p>2021-11-15</li><br/>
 </ul>

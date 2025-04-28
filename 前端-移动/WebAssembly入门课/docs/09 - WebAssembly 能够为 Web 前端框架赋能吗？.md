@@ -226,11 +226,11 @@ Ember.js 的用户虽然没有 React 与 Vue.js 那么多，但它却是第一�
 
 今天的课程就结束了，希望可以帮助到你，也希望你在下方的留言区和我参与讨论，同时欢迎你把这节课分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>Yarco</span> 👍（4） 💬（1）<div>纯计算的话 貌似也许AI&#47;机器学习可用Wasm? 有这块的内容吗?</div>2020-09-23</li><br/><li><span>奕</span> 👍（2） 💬（1）<div>目前  wasm 落地情况是怎么样的呢？ 能不能使用与生产环境中的？ 还是只能学习学习，为未来做个知识储备</div>2020-09-24</li><br/><li><span>不过落魄</span> 👍（2） 💬（1）<div>恰巧在目前 Wasm 的 MVP 标准中，我们也同样无法直接在 Wasm 字节码中操作 HTML 页面上的 DOM 元素。
-是要表达：恰巧在目前 Web 的 MVP 标准中，我们也同样无法直接在 Wasm 字节码中操作 HTML 页面上的 DOM 元素。这一意思吗？</div>2020-09-23</li><br/><li><span>Yixeu</span> 👍（1） 💬（1）<div>不好意思，我跨国前几章直接看的这一章。请问js glue code 具体是指什么？是要理解为js 开放给wasm 的api么？如果是的话，请问是wasm独有的，还是js统一开放出来的api。如果不是，请问怎么理解或者查阅这个glue code具体有些什么内容</div>2021-01-07</li><br/><li><span>极客酱酱</span> 👍（1） 💬（0）<div>尤大的说法：
+<li><span>Yarco</span> 👍（4） 💬（1）<p>纯计算的话 貌似也许AI&#47;机器学习可用Wasm? 有这块的内容吗?</p>2020-09-23</li><br/><li><span>奕</span> 👍（2） 💬（1）<p>目前  wasm 落地情况是怎么样的呢？ 能不能使用与生产环境中的？ 还是只能学习学习，为未来做个知识储备</p>2020-09-24</li><br/><li><span>不过落魄</span> 👍（2） 💬（1）<p>恰巧在目前 Wasm 的 MVP 标准中，我们也同样无法直接在 Wasm 字节码中操作 HTML 页面上的 DOM 元素。
+是要表达：恰巧在目前 Web 的 MVP 标准中，我们也同样无法直接在 Wasm 字节码中操作 HTML 页面上的 DOM 元素。这一意思吗？</p>2020-09-23</li><br/><li><span>Yixeu</span> 👍（1） 💬（1）<p>不好意思，我跨国前几章直接看的这一章。请问js glue code 具体是指什么？是要理解为js 开放给wasm 的api么？如果是的话，请问是wasm独有的，还是js统一开放出来的api。如果不是，请问怎么理解或者查阅这个glue code具体有些什么内容</p>2021-01-07</li><br/><li><span>极客酱酱</span> 👍（1） 💬（0）<p>尤大的说法：
 Not really. At this stage WebAssembly based solutions leads to questionable performance gain (wasm can&#39;t directly touch the DOM), large binary size (which actually reduces load performance), difficulty of debugging during development (can&#39;t just read the stack trace and the source code), significantly larger surface of maintenance (keeping both versions in sync), etc. It&#39;s simply not a reasonable trade-off for existing JavaScript frameworks.
 没有。在这个阶段，基于 WebAssembly 的解决方案会导致可疑的性能提升（wasm 不能直接接触 DOM）、大二进制大小（这实际上降低了负载性能）、开发过程中的调试困难（不能只读取堆栈跟踪和源代码）、明显更大的维护表面（保持两个版本同步）等。对于现有的JavaScript框架来说，这根本不是一个合理的权衡。
 
 The only case where a WASM-based frontend framework makes sense is to use a language other than JavaScript (e.g. people who prefer to write UI in Rust or C#).
-基于 WASM 的前端框架有意义的唯一情况是使用 JavaScript 以外的语言（例如，喜欢用 Rust 或 C# 编写 UI 的人）。</div>2023-09-04</li><br/><li><span>跳跳</span> 👍（0） 💬（0）<div>一枚使用 Blazor WebAssembly 的同学飘过。</div>2022-01-19</li><br/>
+基于 WASM 的前端框架有意义的唯一情况是使用 JavaScript 以外的语言（例如，喜欢用 Rust 或 C# 编写 UI 的人）。</p>2023-09-04</li><br/><li><span>跳跳</span> 👍（0） 💬（0）<p>一枚使用 Blazor WebAssembly 的同学飘过。</p>2022-01-19</li><br/>
 </ul>

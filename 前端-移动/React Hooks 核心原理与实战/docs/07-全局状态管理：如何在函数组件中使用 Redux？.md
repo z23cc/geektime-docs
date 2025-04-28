@@ -286,16 +286,16 @@ function DataList() {
 
 欢迎把你的思考和想法分享在留言区，我会和你交流讨论。也欢迎你把课程分享给你的朋友和同事，我们共同进步！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Isaac</span> 👍（8） 💬（7）<div>老师，redux 如何和自定义 hooks 很好的结合起来？
+<li><span>Isaac</span> 👍（8） 💬（7）<p>老师，redux 如何和自定义 hooks 很好的结合起来？
 比如常见的获取一个列表，我封装成一个 useList 的自定义 hook，那么就可以在多个组件中使用 useList。但是每次 useList() 的时候，都会触发接口调用，获取到的数据源组件之间无法共享。
-</div>2021-06-09</li><br/><li><span>H</span> 👍（8） 💬（2）<div>请问老师在这个专栏更新完之后还有没有其他的计划》
+</p>2021-06-09</li><br/><li><span>H</span> 👍（8） 💬（2）<p>请问老师在这个专栏更新完之后还有没有其他的计划》
 学习老师的每一篇文章以及视频都有醍醐灌顶，任脉打通的感觉。
 很期待老师接着出一个关于解读react源码的课程，很期待，很期待。
-不知道老师除了react的专栏和视屏还有没有其它的课程，很想很想跟着去学习学习。</div>2021-06-20</li><br/><li><span>Redmi_18117543951</span> 👍（1） 💬（1）<div>终于知道啥是异步Action了，之前被名字吓住，学过才发现原来实际上很简单呀</div>2021-07-20</li><br/><li><span>小飞侠</span> 👍（0） 💬（2）<div>小结里面，最后一个词有错别字（∩▽∩），既能=&gt;技能</div>2022-03-11</li><br/><li><span>Vongola</span> 👍（0） 💬（1）<div>const data = useSelectore(state =&gt; state.data);
-这里应该是useSelector吧？</div>2021-08-04</li><br/><li><span>陈芳</span> 👍（0） 💬（1）<div>在 react-redux 的实现中，为了确保需要绑定的组件能够访问到全局唯一的 Redux Store，利用了 React 的 Conext 机制去存放 Store 的信息。
-应该是Context</div>2021-07-24</li><br/><li><span>闲闲</span> 👍（0） 💬（1）<div>老师我有两个问题麻烦问下，
+不知道老师除了react的专栏和视屏还有没有其它的课程，很想很想跟着去学习学习。</p>2021-06-20</li><br/><li><span>Redmi_18117543951</span> 👍（1） 💬（1）<p>终于知道啥是异步Action了，之前被名字吓住，学过才发现原来实际上很简单呀</p>2021-07-20</li><br/><li><span>小飞侠</span> 👍（0） 💬（2）<p>小结里面，最后一个词有错别字（∩▽∩），既能=&gt;技能</p>2022-03-11</li><br/><li><span>Vongola</span> 👍（0） 💬（1）<p>const data = useSelectore(state =&gt; state.data);
+这里应该是useSelector吧？</p>2021-08-04</li><br/><li><span>陈芳</span> 👍（0） 💬（1）<p>在 react-redux 的实现中，为了确保需要绑定的组件能够访问到全局唯一的 Redux Store，利用了 React 的 Conext 机制去存放 Store 的信息。
+应该是Context</p>2021-07-24</li><br/><li><span>闲闲</span> 👍（0） 💬（1）<p>老师我有两个问题麻烦问下，
 1、如果项目里面状态值特别多，业务比较复杂，感觉redux就很容易造成一些不知道哪里引起的重复渲染，导致组件频繁渲染，这个问题有啥好的办法吗？
-2、使用redux，怎么实现A请求完了再发B请求呢？</div>2021-06-08</li><br/><li><span>腾挪</span> 👍（30） 💬（0）<div>给极客时间网页版提一个建议，强烈建议网页版也能像手机端一样，对写得好的文章进行点赞👍。本文写得通俗易懂，说明王老师水平很高，值得赞。</div>2021-06-08</li><br/><li><span>L</span> 👍（4） 💬（2）<div>总感觉redux这套已经过时了。样板代码之类的实在是太多太繁琐了。同样是这种统一管理数据的方式，vuex就比他好很多。感觉现在很多玩的都是约定式</div>2021-06-12</li><br/><li><span>Aaron</span> 👍（4） 💬（0）<div>可以通过在action添加其他字段，如payload来传递需要加减的数值</div>2021-06-08</li><br/><li><span>Change</span> 👍（3） 💬（1）<div>老师问个问题，redux toolkit和redux有啥区别，在项目用哪个更方便一些</div>2021-06-18</li><br/><li><span>kotumato</span> 👍（3） 💬（0）<div>function counterReducer(state = initialState, action) {
+2、使用redux，怎么实现A请求完了再发B请求呢？</p>2021-06-08</li><br/><li><span>腾挪</span> 👍（30） 💬（0）<p>给极客时间网页版提一个建议，强烈建议网页版也能像手机端一样，对写得好的文章进行点赞👍。本文写得通俗易懂，说明王老师水平很高，值得赞。</p>2021-06-08</li><br/><li><span>L</span> 👍（4） 💬（2）<p>总感觉redux这套已经过时了。样板代码之类的实在是太多太繁琐了。同样是这种统一管理数据的方式，vuex就比他好很多。感觉现在很多玩的都是约定式</p>2021-06-12</li><br/><li><span>Aaron</span> 👍（4） 💬（0）<p>可以通过在action添加其他字段，如payload来传递需要加减的数值</p>2021-06-08</li><br/><li><span>Change</span> 👍（3） 💬（1）<p>老师问个问题，redux toolkit和redux有啥区别，在项目用哪个更方便一些</p>2021-06-18</li><br/><li><span>kotumato</span> 👍（3） 💬（0）<p>function counterReducer(state = initialState, action) {
     switch (action.type) {
         case &#39;counter&#47;incremented&#39;: return {value: state.value + action.payload}
         case &#39;counter&#47;decremented&#39;: return {value: state.value - action.payload}
@@ -305,7 +305,7 @@ function DataList() {
 const incrementAction = { type: &#39;counter&#47;incremented&#39;, payload: 10 };
 store.dispatch(incrementAction); &#47;&#47; 计数器加 10
 const decrementAction = { type: &#39;counter&#47;decremented&#39;,  payload: 10 };
-store.dispatch(decrementAction); &#47;&#47; 计数器减 10</div>2021-06-08</li><br/><li><span>Geek_9b9b7e</span> 👍（1） 💬（0）<div>为什么要异步action?老师的答案是：“发送请求获取数据并进行错误处理这个逻辑是不可重用的。假设我们希望在另外一个组件中也能发送同样的请求，就不得不将这段代码重新实现一遍。“
+store.dispatch(decrementAction); &#47;&#47; 计数器减 10</p>2021-06-08</li><br/><li><span>Geek_9b9b7e</span> 👍（1） 💬（0）<p>为什么要异步action?老师的答案是：“发送请求获取数据并进行错误处理这个逻辑是不可重用的。假设我们希望在另外一个组件中也能发送同样的请求，就不得不将这段代码重新实现一遍。“
 
 也就是说，redux-thunk 要做的就是【把这段代码实现一遍】。
 
@@ -337,5 +337,5 @@ useUserList(dispatch =&gt; {
       dispatch({ type: &#39;FETCH_DATA_FAILURE&#39;, error: err });
     }), [dispatch]);
     });
-}) </div>2022-03-07</li><br/><li><span>山丘smith18651579836</span> 👍（1） 💬（0）<div>为什么不用usecontext</div>2022-01-23</li><br/><li><span>Juntíng</span> 👍（1） 💬（0）<div>Hooks 的出现，结合 context API，用管理全局状态更加简洁易懂，只是在数据流变更机制上不容易捕获，但是却比 Redux 带来的代码复杂度的增加、样板代码过多，不易于阅读上来说我更加偏爱 hooks + ContextAPI 。</div>2021-06-22</li><br/>
+}) </p>2022-03-07</li><br/><li><span>山丘smith18651579836</span> 👍（1） 💬（0）<p>为什么不用usecontext</p>2022-01-23</li><br/><li><span>Juntíng</span> 👍（1） 💬（0）<p>Hooks 的出现，结合 context API，用管理全局状态更加简洁易懂，只是在数据流变更机制上不容易捕获，但是却比 Redux 带来的代码复杂度的增加、样板代码过多，不易于阅读上来说我更加偏爱 hooks + ContextAPI 。</p>2021-06-22</li><br/>
 </ul>

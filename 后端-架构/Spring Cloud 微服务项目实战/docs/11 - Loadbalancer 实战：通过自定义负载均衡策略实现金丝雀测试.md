@@ -385,7 +385,7 @@ public Coupon requestCoupon(RequestCoupon request) {
 
 好啦，这节课就结束啦。欢迎你把这节课分享给更多对Spring Cloud感兴趣的朋友。我是姚秋辰，我们下节课再见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>peter</span> 👍（12） 💬（3）<div>老师我有个关于代理的问题：一般用nginx将请求转发到后端多个应用服务器上。现在用了API网关，由API网关将请求转发到后端应用服务器上。这样的话，API网关和nginx的功能就重复了，就不需要nginx了，对吗？ 尤其对于中小公司，服务器数量不是很多，nginx就足够了，或者用API网关就足够了，两者选一个就够了啊。</div>2022-01-06</li><br/><li><span>Geek_0b93c0</span> 👍（10） 💬（1）<div>集群优先代码
+<li><span>peter</span> 👍（12） 💬（3）<p>老师我有个关于代理的问题：一般用nginx将请求转发到后端多个应用服务器上。现在用了API网关，由API网关将请求转发到后端应用服务器上。这样的话，API网关和nginx的功能就重复了，就不需要nginx了，对吗？ 尤其对于中小公司，服务器数量不是很多，nginx就足够了，或者用API网关就足够了，两者选一个就够了啊。</p>2022-01-06</li><br/><li><span>Geek_0b93c0</span> 👍（10） 💬（1）<p>集群优先代码
 
     private Response&lt;ServiceInstance&gt; getSameClusterService(Request request, List&lt;ServiceInstance&gt; instances) {
         String clusterName = environment.resolvePlaceholders(&quot;${spring.cloud.nacos.discovery.cluster-name:}&quot;);
@@ -400,17 +400,17 @@ public Coupon requestCoupon(RequestCoupon request) {
         }else {
             return getRoundRobinInstance(instances);
         }
-    }</div>2022-05-31</li><br/><li><span>与路同飞</span> 👍（10） 💬（2）<div>现在公司所有api服务都是注册到api网关上去了。api网关替我们做了负载均衡和路由规则。那业务团队是不是就不需要引用负载均衡组件了</div>2022-01-20</li><br/><li><span>何衍其</span> 👍（9） 💬（2）<div>&#47;&#47; 当前服务的集群名称
+    }</p>2022-05-31</li><br/><li><span>与路同飞</span> 👍（10） 💬（2）<p>现在公司所有api服务都是注册到api网关上去了。api网关替我们做了负载均衡和路由规则。那业务团队是不是就不需要引用负载均衡组件了</p>2022-01-20</li><br/><li><span>何衍其</span> 👍（9） 💬（2）<p>&#47;&#47; 当前服务的集群名称
  String clusterName = environment.resolvePlaceholders(&quot;${spring.cloud.nacos.discovery.cluster-name:}&quot;);
 
 &#47;&#47; 服务实列所属集群名称
-serviceInstance.getMetadata().get(&quot;nacos.cluster&quot;);</div>2022-04-13</li><br/><li><span>~</span> 👍（5） 💬（3）<div>说一下思考题我的思路：
+serviceInstance.getMetadata().get(&quot;nacos.cluster&quot;);</p>2022-04-13</li><br/><li><span>~</span> 👍（5） 💬（3）<p>说一下思考题我的思路：
 从 CanaryRule 就可以看出来了，其实实现负载均衡的逻辑就在getRoundRobinInstance中，我们只需要改造这里就可以了。我的想法是设置一个缓存（map 也好，其他的也好），存放上次选择出的 serverInstance，如果是第一次选择，那么使用老逻辑选出一个，如果上次选择的服务已经不可用了，就从缓存中清除，重新选一个就可以了。
 补充2点：
 1. 怎么判断一个服务是否可用？其实在这里的代码中，传入的 List&lt;ServiceInstance&gt; 参数就是从 nacos 中获取到的可用服务的列表。那么只需要判断缓存中存放的 serviceInstance 是否也在 list 中就可以了。具体怎么获取到可用服务列表的，需要进一步查看源码才能了解。
 2. 仅做一个猜想，不具有实际意义，老师如果能解答也再好不过了：能否直接在获取可用服务列表那步就直接确定一个服务？其他的逻辑也是如此。就算可行其实设计上也是不合理的，因为获取可用服务的代码就应该只负责相关逻辑，负载均衡代码就应该只管负载均衡。提出这个猜想只不过是想对源码有进一步了解，设计上还是各司其职更合理。
 
 以上就是我的思考，附上代码（超过字数限制了，放在我的留言的回复里了），如果有问题，欢迎指出问题~
-</div>2022-01-16</li><br/><li><span>Yarnbo</span> 👍（1） 💬（1）<div>姚总好，学习了您的本节课受益匪浅。虽然照葫芦画瓢也实现了“优先调用同一个 Cluster 的服务器”，但是这样做的意义有哪些，能结合您的经验介绍下吗？（我能盲猜到的是，假如服务以集群为基本单元提供服务能力，将来方便弹性扩展机器）</div>2022-09-29</li><br/><li><span>二饼</span> 👍（1） 💬（2）<div>Nacos-服务管理-服务列表-开发环境 `coupon-template-serv` 只有一个实例，不是两个，我又把前面的文章看了一遍，没有发现什么地方又说定义了两个实例，和示例代码比对了一下配置文件没看出什么问题，请教一下老师我这是什么造成的？</div>2022-08-21</li><br/><li><span>胖子菜</span> 👍（1） 💬（1）<div>dubbo整合了nacos后，因为我用的最新版本的nacos没有自带ribbon,我又引入了loadbalancer依赖，我想问下dubbo有负载均衡机制，loadbancer也有，他们冲突么，谁会生效呢</div>2022-05-07</li><br/><li><span>靠人品去赢</span> 👍（1） 💬（1）<div>像金丝雀这些线上验证，会产生线上数据，万一没搞好打标打错了或者没配置好，导入到正常服务的机器上没有到金丝雀上，怎么辨别消除影响呢？</div>2022-04-01</li><br/><li><span>rrbbt</span> 👍（0） 💬（1）<div>老师能详细讲一下这句话吗？没太看懂，为什么不应用到全局？不加@Configuration就能不应用到全局吗？===========[原文]&quot;因为我不希望把这个负载均衡策略应用到全局，所以我没有为这个配置类添加 @Configuration 注解&quot;</div>2023-06-24</li><br/><li><span>乘风</span> 👍（0） 💬（1）<div>金丝雀负载均衡策略好像并没有强依赖WebClient呀，为什么说它是专门针对WebClient方式的远程调用，难道openFeigh用不了？</div>2022-09-20</li><br/><li><span>Jaising</span> 👍（0） 💬（2）<div>半仙老师，遇到个负载失效的问题帮忙排查下怎么回事，应用中引入了两个二方库starter A和B，两个starter都各自定义了一个RestTemplate，A做了LoadBalance，B没有，单独引入A或B都可以正常发起http调用，但是同时引入两个starter后，B正常，A却负载失效了报错no instances available，这是咋回事</div>2022-06-22</li><br/><li><span>Geek_5d68ab</span> 👍（0） 💬（1）<div>把老师的代码down下来之后，启动服务，请求接口不经过CanaryRule是怎么回事？</div>2022-05-27</li><br/><li><span>丶凯</span> 👍（0） 💬（1）<div>包含了新的代码改动的服务器就是这个金丝雀,  老师这句话什么意思？
-</div>2022-04-01</li><br/><li><span>密码123456</span> 👍（0） 💬（2）<div>LoadBalancerClientFactory.getLazyProvider这个方法，为什么name随便写一个值不行？必须是服务名称？</div>2022-02-07</li><br/>
+</p>2022-01-16</li><br/><li><span>Yarnbo</span> 👍（1） 💬（1）<p>姚总好，学习了您的本节课受益匪浅。虽然照葫芦画瓢也实现了“优先调用同一个 Cluster 的服务器”，但是这样做的意义有哪些，能结合您的经验介绍下吗？（我能盲猜到的是，假如服务以集群为基本单元提供服务能力，将来方便弹性扩展机器）</p>2022-09-29</li><br/><li><span>二饼</span> 👍（1） 💬（2）<p>Nacos-服务管理-服务列表-开发环境 `coupon-template-serv` 只有一个实例，不是两个，我又把前面的文章看了一遍，没有发现什么地方又说定义了两个实例，和示例代码比对了一下配置文件没看出什么问题，请教一下老师我这是什么造成的？</p>2022-08-21</li><br/><li><span>胖子菜</span> 👍（1） 💬（1）<p>dubbo整合了nacos后，因为我用的最新版本的nacos没有自带ribbon,我又引入了loadbalancer依赖，我想问下dubbo有负载均衡机制，loadbancer也有，他们冲突么，谁会生效呢</p>2022-05-07</li><br/><li><span>靠人品去赢</span> 👍（1） 💬（1）<p>像金丝雀这些线上验证，会产生线上数据，万一没搞好打标打错了或者没配置好，导入到正常服务的机器上没有到金丝雀上，怎么辨别消除影响呢？</p>2022-04-01</li><br/><li><span>rrbbt</span> 👍（0） 💬（1）<p>老师能详细讲一下这句话吗？没太看懂，为什么不应用到全局？不加@Configuration就能不应用到全局吗？===========[原文]&quot;因为我不希望把这个负载均衡策略应用到全局，所以我没有为这个配置类添加 @Configuration 注解&quot;</p>2023-06-24</li><br/><li><span>乘风</span> 👍（0） 💬（1）<p>金丝雀负载均衡策略好像并没有强依赖WebClient呀，为什么说它是专门针对WebClient方式的远程调用，难道openFeigh用不了？</p>2022-09-20</li><br/><li><span>Jaising</span> 👍（0） 💬（2）<p>半仙老师，遇到个负载失效的问题帮忙排查下怎么回事，应用中引入了两个二方库starter A和B，两个starter都各自定义了一个RestTemplate，A做了LoadBalance，B没有，单独引入A或B都可以正常发起http调用，但是同时引入两个starter后，B正常，A却负载失效了报错no instances available，这是咋回事</p>2022-06-22</li><br/><li><span>Geek_5d68ab</span> 👍（0） 💬（1）<p>把老师的代码down下来之后，启动服务，请求接口不经过CanaryRule是怎么回事？</p>2022-05-27</li><br/><li><span>丶凯</span> 👍（0） 💬（1）<p>包含了新的代码改动的服务器就是这个金丝雀,  老师这句话什么意思？
+</p>2022-04-01</li><br/><li><span>密码123456</span> 👍（0） 💬（2）<p>LoadBalancerClientFactory.getLazyProvider这个方法，为什么name随便写一个值不行？必须是服务名称？</p>2022-02-07</li><br/>
 </ul>

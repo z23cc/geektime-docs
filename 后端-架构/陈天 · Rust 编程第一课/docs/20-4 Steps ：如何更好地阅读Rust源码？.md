@@ -349,7 +349,7 @@ struct Shared {
 
 如果你觉得有收获，欢迎分享～
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Geek_1b6d74</span> 👍（17） 💬（1）<div>陈天大神太强了，学习他的课程不仅学习了一门新的语言，还弄明白了很多编程底层原理</div>2021-10-13</li><br/><li><span>核桃</span> 👍（6） 💬（1）<div>老师，专门开一期如何读开源项目源码吧，真的，这个比懂任何技巧都更有意义，目前也没有教这个的。</div>2021-11-20</li><br/><li><span>枸杞红茶</span> 👍（6） 💬（1）<div>我原本准备去超市摸鱼，陈天老师给我渔船把我扔到了大海里</div>2021-10-31</li><br/><li><span>Marvichov</span> 👍（3） 💬（1）<div>1. 我们一起大致分析了 Bytes 的 clone() 的使用的场景，你能用类似的方式研究一下 drop() 是怎么工作的么？
+<li><span>Geek_1b6d74</span> 👍（17） 💬（1）<p>陈天大神太强了，学习他的课程不仅学习了一门新的语言，还弄明白了很多编程底层原理</p>2021-10-13</li><br/><li><span>核桃</span> 👍（6） 💬（1）<p>老师，专门开一期如何读开源项目源码吧，真的，这个比懂任何技巧都更有意义，目前也没有教这个的。</p>2021-11-20</li><br/><li><span>枸杞红茶</span> 👍（6） 💬（1）<p>我原本准备去超市摸鱼，陈天老师给我渔船把我扔到了大海里</p>2021-10-31</li><br/><li><span>Marvichov</span> 👍（3） 💬（1）<p>1. 我们一起大致分析了 Bytes 的 clone() 的使用的场景，你能用类似的方式研究一下 drop() 是怎么工作的么？
 
 如果是Shared, 就像Arc那样decrease counter; 如果是KIND_VEC, with unique ownership, deallocate memory immediately.
 
@@ -398,9 +398,9 @@ struct Shared {
 - 如果是KIND_VEC, 就变成两个Arc, 共享同一个buf pointer
 - 如果是KIND_ARC, 就increase ref count, 设置不同的start, end
 
-感觉真正困难的是 `reserve` 和 `resize`; 这两个method要求KIND_ARC; 这样, 所有outgoing的`BytesMut` 能view underlying Vec pointer change during reallocation</div>2021-11-08</li><br/><li><span>Geek2014</span> 👍（2） 💬（1）<div>而 data 这个 AtomicPtr 指针，在指向 Shared 结构时，这个结构的对齐是 2&#47;4&#47;8 字节（16&#47;32&#47;64 位 CPU 下），末尾一定不为 0：
+感觉真正困难的是 `reserve` 和 `resize`; 这两个method要求KIND_ARC; 这样, 所有outgoing的`BytesMut` 能view underlying Vec pointer change during reallocation</p>2021-11-08</li><br/><li><span>Geek2014</span> 👍（2） 💬（1）<p>而 data 这个 AtomicPtr 指针，在指向 Shared 结构时，这个结构的对齐是 2&#47;4&#47;8 字节（16&#47;32&#47;64 位 CPU 下），末尾一定不为 0：
 
-老师，为啥对齐2&#47;4&#47;8字节，末尾一定不为0呢</div>2021-10-08</li><br/><li><span>Geek_b52974</span> 👍（1） 💬（1）<div>看後面的解釋還是有點懵，我試著照自己的理解說明
+老师，为啥对齐2&#47;4&#47;8字节，末尾一定不为0呢</p>2021-10-08</li><br/><li><span>Geek_b52974</span> 👍（1） 💬（1）<p>看後面的解釋還是有點懵，我試著照自己的理解說明
 最後一位是用來記錄是否是 shared
 但是我們會需要知道升級成 shared 前最後一位是 odd 還是 event 所以用   PROMOTABLE_ODD_VTABLE PROMOTABLE_EVENT_VTABLE 來做不同的 clone 方式
 
@@ -422,8 +422,8 @@ promotable_event_clone 相比 promotable_odd_clone 多了下面這個操作
 let buf = (shared as usize &amp; !KIND_MASK) as *mut u8;
 
 先把最後一位還原成原本的樣子，再進行 clone
-不知道這樣理解對不對</div>2021-11-05</li><br/><li><span>25ma</span> 👍（0） 💬（1）<div>值得反复深度阅读，很有收获</div>2022-07-08</li><br/><li><span>施泰博</span> 👍（0） 💬（1）<div>看完我觉得值得，得反复看很多编了。</div>2021-12-18</li><br/><li><span>overheat</span> 👍（0） 💬（3）<div>Bytes可以支持反序吗？我想要从结尾往开头操作。。。</div>2021-12-10</li><br/><li><span>小康</span> 👍（0） 💬（1）<div>老师，目前中国rust岗位很多都是区块链相关的技术岗位呀？？？java转Rust跨度会不会太大？？？
-</div>2021-11-13</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<div>按照老师个步骤, 一步一步来, 受益匪浅!
+不知道這樣理解對不對</p>2021-11-05</li><br/><li><span>25ma</span> 👍（0） 💬（1）<p>值得反复深度阅读，很有收获</p>2022-07-08</li><br/><li><span>施泰博</span> 👍（0） 💬（1）<p>看完我觉得值得，得反复看很多编了。</p>2021-12-18</li><br/><li><span>overheat</span> 👍（0） 💬（3）<p>Bytes可以支持反序吗？我想要从结尾往开头操作。。。</p>2021-12-10</li><br/><li><span>小康</span> 👍（0） 💬（1）<p>老师，目前中国rust岗位很多都是区块链相关的技术岗位呀？？？java转Rust跨度会不会太大？？？
+</p>2021-11-13</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<p>按照老师个步骤, 一步一步来, 受益匪浅!
 
 试了试resize:
 
@@ -455,7 +455,7 @@ b&quot; world&quot;
 
 结果第一个buf新开了memory, 和other就撇清关系了...
 
-BytesMut真的太难了...不过bytes这个crate真的很适合精读...里面有各种底层技巧…</div>2021-11-08</li><br/><li><span>目标</span> 👍（0） 💬（0）<div>我也暂停下，跟着大佬学习阅读源码。阅读完再继续学习。</div>2024-04-07</li><br/><li><span>Fan</span> 👍（0） 💬（0）<div>牛逼</div>2023-08-17</li><br/><li><span>日月星辰</span> 👍（0） 💬（1）<div>&amp;b&quot;hello world&quot;[..]  这是什么格式，懵逼了，基础太差，到处找不到解释这个的</div>2022-12-15</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<div>针对思考题：
+BytesMut真的太难了...不过bytes这个crate真的很适合精读...里面有各种底层技巧…</p>2021-11-08</li><br/><li><span>目标</span> 👍（0） 💬（0）<p>我也暂停下，跟着大佬学习阅读源码。阅读完再继续学习。</p>2024-04-07</li><br/><li><span>Fan</span> 👍（0） 💬（0）<p>牛逼</p>2023-08-17</li><br/><li><span>日月星辰</span> 👍（0） 💬（1）<p>&amp;b&quot;hello world&quot;[..]  这是什么格式，懵逼了，基础太差，到处找不到解释这个的</p>2022-12-15</li><br/><li><span>进击的Lancelot</span> 👍（0） 💬（0）<p>针对思考题：
 
 1.来看一段 promotable_even_drop 的代码，它会先判断保存在 data(AtomicPtr) 中的数据是否是共享的，如果是，直接调用 release_shared 进行释放(shared_drop 直接执行这一步即可)；如果不是共享数据，则先消除 data 中数据最后一位的 flag，然后调用free_boxed_slice 进行释放
 unsafe fn promotable_even_drop(data: &amp;mut AtomicPtr&lt;()&gt;, ptr: *const u8, len: usize) {
@@ -474,5 +474,5 @@ unsafe fn promotable_even_drop(data: &amp;mut AtomicPtr&lt;()&gt;, ptr: *const u
 } 
 2. 因为 Buf Trait 中有 advance 这样的方法，其 reveiver type 是 &amp;mut self，如果为 T&amp; 实现了 Buf Trait，那么它无法调用 advance，会产生 immutable borrow cannot be borrowed as mutable 这样的错误。而之所以可以为 &amp;[u8] 实现 Buf Trait，是因为 advance 可以直接通过切片的方式对 *self 进行修改，即 advance(&amp;mut self, cnt) =&gt; *self= &amp;self[cnt..]
 3. Vec 可以使用 BufMut，因为 Vec[u8] 实现了 BufMut Trait，文档中 BufMut 的第一个例子就是在 vec 上使用 BufMut
-4. split_off 的核心在于 shallow_clone 函数，这个函数会先判断 self 的类型是否为共享，如果是，增加引用计数，如果不是，则先将其升级为共享数据，然后返回 BytesMut 对象。但这个方法本身是不安全的，需要调用者自己去保证返回的 BytesMut 和原来的 BytesMut 之间没有重叠的视图</div>2022-09-23</li><br/>
+4. split_off 的核心在于 shallow_clone 函数，这个函数会先判断 self 的类型是否为共享，如果是，增加引用计数，如果不是，则先将其升级为共享数据，然后返回 BytesMut 对象。但这个方法本身是不安全的，需要调用者自己去保证返回的 BytesMut 和原来的 BytesMut 之间没有重叠的视图</p>2022-09-23</li><br/>
 </ul>

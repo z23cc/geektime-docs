@@ -212,7 +212,7 @@ CART决策树的剪枝主要采用的是CCP方法，它是一种后剪枝的方�
 
 欢迎你在评论下面留言，与我分享你的答案。也欢迎点击“请朋友读”，把这篇文章分享给你的朋友或者同事，一起交流。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>rainman</span> 👍（39） 💬（1）<div>对于 CART 回归树的可视化，可以先在电脑上安装 graphviz；然后 pip install graphviz，这是安装python的库，需要依赖前面安装的 graphviz。可视化代码如下：
+<li><span>rainman</span> 👍（39） 💬（1）<p>对于 CART 回归树的可视化，可以先在电脑上安装 graphviz；然后 pip install graphviz，这是安装python的库，需要依赖前面安装的 graphviz。可视化代码如下：
 
 ----
 from sklearn.tree import export_graphviz
@@ -226,7 +226,7 @@ graph.render(&#39;Boston&#39;)
 ----
 
 具体内容可以去 sklearn(https:&#47;&#47;scikit-learn.org&#47;stable&#47;modules&#47;generated&#47;sklearn.tree.export_graphviz.html)
-和 graphviz(https:&#47;&#47;graphviz.readthedocs.io&#47;en&#47;stable&#47;) 看看。</div>2019-02-15</li><br/><li><span>小熊猫</span> 👍（16） 💬（1）<div>ID3：以信息增益作为判断标准，计算每个特征的信息增益，选取信息增益最大的特征，但是容易选取到取值较多的特征
+和 graphviz(https:&#47;&#47;graphviz.readthedocs.io&#47;en&#47;stable&#47;) 看看。</p>2019-02-15</li><br/><li><span>小熊猫</span> 👍（16） 💬（1）<p>ID3：以信息增益作为判断标准，计算每个特征的信息增益，选取信息增益最大的特征，但是容易选取到取值较多的特征
 C4.5：以信息增益比作为判断标准，计算每个特征的信息增益比，选取信息增益比最大的特征
 CART：分类树以基尼系数为标准，选取基尼系数小的的特征
             回归树以均方误差或绝对值误差为标准，选取均方误差或绝对值误差最小的特征
@@ -258,9 +258,9 @@ dot_data = tree.export_graphviz(clf, out_file=None)
 graph = graphviz.Source(dot_data)
 graph.render(&#39;CART&#47;&#47;CART_practice_digits&#39;)
 
-CART分类树准确率: 0.8636363636363636</div>2019-02-15</li><br/><li><span>jake</span> 👍（7） 💬（2）<div>
+CART分类树准确率: 0.8636363636363636</p>2019-02-15</li><br/><li><span>jake</span> 👍（7） 💬（2）<p>
 首先想问一个问题 就是在讲到基尼系数那里 有一个图那里的例子 什么D: 9个打篮球 3个不打篮球那里
-那里的D的基尼系数用到了子节点归一化基尼系数之和这个方法求 请问D的基尼系数不能直接用 上面那个公式 也就是&quot;1 - [p(ck|t)]^2&quot;那个公式计算吗 我用这个公式计算出D的基尼系数为 1 - (9&#47;12 * 9&#47;12 + 3&#47;12 * 3&#47;12) = 6&#47;16。 我也想问一下上面那个同学提的这个问题</div>2019-02-24</li><br/><li><span>xfoolin</span> 👍（4） 💬（1）<div>ID3 是通过信息增益，选取信息增益最大的特征；C4.5 是通过信息增益率，选取，CART 是通过基尼系数，选取基尼系数最小的特征。
+那里的D的基尼系数用到了子节点归一化基尼系数之和这个方法求 请问D的基尼系数不能直接用 上面那个公式 也就是&quot;1 - [p(ck|t)]^2&quot;那个公式计算吗 我用这个公式计算出D的基尼系数为 1 - (9&#47;12 * 9&#47;12 + 3&#47;12 * 3&#47;12) = 6&#47;16。 我也想问一下上面那个同学提的这个问题</p>2019-02-24</li><br/><li><span>xfoolin</span> 👍（4） 💬（1）<p>ID3 是通过信息增益，选取信息增益最大的特征；C4.5 是通过信息增益率，选取，CART 是通过基尼系数，选取基尼系数最小的特征。
 
 
 from sklearn.model_selection import train_test_split#训练集和测试集
@@ -292,7 +292,7 @@ dot_data = tree.export_graphviz(clf,out_file = None)
 graph = graphviz.Source(dot_data)
 #输出分类树图示
 graph.view()
-</div>2019-02-19</li><br/><li><span>Lee</span> 👍（3） 💬（1）<div># encoding=utf-8
+</p>2019-02-19</li><br/><li><span>Lee</span> 👍（3） 💬（1）<p># encoding=utf-8
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
@@ -315,7 +315,7 @@ test_predict = clf.predict(test_features)
 score = accuracy_score(test_labels, test_predict)
 print(&quot;CART 分类树准确率 %.4lf&quot; % score)
 
-CART 分类树准确率 0.8620</div>2019-01-24</li><br/><li><span>雨先生的晴天</span> 👍（2） 💬（1）<div>scikit learn package 确实非常好用，很简洁。推荐大家也去官网看一看，请问一下怎样可以把decision tree 可视化呀？ </div>2019-01-27</li><br/><li><span>Mi compaero de armas</span> 👍（1） 💬（1）<div>老师您好，请问采用CART算法时，如果离散型属性的值不止两种还能使用CART算法吗</div>2019-11-19</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<div>第二问
+CART 分类树准确率 0.8620</p>2019-01-24</li><br/><li><span>雨先生的晴天</span> 👍（2） 💬（1）<p>scikit learn package 确实非常好用，很简洁。推荐大家也去官网看一看，请问一下怎样可以把decision tree 可视化呀？ </p>2019-01-27</li><br/><li><span>Mi compaero de armas</span> 👍（1） 💬（1）<p>老师您好，请问采用CART算法时，如果离散型属性的值不止两种还能使用CART算法吗</p>2019-11-19</li><br/><li><span>Ronnyz</span> 👍（1） 💬（1）<p>第二问
 ```
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -338,7 +338,7 @@ predict_labels=clf.predict(test_features)
 
 print(&#39;分类准确度：&#39;,accuracy_score(test_labels,predict_labels))
 ```
-分类准确度： 0.8619528619528619</div>2019-11-11</li><br/><li><span>许宇宝</span> 👍（1） 💬（1）<div>老师，看了两遍还是不明白分类的这个决策树是依据什么画出来的？</div>2019-07-18</li><br/><li><span>羊小看</span> 👍（1） 💬（1）<div>1、为什么CRAT的基尼系数比C4.5的信息增益率好呢？既然sklearn库默认用的基尼系数，应该是这个好一些吧？
+分类准确度： 0.8619528619528619</p>2019-11-11</li><br/><li><span>许宇宝</span> 👍（1） 💬（1）<p>老师，看了两遍还是不明白分类的这个决策树是依据什么画出来的？</p>2019-07-18</li><br/><li><span>羊小看</span> 👍（1） 💬（1）<p>1、为什么CRAT的基尼系数比C4.5的信息增益率好呢？既然sklearn库默认用的基尼系数，应该是这个好一些吧？
 2、from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
@@ -365,7 +365,7 @@ test_predict = clf.predict(test_features)
 score = accuracy_score(test_labels, test_predict)
 print(&quot;CART 分类树准确率 %.4lf&quot; % score)
 
-CART 分类树准确率 0.8636</div>2019-05-10</li><br/><li><span>圆圆的大食客</span> 👍（1） 💬（1）<div>from sklearn.model_selection import train_test_split
+CART 分类树准确率 0.8636</p>2019-05-10</li><br/><li><span>圆圆的大食客</span> 👍（1） 💬（1）<p>from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_digits
@@ -384,7 +384,7 @@ clf = clf.fit(train_features, train_labels)
 test_predict = clf.predict(test_features)
 #预测结果与测试集结果作对比 
 score = accuracy_score(test_labels, test_predict)
-print (&quot;CART分类树准确率%.4lf&quot;% score)</div>2019-02-02</li><br/><li><span>Chino</span> 👍（1） 💬（1）<div>首先想问一个问题 就是在讲到基尼系数那里 有一个图那里的例子 什么D: 9个打篮球 3个不打篮球那里
+print (&quot;CART分类树准确率%.4lf&quot;% score)</p>2019-02-02</li><br/><li><span>Chino</span> 👍（1） 💬（1）<p>首先想问一个问题 就是在讲到基尼系数那里 有一个图那里的例子 什么D: 9个打篮球 3个不打篮球那里
 那里的D的基尼系数用到了子节点归一化基尼系数之和这个方法求 请问D的基尼系数不能直接用 上面那个公式 也就是&quot;1 - [p(ck|t)]^2&quot;那个公式计算吗  我用这个公式计算出D的基尼系数为 1 - (9&#47;12 * 9&#47;12 + 3&#47;12 * 3&#47;12) = 6&#47;16
 
 # ID3,C4.5,CART在做节点划分的区别
@@ -423,5 +423,5 @@ score = accuracy_score(predict_target,test_target)
 
 print(score)
 
-</div>2019-02-01</li><br/><li><span>Melons</span> 👍（0） 💬（1）<div>如果按照第一个公式，数据集D的基尼系数计算方法为1-（9&#47;12 * 9&#47;12 + 3&#47;12 * 3&#47;12）=3&#47;8；请问为什么不能这样算呢？</div>2021-01-14</li><br/><li><span>lemonlxn</span> 👍（0） 💬（1）<div>使用CART树，做回归或者分类，样本数据类型 有无规定，只能是 分类 或 数值 数据类型，还是两者都可以存在？</div>2020-09-21</li><br/><li><span>freedomwl</span> 👍（0） 💬（3）<div>老师，波士顿房价代码每次运行结果不一样是因为训练集和测试集每运行一次都会重新随机选取的原因吗？</div>2020-07-11</li><br/>
+</p>2019-02-01</li><br/><li><span>Melons</span> 👍（0） 💬（1）<p>如果按照第一个公式，数据集D的基尼系数计算方法为1-（9&#47;12 * 9&#47;12 + 3&#47;12 * 3&#47;12）=3&#47;8；请问为什么不能这样算呢？</p>2021-01-14</li><br/><li><span>lemonlxn</span> 👍（0） 💬（1）<p>使用CART树，做回归或者分类，样本数据类型 有无规定，只能是 分类 或 数值 数据类型，还是两者都可以存在？</p>2020-09-21</li><br/><li><span>freedomwl</span> 👍（0） 💬（3）<p>老师，波士顿房价代码每次运行结果不一样是因为训练集和测试集每运行一次都会重新随机选取的原因吗？</p>2020-07-11</li><br/>
 </ul>

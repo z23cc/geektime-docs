@@ -352,7 +352,7 @@ function withLoggedInUserContext(WrappedComponent) {
 
 好了，这节课的内容就是这些。我们下节课再见。
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>若川</span> 👍（4） 💬（2）<div>思考题：
+<li><span>若川</span> 👍（4） 💬（2）<p>思考题：
 1. useState 只有两个值的数组，优点：解构命名方便，缺点：要按顺序。
 
 const [name, setName] = useState()
@@ -361,5 +361,5 @@ const [name, setName] = useState()
 
 一般来说超过三个用对象形式比较好。
 
-2. 暂时实现不出~贴下 React.memo 源码链接: https:&#47;&#47;github.com&#47;facebook&#47;react&#47;blob&#47;main&#47;packages&#47;react&#47;src&#47;ReactMemo.js</div>2022-10-16</li><br/>
+2. 暂时实现不出~贴下 React.memo 源码链接: https:&#47;&#47;github.com&#47;facebook&#47;react&#47;blob&#47;main&#47;packages&#47;react&#47;src&#47;ReactMemo.js</p>2022-10-16</li><br/>
 </ul>

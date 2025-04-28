@@ -564,7 +564,7 @@ fn main() {
 }
 ```
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>D. D</span> 👍（31） 💬（2）<div>1. 相当于：
+<li><span>D. D</span> 👍（31） 💬（2）<p>1. 相当于：
 struct Closure&lt;&#39;a, &#39;b: &#39;a&gt; {
     data: (i32, i32, i32, i32),
     v: &amp;&#39;a [&amp;&#39;b str],
@@ -584,7 +584,7 @@ where
     fn execute(&amp;self, cmd: &amp;str) -&gt; Result&lt;String, &amp;&#39;static str&gt; {
         self(cmd)
     }
-}</div>2021-10-06</li><br/><li><span>罗杰</span> 👍（5） 💬（1）<div>Rust 闭包，看这一篇真的就够了</div>2021-10-06</li><br/><li><span>TheLudlows</span> 👍（2） 💬（1）<div>思路清晰，深入浅出，佩服陈天老师👍</div>2021-11-11</li><br/><li><span>lambda</span> 👍（2） 💬（3）<div>关于第三题有个问题，如果我把
+}</p>2021-10-06</li><br/><li><span>罗杰</span> 👍（5） 💬（1）<p>Rust 闭包，看这一篇真的就够了</p>2021-10-06</li><br/><li><span>TheLudlows</span> 👍（2） 💬（1）<p>思路清晰，深入浅出，佩服陈天老师👍</p>2021-11-11</li><br/><li><span>lambda</span> 👍（2） 💬（3）<p>关于第三题有个问题，如果我把
 impl&lt;F&gt; Executor for F
 where
     F: Fn(&amp;str) -&gt; Result&lt;String, &amp;&#39;static str&gt;
@@ -595,11 +595,11 @@ impl Executor for fn(&amp;str) -&gt; Result&lt;String, &amp;&#39;static str&gt;
 the trait `Executor` is not implemented for
 应该是没对闭包实现Executor这个trait
 
-那我的那个声明是给哪个谁实现了Executor这个trait了呢？</div>2021-10-23</li><br/><li><span>linuxfish</span> 👍（1） 💬（4）<div>“然而，一旦它被当做 FnOnce 调用，自己会被转移到 call_once 函数的作用域中，之后就无法再次调用了”
+那我的那个声明是给哪个谁实现了Executor这个trait了呢？</p>2021-10-23</li><br/><li><span>linuxfish</span> 👍（1） 💬（4）<p>“然而，一旦它被当做 FnOnce 调用，自己会被转移到 call_once 函数的作用域中，之后就无法再次调用了”
 
 老师，实际调试了一下你的代码，发现只要在`call_once`中传入闭包的引用，后续是可以继续使用闭包的，具体请看：
 
-https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=27cd35717d166f01a4045846721cf989</div>2021-10-07</li><br/><li><span>Geek_b52974</span> 👍（0） 💬（1）<div>1. 56
+https:&#47;&#47;play.rust-lang.org&#47;?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=27cd35717d166f01a4045846721cf989</p>2021-10-07</li><br/><li><span>Geek_b52974</span> 👍（0） 💬（1）<p>1. 56
 2. 傳入 FnOnce 的時候是執行 fn call_once(self, args: Args) -&gt; Self::Output; 是傳入 self, 而非 &amp;mut self 所以不需要 mut 關鍵字
 3. 
 impl&lt;F&gt; Executor for F where 
@@ -609,7 +609,7 @@ impl&lt;F&gt; Executor for F where
         self(cmd)
     }
 }
-</div>2021-11-04</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<div>两点思考, 请老师指正
+</p>2021-11-04</li><br/><li><span>Marvichov</span> 👍（0） 💬（1）<p>两点思考, 请老师指正
 
 1. std::function可能类似于dyn Fn()之类的trait object...可能会涉及到额外的vtable (http:&#47;&#47;www.elbeno.com&#47;blog&#47;?p=1068 提到的optimization也可能优化掉vtable);
 
@@ -634,7 +634,7 @@ https:&#47;&#47;github.com&#47;rust-lang&#47;rust&#47;issues&#47;62440
 &gt; This is akin to how closures also create a unique type (but in that case, the size may be &gt;= 0 depending on the captured environment).
 
 function item需要被显式coerce到function pointer (https:&#47;&#47;doc.rust-lang.org&#47;nightly&#47;reference&#47;types&#47;function-item.html)
-</div>2021-10-12</li><br/><li><span>亚伦碎语</span> 👍（0） 💬（1）<div>
+</p>2021-10-12</li><br/><li><span>亚伦碎语</span> 👍（0） 💬（1）<p>
 pub trait Executor {
     fn execute(&amp;self, cmd: &amp;str) -&gt; Result&lt;String, &amp;&#39;static str&gt;;
 }
@@ -678,7 +678,7 @@ fn main() {
 
 fn execute(cmd: &amp;str, exec: impl Executor) -&gt; Result&lt;String, &amp;&#39;static str&gt; {
     exec.execute(cmd)
-}</div>2021-10-06</li><br/><li><span>记事本</span> 👍（0） 💬（2）<div>1、不能访问，name变量的所有权已经被移动闭包里面去了，move强制导致的
+}</p>2021-10-06</li><br/><li><span>记事本</span> 👍（0） 💬（2）<p>1、不能访问，name变量的所有权已经被移动闭包里面去了，move强制导致的
 3、pub trait Executor{
     fn execute(&amp;self,cmd:&amp;str) -&gt;Result&lt;String,&amp;&#39;static str&gt;;
 }
@@ -725,7 +725,7 @@ pub fn test(){
     println!(&quot;{:?}&quot;,r2);
 
 }
-</div>2021-10-06</li><br/><li><span>f</span> 👍（21） 💬（2）<div>发现了老师文中的一个错误结论。当闭包不使用move时，是推断着判断如何去捕获变量的，先尝试不可变引用，然后尝试可变引用，最后尝试Move&#47;Copy，一旦尝试成功，将不再尝试。当使用move时，是强制Move&#47;Copy，而不是一步一步地去推断尝试。
+</p>2021-10-06</li><br/><li><span>f</span> 👍（21） 💬（2）<p>发现了老师文中的一个错误结论。当闭包不使用move时，是推断着判断如何去捕获变量的，先尝试不可变引用，然后尝试可变引用，最后尝试Move&#47;Copy，一旦尝试成功，将不再尝试。当使用move时，是强制Move&#47;Copy，而不是一步一步地去推断尝试。
 
 在the rust reference: https:&#47;&#47;doc.rust-lang.org&#47;reference&#47;expressions&#47;closure-expr.html里有说明：
 ```
@@ -762,9 +762,9 @@ fn main() {
 }
 ```
 
-</div>2021-10-06</li><br/><li><span>flyflypeng</span> 👍（6） 💬（2）<div>有个疑问，闭包中捕获的上下文变量是被存储在栈中，那么闭包中的代码块编译后是存放在哪里？通过什么方式指向这块代码区域呢？</div>2022-05-10</li><br/><li><span>🐳大海全是水</span> 👍（2） 💬（1）<div>这么看来Rust的闭包变量捕获不如c++的灵活，c++的lambda是可以对单个变量进行by-value或者是by-ref方式或者move捕获的，rust 闭包里写了move就全部转走了。如果我某个变量需要move，但是其他变量需要by-ref捕获，怎么实现？</div>2023-01-29</li><br/><li><span>jackstraw</span> 👍（0） 💬（0）<div>再讲FnMut或Fn被当做FnOnce调用一次后就不能调用的时候，“
+</p>2021-10-06</li><br/><li><span>flyflypeng</span> 👍（6） 💬（2）<p>有个疑问，闭包中捕获的上下文变量是被存储在栈中，那么闭包中的代码块编译后是存放在哪里？通过什么方式指向这块代码区域呢？</p>2022-05-10</li><br/><li><span>🐳大海全是水</span> 👍（2） 💬（1）<p>这么看来Rust的闭包变量捕获不如c++的灵活，c++的lambda是可以对单个变量进行by-value或者是by-ref方式或者move捕获的，rust 闭包里写了move就全部转走了。如果我某个变量需要move，但是其他变量需要by-ref捕获，怎么实现？</p>2023-01-29</li><br/><li><span>jackstraw</span> 👍（0） 💬（0）<p>再讲FnMut或Fn被当做FnOnce调用一次后就不能调用的时候，“
 &#47;&#47; 然而一旦它被当成 FnOnce 被调用，就无法被再次调用    
 println!(&quot;result: {:?}&quot;, call_once(&quot;hi&quot;.into(), c));
 ”有问题吧？
-这里不能再被调用不是因为当做FnOnce被调用，而是因为name变量移动所有权到闭包里，执行一次后，name就销毁了，取消move关键字，就可以多次调用</div>2023-12-31</li><br/><li><span>EEEEEEEarly</span> 👍（0） 💬（0）<div>&quot;看图中 gdb 的输出，闭包是存储在栈上&quot; 这个是怎么看出来存储在栈上的？</div>2023-08-24</li><br/><li><span>zzLion</span> 👍（0） 💬（0）<div>为什么fn定义的函数，在 call_once 之后不move呢，还是以通过call_once调用</div>2023-04-02</li><br/>
+这里不能再被调用不是因为当做FnOnce被调用，而是因为name变量移动所有权到闭包里，执行一次后，name就销毁了，取消move关键字，就可以多次调用</p>2023-12-31</li><br/><li><span>EEEEEEEarly</span> 👍（0） 💬（0）<p>&quot;看图中 gdb 的输出，闭包是存储在栈上&quot; 这个是怎么看出来存储在栈上的？</p>2023-08-24</li><br/><li><span>zzLion</span> 👍（0） 💬（0）<p>为什么fn定义的函数，在 call_once 之后不move呢，还是以通过call_once调用</p>2023-04-02</li><br/>
 </ul>

@@ -446,7 +446,7 @@ public class StandardContext extends ContainerBase implements Context{
 
 欢迎你把你思考后的结果分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>HH🐷🐠</span> 👍（0） 💬（1）<div>目前能想到的是 Servlet 注解或者直接增加 mapping 配置</div>2024-01-14</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+<li><span>HH🐷🐠</span> 👍（0） 💬（1）<p>目前能想到的是 Servlet 注解或者直接增加 mapping 配置</p>2024-01-14</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：server.xml中为什么配置两个端口？
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
@@ -466,6 +466,6 @@ Q2:Tomcat为什么用Digester？
 既然Digester比较复杂，使用的人也比较少，为什么Tomcat还用它？
 
 Q3：Tomcat内部怎么表示多个Host？
-一个主机有一套处理实例吗？类似于“类”，一样的代码，但一个具体的主机就是一个实例，比如有3个主机，就有3个实例。是这样吗？</div>2024-01-12</li><br/><li><span>Geek_f1f069</span> 👍（0） 💬（0）<div>课程已经学的差不多了,说一下总体的学习感受。不知道是因为老师讲的不够透彻,
-还是因为自己本身功力的不足，目前感觉理解的不够透彻，想多看代码消化理解,但感觉代码很多地方组织混乱,逻辑不清晰明了。</div>2024-07-28</li><br/>
+一个主机有一套处理实例吗？类似于“类”，一样的代码，但一个具体的主机就是一个实例，比如有3个主机，就有3个实例。是这样吗？</p>2024-01-12</li><br/><li><span>Geek_f1f069</span> 👍（0） 💬（0）<p>课程已经学的差不多了,说一下总体的学习感受。不知道是因为老师讲的不够透彻,
+还是因为自己本身功力的不足，目前感觉理解的不够透彻，想多看代码消化理解,但感觉代码很多地方组织混乱,逻辑不清晰明了。</p>2024-07-28</li><br/>
 </ul>

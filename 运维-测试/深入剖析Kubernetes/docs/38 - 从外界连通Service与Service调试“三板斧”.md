@@ -244,7 +244,7 @@ UP BROADCAST RUNNING PROMISC MULTICAST  MTU:1460  Metric:1
 
 感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>王天明</span> 👍（28） 💬（6）<div>终于算是清楚了，在nodePort模式下，关于端口的有三个参数，port, nodePort, targetPort。
+<li><span>王天明</span> 👍（28） 💬（6）<p>终于算是清楚了，在nodePort模式下，关于端口的有三个参数，port, nodePort, targetPort。
 如果如下定义，（请张老师指出是否有理解偏差）
 spec:
   type: NodePort
@@ -266,7 +266,7 @@ ingress-nginx   ingress-nginx                 NodePort    10.105.192.34    &lt;n
 还有，就是port参数是必要指定的，nodePort即使是显式指定，也必须是在指定范围内。
 
 （在三板斧中也问过张老师如何使用nodePort打通外网的问题，一并谢谢了）
-</div>2018-11-24</li><br/><li><span>Flying</span> 👍（3） 💬（2）<div>老师，你好，使用NodePort类型的Service，会创建 -A KUBE-NODEPORTS 类的 iptables规则及 SNAT规则，如果kube-proxy使用的是 ipvs模式，也同样会创建这两个规则吗</div>2019-04-13</li><br/><li><span>王天明</span> 👍（1） 💬（3）<div>张老师，我在使用NodePort暴露外网访问一直不成功，无论是公网IP还是局域网IP但不成功，只能使用ClusterIP+NodePort访问。查看events也都正常，只几节课里使用NodePort都有类似的问题。是我理解哪里存在偏差吗？</div>2018-11-23</li><br/><li><span>我来也</span> 👍（107） 💬（9）<div>课后思考题:
+</p>2018-11-24</li><br/><li><span>Flying</span> 👍（3） 💬（2）<p>老师，你好，使用NodePort类型的Service，会创建 -A KUBE-NODEPORTS 类的 iptables规则及 SNAT规则，如果kube-proxy使用的是 ipvs模式，也同样会创建这两个规则吗</p>2019-04-13</li><br/><li><span>王天明</span> 👍（1） 💬（3）<p>张老师，我在使用NodePort暴露外网访问一直不成功，无论是公网IP还是局域网IP但不成功，只能使用ClusterIP+NodePort访问。查看events也都正常，只几节课里使用NodePort都有类似的问题。是我理解哪里存在偏差吗？</p>2018-11-23</li><br/><li><span>我来也</span> 👍（107） 💬（9）<p>课后思考题:
 为什么 Kubernetes 要求 externalIPs 必须是至少能够路由到一个 Kubernetes 的节点？
 
 因为k8s只是在集群中的每个节点上创建了一个 externalIPs 与kube-ipvs0网卡的绑定关系.
@@ -305,12 +305,12 @@ inet 192.168.1.1&#47;32 brd 192.168.1.1 scope global kube-ipvs0
 比如你可以填集群中根本就不存在的IP 172.17.0.1,
 那么在k8s所有节点上,你都可以通过netstat -ant | grep 172.17.0.1 查看到,有监听该IP的端口.
 
-</div>2020-04-11</li><br/><li><span>mazhen</span> 👍（30） 💬（8）<div>对ExternalName的作用没太理解。
+</p>2020-04-11</li><br/><li><span>mazhen</span> 👍（30） 💬（8）<p>对ExternalName的作用没太理解。
 访问my-service.default.svc.cluster.local被替换为my.database.example.com，这和我从外部访问到 Kubernetes 里的服务有什么关系？
-感觉这更像是从Kubernetes内访问外部资源的方法。</div>2018-11-19</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（1）<div>思考题 pod的external ip 应该是通过iptables进行配置。可能是一个虚拟ip，在网络中没有对应的设备。所以，必须有路由规则支持。否则客户端可能没办法找到该ip的路径，得到目的网络不可达的回复。</div>2018-11-21</li><br/><li><span>坤</span> 👍（5） 💬（0）<div>nodePort下必须要指定Service的port,我用的v1.14，可能检查的更严格了。</div>2019-11-06</li><br/><li><span>Geek_5baa01</span> 👍（4） 💬（0）<div>我一直再想 LoadBalancer 的问题，如果他是负载到 k8s node 上，那么我应该选择那些 node 做它的负载端点呢？这里被负载的 node 需要额外承担更多的网络流程，这对这些 node 带宽容量评估是个问题，另外还需要考虑 HA 问题，肯定要选择多个 node 作为负载端点，要怎么选择呢？</div>2021-07-02</li><br/><li><span>LEON</span> 👍（4） 💬（1）<div>在我们通过 kubeadm 部署的集群里，你应该看到 kube-proxy 输出的日志如下所示：—输出日志的命令是什么？</div>2018-11-19</li><br/><li><span>我来也</span> 👍（3） 💬（0）<div>关于源IP的问题，简易看看这篇官方文档：
+感觉这更像是从Kubernetes内访问外部资源的方法。</p>2018-11-19</li><br/><li><span>虎虎❤️</span> 👍（8） 💬（1）<p>思考题 pod的external ip 应该是通过iptables进行配置。可能是一个虚拟ip，在网络中没有对应的设备。所以，必须有路由规则支持。否则客户端可能没办法找到该ip的路径，得到目的网络不可达的回复。</p>2018-11-21</li><br/><li><span>坤</span> 👍（5） 💬（0）<p>nodePort下必须要指定Service的port,我用的v1.14，可能检查的更严格了。</p>2019-11-06</li><br/><li><span>Geek_5baa01</span> 👍（4） 💬（0）<p>我一直再想 LoadBalancer 的问题，如果他是负载到 k8s node 上，那么我应该选择那些 node 做它的负载端点呢？这里被负载的 node 需要额外承担更多的网络流程，这对这些 node 带宽容量评估是个问题，另外还需要考虑 HA 问题，肯定要选择多个 node 作为负载端点，要怎么选择呢？</p>2021-07-02</li><br/><li><span>LEON</span> 👍（4） 💬（1）<p>在我们通过 kubeadm 部署的集群里，你应该看到 kube-proxy 输出的日志如下所示：—输出日志的命令是什么？</p>2018-11-19</li><br/><li><span>我来也</span> 👍（3） 💬（0）<p>关于源IP的问题，简易看看这篇官方文档：
 
 文档 教程 Services 使用 Source IP
-https:&#47;&#47;kubernetes.io&#47;zh&#47;docs&#47;tutorials&#47;services&#47;source-ip&#47;</div>2020-10-11</li><br/><li><span>Len</span> 👍（3） 💬（1）<div>因为 kubernetes 维护着 externalIPs IP + PORT 到具体服务的 endpoints 路由规则。</div>2018-11-21</li><br/><li><span>勤劳的小胖子-libo</span> 👍（2） 💬（0）<div>写了一个简单的nodeport,可以访问上一节的hostname deployment.
+https:&#47;&#47;kubernetes.io&#47;zh&#47;docs&#47;tutorials&#47;services&#47;source-ip&#47;</p>2020-10-11</li><br/><li><span>Len</span> 👍（3） 💬（1）<p>因为 kubernetes 维护着 externalIPs IP + PORT 到具体服务的 endpoints 路由规则。</p>2018-11-21</li><br/><li><span>勤劳的小胖子-libo</span> 👍（2） 💬（0）<p>写了一个简单的nodeport,可以访问上一节的hostname deployment.
 apiVersion: v1
 kind: Service
 metadata:
@@ -341,8 +341,8 @@ I1122 10:13:18.817394       1 server_others.go:178] Tearing down inactive rules.
 E1122 10:13:18.874465       1 proxier.go:532] Error removing iptables rules in ipvs proxier: error deleting chain &quot;KUBE-MARK-MASQ&quot;: exit status 1: iptables: Too many links.
 I1122 10:13:18.894045       1 server.go:447] Version: v1.12.2
 
-后面信息都是正常的。不知道上面这些信息可以ignore吗？</div>2018-11-22</li><br/><li><span>LEON</span> 👍（2） 💬（1）<div>而如果你的 Service 没办法通过 ClusterIP 访问到的时候，你首先应该检查的是这个 Service 是否有 Endpoints：———请问老师service ip与cluster ip有什么区别？为什么这块不直接是service ip?</div>2018-11-19</li><br/><li><span>yuling朱</span> 👍（1） 💬（0）<div>&quot;在 NodePort 方式下，Kubernetes 会在 IP 包离开宿主机发往目的 Pod 时，对这个 IP 包做一次 SNAT 操作&quot;,有个疑问，这里表述是不是有点不准确，在ClusterIP下就不会做SNAT了吗？
-只要转发到其他节点就会做SNAT。</div>2022-09-14</li><br/><li><span>陈斯佳</span> 👍（1） 💬（0）<div>第三十八课:从外界连通你好Service与Service调试“三板斧”
+后面信息都是正常的。不知道上面这些信息可以ignore吗？</p>2018-11-22</li><br/><li><span>LEON</span> 👍（2） 💬（1）<p>而如果你的 Service 没办法通过 ClusterIP 访问到的时候，你首先应该检查的是这个 Service 是否有 Endpoints：———请问老师service ip与cluster ip有什么区别？为什么这块不直接是service ip?</p>2018-11-19</li><br/><li><span>yuling朱</span> 👍（1） 💬（0）<p>&quot;在 NodePort 方式下，Kubernetes 会在 IP 包离开宿主机发往目的 Pod 时，对这个 IP 包做一次 SNAT 操作&quot;,有个疑问，这里表述是不是有点不准确，在ClusterIP下就不会做SNAT了吗？
+只要转发到其他节点就会做SNAT。</p>2022-09-14</li><br/><li><span>陈斯佳</span> 👍（1） 💬（0）<p>第三十八课:从外界连通你好Service与Service调试“三板斧”
 Service的类型分为ClusterIP,NodePort, ExternalIP,ExternalName.
 
 当Service没办法通过DNS访问到的时候，可以先检查Master节点的Service DNS是否可以访问到:
@@ -360,5 +360,5 @@ $ kubectl get endpoints hostnames
 如果Pod没办法访问到自己，就要看看是不是kubelet 的 hairpin-mode 没有被正确设置。你只需要确保将 kubelet 的 hairpin-mode 设置为 hairpin-veth 或者 promiscuous-bridge 即可。
 
 所谓的Service,其实就是k8s为Pod分配的、固定的、基于iptables的访问入口。
-</div>2021-10-30</li><br/>
+</p>2021-10-30</li><br/>
 </ul>

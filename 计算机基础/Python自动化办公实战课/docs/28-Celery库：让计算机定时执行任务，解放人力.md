@@ -324,5 +324,5 @@ celery multi stop worker
 
 欢迎把你的想法和思考分享在留言区，我们一起交流讨论。也欢迎你把课程分享给你的同事、朋友，我们一起做职场中的效率人。我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Soul of the Dragon</span> 👍（1） 💬（1）<div>思考题：crontab(minute=0, hour=18, day_of_week=1,3,5)</div>2021-04-15</li><br/><li><span>奔跑的蜗牛</span> 👍（0） 💬（2）<div>支持一次性定时任务吗？</div>2021-09-09</li><br/><li><span>weineel</span> 👍（0） 💬（1）<div>手动执行 celery -A tasks worker 命令启动任务，那怎么开机就启动任务呢？</div>2021-04-29</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-07-25</li><br/>
+<li><span>Soul of the Dragon</span> 👍（1） 💬（1）<p>思考题：crontab(minute=0, hour=18, day_of_week=1,3,5)</p>2021-04-15</li><br/><li><span>奔跑的蜗牛</span> 👍（0） 💬（2）<p>支持一次性定时任务吗？</p>2021-09-09</li><br/><li><span>weineel</span> 👍（0） 💬（1）<p>手动执行 celery -A tasks worker 命令启动任务，那怎么开机就启动任务呢？</p>2021-04-29</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-07-25</li><br/>
 </ul>

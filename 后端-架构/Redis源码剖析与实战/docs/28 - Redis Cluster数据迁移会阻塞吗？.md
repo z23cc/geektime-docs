@@ -401,7 +401,7 @@ if (countKeysInSlot(slot) == 0 && server.cluster->migrating_slots_to[slot]) //�
 
 在维护Redis Cluster集群状态的数据结构clusterState中，有一个字典树slots\_to\_keys。当在数据库中插入key时它会被更新，你能在Redis源码文件db.c中，找到更新slots\_to\_keys字典树的相关函数调用吗？
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Kaito</span> 👍（4） 💬（0）<div>1、Redis Cluster 因为是多个实例共同组成的集群，所以当集群中有节点下线、新节点加入、数据不均衡时，需要做数据迁移，把某些实例中的数据，迁移到其它实例上
+<li><span>Kaito</span> 👍（4） 💬（0）<p>1、Redis Cluster 因为是多个实例共同组成的集群，所以当集群中有节点下线、新节点加入、数据不均衡时，需要做数据迁移，把某些实例中的数据，迁移到其它实例上
 
 2、数据迁移分为 5 个阶段
 
@@ -426,7 +426,7 @@ if (countKeysInSlot(slot) == 0 && server.cluster->migrating_slots_to[slot]) //�
 - slotToKeyUpdateKey，分别被 slotToKeyAdd 和 slotToKeyDel 调用，看名字是向 slots_to_keys 添加 &#47; 删除 key
 - slotToKeyFlush，清空 slots_to_keys 中的数据
 - getKeysInSlot：获取指定 slot 下的 keys
-- delKeysInSlot：删除指定 slot 下的 keys</div>2021-10-18</li><br/><li><span>曾轼麟</span> 👍（4） 💬（0）<div>回答老师的问题：
+- delKeysInSlot：删除指定 slot 下的 keys</p>2021-10-18</li><br/><li><span>曾轼麟</span> 👍（4） 💬（0）<p>回答老师的问题：
 clusterState 中的 slots_to_keys 在查阅git历史提交记录中发现，之前是使用跳跃表（zskiplist）在后来才替换成了-字典树，其最主要的目的是为了方便通过 slot 快速查找到solt下的keys，getKeysInSlot 函数正是使用这种方式来获取待迁出的 keys。
 
         【获取key调用路径】:clusterCommand -&gt; getKeysInSlot -&gt; raxStart(迭代器)
@@ -449,7 +449,7 @@ clusterState 中的 slots_to_keys 在查阅git历史提交记录中发现，之�
 ... RDB payload | 2 bytes RDB version | 8 bytes CRC64 |
 ----------------+---------------------+---------------+
 
-理论上来说RESP协议也能实现类似的效果，但是在传输效率上来说自定义的序列化方案效率更高。</div>2021-10-14</li><br/><li><span>秦静</span> 👍（1） 💬（0）<div>还是没回答问题呀，，，阻塞还是不阻塞</div>2022-12-02</li><br/><li><span>shan</span> 👍（1） 💬（0）<div>Redis Cluster数据迁移总结
+理论上来说RESP协议也能实现类似的效果，但是在传输效率上来说自定义的序列化方案效率更高。</p>2021-10-14</li><br/><li><span>秦静</span> 👍（1） 💬（0）<p>还是没回答问题呀，，，阻塞还是不阻塞</p>2022-12-02</li><br/><li><span>shan</span> 👍（1） 💬（0）<p>Redis Cluster数据迁移总结
 1.在源节点和目标节点分别标记slot迁出和迁入信息
 （1）在需要迁入的目标节点使用IMORITING命令标记要将SLOT从哪个节点迁入
 （2）在源节点也就是slot所在节点使用MIGRATING命令标记数据迁出到哪个节点
@@ -458,5 +458,5 @@ clusterState 中的 slots_to_keys 在查阅git历史提交记录中发现，之�
 4.在源节点和目标节点使用CLUSTER SETSLOT标记slot最终迁移的节点
 
 总结了一篇集群故障迁移的源码分析
-https:&#47;&#47;www.cnblogs.com&#47;shanml&#47;p&#47;16290642.html</div>2022-06-15</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<div>cluster这个章节还是很吃力的</div>2022-10-26</li><br/>
+https:&#47;&#47;www.cnblogs.com&#47;shanml&#47;p&#47;16290642.html</p>2022-06-15</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<p>cluster这个章节还是很吃力的</p>2022-10-26</li><br/>
 </ul>

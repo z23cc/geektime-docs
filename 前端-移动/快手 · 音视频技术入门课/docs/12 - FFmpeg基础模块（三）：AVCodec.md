@@ -139,17 +139,17 @@ Codec和Format之间还有更多的可操作系统的方法，你可以参考FFm
 
 如果解码以后我想给视频添加一些特效，在AVCodec操作以后应该使用哪个结构体里面的内容呢？欢迎你在评论区分享你的想法，也欢迎你把这节课分享给对音视频感兴趣的朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：安装后不能查看codec的parser吗？
 文中有这样一句话“如果你想要知道哪些 codec 有 parser 的话，可以在编译 FFmpeg 代码那一步就通过.&#47;configure --list-parsers 来查看”。 我安装的时候没有做过和“configure --list-parsers”有关的操作，那么，现在能够查看codec的parser吗？
 Q2：FFmpeg能除去水印吗？
 FFmpeg可以给视频加上水印，那可以做相反的操作吗？即去除水印。
-Q3：FFmpeg支持“变速”、“变调”吗？</div>2022-08-19</li><br/><li><span>长江</span> 👍（0） 💬（1）<div>解码预读大小。可以设置成0吗？这样塞进去一帧，就解码一帧，不用缓存</div>2024-01-05</li><br/><li><span>Geek_wad2tx</span> 👍（2） 💬（0）<div>查看了 example&#47;filtering_video.c 下的源码
+Q3：FFmpeg支持“变速”、“变调”吗？</p>2022-08-19</li><br/><li><span>长江</span> 👍（0） 💬（1）<p>解码预读大小。可以设置成0吗？这样塞进去一帧，就解码一帧，不用缓存</p>2024-01-05</li><br/><li><span>Geek_wad2tx</span> 👍（2） 💬（0）<p>查看了 example&#47;filtering_video.c 下的源码
 
 ffmpeg 滤镜链主要用到的
 结构体有：AVFilter，AVFilterInOut
 接口有：avfilter_graph_create_filter，avfilter_graph_config，av_buffersrc_add_frame_flags，av_buffersink_get_frame
 
 
-</div>2022-10-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2023-12-30</li><br/>
+</p>2022-10-08</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2023-12-30</li><br/>
 </ul>

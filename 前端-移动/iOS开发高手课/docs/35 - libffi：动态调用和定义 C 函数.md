@@ -316,7 +316,7 @@ Block 是一个 Objective-C 对象，表面看类似 C 函数，实际上却有�
 
 感谢你的收听，欢迎你在评论区给我留言分享你的观点，也欢迎把它分享给更多的朋友一起阅读。
 <div><strong>精选留言（11）</strong></div><ul>
-<li><span>mersa</span> 👍（2） 💬（1）<div>这个库可以用在线上审核么</div>2019-05-30</li><br/><li><span>Alex</span> 👍（1） 💬（1）<div>能用libffi hook c函数嘛？</div>2019-06-18</li><br/><li><span>Ant</span> 👍（0） 💬（1）<div>为啥少了编译过程也能调用</div>2019-06-01</li><br/><li><span>幻想vs梦想</span> 👍（5） 💬（0）<div>首先,为啥要调用c函数,什么场景下我们需要去调用c函数,调用c函数有哪些好处或作用,有点不太懂.</div>2020-07-15</li><br/><li><span>开发小能手</span> 👍（3） 💬（1）<div>&#47;&#47; 有一个问题想要请教老师, 可能与当前文章没有太大的关联.
+<li><span>mersa</span> 👍（2） 💬（1）<p>这个库可以用在线上审核么</p>2019-05-30</li><br/><li><span>Alex</span> 👍（1） 💬（1）<p>能用libffi hook c函数嘛？</p>2019-06-18</li><br/><li><span>Ant</span> 👍（0） 💬（1）<p>为啥少了编译过程也能调用</p>2019-06-01</li><br/><li><span>幻想vs梦想</span> 👍（5） 💬（0）<p>首先,为啥要调用c函数,什么场景下我们需要去调用c函数,调用c函数有哪些好处或作用,有点不太懂.</p>2020-07-15</li><br/><li><span>开发小能手</span> 👍（3） 💬（1）<p>&#47;&#47; 有一个问题想要请教老师, 可能与当前文章没有太大的关联.
 &#47;&#47; 在女神(念茜)的博客(iOS安全攻防（二十二）：static和被裁的符号表)中提到
 &#47;**
  如果函数属性为 static ，那么编译时该函数符号就会被解析为local符号。
@@ -349,7 +349,7 @@ int coder_func() {
 一摸一样的代码、如果放到终端项目中的话，确实是要加上static才会在release的时候被裁减。 感觉是项目的参数配置导致的、但是一直没有找到。
 
 
-</div>2019-06-10</li><br/><li><span>forping</span> 👍（1） 💬（0）<div>struct BlockDescriptor
+</p>2019-06-10</li><br/><li><span>forping</span> 👍（1） 💬（0）<p>struct BlockDescriptor
 {
     unsigned long reserved;
     unsigned long size;
@@ -392,5 +392,5 @@ void testFFIBlockCall(){
     ffi_call(&amp;cif, imp, &amp;retValue, arguments);
     NSLog(@&quot;ffi_call: %d&quot;, retValue);
     
-}</div>2021-01-26</li><br/><li><span>林峰峰</span> 👍（1） 💬（0）<div>想问下实际应用中，这种动态调用用到了那些方面？</div>2019-06-17</li><br/><li><span>Space</span> 👍（0） 💬（0）<div>如何hook C函数？没头绪~</div>2021-07-07</li><br/><li><span>Master</span> 👍（0） 💬（0）<div>没太看明白，好像被调用的函数都是被编译过的啊？</div>2020-03-11</li><br/><li><span>三刀流剑客</span> 👍（0） 💬（0）<div>可以用libffi动态替换系统+load方法吗</div>2019-08-29</li><br/><li><span>帅气潇洒的豆子</span> 👍（0） 💬（1）<div>没有汇编基础，看起来好痛苦。</div>2019-05-30</li><br/>
+}</p>2021-01-26</li><br/><li><span>林峰峰</span> 👍（1） 💬（0）<p>想问下实际应用中，这种动态调用用到了那些方面？</p>2019-06-17</li><br/><li><span>Space</span> 👍（0） 💬（0）<p>如何hook C函数？没头绪~</p>2021-07-07</li><br/><li><span>Master</span> 👍（0） 💬（0）<p>没太看明白，好像被调用的函数都是被编译过的啊？</p>2020-03-11</li><br/><li><span>三刀流剑客</span> 👍（0） 💬（0）<p>可以用libffi动态替换系统+load方法吗</p>2019-08-29</li><br/><li><span>帅气潇洒的豆子</span> 👍（0） 💬（1）<p>没有汇编基础，看起来好痛苦。</p>2019-05-30</li><br/>
 </ul>

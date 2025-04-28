@@ -247,13 +247,13 @@ final KTable<Integer, Integer> sumOfEvenNumbers = input
 
 欢迎写下你的思考和答案，我们一起讨论。如果你觉得有所收获，也欢迎把文章分享给你的朋友。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>leige</span> 👍（5） 💬（1）<div>stream和table都会有对应的topic吧，老师？他们的本质区别是什么？</div>2019-12-09</li><br/><li><span>明翼</span> 👍（4） 💬（1）<div>单词计数里面的groupBy算子里面的key和value不太明白，不太明确那，为什么最后还要count计数</div>2019-09-09</li><br/><li><span>What for</span> 👍（2） 💬（1）<div>有几个疑惑详情老师赐教：
+<li><span>leige</span> 👍（5） 💬（1）<p>stream和table都会有对应的topic吧，老师？他们的本质区别是什么？</p>2019-12-09</li><br/><li><span>明翼</span> 👍（4） 💬（1）<p>单词计数里面的groupBy算子里面的key和value不太明白，不太明确那，为什么最后还要count计数</p>2019-09-09</li><br/><li><span>What for</span> 👍（2） 💬（1）<p>有几个疑惑详情老师赐教：
 1、demo 是一个可以单机跑的 Java 进程，运行时会有几个线程工作？
 2、如果输入 topic 有 3 个分区，在计算过程中 consumer 会在 3 个不同的线程里分别起 1 个消费 1 个分区还是说有其他的配置项可以调整？
-3、遇到 shuffle 时下游的计算计算分区还是就统一汇总计算？如果 shuffle 下游有分区怎么确定分区策略以及写入输出 topic 的时候会有几个 producer？</div>2020-02-04</li><br/><li><span>lmtoo</span> 👍（2） 💬（2）<div>第一个例子没有时间窗口的情况下，统计的是什么？最终单词的计数，还是某个时间段的计数</div>2019-09-07</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<div>老师，我们领导提出了这样一些需求：1. 可以根据消息中的字段查询消息内容，这样可以用来诊断消息确实写入了kafka；2. 可以对某些消息重放；3. 可以对某些消息打标记从而控制消息的消费。我调研了一圈，第一点貌似可以用confluent的ksql做到，但是需要引入ksql server等复杂性，第二点也可以基于ksql来复制消息到重放队列（这样每一个topic都会存在一个重放topic）。第三点暂时还没有很好的思路。求助老师更好的方案，谢谢！</div>2019-11-27</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<div>老师，我有几个疑问：
+3、遇到 shuffle 时下游的计算计算分区还是就统一汇总计算？如果 shuffle 下游有分区怎么确定分区策略以及写入输出 topic 的时候会有几个 producer？</p>2020-02-04</li><br/><li><span>lmtoo</span> 👍（2） 💬（2）<p>第一个例子没有时间窗口的情况下，统计的是什么？最终单词的计数，还是某个时间段的计数</p>2019-09-07</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<p>老师，我们领导提出了这样一些需求：1. 可以根据消息中的字段查询消息内容，这样可以用来诊断消息确实写入了kafka；2. 可以对某些消息重放；3. 可以对某些消息打标记从而控制消息的消费。我调研了一圈，第一点貌似可以用confluent的ksql做到，但是需要引入ksql server等复杂性，第二点也可以基于ksql来复制消息到重放队列（这样每一个topic都会存在一个重放topic）。第三点暂时还没有很好的思路。求助老师更好的方案，谢谢！</p>2019-11-27</li><br/><li><span>hunterlodge</span> 👍（1） 💬（1）<p>老师，我有几个疑问：
 1. 如果客户端应用重启了，KTable及写入的KStream在重启前的状态就都清楚了对吗？如果是的话，重启后，单词计数要重新对队列中的所有数据从头到尾再次计算，对吗？
 2. 在没有指定时间窗口的情况下，应用读取队列消息的周期是什么呢？Stream API也是通过poll方式读取队列数据吗？
 3. “所以，事件的 Key 也必须要携带时间窗口的信息。”，这里携带时间窗口信息是指什么呢？能举个例子吗？
 
-谢谢！</div>2019-11-12</li><br/><li><span>曾轼麟</span> 👍（1） 💬（1）<div>老师有个疑问，如果按照这个事例，我使用kafka普通client的batch方式消费，搭载JAVA8的lambda不是实现更快捷吗？而且我中间还能自己通过代码写入各种数据库或者其它持久化方式？lambda本身也支持map—reduce的方式计算，而且consumer group本身也是一种负载均衡的思路</div>2019-09-10</li><br/><li><span>icejoywoo</span> 👍（1） 💬（2）<div>count之前加上.windowedBy(TimeWindows.of(Duration.ofMinutes(5)))，应该就可以了吧</div>2019-09-07</li><br/><li><span>张丽娜</span> 👍（0） 💬（1）<div>这个章节，老师讲的东西，我竟然听懂了，感谢老师耐心的讲解啊。</div>2020-03-05</li><br/><li><span>达文西</span> 👍（0） 💬（0）<div>感觉打开了新世界的大门,虽然暂时在业务上用不上</div>2019-11-27</li><br/>
+谢谢！</p>2019-11-12</li><br/><li><span>曾轼麟</span> 👍（1） 💬（1）<p>老师有个疑问，如果按照这个事例，我使用kafka普通client的batch方式消费，搭载JAVA8的lambda不是实现更快捷吗？而且我中间还能自己通过代码写入各种数据库或者其它持久化方式？lambda本身也支持map—reduce的方式计算，而且consumer group本身也是一种负载均衡的思路</p>2019-09-10</li><br/><li><span>icejoywoo</span> 👍（1） 💬（2）<p>count之前加上.windowedBy(TimeWindows.of(Duration.ofMinutes(5)))，应该就可以了吧</p>2019-09-07</li><br/><li><span>张丽娜</span> 👍（0） 💬（1）<p>这个章节，老师讲的东西，我竟然听懂了，感谢老师耐心的讲解啊。</p>2020-03-05</li><br/><li><span>达文西</span> 👍（0） 💬（0）<p>感觉打开了新世界的大门,虽然暂时在业务上用不上</p>2019-11-27</li><br/>
 </ul>

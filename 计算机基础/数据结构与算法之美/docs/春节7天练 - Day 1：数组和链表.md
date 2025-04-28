@@ -71,7 +71,7 @@
 
 祝你取得好成绩！明天见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>William</span> 👍（4） 💬（1）<div>特地新开了一个git仓库，https:&#47;&#47;github.com&#47;Si3ver&#47;LeetCode。刷完5道题，思路大致写一下。1.数组三数之和，时间复杂度是O(n^2)，先排序，外层i遍历数组，内层左右双指针，寻找两数之和 = -nums[i]。 2. 求数组中出现次数大于一半的数字。复杂度O(n)，是利用摩尔投票法。3.求缺失的最小正整数，复杂度O(n)，思路是哈希表统计。4.环形链表用快慢指针。5.合并k个有序链表，用的是两两归并，据说用堆会更快，这个有待补充。</div>2019-02-06</li><br/><li><span>峰</span> 👍（4） 💬（1）<div>第三题，看这题，我就会想到用快排的思想在一堆数中求第n大。于是乎我就套，先把负数全部移掉，o(n)不影响。然后每轮迭代随机取个数n，比它小的放左边，比他大的放右边。比如说第一轮迭代，左边的数据个数小于n-1那么必然在左边。但这里有个问题是数据是可以重复的，怎么办，想呀想，我就选定n后，开始扫描，如果是1我就放第一个位置，如果是2我就放第二个位置，如果再有1，发现重复了，不用移动了，这样我就能计算小于n大于n的正整数有多少种了，然后就能迭代下去了。当然里面还有些细节，比如如果n很大已超过了数组长度，那说明那个数一定在左边。</div>2019-02-05</li><br/><li><span>Ben</span> 👍（2） 💬（1）<div>class Solution(object):
+<li><span>William</span> 👍（4） 💬（1）<p>特地新开了一个git仓库，https:&#47;&#47;github.com&#47;Si3ver&#47;LeetCode。刷完5道题，思路大致写一下。1.数组三数之和，时间复杂度是O(n^2)，先排序，外层i遍历数组，内层左右双指针，寻找两数之和 = -nums[i]。 2. 求数组中出现次数大于一半的数字。复杂度O(n)，是利用摩尔投票法。3.求缺失的最小正整数，复杂度O(n)，思路是哈希表统计。4.环形链表用快慢指针。5.合并k个有序链表，用的是两两归并，据说用堆会更快，这个有待补充。</p>2019-02-06</li><br/><li><span>峰</span> 👍（4） 💬（1）<p>第三题，看这题，我就会想到用快排的思想在一堆数中求第n大。于是乎我就套，先把负数全部移掉，o(n)不影响。然后每轮迭代随机取个数n，比它小的放左边，比他大的放右边。比如说第一轮迭代，左边的数据个数小于n-1那么必然在左边。但这里有个问题是数据是可以重复的，怎么办，想呀想，我就选定n后，开始扫描，如果是1我就放第一个位置，如果是2我就放第二个位置，如果再有1，发现重复了，不用移动了，这样我就能计算小于n大于n的正整数有多少种了，然后就能迭代下去了。当然里面还有些细节，比如如果n很大已超过了数组长度，那说明那个数一定在左边。</p>2019-02-05</li><br/><li><span>Ben</span> 👍（2） 💬（1）<p>class Solution(object):
     def threeSum(self, nums):
         &quot;&quot;&quot;
         :type nums: List[int]
@@ -133,7 +133,7 @@
         n = 1
         while n in nums:
             n +=1
-        return n</div>2019-02-14</li><br/><li><span>acqierement</span> 👍（2） 💬（1）<div>自己总结了链表的部分算法，链表算是很简单的数据结构了，只要你心里有一个个节点的概念，必要时画图看一下还是很简单的。        
+        return n</p>2019-02-14</li><br/><li><span>acqierement</span> 👍（2） 💬（1）<p>自己总结了链表的部分算法，链表算是很简单的数据结构了，只要你心里有一个个节点的概念，必要时画图看一下还是很简单的。        
       1.单链表反转  反转比较简单,就是要有一个先前节点prev和当前节点cur，要有一个临时节点保存cur的下一个节点（cur.next），否则反转之后你就找不到下一个节点了。然后让head指向前一个节点prev。之后继续移动cur和prev节点进行下一次反转
 	public ListNode reverse(ListNode head) {
 		ListNode prev = null;
@@ -177,7 +177,7 @@
 			fast = fast.next.next;
 		}
 		return slow;
-	}</div>2019-02-05</li><br/><li><span>赵菁垚</span> 👍（1） 💬（1）<div>王老师，请教您一个问题，想参加NOIP c++考这些算法吗？</div>2019-08-08</li><br/><li><span>神盾局闹别扭</span> 👍（1） 💬（1）<div>加油礼包的福利在哪里领呢？</div>2019-02-18</li><br/><li><span>Neo_Zhang</span> 👍（1） 💬（1）<div>Three Sum（求三数之和）Go语言：
+	}</p>2019-02-05</li><br/><li><span>赵菁垚</span> 👍（1） 💬（1）<p>王老师，请教您一个问题，想参加NOIP c++考这些算法吗？</p>2019-08-08</li><br/><li><span>神盾局闹别扭</span> 👍（1） 💬（1）<p>加油礼包的福利在哪里领呢？</p>2019-02-18</li><br/><li><span>Neo_Zhang</span> 👍（1） 💬（1）<p>Three Sum（求三数之和）Go语言：
 func threeSum(nums []int) [][]int {
     results := [][]int{}
 	n := len(nums)
@@ -214,7 +214,7 @@ func threeSum(nums []int) [][]int {
 	}
 	return results
 }
-</div>2019-02-12</li><br/><li><span>欢乐小熊</span> 👍（1） 💬（1）<div>链表篇
+</p>2019-02-12</li><br/><li><span>欢乐小熊</span> 👍（1） 💬（1）<p>链表篇
 1. 翻转单链表
 &#47;*翻转单链表*&#47;
 void reversalList(Node&lt;int&gt;* head) {
@@ -284,7 +284,7 @@ Node&lt;E&gt;* findMidNode(Node&lt;E&gt;* head, Node&lt;E&gt;** mid_node) {
 		slow = slow-&gt;next;
 	}
 	*mid_node = slow;
-}</div>2019-02-12</li><br/><li><span>ALAN</span> 👍（1） 💬（1）<div>array answer:
+}</p>2019-02-12</li><br/><li><span>ALAN</span> 👍（1） 💬（1）<p>array answer:
 import java.util.Arrays;
 
 public class Array1 {
@@ -357,8 +357,8 @@ public class Array1 {
     	return c;
     }
 }
-</div>2019-02-07</li><br/><li><span>陈小白( ´･ᴗ･` )</span> 👍（0） 💬（1）<div>这些题，我都做了一遍，除了那个“求缺失的第一个正数“没有相处方法，其它的都是自己做出来了。尤其最后那个”合并 k 个排序链表“，其实以前我也看过一次，当时的想法觉得是一个个取出来，然后排序然后再遍历。学完这堂课之后，看完题目，咦，这不是合并两个链表么？哦，合并多个，怎么处理多个问题？好像可以分治归并，嗯，好像是可以。我了个去，就有那种顿塞的感觉，那种开心。谢谢这门课。也谢谢老师，虽然课程里面还有很多没有明白，不过有些数据结构，算法，细细品味，好爽。
-</div>2019-10-06</li><br/><li><span>coldpark</span> 👍（0） 💬（1）<div>缺失的第一个正数那个题，如果让用额外内存空间还行，如果严格按照题意就是一道智力题，请问这种题在面时中遇到的多吗？</div>2019-10-05</li><br/><li><span>二哥不再迷茫</span> 👍（0） 💬（1）<div>Missing Positive；循环n次和2n次，时间复杂度都算是O(n)吧，空间复杂度也是如此!
+</p>2019-02-07</li><br/><li><span>陈小白( ´･ᴗ･` )</span> 👍（0） 💬（1）<p>这些题，我都做了一遍，除了那个“求缺失的第一个正数“没有相处方法，其它的都是自己做出来了。尤其最后那个”合并 k 个排序链表“，其实以前我也看过一次，当时的想法觉得是一个个取出来，然后排序然后再遍历。学完这堂课之后，看完题目，咦，这不是合并两个链表么？哦，合并多个，怎么处理多个问题？好像可以分治归并，嗯，好像是可以。我了个去，就有那种顿塞的感觉，那种开心。谢谢这门课。也谢谢老师，虽然课程里面还有很多没有明白，不过有些数据结构，算法，细细品味，好爽。
+</p>2019-10-06</li><br/><li><span>coldpark</span> 👍（0） 💬（1）<p>缺失的第一个正数那个题，如果让用额外内存空间还行，如果严格按照题意就是一道智力题，请问这种题在面时中遇到的多吗？</p>2019-10-05</li><br/><li><span>二哥不再迷茫</span> 👍（0） 💬（1）<p>Missing Positive；循环n次和2n次，时间复杂度都算是O(n)吧，空间复杂度也是如此!
 根据他们的思路变通来的，不知道对不对，请老师帮忙看看，哈哈哈，现在老师是不是都不维护了。
 public static int getFirstMissingPositive(int[] nums){
         int result = 1;
@@ -381,7 +381,7 @@ public static int getFirstMissingPositive(int[] nums){
 
         return result;
 
-    }</div>2019-04-10</li><br/><li><span>hopeful</span> 👍（0） 💬（1）<div>&#47;&#47;支持动态扩容的数组
+    }</p>2019-04-10</li><br/><li><span>hopeful</span> 👍（0） 💬（1）<p>&#47;&#47;支持动态扩容的数组
 public class MyArray {
 	Object[] object ;
 	private int capacity;
@@ -462,7 +462,7 @@ public class MyArray {
 		return o;
 	}
 }
-</div>2019-02-13</li><br/><li><span>xumc</span> 👍（0） 💬（1）<div>数组基础 - 有序数组 （2）
+</p>2019-02-13</li><br/><li><span>xumc</span> 👍（0） 💬（1）<p>数组基础 - 有序数组 （2）
 func (array *OrderArray) Remove(val int) {
 	index := array.Find(val)
 	if index == -1 {
@@ -511,7 +511,7 @@ func (array *OrderArray) Set(index int, val int) {
 	(*array)[index] = val
 }
 
-基础薄弱，其他我慢慢写，谢谢老师。</div>2019-02-13</li><br/><li><span>未来的胡先森</span> 👍（0） 💬（1）<div>「三数之和」
+基础薄弱，其他我慢慢写，谢谢老师。</p>2019-02-13</li><br/><li><span>未来的胡先森</span> 👍（0） 💬（1）<p>「三数之和」
 解题思路：
 
 1、先将一维数组升序排序，第 1 、2、3 三个数也按照升序选取，但出现符合题目要求的组合出现则加入要返回的二维数组中。
@@ -574,5 +574,5 @@ int** threeSum(int* nums, int numsSize, int* returnSize)
 		}
 	}
 	return arrys;
-}</div>2019-02-12</li><br/>
+}</p>2019-02-12</li><br/>
 </ul>

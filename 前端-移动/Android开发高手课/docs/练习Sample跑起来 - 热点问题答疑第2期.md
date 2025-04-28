@@ -106,7 +106,7 @@ E/ProcessCpuTracker: CPU usage from 5187ms to 121ms ago (2018-12-28 08:28:27.186
 
 欢迎你点击“请朋友读”，把今天的内容分享给好友，邀请他一起学习。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Swing</span> 👍（1） 💬（2）<div>鹏飞模拟的这个例子，显示的都是minor fault，所以，而没有 major的统计，是因为文件系统的cache，还在等待批量写入磁盘吗？</div>2019-02-13</li><br/><li><span>Seven</span> 👍（1） 💬（0）<div>作业做完才发现鹏飞老师已经上传例子了。我只是参考了ProcessCpuTracker.java得到的数据是通过哪几个数据计算出来的，并没有参考上面的算法，因为开始兴高采烈的把ProcessCpuTracker.java的代码复制到项目中，项目一堆红线在我的脑门挂上了几条黑线。。。那时候就决定自己写，没想到确实可以利用ProcessCpuTracker.java里面的源码。
+<li><span>Swing</span> 👍（1） 💬（2）<p>鹏飞模拟的这个例子，显示的都是minor fault，所以，而没有 major的统计，是因为文件系统的cache，还在等待批量写入磁盘吗？</p>2019-02-13</li><br/><li><span>Seven</span> 👍（1） 💬（0）<p>作业做完才发现鹏飞老师已经上传例子了。我只是参考了ProcessCpuTracker.java得到的数据是通过哪几个数据计算出来的，并没有参考上面的算法，因为开始兴高采烈的把ProcessCpuTracker.java的代码复制到项目中，项目一堆红线在我的脑门挂上了几条黑线。。。那时候就决定自己写，没想到确实可以利用ProcessCpuTracker.java里面的源码。
 看到这句话“在不同的 Linux 内核中，该目录下的内容可能会有所不同”，才知道怪不得每个文档说的参数的含义不一样，原来内核不同。
-想知道kernel这个数据代表什么意思，是怎么计算的</div>2018-12-29</li><br/><li><span>瑞</span> 👍（0） 💬（0）<div>那这种需要怎么解决呢？</div>2019-06-03</li><br/>
+想知道kernel这个数据代表什么意思，是怎么计算的</p>2018-12-29</li><br/><li><span>瑞</span> 👍（0） 💬（0）<p>那这种需要怎么解决呢？</p>2019-06-03</li><br/>
 </ul>

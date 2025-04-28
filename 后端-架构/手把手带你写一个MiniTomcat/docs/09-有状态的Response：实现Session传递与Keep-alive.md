@@ -635,10 +635,10 @@ public class TestServlet extends HttpServlet{
 
 欢迎你把你写的代码分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>在补充一点
-3、while (keepAlive) 为了保持 socket 存活， 会影响非 keep-alive 的请求， 导致死循环。 这块内容老师是否有好的书籍推荐或者以后有加餐， 这样我们可以进行深一层次的探索。</div>2023-12-29</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<div>老师， 我有几个问题
+<li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>在补充一点
+3、while (keepAlive) 为了保持 socket 存活， 会影响非 keep-alive 的请求， 导致死循环。 这块内容老师是否有好的书籍推荐或者以后有加餐， 这样我们可以进行深一层次的探索。</p>2023-12-29</li><br/><li><span>HH🐷🐠</span> 👍（0） 💬（2）<p>老师， 我有几个问题
 1、服务器端和客户端双方是否都可以控制 close Connection 和使用 chunked 传输？
-2、chunked 应用场景有哪些？  目前想到大文件传输， 在现有代码基础上， 自己动手尝试了客户端传输小量文本数据， 客户端多次使用socket 请求服务端， 但服务端并非收到一次请求就返回一次结果， finishResponse 之后也是无法收到服务端返回的结果， 必须 close Connection 才能收到服务端的请求，并且是多次请求合并返回的结果； 这跟我想的有点不一样， 我想的是这个复用的 socket 然后请求一次就返回一次结果， 然后客户端进行处理， 比如客户端请求一个js、一个 css、一个 html， 是需要  close Connection 之后才能返回吗？ 不知道是哪方面想的不对， 还得老师指点。 </div>2023-12-29</li><br/><li><span>peter</span> 👍（0） 💬（1）<div>请教老师几个问题：
+2、chunked 应用场景有哪些？  目前想到大文件传输， 在现有代码基础上， 自己动手尝试了客户端传输小量文本数据， 客户端多次使用socket 请求服务端， 但服务端并非收到一次请求就返回一次结果， finishResponse 之后也是无法收到服务端返回的结果， 必须 close Connection 才能收到服务端的请求，并且是多次请求合并返回的结果； 这跟我想的有点不一样， 我想的是这个复用的 socket 然后请求一次就返回一次结果， 然后客户端进行处理， 比如客户端请求一个js、一个 css、一个 html， 是需要  close Connection 之后才能返回吗？ 不知道是哪方面想的不对， 还得老师指点。 </p>2023-12-29</li><br/><li><span>peter</span> 👍（0） 💬（1）<p>请教老师几个问题：
 Q1：Http请求头中的“connection: keep-alive”是谁控制的？
 该部分是浏览器填的，浏览器是自动填的吗？在填的时候是否受到了服务器的控制？
 Q2：静态访问不能返回内容
@@ -653,5 +653,5 @@ Q3：错误的servlet网址也能返回
 
 Q4：小问题：HelloServlet.java中也多了一个导包语句。
 “import jdk.internal.util.xml.impl.Pair;”
-估计和上节课的一样，也是IDE自动导入的，我已注释掉该代码。</div>2023-12-27</li><br/><li><span>top啦它</span> 👍（0） 💬（3）<div>后面要手写什么？</div>2023-12-27</li><br/><li><span>wild wings.Luv</span> 👍（0） 💬（0）<div>socket没有关闭。但是同一个用户的下一个http请求，需要找到对应的socket吗，还是不需要？</div>2024-09-05</li><br/><li><span>Geek_320730</span> 👍（0） 💬（0）<div>按照 chunked 模式返回响应内容: https:&#47;&#47;github.com&#47;kuifir&#47;MiniTomcat&#47;tree&#47;test-chunk</div>2024-04-17</li><br/>
+估计和上节课的一样，也是IDE自动导入的，我已注释掉该代码。</p>2023-12-27</li><br/><li><span>top啦它</span> 👍（0） 💬（3）<p>后面要手写什么？</p>2023-12-27</li><br/><li><span>wild wings.Luv</span> 👍（0） 💬（0）<p>socket没有关闭。但是同一个用户的下一个http请求，需要找到对应的socket吗，还是不需要？</p>2024-09-05</li><br/><li><span>Geek_320730</span> 👍（0） 💬（0）<p>按照 chunked 模式返回响应内容: https:&#47;&#47;github.com&#47;kuifir&#47;MiniTomcat&#47;tree&#47;test-chunk</p>2024-04-17</li><br/>
 </ul>

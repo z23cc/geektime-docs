@@ -338,6 +338,6 @@ export default function Example() {
 
 欢迎在评论区和我探讨。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>Hadwz</span> 👍（0） 💬（1）<div>老师，用Gesture 手势库和 Reanimated，实现在ScrollView里上下拖拽一个元素，并在元素到达列表的顶部&#47;底部的时候，滚动ScrollView，让列表和元素同时移动，有什么实现思路吗？</div>2022-05-06</li><br/><li><span>ZouLe</span> 👍（0） 💬（1）<div>上 Reanimated v2 和 Gesture v2 就不能用原来的浏览器debug模式开发了，这个转换跨度还是蛮大的 😄</div>2022-05-02</li><br/><li><span>风之化身</span> 👍（3） 💬（0）<div>讲的蛮好，建议录个小视频看下最终效果会更直观点～</div>2022-05-05</li><br/><li><span>*****</span> 👍（0） 💬（0）<div>Gesture.Pan 手指离开屏幕后，下次在拖动就无效了</div>2024-03-11</li><br/><li><span>dao</span> 👍（0） 💬（0）<div>手势这三节课，学习了好几周 💦
-试着做了作业一 https:&#47;&#47;bit.ly&#47;3HXMCae ，使用了 react-native-gesture-handler 的 Swipeable 组件完成的。尝试着自己用 Reanimated 写，发现对我这新手难度大了写 😂</div>2022-06-29</li><br/>
+<li><span>Hadwz</span> 👍（0） 💬（1）<p>老师，用Gesture 手势库和 Reanimated，实现在ScrollView里上下拖拽一个元素，并在元素到达列表的顶部&#47;底部的时候，滚动ScrollView，让列表和元素同时移动，有什么实现思路吗？</p>2022-05-06</li><br/><li><span>ZouLe</span> 👍（0） 💬（1）<p>上 Reanimated v2 和 Gesture v2 就不能用原来的浏览器debug模式开发了，这个转换跨度还是蛮大的 😄</p>2022-05-02</li><br/><li><span>风之化身</span> 👍（3） 💬（0）<p>讲的蛮好，建议录个小视频看下最终效果会更直观点～</p>2022-05-05</li><br/><li><span>*****</span> 👍（0） 💬（0）<p>Gesture.Pan 手指离开屏幕后，下次在拖动就无效了</p>2024-03-11</li><br/><li><span>dao</span> 👍（0） 💬（0）<p>手势这三节课，学习了好几周 💦
+试着做了作业一 https:&#47;&#47;bit.ly&#47;3HXMCae ，使用了 react-native-gesture-handler 的 Swipeable 组件完成的。尝试着自己用 Reanimated 写，发现对我这新手难度大了写 😂</p>2022-06-29</li><br/>
 </ul>

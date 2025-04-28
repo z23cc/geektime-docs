@@ -391,7 +391,7 @@ jmap -dump:format=b,file=文件名 pid
 
 如果你读完这篇文章有所收获，也欢迎你分享给你的朋友，共同学习进步。我们下一讲再见！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>WBF</span> 👍（9） 💬（1）<div>1、mysql：
+<li><span>WBF</span> 👍（9） 💬（1）<p>1、mysql：
     ①查看慢日志
     ②top -Hp pid 定位线程号，通过线程号定位sql
     然后查看执行计划分析是否存在全表扫描，表大小，制定优化方案
@@ -422,5 +422,5 @@ b. jstack 进程pid | grep 线程pid   ：top，top -Hp 进程pid，printf &quot
 《2》分析源码：
         查看代码行，分析所有调用该方法的代码逻辑，分析代码对应的SQL
 
-《3》沟通：与开发沟通，是否存在定时任务，执行定时任务的数据量大小，有无加limit，线程数</div>2021-05-16</li><br/><li><span>jy</span> 👍（0） 💬（1）<div>请问，容器里面如何执行mysqlreport 呢？ 生成的数据如何拿出来？谢谢老师</div>2021-10-14</li><br/>
+《3》沟通：与开发沟通，是否存在定时任务，执行定时任务的数据量大小，有无加limit，线程数</p>2021-05-16</li><br/><li><span>jy</span> 👍（0） 💬（1）<p>请问，容器里面如何执行mysqlreport 呢？ 生成的数据如何拿出来？谢谢老师</p>2021-10-14</li><br/>
 </ul>

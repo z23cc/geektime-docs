@@ -355,11 +355,11 @@ mkdir build && cd build && cmake .. && cmake --build . && ./fibserv
 
 今天的课程到这里就结束了，希望可以帮助到你，也希望你在下方的留言区和我一起讨论。同时，欢迎把这节课分享给你的朋友或同事，我们一起交流。
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>fee1in</span> 👍（3） 💬（1）<div>花了两个小时 终于将示例跑通 后面的同学doxygen问题 可以参考老师在uriparser的issue https:&#47;&#47;github.com&#47;uriparser&#47;uriparser&#47;issues&#47;137</div>2022-02-16</li><br/><li><span>叶兰</span> 👍（2） 💬（1）<div>于老师讲的太好了，受益匪浅</div>2022-02-16</li><br/><li><span>校歌</span> 👍（0） 💬（1）<div>老师你好，我没写过C项目，包管理感觉还是go的项目爽😁；运行报错如下
+<li><span>fee1in</span> 👍（3） 💬（1）<p>花了两个小时 终于将示例跑通 后面的同学doxygen问题 可以参考老师在uriparser的issue https:&#47;&#47;github.com&#47;uriparser&#47;uriparser&#47;issues&#47;137</p>2022-02-16</li><br/><li><span>叶兰</span> 👍（2） 💬（1）<p>于老师讲的太好了，受益匪浅</p>2022-02-16</li><br/><li><span>校歌</span> 👍（0） 💬（1）<p>老师你好，我没写过C项目，包管理感觉还是go的项目爽😁；运行报错如下
 # cmake ..  
 ...
 Could not find a package configuration file provided by &quot;uriparser&quot;
 ... 
 
-为了跑老师的项目，本地安装了libgtest-dev和源码编译安装 uriparser，项目才跑起来。不知有没有简单的办法，类似go mod tidy 或者go get xxx 获取go项目的依赖呢？</div>2022-06-18</li><br/><li><span>brian</span> 👍（0） 💬（0）<div>老师啊，epoll和异步io都没有用上，不能算高性能吧</div>2023-04-28</li><br/><li><span>lunar</span> 👍（0） 💬（0）<div>第一次跑C项目 还要自己装一下第三方库,学习的路上又踏出了一步 -DURIPARSER_BUILD_DOCS=OFF</div>2022-03-20</li><br/>
+为了跑老师的项目，本地安装了libgtest-dev和源码编译安装 uriparser，项目才跑起来。不知有没有简单的办法，类似go mod tidy 或者go get xxx 获取go项目的依赖呢？</p>2022-06-18</li><br/><li><span>brian</span> 👍（0） 💬（0）<p>老师啊，epoll和异步io都没有用上，不能算高性能吧</p>2023-04-28</li><br/><li><span>lunar</span> 👍（0） 💬（0）<p>第一次跑C项目 还要自己装一下第三方库,学习的路上又踏出了一步 -DURIPARSER_BUILD_DOCS=OFF</p>2022-03-20</li><br/>
 </ul>

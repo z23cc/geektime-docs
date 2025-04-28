@@ -321,19 +321,19 @@ Servlet Filter、Spring Interceptor可以用来拦截用户自己定义的类的
 
 欢迎留言和我分享你的想法。如果有收获，也欢迎你把这篇文章分享给你的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>test</span> 👍（36） 💬（0）<div>思考题：因为用mybatis就是为了使用数据库。</div>2020-05-25</li><br/><li><span>Monday</span> 👍（31） 💬（0）<div>精彩，看了源码，Mybatis分布工具PageHelper也通过Plugin方式实现的。
+<li><span>test</span> 👍（36） 💬（0）<p>思考题：因为用mybatis就是为了使用数据库。</p>2020-05-25</li><br/><li><span>Monday</span> 👍（31） 💬（0）<p>精彩，看了源码，Mybatis分布工具PageHelper也通过Plugin方式实现的。
 @Intercepts({@Signature(
     type = Executor.class,
     method = &quot;query&quot;,
     args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}
 )})
-public class PageHelper implements Interceptor {...}</div>2020-05-26</li><br/><li><span>your problem？</span> 👍（20） 💬（0）<div>思考题：YAGNI，单一职责原则，MyBatis就是负责简化以及通用数据库的处理，没有必要支持过多无关的东西</div>2020-05-25</li><br/><li><span>小晏子</span> 👍（11） 💬（0）<div>我感觉这要从mybatis的使用场景考虑，mybatis主要用于简化数据库操作，所以对于SQL语句的解析才是其本质，而不需要额外支持其他的东西，所以不需要拦截用户自定义类的方法</div>2020-05-25</li><br/><li><span>J.Smile</span> 👍（10） 💬（0）<div>Springaop中的前置通知，后置通知，异常通知也是基于动态代理的职责链模式。</div>2020-05-30</li><br/><li><span>Lambor</span> 👍（7） 💬（2）<div>MyBatis 每次SQL执行都会创建 Executor 等对象，再通过 pluginAll 方法创建一个代理的职责链，然后递归调用每个代理对象，最后调用 Executor 对象的方法。个人认为这个代理职责链主要就是控制 Executor 的方法在最后一步执行，这种职责链+代理的实现方式虽然巧妙，但感觉得不偿失，每次SQL调用都会创建一个新的嵌套代理调用链，这本身就是有性能消耗的，而且是作为底层框架，这点性能还是要考虑的。感觉采用 ApplicationFilterChain 的那种方式会更好，固定的一个拦截器链路，不用每次创建代理。</div>2020-05-27</li><br/><li><span>Monday</span> 👍（4） 💬（1）<div>看第一篇以为听懂了，再第二篇，发现根本没懂。如果换成是我要实现sql耗时的操作，走两步就行
+public class PageHelper implements Interceptor {...}</p>2020-05-26</li><br/><li><span>your problem？</span> 👍（20） 💬（0）<p>思考题：YAGNI，单一职责原则，MyBatis就是负责简化以及通用数据库的处理，没有必要支持过多无关的东西</p>2020-05-25</li><br/><li><span>小晏子</span> 👍（11） 💬（0）<p>我感觉这要从mybatis的使用场景考虑，mybatis主要用于简化数据库操作，所以对于SQL语句的解析才是其本质，而不需要额外支持其他的东西，所以不需要拦截用户自定义类的方法</p>2020-05-25</li><br/><li><span>J.Smile</span> 👍（10） 💬（0）<p>Springaop中的前置通知，后置通知，异常通知也是基于动态代理的职责链模式。</p>2020-05-30</li><br/><li><span>Lambor</span> 👍（7） 💬（2）<p>MyBatis 每次SQL执行都会创建 Executor 等对象，再通过 pluginAll 方法创建一个代理的职责链，然后递归调用每个代理对象，最后调用 Executor 对象的方法。个人认为这个代理职责链主要就是控制 Executor 的方法在最后一步执行，这种职责链+代理的实现方式虽然巧妙，但感觉得不偿失，每次SQL调用都会创建一个新的嵌套代理调用链，这本身就是有性能消耗的，而且是作为底层框架，这点性能还是要考虑的。感觉采用 ApplicationFilterChain 的那种方式会更好，固定的一个拦截器链路，不用每次创建代理。</p>2020-05-27</li><br/><li><span>Monday</span> 👍（4） 💬（1）<p>看第一篇以为听懂了，再第二篇，发现根本没懂。如果换成是我要实现sql耗时的操作，走两步就行
 1、写一个切面拦截StatementHander的某些方法，在执行sql前后加开始结束时间就行。
-2、上一点中拦截哪些方法，还是需要一个类似Plugin中的getSignatureMap方法的解析，没感觉到Plugin类其他的价值。。</div>2020-05-26</li><br/><li><span>ljx</span> 👍（3） 💬（0）<div>感觉自己变强了，一年前看这段源码觉得云里雾里，只能理解个大概，如今再看是如此清晰。。。</div>2022-03-11</li><br/><li><span>高乐</span> 👍（3） 💬（0）<div>请问老师，动态代理后的代理类是final的吧，应该无法再次被动态代理吧？那这个嵌套代理是怎么实现的？</div>2021-11-16</li><br/><li><span>Heaven</span> 👍（3） 💬（0）<div>职责单一,我用Mybatis就是为了更快更好的处理数据库之间的关系,所以专注于这四类是必然的,之前咱自己也看过Mybatis源码,但是并没有看出来是利用代理和职责链实现的整体执行过程</div>2020-05-26</li><br/><li><span>M</span> 👍（2） 💬（0）<div>pluginAll()方法的设计，有点像观察者模式，所有的观察者注册到被观察者中，被观察者必须等到所有的观察者执行完之后才能够执行</div>2021-04-06</li><br/><li><span>Molyt</span> 👍（1） 💬（0）<div>这一节课更看不懂了，难顶（捂脸哭.jpg）</div>2022-04-30</li><br/><li><span>我是曾经那个少年</span> 👍（1） 💬（0）<div>数据库的执行前我们一般能做的就是：
+2、上一点中拦截哪些方法，还是需要一个类似Plugin中的getSignatureMap方法的解析，没感觉到Plugin类其他的价值。。</p>2020-05-26</li><br/><li><span>ljx</span> 👍（3） 💬（0）<p>感觉自己变强了，一年前看这段源码觉得云里雾里，只能理解个大概，如今再看是如此清晰。。。</p>2022-03-11</li><br/><li><span>高乐</span> 👍（3） 💬（0）<p>请问老师，动态代理后的代理类是final的吧，应该无法再次被动态代理吧？那这个嵌套代理是怎么实现的？</p>2021-11-16</li><br/><li><span>Heaven</span> 👍（3） 💬（0）<p>职责单一,我用Mybatis就是为了更快更好的处理数据库之间的关系,所以专注于这四类是必然的,之前咱自己也看过Mybatis源码,但是并没有看出来是利用代理和职责链实现的整体执行过程</p>2020-05-26</li><br/><li><span>M</span> 👍（2） 💬（0）<p>pluginAll()方法的设计，有点像观察者模式，所有的观察者注册到被观察者中，被观察者必须等到所有的观察者执行完之后才能够执行</p>2021-04-06</li><br/><li><span>Molyt</span> 👍（1） 💬（0）<p>这一节课更看不懂了，难顶（捂脸哭.jpg）</p>2022-04-30</li><br/><li><span>我是曾经那个少年</span> 👍（1） 💬（0）<p>数据库的执行前我们一般能做的就是：
 1. 对数据库参数字段的一些处理，。
 2. 对数据库响应结果的一些处理。
 3. 或者动态概要SQL语句。
-数据库ORM组件也就是处理这些东西，没有其他的业务扩展的需要。</div>2021-12-12</li><br/><li><span>Henry</span> 👍（1） 💬（0）<div>mybatis的拦截的范围粒度比较大，针对的是特定类型的sql查询及参数和返回结果处理。拦截用户自定义的方法可以通过spring aop进行更细粒度的方法拦截。</div>2020-11-12</li><br/><li><span>Edward Lee</span> 👍（1） 💬（0）<div>Mybatis 需要更专注于数据库操作方面的代理，而更具体的方法代理可以交由 Spring 这类 AOP 框架配置实现，Mybatis 就不必再重复造轮子了。
+数据库ORM组件也就是处理这些东西，没有其他的业务扩展的需要。</p>2021-12-12</li><br/><li><span>Henry</span> 👍（1） 💬（0）<p>mybatis的拦截的范围粒度比较大，针对的是特定类型的sql查询及参数和返回结果处理。拦截用户自定义的方法可以通过spring aop进行更细粒度的方法拦截。</p>2020-11-12</li><br/><li><span>Edward Lee</span> 👍（1） 💬（0）<p>Mybatis 需要更专注于数据库操作方面的代理，而更具体的方法代理可以交由 Spring 这类 AOP 框架配置实现，Mybatis 就不必再重复造轮子了。
 
-对于 Mybatis 以动态代理的方式实现拦截器感觉到新颖，看似使用动态代理会影响效率，实则是提升了执行效率。这是因为只有在系统启动的时候会慢一些，在实际执行的过程中就不需要额外的匹配及判断过滤规则了，当然，动态代理还需要额外的内存开销。</div>2020-06-20</li><br/>
+对于 Mybatis 以动态代理的方式实现拦截器感觉到新颖，看似使用动态代理会影响效率，实则是提升了执行效率。这是因为只有在系统启动的时候会慢一些，在实际执行的过程中就不需要额外的匹配及判断过滤规则了，当然，动态代理还需要额外的内存开销。</p>2020-06-20</li><br/>
 </ul>

@@ -189,7 +189,7 @@ codis server其实就是Redis实例，只不过增加了和集群操作相关的
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你分享给你的朋友或同事。我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Kaito</span> 👍（183） 💬（20）<div>假设 Codis 集群中保存的 80% 的键值对都是 Hash 类型，每个 Hash 集合的元素数量在 10 万 ～ 20 万个，每个集合元素的大小是 2KB。迁移一个这样的 Hash 集合数据，是否会对 Codis 的性能造成影响？
+<li><span>Kaito</span> 👍（183） 💬（20）<p>假设 Codis 集群中保存的 80% 的键值对都是 Hash 类型，每个 Hash 集合的元素数量在 10 万 ～ 20 万个，每个集合元素的大小是 2KB。迁移一个这样的 Hash 集合数据，是否会对 Codis 的性能造成影响？
 
 不会有性能影响。
 
@@ -213,7 +213,7 @@ Codis 在数据迁移方面要比 Redis Cluster 做得更优秀，而且 Codis �
 
 我当时在对 Codis 开发新的组件时，被 Codis 的优秀设计深深折服。当然，它的缺点也很明显，组件比较多，部署略复杂。另外，因为是基于 Redis 3.2.8 做的二次开发，所以升级 Redis Server 比较困难，新特性也就自然无法使用。
 
-现在 Codis 已经不再维护，但是作为国人开发的 Redis 集群解决方案，其设计思想还是非常值得学习的。也推荐 Go 开发者，读一读 Codis 源码，质量非常高，对于 Go 语言的进阶也会有很大收获！</div>2020-11-11</li><br/><li><span>杨逸林</span> 👍（16） 💬（1）<div>我简单用 Google 搜了下，主流的 Redis 集群方案大概分为三种：
+现在 Codis 已经不再维护，但是作为国人开发的 Redis 集群解决方案，其设计思想还是非常值得学习的。也推荐 Go 开发者，读一读 Codis 源码，质量非常高，对于 Go 语言的进阶也会有很大收获！</p>2020-11-11</li><br/><li><span>杨逸林</span> 👍（16） 💬（1）<p>我简单用 Google 搜了下，主流的 Redis 集群方案大概分为三种：
 1. Redis Cluster
 2. 大厂&#47;小项目组 开源的解决方案—— Twitter 开源的 Twemproxy、Codis
 3. 买专有的 Redis 服务器—— Aliyun AparaCache（这个开源的没有 slot 的实现）、AWS ElasticCache
@@ -226,7 +226,7 @@ https:&#47;&#47;www.cnblogs.com&#47;me115&#47;p&#47;9043420.html
 https:&#47;&#47;www.zhihu.com&#47;question&#47;21419897
 
 第一个页面是转载自 Kaito 的个人博客网站，我是想不到的，对应的页面上有人说方案太老了。
-顺便提一下，我的也是用的 Hexo，也是基于 Next 主题改的������。</div>2020-11-11</li><br/><li><span>天气</span> 👍（11） 💬（1）<div>redis cluster怎么使用都没介绍啊</div>2020-12-23</li><br/><li><span>rfyiamcool</span> 👍（7） 💬（1）<div>不建议使用codis，redis的版本太老，在很多特性和性能上都有体现，codis在大流量下性能衰减很厉害，另外codis的管道有性能和兼容问题。</div>2021-05-17</li><br/><li><span>Geek_f00f74</span> 👍（6） 💬（0）<div>迁移的数据会被设置为只读，如果迁移过程中，有对迁移数据的写操作，会导致redis读写线程阻塞吗？</div>2020-11-13</li><br/><li><span>escray</span> 👍（5） 💬（0）<div>在阅读本文之前，我的想法是，如果条件允许，主要是 Redis 的版本，另外还有业务需要，当然是选择 Redis Cluster 官方的集群方案。
+顺便提一下，我的也是用的 Hexo，也是基于 Next 主题改的������。</p>2020-11-11</li><br/><li><span>天气</span> 👍（11） 💬（1）<p>redis cluster怎么使用都没介绍啊</p>2020-12-23</li><br/><li><span>rfyiamcool</span> 👍（7） 💬（1）<p>不建议使用codis，redis的版本太老，在很多特性和性能上都有体现，codis在大流量下性能衰减很厉害，另外codis的管道有性能和兼容问题。</p>2021-05-17</li><br/><li><span>Geek_f00f74</span> 👍（6） 💬（0）<p>迁移的数据会被设置为只读，如果迁移过程中，有对迁移数据的写操作，会导致redis读写线程阻塞吗？</p>2020-11-13</li><br/><li><span>escray</span> 👍（5） 💬（0）<p>在阅读本文之前，我的想法是，如果条件允许，主要是 Redis 的版本，另外还有业务需要，当然是选择 Redis Cluster 官方的集群方案。
 
 Codis 有 1024 个逻辑槽 Slot，客户端读取时，使用 CRC32 算法计算 key 的哈希值，并且对 1024 取模，余数对应 slot 编号，再通过 Slot 和 server 的对应关系，找到数据所在服务器。
 
@@ -238,9 +238,9 @@ Redis Cluster 有 16384 个哈希槽 Hash Slot，采用 CRC16 算法计算哈希
 
 对于课后题，20 万个 2KB 元素的 Hash 类型数据，应该已经算是 bigkey 了，迁移这样的 Hash 集合数据，如果采用 Codis 的异步迁移，感觉似乎问题不大。如果是读多写少的缓存应用，应该就更没有问题了。
 
-看了课代表的提醒，才知道 Codis 是 Go 语言开发的，最近正准备入坑 Let&#39;s Go</div>2021-04-03</li><br/><li><span>张申傲</span> 👍（5） 💬（0）<div>老师好~ 目前公司在用twemproxy维护Redis集群，能简单对比下codis和twemproxy的优劣吗？</div>2020-11-11</li><br/><li><span>zenk</span> 👍（3） 💬（1）<div>只读时间会不会太长导致key不可写</div>2020-12-02</li><br/><li><span>yeek</span> 👍（3） 💬（0）<div>有几个疑问：
+看了课代表的提醒，才知道 Codis 是 Go 语言开发的，最近正准备入坑 Let&#39;s Go</p>2021-04-03</li><br/><li><span>张申傲</span> 👍（5） 💬（0）<p>老师好~ 目前公司在用twemproxy维护Redis集群，能简单对比下codis和twemproxy的优劣吗？</p>2020-11-11</li><br/><li><span>zenk</span> 👍（3） 💬（1）<p>只读时间会不会太长导致key不可写</p>2020-12-02</li><br/><li><span>yeek</span> 👍（3） 💬（0）<p>有几个疑问：
 1、对于迁移过程中，codis的只读特性，对于集合类型，是整个key只读，还是已迁移的部分是只读的；
 2、codis分批迁移的过期时间是怎么设置的，太长会长期驻留，太短会在迁移过程中失效么？
-3、codis使用zk保存多proxy信息，那么客户端本地会缓存多proxy信息吗？从而选择不同proxy进行连接</div>2020-11-13</li><br/><li><span>柳磊</span> 👍（2） 💬（1）<div>关于“集群客户端需要重新开发吗?”有点疑问，虽然codis proxy 是和单实例客户端兼容的，但应该不支持codis proxy的HA吧？我看codis官方文档中提到，需要使用Jodis 客户端（在Jedis增加了codis proxy HA），所以我理解生产级的使用还是需要换客户端的吧？
-</div>2021-01-25</li><br/><li><span>烫烫烫</span> 👍（2） 💬（2）<div>我觉得会有影响。每个Hash集合元素数量以15万来算，则大小为 15w * 2KB = 300MB，如果是千兆网，耗时约300 &#47; (1000 &#47; 8) ≈ 2.4s。尽管迁移时bigkey会被拆分传输，但传输过程中数据是只读的，写操作还是会被阻塞，所以会有影响。</div>2020-11-13</li><br/><li><span>Furious</span> 👍（0） 💬（0）<div>其实目前来讲，codis相对redis cluster的优势也没了，codis年代太久远了，上一次更新已经是2018年，到现在2024年都已经6年了，应用上redis cluster更加成熟了，而且官方推出的稳定性更可靠，至于说客户端，目前太多客户端都支持集群命令了，并不需要重新开发了，而数据迁移，redis基本上都是用作缓存的，不会有太多的数据迁移。所以目前cluster就是最优解了</div>2024-07-05</li><br/><li><span>杨过</span> 👍（0） 💬（0）<div>sss</div>2023-01-06</li><br/><li><span>i_chase</span> 👍（0） 💬（0）<div>迁移过程中，一个slot的数据会分布在两个节点，查询key的时候，codis怎么知道去哪里查？不是和redis 官方cluster一样得查询两次吗？</div>2022-11-10</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<div>还没有用过redis cluster</div>2022-08-16</li><br/>
+3、codis使用zk保存多proxy信息，那么客户端本地会缓存多proxy信息吗？从而选择不同proxy进行连接</p>2020-11-13</li><br/><li><span>柳磊</span> 👍（2） 💬（1）<p>关于“集群客户端需要重新开发吗?”有点疑问，虽然codis proxy 是和单实例客户端兼容的，但应该不支持codis proxy的HA吧？我看codis官方文档中提到，需要使用Jodis 客户端（在Jedis增加了codis proxy HA），所以我理解生产级的使用还是需要换客户端的吧？
+</p>2021-01-25</li><br/><li><span>烫烫烫</span> 👍（2） 💬（2）<p>我觉得会有影响。每个Hash集合元素数量以15万来算，则大小为 15w * 2KB = 300MB，如果是千兆网，耗时约300 &#47; (1000 &#47; 8) ≈ 2.4s。尽管迁移时bigkey会被拆分传输，但传输过程中数据是只读的，写操作还是会被阻塞，所以会有影响。</p>2020-11-13</li><br/><li><span>Furious</span> 👍（0） 💬（0）<p>其实目前来讲，codis相对redis cluster的优势也没了，codis年代太久远了，上一次更新已经是2018年，到现在2024年都已经6年了，应用上redis cluster更加成熟了，而且官方推出的稳定性更可靠，至于说客户端，目前太多客户端都支持集群命令了，并不需要重新开发了，而数据迁移，redis基本上都是用作缓存的，不会有太多的数据迁移。所以目前cluster就是最优解了</p>2024-07-05</li><br/><li><span>杨过</span> 👍（0） 💬（0）<p>sss</p>2023-01-06</li><br/><li><span>i_chase</span> 👍（0） 💬（0）<p>迁移过程中，一个slot的数据会分布在两个节点，查询key的时候，codis怎么知道去哪里查？不是和redis 官方cluster一样得查询两次吗？</p>2022-11-10</li><br/><li><span>飞龙</span> 👍（0） 💬（0）<p>还没有用过redis cluster</p>2022-08-16</li><br/>
 </ul>

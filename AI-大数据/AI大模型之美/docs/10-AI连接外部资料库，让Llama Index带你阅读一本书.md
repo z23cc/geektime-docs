@@ -359,7 +359,7 @@ llama-index的功能非常强大，并且源代码里也专门提供了示例部
 1. 官方文档：[https://gpt-index.readthedocs.io/en/latest/](https://gpt-index.readthedocs.io/en/latest/)
 2. 源码以及示例：[https://github.com/jerryjliu/llama\_index](https://github.com/jerryjliu/llama_index)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Owen</span> 👍（7） 💬（0）<div>截止到目前，最新能运行的代码
+<li><span>Owen</span> 👍（7） 💬（0）<p>截止到目前，最新能运行的代码
 
 &#39;&#39;&#39;
 归纳总结文章内容
@@ -380,7 +380,7 @@ index = SummaryIndex.from_documents(documents = documents, service_context = ser
 query_engine = index.as_query_engine()
 response = query_engine.query(&quot;用中文总结这个故事&quot;)
 
-print(response)</div>2024-03-01</li><br/><li><span>Penguin Shi</span> 👍（7） 💬（0）<div>《藤野先生》输出摘要的代码，因为代码更新，有bug，参考https:&#47;&#47;gpt-index.readthedocs.io&#47;en&#47;latest&#47;guides&#47;primer&#47;usage_pattern.html更新代码如下：
+print(response)</p>2024-03-01</li><br/><li><span>Penguin Shi</span> 👍（7） 💬（0）<p>《藤野先生》输出摘要的代码，因为代码更新，有bug，参考https:&#47;&#47;gpt-index.readthedocs.io&#47;en&#47;latest&#47;guides&#47;primer&#47;usage_pattern.html更新代码如下：
 
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import SpacyTextSplitter
@@ -409,7 +409,7 @@ response = query_engine.query(&quot;下面鲁迅先生以第一人称‘我’�
 print(response)
 
 另目前文档中，&quot;我把从网上找到的《藤野先生》这篇文章变成了一个 txt 文件，放在了 data&#47;mr_fujino 这个目录下。我们的代码也非常简单，一共没有几行。&quot;此文字下方代码的，第7行，index = GPTSimpleVectorIndex.from_documents(documents)中，“GPTSimpleVectorIndex”还未改成“GPTVectorStoreIndex” ；第9行，更改为index.storage_context.persist(&#39;index_mr_fujino&#39;)。
-请更改，方便后续同学学习并运行代码。</div>2023-07-09</li><br/><li><span>Wise</span> 👍（20） 💬（5）<div>在llama_index V0.6.1 版本中，没有GPTSimpleVectorIndex 类了
+请更改，方便后续同学学习并运行代码。</p>2023-07-09</li><br/><li><span>Wise</span> 👍（20） 💬（5）<p>在llama_index V0.6.1 版本中，没有GPTSimpleVectorIndex 类了
 import openai, os
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader
 os.environ[&quot;OPENAI_API_KEY&quot;] = &#39;&#39;
@@ -428,7 +428,7 @@ query_engine = index.as_query_engine()
 response = query_engine.query(&quot;鲁迅先生在日本学习医学的老师是谁？&quot;)
 print(response)
 
-参考官方文档连接：https:&#47;&#47;gpt-index.readthedocs.io&#47;en&#47;latest&#47;getting_started&#47;starter_example.html</div>2023-05-07</li><br/><li><span>hello</span> 👍（15） 💬（4）<div>想请教下老师，我们喂的语料，会被其他人看到使用吗？</div>2023-04-06</li><br/><li><span>daz2yy</span> 👍（11） 💬（1）<div>老师，请问下一个问题，我把它用作 QA 系统的时候有个问题，原本 QA 就有标准的回答模版，里面包括有文档地址、操作步骤等；如果让 GPT 根据这个模版来回答问题，他会自由发挥，会漏掉一部分内容；想拥有 AI 自由对话的能力，又想有固定的回答模版这个怎么能较好的兼顾呢？</div>2023-04-04</li><br/><li><span>Terry</span> 👍（8） 💬（1）<div>老师，请教一下langchain我理解也是一个LLM应用框架，它的功能和版本也更新很快。它和llama_index的区分是什么？在LLM应用开发上，我们一般怎么选择会比较好？</div>2023-04-25</li><br/><li><span>马听</span> 👍（8） 💬（3）<div>分享一个加载MySQL数据的例子：
+参考官方文档连接：https:&#47;&#47;gpt-index.readthedocs.io&#47;en&#47;latest&#47;getting_started&#47;starter_example.html</p>2023-05-07</li><br/><li><span>hello</span> 👍（15） 💬（4）<p>想请教下老师，我们喂的语料，会被其他人看到使用吗？</p>2023-04-06</li><br/><li><span>daz2yy</span> 👍（11） 💬（1）<p>老师，请问下一个问题，我把它用作 QA 系统的时候有个问题，原本 QA 就有标准的回答模版，里面包括有文档地址、操作步骤等；如果让 GPT 根据这个模版来回答问题，他会自由发挥，会漏掉一部分内容；想拥有 AI 自由对话的能力，又想有固定的回答模版这个怎么能较好的兼顾呢？</p>2023-04-04</li><br/><li><span>Terry</span> 👍（8） 💬（1）<p>老师，请教一下langchain我理解也是一个LLM应用框架，它的功能和版本也更新很快。它和llama_index的区分是什么？在LLM应用开发上，我们一般怎么选择会比较好？</p>2023-04-25</li><br/><li><span>马听</span> 👍（8） 💬（3）<p>分享一个加载MySQL数据的例子：
 from llama_index import GPTSimpleVectorIndex,download_loader
 
 DatabaseReader = download_loader(&#39;DatabaseReader&#39;)
@@ -447,7 +447,7 @@ select * from student_info
 &quot;&quot;&quot;
 
 documents = reader.load_data(query=query)
-print(documents)</div>2023-04-12</li><br/><li><span>Oxygen Au 昕</span> 👍（6） 💬（1）<div>
+print(documents)</p>2023-04-12</li><br/><li><span>Oxygen Au 昕</span> 👍（6） 💬（1）<p>
 response = list_index.query(&quot;下面鲁迅先生以第一人称‘我’写的内容，请你用中文总结一下:&quot;, response_mode=&quot;tree_summarize&quot;)
 print(response)
 
@@ -459,10 +459,10 @@ query_engine = list_index.as_query_engine(response_mode=&quot;tree_summarize&quo
 response = query_engine.query(&quot;下面鲁迅先生以第一人称‘我’写的内容，请你用中文总结一下:&quot;)
 print(response)
 
-结果： 鲁迅先生在日本学习医学时遇到了藤野严九郎教授，他很有学问，对学生也很关心，甚至帮助鲁迅修改讲义。但鲁迅当时不够用功，有时也很任性。在学习中，他遇到了一些困难和不愉快的事情，最终决定离开医学去学习生物学。离开前，藤野先生送给他一张照片，并希望他能保持联系。鲁迅很久没有和任何人通信，但想起了这位热心的老师，他的照片挂在鲁迅的房间里，每当他疲倦时看到照片就会感到勇气和良心发现。</div>2023-05-09</li><br/><li><span>黄智荣</span> 👍（2） 💬（1）<div>现在有很多应用，在你把文档上传之后，还会给你一系列的提示，告诉你可以向对应的书或者论文问什么问题。
------- 可以根据索引的文本，让chatgpt 设计几个提问的问题</div>2023-05-16</li><br/><li><span>勇.Max</span> 👍（2） 💬（3）<div>上面from llama_index import GPTSimpleVectorIndex会报错，因为现在已经改成了GPTVectorStoreIndex。
+结果： 鲁迅先生在日本学习医学时遇到了藤野严九郎教授，他很有学问，对学生也很关心，甚至帮助鲁迅修改讲义。但鲁迅当时不够用功，有时也很任性。在学习中，他遇到了一些困难和不愉快的事情，最终决定离开医学去学习生物学。离开前，藤野先生送给他一张照片，并希望他能保持联系。鲁迅很久没有和任何人通信，但想起了这位热心的老师，他的照片挂在鲁迅的房间里，每当他疲倦时看到照片就会感到勇气和良心发现。</p>2023-05-09</li><br/><li><span>黄智荣</span> 👍（2） 💬（1）<p>现在有很多应用，在你把文档上传之后，还会给你一系列的提示，告诉你可以向对应的书或者论文问什么问题。
+------ 可以根据索引的文本，让chatgpt 设计几个提问的问题</p>2023-05-16</li><br/><li><span>勇.Max</span> 👍（2） 💬（3）<p>上面from llama_index import GPTSimpleVectorIndex会报错，因为现在已经改成了GPTVectorStoreIndex。
 from llama_index import GPTVectorStoreIndex &#47;&#47;老师看到后可以更新下
-</div>2023-05-08</li><br/><li><span>Viola</span> 👍（2） 💬（2）<div> 有同学遇到吗？
-type object &#39;GPTSimpleVectorIndex&#39; has no attribute &#39;from_documents&#39;</div>2023-04-05</li><br/><li><span>hawk</span> 👍（2） 💬（3）<div>这些预选的问题，应该也是通过组合特定的提示语，和段落摘要，扔给GPT得到的吧？</div>2023-04-04</li><br/><li><span>牛味浓龙魏流</span> 👍（1） 💬（2）<div>所以llama_index跟chatGPT没什么关系是吗。。还是说这个包本身也在跟openAI打交道，看代码看不出来</div>2023-05-15</li><br/><li><span>东临沧海</span> 👍（1） 💬（1）<div>建议老师安装的库文件标明一下版本号，遇到这样问题好几次了，每次都要浪费大量时间。
-llama_index版本都到v0.6.5，更新太快了</div>2023-05-11</li><br/><li><span>snow</span> 👍（1） 💬（2）<div>想请教下老师，为什么我在调用query 的时候，提示说BaseQueryEngine.query() got an unexpected keyword argument &#39;response_mode&#39; ？  发现当定义 list_index = GPTListIndex(nodes=nodes, service_context=service_context)， 没法直接调用list_index.query() ,而需要  list_index.as_query_engine().query() 这样子调用。 </div>2023-05-09</li><br/>
+</p>2023-05-08</li><br/><li><span>Viola</span> 👍（2） 💬（2）<p> 有同学遇到吗？
+type object &#39;GPTSimpleVectorIndex&#39; has no attribute &#39;from_documents&#39;</p>2023-04-05</li><br/><li><span>hawk</span> 👍（2） 💬（3）<p>这些预选的问题，应该也是通过组合特定的提示语，和段落摘要，扔给GPT得到的吧？</p>2023-04-04</li><br/><li><span>牛味浓龙魏流</span> 👍（1） 💬（2）<p>所以llama_index跟chatGPT没什么关系是吗。。还是说这个包本身也在跟openAI打交道，看代码看不出来</p>2023-05-15</li><br/><li><span>东临沧海</span> 👍（1） 💬（1）<p>建议老师安装的库文件标明一下版本号，遇到这样问题好几次了，每次都要浪费大量时间。
+llama_index版本都到v0.6.5，更新太快了</p>2023-05-11</li><br/><li><span>snow</span> 👍（1） 💬（2）<p>想请教下老师，为什么我在调用query 的时候，提示说BaseQueryEngine.query() got an unexpected keyword argument &#39;response_mode&#39; ？  发现当定义 list_index = GPTListIndex(nodes=nodes, service_context=service_context)， 没法直接调用list_index.query() ,而需要  list_index.as_query_engine().query() 这样子调用。 </p>2023-05-09</li><br/>
 </ul>

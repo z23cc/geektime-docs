@@ -387,12 +387,12 @@ public class ResourceServletTest extends ServletTest {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>枫中的刀剑</span> 👍（0） 💬（1）<div>exceptionMapper_toResponse的异常抛出这样写会不会好一些。
+<li><span>枫中的刀剑</span> 👍（0） 💬（1）<p>exceptionMapper_toResponse的异常抛出这样写会不会好一些。
 when(providers.getExceptionMapper(eq(RuntimeException.class))).thenReturn(ex -&gt; {
             throw exception;
         });
 强调是在toResponse 里抛出的。
-不然感觉和providers_getExceptionMapper没区别。</div>2022-06-30</li><br/><li><span>忘川</span> 👍（3） 💬（0）<div>伦敦学派 
+不然感觉和providers_getExceptionMapper没区别。</p>2022-06-30</li><br/><li><span>忘川</span> 👍（3） 💬（0）<p>伦敦学派 
 	适用场景: 自己不太熟悉的框架或者大型结构
 	使用方法: 使用约定和api的配合,来验证组件的功能,同时增加自己对于框架的理解.用来吸收和消化框架
 	大的方向: 自上而下 从抽象到具体
@@ -402,5 +402,5 @@ when(providers.getExceptionMapper(eq(RuntimeException.class))).thenReturn(ex -&g
 	大的方向: 自下而上 从具体到抽象 使用抽象 让经验升华
 给我带来的思考:
 	学习或者制造一个自己不熟悉的东西的时候 模仿是最快的 可以避免走弯路
-	当我们已经有大的把握的时候 自下而上 会更快捷 可以避免模拟的成本  </div>2023-01-06</li><br/>
+	当我们已经有大的把握的时候 自下而上 会更快捷 可以避免模拟的成本  </p>2023-01-06</li><br/>
 </ul>

@@ -352,7 +352,7 @@ http://127.0.0.1:3000/query?foo=1&bar=2&third=3&another=4
 
 请你说一说Request/Response 模型是什么，Axum框架和其他gRPC框架（比如Tonic）有什么区别。欢迎你把自己的思考分享到评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>小虎子11🐯</span> 👍（3） 💬（1）<div>版本已经更新到 0.7 啦</div>2023-12-11</li><br/><li><span>鸠摩智</span> 👍（3） 💬（1）<div>windows powershell中的启动命令：$env:RUST_LOG=&quot;debug&quot; ; cargo run 。不设置级别的话，默认看不到debug级别的日志</div>2023-12-11</li><br/><li><span>tan</span> 👍（2） 💬（1）<div>时区设置
+<li><span>小虎子11🐯</span> 👍（3） 💬（1）<p>版本已经更新到 0.7 啦</p>2023-12-11</li><br/><li><span>鸠摩智</span> 👍（3） 💬（1）<p>windows powershell中的启动命令：$env:RUST_LOG=&quot;debug&quot; ; cargo run 。不设置级别的话，默认看不到debug级别的日志</p>2023-12-11</li><br/><li><span>tan</span> 👍（2） 💬（1）<p>时区设置
 ● cargo add time --features macros
 ● cargo add tracing-subscriber --features time
 
@@ -371,7 +371,7 @@ tracing_subscriber::fmt().with_max_level(Level::TRACE).with_timer(timer).init();
 &#47;&#47; use
 tracing::info!(&quot;listening on {}&quot;, listener.local_addr().unwrap());
 ```
-</div>2024-01-11</li><br/><li><span>一只</span> 👍（2） 💬（1）<div>第一个例子 hello-world 需要使用链接中的依赖版本才能运行，应该是库的接口发生变更了。
+</p>2024-01-11</li><br/><li><span>一只</span> 👍（2） 💬（1）<p>第一个例子 hello-world 需要使用链接中的依赖版本才能运行，应该是库的接口发生变更了。
 或者使用 官方最新例子
 ```rust
 use axum::{response::Html, routing::get, Router};
@@ -392,8 +392,8 @@ async fn main() {
 async fn handler() -&gt; Html&lt;&amp;&#39;static str&gt; {
     Html(&quot;&lt;h1&gt;Hello, World!&lt;&#47;h1&gt;&quot;)
 }
-```</div>2023-12-11</li><br/><li><span>buoge</span> 👍（1） 💬（1）<div>日志部分配合这个看会更佳
-使用 tracing 记录日志：https:&#47;&#47;course.rs&#47;logs&#47;tracing.html</div>2023-12-20</li><br/><li><span>土土人</span> 👍（0） 💬（1）<div>Axum ctrl c退出为啥会报错？还有启动线程不会按核数自动分配吗？</div>2024-02-28</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（2）<div>tracing输出的日志时区不对，怎么设置时区啊？</div>2023-12-16</li><br/><li><span>Carlsama</span> 👍（0） 💬（1）<div>内容已经调整到0.7了吗？看了评论有点不敢跟着抄写代码，等都更完再一块看</div>2023-12-12</li><br/><li><span>My dream</span> 👍（0） 💬（1）<div>怎么用这个框架实现读取、导出xls或者pdf文件啊？</div>2023-12-12</li><br/><li><span>雍和</span> 👍（0） 💬（1）<div>老师，文中说的evn_logger是不是笔误了呢？实际是env_logger？</div>2023-12-11</li><br/><li><span>-</span> 👍（0） 💬（2）<div>咋没有用最新版的0.7版本啊？</div>2023-12-11</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<div>错别字： 
+```</p>2023-12-11</li><br/><li><span>buoge</span> 👍（1） 💬（1）<p>日志部分配合这个看会更佳
+使用 tracing 记录日志：https:&#47;&#47;course.rs&#47;logs&#47;tracing.html</p>2023-12-20</li><br/><li><span>土土人</span> 👍（0） 💬（1）<p>Axum ctrl c退出为啥会报错？还有启动线程不会按核数自动分配吗？</p>2024-02-28</li><br/><li><span>Geek_e72251</span> 👍（0） 💬（2）<p>tracing输出的日志时区不对，怎么设置时区啊？</p>2023-12-16</li><br/><li><span>Carlsama</span> 👍（0） 💬（1）<p>内容已经调整到0.7了吗？看了评论有点不敢跟着抄写代码，等都更完再一块看</p>2023-12-12</li><br/><li><span>My dream</span> 👍（0） 💬（1）<p>怎么用这个框架实现读取、导出xls或者pdf文件啊？</p>2023-12-12</li><br/><li><span>雍和</span> 👍（0） 💬（1）<p>老师，文中说的evn_logger是不是笔误了呢？实际是env_logger？</p>2023-12-11</li><br/><li><span>-</span> 👍（0） 💬（2）<p>咋没有用最新版的0.7版本啊？</p>2023-12-11</li><br/><li><span>刘丹</span> 👍（0） 💬（1）<p>错别字： 
 carge add tracing-subscriber
-</div>2023-12-11</li><br/><li><span>刘丹</span> 👍（0） 💬（2）<div>老师，请问能否介绍最新版本的 axum ?</div>2023-12-11</li><br/><li><span>安石</span> 👍（0） 💬（0）<div>并发性能好像没有node的好。。。。</div>2024-06-26</li><br/>
+</p>2023-12-11</li><br/><li><span>刘丹</span> 👍（0） 💬（2）<p>老师，请问能否介绍最新版本的 axum ?</p>2023-12-11</li><br/><li><span>安石</span> 👍（0） 💬（0）<p>并发性能好像没有node的好。。。。</p>2024-06-26</li><br/>
 </ul>

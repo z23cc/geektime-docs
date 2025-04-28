@@ -240,19 +240,19 @@ setCountArray(newCountArray)
 
 欢迎在留言区分享你的想法。下一节课我们将来讨论React Native中图片组件的用法和最佳实践，你可以做些准备。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>beetcb</span> 👍（0） 💬（1）<div>感谢老师推荐！我自己也去学习了 beta 文档，状态管理那章写得真好，除了有本文中提到的方法，还把 useState useReducer Context 都串起来啦，非常清晰。</div>2022-04-30</li><br/><li><span>Le vent se lève</span> 👍（0） 💬（1）<div>终于运行起来了</div>2022-04-24</li><br/><li><span>Le vent se lève</span> 👍（0） 💬（1）<div>老师我想问下productTable。tsx文件里边的fetch请求第二个then中products: Products，这个Products是什么意思呢？可以帮我分析下吗没太看懂？
-</div>2022-04-24</li><br/><li><span>请务必优秀</span> 👍（0） 💬（1）<div>interface声明方式在jsx文件怎么生效呢
-</div>2022-04-20</li><br/><li><span>请务必优秀</span> 👍（0） 💬（2）<div>fetch(&#39;https:&#47;&#47;61c48e65f1af4a0017d9966d.mockapi.io&#47;products&#39;)这个接口没有怎么模拟呢</div>2022-04-20</li><br/><li><span>Asterisk</span> 👍（4） 💬（0）<div>讲的也有点太简单了，能不能把关键的地方，或者容易入坑的地方好好讲讲。至于基础知识这个官网讲的就挺好了。</div>2022-10-19</li><br/><li><span>Sunny</span> 👍（2） 💬（5）<div>export default function ProductTable() {
+<li><span>beetcb</span> 👍（0） 💬（1）<p>感谢老师推荐！我自己也去学习了 beta 文档，状态管理那章写得真好，除了有本文中提到的方法，还把 useState useReducer Context 都串起来啦，非常清晰。</p>2022-04-30</li><br/><li><span>Le vent se lève</span> 👍（0） 💬（1）<p>终于运行起来了</p>2022-04-24</li><br/><li><span>Le vent se lève</span> 👍（0） 💬（1）<p>老师我想问下productTable。tsx文件里边的fetch请求第二个then中products: Products，这个Products是什么意思呢？可以帮我分析下吗没太看懂？
+</p>2022-04-24</li><br/><li><span>请务必优秀</span> 👍（0） 💬（1）<p>interface声明方式在jsx文件怎么生效呢
+</p>2022-04-20</li><br/><li><span>请务必优秀</span> 👍（0） 💬（2）<p>fetch(&#39;https:&#47;&#47;61c48e65f1af4a0017d9966d.mockapi.io&#47;products&#39;)这个接口没有怎么模拟呢</p>2022-04-20</li><br/><li><span>Asterisk</span> 👍（4） 💬（0）<p>讲的也有点太简单了，能不能把关键的地方，或者容易入坑的地方好好讲讲。至于基础知识这个官网讲的就挺好了。</p>2022-10-19</li><br/><li><span>Sunny</span> 👍（2） 💬（5）<p>export default function ProductTable() {
     &#47;&#47; ...
 }
-请教一下，这也是声明组件么 ？为什么不用 class 声明 ？</div>2022-04-05</li><br/><li><span>江左小海</span> 👍（1） 💬（3）<div>为什么有jsx，tsx，不都是JS吗，Android开发，对这一块不懂，这个项目也运行不起来，第一个ProductTabled的id找不到，删除后，又说ProductRow没有引入</div>2022-07-12</li><br/><li><span>angelajing</span> 👍（0） 💬（0）<div>github能否添加一个readme.md文件，详细介绍下怎样执行每个示例的代码。因为是初学者，对Android studio的run配置和npm、npx react-native命令行都不太熟悉。</div>2023-11-26</li><br/><li><span>左手指月</span> 👍（0） 💬（0）<div>countObject.num === countObject.num &#47;&#47; false
+请教一下，这也是声明组件么 ？为什么不用 class 声明 ？</p>2022-04-05</li><br/><li><span>江左小海</span> 👍（1） 💬（3）<p>为什么有jsx，tsx，不都是JS吗，Android开发，对这一块不懂，这个项目也运行不起来，第一个ProductTabled的id找不到，删除后，又说ProductRow没有引入</p>2022-07-12</li><br/><li><span>angelajing</span> 👍（0） 💬（0）<p>github能否添加一个readme.md文件，详细介绍下怎样执行每个示例的代码。因为是初学者，对Android studio的run配置和npm、npx react-native命令行都不太熟悉。</p>2023-11-26</li><br/><li><span>左手指月</span> 👍（0） 💬（0）<p>countObject.num === countObject.num &#47;&#47; false
 
-真的没问题么，复制到浏览器是true耶</div>2023-08-16</li><br/><li><span>kittyE</span> 👍（0） 💬（0）<div>声明一个3*3的二维数据或者9位的一维数组，循环数组渲染</div>2023-07-23</li><br/><li><span>简之语</span> 👍（0） 💬（0）<div>此次细看真的是行云流水一般通畅的文章，信息密度还不低，👍</div>2023-07-11</li><br/><li><span>陈彦祖</span> 👍（0） 💬（0）<div>井字棋只需要一个状态用于记录棋盘内容即可。需要可读性的好就是一个 3×3 的数组，也可以用一个一维数组来表示。一维数组在计算的时候麻烦一些。例如：
+真的没问题么，复制到浏览器是true耶</p>2023-08-16</li><br/><li><span>kittyE</span> 👍（0） 💬（0）<p>声明一个3*3的二维数据或者9位的一维数组，循环数组渲染</p>2023-07-23</li><br/><li><span>简之语</span> 👍（0） 💬（0）<p>此次细看真的是行云流水一般通畅的文章，信息密度还不低，👍</p>2023-07-11</li><br/><li><span>陈彦祖</span> 👍（0） 💬（0）<p>井字棋只需要一个状态用于记录棋盘内容即可。需要可读性的好就是一个 3×3 的数组，也可以用一个一维数组来表示。一维数组在计算的时候麻烦一些。例如：
 let chessStatus: number[] = [1,null,0,null,null,null,null,null,null]
 1. 从左至右，从上到下分别对应数组索引 0~8
 2. 数组元素 1 表示 X 在这个位子落子，0 表示圈在这个位子落子；null 表示该位置没有落子
 
 
-</div>2023-04-27</li><br/><li><span>Geek_7831b0</span> 👍（0） 💬（0）<div>接口似乎失效了，有人能给个example json吗？</div>2022-10-20</li><br/><li><span>王昭策</span> 👍（0） 💬（0）<div>老师能不能讲一下作业啊？光布置不讲我也不知道自己想法对不对。
-</div>2022-10-17</li><br/>
+</p>2023-04-27</li><br/><li><span>Geek_7831b0</span> 👍（0） 💬（0）<p>接口似乎失效了，有人能给个example json吗？</p>2022-10-20</li><br/><li><span>王昭策</span> 👍（0） 💬（0）<p>老师能不能讲一下作业啊？光布置不讲我也不知道自己想法对不对。
+</p>2022-10-17</li><br/>
 </ul>

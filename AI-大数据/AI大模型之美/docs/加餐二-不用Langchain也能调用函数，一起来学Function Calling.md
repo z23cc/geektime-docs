@@ -455,7 +455,7 @@ Therefore, the Macbook M3 is priced higher than the Macbook M2.
 
 欢迎你把你的代码实现分享再评论区，也欢迎你把这节课的内容分享给其他朋友，我们下节课再见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Toni</span> 👍（3） 💬（0）<div>谢谢徐文浩老师的加餐，并在思考题里提出“连环调用”Function Call的问题。
+<li><span>Toni</span> 👍（3） 💬（0）<p>谢谢徐文浩老师的加餐，并在思考题里提出“连环调用”Function Call的问题。
 
-让AI解决一个比较复杂的工作流程，包括自动规划分割子任务，自动生成子任务调动的排序，执行各个子任务并将结果汇总保存最终反馈给用户，可以考虑使用plan-and-excute框架，参考: https:&#47;&#47;blog.langchain.dev&#47;planning-agents&#47;</div>2024-08-08</li><br/><li><span>longslee</span> 👍（1） 💬（0）<div>思考题：是不是递归场景呀？以前编码时需要程序员设定边界和退出条件，现在把要求提给 ChatGPT 让它去调用。当然它会不会产生递归的调用，我也不清楚哈哈，猜测。</div>2024-07-10</li><br/><li><span>twintel</span> 👍（0） 💬（0）<div>这个是不是可以用来解决最近比较火的9.8和9.11比大小的问题</div>2024-07-19</li><br/><li><span>Geek_aecc52</span> 👍（0） 💬（0）<div>良心作者呀，又加餐了</div>2024-06-13</li><br/>
+让AI解决一个比较复杂的工作流程，包括自动规划分割子任务，自动生成子任务调动的排序，执行各个子任务并将结果汇总保存最终反馈给用户，可以考虑使用plan-and-excute框架，参考: https:&#47;&#47;blog.langchain.dev&#47;planning-agents&#47;</p>2024-08-08</li><br/><li><span>longslee</span> 👍（1） 💬（0）<p>思考题：是不是递归场景呀？以前编码时需要程序员设定边界和退出条件，现在把要求提给 ChatGPT 让它去调用。当然它会不会产生递归的调用，我也不清楚哈哈，猜测。</p>2024-07-10</li><br/><li><span>twintel</span> 👍（0） 💬（0）<p>这个是不是可以用来解决最近比较火的9.8和9.11比大小的问题</p>2024-07-19</li><br/><li><span>Geek_aecc52</span> 👍（0） 💬（0）<p>良心作者呀，又加餐了</p>2024-06-13</li><br/>
 </ul>

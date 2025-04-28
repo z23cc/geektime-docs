@@ -192,18 +192,18 @@ iframe标签也是各种安全问题的重灾区。opener、window.name、甚至
 
 最后，留给你一个小问题，请查资料总结一下，在多数现代浏览器兼容的范围内，src属性支持哪些协议的uri（如http和我们提到的data）。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>宗麒麟</span> 👍（0） 💬（3）<div>var a = {n: 1}; 
+<li><span>宗麒麟</span> 👍（0） 💬（3）<p>var a = {n: 1}; 
 var b = a; 
 a.x = a = {n: 2};
 a.x  b.x 分别是什么？
-老师，能不能把a.x这块的赋值讲一下？</div>2019-08-08</li><br/><li><span>赵健</span> 👍（20） 💬（5）<div>老师好，想请问下，业务场景中需要嵌入公司其他行业线的页面，这种不使用iframe该咋办？</div>2019-04-09</li><br/><li><span>favorlm</span> 👍（10） 💬（0）<div>早起第一件事，学习</div>2019-04-09</li><br/><li><span>草剑</span> 👍（9） 💬（0）<div>src 属性支持 http、data、 ftp、file、mailto、smtp、pop、dns、whois、finger、daytime、news、urn 等协议</div>2020-05-17</li><br/><li><span>Geeker1992</span> 👍（9） 💬（2）<div>老师，style 既然也可以这么用
+老师，能不能把a.x这块的赋值讲一下？</p>2019-08-08</li><br/><li><span>赵健</span> 👍（20） 💬（5）<p>老师好，想请问下，业务场景中需要嵌入公司其他行业线的页面，这种不使用iframe该咋办？</p>2019-04-09</li><br/><li><span>favorlm</span> 👍（10） 💬（0）<p>早起第一件事，学习</p>2019-04-09</li><br/><li><span>草剑</span> 👍（9） 💬（0）<p>src 属性支持 http、data、 ftp、file、mailto、smtp、pop、dns、whois、finger、daytime、news、urn 等协议</p>2020-05-17</li><br/><li><span>Geeker1992</span> 👍（9） 💬（2）<p>老师，style 既然也可以这么用
 &lt;style&gt;css 规则&lt;&#47;style&gt;，
 为什么没有 &lt;style src=“”&gt;&lt;&#47;style&gt;？
-</div>2019-04-10</li><br/><li><span>阿成</span> 👍（7） 💬（0）<div>常见的有：http:&#47;&#47;,https:&#47;&#47;,file:&#47;&#47;,data...</div>2019-04-09</li><br/><li><span>南墙的树</span> 👍（5） 💬（0）<div>h5的设计稿，完全照办app设计稿，页面顶部的title导航（包括返回按钮），页面主体部分引入外部资源，这种需求，不使用iframe，请问老师该怎么处理？或者说，从一个不懂技术的产品那里开始，这种方案就有问题？</div>2019-04-25</li><br/><li><span>Geek_0bb537</span> 👍（3） 💬（2）<div>iframe有没有什么好的替代方案 那个导航栏一般都是通用的 我看到淘宝也有iframe</div>2019-04-19</li><br/><li><span>umaru</span> 👍（2） 💬（0）<div>Style元素不能使用css属性，这句话没看懂</div>2019-04-10</li><br/><li><span>Geek_de3c35</span> 👍（1） 💬（0）<div>https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;HTTP&#47;Headers&#47;Content-Security-Policy&#47;img-src</div>2020-11-24</li><br/><li><span>宗麒麟</span> 👍（1） 💬（0）<div>老师还是承接刚才那个问题，
+</p>2019-04-10</li><br/><li><span>阿成</span> 👍（7） 💬（0）<p>常见的有：http:&#47;&#47;,https:&#47;&#47;,file:&#47;&#47;,data...</p>2019-04-09</li><br/><li><span>南墙的树</span> 👍（5） 💬（0）<p>h5的设计稿，完全照办app设计稿，页面顶部的title导航（包括返回按钮），页面主体部分引入外部资源，这种需求，不使用iframe，请问老师该怎么处理？或者说，从一个不懂技术的产品那里开始，这种方案就有问题？</p>2019-04-25</li><br/><li><span>Geek_0bb537</span> 👍（3） 💬（2）<p>iframe有没有什么好的替代方案 那个导航栏一般都是通用的 我看到淘宝也有iframe</p>2019-04-19</li><br/><li><span>umaru</span> 👍（2） 💬（0）<p>Style元素不能使用css属性，这句话没看懂</p>2019-04-10</li><br/><li><span>Geek_de3c35</span> 👍（1） 💬（0）<p>https:&#47;&#47;developer.mozilla.org&#47;zh-CN&#47;docs&#47;Web&#47;HTTP&#47;Headers&#47;Content-Security-Policy&#47;img-src</p>2020-11-24</li><br/><li><span>宗麒麟</span> 👍（1） 💬（0）<p>老师还是承接刚才那个问题，
 js里  .优先级高于  =，因此:
 1、先计算a.x，此时内存地址1多了x
 2、计算最右边  =  ，此时a指向了新地址2
 3、最后计算左边的=，此时内存地址1的x指向了a
-应该是这样的原理，但是我感觉少了一个东西，就是第2步里，a已经指向新地址2了，为什么第三步执行a.x时，a.x还能指向地址1里的x呢？</div>2019-08-08</li><br/><li><span>🐳李小博🐳</span> 👍（1） 💬（2）<div>@Geeker1992
-回答你的问题，只有可替换型元素才能用src，元素就是实实在在有内容的东西，不管有没有样式文档都会存在，而css是样式文档，他不是可替换型元素。</div>2019-05-07</li><br/><li><span>奕</span> 👍（1） 💬（0）<div>就说一个经常见到的： blob</div>2019-04-26</li><br/><li><span>稚鸿同学</span> 👍（0） 💬（0）<div>winter你好，如果当前页面需要有个区域是当前系统其他页面或者其他系统的，可以不用iframe，还也可以怎么处理？因为可能还有和子页面的交互</div>2019-12-01</li><br/><li><span>AbyssKR</span> 👍（0） 💬（0）<div>style 标签不在替换中元素中，所以不使用 src 属性。&lt;style src=&quot;&quot;&gt; W3C 的回答是从未讨论过，而且看到貌似以前还出现过 link 引入 JavaScript 的想法。</div>2019-04-11</li><br/>
+应该是这样的原理，但是我感觉少了一个东西，就是第2步里，a已经指向新地址2了，为什么第三步执行a.x时，a.x还能指向地址1里的x呢？</p>2019-08-08</li><br/><li><span>🐳李小博🐳</span> 👍（1） 💬（2）<p>@Geeker1992
+回答你的问题，只有可替换型元素才能用src，元素就是实实在在有内容的东西，不管有没有样式文档都会存在，而css是样式文档，他不是可替换型元素。</p>2019-05-07</li><br/><li><span>奕</span> 👍（1） 💬（0）<p>就说一个经常见到的： blob</p>2019-04-26</li><br/><li><span>稚鸿同学</span> 👍（0） 💬（0）<p>winter你好，如果当前页面需要有个区域是当前系统其他页面或者其他系统的，可以不用iframe，还也可以怎么处理？因为可能还有和子页面的交互</p>2019-12-01</li><br/><li><span>AbyssKR</span> 👍（0） 💬（0）<p>style 标签不在替换中元素中，所以不使用 src 属性。&lt;style src=&quot;&quot;&gt; W3C 的回答是从未讨论过，而且看到貌似以前还出现过 link 引入 JavaScript 的想法。</p>2019-04-11</li><br/>
 </ul>

@@ -261,19 +261,19 @@ cmdline.execute('scrapy crawl sina_spider'.split())
 
 欢迎你在留言区与我交流讨论，我们下节课再见。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>Geek_79da7f</span> 👍（3） 💬（2）<div>关于安装ChromeDriver, mac上面一个命令行就解决了： brew install chromedriver</div>2023-09-18</li><br/><li><span>地铁林黛玉</span> 👍（1） 💬（4）<div>爬取的这些数据我们需要通过哪些方法知道是不是违法的呢？</div>2023-05-04</li><br/><li><span>未来已来</span> 👍（1） 💬（2）<div>遇到一个报错：Failure while parsing robots.txt.
-解决：把 settings.py 文件的 `ROBOTSTXT_OBEY = True` 改为 `ROBOTSTXT_OBEY = False` 即可</div>2023-05-03</li><br/><li><span>peter</span> 👍（1） 💬（3）<div>请教老师几个问题啊
+<li><span>Geek_79da7f</span> 👍（3） 💬（2）<p>关于安装ChromeDriver, mac上面一个命令行就解决了： brew install chromedriver</p>2023-09-18</li><br/><li><span>地铁林黛玉</span> 👍（1） 💬（4）<p>爬取的这些数据我们需要通过哪些方法知道是不是违法的呢？</p>2023-05-04</li><br/><li><span>未来已来</span> 👍（1） 💬（2）<p>遇到一个报错：Failure while parsing robots.txt.
+解决：把 settings.py 文件的 `ROBOTSTXT_OBEY = True` 改为 `ROBOTSTXT_OBEY = False` 即可</p>2023-05-03</li><br/><li><span>peter</span> 👍（1） 💬（3）<p>请教老师几个问题啊
 Q1：网站后端是用Java开发的，可以用Scrapy来抓取数据吗？相当于两种语言的混合使用了。
 Q2：Anaconda安装的最后一步提示是“python3.9”,为什么创建虚拟环境的时候python版本是3.7？
 Q3：安装的这个Anaconda，是正常的python开发环境吧。比如用来学习python，编码等。
 Q4：conda list命令列出的scrapy，其build channel是py37XXX，
-其中的37是python版本吗？</div>2023-04-24</li><br/><li><span>GhostGuest</span> 👍（1） 💬（3）<div>更新建议改为一天一更，现在这节奏太慢了，前摇半天</div>2023-04-24</li><br/><li><span>Weitzenböck</span> 👍（0） 💬（5）<div>我在执行main函数的时候出现了这个错误&quot;UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xc3 in position 93: invalid continuation byte&quot;，是不是https:&#47;&#47;sina.com.cn这个网站没有用utf-8的编码格式啊</div>2023-06-14</li><br/><li><span>叶圣枫</span> 👍（2） 💬（0）<div>我的macbook上会报这个错：
+其中的37是python版本吗？</p>2023-04-24</li><br/><li><span>GhostGuest</span> 👍（1） 💬（3）<p>更新建议改为一天一更，现在这节奏太慢了，前摇半天</p>2023-04-24</li><br/><li><span>Weitzenböck</span> 👍（0） 💬（5）<p>我在执行main函数的时候出现了这个错误&quot;UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xc3 in position 93: invalid continuation byte&quot;，是不是https:&#47;&#47;sina.com.cn这个网站没有用utf-8的编码格式啊</p>2023-06-14</li><br/><li><span>叶圣枫</span> 👍（2） 💬（0）<p>我的macbook上会报这个错：
 urllib3 v2.0 only supports OpenSSL 1.1.1+, currently the &#39;ssl&#39; module is compiled with &#39;OpenSSL 1.0.2u  20 Dec 2019
 解决方案是降级urllib3:
 pip install urllib3==1.26.6
 
-</div>2024-01-12</li><br/><li><span>悟尘</span> 👍（2） 💬（0）<div>chrom 114 版本以上的 下载chromedriver在这里：https:&#47;&#47;registry.npmmirror.com&#47;binary.html?path=chrome-for-testing&#47;</div>2023-12-11</li><br/><li><span>李</span> 👍（0） 💬（0）<div>老师出现这个错误是什么原因</div>2024-02-18</li><br/><li><span>悟尘</span> 👍（0） 💬（1）<div> [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https:&#47;&#47;www.sina.com.cn&#47;&gt; from &lt;GET https:&#47;&#47;sina.com.cn&gt;
+</p>2024-01-12</li><br/><li><span>悟尘</span> 👍（2） 💬（0）<p>chrom 114 版本以上的 下载chromedriver在这里：https:&#47;&#47;registry.npmmirror.com&#47;binary.html?path=chrome-for-testing&#47;</p>2023-12-11</li><br/><li><span>李</span> 👍（0） 💬（0）<p>老师出现这个错误是什么原因</p>2024-02-18</li><br/><li><span>悟尘</span> 👍（0） 💬（1）<p> [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https:&#47;&#47;www.sina.com.cn&#47;&gt; from &lt;GET https:&#47;&#47;sina.com.cn&gt;
  [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https:&#47;&#47;www.sina.com.cn&#47;&gt; (referer: None)
 
-这算是连上了？</div>2023-12-11</li><br/>
+这算是连上了？</p>2023-12-11</li><br/>
 </ul>

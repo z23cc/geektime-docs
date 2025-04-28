@@ -36,15 +36,15 @@
 
 编辑提示：建模作业活动虽然告一段落，但如果你学完迭代一，希望通过练习巩固一下，还是推荐你自己动手练习一下，并把自己的成果以超链接分享到留言区。作业点评的直播回放，可以点击[这里](https://time.geekbang.org/column/article/629140)查看（自行思考练习后再听讲解，效果更好）。
 <div><strong>精选留言（12）</strong></div><ul>
-<li><span>阿飞</span> 👍（0） 💬（1）<div>阿飞
-https:&#47;&#47;shimo.im&#47;boards&#47;9030JvEweMIe4Jkw&#47;</div>2023-05-10</li><br/><li><span>龙腾</span> 👍（2） 💬（0）<div>龙腾
-https:&#47;&#47;www.wolai.com&#47;sunteng&#47;byzrjBp2CJm7Rp3vEog4tT</div>2023-01-31</li><br/><li><span>aoe</span> 👍（1） 💬（0）<div>50 分</div>2023-01-25</li><br/><li><span>Jaising</span> 👍（0） 💬（0）<div>Jaising
-https:&#47;&#47;shimo.im&#47;file-invite&#47;c5BySwBocCScj2LTpMamDUQgkARB6&#47; B-boy 邀请您协作《建模健身操——敏捷项目管理的领域建模训练》，点击链接开始编辑</div>2023-01-31</li><br/><li><span>支离书</span> 👍（0） 💬（0）<div>支离书
-http:&#47;&#47;image.onlyfew.cn&#47;picgo&#47;20230131160459.png</div>2023-01-31</li><br/><li><span>FiRerOUNd</span> 👍（0） 💬（0）<div>fireround
-https:&#47;&#47;drive.google.com&#47;file&#47;d&#47;1KYATUE0uruetcSyll5lJjHd2lDQHKq3G&#47;view?usp=sharing</div>2023-01-30</li><br/><li><span>cluski</span> 👍（0） 💬（0）<div>cluski 
-https:&#47;&#47;docs.qq.com&#47;sheet&#47;DWWd6RFJTWVhqZnFK?tab=BB08J2</div>2023-01-30</li><br/><li><span>6点无痛早起学习的和尚</span> 👍（0） 💬（0）<div>和尚 + 【腾讯文档】极客 DDD 的领域建模作业
-https:&#47;&#47;docs.qq.com&#47;doc&#47;DYlNHZXJzVHBVdlBh</div>2023-01-30</li><br/><li><span>杀手要有爱</span> 👍（0） 💬（0）<div>客观题50分  -.-!
+<li><span>阿飞</span> 👍（0） 💬（1）<p>阿飞
+https:&#47;&#47;shimo.im&#47;boards&#47;9030JvEweMIe4Jkw&#47;</p>2023-05-10</li><br/><li><span>龙腾</span> 👍（2） 💬（0）<p>龙腾
+https:&#47;&#47;www.wolai.com&#47;sunteng&#47;byzrjBp2CJm7Rp3vEog4tT</p>2023-01-31</li><br/><li><span>aoe</span> 👍（1） 💬（0）<p>50 分</p>2023-01-25</li><br/><li><span>Jaising</span> 👍（0） 💬（0）<p>Jaising
+https:&#47;&#47;shimo.im&#47;file-invite&#47;c5BySwBocCScj2LTpMamDUQgkARB6&#47; B-boy 邀请您协作《建模健身操——敏捷项目管理的领域建模训练》，点击链接开始编辑</p>2023-01-31</li><br/><li><span>支离书</span> 👍（0） 💬（0）<p>支离书
+http:&#47;&#47;image.onlyfew.cn&#47;picgo&#47;20230131160459.png</p>2023-01-31</li><br/><li><span>FiRerOUNd</span> 👍（0） 💬（0）<p>fireround
+https:&#47;&#47;drive.google.com&#47;file&#47;d&#47;1KYATUE0uruetcSyll5lJjHd2lDQHKq3G&#47;view?usp=sharing</p>2023-01-30</li><br/><li><span>cluski</span> 👍（0） 💬（0）<p>cluski 
+https:&#47;&#47;docs.qq.com&#47;sheet&#47;DWWd6RFJTWVhqZnFK?tab=BB08J2</p>2023-01-30</li><br/><li><span>6点无痛早起学习的和尚</span> 👍（0） 💬（0）<p>和尚 + 【腾讯文档】极客 DDD 的领域建模作业
+https:&#47;&#47;docs.qq.com&#47;doc&#47;DYlNHZXJzVHBVdlBh</p>2023-01-30</li><br/><li><span>杀手要有爱</span> 👍（0） 💬（0）<p>客观题50分  -.-!
 【腾讯文档】领域模型图
-https:&#47;&#47;docs.qq.com&#47;doc&#47;DT01xSVNXVWFlbFBo</div>2023-01-29</li><br/><li><span>小5</span> 👍（0） 💬（2）<div>小5 https:&#47;&#47;www.yuque.com&#47;g&#47;u1146543&#47;vgb2ar&#47;tb1ly4oue9bxo9zu&#47;collaborator&#47;join?token=DGitfTPitUJauCL8# 《落地DDD笔记03-敏捷管理项目领域建模练习》</div>2023-01-28</li><br/><li><span>李威</span> 👍（0） 💬（0）<div>李威 + https:&#47;&#47;docs.qq.com&#47;doc&#47;DWHNWT21lb2NKY3Zu</div>2023-01-28</li><br/><li><span>沐瑞Lynn</span> 👍（0） 💬（0）<div>沐瑞Lynn 【腾讯文档】DDD落地练习
-https:&#47;&#47;docs.qq.com&#47;doc&#47;DU1NPbE1FaUxBVlVa</div>2023-01-27</li><br/>
+https:&#47;&#47;docs.qq.com&#47;doc&#47;DT01xSVNXVWFlbFBo</p>2023-01-29</li><br/><li><span>小5</span> 👍（0） 💬（2）<p>小5 https:&#47;&#47;www.yuque.com&#47;g&#47;u1146543&#47;vgb2ar&#47;tb1ly4oue9bxo9zu&#47;collaborator&#47;join?token=DGitfTPitUJauCL8# 《落地DDD笔记03-敏捷管理项目领域建模练习》</p>2023-01-28</li><br/><li><span>李威</span> 👍（0） 💬（0）<p>李威 + https:&#47;&#47;docs.qq.com&#47;doc&#47;DWHNWT21lb2NKY3Zu</p>2023-01-28</li><br/><li><span>沐瑞Lynn</span> 👍（0） 💬（0）<p>沐瑞Lynn 【腾讯文档】DDD落地练习
+https:&#47;&#47;docs.qq.com&#47;doc&#47;DU1NPbE1FaUxBVlVa</p>2023-01-27</li><br/>
 </ul>

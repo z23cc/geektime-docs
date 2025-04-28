@@ -132,9 +132,9 @@ mysql> SHOW STATUS LIKE 'last_query_cost';
 
 欢迎在评论区写下你的答案，如果你觉得这篇文章有帮助，不妨把它分享给你的朋友或者同事吧。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>NIXUS</span> 👍（83） 💬（7）<div>请问下老师，缓冲池和查询缓存是一个东西吗？</div>2019-08-22</li><br/><li><span>DZ</span> 👍（54） 💬（2）<div>顺序读的页面平均加载效率更高是因为顺序读更贴合存储介质的物理特性，即一次顺序读取一批相邻物理块的效率，大于多次随机访问不连续的物理块的效率。
+<li><span>NIXUS</span> 👍（83） 💬（7）<p>请问下老师，缓冲池和查询缓存是一个东西吗？</p>2019-08-22</li><br/><li><span>DZ</span> 👍（54） 💬（2）<p>顺序读的页面平均加载效率更高是因为顺序读更贴合存储介质的物理特性，即一次顺序读取一批相邻物理块的效率，大于多次随机访问不连续的物理块的效率。
 
-缓冲池机制和页面加载方式是计算机体系结构的经典方式，首先必须承认两个客观事实，一是资源有限，二是时间有限。从硬盘到内存再到CPU缓存，价格和效率永远存在矛盾，只能通过多级缓存的形式，将更贵的资源留给更热的数据。</div>2019-08-14</li><br/><li><span>小年</span> 👍（11） 💬（1）<div>老师，不止可否在哪一期讲一讲面试的时候常考的一些SQL相关的内容呀？感觉这些索引深入了以后面试不太会涉及到，抱歉功利了点因为最近在秋招各种面试，担心看的太深了反而暂时用不到...</div>2019-09-06</li><br/><li><span>lmtoo</span> 👍（7） 💬（4）<div>innodb_buffer_pool_size是缓存池总大小吗？如果缓存池个数大于1，那每个缓冲池大小是不是innodb_buffer_pool_size&#47;innodb_buffer_pool_instances?</div>2019-08-14</li><br/><li><span>峻铭</span> 👍（6） 💬（3）<div>SELECT comment_id, product_id, comment_text, user_id FROM product_comment WHERE comment_id = 900001;
+缓冲池机制和页面加载方式是计算机体系结构的经典方式，首先必须承认两个客观事实，一是资源有限，二是时间有限。从硬盘到内存再到CPU缓存，价格和效率永远存在矛盾，只能通过多级缓存的形式，将更贵的资源留给更热的数据。</p>2019-08-14</li><br/><li><span>小年</span> 👍（11） 💬（1）<p>老师，不止可否在哪一期讲一讲面试的时候常考的一些SQL相关的内容呀？感觉这些索引深入了以后面试不太会涉及到，抱歉功利了点因为最近在秋招各种面试，担心看的太深了反而暂时用不到...</p>2019-09-06</li><br/><li><span>lmtoo</span> 👍（7） 💬（4）<p>innodb_buffer_pool_size是缓存池总大小吗？如果缓存池个数大于1，那每个缓冲池大小是不是innodb_buffer_pool_size&#47;innodb_buffer_pool_instances?</p>2019-08-14</li><br/><li><span>峻铭</span> 👍（6） 💬（3）<p>SELECT comment_id, product_id, comment_text, user_id FROM product_comment WHERE comment_id = 900001;
 SELECT comment_id, product_id, comment_text, user_id FROM product_comment WHERE comment_id BETWEEN 900001 AND 900100;
 这两句查询的last_query_cost都是4.724，说明这不是页
 官网：https:&#47;&#47;dev.mysql.com&#47;doc&#47;refman&#47;8.0&#47;en&#47;server-status-variables.html
@@ -142,10 +142,10 @@ SELECT comment_id, product_id, comment_text, user_id FROM product_comment WHERE 
 The total cost of the last compiled query as computed by the query optimizer. This is useful for comparing the cost of different query plans for the same query. The default value of 0 means that no query has been compiled yet. The default value is 0. Last_query_cost has session scope
 对同一个查询语句的不同查询计划的代价进行计较，选择代价最小的。last_query_cost得到的值只是一个查询计划的评分值，不是页
 
-</div>2019-09-18</li><br/><li><span>扶幽</span> 👍（5） 💬（1）<div>是因为磁盘IO时寻道和半圈旋转时间较长吗？</div>2019-11-07</li><br/><li><span>NO.9</span> 👍（5） 💬（1）<div>老师 你好，请教一个问题，
+</p>2019-09-18</li><br/><li><span>扶幽</span> 👍（5） 💬（1）<p>是因为磁盘IO时寻道和半圈旋转时间较长吗？</p>2019-11-07</li><br/><li><span>NO.9</span> 👍（5） 💬（1）<p>老师 你好，请教一个问题，
 看完本章前面的部分之后忽然间意识到：
-      数据库Down掉之后的Recover，只能是用最新对backup+checkpoint+transaction的log 恢复，就是因为commit的内容还没有从缓冲池写入磁盘。</div>2019-08-25</li><br/><li><span>用0和1改变自己</span> 👍（4） 💬（4）<div>1,顺序读取是一种批量读取，读取的数据都是相邻的，所以不需要每一页都进行I&#47;O操作，平均下来就效率更高了。
-2.缓存池的刷新机制和许多缓存都是一样的，达到一定数量后进行更新，以达到提升性能都目的。</div>2019-08-14</li><br/><li><span>程序员花卷</span> 👍（3） 💬（1）<div>第一个问题
+      数据库Down掉之后的Recover，只能是用最新对backup+checkpoint+transaction的log 恢复，就是因为commit的内容还没有从缓冲池写入磁盘。</p>2019-08-25</li><br/><li><span>用0和1改变自己</span> 👍（4） 💬（4）<p>1,顺序读取是一种批量读取，读取的数据都是相邻的，所以不需要每一页都进行I&#47;O操作，平均下来就效率更高了。
+2.缓存池的刷新机制和许多缓存都是一样的，达到一定数量后进行更新，以达到提升性能都目的。</p>2019-08-14</li><br/><li><span>程序员花卷</span> 👍（3） 💬（1）<p>第一个问题
 我们的数据在磁盘上是相邻存储的，当我们将数据从磁盘中加载读取到缓冲区的时候，就直接一堆一堆的读取，根本不需要单独的去对某个数据进行I&#47;O的操作，这样效率就会很高，（重点在于数据在磁盘中是相邻存储的）
 
 第二个问题
@@ -153,12 +153,12 @@ The total cost of the last compiled query as computed by the query optimizer. Th
 我觉得CPU这个访问数据的方式和数据库中访问的方式的原理是一样的！CPU中是CPU Cache,数据库中呢是比如”Redis缓存、MemCache缓存”等！
 
 不知道上述总结是否正确，但是我觉得万变不离其宗，很多东西只是换了一种方式去操作而已，其根本的原理是不变的！有不对的地方，还请老师指正！
-</div>2019-12-24</li><br/><li><span>wonderq_gk</span> 👍（3） 💬（1）<div>如何把数据放到缓冲池
+</p>2019-12-24</li><br/><li><span>wonderq_gk</span> 👍（3） 💬（1）<p>如何把数据放到缓冲池
 
-</div>2019-08-29</li><br/><li><span>wonderq_gk</span> 👍（2） 💬（1）<div>老师，我这里size是32M，为什么也是有8个缓冲池</div>2019-08-29</li><br/><li><span>Geek_Wison</span> 👍（2） 💬（2）<div>老师，您好。这一节讲的数据库缓存池和新版本MySQL8.0取消的缓存指的是同一个东西吗？
-如果是的话，那这节课的内容只在旧版本的mysql成立，在新版本的mysql（取消了缓存的版本）就没用了？</div>2019-08-16</li><br/><li><span>许童童</span> 👍（1） 💬（1）<div>你能解释下相比于单个页面的随机读，为什么顺序读取时平均一个页面的加载效率会提高吗？
+</p>2019-08-29</li><br/><li><span>wonderq_gk</span> 👍（2） 💬（1）<p>老师，我这里size是32M，为什么也是有8个缓冲池</p>2019-08-29</li><br/><li><span>Geek_Wison</span> 👍（2） 💬（2）<p>老师，您好。这一节讲的数据库缓存池和新版本MySQL8.0取消的缓存指的是同一个东西吗？
+如果是的话，那这节课的内容只在旧版本的mysql成立，在新版本的mysql（取消了缓存的版本）就没用了？</p>2019-08-16</li><br/><li><span>许童童</span> 👍（1） 💬（1）<p>你能解释下相比于单个页面的随机读，为什么顺序读取时平均一个页面的加载效率会提高吗？
 和硬盘的结构有关，硬盘如果读取连续的页，那平均延时和寻道时间平均到每个页面就非常少了，甚至非常接近读取一个页面的效率。
 
 另外，对于今天学习的缓冲池机制和数据页加载的方式，你有什么心得体会吗？
-缓冲机制在计算机性能优化随处可见，其理论依据就是计算机的局部性原理，空间局部性，时间局部性。</div>2019-08-14</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<div>1. 因为一次顺序读取的话，单次读取的数据页比较大， 落实到每个页的平均时间比较低，2. checkpoint 的落盘机制印象深刻， 有点类似异步的机制；</div>2019-12-19</li><br/><li><span>Ryoma</span> 👍（14） 💬（0）<div>在什么情况下，数据不在缓冲池中，而是在内存中，此时从内存中读取？</div>2020-03-17</li><br/>
+缓冲机制在计算机性能优化随处可见，其理论依据就是计算机的局部性原理，空间局部性，时间局部性。</p>2019-08-14</li><br/><li><span>爬行的蜗牛</span> 👍（0） 💬（1）<p>1. 因为一次顺序读取的话，单次读取的数据页比较大， 落实到每个页的平均时间比较低，2. checkpoint 的落盘机制印象深刻， 有点类似异步的机制；</p>2019-12-19</li><br/><li><span>Ryoma</span> 👍（14） 💬（0）<p>在什么情况下，数据不在缓冲池中，而是在内存中，此时从内存中读取？</p>2020-03-17</li><br/>
 </ul>

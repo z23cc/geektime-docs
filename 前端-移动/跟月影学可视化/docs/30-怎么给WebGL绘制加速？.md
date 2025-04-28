@@ -468,5 +468,5 @@ gl_FragColor = vec4(1) * step(random(st), 0.5);
 
 [WebGL2系列之实例数组(Instanced Arrays)](https://www.jianshu.com/p/d40a8b38adfe)
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>l_j_dota_1111</span> 👍（2） 💬（2）<div>如果几何图形都一样,但是位置不是随机的，而是从数据中获取的，是不是也不能使用静态批量渲染方式？</div>2021-08-13</li><br/>
+<li><span>l_j_dota_1111</span> 👍（2） 💬（2）<p>如果几何图形都一样,但是位置不是随机的，而是从数据中获取的，是不是也不能使用静态批量渲染方式？</p>2021-08-13</li><br/>
 </ul>

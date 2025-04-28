@@ -304,7 +304,7 @@ userInfo.updateInfo()
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>ytd</span> 👍（210） 💬（9）<div>&#47;&#47; 修改方法一：箭头函数最方便
+<li><span>ytd</span> 👍（210） 💬（9）<p>&#47;&#47; 修改方法一：箭头函数最方便
 let userInfo = {
   name:&quot;jack.ma&quot;,
   age:13,
@@ -406,7 +406,7 @@ let userInfo = {
     &#47;&#47; 模拟 xmlhttprequest 请求延时
     setTimeout(this.update.bind(this), 100)
   }
-}</div>2019-08-29</li><br/><li><span>William</span> 👍（28） 💬（7）<div>setTimeOut() 函数内部的回调函数，this指向全局函数。修复：在外部绑this或者使用箭头函数。
+}</p>2019-08-29</li><br/><li><span>William</span> 👍（28） 💬（7）<p>setTimeOut() 函数内部的回调函数，this指向全局函数。修复：在外部绑this或者使用箭头函数。
 ```
 let userInfo = {
   name:&quot;jack.ma&quot;,
@@ -444,11 +444,11 @@ let userInfo = {
 userInfo.updateInfo()
 ```
 
-</div>2019-08-29</li><br/><li><span>悬炫</span> 👍（25） 💬（8）<div>关于箭头函数，文章中说其没有自己的执行上下文，难道箭头函数就像let定义的变量一样是哥块级作用域吗？其内部定义的变量都是存储在词法环境中是吗？</div>2019-08-29</li><br/><li><span>风一样的浪漫</span> 👍（15） 💬（2）<div>老师请问下outer的位置是在变量对象内还是外，第10节描述是在内部的，可是11节的图outer放在变量对象外面了</div>2019-09-05</li><br/><li><span>李懂</span> 👍（6） 💬（5）<div>文章只是简单讲了下this的几种场景，不像前面变量申明，可以很清晰的知道在执行上下文的位置，也没有画图，看完还是不知道不能深入理解，更多的是一种记忆，这种是指向window，那种是指向对象。能不能深入到是如何实现this，才能知道缺陷的原因，这里一直是没理解的难点！</div>2019-08-29</li><br/><li><span>pyhhou</span> 👍（6） 💬（1）<div>思考题，有两种方法
+</p>2019-08-29</li><br/><li><span>悬炫</span> 👍（25） 💬（8）<p>关于箭头函数，文章中说其没有自己的执行上下文，难道箭头函数就像let定义的变量一样是哥块级作用域吗？其内部定义的变量都是存储在词法环境中是吗？</p>2019-08-29</li><br/><li><span>风一样的浪漫</span> 👍（15） 💬（2）<p>老师请问下outer的位置是在变量对象内还是外，第10节描述是在内部的，可是11节的图outer放在变量对象外面了</p>2019-09-05</li><br/><li><span>李懂</span> 👍（6） 💬（5）<p>文章只是简单讲了下this的几种场景，不像前面变量申明，可以很清晰的知道在执行上下文的位置，也没有画图，看完还是不知道不能深入理解，更多的是一种记忆，这种是指向window，那种是指向对象。能不能深入到是如何实现this，才能知道缺陷的原因，这里一直是没理解的难点！</p>2019-08-29</li><br/><li><span>pyhhou</span> 👍（6） 💬（1）<p>思考题，有两种方法
 1. 将 setTimeout 里面的函数变成箭头函数
 2. 在 setTimeout 外将 this 赋值给其他的变量，setTimeout 里面的函数通过作用域链去改变 userInfo 的属性
 
-很不错的文章，受益匪浅，感谢老师。这里有一个疑问就是，关于箭头函数，文章中说其没有自己的执行上下文，这里指的是箭头函数并不会创建自己的执行上下文变量并压栈，其只是被看作是一个块区域吗？那么在实际的开发中如何在普通函数和箭头函数之间做选择？关于这一点，老师有没有相关推荐的文章呢？谢谢老师</div>2019-08-29</li><br/><li><span>朱维娜🍍</span> 👍（4） 💬（3）<div>之前看到一种说法：this指向的永远是调用它的对象。按照这种说法，嵌套函数的调用者是window，与文中所述的“showThis调用内部函数不能继承this”有所出入，想请老师解答一下这种说法是否正确？</div>2019-08-31</li><br/><li><span>潘启宝</span> 👍（3） 💬（6）<div>let userInfo = {
+很不错的文章，受益匪浅，感谢老师。这里有一个疑问就是，关于箭头函数，文章中说其没有自己的执行上下文，这里指的是箭头函数并不会创建自己的执行上下文变量并压栈，其只是被看作是一个块区域吗？那么在实际的开发中如何在普通函数和箭头函数之间做选择？关于这一点，老师有没有相关推荐的文章呢？谢谢老师</p>2019-08-29</li><br/><li><span>朱维娜🍍</span> 👍（4） 💬（3）<p>之前看到一种说法：this指向的永远是调用它的对象。按照这种说法，嵌套函数的调用者是window，与文中所述的“showThis调用内部函数不能继承this”有所出入，想请老师解答一下这种说法是否正确？</p>2019-08-31</li><br/><li><span>潘启宝</span> 👍（3） 💬（6）<p>let userInfo = {
   name:&quot;jack.ma&quot;,
   age:13,
   sex:&#39;male&#39;,
@@ -462,7 +462,7 @@ userInfo.updateInfo()
   }
 }
 
-userInfo.updateInfo()</div>2019-08-29</li><br/><li><span>子曰</span> 👍（1） 💬（1）<div>let userInfo = {
+userInfo.updateInfo()</p>2019-08-29</li><br/><li><span>子曰</span> 👍（1） 💬（1）<p>let userInfo = {
     name:&quot;jack.ma&quot;,
     age:13,
     sex:&quot;male&quot;,
@@ -475,7 +475,7 @@ userInfo.updateInfo()</div>2019-08-29</li><br/><li><span>子曰</span> 👍（1�
       },100)
     }
   }
-  userInfo.updateInfo()</div>2019-08-29</li><br/><li><span>mfist</span> 👍（1） 💬（1）<div>延时函数更新此时的this对象指向了window全局对象。
+  userInfo.updateInfo()</p>2019-08-29</li><br/><li><span>mfist</span> 👍（1） 💬（1）<p>延时函数更新此时的this对象指向了window全局对象。
 解决方法就是文章老师提到的两种方法。
 1 this保存给self变量，通过变量作用域机制传递给嵌套函数。
 2箭头函数去锁定函数定义时候的this对象，箭头函数没有上下文，它会继承函数初始化对应上下文。
@@ -484,7 +484,7 @@ userInfo.updateInfo()</div>2019-08-29</li><br/><li><span>子曰</span> 👍（1�
 1 能否通过bind和apply改变箭头函数this指向？
 回头试一下，然后好好理理这几节内容
 
-</div>2019-08-29</li><br/><li><span>FreezeSoul</span> 👍（0） 💬（2）<div>感觉还缺一个property，原型链</div>2020-03-20</li><br/><li><span>Geek_b42f75</span> 👍（0） 💬（3）<div>发现一个事，虽然setTimeout改成箭头函数了，里面的this指向userInfo这个对象了。
+</p>2019-08-29</li><br/><li><span>FreezeSoul</span> 👍（0） 💬（2）<p>感觉还缺一个property，原型链</p>2020-03-20</li><br/><li><span>Geek_b42f75</span> 👍（0） 💬（3）<p>发现一个事，虽然setTimeout改成箭头函数了，里面的this指向userInfo这个对象了。
 但是在console.log(userInfo.age)打印age的时候，为什么还是13，没有改成39呢？
 我看不用setTimeout，直接在updateInfo方法里调用this.age = 39是能改变的。
 let userInfo = {
@@ -502,7 +502,7 @@ let userInfo = {
       }
 }
 userInfo.updateInfo()
-console.log(userInfo.age)</div>2019-08-30</li><br/><li><span>stone</span> 👍（0） 💬（1）<div>
+console.log(userInfo.age)</p>2019-08-30</li><br/><li><span>stone</span> 👍（0） 💬（1）<p>
 let userInfo = {
   name:&quot;jack.ma&quot;,
   age:13,
@@ -530,7 +530,7 @@ let userInfo = {
 }
 
 userInfo.updateInfo()
-</div>2019-08-29</li><br/><li><span>Geek_q29f6t</span> 👍（0） 💬（1）<div>思考题：
+</p>2019-08-29</li><br/><li><span>Geek_q29f6t</span> 👍（0） 💬（1）<p>思考题：
 这份代码在开发中是很常见的一种操作，调用了api后，希望在callback中执行一些操作。但此时，callback中的this已经不是原先那个caller了（即题目中的updateInfo）, 而是callback
 
 常见的方式是在后台的api中返回一个对象，如：{result: true, data:{name:&#39;pony.ma&#39;,age:39, sex:&#39;female&#39;}};
@@ -554,7 +554,7 @@ let userInfo = {
 }
 
 userInfo.updateInfo()
-</div>2019-08-29</li><br/><li><span>谢海涛</span> 👍（0） 💬（1）<div>let userInfo = {
+</p>2019-08-29</li><br/><li><span>谢海涛</span> 👍（0） 💬（1）<p>let userInfo = {
   name:&quot;jack.ma&quot;,
   age:13,
   sex:&quot;male&quot;,
@@ -566,5 +566,5 @@ userInfo.updateInfo()
       this.sex = &quot;female&quot;
     },100)
   }
-}</div>2019-08-29</li><br/>
+}</p>2019-08-29</li><br/>
 </ul>

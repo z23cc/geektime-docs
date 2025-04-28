@@ -349,14 +349,14 @@ Running migrations:
 
 今天我想给你留一个难度比较高的作业。RESTful API 在 Django 中是如何实现安全认证的？你能通过搜索和自学掌握这个知识点吗？希望可以在留言区看到你的认真学习记录和总结，我会一一给出建议。也欢迎你把这篇文章分享给你的朋友、同事，一起交流、一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（29） 💬（0）<div>常用的认证方式有，HTTP Basic Auth，OAuth，Cookie Auth，Token Auth，而 Django Restful 一种常用的方式是 JSON Web Token（JWT），这是一个非常轻巧的规范，可以参考 https:&#47;&#47;github.com&#47;jpadilla&#47;django-rest-framework-jwt.</div>2019-08-19</li><br/><li><span>小侠龙旋风</span> 👍（6） 💬（1）<div>老师，我本地的django版本是1.11.8，没法运行你的最新版本。
+<li><span>Jingxiao</span> 👍（29） 💬（0）<p>常用的认证方式有，HTTP Basic Auth，OAuth，Cookie Auth，Token Auth，而 Django Restful 一种常用的方式是 JSON Web Token（JWT），这是一个非常轻巧的规范，可以参考 https:&#47;&#47;github.com&#47;jpadilla&#47;django-rest-framework-jwt.</p>2019-08-19</li><br/><li><span>小侠龙旋风</span> 👍（6） 💬（1）<p>老师，我本地的django版本是1.11.8，没法运行你的最新版本。
 指出一个错误：不用手动创建migrations文件夹。执行python3 manage.py makemigrations命令就会生成了。
 有个问题：这个url的正则表达式我不太懂“path(&#39;positions&#47;&lt;str:asset&gt;&#39;, views.render_positions)”，&lt;str:asset&gt;不是一般都写成(?P&lt;asset&gt;[a-zA-Z]+)这样子的嘛？
 作业回答：
 因为http协议是无状态的，每次请求都是一次新的请求，不会记得之前通信的状态。所以需要一些特殊手段来记录状态。
 方法一：把userinfo存储在request.session中，每次请求进行验证userinfo；
-方法二：jwt生成一个包含用户信息的token令牌，并设置过期时间，每次处理客户端请求先验证是否请求头中带有token，要是有token解析出来的用户信息是否正确，以此来确定用户的登录状态。</div>2019-09-10</li><br/><li><span>jxs1211</span> 👍（4） 💬（1）<div>目前流行前后端分离，通过http通信，独立部署，不知在fackbook也是这样，另外想了解下python做后端有什么比较好的推荐书籍可供学习吗</div>2019-08-08</li><br/><li><span>Kuzaman</span> 👍（33） 💬（1）<div>建议老师以后能专门出一个实战栏目，必顶</div>2019-08-07</li><br/><li><span>图·美克尔</span> 👍（21） 💬（0）<div>MVC在Django中对应的是MTV</div>2019-08-15</li><br/><li><span>奥特虾不会写代码</span> 👍（16） 💬（4）<div>老师的专栏是我在极客时间看过的质量最高的专栏了，文字简单易懂，又不失深度，不知道以后会不会专门出一个量化交易的专栏，一定支持！</div>2019-08-07</li><br/><li><span>TKbook</span> 👍（6） 💬（2）<div>貌似还缺少一步，添加相关数据。</div>2019-08-07</li><br/><li><span>夜月不挂科</span> 👍（5） 💬（1）<div>django会自动生成一个csrf字段用来认证。</div>2019-08-07</li><br/><li><span>路伴友行</span> 👍（2） 💬（0）<div>DRF 有自带的token验证，也可以自己写中间件实现拦截</div>2019-08-12</li><br/><li><span>旗木卡卡</span> 👍（2） 💬（0）<div>不知不觉已经学习了40讲，专栏马上就结束了，还没学够！</div>2019-08-07</li><br/><li><span>山雨淋淋</span> 👍（1） 💬（0）<div>监控系统的稳定性谁来保证，监控监控系统本身？</div>2020-11-02</li><br/><li><span>8849</span> 👍（1） 💬（0）<div>Django是MVT，虽然是从MVC演变的，但还是有必要区别开</div>2020-10-19</li><br/><li><span>Rs先生</span> 👍（1） 💬（0）<div>请教老师一个问题，我用的是python2.7，然后Django的版本为1.11.29，但是在最后访问url的是时候的显示page not found。这个是什么原因呢？
-</div>2020-08-30</li><br/><li><span>追风筝的人</span> 👍（1） 💬（1）<div>
+方法二：jwt生成一个包含用户信息的token令牌，并设置过期时间，每次处理客户端请求先验证是否请求头中带有token，要是有token解析出来的用户信息是否正确，以此来确定用户的登录状态。</p>2019-09-10</li><br/><li><span>jxs1211</span> 👍（4） 💬（1）<p>目前流行前后端分离，通过http通信，独立部署，不知在fackbook也是这样，另外想了解下python做后端有什么比较好的推荐书籍可供学习吗</p>2019-08-08</li><br/><li><span>Kuzaman</span> 👍（33） 💬（1）<p>建议老师以后能专门出一个实战栏目，必顶</p>2019-08-07</li><br/><li><span>图·美克尔</span> 👍（21） 💬（0）<p>MVC在Django中对应的是MTV</p>2019-08-15</li><br/><li><span>奥特虾不会写代码</span> 👍（16） 💬（4）<p>老师的专栏是我在极客时间看过的质量最高的专栏了，文字简单易懂，又不失深度，不知道以后会不会专门出一个量化交易的专栏，一定支持！</p>2019-08-07</li><br/><li><span>TKbook</span> 👍（6） 💬（2）<p>貌似还缺少一步，添加相关数据。</p>2019-08-07</li><br/><li><span>夜月不挂科</span> 👍（5） 💬（1）<p>django会自动生成一个csrf字段用来认证。</p>2019-08-07</li><br/><li><span>路伴友行</span> 👍（2） 💬（0）<p>DRF 有自带的token验证，也可以自己写中间件实现拦截</p>2019-08-12</li><br/><li><span>旗木卡卡</span> 👍（2） 💬（0）<p>不知不觉已经学习了40讲，专栏马上就结束了，还没学够！</p>2019-08-07</li><br/><li><span>山雨淋淋</span> 👍（1） 💬（0）<p>监控系统的稳定性谁来保证，监控监控系统本身？</p>2020-11-02</li><br/><li><span>8849</span> 👍（1） 💬（0）<p>Django是MVT，虽然是从MVC演变的，但还是有必要区别开</p>2020-10-19</li><br/><li><span>Rs先生</span> 👍（1） 💬（0）<p>请教老师一个问题，我用的是python2.7，然后Django的版本为1.11.29，但是在最后访问url的是时候的显示page not found。这个是什么原因呢？
+</p>2020-08-30</li><br/><li><span>追风筝的人</span> 👍（1） 💬（1）<p>
 pip3 install Django
 django-admin --version
 
@@ -371,5 +371,5 @@ System check identified no issues (0 silenced).
 August 12, 2020 - 15:59:14
 Django version 3.1, using settings &#39;TradingMonitor.settings&#39;
 Starting development server at http:&#47;&#47;127.0.0.1:8000&#47;
-Quit the server with CONTROL-C. ，但是浏览器访问失败 是什么原因</div>2020-08-12</li><br/><li><span>Geek_aa780e</span> 👍（1） 💬（0）<div>可以讲一下在web项目中，对于非法情况，比如说数据库链接错误报的异常，该怎么处理吗？ 是直接抛到handler层，还是在哪进行捕获？ </div>2020-08-05</li><br/>
+Quit the server with CONTROL-C. ，但是浏览器访问失败 是什么原因</p>2020-08-12</li><br/><li><span>Geek_aa780e</span> 👍（1） 💬（0）<p>可以讲一下在web项目中，对于非法情况，比如说数据库链接错误报的异常，该怎么处理吗？ 是直接抛到handler层，还是在哪进行捕获？ </p>2020-08-05</li><br/>
 </ul>

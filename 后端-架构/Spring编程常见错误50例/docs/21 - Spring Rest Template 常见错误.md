@@ -503,5 +503,5 @@ public class HelloWorldController {
 
 期待你的思考，我们留言区见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>第一装甲集群司令克莱斯特</span> 👍（6） 💬（0）<div>传参数的时候，还遇到过Integer cannot cast to String.不好好看官方文档，仅仅依靠片面的互联网资料，就会踩坑。感谢老师！</div>2021-06-10</li><br/><li><span>jjn0703</span> 👍（3） 💬（0）<div>抓包排查问题 很关键的了~</div>2021-12-09</li><br/><li><span>chenlx</span> 👍（2） 💬（0）<div>不同版本的 SpringBoot UriComponentsBuilder#fromHttpUrl 和 UriComponentsBuilder#fromUriString 对 fragment 逻辑是不一致的，SpringBoot 2.7.6 UriComponentsBuilder#fromHttpUrl 得到结果是 helloworld:1 而不是 helloworld:1#2</div>2022-12-17</li><br/><li><span>刘增泽</span> 👍（0） 💬（0）<div>spring-boot 2.3.7.RELEASE UriComponentsBuilder的fromHttpUrl方法也添加了对fragment的解析</div>2023-12-24</li><br/>
+<li><span>第一装甲集群司令克莱斯特</span> 👍（6） 💬（0）<p>传参数的时候，还遇到过Integer cannot cast to String.不好好看官方文档，仅仅依靠片面的互联网资料，就会踩坑。感谢老师！</p>2021-06-10</li><br/><li><span>jjn0703</span> 👍（3） 💬（0）<p>抓包排查问题 很关键的了~</p>2021-12-09</li><br/><li><span>chenlx</span> 👍（2） 💬（0）<p>不同版本的 SpringBoot UriComponentsBuilder#fromHttpUrl 和 UriComponentsBuilder#fromUriString 对 fragment 逻辑是不一致的，SpringBoot 2.7.6 UriComponentsBuilder#fromHttpUrl 得到结果是 helloworld:1 而不是 helloworld:1#2</p>2022-12-17</li><br/><li><span>刘增泽</span> 👍（0） 💬（0）<p>spring-boot 2.3.7.RELEASE UriComponentsBuilder的fromHttpUrl方法也添加了对fragment的解析</p>2023-12-24</li><br/>
 </ul>

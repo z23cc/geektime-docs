@@ -135,15 +135,15 @@ sendCond.Signal()
 
 [戳此查看Go语言专栏文章配套详细代码。](https://github.com/hyper0x/Golang_Puzzlers)
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>hello peter</span> 👍（39） 💬（2）<div>老师, 感觉这个送信的例子似乎用chanel实现更简单.在网上也查了一些例子, 发现都可以用chanel替代. 那使用sync.Cond 的优势是什么呢, 或者有哪些独特的使用场景?</div>2018-10-26</li><br/><li><span>属雨</span> 👍（34） 💬（1）<div>个人理解，不确定对不对，请老师评判一下：
-因为Go语言传递对象时，使用的是浅拷贝的值传递，所以，当传递一个Cond对象时复制了这个Cond对象，但是低层保存的L(Locker类型)，noCopy(noCopy类型)，notify(notifyList类型)，checker(copyChecker)对象的指针没变，因此，*sync.Cond和sync.Cond都可以传递。</div>2018-10-12</li><br/><li><span>传说中的成大大</span> 👍（19） 💬（1）<div>这几天一直对条件变量的理解比较模糊，但是我想既然要学就学好 于是又去翻了Unix环境高级编程 总算把它跟互斥锁区分开了
+<li><span>hello peter</span> 👍（39） 💬（2）<p>老师, 感觉这个送信的例子似乎用chanel实现更简单.在网上也查了一些例子, 发现都可以用chanel替代. 那使用sync.Cond 的优势是什么呢, 或者有哪些独特的使用场景?</p>2018-10-26</li><br/><li><span>属雨</span> 👍（34） 💬（1）<p>个人理解，不确定对不对，请老师评判一下：
+因为Go语言传递对象时，使用的是浅拷贝的值传递，所以，当传递一个Cond对象时复制了这个Cond对象，但是低层保存的L(Locker类型)，noCopy(noCopy类型)，notify(notifyList类型)，checker(copyChecker)对象的指针没变，因此，*sync.Cond和sync.Cond都可以传递。</p>2018-10-12</li><br/><li><span>传说中的成大大</span> 👍（19） 💬（1）<p>这几天一直对条件变量的理解比较模糊，但是我想既然要学就学好 于是又去翻了Unix环境高级编程 总算把它跟互斥锁区分开了
 互斥锁 是对一个共享区域进行加锁 所有线程都是一种竞争的状态去访问
-而条件变量 主要是通过条件状态来判断，实际上他还是会阻塞 只不过不会像互斥锁一样去参与竞争，而是在哪里等待条件变量的状态发生改变过后的通知 再被唤醒</div>2020-04-09</li><br/><li><span>Geek_a8be59</span> 👍（15） 💬（3）<div>var mailbox uint8
+而条件变量 主要是通过条件状态来判断，实际上他还是会阻塞 只不过不会像互斥锁一样去参与竞争，而是在哪里等待条件变量的状态发生改变过后的通知 再被唤醒</p>2020-04-09</li><br/><li><span>Geek_a8be59</span> 👍（15） 💬（3）<p>var mailbox uint8
 var lock sync.RWMutex
 sendCond := sync.NewCond(&amp;lock)
 recvCond := sync.NewCond(&amp;lock)
 为什么不能向上面那样都用同一个互斥量，非要两个不同呢？老师，能讲一下区别么
-</div>2019-08-12</li><br/><li><span>郭星</span> 👍（5） 💬（1）<div>在for 循环中使用 wait,在我的测试中,当条件变量处于wait状态时,如果没有唤醒,当前协程会一直阻塞等待在wait这行代码,因此使用for 和 使用if 实际最终结果是相同的,为什么要使用for呢?
+</p>2019-08-12</li><br/><li><span>郭星</span> 👍（5） 💬（1）<p>在for 循环中使用 wait,在我的测试中,当条件变量处于wait状态时,如果没有唤醒,当前协程会一直阻塞等待在wait这行代码,因此使用for 和 使用if 实际最终结果是相同的,为什么要使用for呢?
 
 package lesson27
 
@@ -211,7 +211,7 @@ func TestCond(t *testing.T) {
 	}(max)
 	wg.Wait()
 }
-</div>2020-09-02</li><br/><li><span>啦啦啦</span> 👍（3） 💬（1）<div>想请问下老师，两个goroutine都使用了同一把锁，26讲（Mutex）里不是说明，尽量使用：是让每一个互斥锁都只保护一个临界区或一组相关临界区。有点搞不明白，望老师指点
+</p>2020-09-02</li><br/><li><span>啦啦啦</span> 👍（3） 💬（1）<p>想请问下老师，两个goroutine都使用了同一把锁，26讲（Mutex）里不是说明，尽量使用：是让每一个互斥锁都只保护一个临界区或一组相关临界区。有点搞不明白，望老师指点
 
 
 
@@ -248,11 +248,11 @@ go func(max int) { &#47;&#47; 用于发信。
 			lock.RUnlock()
 			sendCond.Signal()
 		}
-	}(max)</div>2022-06-07</li><br/><li><span>lesserror</span> 👍（3） 💬（1）<div>郝林老师，demo61.go 中的  两个go function（收信 和 发信），是怎么保证先 发信 后收信的呢？
+	}(max)</p>2022-06-07</li><br/><li><span>lesserror</span> 👍（3） 💬（1）<p>郝林老师，demo61.go 中的  两个go function（收信 和 发信），是怎么保证先 发信 后收信的呢？
 
-不是说 go function 函数 的执行 是 随机的么？ 我打印了很多遍，发现 都是执行的 发信 操作，然后是 收信 操作。</div>2021-08-15</li><br/><li><span>会玩code</span> 👍（2） 💬（2）<div>老师，不懂这里的recvCond为什么可以用读锁呢？这里也是有对资源做操作的呀（将mailbox置为0），用读锁不会有问题吗？</div>2020-05-15</li><br/><li><span>lofaith</span> 👍（1） 💬（1）<div>老师，读写锁之间不是互斥的吗，我理解应该在加上读锁的时候，写锁就会阻塞在lock这里，不会走到 sendCond.Wait() 这里啊。虽然能明白条件变量的作用了，但还是不清楚它的使用场景，老师能说一下使用场景吗</div>2021-11-15</li><br/><li><span>...</span> 👍（1） 💬（3）<div>老师 wait会释放锁吗</div>2019-02-20</li><br/><li><span>CrazyCodes</span> 👍（0） 💬（1）<div>*sync.Cond类型的值可以被传递吗？那sync.Cond类型的值呢？
+不是说 go function 函数 的执行 是 随机的么？ 我打印了很多遍，发现 都是执行的 发信 操作，然后是 收信 操作。</p>2021-08-15</li><br/><li><span>会玩code</span> 👍（2） 💬（2）<p>老师，不懂这里的recvCond为什么可以用读锁呢？这里也是有对资源做操作的呀（将mailbox置为0），用读锁不会有问题吗？</p>2020-05-15</li><br/><li><span>lofaith</span> 👍（1） 💬（1）<p>老师，读写锁之间不是互斥的吗，我理解应该在加上读锁的时候，写锁就会阻塞在lock这里，不会走到 sendCond.Wait() 这里啊。虽然能明白条件变量的作用了，但还是不清楚它的使用场景，老师能说一下使用场景吗</p>2021-11-15</li><br/><li><span>...</span> 👍（1） 💬（3）<p>老师 wait会释放锁吗</p>2019-02-20</li><br/><li><span>CrazyCodes</span> 👍（0） 💬（1）<p>*sync.Cond类型的值可以被传递吗？那sync.Cond类型的值呢？
 
-代码测试*sync.Cond 可以被传递，但sync.Cond不能，是因为必须是指针类型吗？</div>2023-11-24</li><br/><li><span>川川</span> 👍（0） 💬（1）<div>老师，我没太理解为啥 广播 是要在解锁之后再 触发吗？  client-go 中广播都是在锁内发生的啊
+代码测试*sync.Cond 可以被传递，但sync.Cond不能，是因为必须是指针类型吗？</p>2023-11-24</li><br/><li><span>川川</span> 👍（0） 💬（1）<p>老师，我没太理解为啥 广播 是要在解锁之后再 触发吗？  client-go 中广播都是在锁内发生的啊
 
 func (f *FIFO) Add(obj interface{}) error {
 	id, err := f.keyFunc(obj)
@@ -268,15 +268,15 @@ func (f *FIFO) Add(obj interface{}) error {
 	f.items[id] = obj
 	f.cond.Broadcast()
 	return nil
-}</div>2022-05-22</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<div>在运行读取mailbox的goroutine中，当mailbox=1时，可以取信，在这段由读锁锁定的临界区中，mailbox=0实际是一个写入操作，怎么理解这个读锁锁定的临界区中实则为一个写操作呢
+}</p>2022-05-22</li><br/><li><span>jxs1211</span> 👍（0） 💬（1）<p>在运行读取mailbox的goroutine中，当mailbox=1时，可以取信，在这段由读锁锁定的临界区中，mailbox=0实际是一个写入操作，怎么理解这个读锁锁定的临界区中实则为一个写操作呢
 log.Printf(&quot;receiver [%d]: the mailbox is full.&quot;, j)
 mailbox = 0
 log.Printf(&quot;receiver [%d]: the letter has been received.&quot;, j)
-lock.RUnlock()</div>2021-10-21</li><br/><li><span>lesserror</span> 👍（0） 💬（1）<div>郝林老师，如果能对照代码的打印输出流程讲就好了，有好多讲我看代码的输出挺懵的。</div>2021-08-15</li><br/><li><span>ileruza</span> 👍（0） 💬（1）<div>a := &amp;lock
+lock.RUnlock()</p>2021-10-21</li><br/><li><span>lesserror</span> 👍（0） 💬（1）<p>郝林老师，如果能对照代码的打印输出流程讲就好了，有好多讲我看代码的输出挺懵的。</p>2021-08-15</li><br/><li><span>ileruza</span> 👍（0） 💬（1）<p>a := &amp;lock
 b := lock.RLocker()
 
 fmt.Printf(&quot;%p\n&quot;, a)
 fmt.Printf(&quot;%p\n&quot;, b)
 
-它们地址都是一样的呀，为什么说是不同的lock呢？</div>2021-03-31</li><br/>
+它们地址都是一样的呀，为什么说是不同的lock呢？</p>2021-03-31</li><br/>
 </ul>

@@ -105,5 +105,5 @@ RootResource/Resource/ResourceMethod部分的任务要如何分解？
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>原来通过排序也可以实现策略模式，之前只知道使用HASH实现策略模式</div>2022-07-22</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>原来通过排序也可以实现策略模式，之前只知道使用HASH实现策略模式</p>2022-07-22</li><br/>
 </ul>

@@ -400,7 +400,7 @@ avg(irate(node_cpu_seconds_total{instance=~"$node",mode="iowait"}[30m])) by (ins
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>小昭</span> 👍（7） 💬（2）<div>今日思考题：
+<li><span>小昭</span> 👍（7） 💬（2）<p>今日思考题：
 问题1：JMeter 是如何把数据推送到 Grafana 中的？
 共分为两个大步骤：
 1、JMeter 将数据发给 InfluxDB：
@@ -426,9 +426,9 @@ avg(irate(node_cpu_seconds_total{instance=~"$node",mode="iowait"}[30m])) by (ins
 
 其实归根结底还是自己手头没有实际的性能项目来练习，边学边练其实才是最好的。
 
-最最后：文中“通过 writeAndSendMetrics，就将所有保存的 metrix 都发给了 InfluxDB。” 老师单词是不是拼错啦，应该是metric吧（或者是metrics?）</div>2020-03-30</li><br/><li><span>bettynie</span> 👍（7） 💬（1）<div>老师，按照你讲的原理，其实我们需要搭建 jmeter+influxdb+grafana 和 prometheus+exports+grafana 2套系统来分别监控我们需要的性能指标，是么？
+最最后：文中“通过 writeAndSendMetrics，就将所有保存的 metrix 都发给了 InfluxDB。” 老师单词是不是拼错啦，应该是metric吧（或者是metrics?）</p>2020-03-30</li><br/><li><span>bettynie</span> 👍（7） 💬（1）<p>老师，按照你讲的原理，其实我们需要搭建 jmeter+influxdb+grafana 和 prometheus+exports+grafana 2套系统来分别监控我们需要的性能指标，是么？
  jmeter+influxdb+grafana用来监控jmeter中的线程数，响应时间和吞吐量，prometheus+exports+grafana 用来监控系统资源或者数据库以及其他资源, 对么？
-并且prometheus+exports+grafana 只能监控linux和uinx系统，无法监控windows,并且只能监控mysql数据库，感觉好像就是为监控docker之内的容器而生的~</div>2020-02-29</li><br/><li><span>SeaYang</span> 👍（6） 💬（1）<div>老师您好，backend listener本身没有问题，可能我描述的不够清楚，我再描述一次我的问题：
+并且prometheus+exports+grafana 只能监控linux和uinx系统，无法监控windows,并且只能监控mysql数据库，感觉好像就是为监控docker之内的容器而生的~</p>2020-02-29</li><br/><li><span>SeaYang</span> 👍（6） 💬（1）<p>老师您好，backend listener本身没有问题，可能我描述的不够清楚，我再描述一次我的问题：
 1、背景
 我们基于jmeter做了个压测平台，在平台的前端页面上编写接口、场景等，点击压测，后端会调度多台压力机，每台压力机会将接口、场景数据使用jmeter的api生成jmx文件，然后调用jmeter的命令行启动压测。生成jmx文件的过程中会创建一个backend listener元件，每台压力机backend listener元件的application字段设置为了同一个值，这样子我们可以通过这个application值调用InfluxDB的http接口，获得所有压力机的tps总和
 
@@ -442,18 +442,18 @@ avg(irate(node_cpu_seconds_total{instance=~"$node",mode="iowait"}[30m])) by (ins
 后来同时启动30台压力机，也是看上去像是有一两台压力机没有抛数据一样，但jmeter日志都没问题，这就很奇怪了，如果是InfluxDB不支持20台压力机同时抛数据，那么30台压力机同时抛数据就应该最多每秒只有十几条数据啊。难道是因为每台压力机的application值都一样，有一定概率发生数据覆盖？
 
 3、解决办法
-将每台压力机的backend listener的application字段设置为不同的值，但是有一个相同的前缀，通过这个前缀值去查询总的TPS数据，经过几十次的测试，都是正常的，没有再出现问题了。但是之前是不是发生了数据覆盖也不确定，但暂时也不管了。</div>2020-11-12</li><br/><li><span>障碍物</span> 👍（5） 💬（1）<div>Prometheus有插件能监控sqlserver或者oracle等其他数据库么</div>2020-02-11</li><br/><li><span>dao</span> 👍（3） 💬（2）<div>如果有人和我一样安装的是 influxdb 2.0，那么需要在 JMeter Backend Listener 设置 influxdbUrl 和 influxdbToken。比如我的设置
+将每台压力机的backend listener的application字段设置为不同的值，但是有一个相同的前缀，通过这个前缀值去查询总的TPS数据，经过几十次的测试，都是正常的，没有再出现问题了。但是之前是不是发生了数据覆盖也不确定，但暂时也不管了。</p>2020-11-12</li><br/><li><span>障碍物</span> 👍（5） 💬（1）<p>Prometheus有插件能监控sqlserver或者oracle等其他数据库么</p>2020-02-11</li><br/><li><span>dao</span> 👍（3） 💬（2）<p>如果有人和我一样安装的是 influxdb 2.0，那么需要在 JMeter Backend Listener 设置 influxdbUrl 和 influxdbToken。比如我的设置
 influxdbUrl：http:&#47;&#47;192.168.1.196:9999&#47;api&#47;v2&#47;write?bucket=test&amp;org=dao
-influxdbToken：好长的一串 base64 编码的 token</div>2021-05-04</li><br/><li><span>蔚来懿</span> 👍（3） 💬（1）<div>老师，有一个疑问，我的情况是这样的，我们公司环境有很多（测试环境，开发环境，预发布环境，开发环境），很多个项目，每个项目结构复杂，机器有很多，如果按照这样的部署的话，需要安装很多软件，还有防火墙的问题，请问是否有轻量级的监控方式，比如说，直接在服务器上装工具（类似nmon，但是直观），</div>2021-01-13</li><br/><li><span>涓涓</span> 👍（3） 💬（1）<div>高老师，好。
+influxdbToken：好长的一串 base64 编码的 token</p>2021-05-04</li><br/><li><span>蔚来懿</span> 👍（3） 💬（1）<p>老师，有一个疑问，我的情况是这样的，我们公司环境有很多（测试环境，开发环境，预发布环境，开发环境），很多个项目，每个项目结构复杂，机器有很多，如果按照这样的部署的话，需要安装很多软件，还有防火墙的问题，请问是否有轻量级的监控方式，比如说，直接在服务器上装工具（类似nmon，但是直观），</p>2021-01-13</li><br/><li><span>涓涓</span> 👍（3） 💬（1）<p>高老师，好。
 你看这样配置行不行:
 1. 要监控的每台服务器都配置一个node_exporter
 2.  然后再找台服务器安装prometheus，在prometheus.yml中添加每个node_exporter的配置
-3. 最后在grafana中配置prometheus，查看采集的各台服务器数据。</div>2021-01-08</li><br/><li><span>SeaYang</span> 👍（3） 💬（1）<div>1、JMeter 是如何把数据推送到 Grafana 中呢？
+3. 最后在grafana中配置prometheus，查看采集的各台服务器数据。</p>2021-01-08</li><br/><li><span>SeaYang</span> 👍（3） 💬（1）<p>1、JMeter 是如何把数据推送到 Grafana 中呢？
 JMeter实际上是将数据推送到Influxdb中，Influxdb本身对外提供了HTTP接口，Grafana通过HTTP接口轮询性能指标，若自己去画前端页面图表的话，也可以不用Grafana，直接调用Influxdb的HTTP接口
 
 2、另外，同样是监控操作系统的计数器，监控平台中的数据和监控命令中的数据有什么区别？
 没有区别，只是命令可能能看到更多的值
 
-有时候压测过程中，压力机本身的资源情况也是需要关注的，通过Prometheus + node_exporter + Grafana可以很方便的查看压力机集群的资源情况，比传统一台台登录方便很多，顺便熟悉监控的部署</div>2020-11-11</li><br/><li><span>杜艳</span> 👍（3） 💬（16）<div>感觉老师讲的都是偏理论，知道数据的来龙去脉了，但是使用过程怎么搭建这个整体的监控平台步骤能不能详细介绍，让我们可以用在项目中呢？</div>2020-02-09</li><br/><li><span>Cheese</span> 👍（2） 💬（1）<div>老师，如果用nodeexporter监控容器要怎么监控，因为容器IP是变化的，是通过端口来监控吗</div>2021-11-21</li><br/><li><span>不将就</span> 👍（2） 💬（1）<div>问题1:：Jmeter直接面向的是influxdb,Granfana通过官方插件取指定的influxdb中抓取数据做展示
-问题2：监控平台的数据本质上还是通过操作系统命令获取的，而且有抓取周期，通过网络传过来，实时性不如直接在操作系统获取，但是好处也是明显的，就是图形化展示和历史监控数据的便捷查询</div>2020-11-05</li><br/><li><span>aoe</span> 👍（2） 💬（3）<div>上来安装了 InfluxDB 2.0 ，结果悲剧了，找了一天没找到怎么创建 database，后来看官方文档，感觉是理念变了，全部通过 API 完成。请选择 InfluxDB v1.8 ，避免 2.0 的尴尬。</div>2020-10-28</li><br/><li><span>Geek_a55bf0</span> 👍（2） 💬（1）<div>高老师，我的jmeter传到influxdb的数据没有事务名，请问您知道原因吗？如果没有碰到过麻烦提供下您的软件版本，我按您的版本安装试试</div>2020-06-16</li><br/><li><span>Joie</span> 👍（2） 💬（1）<div>我在项目中用到了jmeter+influxDB+grafana，拉长时间段来看TPS和响应时间 还有分事务来看不同趋势 效果很明显。不过有时候不知道为什么在趋势显示时中间会有断开曲线的情况，在jmeter自身的log中是没有出现的</div>2020-04-16</li><br/><li><span>郑频雅</span> 👍（1） 💬（1）<div>请问老师，除了这套工具，nmon为什么没有介绍，这个工具不是必不可少的？</div>2021-07-09</li><br/>
+有时候压测过程中，压力机本身的资源情况也是需要关注的，通过Prometheus + node_exporter + Grafana可以很方便的查看压力机集群的资源情况，比传统一台台登录方便很多，顺便熟悉监控的部署</p>2020-11-11</li><br/><li><span>杜艳</span> 👍（3） 💬（16）<p>感觉老师讲的都是偏理论，知道数据的来龙去脉了，但是使用过程怎么搭建这个整体的监控平台步骤能不能详细介绍，让我们可以用在项目中呢？</p>2020-02-09</li><br/><li><span>Cheese</span> 👍（2） 💬（1）<p>老师，如果用nodeexporter监控容器要怎么监控，因为容器IP是变化的，是通过端口来监控吗</p>2021-11-21</li><br/><li><span>不将就</span> 👍（2） 💬（1）<p>问题1:：Jmeter直接面向的是influxdb,Granfana通过官方插件取指定的influxdb中抓取数据做展示
+问题2：监控平台的数据本质上还是通过操作系统命令获取的，而且有抓取周期，通过网络传过来，实时性不如直接在操作系统获取，但是好处也是明显的，就是图形化展示和历史监控数据的便捷查询</p>2020-11-05</li><br/><li><span>aoe</span> 👍（2） 💬（3）<p>上来安装了 InfluxDB 2.0 ，结果悲剧了，找了一天没找到怎么创建 database，后来看官方文档，感觉是理念变了，全部通过 API 完成。请选择 InfluxDB v1.8 ，避免 2.0 的尴尬。</p>2020-10-28</li><br/><li><span>Geek_a55bf0</span> 👍（2） 💬（1）<p>高老师，我的jmeter传到influxdb的数据没有事务名，请问您知道原因吗？如果没有碰到过麻烦提供下您的软件版本，我按您的版本安装试试</p>2020-06-16</li><br/><li><span>Joie</span> 👍（2） 💬（1）<p>我在项目中用到了jmeter+influxDB+grafana，拉长时间段来看TPS和响应时间 还有分事务来看不同趋势 效果很明显。不过有时候不知道为什么在趋势显示时中间会有断开曲线的情况，在jmeter自身的log中是没有出现的</p>2020-04-16</li><br/><li><span>郑频雅</span> 👍（1） 💬（1）<p>请问老师，除了这套工具，nmon为什么没有介绍，这个工具不是必不可少的？</p>2021-07-09</li><br/>
 </ul>

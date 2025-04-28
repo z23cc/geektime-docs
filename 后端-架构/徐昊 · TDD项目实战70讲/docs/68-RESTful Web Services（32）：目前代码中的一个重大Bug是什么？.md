@@ -237,5 +237,5 @@ class ResourceHandler implements ResourceRouter.Resource {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（1）</strong></div><ul>
-<li><span>aoe</span> 👍（0） 💬（0）<div>我感觉 Response 中只能返回 ok 和 noContent 更多是设计缺陷，因为之前没考虑到，现在突然发现了</div>2022-08-30</li><br/>
+<li><span>aoe</span> 👍（0） 💬（0）<p>我感觉 Response 中只能返回 ok 和 noContent 更多是设计缺陷，因为之前没考虑到，现在突然发现了</p>2022-08-30</li><br/>
 </ul>

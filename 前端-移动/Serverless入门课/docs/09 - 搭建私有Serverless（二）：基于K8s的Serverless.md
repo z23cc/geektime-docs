@@ -247,7 +247,7 @@ kubectl get svc istio-ingressgateway -n istio-system
 
 \[1] [https://istio.io/](https://istio.io/)
 <div><strong>精选留言（6）</strong></div><ul>
-<li><span>我来也</span> 👍（5） 💬（1）<div>折腾了一番,在老师的帮助下终于调通了.
+<li><span>我来也</span> 👍（5） 💬（1）<p>折腾了一番,在老师的帮助下终于调通了.
 在此给有需要的小伙伴一个参考:
 
 1. 需要新建一个OTS表user
@@ -274,5 +274,5 @@ kubectl get svc istio-ingressgateway -n istio-system
 本打算自己按着官方文档安装一番,结果很多镜像拉取不了.最后还是放弃了.
 后来在安装阿里云自带的Knative时走了些弯路,花了不少时间.
 主要是卸载Knative不干净,导致重装时怎么也装不成功,需要手动删除k8s上的一些资源才行.
-</div>2020-05-07</li><br/><li><span>程序员二师兄</span> 👍（4） 💬（2）<div>了解到云原生，三驾马车：K8s、Service Mesh、Serverless。还有其他的知识点：lstio、docker、Knative</div>2020-05-06</li><br/><li><span>小黑小小黑</span> 👍（1） 💬（1）<div>阿里的函数计算是基于knative来实现的吗?</div>2020-06-28</li><br/><li><span>邵萍</span> 👍（0） 💬（1）<div>kiali控制台的用户名和密码是什么？登不进去呀</div>2020-12-25</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<div>请问下作者生产环节当中的serverless架构有哪些实践可以优化faas的这个请求联路，因为经过虚拟化、容器、overlay好多层之后网络性能有很多损耗，现在有些企业尝试cilium+istio的方式来尽量减少过多的用户与内核态切换</div>2020-07-04</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<div>请问下为何不用istio和k8s hpa的原生功能来做服务发现、负载均衡、版本管理等实现呢？感觉knative有些多余啊</div>2020-07-01</li><br/>
+</p>2020-05-07</li><br/><li><span>程序员二师兄</span> 👍（4） 💬（2）<p>了解到云原生，三驾马车：K8s、Service Mesh、Serverless。还有其他的知识点：lstio、docker、Knative</p>2020-05-06</li><br/><li><span>小黑小小黑</span> 👍（1） 💬（1）<p>阿里的函数计算是基于knative来实现的吗?</p>2020-06-28</li><br/><li><span>邵萍</span> 👍（0） 💬（1）<p>kiali控制台的用户名和密码是什么？登不进去呀</p>2020-12-25</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<p>请问下作者生产环节当中的serverless架构有哪些实践可以优化faas的这个请求联路，因为经过虚拟化、容器、overlay好多层之后网络性能有很多损耗，现在有些企业尝试cilium+istio的方式来尽量减少过多的用户与内核态切换</p>2020-07-04</li><br/><li><span>Geek_dn82ci</span> 👍（0） 💬（1）<p>请问下为何不用istio和k8s hpa的原生功能来做服务发现、负载均衡、版本管理等实现呢？感觉knative有些多余啊</p>2020-07-01</li><br/>
 </ul>

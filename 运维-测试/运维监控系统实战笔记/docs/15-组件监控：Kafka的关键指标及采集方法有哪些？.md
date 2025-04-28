@@ -355,10 +355,10 @@ Lag 监控，也就是 Topic Partition 的消费者滞后监控，是 Queue 类�
 
 Kafka Broker 的 JMX 指标很多，除了这一讲我们介绍的这些之外，还有不少关键指标，比如针对 Kafka Broker 收到的 request，就有指标来统计吞吐和延时。你能否通过 JConsole 找到 ListGroups 这个 request 每秒请求数的 MBean？能否照猫画虎给出 Jolokia 抓取这个 MBean 的配置？欢迎你在留言区分享你的答案，也欢迎你把今天的内容分享给身边的朋友，邀他一起学习。我们下一讲再见！
 <div><strong>精选留言（5）</strong></div><ul>
-<li><span>巴辉特</span> 👍（0） 💬（0）<div>关于 jmx_exporter 的描述有误，特做勘误，具体测试过程如下：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;_RLYGuGdz-gvuqZfg1_rFg 供各位小伙伴参考</div>2023-02-10</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+<li><span>巴辉特</span> 👍（0） 💬（0）<p>关于 jmx_exporter 的描述有误，特做勘误，具体测试过程如下：https:&#47;&#47;mp.weixin.qq.com&#47;s&#47;_RLYGuGdz-gvuqZfg1_rFg 供各位小伙伴参考</p>2023-02-10</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：流程理解是否对？
 A categraf部署在kafka上，采集指标数据，然后发送给jolokia，jolokia将数据转换为HTTP协议后发送到监控系统。B categraf和jolokia都位于kafka端，监控系统类似于server端。 这样理解对吗？
 Q2：怎么知道消费流量？
 BytesOutPerSec除了包含普通消费者的消费流量，也包含了副本同步流量，那么怎么知道普通消费者的消费流量？
-Q3：关键指标的仪表盘是Prometheus的吗？</div>2023-02-10</li><br/><li><span>Geek_f31e99</span> 👍（0） 💬（1）<div>请问老师！ kafka_consumer_lag_millis这个报警值，设置多大比较合适！</div>2023-02-14</li><br/><li><span>冷如冰</span> 👍（0） 💬（1）<div>为什么全是语音。。。没视频？</div>2023-02-12</li><br/><li><span>StackOverflow</span> 👍（0） 💬（0）<div>如果是k8s集群部署的 kafka，是不是使能 metrics，然后监控相应指标？</div>2023-02-16</li><br/>
+Q3：关键指标的仪表盘是Prometheus的吗？</p>2023-02-10</li><br/><li><span>Geek_f31e99</span> 👍（0） 💬（1）<p>请问老师！ kafka_consumer_lag_millis这个报警值，设置多大比较合适！</p>2023-02-14</li><br/><li><span>冷如冰</span> 👍（0） 💬（1）<p>为什么全是语音。。。没视频？</p>2023-02-12</li><br/><li><span>StackOverflow</span> 👍（0） 💬（0）<p>如果是k8s集群部署的 kafka，是不是使能 metrics，然后监控相应指标？</p>2023-02-16</li><br/>
 </ul>

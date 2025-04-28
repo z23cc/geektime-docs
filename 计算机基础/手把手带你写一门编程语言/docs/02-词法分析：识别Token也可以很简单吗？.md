@@ -372,14 +372,14 @@ statementList
 
 [这节课的示例代码在这里！](https://gitee.com/richard-gong/craft-a-language/blob/master/02/play.ts)
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>yjhmelody</span> 👍（3） 💬（1）<div>首先考虑是否有一元运算符-，没有则为整体解析。然后考虑支不支持该运算符的重载，如果有则可能分开解析更好。其他情况均可以，取决于实现者如何看待这个-号</div>2021-08-11</li><br/><li><span>船</span> 👍（0） 💬（1）<div>为什么在用cmd运行这节代码时会出现？
-Usage: node D:\craft-a-language\02\play.js FILENAME</div>2021-09-14</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（1）<div>-3作为一个负数字面量，会减少一个减法表达式，从这章的内容看，语法分析过程中会因为回溯会影响效率，减少不必要的规则表达式也是提升效率一种方式。从词法分析上把-3当作一个token识别出来，性能消耗可能并不多。</div>2021-08-12</li><br/><li><span>蓝士钦</span> 👍（0） 💬（2）<div>如果要自己实现一个JSON parse、或者PDF parse，只需要识别Token即可，整个过程和写一个有限自动机一样，这些parse比写一门语言要来的简单吧
-</div>2021-08-11</li><br/><li><span>王</span> 👍（0） 💬（3）<div>老师，我觉得应该把-3整体当做一个字面量解析。如果解析成一个-和一个3的话，就是减法运算了，减法是需要两个数的。如果非要解析为减法运算，是不是被减数还得默认设置为0</div>2021-08-11</li><br/><li><span>springXu</span> 👍（0） 💬（1）<div>把-3作为整体，计算机中负数是用补码来表示负数的。这样把字符转换成数字方便了。</div>2021-08-11</li><br/><li><span>星小哥</span> 👍（0） 💬（0）<div>建议代码少一点else{} 嵌套，比如 以下的else没有必要
+<li><span>yjhmelody</span> 👍（3） 💬（1）<p>首先考虑是否有一元运算符-，没有则为整体解析。然后考虑支不支持该运算符的重载，如果有则可能分开解析更好。其他情况均可以，取决于实现者如何看待这个-号</p>2021-08-11</li><br/><li><span>船</span> 👍（0） 💬（1）<p>为什么在用cmd运行这节代码时会出现？
+Usage: node D:\craft-a-language\02\play.js FILENAME</p>2021-09-14</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（1）<p>-3作为一个负数字面量，会减少一个减法表达式，从这章的内容看，语法分析过程中会因为回溯会影响效率，减少不必要的规则表达式也是提升效率一种方式。从词法分析上把-3当作一个token识别出来，性能消耗可能并不多。</p>2021-08-12</li><br/><li><span>蓝士钦</span> 👍（0） 💬（2）<p>如果要自己实现一个JSON parse、或者PDF parse，只需要识别Token即可，整个过程和写一个有限自动机一样，这些parse比写一门语言要来的简单吧
+</p>2021-08-11</li><br/><li><span>王</span> 👍（0） 💬（3）<p>老师，我觉得应该把-3整体当做一个字面量解析。如果解析成一个-和一个3的话，就是减法运算了，减法是需要两个数的。如果非要解析为减法运算，是不是被减数还得默认设置为0</p>2021-08-11</li><br/><li><span>springXu</span> 👍（0） 💬（1）<p>把-3作为整体，计算机中负数是用补码来表示负数的。这样把字符转换成数字方便了。</p>2021-08-11</li><br/><li><span>星小哥</span> 👍（0） 💬（0）<p>建议代码少一点else{} 嵌套，比如 以下的else没有必要
 if (this.stream.eof()) {
             return { kind: TokenKind.EOF, text: &quot;&quot; };
         }
         else {}
-</div>2023-06-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<div>学习打卡</div>2022-09-09</li><br/><li><span>神经旷野舞者</span> 👍（0） 💬（0）<div>老师能不能把每节课的要求列一下，因为不懂得太多，不知道理解到什么程度可以进入下一节</div>2022-07-03</li><br/><li><span>Jack_1024</span> 👍（0） 💬（0）<div>这样实现是自举对吗？</div>2022-04-27</li><br/><li><span>Gaollard</span> 👍（0） 💬（0）<div>我觉得都可以，比如 -5 - (20 * 2) 在词法分析阶段中 -5 可以作为一个 token，而后面的 &quot;-&quot; 可以被解析为 unary operator。</div>2022-01-13</li><br/><li><span>喵咪爱吃肉</span> 👍（0） 💬（0）<div>能否给出一些运行的例子呢？这样运行代码时通过这个例子才更加理解，比如这个章节我大概理解是要干什么，但是没有一个测试用例，感觉有点茫然（可能是我比较笨～</div>2021-10-23</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（3）<div>谁能解释下这是js的什么写法？
+</p>2023-06-14</li><br/><li><span>ifelse</span> 👍（0） 💬（0）<p>学习打卡</p>2022-09-09</li><br/><li><span>神经旷野舞者</span> 👍（0） 💬（0）<p>老师能不能把每节课的要求列一下，因为不懂得太多，不知道理解到什么程度可以进入下一节</p>2022-07-03</li><br/><li><span>Jack_1024</span> 👍（0） 💬（0）<p>这样实现是自举对吗？</p>2022-04-27</li><br/><li><span>Gaollard</span> 👍（0） 💬（0）<p>我觉得都可以，比如 -5 - (20 * 2) 在词法分析阶段中 -5 可以作为一个 token，而后面的 &quot;-&quot; 可以被解析为 unary operator。</p>2022-01-13</li><br/><li><span>喵咪爱吃肉</span> 👍（0） 💬（0）<p>能否给出一些运行的例子呢？这样运行代码时通过这个例子才更加理解，比如这个章节我大概理解是要干什么，但是没有一个测试用例，感觉有点茫然（可能是我比较笨～</p>2021-10-23</li><br/><li><span>有学识的兔子</span> 👍（0） 💬（3）<p>谁能解释下这是js的什么写法？
 
 var TokenKind;
 (function (TokenKind) {
@@ -390,5 +390,5 @@ var TokenKind;
     TokenKind[TokenKind[&quot;Operator&quot;] = 4] = &quot;Operator&quot;;
     TokenKind[TokenKind[&quot;EOF&quot;] = 5] = &quot;EOF&quot;;
 })(TokenKind || (TokenKind = {}));
-;</div>2021-08-14</li><br/>
+;</p>2021-08-14</li><br/>
 </ul>

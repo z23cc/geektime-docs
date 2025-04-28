@@ -154,7 +154,7 @@ table1.join(broadcast(table2), Seq(“key”), “right”)
 
 期待在留言区看到你的思考和答案，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>kingcall</span> 👍（25） 💬（3）<div>第一题：可以参考JoinStrategyHint.scala 
+<li><span>kingcall</span> 👍（25） 💬（3）<p>第一题：可以参考JoinStrategyHint.scala 
     BROADCAST,
     SHUFFLE_MERGE,
     SHUFFLE_HASH,
@@ -172,18 +172,18 @@ table1.join(broadcast(table2), Seq(“key”), “right”)
     dataFrame.show()
     val dataFrame2 = transactionsDF.join(bcUserDF2.value, Seq(&quot;userID&quot;), &quot;inner&quot;)
     dataFrame2.show()
-</div>2021-04-12</li><br/><li><span>Geek_d794f8</span> 👍（19） 💬（5）<div>老师我做了一个测试，我的表数据是parquet存储，snappy压缩的，磁盘的存储大小为133.4M。我将广播变量的阈值调到了134M，它却可以自动广播；当我将阈值调到132M，则不会自动广播。
-我用老师的方法做了一个数据在内存展开的预估，大概1000M左右，那么为什么我按照磁盘的大小设定广播阈值，它能够广播呢？</div>2021-05-18</li><br/><li><span>YJ</span> 👍（16） 💬（3）<div>老师，我有一个问题。 
+</p>2021-04-12</li><br/><li><span>Geek_d794f8</span> 👍（19） 💬（5）<p>老师我做了一个测试，我的表数据是parquet存储，snappy压缩的，磁盘的存储大小为133.4M。我将广播变量的阈值调到了134M，它却可以自动广播；当我将阈值调到132M，则不会自动广播。
+我用老师的方法做了一个数据在内存展开的预估，大概1000M左右，那么为什么我按照磁盘的大小设定广播阈值，它能够广播呢？</p>2021-05-18</li><br/><li><span>YJ</span> 👍（16） 💬（3）<p>老师，我有一个问题。 
 bigTableA.Join(broadcast(smallTable), ...);
 bigTableB.Join(broadsast(smallTable), ...);
 bigTableA.Join(bigTableB, ...);
-这里 广播了的smallTable 会被第二个join重用吗？ 还是说会被广播两次？</div>2021-04-16</li><br/><li><span>Geek1185</span> 👍（12） 💬（3）<div>为什么left join的时候不能广播左边的小表呢？几百行的表左连接几亿行的表（业务上要求即便没关联上也要保留左表的记录）。
+这里 广播了的smallTable 会被第二个join重用吗？ 还是说会被广播两次？</p>2021-04-16</li><br/><li><span>Geek1185</span> 👍（12） 💬（3）<p>为什么left join的时候不能广播左边的小表呢？几百行的表左连接几亿行的表（业务上要求即便没关联上也要保留左表的记录）。
 就像为什么left join时，左表在on的谓词不能下推？
-我不太明白，希望老师解答</div>2021-08-30</li><br/><li><span>周俊</span> 👍（5） 💬（1）<div>老师，假设我有16张表需要连接，其余15张都是小表，如果我将15张小表都做成广播变量，假设他们的总数据量超过了8G，是不是会直接OOM呀，还是说只要每一个广播变量不超过8g,就不会有问题。</div>2021-08-17</li><br/><li><span>Jefitar</span> 👍（3） 💬（1）<div>老师，有个问题，字符串“abcd”只需要消耗 4 个字节，为什么JVM 在堆内存储这 4 个字符串总共需要消耗 48 个字节？</div>2021-04-19</li><br/><li><span>Unknown element</span> 👍（2） 💬（1）<div>老师您好 请问
+我不太明白，希望老师解答</p>2021-08-30</li><br/><li><span>周俊</span> 👍（5） 💬（1）<p>老师，假设我有16张表需要连接，其余15张都是小表，如果我将15张小表都做成广播变量，假设他们的总数据量超过了8G，是不是会直接OOM呀，还是说只要每一个广播变量不超过8g,就不会有问题。</p>2021-08-17</li><br/><li><span>Jefitar</span> 👍（3） 💬（1）<p>老师，有个问题，字符串“abcd”只需要消耗 4 个字节，为什么JVM 在堆内存储这 4 个字符串总共需要消耗 48 个字节？</p>2021-04-19</li><br/><li><span>Unknown element</span> 👍（2） 💬（1）<p>老师您好 请问
 val plan = df.queryExecution.logicalval estimated: BigInt = spark.sessionState.executePlan(plan).optimizedPlan.stats.sizeInBytes
 这个查看内存占用的方法是在哪里看到的呢？我在官方文档 
-https:&#47;&#47;spark.apache.org&#47;docs&#47;2.4.0&#47;api&#47;scala&#47;index.html#org.apache.spark.sql.DataFrameNaFunctions 里把这些方法都搜了一遍没有搜到QAQ</div>2022-01-06</li><br/><li><span>笨小孩</span> 👍（2） 💬（1）<div>老师你好  在SparkSql中使用类似with  as  这样的语法  会自动广播这张表嘛</div>2021-05-25</li><br/><li><span>魏海霞</span> 👍（1） 💬（2）<div>老师您好，用sparksql开发，遇到一个写了hint也不走broadcast的情况。具体情况是这样的，A表是个大表,有20多亿条记录，b,c,d都是小表，表就几个字段，数据最多也就3000多条，select &#47;*+ broadcast(b,c,d) from a join b jion c left join d
-执行计划里b c都用的是BroadcastHashJOIN,d表是SortMergeJoin。d表不走bhj的原因大概是什么？能给个思路吗？</div>2021-09-08</li><br/><li><span>Sampson</span> 👍（0） 💬（1）<div>磊哥你好 ，请教一下，我在我的任务中设置的如下的参数提交Spark任务，
+https:&#47;&#47;spark.apache.org&#47;docs&#47;2.4.0&#47;api&#47;scala&#47;index.html#org.apache.spark.sql.DataFrameNaFunctions 里把这些方法都搜了一遍没有搜到QAQ</p>2022-01-06</li><br/><li><span>笨小孩</span> 👍（2） 💬（1）<p>老师你好  在SparkSql中使用类似with  as  这样的语法  会自动广播这张表嘛</p>2021-05-25</li><br/><li><span>魏海霞</span> 👍（1） 💬（2）<p>老师您好，用sparksql开发，遇到一个写了hint也不走broadcast的情况。具体情况是这样的，A表是个大表,有20多亿条记录，b,c,d都是小表，表就几个字段，数据最多也就3000多条，select &#47;*+ broadcast(b,c,d) from a join b jion c left join d
+执行计划里b c都用的是BroadcastHashJOIN,d表是SortMergeJoin。d表不走bhj的原因大概是什么？能给个思路吗？</p>2021-09-08</li><br/><li><span>Sampson</span> 👍（0） 💬（1）<p>磊哥你好 ，请教一下，我在我的任务中设置的如下的参数提交Spark任务，
 --master yarn --deploy-mode cluster --num-executors 20 --executor-cores 1 --executor-memory 5G --driver-memory 2G  --conf spark.yarn.executor.memoryOverhead=2048M --conf spark.sql.shuffle.partitions=30 --conf spark.default.parallelism=30 --conf spark.sql.autoBroadcastJoinThreshold=1024 
 
 按照上文中讲到的我设置了广播变量的阀值是 1024 = 1G ，但是看任务运行中的日志 
@@ -201,7 +201,7 @@ storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on miai4:35351 (siz
 
 并不是我设置的1G呀 ，这是为什么呢 ？
 
-</div>2022-01-21</li><br/><li><span>猿鸽君</span> 👍（0） 💬（1）<div>老师好。我们spark是2.2.0，sparksql是2.11。我想模拟读取 Spark SQL 执行计划的统计数据时。在调用stats时却需要传一个SQLConf类型的参数。请问这是版本的问题吗？有什么替代的方法？感谢</div>2021-08-11</li><br/><li><span>臻果爸爸</span> 👍（0） 💬（1）<div>spark sql执行时，有一个task一直running，但是执行耗时等sparkui参数都为0，只有gc时间一直在增加，想问下这个怎么排查？</div>2021-07-06</li><br/><li><span>闯闯</span> 👍（0） 💬（1）<div>老师有个疑问，看了您的文章后，动手试了下：
+</p>2022-01-21</li><br/><li><span>猿鸽君</span> 👍（0） 💬（1）<p>老师好。我们spark是2.2.0，sparksql是2.11。我想模拟读取 Spark SQL 执行计划的统计数据时。在调用stats时却需要传一个SQLConf类型的参数。请问这是版本的问题吗？有什么替代的方法？感谢</p>2021-08-11</li><br/><li><span>臻果爸爸</span> 👍（0） 💬（1）<p>spark sql执行时，有一个task一直running，但是执行耗时等sparkui参数都为0，只有gc时间一直在增加，想问下这个怎么排查？</p>2021-07-06</li><br/><li><span>闯闯</span> 👍（0） 💬（1）<p>老师有个疑问，看了您的文章后，动手试了下：
 df.queryExecution.optimizedPlan.stats.sizeInBytes
-这段代码也是能够获取统计信息的。这说明是不是可以简化呢。看了源码发现，这个例子跟您的例子调用 optimizedPlan 是同一段代码</div>2021-06-11</li><br/><li><span>Geek_01eb83</span> 👍（0） 💬（3）<div>老师，您好！请教一个问题，最近用DataFrame编写spark程序，程序中通过sqlContext.sql()的方式处理Hive上的数据，发现速度很慢（整个程序很长，用了很多次sqlContext.sql()，并且注册了临时表）。最后在每一步的sqlContext.sql()语句后面加上了count（也即是action算子），其他没有改动，这样整个程序快了很多。想麻烦问下这是什么原因？</div>2021-05-08</li><br/><li><span>耳东</span> 👍（0） 💬（2）<div>在左连接（Left Outer Join）中，我们只能广播右表；在右连接（Right Outer Join）中，我们只能广播左表。  这段的意思是指在 left outer join时 大表放左边 ，小表放右边吗 ？为什么？</div>2021-04-20</li><br/>
+这段代码也是能够获取统计信息的。这说明是不是可以简化呢。看了源码发现，这个例子跟您的例子调用 optimizedPlan 是同一段代码</p>2021-06-11</li><br/><li><span>Geek_01eb83</span> 👍（0） 💬（3）<p>老师，您好！请教一个问题，最近用DataFrame编写spark程序，程序中通过sqlContext.sql()的方式处理Hive上的数据，发现速度很慢（整个程序很长，用了很多次sqlContext.sql()，并且注册了临时表）。最后在每一步的sqlContext.sql()语句后面加上了count（也即是action算子），其他没有改动，这样整个程序快了很多。想麻烦问下这是什么原因？</p>2021-05-08</li><br/><li><span>耳东</span> 👍（0） 💬（2）<p>在左连接（Left Outer Join）中，我们只能广播右表；在右连接（Right Outer Join）中，我们只能广播左表。  这段的意思是指在 left outer join时 大表放左边 ，小表放右边吗 ？为什么？</p>2021-04-20</li><br/>
 </ul>

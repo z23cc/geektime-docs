@@ -591,7 +591,7 @@ suspend fun <T : Any> KtCall<T>.await(): T =
     }
 ```
 <div><strong>精选留言（14）</strong></div><ul>
-<li><span>迩、卜懂莪</span> 👍（4） 💬（1）<div>Kthttp系列实战 像是简易版的retrofit2 对学习 retrofit的源码有很大帮助</div>2022-03-15</li><br/><li><span>神秘嘉Bin</span> 👍（3） 💬（3）<div>思考题：
+<li><span>迩、卜懂莪</span> 👍（4） 💬（1）<p>Kthttp系列实战 像是简易版的retrofit2 对学习 retrofit的源码有很大帮助</p>2022-03-15</li><br/><li><span>神秘嘉Bin</span> 👍（3） 💬（3）<p>思考题：
 （1）执行async可认为一瞬间就到了suspendCancellableCoroutine的await扩展方法，即协程被挂起。
 （2）执行deferred.cancel()，可以使得挂起函数立刻返回并抛出协程cancel异常
 （3）协程取消了，但网络请求还是发出去了，（因为网络请求有自己的线程）也会回来，调用continuation.resume，发现协程被取消了，抛出协程已经被取消的异常
@@ -599,7 +599,7 @@ suspend fun <T : Any> KtCall<T>.await(): T =
 （4.2）网络IO比deferred.await()晚，那么deferred.await()会立刻返回，没有异常
 
 
-以上都是我猜的，没有实际运行  -.- </div>2022-03-02</li><br/><li><span>荒原</span> 👍（1） 💬（1）<div>KtHttpV3.invoke()方法返回值这样写会将同步请求的返回值转成了一个异步的KtCall
+以上都是我猜的，没有实际运行  -.- </p>2022-03-02</li><br/><li><span>荒原</span> 👍（1） 💬（1）<p>KtHttpV3.invoke()方法返回值这样写会将同步请求的返回值转成了一个异步的KtCall
 return if (isKtCallReturn(method)){
             KtCall&lt;T&gt;(
                 client.newCall(request),
@@ -629,9 +629,9 @@ if (isKtCallReturn(method)){
                 method.genericReturnType
             )
         }
-这是为什么呢</div>2022-05-21</li><br/><li><span>王安泽</span> 👍（1） 💬（1）<div>请问为什么Async的写法response返回后程序没有结束呢？ </div>2022-04-14</li><br/><li><span>better</span> 👍（1） 💬（1）<div>第一，它可以避免不必要的挂起，提升运行效率 ；请问老师，这一条指的是？
+这是为什么呢</p>2022-05-21</li><br/><li><span>王安泽</span> 👍（1） 💬（1）<p>请问为什么Async的写法response返回后程序没有结束呢？ </p>2022-04-14</li><br/><li><span>better</span> 👍（1） 💬（1）<p>第一，它可以避免不必要的挂起，提升运行效率 ；请问老师，这一条指的是？
 思考题：
-网络请求还是会执行，第一点避免了，但是二点没有避免。</div>2022-02-24</li><br/><li><span>Allen</span> 👍（1） 💬（1）<div>问题二：像 suspendCoroutine 这一类系统所提供的挂起函数底层到底实现了什么，才使得其具有挂起的功能？是内部自己实现了 Callback 吗？为啥我们自己实现的 suspend 函数必须调用系统提供的挂起函数才能生效？</div>2022-02-23</li><br/><li><span>Allen</span> 👍（0） 💬（1）<div>涛哥，问两个问题哈。如果上面例子中的网络请求是运行在当前线程，是不是这里的挂起实际上也没有什么用，因为其还是会阻塞当前线程（像下面的代码一样）？
+网络请求还是会执行，第一点避免了，但是二点没有避免。</p>2022-02-24</li><br/><li><span>Allen</span> 👍（1） 💬（1）<p>问题二：像 suspendCoroutine 这一类系统所提供的挂起函数底层到底实现了什么，才使得其具有挂起的功能？是内部自己实现了 Callback 吗？为啥我们自己实现的 suspend 函数必须调用系统提供的挂起函数才能生效？</p>2022-02-23</li><br/><li><span>Allen</span> 👍（0） 💬（1）<p>涛哥，问两个问题哈。如果上面例子中的网络请求是运行在当前线程，是不是这里的挂起实际上也没有什么用，因为其还是会阻塞当前线程（像下面的代码一样）？
 
 suspend fun testSuspendFunc() {
     suspendCancellableCoroutine&lt;Unit&gt; {
@@ -639,13 +639,13 @@ suspend fun testSuspendFunc() {
         Thread.sleep(5000)
         it.resumeWith(Result.success(Unit))
     }
-}</div>2022-02-23</li><br/><li><span>Allen</span> 👍（0） 💬（3）<div>思考题的执行结果和 suspendCoroutine 的执行结果是一样的。取消了监听 invokeOnCancellation 的方法后，suspendCancellableoroutine 和 suspendCoroutine 本质上是一回事。</div>2022-02-23</li><br/><li><span>梦佳</span> 👍（0） 💬（0）<div>已经实践于项目，协程包装原来网络请求，一行代码获取数据</div>2024-03-09</li><br/><li><span>jack</span> 👍（0） 💬（0）<div>思考题的运行结果参考：
+}</p>2022-02-23</li><br/><li><span>Allen</span> 👍（0） 💬（3）<p>思考题的执行结果和 suspendCoroutine 的执行结果是一样的。取消了监听 invokeOnCancellation 的方法后，suspendCancellableoroutine 和 suspendCoroutine 本质上是一回事。</p>2022-02-23</li><br/><li><span>梦佳</span> 👍（0） 💬（0）<p>已经实践于项目，协程包装原来网络请求，一行代码获取数据</p>2024-03-09</li><br/><li><span>jack</span> 👍（0） 💬（0）<p>思考题的运行结果参考：
 Time cancel: 697
 invokeOnCompletion!
 Time exception: 702
 Catch exception:kotlinx.coroutines.JobCancellationException: DeferredCoroutine was cancelled; job=DeferredCoroutine{Cancelled}@25084a1e
 Time total: 703
-Request success!</div>2023-10-13</li><br/><li><span>常正午</span> 👍（0） 💬（0）<div>和retrofit2 源码相比，文章的代码质量差太远，还不如自己直接学习retrofit2如何支持suspend</div>2023-03-06</li><br/><li><span>梦佳</span> 👍（0） 💬（0）<div>已经用起来了</div>2022-12-06</li><br/><li><span>郑峰</span> 👍（0） 💬（0）<div>思考题：
+Request success!</p>2023-10-13</li><br/><li><span>常正午</span> 👍（0） 💬（0）<p>和retrofit2 源码相比，文章的代码质量差太远，还不如自己直接学习retrofit2如何支持suspend</p>2023-03-06</li><br/><li><span>梦佳</span> 👍（0） 💬（0）<p>已经用起来了</p>2022-12-06</li><br/><li><span>郑峰</span> 👍（0） 💬（0）<p>思考题：
 
 1. 除非没有Line 12 delay(50L) 或者 delay(0L)， 网络请求总是被发送出去，并返回结果。因为请求没有被取消。
 2. 取消协程不一定能catch到cancel exception。
@@ -654,7 +654,7 @@ Request success!</div>2023-10-13</li><br/><li><span>常正午</span> 👍（0）
 
 注意两点
 1. 本课的协程输出受delay时间影响。出现了request未被发送， request发送未返回和request发送返回 多种不同状态。
-2. main函数执行完成后，process不能马上exit。因为okhttp创建了一个非daemon的线程。在timeout结束后process可以正常结束。</div>2022-08-11</li><br/><li><span>银河</span> 👍（0） 💬（0）<div>思考题结果：
+2. main函数执行完成后，process不能马上exit。因为okhttp创建了一个非daemon的线程。在timeout结束后process可以正常结束。</p>2022-08-11</li><br/><li><span>银河</span> 👍（0） 💬（0）<p>思考题结果：
 Time cancel: 301
 invokeOnCompletion!
 Time exception: 301
@@ -662,5 +662,5 @@ Catch exception:kotlinx.coroutines.JobCancellationException: DeferredCoroutine w
 Time total: 301
 Request success!
 
-不难看出，suspendCancellableCoroutine函数是asyc被cancel后await立即恢复，不阻塞了，监听的是外部async的生命周期，而suspendCoroutine靠手动也就是监听网络请求call的返回结果</div>2022-08-01</li><br/>
+不难看出，suspendCancellableCoroutine函数是asyc被cancel后await立即恢复，不阻塞了，监听的是外部async的生命周期，而suspendCoroutine靠手动也就是监听网络请求call的返回结果</p>2022-08-01</li><br/>
 </ul>

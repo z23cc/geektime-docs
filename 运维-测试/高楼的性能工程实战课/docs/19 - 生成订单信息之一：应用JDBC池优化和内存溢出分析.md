@@ -406,15 +406,15 @@ orderMapper.updateByPrimaryKeySelective(cancelOrder);
 
 如果你读完这篇文章有所收获，也欢迎你分享给你的朋友，共同学习进步。我们下一讲再见！
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>张东炫</span> 👍（5） 💬（1）<div>1.VM Thread 线程消耗 CPU 高的异常，查看JAVA gc 是否合理
-2.innodb_trx表提供了当前innodb引擎内每个事务的信息（只读事务除外），包括当一个事务启动，事务是否在等待一个锁，以及交易正在执行的语句</div>2021-05-06</li><br/><li><span>jy</span> 👍（3） 💬（1）<div>老师你好，查了下资料，bulk_insert_buffer_size是用于myisam存储引擎，我看你的建表sql，是innodb，请确认下呢？</div>2021-07-28</li><br/><li><span>阿嬷</span> 👍（0） 💬（1）<div>老师，架构图是用什么画的？</div>2022-02-14</li><br/><li><span>steve</span> 👍（0） 💬（1）<div>aix服务器的java路径下没找到jstack</div>2021-09-06</li><br/><li><span>jy</span> 👍（0） 💬（1）<div>1、第二阶段里面
+<li><span>张东炫</span> 👍（5） 💬（1）<p>1.VM Thread 线程消耗 CPU 高的异常，查看JAVA gc 是否合理
+2.innodb_trx表提供了当前innodb引擎内每个事务的信息（只读事务除外），包括当一个事务启动，事务是否在等待一个锁，以及交易正在执行的语句</p>2021-05-06</li><br/><li><span>jy</span> 👍（3） 💬（1）<p>老师你好，查了下资料，bulk_insert_buffer_size是用于myisam存储引擎，我看你的建表sql，是innodb，请确认下呢？</p>2021-07-28</li><br/><li><span>阿嬷</span> 👍（0） 💬（1）<p>老师，架构图是用什么画的？</p>2022-02-14</li><br/><li><span>steve</span> 👍（0） 💬（1）<p>aix服务器的java路径下没找到jstack</p>2021-09-06</li><br/><li><span>jy</span> 👍（0） 💬（1）<p>1、第二阶段里面
 在查看 Order 服务的 top 时，占用cpu最多的是pid 29349 ，为什么后面是jstack -l 1，而不是jstack -l  29349？
 
 
 2、“当批量业务和实时业务同时出现在同一个数据库中，并且是对同样的表进行操作，这时，你就得考虑一下架构设计是否合理了。”
 请问下应该如何设计架构呢？
 
-谢谢</div>2021-07-16</li><br/><li><span>zwm</span> 👍（0） 💬（1）<div> 从上图来看，系统资源并没有完全用起来，这个接口显然还有优化的空间
+谢谢</p>2021-07-16</li><br/><li><span>zwm</span> 👍（0） 💬（1）<p> 从上图来看，系统资源并没有完全用起来，这个接口显然还有优化的空间
 
-老师这个是怎么看出来的，就通过TPS和响应时间？</div>2021-07-13</li><br/><li><span>Hant</span> 👍（0） 💬（1）<div>高老师，怎么判断GC正不正常呀？</div>2021-06-27</li><br/>
+老师这个是怎么看出来的，就通过TPS和响应时间？</p>2021-07-13</li><br/><li><span>Hant</span> 👍（0） 💬（1）<p>高老师，怎么判断GC正不正常呀？</p>2021-06-27</li><br/>
 </ul>

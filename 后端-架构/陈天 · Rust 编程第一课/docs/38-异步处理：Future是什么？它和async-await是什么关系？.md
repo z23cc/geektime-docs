@@ -615,7 +615,7 @@ fn task_async() -> impl Future<Output = usize> {
 
 欢迎在留言区分享你的学习感悟和思考。今天你完成Rust学习的第38次打卡啦，感谢你的收听，如果你觉得有收获，也欢迎你分享给身边的朋友，邀他一起讨论。我们下节课见。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>Marvichov</span> 👍（6） 💬（1）<div>现在一节课需要很久才勉强消化...这课真心值!
+<li><span>Marvichov</span> 👍（6） 💬（1）<p>现在一节课需要很久才勉强消化...这课真心值!
 
 ```
     error: future cannot be sent between threads safely
@@ -636,8 +636,8 @@ where
 
 对executor了解很少...但从文中的提示 (task stealing, 从其他thread偷task), executor应该有个thread pool可以在不同的thread里面poll future...
 
-至于await里面怎么就有多线程的executor, 还希望老师答疑解惑!</div>2021-12-08</li><br/><li><span>CyNevis</span> 👍（0） 💬（2）<div>标准库的 Mutex 不能跨越 await, 盲猜一手是不是标准库的Mutex实现是依赖线程绑定, 得去看代码是怎么实现的</div>2021-12-01</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<div>代码中的 toml::from_str 编译不过，但在 play.rust-lang.org 中竟然可以编译通过，很神奇，我在本地添加了 toml 库，并且 use toml 之后，代码就可以正常运行了。</div>2021-11-26</li><br/><li><span>zxk</span> 👍（4） 💬（0）<div>这是由于 MutexGuard 没有实现 Send trait。
+至于await里面怎么就有多线程的executor, 还希望老师答疑解惑!</p>2021-12-08</li><br/><li><span>CyNevis</span> 👍（0） 💬（2）<p>标准库的 Mutex 不能跨越 await, 盲猜一手是不是标准库的Mutex实现是依赖线程绑定, 得去看代码是怎么实现的</p>2021-12-01</li><br/><li><span>罗杰</span> 👍（0） 💬（1）<p>代码中的 toml::from_str 编译不过，但在 play.rust-lang.org 中竟然可以编译通过，很神奇，我在本地添加了 toml 库，并且 use toml 之后，代码就可以正常运行了。</p>2021-11-26</li><br/><li><span>zxk</span> 👍（4） 💬（0）<p>这是由于 MutexGuard 没有实现 Send trait。
 对于 MutexGuard 为什么不实现 Send 的一点思考，不知道是否理解正确，望老师指点下。
-标准库的 MutexGuard 主要是针对线程的，一个线程通过 lock 获取到锁后独占该临界区的资源。假设允许 MutexGuard 跨越 await，那么 MutexGuard 就有可能随着 Future 跑到其他线程上执行，那就破坏了之前的线程独占该临界区的语义了。</div>2022-07-10</li><br/><li><span>ELSE</span> 👍（2） 💬（2）<div>有个疑问，像这样的语句，同步和异步有什么区别吗
-let listener = TcpListener::bind(addr).await?;</div>2022-07-13</li><br/><li><span>Geek_91aad0</span> 👍（1） 💬（0）<div>真的经典，反复做笔记反复理解，配合future的源码才完全看懂！真的是技术深度极高！</div>2024-03-18</li><br/><li><span>罗杰</span> 👍（1） 💬（0）<div>今天的内容要好好消化一下…</div>2021-11-26</li><br/><li><span>鱼丸粗面</span> 👍（0） 💬（0）<div>mutexGuard的drop方法里有释放锁的功能，它销毁时会释放锁，把它发出去会造成同步语义的破坏。比如guard已经被销毁而当前线程仍然在安全区域修改被保护的数据</div>2022-10-06</li><br/><li><span>RAY_CCW😝😝😝</span> 👍（0） 💬（0）<div>tyr老师，想问一下，其实Rust executor的Reactor 模式，本质是也是用了类似于事件驱动的异步方式来实现？因为近年都在写go，看到这个想起来以前写Python时候的gevent的感觉了。</div>2022-03-20</li><br/><li><span>...zzZ</span> 👍（0） 💬（1）<div>rust future中的task和executor能不能类比于go MPG模型中的G和P？</div>2022-02-22</li><br/>
+标准库的 MutexGuard 主要是针对线程的，一个线程通过 lock 获取到锁后独占该临界区的资源。假设允许 MutexGuard 跨越 await，那么 MutexGuard 就有可能随着 Future 跑到其他线程上执行，那就破坏了之前的线程独占该临界区的语义了。</p>2022-07-10</li><br/><li><span>ELSE</span> 👍（2） 💬（2）<p>有个疑问，像这样的语句，同步和异步有什么区别吗
+let listener = TcpListener::bind(addr).await?;</p>2022-07-13</li><br/><li><span>Geek_91aad0</span> 👍（1） 💬（0）<p>真的经典，反复做笔记反复理解，配合future的源码才完全看懂！真的是技术深度极高！</p>2024-03-18</li><br/><li><span>罗杰</span> 👍（1） 💬（0）<p>今天的内容要好好消化一下…</p>2021-11-26</li><br/><li><span>鱼丸粗面</span> 👍（0） 💬（0）<p>mutexGuard的drop方法里有释放锁的功能，它销毁时会释放锁，把它发出去会造成同步语义的破坏。比如guard已经被销毁而当前线程仍然在安全区域修改被保护的数据</p>2022-10-06</li><br/><li><span>RAY_CCW😝😝😝</span> 👍（0） 💬（0）<p>tyr老师，想问一下，其实Rust executor的Reactor 模式，本质是也是用了类似于事件驱动的异步方式来实现？因为近年都在写go，看到这个想起来以前写Python时候的gevent的感觉了。</p>2022-03-20</li><br/><li><span>...zzZ</span> 👍（0） 💬（1）<p>rust future中的task和executor能不能类比于go MPG模型中的G和P？</p>2022-02-22</li><br/>
 </ul>

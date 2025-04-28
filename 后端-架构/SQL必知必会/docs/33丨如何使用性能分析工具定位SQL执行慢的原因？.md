@@ -204,22 +204,22 @@ mysql > show profile;
 
 欢迎你在评论区写下你的思考，也欢迎把这篇文章分享给你的朋友或者同事，一起交流进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>DZ</span> 👍（39） 💬（1）<div>如果两表关联查询，可以这样理解：
+<li><span>DZ</span> 👍（39） 💬（1）<p>如果两表关联查询，可以这样理解：
 
 1. ref - 双层循环，直到找出所有匹配。
 2. eq_ref - 双层循环，借助索引的唯一性，找到匹配就马上退出内层循环。
 3. const: 单层循环。
 
-按照循环次数递减的顺序排列它们，应该是 ref &gt; eq_ref &gt; const，循环次数越少，查询效率越高。</div>2019-08-26</li><br/><li><span>土土人</span> 👍（8） 💬（1）<div>oracle是否有对应工呢？</div>2019-08-26</li><br/><li><span>LJK</span> 👍（5） 💬（1）<div>SHOW PROFILE还会再有细致一点的说明么？一般看到都是sending data这个时间最长，不知道包含了哪些具体操作在里面？</div>2019-08-27</li><br/><li><span>leslie</span> 👍（30） 💬（2）<div>      explain看的东西不止这点吧：老师是不是针对错了DB，至少现实生产这点东西的定位完全不够；老师在生产中不看表的状态就做explain么？如果表的DML过高的话，explain的操作完全没有价值。
+按照循环次数递减的顺序排列它们，应该是 ref &gt; eq_ref &gt; const，循环次数越少，查询效率越高。</p>2019-08-26</li><br/><li><span>土土人</span> 👍（8） 💬（1）<p>oracle是否有对应工呢？</p>2019-08-26</li><br/><li><span>LJK</span> 👍（5） 💬（1）<p>SHOW PROFILE还会再有细致一点的说明么？一般看到都是sending data这个时间最长，不知道包含了哪些具体操作在里面？</p>2019-08-27</li><br/><li><span>leslie</span> 👍（30） 💬（2）<p>      explain看的东西不止这点吧：老师是不是针对错了DB，至少现实生产这点东西的定位完全不够；老师在生产中不看表的状态就做explain么？如果表的DML过高的话，explain的操作完全没有价值。
      如果一张表的自增跑到了100万，数据量只有10万；说明这张表可能已经损坏了，第一步就是修复表而不是一开始做explain。就像我们拿到一台设备不是先去测功能，首先应当坚持设备是否完全OK再去测试，数据库不可能拿到的是一张全新的表；首先应当是表的性能评估，然后再说相关的检查吧。
        个人觉得今天的讲解的时候漏了真正的第一步：设备没坚持就开始检查设备性能了。
-    </div>2019-08-27</li><br/><li><span>许童童</span> 👍（6） 💬（0）<div>你可以讲一下 ref、eq_ref 和 const 这三种类型的区别吗？查询效率有何不同？
+    </p>2019-08-27</li><br/><li><span>许童童</span> 👍（6） 💬（0）<p>你可以讲一下 ref、eq_ref 和 const 这三种类型的区别吗？查询效率有何不同？
 ref 是使用了非唯一索引
 eq_ref 是使用了主键或唯一索引，一般在两表连接查询中索引
 const 是使用了主键或唯一索引 与常量值进行比较
 
-查询效率 ref &lt; eq_ref &lt; const</div>2019-08-26</li><br/><li><span>学无涯</span> 👍（3） 💬（1）<div>用EXPLAIN查看SQL执行顺序：如果SQL使用EXISTS嵌套子查询，按说，执行顺序是先执行主查询，再执行子查询，但是EXPLAIN出来的结果是主查询的id为1，子查询的id为2，也就是说是先执行的子查询，这是为什么呢</div>2019-08-27</li><br/><li><span>靠人品去赢</span> 👍（2） 💬（0）<div>想问一下，运维的那个MySQL慢SQL的页面怎么弄出来的的，就是甩给我一个网页地址，里面是SLOW LOG PLATFORM里面的详细慢sql日志，毕竟是页面，感觉看起来要比去服务器看输出友好一点。
+查询效率 ref &lt; eq_ref &lt; const</p>2019-08-26</li><br/><li><span>学无涯</span> 👍（3） 💬（1）<p>用EXPLAIN查看SQL执行顺序：如果SQL使用EXISTS嵌套子查询，按说，执行顺序是先执行主查询，再执行子查询，但是EXPLAIN出来的结果是主查询的id为1，子查询的id为2，也就是说是先执行的子查询，这是为什么呢</p>2019-08-27</li><br/><li><span>靠人品去赢</span> 👍（2） 💬（0）<p>想问一下，运维的那个MySQL慢SQL的页面怎么弄出来的的，就是甩给我一个网页地址，里面是SLOW LOG PLATFORM里面的详细慢sql日志，毕竟是页面，感觉看起来要比去服务器看输出友好一点。
 是什么工具，搭建在自己的服务器，可以选择数据库，选择用户的查看日志详情，自己玩，安装的话对服务器要求高吗
-</div>2021-04-29</li><br/><li><span>尔东橙</span> 👍（2） 💬（0）<div>当前会话是代表什么，当前事务么</div>2020-03-27</li><br/><li><span>安静的boy</span> 👍（2） 💬（0）<div>index_merge的那个例子中，查询的type怎么是ref</div>2019-08-26</li><br/><li><span>学渣汪在央企打怪升级</span> 👍（1） 💬（0）<div>EXPLAIN那里有些不太清楚，还有要是有一些经验上的阈值分析就好了</div>2020-03-27</li><br/><li><span>Geek_cdf4b1</span> 👍（0） 💬（0）<div>老师，文中“如何使用 EXPLAIN 查看执行计划”部分，“我们对 product_comment 数据表进行查询，设计了联合索引composite_index (user_id, comment_text)，然后对数据表中的comment_id、comment_text、user_id这三个字段进行查询，最后用 EXPLAIN 看下执行计划”。
-执行计划 TYPE 应该是 ALL，当使用联合索引composite_index (comment_id, comment_text, user_id) 时，TYPE 是 index。</div>2023-07-07</li><br/><li><span>andy</span> 👍（0） 💬（0）<div>等待时间和执行时间是在哪里查？</div>2021-07-15</li><br/><li><span>beyondzhao</span> 👍（0） 💬（0）<div>老师，想问下，慢查询里最后那个例子里，采用 mysqldumpslow 按时间排序查看前两条 SQL 查询语句，查询结果里第二条查询语句 Time=164.04s（656s），括号里的656秒表示什么意思呢？哪一个才是这条 SQL 语句查询的耗时呢?</div>2020-11-23</li><br/><li><span>张滔</span> 👍（0） 💬（1）<div>我给领导提出的建议是开启慢查询，然后根据慢查询来优化sql，但领导说这样的话工作会拖拖沓沓，要求我把我们系统的所有sql整理出来进行优化，您赞同我领导的做法吗？</div>2020-04-07</li><br/><li><span>博弈</span> 👍（0） 💬（0）<div>通过本章学习，了解了如何使用性能分析工具定位SQL执行慢的原因，希望能在实践中运用。</div>2020-03-25</li><br/>
+</p>2021-04-29</li><br/><li><span>尔东橙</span> 👍（2） 💬（0）<p>当前会话是代表什么，当前事务么</p>2020-03-27</li><br/><li><span>安静的boy</span> 👍（2） 💬（0）<p>index_merge的那个例子中，查询的type怎么是ref</p>2019-08-26</li><br/><li><span>学渣汪在央企打怪升级</span> 👍（1） 💬（0）<p>EXPLAIN那里有些不太清楚，还有要是有一些经验上的阈值分析就好了</p>2020-03-27</li><br/><li><span>Geek_cdf4b1</span> 👍（0） 💬（0）<p>老师，文中“如何使用 EXPLAIN 查看执行计划”部分，“我们对 product_comment 数据表进行查询，设计了联合索引composite_index (user_id, comment_text)，然后对数据表中的comment_id、comment_text、user_id这三个字段进行查询，最后用 EXPLAIN 看下执行计划”。
+执行计划 TYPE 应该是 ALL，当使用联合索引composite_index (comment_id, comment_text, user_id) 时，TYPE 是 index。</p>2023-07-07</li><br/><li><span>andy</span> 👍（0） 💬（0）<p>等待时间和执行时间是在哪里查？</p>2021-07-15</li><br/><li><span>beyondzhao</span> 👍（0） 💬（0）<p>老师，想问下，慢查询里最后那个例子里，采用 mysqldumpslow 按时间排序查看前两条 SQL 查询语句，查询结果里第二条查询语句 Time=164.04s（656s），括号里的656秒表示什么意思呢？哪一个才是这条 SQL 语句查询的耗时呢?</p>2020-11-23</li><br/><li><span>张滔</span> 👍（0） 💬（1）<p>我给领导提出的建议是开启慢查询，然后根据慢查询来优化sql，但领导说这样的话工作会拖拖沓沓，要求我把我们系统的所有sql整理出来进行优化，您赞同我领导的做法吗？</p>2020-04-07</li><br/><li><span>博弈</span> 👍（0） 💬（0）<p>通过本章学习，了解了如何使用性能分析工具定位SQL执行慢的原因，希望能在实践中运用。</p>2020-03-25</li><br/>
 </ul>

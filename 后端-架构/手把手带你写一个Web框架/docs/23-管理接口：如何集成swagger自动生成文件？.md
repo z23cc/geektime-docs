@@ -434,5 +434,5 @@ func Routes(r *gin.Engine) {
 
 欢迎在留言区分享你的思考。感谢你的收听，如果觉得今天的内容对你有所帮助，也欢迎分享给你身边的朋友，邀请他一起学习。我们下节课见～
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Geek_62f18d</span> 👍（1） 💬（1）<div>您好，请问swagger的注释中的description.markdown怎么使用</div>2021-12-01</li><br/><li><span>taoist</span> 👍（0） 💬（0）<div>swag v1.7.9及后续版本gen.Config,需要添加 OutputTypes:   []string{&quot;yaml&quot;, &quot;json&quot;, &quot;go&quot;} , 指定生成文件的类型。</div>2024-01-24</li><br/><li><span>大神博士</span> 👍（0） 💬（0）<div>go swagger 可以换主题吗，默认主题太难用了。</div>2023-08-14</li><br/>
+<li><span>Geek_62f18d</span> 👍（1） 💬（1）<p>您好，请问swagger的注释中的description.markdown怎么使用</p>2021-12-01</li><br/><li><span>taoist</span> 👍（0） 💬（0）<p>swag v1.7.9及后续版本gen.Config,需要添加 OutputTypes:   []string{&quot;yaml&quot;, &quot;json&quot;, &quot;go&quot;} , 指定生成文件的类型。</p>2024-01-24</li><br/><li><span>大神博士</span> 👍（0） 💬（0）<p>go swagger 可以换主题吗，默认主题太难用了。</p>2023-08-14</li><br/>
 </ul>

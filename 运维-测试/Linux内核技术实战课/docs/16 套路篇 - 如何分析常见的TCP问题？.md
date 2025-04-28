@@ -130,10 +130,10 @@ Tracepoint是我分析问题常用的手段之一，在遇到一些疑难问题�
 
 感谢你的阅读，如果你认为这节课的内容有收获，也欢迎把它分享给你的朋友，我们下一讲见。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>邵亚方</span> 👍（11） 💬（0）<div>课后作业答案：
+<li><span>邵亚方</span> 👍（11） 💬（0）<p>课后作业答案：
 - 请问 tcpdump 在解析内核缓冲区里的数据时，为什么使用 PACKET_MMAP 这种方式？你了解这种方式吗？这样做的好处是什么？
 评论区有同学已经回答的很好了，
-“PACKET_MMAP减少了系统调用，不用recvmsg就可以读取到捕获的报文，相比原始套接字+recvfrom的方式，减少了一次拷贝和一次系统调用。”</div>2020-10-11</li><br/><li><span>那时刻</span> 👍（5） 💬（1）<div>请问老师Wireshark和tcpdump在实现原理上，是否也是监控网卡以内的行为？</div>2020-09-24</li><br/><li><span>stackWarn</span> 👍（3） 💬（2）<div>1.感谢作者的总结，请教下ss命令或者读proc文件会进行加锁吗？如果会是否影响性能。proc下的meminfo会
+“PACKET_MMAP减少了系统调用，不用recvmsg就可以读取到捕获的报文，相比原始套接字+recvfrom的方式，减少了一次拷贝和一次系统调用。”</p>2020-10-11</li><br/><li><span>那时刻</span> 👍（5） 💬（1）<p>请问老师Wireshark和tcpdump在实现原理上，是否也是监控网卡以内的行为？</p>2020-09-24</li><br/><li><span>stackWarn</span> 👍（3） 💬（2）<p>1.感谢作者的总结，请教下ss命令或者读proc文件会进行加锁吗？如果会是否影响性能。proc下的meminfo会
 2.bpf的性能好和tcpdump的性能差，如何理解。是否
-3.后续会出实际的tracepoint或者stap之类的实际案件排查吗？</div>2020-09-24</li><br/><li><span>stackWarn</span> 👍（9） 💬（1）<div>PACKET_MMAP减少了系统调用，不用recvmsg就可以读取到捕获的报文，相比原始套接字+recvfrom的方式，减少了一次拷贝和一次系统调用。</div>2020-09-24</li><br/>
+3.后续会出实际的tracepoint或者stap之类的实际案件排查吗？</p>2020-09-24</li><br/><li><span>stackWarn</span> 👍（9） 💬（1）<p>PACKET_MMAP减少了系统调用，不用recvmsg就可以读取到捕获的报文，相比原始套接字+recvfrom的方式，减少了一次拷贝和一次系统调用。</p>2020-09-24</li><br/>
 </ul>

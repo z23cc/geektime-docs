@@ -111,23 +111,23 @@ sendto(socket_fd, send_line, strlen(send_line), 0, (struct sockaddr *) &client_a
 
 如果你觉得今天的答疑内容对你有所帮助，欢迎把它转发给你的朋友或者同事，一起交流一下。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>安排</span> 👍（20） 💬（9）<div>MSL的值怎么和TTL对应的啊？比如MSL设置为30秒，那怎么计算出TTL的值呢？怎么保证一个报文在网络中真的存活不超过30秒？</div>2019-09-13</li><br/><li><span>Geek_f8c379</span> 👍（6） 💬（1）<div>signal(SIGPIPE, SIG_IGN); 实际上是忽略信号 而不是 按照默认的信号处理程序即退出</div>2020-08-04</li><br/><li><span>扩散性百万咸面包</span> 👍（4） 💬（1）<div>请问老师，SO_REUSEADDR虽说是重用TIME_WAIT的socket，为什么不能作为TIME_WAIT的解决方案呢？本质上是解决了端口占用问题，而TIME_WAIT的主要弊端不就在与端口占用吗？</div>2020-04-22</li><br/><li><span>钱</span> 👍（4） 💬（1）<div>MSL 是任何 IP 数据报能够在因特网中存活的最长时间。其实它的实现不是靠计时器来完成的，在每个数据报里都包含有一个被称为 TTL（time to live）的 8 位字段，它的最大值为 255。TTL 可译为“生存时间”，这个生存时间由源主机设置初始值，它表示的是一个 IP 数据报可以经过的最大跳跃数，每经过一个路由器，就相当于经过了一跳，它的值就减 1，当此值减为 0 时，则所在的路由器会将其丢弃，同时发送 ICMP 报文通知源主机
+<li><span>安排</span> 👍（20） 💬（9）<p>MSL的值怎么和TTL对应的啊？比如MSL设置为30秒，那怎么计算出TTL的值呢？怎么保证一个报文在网络中真的存活不超过30秒？</p>2019-09-13</li><br/><li><span>Geek_f8c379</span> 👍（6） 💬（1）<p>signal(SIGPIPE, SIG_IGN); 实际上是忽略信号 而不是 按照默认的信号处理程序即退出</p>2020-08-04</li><br/><li><span>扩散性百万咸面包</span> 👍（4） 💬（1）<p>请问老师，SO_REUSEADDR虽说是重用TIME_WAIT的socket，为什么不能作为TIME_WAIT的解决方案呢？本质上是解决了端口占用问题，而TIME_WAIT的主要弊端不就在与端口占用吗？</p>2020-04-22</li><br/><li><span>钱</span> 👍（4） 💬（1）<p>MSL 是任何 IP 数据报能够在因特网中存活的最长时间。其实它的实现不是靠计时器来完成的，在每个数据报里都包含有一个被称为 TTL（time to live）的 8 位字段，它的最大值为 255。TTL 可译为“生存时间”，这个生存时间由源主机设置初始值，它表示的是一个 IP 数据报可以经过的最大跳跃数，每经过一个路由器，就相当于经过了一跳，它的值就减 1，当此值减为 0 时，则所在的路由器会将其丢弃，同时发送 ICMP 报文通知源主机
 
 这是否意味着一个IP数据报不可能经过255个路由器？
 请问一个IP数据报经过多少路由器，这个由谁决定？怎么决定？和网络距离距离有什么关系？
 
-😅感觉老师的回答和问题，没有完全的对上？</div>2019-11-23</li><br/><li><span>风羽星泉</span> 👍（2） 💬（1）<div>老师，我找到我提交的问题答案了。 使用 man listen 命令，可以找到下面这一句话：
-If the backlog argument is greater than the value in &#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn, then it is silently truncated to that value;   也就是说backlog 设置的值大于somaxconn，会被截断为somaxconn 的值。</div>2019-09-17</li><br/><li><span>小蛋壳</span> 👍（2） 💬（1）<div>高性能的网络通信框架，是不是类似netty做的事？。那比如spring mvc或者其他任何应用程序框架其实底层都需要处理网络通讯这块。可以说知名的框架这块其实处理的都很好？ java应用，是tomcat处理网络请求还是spring来处理的？还有nginx</div>2019-09-13</li><br/><li><span>三年二班邱小东</span> 👍（1） 💬（2）<div>老师，为FIN包插入EOF的TCP协议栈是主动关闭方插入的，还是被动关闭方插入的？</div>2022-02-25</li><br/><li><span>风羽星泉</span> 👍（1） 💬（2）<div>老师，我修改了程序中的backlog为10，&#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn没有变还是默认值128。测试程序同时发起800个连接请求，用netstat观察每次大概能建立10个连接，最后有大量连接报错“A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.”；
+😅感觉老师的回答和问题，没有完全的对上？</p>2019-11-23</li><br/><li><span>风羽星泉</span> 👍（2） 💬（1）<p>老师，我找到我提交的问题答案了。 使用 man listen 命令，可以找到下面这一句话：
+If the backlog argument is greater than the value in &#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn, then it is silently truncated to that value;   也就是说backlog 设置的值大于somaxconn，会被截断为somaxconn 的值。</p>2019-09-17</li><br/><li><span>小蛋壳</span> 👍（2） 💬（1）<p>高性能的网络通信框架，是不是类似netty做的事？。那比如spring mvc或者其他任何应用程序框架其实底层都需要处理网络通讯这块。可以说知名的框架这块其实处理的都很好？ java应用，是tomcat处理网络请求还是spring来处理的？还有nginx</p>2019-09-13</li><br/><li><span>三年二班邱小东</span> 👍（1） 💬（2）<p>老师，为FIN包插入EOF的TCP协议栈是主动关闭方插入的，还是被动关闭方插入的？</p>2022-02-25</li><br/><li><span>风羽星泉</span> 👍（1） 💬（2）<p>老师，我修改了程序中的backlog为10，&#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn没有变还是默认值128。测试程序同时发起800个连接请求，用netstat观察每次大概能建立10个连接，最后有大量连接报错“A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.”；
 当我修改程序中的backlog为1000时，最大可连接数并没有突破128，最后也是报上面那个错误。
-是不是backlog设置的值只能小于内核somaxconn的值，如果比它大，则取内核设置的值。</div>2019-09-17</li><br/><li><span>铲铲队</span> 👍（0） 💬（1）<div>至于已完成连接队列，如果声明的 backlog 参数比 &#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn 的参数要大，那么就会使用我们声明的那个值
+是不是backlog设置的值只能小于内核somaxconn的值，如果比它大，则取内核设置的值。</p>2019-09-17</li><br/><li><span>铲铲队</span> 👍（0） 💬（1）<p>至于已完成连接队列，如果声明的 backlog 参数比 &#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn 的参数要大，那么就会使用我们声明的那个值
 -----》老师，这里是不是有问题呢，原文是这样的： If  the  backlog  argument  is greater than the value in &#47;proc&#47;sys&#47;net&#47;core&#47;somaxconn, then it issilently truncated to that value
 意思应该是设置的backlog值超过了最大值，则被截断为最大值把。
-</div>2022-04-23</li><br/><li><span>GeekYanger</span> 👍（0） 💬（1）<div>记录一下，TIME_WAIT本身还是很有价值的，TIME_WAIT 的引入是为了让 TCP 报文得以自然消失，同时为了让被动关闭方能够正常关闭。</div>2021-10-27</li><br/><li><span>landing</span> 👍（0） 💬（1）<div>&quot;注意服务器端程序，先通过 recvfrom 函数调用获取了客户端的地址和端口信息，这当然是可以的，因为 UDP 报文里面包含了这部分信息。&quot;这里不理解。如果解释了客户端收到服务端的数据是因为服务端第一次接受客户端数据时获得了客户端的地址，然后通过sendto告诉了内核，那么第一步内核为什么把数据给服务端套接字，这一步没有建立映射关系，内核应该也不知道啊</div>2021-10-17</li><br/><li><span>duckman</span> 👍（0） 💬（1）<div>突然发现了
+</p>2022-04-23</li><br/><li><span>GeekYanger</span> 👍（0） 💬（1）<p>记录一下，TIME_WAIT本身还是很有价值的，TIME_WAIT 的引入是为了让 TCP 报文得以自然消失，同时为了让被动关闭方能够正常关闭。</p>2021-10-27</li><br/><li><span>landing</span> 👍（0） 💬（1）<p>&quot;注意服务器端程序，先通过 recvfrom 函数调用获取了客户端的地址和端口信息，这当然是可以的，因为 UDP 报文里面包含了这部分信息。&quot;这里不理解。如果解释了客户端收到服务端的数据是因为服务端第一次接受客户端数据时获得了客户端的地址，然后通过sendto告诉了内核，那么第一步内核为什么把数据给服务端套接字，这一步没有建立映射关系，内核应该也不知道啊</p>2021-10-17</li><br/><li><span>duckman</span> 👍（0） 💬（1）<p>突然发现了
 
 无论是TCP&#47;UDP, 建立连接之后, 服务端总是先read, 客户端总是先write。
 
 所以，有了IO多路复用之后, 是不是 服务端&#47;客户端可以抛弃这个经典的对话模式，完全根据业务层面的需求, 决定是先write还是先read, 而且两个动作是独立的，互不影响。
-</div>2020-12-10</li><br/><li><span>YUAN</span> 👍（0） 💬（1）<div>使用udp时，客户端如何知道服务器端收到了它发送的请求？例如dns查询，客户端发送的请求如果丢失，那么客户端如何知道发生了报文丢失？</div>2020-10-03</li><br/><li><span>宋菁</span> 👍（0） 💬（1）<div>老师好，udp没绑定端口的话，操作系统动态分配端口，有可能会出现两个socket自动绑定到同一个端口的情况吗</div>2020-07-03</li><br/><li><span>pc</span> 👍（0） 💬（2）<div>看了前面的连接关闭、TCP对链路异常的感知，以及四次挥手，串起来后总感觉有点糊涂。看完这篇的几个问题，又稍微明白了一点。想着还是总结着提问一下：
+</p>2020-12-10</li><br/><li><span>YUAN</span> 👍（0） 💬（1）<p>使用udp时，客户端如何知道服务器端收到了它发送的请求？例如dns查询，客户端发送的请求如果丢失，那么客户端如何知道发生了报文丢失？</p>2020-10-03</li><br/><li><span>宋菁</span> 👍（0） 💬（1）<p>老师好，udp没绑定端口的话，操作系统动态分配端口，有可能会出现两个socket自动绑定到同一个端口的情况吗</p>2020-07-03</li><br/><li><span>pc</span> 👍（0） 💬（2）<p>看了前面的连接关闭、TCP对链路异常的感知，以及四次挥手，串起来后总感觉有点糊涂。看完这篇的几个问题，又稍微明白了一点。想着还是总结着提问一下：
 1、首先ACK M+1 和 FIN N两次挥手不能合并吧？上学课本还有一些博客不是都有提到，两者之前被动关闭的一方还可以继续发送数据的。
 
 2、所以TCP四次挥手简单总结为：A端发送FIN包、B端返回ACK；B端继续send data；B端发送FIN包、A端进入TIME_WAIT并发送ACK。
@@ -135,5 +135,5 @@ If the backlog argument is greater than the value in &#47;proc&#47;sys&#47;net&#
 这样的话，对于是不是可以理解成shutdown关闭的时候才是四次挥手的场景呢？反过来说，关闭的时候并不都是“标准的四次挥手”？
 
 3、像kill -9这种暴力关闭程序，都应该类似close关闭吧？
-</div>2020-06-07</li><br/>
+</p>2020-06-07</li><br/>
 </ul>

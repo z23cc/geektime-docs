@@ -328,11 +328,11 @@ objgraph.show_backrefs([a])
 
 希望你可以认真思考这个问题，并且在留言区写下你的答案与我讨论。也欢迎你把这篇文章分享出去，我们一起交流，一起进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Jingxiao</span> 👍（38） 💬（2）<div>思考题答案：
+<li><span>Jingxiao</span> 👍（38） 💬（2）<p>思考题答案：
 
-事实上算法可以写的很简单，这是个很经典的 dfs （深度优先搜索）遍历，从起点开始遍历，对遍历到的节点做个记号。遍历完成后，再对所有节点扫一遍，没有被做记号的，就是需要垃圾回收的。</div>2019-07-06</li><br/><li><span>陈迪</span> 👍（24） 💬（4）<div>1. 循环引用情况下Python不立即回收内存，如果放任不管，即不显式调用gc.collect的话，Python的垃圾回收器自己会什么时候处理？
-2. 最后介绍了内存泄露排查工具，哪种算内存泄露呢？接问题1，不立即回收算内存泄露吗？还是有其他场景</div>2019-07-03</li><br/><li><span>天凉好个秋</span> 👍（10） 💬（3）<div>本文讲的垃圾回收算法在Java中也都有，当初在设计的时候是不是参考了Java？而且，Java中还有标记整理算法，可以解决回收内存不连续的问题，这个在Python中有没有考虑呢？</div>2019-07-03</li><br/><li><span>　　星豪</span> 👍（5） 💬（1）<div>1. 在读文章的时候找了一个可能是错别字的地方，在循环引用那一节中，第四段试想一下，如果这段代码出现在生产环境中...但经过长时间运行“候”...。这一侯应该是后来的后吧？
-2. 当垃圾回收器中新增对象减去删除对象达到相应的阈值时，就会对这一代对象启动垃圾回收。这一句话不是很明白，新增对象我理解的是新创建的对象或者是从上一代挪过来的对象，那么删除对象指的是哪些呢？或者说是如何进行指定哪些是应该被删除的对象呢？</div>2019-07-04</li><br/><li><span>MirkoWei</span> 👍（3） 💬（1）<div>windows下使用objgraph遇到个问题：
+事实上算法可以写的很简单，这是个很经典的 dfs （深度优先搜索）遍历，从起点开始遍历，对遍历到的节点做个记号。遍历完成后，再对所有节点扫一遍，没有被做记号的，就是需要垃圾回收的。</p>2019-07-06</li><br/><li><span>陈迪</span> 👍（24） 💬（4）<p>1. 循环引用情况下Python不立即回收内存，如果放任不管，即不显式调用gc.collect的话，Python的垃圾回收器自己会什么时候处理？
+2. 最后介绍了内存泄露排查工具，哪种算内存泄露呢？接问题1，不立即回收算内存泄露吗？还是有其他场景</p>2019-07-03</li><br/><li><span>天凉好个秋</span> 👍（10） 💬（3）<p>本文讲的垃圾回收算法在Java中也都有，当初在设计的时候是不是参考了Java？而且，Java中还有标记整理算法，可以解决回收内存不连续的问题，这个在Python中有没有考虑呢？</p>2019-07-03</li><br/><li><span>　　星豪</span> 👍（5） 💬（1）<p>1. 在读文章的时候找了一个可能是错别字的地方，在循环引用那一节中，第四段试想一下，如果这段代码出现在生产环境中...但经过长时间运行“候”...。这一侯应该是后来的后吧？
+2. 当垃圾回收器中新增对象减去删除对象达到相应的阈值时，就会对这一代对象启动垃圾回收。这一句话不是很明白，新增对象我理解的是新创建的对象或者是从上一代挪过来的对象，那么删除对象指的是哪些呢？或者说是如何进行指定哪些是应该被删除的对象呢？</p>2019-07-04</li><br/><li><span>MirkoWei</span> 👍（3） 💬（1）<p>windows下使用objgraph遇到个问题：
 `failed to execute [&#39;dot&#39;, &#39;-Tpdf&#39;], make sure the Graphviz executables are on your systems&#39; path`
 
 安装objgraph的时候，需要的前置条件graphviz、xdot都安装了，系统环境变量也添加了，仍然找不到路径
@@ -343,7 +343,7 @@ import os
 
 os.environ[&quot;PATH&quot;] += os.pathsep + &#39;xxx&#47;Graphviz2.38&#47;bin&#47;&#39;
 ```
-问题是解决了，但是每次都需要手动添加环境变量也太麻烦了，不知道是否有更好的解决办法</div>2020-05-19</li><br/><li><span>wangkx</span> 👍（1） 💬（1）<div>课程越往后越有意思，发现了很多知识点盲区，这门课很值！</div>2020-07-02</li><br/><li><span>Switch</span> 👍（23） 💬（1）<div>思考题：
+问题是解决了，但是每次都需要手动添加环境变量也太麻烦了，不知道是否有更好的解决办法</p>2020-05-19</li><br/><li><span>wangkx</span> 👍（1） 💬（1）<p>课程越往后越有意思，发现了很多知识点盲区，这门课很值！</p>2020-07-02</li><br/><li><span>Switch</span> 👍（23） 💬（1）<p>思考题：
 from typing import Set
 
 
@@ -411,12 +411,12 @@ if __name__ == &#39;__main__&#39;:
     print(graph_nodes)
     # OUT: {Graph F nodes [&#39;D&#39;], Graph D nodes [&#39;F&#39;]}
     print(has_nodes - graph_nodes)
-</div>2019-07-08</li><br/><li><span>youaresherlock</span> 👍（8） 💬（1）<div>四次引用，a，python 的函数调用栈，函数参数，和 getrefcount
-不理解这里的函数调用栈、函数参数为什么增加了2次，这里有什么区别？他们两个不是一样的吗，函数参数在函数调用栈里，应该是一次啊</div>2020-07-06</li><br/><li><span>你说呢</span> 👍（5） 💬（0）<div>可以这样理解么：python的垃圾回收机制，以引用计数算法为主、标记-删除算法为辅 来确定内存中哪些对象可以回收；而分代回收算法确定了垃圾是什么时候被回收。
-</div>2021-03-17</li><br/><li><span>程序员人生</span> 👍（5） 💬（10）<div>请问一下，老师
+</p>2019-07-08</li><br/><li><span>youaresherlock</span> 👍（8） 💬（1）<p>四次引用，a，python 的函数调用栈，函数参数，和 getrefcount
+不理解这里的函数调用栈、函数参数为什么增加了2次，这里有什么区别？他们两个不是一样的吗，函数参数在函数调用栈里，应该是一次啊</p>2020-07-06</li><br/><li><span>你说呢</span> 👍（5） 💬（0）<p>可以这样理解么：python的垃圾回收机制，以引用计数算法为主、标记-删除算法为辅 来确定内存中哪些对象可以回收；而分代回收算法确定了垃圾是什么时候被回收。
+</p>2021-03-17</li><br/><li><span>程序员人生</span> 👍（5） 💬（10）<p>请问一下，老师
 执行关于objgraph代码，出现如下错误：
 Graph viewer (xdot) and image renderer (dot) not found, not doing anything else
-是不是还要安装什么软件？</div>2019-07-03</li><br/><li><span>cool</span> 👍（3） 💬（1）<div>Python 的自动回收算法包括标记清除 ，标记清除怎么来解决循环引用垃圾回收的，专栏中讲解的没听懂，循环引用 能在图中遍历到</div>2020-07-01</li><br/><li><span>微风漂过</span> 👍（3） 💬（0）<div>开头的代码
+是不是还要安装什么软件？</p>2019-07-03</li><br/><li><span>cool</span> 👍（3） 💬（1）<p>Python 的自动回收算法包括标记清除 ，标记清除怎么来解决循环引用垃圾回收的，专栏中讲解的没听懂，循环引用 能在图中遍历到</p>2020-07-01</li><br/><li><span>微风漂过</span> 👍（3） 💬（0）<p>开头的代码
 运行出错：ModuleNotFoundError: No module named &#39;psutil&#39;
 安装出错：
 pip install --upgrade psutil
@@ -424,7 +424,7 @@ Collecting psutil
   Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#39;pypi.org&#39;, port=443): Read timed out. (read timeout=15)&quot;)&#39;: &#47;simple&#47;psutil&#47;
   Could not find a version that satisfies the requirement psutil (from versions: )
 No matching distribution found for psutil
-请问这是什么原因？</div>2020-01-31</li><br/><li><span>响雨</span> 👍（2） 💬（0）<div>思考题看的我一脸蒙蔽，无从下手</div>2019-07-03</li><br/><li><span>ァSgr</span> 👍（1） 💬（0）<div>思考题：
+请问这是什么原因？</p>2020-01-31</li><br/><li><span>响雨</span> 👍（2） 💬（0）<p>思考题看的我一脸蒙蔽，无从下手</p>2019-07-03</li><br/><li><span>ァSgr</span> 👍（1） 💬（0）<p>思考题：
 def dfs(graph: dict, start: str):
     visited = set()
     stack = [start]
@@ -457,5 +457,5 @@ graph = {
 print(unreachable_nodes(graph, &#39;A&#39;))
 
 # 输出
-{&#39;G&#39;, &#39;H&#39;}</div>2023-05-16</li><br/><li><span>瞌睡的咸鱼</span> 👍（1） 💬（0）<div>思考题——通过有向图的拓扑排序可以求出（可以参考《算法导论》去理解）</div>2019-07-03</li><br/>
+{&#39;G&#39;, &#39;H&#39;}</p>2023-05-16</li><br/><li><span>瞌睡的咸鱼</span> 👍（1） 💬（0）<p>思考题——通过有向图的拓扑排序可以求出（可以参考《算法导论》去理解）</p>2019-07-03</li><br/>
 </ul>

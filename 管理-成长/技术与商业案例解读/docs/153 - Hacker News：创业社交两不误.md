@@ -48,5 +48,5 @@ Hacker News的前途定位，从格雷厄姆的角度来看是很清楚的。格
 
 有些时候我们做事情，往往是有心栽花花不开，无心插柳柳成荫。Hacker News也是这样。拥抱变化，适应变化，才是常态。
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>Panda</span> 👍（0） 💬（1）<div>Hacker News  分享质量挺高的</div>2019-03-17</li><br/><li><span>Fenng</span> 👍（24） 💬（0）<div>Hacker News 的代码开源的。</div>2019-02-11</li><br/><li><span>Mango</span> 👍（1） 💬（0）<div>无意间的行为影响了最终的结果，不管是正面的还是反面的，专心去做一件事情，不计较短期的得失，往往会创造出更大的价值，自然成功也就不远了</div>2020-04-18</li><br/><li><span>Chaos</span> 👍（0） 💬（0）<div>Hacker News 是日常业界和科技信息类信息的主要来源之一。以前用 Android 的时最怀念一个叫Materialistic 现在 iOS 也有 Octal 这样优秀的客户端了。</div>2020-08-30</li><br/>
+<li><span>Panda</span> 👍（0） 💬（1）<p>Hacker News  分享质量挺高的</p>2019-03-17</li><br/><li><span>Fenng</span> 👍（24） 💬（0）<p>Hacker News 的代码开源的。</p>2019-02-11</li><br/><li><span>Mango</span> 👍（1） 💬（0）<p>无意间的行为影响了最终的结果，不管是正面的还是反面的，专心去做一件事情，不计较短期的得失，往往会创造出更大的价值，自然成功也就不远了</p>2020-04-18</li><br/><li><span>Chaos</span> 👍（0） 💬（0）<p>Hacker News 是日常业界和科技信息类信息的主要来源之一。以前用 Android 的时最怀念一个叫Materialistic 现在 iOS 也有 Octal 这样优秀的客户端了。</p>2020-08-30</li><br/>
 </ul>

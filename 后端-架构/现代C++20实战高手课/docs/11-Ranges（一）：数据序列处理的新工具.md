@@ -302,19 +302,19 @@ Ranges提供了以往C++中不存在的数据迭代特性，特别是越界这�
 
 欢迎说出你的看法，与大家一起分享。我们一同交流。下一讲见！
 <div><strong>精选留言（4）</strong></div><ul>
-<li><span>李云龙</span> 👍（1） 💬（1）<div>工作中防止越界访问一般是在访问前进行if条件判断，如果没有越界才会进行访问操作。而且在代码中也会增加捕获越界访问异常的代码。
+<li><span>李云龙</span> 👍（1） 💬（1）<p>工作中防止越界访问一般是在访问前进行if条件判断，如果没有越界才会进行访问操作。而且在代码中也会增加捕获越界访问异常的代码。
 下面是我根据老师的提示写的一个Range概念：template &lt;typename T&gt;
 concept Range = requires(T container){
     {std::ranges::begin(container)};
     {std::ranges::end(container)};
 };
-</div>2024-01-06</li><br/><li><span>peter</span> 👍（1） 💬（1）<div>请教老师几个问题：
+</p>2024-01-06</li><br/><li><span>peter</span> 👍（1） 💬（1）<p>请教老师几个问题：
 Q1：“假设 f(x,g) 的定义为 g(x)”，这句话表面上理解是：g(x)=f(x,g)。但好像说不通啊。f(x,g)的参数g的定义为g(x)，是不是这样啊。
 Q2：auto是由编译器来自动判断类型吗？（类似于弱类型语言了）
 Q3：迭代器与只读迭代器有什么区别？难道迭代器除了“读”还可以“写”吗？ 另外，逆向迭代器，比如begin，正常是从第一个向后面遍历，那“逆向”难道会向前遍历？（已经是第一个，不可能向前遍历啊）
 Q3：代码的运行环境是什么样的？
 对于实例代码，想运行一下看看，IDE是什么啊，包括设置编译器版本为c++20等。
-Q4：“start = std::find(getArray().begin(), getArray().end(), 1);”调用后为什么会变成悬空指针？能否再详细说明一下？</div>2023-02-09</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<div>#include &lt;vector&gt;
+Q4：“start = std::find(getArray().begin(), getArray().end(), 1);”调用后为什么会变成悬空指针？能否再详细说明一下？</p>2023-02-09</li><br/><li><span>Family mission</span> 👍（0） 💬（1）<p>#include &lt;vector&gt;
 #include &lt;algorithm&gt;
 #include &lt;ranges&gt;
 #include &lt;iostream&gt;
@@ -338,7 +338,7 @@ int main() {
         
         return std::vector&lt;int&gt;{ 0, 1, 0, 1 };
         
-    };才可以</div>2023-12-13</li><br/><li><span>努力学习不准懈怠</span> 👍（0） 💬（1）<div>
+    };才可以</p>2023-12-13</li><br/><li><span>努力学习不准懈怠</span> 👍（0） 💬（1）<p>
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 #include &lt;ranges&gt;
@@ -373,5 +373,5 @@ int main() {
  
     return 0;
 }
-这段代码第19行应该是std::cout &lt;&lt; &quot;[4]: &quot; &lt;&lt; *(curr + 3) &lt;&lt; std::endl;</div>2023-02-22</li><br/>
+这段代码第19行应该是std::cout &lt;&lt; &quot;[4]: &quot; &lt;&lt; *(curr + 3) &lt;&lt; std::endl;</p>2023-02-22</li><br/>
 </ul>

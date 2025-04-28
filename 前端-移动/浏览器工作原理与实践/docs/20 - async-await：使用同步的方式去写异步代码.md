@@ -286,20 +286,20 @@ console.log('script end')
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>mfist</span> 👍（118） 💬（20）<div>1. 首先在主协程中初始化异步函数foo和bar，碰到console.log打印script start；
+<li><span>mfist</span> 👍（118） 💬（20）<p>1. 首先在主协程中初始化异步函数foo和bar，碰到console.log打印script start；
 2. 解析到setTimeout，初始化一个Timer，创建一个新的task
 3. 执行bar函数，将控制权交给协程，输出bar start，碰到await，执行foo，输出foo，创建一个 Promise返回给主协程
 4. 将返回的promise添加到微任务队列，向下执行 new Promise，输出 promise executor，返回resolve 添加到微任务队列
 5. 输出script end
 6. 当前task结束之前检查微任务队列，执行第一个微任务，将控制器交给协程输出bar end
 7. 执行第二个微任务 输出 promise then
-8. 当前任务执行完毕进入下一个任务，输出setTimeout</div>2019-09-19</li><br/><li><span>Luke</span> 👍（39） 💬（2）<div>generator 函数是如何暂停执行程序的？
+8. 当前任务执行完毕进入下一个任务，输出setTimeout</p>2019-09-19</li><br/><li><span>Luke</span> 👍（39） 💬（2）<p>generator 函数是如何暂停执行程序的？
 答案是通过协程来控制程序执行。
 generator 函数是一个生成器，执行它会返回一个迭代器，这个迭代器同时也是一个协程。一个线程中可以有多个协程，但是同时只能有一个协程在执行。线程的执行是在内核态，是由操作系统来控制；协程的执行是在用户态，是完全由程序来进行控制，通过调用生成器的next()方法可以让该协程执行，通过yield关键字可以让该协程暂停，交出主线程控制权，通过return 关键字可以让该协程结束。协程切换是在用户态执行，而线程切换时需要从用户态切换到内核态，在内核态进行调度，协程相对于线程来说更加轻量、高效。
 async function实现原理？ 
 async function 是通过 promise + generator 来实现的。generator 是通过协程来控制程序调度的。
 ​在协程中执行异步任务时，先用promise封装该异步任务，如果异步任务完成，会将其结果放入微任务队列中，然后通过yield 让出主线程执行权，继续执行主线程js，主线程js执行完毕后，会去扫描微任务队列，如果有任务则取出任务进行执行，这时通过调用迭代器的next(result)方法，并传入任务执行结果result，将主线程执行权转交给该协程继续执行，并且将result赋值给yield 表达式左边的变量，从而以同步的方式实现了异步编程。
-所以说到底async function 还是通过协程+微任务+浏览器事件循环机制来实现的。</div>2019-09-19</li><br/><li><span>EmilyLucky</span> 👍（34） 💬（6）<div>1.首先执行console.log(&#39;script start&#39;);打印出script start
+所以说到底async function 还是通过协程+微任务+浏览器事件循环机制来实现的。</p>2019-09-19</li><br/><li><span>EmilyLucky</span> 👍（34） 💬（6）<p>1.首先执行console.log(&#39;script start&#39;);打印出script start
 2.接着遇到定时器，创建一个新任务，放在延迟队列中
 3.紧接着执行bar函数，由于bar函数被async标记的，所以进入该函数时，JS引擎会保存当前调用栈等信息，然后执行bar函数中的console.log(&#39;bar start&#39;);语句，打印bar start。
 4.接下来执行到bar函数中的await foo();语句，执行foo函数，也由于foo函数被async标记的，所以进入该函数时，JS引擎会保存当前调用栈等信息，然后执行foo函数中的console.log(&#39;foo&#39;);语句，打印foo。
@@ -314,8 +314,8 @@ async function 是通过 promise + generator 来实现的。generator 是通过�
 13.执行完之后，将控制权归还给主线程，当前任务执行完毕，取出延迟队列中的任务，执行console.log(&#39;setTimeout&#39;);，打印输出setTimeout。
 
 故：最终输出顺序是：script start =&gt; bar start =&gt; foo =&gt; promise executor =&gt; script end =&gt; bar end =&gt; promise then =&gt; setTimeout
-</div>2020-05-17</li><br/><li><span>许童童</span> 👍（10） 💬（0）<div>感谢老师的分享，懂了，生成器+Promise+自动迭代器=async&#47;await。</div>2019-09-19</li><br/><li><span>穿秋裤的男孩</span> 👍（9） 💬（8）<div>以前一直以为promise.then就是添加微任务，原来真的的微任务是promise.resolve&#47;reject。then函数只是resolve&#47;reject执行的副产品</div>2020-04-17</li><br/><li><span>淡</span> 👍（8） 💬（6）<div>你好，这还有个小疑问：
-就是foo函数被标记上async后，会隐式生成一个promise，然后在await foo（）处，await本身又会生成一个promise_，这两个promise是什么关系？</div>2019-09-30</li><br/><li><span>墨灵</span> 👍（7） 💬（0）<div>直到现在才构建起一个比较完整的异步编程范式的体系，真是深入浅出。</div>2020-03-27</li><br/><li><span>啊哈哈</span> 👍（4） 💬（2）<div>那也就是说，await之后的行为，全部作为promise.then()的微任务加入进微任务队列中了。最后在本轮宏任务执行完成后才执行当前宏任务下的微任务队列。</div>2021-01-14</li><br/><li><span>A LETTER</span> 👍（2） 💬（0）<div>awiat会向父协程传递创建的promise_,并执行resolve(result)，该方法会被放入微任务队列中执行，之后在赋值前通过yield跳出该协程，转到父协程，然后父协程通过调用promise_.then方法来监听这个promise的变化，当父协程执行结束之前，到达检查点，去执行微任务队列时，执行到之前注册的resolve(result)时，会调用之前then注册的回调函数，在该回调函数中通过next(result)来进入子协程，并将result的值，赋值给await等式左边的变量，然后继续执行该子协程的代码，就相当于在之前的then中注册的回调函数里执行一样，实现了同步的方式来进行异步操作。</div>2021-10-06</li><br/><li><span>王玄</span> 👍（2） 💬（0）<div>老师 可以否按照mfist这种流程详细讲解一下练习题</div>2021-04-19</li><br/><li><span>张萌</span> 👍（2） 💬（0）<div>最新的 node 14 已经支持顶层 await 了</div>2020-05-24</li><br/><li><span>开开之之</span> 👍（1） 💬（0）<div>首先执行console.log(&#39;script start&#39;)
+</p>2020-05-17</li><br/><li><span>许童童</span> 👍（10） 💬（0）<p>感谢老师的分享，懂了，生成器+Promise+自动迭代器=async&#47;await。</p>2019-09-19</li><br/><li><span>穿秋裤的男孩</span> 👍（9） 💬（8）<p>以前一直以为promise.then就是添加微任务，原来真的的微任务是promise.resolve&#47;reject。then函数只是resolve&#47;reject执行的副产品</p>2020-04-17</li><br/><li><span>淡</span> 👍（8） 💬（6）<p>你好，这还有个小疑问：
+就是foo函数被标记上async后，会隐式生成一个promise，然后在await foo（）处，await本身又会生成一个promise_，这两个promise是什么关系？</p>2019-09-30</li><br/><li><span>墨灵</span> 👍（7） 💬（0）<p>直到现在才构建起一个比较完整的异步编程范式的体系，真是深入浅出。</p>2020-03-27</li><br/><li><span>啊哈哈</span> 👍（4） 💬（2）<p>那也就是说，await之后的行为，全部作为promise.then()的微任务加入进微任务队列中了。最后在本轮宏任务执行完成后才执行当前宏任务下的微任务队列。</p>2021-01-14</li><br/><li><span>A LETTER</span> 👍（2） 💬（0）<p>awiat会向父协程传递创建的promise_,并执行resolve(result)，该方法会被放入微任务队列中执行，之后在赋值前通过yield跳出该协程，转到父协程，然后父协程通过调用promise_.then方法来监听这个promise的变化，当父协程执行结束之前，到达检查点，去执行微任务队列时，执行到之前注册的resolve(result)时，会调用之前then注册的回调函数，在该回调函数中通过next(result)来进入子协程，并将result的值，赋值给await等式左边的变量，然后继续执行该子协程的代码，就相当于在之前的then中注册的回调函数里执行一样，实现了同步的方式来进行异步操作。</p>2021-10-06</li><br/><li><span>王玄</span> 👍（2） 💬（0）<p>老师 可以否按照mfist这种流程详细讲解一下练习题</p>2021-04-19</li><br/><li><span>张萌</span> 👍（2） 💬（0）<p>最新的 node 14 已经支持顶层 await 了</p>2020-05-24</li><br/><li><span>开开之之</span> 👍（1） 💬（0）<p>首先执行console.log(&#39;script start&#39;)
 然后执行setTimeout，由于setTimeout是宏任务，因此会把它的回调函数放入消息队列中。
 执行bar(): 启动bar协程，这个时候会执行 console.log(&#39;bar start&#39;)。
 然后执行await foo()，这个时候会执行console.log(&#39;foo&#39;), 并且创建一个promise对象, 把resolve放入微任务队列中。
@@ -331,7 +331,7 @@ promise._then(() =&gt; {
 这个时候主函数执行完毕，开始执行微任务，由于先进先出，会先执行bar协程创建的promise对象的resolve任务，因此下一步是触发bar协程，继续执行完 console.log(&#39;bar end&#39;)。
 继续执行微任务队列，执行下一个promise的resolve函数，并触发执行其then函数
 console.log(&#39;promise then&#39;)
-微任务执行完毕，继续执行下一个宏任务 console.log(&#39;setTimeout&#39;)</div>2022-10-15</li><br/><li><span>Geek_aa1c31</span> 👍（1） 💬（0）<div>
+微任务执行完毕，继续执行下一个宏任务 console.log(&#39;setTimeout&#39;)</p>2022-10-15</li><br/><li><span>Geek_aa1c31</span> 👍（1） 💬（0）<p>
 async function foo() {
     console.log(1)
     let a = await 100
@@ -408,12 +408,12 @@ new Promise(resolve =&gt; {
 }).then(() =&gt; {
   console.log(&#39;promise then&#39;);
 });
-console.log(&#39;script end&#39;);</div>2022-02-20</li><br/><li><span>路漫漫</span> 👍（1） 💬（0）<div>好文，看了许久和配合es6的文档才看明白的，收获极大</div>2022-02-06</li><br/><li><span>AIGC Weekly 周报</span> 👍（1） 💬（0）<div>具体步骤如下，并不严谨，欢迎指教：
+console.log(&#39;script end&#39;);</p>2022-02-20</li><br/><li><span>路漫漫</span> 👍（1） 💬（0）<p>好文，看了许久和配合es6的文档才看明白的，收获极大</p>2022-02-06</li><br/><li><span>AIGC Weekly 周报</span> 👍（1） 💬（0）<p>具体步骤如下，并不严谨，欢迎指教：
 1. 输出 “script start”。
 2. 执行 setTimeout，将其加入到定时消息队列(宏任务)。
 3. 执行 bar()，以协程的角度，创建一个 bar 协程，首先输出 “bar start”，执行到 await 后，调用 foo (创建一个foo协程)，输出 “ foo”，并新建一个Promise实例传递给父协程，父协程将其添加到当前宏任务的微任务队列(微任务队列元素+1)。
 4. 执行新建 Promise 实例，输出 “promise executor”，执行 resolve() 添加到微任务队列中(微任务队列元素+1)。
 5. 输出 “script end”。
 6. 当前宏任务执行完毕，开始检查微任务队列，按照添加的先后顺序，首先输出 “bar end”，再次输出 “promise then”。
-7. 消息队列中的任务在下一次事件循环中执行，输出 “ setTimeout”。</div>2021-04-04</li><br/>
+7. 消息队列中的任务在下一次事件循环中执行，输出 “ setTimeout”。</p>2021-04-04</li><br/>
 </ul>

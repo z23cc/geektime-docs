@@ -307,13 +307,13 @@ a=rtcp-fb:100 transport-cc
 
 欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>诸葛亮了</span> 👍（7） 💬（2）<div>浏览器和ios app之间用webrtc建立视频直播，ios app退出到后台，再次进入时浏览器的直播会卡住是什么原因呢？</div>2019-07-31</li><br/><li><span>_(:з」∠)_</span> 👍（4） 💬（1）<div>果然饭要一口一口吃  以前找的案例都是能跑通  但是想改点什么 不知道原理真没法下手_(:з」∠)_</div>2021-03-20</li><br/><li><span>艺超(鲁鸣)</span> 👍（3） 💬（2）<div>老师好，请问一下，一直不是很明白，这个里面交换SDP的时候，是通过信令服务器做的交换是吗？即使是P2P里面，也是需要信令服务器的吗？</div>2021-05-25</li><br/><li><span>Benjamin</span> 👍（3） 💬（1）<div>李老师你好。
+<li><span>诸葛亮了</span> 👍（7） 💬（2）<p>浏览器和ios app之间用webrtc建立视频直播，ios app退出到后台，再次进入时浏览器的直播会卡住是什么原因呢？</p>2019-07-31</li><br/><li><span>_(:з」∠)_</span> 👍（4） 💬（1）<p>果然饭要一口一口吃  以前找的案例都是能跑通  但是想改点什么 不知道原理真没法下手_(:з」∠)_</p>2021-03-20</li><br/><li><span>艺超(鲁鸣)</span> 👍（3） 💬（2）<p>老师好，请问一下，一直不是很明白，这个里面交换SDP的时候，是通过信令服务器做的交换是吗？即使是P2P里面，也是需要信令服务器的吗？</p>2021-05-25</li><br/><li><span>Benjamin</span> 👍（3） 💬（1）<p>李老师你好。
 SDP 这篇内容不错，让我梳理清楚了很多 SDP 细节和后续需要进一步补充更多细节的方向。
 
 但是我这里一直有个 SDP 信息报文两端相互交换的时间点疑问。
 
 假设是 1 to 1 的场景，一次连接时相互会交换一次 SDP 信息，连接正常音视频通信正常中的时候。
-后续两端还会相互交换 SDP 信息嘛？还是说在一段主动发起再次协商时，才会触发一次两边交换一次新的 SDP 信息。并且 o= 下的 version 会递增一次。</div>2020-02-11</li><br/><li><span>Geek_ualcx9</span> 👍（3） 💬（1）<div>这节课开始加深了，找了一段资料，不知道对不对。
+后续两端还会相互交换 SDP 信息嘛？还是说在一段主动发起再次协商时，才会触发一次两边交换一次新的 SDP 信息。并且 o= 下的 version 会递增一次。</p>2020-02-11</li><br/><li><span>Geek_ualcx9</span> 👍（3） 💬（1）<p>这节课开始加深了，找了一段资料，不知道对不对。
 
 课后题：
    In SDP [1] there exists a bandwidth attribute, which has a modifier
@@ -322,7 +322,7 @@ SDP 这篇内容不错，让我梳理清楚了很多 SDP 细节和后续需要�
 
       b=&lt;modifier&gt;:&lt;value&gt;
 
-   Today there are four defined modifiers used for different purposes.</div>2019-12-12</li><br/><li><span>just so so</span> 👍（1） 💬（1）<div>当用户发送数据量太大超过评估的带宽时，要及时减少数据包的发送：这是不是代表着视频的质量就下降了，或者会出现马赛克的情况？</div>2019-08-26</li><br/><li><span>Geek_1ae6d0</span> 👍（1） 💬（2）<div>看了sdp   但是sdp是怎么用呢    web端要我们自己去打出来吗   还是调用api
-</div>2019-08-14</li><br/><li><span>Geek_855fe4</span> 👍（1） 💬（1）<div>可以使用b=AS:xxx来限制传输码率，应该是这样子的吧；
-另外，老师是否可以增加些candidate、ssrc-group、ice-ufrag、ice-pwd、fingerprint、setup等属性的深入讲解呢，以及这些属性在哪些地方会被用到。有些属性一直没能很清楚的理解，没能很好的通RTP包关联起来，谢谢老师。</div>2019-08-08</li><br/><li><span>良师益友</span> 👍（1） 💬（1）<div>多个用户加入一个房间，需要sdp关于编解码部分必须一样吗？</div>2019-07-30</li><br/><li><span>佛学渣</span> 👍（1） 💬（1）<div>l传输协议好像还有RTP&#47;SAVP吧...</div>2019-07-30</li><br/><li><span>Beast-Of-Prey</span> 👍（1） 💬（1）<div>打卡 一遍过去记不住 明天再读一遍</div>2019-07-30</li><br/><li><span>David</span> 👍（0） 💬（2）<div>在流媒体描述中改变码率吧，a=rtpmap:96 VP8&#47;90000，不过我好奇怎么更改SDP</div>2019-08-15</li><br/><li><span>许童童</span> 👍（0） 💬（1）<div>短期记忆已经记住了SDP，晚上再回顾一下。</div>2019-07-30</li><br/><li><span>佛学渣</span> 👍（0） 💬（2）<div>是在fmtp下设置传输码率吗?</div>2019-07-30</li><br/><li><span>Berklee</span> 👍（2） 💬（0）<div>最近遇到的问题：safari 下有音频数据过来，但是没视频画面（chrome，火狐一切正常）。经排查是 safari 生成的 sdp，没有携带 video 相关信息。添加 addTransceiver 之后，可以正常产生带有 video 的 sdp。问题解决👌</div>2023-03-19</li><br/>
+   Today there are four defined modifiers used for different purposes.</p>2019-12-12</li><br/><li><span>just so so</span> 👍（1） 💬（1）<p>当用户发送数据量太大超过评估的带宽时，要及时减少数据包的发送：这是不是代表着视频的质量就下降了，或者会出现马赛克的情况？</p>2019-08-26</li><br/><li><span>Geek_1ae6d0</span> 👍（1） 💬（2）<p>看了sdp   但是sdp是怎么用呢    web端要我们自己去打出来吗   还是调用api
+</p>2019-08-14</li><br/><li><span>Geek_855fe4</span> 👍（1） 💬（1）<p>可以使用b=AS:xxx来限制传输码率，应该是这样子的吧；
+另外，老师是否可以增加些candidate、ssrc-group、ice-ufrag、ice-pwd、fingerprint、setup等属性的深入讲解呢，以及这些属性在哪些地方会被用到。有些属性一直没能很清楚的理解，没能很好的通RTP包关联起来，谢谢老师。</p>2019-08-08</li><br/><li><span>良师益友</span> 👍（1） 💬（1）<p>多个用户加入一个房间，需要sdp关于编解码部分必须一样吗？</p>2019-07-30</li><br/><li><span>佛学渣</span> 👍（1） 💬（1）<p>l传输协议好像还有RTP&#47;SAVP吧...</p>2019-07-30</li><br/><li><span>Beast-Of-Prey</span> 👍（1） 💬（1）<p>打卡 一遍过去记不住 明天再读一遍</p>2019-07-30</li><br/><li><span>David</span> 👍（0） 💬（2）<p>在流媒体描述中改变码率吧，a=rtpmap:96 VP8&#47;90000，不过我好奇怎么更改SDP</p>2019-08-15</li><br/><li><span>许童童</span> 👍（0） 💬（1）<p>短期记忆已经记住了SDP，晚上再回顾一下。</p>2019-07-30</li><br/><li><span>佛学渣</span> 👍（0） 💬（2）<p>是在fmtp下设置传输码率吗?</p>2019-07-30</li><br/><li><span>Berklee</span> 👍（2） 💬（0）<p>最近遇到的问题：safari 下有音频数据过来，但是没视频画面（chrome，火狐一切正常）。经排查是 safari 生成的 sdp，没有携带 video 相关信息。添加 addTransceiver 之后，可以正常产生带有 video 的 sdp。问题解决👌</p>2023-03-19</li><br/>
 </ul>

@@ -155,7 +155,7 @@ bind 192.168.10.3 192.168.10.4 192.168.10.5
 
 欢迎在留言区写下你的思考和答案，我们一起交流讨论。如果你觉得今天的内容对你有所帮助，也欢迎你分享给你的朋友或同事。我们下节课见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Kaito</span> 👍（229） 💬（11）<div>把 slave-read-only 设置为 no，让从库也能直接删除数据，以此来避免读到过期数据，这种方案是否可行？
+<li><span>Kaito</span> 👍（229） 💬（11）<p>把 slave-read-only 设置为 no，让从库也能直接删除数据，以此来避免读到过期数据，这种方案是否可行？
 
 我个人觉得这个问题有些歧义，因为尽管把 slave-read-only 设置为 no，其实 slave 也不会主动过期删除从 master 同步过来的数据的。
 
@@ -181,7 +181,7 @@ bind 192.168.10.3 192.168.10.4 192.168.10.5
 
 1、主从库设置的 maxmemory 不同，如果 slave 比 master 小，那么 slave 内存就会优先达到 maxmemroy，然后开始淘汰数据，此时主从库也会产生不一致。
 
-2、如果主从同步的 client-output-buffer-limit 设置过小，并且 master 数据量很大，主从全量同步时可能会导致 buffer 溢出，溢出后主从全量同步就会失败。如果主从集群配置了哨兵，那么哨兵会让 slave 继续向 master 发起全量同步请求，然后 buffer 又溢出同步失败，如此反复，会形成复制风暴，这会浪费 master 大量的 CPU、内存、带宽资源，也会让 master 产生阻塞的风险。</div>2020-11-02</li><br/><li><span>老大不小</span> 👍（31） 💬（2）<div>老师，slave-serve-stale-data这个命令说的不清不楚的，对于初学者来说不明就里。
+2、如果主从同步的 client-output-buffer-limit 设置过小，并且 master 数据量很大，主从全量同步时可能会导致 buffer 溢出，溢出后主从全量同步就会失败。如果主从集群配置了哨兵，那么哨兵会让 slave 继续向 master 发起全量同步请求，然后 buffer 又溢出同步失败，如此反复，会形成复制风暴，这会浪费 master 大量的 CPU、内存、带宽资源，也会让 master 产生阻塞的风险。</p>2020-11-02</li><br/><li><span>老大不小</span> 👍（31） 💬（2）<p>老师，slave-serve-stale-data这个命令说的不清不楚的，对于初学者来说不明就里。
 
 slave-serve-stale-data
 
@@ -191,11 +191,11 @@ slave-serve-stale-data
 29、slave-read-only
 
 解释：设置slave是否是只读的。从2.6版起，slave默认是只读的。
-</div>2021-04-28</li><br/><li><span>思变</span> 👍（6） 💬（2）<div>老师您好,关于bind参数,不是设置redis能接受哪个本机网卡接入的连接吗?为什么要配置多个哨兵的IP呢</div>2020-11-04</li><br/><li><span>杨逸林</span> 👍（6） 💬（0）<div>不是个好方法，如果不同客户端，去非当前从库读取数据时，就会出现缓存不一致的情况。</div>2020-11-02</li><br/><li><span>小白白不白</span> 👍（5） 💬（3）<div>EXPIRE、PEXPIRE和EXPIREAT三个命令都会转换成PEXPIREAT命令来执行,难道redis对于aof日志文件没有转为PEXPIREAT吗?</div>2021-03-05</li><br/><li><span>刘浩</span> 👍（4） 💬（0）<div>slave-serve-stale-data配置了主从中断后，从库的逻辑
+</p>2021-04-28</li><br/><li><span>思变</span> 👍（6） 💬（2）<p>老师您好,关于bind参数,不是设置redis能接受哪个本机网卡接入的连接吗?为什么要配置多个哨兵的IP呢</p>2020-11-04</li><br/><li><span>杨逸林</span> 👍（6） 💬（0）<p>不是个好方法，如果不同客户端，去非当前从库读取数据时，就会出现缓存不一致的情况。</p>2020-11-02</li><br/><li><span>小白白不白</span> 👍（5） 💬（3）<p>EXPIRE、PEXPIRE和EXPIREAT三个命令都会转换成PEXPIREAT命令来执行,难道redis对于aof日志文件没有转为PEXPIREAT吗?</p>2021-03-05</li><br/><li><span>刘浩</span> 👍（4） 💬（0）<p>slave-serve-stale-data配置了主从中断后，从库的逻辑
 --no ：从库只能应答INFO和SLAVEOF
 --yes默认 ：正常应答
-这样不知道对不对</div>2020-11-13</li><br/><li><span>赵茭茭</span> 👍（3） 💬（1）<div>主从复制 不是复制的是rdb吗 不是aof啊 这个和指令 带AT的还有效吗 还是我理解的有问题</div>2020-12-07</li><br/><li><span>Geek_be8402</span> 👍（2） 💬（0）<div>这篇内容已经过时了，2021.5 以后主节点上执行的 expire 命令已经会转换为绝对时间传播给 replica
-https:&#47;&#47;github.com&#47;redis&#47;redis&#47;commit&#47;53d1acd598b689b2bbc470d907b9e40e548d63f6</div>2024-04-19</li><br/><li><span>Geek1254</span> 👍（2） 💬（0）<div>为什么不在主库删除过期key时给从库发送删除命令</div>2021-06-20</li><br/><li><span>yu</span> 👍（2） 💬（2）<div>redis为何不把底层的expire实现成为expireAt，再发给从库进行同步，避免出现过期数据问题？</div>2021-03-28</li><br/><li><span>零点999</span> 👍（2） 💬（0）<div>只有主库提供服务，从库只保证高可用</div>2020-11-02</li><br/><li><span>唐朝首都</span> 👍（1） 💬（0）<div>不是一个好方法，这样从库也能处理写命令，这样更容易造成主从不一致。</div>2020-11-06</li><br/><li><span>思变</span> 👍（1） 💬（1）<div>protected-mode我看参数文件的解释是,如果protected-mode设置为yes,如果实例未设置密码且未设置bind参数,只能通过127.0.0.1进行本地连接,是我理解的不对吗?</div>2020-11-04</li><br/><li><span>淡蓝色</span> 👍（0） 💬（0）<div>slave-serve-stale-data参数设置成yes，主从复制中，从服务器可以响应客户端请求；
+这样不知道对不对</p>2020-11-13</li><br/><li><span>赵茭茭</span> 👍（3） 💬（1）<p>主从复制 不是复制的是rdb吗 不是aof啊 这个和指令 带AT的还有效吗 还是我理解的有问题</p>2020-12-07</li><br/><li><span>Geek_be8402</span> 👍（2） 💬（0）<p>这篇内容已经过时了，2021.5 以后主节点上执行的 expire 命令已经会转换为绝对时间传播给 replica
+https:&#47;&#47;github.com&#47;redis&#47;redis&#47;commit&#47;53d1acd598b689b2bbc470d907b9e40e548d63f6</p>2024-04-19</li><br/><li><span>Geek1254</span> 👍（2） 💬（0）<p>为什么不在主库删除过期key时给从库发送删除命令</p>2021-06-20</li><br/><li><span>yu</span> 👍（2） 💬（2）<p>redis为何不把底层的expire实现成为expireAt，再发给从库进行同步，避免出现过期数据问题？</p>2021-03-28</li><br/><li><span>零点999</span> 👍（2） 💬（0）<p>只有主库提供服务，从库只保证高可用</p>2020-11-02</li><br/><li><span>唐朝首都</span> 👍（1） 💬（0）<p>不是一个好方法，这样从库也能处理写命令，这样更容易造成主从不一致。</p>2020-11-06</li><br/><li><span>思变</span> 👍（1） 💬（1）<p>protected-mode我看参数文件的解释是,如果protected-mode设置为yes,如果实例未设置密码且未设置bind参数,只能通过127.0.0.1进行本地连接,是我理解的不对吗?</p>2020-11-04</li><br/><li><span>淡蓝色</span> 👍（0） 💬（0）<p>slave-serve-stale-data参数设置成yes，主从复制中，从服务器可以响应客户端请求；
 
-slave-serve-stale-data参数设置成no，主从复制中，从服务器将阻塞所有请求，有客户端请求时返回“SYNC with master in progress”；</div>2024-06-17</li><br/><li><span>小耿</span> 👍（0） 💬（0）<div>从库执行写命令后，也需要给其它从库和主库做同步，同样会发生读到过期数据的问题。所以不是有效的方法。</div>2023-09-28</li><br/>
+slave-serve-stale-data参数设置成no，主从复制中，从服务器将阻塞所有请求，有客户端请求时返回“SYNC with master in progress”；</p>2024-06-17</li><br/><li><span>小耿</span> 👍（0） 💬（0）<p>从库执行写命令后，也需要给其它从库和主库做同步，同样会发生读到过期数据的问题。所以不是有效的方法。</p>2023-09-28</li><br/>
 </ul>

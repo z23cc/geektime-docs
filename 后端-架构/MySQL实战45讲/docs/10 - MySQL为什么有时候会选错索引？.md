@@ -300,11 +300,11 @@ merge的执行流程是这样的：
 > @Ivan 回复了其他同学的问题，并联系到Checkpoint机制；  
 > @约书亚 问到了merge和redolog的关系。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>路过</span> 👍（37） 💬（7）<div>老师，关于本章中的“基数”（cardinality）问题。既然已经为列a创建了索引，即有专门的数据页存放索引。遍历索引是很快的，从而得到“基数”的值应该很快呀。为何要到原始的数据页中，找N页，统计上面不同的值呢？有点多此一举啊。如果这样操作，会导致信息不准确，比如本来一个页中有50条数据，后来其中20条数据被删除了，空间没有被释放，这导致统计的信息就发生偏差。基数信息就更不准确了。
+<li><span>路过</span> 👍（37） 💬（7）<p>老师，关于本章中的“基数”（cardinality）问题。既然已经为列a创建了索引，即有专门的数据页存放索引。遍历索引是很快的，从而得到“基数”的值应该很快呀。为何要到原始的数据页中，找N页，统计上面不同的值呢？有点多此一举啊。如果这样操作，会导致信息不准确，比如本来一个页中有50条数据，后来其中20条数据被删除了，空间没有被释放，这导致统计的信息就发生偏差。基数信息就更不准确了。
 从原始页中计算“基数”，是不是考虑到索引页中的数据具有滞后性，即更新了表中数据，要过一会才更新索引页？
 请老师指正，谢谢！
 
-</div>2018-12-05</li><br/><li><span>某、人</span> 👍（74） 💬（3）<div>今天这个问题不是特别明白为什么。session A开启了一致性读,session B delete或者insert,之前记录都已经放进了undo了。二级索引的记录也写进了redo和change buffer,应该说删除了索引页也不影响session A的重复读。估计是开启了一致性读之后,在这个事务执行期间,不能释放空间,导致统计信息变大。还是需要老师解释下具体的细节
+</p>2018-12-05</li><br/><li><span>某、人</span> 👍（74） 💬（3）<p>今天这个问题不是特别明白为什么。session A开启了一致性读,session B delete或者insert,之前记录都已经放进了undo了。二级索引的记录也写进了redo和change buffer,应该说删除了索引页也不影响session A的重复读。估计是开启了一致性读之后,在这个事务执行期间,不能释放空间,导致统计信息变大。还是需要老师解释下具体的细节
 
 今天有两个问题,想请教下老师
 1.我的理解是由于B是查找(50000,100000),由于B+树有序,通过二分查找找到b=50000的值,从50000往右扫描,一条一条回表查数据,在执行器上做where a(1,1000)的筛选,然后做判断是否够不够limit的数,够就结束循环。由于这里b(50000,100000)必然不存在a(1,1000),所以需要扫描5W行左右.但是如果把a改为(50001,51000),扫描行数没有变。那么是因为优化器给的扫描行数有问题还是执行器没有结束循环？为什么不结束循环?
@@ -317,7 +317,7 @@ select * from t force index(a) where (a between 1 and 1000) and (b between 50000
 由于这里选取的是a索引,排序不能用到索引,只能用优化排序.选取的是b值最大,id值最小那一行
 这就是典型的两条相同的sql,但是索引选择的不同,出现的数据不一致。
 所以如果是order by b,a就可以避免这种情况的引起的不一致,也可以避免堆排序造成的不一致
-但是如果是asc没有出现这种情况。这里出现不一致,应该还不是由于堆排序造成的。这是什么原因造成的？</div>2018-12-05</li><br/><li><span>bowenz</span> 👍（15） 💬（7）<div>在5.7.21 percona 版本实验，未出现案例1的情况 。 
+但是如果是asc没有出现这种情况。这里出现不一致,应该还不是由于堆排序造成的。这是什么原因造成的？</p>2018-12-05</li><br/><li><span>bowenz</span> 👍（15） 💬（7）<p>在5.7.21 percona 版本实验，未出现案例1的情况 。 
 dev02&gt; select @@global.tx_isolation,@@tx_isolation,version(),&quot;session A&quot;;
 +-----------------------+-----------------+---------------+-----------+
 | @@global.tx_isolation | @@tx_isolation  | version()     | session A |
@@ -359,7 +359,7 @@ dev02&gt; select now();
 
 dev02&gt; explain select * from t where a between 10000 and 20000;
 | id | select_type | table | partitions | type  | possible_keys | key  | key_len | ref  | rows  | filtered | Extra                 |
-|  1 | SIMPLE      | t     | NULL       | range | a             | a    | 5       | NULL | 10001 |   100.00 | Using index condition |</div>2018-12-05</li><br/><li><span>某、人</span> 👍（369） 💬（21）<div>趁着答案公布之前的最后时间,再来尝试性答一下这个题
+|  1 | SIMPLE      | t     | NULL       | range | a             | a    | 5       | NULL | 10001 |   100.00 | Using index condition |</p>2018-12-05</li><br/><li><span>某、人</span> 👍（369） 💬（21）<p>趁着答案公布之前的最后时间,再来尝试性答一下这个题
 1.为什么没有session A,session B扫描的行数是1W
 由于mysql是使用标记删除来删除记录的,并不从索引和数据文件中真正的删除。
 如果delete和insert中间的间隔相对较小,purge线程还没有来得及清理该记录。
@@ -368,18 +368,18 @@ dev02&gt; explain select * from t where a between 10000 and 20000;
 2.为什么开启了session A,session B扫描行数变成3W
 由于session A开启了一致性读,目的为了保证session A的可重复读,insert只能
 另起炉灶,不能占用delete的空间。所以出现的情况就是delete虽然删除了,但是
-未释放空间,insert又增加了空间。导致统计信息有误</div>2018-12-06</li><br/><li><span>Ying</span> 👍（71） 💬（13）<div>现学现用 今天有个500万的表 分页查询特别慢。
+未释放空间,insert又增加了空间。导致统计信息有误</p>2018-12-06</li><br/><li><span>Ying</span> 👍（71） 💬（13）<p>现学现用 今天有个500万的表 分页查询特别慢。
 select * from table where create_time and create_time&gt;=时间戳 and  create_time&lt;=时间戳 
 and subtype=&#39;xx&#39; and type=&#39;xx&#39; and company_id =x order by create_time limited 90,30 ;
 已经建立了组合索引 union_index包括字段 create_time subtype  type company_id
 但是 explain 发现竟然走了create_time 的索引
 语句里加了一个use index(union_index) ，立马好了
-真正的解决了客户的实际问题啊。 感谢老师</div>2018-12-05</li><br/><li><span>梁中华</span> 👍（52） 💬（17）<div>假如要查 A in () AND B in (), 怎么建索引?</div>2019-02-01</li><br/><li><span>斜面镜子 Bill</span> 👍（51） 💬（4）<div>问题的思考：
-我理解 session A 开启的事务对 session B的delete操作后的索引数据的统计时效产生了影响，因为需要保证事务A的重复读，在数据页没有实际删除，而索引的统计选择了N个数据页，这部分数据页不收到前台事务的影响，所以整体统计值会变大，直接影响了索引选择的准确性；</div>2018-12-05</li><br/><li><span>geraltlaush</span> 👍（43） 💬（12）<div>公司测试机器IO性能太差，插十万条要27分钟，做这个文章的实验要1个小时以上</div>2018-12-05</li><br/><li><span>沉浮</span> 👍（37） 💬（1）<div>图十下面第二段
+真正的解决了客户的实际问题啊。 感谢老师</p>2018-12-05</li><br/><li><span>梁中华</span> 👍（52） 💬（17）<p>假如要查 A in () AND B in (), 怎么建索引?</p>2019-02-01</li><br/><li><span>斜面镜子 Bill</span> 👍（51） 💬（4）<p>问题的思考：
+我理解 session A 开启的事务对 session B的delete操作后的索引数据的统计时效产生了影响，因为需要保证事务A的重复读，在数据页没有实际删除，而索引的统计选择了N个数据页，这部分数据页不收到前台事务的影响，所以整体统计值会变大，直接影响了索引选择的准确性；</p>2018-12-05</li><br/><li><span>geraltlaush</span> 👍（43） 💬（12）<p>公司测试机器IO性能太差，插十万条要27分钟，做这个文章的实验要1个小时以上</p>2018-12-05</li><br/><li><span>沉浮</span> 👍（37） 💬（1）<p>图十下面第二段
 现在 limit b,a 这种写法，要求按照 b,a 排序，就意味着使用这两个索引都需要排序。
 应该是order by b,a吧
-另外有个问题请教林老师，根据经验大表增加索引的时候比较慢，这个是理解的，但是删除索引的时候能做到秒删，这个什么原理呢？</div>2018-12-05</li><br/><li><span>张永志</span> 👍（33） 💬（10）<div>merge那段的解释明白了change buffer操作逻辑。即change buffer变化与数据块变化是分开的，最初redo中记录的只是change buffer的变更，因为还未应用到数据块上。而merge后redo记录的是数据块、change buffer的变更。
-是这样吧？😄</div>2018-12-05</li><br/><li><span>XD</span> 👍（32） 💬（1）<div>谢谢老师的解答，我之前一直以为这个操作也是在存储层进行的。
-那执行器调用存储层的接口是不是只能获取到最原始的数据，后续的加工，比如order，join和group操作也都是在执行器里进行的吗？对应的buffer和内存临时表也都是server层的东西？</div>2019-02-26</li><br/><li><span>kevin</span> 👍（21） 💬（1）<div>老师你好。我用存储过程插入100000条数据特别慢，后来我set autocommit=0,每1000条才commit，这样就快了。我想不出来这是为什么，求解惑</div>2018-12-05</li><br/><li><span>蚂蚁内推+v</span> 👍（19） 💬（4）<div>老师，原文中：在这个例子里，我们用 limit 100 让优化器意识到，使用b索引代价是很高的。
-问题：为什么limit 100时候，使用b索引代价高呢？和limit 1相比，赶紧没有什么质的变化啊</div>2018-12-08</li><br/><li><span>EAGLE</span> 👍（19） 💬（3）<div>老师，看了一篇文章说innodb如果不加order by默认是按照主键排序的。也就是说如果不加order by，查询结果也是有一定次序的。那么如果没有业务需求，纯粹只是为了分页显示数据，不加order by也是可以的吗？</div>2018-12-06</li><br/><li><span>Laputa</span> 👍（17） 💬（3）<div>老师，redo log 是实时写入磁盘的吗？是不是还有一层所谓的“redo log buffer”？</div>2018-12-05</li><br/>
+另外有个问题请教林老师，根据经验大表增加索引的时候比较慢，这个是理解的，但是删除索引的时候能做到秒删，这个什么原理呢？</p>2018-12-05</li><br/><li><span>张永志</span> 👍（33） 💬（10）<p>merge那段的解释明白了change buffer操作逻辑。即change buffer变化与数据块变化是分开的，最初redo中记录的只是change buffer的变更，因为还未应用到数据块上。而merge后redo记录的是数据块、change buffer的变更。
+是这样吧？😄</p>2018-12-05</li><br/><li><span>XD</span> 👍（32） 💬（1）<p>谢谢老师的解答，我之前一直以为这个操作也是在存储层进行的。
+那执行器调用存储层的接口是不是只能获取到最原始的数据，后续的加工，比如order，join和group操作也都是在执行器里进行的吗？对应的buffer和内存临时表也都是server层的东西？</p>2019-02-26</li><br/><li><span>kevin</span> 👍（21） 💬（1）<p>老师你好。我用存储过程插入100000条数据特别慢，后来我set autocommit=0,每1000条才commit，这样就快了。我想不出来这是为什么，求解惑</p>2018-12-05</li><br/><li><span>蚂蚁内推+v</span> 👍（19） 💬（4）<p>老师，原文中：在这个例子里，我们用 limit 100 让优化器意识到，使用b索引代价是很高的。
+问题：为什么limit 100时候，使用b索引代价高呢？和limit 1相比，赶紧没有什么质的变化啊</p>2018-12-08</li><br/><li><span>EAGLE</span> 👍（19） 💬（3）<p>老师，看了一篇文章说innodb如果不加order by默认是按照主键排序的。也就是说如果不加order by，查询结果也是有一定次序的。那么如果没有业务需求，纯粹只是为了分页显示数据，不加order by也是可以的吗？</p>2018-12-06</li><br/><li><span>Laputa</span> 👍（17） 💬（3）<p>老师，redo log 是实时写入磁盘的吗？是不是还有一层所谓的“redo log buffer”？</p>2018-12-05</li><br/>
 </ul>

@@ -267,6 +267,6 @@ RabbitMQ 是通过配置镜像队列的机制来实现多副本的，数据可�
 
 从实现上来看，RabbitMQ的镜像模式基于主从架构的模型。镜像队列是在 Queue 的维度配置的，共有 All、Exactly、Node 三种策略。其中，All 是指强一致；Exactly 是允许指定同步的副本数，这和多数策略很像，属于最终一致；Node 可以指定数据需要固定同步的节点列表，严格意义来说也是强一致，因为被选中的节点都需要写入数据才算数据保存成功。从实现上看，在RabbitMQ的镜像模式中，不支持弱一致的一致性策略。
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Kevin</span> 👍（1） 💬（0）<div>干货总结，点赞six six six</div>2023-08-07</li><br/><li><span>如果可以改变</span> 👍（1） 💬（2）<div>在某些场景下，比如数据的集合长度是固定的时候，可以考虑数组替代或者重写 Map，用来降低 HashMap 的 overheap。
-上述 HashMap 的 overheap 应该是 overhead 吧！老师，如何降低 map 的 overhead ？</div>2023-07-31</li><br/><li><span>Geek_db7484</span> 👍（0） 💬（0）<div>Unsafe JDK 9 没有被禁用</div>2024-06-17</li><br/>
+<li><span>Kevin</span> 👍（1） 💬（0）<p>干货总结，点赞six six six</p>2023-08-07</li><br/><li><span>如果可以改变</span> 👍（1） 💬（2）<p>在某些场景下，比如数据的集合长度是固定的时候，可以考虑数组替代或者重写 Map，用来降低 HashMap 的 overheap。
+上述 HashMap 的 overheap 应该是 overhead 吧！老师，如何降低 map 的 overhead ？</p>2023-07-31</li><br/><li><span>Geek_db7484</span> 👍（0） 💬（0）<p>Unsafe JDK 9 没有被禁用</p>2024-06-17</li><br/>
 </ul>

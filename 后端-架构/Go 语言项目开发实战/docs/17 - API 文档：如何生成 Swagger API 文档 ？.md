@@ -452,31 +452,31 @@ $ swagger serve --no-open -F=swagger --port 36666 swagger.yaml
 
 欢迎你在留言区与我交流讨论，我们下一讲见。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>遇见@z</span> 👍（7） 💬（4）<div>看着好麻烦，我们公司自己写的框架通过扫描ast语法树生成openapi，代码即文档</div>2021-07-08</li><br/><li><span>daz2yy</span> 👍（7） 💬（5）<div>一点想法，在小团队里，其实也没那么规范，能简单就简单点，目前用的是 Postman 生成的文档，考虑的点：
+<li><span>遇见@z</span> 👍（7） 💬（4）<p>看着好麻烦，我们公司自己写的框架通过扫描ast语法树生成openapi，代码即文档</p>2021-07-08</li><br/><li><span>daz2yy</span> 👍（7） 💬（5）<p>一点想法，在小团队里，其实也没那么规范，能简单就简单点，目前用的是 Postman 生成的文档，考虑的点：
 1. 一方面程序员自己调试接口必然会用到接口调用工具，postman大家也比较熟悉；
 2. 另一方面开发完之后，它能直接生成在线文档，不用重新去定义文档使用的 API 的字段、结构体等，感觉会方便很多，而且能实时同步修改（接口有变动可以同步反映到文档上，不需要二次修改 api 文档，减少人为的错误）
 
 请教下老师对两者的看法，主要是我觉得写 swagger 接口注释这个工作比较繁琐，另外需要特意去维护它，容易出现代码改了但是文档未改的情况；或者说老师这边有什么好的实践经验。
 
-FYI：Makefile 说明那里有个 Models 写成了 Modles</div>2021-07-05</li><br/><li><span>helloworld</span> 👍（4） 💬（1）<div>思考题可能的好处：1. 方便和项目根路径下的帮助文档目录docs做区分；2. 路径层次清晰辨认功能；3. 方便启api文档的http服务？</div>2021-07-03</li><br/><li><span>先听</span> 👍（2） 💬（2）<div>swagger可以通过扫描源码生成文档。但是后端往往需要在编码之前就提供接口文档。貌似有些矛盾</div>2021-07-21</li><br/><li><span>Geek_5baa01</span> 👍（1） 💬（1）<div>需求确认了后,后台首先应该写swagger 提供给前端开发, 相互不影响,   按照你这个套路, 是不是得后端开发完了在让前端搞</div>2022-11-14</li><br/><li><span>NULL</span> 👍（1） 💬（1）<div>&quot;目前最新的 OpenAPI 规范是OpenAPI 3.0（也就是 Swagger 2.0 规范）&quot;
+FYI：Makefile 说明那里有个 Models 写成了 Modles</p>2021-07-05</li><br/><li><span>helloworld</span> 👍（4） 💬（1）<p>思考题可能的好处：1. 方便和项目根路径下的帮助文档目录docs做区分；2. 路径层次清晰辨认功能；3. 方便启api文档的http服务？</p>2021-07-03</li><br/><li><span>先听</span> 👍（2） 💬（2）<p>swagger可以通过扫描源码生成文档。但是后端往往需要在编码之前就提供接口文档。貌似有些矛盾</p>2021-07-21</li><br/><li><span>Geek_5baa01</span> 👍（1） 💬（1）<p>需求确认了后,后台首先应该写swagger 提供给前端开发, 相互不影响,   按照你这个套路, 是不是得后端开发完了在让前端搞</p>2022-11-14</li><br/><li><span>NULL</span> 👍（1） 💬（1）<p>&quot;目前最新的 OpenAPI 规范是OpenAPI 3.0（也就是 Swagger 2.0 规范）&quot;
 
 这里错了啊, 现在最新的规范是2021年2月16日发布的 OpenAPI 3.1.0, 而且 OpenAPI 3.0 != Swagger 2.0
 
 OpenAPI有三个版本 Swagger 2.0, OpenAPI 3.0.x, OpenAPI 3.1.0
 详见:
 https:&#47;&#47;swagger.io&#47;blog&#47;news&#47;whats-new-in-openapi-3-0&#47;
-https:&#47;&#47;www.openapis.org&#47;blog&#47;2021&#47;02&#47;16&#47;migrating-from-openapi-3-0-to-3-1-0</div>2022-07-30</li><br/><li><span>咖梵冰雨</span> 👍（1） 💬（2）<div>这个demo运行会有跨域问题？这个本地咋解决，我gin加了中间件运行跨域好像不管用</div>2021-11-09</li><br/><li><span>types</span> 👍（1） 💬（2）<div>swagger文档可以手动编写，也可以通过工具解析注释生成文档。
+https:&#47;&#47;www.openapis.org&#47;blog&#47;2021&#47;02&#47;16&#47;migrating-from-openapi-3-0-to-3-1-0</p>2022-07-30</li><br/><li><span>咖梵冰雨</span> 👍（1） 💬（2）<p>这个demo运行会有跨域问题？这个本地咋解决，我gin加了中间件运行跨域好像不管用</p>2021-11-09</li><br/><li><span>types</span> 👍（1） 💬（2）<p>swagger文档可以手动编写，也可以通过工具解析注释生成文档。
 说明关于swagger 文档产生了2中开发模式：
 1. 手动编写swagger 文档，可以通过文档生成代码
 2. 先编写代码，添加swagger规范的注释，生成文档。
-请问一般开发中，使用哪种swagger模式？（我看kubernetes中的api doc不是通过代码生成的）</div>2021-07-31</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<div>swagger generate 命令会找到 main 函数，然后遍历所有的源代码，解析源码中与 Swagger 相关的注释，然后自动生成 swagger.json&#47;swagger.yaml 文件；
+请问一般开发中，使用哪种swagger模式？（我看kubernetes中的api doc不是通过代码生成的）</p>2021-07-31</li><br/><li><span>Jone_乔泓恺</span> 👍（0） 💬（1）<p>swagger generate 命令会找到 main 函数，然后遍历所有的源代码，解析源码中与 Swagger 相关的注释，然后自动生成 swagger.json&#47;swagger.yaml 文件；
 
-version: v0.29.0 不适用了吧？</div>2022-07-06</li><br/><li><span>yangchnet</span> 👍（0） 💬（1）<div>请问老师怎么看待“protoc-gen-openapiv2”这个工具，使用proto文件定义了接口出入参后可以直接生成swagger文档，不用再手动去编写。是不是比文中这种去手动编写的方便一点呢。</div>2022-02-05</li><br/><li><span>yandongxiao</span> 👍（0） 💬（1）<div>总结：
+version: v0.29.0 不适用了吧？</p>2022-07-06</li><br/><li><span>yangchnet</span> 👍（0） 💬（1）<p>请问老师怎么看待“protoc-gen-openapiv2”这个工具，使用proto文件定义了接口出入参后可以直接生成swagger文档，不用再手动去编写。是不是比文中这种去手动编写的方便一点呢。</p>2022-02-05</li><br/><li><span>yandongxiao</span> 👍（0） 💬（1）<p>总结：
 1. 什么是 swagger? 它和OpenAPI之间是什么关系？如何编写swagger.yaml? 
 2. go-swagger 是一个非常流行的工具。你可以生成swagger.yaml，检查 swagger.yaml，生成客户端代码，生成服务端代码，启动HTTP服务器访问API文档
-3. diff 命令可以检查两个yaml文件的内容，从而判断出，API文档是否引入了Break Change。</div>2021-11-27</li><br/><li><span>宙斯</span> 👍（0） 💬（1）<div>文档版本比较多时（有的接口有3-4个版本），放在一个swagger文档下是否还需要加版本以区分呢？</div>2021-07-06</li><br/><li><span>惜心（伟祺）</span> 👍（15） 💬（0）<div>老师厉害 把软件工程方方面面通过一个项目讲了
+3. diff 命令可以检查两个yaml文件的内容，从而判断出，API文档是否引入了Break Change。</p>2021-11-27</li><br/><li><span>宙斯</span> 👍（0） 💬（1）<p>文档版本比较多时（有的接口有3-4个版本），放在一个swagger文档下是否还需要加版本以区分呢？</p>2021-07-06</li><br/><li><span>惜心（伟祺）</span> 👍（15） 💬（0）<p>老师厉害 把软件工程方方面面通过一个项目讲了
 相信看完这个再去看大型开源项目 比如kubernates应该会容易很多 
 聚焦在论文核心实现部分就可以
-知道一个大项目是怎么造出来的 包括什么 再去学自然容易多了</div>2021-07-09</li><br/><li><span>土拨鼠</span> 👍（2） 💬（1）<div>目前前后端就是通过swagger沟通，后端在开发之前先定义好swagger的 api.json，这样前后端就可以并行开发了，而且减少了很多扯皮</div>2021-11-23</li><br/><li><span>Sch0ng</span> 👍（2） 💬（2）<div>用go-swagger生成swagger格式的API文档。
-API文档最大的一个痛点是更新不及时，使用自动生成工具可以降低及时更新文档的阻力，让文档实时更新变得更容易操作。使用更先进的工具，对抗人的惰性。</div>2021-08-10</li><br/>
+知道一个大项目是怎么造出来的 包括什么 再去学自然容易多了</p>2021-07-09</li><br/><li><span>土拨鼠</span> 👍（2） 💬（1）<p>目前前后端就是通过swagger沟通，后端在开发之前先定义好swagger的 api.json，这样前后端就可以并行开发了，而且减少了很多扯皮</p>2021-11-23</li><br/><li><span>Sch0ng</span> 👍（2） 💬（2）<p>用go-swagger生成swagger格式的API文档。
+API文档最大的一个痛点是更新不及时，使用自动生成工具可以降低及时更新文档的阻力，让文档实时更新变得更容易操作。使用更先进的工具，对抗人的惰性。</p>2021-08-10</li><br/>
 </ul>

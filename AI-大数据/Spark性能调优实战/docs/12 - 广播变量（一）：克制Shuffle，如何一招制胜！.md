@@ -145,9 +145,9 @@ Driver从所有Executors收集userDF所属的所有数据分片，在本地汇�
 
 期待在留言区看到你的思考和答案，我们下一讲见！
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>Sansi</span> 👍（22） 💬（4）<div>1. 改成由driver获取到数据分布，然后通知各个executor之间进行拉取，这样可以利用多个executor网络，避免只有driver组装以后再一个一个发送效率过低
+<li><span>Sansi</span> 👍（22） 💬（4）<p>1. 改成由driver获取到数据分布，然后通知各个executor之间进行拉取，这样可以利用多个executor网络，避免只有driver组装以后再一个一个发送效率过低
 
-2.当两个需要join的数据集都很大时，使用broadcast join需要将一个很大的数据集进行网络分发多次，已经远超出了shuffle join需要传输的数据</div>2021-04-09</li><br/><li><span>Geek_d794f8</span> 👍（21） 💬（3）<div>磊哥，为什么我测试了广播rdd不行：
+2.当两个需要join的数据集都很大时，使用broadcast join需要将一个很大的数据集进行网络分发多次，已经远超出了shuffle join需要传输的数据</p>2021-04-09</li><br/><li><span>Geek_d794f8</span> 👍（21） 💬（3）<p>磊哥，为什么我测试了广播rdd不行：
 我写了个demo，广播rdd是报错的，代码如下：
     val userFile: String =&quot;spark-basic&#47;File&#47;csv_data.csv&quot;
     val df: DataFrame = spark.read.csv(userFile)
@@ -171,7 +171,7 @@ def broadcast[T: ClassTag](value: T): Broadcast[T] = {
   }
 
 第4行的代码显示的Can not directly broadcast RDDs
-是不是我哪里不太对？</div>2021-05-12</li><br/><li><span>Jack</span> 👍（6） 💬（8）<div>老师，对于第1题，看了下spark的源码，目前Broadcast只有一个实现类TorrentBroadcast，看代码的注释，这个类通过使用类似Bit-torrent协议的方法解决了Driver成为瓶颈的问题。目前Spark还会存在广播变量的数据太大造成Driver成为瓶颈的问题吗？
+是不是我哪里不太对？</p>2021-05-12</li><br/><li><span>Jack</span> 👍（6） 💬（8）<p>老师，对于第1题，看了下spark的源码，目前Broadcast只有一个实现类TorrentBroadcast，看代码的注释，这个类通过使用类似Bit-torrent协议的方法解决了Driver成为瓶颈的问题。目前Spark还会存在广播变量的数据太大造成Driver成为瓶颈的问题吗？
 
 &#47;**
  * A BitTorrent-like implementation of [[org.apache.spark.broadcast.Broadcast]].
@@ -196,27 +196,27 @@ def broadcast[T: ClassTag](value: T): Broadcast[T] = {
  *&#47;
 private[spark] class TorrentBroadcast[T: ClassTag](obj: T, id: Long)
   extends Broadcast[T](id) with Logging with Serializable {
-</div>2021-04-09</li><br/><li><span>冯杰</span> 👍（5） 💬（1）<div>老师你好，关于broacast join，遇到了一个特别的问题请教一下。
+</p>2021-04-09</li><br/><li><span>冯杰</span> 👍（5） 💬（1）<p>老师你好，关于broacast join，遇到了一个特别的问题请教一下。
 1、Fact(订单) 和 DIM(门店) 关联。  其中门店表量级为 3w(条数) * 10个(字段)，采用Parquet存储在Hive上，大小1M左右。
 2、运行参数，并行度 = 200，Executor = 50，CPU核数 = 2，内存&#47;Executor = 6G，Drvier内存=2G。 PS：没有特别配置Broadcast 相关参数
 3、执行时，有两个疑问点，不得其解
     a）Spark UI 显示，并没有执行BHJ，反而执行了 hash sort merge join。   照理，如此小的数据，应该走前者
     b）Spark UI 显示，走hash sort merge join后，shuffle阶段的内存计算大小为4MB，sort阶段的内存计算大小为6G。    为何sort完后，为膨胀的如此厉害。
 
-</div>2021-06-10</li><br/><li><span>Geek_d794f8</span> 👍（5） 💬（1）<div>老师有两个问题请教一下：
+</p>2021-06-10</li><br/><li><span>Geek_d794f8</span> 👍（5） 💬（1）<p>老师有两个问题请教一下：
 1.文中提到两个表join，两个表数据量相差很大呀，为什么他们的的分区数是一致的，而且分区数不是根据hadoop的切片规则去划分的吗？
 2.广播join不是默认开启的吗，好像小表默认10M；还需像文中代码val bcUserDF = broadcast(userDF)这样声明吗？
-希望得到您的指导，多谢！</div>2021-04-10</li><br/><li><span>斯盖丸</span> 👍（4） 💬（5）<div>老师我生产中为啥从没有遇到过10000并行度那么大的stage，可能我公司比较小吧，集群最多才100多个核，多数时才几百个任务，最多时也才2000多个任务。这健康吗？</div>2021-05-05</li><br/><li><span>斯盖丸</span> 👍（2） 💬（1）<div>原来小表和大表join是节省了大表的shuffle，不然大表只能根据join的列在所有机器上重新分布一遍，现在懂了</div>2021-04-09</li><br/><li><span>狗哭</span> 👍（1） 💬（3）<div>select * from
+希望得到您的指导，多谢！</p>2021-04-10</li><br/><li><span>斯盖丸</span> 👍（4） 💬（5）<p>老师我生产中为啥从没有遇到过10000并行度那么大的stage，可能我公司比较小吧，集群最多才100多个核，多数时才几百个任务，最多时也才2000多个任务。这健康吗？</p>2021-05-05</li><br/><li><span>斯盖丸</span> 👍（2） 💬（1）<p>原来小表和大表join是节省了大表的shuffle，不然大表只能根据join的列在所有机器上重新分布一遍，现在懂了</p>2021-04-09</li><br/><li><span>狗哭</span> 👍（1） 💬（3）<p>select * from
 (select id from table1) a -- 结果很大
 left join
 (select id from table2) b -- 结果很小
 on t1.id = t2.id;
-老师请教下，这种情况b表会广播吗？如果不会怎么处理能让其广播出去呢</div>2021-10-21</li><br/><li><span>陌生的心酸</span> 👍（0） 💬（2）<div>1&gt;.当数据量比较大，对数据进行广播后，同时还要接受各个Executor的中间结果上报，状态管理，导致网络繁忙，继而会发生分发任务到Executor产生失败
+老师请教下，这种情况b表会广播吗？如果不会怎么处理能让其广播出去呢</p>2021-10-21</li><br/><li><span>陌生的心酸</span> 👍（0） 💬（2）<p>1&gt;.当数据量比较大，对数据进行广播后，同时还要接受各个Executor的中间结果上报，状态管理，导致网络繁忙，继而会发生分发任务到Executor产生失败
 
-2&gt; 两个大表【超过广播变量的阈值参数设置】进行join，数据需要分发多次，效率不佳</div>2022-02-21</li><br/><li><span>子兮</span> 👍（0） 💬（1）<div>老师您好，在整个应用资源较为紧张，数据量较大的情况下：spark core计算过程中，生成一个较大的RDD , 它被引用一次，但我还是对它persist(disk)，我在用完并且动作算子后，立刻对它进行了释放unpersist，这样操作是否能加快spark 对这个rdd 的清理，加快内存的释放，缓解内存压力？如果是persist(memory and disk)，用完并且在动作算子后立即释放unpersist，是否能缓解内存压力？如果不persist，用完并且在动作算子后立即释放unpersist，是否能缓解内存压力？ 文字有些长，希望没给老师造成困扰，谢谢老师</div>2021-11-10</li><br/><li><span>子兮</span> 👍（0） 💬（1）<div>1 老师，您好，spark core计算过程中，需要频繁的使用broadCast 操作， 这样累计几次后driver 端内存会很有压力，怎样设置参数或者手动清除之前用来broadCast 的数据？谢谢老师
+2&gt; 两个大表【超过广播变量的阈值参数设置】进行join，数据需要分发多次，效率不佳</p>2022-02-21</li><br/><li><span>子兮</span> 👍（0） 💬（1）<p>老师您好，在整个应用资源较为紧张，数据量较大的情况下：spark core计算过程中，生成一个较大的RDD , 它被引用一次，但我还是对它persist(disk)，我在用完并且动作算子后，立刻对它进行了释放unpersist，这样操作是否能加快spark 对这个rdd 的清理，加快内存的释放，缓解内存压力？如果是persist(memory and disk)，用完并且在动作算子后立即释放unpersist，是否能缓解内存压力？如果不persist，用完并且在动作算子后立即释放unpersist，是否能缓解内存压力？ 文字有些长，希望没给老师造成困扰，谢谢老师</p>2021-11-10</li><br/><li><span>子兮</span> 👍（0） 💬（1）<p>1 老师，您好，spark core计算过程中，需要频繁的使用broadCast 操作， 这样累计几次后driver 端内存会很有压力，怎样设置参数或者手动清除之前用来broadCast 的数据？谢谢老师
 2 老师这个课程的微信交流群怎么添加呢？期待加入学习
 
-</div>2021-11-10</li><br/><li><span>子兮</span> 👍（0） 💬（1）<div>老师, 课程里您讲了内连接左右左右两表的连接过程，您能否再讲一下左外连接leftoutjoin 的呢？对shuffle过程不太清晰，谢谢老师</div>2021-11-02</li><br/><li><span>zhongmin</span> 👍（0） 💬（1）<div>吴老师，问个问题，在广播分布式变量的时候，如果变量的内容发生改变，是怎么去做变量的同步和更新呢？</div>2021-09-06</li><br/><li><span>wow_xiaodi</span> 👍（0） 💬（1）<div>老师对于这节有一些问题：
+</p>2021-11-10</li><br/><li><span>子兮</span> 👍（0） 💬（1）<p>老师, 课程里您讲了内连接左右左右两表的连接过程，您能否再讲一下左外连接leftoutjoin 的呢？对shuffle过程不太清晰，谢谢老师</p>2021-11-02</li><br/><li><span>zhongmin</span> 👍（0） 💬（1）<p>吴老师，问个问题，在广播分布式变量的时候，如果变量的内容发生改变，是怎么去做变量的同步和更新呢？</p>2021-09-06</li><br/><li><span>wow_xiaodi</span> 👍（0） 💬（1）<p>老师对于这节有一些问题：
 (1)executor对于待回传driver端的广播数据集是先存在内存还是落地硬盘呢？
-(2)由executor来处理分片再回传，可能分片需要进行一定的计算再由driver汇总广播，那么如果是无需计算的原始分片呢，driver可否亲自操刀读取所有原始分片直接汇总再分发呢，感觉这样可以节省网络开销？</div>2021-08-01</li><br/><li><span>xuchuan</span> 👍（0） 💬（1）<div>2.多个大表join应该就没法用广播解决，这个延伸一个问题，以电商为例，即席查询应该还要有数仓吧，这不是spark的主要覆盖范畴。</div>2021-05-18</li><br/>
+(2)由executor来处理分片再回传，可能分片需要进行一定的计算再由driver汇总广播，那么如果是无需计算的原始分片呢，driver可否亲自操刀读取所有原始分片直接汇总再分发呢，感觉这样可以节省网络开销？</p>2021-08-01</li><br/><li><span>xuchuan</span> 👍（0） 💬（1）<p>2.多个大表join应该就没法用广播解决，这个延伸一个问题，以电商为例，即席查询应该还要有数仓吧，这不是spark的主要覆盖范畴。</p>2021-05-18</li><br/>
 </ul>

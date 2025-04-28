@@ -290,7 +290,7 @@ ioctl(5, PERF_EVENT_IOC_SET_BPF, 4)     = 0
 
 欢迎在留言区和我讨论，也欢迎把这节课分享给你的同事、朋友。我们一起在实战中演练，在交流中进步。
 <div><strong>精选留言（15）</strong></div><ul>
-<li><span>莫名</span> 👍（23） 💬（3）<div>追踪 bpf 系统调用，借助 BCC 宏定义 TRACEPOINT_PROBE(category, event) 比较方便，例如：
+<li><span>莫名</span> 👍（23） 💬（3）<p>追踪 bpf 系统调用，借助 BCC 宏定义 TRACEPOINT_PROBE(category, event) 比较方便，例如：
 
 -------------- example.c ----------------
 
@@ -310,7 +310,7 @@ from bcc import BPF
 b = BPF(src_file=&quot;example.c&quot;)
 b.trace_print()
 
-</div>2022-01-24</li><br/><li><span>18646333118</span> 👍（12） 💬（7）<div>解决方法:
+</p>2022-01-24</li><br/><li><span>18646333118</span> 👍（12） 💬（7）<p>解决方法:
 {
     &quot;features&quot;: {
         &quot;libbfd&quot;: false
@@ -337,12 +337,12 @@ make -C  bpf&#47;bpftool
         &quot;skeletons&quot;: true
     }
 }
-</div>2022-02-09</li><br/><li><span>不了峰</span> 👍（5） 💬（1）<div>你通常是如何快速理解一门新技术的运行原理的？
+</p>2022-02-09</li><br/><li><span>不了峰</span> 👍（5） 💬（1）<p>你通常是如何快速理解一门新技术的运行原理的？
 --- 看一下官方文档，了解体系架构，多看几遍。买书看感觉也是一个快速入门的方法。
-但是对于没有编程经验，对于 字节码、cpu寄存器、jit ，编译器的理解还是很抽象，学到这里还是有点晕。感觉还是要把这课程从头再看一遍。</div>2022-01-28</li><br/><li><span>火火寻</span> 👍（3） 💬（1）<div>1、你通常是如何快速理解一门新技术的运行原理的？
+但是对于没有编程经验，对于 字节码、cpu寄存器、jit ，编译器的理解还是很抽象，学到这里还是有点晕。感觉还是要把这课程从头再看一遍。</p>2022-01-28</li><br/><li><span>火火寻</span> 👍（3） 💬（1）<p>1、你通常是如何快速理解一门新技术的运行原理的？
 Get Essentials， ADEPT五步法：类比，画图，例子，文字说明，定义。
 
-剩下的就是根据需要侧重地深入到细节。</div>2022-02-26</li><br/><li><span>七里</span> 👍（1） 💬（1）<div>请问，不能执行&#39;bpftool prog dump jited id 78&#39;是怎么回事？bpf相关的包都按照上一讲的提示按照上了
+剩下的就是根据需要侧重地深入到细节。</p>2022-02-26</li><br/><li><span>七里</span> 👍（1） 💬（1）<p>请问，不能执行&#39;bpftool prog dump jited id 78&#39;是怎么回事？bpf相关的包都按照上一讲的提示按照上了
 
 root@maqi-ubt:~# bpftool prog dump xlated id 78
 int hello_world(void * ctx):
@@ -365,16 +365,16 @@ int hello_world(void * ctx):
   12: (95) exit
 root@maqi-ubt:~#
 root@maqi-ubt:~# bpftool prog dump jited id 78
-Error: No libbfd support</div>2022-02-02</li><br/><li><span>写点啥呢</span> 👍（1） 💬（2）<div>请问老师，像上节课例子中 trace openat系统调用的这个函数int hello_world(struct pt_regs *ctx, int dfd, const char __user * filename, struct open_how *how)，bpf会自动把系统调用参数注入bpf函数执行中。本节课提到bpf虚拟机中对bpf函数的参数个数有限制，那如果碰到系统调用参数个数大于bpf限制了，该如何处理呢？
+Error: No libbfd support</p>2022-02-02</li><br/><li><span>写点啥呢</span> 👍（1） 💬（2）<p>请问老师，像上节课例子中 trace openat系统调用的这个函数int hello_world(struct pt_regs *ctx, int dfd, const char __user * filename, struct open_how *how)，bpf会自动把系统调用参数注入bpf函数执行中。本节课提到bpf虚拟机中对bpf函数的参数个数有限制，那如果碰到系统调用参数个数大于bpf限制了，该如何处理呢？
 
-谢谢老师</div>2022-01-29</li><br/><li><span>22</span> 👍（0） 💬（5）<div>老师，sudo strace -v -f -ebpf .&#47;hello.py
+谢谢老师</p>2022-01-29</li><br/><li><span>22</span> 👍（0） 💬（5）<p>老师，sudo strace -v -f -ebpf .&#47;hello.py
 strace: exec: 可执行文件格式错误
 +++ exited with 1 +++
-想请问一下这是什么原因啊？</div>2023-02-25</li><br/><li><span>22</span> 👍（0） 💬（2）<div>追踪系统调用，显示没有权限该怎么解决啊
+想请问一下这是什么原因啊？</p>2023-02-25</li><br/><li><span>22</span> 👍（0） 💬（2）<p>追踪系统调用，显示没有权限该怎么解决啊
 sudo strace -v -f -ebpf .&#47;hello.py
 strace: exec: 权限不够
 +++ exited with 1 +++
-</div>2023-02-25</li><br/><li><span>崔伟协</span> 👍（0） 💬（1）<div>ebpf是图灵完备的吗</div>2022-09-25</li><br/><li><span>woo</span> 👍（0） 💬（1）<div>为啥我的strace输出的不像老师那种json格式很漂亮，是以行为单位的显示，是装了什么工具吗？</div>2022-03-12</li><br/><li><span>不了峰</span> 👍（0） 💬（1）<div>root@ubuntu-impish:~# bpftool prog dump jited id 331
+</p>2023-02-25</li><br/><li><span>崔伟协</span> 👍（0） 💬（1）<p>ebpf是图灵完备的吗</p>2022-09-25</li><br/><li><span>woo</span> 👍（0） 💬（1）<p>为啥我的strace输出的不像老师那种json格式很漂亮，是以行为单位的显示，是装了什么工具吗？</p>2022-03-12</li><br/><li><span>不了峰</span> 👍（0） 💬（1）<p>root@ubuntu-impish:~# bpftool prog dump jited id 331
 Error: No libbfd support   
 root@ubuntu-impish:~# 
 ----
@@ -390,9 +390,9 @@ root@ubuntu-impish:~#  bpftool prog profile
 Error: bpftool prog profile command is not supported. Please build bpftool with clang &gt;= 10.0.0
 root@ubuntu-impish:~# clang -v
 Ubuntu clang version 13.0.0-2
-Target: x86_64-pc-linux-gnu</div>2022-01-27</li><br/><li><span>ZR2021</span> 👍（0） 💬（3）<div>老师，我这边执行 bpftool prog dump jited id xxx，报&quot;Error: No libbfd support&quot; 错误，网上也没找到原因，系统是最新的ubuntu 21.10，vmvare的虚拟机，执行xlated是可以打印出指令的，不知道啥个情况</div>2022-01-27</li><br/><li><span>ZR2021</span> 👍（0） 💬（2）<div>老师，sudo bpftool prog dump xlated id 89，这条命令输出的指令是存储模块存储的指令吗，这个指令是在验证器里进行转换的吗，验证器用转换后的指令去模拟执行是否安全，对bpf 接触的比较少，可能问的有点低级……</div>2022-01-26</li><br/><li><span>Geek_b84e15</span> 👍（4） 💬（1）<div>倪老师您好，我看hello_world的参数列表是(void * ctx)，而有的例子里参数是这样的：int hello_world(struct pt_regs *ctx, int dfd, const char __user * filename, struct open_how *how)，请问怎么确定参数的个数和参数的类型呢？</div>2022-04-25</li><br/><li><span>Sudouble</span> 👍（2） 💬（0）<div>对于运行了sudo strace -v -f -ebpf .&#47;hello.py报了以下错误的小伙伴
+Target: x86_64-pc-linux-gnu</p>2022-01-27</li><br/><li><span>ZR2021</span> 👍（0） 💬（3）<p>老师，我这边执行 bpftool prog dump jited id xxx，报&quot;Error: No libbfd support&quot; 错误，网上也没找到原因，系统是最新的ubuntu 21.10，vmvare的虚拟机，执行xlated是可以打印出指令的，不知道啥个情况</p>2022-01-27</li><br/><li><span>ZR2021</span> 👍（0） 💬（2）<p>老师，sudo bpftool prog dump xlated id 89，这条命令输出的指令是存储模块存储的指令吗，这个指令是在验证器里进行转换的吗，验证器用转换后的指令去模拟执行是否安全，对bpf 接触的比较少，可能问的有点低级……</p>2022-01-26</li><br/><li><span>Geek_b84e15</span> 👍（4） 💬（1）<p>倪老师您好，我看hello_world的参数列表是(void * ctx)，而有的例子里参数是这样的：int hello_world(struct pt_regs *ctx, int dfd, const char __user * filename, struct open_how *how)，请问怎么确定参数的个数和参数的类型呢？</p>2022-04-25</li><br/><li><span>Sudouble</span> 👍（2） 💬（0）<p>对于运行了sudo strace -v -f -ebpf .&#47;hello.py报了以下错误的小伙伴
 strace: exec: Exec format error
 +++ exited with 1 +++
 
-替换成这个命令就可以出结果啦：sudo strace -v -f -ebpf python3 hello.py</div>2023-07-06</li><br/>
+替换成这个命令就可以出结果啦：sudo strace -v -f -ebpf python3 hello.py</p>2023-07-06</li><br/>
 </ul>

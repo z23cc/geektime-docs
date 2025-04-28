@@ -345,5 +345,5 @@ class InjectionProvider<T> implements ContextConfig.ComponentProvider<T> {
 
 欢迎把你的想法分享在留言区，也欢迎把你的项目代码的链接分享出来。相信经过你的思考与实操，学习效果会更好！
 <div><strong>精选留言（2）</strong></div><ul>
-<li><span>davix</span> 👍（0） 💬（0）<div>contructor&#47;field&#47;method有時test case都幾乎一樣，copy&#47;paste再改改就行，老師總還是手敲，是有意的嗎？</div>2022-08-24</li><br/><li><span>aoe</span> 👍（0） 💬（0）<div>原来修改代码的时候选择简单方便的就行，不用严格遵守规范（视频中最后一个示例）</div>2022-05-22</li><br/>
+<li><span>davix</span> 👍（0） 💬（0）<p>contructor&#47;field&#47;method有時test case都幾乎一樣，copy&#47;paste再改改就行，老師總還是手敲，是有意的嗎？</p>2022-08-24</li><br/><li><span>aoe</span> 👍（0） 💬（0）<p>原来修改代码的时候选择简单方便的就行，不用严格遵守规范（视频中最后一个示例）</p>2022-05-22</li><br/>
 </ul>

@@ -635,12 +635,12 @@ pub type Result<T> = Result<T, Error>;
 ![图片](https://static001.geekbang.org/resource/image/03/e9/0315a018c95a61cd6d54bde9cace8ee9.jpg?wh=1114x126)  
 ![图片](https://static001.geekbang.org/resource/image/50/6f/5005yy9ef73f713e299e5a322f301d6f.jpg?wh=1030x222)
 <div><strong>精选留言（7）</strong></div><ul>
-<li><span>古明地觉</span> 👍（9） 💬（2）<div>思考题：&quot;为泛型实现了一个方法，能否再为具化类型实现一个同名方法&quot;，取决于这个泛型能否表示相应的具化类型。比如为泛型 T 和 String 实现了相同的方法，由于 T 没有施加任何约束，它可以代表 String。那么当调用方法时，对于具化类型 String 来说，要调用哪一个呢？因此会出现歧义，编译器会报错：方法被重复定义了。
+<li><span>古明地觉</span> 👍（9） 💬（2）<p>思考题：&quot;为泛型实现了一个方法，能否再为具化类型实现一个同名方法&quot;，取决于这个泛型能否表示相应的具化类型。比如为泛型 T 和 String 实现了相同的方法，由于 T 没有施加任何约束，它可以代表 String。那么当调用方法时，对于具化类型 String 来说，要调用哪一个呢？因此会出现歧义，编译器会报错：方法被重复定义了。
 
 但如果给泛型 T 施加了一个 Copy 约束，要求 T 必须实现了 Copy trait，那么就不会报错了，因为此时 T 代表不了 String，所以调用方法不会出现歧义。但如果再为 i32 实现一个同名方法就会报错了，因为 i32 实现了 Copy，它可以被 T 表示。
 
-PS：老师我在 06 讲提了一个问题，之前在学 Rust 的时候就一直困扰着我，还麻烦老师解答一下。</div>2023-11-03</li><br/><li><span>一个人旅行</span> 👍（5） 💬（1）<div>不能，编译器会提示duplicate definitions for XXXXX。
-如果想为具化类型再实现同样的方法，则可以定义一个trait，用具化类型实现这个trait，来达到&quot;为具化类型再实现同样的方法“的目的。</div>2023-11-03</li><br/><li><span>-Hedon🍭</span> 👍（3） 💬（1）<div>思考题：核心点就在于不能为同一个类型实现 2 个相同函数签名的方法，因为这会引起方法冲突。
+PS：老师我在 06 讲提了一个问题，之前在学 Rust 的时候就一直困扰着我，还麻烦老师解答一下。</p>2023-11-03</li><br/><li><span>一个人旅行</span> 👍（5） 💬（1）<p>不能，编译器会提示duplicate definitions for XXXXX。
+如果想为具化类型再实现同样的方法，则可以定义一个trait，用具化类型实现这个trait，来达到&quot;为具化类型再实现同样的方法“的目的。</p>2023-11-03</li><br/><li><span>-Hedon🍭</span> 👍（3） 💬（1）<p>思考题：核心点就在于不能为同一个类型实现 2 个相同函数签名的方法，因为这会引起方法冲突。
 
 编译报错如下：
 
@@ -681,7 +681,7 @@ impl Point&lt;NotDisplay&gt; {
         println!(&quot;not display&quot;);
     }
 }
-```</div>2023-11-08</li><br/><li><span>Geek_de05b4</span> 👍（2） 💬（1）<div>impl&lt;T: std::ops::Add&lt;Output = T&gt;&gt; Bar&lt;T&gt; {
+```</p>2023-11-08</li><br/><li><span>Geek_de05b4</span> 👍（2） 💬（1）<p>impl&lt;T: std::ops::Add&lt;Output = T&gt;&gt; Bar&lt;T&gt; {
     fn plus(self, other: Bar&lt;T&gt;) -&gt; T {
         self.value + other.value
     }
@@ -703,10 +703,10 @@ error[E0592]: duplicate definitions with name `plus`
 70 |     fn plus(&amp;self, other: &amp;Bar&lt;u32&gt;) -&gt; u32 {
    |     --------------------------------------- other definition for `plus`
 
-不能</div>2023-11-03</li><br/><li><span>Noya</span> 👍（0） 💬（1）<div>思考题：通常是不能， 但是可以通过 trait 进行特化</div>2023-11-09</li><br/><li><span>伯阳</span> 👍（1） 💬（0）<div>和Java的范型类似</div>2023-11-03</li><br/><li><span>坤</span> 👍（0） 💬（0）<div>let a = 9 + &#39;1&#39; as u8;
+不能</p>2023-11-03</li><br/><li><span>Noya</span> 👍（0） 💬（1）<p>思考题：通常是不能， 但是可以通过 trait 进行特化</p>2023-11-09</li><br/><li><span>伯阳</span> 👍（1） 💬（0）<p>和Java的范型类似</p>2023-11-03</li><br/><li><span>坤</span> 👍（0） 💬（0）<p>let a = 9 + &#39;1&#39; as u8;
 结果是 58,让我困惑了:9+1 结果明明是10,这怎么就58了.
 然后就想:为什么是58而不是其他的值,特征是这个数字小于100,
 那么&#39;1&#39; 就是 58-9=49,有了一个猜想&#39;1&#39; as u8 是指ascii码的1,转之后是49, 
 然后就去验证,查看ascii,果然&#39;1&#39;是49.
-</div>2024-11-22</li><br/>
+</p>2024-11-22</li><br/>
 </ul>

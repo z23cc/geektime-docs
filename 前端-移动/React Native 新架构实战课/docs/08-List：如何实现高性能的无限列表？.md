@@ -337,11 +337,11 @@ rowRenderer 的对应代码，我也放在了这里，你可以对照查看：
 
 欢迎在留言区分享你的见解。我是蒋宏伟，咱们下节课见。
 <div><strong>精选留言（13）</strong></div><ul>
-<li><span>卯熙</span> 👍（1） 💬（1）<div>老师， 按需渲染组件，数据还需要分页加载吗？是不是可以不用分页加载，一次性把数据请求回来，它会自动按需渲染。</div>2022-05-01</li><br/><li><span>山文宋</span> 👍（1） 💬（1）<div>老师，有比较好的RN的书或者资料推荐吗？</div>2022-04-13</li><br/><li><span>持续思考持续做的牛牛</span> 👍（0） 💬（1）<div>现在新架构里面分支，0.68，有相应的listview优化么？怎么看不到对应的scrollview os库？rrc_scrollview这个组件是还没有完成么？</div>2022-04-25</li><br/><li><span>持续思考持续做的牛牛</span> 👍（0） 💬（1）<div>对于item高度会变化的，能适配么？</div>2022-04-25</li><br/><li><span>dao</span> 👍（0） 💬（2）<div>作业 
+<li><span>卯熙</span> 👍（1） 💬（1）<p>老师， 按需渲染组件，数据还需要分页加载吗？是不是可以不用分页加载，一次性把数据请求回来，它会自动按需渲染。</p>2022-05-01</li><br/><li><span>山文宋</span> 👍（1） 💬（1）<p>老师，有比较好的RN的书或者资料推荐吗？</p>2022-04-13</li><br/><li><span>持续思考持续做的牛牛</span> 👍（0） 💬（1）<p>现在新架构里面分支，0.68，有相应的listview优化么？怎么看不到对应的scrollview os库？rrc_scrollview这个组件是还没有完成么？</p>2022-04-25</li><br/><li><span>持续思考持续做的牛牛</span> 👍（0） 💬（1）<p>对于item高度会变化的，能适配么？</p>2022-04-25</li><br/><li><span>dao</span> 👍（0） 💬（2）<p>作业 
 1， https:&#47;&#47;github.com&#47;hdouhua&#47;hybrid-mobile-app&#47;tree&#47;main&#47;AwesomeProject&#47;src&#47;c08
 2， 新手，工作中没有使用过，作业中有下面两个问题，请老师帮忙解答。
 一，设置 loading 属性会引起 RecyclerListView 重新渲染
-二，屏幕下方 “加载更多” 按钮，屏幕有一点抖动</div>2022-04-21</li><br/><li><span>geeklyc</span> 👍（0） 💬（1）<div>老师，有支持多列，瀑布流的不。RecyclerListView</div>2022-04-15</li><br/><li><span>Geek_e4a05b</span> 👍（0） 💬（1）<div>RecyclerListView 在安卓底端机上暴力滑动底部有可能有闪动情况。RecyclerListView如果卡片高度不固定需要提前计算卡片高度，这个可能会牺牲展示时间。Flatlist可以通过指定windowSize来减少白屏出现，感觉性能比之前好很多了。</div>2022-04-13</li><br/><li><span>Luvian</span> 👍（2） 💬（0）<div>现在有一个新的flashList，原理和recycleList差不多，但是使用更简单</div>2023-07-25</li><br/><li><span>Duke</span> 👍（0） 💬（1）<div>最后一个列表项可枚举是什么意思？</div>2022-11-16</li><br/><li><span>IRONMAN</span> 👍（0） 💬（0）<div>你好，这个是我写的rowRenderer的函数:
+二，屏幕下方 “加载更多” 按钮，屏幕有一点抖动</p>2022-04-21</li><br/><li><span>geeklyc</span> 👍（0） 💬（1）<p>老师，有支持多列，瀑布流的不。RecyclerListView</p>2022-04-15</li><br/><li><span>Geek_e4a05b</span> 👍（0） 💬（1）<p>RecyclerListView 在安卓底端机上暴力滑动底部有可能有闪动情况。RecyclerListView如果卡片高度不固定需要提前计算卡片高度，这个可能会牺牲展示时间。Flatlist可以通过指定windowSize来减少白屏出现，感觉性能比之前好很多了。</p>2022-04-13</li><br/><li><span>Luvian</span> 👍（2） 💬（0）<p>现在有一个新的flashList，原理和recycleList差不多，但是使用更简单</p>2023-07-25</li><br/><li><span>Duke</span> 👍（0） 💬（1）<p>最后一个列表项可枚举是什么意思？</p>2022-11-16</li><br/><li><span>IRONMAN</span> 👍（0） 💬（0）<p>你好，这个是我写的rowRenderer的函数:
  const _rowRenderer = (type,data)=&gt;{
         console.log(data,data.name)
         &#47;&#47;编写如何渲染数据
@@ -357,7 +357,7 @@ rowRenderer 的对应代码，我也放在了这里，你可以对照查看：
   LayoutException: RecyclerListView needs to have a bounded size. Currently height or, width is 0.Consider adding style={{flex:1}} or, fixed dimensions
 
      我明明已经明确了每一个列表项的height，为什么还会报错？但是一旦我重新刷新之后，报错就消失了，但是控制台中并没有打印我在rowRenderer函数中中指定的信息，所以为什么rowRenderer函数没有被调用？
-</div>2022-06-29</li><br/><li><span>IRONMAN</span> 👍（0） 💬（0）<div>老师我用函数组件重新写了一下你的demo，为什么RecycleListView中的内容根本不显示，页面一篇空白。
+</p>2022-06-29</li><br/><li><span>IRONMAN</span> 👍（0） 💬（0）<p>老师我用函数组件重新写了一下你的demo，为什么RecycleListView中的内容根本不显示，页面一篇空白。
 function  Scroll (props){
     const {width} = useContext(devInfoContext)
     &#47;&#47; const {data} =  props
@@ -422,5 +422,5 @@ function  Scroll (props){
         &#47;&gt;
     )
 
-}</div>2022-06-29</li><br/><li><span>大龙龙龙</span> 👍（0） 💬（0）<div>老师， 问一下 之前的章节都是 funcation实现组件， 到这里 我看到demo里的recyclerlistview 为什么使用类来实现组件了呢？</div>2022-06-29</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（2）<div>一般业务中列表数据都是分页请求的，按照文中的说法“已经渲染好的组件滚动是跟js没关系的”，那这种场景是不是用scrollview就好了？</div>2022-06-08</li><br/>
+}</p>2022-06-29</li><br/><li><span>大龙龙龙</span> 👍（0） 💬（0）<p>老师， 问一下 之前的章节都是 funcation实现组件， 到这里 我看到demo里的recyclerlistview 为什么使用类来实现组件了呢？</p>2022-06-29</li><br/><li><span>Aaaaaaaaaaayou</span> 👍（0） 💬（2）<p>一般业务中列表数据都是分页请求的，按照文中的说法“已经渲染好的组件滚动是跟js没关系的”，那这种场景是不是用scrollview就好了？</p>2022-06-08</li><br/>
 </ul>

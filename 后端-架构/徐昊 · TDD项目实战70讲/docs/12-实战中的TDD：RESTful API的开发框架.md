@@ -64,7 +64,7 @@ Jakarta Dependency Injection中没有规定而又常用的部分有：配置容�
 
 欢迎把你的思考和想法分享在留言区，也欢迎你扫描详情页的二维码加入读者交流群。我们下节课再见！
 <div><strong>精选留言（9）</strong></div><ul>
-<li><span>🐑</span> 👍（0） 💬（0）<div>TDD专栏福利大合集：
+<li><span>🐑</span> 👍（0） 💬（0）<p>TDD专栏福利大合集：
 
 1、打卡赢好礼（4月23日-5月10日）：正在进行中，学习专栏第1-10讲并在留言区打卡，结束后奖励；
 
@@ -72,12 +72,12 @@ Jakarta Dependency Injection中没有规定而又常用的部分有：配置容�
 
 3、线上带你练：根据专栏更新节奏和老师时间安排确定，徐昊老师会线上带四个同学手把手地改代码，敬请期待！
 
-具体活动介绍见 👉 http:&#47;&#47;gk.link&#47;a&#47;11jPi</div>2022-04-28</li><br/><li><span>Flynn</span> 👍（0） 💬（1）<div>&#47;&#47;TODO 1.注入框架是否注册该对象
+具体活动介绍见 👉 http:&#47;&#47;gk.link&#47;a&#47;11jPi</p>2022-04-28</li><br/><li><span>Flynn</span> 👍（0） 💬（1）<p>&#47;&#47;TODO 1.注入框架是否注册该对象
 &#47;&#47;TODO 2.constructor注入获取到的对象是期望的
 &#47;&#47;TODO 2.filed注入获取到的对象是期望的
 &#47;&#47;TODO 3.method注入获取到的对象是期望的
 &#47;&#47;TODO 4.同一scope生命周期是同一个对象
-&#47;&#47;TODO 5.不同scope生命周期是不同对象</div>2022-04-16</li><br/><li><span>奇小易</span> 👍（3） 💬（0）<div>&gt; 功能梳理
+&#47;&#47;TODO 5.不同scope生命周期是不同对象</p>2022-04-16</li><br/><li><span>奇小易</span> 👍（3） 💬（0）<p>&gt; 功能梳理
 
 ```text
 jakarata dependency injection 核心功能
@@ -136,7 +136,7 @@ Sad Path:
 
 ```
 
-</div>2022-05-04</li><br/><li><span>aoe</span> 👍（3） 💬（0）<div>笔记 https:&#47;&#47;wyyl1.com&#47;post&#47;19&#47;07&#47;
+</p>2022-05-04</li><br/><li><span>aoe</span> 👍（3） 💬（0）<p>笔记 https:&#47;&#47;wyyl1.com&#47;post&#47;19&#47;07&#47;
 
 希望留言可以支持 Markdown 格式，这样更容易阅读
 
@@ -196,7 +196,7 @@ Sad Path:
 - 多个 @Named 重名
 - 不支持第三方 jar 中类由容器统一管理
 
-单例模式下创建对象需要考虑内存消耗、线程安全的问题</div>2022-04-14</li><br/><li><span>于</span> 👍（2） 💬（0）<div>用一个一般复杂度的业务系统更有实用价值，更利于大家跟随、模仿</div>2022-07-02</li><br/><li><span>davix</span> 👍（2） 💬（0）<div>請老師指導下go programmer怎麼學、練習這個項目。</div>2022-05-03</li><br/><li><span>leesper</span> 👍（1） 💬（0）<div>思考题：因为暂时不存在架构愿景，因此可以把功能点当成功能上下文：组件构造、依赖选择、生命周期管理</div>2023-01-21</li><br/><li><span>霜期飞敛</span> 👍（1） 💬（0）<div>
+单例模式下创建对象需要考虑内存消耗、线程安全的问题</p>2022-04-14</li><br/><li><span>于</span> 👍（2） 💬（0）<p>用一个一般复杂度的业务系统更有实用价值，更利于大家跟随、模仿</p>2022-07-02</li><br/><li><span>davix</span> 👍（2） 💬（0）<p>請老師指導下go programmer怎麼學、練習這個項目。</p>2022-05-03</li><br/><li><span>leesper</span> 👍（1） 💬（0）<p>思考题：因为暂时不存在架构愿景，因此可以把功能点当成功能上下文：组件构造、依赖选择、生命周期管理</p>2023-01-21</li><br/><li><span>霜期飞敛</span> 👍（1） 💬（0）<p>
 - 组件的构造
   - 扫描指定目录的所有类，识别出所有带有注解@Inject的类
     - sad path：不同包名下的同名class，通过加上包名区分
@@ -246,5 +246,5 @@ Sad Path:
     - singleton 单例实现，多次获取Class的实例返回一个实例
     - prototype 和默认情况相同
     - default value： prototype
-</div>2022-04-30</li><br/><li><span>davix</span> 👍（1） 💬（1）<div>學這門課最遺憾的是身為go程序員，不知道Java 這些都是啥</div>2022-04-15</li><br/>
+</p>2022-04-30</li><br/><li><span>davix</span> 👍（1） 💬（1）<p>學這門課最遺憾的是身為go程序員，不知道Java 這些都是啥</p>2022-04-15</li><br/>
 </ul>

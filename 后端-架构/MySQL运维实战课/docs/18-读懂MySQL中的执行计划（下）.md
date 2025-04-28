@@ -397,7 +397,7 @@ mysql> select id, a, (select avg(b) from tab where a=t1.a) from tab t1 order by 
 
 期待你的思考，欢迎在留言区中与我交流。如果今天的课程让你有所收获，也欢迎转发给有需要的朋友。我们下节课再见！
 <div><strong>精选留言（3）</strong></div><ul>
-<li><span>Shelly</span> 👍（1） 💬（1）<div>思考题： 
+<li><span>Shelly</span> 👍（1） 💬（1）<p>思考题： 
 SELECT   
     t1.id, 
     t1.a, 
@@ -416,7 +416,7 @@ ON
     t1.a = t2.a 
 ORDER BY 
     t1.id;
-这么写会生成临时表，被驱动表t1被扫描三次</div>2024-09-27</li><br/><li><span>123</span> 👍（1） 💬（1）<div>老师，文中说到“const 表示查询最多返回 1 行记录。对主键或唯一索引的所有字段都使用常量等值匹配时，type 为 const。优化器会将 type 为 const 的查询单元直接替换为常量表。”这个常量表具体指什么，是如何产生的？该主键索引的查询到的值不也是需要通过B+树层级扫描链接获取到吗？</div>2024-09-27</li><br/><li><span>叶明</span> 👍（0） 💬（1）<div>思考题
+这么写会生成临时表，被驱动表t1被扫描三次</p>2024-09-27</li><br/><li><span>123</span> 👍（1） 💬（1）<p>老师，文中说到“const 表示查询最多返回 1 行记录。对主键或唯一索引的所有字段都使用常量等值匹配时，type 为 const。优化器会将 type 为 const 的查询单元直接替换为常量表。”这个常量表具体指什么，是如何产生的？该主键索引的查询到的值不也是需要通过B+树层级扫描链接获取到吗？</p>2024-09-27</li><br/><li><span>叶明</span> 👍（0） 💬（1）<p>思考题
 将子查询改为联表查询，先聚合后 join,避免对表中每行记录都进行聚合计算
   
 select
@@ -437,5 +437,5 @@ from
 order by
   id;
 
-10000 rows in set (0.04 sec)</div>2024-09-27</li><br/>
+10000 rows in set (0.04 sec)</p>2024-09-27</li><br/>
 </ul>

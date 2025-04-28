@@ -623,7 +623,7 @@ testNonInlined  thrpt     31404.262 ±   804.615  ops/ms
 
 咱们的词频统计程序其实还有很多可以优化和提升的地方，请问你能想到哪些改进之处？欢迎你在评论区分享你的思路，我们下节课再见。
 <div><strong>精选留言（10）</strong></div><ul>
-<li><span>colin</span> 👍（16） 💬（1）<div>String.clean() 使用顶层扩展好像不太合适，顶层扩展只适用于通用的逻辑，否则不清楚的人看着 idea 提示的扩展函数也一脸懵逼。</div>2022-01-13</li><br/><li><span>A Lonely Cat</span> 👍（8） 💬（1）<div>
+<li><span>colin</span> 👍（16） 💬（1）<p>String.clean() 使用顶层扩展好像不太合适，顶层扩展只适用于通用的逻辑，否则不清楚的人看着 idea 提示的扩展函数也一脸懵逼。</p>2022-01-13</li><br/><li><span>A Lonely Cat</span> 👍（8） 💬（1）<p>
 fun main() {
     val word = &quot;Kotlin is my favorite language. I love Kotlin!&quot;
     val wordFrequencyList = word.clean()
@@ -661,18 +661,18 @@ private fun List&lt;String&gt;.countWordFrequency(): Map&lt;String, Int&gt; {
     }
     return map.toMap()
 }
-</div>2022-01-12</li><br/><li><span>奥特之光</span> 👍（2） 💬（5）<div>fun foo(block: () -&gt; Unit) { 
+</p>2022-01-12</li><br/><li><span>奥特之光</span> 👍（2） 💬（5）<p>fun foo(block: () -&gt; Unit) { 
    block()
 }
-从开始讲函数到这节课看完，我还没有发现有讲过-&gt;是什么意思，这里() -&gt; Unit这让人很懵，然后下面这个block()和参数的block又是啥关系？</div>2022-05-03</li><br/><li><span>_</span> 👍（0） 💬（1）<div>没用过JMH，查了一下Score的含义，默认情况下是Throughput模式，Score代表单位时间内执行的操作次数，所以testInlined要比testNoninlined快10倍。
-https:&#47;&#47;stackoverflow.com&#47;questions&#47;24928922&#47;jmh-what-does-the-score-value-mean</div>2022-04-24</li><br/><li><span>阿康</span> 👍（0） 💬（1）<div>在正式开始学习之前，我也建议你去 clone 我 GitHub 上面的 TextProcessor 工程：https:&#47;&#47;github.com&#47;chaxiu&#47;Calculator.git，然后用 IntelliJ 打开，并切换到 start 分支跟着课程一步步敲代码。
-源码连接错了</div>2022-01-12</li><br/><li><span>郑峰</span> 👍（2） 💬（0）<div>One liner
+从开始讲函数到这节课看完，我还没有发现有讲过-&gt;是什么意思，这里() -&gt; Unit这让人很懵，然后下面这个block()和参数的block又是啥关系？</p>2022-05-03</li><br/><li><span>_</span> 👍（0） 💬（1）<p>没用过JMH，查了一下Score的含义，默认情况下是Throughput模式，Score代表单位时间内执行的操作次数，所以testInlined要比testNoninlined快10倍。
+https:&#47;&#47;stackoverflow.com&#47;questions&#47;24928922&#47;jmh-what-does-the-score-value-mean</p>2022-04-24</li><br/><li><span>阿康</span> 👍（0） 💬（1）<p>在正式开始学习之前，我也建议你去 clone 我 GitHub 上面的 TextProcessor 工程：https:&#47;&#47;github.com&#47;chaxiu&#47;Calculator.git，然后用 IntelliJ 打开，并切换到 start 分支跟着课程一步步敲代码。
+源码连接错了</p>2022-01-12</li><br/><li><span>郑峰</span> 👍（2） 💬（0）<p>One liner
 
 fun processText(text: String) = text.replace(&quot;[^A-Za-z]&quot;.toRegex(), &quot; &quot;).trim()
     .split(&quot; &quot;).filter(String::isNotBlank)
     .groupingBy { it }.eachCount()
     .map { WordFreq(it.key, it.value) }
     .sortedByDescending { it.freq }
-</div>2022-07-25</li><br/><li><span>ElleSky</span> 👍（1） 💬（0）<div>如果方法变得足够大，过度使用 inline 可能会妨碍或停止 Hotspot 优化（例如方法内联）。默认情况下， Hotspot 不会内联大于35个字节的方法。内联高阶函数也得根据实际情况吧？</div>2023-02-22</li><br/><li><span>ElleSky</span> 👍（0） 💬（0）<div>hi，你好呀，请问你这gif图是用的什么软件生成的呢？</div>2023-02-08</li><br/><li><span>晓春</span> 👍（0） 💬（0）<div>Kotlin 最新 sortedByDescending 返回的是 List，
-sortByDescending 返回的是 Unit</div>2023-01-12</li><br/><li><span>熊妈饭团</span> 👍（0） 💬（0）<div>为什么 inline mapToList 是private的method，当被拷贝到public area 执行时却不会报错呢？</div>2022-11-01</li><br/>
+</p>2022-07-25</li><br/><li><span>ElleSky</span> 👍（1） 💬（0）<p>如果方法变得足够大，过度使用 inline 可能会妨碍或停止 Hotspot 优化（例如方法内联）。默认情况下， Hotspot 不会内联大于35个字节的方法。内联高阶函数也得根据实际情况吧？</p>2023-02-22</li><br/><li><span>ElleSky</span> 👍（0） 💬（0）<p>hi，你好呀，请问你这gif图是用的什么软件生成的呢？</p>2023-02-08</li><br/><li><span>晓春</span> 👍（0） 💬（0）<p>Kotlin 最新 sortedByDescending 返回的是 List，
+sortByDescending 返回的是 Unit</p>2023-01-12</li><br/><li><span>熊妈饭团</span> 👍（0） 💬（0）<p>为什么 inline mapToList 是private的method，当被拷贝到public area 执行时却不会报错呢？</p>2022-11-01</li><br/>
 </ul>
